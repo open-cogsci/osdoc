@@ -21,6 +21,7 @@ pre {
 	padding: 1px 4px 1px 4px;
 }
 
+pre code,
 .highlight code {
 	border: none;
 	padding: none;
