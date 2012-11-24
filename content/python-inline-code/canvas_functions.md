@@ -13,7 +13,7 @@ The `canvas` class is used for display presentation. For example, the following 
 from openexp.canvas import canvas
 my_canvas = canvas(self.experiment)
 my_canvas.fixdot()
-my_canvas.show() # You don't draw directly on the display. In order to show the canvas, you need to explicitly call "show"
+my_canvas.show()
 {% endhighlight %}
 
-{% include doc/canvas.html %}
+{% include doc/canvas %}

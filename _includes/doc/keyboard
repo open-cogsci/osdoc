@@ -40,8 +40,7 @@ for no timeout (default=None)<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}
-from openexp.keyboard import keyboard
+{% highlight python %}from openexp.keyboard import keyboard
 my_keyboard = keyboard(exp, keylist=['z', 'm'], timeout=2000)
 {% endhighlight %}<br />
 </div></div>
@@ -59,8 +58,7 @@ to flush) and False otherwise<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}
-from openexp.keyboard import keyboard
+{% highlight python %}from openexp.keyboard import keyboard
 my_keyboard = keyboard(exp)
 my_keyboard.flush()
 response, timestamp = my_keyboard.get_key()
@@ -90,8 +88,7 @@ A (key, timestamp) tuple. The key is None if a timeout occurs.<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}
-from openexp.keyboard import keyboard
+{% highlight python %}from openexp.keyboard import keyboard
 my_keyboard = keyboard(exp, timeout=2000)
 response, timestamp = my_keyboard.get_key()
 if response == None:
@@ -109,8 +106,7 @@ moderators are pressed.<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}
-from openexp.keyboard import keyboard
+{% highlight python %}from openexp.keyboard import keyboard
 my_keyboard = keyboard(exp)
 moderators = my_keyboard.get_mods()
 if 'shift' in moderators:
@@ -128,8 +124,7 @@ Sets a list of accepted keys<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}
-from openexp.keyboard import keyboard
+{% highlight python %}from openexp.keyboard import keyboard
 my_keyboard = keyboard(exp)
 my_keyboard.set_keylist( ['z', 'm'] )
 {% endhighlight %}<br />
@@ -145,8 +140,7 @@ for no timeout (default=None)<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}
-from openexp.keyboard import keyboard
+{% highlight python %}from openexp.keyboard import keyboard
 my_keyboard = keyboard(exp)
 my_keyboard.set_timeout(2000)
 {% endhighlight %}<br />

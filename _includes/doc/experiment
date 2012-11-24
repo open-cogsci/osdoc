@@ -1,53 +1,48 @@
 <div class='pydoc'>
 <p><small>For OpenSesame 0.27~pre28</small></p>
-<span class='class_name'>class <b>inline_script</b></span><br />
+<span class='class_name'>class <b>experiment</b></span><br />
 <p class='details'><b>Function overview:</b><br />
-<a href='#inline_script.__init__'>__init__</a><br />
-<a href='#inline_script.auto_type'>auto_type</a><br />
-<a href='#inline_script.color_check'>color_check</a><br />
-<a href='#inline_script.copy_sketchpad'>copy_sketchpad</a><br />
-<a href='#inline_script.eval_text'>eval_text</a><br />
-<a href='#inline_script.flush_log'>flush_log</a><br />
-<a href='#inline_script.get'>get</a><br />
-<a href='#inline_script.get_check'>get_check</a><br />
-<a href='#inline_script.get_refs'>get_refs</a><br />
-<a href='#inline_script.has'>has</a><br />
-<a href='#inline_script.log'>log</a><br />
-<a href='#inline_script.offline_canvas'>offline_canvas</a><br />
-<a href='#inline_script.prepare'>prepare</a><br />
-<a href='#inline_script.resolution'>resolution</a><br />
-<a href='#inline_script.run'>run</a><br />
-<a href='#inline_script.sanitize'>sanitize</a><br />
-<a href='#inline_script.set'>set</a><br />
-<a href='#inline_script.sleep'>sleep</a><br />
-<a href='#inline_script.time'>time</a><br />
-<a href='#inline_script.unset'>unset</a><br />
+<a href='#experiment.__init__'>__init__</a><br />
+<a href='#experiment.auto_type'>auto_type</a><br />
+<a href='#experiment.color_check'>color_check</a><br />
+<a href='#experiment.eval_text'>eval_text</a><br />
+<a href='#experiment.file_in_pool'>file_in_pool</a><br />
+<a href='#experiment.flush_log'>flush_log</a><br />
+<a href='#experiment.get'>get</a><br />
+<a href='#experiment.get_check'>get_check</a><br />
+<a href='#experiment.get_file'>get_file</a><br />
+<a href='#experiment.get_refs'>get_refs</a><br />
+<a href='#experiment.has'>has</a><br />
+<a href='#experiment.log'>log</a><br />
+<a href='#experiment.resolution'>resolution</a><br />
+<a href='#experiment.sanitize'>sanitize</a><br />
+<a href='#experiment.set'>set</a><br />
+<a href='#experiment.set_subject'>set_subject</a><br />
+<a href='#experiment.sleep'>sleep</a><br />
+<a href='#experiment.time'>time</a><br />
+<a href='#experiment.unset'>unset</a><br />
 </p>
-<div class='function'><span class='function_name'><a class='anchor' id='inline_script.__init__'>inline_script</a>.<b>__init__(name, experiment, string = None)</b></span><div class='details'>
-Constructor. You will generally not create an inline_script item<br />
-yourself, but use OpenSesame to create a body for the prepare() and<br />
-run() functions.<br />
-<br />
-<span class='keyword'>Arguments:</span>
-<br />
-<span class='variable'>name</span> &rarr; the name of the item
-<br />
-<span class='variable'>experiment</span> &rarr; the experiment
-<br />
+<div class='function'><span class='function_name'><a class='anchor' id='experiment.__init__'>experiment</a>.<b>__init__(name='experiment', string=None, pool_folder=None)</b></span><div class='details'>
+Constructor. The experiment is created automatically be OpenSesame and<br />
+you will generally not need to create it yourself.<br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>string</span> &rarr; an item definition string (default = None)
+<span class='variable'>name</span> &rarr; the name of the experiment (default='experiment')
 <br />
+<span class='variable'>string</span> &rarr; a string containing the experiment definition (default=None)
+<br />
+<span class='variable'>pool_folder</span> &rarr; a specific folder to be used for the file pool
+<br />
+(default=None)<br />
 </div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='inline_script.auto_type'>inline_script</a>.<b>auto_type(val)</b></span><div class='details'>
+<div class='function'><span class='function_name'><a class='anchor' id='experiment.auto_type'>experiment</a>.<b>auto_type(val)</b></span><div class='details'>
 <i>Inherited from /home/sebastiaan/git/opensesame/libopensesame/item.py</i><br /><br />Convert a value into the 'best fitting' or 'simples' type that is<br />
 compatible with the value.<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}
-print type(self.auto_type('1')) # Prints 'int'
+{% highlight python %}print type(self.auto_type('1')) # Prints 'int'
 print type(self.auto_type('1.1')) # Prints 'float'
 print type(self.auto_type('some text')) # Prints 'unicode'
 # Note: Boolean values are converted to 'yes' / 'no' and are
@@ -64,13 +59,12 @@ print type(self.auto_type(True)) # Prints 'unicode'
 <br />
 The same value converted to the 'best fitting' type<br />
 </div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='inline_script.color_check'>inline_script</a>.<b>color_check(col)</b></span><div class='details'>
+<div class='function'><span class='function_name'><a class='anchor' id='experiment.color_check'>experiment</a>.<b>color_check(col)</b></span><div class='details'>
 <i>Inherited from /home/sebastiaan/git/opensesame/libopensesame/item.py</i><br /><br />Checks whether a string is a valid color name<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}
-# Ok
+{% highlight python %}# Ok
 print self.color_check('red')
 # Ok
 print self.color_check('#FFFFFF')
@@ -87,32 +81,13 @@ print self.color_check('this is not a color')
 <br />
 Raises a runtime_error if col is not a valid color<br />
 </div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='inline_script.copy_sketchpad'>inline_script</a>.<b>copy_sketchpad(sketchpad_name)</b></span><div class='details'>
-Create a canvas that is a copy from the canvas of a sketchpad item<br />
-<br />
-<span class='keyword'>Arguments:</span>
-<br />
-<span class='variable'>sketchpad_name</span> &rarr; the name of the sketchpad
-<br />
-<br />
-<span class='keyword'>Returns:</span>
-<br />
-An openexp canvas<br />
-<br />
-<span class='keyword'>Example:</span>
-<br />
-{% highlight python %}
-my_canvas = self.copy_sketchpad('my_sketchpad')
-{% endhighlight %}<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='inline_script.eval_text'>inline_script</a>.<b>eval_text(text, round_float=False, soft_ignore=False, quote_str=False)</b></span><div class='details'>
+<div class='function'><span class='function_name'><a class='anchor' id='experiment.eval_text'>experiment</a>.<b>eval_text(text, round_float=False, soft_ignore=False, quote_str=False)</b></span><div class='details'>
 <i>Inherited from /home/sebastiaan/git/opensesame/libopensesame/item.py</i><br /><br />Evaluate a string of text, so that all variables references (e.g.,<br />
 '[var]') are replaced by values.<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}
-exp.set('var', 'evaluated')
+{% highlight python %}exp.set('var', 'evaluated')
 # Prints 'This string has been evaluated
 print self.eval_text('This string has been [var]')
 {% endhighlight %}
@@ -141,18 +116,34 @@ surrounded by single quotes (default=False)<br />
 <br />
 The evaluated tex<br />
 </div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='inline_script.flush_log'>inline_script</a>.<b>flush_log()</b></span><div class='details'>
+<div class='function'><span class='function_name'><a class='anchor' id='experiment.file_in_pool'>experiment</a>.<b>file_in_pool(path)</b></span><div class='details'>
+Checks if a file is in the file pool<br />
+<br />
+<span class='keyword'>Returns:</span>
+<br />
+A boolean indicating if the file is in the pool<br />
+<br />
+<span class='keyword'>Example:</span>
+<br />
+{% highlight python %}if not exp.file_in_pool('my_image.png'):
+	print 'my_image.png could not be found!'
+else:
+	image_path = exp.get_file('my_image.png')
+	my_canvas = exp.offline_canvas()
+	my_canvas.image(image_path)
+{% endhighlight %}<br />
+</div></div>
+<div class='function'><span class='function_name'><a class='anchor' id='experiment.flush_log'>experiment</a>.<b>flush_log()</b></span><div class='details'>
 <i>Inherited from /home/sebastiaan/git/opensesame/libopensesame/item.py</i><br /><br />Force any pending write operations to the log file to be written to disk<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}
-self.log('TRIAL FINISHED')
+{% highlight python %}self.log('TRIAL FINISHED')
 self.flush_log()
 {% endhighlight %}
 <br />
 </div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='inline_script.get'>inline_script</a>.<b>get(var, _eval=True)</b></span><div class='details'>
+<div class='function'><span class='function_name'><a class='anchor' id='experiment.get'>experiment</a>.<b>get(var, _eval=True)</b></span><div class='details'>
 <i>Inherited from /home/sebastiaan/git/opensesame/libopensesame/item.py</i><br /><br />Return the value of an OpenSesame variable. Checks first if the variable<br />
 exists 'locally' in the item and, if not, checks if the variable exists<br />
 'globally' in the experiment.<br />
@@ -164,8 +155,7 @@ is returned as int, '10.1' as float, and 'some text' as unicode.<br />
 The _eval parameter is used to specify whether the value of the<br />
 variable should be evaluated, in case it contains references to other<br />
 variables. This is best illustrated by example:<br />
-{% highlight python %}
-exp.set('var1', 'I like [var2]')
+{% highlight python %}exp.set('var1', 'I like [var2]')
 exp.set('var2', 'OpenSesame')
 print self.get('var1') # prints 'I like OpenSesame'
 print self.get('var1', _eval=False) # prints 'I like [var2]'
@@ -173,8 +163,7 @@ print self.get('var1', _eval=False) # prints 'I like [var2]'
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}
-if self.get('cue') == 'valid':
+{% highlight python %}if self.get('cue') == 'valid':
 	print 'This is a validly cued trial'
 {% endhighlight %}
 <br />
@@ -195,7 +184,7 @@ a runtime_error is raised if the variable is not found<br />
 <br />
 The value<br />
 </div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='inline_script.get_check'>inline_script</a>.<b>get_check(var, default=None, valid=None, _eval=True)</b></span><div class='details'>
+<div class='function'><span class='function_name'><a class='anchor' id='experiment.get_check'>experiment</a>.<b>get_check(var, default=None, valid=None, _eval=True)</b></span><div class='details'>
 <i>Inherited from /home/sebastiaan/git/opensesame/libopensesame/item.py</i><br /><br />Similar to get(), but falls back to a default if the variable has not<br />
 been set. It also raises an error if the value is not part of the valid<br />
 list.<br />
@@ -216,8 +205,7 @@ whether containing variables should be processed (default=True)<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}
-if self.get_check('cue', default='invalid') == 'valid':
+{% highlight python %}if self.get_check('cue', default='invalid') == 'valid':
 	print 'This is a validly cued trial'
 {% endhighlight %}
 <br />
@@ -230,13 +218,33 @@ default value, or if the variable value is not part of the 'valid' list.<br />
 <br />
 The value<br />
 </div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='inline_script.get_refs'>inline_script</a>.<b>get_refs(text)</b></span><div class='details'>
+<div class='function'><span class='function_name'><a class='anchor' id='experiment.get_file'>experiment</a>.<b>get_file(path)</b></span><div class='details'>
+Returns the path to a file. First checks if the file is in the file pool<br />
+and then the folder of the current experiment (if any)<br />
+Otherwise, simply return the path.<br />
+<br />
+<span class='keyword'>Arguments:</span>
+<br />
+<span class='variable'>path</span> &rarr; the filename
+<br />
+<br />
+<span class='keyword'>Returns:</span>
+<br />
+The full path to the file<br />
+<br />
+<span class='keyword'>Example:</span>
+<br />
+{% highlight python %}image_path = exp.get_file('my_image.png')
+my_canvas = exp.offline_canvas()
+my_canvas.image(image_path)
+{% endhighlight %}<br />
+</div></div>
+<div class='function'><span class='function_name'><a class='anchor' id='experiment.get_refs'>experiment</a>.<b>get_refs(text)</b></span><div class='details'>
 <i>Inherited from /home/sebastiaan/git/opensesame/libopensesame/item.py</i><br /><br />Returns a list of variables that are referred to by a string of text<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}
-print self.get_refs('There are [two] [references] here')
+{% highlight python %}print self.get_refs('There are [two] [references] here')
 # Prints ['two', 'references']
 {% endhighlight %}
 <br />
@@ -250,7 +258,7 @@ print self.get_refs('There are [two] [references] here')
 A list of variable names or an empty list if the string contains no<br />
 references.<br />
 </div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='inline_script.has'>inline_script</a>.<b>has(var)</b></span><div class='details'>
+<div class='function'><span class='function_name'><a class='anchor' id='experiment.has'>experiment</a>.<b>has(var)</b></span><div class='details'>
 <i>Inherited from /home/sebastiaan/git/opensesame/libopensesame/item.py</i><br /><br />Checks if an OpenSesame variable exists, either in the item or in the<br />
 experiment.<br />
 <br />
@@ -261,8 +269,7 @@ experiment.<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}
-if not self.has('response'):
+{% highlight python %}if not self.has('response'):
 	print 'No response has been collected yet'
 {% endhighlight %}
 <br />
@@ -270,43 +277,19 @@ if not self.has('response'):
 <br />
 True if the variable exists, False if not<br />
 </div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='inline_script.log'>inline_script</a>.<b>log(msg)</b></span><div class='details'>
+<div class='function'><span class='function_name'><a class='anchor' id='experiment.log'>experiment</a>.<b>log(msg)</b></span><div class='details'>
 <i>Inherited from /home/sebastiaan/git/opensesame/libopensesame/item.py</i><br /><br />Write a message to the log file. Note that using the log() function in<br />
 combination with a logger item may result in messy log-files.<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}
-self.log('TIMESTAMP = %s' % self.time())
+{% highlight python %}self.log('TIMESTAMP = %s' % self.time())
 {% endhighlight %}
 <br />
 <span class='variable'>msg</span> &rarr; a message
 <br />
 </div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='inline_script.offline_canvas'>inline_script</a>.<b>offline_canvas(auto_prepare=True)</b></span><div class='details'>
-Create an empty canvas<br />
-<br />
-<span class='keyword'>Keyword arguments:</span>
-<br />
-<span class='variable'>auto_prepare</span> &rarr; Please see the canvas documentation (default=True)
-<br />
-<br />
-<span class='keyword'>Returns:</span>
-<br />
-An openexp canvas<br />
-<br />
-<span class='keyword'>Example:</span>
-<br />
-{% highlight python %}
-my_canvas = self.offline_canvas()
-{% endhighlight %}<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='inline_script.prepare'>inline_script</a>.<b>prepare()</b></span><div class='details'>
-Execute the prepare script. The code that you enter in the 'prepare'<br />
-tab of an inline_script item in the GUI is used as a body for this<br />
-function.<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='inline_script.resolution'>inline_script</a>.<b>resolution()</b></span><div class='details'>
+<div class='function'><span class='function_name'><a class='anchor' id='experiment.resolution'>experiment</a>.<b>resolution()</b></span><div class='details'>
 <i>Inherited from /home/sebastiaan/git/opensesame/libopensesame/item.py</i><br /><br />Return the display resolution and check whether the resolution is valid.<br />
 <br />
 Note 1:<br />
@@ -320,17 +303,12 @@ presented in the center of the display.<br />
 <br />
 A (width, height) tuple<br />
 </div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='inline_script.run'>inline_script</a>.<b>run()</b></span><div class='details'>
-Execute the run script. The code that you enter in the 'run' tab of an<br />
-inline_script item in the GUI is used as a body for this function.<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='inline_script.sanitize'>inline_script</a>.<b>sanitize(s, strict=False, allow_vars=True)</b></span><div class='details'>
+<div class='function'><span class='function_name'><a class='anchor' id='experiment.sanitize'>experiment</a>.<b>sanitize(s, strict=False, allow_vars=True)</b></span><div class='details'>
 <i>Inherited from /home/sebastiaan/git/opensesame/libopensesame/item.py</i><br /><br />Remove invalid characters (notably quotes) from the string<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}
-# Prints 'Universit Aix-Marseille'
+{% highlight python %}# Prints 'Universit Aix-Marseille'
 print self.sanitize('\"Université Aix-Marseille\"')
 # Prints 'UniversitAixMarseille'
 print self.sanitize('\"Université Aix-Marseille\""', strict=True)
@@ -354,7 +332,7 @@ variables (default=True)<br />
 <br />
 A sanitized unicode string<br />
 </div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='inline_script.set'>inline_script</a>.<b>set(var, val)</b></span><div class='details'>
+<div class='function'><span class='function_name'><a class='anchor' id='experiment.set'>experiment</a>.<b>set(var, val)</b></span><div class='details'>
 <i>Inherited from /home/sebastiaan/git/opensesame/libopensesame/item.py</i><br /><br />Sets an OpenSesame variable<br />
 <br />
 If you want to set a variable so that it is available in other items as<br />
@@ -373,8 +351,7 @@ explanation of how data-types are handled.<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}
-exp.set('my_timestamp', self.time())
+{% highlight python %}exp.set('my_timestamp', self.time())
 {% endhighlight %}
 <br />
 <span class='keyword'>Arguments:</span>
@@ -384,13 +361,29 @@ exp.set('my_timestamp', self.time())
 <span class='variable'>val</span> &rarr; the value
 <br />
 </div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='inline_script.sleep'>inline_script</a>.<b>sleep(ms)</b></span><div class='details'>
+<div class='function'><span class='function_name'><a class='anchor' id='experiment.set_subject'>experiment</a>.<b>set_subject(nr)</b></span><div class='details'>
+Set the subject number and parity (even/ odd). This function is<br />
+called automatically when an experiment is started, so you do not<br />
+generally need to call it yourself.<br />
+<br />
+<span class='keyword'>Arguments:</span>
+<br />
+<span class='variable'>nr</span> &rarr; the subject nr
+<br />
+<br />
+<span class='keyword'>Example:</span>
+<br />
+{% highlight python %}exp.set_subject(1)
+print 'Subject nr = %d' % exp.get('subject_nr')
+print 'Subject parity = %s' % exp.get('subject_parity')
+{% endhighlight %}<br />
+</div></div>
+<div class='function'><span class='function_name'><a class='anchor' id='experiment.sleep'>experiment</a>.<b>sleep(ms)</b></span><div class='details'>
 <i>Inherited from /home/sebastiaan/git/opensesame/libopensesame/item.py</i><br /><br />Sleep for a specified duration<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}
-self.sleep(1000) # Sleep one second
+{% highlight python %}self.sleep(1000) # Sleep one second
 {% endhighlight %}
 <br />
 <span class='keyword'>Arguments:</span>
@@ -398,26 +391,24 @@ self.sleep(1000) # Sleep one second
 <span class='variable'>ms</span> &rarr; a duration in milliseconds
 <br />
 </div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='inline_script.time'>inline_script</a>.<b>time()</b></span><div class='details'>
+<div class='function'><span class='function_name'><a class='anchor' id='experiment.time'>experiment</a>.<b>time()</b></span><div class='details'>
 <i>Inherited from /home/sebastiaan/git/opensesame/libopensesame/item.py</i><br /><br />Return current time<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}
-print 'The time is %s' % self.time()
+{% highlight python %}print 'The time is %s' % self.time()
 {% endhighlight %}
 <br />
 <span class='keyword'>Returns:</span>
 <br />
 A timestamp of the current time<br />
 </div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='inline_script.unset'>inline_script</a>.<b>unset(var)</b></span><div class='details'>
+<div class='function'><span class='function_name'><a class='anchor' id='experiment.unset'>experiment</a>.<b>unset(var)</b></span><div class='details'>
 <i>Inherited from /home/sebastiaan/git/opensesame/libopensesame/item.py</i><br /><br />Unset (forget) an OpenSesame variable<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}
-self.set('var', 'Hello world!')
+{% highlight python %}self.set('var', 'Hello world!')
 print self.get('var') # Prints 'Hello world!'
 self.unset('variable_to_forget')
 print self.get('var') # Gives error!

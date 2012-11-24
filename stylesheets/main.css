@@ -7,9 +7,28 @@ body {
 	color: #2e3436;
 }
 
-pre, code {
+pre,
+code {
 	font-family: 'Droid Sans Mono','monospace';
 	color: #555753;	
+	border: solid 1px #d3d7cf;
+	background: #eeeeec;	
+	border-radius: 2px;
+	
+}
+
+pre {
+	padding: 1px 4px 1px 4px;
+}
+
+.highlight code {
+	border: none;
+	padding: none;
+}
+
+.pydoc .highlight code,
+.pydoc .highlight pre {
+	background: #ffffff;
 }
 
 a {

@@ -57,11 +57,7 @@ Pygments is used to perform syntax highlighting for the Python scripts, as descr
 	{% highlight python %}
 	print 'This is Python'
 	{% endhighlight %}
-
-The stylesheet for pygments is generated with the following command.
-
-	pygmentize -S tango -f html > stylesheets/pygments.css
-
+	
 [markdown]: http://daringfireball.net/projects/markdown/
 [tango]: http://en.wikipedia.org/wiki/Tango_Desktop_Project
 [yaml_front]: https://github.com/mojombo/jekyll/wiki/YAML-Front-Matter

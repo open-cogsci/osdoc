@@ -32,8 +32,7 @@ for no timeout (default = None)<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}
-from openexp.mouse import mouse
+{% highlight python %}from openexp.mouse import mouse
 my_mouse = mouse(exp)
 {% endhighlight %}<br />
 </div></div>
@@ -47,8 +46,7 @@ to flush) and False otherwise<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}
-from openexp.mouse import mouse
+{% highlight python %}from openexp.mouse import mouse
 my_mouse = mouse(exp)
 my_mouse.flush()
 button, position, timestamp = my_mouse.get_click()
@@ -79,8 +77,7 @@ if a timeout occurs. Position is an (x, y) tuple in screen coordinates.<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}
-from openexp.mouse import mouse
+{% highlight python %}from openexp.mouse import mouse
 my_mouse = mouse(exp)
 button, position, timestamp = my_mouse.get_click()
 if button == None:
@@ -96,8 +93,7 @@ A (position, timestamp) tuple.<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}
-from openexp.mouse import mouse
+{% highlight python %}from openexp.mouse import mouse
 my_mouse = mouse(exp)
 position, timestamp = my_mouse.get_pos()
 x, y = position
@@ -115,8 +111,7 @@ input (default=None)<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}
-from openexp.mouse import mouse
+{% highlight python %}from openexp.mouse import mouse
 my_mouse = mouse(exp)
 my_mouse.set_buttonlist( [1,2] )
 {% endhighlight %}<br />
@@ -132,8 +127,7 @@ for no timeout (default=None)<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}
-from openexp.mouse import mouse
+{% highlight python %}from openexp.mouse import mouse
 my_mouse = mouse(exp)
 my_mouse.set_timeout(2000)
 {% endhighlight %}<br />
@@ -149,8 +143,7 @@ Sets the visibility of the cursor<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}
-from openexp.mouse import mouse
+{% highlight python %}from openexp.mouse import mouse
 my_mouse = mouse(exp)
 my_mouse.set_visible(True)
 {% endhighlight %}<br />

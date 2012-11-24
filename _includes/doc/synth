@@ -41,8 +41,7 @@ Initialize the synthesizer<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}
-from openexp.synth import synth
+{% highlight python %}from openexp.synth import synth
 my_synth = synth(exp, freq='b2', length=500)
 {% endhighlight %}<br />
 </div></div>
@@ -55,8 +54,7 @@ ms - A duration in milliseconds<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}
-from openexp.sampler import sampler
+{% highlight python %}from openexp.sampler import sampler
 src = exp.get_file('my_sound.ogg')
 my_sampler = sampler(exp, src)
 my_sampler.fade_in(100)
@@ -71,8 +69,7 @@ True if a sound is playing, False if not<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}
-from openexp.sampler import sampler
+{% highlight python %}from openexp.sampler import sampler
 src = exp.get_file('my_sound.ogg')
 my_sampler = sampler(exp, src)
 my_sampler.play()
@@ -95,8 +92,7 @@ An int containing the frequency in Hertz<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}
-from openexp.synth import synth
+{% highlight python %}from openexp.synth import synth
 my_synth = synth(exp)
 print 'An a2 is %d Hz' % my_synth.key_to_freq('a2')
 {% endhighlight %}<br />
@@ -115,8 +111,7 @@ mute one channel specify "left" (mutes right, pans to left) or "right"<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}
-from openexp.sampler import sampler
+{% highlight python %}from openexp.sampler import sampler
 src = exp.get_file('my_sound.ogg')
 my_sampler = sampler(exp, src)
 my_sampler.pan('left')
@@ -127,8 +122,7 @@ my_sampler.pan('left')
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}
-from openexp.sampler import sampler
+{% highlight python %}from openexp.sampler import sampler
 src = exp.get_file('my_sound.ogg')
 my_sampler = sampler(exp, src)
 my_sampler.play()
@@ -148,8 +142,7 @@ my_sampler.resume()
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}
-from openexp.sampler import sampler
+{% highlight python %}from openexp.sampler import sampler
 src = exp.get_file('my_sound.ogg')
 my_sampler = sampler(exp, src)
 my_sampler.pitch(2.0)
@@ -165,8 +158,7 @@ my_sampler.pitch(2.0)
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}
-from openexp.sampler import sampler
+{% highlight python %}from openexp.sampler import sampler
 src = exp.get_file('my_sound.ogg')
 my_sampler = sampler(exp, src)
 my_sampler.play()
@@ -177,8 +169,7 @@ my_sampler.play()
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}
-from openexp.sampler import sampler
+{% highlight python %}from openexp.sampler import sampler
 src = exp.get_file('my_sound.ogg')
 my_sampler = sampler(exp, src)
 my_sampler.play()
@@ -193,8 +184,7 @@ my_sampler.resume()
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}
-from openexp.sampler import sampler
+{% highlight python %}from openexp.sampler import sampler
 src = exp.get_file('my_sound.ogg')
 my_sampler = sampler(exp, src)
 my_sampler.play()
@@ -212,8 +202,7 @@ my_sampler.stop()
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}
-from openexp.sampler import sampler
+{% highlight python %}from openexp.sampler import sampler
 src = exp.get_file('my_sound.ogg')
 my_sampler = sampler(exp, src)
 my_sampler.stop_after(100)
@@ -229,8 +218,7 @@ my_sampler.stop_after(100)
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}
-from openexp.sampler import sampler
+{% highlight python %}from openexp.sampler import sampler
 src = exp.get_file('my_sound.ogg')
 my_sampler = sampler(exp, src)
 my_sampler.volume(0.5)
@@ -242,8 +230,7 @@ sound is playing<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}
-from openexp.sampler import sampler
+{% highlight python %}from openexp.sampler import sampler
 src = exp.get_file('my_sound.ogg')
 my_sampler = sampler(exp, src)
 my_sampler.play()

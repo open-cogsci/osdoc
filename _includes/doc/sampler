@@ -27,8 +27,7 @@ Initialize the sampler with a specified file<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}
-from openexp.sampler import sampler
+{% highlight python %}from openexp.sampler import sampler
 src = exp.get_file('my_sound.ogg')
 my_sampler = sampler(exp, src)
 {% endhighlight %}<br />
@@ -42,8 +41,7 @@ ms - A duration in milliseconds<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}
-from openexp.sampler import sampler
+{% highlight python %}from openexp.sampler import sampler
 src = exp.get_file('my_sound.ogg')
 my_sampler = sampler(exp, src)
 my_sampler.fade_in(100)
@@ -58,8 +56,7 @@ True if a sound is playing, False if not<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}
-from openexp.sampler import sampler
+{% highlight python %}from openexp.sampler import sampler
 src = exp.get_file('my_sound.ogg')
 my_sampler = sampler(exp, src)
 my_sampler.play()
@@ -82,8 +79,7 @@ mute one channel specify "left" (mutes right, pans to left) or "right"<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}
-from openexp.sampler import sampler
+{% highlight python %}from openexp.sampler import sampler
 src = exp.get_file('my_sound.ogg')
 my_sampler = sampler(exp, src)
 my_sampler.pan('left')
@@ -94,8 +90,7 @@ Pauses playback (if any)<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}
-from openexp.sampler import sampler
+{% highlight python %}from openexp.sampler import sampler
 src = exp.get_file('my_sound.ogg')
 my_sampler = sampler(exp, src)
 my_sampler.play()
@@ -115,8 +110,7 @@ Set the relative pitch of the sample<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}
-from openexp.sampler import sampler
+{% highlight python %}from openexp.sampler import sampler
 src = exp.get_file('my_sound.ogg')
 my_sampler = sampler(exp, src)
 my_sampler.pitch(2.0)
@@ -132,8 +126,7 @@ Play the sound<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}
-from openexp.sampler import sampler
+{% highlight python %}from openexp.sampler import sampler
 src = exp.get_file('my_sound.ogg')
 my_sampler = sampler(exp, src)
 my_sampler.play()
@@ -144,8 +137,7 @@ Resumes playback (if any)<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}
-from openexp.sampler import sampler
+{% highlight python %}from openexp.sampler import sampler
 src = exp.get_file('my_sound.ogg')
 my_sampler = sampler(exp, src)
 my_sampler.play()
@@ -160,8 +152,7 @@ Stops the currently playing sound (if any)<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}
-from openexp.sampler import sampler
+{% highlight python %}from openexp.sampler import sampler
 src = exp.get_file('my_sound.ogg')
 my_sampler = sampler(exp, src)
 my_sampler.play()
@@ -179,8 +170,7 @@ Specify a duration after which the sampler stops playing<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}
-from openexp.sampler import sampler
+{% highlight python %}from openexp.sampler import sampler
 src = exp.get_file('my_sound.ogg')
 my_sampler = sampler(exp, src)
 my_sampler.stop_after(100)
@@ -196,8 +186,7 @@ Set the volume<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}
-from openexp.sampler import sampler
+{% highlight python %}from openexp.sampler import sampler
 src = exp.get_file('my_sound.ogg')
 my_sampler = sampler(exp, src)
 my_sampler.volume(0.5)
@@ -209,8 +198,7 @@ sound is playing<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}
-from openexp.sampler import sampler
+{% highlight python %}from openexp.sampler import sampler
 src = exp.get_file('my_sound.ogg')
 my_sampler = sampler(exp, src)
 my_sampler.play()
