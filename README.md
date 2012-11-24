@@ -11,28 +11,26 @@ The style guidelines are according to the [Tango Desktop Project][tango].
 PAGE MARKUP
 ===========
 
-Pages are generated from the markdown (.md) files located in the content folder. 
-
 YAML FRONT MATTER
 -----------------
 
 Each file starts with a [YAML front-matter header][yaml_front].
 
----
-layout: osdoc
-title: About OpenSesame
-group: General
-permalink: /about-opensesame/
-level: 0
-sortkey: 002.001
----
+	---
+	layout: osdoc
+	title: About OpenSesame
+	group: General
+	permalink: /about-opensesame/
+	level: 0
+	sortkey: 002.001
+	---
 
-- The layout is always 'osdoc'
-- The title is the title as visible in the menu and the top of the page
-- The group is used to cluster the menus. 'General' is the group for the pages that do not have any other pages.
-- The permalink determines the location of the page. This should match the old http://osdoc.cogsci.nl. This link should also start and end with a slash (/)
-- The level indicates the level in the menu. 0 is top-level, 1 is sub-menu.
-- The sortkey indicates the order of the page in the menu. The typical notation is toplevel-order.category-order.
+- The `layout` is always 'osdoc'
+- The `title` is the title as visible in the menu and the top of the page
+- The `group` is used to cluster the menus. 'General' is the group for the pages that do not have any other pages.
+- The `permalink` determines the location of the page. This should match the old http://osdoc.cogsci.nl. This link should also start and end with a slash (/)
+- The `level` indicates the level in the menu. 0 is top-level, 1 is sub-menu.
+- The `sortkey` indicates the order of the page in the menu. The typical notation is toplevel-order.category-order.
 
 FOLDER STRUCTURE
 ----------------
@@ -57,8 +55,11 @@ CODE BLOCKS AND SYNTAX HIGHLIGHTING
 Pygments is used to perform syntax highlighting for the Python scripts, as described [here][pygments]. The liquid syntax to indicate which parts should be highlighted is as follows:
 
 {% highlight python %}
+
 def my_example():
+
 	pass
+
 {% endhighlight %}
 
 The stylesheet for pygments is generated with the following command.
