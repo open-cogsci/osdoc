@@ -1,0 +1,10 @@
+<div id="socialheader">Social</div>
+<div id="socialbox">
+<div class="g-plusone" data-size="small" data-href="http://www.cogsci.nl/"></div>
+<br />
+
+<div class="fb-like" data-href="http://www.facebook.com/cognitivescience" data-send="false" data-layout="button_count" data-width="172" data-show-faces="true"></div>
+
+<a href="https://twitter.com/cogscinl" class="twitter-follow-button" data-show-count="false">Follow @cogscinl</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</div>

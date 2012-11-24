@@ -1,0 +1,44 @@
+.pydoc {
+	border: solid 1px #3465a4;
+}
+
+.pydoc .anchor {
+	color: #eeeeec;
+}
+
+.pydoc small {
+	margin-left: 4px;
+}
+
+.pydoc .function {
+	display: block;
+	margin-left: 12px;
+	padding-left: 0px;
+	border: solid 1px #3465a4;
+	margin: 24px;
+	background: #eeeeec;
+}
+
+.pydoc .function_name,
+.pydoc .class_name {
+	display: inline-block;
+	background: #3465a4;
+	padding: 4px;
+	font-size: 12pt;
+	color: #ffffff;
+}
+
+.pydoc .details {
+	display: block;
+	margin: 8px;
+	color: #555753;
+}
+
+.pydoc .keyword {
+	font-weight: bold;
+	color: #3465a4;
+}
+
+.pydoc .variable {
+	font-weight: bold;
+}

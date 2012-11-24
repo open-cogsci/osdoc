@@ -1,0 +1,11 @@
+{% for node in site.sorted %}
+	{% if node.title != null %}
+		{% if expanded == 1 or node.level <= page.level or group == null or group == node.group %}
+		{% if page.url == node.url %}
+		<span class="active {{node.menuclass}} level-{{ node.level}}"><a href="{{ site.host }}{{node.url}}">{{node.title}}</a></span>
+		{% else %}
+		<span class="inactive {{node.menuclass}} level-{{ node.level}}"><a href="{{ site.host }}{{node.url}}">{{node.title}}</a></span>
+		{% endif %}
+		{% endif %}
+	{% endif %}
+{% endfor %}

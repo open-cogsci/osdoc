@@ -1,0 +1,43 @@
+---
+layout: osdoc
+title: About OpenSesame
+group: General
+permalink: /about-opensesame/
+level: 0
+sortkey: 002.001
+---
+
+OpenSesame is a graphical, open-source experiment builder for the social sciences. It sports a modern and intuitive user interface that allows you to build complex experiments with a minimum of effort. Python scripting is supported as well. With OpenSesame you can create a wide range of experiments: Psychophysics, reaction time tasks, and questionnaires, to name but a few. The plug-in framework and Python scripting allow you to incorporate external devices, such as eye trackers and response boxes, into your experiment.
+
+OpenSesame is freely available under the [General Public Licence][gpl].
+
+Acknowledgements
+----------------
+
+Many thanks go out to Jan Theeuwes, Daniel Schreij, Edwin Dalmaijer, Lotje van der Linden, Per Sederberg, Jarik den Hartog, Cor Stoof and the entire Department of Cognitive Psychology at the VU University, who have provided invaluable advice, code contributions and technical support.
+
+We would like to thank [SR Research][sr-research] for their generous support.
+
+OpenSesame is powered by the following libraries (and many more). Credits go out to the respective authors:
+
+- [Python][]
+- [Qt4][]
+- [PyGame][]
+- [PySerial][]
+- [Faenza icon theme][faenza]
+- [SciPy and NumPy][scipy]
+- [Expyriment][]
+- [PsychoPy][]
+- [PyOpenGL][]
+
+[sr-research]: http://www.sr-research.com/
+[gpl]: http://www.gnu.org/licenses/gpl.html
+[python]: http://www.python.org/
+[qt4]: http://qt.nokia.com/
+[pygame]: http://www.pygame.org/
+[pyserial]: http://pyserial.sourceforge.net/
+[faenza]: http://tiheum.deviantart.com/art/Faenza-Icons-173323228	
+[scipy]: http://www.scipy.org/
+[expyriment]: http://www.expyriment.org/
+[psychopy]: http://www.psychopy.org/
+[pyopengl]: http://pyopengl.sourceforge.net/

@@ -1,0 +1,57 @@
+<div class='pydoc'>
+<span class='class_name'>class <b>libsrbox</b></span><br />
+<p class='details'><b>Function overview:</b><br />
+<a href='#libsrbox.__init__'>__init__</a><br />
+<a href='#libsrbox.close'>close</a><br />
+<a href='#libsrbox.get_button_press'>get_button_press</a><br />
+<a href='#libsrbox.send'>send</a><br />
+<a href='#libsrbox.start'>start</a><br />
+<a href='#libsrbox.stop'>stop</a><br />
+</p>
+<div class='function'><span class='function_name'><a class='anchor' id='libsrbox.__init__'>libsrbox</a>.<b>__init__(experiment, dev=None)</b></span><div class='details'>
+Constructor. Connects to the SR Box.<br />
+<br />
+<span class='keyword'>Arguments:</span>
+<br />
+<span class='variable'>experiment</span> &rarr; opensesame experiment
+<br />
+<br />
+Keywords arguments:<br />
+<span class='variable'>dev</span> &rarr; the srbox device port or None for auto-detect (default=None)
+<br />
+</div></div>
+<div class='function'><span class='function_name'><a class='anchor' id='libsrbox.close'>libsrbox</a>.<b>close()</b></span><div class='details'>
+Close the connection to the srbox. This (sometimes?) required in order<br />
+to re-use the SR Box in the same session of OpenSesame.<br />
+</div></div>
+<div class='function'><span class='function_name'><a class='anchor' id='libsrbox.get_button_press'>libsrbox</a>.<b>get_button_press(allowed_buttons=None, timeout=None)</b></span><div class='details'>
+Get a button press from the SR box<br />
+<br />
+Keywords arguments:<br />
+<span class='variable'>allowed_buttons</span> &rarr; A list of buttons that are accepted or None to accept
+<br />
+all buttons. Valid buttons are integers 1 through 8.<br />
+(default=None)<br />
+<span class='variable'>timeout</span> &rarr; a timeout value or None for no timeout (default=None)
+<br />
+<br />
+<span class='keyword'>Returns:</span>
+<br />
+A timestamp, buttonlist tuple. The buttonlist consists of a list of<br />
+button numbers.<br />
+</div></div>
+<div class='function'><span class='function_name'><a class='anchor' id='libsrbox.send'>libsrbox</a>.<b>send(ch)</b></span><div class='details'>
+Send a single character<br />
+<br />
+<span class='keyword'>Arguments:</span>
+<br />
+<span class='variable'>ch</span> &rarr; the character to send
+<br />
+</div></div>
+<div class='function'><span class='function_name'><a class='anchor' id='libsrbox.start'>libsrbox</a>.<b>start()</b></span><div class='details'>
+Turn on sending mode, to start giving output<br />
+</div></div>
+<div class='function'><span class='function_name'><a class='anchor' id='libsrbox.stop'>libsrbox</a>.<b>stop()</b></span><div class='details'>
+Turn of sending mode, so stop giving output<br />
+</div></div>
+</div>

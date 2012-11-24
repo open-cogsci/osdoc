@@ -1,0 +1,12 @@
+ #notification {
+	margin-left: 8px;	
+ }
+ 
+ #notification div {
+	 margin-top: 16px;
+	 border: solid 1px #729fcf;	 	 
+	 border-radius: 4px;
+	 padding: 4px 4px 4px 32px;
+	 background: #3465a4 url('/img/notification.png') no-repeat 4px 4px;
+	 color: #eeeeec;
+ }

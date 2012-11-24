@@ -1,0 +1,32 @@
+#menu {
+	width: 192px;	
+}
+
+#index span,
+#menu span {
+	display: block;
+}
+
+#menu span {
+	padding-top: 4px;
+	padding-bottom: 4px;
+	border-top: dotted 1px #d3d7fc
+}
+
+#menu .active {
+	font-weight: bold;
+}
+
+#index .level-1,
+#menu .level-1 {
+	margin-left: 16px;
+}
+
+#menu .level-1 {
+	font-size: 0.95em;
+}
+
+#menu a {
+	text-decoration: none;
+	border: none;
+}

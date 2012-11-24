@@ -1,0 +1,13 @@
+<link rel="stylesheet" type="text/css" href="{{ site.host }}/stylesheets/main.css">
+<link rel="stylesheet" type="text/css" href="{{ site.host }}/stylesheets/header.css">
+<link rel="stylesheet" type="text/css" href="{{ site.host }}/stylesheets/footer.css">
+<link rel="stylesheet" type="text/css" href="{{ site.host }}/stylesheets/menu.css">
+<link rel="stylesheet" type="text/css" href="{{ site.host }}/stylesheets/content.css">
+<link rel="stylesheet" type="text/css" href="{{ site.host }}/stylesheets/search.css">
+<link rel="stylesheet" type="text/css" href="{{ site.host }}/stylesheets/sponsor.css">
+<link rel="stylesheet" type="text/css" href="{{ site.host }}/stylesheets/social.css">
+<link rel="stylesheet" type="text/css" href="{{ site.host }}/stylesheets/notification.css">
+<link rel="stylesheet" type="text/css" href="{{ site.host }}/stylesheets/pydoc.css">
+<link rel="stylesheet" type="text/css" href="{{ site.host }}/stylesheets/downloads.css">
+<link rel="stylesheet" type="text/css" href="{{ site.host }}/stylesheets/pygments.css">
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Font+Name">

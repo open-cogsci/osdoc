@@ -1,0 +1,90 @@
+<div class='pydoc'>
+<span class='class_name'>class <b>button</b></span><br />
+<p class='details'><b>Function overview:</b><br />
+<a href='#button.__init__'>__init__</a><br />
+<a href='#button.draw_frame'>draw_frame</a><br />
+<a href='#button.draw_text'>draw_text</a><br />
+<a href='#button.on_mouse_click'>on_mouse_click</a><br />
+<a href='#button.render'>render</a><br />
+<a href='#button.set_rect'>set_rect</a><br />
+<a href='#button.set_var'>set_var</a><br />
+</p>
+<div class='function'><span class='function_name'><a class='anchor' id='button.__init__'>button</a>.<b>__init__(form, text='button', frame=True, center=True, var=None)</b></span><div class='details'>
+Constructor<br />
+<br />
+<span class='keyword'>Arguments:</span>
+<br />
+<span class='variable'>form</span> &rarr; the parent form
+<br />
+<br />
+<span class='keyword'>Keyword arguments:</span>
+<br />
+<span class='variable'>text</span> &rarr; button text (default='button')
+<br />
+<span class='variable'>frame</span> &rarr; indicates whether a frame should be drawn around the widget
+<br />
+(default=False)<br />
+<span class='variable'>center</span> &rarr; indicates whether the text should be centered (default=False)
+<br />
+<span class='variable'>var</span> &rarr; the name of the experimental variable that should be used to log
+<br />
+the widget status (default=None)<br />
+</div></div>
+<div class='function'><span class='function_name'><a class='anchor' id='button.draw_frame'>button</a>.<b>draw_frame(rect=None, style='normal')</b></span><div class='details'>
+<i>Inherited from /home/sebastiaan/git/opensesame/libopensesame/widgets/widget.py</i><br /><br />Draws a simple frame around the widget<br />
+<br />
+<span class='keyword'>Keyword arguments:</span>
+<br />
+<span class='variable'>rect</span> &rarr; a (left, top, width, height) tuple for the frame geometry or
+<br />
+None to use the widget geometry (default=None)<br />
+<span class='variable'>style</span> &rarr; 'normal', 'active', 'light' (default='normal')
+<br />
+</div></div>
+<div class='function'><span class='function_name'><a class='anchor' id='button.draw_text'>button</a>.<b>draw_text(text, html=True)</b></span><div class='details'>
+<i>Inherited from /home/sebastiaan/git/opensesame/libopensesame/widgets/label.py</i><br /><br />Draws text in the widget<br />
+<br />
+<span class='keyword'>Arguments:</span>
+<br />
+<span class='variable'>text</span> &rarr; the text to draw
+<br />
+<br />
+<span class='keyword'>Keyword arguments:</span>
+<br />
+<span class='variable'>html</span> &rarr; indicates whether HTML should be parsed (default=True)
+<br />
+</div></div>
+<div class='function'><span class='function_name'><a class='anchor' id='button.on_mouse_click'>button</a>.<b>on_mouse_click(pos)</b></span><div class='details'>
+Is called whenever the user clicks on the widget. Returns the button<br />
+text.<br />
+<br />
+<span class='keyword'>Arguments:</span>
+<br />
+<span class='variable'>pos</span> &rarr; an (x, y) tuple
+<br />
+</div></div>
+<div class='function'><span class='function_name'><a class='anchor' id='button.render'>button</a>.<b>render()</b></span><div class='details'>
+<i>Inherited from /home/sebastiaan/git/opensesame/libopensesame/widgets/label.py</i><br /><br />Draws the widget<br />
+</div></div>
+<div class='function'><span class='function_name'><a class='anchor' id='button.set_rect'>button</a>.<b>set_rect(rect)</b></span><div class='details'>
+<i>Inherited from /home/sebastiaan/git/opensesame/libopensesame/widgets/widget.py</i><br /><br />Sets the widget geometry<br />
+<br />
+<span class='keyword'>Arguments:</span>
+<br />
+<span class='variable'>rect</span> &rarr; a (left, top, width, height) tuple
+<br />
+</div></div>
+<div class='function'><span class='function_name'><a class='anchor' id='button.set_var'>button</a>.<b>set_var(val, var=None)</b></span><div class='details'>
+<i>Inherited from /home/sebastiaan/git/opensesame/libopensesame/widgets/widget.py</i><br /><br />Set an experimental variable<br />
+<br />
+<span class='keyword'>Arguments:</span>
+<br />
+<span class='variable'>val</span> &rarr; a value
+<br />
+<br />
+<span class='keyword'>Keyword arguments:</span>
+<br />
+<span class='variable'>var</span> &rarr; a variable name, or None to use widget default (default=None)
+<br />
+</div></div>
+</div>

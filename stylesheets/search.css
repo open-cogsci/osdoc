@@ -1,0 +1,26 @@
+#search {
+	width: 190px;	
+	border: solid 1px #555753;
+	border-radius: 2px;
+	padding: 0px;
+	height: 24px;
+	display: block;	
+	margin: 0px 0px 16px 0px;
+}
+
+#cse-search-box {
+	background-color: #ffffff;
+}
+
+#cse-search-box #searchbutton {
+	background-color: #4e9a06;
+	color: #eeeeec;
+	border: none;	
+	height: 24px;
+	float: right;
+	margin: 0px;
+}
+
+#cse-search-box #searchbox {	
+	border: none;	
+}

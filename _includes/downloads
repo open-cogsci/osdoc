@@ -1,0 +1,72 @@
+<h3>Common downloads</h3>
+
+<p class="button-winexe">
+	<a target="_blank"  href="http://files.cogsci.nl/software/opensesame/opensesame_0.26-win32-1.exe" >
+	Windows XP/Vista/7 installer (.exe)
+	</a>
+</p>
+
+<p class="button-debian">
+	<a target="_blank" href="http://neuro.debian.net/pkgs/opensesame.html">
+	Ubuntu/ Debian package (NeuroDebian repository)
+	</a>
+</p>
+
+<p class="button-arch">
+	<a target="_blank" href="http://aur.archlinux.org/packages.php?ID=57142" >
+	Arch Linux package
+	</a>
+</p>
+
+<p class="button-macos">
+	<a href="#macos">
+	Mac OS package (.zip)
+	</a>
+</p>
+
+<h3>Other downloads</h3>
+
+<p class="button-winzip">
+	<a target="_blank"  href="http://files.cogsci.nl/software/opensesame/opensesame_0.26-win32-1.zip">
+	Windows XP/Vista/7 no installation required (.zip)
+	</a>
+</p>
+
+<p class="button-winzip">
+	<a target="_blank" href="http://osdoc.cogsci.nl/getting-started/running-with-python-portable">
+	Windows XP/Vista/7 Python portable package (.zip)
+	</a>
+</p>
+
+<p class="button-src">
+	<a target="_blank" href="http://files.cogsci.nl/software/opensesame/opensesame_0.26-1.tar.gz">
+	Source code (.tar.gz)
+	</a>
+</p>
+
+<p class="button-torrent">
+	<a target="_blank" href="http://www.mininova.org/user/Ceebass">
+	Bittorrent (Windows and Mac OS packages via MiniNova)
+	</a>
+</p>
+
+<h3>Other resources</h3>
+
+<p class="button-forum">
+	<a target="_blank" href="http://forum.cogsci.nl/">
+	Forum
+	</a>
+</p>
+
+<p class="button-dev">
+	<a target="_blank" href="http://github.com/smathot/OpenSesame">
+	Development via GitHub
+	</a>
+</p>
+
+<p class="button-donate">
+	<a target="_blank" href="http://osdoc.cogsci.nl/donate">
+	Donate
+	</a>
+</p>
+

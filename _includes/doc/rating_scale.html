@@ -1,0 +1,86 @@
+<div class='pydoc'>
+<span class='class_name'>class <b>rating_scale</b></span><br />
+<p class='details'><b>Function overview:</b><br />
+<a href='#rating_scale.__init__'>__init__</a><br />
+<a href='#rating_scale.draw_frame'>draw_frame</a><br />
+<a href='#rating_scale.on_mouse_click'>on_mouse_click</a><br />
+<a href='#rating_scale.render'>render</a><br />
+<a href='#rating_scale.set_rect'>set_rect</a><br />
+<a href='#rating_scale.set_value'>set_value</a><br />
+<a href='#rating_scale.set_var'>set_var</a><br />
+</p>
+<div class='function'><span class='function_name'><a class='anchor' id='rating_scale.__init__'>rating_scale</a>.<b>__init__(form, nodes=5, click_accepts=False, var=None)</b></span><div class='details'>
+Constructor<br />
+<br />
+<span class='keyword'>Arguments:</span>
+<br />
+<span class='variable'>form</span> &rarr; the parent form
+<br />
+<br />
+<span class='keyword'>Keyword arguments:</span>
+<br />
+<span class='variable'>nodes</span> &rarr; the number of nodes or a list of node identifiers (e.g.,
+<br />
+['yes', 'no', 'maybe']. If a list is passed the rating scale<br />
+will have labels, otherwise it will just have boxes.<br />
+(default=5)<br />
+<span class='variable'>click_accepts</span> &rarr; indicates whether the form should close when a value
+<br />
+is selected (default=False)<br />
+<span class='variable'>var</span> &rarr; the name of the experimental variable that should be used to log
+<br />
+the widget status (default=None)<br />
+</div></div>
+<div class='function'><span class='function_name'><a class='anchor' id='rating_scale.draw_frame'>rating_scale</a>.<b>draw_frame(rect=None, style='normal')</b></span><div class='details'>
+<i>Inherited from /home/sebastiaan/git/opensesame/libopensesame/widgets/widget.py</i><br /><br />Draws a simple frame around the widget<br />
+<br />
+<span class='keyword'>Keyword arguments:</span>
+<br />
+<span class='variable'>rect</span> &rarr; a (left, top, width, height) tuple for the frame geometry or
+<br />
+None to use the widget geometry (default=None)<br />
+<span class='variable'>style</span> &rarr; 'normal', 'active', 'light' (default='normal')
+<br />
+</div></div>
+<div class='function'><span class='function_name'><a class='anchor' id='rating_scale.on_mouse_click'>rating_scale</a>.<b>on_mouse_click(pos)</b></span><div class='details'>
+Is called whenever the user clicks on the widget. Selects the correct<br />
+value from the scale and optionally closes the form.<br />
+<br />
+<span class='keyword'>Arguments:</span>
+<br />
+<span class='variable'>pos</span> &rarr; an (x, y) tuple
+<br />
+</div></div>
+<div class='function'><span class='function_name'><a class='anchor' id='rating_scale.render'>rating_scale</a>.<b>render()</b></span><div class='details'>
+Draws the widget<br />
+</div></div>
+<div class='function'><span class='function_name'><a class='anchor' id='rating_scale.set_rect'>rating_scale</a>.<b>set_rect(rect)</b></span><div class='details'>
+<i>Inherited from /home/sebastiaan/git/opensesame/libopensesame/widgets/widget.py</i><br /><br />Sets the widget geometry<br />
+<br />
+<span class='keyword'>Arguments:</span>
+<br />
+<span class='variable'>rect</span> &rarr; a (left, top, width, height) tuple
+<br />
+</div></div>
+<div class='function'><span class='function_name'><a class='anchor' id='rating_scale.set_value'>rating_scale</a>.<b>set_value(val)</b></span><div class='details'>
+Set the rating scale value<br />
+<br />
+<span class='keyword'>Arguments:</span>
+<br />
+<span class='variable'>val</span> &rarr; the value
+<br />
+</div></div>
+<div class='function'><span class='function_name'><a class='anchor' id='rating_scale.set_var'>rating_scale</a>.<b>set_var(val, var=None)</b></span><div class='details'>
+<i>Inherited from /home/sebastiaan/git/opensesame/libopensesame/widgets/widget.py</i><br /><br />Set an experimental variable<br />
+<br />
+<span class='keyword'>Arguments:</span>
+<br />
+<span class='variable'>val</span> &rarr; a value
+<br />
+<br />
+<span class='keyword'>Keyword arguments:</span>
+<br />
+<span class='variable'>var</span> &rarr; a variable name, or None to use widget default (default=None)
+<br />
+</div></div>
+</div>

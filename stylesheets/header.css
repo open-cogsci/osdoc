@@ -1,0 +1,10 @@
+#header {
+	background-color: #eeeeec;
+	height: 96px;
+	border-bottom: solid 2px #888a85;
+	margin-bottom: 16px;
+}
+
+#header img {
+	border: none;
+}

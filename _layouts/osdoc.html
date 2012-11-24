@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>{{ page.title }} - OpenSesame documentation area</title>
+{% include stylesheets %}
+{% include google %}
+</head>
+
+<body>
+
+{% include facebook %}
+
+<table width='100%' id='maincontainer'>
+	<tr>
+		<td colspan=2>
+			<div id='toppane'>
+				<div id='header'>{% include header %}</div>			
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td id="lefttd">
+			<div id='leftpane'>
+				<div id='search'>{% include search %}</div>
+				<div id='menu'>{% include menu %}</div>
+				<div id='social'>{% include social %}</div>
+				<div id='sponsor'>{% include sponsor %}</div>
+			</div>
+		</td>
+		<td>			
+			<div id='rightpane'>
+				{% if site.notifications == true %}
+				<div id='notification'>{% include notification %}</div>
+				{% endif %}
+				<div id='content'>{% include content %}</div>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td colspan=2>
+			<div id='bottompane'>
+				<div id='footer'>{% include footer %}</div>
+			</div>
+		</td>
+	</tr>
+</table>
+
+</body>
+</html>

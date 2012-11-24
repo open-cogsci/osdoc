@@ -1,0 +1,5 @@
+<div id='menu'>
+{% assign group = page.group %}
+{% include pages_list %}
+</div>
+
