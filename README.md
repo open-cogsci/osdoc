@@ -54,11 +54,9 @@ CODE BLOCKS AND SYNTAX HIGHLIGHTING
 
 Pygments is used to perform syntax highlighting for the Python scripts, as described [here][pygments]. The liquid syntax to indicate which parts should be highlighted is as follows:
 
-{% highlight python %}
-
-print 'This is Python'
-
-{% endhighlight %}
+	{% highlight python %}
+	print 'This is Python'
+	{% endhighlight %}
 
 The stylesheet for pygments is generated with the following command.
 
