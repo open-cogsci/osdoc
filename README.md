@@ -56,9 +56,7 @@ Pygments is used to perform syntax highlighting for the Python scripts, as descr
 
 {% highlight python %}
 
-def my_example():
-
-	pass
+print 'This is Python'
 
 {% endhighlight %}
 
