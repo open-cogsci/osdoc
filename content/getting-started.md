@@ -7,7 +7,7 @@ level: 0
 sortkey: 003.001
 ---
 
-*Getting started*
-
-<b>This should be pre-formatted
-Text</b>
+<div id='index'>
+{% assign only_group = page.group %}
+{% include pages_list %}
+</div>

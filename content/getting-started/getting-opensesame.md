@@ -7,7 +7,7 @@ level: 1
 sortkey: 003.002
 ---
 
-The latest stable version is 0.26 "Earnest Einstein". The development version is 0.27 "Frisky Freud". Older versions can be found [here][archive].
+The latest stable version is 0.27 "Frisky Freud". The development version is 0.28 "Gutsy Gibson". Older versions can be found [here][archive].
 
 Installation instructions and more download options can be found below the download buttons.
 
@@ -30,7 +30,7 @@ The recommended way to install OpenSesame under Ubuntu/ Debian/ Linux Mint is th
 	sudo apt-get update
 	sudo apt-get install opensesame
 	
-If you encounter problems or if your distribution is not supported by NeuroDebian, you can also install OpenSesame via the [ppa:smathot/cogscinl][ppa_cogscinl] Ubuntu repository. If you experience missing icons, please install the package gnome-icon-theme-full or see this post.
+If you encounter problems or if your distribution is not supported by NeuroDebian, you can also install OpenSesame via the [ppa:smathot/cogscinl][ppa-cogscinl] Ubuntu repository. If you experience missing icons, please install the package gnome-icon-theme-full or see this post.
 
 	sudo add-apt-repository ppa:smathot/cogscinl
 	sudo apt-get update
@@ -43,17 +43,19 @@ After you have installed OpenSesame, you can start OpenSesame from the menu (Acc
 Mac OS
 ------
 
-Support for Mac OS is experimental. Instructions for running OpenSesame from source on Mac OS can be found here.
+Support for Mac OS is experimental. Instructions for running OpenSesame from source on Mac OS can be found [here][macos-running-from-source].
 
-Are you a Mac OS user and want to help out? We are looking for someone to maintain Mac OS packages for OpenSesame!
+[opensesame_0.26-macos-2.zip][macos-package]
 
-[opensesame_0.26-macos-2.zip (latest)](http://files.cogsci.nl/software/opensesame/opensesame_0.26-macos-2.zip)
-
-[opensesame_0.25-macos-3.zip](http://files.cogsci.nl/software/opensesame/opensesame_0.25-macos-3.zip)
+*Are you a Mac OS user and want to help out? We are looking for someone to maintain Mac OS packages for OpenSesame!*
 
 Other platforms
 ---------------
 
-If there are no packages provided for your platform, you will need to run OpenSesame from source, as per these instructions.
+If there are no packages provided for your platform, you will need to run OpenSesame from source, as [per these instructions][running-from-source].
 
-[ppa_cogscinl]: https://launchpad.net/~smathot/+archive/cogscinl
+[archive]: http://files.cogsci.nl/software/opensesame/
+[macos-package]: http://files.cogsci.nl/software/opensesame/opensesame_0.26-macos-2.zip
+[macos-running-from-source]: /getting-started/running-from-source#macos
+[ppa-cogscinl]: https://launchpad.net/~smathot/+archive/cogscinl
+[running-from-source]: /getting-started/running-from-source

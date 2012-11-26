@@ -7,4 +7,7 @@ level: 0
 sortkey: 004.001
 ---
 
-Some text
+<div id='index'>
+{% assign only_group = page.group %}
+{% include pages_list %}
+</div>

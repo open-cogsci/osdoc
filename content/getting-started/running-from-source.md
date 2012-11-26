@@ -7,7 +7,7 @@ level: 1
 sortkey: 003.003
 ---
 
-This post describes how to set up a complete Python environment on your computer, so you can run OpenSesame directly from the source code. Depending on your needs, you could also consider using Python portable, as described here.
+This post describes how to set up a complete Python environment on your computer, so you can run OpenSesame directly from the source code. Depending on your needs, you could also consider using Python portable, as described [here][python-portable].
 
 Overview
 --------
@@ -80,7 +80,7 @@ You need to install at least the following packages:
 
 - Python <http://www.python.org/>
 - PyGame <http://www.pygame.org/>
-- Install PyQt4 <http://www.riverbankcomputing.co.uk/software/pyqt/intro>
+- PyQt4 <http://www.riverbankcomputing.co.uk/software/pyqt/intro>
 - NumPy <http://numpy.scipy.org/>
 
 The following packages are optional, but there's a good chance you will want to install at least one of them:
@@ -254,5 +254,6 @@ Run OpenSesame using one of the following commands:
 	python opensesame
 	python opensesame --debug
 
+[python-portable]: /getting-started/running-with-python-portable
 [src_stable]: http://files.cogsci.nl/software/opensesame/
 [src_unstable]: https://github.com/smathot/OpenSesame

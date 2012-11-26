@@ -2,3 +2,13 @@
 	float: left;
 	margin: 8px;
 } 
+
+h6 {
+	font-size: 0.9em;
+	text-indent: -16px;
+	font-weight: normal;
+	padding: 0px 0px 4px 16px;
+	margin: 0px;
+}
+	
+}
