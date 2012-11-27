@@ -4,7 +4,7 @@ title: Running on a tablet/ mobile device
 group: Getting started
 permalink: /running-on-a-tablet-mobile-device/
 level: 1
-sortkey: 003.003
+sortkey: 003.004
 ---
 
 A frequently asked question is whether it is possible to run OpenSesame on a tablet device.  Below is a short description of the current options:

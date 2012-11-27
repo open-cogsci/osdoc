@@ -1,6 +1,6 @@
 {% for node in site.sorted %}
 	{% if node.title != null and (only_group == null or only_group == node.group) %}
-		{% if expanded == 1 or node.level <= page.level or group == null or group == node.group or only_group == node.group %}
+		{% if expanded == 1 or node.level == 0 or group == null or group == node.group or only_group == node.group %}
 		{% if page.url == node.url %}
 		<span class="active {{node.menuclass}} level-{{ node.level}}"><a href="{{ site.host }}{{node.url}}">{{node.title}}</a></span>
 		{% else %}

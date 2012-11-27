@@ -1,10 +1,10 @@
 ---
 layout: osdoc
-title: Python inline code
-group: Python inline code
-permalink: /python-inline-code/
+title: Usage
+group: Usage
+permalink: /usage/
 level: 0
-sortkey: 005.001
+sortkey: 004.001
 ---
 
 <div id='index'>
