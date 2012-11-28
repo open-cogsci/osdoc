@@ -1,7 +1,7 @@
 body {
 	background: url('/img/background.png');
 	padding: 16px;
-	font-family: 'Droid Sans','sans-serif';
+	font-family: 'Ubuntu', sans-serif;
 	font-size: 100%;
 	line-height: 150%;	
 	color: #2e3436;
@@ -9,7 +9,7 @@ body {
 
 pre,
 code {
-	font-family: 'Droid Sans Mono','monospace';
+	font-family: 'Ubuntu Mono', monospace;
 	color: #555753;	
 	border: solid 1px #d3d7cf;
 	background: #eeeeec;	
