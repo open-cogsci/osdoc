@@ -6,9 +6,6 @@
 	height: 26px;
 	display: block;
 	margin: 0px 0px 16px 0px;
-}
-
-#cse-search-box {
 	background: #ffffff;
 }
 
@@ -24,4 +21,6 @@
 #cse-search-box #searchbox {
 	border: none;
 	width: 150px;
+	float: left;
+	padding: 4px;
 }

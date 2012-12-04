@@ -2,9 +2,10 @@
 	margin: 16px 0px 8px 0px;
 	font-size: 0.7em;
 	color: #555753;
-	text-align: center;	
+	text-align: center;
 }
 
+#sponsor img,
 #sponsor a {
 	border: none;
 }

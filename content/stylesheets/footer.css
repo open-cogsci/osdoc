@@ -3,14 +3,18 @@
 	padding: 8px 0px 0px 0px;
 	border-top: solid 1px #888a85;
 	color: #888a85;
-	font-size: 0.7em;	
+	font-size: 0.7em;
 }
 
 #footer a {
-	color: #888a85;		
+	color: #888a85;
 	border: none;
 }
 
+#footer #credits {
+	float: left;
+}
+
 #footer #license {
-	float: right;	
+	float: right;
 }
