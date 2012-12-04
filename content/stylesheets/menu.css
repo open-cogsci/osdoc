@@ -1,5 +1,5 @@
 #menu {
-	width: 192px;	
+	width: 192px;
 }
 
 #index span,
@@ -17,16 +17,41 @@
 	font-weight: bold;
 }
 
-#index .level-1,
+#menu .external a {
+	color: #4e9a06;
+}
+
+#menu .external {
+	background: url('/img/menu/external.png') no-repeat left center;
+	padding-left: 24px;
+}
+
+#menu .highlight a {
+	color: #c4a000;
+}
+
+#menu .highlight {
+	background: url('/img/menu/highlight.png') no-repeat left center;
+	padding-left: 24px;
+}
+
 #menu .level-1 {
 	margin-left: 16px;
 }
 
 #menu .level-1 {
-	font-size: 0.95em;
+	font-size: 0.8em;
 }
 
 #menu a {
 	text-decoration: none;
 	border: none;
+}
+
+#index .level-0 {
+	margin: 16px 0px 8px 0px;
+}
+
+#index .level-1 {
+	margin-left: 32px;
 }

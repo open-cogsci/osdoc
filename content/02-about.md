@@ -1,8 +1,8 @@
 ---
 layout: osdoc
-title: About OpenSesame
+title: About
 group: General
-permalink: /about-opensesame/
+permalink: /about/
 level: 0
 sortkey: 002.001
 ---
@@ -10,6 +10,8 @@ sortkey: 002.001
 OpenSesame is a graphical, open-source experiment builder for the social sciences. It sports a modern and intuitive user interface that allows you to build complex experiments with a minimum of effort. Python scripting is supported as well. With OpenSesame you can create a wide range of experiments: Psychophysics, reaction time tasks, and questionnaires, to name but a few. The plug-in framework and Python scripting allow you to incorporate external devices, such as eye trackers and response boxes, into your experiment.
 
 OpenSesame is freely available under the [General Public Licence][gpl].
+
+![](/img/fig/fig1.2.1.png)
 
 Acknowledgements
 ----------------
@@ -36,7 +38,7 @@ OpenSesame is powered by the following libraries (and many more). Credits go out
 [qt4]: http://qt.nokia.com/
 [pygame]: http://www.pygame.org/
 [pyserial]: http://pyserial.sourceforge.net/
-[faenza]: http://tiheum.deviantart.com/art/Faenza-Icons-173323228	
+[faenza]: http://tiheum.deviantart.com/art/Faenza-Icons-173323228
 [scipy]: http://www.scipy.org/
 [expyriment]: http://www.expyriment.org/
 [psychopy]: http://www.psychopy.org/

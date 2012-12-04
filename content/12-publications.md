@@ -1,12 +1,12 @@
 ---
 layout: osdoc
-title: Citations and publications
+title: Publications
 group: General
-permalink: /citation/
+permalink: /publications/
 level: 0
 sortkey: 0012.001
 ---
- 
+
 How to cite OpenSesame
 ----------------------
 
@@ -20,7 +20,7 @@ If you have used OpenSesame for your experiments, we would appreciate it if you 
 
 ###### Mathôt, S., & Theeuwes, J. (2010). OpenSesame (Version 0.23) [Computer software and manual]. Retrieved December 18, 2010, from <http://www.cogsci.nl/opensesame>
 
-###### Mathôt, S., Schreij, D., Theeuwes, J. (2011, Aug). *OpenSesame: A free, graphical experiment builder for the social sciences.* Poster presented at the 16th European Conference on Eye Movements, Marseille, France. 
+###### Mathôt, S., Schreij, D., Theeuwes, J. (2011, Aug). *OpenSesame: A free, graphical experiment builder for the social sciences.* Poster presented at the 16th European Conference on Eye Movements, Marseille, France.
 
 Please note that OpenSesame relies on many modules for which we can take no credit. If you make extensive use of modules such as SciPy/ NumPy, PsychoPy, or Expyriment, please also cite the respective authors.
 

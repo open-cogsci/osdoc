@@ -1,12 +1,27 @@
- #notification {
-	margin-left: 8px;	
- }
- 
- #notification div {
-	 margin-top: 16px;
-	 border: solid 1px #729fcf;	 	 
-	 border-radius: 4px;
-	 padding: 4px 4px 4px 32px;
-	 background: #3465a4 url('/img/notification.png') no-repeat 4px 4px;
-	 color: #eeeeec;
- }
+#notification {
+	margin-left: 8px;
+}
+
+.moved,
+h5,
+#notification div {
+	margin-top: 16px;
+	border-top: dotted 1px #3465a4;
+	border-bottom: dotted 1px #3465a4;
+	padding: 8px 8px 8px 40px;
+	background: #eeeeec url('/img/notification.png') no-repeat 8px 8px;
+	font-size: 1em;
+	font-weight: normal;
+}
+
+#notification div {
+	background: #eeeeec url('/img/notification/site.png') no-repeat 8px 8px;
+}
+
+h5 {
+	background: #eeeeec url('/img/notification/page.png') no-repeat 8px 8px;
+}
+
+.moved {
+	background: #eeeeec url('/img/notification/redirect.png') no-repeat 8px 8px;
+}

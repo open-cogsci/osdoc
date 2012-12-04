@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-<title>{{ page.title }} - OpenSesame documentation area</title>
-{% include stylesheets %}
-{% include google %}
+	<meta charset="UTF-8" />
+	<meta name="author" content="Sebastiaan Mathot" />
+	<meta name="keywords" content="OpenSesame, Psychology, Python, Experiment builder, Open Source, Cross-platform" />
+	<meta name="description" content="Documentation for OpenSesame experiment builder" />
+	<title>{{ page.title }} - OpenSesame documentation area</title>
+	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+	{% include stylesheets %}
+	{% include google %}
 </head>
 
 <body>
@@ -15,7 +19,7 @@
 	<tr>
 		<td colspan=2>
 			<div id='toppane'>
-				<div id='header'>{% include header %}</div>			
+				<div id='header'>{% include header %}</div>
 			</div>
 		</td>
 	</tr>
@@ -28,7 +32,7 @@
 				<div id='sponsor'>{% include sponsor %}</div>
 			</div>
 		</td>
-		<td>			
+		<td>
 			<div id='rightpane'>
 				{% if site.notifications == true %}
 				<div id='notification'>{% include notification %}</div>
