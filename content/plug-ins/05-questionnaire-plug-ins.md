@@ -7,7 +7,7 @@ level: 1
 sortkey: 007.005
 ---
 
-##### The questionnaire plug-ins are deprecated in favour of [forms][] #####
+##### As of OpenSesame 0.27, [forms][] provide a better way to implement questionnaires
 
 About the questionnaire plug-ins
 --------------------------------
