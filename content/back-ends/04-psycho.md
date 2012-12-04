@@ -29,6 +29,7 @@ Citation
 Although PsychoPy is bundled with the binary distributions of OpenSesame, it is a separate project. When appropriate, please cite the following papers in addition to citing OpenSesame:
 
 ###### Peirce, J. W. (2007). PsychoPy: Psychophysics software in Python. *Journal of Neuroscience Methods*, *162*(1-2), 8-13. doi:10.1016/j.jneumeth.2006.11.017
+
 ###### Peirce, J. W. (2009). Generating stimuli for neuroscience using PsychoPy. *Frontiers in Neuroinformatics*, *2*(10). doi: 10.3389/neuro.11.010.2008
 
 [psychopy]: http://www.psychopy.org/
