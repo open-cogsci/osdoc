@@ -6,7 +6,7 @@ level: 0
 sortkey: 001.001
 ---
 
-<div style='float:right;'>
+<div style='float:right;margin-left:16px;'>
 <img src="/img/fig/fig1.1.1.png" />
 </div>
 
