@@ -25,18 +25,18 @@ Alternatively, you can download the Windows portable .zip file (see link above) 
 Ubuntu/ Debian/ Linux Mint
 --------------------------
 
-The recommended way to install OpenSesame under Ubuntu/ Debian/ Linux Mint is through the NeuroDebian repository (see their instructions on how to add NeuroDebian to your list of repositories). After you have added NeuroDebian to your software sources, you can install it using your package manager (Synaptic/ Add remove programs/ Ubuntu software center) or by typing the following lines in a terminal:
+The recommended way to install OpenSesame under Ubuntu/ Debian/ Linux Mint is through the [NeuroDebian][] repository (see their instructions on how to add NeuroDebian to your list of repositories). After you have added NeuroDebian to your software sources, you can install it using your package manager (Synaptic/ Add remove programs/ Ubuntu software center) or by typing the following lines in a terminal:
 
 	sudo apt-get update
 	sudo apt-get install opensesame
-	
-If you encounter problems or if your distribution is not supported by NeuroDebian, you can also install OpenSesame via the [ppa:smathot/cogscinl][ppa-cogscinl] Ubuntu repository. If you experience missing icons, please install the package gnome-icon-theme-full or see this post.
+
+If you encounter problems or if your distribution is not supported by NeuroDebian, you can also install OpenSesame via the [ppa:smathot/cogscinl][ppa-cogscinl] Ubuntu repository. If you experience missing icons, please install the package `gnome-icon-theme-full`.
 
 	sudo add-apt-repository ppa:smathot/cogscinl
 	sudo apt-get update
 	sudo apt-get install opensesame
 
-After you have installed OpenSesame, you can start OpenSesame from the menu (Accessories => OpenSesame) or by opening a terminal and running:
+After you have installed OpenSesame, you can start OpenSesame from the menu or by opening a terminal and running:
 
 	opensesame
 
@@ -47,7 +47,7 @@ Support for Mac OS is experimental. Instructions for running OpenSesame from sou
 
 [opensesame_0.26-macos-2.zip][macos-package]
 
-*Are you a Mac OS user and want to help out? We are looking for someone to maintain Mac OS packages for OpenSesame!*
+##### We are looking for someone to improve and maintain the Mac OS packages for OpenSesame!*
 
 Other platforms
 ---------------
@@ -59,3 +59,4 @@ If there are no packages provided for your platform, you will need to run OpenSe
 [macos-running-from-source]: /getting-started/running-from-source#macos
 [ppa-cogscinl]: https://launchpad.net/~smathot/+archive/cogscinl
 [running-from-source]: /getting-started/running-from-source
+[neurodebian]: http://neuro.debian.net/
