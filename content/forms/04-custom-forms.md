@@ -14,6 +14,7 @@ Overview
 - [Creating custom forms](#custom)
 	- [Creating custom forms using OpenSesame script](#opensesame-script)
 	- [Creating custom forms using Python inline script](#python)
+	- [Non-interactive forms](#non-interactive)
 	- [Available widgets and keywords](#widgets)
 - [Another example](#another-example)
 
@@ -113,6 +114,14 @@ form.set_widget(button10cts, (1,2))
 button_clicked = form._exec()
 {% endhighlight %}
 
+### Non-interactive forms <a id='non-interactive'></a>
+
+Usually, a form will have an input field, a button, or some other interactive element. However, you can also use forms without having any interactive element. To do this in OpenSesame script, you set `only_render` to "yes":
+
+	set only_render "yes"
+
+To this in Python inline-script, you call `form.render()`, instead of `form._exec()`.
+
 ### Available widgets and keywords <a id='widgets'></a>
 
 The following widgets are available:
@@ -196,7 +205,7 @@ The resulting form looks something like this. (The exact appearance depends on y
 ![](/img/fig/fig6.4.5.png)
 
 [button]: /forms/button-functions/
-[checbox]: /forms/checkbox-functions/
+[checkbox]: /forms/checkbox-functions/
 [image]: /forms/image-functions/
 [image_button]: /forms/imagebutton-functions/
 [label]: /forms/label-functions/
