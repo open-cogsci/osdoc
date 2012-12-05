@@ -13,6 +13,50 @@ OpenSesame is freely available under the [General Public Licence][gpl].
 
 ![](/img/fig/fig1.2.1.png)
 
+The team
+--------
+
+OpenSesame is developed by a loose collection of individuals. Anyone is welcome to join the team of regular contributors.
+
+<table class="no-table-border">
+	<tr>
+		<td>
+			<img src="/img/team/sebastiaan.png" />
+		</td>
+		<td>
+			{% capture sebastiaan %}{% include team/sebastiaan.md %}{% endcapture %}
+			{{ sebastiaan | markdownify }}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<img src="/img/team/daniel.png" />
+		</td>
+		<td>
+			{% capture daniel %}{% include team/daniel.md %}{% endcapture %}
+			{{ daniel | markdownify }}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<img src="/img/team/lotje.png" />
+		</td>
+		<td>
+			{% capture lotje %}{% include team/lotje.md %}{% endcapture %}
+			{{ lotje | markdownify }}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<img src="/img/team/edwin.png" />
+		</td>
+		<td>
+			{% capture edwin %}{% include team/edwin.md %}{% endcapture %}
+			{{ edwin | markdownify }}
+		</td>
+	</tr>
+</table>
+
 Acknowledgements
 ----------------
 

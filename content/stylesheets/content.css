@@ -17,6 +17,13 @@
 	box-shadow: none;
 }
 
+#content .no-table-border,
+#content .no-table-border table,
+#content .no-table-border tr,
+#content .no-table-border td {
+	border: none;
+}
+
 #content table,
 #content tr,
 #content td {
