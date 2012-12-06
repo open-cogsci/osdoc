@@ -9,8 +9,8 @@ sortkey: 004.012
 
 ##### Always triple check whether your data has been correctly logged before running your experiment!
 
-Logging your data
------------------
+Using the logger item
+---------------------
 
 OpenSesame will not log your data automatically. Instead, you need to insert a *logger* item, typically at the end of your trial sequence.
 
@@ -24,6 +24,26 @@ The logger has a number of options:
 
 - **Put quotes around values** means that OpenSesame will surround each value in the data file with double-quotes. If you do not have any specific reason to disable this option, it's best to leave it enabled.
 
+In general, you should create only one logger item, and reuse that item at different locations in your experiment if necessary. If you create multiple logger items (rather than using a single logger multiple times), they will all write to the same log file, and the result will be a mess!
+
+Using Python inline script
+--------------------------
+
+You can write to the log file using the [`self.log()`][log-func], like so:
+
+{% highlight python %}
+self.log('This will be written to the log file!')
+{% endhighlight %}
+
+If you need more fine-grained control, you can use `exp.logfile`, which contains the name of the log file, and `exp._log`, which is a Python file object (`UTF-8` encoding through [`codecs.open()`][codecs]):
+
+{% highlight python %}
+print 'The location of the log file is %s' % exp.logfile
+exp._log.write('This will be written to the log!')
+{% endhighlight %}
+
+Note that you will generally not want to write to the log file directly and use a logger item at the same time: This will result in very messy log files.
+
 Format of the data files
 ------------------------
 
@@ -35,3 +55,5 @@ If you prefer to have all data in one large spreadsheet, rather than in separate
 [libreoffice]: http://www.libreoffice.org/
 [openoffice]: http://www.openoffice.org/
 [gnumeric]: http://projects.gnome.org/gnumeric/
+[log-func]: /python-inline-code/inlinescript-functions/#inline_script.log
+[codecs]: http://docs.python.org/2/library/codecs.html
