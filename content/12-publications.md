@@ -33,6 +33,8 @@ Despite the project's young age, references to OpenSesame are starting to appear
 
 ###### Andrews, M., & Diaz, J. (2012). And now for something completely different: Python in cognitive science. *CogSci 2012 Proceedings.* Retrieved from <http://mindmodeling.org/cogsci2012/papers/0004/paper0004.pdf>
 
+###### Biancini, A. (2012). *Social Psychology Testing Platform Leveraging Facebook and SNA Techniques.* Talk presented at the 8th International Conference on Signal Image Technology & Internet Based Systems, Sorrento-Naples, Italy.
+
 ###### Breit, F. (2012). *Constraints in Auxiliary Deletion in Colloquial Welsh* (Bachelor’s thesis). Bangor University, Bangor, United Kingdom.
 
 ###### Cao, R. (2012). *The Word Frequency and List Length Effects on Cued Recall* (Bachelor’s thesis). Ohio State University, Columbus, OH, United States.
