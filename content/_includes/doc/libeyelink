@@ -53,8 +53,15 @@ Constructor. Initializes the connection to the Eyelink<br />
 <br />
 True on connection success and False on connection failure<br />
 </div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='libeyelink.calibrate'>libeyelink</a>.<b>calibrate()</b></span><div class='details'>
+<div class='function'><span class='function_name'><a class='anchor' id='libeyelink.calibrate'>libeyelink</a>.<b>calibrate(beep=True, target_size=16)</b></span><div class='details'>
 Starts eyelink calibration<br />
+<br />
+<span class='keyword'>Keyword arguments:</span>
+<br />
+<span class='variable'>beep</span> &rarr; indicates whether the calibration target should beep (default=True)
+<br />
+<span class='variable'>target_size</span> &rarr; the size of the calibration target (default=16)
+<br />
 <br />
 <span class='keyword'>Exceptions:</span>
 <br />
@@ -141,6 +148,9 @@ eyelink.log("var %s %s" % (var, val))<br />
 <div class='function'><span class='function_name'><a class='anchor' id='libeyelink.prepare_backdrop'>libeyelink</a>.<b>prepare_backdrop(canvas)</b></span><div class='details'>
 Convert a surface to the format required by the eyelink.<br />
 <br />
+WARNING: this function can take between 50-150 ms to complete, depending on the resolution of the image<br />
+and the cpu power of your machine. Do not use during time critical phases of your experiment<br />
+<br />
 <span class='keyword'>Arguments:</span>
 <br />
 <span class='variable'>canvas</span> &rarr; an openexp canvas
@@ -148,7 +158,7 @@ Convert a surface to the format required by the eyelink.<br />
 <br />
 <span class='keyword'>Returns:</span>
 <br />
-A image in (list x list x tuple) format<br />
+A tuple with in ((list) image in array2d format, (int) image width, (int) image height)<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='libeyelink.prepare_drift_correction'>libeyelink</a>.<b>prepare_drift_correction(pos)</b></span><div class='details'>
 Puts the tracker in drift correction mode<br />
@@ -181,24 +191,29 @@ Sends a command to the eyelink<br />
 <span class='variable'>cmd</span> &rarr; the eyelink command to be executed
 <br />
 </div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='libeyelink.set_backdrop'>libeyelink</a>.<b>set_backdrop(canvas, prepped_backdrop_image=None)</b></span><div class='details'>
-Set backdrop image of Eyelink computer. For performance, it can be<br />
-useful sometimes to already prepare the image to send to the eyelink in<br />
-the prepare phase. This prepared image can be optionally supplied in<br />
-prepped_backdrop_image (a  3 dimensional list with hor-lines x ver-lines<br />
-x pixels) Otherwise, supplying the canvas is enough and this function<br />
+<div class='function'><span class='function_name'><a class='anchor' id='libeyelink.set_backdrop'>libeyelink</a>.<b>set_backdrop(backdrop)</b></span><div class='details'>
+Set backdrop image of Eyelink computer. For better performance, it can be<br />
+useful to already convert the canvas to send to the eyelink in the prepare phase using eyelink.prepare_backdrop().<br />
+If speed is not an issue, you can also directly pass a openexp.canvas object and this function<br />
 will take care of the conversion<br />
+<br />
+WARNING: this function can take between 10-50 ms to complete, depending on the resolution of the image<br />
+and the cpu power of your machine. Do not use during time critical phases of your experiment<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>canvas</span> &rarr; an openexp canvas
+backdrop --<br />
 <br />
+an openexp canvas<br />
+OR<br />
+a tuple representation (created with prepare_backdrop()) containing<br />
+1. (list) a numpy array2d.tolist() representation of the image<br />
+2. (int)the width of the image<br />
+3. (int)the height of the image<br />
 <br />
-<span class='keyword'>Keyword arguments:</span>
+<span class='keyword'>Returns:</span>
 <br />
-<span class='variable'>prepped_backdrop_image</span> &rarr; an image in the (list x list x tuple) format
-<br />
-required by pylink<br />
+(int) The amount of time in ms the function took to complete<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='libeyelink.set_eye_used'>libeyelink</a>.<b>set_eye_used()</b></span><div class='details'>
 Sets the eye_used variable, based on the eyelink's report, which<br />
@@ -257,6 +272,10 @@ Waits until an event has occurred<br />
 <br />
 <span class='variable'>event</span> &rarr; eyelink event, like pylink.STARTSACC
 <br />
+<br />
+<span class='keyword'>Returns:</span>
+<br />
+A tuple (timestamp, event). The event is in float_data format<br />
 <br />
 <span class='keyword'>Exceptions:</span>
 <br />
