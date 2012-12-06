@@ -25,38 +25,38 @@ Overview
 - [Step 6: Running OpenSesame with Eyelink support!](#step-6)
 - [Tutorial, documentation, examples and function overview](#documentation)
 
-Running in dummy mode <a id='dummy'></a>
+Running in dummy mode {#dummy}
 ---------------------
 
 You need to walk through the steps below only for the computer to which the Eyelink is actually attached. You can easily install the OpenSesame eyelink plug-ins on your own computer, as per [step 5](#step-5), without having to install anything or having to run OpenSesame from source. Obviously, you can only run the plug-in in 'dummy mode' in this case, but this is very convenient while developing and testing your experiment.
 
-SR Research forum <a id='forum'></a>
+SR Research forum {#forum}
 -----------------
 
 You will need to download some software from the SR Research forum. This is a closed forum, but you can register free of charge.
 
 - <https://www.sr-support.com/forums/>
 
-System requirements <a id='system-requirements'></a>
+System requirements {#system-requirements}
 -------------------
 
 This tutorial has been written for Windows XP 32-bit, for the simple reason that our own Eyelink PC uses this OS. You may still find this tutorial a useful resource when trying to install the OpenSesame Eyelink plug-ins on a different OS, but things will obviously work a little differently.
 
-Step 1: Installing OpenSesame from source <a id='step-1'></a>
+Step 1: Installing OpenSesame from source {#step-1}
 -----------------------------------------
 
 The Windows binary of OpenSesame comes with its own Python environment and can only make use of the modules that have been included (PyGame, NumPy, etc.). Since PyLink is not included, and due to licensing restrictions probably never will be included, with OpenSesame, you will have to run OpenSesame from source. The following tutorial describes how to set-up the environment necessary for running OpenSesame from source:
 
 - <http://osdoc.cogsci.nl/getting-started/running-from-source>
 
-Step 2: Installing the Python Imaging Library <a id='step-2'></a>
+Step 2: Installing the Python Imaging Library {#step-2}
 ---------------------------------------------
 
 The Python Imaging Library is used to do some juggling between various image formats. You can download it here (make sure you download the most recent version for Python 2.6):
 
 - <http://www.pythonware.com/products/pil/>
 
-Step 3: Installing Eyelink display software <a id='step-3'></a>
+Step 3: Installing Eyelink display software {#step-3}
 -------------------------------------------
 
 The Eyelink display software provides the libraries that are required to communicate with the Eyelink PC. You can find it here:
@@ -69,7 +69,7 @@ Add the following directory to the Path (this may have been added to the path au
 
 You can do this by opeing “My Computer”, clicking on “View system information”, opening the “Advanced” tab, clicking on “Environment Variables” and appending `;C:\Program Files\SR Research\EyeLink\libs` to the Path variable (under System variables).
 
-Step 4: Installing PyLink <a id='step-4'></a>
+Step 4: Installing PyLink {#step-4}
 -------------------------
 
 PyLink is a Python wrapper around the display software. There are two versions of PyLink: one with custom SDL and one without custom SDL. The reason that SR Research has changed some functionality in SDL (the Simple DirectMedia Layer, which is a set of libraries used to control the display etc.) is to improve timing accuracy. This is nice, but in the case of OpenSesame it is only relevant if you use the legacy (pygame) back-end: xpyriment and psycho have excellent timing regardless of which pylink version is used. The downside of pylink's custom SDL is that you may encounter compatibility issues.
@@ -98,7 +98,7 @@ Copy the `pylink` folder in its entirety to
 
 	c:\Python26\Lib\site-packages
 
-Step 5: Installing the OpenSesame Eyelink plug-ins <a id='step-5'></a>
+Step 5: Installing the OpenSesame Eyelink plug-ins {#step-5}
 --------------------------------------------------
 
 You can download the latest Eyelink plug-ins from GitHub:
@@ -109,7 +109,7 @@ Extract the archive and put all the folders (eyelink_calibrate, etc.) directly i
 
 - <http://osdoc.cogsci.nl/plug-ins/plug-in-installation>
 
-Step 6: Running OpenSesame with Eyelink support! <a id='step-6'></a>
+Step 6: Running OpenSesame with Eyelink support! {#step-6}
 ------------------------------------------------
 
 You're done! If you have installed the with SDL version of PyLink, you need to start OpenSesame with the `--pylink` command line argument (again, assuming that Python is installed in `c:\Python26`):
@@ -120,7 +120,7 @@ If you start OpenSesame now, you should see the Eyelink plug-ins appear as addit
 
 ![](/img/fig/fig7.6.1.png)
 
-Documentation, examples and function overview <a id='documentation'></a>
+Documentation, examples and function overview {#documentation}
 ---------------------------------------------
 
 You can find a tutorial for using the OpenSesame Eyelink plug-ins here [(PDF)][tutorial].

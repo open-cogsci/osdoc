@@ -24,7 +24,7 @@ Overview
 - [When are conditions evaluated?](#when-are-conditions-evaluated)
 - [Getting and setting variables in inline_script items](#getting-and-setting)
 
-Smart variable typing <a id='smart-typing'></a>
+Smart variable typing {#smart-typing}
 ---------------------
 
 In OpenSesame, you do not need to indicate whether the type of your variable is a string, integer, or floating point. Instead, OpenSesame picks a variable type automatically, as follows:
@@ -35,21 +35,21 @@ In OpenSesame, you do not need to indicate whether the type of your variable is 
 
 In general, this is convenient, because it allows you to compare numeric variables in conditional statements. However, it can also have unexpected side effects. For example, if you give a variable the value *0001*, and [print it to the screen with a sketchpad](#using-variables), you will see *1*. This is because *0001* is interpreted as an integer, and the leading zeros get lost in translation. Similarly, if you use `exp.set()` [in an inline_script](#getting-and-setting) to store an object, the object will be converted into some (unpredictable) string representation, which is generally not what you want.
 
-The variable inspector <a id='variable-inspector'></a>
+The variable inspector {#variable-inspector}
 ----------------------
 
 The variable inspector provides a convenient overview of the available variables. You can activate the variable inspector by pressing Control + I or through the menu (Menu → View → Show variable inspector).
 
 ![](/img/fig/fig4.5.1.png)
 
-Defining variables <a id='defining-variables'></a>
+Defining variables {#defining-variables}
 ------------------
 
 The simplest way to define variables is using loop items. For example, in the screenshot below you can see that a variable named 'target' has been defined. The 'trial_sequence' item is called once while 'target' is set to 'left' and once while 'target' is set to 'right'.
 
 ![](/img/fig/fig4.5.2.png)
 
-Built-in variables <a id='built-in-variables'></a>
+Built-in variables {#built-in-variables}
 ------------------
 
 A number of variables are built into OpenSesame. The following global variables are always available.
@@ -81,7 +81,7 @@ Response items, such as the keyboard_response and mouse_response items, also set
 |`response_time`					|Contains the interval in milliseconds between the start of the response interval and the last response.|
 |`response_time_[item_name]`		|Contains the response time for a specific response item.|
 |`correct`						|Set to '1' if the last response matches the 'correct_response' variable, '0' if not, and 'undefined' if no 'correct_response' variable has been set.|
-|`correct_[item_name]`			|As `correct` but for a specifc response item.| 
+|`correct_[item_name]`			|As `correct` but for a specifc response item.|
 
 ### Feedback variables
 
@@ -92,7 +92,7 @@ Feedback variables maintain a running accuracy and average of response times. Fo
 |`accuracy`						|The average percentage of correct responses. This is variable is useful for presenting feedback to the participant.|
 |`acc`							|Synonym for 'accuracy'|
 
-Using variables <a id='using-variables'></a>
+Using variables {#using-variables}
 ---------------
 
 Simply put, everywhere you see a value in the OpenSesame GUI, you can replace the value by a variable using the '[variable name]' notation. For example, if you have defined a variable 'soa' in a loop item, you can use this variable for the duration of a sketchpad as follows:
@@ -115,7 +115,7 @@ and press 'apply'.
 
 You can find a much more detailed example of using variables in this way in the tutorial.
 
-Resolving recursion errors <a id='recursion-errors'></a>
+Resolving recursion errors {#recursion-errors}
 --------------------------
 
 Sometimes, you may encounter a runtime error of the following type:
@@ -124,12 +124,12 @@ Sometimes, you may encounter a runtime error of the following type:
 	in terms of itself (e.g., 'var = [var]')
 
 ![](/img/fig/fig4.5.5.png)
-	
+
 This error maybe confusing at first, but is easy to prevent once you understand it. The problem is that the synth item (in this example) uses an internal item variable that is called `freq`. Hence, if you try to use a global variable called `freq` to specify the item's internal variable called `freq`, OpenSesame will get into an infinite recursion!
 
 The solution, of course, is to use a different name for your own variable. For example, `my_freq` will do just fine.
 
-Using conditional ("if") statements <a id='using-conditionals'></a>
+Using conditional ("if") statements {#using-conditionals}
 -----------------------------------
 
 Conditional statements, more commonly referred to as "if statements", provide a way to specify that something should happen only under specific circumstances (i.e., when variables have specific values). In OpenSesame you can use conditions in sequence, sketchpad, and feedback items.
@@ -157,7 +157,7 @@ The same principle applies to 'Show if' fields in sketchpad items. For example, 
 
 ![](/img/fig/fig4.5.6.png)
 
-When are conditions evaluated? <a id='when-are-conditions-evaluated'></a>
+When are conditions evaluated? {#when-are-conditions-evaluated}
 ------------------------------
 
 OpenSesame calls every sequence twice: once to prepare and once for the actual running. Obviously, it makes a difference whether conditions are evaluated during the prepare or during the run phase. Potentially, this can be very confusing, so it's good to be explicit about when conditions are evaluated.
@@ -168,7 +168,7 @@ In sketchpad items, the 'Show if...' condition is evaluated during the prepare p
 
 In feedback items, the 'Show if..,' condition is evaluated during the run phase. In fact, this is the only difference between sketchpad and feedback items. Therefore, a condition like `[correct] = 0` will work perfectly well in a feedback item. Because of this property, feedback items are well suited to provide feedback, as the name suggests. But for the same reason, feedback items are not as fast as sketchpad items and should not be used to present time critical displays (or at the very least you should verify that no timing issues arise).
 
-Getting and setting variables in inline_script items <a id='getting-and-setting'></a>
+Getting and setting variables in inline_script items {#getting-and-setting}
 ----------------------------------------------------
 
 Inline_script items allow you to use Python inline code in OpenSesame. This is useful for complex tasks, which are difficult or impossible to do through the GUI. Fore more information about inline_script items, see this article.

@@ -27,7 +27,7 @@ Overview
 	- [setcycle](#setcycle)
 	- [widget](#widget)
 
-About OpenSesame script <a href='about'></a>
+About OpenSesame script {#about}
 -----------------------
 
 OpenSesame script is a simple definitional language that defines an experiment. It is not a full fledged programming language, and does not include features such a `for` loops. The OpenSesame script is interpreted by an OpenSesame runtime environment.
@@ -37,11 +37,11 @@ OpenSesame script is different from the Python scripts that are used in inline_s
 General remarks
 ---------------
 
-### Keywords <a id='keywords'></a>
+### Keywords {#keywords}
 
 Some items, such as form_base and sketchpad accept keywords. Keywords are of the form `keyword=value`. Keywords are optional and should fall back to a default value.
 
-### Comments <a id='comments'></a>
+### Comments {#comments}
 
 Strings preceded by a hash should be interpreted as comments.
 
@@ -49,7 +49,7 @@ Strings preceded by a hash should be interpreted as comments.
 
 	# This is a comment
 
-### Quotation <a id='quotation'></a>
+### Quotation {#quotation}
 
 Quotation is not necessary, except around strings that contain spaces or other forms of punctuation. So the following lines should be interpreted as identical:
 
@@ -62,19 +62,19 @@ However, the following lines are not. In fact, the first line is not valid, beca
 	set my_var my value
 	set my_var "my value"
 
-### Types <a href='types'></a>
+### Types {#types}
 
 There are no types. No distinction is made between strings, integers, etc.
 
-### Item-specific syntax <a id='item-specific-syntax'></a>
+### Item-specific syntax {#item-specific-syntax}
 
 Some items have a specific syntax. This is indicated in the “Applies to” section for each of the keywords discussed below.
 
-### Resolving path names <a id='path-names'></a>
+### Resolving path names {#path-names}
 
 TODO
 
-*define* statement <a id='define'></a>
+*define* statement {#define}
 ------------------
 
 Starts the definition of an item. After a define statement, all lines are indented by a single tab. The end of the item definition is the first string that is no longer indented. Nested define statements are not allowed.
@@ -101,7 +101,7 @@ All items
 		set timeout "infinite"
 		set flush "yes"
 
-*draw* statement <a id='draw'></a>
+*draw* statement {#draw}
 ----------------
 
 Defines a visual element of a sketchpad or feedback item.
@@ -143,7 +143,7 @@ TODO
 
 	draw fixdot 0 0
 
-*log* statement <a id='log'></a>
+*log* statement {#log}
 ---------------
 
 Indicates that a variable should be written to the log-file.
@@ -164,7 +164,7 @@ logger
 
 	log response_time
 
-*run* statement <a id='run'></a>
+*run* statement {#run}
 ---------------
 
 Indicates that an item should be run. In the case of the sequence, the order of the run statements determines the order in which items are called. In the case of the parallel plug-in all items are called at the same item.
@@ -186,7 +186,7 @@ sequence
 
 	run correct_feedback '[correct] = 1'
 
-*set* statement <a id='set'></a>
+*set* statement {#set}
 ---------------
 
 Defines single-line variables.
@@ -219,7 +219,7 @@ Multi-line variables are defined using the `__[variable name]__` notation. This 
 	This is the second line.
 	__end__
 
-*setcycle* statement <a id='setcycle'></a>
+*setcycle* statement {#setcycle}
 --------------------
 
 Similar to the regular “set” statement, but sets a variable only during a specific cycle of a loop. This is the script equivalent of the loop table.
@@ -242,7 +242,7 @@ Loop
 
 	setcycle 0 cue valid
 
-*widget* statement <a id='widget'></a>
+*widget* statement {#widget}
 ------------------
 
 Adds a widget (buttons, labels, etc.) to a form. Valid keywords depend on the type of widget. The widget statement is not strictly part of the core OpenSesame syntax, but is used by the form_base plug-in.

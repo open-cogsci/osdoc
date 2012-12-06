@@ -18,7 +18,7 @@ Overview
 	- [Available widgets and keywords](#widgets)
 - [Another example](#another-example)
 
-About forms, geometries, and widgets <a id='about'></a>
+About forms, geometries, and widgets {#about}
 ------------------------------------
 
 A form is essentially a set of widgets (buttons, labels, text input fields, etc.) arranged into a grid with a particular geometry. In the image below you can see an example of a 2 (columns) by 3 (rows) form. A form geometry is quite simple, and consists of the following properties:
@@ -43,12 +43,12 @@ The images above are schematic examples. How this form actually looks in OpenSes
 
 ![](/img/fig/fig6.4.3.png)
 
-Creating custom forms <a id='custom'></a>
+Creating custom forms {#custom}
 ---------------------
 
 There are two ways to create custom forms. The first way is to use the *form_base* plug-in, and specify your form using OpenSesame script. The second way is to use the `libopensesame.widgets` package and create your form using Python inline code. The Python way is slightly more flexible, but for most purposes both ways can be used.
 
-### Creating custom forms using OpenSesame script <a id='opensesame-script'></a>
+### Creating custom forms using OpenSesame script {#opensesame-script}
 
 We will create the form described above using OpenSesame script. First, drag the *form_base* plug-in into your experiment. Click on the newly created item to open its tab. Next, click on the 'Edit script' button (with the terminal icon), in the top-right of the tab area. This will open the script editor. Enter the following script to generate the form described above (see the comments for explanations).
 
@@ -79,7 +79,7 @@ We will create the form described above using OpenSesame script. First, drag the
 	widget 0 2 1 1 button text="$0.10"
 	widget 1 2 1 1 button text="$0.05"
 
-### Creating custom forms using Python inline script <a id='python'></a>
+### Creating custom forms using Python inline script {#python}
 
 The exact same form can be created using an inline_script item and a bit of Python code. You will notice that the Python code somewhat resembles the OpenSesame script shown above. This is no wonder: The form_base plug-in essentially translates the OpenSesame script into Python code.
 
@@ -114,7 +114,7 @@ form.set_widget(button10cts, (1,2))
 button_clicked = form._exec()
 {% endhighlight %}
 
-### Non-interactive forms <a id='non-interactive'></a>
+### Non-interactive forms {#non-interactive}
 
 Usually, a form will have an input field, a button, or some other interactive element. However, you can also use forms without having any interactive element. To do this in OpenSesame script, you set `only_render` to "yes":
 
@@ -122,7 +122,7 @@ Usually, a form will have an input field, a button, or some other interactive el
 
 To this in Python inline-script, you call `form.render()`, instead of `form._exec()`.
 
-### Available widgets and keywords <a id='widgets'></a>
+### Available widgets and keywords {#widgets}
 
 The following widgets are available:
 
@@ -156,7 +156,7 @@ Click on the links below to see a full description of keywords and functions (Py
 - [Text_input][]
 - [Form][]
 
-Another example <a id='another-example'></a>
+Another example {#another-example}
 ---------------
 
 The following OpenSesame script (in a form_base plug-in) will produce a questionnaire of three rating scales plus a next button:

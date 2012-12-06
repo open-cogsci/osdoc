@@ -16,7 +16,7 @@ Overview
 - [Loops](#loops)
 - [Combining loops and sequences](#combining)
 
-Sequences <a id='sequences'></a>
+Sequences {#sequences}
 ---------
 
 A sequence is a list of items that is executed in sequence. For every item in a sequence there is also a “Run if” condition, which specifies the conditions under which an item should be executed (by default this is “always”). A sequence does not repeat automatically: For this, you will need to combine it with a loop.
@@ -31,7 +31,7 @@ Most items are called “always”. However, the green and red fixation dots hav
 
 The variable “correct” is set automatically by the keyboard_response item. For more information about variables and conditional statements, see here.
 
-Loops <a id='loops'></a>
+Loops {#loops}
 -----
 
 Loops repeatedly call a single other item, the “item to run”. Loops are also used to control independent variables, so that every time that the item to run is called, the independent variables have different values. A loop does not call multiple items, for this you will need to combine it with a sequence.
@@ -42,7 +42,7 @@ A typical place where a loop is used is to form a block of trials. In that case,
 
 In this example loop, 3 independent variables have been defined: “object”, “orientation”, and “correct_response”. There are 8 different “cycles”, or combinations (“knife, left, z”, “knife, right, z”, etc.). Because “repeat” is set to 3, every combination is called 3 times. Therefore, “trial_sequence” is called 8 x 3 = 24 times. The “order” is set to random, which means that a random cycle is selected (without replacement) for every call of “trial_sequence”.
 
-Combining loops and sequences <a id='combining'></a>
+Combining loops and sequences {#combining}
 -----------------------------
 
 Loops and sequences are often combined to create a structure in which multiple items are repeated. As we've seen, a typical example of a loop-sequence structure is a single block of trials. Here a single trial is a sequence, which is called repeatedly by a loop to form a block of trials, as shown in the screenshots below.

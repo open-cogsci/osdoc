@@ -17,7 +17,7 @@ Overview
 - [The code](#code)
 - [Screenshot!](#screenshot)
 
-What are we going to do and what do we need? <a id='what'></a>
+What are we going to do and what do we need? {#what}
 --------------------------------------------
 
 OpenSesame doesn't support video playback natively. So we're going create a plug-in to fix this gaping hole in OpenSesame's functionality! Our plug-in uses a video file from the file pool as a source and plays it for a specified duration or until a key has been pressed or a mouse button has been clicked. The user can specify the duration of each frame, effectively controlling the playback speed. The user can also indicate whether the video should be scaled to fit the entire screen or shown in the center of the display in its original size.
@@ -32,7 +32,7 @@ This plug-in requires opencv 2.1 (not 2.2, which is the most recent version) to 
 
 Because we will use a custom module (opencv), we will need to run OpenSesame from source. You can find out how to do this [in this article][source].
 
-The folder/ file structure <a id='structure'></a>
+The folder/ file structure {#structure}
 --------------------------
 
 First things first, we need to know where to put our plug-in. OpenSesame looks in a few locations for plug-ins. If you are running Windows, the OpenSesame plug-in folders are
@@ -61,7 +61,7 @@ The icon and help files are fairly self explanatory (you can choose any icons yo
 
 	category:Visual stimuli
 
-The code <a id='code'></a>
+The code {#code}
 --------
 
 ##### You can find the code for this plug-in here: <https://github.com/smathot/OpenSesame/blob/master/plugins/video_player/video_player.py>
@@ -352,7 +352,7 @@ The final two functions of `qtvideo_player` deal with setting the graphical cont
 
 That's it! You now have a fully functioning plug-in for playing video files. As a final thing, to be nice to your users, you should add some sensible content to the `.html` help file.
 
-Screenshot! <a id='screenshot'></a>
+Screenshot! {#screenshot}
 -----------
 
 ![](/img/fig/fig13.4.1.png)

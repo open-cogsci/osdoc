@@ -14,7 +14,7 @@ A frequently asked question is whether it is possible to run OpenSesame on a tab
 - [Using an Android tablet](#android)
 - [Using an iPad](#ipad)
 
-Using a Windows XP/ Vista/ 7 tablet <a id='windows'></a>
+Using a Windows XP/ Vista/ 7 tablet {#windows}
 -----------------------------------
 
 There are a number of tablets available that run a regular installation of Windows XP/ Vista/ 7, rather than a mobile operating system. These tablets are essentially just laptops sans keyboard, and thus allow you to run OpenSesame in the same way that you would on a regular computer. Unfortunately, such tablets are rare and relatively expensive.
@@ -61,12 +61,12 @@ Furthermore, you will notice that Ubuntu is not very touch-friendly, and that ty
 
 	sudo apt-get install quicksynergy
 
-Using an Android tablet <a id='android'></a>
+Using an Android tablet {#android}
 -----------------------
 
 Currently, the only way to run OpenSesame on an Android tablet is by using Ubuntu, as described above for the Nexus 7. However, because Android has decent support for Python, it should be possible to develop a native OpenSesame port for Android.
 
-Using an iPad <a id='android'></a>
+Using an iPad {#ipad}
 -------------
 
 It is not possible to run OpenSesame on the iPad. The iPad does not appear to be very Python-friendly, and it will therefore not be easy to port OpenSesame to the iPad.

@@ -19,7 +19,7 @@ Overview
 - [Instructions for Windows](#windows)
 - [Instructions for Mac OS](#macos)
 
-Description of required packages <a id="description"></a>
+Description of required packages {#description}
 --------------------------------
 
 OpenSesame depends on a number of other packages (dependencies), all of which are freely available. If you run OpenSesame from source you will need to manually install these packages. The minimum packages are:
@@ -29,17 +29,17 @@ OpenSesame depends on a number of other packages (dependencies), all of which ar
 - (Py)Qt4 is the graphics toolkit that is used to construct the graphical user interface.
 - NumPy is an advanced mathematical library, which is used for various things.
 
-Isn't Python always run from source? <a id="always"></a> 
+Isn't Python always run from source? {#always}
 ------------------------------------
 
 Being clever, huh? But yes, actually you're right. However, the packages come with their own Python environment or, in the case of the Debian/ Ubuntu packages, all dependencies are installed automatically. If you run straight from the source code, you have to set up your own Python environment, which is a little extra work. But you don't need to compile anything, as, for example, you would need to do with a program written in C.
 
-Reasons to run from source <a id="reasons"></a> 
+Reasons to run from source {#reasons}
 --------------------------
 
 The most obvious reason to run from source is that there may not be a package available for your platform (if you run, say, Solaris). Another reason, which applies only to the Windows and Mac packages, is that these packages come with their own Python environment, which doesn't allow you to install additional modules. If you want to use specific modules, which are not included with the packages, you will have to run from source.
 
-Instructions for Linux <a id="linux"></a> 
+Instructions for Linux {#linux}
 ----------------------
 
 ### Install dependencies
@@ -55,7 +55,7 @@ If you want to use the PsychoPy-based psycho back-end, you will also need to ins
 If you want to use the OpenGL back-end, you will need to install python-opengl. Under Ubuntu you can do this with the following command:
 
 	sudo apt-get install python-opengl
-	
+
 ### Run OpenSesame
 
 Download the source code of the latest OpenSesame release here. Extract the .tar.gz to your home folder (any other location works analogously). Open a terminal and switch to the location of OpenSesame (this example assumes that the version is 0.21):
@@ -67,7 +67,7 @@ Run OpenSesame using one of the following commands:
 	python opensesame
 	python opensesame --debug
 
-Instructions for Windows <a id="windows"></a> 
+Instructions for Windows {#windows}
 ------------------------
 
 The links provided below are current as of Jan 20, 2011. Check the websites of the respective packages to check for more recent versions. Running OpenSesame from source has been tested on Windows XP.
@@ -107,7 +107,7 @@ Run OpenSesame using one of the following commands (this example assumes that yo
 
 It's convenient to create a batch file for running OpenSesame from source. You can do this simply by creating a file called `opensesame.bat` containing one of the commands above. You will then be able to run OpenSesame by executing the batch file.
 
-Instructions for Mac OS <a id="macos"></a> 
+Instructions for Mac OS {#macos}
 -----------------------
 
 There are two ways to prepare the software environment for running OpenSesame from source on Mac OS X. One is by downloading and installing all the packages manually. The other is to use MacPorts, which compiles all required packages from source. Basically MacPorts is a large repository containing the source code of programs that have been ported from Linux to Mac OS X (which are very related as Mac OS X is also a Unix based system, as you might know). Installing all the packages manually seems pretty labour-intensive, but will be the fastest way nevertheless as Macports takes an astoundingly long time to compile all dependencies (with a quad core cpu it can already take up to a full day). On the other hand, MacPorts does not have the dependecy hassle if you ever want to install additional packages, which require other packages again, etc. Macports sorts out and installs these depencies itself. You have to decide for yourself which method of composing the source environment you like best. Both will work fine for running OpenSesame from source.
@@ -152,7 +152,7 @@ If you want to install all Opensesame dependecies yourself you need to download 
 
 #### Install Python
 
-The python installation that comes with OS X by default is usually of a very old version (and nowadays is only 64-bit). Therefore it is better to install the newest version:	
+The python installation that comes with OS X by default is usually of a very old version (and nowadays is only 64-bit). Therefore it is better to install the newest version:
 
 Website: <http://www.python.org/>
 
@@ -194,7 +194,7 @@ Alternatively, you can also download the packages and install them yourself from
 
 #### Install PsychoPy (optional, required for psycho back-end)
 
-PsychoPy requires the installation of a number of dependencies. Most of these can be installed fairly easily using setuptools. 
+PsychoPy requires the installation of a number of dependencies. Most of these can be installed fairly easily using setuptools.
 
 Website: <http://pypi.python.org/pypi/setuptools>
 

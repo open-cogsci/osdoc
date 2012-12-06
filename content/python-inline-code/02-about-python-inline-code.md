@@ -22,7 +22,7 @@ Overview
 - [The debug window](#debug)
 - [openexp modules](#openexp)
 
-Learning Python <a id='learning'></a>
+Learning Python {#learning}
 ---------------
 
 This tutorial assumes that you are familiar with Python. Python is a widely used, intuitive and powerful programming language. For scientists in particular, Python is attractive, because it is excellently suited for data analysis and creating experiments. In addition, Python is freely available and cross-platform.
@@ -43,7 +43,7 @@ Or you can follow one of the many other introductions to Python that are floatin
 
 If you are interested in using OpenSesame in combination with PsychoPy, you may want to check out this tutorial on the GestaltRevision site (University of Leuven, Belgium): <http://gestaltrevision.be/wiki/coding>
 
-The inline_script item <a id='inline-script'></a>
+The inline_script item {#inline-script}
 ----------------------
 
 In order to use Python code you need to add an inline_script item to your experiment. You can do this by dragging the Python icon (the blue/yellow icon) from the item toolbar into the experiment sequence. After you have done this you will see something like the screenshot below.
@@ -70,7 +70,7 @@ self.sleep(1000)
 
 This works, because `sleep()` is a function of the `inline_script` object. For a complete list of `inline_script` functions, see [here][inline-script].
 
-Importing modules <a id='modules'></a>
+Importing modules {#modules}
 -----------------
 
 Because the code in an inline_script item is essentially the body of a function (see above), functions and modules may not work as you expect them to. For example, the following seemingly valid (although silly) piece of script ...
@@ -100,7 +100,7 @@ my_function()
 
 This may be a bit confusing, but the take home message is: If you get a `NameError` for a module/ package/ function that you have imported, try declaring that module/ package/ function global, as illustrated above.
 
-Defining globally accessible functions <a id='functions'></a>
+Defining globally accessible functions {#functions}
 --------------------------------------
 
 Another neat trick is that you can declare functions global. Normally, you would not be able to define a function in one inline_script, and use it in another inline_script. By declaring a function global, you can circumvent this problem. So if you create the following inline_script ...
@@ -119,12 +119,12 @@ def my_global_function():
 my_global_function()
 {% endhighlight %}
 
-The exp and win variables <a id='exp-win'></a>
+The exp and win variables {#exp-win}
 -------------------------
 
 In an inline_script (as of 0.25) there are two special variables: `exp` and `win`. Actually, there is nothing magical about these variables, they are simply synonyms for `self.experiment` and `self.experiment.window`, respectively. `exp` is the `experiment` object, which is described [here][experiment]. `win` is the window handle, which is dependent on the back-end that is used.
 
-The debug window <a id='debug'></a>
+The debug window {#debug}
 ----------------
 
 OpenSesame reroutes the standard output to the debug window, which you can activate using Control + D or through the menu (Menu -> View -> Show debug window). You can print to the debug window using the Python print statement:
@@ -139,7 +139,7 @@ By default, OpenSesame uses a simple, custom Python console in the debug window.
 
 ![](/img/fig/fig5.2.3.png)
 
-openexp modules <a id='openexp'></a>
+openexp modules {#openexp}
 ---------------
 
 OpenSesame comes with a set of Python modules for presenting stimuli, handling input, etc. There are 5 such modules and the full API (i.e., a list of functions) is available:
