@@ -34,7 +34,7 @@ path to the image is used as id (default=None)<br />
 the widget status (default=None)<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='image_button.draw_frame'>image_button</a>.<b>draw_frame(rect=None, style='normal')</b></span><div class='details'>
-<i>Inherited from /home/sebastiaan/git/opensesame/libopensesame/widgets/widget.py</i><br /><br />Draws a simple frame around the widget<br />
+<i>Inherited from <b>widget</b></i><br /><br />Draws a simple frame around the widget<br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
@@ -54,10 +54,10 @@ or the path to the image if no image_id has been specified.<br />
 <br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='image_button.render'>image_button</a>.<b>render()</b></span><div class='details'>
-<i>Inherited from /home/sebastiaan/git/opensesame/libopensesame/widgets/image.py</i><br /><br />Draws the widget<br />
+<i>Inherited from <b>image</b></i><br /><br />Draws the widget<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='image_button.set_rect'>image_button</a>.<b>set_rect(rect)</b></span><div class='details'>
-<i>Inherited from /home/sebastiaan/git/opensesame/libopensesame/widgets/image.py</i><br /><br />Sets the widget geometry<br />
+<i>Inherited from <b>image</b></i><br /><br />Sets the widget geometry<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
@@ -65,7 +65,7 @@ or the path to the image if no image_id has been specified.<br />
 <br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='image_button.set_var'>image_button</a>.<b>set_var(val, var=None)</b></span><div class='details'>
-<i>Inherited from /home/sebastiaan/git/opensesame/libopensesame/widgets/widget.py</i><br /><br />Set an experimental variable<br />
+<i>Inherited from <b>widget</b></i><br /><br />Set an experimental variable<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />

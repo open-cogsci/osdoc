@@ -28,7 +28,7 @@ size of the widget (default=True)<br />
 (default=False)<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='image.draw_frame'>image</a>.<b>draw_frame(rect=None, style='normal')</b></span><div class='details'>
-<i>Inherited from /home/sebastiaan/git/opensesame/libopensesame/widgets/widget.py</i><br /><br />Draws a simple frame around the widget<br />
+<i>Inherited from <b>widget</b></i><br /><br />Draws a simple frame around the widget<br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
@@ -39,7 +39,7 @@ None to use the widget geometry (default=None)<br />
 <br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='image.on_mouse_click'>image</a>.<b>on_mouse_click(pos)</b></span><div class='details'>
-<i>Inherited from /home/sebastiaan/git/opensesame/libopensesame/widgets/widget.py</i><br /><br />Is called whenever the user clicks on the widget<br />
+<i>Inherited from <b>widget</b></i><br /><br />Is called whenever the user clicks on the widget<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
@@ -58,7 +58,7 @@ Sets the widget geometry<br />
 <br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='image.set_var'>image</a>.<b>set_var(val, var=None)</b></span><div class='details'>
-<i>Inherited from /home/sebastiaan/git/opensesame/libopensesame/widgets/widget.py</i><br /><br />Set an experimental variable<br />
+<i>Inherited from <b>widget</b></i><br /><br />Set an experimental variable<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />

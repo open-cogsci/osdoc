@@ -46,7 +46,7 @@ my_synth = synth(exp, freq='b2', length=500)
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='synth.fade_in'>synth</a>.<b>fade_in(ms)</b></span><div class='details'>
-<i>Inherited from /home/sebastiaan/git/opensesame/openexp/_sampler/legacy.py</i><br /><br />Set the fade-in time in milliseconds<br />
+<i>Inherited from <b>legacy</b></i><br /><br />Set the fade-in time in milliseconds<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
@@ -61,7 +61,7 @@ my_sampler.fade_in(100)
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='synth.is_playing'>synth</a>.<b>is_playing()</b></span><div class='details'>
-<i>Inherited from /home/sebastiaan/git/opensesame/openexp/_sampler/legacy.py</i><br /><br />Checks if a sound is currently playing<br />
+<i>Inherited from <b>legacy</b></i><br /><br />Checks if a sound is currently playing<br />
 <br />
 <span class='keyword'>Returns:</span>
 <br />
@@ -98,7 +98,7 @@ print 'An a2 is %d Hz' % my_synth.key_to_freq('a2')
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='synth.pan'>synth</a>.<b>pan(p)</b></span><div class='details'>
-<i>Inherited from /home/sebastiaan/git/opensesame/openexp/_sampler/legacy.py</i><br /><br />Sets the panning of the sample. The volume of the "unpanned" channel<br />
+<i>Inherited from <b>legacy</b></i><br /><br />Sets the panning of the sample. The volume of the "unpanned" channel<br />
 decreases, the volume of the other channel remains the same. To fully<br />
 mute one channel specify "left" (mutes right, pans to left) or "right"<br />
 (mutes left, pans to right").<br />
@@ -118,7 +118,7 @@ my_sampler.pan('left')
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='synth.pause'>synth</a>.<b>pause()</b></span><div class='details'>
-<i>Inherited from /home/sebastiaan/git/opensesame/openexp/_sampler/legacy.py</i><br /><br />Pauses playback (if any)<br />
+<i>Inherited from <b>legacy</b></i><br /><br />Pauses playback (if any)<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
@@ -133,7 +133,7 @@ my_sampler.resume()
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='synth.pitch'>synth</a>.<b>pitch(p)</b></span><div class='details'>
-<i>Inherited from /home/sebastiaan/git/opensesame/openexp/_sampler/legacy.py</i><br /><br />Set the relative pitch of the sample<br />
+<i>Inherited from <b>legacy</b></i><br /><br />Set the relative pitch of the sample<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
@@ -149,7 +149,7 @@ my_sampler.pitch(2.0)
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='synth.play'>synth</a>.<b>play(block = False)</b></span><div class='details'>
-<i>Inherited from /home/sebastiaan/git/opensesame/openexp/_sampler/legacy.py</i><br /><br />Play the sound<br />
+<i>Inherited from <b>legacy</b></i><br /><br />Play the sound<br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
@@ -165,7 +165,7 @@ my_sampler.play()
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='synth.resume'>synth</a>.<b>resume()</b></span><div class='details'>
-<i>Inherited from /home/sebastiaan/git/opensesame/openexp/_sampler/legacy.py</i><br /><br />Resumes playback (if any)<br />
+<i>Inherited from <b>legacy</b></i><br /><br />Resumes playback (if any)<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
@@ -180,7 +180,7 @@ my_sampler.resume()
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='synth.stop'>synth</a>.<b>stop()</b></span><div class='details'>
-<i>Inherited from /home/sebastiaan/git/opensesame/openexp/_sampler/legacy.py</i><br /><br />Stops the currently playing sound (if any)<br />
+<i>Inherited from <b>legacy</b></i><br /><br />Stops the currently playing sound (if any)<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
@@ -193,7 +193,7 @@ my_sampler.stop()
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='synth.stop_after'>synth</a>.<b>stop_after(ms)</b></span><div class='details'>
-<i>Inherited from /home/sebastiaan/git/opensesame/openexp/_sampler/legacy.py</i><br /><br />Specify a duration after which the sampler stops playing<br />
+<i>Inherited from <b>legacy</b></i><br /><br />Specify a duration after which the sampler stops playing<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
@@ -209,7 +209,7 @@ my_sampler.stop_after(100)
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='synth.volume'>synth</a>.<b>volume(vol)</b></span><div class='details'>
-<i>Inherited from /home/sebastiaan/git/opensesame/openexp/_sampler/legacy.py</i><br /><br />Set the volume<br />
+<i>Inherited from <b>legacy</b></i><br /><br />Set the volume<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
@@ -225,7 +225,7 @@ my_sampler.volume(0.5)
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='synth.wait'>synth</a>.<b>wait()</b></span><div class='details'>
-<i>Inherited from /home/sebastiaan/git/opensesame/openexp/_sampler/legacy.py</i><br /><br />Blocks until the sound has finished playing or returns right away if no<br />
+<i>Inherited from <b>legacy</b></i><br /><br />Blocks until the sound has finished playing or returns right away if no<br />
 sound is playing<br />
 <br />
 <span class='keyword'>Example:</span>

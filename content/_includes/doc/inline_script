@@ -41,7 +41,7 @@ run() functions.<br />
 <br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='inline_script.auto_type'>inline_script</a>.<b>auto_type(val)</b></span><div class='details'>
-<i>Inherited from /home/sebastiaan/git/opensesame/libopensesame/item.py</i><br /><br />Convert a value into the 'best fitting' or 'simples' type that is<br />
+<i>Inherited from <b>item</b></i><br /><br />Convert a value into the 'best fitting' or 'simples' type that is<br />
 compatible with the value.<br />
 <br />
 <span class='keyword'>Example:</span>
@@ -64,7 +64,7 @@ print type(self.auto_type(True)) # Prints 'unicode'
 The same value converted to the 'best fitting' type<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='inline_script.color_check'>inline_script</a>.<b>color_check(col)</b></span><div class='details'>
-<i>Inherited from /home/sebastiaan/git/opensesame/libopensesame/item.py</i><br /><br />Checks whether a string is a valid color name<br />
+<i>Inherited from <b>item</b></i><br /><br />Checks whether a string is a valid color name<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
@@ -103,7 +103,7 @@ An openexp canvas<br />
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='inline_script.eval_text'>inline_script</a>.<b>eval_text(text, round_float=False, soft_ignore=False, quote_str=False)</b></span><div class='details'>
-<i>Inherited from /home/sebastiaan/git/opensesame/libopensesame/item.py</i><br /><br />Evaluate a string of text, so that all variables references (e.g.,<br />
+<i>Inherited from <b>item</b></i><br /><br />Evaluate a string of text, so that all variables references (e.g.,<br />
 '[var]') are replaced by values.<br />
 <br />
 <span class='keyword'>Example:</span>
@@ -138,7 +138,7 @@ surrounded by single quotes (default=False)<br />
 The evaluated tex<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='inline_script.flush_log'>inline_script</a>.<b>flush_log()</b></span><div class='details'>
-<i>Inherited from /home/sebastiaan/git/opensesame/libopensesame/item.py</i><br /><br />Force any pending write operations to the log file to be written to disk<br />
+<i>Inherited from <b>item</b></i><br /><br />Force any pending write operations to the log file to be written to disk<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
@@ -148,7 +148,7 @@ self.flush_log()
 <br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='inline_script.get'>inline_script</a>.<b>get(var, _eval=True)</b></span><div class='details'>
-<i>Inherited from /home/sebastiaan/git/opensesame/libopensesame/item.py</i><br /><br />Return the value of an OpenSesame variable. Checks first if the variable<br />
+<i>Inherited from <b>item</b></i><br /><br />Return the value of an OpenSesame variable. Checks first if the variable<br />
 exists 'locally' in the item and, if not, checks if the variable exists<br />
 'globally' in the experiment.<br />
 <br />
@@ -189,7 +189,7 @@ a runtime_error is raised if the variable is not found<br />
 The value<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='inline_script.get_check'>inline_script</a>.<b>get_check(var, default=None, valid=None, _eval=True)</b></span><div class='details'>
-<i>Inherited from /home/sebastiaan/git/opensesame/libopensesame/item.py</i><br /><br />Similar to get(), but falls back to a default if the variable has not<br />
+<i>Inherited from <b>item</b></i><br /><br />Similar to get(), but falls back to a default if the variable has not<br />
 been set. It also raises an error if the value is not part of the valid<br />
 list.<br />
 <br />
@@ -223,7 +223,7 @@ default value, or if the variable value is not part of the 'valid' list.<br />
 The value<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='inline_script.get_refs'>inline_script</a>.<b>get_refs(text)</b></span><div class='details'>
-<i>Inherited from /home/sebastiaan/git/opensesame/libopensesame/item.py</i><br /><br />Returns a list of variables that are referred to by a string of text<br />
+<i>Inherited from <b>item</b></i><br /><br />Returns a list of variables that are referred to by a string of text<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
@@ -242,7 +242,7 @@ A list of variable names or an empty list if the string contains no<br />
 references.<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='inline_script.has'>inline_script</a>.<b>has(var)</b></span><div class='details'>
-<i>Inherited from /home/sebastiaan/git/opensesame/libopensesame/item.py</i><br /><br />Checks if an OpenSesame variable exists, either in the item or in the<br />
+<i>Inherited from <b>item</b></i><br /><br />Checks if an OpenSesame variable exists, either in the item or in the<br />
 experiment.<br />
 <br />
 <span class='keyword'>Arguments:</span>
@@ -261,7 +261,7 @@ experiment.<br />
 True if the variable exists, False if not<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='inline_script.log'>inline_script</a>.<b>log(msg)</b></span><div class='details'>
-<i>Inherited from /home/sebastiaan/git/opensesame/libopensesame/item.py</i><br /><br />Write a message to the log file. Note that using the log() function in<br />
+<i>Inherited from <b>item</b></i><br /><br />Write a message to the log file. Note that using the log() function in<br />
 combination with a logger item may result in messy log-files.<br />
 <br />
 <span class='keyword'>Example:</span>
@@ -295,7 +295,7 @@ tab of an inline_script item in the GUI is used as a body for this<br />
 function.<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='inline_script.resolution'>inline_script</a>.<b>resolution()</b></span><div class='details'>
-<i>Inherited from /home/sebastiaan/git/opensesame/libopensesame/item.py</i><br /><br />Return the display resolution and check whether the resolution is valid.<br />
+<i>Inherited from <b>item</b></i><br /><br />Return the display resolution and check whether the resolution is valid.<br />
 <br />
 Note 1:<br />
 The meaning of 'resolution' depends on the back-end. For example, the<br />
@@ -313,7 +313,7 @@ Execute the run script. The code that you enter in the 'run' tab of an<br />
 inline_script item in the GUI is used as a body for this function.<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='inline_script.sanitize'>inline_script</a>.<b>sanitize(s, strict=False, allow_vars=True)</b></span><div class='details'>
-<i>Inherited from /home/sebastiaan/git/opensesame/libopensesame/item.py</i><br /><br />Remove invalid characters (notably quotes) from the string<br />
+<i>Inherited from <b>item</b></i><br /><br />Remove invalid characters (notably quotes) from the string<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
@@ -342,7 +342,7 @@ variables (default=True)<br />
 A sanitized unicode string<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='inline_script.set'>inline_script</a>.<b>set(var, val)</b></span><div class='details'>
-<i>Inherited from /home/sebastiaan/git/opensesame/libopensesame/item.py</i><br /><br />Sets an OpenSesame variable<br />
+<i>Inherited from <b>item</b></i><br /><br />Sets an OpenSesame variable<br />
 <br />
 If you want to set a variable so that it is available in other items as<br />
 well (such as the logger item, so you can log the variable), you need<br />
@@ -371,7 +371,7 @@ explanation of how data-types are handled.<br />
 <br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='inline_script.sleep'>inline_script</a>.<b>sleep(ms)</b></span><div class='details'>
-<i>Inherited from /home/sebastiaan/git/opensesame/libopensesame/item.py</i><br /><br />Sleep for a specified duration<br />
+<i>Inherited from <b>item</b></i><br /><br />Sleep for a specified duration<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
@@ -384,7 +384,7 @@ explanation of how data-types are handled.<br />
 <br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='inline_script.time'>inline_script</a>.<b>time()</b></span><div class='details'>
-<i>Inherited from /home/sebastiaan/git/opensesame/libopensesame/item.py</i><br /><br />Return current time<br />
+<i>Inherited from <b>item</b></i><br /><br />Return current time<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
@@ -396,7 +396,7 @@ explanation of how data-types are handled.<br />
 A timestamp of the current time<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='inline_script.unset'>inline_script</a>.<b>unset(var)</b></span><div class='details'>
-<i>Inherited from /home/sebastiaan/git/opensesame/libopensesame/item.py</i><br /><br />Unset (forget) an OpenSesame variable<br />
+<i>Inherited from <b>item</b></i><br /><br />Unset (forget) an OpenSesame variable<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />

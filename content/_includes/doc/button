@@ -31,7 +31,7 @@ Constructor<br />
 the widget status (default=None)<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='button.draw_frame'>button</a>.<b>draw_frame(rect=None, style='normal')</b></span><div class='details'>
-<i>Inherited from /home/sebastiaan/git/opensesame/libopensesame/widgets/widget.py</i><br /><br />Draws a simple frame around the widget<br />
+<i>Inherited from <b>widget</b></i><br /><br />Draws a simple frame around the widget<br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
@@ -42,7 +42,7 @@ None to use the widget geometry (default=None)<br />
 <br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='button.draw_text'>button</a>.<b>draw_text(text, html=True)</b></span><div class='details'>
-<i>Inherited from /home/sebastiaan/git/opensesame/libopensesame/widgets/label.py</i><br /><br />Draws text in the widget<br />
+<i>Inherited from <b>label</b></i><br /><br />Draws text in the widget<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
@@ -64,10 +64,10 @@ text.<br />
 <br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='button.render'>button</a>.<b>render()</b></span><div class='details'>
-<i>Inherited from /home/sebastiaan/git/opensesame/libopensesame/widgets/label.py</i><br /><br />Draws the widget<br />
+<i>Inherited from <b>label</b></i><br /><br />Draws the widget<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='button.set_rect'>button</a>.<b>set_rect(rect)</b></span><div class='details'>
-<i>Inherited from /home/sebastiaan/git/opensesame/libopensesame/widgets/widget.py</i><br /><br />Sets the widget geometry<br />
+<i>Inherited from <b>widget</b></i><br /><br />Sets the widget geometry<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
@@ -75,7 +75,7 @@ text.<br />
 <br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='button.set_var'>button</a>.<b>set_var(val, var=None)</b></span><div class='details'>
-<i>Inherited from /home/sebastiaan/git/opensesame/libopensesame/widgets/widget.py</i><br /><br />Set an experimental variable<br />
+<i>Inherited from <b>widget</b></i><br /><br />Set an experimental variable<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />

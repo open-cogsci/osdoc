@@ -32,7 +32,7 @@ is selected (default=False)<br />
 the widget status (default=None)<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='rating_scale.draw_frame'>rating_scale</a>.<b>draw_frame(rect=None, style='normal')</b></span><div class='details'>
-<i>Inherited from /home/sebastiaan/git/opensesame/libopensesame/widgets/widget.py</i><br /><br />Draws a simple frame around the widget<br />
+<i>Inherited from <b>widget</b></i><br /><br />Draws a simple frame around the widget<br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
@@ -55,7 +55,7 @@ value from the scale and optionally closes the form.<br />
 Draws the widget<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='rating_scale.set_rect'>rating_scale</a>.<b>set_rect(rect)</b></span><div class='details'>
-<i>Inherited from /home/sebastiaan/git/opensesame/libopensesame/widgets/widget.py</i><br /><br />Sets the widget geometry<br />
+<i>Inherited from <b>widget</b></i><br /><br />Sets the widget geometry<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
@@ -71,7 +71,7 @@ Set the rating scale value<br />
 <br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='rating_scale.set_var'>rating_scale</a>.<b>set_var(val, var=None)</b></span><div class='details'>
-<i>Inherited from /home/sebastiaan/git/opensesame/libopensesame/widgets/widget.py</i><br /><br />Set an experimental variable<br />
+<i>Inherited from <b>widget</b></i><br /><br />Set an experimental variable<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
