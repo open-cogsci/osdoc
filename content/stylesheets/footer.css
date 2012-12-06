@@ -9,6 +9,7 @@
 #footer a {
 	color: #888a85;
 	border: none;
+	text-decoration: underline;
 }
 
 #footer #credits {
