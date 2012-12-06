@@ -57,6 +57,12 @@ pre code,
 	padding: none;
 }
 
+a code {
+	color: #3465a3;
+	text-decoration: underline;
+}
+
+
 .pydoc .highlight code,
 .pydoc .highlight pre {
 	background: #ffffff;
