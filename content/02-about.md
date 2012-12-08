@@ -7,7 +7,7 @@ level: 0
 sortkey: 002.001
 ---
 
-OpenSesame is a graphical, open-source experiment builder for the social sciences. It sports a modern and intuitive user interface that allows you to build complex experiments with a minimum of effort. Python scripting is supported as well. With OpenSesame you can create a wide range of experiments: Psychophysics, reaction time tasks, and questionnaires, to name but a few. The plug-in framework and Python scripting allow you to incorporate external devices, such as eye trackers and response boxes, into your experiment.
+OpenSesame is a graphical, open-source experiment builder for the social sciences. It sports a modern and intuitive user interface that allows you to build complex experiments with a minimum of effort. With OpenSesame you can create a wide range of experiments: Psychophysics, reaction time tasks, and questionnaires, to name but a few. The [plug-in framework][plug-ins] and [Python scripting][python-scripting] allow you to incorporate [external devices][external-devices], such as eye trackers, response boxes, and parallel port devices, into your experiment.
 
 OpenSesame is freely available under the [General Public Licence][gpl].
 
@@ -60,7 +60,7 @@ OpenSesame is developed by a loose collection of individuals. Anyone is welcome 
 Acknowledgements
 ----------------
 
-Many thanks go out to Jan Theeuwes, Daniel Schreij, Edwin Dalmaijer, Lotje van der Linden, Per Sederberg, Jarik den Hartog, Cor Stoof and the entire Department of Cognitive Psychology at the VU University, who have provided invaluable advice, code contributions and technical support.
+Many thanks go out to Jan Theeuwes, Wouter Kruijne, Jarik den Hartog, Cor Stoof, the entire Department of Cognitive Psychology at the VU University, Jonathan Grainger, Françoise Vitu, Eric Castet, the rest of the people at the LPC in Marseille, and Andrea Epifani.
 
 We would like to thank [SR Research][sr-research] for their generous support.
 
@@ -87,3 +87,6 @@ OpenSesame is powered by the following libraries (and many more). Credits go out
 [expyriment]: http://www.expyriment.org/
 [psychopy]: http://www.psychopy.org/
 [pyopengl]: http://pyopengl.sourceforge.net/
+[plug-ins]: /plug-ins
+[external-devices]: /devices/
+[python-scripting]: /python-inline-code
