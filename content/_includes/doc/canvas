@@ -1,5 +1,5 @@
 <div class='pydoc'>
-<p><small>For OpenSesame 0.27~pre32</small></p>
+<p><small>For OpenSesame 0.27~pre34</small></p>
 <span class='class_name'>class <b>canvas</b></span><br />
 <p class='details'><b>Function overview:</b><br />
 <a href='#canvas.__init__'>__init__</a><br />
@@ -28,21 +28,21 @@
 <a href='#canvas.ycenter'>ycenter</a><br />
 </p>
 <div class='function'><span class='function_name'><a class='anchor' id='canvas.__init__'>canvas</a>.<b>__init__(experiment, bgcolor=None, fgcolor=None, auto_prepare=True)</b></span><div class='details'>
-Initializes the canvas<br />
+Initializes the canvas.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>experiment</span> &rarr; an instance of libopensesame.experiment.experiment
+<span class='variable'>experiment</span> &rarr; An instance of libopensesame.experiment.experiment.
 <br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>bgcolor</span> &rarr; a human-readable background color or None to use 
-experiment default (default=None)<br />
-<span class='variable'>fgcolor</span> &rarr; a human-readable foreground color or None to use 
-experiment default (default=None)<br />
+<span class='variable'>bgcolor</span> &rarr; A human-readable background color or None to use 
+experiment default (default=None).<br />
+<span class='variable'>fgcolor</span> &rarr; A human-readable foreground color or None to use 
+experiment default (default=None).<br />
 <span class='variable'>auto_prepare</span> &rarr; Indicates whether the canvas should be automatically 
-prepared after each drawing operation, so that `canvas.show()` will be maximally efficient. If auto_prepare is turned off, drawing operations may be more faster, but canvas.show() will take longer, unless canvas.prepare() is explicitly called in advance. Generally, it only makes sense to disable auto_prepare when you want to draw a large number of stimuli, as in the second example below. Currently, the auto_prepare parameter only applies to the xpyriment, and is ignored by the other backends. (default=True)<br />
+prepared after each drawing operation, so that canvas.show() will be maximally efficient. If auto_prepare is turned off, drawing operations may be faster, but canvas.show() will take longer, unless canvas.prepare() is explicitly called in advance. Generally, it only makes sense to disable auto_prepare when you want to draw a large number of stimuli, as in the second example below. Currently, the auto_prepare parameter only applies to the xpyriment backend, and is ignored by the other backends (default=True).<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
@@ -60,33 +60,31 @@ my_canvas = canvas(exp, auto_prepare=False)
 for i in range(1000):
 	x = randint(0, self.get('width'))
 	y = randint(0, self.get('height'))
-		my_canvas.fixdot(x, y)
+	my_canvas.fixdot(x, y)
 my_canvas.prepare()
 my_canvas.show()
 {% endhighlight %}
 <br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='canvas.arrow'>canvas</a>.<b>arrow(sx, sy, ex, ey, arrow_size=5, color=None)</b></span><div class='details'>
-Draws an arrow. An arrow is a line, with an arrowhead at (ex, ey). The<br />
-angle between the arrowhead lines and the arrow line is 45 degrees.<br />
+Draws an arrow. An arrow is a line, with an arrowhead at (ex, ey). The angle between the arrowhead lines and the arrow line is 45 degrees.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>sx</span> &rarr; The left coordinate
+<span class='variable'>sx</span> &rarr; The left coordinate.
 <br />
-<span class='variable'>sy</span> &rarr; The top coordinate
+<span class='variable'>sy</span> &rarr; The top coordinate.
 <br />
-<span class='variable'>ex</span> &rarr; The right coordinate
+<span class='variable'>ex</span> &rarr; The right coordinate.
 <br />
-<span class='variable'>ey</span> &rarr; The bottom coordinate
+<span class='variable'>ey</span> &rarr; The bottom coordinate.
 <br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>arrow_size</span> &rarr; The length of the arrowhead lines (default=5)
+<span class='variable'>arrow_size</span> &rarr; The length of the arrowhead lines (default=5).
 <br />
 <span class='variable'>color</span> &rarr; A custom foreground color. This does not affect the default
-<br />
 foreground color as set by set_fgcolor(). (Default=None)<br />
 <br />
 <span class='keyword'>Example:</span>
@@ -103,17 +101,17 @@ Draws a circle.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>x</span> &rarr; The center X coordinate
+<span class='variable'>x</span> &rarr; The center X coordinate.
 <br />
-<span class='variable'>y</span> &rarr; The center Y coordinate
+<span class='variable'>y</span> &rarr; The center Y coordinate.
 <br />
-<span class='variable'>r</span> &rarr; The radius
+<span class='variable'>r</span> &rarr; The radius.
 <br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>fill</span> &rarr; A boolean indicating whether the circle is outlined (False) 
-or filled (True) (default=False)<br />
+<span class='variable'>fill</span> &rarr; A Boolean indicating whether the circle is outlined (False) 
+or filled (True). (Default=False)<br />
 <span class='variable'>color</span> &rarr; A custom human readable foreground color. This does not 
 affect the default foreground color as set by set_fgcolor(). (Default=None)<br />
 <br />
@@ -125,16 +123,12 @@ my_canvas.circle(100, 100, 50, fill=True, color='red')
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='canvas.clear'>canvas</a>.<b>clear(color=None)</b></span><div class='details'>
-Clears the canvas with the current background color. Note that it is<br />
-generally better to use a different canvas for each experimental display,<br />
-than to use a single canvas and repeatedly clear and redraw it.<br />
+Clears the canvas with the current background color. Note that it isgenerally better to use a different canvas for each experimental display,than to use a single canvas and repeatedly clear and redraw it.<br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
 <span class='variable'>color</span> &rarr; A custom background color to be used. This does not affect the
-<br />
-default background color as set by set_bgcolor().<br />
-(Default=None)<br />
+default background color as set by set_bgcolor() (default=None).<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
@@ -149,13 +143,11 @@ my_canvas.show()
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='canvas.copy'>canvas</a>.<b>copy(canvas)</b></span><div class='details'>
-Turn the current canvas into a copy of the passed canvas. Note: If you<br />
-want to create a copy of a sketchpad canvas, you can also use the<br />
-inline_script.copy_sketchpad() function.<br />
+Turns the current canvas into a copy of the passed canvas. Note: If youwant to create a copy of a sketchpad canvas, you can also use theinline_script.copy_sketchpad() function.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>canvas</span> &rarr; The canvas to copy
+<span class='variable'>canvas</span> &rarr; The canvas to copy.
 <br />
 <br />
 <span class='keyword'>Example:</span>
@@ -165,10 +157,12 @@ my_canvas = canvas(exp)
 my_canvas.fixdot(x=100, color='green')
 my_copied_canvas = canvas(exp)
 my_copied_canvas.copy(my_canvas)
+my_copied_canvas.fixdot(x=200, color="blue")
+my_copied_canvas.show()
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='canvas.ellipse'>canvas</a>.<b>ellipse(x, y, w, h, fill=False, color=None)</b></span><div class='details'>
-Draws an ellipse<br />
+Draws an ellipse.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
@@ -183,11 +177,9 @@ Draws an ellipse<br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>fill</span> &rarr; A boolean indicating whether the ellipse is outlined (False) or
-<br />
-filled (True) (default=False)<br />
+<span class='variable'>fill</span> &rarr; A Boolean indicating whether the ellipse is outlined (False) or
+filled (True). (default=False)<br />
 <span class='variable'>color</span> &rarr; A custom foreground color. This does not affect the default
-<br />
 foreground color as set by set_fgcolor(). (Default=None)<br />
 <br />
 <span class='keyword'>Example:</span>
@@ -200,19 +192,16 @@ my_canvas.ellipse(10, 10, w, h, fill=True)
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='canvas.fixdot'>canvas</a>.<b>fixdot(x=None, y=None, color=None)</b></span><div class='details'>
-Draws a standard fixation dot, which is a big circle (r = 8px) with the<br />
-foreground color and a smaller circle (r = 2px) of the background color<br />
+Draws a standard fixation dot, which is a big circle (r = 8px) with theforeground color and a smaller circle (r = 2px) of the background color.<br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>x</span> &rarr; The center X coordinate. None = center (default=None)
+<span class='variable'>x</span> &rarr; The center X coordinate. None = center (default=None).
 <br />
-<span class='variable'>y</span> &rarr; The center Y coordinate. None = center (default=None)
+<span class='variable'>y</span> &rarr; The center Y coordinate. None = center (default=None).
 <br />
 <span class='variable'>color</span> &rarr; A custom human readable foreground color. This does not affect
-<br />
-the default foreground color as set by set_fgcolor().<br />
-(Default=None)<br />
+the default foreground color as set by set_fgcolor(). (Default=None)<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
@@ -222,42 +211,35 @@ my_canvas.fixdot()
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='canvas.gabor'>canvas</a>.<b>gabor(x, y, orient, freq, env="gaussian", size=96, stdev=12, phase=0, col1="white", col2="black", bgmode="avg")</b></span><div class='details'>
-Draws a Gabor patch. The exact rendering of the Gabor patch depends on the<br />
-back-end.<br />
+Draws a Gabor patch. The exact rendering of the Gabor patch depends on the back-end.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>x</span> &rarr; The center X coordinate
+<span class='variable'>x</span> &rarr; The center X coordinate.
 <br />
-<span class='variable'>y</span> &rarr; The center Y coordinate
+<span class='variable'>y</span> &rarr; The center Y coordinate.
 <br />
-<span class='variable'>orient</span> &rarr; Orientation in degrees [0 .. 360]
+<span class='variable'>orient</span> &rarr; Orientation in degrees [0 .. 360].
 <br />
-<span class='variable'>freq</span> &rarr; Frequency in cycles/px of the sinusoid
+<span class='variable'>freq</span> &rarr; Frequency in cycles/px of the sinusoid.
 <br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>env</span> &rarr; Any of the following: "gaussian", "linear", "circular",
+<span class='variable'>env</span> &rarr; Any of the following: "gaussian", "linear", "circular", 
+"rectangle" (default="gaussian").<br />
+<span class='variable'>size</span> &rarr; Size in pixels (default=96).
 <br />
-"rectangle" (default="gaussian")<br />
-<span class='variable'>size</span> &rarr; Size in pixels (default=96)
+<span class='variable'>stdev</span> &rarr; Standard deviation in pixels of the gaussian. Only applicable 
+if env = "gaussian". (Default=12)<br />
+<span class='variable'>phase</span> &rarr; Phase of the sinusoid [0.0 .. 1.0] (default=0).
 <br />
-<span class='variable'>stdev</span> &rarr; Standard deviation in pixels of the gaussian. Only applicable
+<span class='variable'>col1</span> &rarr; Human readable color for the tops (default="white").
 <br />
-if env = "gaussian". (default=12)<br />
-<span class='variable'>phase</span> &rarr; Phase of the sinusoid [0.0 .. 1.0] (default=0)
-<br />
-<span class='variable'>col1</span> &rarr; Human readable color for the tops (default="white")
-<br />
-<span class='variable'>col2</span> &rarr; Human readable color for the troughs. Note: This parameter is
-<br />
-ignored by the psycho back-end. (default="black")<br />
-<span class='variable'>bgmode</span> &rarr; Specifies whether the background is the average of col1 and
-<br />
-col2 (bgmode = "avg", a typical Gabor patch) or equal to col2<br />
-("col2"), useful for blending into the background. Note: this<br />
-paramter is ignored by the psycho backend. (default="avg")<br />
+<span class='variable'>col2</span> &rarr; Human readable color for the troughs. Note: This parameter is 
+ignored by the psycho backend. (Default="black").<br />
+<span class='variable'>bgmode</span> &rarr; Specifies whether the background is the average of col1 and 
+col2 (bgmode = "avg", a typical Gabor patch) or equal to col2 ("col2"), useful for blending into the background. Note: this parameter is ignored by the psycho backend. (Default="avg").<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
@@ -267,27 +249,23 @@ my_canvas.gabor(100, 100, 45, .05)
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='canvas.image'>canvas</a>.<b>image(fname, center=True, x=None, y=None, scale=None)</b></span><div class='details'>
-Draws an image from file. This function does not look in the file pool,<br />
-but takes an absolute path.<br />
+Draws an image from file. This function does not look in the file pool, but takes an absolute path.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>fname</span> &rarr; The path of the file
+<span class='variable'>fname</span> &rarr; The path of the file.
 <br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>center</span> &rarr; A boolean indicating whether the given coordinates reflect the
+<span class='variable'>center</span> &rarr; A Boolean indicating whether the given coordinates reflect the 
+center (True) or the top-left (False) of the image (default=True).<br />
+<span class='variable'>x</span> &rarr; The X coordinate. None = center. (Default=None)
 <br />
-center (True) or the top-left (False) of the image<br />
-(default=True)<br />
-<span class='variable'>x</span> &rarr; The X coordinate. None = center. (default=None)
+<span class='variable'>y</span> &rarr; The Y coordinate. None = center. (Default=None)
 <br />
-<span class='variable'>y</span> &rarr; The Y coordinate. None = center. (default=None)
-<br />
-<span class='variable'>scale</span> &rarr; The scaling factor of the image. 1.0 or None = no scaling, 2.0
-<br />
-= twice as large, etc. (default=None)<br />
+<span class='variable'>scale</span> &rarr; The scaling factor of the image. 1.0 or None = no scaling, 2.0 
+= twice as large, etc. (default=None).<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
@@ -298,17 +276,17 @@ my_canvas.image(path)
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='canvas.line'>canvas</a>.<b>line(sx, sy, ex, ey, color=None)</b></span><div class='details'>
-Draws a line<br />
+Draws a line.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>sx</span> &rarr; The left coordinate
+<span class='variable'>sx</span> &rarr; The left coordinate.
 <br />
-<span class='variable'>sy</span> &rarr; The top coordinate
+<span class='variable'>sy</span> &rarr; The top coordinate.
 <br />
-<span class='variable'>ex</span> &rarr; The right coordinate
+<span class='variable'>ex</span> &rarr; The right coordinate.
 <br />
-<span class='variable'>ey</span> &rarr; The bottom coordinate
+<span class='variable'>ey</span> &rarr; The bottom coordinate.
 <br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
@@ -326,37 +304,31 @@ my_canvas.line(0, 0, w, h)
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='canvas.noise_patch'>canvas</a>.<b>noise_patch(x, y, env="gaussian", size=96, stdev=12, col1="white", col2="black", bgmode="avg")</b></span><div class='details'>
-Draws a patch of noise, with an envelope. The exact rendering of the noise<br />
-patch depends on the back-end.<br />
+Draws a patch of noise, with an envelope. The exact rendering of the noise patch depends on the back-end.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>x</span> &rarr; The center X coordinate
+<span class='variable'>x</span> &rarr; The center X coordinate.
 <br />
-<span class='variable'>y</span> &rarr; The center Y coordinate
+<span class='variable'>y</span> &rarr; The center Y coordinate.
 <br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>env</span> &rarr; Any of the following: "gaussian", "linear", "circular",
+<span class='variable'>env</span> &rarr; Any of the following: "gaussian", "linear", "circular", 
+"rectangle" (default="gaussian").<br />
+<span class='variable'>size</span> &rarr; Size in pixels (default=96).
 <br />
-"rectangle" (default="gaussian")<br />
-<span class='variable'>size</span> &rarr; Size in pixels (default=96)
+<span class='variable'>stdev</span> &rarr; Standard deviation in pixels of the gaussian. Only applicable 
+if env = "gaussian". (Default=12)<br />
+<span class='variable'>phase</span> &rarr; Phase of the sinusoid [0.0 .. 1.0] (default=0).
 <br />
-<span class='variable'>stdev</span> &rarr; Standard deviation in pixels of the gaussian. Only applicable
+<span class='variable'>col1</span> &rarr; Human readable color for the tops (default="white").
 <br />
-if env = "gaussian". (default=12)<br />
-<span class='variable'>phase</span> &rarr; Phase of the sinusoid [0.0 .. 1.0] (default=0)
+<span class='variable'>col2</span> &rarr; Human readable color for the troughs (default="black").
 <br />
-<span class='variable'>col1</span> &rarr; Human readable color for the tops (default="white")
-<br />
-<span class='variable'>col2</span> &rarr; Human readable color for the troughs (default="black")
-<br />
-<span class='variable'>bgmode</span> &rarr; Specifies whether the background is the average of col1 and
-<br />
-col2 (bgmode="avg", a typical Gabor patch) or equal to col2<br />
-("col2"), useful for blending into the background.<br />
-(default="avg")<br />
+<span class='variable'>bgmode</span> &rarr; Specifies whether the background is the average of col1 and 
+col2 (bgmode="avg", a typical Gabor patch) or equal to col2 ("col2"), useful for blending into the background (default="avg").<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
@@ -366,23 +338,18 @@ my_canvas.noise_patch(100, 100, env='circular')
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='canvas.polygon'>canvas</a>.<b>polygon(vertices, fill=False, color=None)</b></span><div class='details'>
-Draws a polygon that consists of multiple vertices (i.e. a shape of<br />
-points connected by lines)<br />
+Draws a polygon that consists of multiple vertices (i.e. a shape ofpoints connected by lines).<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>vertices</span> &rarr; a list of tuples, where each tuple corresponds to a vertex
-<br />
-For example, [(100,100), (200,100), (100,200)] will draw a<br />
-triangle.<br />
+<span class='variable'>vertices</span> &rarr; A list of tuples, where each tuple corresponds to a vertex 
+For example, [(100,100), (200,100), (100,200)] will draw a triangle.<br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>fill</span> &rarr; A boolean indicating whether the rectangle is outlined (False)
-<br />
-or filled (True) (default=False)<br />
-<span class='variable'>color</span> &rarr; A custom foreground color. This does not affect the default
-<br />
+<span class='variable'>fill</span> &rarr; A Boolean indicating whether the rectangle is outlined (False) 
+or filled (True). (Default=False)<br />
+<span class='variable'>color</span> &rarr; A custom foreground color. This does not affect the default 
 foreground color as set by set_fgcolor(). (Default=None)<br />
 <br />
 <span class='keyword'>Example:</span>
@@ -396,13 +363,10 @@ my_canvas.polygon([n1, n2, n3])
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='canvas.prepare'>canvas</a>.<b>prepare()</b></span><div class='details'>
-Finishes up pending canvas operations (if any), so that a subsequent<br />
-call to show() is extra fast. It's generally not necessary to call this<br />
-function, unless you use a specific back-end that requires this. Also,<br />
-see the note on auto_prepare under __init__().<br />
+Finishes up pending canvas operations (if any), so that a subsequentcall to show() is extra fast. It's generally not necessary to call thisfunction, unless you use a specific back-end that requires this. Also,see the note on auto_prepare under __init__().<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='canvas.rect'>canvas</a>.<b>rect(x, y, w, h, fill=False, color=None)</b></span><div class='details'>
-Draws a rectangle<br />
+Draws a rectangle.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
@@ -419,9 +383,7 @@ Draws a rectangle<br />
 <br />
 <span class='variable'>fill</span> &rarr; A boolean indicating whether the rectangle is outlined (False)
 <br />
-or filled (True) (default=False)<br />
-<span class='variable'>color</span> &rarr; A custom foreground color. This does not affect the default
-<br />
+or filled (True). (Default=False)<span class='variable'>color</span> &rarr; A custom foreground color. This does not affect the default
 foreground color as set by set_fgcolor(). (Default=None)<br />
 <br />
 <span class='keyword'>Example:</span>
@@ -434,13 +396,12 @@ my_canvas.rect(10, 10, w, h, fill=True)
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='canvas.set_bgcolor'>canvas</a>.<b>set_bgcolor(color)</b></span><div class='details'>
-Sets the background color for the canvas<br />
+Sets the background color for the canvas.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
 <span class='variable'>color</span> &rarr; A color. Acceptable formats are human readable colors, such as
-<br />
-'red', and HTML colors, such as '#FF0000'<br />
+'red'; and HTML colors, such as '#FF0000'.<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
@@ -456,8 +417,7 @@ Sets the foreground color for subsequent drawing operations.<br />
 <span class='keyword'>Arguments:</span>
 <br />
 <span class='variable'>color</span> &rarr; A color. Acceptable formats are human readable colors, such as
-<br />
-'red', and HTML colors, such as '#FF0000'<br />
+'red'; and HTML colors, such as '#FF0000'.<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
@@ -475,16 +435,14 @@ Sets the font for subsequent drawing operations.<br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
 <span class='variable'>style</span> &rarr; A font style. This can be one of the three standard styles
+('mono', 'sans', or 'serif') or a system font (e.g., 'arial').(Default=None)<br />
+<span class='variable'>size</span> &rarr; A font size in pixels (default=None).
 <br />
-('mono', 'sans', or 'serif') or a system font (e.g., 'arial')<br />
-(default=None)<br />
-<span class='variable'>size</span> &rarr; A font size in pixels (default=None)
+<span class='variable'>italic</span> &rarr; Indicates if the font should be italic (default=None).
 <br />
-<span class='variable'>italic</span> &rarr; indicates if the font should be italic (default=None)
+<span class='variable'>bold</span> &rarr; Indicates if the font should be bold (default=None).
 <br />
-<span class='variable'>bold</span> &rarr; indicates if the font should be bold (default=None)
-<br />
-<span class='variable'>underline</span> &rarr; indicates if the font should be underlined (default=None)
+<span class='variable'>underline</span> &rarr; Indicates if the font should be underlined (default=None).
 <br />
 <br />
 <span class='keyword'>Example:</span>
@@ -500,8 +458,10 @@ Sets the pen width for subsequent drawing operations.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>penwidth</span> &rarr; A pen width in pixels
+<span class='variable'>penwidth</span> &rarr; A pen width in pixels.
 <br />
+<br />
+<span class='keyword'>Example:</span>
 <br />
 {% highlight python %}from openexp.canvas import canvas
 my_canvas = canvas(exp)
@@ -510,12 +470,11 @@ my_canvas.line(100, 100, 200, 200)
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='canvas.show'>canvas</a>.<b>show()</b></span><div class='details'>
-Puts ('flips') the canvas onto the screen<br />
+Puts ('flips') the canvas onto the screen.<br />
 <br />
 <span class='keyword'>Returns:</span>
 <br />
-A timestamp containing the time at which the canvas actually appeared on<br />
-the screen (or a best guess).<br />
+A timestamp containing the time at which the canvas actually appeared onthe screen (or a best guess).<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
@@ -536,21 +495,17 @@ Draws text.<br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>center</span> &rarr; A boolean indicating whether the coordinates reflect the
+<span class='variable'>center</span> &rarr; A Boolean indicating whether the coordinates reflect the 
+center (True) or top-left (default=True).<br />
+<span class='variable'>x</span> &rarr; The X coordinate. None = center. (Default=None)
 <br />
-center (True) or top-left (default=True)<br />
-<span class='variable'>x</span> &rarr; The X coordinate. None = center. (default=None)
+<span class='variable'>y</span> &rarr; The Y coordinate. None = center. (Default=None)
 <br />
-<span class='variable'>y</span> &rarr; The Y coordinate. None = center. (default=None)
-<br />
-<span class='variable'>max_width</span> &rarr; The maximum width of the text, before wrapping to a new
-<br />
+<span class='variable'>max_width</span> &rarr; The maximum width of the text, before wrapping to a new 
 line, or None to wrap at screen edge (default=None)<br />
-<span class='variable'>color</span> &rarr; A custom human readable foreground color. This does not affect
-<br />
-the default foreground color as set by set_fgcolor().<br />
-(Default=None)<br />
-<span class='variable'>html</span> &rarr; Indicates whether HTML tags should be parsed (default=True)
+<span class='variable'>color</span> &rarr; A custom human readable foreground color. This does not affect 
+the default foreground color as set by set_fgcolor(). (Default=None)<br />
+<span class='variable'>html</span> &rarr; Indicates whether HTML tags should be parsed (default=True).
 <br />
 <br />
 <span class='keyword'>Example:</span>
@@ -565,12 +520,12 @@ Determines the size of a text string in pixels.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>text</span> &rarr; The text string
+<span class='variable'>text</span> &rarr; The text string.
 <br />
 <br />
 <span class='keyword'>Returns:</span>
 <br />
-A (width, height) tuple containing the dimensions of the text string<br />
+A (width, height) tuple containing the dimensions of the text string.<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
@@ -580,23 +535,18 @@ w, h = my_canvas.text_size('Some text')
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='canvas.textline'>canvas</a>.<b>textline(text, line, color=None)</b></span><div class='details'>
-A convenience function that draws a line of text based on a line number.<br />
-The text strings are centered on the X-axis and vertically spaced with<br />
-1.5 the line height as determined by text_size().<br />
-<br />
+A convenience function that draws a line of text based on a line number. The text strings are centered on the X-axis and vertically spaced with 1.5 times the line height as determined by text_size(). <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>text</span> &rarr; The text string
+<span class='variable'>text</span> &rarr; The text string.
 <br />
-<span class='variable'>line</span> &rarr; A line number, where 0 is the center and > 0 is below the
-<br />
+<span class='variable'>line</span> &rarr; A line number, where 0 is the center and > 0 is below the 
 center.<br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>color</span> &rarr; A custom foreground color. This does not affect the default
-<br />
-foreground color as set by set_fgcolor(). (default=None)<br />
+<span class='variable'>color</span> &rarr; A custom foreground color. This does not affect the default 
+foreground color as set by set_fgcolor(). (Default=None)<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />

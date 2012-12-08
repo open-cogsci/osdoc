@@ -1,5 +1,5 @@
 <div class='pydoc'>
-<p><small>For OpenSesame 0.27~pre32</small></p>
+<p><small>For OpenSesame 0.27~pre34</small></p>
 <span class='class_name'>class <b>keyboard</b></span><br />
 <p class='details'><b>Function overview:</b><br />
 <a href='#keyboard.__init__'>__init__</a><br />
@@ -12,8 +12,7 @@
 <div class='function'><span class='function_name'><a class='anchor' id='keyboard.__init__'>keyboard</a>.<b>__init__(experiment, keylist=None, timeout=None)</b></span><div class='details'>
 Intializes the keyboard object.<br />
 <br />
-Keys can be identified either by character or name. This is case<br />
-insensitive. Naming keys using ASCII (integer) key codes is deprecated.<br />
+Keys can be identified either by character or name. This is case insensitive. Naming keys using ASCII (integer) key codes is deprecated.<br />
 <br />
 For example:<br />
 - The key 'a' is represented by 'a' and 'A'<br />
@@ -21,22 +20,19 @@ For example:<br />
 - The '/' key is represented by '/', 'slash', and 'SLASH'<br />
 - The spacebar is represented by 'space' and 'SPACE'<br />
 <br />
-For a complete list of available key names, click on the 'list available<br />
-keys' button the keyboard_response tab within OpenSesame.<br />
+For a complete list of available key names, click on the 'list available keys' button in the keyboard_response tab within OpenSesame.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>experiment</span> &rarr; an instance of libopensesame.experiment.experiment
+<span class='variable'>experiment</span> &rarr; An instance of libopensesame.experiment.experiment.
 <br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>keylist</span> &rarr; a list of human readable keys that are accepted or None to
-<br />
-accept all keys (default=None)<br />
-<span class='variable'>timeout</span> &rarr; an integer value specifying a timeout in milliseconds or None
-<br />
-for no timeout (default=None)<br />
+<span class='variable'>keylist</span> &rarr; A list of human readable keys that are accepted or None to 
+accept all keys (default=None).<br />
+<span class='variable'>timeout</span> &rarr; An integer value specifying a timeout in milliseconds or None 
+for no timeout (default=None).<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
@@ -45,7 +41,7 @@ my_keyboard = keyboard(exp, keylist=['z', 'm'], timeout=2000)
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='keyboard.flush'>keyboard</a>.<b>flush()</b></span><div class='details'>
-Clears all pending input, not limited to the keyboard<br />
+Clears all pending input, not limited to the keyboard.<br />
 <br />
 <span class='keyword'>Exceptions:</span>
 <br />
@@ -53,8 +49,7 @@ A response_error if 'escape' was pressed<br />
 <br />
 <span class='keyword'>Returns:</span>
 <br />
-True if a key had been pressed (i.e., if there was something<br />
-to flush) and False otherwise<br />
+True if a key had been pressed (i.e., if there was something to flush) and False otherwise.<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
@@ -65,22 +60,18 @@ response, timestamp = my_keyboard.get_key()
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='keyboard.get_key'>keyboard</a>.<b>get_key(keylist=None, timeout=None)</b></span><div class='details'>
-Waits for keyboard input<br />
+Waits for keyboard input.<br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>keylist</span> &rarr; a list of human readable keys that are accepted or None to
-<br />
-use the default. This parameter does not change the default<br />
-keylist. (default=None)<br />
-<span class='variable'>timeout</span> &rarr; an integer value specifying a timeout in milliseconds or None
-<br />
-to use the default. This parameter does not change the<br />
-default timeout. (default=None)<br />
+<span class='variable'>keylist</span> &rarr; A list of human readable keys that are accepted or None to 
+use the default. This parameter does not change the default keylist (default=None).<br />
+<span class='variable'>timeout</span> &rarr; An integer value specifying a timeout in milliseconds or None 
+to use the default. This parameter does not change the default timeout (default=None).<br />
 <br />
 <span class='keyword'>Exceptions:</span>
 <br />
-A response_error if 'escape' was pressed<br />
+A response_error if 'escape' was pressed.<br />
 <br />
 <span class='keyword'>Returns:</span>
 <br />
@@ -92,17 +83,15 @@ A (key, timestamp) tuple. The key is None if a timeout occurs.<br />
 my_keyboard = keyboard(exp, timeout=2000)
 response, timestamp = my_keyboard.get_key()
 if response == None:
-	print 'A timeout occurred!'
+		print 'A timeout occurred!'
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='keyboard.get_mods'>keyboard</a>.<b>get_mods()</b></span><div class='details'>
-Returns a list of keyboard moderators (e.g., shift, alt, etc.) that are<br />
-currently pressed.<br />
+Returns a list of keyboard moderators (e.g., shift, alt, etc.) that are currently pressed.<br />
 <br />
 <span class='keyword'>Returns:</span>
 <br />
-A list of keyboard moderators. An empty list is returned if no<br />
-moderators are pressed.<br />
+A list of keyboard moderators. An empty list is returned if no moderators are pressed.<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
@@ -110,17 +99,16 @@ moderators are pressed.<br />
 my_keyboard = keyboard(exp)
 moderators = my_keyboard.get_mods()
 if 'shift' in moderators:
-	print 'The shift-key is down!'
+		print 'The shift-key is down!'
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='keyboard.set_keylist'>keyboard</a>.<b>set_keylist(keylist=None)</b></span><div class='details'>
-Sets a list of accepted keys<br />
+Sets a list of accepted keys.<br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>keylist</span> &rarr; a list of keys that are accepted or None to accept all keys
-<br />
-(default=None)<br />
+<span class='variable'>keylist</span> &rarr; A list of keys that are accepted or None to accept all keys 
+(default=None).<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
@@ -130,13 +118,12 @@ my_keyboard.set_keylist( ['z', 'm'] )
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='keyboard.set_timeout'>keyboard</a>.<b>set_timeout(timeout=None)</b></span><div class='details'>
-Sets a timeout<br />
+Sets a timeout.<br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>timeout</span> &rarr; an integer value specifying a timeout in milliseconds or None
-<br />
-for no timeout (default=None)<br />
+<span class='variable'>timeout</span> &rarr; An integer value specifying a timeout in milliseconds or None 
+for no timeout (default=None).<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
