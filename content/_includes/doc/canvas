@@ -1,5 +1,5 @@
 <div class='pydoc'>
-<p><small>For OpenSesame 0.27~pre34</small></p>
+<p><small>For OpenSesame 0.27~rc1</small></p>
 <span class='class_name'>class <b>canvas</b></span><br />
 <p class='details'><b>Function overview:</b><br />
 <a href='#canvas.__init__'>__init__</a><br />
@@ -84,7 +84,7 @@ Draws an arrow. An arrow is a line, with an arrowhead at (ex, ey). The angle bet
 <br />
 <span class='variable'>arrow_size</span> &rarr; The length of the arrowhead lines (default=5).
 <br />
-<span class='variable'>color</span> &rarr; A custom foreground color. This does not affect the default
+<span class='variable'>color</span> &rarr; A custom foreground color. This does not affect the default 
 foreground color as set by set_fgcolor(). (Default=None)<br />
 <br />
 <span class='keyword'>Example:</span>
@@ -112,7 +112,7 @@ Draws a circle.<br />
 <br />
 <span class='variable'>fill</span> &rarr; A Boolean indicating whether the circle is outlined (False) 
 or filled (True). (Default=False)<br />
-<span class='variable'>color</span> &rarr; A custom human readable foreground color. This does not 
+<span class='variable'>color</span> &rarr; A custom human-readable foreground color. This does not 
 affect the default foreground color as set by set_fgcolor(). (Default=None)<br />
 <br />
 <span class='keyword'>Example:</span>
@@ -123,12 +123,12 @@ my_canvas.circle(100, 100, 50, fill=True, color='red')
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='canvas.clear'>canvas</a>.<b>clear(color=None)</b></span><div class='details'>
-Clears the canvas with the current background color. Note that it isgenerally better to use a different canvas for each experimental display,than to use a single canvas and repeatedly clear and redraw it.<br />
+Clears the canvas with the current background color. Note that it is generally better to use a different canvas for each experimental display, than to use a single canvas and repeatedly clear and redraw it.<br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>color</span> &rarr; A custom background color to be used. This does not affect the
-default background color as set by set_bgcolor() (default=None).<br />
+<span class='variable'>color</span> &rarr; A custom background color to be used. This does not affect the 
+default background color as set by set_bgcolor(). (Default=None).<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
@@ -143,7 +143,7 @@ my_canvas.show()
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='canvas.copy'>canvas</a>.<b>copy(canvas)</b></span><div class='details'>
-Turns the current canvas into a copy of the passed canvas. Note: If youwant to create a copy of a sketchpad canvas, you can also use theinline_script.copy_sketchpad() function.<br />
+Turns the current canvas into a copy of the passed canvas. Note: If you want to create a copy of a sketchpad canvas, you can also use the inline_script.copy_sketchpad() function.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
@@ -177,9 +177,9 @@ Draws an ellipse.<br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>fill</span> &rarr; A Boolean indicating whether the ellipse is outlined (False) or
-filled (True). (default=False)<br />
-<span class='variable'>color</span> &rarr; A custom foreground color. This does not affect the default
+<span class='variable'>fill</span> &rarr; A Boolean indicating whether the ellipse is outlined (False) or 
+filled (True). (Default=False)<br />
+<span class='variable'>color</span> &rarr; A custom foreground color. This does not affect the default 
 foreground color as set by set_fgcolor(). (Default=None)<br />
 <br />
 <span class='keyword'>Example:</span>
@@ -192,7 +192,7 @@ my_canvas.ellipse(10, 10, w, h, fill=True)
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='canvas.fixdot'>canvas</a>.<b>fixdot(x=None, y=None, color=None)</b></span><div class='details'>
-Draws a standard fixation dot, which is a big circle (r = 8px) with theforeground color and a smaller circle (r = 2px) of the background color.<br />
+Draws a standard fixation dot, which is a big circle (radius = 8px) with the foreground color and a smaller circle (radius = 2px) of the background color.<br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
@@ -200,7 +200,7 @@ Draws a standard fixation dot, which is a big circle (r = 8px) with theforegroun
 <br />
 <span class='variable'>y</span> &rarr; The center Y coordinate. None = center (default=None).
 <br />
-<span class='variable'>color</span> &rarr; A custom human readable foreground color. This does not affect
+<span class='variable'>color</span> &rarr; A custom human-readable foreground color. This does not affect 
 the default foreground color as set by set_fgcolor(). (Default=None)<br />
 <br />
 <span class='keyword'>Example:</span>
@@ -234,12 +234,12 @@ Draws a Gabor patch. The exact rendering of the Gabor patch depends on the back-
 if env = "gaussian". (Default=12)<br />
 <span class='variable'>phase</span> &rarr; Phase of the sinusoid [0.0 .. 1.0] (default=0).
 <br />
-<span class='variable'>col1</span> &rarr; Human readable color for the tops (default="white").
+<span class='variable'>col1</span> &rarr; Human-readable color for the tops (default="white").
 <br />
-<span class='variable'>col2</span> &rarr; Human readable color for the troughs. Note: This parameter is 
+<span class='variable'>col2</span> &rarr; Human-readable color for the troughs. Note: This parameter is 
 ignored by the psycho backend. (Default="black").<br />
 <span class='variable'>bgmode</span> &rarr; Specifies whether the background is the average of col1 and 
-col2 (bgmode = "avg", a typical Gabor patch) or equal to col2 ("col2"), useful for blending into the background. Note: this parameter is ignored by the psycho backend. (Default="avg").<br />
+col2 (bgmode = "avg", a typical Gabor patch) or equal to col2 ("col2"), useful for blending into the background. Note: this parameter is ignored by the psycho backend. (Default="avg")<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
@@ -291,7 +291,7 @@ Draws a line.<br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>color</span> &rarr; A custom human readable foreground color. This does not 
+<span class='variable'>color</span> &rarr; A custom human-readable foreground color. This does not 
 affect the default foreground color as set by set_fgcolor(). (Default=None)<br />
 <br />
 <span class='keyword'>Example:</span>
@@ -323,9 +323,9 @@ Draws a patch of noise, with an envelope. The exact rendering of the noise patch
 if env = "gaussian". (Default=12)<br />
 <span class='variable'>phase</span> &rarr; Phase of the sinusoid [0.0 .. 1.0] (default=0).
 <br />
-<span class='variable'>col1</span> &rarr; Human readable color for the tops (default="white").
+<span class='variable'>col1</span> &rarr; Human-readable color for the tops (default="white").
 <br />
-<span class='variable'>col2</span> &rarr; Human readable color for the troughs (default="black").
+<span class='variable'>col2</span> &rarr; Human-readable color for the troughs (default="black").
 <br />
 <span class='variable'>bgmode</span> &rarr; Specifies whether the background is the average of col1 and 
 col2 (bgmode="avg", a typical Gabor patch) or equal to col2 ("col2"), useful for blending into the background (default="avg").<br />
@@ -338,11 +338,11 @@ my_canvas.noise_patch(100, 100, env='circular')
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='canvas.polygon'>canvas</a>.<b>polygon(vertices, fill=False, color=None)</b></span><div class='details'>
-Draws a polygon that consists of multiple vertices (i.e. a shape ofpoints connected by lines).<br />
+Draws a polygon that consists of multiple vertices (i.e. a shape of points connected by lines).<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>vertices</span> &rarr; A list of tuples, where each tuple corresponds to a vertex 
+<span class='variable'>vertices</span> &rarr; A list of tuples, where each tuple corresponds to a vertex. 
 For example, [(100,100), (200,100), (100,200)] will draw a triangle.<br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
@@ -363,7 +363,7 @@ my_canvas.polygon([n1, n2, n3])
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='canvas.prepare'>canvas</a>.<b>prepare()</b></span><div class='details'>
-Finishes up pending canvas operations (if any), so that a subsequentcall to show() is extra fast. It's generally not necessary to call thisfunction, unless you use a specific back-end that requires this. Also,see the note on auto_prepare under __init__().<br />
+Finishes up pending canvas operations (if any), so that a subsequent call to show() is extra fast. It's generally not necessary to call this function, unless you use a specific back-end that requires this. Also, see the note on auto_prepare under __init__().<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='canvas.rect'>canvas</a>.<b>rect(x, y, w, h, fill=False, color=None)</b></span><div class='details'>
 Draws a rectangle.<br />
@@ -381,9 +381,9 @@ Draws a rectangle.<br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>fill</span> &rarr; A boolean indicating whether the rectangle is outlined (False)
-<br />
-or filled (True). (Default=False)<span class='variable'>color</span> &rarr; A custom foreground color. This does not affect the default
+<span class='variable'>fill</span> &rarr; A Boolean indicating whether the rectangle is outlined (False) 
+or filled (True). (Default=False)<br />
+<span class='variable'>color</span> &rarr; A custom foreground color. This does not affect the default 
 foreground color as set by set_fgcolor(). (Default=None)<br />
 <br />
 <span class='keyword'>Example:</span>
@@ -400,7 +400,7 @@ Sets the background color for the canvas.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>color</span> &rarr; A color. Acceptable formats are human readable colors, such as
+<span class='variable'>color</span> &rarr; A color. Acceptable formats are human-readable colors, such as 
 'red'; and HTML colors, such as '#FF0000'.<br />
 <br />
 <span class='keyword'>Example:</span>
@@ -416,7 +416,7 @@ Sets the foreground color for subsequent drawing operations.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>color</span> &rarr; A color. Acceptable formats are human readable colors, such as
+<span class='variable'>color</span> &rarr; A color. Acceptable formats are human-readable colors, such as 
 'red'; and HTML colors, such as '#FF0000'.<br />
 <br />
 <span class='keyword'>Example:</span>
@@ -434,8 +434,8 @@ Sets the font for subsequent drawing operations.<br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>style</span> &rarr; A font style. This can be one of the three standard styles
-('mono', 'sans', or 'serif') or a system font (e.g., 'arial').(Default=None)<br />
+<span class='variable'>style</span> &rarr; A font style. This can be one of the three standard styles 
+('mono', 'sans', or 'serif') or a system font (e.g., 'arial'). (Default=None)<br />
 <span class='variable'>size</span> &rarr; A font size in pixels (default=None).
 <br />
 <span class='variable'>italic</span> &rarr; Indicates if the font should be italic (default=None).
@@ -474,7 +474,7 @@ Puts ('flips') the canvas onto the screen.<br />
 <br />
 <span class='keyword'>Returns:</span>
 <br />
-A timestamp containing the time at which the canvas actually appeared onthe screen (or a best guess).<br />
+A timestamp containing the time at which the canvas actually appeared on the screen (or a best guess).<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
@@ -503,7 +503,7 @@ center (True) or top-left (default=True).<br />
 <br />
 <span class='variable'>max_width</span> &rarr; The maximum width of the text, before wrapping to a new 
 line, or None to wrap at screen edge (default=None)<br />
-<span class='variable'>color</span> &rarr; A custom human readable foreground color. This does not affect 
+<span class='variable'>color</span> &rarr; A custom human-readable foreground color. This does not affect 
 the default foreground color as set by set_fgcolor(). (Default=None)<br />
 <span class='variable'>html</span> &rarr; Indicates whether HTML tags should be parsed (default=True).
 <br />
@@ -535,7 +535,8 @@ w, h = my_canvas.text_size('Some text')
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='canvas.textline'>canvas</a>.<b>textline(text, line, color=None)</b></span><div class='details'>
-A convenience function that draws a line of text based on a line number. The text strings are centered on the X-axis and vertically spaced with 1.5 times the line height as determined by text_size(). <br />
+A convenience function that draws a line of text based on a line number. The text strings are centered on the X-axis and vertically spaced with 1.5 times the line height as determined by text_size().<br />
+<br />
 <span class='keyword'>Arguments:</span>
 <br />
 <span class='variable'>text</span> &rarr; The text string.

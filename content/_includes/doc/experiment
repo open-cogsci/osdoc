@@ -1,5 +1,5 @@
 <div class='pydoc'>
-<p><small>For OpenSesame 0.27~pre34</small></p>
+<p><small>For OpenSesame 0.27~rc1</small></p>
 <span class='class_name'>class <b>experiment</b></span><br />
 <p class='details'><b>Function overview:</b><br />
 <a href='#experiment.__init__'>__init__</a><br />
@@ -37,8 +37,17 @@ you will generally not need to create it yourself.<br />
 (default=None)<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='experiment.auto_type'>experiment</a>.<b>auto_type(val)</b></span><div class='details'>
-<i>Inherited from <b>item</b></i><br /><br />Convert a value into the 'best fitting' or 'simples' type that is<br />
-compatible with the value.<br />
+<i>Inherited from <b>item</b></i><br /><br />Converts a value into the 'best fitting' or 'simplest' type that is compatible with the value.<br />
+<br />
+<br />
+<span class='keyword'>Arguments:</span>
+<br />
+<span class='variable'>val</span> &rarr; A value.
+<br />
+<br />
+<span class='keyword'>Returns:</span>
+<br />
+The same value converted to the 'best fitting' type<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
@@ -48,19 +57,19 @@ print type(self.auto_type('some text')) # Prints 'unicode'
 # Note: Boolean values are converted to 'yes' / 'no' and are
 # therefore also returned as unicode objects.
 print type(self.auto_type(True)) # Prints 'unicode'
-{% endhighlight %}
+{% endhighlight %}<br />
+</div></div>
+<div class='function'><span class='function_name'><a class='anchor' id='experiment.color_check'>experiment</a>.<b>color_check(col)</b></span><div class='details'>
+<i>Inherited from <b>item</b></i><br /><br />Checks whether a string is a valid color name.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>val</span> &rarr; a value
+<span class='variable'>col</span> &rarr; The color to check.
 <br />
 <br />
-<span class='keyword'>Returns:</span>
+<span class='keyword'>Exceptions:</span>
 <br />
-The same value converted to the 'best fitting' type<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='experiment.color_check'>experiment</a>.<b>color_check(col)</b></span><div class='details'>
-<i>Inherited from <b>item</b></i><br /><br />Checks whether a string is a valid color name<br />
+Raises a runtime_error if col is not a valid color.<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
@@ -70,58 +79,43 @@ print self.color_check('red')
 print self.color_check('#FFFFFF')
 # Raises runtime_error
 print self.color_check('this is not a color')
-{% endhighlight %}
+{% endhighlight %}<br />
+</div></div>
+<div class='function'><span class='function_name'><a class='anchor' id='experiment.eval_text'>experiment</a>.<b>eval_text(text, round_float=False, soft_ignore=False, quote_str=False)</b></span><div class='details'>
+<i>Inherited from <b>item</b></i><br /><br />Evaluates a string of text, so that all variable references (e.g., '[var]') are replaced by values.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>col</span> &rarr; the color to check
+<span class='variable'>text</span> &rarr; The text to be evaluated.
 <br />
 <br />
-<span class='keyword'>Exceptions:</span>
+<span class='keyword'>Keyword arguments:</span>
 <br />
-Raises a runtime_error if col is not a valid color<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='experiment.eval_text'>experiment</a>.<b>eval_text(text, round_float=False, soft_ignore=False, quote_str=False)</b></span><div class='details'>
-<i>Inherited from <b>item</b></i><br /><br />Evaluate a string of text, so that all variables references (e.g.,<br />
-'[var]') are replaced by values.<br />
+<span class='variable'>round_float</span> &rarr; A Boolean indicating whether float values should be 
+rounded to a precision of [round_decimals]. round_decimals is an OpenSesame variable that has a default value of 2. (Default=False)<br />
+<span class='variable'>soft_ignore</span> &rarr; A Boolean indicating whether missing variables should be 
+ignored, rather than cause an exception (default=False).<br />
+<span class='variable'>quote_str</span> &rarr; A Boolean indicating whether string variables should be
+<br />
+surrounded by single quotes (default=False).<br />
+<br />
+<span class='keyword'>Returns:</span>
+<br />
+The evaluated text.<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
 {% highlight python %}exp.set('var', 'evaluated')
 # Prints 'This string has been evaluated
 print self.eval_text('This string has been [var]')
-{% endhighlight %}
-<br />
-<span class='keyword'>Arguments:</span>
-<br />
-<span class='variable'>text</span> &rarr; the text to be evaluated
-<br />
-<br />
-<span class='keyword'>Keyword arguments:</span>
-<br />
-<span class='variable'>round_float</span> &rarr; a boolean indicating whether float values should be
-<br />
-rounded to a precision of [round_decimals].<br />
-round_decimals is an OpenSesame variable that has a<br />
-default value of 2.<br />
-(default=False)<br />
-<span class='variable'>soft_ignore</span> &rarr; a boolean indicating whether missing variables should be
-<br />
-ignored, rather than cause an exception (default=False)<br />
-<span class='variable'>quote_str</span> &rarr; a boolean indicating whether string variables should be
-<br />
-surrounded by single quotes (default=False)<br />
-<br />
-<span class='keyword'>Returns:</span>
-<br />
-The evaluated tex<br />
+{% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='experiment.file_in_pool'>experiment</a>.<b>file_in_pool(path)</b></span><div class='details'>
-Checks if a file is in the file pool<br />
+Checks if a file is in the file pool.<br />
 <br />
 <span class='keyword'>Returns:</span>
 <br />
-A boolean indicating if the file is in the pool<br />
+A Boolean indicating if the file is in the pool.<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
@@ -134,103 +128,85 @@ else:
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='experiment.flush_log'>experiment</a>.<b>flush_log()</b></span><div class='details'>
-<i>Inherited from <b>item</b></i><br /><br />Force any pending write operations to the log file to be written to disk<br />
+<i>Inherited from <b>item</b></i><br /><br />Forces any pending write operations to the log file to be written to disk.<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
 {% highlight python %}self.log('TRIAL FINISHED')
 self.flush_log()
-{% endhighlight %}
-<br />
+{% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='experiment.get'>experiment</a>.<b>get(var, _eval=True)</b></span><div class='details'>
-<i>Inherited from <b>item</b></i><br /><br />Return the value of an OpenSesame variable. Checks first if the variable<br />
-exists 'locally' in the item and, if not, checks if the variable exists<br />
-'globally' in the experiment.<br />
+<i>Inherited from <b>item</b></i><br /><br />Returns the value of an OpenSesame variable. Checks first if the variable exists 'locally' in the item and, if not, checks if the variable exists 'globally' in the experiment.<br />
 <br />
-The type of the value that is returned can be int, float, or unicode<br />
-(string). The appropriate type is automatically selected, e.g. '10'<br />
-is returned as int, '10.1' as float, and 'some text' as unicode.<br />
+The type of the returned value be int, float, or unicode (string). The appropriate type is automatically selected, e.g. '10' is returned as int, '10.1' as float, and 'some text' as unicode.<br />
 <br />
-The _eval parameter is used to specify whether the value of the<br />
-variable should be evaluated, in case it contains references to other<br />
-variables. This is best illustrated by example:<br />
+The _eval parameter is used to specify whether the value of the variable should be evaluated, in case it contains references to other variables. This is best illustrated by example:<br />
 {% highlight python %}exp.set('var1', 'I like [var2]')
 exp.set('var2', 'OpenSesame')
 print self.get('var1') # prints 'I like OpenSesame'
 print self.get('var1', _eval=False) # prints 'I like [var2]'
 {% endhighlight %}
 <br />
+<span class='keyword'>Arguments:</span>
+<br />
+<span class='variable'>var</span> &rarr; The name of an OpenSesame variable.
+<br />
+<span class='variable'>_eval</span> &rarr; Indicates whether the variable should be evaluated, i.e. 
+whether containing variables should be processed (default=True).<br />
+<br />
+<span class='keyword'>Exceptions:</span>
+<br />
+A runtime_error is raised if the variable is not found.<br />
+<br />
+<span class='keyword'>Returns:</span>
+<br />
+The value.<br />
+<br />
 <span class='keyword'>Example:</span>
 <br />
 {% highlight python %}if self.get('cue') == 'valid':
 	print 'This is a validly cued trial'
-{% endhighlight %}
+{% endhighlight %}<br />
+</div></div>
+<div class='function'><span class='function_name'><a class='anchor' id='experiment.get_check'>experiment</a>.<b>get_check(var, default=None, valid=None, _eval=True)</b></span><div class='details'>
+<i>Inherited from <b>item</b></i><br /><br />Similar to get(), but falls back to a default if the variable has not been set. It also raises an error if the value is not part of the valid list.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>var</span> &rarr; the name of an OpenSesame variable
-<br />
-<span class='variable'>_eval</span> &rarr; indicates whether the variable should be evaluated, i.e.
-<br />
-whether containing variables should be processed<br />
-(default=True)<br />
+var --The name of an OpenSesame variable<br />
+<span class='variable'>default</span> &rarr; A default 'fallback' value or None for no fallback, in which 
+case an exception is rased if the value does not exist.<br />
+<span class='variable'>valid</span> &rarr; A list of allowed values (or None for no restrictions). An 
+exception is raised if the value is not an allowed value.<br />
+<span class='variable'>_eval</span> &rarr; Indicates whether the variable should be evaluated, i.e. 
+whether containing variables should be processed (default=True).<br />
 <br />
 <span class='keyword'>Exceptions:</span>
 <br />
-a runtime_error is raised if the variable is not found<br />
+Raises a runtime_error if the variable is not defined and there is no default value, or if the variable value is not part of the 'valid' list.<br />
 <br />
 <span class='keyword'>Returns:</span>
 <br />
 The value<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='experiment.get_check'>experiment</a>.<b>get_check(var, default=None, valid=None, _eval=True)</b></span><div class='details'>
-<i>Inherited from <b>item</b></i><br /><br />Similar to get(), but falls back to a default if the variable has not<br />
-been set. It also raises an error if the value is not part of the valid<br />
-list.<br />
-<br />
-<span class='keyword'>Arguments:</span>
-<br />
-<span class='variable'>var</span> &rarr; the name of an OpenSesame variable
-<br />
-<span class='variable'>default</span> &rarr; a default 'fallback' value or None for no fallback, in which
-<br />
-case an exception is rased if the value does not exist.<br />
-<span class='variable'>valid</span> &rarr; a list of allowed values (or None for no restrictions). An
-<br />
-exception is raised if the value is not an allowed value.<br />
-<span class='variable'>_eval</span> &rarr; indicates whether the variable should be evaluated, i.e.
-<br />
-whether containing variables should be processed (default=True)<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
 {% highlight python %}if self.get_check('cue', default='invalid') == 'valid':
-	print 'This is a validly cued trial'
-{% endhighlight %}
-<br />
-<span class='keyword'>Exceptions:</span>
-<br />
-Raises a runtime_error if the variable is not defined and there is no<br />
-default value, or if the variable value is not part of the 'valid' list.<br />
-<br />
-<span class='keyword'>Returns:</span>
-<br />
-The value<br />
+	print 'This is a validly-cued trial'
+{% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='experiment.get_file'>experiment</a>.<b>get_file(path)</b></span><div class='details'>
-Returns the path to a file. First checks if the file is in the file pool<br />
-and then the folder of the current experiment (if any)<br />
-Otherwise, simply return the path.<br />
+Returns the path to a file. First checks if the file is in the file pool and then the folder of the current experiment (if any). Otherwise, simply returns the path.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>path</span> &rarr; the filename
+<span class='variable'>path</span> &rarr; The filename.
 <br />
 <br />
 <span class='keyword'>Returns:</span>
 <br />
-The full path to the file<br />
+The full path to the file.<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
@@ -240,32 +216,35 @@ my_canvas.image(image_path)
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='experiment.get_refs'>experiment</a>.<b>get_refs(text)</b></span><div class='details'>
-<i>Inherited from <b>item</b></i><br /><br />Returns a list of variables that are referred to by a string of text<br />
-<br />
-<span class='keyword'>Example:</span>
-<br />
-{% highlight python %}print self.get_refs('There are [two] [references] here')
-# Prints ['two', 'references']
-{% endhighlight %}
+<i>Inherited from <b>item</b></i><br /><br />Returns a list of variables that are referred to by a string of text.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>text</span> &rarr; a string of text
+<span class='variable'>text</span> &rarr; A string of text.
 <br />
 <br />
 <span class='keyword'>Returns:</span>
 <br />
 A list of variable names or an empty list if the string contains no<br />
 references.<br />
+<br />
+<span class='keyword'>Example:</span>
+<br />
+{% highlight python %}print self.get_refs('There are [two] [references] here')
+# Prints ['two', 'references']
+{% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='experiment.has'>experiment</a>.<b>has(var)</b></span><div class='details'>
-<i>Inherited from <b>item</b></i><br /><br />Checks if an OpenSesame variable exists, either in the item or in the<br />
-experiment.<br />
+<i>Inherited from <b>item</b></i><br /><br />Checks if an OpenSesame variable exists, either in the item or in the experiment.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>var</span> &rarr; the name of an OpenSesame variable
+<span class='variable'>var</span> &rarr; The name of an OpenSesame variable.
 <br />
+<br />
+<span class='keyword'>Returns:</span>
+<br />
+True if the variable exists, False if not.<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
@@ -273,38 +252,47 @@ experiment.<br />
 	print 'No response has been collected yet'
 {% endhighlight %}
 <br />
-<span class='keyword'>Returns:</span>
-<br />
-True if the variable exists, False if not<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='experiment.log'>experiment</a>.<b>log(msg)</b></span><div class='details'>
-<i>Inherited from <b>item</b></i><br /><br />Write a message to the log file. Note that using the log() function in<br />
-combination with a logger item may result in messy log-files.<br />
+<i>Inherited from <b>item</b></i><br /><br />Writes a message to the log file. Note that using the log() function in combination with a logger item may result in messy log files.<br />
+<br />
+<span class='variable'>msg</span> &rarr; A message.
+<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
 {% highlight python %}self.log('TIMESTAMP = %s' % self.time())
-{% endhighlight %}
-<br />
-<span class='variable'>msg</span> &rarr; a message
-<br />
+{% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='experiment.resolution'>experiment</a>.<b>resolution()</b></span><div class='details'>
-<i>Inherited from <b>item</b></i><br /><br />Return the display resolution and check whether the resolution is valid.<br />
+<i>Inherited from <b>item</b></i><br /><br />Returns the display resolution and check whether the resolution is valid.<br />
 <br />
-Note 1:<br />
-The meaning of 'resolution' depends on the back-end. For example, the<br />
-legacy and opengl back-ends change the actual resolution of the display,<br />
-whereas the other back-ends do not alter the actual display resolution,<br />
-but create a 'virtual display' with the requested resolution that is<br />
-presented in the center of the display.<br />
+Note: The meaning of 'resolution' depends on the back-end. For example, the legacy and OpenGL back-ends change the actual resolution of the display, whereas the other back-ends do not alter the actual display resolution, 	but create a 'virtual display' with the requested resolution that is presented in the center of the display.<br />
 <br />
 <span class='keyword'>Returns:</span>
 <br />
 A (width, height) tuple<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='experiment.sanitize'>experiment</a>.<b>sanitize(s, strict=False, allow_vars=True)</b></span><div class='details'>
-<i>Inherited from <b>item</b></i><br /><br />Remove invalid characters (notably quotes) from the string<br />
+<i>Inherited from <b>item</b></i><br /><br />Removes invalid characters (notably quotes) from the string.<br />
+<br />
+<span class='keyword'>Arguments:</span>
+<br />
+<span class='variable'>s</span> &rarr; The string (unicode or str) to be sanitized.
+<br />
+<br />
+<span class='keyword'>Keyword arguments:</span>
+<br />
+<span class='variable'>strict</span> &rarr; If True, all except underscores and alphanumeric characters are
+<br />
+stripped (default=False).<br />
+<span class='variable'>allow_vars</span> &rarr; If True, square brackets are not sanitized, so you can use
+<br />
+variables (default=True).<br />
+<br />
+<span class='keyword'>Returns:</span>
+<br />
+A sanitized unicode string<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
@@ -312,47 +300,16 @@ A (width, height) tuple<br />
 print self.sanitize('\"Université Aix-Marseille\"')
 # Prints 'UniversitAixMarseille'
 print self.sanitize('\"Université Aix-Marseille\""', strict=True)
-{% endhighlight %}
-<br />
-<span class='keyword'>Arguments:</span>
-<br />
-<span class='variable'>s</span> &rarr; the string (unicode or str) to be sanitized
-<br />
-<br />
-<span class='keyword'>Keyword arguments:</span>
-<br />
-<span class='variable'>strict</span> &rarr; If True, all except underscores and alphanumeric characters are
-<br />
-stripped (default=False)<br />
-<span class='variable'>allow_vars</span> &rarr; If True, square brackets are not sanitized, so you can use
-<br />
-variables (default=True)<br />
-<br />
-<span class='keyword'>Returns:</span>
-<br />
-A sanitized unicode string<br />
+{% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='experiment.set'>experiment</a>.<b>set(var, val)</b></span><div class='details'>
-<i>Inherited from <b>item</b></i><br /><br />Sets an OpenSesame variable<br />
+<i>Inherited from <b>item</b></i><br /><br />Sets an OpenSesame variable.<br />
 <br />
-If you want to set a variable so that it is available in other items as<br />
-well (such as the logger item, so you can log the variable), you need<br />
-to use the set() function from the experiment. So, in an inline_script<br />
-item you would generally set a variable with exp.set(), rather<br />
-than self.set().<br />
+If you want to set a variable so that it is available in other items as well (such as the logger item, so you can log the variable), you need to use the set() function from the experiment. So, in an inline_script item you would generally set a variable with exp.set(), rather than self.set().<br />
 <br />
-Please note that you can only set simple variable types (str, unicode,<br />
-float, and int). If you use the set function to save an object, it will<br />
-be converted to a string representation. To make complex variables<br />
-globally accessible in your experiment, please use the global keyword.<br />
+Please note that you can only set simple variable types (str, unicode, float, and int). If you use the set function to save an object, it will be converted to a string representation. To make complex variables globally accessible in your experiment, please use the global keyword.<br />
 <br />
-The type of the value can be anything. However, see get() for an<br />
-explanation of how data-types are handled.<br />
-<br />
-<span class='keyword'>Example:</span>
-<br />
-{% highlight python %}exp.set('my_timestamp', self.time())
-{% endhighlight %}
+The type of the value can be anything. However, see get() for an explanation of how data-types are handled.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
@@ -360,15 +317,18 @@ explanation of how data-types are handled.<br />
 <br />
 <span class='variable'>val</span> &rarr; the value
 <br />
+<br />
+<span class='keyword'>Example:</span>
+<br />
+{% highlight python %}exp.set('my_timestamp', self.time())
+{% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='experiment.set_subject'>experiment</a>.<b>set_subject(nr)</b></span><div class='details'>
-Set the subject number and parity (even/ odd). This function is<br />
-called automatically when an experiment is started, so you do not<br />
-generally need to call it yourself.<br />
+Sets the subject number and parity (even/ odd). This function is called automatically when an experiment is started, so you do not generally need to call it yourself.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>nr</span> &rarr; the subject nr
+<span class='variable'>nr</span> &rarr; The subject nr.
 <br />
 <br />
 <span class='keyword'>Example:</span>
@@ -379,32 +339,37 @@ print 'Subject parity = %s' % exp.get('subject_parity')
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='experiment.sleep'>experiment</a>.<b>sleep(ms)</b></span><div class='details'>
-<i>Inherited from <b>item</b></i><br /><br />Sleep for a specified duration<br />
-<br />
-<span class='keyword'>Example:</span>
-<br />
-{% highlight python %}self.sleep(1000) # Sleep one second
-{% endhighlight %}
+<i>Inherited from <b>item</b></i><br /><br />Sleeps for a specified duration.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>ms</span> &rarr; a duration in milliseconds
+<span class='variable'>ms</span> &rarr; An integer value specifying the duration in milliseconds.
 <br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='experiment.time'>experiment</a>.<b>time()</b></span><div class='details'>
-<i>Inherited from <b>item</b></i><br /><br />Return current time<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}print 'The time is %s' % self.time()
-{% endhighlight %}
+{% highlight python %}self.sleep(1000) # Sleeps one second
+{% endhighlight %}<br />
+</div></div>
+<div class='function'><span class='function_name'><a class='anchor' id='experiment.time'>experiment</a>.<b>time()</b></span><div class='details'>
+<i>Inherited from <b>item</b></i><br /><br />Returns the current time.<br />
 <br />
 <span class='keyword'>Returns:</span>
 <br />
 A timestamp of the current time<br />
+<br />
+<span class='keyword'>Example:</span>
+<br />
+{% highlight python %}print 'The time is %s' % self.time()
+{% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='experiment.unset'>experiment</a>.<b>unset(var)</b></span><div class='details'>
-<i>Inherited from <b>item</b></i><br /><br />Unset (forget) an OpenSesame variable<br />
+<i>Inherited from <b>item</b></i><br /><br />Unsets (forgets) an OpenSesame variable.<br />
+<br />
+<span class='keyword'>Arguments:</span>
+<br />
+<span class='variable'>var</span> &rarr; The name of an OpenSesame variable.
+<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
@@ -412,11 +377,6 @@ A timestamp of the current time<br />
 print self.get('var') # Prints 'Hello world!'
 self.unset('variable_to_forget')
 print self.get('var') # Gives error!
-{% endhighlight %}
-<br />
-<span class='keyword'>Arguments:</span>
-<br />
-<span class='variable'>var</span> &rarr; the name of an OpenSesame variable
-<br />
+{% endhighlight %}<br />
 </div></div>
 </div>

@@ -1,5 +1,5 @@
 <div class='pydoc'>
-<p><small>For OpenSesame 0.27~pre34</small></p>
+<p><small>For OpenSesame 0.27~rc1</small></p>
 <span class='class_name'>class <b>sampler</b></span><br />
 <p class='details'><b>Function overview:</b><br />
 <a href='#sampler.__init__'>__init__</a><br />
@@ -37,7 +37,8 @@ Sets the fade-in time in milliseconds.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-ms - An integer value specifying the duration in milliseconds.<br />
+<span class='variable'>ms</span> &rarr; An integer value specifying the duration in milliseconds.
+<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
@@ -117,7 +118,7 @@ Plays the sound.<br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>block</span> &rarr; If True, block until the sound is finished (default == False).
+<span class='variable'>block</span> &rarr; If True, block until the sound is finished (default = False).
 <br />
 <br />
 <span class='keyword'>Example:</span>

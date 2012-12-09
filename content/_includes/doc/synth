@@ -1,5 +1,5 @@
 <div class='pydoc'>
-<p><small>For OpenSesame 0.27~pre34</small></p>
+<p><small>For OpenSesame 0.27~rc1</small></p>
 <span class='class_name'>class <b>synth</b></span><br />
 <p class='details'><b>Function overview:</b><br />
 <a href='#synth.__init__'>__init__</a><br />
@@ -26,7 +26,7 @@ Initializes the synthesizer.<br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>osc</span> &rarr; Oscillator, can be "sine", "saw", "square" or "white_noise"
+<span class='variable'>osc</span> &rarr; Oscillator, can be "sine", "saw", "square" or "white_noise" 
 (default = "sine").<br />
 <span class='variable'>freq</span> &rarr; Frequency, either an integer value (value in hertz) or a string 
 ("A1", "eb2", etc.). (Default = 440)<br />
@@ -48,7 +48,8 @@ my_synth = synth(exp, freq='b2', length=500)
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-ms - An integer value specifying the duration in milliseconds.<br />
+<span class='variable'>ms</span> &rarr; An integer value specifying the duration in milliseconds.
+<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
@@ -147,7 +148,7 @@ my_sampler.pitch(2.0)
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>block</span> &rarr; If True, block until the sound is finished (default == False).
+<span class='variable'>block</span> &rarr; If True, block until the sound is finished (default = False).
 <br />
 <br />
 <span class='keyword'>Example:</span>
