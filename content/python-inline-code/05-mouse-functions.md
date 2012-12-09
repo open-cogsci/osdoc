@@ -7,7 +7,7 @@ level: 1
 sortkey: 005.005
 ---
 
-The `mouse` class is used to collect mouse input. For example, the following script lets you move around a fixation dot with the mouse until a button is clicked
+The `mouse` class is used to collect mouse input. For example, the following script lets you move around a fixation dot with the mouse until a button is clicked:
 
 {% highlight python %}
 from openexp.mouse import mouse
