@@ -87,7 +87,7 @@ Converts a key (e.g., A1) to a frequency.<br />
 <br />
 <span class='keyword'>Returns:</span>
 <br />
-An int containing the frequency in Hertz.<br />
+An integer value containing the frequency in hertz.<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
@@ -102,7 +102,7 @@ print 'An a2 is %d Hz' % my_synth.key_to_freq('a2')
 <span class='keyword'>Arguments:</span>
 <br />
 <span class='variable'>p</span> &rarr; Panning. A float (p < 0 = to left, p > 0 = to right) or string 
-("left" or "right")<br />
+("left" or "right").<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />

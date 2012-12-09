@@ -72,7 +72,7 @@ Sets the panning of the sample. The volume of the "unpanned" channel decreases, 
 <span class='keyword'>Arguments:</span>
 <br />
 <span class='variable'>p</span> &rarr; Panning. A float (p < 0 = to left, p > 0 = to right) or string 
-("left" or "right")<br />
+("left" or "right").<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />

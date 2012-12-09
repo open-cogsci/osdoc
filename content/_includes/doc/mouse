@@ -70,7 +70,7 @@ A (button, position, timestamp) tuple. The button and position are None if a tim
 my_mouse = mouse(exp)
 button, position, timestamp = my_mouse.get_click()
 if button == None:
-		print 'A timeout occurred!'
+	print 'A timeout occurred!'
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='mouse.get_pos'>mouse</a>.<b>get_pos()</b></span><div class='details'>

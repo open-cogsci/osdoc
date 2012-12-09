@@ -23,22 +23,19 @@
 <a href='#experiment.unset'>unset</a><br />
 </p>
 <div class='function'><span class='function_name'><a class='anchor' id='experiment.__init__'>experiment</a>.<b>__init__(name='experiment', string=None, pool_folder=None)</b></span><div class='details'>
-Constructor. The experiment is created automatically be OpenSesame and<br />
-you will generally not need to create it yourself.<br />
+Constructor. The experiment is created automatically be OpenSesame and you will generally not need to create it yourself.<br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>name</span> &rarr; the name of the experiment (default='experiment')
+<span class='variable'>name</span> &rarr; The name of the experiment (default='experiment').
 <br />
-<span class='variable'>string</span> &rarr; a string containing the experiment definition (default=None)
+<span class='variable'>string</span> &rarr; A string containing the experiment definition (default=None).
 <br />
-<span class='variable'>pool_folder</span> &rarr; a specific folder to be used for the file pool
-<br />
-(default=None)<br />
+<span class='variable'>pool_folder</span> &rarr; A specific folder to be used for the file pool 
+(default=None).<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='experiment.auto_type'>experiment</a>.<b>auto_type(val)</b></span><div class='details'>
 <i>Inherited from <b>item</b></i><br /><br />Converts a value into the 'best fitting' or 'simplest' type that is compatible with the value.<br />
-<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
@@ -47,7 +44,7 @@ you will generally not need to create it yourself.<br />
 <br />
 <span class='keyword'>Returns:</span>
 <br />
-The same value converted to the 'best fitting' type<br />
+The same value converted to the 'best fitting' type.<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
@@ -95,8 +92,7 @@ print self.color_check('this is not a color')
 rounded to a precision of [round_decimals]. round_decimals is an OpenSesame variable that has a default value of 2. (Default=False)<br />
 <span class='variable'>soft_ignore</span> &rarr; A Boolean indicating whether missing variables should be 
 ignored, rather than cause an exception (default=False).<br />
-<span class='variable'>quote_str</span> &rarr; A Boolean indicating whether string variables should be
-<br />
+<span class='variable'>quote_str</span> &rarr; A Boolean indicating whether string variables should be 
 surrounded by single quotes (default=False).<br />
 <br />
 <span class='keyword'>Returns:</span>
@@ -139,14 +135,9 @@ self.flush_log()
 <div class='function'><span class='function_name'><a class='anchor' id='experiment.get'>experiment</a>.<b>get(var, _eval=True)</b></span><div class='details'>
 <i>Inherited from <b>item</b></i><br /><br />Returns the value of an OpenSesame variable. Checks first if the variable exists 'locally' in the item and, if not, checks if the variable exists 'globally' in the experiment.<br />
 <br />
-The type of the returned value be int, float, or unicode (string). The appropriate type is automatically selected, e.g. '10' is returned as int, '10.1' as float, and 'some text' as unicode.<br />
+The type of the returned value can be int, float, or unicode (string). The appropriate type is automatically selected, e.g. '10' is returned as int, '10.1' as float, and 'some text' as unicode.<br />
 <br />
-The _eval parameter is used to specify whether the value of the variable should be evaluated, in case it contains references to other variables. This is best illustrated by example:<br />
-{% highlight python %}exp.set('var1', 'I like [var2]')
-exp.set('var2', 'OpenSesame')
-print self.get('var1') # prints 'I like OpenSesame'
-print self.get('var1', _eval=False) # prints 'I like [var2]'
-{% endhighlight %}
+The _eval parameter is used to specify whether the value of the variable should be evaluated, in case it contains references to other variables. This is best illustrated by example 2 below.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
@@ -167,14 +158,23 @@ The value.<br />
 <br />
 {% highlight python %}if self.get('cue') == 'valid':
 	print 'This is a validly cued trial'
-{% endhighlight %}<br />
+{% endhighlight %}
+<br />
+Example 2:<br />
+{% highlight python %}exp.set('var1', 'I like [var2]')
+exp.set('var2', 'OpenSesame')
+print self.get('var1') # prints 'I like OpenSesame'
+print self.get('var1', _eval=False) # prints 'I like [var2]'
+{% endhighlight %}
+<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='experiment.get_check'>experiment</a>.<b>get_check(var, default=None, valid=None, _eval=True)</b></span><div class='details'>
 <i>Inherited from <b>item</b></i><br /><br />Similar to get(), but falls back to a default if the variable has not been set. It also raises an error if the value is not part of the valid list.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-var --The name of an OpenSesame variable<br />
+<span class='variable'>var</span> &rarr; The name of an OpenSesame variable
+<br />
 <span class='variable'>default</span> &rarr; A default 'fallback' value or None for no fallback, in which 
 case an exception is rased if the value does not exist.<br />
 <span class='variable'>valid</span> &rarr; A list of allowed values (or None for no restrictions). An 
@@ -225,8 +225,7 @@ my_canvas.image(image_path)
 <br />
 <span class='keyword'>Returns:</span>
 <br />
-A list of variable names or an empty list if the string contains no<br />
-references.<br />
+A list of variable names or an empty list if the string contains no references.<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
@@ -313,9 +312,9 @@ The type of the value can be anything. However, see get() for an explanation of 
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>var</span> &rarr; the name of an OpenSesame variable
+<span class='variable'>var</span> &rarr; The name of an OpenSesame variable.
 <br />
-<span class='variable'>val</span> &rarr; the value
+<span class='variable'>val</span> &rarr; The value.
 <br />
 <br />
 <span class='keyword'>Example:</span>
@@ -356,7 +355,7 @@ print 'Subject parity = %s' % exp.get('subject_parity')
 <br />
 <span class='keyword'>Returns:</span>
 <br />
-A timestamp of the current time<br />
+A timestamp of the current time.<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
