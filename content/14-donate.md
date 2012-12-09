@@ -8,9 +8,7 @@ sortkey: 0014.001
 menuclass: highlight
 ---
 
-We are a big project on a small budget.
-
-With your donation you support the continued development of OpenSesame. We use donations to buy hardware for development and testing, to cover travel expenses, to maintain the website, etc.
+We are a big project on a small budget! With your donation you support the continued development of OpenSesame. We use donations to buy hardware for development and testing, to cover travel expenses, to maintain the website, etc.
 
 Donate money
 ------------
