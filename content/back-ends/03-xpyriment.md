@@ -20,6 +20,15 @@ text = stimuli.TextLine('This is expyriment!')
 text.present()
 {% endhighlight %}
 
+Installing Expyriment on Ubuntu
+-------------------------------
+
+Ubuntu users can install Expyriment from the Cogsci.nl PPA:
+
+	sudo add-apt-repository ppa:smathot/cogscinl
+	sudo apt-get update
+	sudo apt-get install expyriment
+
 Citation
 --------
 
