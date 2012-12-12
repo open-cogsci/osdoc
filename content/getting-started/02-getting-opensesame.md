@@ -13,7 +13,7 @@ Installation instructions and more download options can be found below the downl
 
 {% include downloads %}
 
-Windows XP / Vista / 7
+Windows XP / Vista / 7 {#windows}
 ----------------------
 
 There are a number of ways to run OpenSesame under Windows:
@@ -22,9 +22,7 @@ There are a number of ways to run OpenSesame under Windows:
 - Download the Windows portable .zip file (see link above) and extract it to a location of your choice.
 - Download the package based on Python portable, which comes with a slightly different set of modules. For more information, see [this article][python-portable].
 
-	opensesame.exe
-
-Ubuntu/ Debian/ Linux Mint
+Ubuntu/ Debian/ Linux Mint {#ubuntu}
 --------------------------
 
 The recommended way to install OpenSesame under Ubuntu/ Debian/ Linux Mint is through the [NeuroDebian][] repository (see their instructions on how to add NeuroDebian to your list of repositories). After you have added NeuroDebian to your software sources, you can install it using your package manager (Synaptic/ Add remove programs/ Ubuntu software center) or by typing the following lines in a terminal:
@@ -42,7 +40,7 @@ After you have installed OpenSesame, you can start OpenSesame from the menu or b
 
 	opensesame
 
-Mac OS
+Mac OS {#macos}
 ------
 
 Support for Mac OS is experimental. Instructions for running OpenSesame from source on Mac OS can be found [here][macos-running-from-source].
@@ -51,7 +49,7 @@ Support for Mac OS is experimental. Instructions for running OpenSesame from sou
 
 ##### We are looking for someone to improve and maintain the Mac OS packages for OpenSesame!*
 
-Other platforms
+Other platforms {#other}
 ---------------
 
 If there are no packages provided for your platform, you will need to run OpenSesame from source, as [per these instructions][running-from-source].
