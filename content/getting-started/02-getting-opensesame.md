@@ -16,9 +16,11 @@ Installation instructions and more download options can be found below the downl
 Windows XP / Vista / 7
 ----------------------
 
-The easiest way to install OpenSesame under Windows is using the automated installer (see link above). After installation, you can run OpenSesame from the start menu.
+There are a number of ways to run OpenSesame under Windows:
 
-Alternatively, you can download the Windows portable .zip file (see link above) and extract it to a location of your choice. After extraction, you can start OpenSesame by running.
+- Use the automated installer (see link above). After installation, you can run OpenSesame from the start menu.
+- Download the Windows portable .zip file (see link above) and extract it to a location of your choice.
+- Download the package based on Python portable, which comes with a slightly different set of modules. For more information, see [this article][python-portable].
 
 	opensesame.exe
 
@@ -60,3 +62,4 @@ If there are no packages provided for your platform, you will need to run OpenSe
 [ppa-cogscinl]: https://launchpad.net/~smathot/+archive/cogscinl
 [running-from-source]: /getting-started/running-from-source
 [neurodebian]: http://neuro.debian.net/
+[python-portable]: /getting-started/running-with-python-portable/
