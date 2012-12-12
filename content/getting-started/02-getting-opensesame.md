@@ -7,7 +7,7 @@ level: 1
 sortkey: 003.002
 ---
 
-The latest stable version is 0.27 "Frisky Freud". The development version is 0.28 "Gutsy Gibson". Older versions can be found [here][archive].
+The latest stable version of OpenSesame is 0.27 *Frisky Freud*. If you are upgrading from 0.26, please read the [release notes][]. Older versions can be found [here][archive].
 
 Installation instructions and more download options can be found below the download buttons.
 

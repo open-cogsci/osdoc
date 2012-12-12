@@ -14,7 +14,7 @@ Welcome to the OpenSesame documentation area! Here you can find everything you a
 
 [Download][]{:.button}
 
-The latest stable version of OpenSesame is 0.27 *Frisky Freud*. If you are upgrading from 0.26, please read the [release notes][]
+The latest stable version of OpenSesame is 0.27 *Frisky Freud*. If you are upgrading from 0.26, please read the [release notes][].
 
 <div id='index'>
 {% assign expanded = 1 %}
