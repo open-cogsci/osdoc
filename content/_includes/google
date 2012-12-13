@@ -6,7 +6,7 @@
 
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-26205412-1']);
-  _gaq.push(['_setDomainName', 'cogsci.nl']);
+  _gaq.push(['_setDomainName', 'osdoc.cogsci.nl']);
   _gaq.push(['_trackPageview']);
 
   (function() {
