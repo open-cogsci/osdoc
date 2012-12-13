@@ -8,7 +8,7 @@ sortkey: 999.999
 show: false
 ---
 
-OpenSesame 0.27 is almost completely backwards compatible with previous versions, expect for the following differences:
+OpenSesame 0.27 is almost completely backwards compatible with previous versions, except for the following differences:
 
 - `canvas.keyboard.get_key()` now returns a key as `unicode`, rather than as an `int` corresponding to an ASCII value. This change has been made to improve support for non-QWERTY keyboard layouts.
 - Response timeouts are now registered as `None`, rather than the string 'timeout'.
