@@ -47,6 +47,8 @@ Despite the project's young age, references to OpenSesame are starting to appear
 
 ###### Mathôt, S., & Theeuwes, J. (2012). It’s all about the transient: Intra-saccadic abrupt onsets do not capture attention. *Journal of Eye Movement Research*, *5*(2), 1–12.
 
+###### Peters, G-J. Y., Abraham, C., & Crutzen, R. (2012). Full disclosure: doing behavioural science necessitates sharing. *The European Health Psychologist*, *14*(4), 77-84.
+
 ###### Rognoni, L. (2012, May). *The impact of prosody in foreign accent detection: A perception study of Italian accent in English.* Poster presented at the Methods in L2 prosody, Padova, Italy.
 
 ###### Schreij, D. (2012). *Attention to Emerging Objects* (Doctoral dissertation). VU University, Amsterdam, Netherlands.
