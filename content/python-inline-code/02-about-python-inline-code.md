@@ -16,6 +16,7 @@ Overview
 
 - [Learning Python](#learning)
 - [The inline_script item](#inline-script)
+- [Carry-over effects between runs](#carry-over)
 - [Importing modules](#modules)
 - [Defining globally accessible functions](#functions)
 - [The exp and win variables](#exp-win)
@@ -69,6 +70,33 @@ self.sleep(1000)
 {% endhighlight %}
 
 This works, because `sleep()` is a function of the `inline_script` object. For a complete list of `inline_script` functions, see [here][inline-script].
+
+Carry-over effects between runs {#carry-over}
+-------------------------------
+
+By default, OpenSesame executes the user interface and experimental runs in the same process. In some cases, this can give unexpected results. Let's consider Experiment A that consists (only) of the following script ...
+
+{% highlight python %}
+global my_var
+my_var = 'Test!'
+{% endhighlight %}
+
+... and Experiment B that consists (only) of the following script ...
+
+{% highlight python %}
+print my_var
+{% endhighlight %}
+
+If you first run Experiments A and next run Experiment B (without closing OpenSesame), you will find that Experiment B prints out 'Test!'. This is a carry-over effect: `my_var` is set in Experiment A, but because it is declared `global` it will stay alive and also be accessible to Experiment B.
+
+In general, such carry-over effects are harmless, but they are known to (on some systems) cause crashes when `canvas` objects are declared `global`. In general, it is therefore not advisable to declare `canvas` objects `global`. Instead, to share a `canvas` between inline_script items, you can store it as a property of `exp`:
+
+{% highlight python %}
+from openexp.canvas import canvas
+exp.my_canvas = canvas(exp)
+{% endhighlight %}
+
+*Tip:* If you consistently encounter trouble when running your experiment for the second time (without closing OpenSesame), you can enable the *Run experiments in a separate process* option under *Preferences*. If you enable this option, OpenSesame will run your experiments as a separate program, using [opensesamerun][].
 
 Importing modules {#modules}
 -----------------
@@ -166,3 +194,4 @@ It is perfectly possible to bypass the openexp modules and use the back-end dire
 [swaroop-direct]: http://www.ibiblio.org/swaroopch/byteofpython/files/120/byteofpython_120.pdf
 [downey]: http://www.greenteapress.com/thinkpython/
 [downey-direct]: http://www.greenteapress.com/thinkpython/thinkpython.pdf
+[opensesamerun]: /usage/opensesamerun-no-gui/
