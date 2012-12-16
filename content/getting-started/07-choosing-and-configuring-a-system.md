@@ -28,6 +28,8 @@ Choosing an operating system
 
 This is very much a matter of preference. Right now, Windows 7 is [the most widely used operating system for running experiments][most-used] and it works pretty well. In our tests, Linux offers marginally better performance than Windows. A popular and free Linux distribution is [Ubuntu][], which is supported by OpenSesame and [NeuroDebian][].
 
+OpenSesame is developed primarily on [Kubuntu][] 12.04.1 LTS.
+
 Choosing an OpenSesame back-end
 -------------------------------
 
@@ -40,3 +42,4 @@ For more information about the various back-ends, see [here][backends].
 [ubuntu]: http://www.ubuntu.com/
 [neurodebian]: http://neuro.debian.net/
 [backends]: /back-ends
+[kubuntu]: http://www.kubuntu.org/
