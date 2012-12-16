@@ -61,3 +61,4 @@ If there are no packages provided for your platform, you will need to run OpenSe
 [running-from-source]: /getting-started/running-from-source
 [neurodebian]: http://neuro.debian.net/
 [python-portable]: /getting-started/running-with-python-portable/
+[release notes]: /notes/0.27
