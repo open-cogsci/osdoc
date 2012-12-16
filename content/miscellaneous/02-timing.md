@@ -20,7 +20,7 @@ It should be noted that it is always wise to test your own system, and not simpl
 - Download `psycho_timing_check.opensesame` from here: <https://gist.github.com/1675762>
 - Download `legacy_timing_check.opensesame` from here: <https://gist.github.com/1767560>
 
-You can open the tests scripts in OpenSesame and run them. To get the optimal results, you should run the experiments in fullscreen. Also, desktop-effect layers, such as *Aero* on Windows and *Compiz* on Linux, may adversely effect timing. If the test gives funky results, please disable the effect layer and try again.
+You can open the tests scripts in OpenSesame and run them. To get the optimal results, you should run the experiments in fullscreen. Also, desktop-effect layers, such as *Aero* on Windows and *Compiz* on Linux, may adversely affect timing. If the test gives funky results, please disable the effect layer and try again.
 
 After a brief test, these scripts will show a mean and a standard deviation. The mean should be the next value higher than 50 ms that is compatible with your display refresh rate. So, for example, if your refresh is 60Hz, the mean should be 50ms + 16.67ms = approx. 67ms. The standard deviation should be small, preferably below 1ms.
 
