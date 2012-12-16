@@ -9,4 +9,4 @@ show: false
 ---
 
 {% assign url = "/devices/eyelink" %}
-{% include page_moved %})
+{% include page_moved %}
