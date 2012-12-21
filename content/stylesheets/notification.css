@@ -9,13 +9,13 @@ h5,
 	border-top: dotted 1px #3465a4;
 	border-bottom: dotted 1px #3465a4;
 	padding: 8px 8px 8px 40px;
-	background: #eeeeec url('/img/notification.png') no-repeat 8px 8px;
 	font-size: 1em;
 	font-weight: normal;
 }
 
 #notification div {
-	background: #eeeeec url('/img/notification/site.png') no-repeat 8px 8px;
+	/* background: #eeeeec url('/img/notification/site.png') no-repeat 8px 8px; */
+	background: #eeeeec url('/img/notification/face-smile-big.png') no-repeat 8px 8px;
 }
 
 h5 {
