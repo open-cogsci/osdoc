@@ -1,4 +1,4 @@
-<div id="socialheader">Share!</div>
+<div id="socialheader">Share and support!</div>
 <div id="socialbox">
 
 <!-- AddThis Button BEGIN -->
@@ -17,6 +17,10 @@
 <br />
 
 <div class="fb-like" data-href="http://www.facebook.com/cognitivescience" data-send="false" data-layout="button_count" data-width="172" data-show-faces="true"></div>
+
+<a class="FlattrButton" style="display:none;" rev="flattr;button:compact;" href="http://www.cogsci.nl/"></a>
+<noscript><a href="http://flattr.com/thing/632895/Cogsci-nl-cognitive-science-and-more" target="_blank">
+<img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" /></a></noscript>
 
 <a href="https://twitter.com/cogscinl" class="twitter-follow-button" data-show-count="false">Follow @cogscinl</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
