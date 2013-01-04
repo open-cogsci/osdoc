@@ -23,6 +23,8 @@ win.flip()
 
 An example experiment that uses PsychoPy can be found here: [tilt_adaptation_psychopy.opensesame][example]
 
+In addition, you can find a tutorial on using PsychoPy from within OpenSesame [here][tutorial].
+
 Citation
 --------
 
@@ -34,3 +36,4 @@ Although PsychoPy is bundled with the binary distributions of OpenSesame, it is 
 
 [psychopy]: http://www.psychopy.org/
 [example]: https://github.com/smathot/OpenSesame/blob/master/examples/tilt_adaptation_psychopy.opensesame
+[tutorial]: http://www.cogsci.nl/blog/tutorials/211-a-bit-about-patches-textures-and-masks-in-psychopy
