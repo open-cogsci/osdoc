@@ -44,7 +44,7 @@ Features:
 - Intregrated photodiode to test your own system
 - USB connected
 
-In addition, part of the price is a direct donation to the OpenSesame project. So you purchase of the Boks helps to maintain OpenSesame!
+In addition, part of the price is a direct donation to the OpenSesame project. So your purchase of the Boks helps to maintain OpenSesame!
 
 ![](/img/fig/fig19.1.1.png)
 
@@ -248,7 +248,7 @@ You can run the full test suite with the following command:
 
 	./unittest led buttons photodiode latency commspeed
 	
-Furthermore, you can test your Boks in OpenSesame using the `boks_test.openseame` file included with the Boks source code.
+Furthermore, you can test your Boks in OpenSesame using the `boks_test.opensesame` file included with the Boks source code.
 
 Update firmware {#firmware}
 ---------------
