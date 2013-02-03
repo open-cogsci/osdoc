@@ -23,23 +23,31 @@ This plugin uses the [pymedia][pymedia-url] library to read audio from the micro
 Download and installation
 -------------------------
 
-You can download the plugin [here][plugin_url]. There are three separate versions available:
-1. One which does not have the pymedia module included. You can use this version if you are running from source and want to install the pymedia module yourself. For operating systems other than windows you should also choose this version.
-2. One for OpenSesame 0.26 (which runs on Python 2.6)(Windows only)
-3. One for OpenSesame 0.27 and higher (which runs on Python 2.7)(Windows only)
+You can download the plugin [here][plugin-url]. There are three separate versions available:
+
+- One which does not have the pymedia module included. You can use this version if you are running from source and want to install the pymedia module yourself. For operating systems other than windows you should also choose this version. (all platforms, from source)
+- One for OpenSesame 0.26 (which runs on Python 2.6)(Windows only)
+- One for OpenSesame 0.27 and higher (which runs on Python 2.7)(Windows only)
+
 These separate versions are necessary because pymedia can only be compiled for specific Python versions.
 
 Usage
 ----------------------------------------
 
-Insert a sound_start_recording item in your experiment at the point you would like to start recording and a sound_stop_recording item at the point at which the recording should end. After a recording is finished, it is written to folder specified in the options of start_sound_recording.
+Insert a sound_start_recording item in your experiment at the point at which you would like to start recording and a sound_stop_recording item at the point at which the recording should end. After a recording is finished, it is written to the folder and filename as specified in the options of start_sound_recording.
 
 In a limited way, you can also use the sound recorder object with inline_script. When a sound_start_recording items starts the actual recording, it makes a self.experiment.soundrecorder (or exp.soundrecorder) object available.
 This object has two functions which you can call:
 
-soundrecorder.is_recording(): Returns True if it is currently recording and False if it has finished recording
+{% highlight python %}
+soundrecorder.is_recording(): 
+{% endhighlight %}
+Returns True if it is currently recording and False if it has finished recording
 
-soundrecorder.stop(): Stops recording. This does the same as the sound_stop_recording item (which basically only calls the stop() function from the exp.soundrecorder item)
+{% highlight python %}
+soundrecorder.stop(): 
+{% endhighlight %}
+Stops recording. This does the same as the sound_stop_recording item (which basically only calls the stop() function from the exp.soundrecorder item)
 
-[pymedia-url] http://www.lfd.uci.edu/~gohlke/pythonlibs/#pymedia
-[plugin-url] https://github.com/dschreij/opensesame_soundrecorder_plugins/tags
+[pymedia-url]: http://www.lfd.uci.edu/~gohlke/pythonlibs/#pymedia
+[plugin-url]: https://github.com/dschreij/opensesame_soundrecorder_plugins/tags
