@@ -1,0 +1,111 @@
+<div class='pydoc'>
+<span class='class_name'>class <b>libboks</b></span><br />
+<p class='details'><b>Function overview:</b><br />
+<a href='#libboks.__init__'>__init__</a><br />
+<a href='#libboks.close'>close</a><br />
+<a href='#libboks.get_button_press'>get_button_press</a><br />
+<a href='#libboks.get_button_release'>get_button_release</a><br />
+<a href='#libboks.get_button_state'>get_button_state</a><br />
+<a href='#libboks.get_buttons'>get_buttons</a><br />
+<a href='#libboks.get_timeout'>get_timeout</a><br />
+<a href='#libboks.info'>info</a><br />
+<a href='#libboks.set_buttons'>set_buttons</a><br />
+<a href='#libboks.set_continuous'>set_continuous</a><br />
+<a href='#libboks.set_led'>set_led</a><br />
+<a href='#libboks.set_timeout'>set_timeout</a><br />
+</p>
+<div class='function'><span class='function_name'><a class='anchor' id='libboks.__init__'>libboks</a>.<b>__init__(port=None, experiment=None, baudrate=115200, buttons=None, timeout=None)</b></span><div class='details'>
+Constructor<br />
+<br />
+<span class='keyword'>Keyword arguments:</span>
+<br />
+<span class='variable'>port	 		</span> &rarr;  	the port to which the device is connected, None 
+for autodetect, or 'dummy' to use the keyboard as dummy-boks (default=None)<br />
+<span class='variable'>experiment 		</span> &rarr; 	an OpenSesame experiment, or None to run in plain 
+Python mode (default=None)<br />
+<span class='variable'>baudrate 		</span> &rarr; 	the baudrate of the boks, or None to use default 
+(default=None)<br />
+<span class='variable'>buttons 		</span> &rarr; 	a list of buttons that are used, or None to use 
+all buttons (default=None)<br />
+<span class='variable'>timeout 		</span> &rarr; 	a timeout in milliseconds when collecting 
+responses or None for no timeout (default=None)<br />
+</div></div>
+<div class='function'><span class='function_name'><a class='anchor' id='libboks.close'>libboks</a>.<b>close()</b></span><div class='details'>
+Neatly close the device. This will deactivate the boks and close the serial port connection.<br />
+</div></div>
+<div class='function'><span class='function_name'><a class='anchor' id='libboks.get_button_press'>libboks</a>.<b>get_button_press()</b></span><div class='details'>
+Collect a button press<br />
+<br />
+<span class='keyword'>Returns:</span>
+<br />
+A (button, timestamp) tuple. If a timeout occured, the button is None. Otherwise buttons are integers. The timestamp is a float value in milliseconds.<br />
+</div></div>
+<div class='function'><span class='function_name'><a class='anchor' id='libboks.get_button_release'>libboks</a>.<b>get_button_release()</b></span><div class='details'>
+Collect a button release<br />
+<br />
+<span class='keyword'>Returns:</span>
+<br />
+A (button, timestamp) tuple. If a timeout occured, the button is None. Otherwise buttons are integers. The timestamp is a float value in milliseconds.<br />
+</div></div>
+<div class='function'><span class='function_name'><a class='anchor' id='libboks.get_button_state'>libboks</a>.<b>get_button_state()</b></span><div class='details'>
+Checks which buttons are currently pressed<br />
+<br />
+<span class='keyword'>Returns:</span>
+<br />
+A list of buttons that are currently presed<br />
+</div></div>
+<div class='function'><span class='function_name'><a class='anchor' id='libboks.get_buttons'>libboks</a>.<b>get_buttons()</b></span><div class='details'>
+Retrieves the list of buttons that are 'active', i.e. that are used by get_button_press() and get_button_release().<br />
+<br />
+<span class='keyword'>Returns:</span>
+<br />
+A list of active buttons. For example, [1,2,3,4].<br />
+</div></div>
+<div class='function'><span class='function_name'><a class='anchor' id='libboks.get_timeout'>libboks</a>.<b>get_timeout()</b></span><div class='details'>
+Gets the timeout used by get_button_press() and get_button_release().<br />
+<br />
+<span class='keyword'>Returns:</span>
+<br />
+A timeout value in milliseconds or None if no timeout is set<br />
+</div></div>
+<div class='function'><span class='function_name'><a class='anchor' id='libboks.info'>libboks</a>.<b>info()</b></span><div class='details'>
+Retrieve boks device info<br />
+<br />
+<span class='keyword'>Returns:</span>
+<br />
+A (firmware_version, model) tuple. The firmware_version is a string of the format X.Y.Z. The model is a short string.<br />
+</div></div>
+<div class='function'><span class='function_name'><a class='anchor' id='libboks.set_buttons'>libboks</a>.<b>set_buttons(buttons)</b></span><div class='details'>
+Sets which buttons should be used for libboks.get_button_press() and libboks.get_button_release()<br />
+<br />
+<span class='keyword'>Arguments:</span>
+<br />
+<span class='variable'>buttons			</span> &rarr; 	a list of buttons, where each button is an 
+integer. To enable all buttons, use None.<br />
+</div></div>
+<div class='function'><span class='function_name'><a class='anchor' id='libboks.set_continuous'>libboks</a>.<b>set_continuous(continuous=True)</b></span><div class='details'>
+Determines whether get_button_press() and get_button_release() are triggered only by signal changes (discontinuous) or also by continuous signals. The Boks is by default in discontinuous mode, which is generally what you want. For example, in continuous mode, get_button_release() will respond right away if any of the buttons is not pressed, whereas you are generally interested only in buttons that go from being pressed to not being pressed.<br />
+<br />
+<span class='keyword'>Keyword arguments:</span>
+<br />
+<span class='variable'>continuous		</span> &rarr; 	True for continuous, False for discontinuous
+<br />
+(default=True)<br />
+</div></div>
+<div class='function'><span class='function_name'><a class='anchor' id='libboks.set_led'>libboks</a>.<b>set_led(on=True)</b></span><div class='details'>
+Turns the LED on or off.<br />
+<br />
+<span class='keyword'>Keyword arguments:</span>
+<br />
+<span class='variable'>on	</span> &rarr; 	Indicates whether the LED should be on (True) or off (False) 
+(default=True)<br />
+</div></div>
+<div class='function'><span class='function_name'><a class='anchor' id='libboks.set_timeout'>libboks</a>.<b>set_timeout(timeout)</b></span><div class='details'>
+Sets the timeout used by get_button_press() and get_button_release()<br />
+<br />
+<span class='keyword'>Arguments:</span>
+<br />
+<span class='variable'>timeout			</span> &rarr; 	a value in milliseconds. Use 0 or None to disable 
+timeout<br />
+</div></div>
+</div>
