@@ -21,6 +21,7 @@ Unless otherwise indicated, plug-ins are cross-platform, so you can use the same
 |**port_reader**		|Reads input from a port (parallel or serial). *Note: Windows only*										|	|
 |**reset_feedback**		|Resets the feedback variables (accuracy, avg_rt, etc.).												|	|
 |**srbox**				|Collects input from the serial response box (Psychology Software Tools) and compatible devices.		|[Link][srbox]	|
+|**soundrecorder**		|Records sound from a microphone or audio-input device.													|[Link][soundrecorder]		|
 
 The following plug-ins are no longer actively developed:
 
@@ -36,3 +37,4 @@ The following plug-ins are no longer actively developed:
 [media_player_vlc]: https://github.com/dschreij/media_player_vlc
 [srbox]: /plug-ins/srbox/
 [questionnaire]: /plug-ins/questionnaire-plug-ins
+[soundrecorder]: /devices/soundrecorder
