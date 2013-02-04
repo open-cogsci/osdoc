@@ -35,6 +35,6 @@ The following plug-ins are no longer actively developed:
 [mantra]: http://www.cogsci.nl/software/mantra
 [media_player]: https://github.com/dschreij/media_player
 [media_player_vlc]: https://github.com/dschreij/media_player_vlc
-[srbox]: /plug-ins/srbox/
+[srbox]: /devices/srbox/
 [questionnaire]: /plug-ins/questionnaire-plug-ins
 [soundrecorder]: /devices/soundrecorder
