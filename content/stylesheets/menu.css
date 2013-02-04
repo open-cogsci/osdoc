@@ -26,6 +26,11 @@
 	padding-left: 24px;
 }
 
+#menu .boks {
+	background: url('/img/menu/boks.png') no-repeat left center;
+	padding-left: 24px;
+}
+
 #menu .highlight a {
 	color: #c4a000;
 }
