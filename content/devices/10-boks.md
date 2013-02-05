@@ -106,7 +106,7 @@ exp.set('response_time', t2-t1)
 Serial port communication {#serial}
 -------------------------
 
-If you are using software that cannot make use the Boks Python module, you can interact directly with the Boks through via the serial port. Communication occurs by sending a single command byte to the Boks. Depending on the command, the command byte should be followed by one or more bytes that serve as parameters. Depending on the command, the Boks responds by sending zero or more bytes in response. The command bytes are indicated in decimal notation in the square brackets.
+If you are using software that cannot make use of the Boks Python module, you can interact directly with the Boks through via the serial port. Communication occurs by sending a single command byte to the Boks. Depending on the command, the command byte should be followed by one or more bytes that serve as parameters. Depending on the command, the Boks responds by sending zero or more bytes in response. The command bytes are indicated in decimal notation in the square brackets.
 
 #### Timestamps
 
@@ -167,9 +167,10 @@ Sets the buttons that should be polled by `CMD_WAIT_PRESS` and `CMD_WAIT_RELEASE
 
 Parameter example (binary):
 
-	00001111 # Poll all buttons
+	00001111 # Turn on all buttons, except photodiode
 	00000011 # Only poll buttons one and two
-	00000000 # Turn on all buttons (special case!)
+	00000000 # Turn on all buttons, except photodiode (special case!)
+	10000000 # Turn on photodiode
 
 #### `CMD_GET_T1` [011]
 
@@ -177,7 +178,7 @@ Returns `T1` as an unsigned long (4 bytes).
 
 #### `CMD_GET_T2` [012]
 
-Returns `T2` as an unsigned long (4 bytes)
+Returns `T2` as an unsigned long (4 bytes).
 
 #### `CMD_GET_TD` [013]
 
@@ -215,33 +216,34 @@ Timing {#timing}
 
 ##### These are preliminary tests. More detailed benchmarks will be made available at a later date.
 
-The Boks is able to record responses with sub-millisecond precision, but the temporal precision that you will achieve in practice depends also on the system.
+The Boks is able to record responses with sub-millisecond precision, but the temporal precision that you will achieve in practice depends on the hardware and operating system of your computer.
 
 The graph below shows the response time to a continuously pressed button, which indicates the minimum response latency. In this time, `libeyelink` sends first a `CMD_SET_T1` command, to mark the start of the response interval, followed by a `CMD_GET_BUTTONS` command to wait for a response. By using strictly one-way communication in the crucial time period, the Boks minimizes the error that will result from information being sent from the Boks back to the computer (this happens later, after the response time has already been established).
 
-As you can see, the minimum response latency is much lower on Kubuntu Linux 12.04.1 LTS than on Windows XP. The results from Windows 7 resemble those from Kubuntu (not shown). However, even on Windows XP the timing is very good. (Please note that all results are shown in microseconds, which is a millionth of a second.)
+As you can see, the minimum response latency is much lower on Kubuntu Linux 12.04 LTS than on Windows XP. The results from Windows 7 resemble those from Kubuntu (not shown). However, even on Windows XP the timing is very good. (Please note that all results are shown in microseconds, which is a millionth of a second.)
 
-*Results from Kubuntu 12.04.1*
+*Results from Kubuntu 12.04*[^system-1]
 
 ![](/img/fig/fig9.10.4.png)
 
-*Results from Windows XP*
+*Results from Windows XP*[^system-2]
 
 ![](/img/fig/fig9.10.5.png)
 
-Another important test is to measure the lowest possible response time that the button box can offer. This can be tested quite easily, using the photodiode that is integrated into the bottom of the Boks (cf Mathot et al., 2012, BRM), by holding the photodiode to the top-left of the monitor and measuring the response time to a white display. This test measures the error in the whole cycle from display presentation to response collection.
+Another important test is to measure the lowest possible response time that the button box can offer. This can be tested quite easily, using the photodiode that is integrated into the bottom of the Boks (cf. Mathôt et al., 2012, BRM), by holding the photodiode to the top-left of the monitor and measuring the response time to a white display. This test measures the error in the whole cycle from display presentation to response collection.
 
-As you can see below, the minimum response time offered by the Boks is low (< 1ms) and constant. For the purpose of statistical power and performing response-locked analysis, the variability is the most important factor.
+As you can see below, the minimum response time offered by the Boks is low (< 1ms) and constant. For the purpose of statistical power and performing response-locked analysis, variability is the most important factor.
 
 You also see that the results depend on the back-end that is used: The legacy back-end performs quite poorly, with high and variable response times. The temporal jitter that you observe with the legacy back-end is not due to the Boks, but the fact that the legacy back-end does not use 'blocking' display presentation and thus has less precise display timestamps.
 
 Finally, a keen eye may notice the response times are actually slightly lower than the minimum response latency shown in the graph above (Windows XP results). This is probably because the software timestamps the displays slightly too late, by tens of microseconds in the case of the xpyriment back-end, and by hundreds of microseconds in the case of the psycho back-end.
 
-*Results from Windows XP*
+*Results from Windows XP*[^system-3]
 
-	SD(xpyriment): 123 µs
-	SD(psycho): 123 µs
-	SD(legacy): 2727 µs
+|Back-end	|Mean (µs)	|Std. dev. (µs)	|
+|xpyriment	|930 		|123			|
+|psycho		|548 		|123			|
+|legacy		|3942		|2727			|
 
 ![](/img/fig/fig9.10.6.png)
 
@@ -250,14 +252,10 @@ Test your own system {#test}
 
 ##### More detailed test instructions will be made available at a later date.
 
-You can perform the test shown above using the `unittest` script included with the Boks source code and running the `latency` test:
-
-	./unittest latency
-	
-You can run the full test suite with the following command:
+You can test the Boks your own system using the `unittest` script included with the Boks source. You can run the full test suite with the following command (the command line arguments specify which tests should be performed):
 
 	./unittest led buttons photodiode latency commspeed
-	
+		
 Furthermore, you can test your Boks in OpenSesame using the `boks_test.opensesame` file included with the Boks source code.
 
 Update firmware {#firmware}
@@ -269,4 +267,11 @@ For more information, please refer to the Arduino site:
 
 - <http://arduino.cc/en/Guide/Environment>
 
+[^system-1]: Acer Aspire V5-171, Intel Core I3-2365M @ 1.4Ghz, 6GB, 11.6" LCD
+
+[^system-2]: HP Compaq dc7900, Intel Core 2 Quad Q9400 @ 2.66Ghz, 3GB, 21" ViewSonic P227f CRT
+
+[^system-3]: See 2
+
 [arduino]: http://arduino.cc/
+
