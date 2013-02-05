@@ -92,3 +92,8 @@ a code {
 	margin: 16px 16px 0px 0px;
 }
 
+.footnotes {
+	border-top: solid 1px #888a85;
+	font-size: 0.7em;
+	color: #888a85;
+}
