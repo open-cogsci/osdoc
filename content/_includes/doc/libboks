@@ -2,6 +2,7 @@
 <span class='class_name'>class <b>libboks</b></span><br />
 <p class='details'><b>Function overview:</b><br />
 <a href='#libboks.__init__'>__init__</a><br />
+<a href='#libboks.button_count'>button_count</a><br />
 <a href='#libboks.close'>close</a><br />
 <a href='#libboks.get_button_press'>get_button_press</a><br />
 <a href='#libboks.get_button_release'>get_button_release</a><br />
@@ -29,9 +30,37 @@ Python mode (default=None)<br />
 all buttons (default=None)<br />
 <span class='variable'>timeout 		</span> &rarr; 	a timeout in milliseconds when collecting 
 responses or None for no timeout (default=None)<br />
+<br />
+<span class='keyword'>Example:</span>
+<br />
+{% highlight python %}# Collect a response with a 2000ms timeout
+exp.boks.set_timeout(2000)
+t1 = self.time()
+button, t2 = exp.boks.get_button_press()
+exp.set('response', button)
+exp.set('response_time', t2-t1)
+{% endhighlight %}<br />
+</div></div>
+<div class='function'><span class='function_name'><a class='anchor' id='libboks.button_count'>libboks</a>.<b>button_count()</b></span><div class='details'>
+Gets the number of buttons that are physically present on the device. This number includes the photodiode.<br />
+<br />
+<span class='keyword'>Returns:</span>
+<br />
+The number of buttons<br />
+<br />
+<span class='keyword'>Example:</span>
+<br />
+{% highlight python %}i = exp.boks.button_count()
+print 'Your Boks has %d buttons' % i
+{% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='libboks.close'>libboks</a>.<b>close()</b></span><div class='details'>
-Neatly close the device. This will deactivate the boks and close the serial port connection.<br />
+Neatly close the device. This will deactivate the boks and close the serial port connection. OpenSesame will do this automatically when the experiment ends.<br />
+<br />
+<span class='keyword'>Example:</span>
+<br />
+{% highlight python %}exp.boks.close()
+{% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='libboks.get_button_press'>libboks</a>.<b>get_button_press()</b></span><div class='details'>
 Collect a button press<br />
@@ -39,6 +68,16 @@ Collect a button press<br />
 <span class='keyword'>Returns:</span>
 <br />
 A (button, timestamp) tuple. If a timeout occured, the button is None. Otherwise buttons are integers. The timestamp is a float value in milliseconds.<br />
+<br />
+<span class='keyword'>Example:</span>
+<br />
+{% highlight python %}# Collect a response with a 2000ms timeout
+exp.boks.set_timeout(2000)
+t1 = self.time()
+button, t2 = exp.boks.get_button_press()
+exp.set('response', button)
+exp.set('response_time', t2-t1)
+{% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='libboks.get_button_release'>libboks</a>.<b>get_button_release()</b></span><div class='details'>
 Collect a button release<br />
@@ -46,6 +85,16 @@ Collect a button release<br />
 <span class='keyword'>Returns:</span>
 <br />
 A (button, timestamp) tuple. If a timeout occured, the button is None. Otherwise buttons are integers. The timestamp is a float value in milliseconds.<br />
+<br />
+<span class='keyword'>Example:</span>
+<br />
+{% highlight python %}# Collect a button release with a 2000ms timeout
+exp.boks.set_timeout(2000)
+t1 = self.time()
+button, t2 = exp.boks.get_button_release()
+exp.set('response', button)
+exp.set('response_time', t2-t1)
+{% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='libboks.get_button_state'>libboks</a>.<b>get_button_state()</b></span><div class='details'>
 Checks which buttons are currently pressed<br />
@@ -53,13 +102,27 @@ Checks which buttons are currently pressed<br />
 <span class='keyword'>Returns:</span>
 <br />
 A list of buttons that are currently presed<br />
+<br />
+<span class='keyword'>Example:</span>
+<br />
+{% highlight python %}l = exp.boks.get_button_state()
+if 1 in l:
+	print 'Button 1 is pressed'
+{% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='libboks.get_buttons'>libboks</a>.<b>get_buttons()</b></span><div class='details'>
-Retrieves the list of buttons that are 'active', i.e. that are used by get_button_press() and get_button_release().<br />
+Retrieves the list of buttons that are 'active', i.e. that are used by get_button_press(), get_button_release(), and get_button_state().<br />
 <br />
 <span class='keyword'>Returns:</span>
 <br />
 A list of active buttons. For example, [1,2,3,4].<br />
+<br />
+<span class='keyword'>Example:</span>
+<br />
+{% highlight python %}l = exp.boks.get_buttons()
+if 1 in l:
+	print 'Button 1 is currently being monitored'
+{% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='libboks.get_timeout'>libboks</a>.<b>get_timeout()</b></span><div class='details'>
 Gets the timeout used by get_button_press() and get_button_release().<br />
@@ -67,6 +130,13 @@ Gets the timeout used by get_button_press() and get_button_release().<br />
 <span class='keyword'>Returns:</span>
 <br />
 A timeout value in milliseconds or None if no timeout is set<br />
+<br />
+<span class='keyword'>Example:</span>
+<br />
+{% highlight python %}exp.boks.set_timeout(2000)
+t = exp.boks.get_timeout()
+print 'The Boks timeout is currently set to %d ms' % t
+{% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='libboks.info'>libboks</a>.<b>info()</b></span><div class='details'>
 Retrieve boks device info<br />
@@ -74,6 +144,13 @@ Retrieve boks device info<br />
 <span class='keyword'>Returns:</span>
 <br />
 A (firmware_version, model) tuple. The firmware_version is a string of the format X.Y.Z. The model is a short string.<br />
+<br />
+<span class='keyword'>Example:</span>
+<br />
+{% highlight python %}firmware, model = exp.boks.info()
+print 'Boks model: %s' % model
+print 'Boks firmware: %s' % firmware
+{% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='libboks.set_buttons'>libboks</a>.<b>set_buttons(buttons)</b></span><div class='details'>
 Sets which buttons should be used for libboks.get_button_press() and libboks.get_button_release()<br />
@@ -81,7 +158,25 @@ Sets which buttons should be used for libboks.get_button_press() and libboks.get
 <span class='keyword'>Arguments:</span>
 <br />
 <span class='variable'>buttons			</span> &rarr; 	a list of buttons, where each button is an 
-integer. To enable all buttons, use None.<br />
+integer. To enable all buttons (except for the photodiode), use None.<br />
+<br />
+<span class='keyword'>Example:</span>
+<br />
+{% highlight python %}# Only use buttons 1 and 2
+exp.boks.set_buttons([1,2])
+{% endhighlight %}
+<br />
+<span class='keyword'>Example:</span>
+<br />
+{% highlight python %}# Use all buttons except for the photodiode
+exp.boks.set_buttons(None)
+{% endhighlight %}
+<br />
+<span class='keyword'>Example:</span>
+<br />
+{% highlight python %}# Only use the photodiode (button 8)
+exp.boks.set_buttons([8])
+{% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='libboks.set_continuous'>libboks</a>.<b>set_continuous(continuous=True)</b></span><div class='details'>
 Determines whether get_button_press() and get_button_release() are triggered only by signal changes (discontinuous) or also by continuous signals. The Boks is by default in discontinuous mode, which is generally what you want. For example, in continuous mode, get_button_release() will respond right away if any of the buttons is not pressed, whereas you are generally interested only in buttons that go from being pressed to not being pressed.<br />
@@ -91,6 +186,16 @@ Determines whether get_button_press() and get_button_release() are triggered onl
 <span class='variable'>continuous		</span> &rarr; 	True for continuous, False for discontinuous
 <br />
 (default=True)<br />
+<br />
+<span class='keyword'>Example:</span>
+<br />
+{% highlight python %}exp.boks.set_continuous(True)
+t1 = exp.time()
+# If some button is not pressed, this will return right away
+button, t2 = exp.boks.get_button_release()
+exp.set('response', button)
+exp.set('response_time', t2-t1)
+{% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='libboks.set_led'>libboks</a>.<b>set_led(on=True)</b></span><div class='details'>
 Turns the LED on or off.<br />
@@ -99,6 +204,16 @@ Turns the LED on or off.<br />
 <br />
 <span class='variable'>on	</span> &rarr; 	Indicates whether the LED should be on (True) or off (False) 
 (default=True)<br />
+<br />
+<span class='keyword'>Example:</span>
+<br />
+{% highlight python %}# Blink LED five time
+for i in range(5):
+	exp.boks.set_led(True)
+	self.sleep(500)
+	exp.boks.set_led(False)
+	self.sleep(500)
+{% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='libboks.set_timeout'>libboks</a>.<b>set_timeout(timeout)</b></span><div class='details'>
 Sets the timeout used by get_button_press() and get_button_release()<br />
@@ -107,5 +222,12 @@ Sets the timeout used by get_button_press() and get_button_release()<br />
 <br />
 <span class='variable'>timeout			</span> &rarr; 	a value in milliseconds. Use 0 or None to disable 
 timeout<br />
+<br />
+<span class='keyword'>Example:</span>
+<br />
+{% highlight python %}exp.boks.set_timeout(2000)
+t = exp.boks.get_timeout()
+print 'The Boks timeout is currently set to %d ms' % t
+{% endhighlight %}<br />
 </div></div>
 </div>
