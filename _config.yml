@@ -1,5 +1,4 @@
-notifications: true
+notifications: false
 pygments: true
 markdown: kramdown
 source: content
-#host: http://osdoc.github.com/osdoc

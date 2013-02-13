@@ -1,5 +1,5 @@
 <div class='pydoc'>
-<p><small>For OpenSesame 0.27~rc1</small></p>
+<p><small>For OpenSesame 0.27.1</small></p>
 <span class='class_name'>class <b>synth</b></span><br />
 <p class='details'><b>Function overview:</b><br />
 <a href='#synth.__init__'>__init__</a><br />
@@ -21,20 +21,20 @@ Initializes the synthesizer.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>experiment</span> &rarr; An instance of libopensesame.experiment.experiment.
+<span class='variable'>experiment </span> &rarr;  An instance of libopensesame.experiment.experiment.
 <br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>osc</span> &rarr; Oscillator, can be "sine", "saw", "square" or "white_noise" 
+<span class='variable'>osc </span> &rarr;  Oscillator, can be "sine", "saw", "square" or "white_noise" 
 (default = "sine").<br />
-<span class='variable'>freq</span> &rarr; Frequency, either an integer value (value in hertz) or a string 
+<span class='variable'>freq </span> &rarr;  Frequency, either an integer value (value in hertz) or a string 
 ("A1", "eb2", etc.). (Default = 440)<br />
-<span class='variable'>length</span> &rarr; The length of the sound in milliseconds (default = 100).
+<span class='variable'>length </span> &rarr;  The length of the sound in milliseconds (default = 100).
 <br />
-<span class='variable'>attack</span> &rarr; The attack (fade-in) time in milliseconds (default = 0).
+<span class='variable'>attack </span> &rarr;  The attack (fade-in) time in milliseconds (default = 0).
 <br />
-<span class='variable'>decay</span> &rarr; The decay (fade-out) time in milliseconds (default = 5).
+<span class='variable'>decay </span> &rarr;  The decay (fade-out) time in milliseconds (default = 5).
 <br />
 <br />
 <span class='keyword'>Example:</span>
@@ -48,7 +48,7 @@ my_synth = synth(exp, freq='b2', length=500)
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>ms</span> &rarr; An integer value specifying the duration in milliseconds.
+<span class='variable'>ms </span> &rarr;  An integer value specifying the duration in milliseconds.
 <br />
 <br />
 <span class='keyword'>Example:</span>
@@ -82,7 +82,7 @@ Converts a key (e.g., A1) to a frequency.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>key</span> &rarr; A string like "A1", "eb2", etc.
+<span class='variable'>key </span> &rarr;  A string like "A1", "eb2", etc.
 <br />
 <br />
 <span class='keyword'>Returns:</span>
@@ -101,7 +101,7 @@ print 'An a2 is %d Hz' % my_synth.key_to_freq('a2')
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>p</span> &rarr; Panning. A float (p < 0 = to left, p > 0 = to right) or string 
+<span class='variable'>p </span> &rarr;  Panning. A float (p < 0 = to left, p > 0 = to right) or string 
 ("left" or "right").<br />
 <br />
 <span class='keyword'>Example:</span>
@@ -132,7 +132,7 @@ my_sampler.resume()
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>p</span> &rarr; The pitch. p > 1.0 slows the sample down, p < 1.0 speeds 
+<span class='variable'>p </span> &rarr;  The pitch. p > 1.0 slows the sample down, p < 1.0 speeds 
 the sample up.<br />
 <br />
 <span class='keyword'>Example:</span>
@@ -148,7 +148,7 @@ my_sampler.pitch(2.0)
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>block</span> &rarr; If True, block until the sound is finished (default = False).
+<span class='variable'>block </span> &rarr;  If True, block until the sound is finished (default = False).
 <br />
 <br />
 <span class='keyword'>Example:</span>
@@ -192,7 +192,7 @@ my_sampler.stop()
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>ms</span> &rarr; An integer value specifying the duration in milliseconds.
+<span class='variable'>ms </span> &rarr;  An integer value specifying the duration in milliseconds.
 <br />
 <br />
 <span class='keyword'>Example:</span>
@@ -208,7 +208,7 @@ my_sampler.stop_after(100)
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>vol</span> &rarr; A volume between 0.0 and 1.0
+<span class='variable'>vol </span> &rarr;  A volume between 0.0 and 1.0
 <br />
 <br />
 <span class='keyword'>Example:</span>

@@ -7,20 +7,22 @@ level: 1
 sortkey: 010.006
 ---
 
+|Feb 13, 2013	| 0.27.1 *Frisky Freud* (maintenance)	|
+|Dec 11, 2012	| [0.27][] *Frisky Freud*				|
 |April 2, 2012 	| [0.26][] *Earnest Einstein*			|
 |Nov 12, 2011 	| [0.25][] *Dashy Darwin*				|
 |July 18, 2011 	| [0.24][] *Cody Crick*					|
-|March 25, 2011 	| [0.23][] *Blue Beck*					|
+|March 25, 2011 | [0.23][] *Blue Beck*					|
 |Jan 30, 2011 	| [0.22][] *Axiomatic Axelrod*			|
-|Jan 11, 2011 	| [0.21][]  								|
-|Jan 4, 2011 	| [0.20][]  								|
+|Jan 11, 2011 	| [0.21][]  							|
+|Jan 4, 2011 	| [0.20][]  							|
 |Jan 4, 2011 	| 0.19	  								|
-|Jan 1, 2011 	| [0.18][]  								|
-|Dec 18, 2010 	| [0.17][]  								|
-|Dec 11, 2010 	| [0.16][]  								|
-|Dec 4, 2010 	| [0.15][]  								|
-|Nov 30, 2010 	| [0.14][]  								|
-|Nov 28, 2010 	| [0.13][]  								|
+|Jan 1, 2011 	| [0.18][]  							|
+|Dec 18, 2010 	| [0.17][]  							|
+|Dec 11, 2010 	| [0.16][]  							|
+|Dec 4, 2010 	| [0.15][]  							|
+|Nov 30, 2010 	| [0.14][]  							|
+|Nov 28, 2010 	| [0.13][]  							|
 |Nov 23, 2010	| [OpenSesame announced][announcement] 	|
 
 [announcement]: http://www.cogsci.nl/blog/software-updates/84-introducing-opensesame-a-graphical-open-source-experiment-builder

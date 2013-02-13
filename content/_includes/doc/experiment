@@ -1,5 +1,5 @@
 <div class='pydoc'>
-<p><small>For OpenSesame 0.27~rc1</small></p>
+<p><small>For OpenSesame 0.27.1</small></p>
 <span class='class_name'>class <b>experiment</b></span><br />
 <p class='details'><b>Function overview:</b><br />
 <a href='#experiment.__init__'>__init__</a><br />
@@ -27,11 +27,11 @@ Constructor. The experiment is created automatically be OpenSesame and you will 
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>name</span> &rarr; The name of the experiment (default='experiment').
+<span class='variable'>name </span> &rarr;  The name of the experiment (default='experiment').
 <br />
-<span class='variable'>string</span> &rarr; A string containing the experiment definition (default=None).
+<span class='variable'>string </span> &rarr;  A string containing the experiment definition (default=None).
 <br />
-<span class='variable'>pool_folder</span> &rarr; A specific folder to be used for the file pool 
+<span class='variable'>pool_folder </span> &rarr;  A specific folder to be used for the file pool 
 (default=None).<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='experiment.auto_type'>experiment</a>.<b>auto_type(val)</b></span><div class='details'>
@@ -39,7 +39,7 @@ Constructor. The experiment is created automatically be OpenSesame and you will 
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>val</span> &rarr; A value.
+<span class='variable'>val </span> &rarr;  A value.
 <br />
 <br />
 <span class='keyword'>Returns:</span>
@@ -61,7 +61,7 @@ print type(self.auto_type(True)) # Prints 'unicode'
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>col</span> &rarr; The color to check.
+<span class='variable'>col </span> &rarr;  The color to check.
 <br />
 <br />
 <span class='keyword'>Exceptions:</span>
@@ -83,16 +83,16 @@ print self.color_check('this is not a color')
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>text</span> &rarr; The text to be evaluated.
+<span class='variable'>text </span> &rarr;  The text to be evaluated.
 <br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>round_float</span> &rarr; A Boolean indicating whether float values should be 
+<span class='variable'>round_float </span> &rarr;  A Boolean indicating whether float values should be 
 rounded to a precision of [round_decimals]. round_decimals is an OpenSesame variable that has a default value of 2. (Default=False)<br />
-<span class='variable'>soft_ignore</span> &rarr; A Boolean indicating whether missing variables should be 
+<span class='variable'>soft_ignore </span> &rarr;  A Boolean indicating whether missing variables should be 
 ignored, rather than cause an exception (default=False).<br />
-<span class='variable'>quote_str</span> &rarr; A Boolean indicating whether string variables should be 
+<span class='variable'>quote_str </span> &rarr;  A Boolean indicating whether string variables should be 
 surrounded by single quotes (default=False).<br />
 <br />
 <span class='keyword'>Returns:</span>
@@ -141,9 +141,9 @@ The _eval parameter is used to specify whether the value of the variable should 
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>var</span> &rarr; The name of an OpenSesame variable.
+<span class='variable'>var </span> &rarr;  The name of an OpenSesame variable.
 <br />
-<span class='variable'>_eval</span> &rarr; Indicates whether the variable should be evaluated, i.e. 
+<span class='variable'>_eval </span> &rarr;  Indicates whether the variable should be evaluated, i.e. 
 whether containing variables should be processed (default=True).<br />
 <br />
 <span class='keyword'>Exceptions:</span>
@@ -173,13 +173,13 @@ print self.get('var1', _eval=False) # prints 'I like [var2]'
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>var</span> &rarr; The name of an OpenSesame variable
+<span class='variable'>var </span> &rarr;  The name of an OpenSesame variable
 <br />
-<span class='variable'>default</span> &rarr; A default 'fallback' value or None for no fallback, in which 
+<span class='variable'>default </span> &rarr;  A default 'fallback' value or None for no fallback, in which 
 case an exception is rased if the value does not exist.<br />
-<span class='variable'>valid</span> &rarr; A list of allowed values (or None for no restrictions). An 
+<span class='variable'>valid </span> &rarr;  A list of allowed values (or None for no restrictions). An 
 exception is raised if the value is not an allowed value.<br />
-<span class='variable'>_eval</span> &rarr; Indicates whether the variable should be evaluated, i.e. 
+<span class='variable'>_eval </span> &rarr;  Indicates whether the variable should be evaluated, i.e. 
 whether containing variables should be processed (default=True).<br />
 <br />
 <span class='keyword'>Exceptions:</span>
@@ -201,7 +201,7 @@ Returns the path to a file. First checks if the file is in the file pool and the
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>path</span> &rarr; The filename.
+<span class='variable'>path </span> &rarr;  The filename.
 <br />
 <br />
 <span class='keyword'>Returns:</span>
@@ -220,7 +220,7 @@ my_canvas.image(image_path)
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>text</span> &rarr; A string of text.
+<span class='variable'>text </span> &rarr;  A string of text.
 <br />
 <br />
 <span class='keyword'>Returns:</span>
@@ -238,7 +238,7 @@ A list of variable names or an empty list if the string contains no references.<
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>var</span> &rarr; The name of an OpenSesame variable.
+<span class='variable'>var </span> &rarr;  The name of an OpenSesame variable.
 <br />
 <br />
 <span class='keyword'>Returns:</span>
@@ -255,7 +255,7 @@ True if the variable exists, False if not.<br />
 <div class='function'><span class='function_name'><a class='anchor' id='experiment.log'>experiment</a>.<b>log(msg)</b></span><div class='details'>
 <i>Inherited from <b>item</b></i><br /><br />Writes a message to the log file. Note that using the log() function in combination with a logger item may result in messy log files.<br />
 <br />
-<span class='variable'>msg</span> &rarr; A message.
+<span class='variable'>msg </span> &rarr;  A message.
 <br />
 <br />
 <span class='keyword'>Example:</span>
@@ -277,15 +277,15 @@ A (width, height) tuple<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>s</span> &rarr; The string (unicode or str) to be sanitized.
+<span class='variable'>s </span> &rarr;  The string (unicode or str) to be sanitized.
 <br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>strict</span> &rarr; If True, all except underscores and alphanumeric characters are
+<span class='variable'>strict </span> &rarr;  If True, all except underscores and alphanumeric characters are
 <br />
 stripped (default=False).<br />
-<span class='variable'>allow_vars</span> &rarr; If True, square brackets are not sanitized, so you can use
+<span class='variable'>allow_vars </span> &rarr;  If True, square brackets are not sanitized, so you can use
 <br />
 variables (default=True).<br />
 <br />
@@ -312,9 +312,9 @@ The type of the value can be anything. However, see get() for an explanation of 
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>var</span> &rarr; The name of an OpenSesame variable.
+<span class='variable'>var </span> &rarr;  The name of an OpenSesame variable.
 <br />
-<span class='variable'>val</span> &rarr; The value.
+<span class='variable'>val </span> &rarr;  The value.
 <br />
 <br />
 <span class='keyword'>Example:</span>
@@ -327,7 +327,7 @@ Sets the subject number and parity (even/ odd). This function is called automati
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>nr</span> &rarr; The subject nr.
+<span class='variable'>nr </span> &rarr;  The subject nr.
 <br />
 <br />
 <span class='keyword'>Example:</span>
@@ -342,7 +342,7 @@ print 'Subject parity = %s' % exp.get('subject_parity')
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>ms</span> &rarr; An integer value specifying the duration in milliseconds.
+<span class='variable'>ms </span> &rarr;  An integer value specifying the duration in milliseconds.
 <br />
 <br />
 <span class='keyword'>Example:</span>
@@ -367,7 +367,7 @@ A timestamp of the current time.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>var</span> &rarr; The name of an OpenSesame variable.
+<span class='variable'>var </span> &rarr;  The name of an OpenSesame variable.
 <br />
 <br />
 <span class='keyword'>Example:</span>

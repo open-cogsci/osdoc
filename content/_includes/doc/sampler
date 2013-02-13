@@ -1,5 +1,5 @@
 <div class='pydoc'>
-<p><small>For OpenSesame 0.27~rc1</small></p>
+<p><small>For OpenSesame 0.27.1</small></p>
 <span class='class_name'>class <b>sampler</b></span><br />
 <p class='details'><b>Function overview:</b><br />
 <a href='#sampler.__init__'>__init__</a><br />
@@ -20,9 +20,9 @@ Initializes the sampler with a specified file.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>experiment</span> &rarr; An instance of libopensesame.experiment.experiment.
+<span class='variable'>experiment </span> &rarr;  An instance of libopensesame.experiment.experiment.
 <br />
-<span class='variable'>src</span> &rarr; A path to a .wav or .ogg file.
+<span class='variable'>src </span> &rarr;  A path to a .wav or .ogg file.
 <br />
 <br />
 <span class='keyword'>Example:</span>
@@ -37,7 +37,7 @@ Sets the fade-in time in milliseconds.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>ms</span> &rarr; An integer value specifying the duration in milliseconds.
+<span class='variable'>ms </span> &rarr;  An integer value specifying the duration in milliseconds.
 <br />
 <br />
 <span class='keyword'>Example:</span>
@@ -71,7 +71,7 @@ Sets the panning of the sample. The volume of the "unpanned" channel decreases, 
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>p</span> &rarr; Panning. A float (p < 0 = to left, p > 0 = to right) or string 
+<span class='variable'>p </span> &rarr;  Panning. A float (p < 0 = to left, p > 0 = to right) or string 
 ("left" or "right").<br />
 <br />
 <span class='keyword'>Example:</span>
@@ -102,7 +102,7 @@ Sets the relative pitch of the sample.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>p</span> &rarr; The pitch. p > 1.0 slows the sample down, p < 1.0 speeds 
+<span class='variable'>p </span> &rarr;  The pitch. p > 1.0 slows the sample down, p < 1.0 speeds 
 the sample up.<br />
 <br />
 <span class='keyword'>Example:</span>
@@ -118,7 +118,7 @@ Plays the sound.<br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>block</span> &rarr; If True, block until the sound is finished (default = False).
+<span class='variable'>block </span> &rarr;  If True, block until the sound is finished (default = False).
 <br />
 <br />
 <span class='keyword'>Example:</span>
@@ -162,7 +162,7 @@ Specifies a duration after which the sampler stops playing.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>ms</span> &rarr; An integer value specifying the duration in milliseconds.
+<span class='variable'>ms </span> &rarr;  An integer value specifying the duration in milliseconds.
 <br />
 <br />
 <span class='keyword'>Example:</span>
@@ -178,7 +178,7 @@ Sets the volume.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>vol</span> &rarr; A volume between 0.0 and 1.0
+<span class='variable'>vol </span> &rarr;  A volume between 0.0 and 1.0
 <br />
 <br />
 <span class='keyword'>Example:</span>
