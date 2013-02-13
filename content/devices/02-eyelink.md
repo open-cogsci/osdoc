@@ -152,7 +152,7 @@ Download the correct PyLink for your distribution from here (make sure that you 
 
 - <https://www.sr-support.com/forums/showthread.php?t=14>
 
-Extract it to a location of your choice and rename the `pylink27` folder to `pylink`. This is essentially it, although you need to 
+Extract it to a location of your choice and rename the `pylink27` folder to `pylink`.
 
 Step 5: Installing the OpenSesame Eyelink plug-ins {#step-5}
 --------------------------------------------------
