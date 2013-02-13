@@ -17,11 +17,11 @@ Initializes the SMI tracker class<br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>port</span> &rarr; the name of the serial port to which the tracker is attached (default = 'COM1')
+<span class='variable'>port </span> &rarr;  the name of the serial port to which the tracker is attached (default = 'COM1')
 <br />
-<span class='variable'>baudrate</span> &rarr; the baudrate of the serial port communications (default = 115200)
+<span class='variable'>baudrate </span> &rarr;  the baudrate of the serial port communications (default = 115200)
 <br />
-<span class='variable'>sound</span> &rarr; indicates if sounds should be played to inidicate success or failure
+<span class='variable'>sound </span> &rarr;  indicates if sounds should be played to inidicate success or failure
 <br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='libsmi.calibrate'>libsmi</a>.<b>calibrate(nr_of_pts=9)</b></span><div class='details'>
@@ -43,7 +43,7 @@ Write message (or remark) to the SMI logfile<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>msg</span> &rarr; a string containing the message
+<span class='variable'>msg </span> &rarr;  a string containing the message
 <br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='libsmi.recv'>libsmi</a>.<b>recv()</b></span><div class='details'>
@@ -59,7 +59,7 @@ recording is enabled, return the left eye.<br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>clear</span> &rarr; indicates if the input buffer should be flushed so that an
+<span class='variable'>clear </span> &rarr;  indicates if the input buffer should be flushed so that an
 <br />
 up-to-date sample is returned (default=False)<br />
 <br />
@@ -72,7 +72,7 @@ Save the SMI datafile to disk<br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>path</span> &rarr; the name of the datafile or None for a default name (default=None)
+<span class='variable'>path </span> &rarr;  the name of the datafile or None for a default name (default=None)
 <br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='libsmi.send'>libsmi</a>.<b>send(msg, sleep=10)</b></span><div class='details'>
@@ -80,12 +80,12 @@ Send a message to the tracker<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>msg</span> &rarr; a string containing the message
+<span class='variable'>msg </span> &rarr;  a string containing the message
 <br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>sleep</span> &rarr; a value in milliseconds to sleep after the command has been
+<span class='variable'>sleep </span> &rarr;  a value in milliseconds to sleep after the command has been
 <br />
 sent to avoid overflowing (default=10)<br />
 </div></div>
@@ -94,7 +94,7 @@ Start recording<br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>stream</span> &rarr; determines if samples should be streamed so they can be
+<span class='variable'>stream </span> &rarr;  determines if samples should be streamed so they can be
 <br />
 accessed using the sample() function<br />
 </div></div>

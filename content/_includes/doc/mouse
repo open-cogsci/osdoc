@@ -1,5 +1,5 @@
 <div class='pydoc'>
-<p><small>For OpenSesame 0.27~rc1</small></p>
+<p><small>For OpenSesame 0.27.1</small></p>
 <span class='class_name'>class <b>mouse</b></span><br />
 <p class='details'><b>Function overview:</b><br />
 <a href='#mouse.__init__'>__init__</a><br />
@@ -15,16 +15,16 @@ Intializes the mouse object.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>experiment</span> &rarr; An instance of libopensesame.experiment.experiment.
+<span class='variable'>experiment </span> &rarr;  An instance of libopensesame.experiment.experiment.
 <br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>buttonlist</span> &rarr; A list of buttons that are accepted or None to accept all 
+<span class='variable'>buttonlist </span> &rarr;  A list of buttons that are accepted or None to accept all 
 input (default = None).<br />
-<span class='variable'>timeout</span> &rarr; An integer value specifying a timeout in milliseconds or None 
+<span class='variable'>timeout </span> &rarr;  An integer value specifying a timeout in milliseconds or None 
 for no timeout (default = None).<br />
-<span class='variable'>visible</span> &rarr; A Boolean indicating the visibility of the cursor 
+<span class='variable'>visible </span> &rarr;  A Boolean indicating the visibility of the cursor 
 (default=False).<br />
 <br />
 <span class='keyword'>Example:</span>
@@ -53,11 +53,11 @@ Waits for mouse input.<br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>buttonlist</span> &rarr; A list of buttons that are accepted or None to use the 
+<span class='variable'>buttonlist </span> &rarr;  A list of buttons that are accepted or None to use the 
 default. This parameter does not change the default keylist (default=None).<br />
-<span class='variable'>timeout</span> &rarr; An integer value specifying a timeout in milliseconds or None 
+<span class='variable'>timeout </span> &rarr;  An integer value specifying a timeout in milliseconds or None 
 to use the default. This parameter does not change the default timeout (default=None).<br />
-<span class='variable'>visible</span> &rarr; A Boolean indicating the visibility of the target or None to 
+<span class='variable'>visible </span> &rarr;  A Boolean indicating the visibility of the target or None to 
 use the default. This parameter does not change the default visibility (default=False).<br />
 <br />
 <span class='keyword'>Returns:</span>
@@ -94,7 +94,7 @@ Sets a list of accepted buttons.<br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>buttonlist</span> &rarr; A list of buttons that are accepted or None to accept all 
+<span class='variable'>buttonlist </span> &rarr;  A list of buttons that are accepted or None to accept all 
 input (default=None).<br />
 <br />
 <span class='keyword'>Example:</span>
@@ -109,7 +109,7 @@ Sets a timeout.<br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>timeout</span> &rarr; An integer value specifying a timeout in milliseconds or None 
+<span class='variable'>timeout </span> &rarr;  An integer value specifying a timeout in milliseconds or None 
 for no timeout (default=None).<br />
 <br />
 <span class='keyword'>Example:</span>
@@ -124,7 +124,7 @@ Sets the visibility of the cursor.<br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>visible</span> &rarr; A Boolean indicating the visibility of the cursor 
+<span class='variable'>visible </span> &rarr;  A Boolean indicating the visibility of the cursor 
 (default=True).<br />
 <br />
 <span class='keyword'>Example:</span>

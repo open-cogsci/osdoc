@@ -1,5 +1,5 @@
 <div class='pydoc'>
-<p><small>For OpenSesame 0.27~rc1</small></p>
+<p><small>For OpenSesame 0.27.1</small></p>
 <span class='class_name'>class <b>canvas</b></span><br />
 <p class='details'><b>Function overview:</b><br />
 <a href='#canvas.__init__'>__init__</a><br />
@@ -32,16 +32,16 @@ Initializes the canvas.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>experiment</span> &rarr; An instance of libopensesame.experiment.experiment.
+<span class='variable'>experiment </span> &rarr;  An instance of libopensesame.experiment.experiment.
 <br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>bgcolor</span> &rarr; A human-readable background color or None to use 
+<span class='variable'>bgcolor </span> &rarr;  A human-readable background color or None to use 
 experiment default (default=None).<br />
-<span class='variable'>fgcolor</span> &rarr; A human-readable foreground color or None to use 
+<span class='variable'>fgcolor </span> &rarr;  A human-readable foreground color or None to use 
 experiment default (default=None).<br />
-<span class='variable'>auto_prepare</span> &rarr; Indicates whether the canvas should be automatically 
+<span class='variable'>auto_prepare </span> &rarr;  Indicates whether the canvas should be automatically 
 prepared after each drawing operation, so that canvas.show() will be maximally efficient. If auto_prepare is turned off, drawing operations may be faster, but canvas.show() will take longer, unless canvas.prepare() is explicitly called in advance. Generally, it only makes sense to disable auto_prepare when you want to draw a large number of stimuli, as in the second example below. Currently, the auto_prepare parameter only applies to the xpyriment backend, and is ignored by the other backends (default=True).<br />
 <br />
 <span class='keyword'>Example:</span>
@@ -71,20 +71,20 @@ Draws an arrow. An arrow is a line, with an arrowhead at (ex, ey). The angle bet
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>sx</span> &rarr; The left coordinate.
+<span class='variable'>sx </span> &rarr;  The left coordinate.
 <br />
-<span class='variable'>sy</span> &rarr; The top coordinate.
+<span class='variable'>sy </span> &rarr;  The top coordinate.
 <br />
-<span class='variable'>ex</span> &rarr; The right coordinate.
+<span class='variable'>ex </span> &rarr;  The right coordinate.
 <br />
-<span class='variable'>ey</span> &rarr; The bottom coordinate.
+<span class='variable'>ey </span> &rarr;  The bottom coordinate.
 <br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>arrow_size</span> &rarr; The length of the arrowhead lines (default=5).
+<span class='variable'>arrow_size </span> &rarr;  The length of the arrowhead lines (default=5).
 <br />
-<span class='variable'>color</span> &rarr; A custom human-readable foreground color. This does not affect 
+<span class='variable'>color </span> &rarr;  A custom human-readable foreground color. This does not affect 
 the default foreground color as set by set_fgcolor(). (Default=None)<br />
 <br />
 <span class='keyword'>Example:</span>
@@ -101,18 +101,18 @@ Draws a circle.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>x</span> &rarr; The center X coordinate.
+<span class='variable'>x </span> &rarr;  The center X coordinate.
 <br />
-<span class='variable'>y</span> &rarr; The center Y coordinate.
+<span class='variable'>y </span> &rarr;  The center Y coordinate.
 <br />
-<span class='variable'>r</span> &rarr; The radius.
+<span class='variable'>r </span> &rarr;  The radius.
 <br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>fill</span> &rarr; A Boolean indicating whether the circle is outlined (False) 
+<span class='variable'>fill </span> &rarr;  A Boolean indicating whether the circle is outlined (False) 
 or filled (True). (Default=False)<br />
-<span class='variable'>color</span> &rarr; A custom human-readable foreground color. This does not 
+<span class='variable'>color </span> &rarr;  A custom human-readable foreground color. This does not 
 affect the default foreground color as set by set_fgcolor(). (Default=None)<br />
 <br />
 <span class='keyword'>Example:</span>
@@ -127,7 +127,7 @@ Clears the canvas with the current background color. Note that it is generally b
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>color</span> &rarr; A custom human-readable background color to be used. This does 
+<span class='variable'>color </span> &rarr;  A custom human-readable background color to be used. This does 
 not affect the default background color as set by set_bgcolor(). (Default=None)<br />
 <br />
 <span class='keyword'>Example:</span>
@@ -147,7 +147,7 @@ Turns the current canvas into a copy of the passed canvas. Note: If you want to 
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>canvas</span> &rarr; The canvas to copy.
+<span class='variable'>canvas </span> &rarr;  The canvas to copy.
 <br />
 <br />
 <span class='keyword'>Example:</span>
@@ -166,20 +166,20 @@ Draws an ellipse.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>x</span> &rarr; The left X coordinate.
+<span class='variable'>x </span> &rarr;  The left X coordinate.
 <br />
-<span class='variable'>y</span> &rarr; The top Y coordinate.
+<span class='variable'>y </span> &rarr;  The top Y coordinate.
 <br />
-<span class='variable'>w</span> &rarr; The width.
+<span class='variable'>w </span> &rarr;  The width.
 <br />
-<span class='variable'>h</span> &rarr; The height.
+<span class='variable'>h </span> &rarr;  The height.
 <br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>fill</span> &rarr; A Boolean indicating whether the ellipse is outlined (False) or 
+<span class='variable'>fill </span> &rarr;  A Boolean indicating whether the ellipse is outlined (False) or 
 filled (True). (Default=False)<br />
-<span class='variable'>color</span> &rarr; A custom foreground color. This does not affect the default 
+<span class='variable'>color </span> &rarr;  A custom foreground color. This does not affect the default 
 foreground color as set by set_fgcolor(). (Default=None)<br />
 <br />
 <span class='keyword'>Example:</span>
@@ -196,11 +196,11 @@ Draws a standard fixation dot, which is a big circle (radius = 8px) with the for
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>x</span> &rarr; The center X coordinate. None = center (default=None).
+<span class='variable'>x </span> &rarr;  The center X coordinate. None = center (default=None).
 <br />
-<span class='variable'>y</span> &rarr; The center Y coordinate. None = center (default=None).
+<span class='variable'>y </span> &rarr;  The center Y coordinate. None = center (default=None).
 <br />
-<span class='variable'>color</span> &rarr; A custom human-readable foreground color. This does not affect 
+<span class='variable'>color </span> &rarr;  A custom human-readable foreground color. This does not affect 
 the default foreground color as set by set_fgcolor(). (Default=None)<br />
 <br />
 <span class='keyword'>Example:</span>
@@ -215,30 +215,30 @@ Draws a Gabor patch. The exact rendering of the Gabor patch depends on the back-
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>x</span> &rarr; The center X coordinate.
+<span class='variable'>x </span> &rarr;  The center X coordinate.
 <br />
-<span class='variable'>y</span> &rarr; The center Y coordinate.
+<span class='variable'>y </span> &rarr;  The center Y coordinate.
 <br />
-<span class='variable'>orient</span> &rarr; Orientation in degrees [0 .. 360].
+<span class='variable'>orient </span> &rarr;  Orientation in degrees [0 .. 360].
 <br />
-<span class='variable'>freq</span> &rarr; Frequency in cycles/px of the sinusoid.
+<span class='variable'>freq </span> &rarr;  Frequency in cycles/px of the sinusoid.
 <br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>env</span> &rarr; Any of the following: "gaussian", "linear", "circular", 
+<span class='variable'>env </span> &rarr;  Any of the following: "gaussian", "linear", "circular", 
 "rectangle" (default="gaussian").<br />
-<span class='variable'>size</span> &rarr; Size in pixels (default=96).
+<span class='variable'>size </span> &rarr;  Size in pixels (default=96).
 <br />
-<span class='variable'>stdev</span> &rarr; Standard deviation in pixels of the gaussian. Only applicable 
+<span class='variable'>stdev </span> &rarr;  Standard deviation in pixels of the gaussian. Only applicable 
 if env = "gaussian". (Default=12)<br />
-<span class='variable'>phase</span> &rarr; Phase of the sinusoid [0.0 .. 1.0] (default=0).
+<span class='variable'>phase </span> &rarr;  Phase of the sinusoid [0.0 .. 1.0] (default=0).
 <br />
-<span class='variable'>col1</span> &rarr; Human-readable color for the tops (default="white").
+<span class='variable'>col1 </span> &rarr;  Human-readable color for the tops (default="white").
 <br />
-<span class='variable'>col2</span> &rarr; Human-readable color for the troughs. Note: This parameter is 
+<span class='variable'>col2 </span> &rarr;  Human-readable color for the troughs. Note: This parameter is 
 ignored by the psycho backend. (Default="black").<br />
-<span class='variable'>bgmode</span> &rarr; Specifies whether the background is the average of col1 and 
+<span class='variable'>bgmode </span> &rarr;  Specifies whether the background is the average of col1 and 
 col2 (bgmode = "avg", a typical Gabor patch) or equal to col2 ("col2"), useful for blending into the background. Note: this parameter is ignored by the psycho backend. (Default="avg")<br />
 <br />
 <span class='keyword'>Example:</span>
@@ -253,18 +253,18 @@ Draws an image from file. This function does not look in the file pool, but take
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>fname</span> &rarr; The path of the file.
+<span class='variable'>fname </span> &rarr;  The path of the file.
 <br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>center</span> &rarr; A Boolean indicating whether the given coordinates reflect the 
+<span class='variable'>center </span> &rarr;  A Boolean indicating whether the given coordinates reflect the 
 center (True) or the top-left (False) of the image (default=True).<br />
-<span class='variable'>x</span> &rarr; The X coordinate. None = center. (Default=None)
+<span class='variable'>x </span> &rarr;  The X coordinate. None = center. (Default=None)
 <br />
-<span class='variable'>y</span> &rarr; The Y coordinate. None = center. (Default=None)
+<span class='variable'>y </span> &rarr;  The Y coordinate. None = center. (Default=None)
 <br />
-<span class='variable'>scale</span> &rarr; The scaling factor of the image. 1.0 or None = no scaling, 2.0 
+<span class='variable'>scale </span> &rarr;  The scaling factor of the image. 1.0 or None = no scaling, 2.0 
 = twice as large, etc. (default=None).<br />
 <br />
 <span class='keyword'>Example:</span>
@@ -281,18 +281,18 @@ Draws a line.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>sx</span> &rarr; The left coordinate.
+<span class='variable'>sx </span> &rarr;  The left coordinate.
 <br />
-<span class='variable'>sy</span> &rarr; The top coordinate.
+<span class='variable'>sy </span> &rarr;  The top coordinate.
 <br />
-<span class='variable'>ex</span> &rarr; The right coordinate.
+<span class='variable'>ex </span> &rarr;  The right coordinate.
 <br />
-<span class='variable'>ey</span> &rarr; The bottom coordinate.
+<span class='variable'>ey </span> &rarr;  The bottom coordinate.
 <br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>color</span> &rarr; A custom human-readable foreground color. This does not 
+<span class='variable'>color </span> &rarr;  A custom human-readable foreground color. This does not 
 affect the default foreground color as set by set_fgcolor(). (Default=None)<br />
 <br />
 <span class='keyword'>Example:</span>
@@ -309,26 +309,26 @@ Draws a patch of noise, with an envelope. The exact rendering of the noise patch
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>x</span> &rarr; The center X coordinate.
+<span class='variable'>x </span> &rarr;  The center X coordinate.
 <br />
-<span class='variable'>y</span> &rarr; The center Y coordinate.
+<span class='variable'>y </span> &rarr;  The center Y coordinate.
 <br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>env</span> &rarr; Any of the following: "gaussian", "linear", "circular", 
+<span class='variable'>env </span> &rarr;  Any of the following: "gaussian", "linear", "circular", 
 "rectangle" (default="gaussian").<br />
-<span class='variable'>size</span> &rarr; Size in pixels (default=96).
+<span class='variable'>size </span> &rarr;  Size in pixels (default=96).
 <br />
-<span class='variable'>stdev</span> &rarr; Standard deviation in pixels of the gaussian. Only applicable 
+<span class='variable'>stdev </span> &rarr;  Standard deviation in pixels of the gaussian. Only applicable 
 if env = "gaussian". (Default=12)<br />
-<span class='variable'>phase</span> &rarr; Phase of the sinusoid [0.0 .. 1.0] (default=0).
+<span class='variable'>phase </span> &rarr;  Phase of the sinusoid [0.0 .. 1.0] (default=0).
 <br />
-<span class='variable'>col1</span> &rarr; Human-readable color for the tops (default="white").
+<span class='variable'>col1 </span> &rarr;  Human-readable color for the tops (default="white").
 <br />
-<span class='variable'>col2</span> &rarr; Human-readable color for the troughs (default="black").
+<span class='variable'>col2 </span> &rarr;  Human-readable color for the troughs (default="black").
 <br />
-<span class='variable'>bgmode</span> &rarr; Specifies whether the background is the average of col1 and 
+<span class='variable'>bgmode </span> &rarr;  Specifies whether the background is the average of col1 and 
 col2 (bgmode="avg", a typical noise patch) or equal to col2 ("col2"), useful for blending into the background (default="avg").<br />
 <br />
 <span class='keyword'>Example:</span>
@@ -343,14 +343,14 @@ Draws a polygon that consists of multiple vertices (i.e. a shape of points conne
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>vertices</span> &rarr; A list of tuples, where each tuple corresponds to a vertex. 
+<span class='variable'>vertices </span> &rarr;  A list of tuples, where each tuple corresponds to a vertex. 
 For example, [(100,100), (200,100), (100,200)] will draw a triangle.<br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>fill</span> &rarr; A Boolean indicating whether the rectangle is outlined (False) 
+<span class='variable'>fill </span> &rarr;  A Boolean indicating whether the rectangle is outlined (False) 
 or filled (True). (Default=False)<br />
-<span class='variable'>color</span> &rarr; A custom human-readable foreground color. This does not affect 
+<span class='variable'>color </span> &rarr;  A custom human-readable foreground color. This does not affect 
 the default foreground color as set by set_fgcolor(). (Default=None)<br />
 <br />
 <span class='keyword'>Example:</span>
@@ -371,20 +371,20 @@ Draws a rectangle.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>x</span> &rarr; The left X coordinate.
+<span class='variable'>x </span> &rarr;  The left X coordinate.
 <br />
-<span class='variable'>y</span> &rarr; The top Y coordinate.
+<span class='variable'>y </span> &rarr;  The top Y coordinate.
 <br />
-<span class='variable'>w</span> &rarr; The width.
+<span class='variable'>w </span> &rarr;  The width.
 <br />
-<span class='variable'>h</span> &rarr; The height.
+<span class='variable'>h </span> &rarr;  The height.
 <br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>fill</span> &rarr; A Boolean indicating whether the rectangle is outlined (False) 
+<span class='variable'>fill </span> &rarr;  A Boolean indicating whether the rectangle is outlined (False) 
 or filled (True). (Default=False)<br />
-<span class='variable'>color</span> &rarr; A custom human-readable foreground color. This does not affect 
+<span class='variable'>color </span> &rarr;  A custom human-readable foreground color. This does not affect 
 the default foreground color as set by set_fgcolor(). (Default=None)<br />
 <br />
 <span class='keyword'>Example:</span>
@@ -401,7 +401,7 @@ Sets the background color for the canvas.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>color</span> &rarr; A color. Acceptable formats are human-readable colors, such as 
+<span class='variable'>color </span> &rarr;  A color. Acceptable formats are human-readable colors, such as 
 'red'; and HTML colors, such as '#FF0000'.<br />
 <br />
 <span class='keyword'>Example:</span>
@@ -417,7 +417,7 @@ Sets the foreground color for subsequent drawing operations.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>color</span> &rarr; A color. Acceptable formats are human-readable colors, such as 
+<span class='variable'>color </span> &rarr;  A color. Acceptable formats are human-readable colors, such as 
 'red'; and HTML colors, such as '#FF0000'.<br />
 <br />
 <span class='keyword'>Example:</span>
@@ -435,15 +435,15 @@ Sets the font for subsequent drawing operations.<br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>style</span> &rarr; A font style. This can be one of the three standard styles 
+<span class='variable'>style </span> &rarr;  A font style. This can be one of the three standard styles 
 ('mono', 'sans', or 'serif') or a system font (e.g., 'arial'). (Default=None)<br />
-<span class='variable'>size</span> &rarr; A font size in pixels (default=None).
+<span class='variable'>size </span> &rarr;  A font size in pixels (default=None).
 <br />
-<span class='variable'>italic</span> &rarr; Indicates if the font should be italic (default=None).
+<span class='variable'>italic </span> &rarr;  Indicates if the font should be italic (default=None).
 <br />
-<span class='variable'>bold</span> &rarr; Indicates if the font should be bold (default=None).
+<span class='variable'>bold </span> &rarr;  Indicates if the font should be bold (default=None).
 <br />
-<span class='variable'>underline</span> &rarr; Indicates if the font should be underlined (default=None).
+<span class='variable'>underline </span> &rarr;  Indicates if the font should be underlined (default=None).
 <br />
 <br />
 <span class='keyword'>Example:</span>
@@ -459,7 +459,7 @@ Sets the pen width for subsequent drawing operations.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>penwidth</span> &rarr; A pen width in pixels.
+<span class='variable'>penwidth </span> &rarr;  A pen width in pixels.
 <br />
 <br />
 <span class='keyword'>Example:</span>
@@ -491,22 +491,22 @@ Draws text.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>text</span> &rarr; The text string.
+<span class='variable'>text </span> &rarr;  The text string.
 <br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>center</span> &rarr; A Boolean indicating whether the coordinates reflect the 
+<span class='variable'>center </span> &rarr;  A Boolean indicating whether the coordinates reflect the 
 center (True) or top-left (default=True).<br />
-<span class='variable'>x</span> &rarr; The X coordinate. None = center. (Default=None)
+<span class='variable'>x </span> &rarr;  The X coordinate. None = center. (Default=None)
 <br />
-<span class='variable'>y</span> &rarr; The Y coordinate. None = center. (Default=None)
+<span class='variable'>y </span> &rarr;  The Y coordinate. None = center. (Default=None)
 <br />
-<span class='variable'>max_width</span> &rarr; The maximum width of the text, before wrapping to a new 
+<span class='variable'>max_width </span> &rarr;  The maximum width of the text, before wrapping to a new 
 line, or None to wrap at screen edge (default=None)<br />
-<span class='variable'>color</span> &rarr; A custom human-readable foreground color. This does not affect 
+<span class='variable'>color </span> &rarr;  A custom human-readable foreground color. This does not affect 
 the default foreground color as set by set_fgcolor(). (Default=None)<br />
-<span class='variable'>html</span> &rarr; Indicates whether HTML tags should be parsed (default=True).
+<span class='variable'>html </span> &rarr;  Indicates whether HTML tags should be parsed (default=True).
 <br />
 <br />
 <span class='keyword'>Example:</span>
@@ -521,7 +521,7 @@ Determines the size of a text string in pixels.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>text</span> &rarr; The text string.
+<span class='variable'>text </span> &rarr;  The text string.
 <br />
 <br />
 <span class='keyword'>Returns:</span>
@@ -540,14 +540,14 @@ A convenience function that draws a line of text based on a line number. The tex
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>text</span> &rarr; The text string.
+<span class='variable'>text </span> &rarr;  The text string.
 <br />
-<span class='variable'>line</span> &rarr; A line number, where 0 is the center and > 0 is below the 
+<span class='variable'>line </span> &rarr;  A line number, where 0 is the center and > 0 is below the 
 center.<br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>color</span> &rarr; A human-readable custom foreground color. This does not affect 
+<span class='variable'>color </span> &rarr;  A human-readable custom foreground color. This does not affect 
 the default 	foreground color as set by set_fgcolor(). (Default=None)<br />
 <br />
 <span class='keyword'>Example:</span>

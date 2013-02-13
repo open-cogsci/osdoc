@@ -13,53 +13,42 @@ Constructor<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>experiment</span> &rarr; an OpenSesame experiment
+<span class='variable'>experiment </span> &rarr;  An OpenSesame experiment.
 <br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>cols</span> &rarr; The number of columns (as int) or a list that specifies the
+<span class='variable'>cols </span> &rarr;  The number of columns (as int) or a list that specifies the 
+number and relative size of the columns. For example, '[1,2,1]' will create 3 columns where the middle one is twice as large as the outer ones (default=2).<br />
+<span class='variable'>rows </span> &rarr;  Analogous to 'cols' (default=2).
 <br />
-number and relative size of the columns. For example, '[1,2,1]'<br />
-will create 3 columns where the middle one is twice as large as<br />
-the outer ones. (default=2)<br />
-<span class='variable'>rows</span> &rarr; Analogous to 'cols' (default=2)
+<span class='variable'>spacing </span> &rarr;  The amount of empty space between the widgets (default=10).
 <br />
-<span class='variable'>spacing</span> &rarr; The amount of empty space between the widgets (default=10)
+<span class='variable'>margins </span> &rarr;  The amount of empty space around the form. This is specified 
+as a list, like so [top-margin, right-margin, bottom-margin, left-margin] (default=[100, 100, 100, 100]).<br />
+<span class='variable'>theme </span> &rarr;  The theme for the widgets (default='gray').
 <br />
-<span class='variable'>margins</span> &rarr; The amount of empty space around the form. This is specified
-<br />
-as a list, like so [top-margin, right-margin, bottom-margin,<br />
-left-margin]. (default=[100, 100, 100, 100])<br />
-<span class='variable'>theme</span> &rarr; the theme for the widgets (default='gray')
-<br />
-<span class='variable'>item</span> &rarr; the item of which the form is part (default=None)
+<span class='variable'>item </span> &rarr;  The item of which the form is part (default=None).
 <br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='form._exec'>form</a>.<b>_exec(focus_widget=None)</b></span><div class='details'>
-Executes the form<br />
+Executes the form.<br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>focus_widget</span> &rarr; a widget that is in the form and should receive a
-<br />
-virtual mouse click when the form is opened. This allows<br />
-you to activate a text_input right away, for example, so<br />
-that the user doesn't have to click on it anymore.<br />
+<span class='variable'>focus_widget </span> &rarr;  A widget that is in the form and should receive a 
+virtual mouse click when the form is opened. This allows you to activate a text_input right away, for example, so that the user doesn't have to click on it anymore.<br />
 <br />
 <span class='keyword'>Returns:</span>
 <br />
-Gives the return value of the form, which depends on how the user has<br />
-interacted with the widgets. For example, if the user has pressed a<br />
-button, the button text will be returned.<br />
+Gives the return value of the form, which depends on how the user has interacted with the widgets. For example, if the user has pressed a button, the button text will be returned.<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='form.cell_index'>form</a>.<b>cell_index(pos)</b></span><div class='details'>
-Converts a position to a cell index. A cell index corresponds to the<br />
-number of the cell in the form, from left-to-right, top-to-bottom.<br />
+Converts a position to a cell index. A cell index corresponds to the number of the cell in the form, from left-to-right, top-to-bottom.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>pos</span> &rarr; a position, which can be an index (int) or a column, row tuple.
+<span class='variable'>pos </span> &rarr;  A position, which can be an index (int) or a column, row tuple.
 <br />
 <br />
 <span class='keyword'>Returns:</span>
@@ -67,37 +56,36 @@ number of the cell in the form, from left-to-right, top-to-bottom.<br />
 A cell index<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='form.render'>form</a>.<b>render()</b></span><div class='details'>
-Draws the form and all the widgets in it<br />
+Draws the form and all the widgets in it.<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='form.set_widget'>form</a>.<b>set_widget(widget, pos, colspan=1, rowspan=1)</b></span><div class='details'>
-Adds a widget to the form<br />
+Adds a widget to the form.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>widget</span> &rarr; the widget to add
+<span class='variable'>widget </span> &rarr;  The widget to add.
 <br />
-<span class='variable'>pos</span> &rarr; the position to add the widget, which can be an index or a
+<span class='variable'>pos </span> &rarr;  The position to add the widget, which can be an index or a
 <br />
-(column, row) tuple<br />
+(column, row) tuple.<br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>colspan</span> &rarr; the number of columns that the widget should span (default=1)
+<span class='variable'>colspan </span> &rarr;  The number of columns that the widget should span (default=1).
 <br />
-<span class='variable'>rowspan</span> &rarr; the number of rows that the widget should span (default=1)
+<span class='variable'>rowspan </span> &rarr;  The number of rows that the widget should span (default=1).
 <br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='form.xy_to_index'>form</a>.<b>xy_to_index(xy)</b></span><div class='details'>
-Converts a coordinate in pixels to a cell index. This allows you to<br />
-determine on which widget a user has clicked.<br />
+Converts a coordinate in pixels to a cell index. This allows you to determine on which widget a user has clicked.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>xy</span> &rarr; an (x,y) tuple
+<span class='variable'>xy </span> &rarr;  An (x,y) tuple.
 <br />
 <br />
 <span class='keyword'>Returns:</span>
 <br />
-A cell index<br />
+A cell index.<br />
 </div></div>
 </div>

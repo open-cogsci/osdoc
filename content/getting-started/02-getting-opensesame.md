@@ -7,7 +7,7 @@ level: 1
 sortkey: 003.002
 ---
 
-The latest stable version of OpenSesame is 0.27 *Frisky Freud*. If you are upgrading from 0.26, please read the [release notes][]. Older versions can be found [here][archive].
+The latest stable version of OpenSesame is 0.27.1 *Frisky Freud* ([release notes][]), the first maintenance release in the 0.27 series. If you are upgrading from 0.26, please read the [0.27 release notes][]. Older versions can be found [here][archive].
 
 Installation instructions and more download options can be found below the download buttons.
 
@@ -47,7 +47,7 @@ Support for Mac OS is experimental. Instructions for running OpenSesame from sou
 
 [opensesame_0.26-macos-2.zip][macos-package]
 
-##### We are looking for someone to improve and maintain the Mac OS packages for OpenSesame!*
+##### We are looking for someone to improve and maintain the Mac OS packages for OpenSesame!
 
 Other platforms {#other}
 ---------------
@@ -61,4 +61,5 @@ If there are no packages provided for your platform, you will need to run OpenSe
 [running-from-source]: /getting-started/running-from-source
 [neurodebian]: http://neuro.debian.net/
 [python-portable]: /getting-started/running-with-python-portable/
-[release notes]: /notes/0.27
+[0.27 release notes]: /notes/0.27
+[release notes]: /notes/0.27.1

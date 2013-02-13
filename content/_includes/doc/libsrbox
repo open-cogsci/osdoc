@@ -13,45 +13,68 @@ Constructor. Connects to the SR Box.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>experiment</span> &rarr; opensesame experiment
+<span class='variable'>experiment </span> &rarr;  Opensesame experiment.
 <br />
 <br />
 Keywords arguments:<br />
-<span class='variable'>dev</span> &rarr; the srbox device port or None for auto-detect (default=None)
+<span class='variable'>dev </span> &rarr;  The srbox device port or None for auto-detect (default=None).
 <br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='libsrbox.close'>libsrbox</a>.<b>close()</b></span><div class='details'>
-Close the connection to the srbox. This (sometimes?) required in order<br />
-to re-use the SR Box in the same session of OpenSesame.<br />
+Closes the connection to the srbox. This is (sometimes?) required in order to re-use the SR Box in the same session of OpenSesame.<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='libsrbox.get_button_press'>libsrbox</a>.<b>get_button_press(allowed_buttons=None, timeout=None)</b></span><div class='details'>
-Get a button press from the SR box<br />
+Gets a button press from the SR box.<br />
 <br />
 Keywords arguments:<br />
-<span class='variable'>allowed_buttons</span> &rarr; A list of buttons that are accepted or None to accept
-<br />
-all buttons. Valid buttons are integers 1 through 8.<br />
-(default=None)<br />
-<span class='variable'>timeout</span> &rarr; a timeout value or None for no timeout (default=None)
+<span class='variable'>allowed_buttons </span> &rarr;  A list of buttons that are accepted or None to accept 
+all buttons. Valid buttons are integers 1 through 8. (default=None)<br />
+<span class='variable'>timeout </span> &rarr;  A timeout value or None for no timeout. (default=None)
 <br />
 <br />
 <span class='keyword'>Returns:</span>
 <br />
-A timestamp, buttonlist tuple. The buttonlist consists of a list of<br />
-button numbers.<br />
+A timestamp, buttonlist tuple. The buttonlist consists of a list of button numbers.<br />
+<br />
+<span class='keyword'>Example:</span>
+<br />
+{% highlight python %}exp.srbox.start()
+timestamp, buttonlist = exp.srbox.get_button_press(allowed_buttons=[1,2])
+if 1 in buttonlist:
+		print 'Button 1 was pressed!'
+exp.srbox.stop()
+{% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='libsrbox.send'>libsrbox</a>.<b>send(ch)</b></span><div class='details'>
-Send a single character<br />
+Sends a single character.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>ch</span> &rarr; the character to send
+<span class='variable'>ch </span> &rarr;  The character to send.
 <br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='libsrbox.start'>libsrbox</a>.<b>start()</b></span><div class='details'>
-Turn on sending mode, to start giving output<br />
+Turns on sending mode, to start giving output.<br />
+<br />
+<span class='keyword'>Example:</span>
+<br />
+{% highlight python %}exp.srbox.start()
+timestamp, buttonlist = exp.srbox.get_button_press(allowed_buttons=[1,2])
+if 1 in buttonlist:
+		print 'Button 1 was pressed!'
+exp.srbox.stop()
+{% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='libsrbox.stop'>libsrbox</a>.<b>stop()</b></span><div class='details'>
-Turn of sending mode, so stop giving output<br />
+Turns of sending mode, to stop giving output.<br />
+<br />
+<span class='keyword'>Example:</span>
+<br />
+{% highlight python %}exp.srbox.start()
+timestamp, buttonlist = exp.srbox.get_button_press(allowed_buttons=[1,2])
+if 1 in buttonlist:
+		print 'Button 1 was pressed!'
+exp.srbox.stop()
+{% endhighlight %}<br />
 </div></div>
 </div>
