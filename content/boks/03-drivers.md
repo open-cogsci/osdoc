@@ -16,7 +16,7 @@ Overview
 --------
 
 - [Windows](#windows)
-- [Linux](linux)
+- [Linux](#linux)
 - [Mac OS](#macos)
 
 Windows driver installation {#windows}
@@ -34,6 +34,10 @@ Linux driver installation {#linux}
 The Boks works almost straight-away on most modern Linux distributions. The only thing that you may need to do is add your user to the `dialout` group. Under recent distributions of Ubuntu you can do this with the following command (you need to log out/in for the group change to take effect):
 
 	sudo usermod -aG dialout <myuser>
+
+Usually, this will be sufficient, but [it has been reported](http://blog.markloiseau.com/2012/05/install-arduino-ubuntu/) that in some cases you need to explicitly modify the permission for the Arduino port:
+
+	sudo chmod a+rw /dev/ttyACM0
 
 For more information, please refer to the Arduino site:
 

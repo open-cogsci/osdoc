@@ -55,7 +55,7 @@ Precision vs accuracy {#precision-vs-accuracy}
 
 As explained on [Wikipedia][wikipedia-precision], there is a conceptual difference between the 'precision' and the 'accuracy' of a measurement. The accuracy of a system reflects the extent to which the measured value corresponds to the true value, i.e. is unbiased. The precision of a system reflects the extent to which measurements are constant, i.e. have little variability.
 
-In virtually all circumstances, the temporal precision of response measurements is far more important than the precision, because variability is what reduces statistical power. This situation is fortunate, because establishing the precision of the Boks is easier than establishing its accuracy. The variability in the minimum response latency is a test of *precision*, and is in the order of microseconds (on our reference system), The absolute error in photodiode responses to a white display is a test of *accuracy* (of both the Boks and display presentation), and is in the the order of hundreds of microseconds (on our reference system).
+In virtually all circumstances, the temporal precision of response measurements is far more important than the accuracy, because variability is what reduces statistical power. This is fortunate, because establishing the precision of the Boks is easier than establishing its accuracy. The variability in the minimum response latency is a test of *precision*, and is in the order of microseconds (on our reference system), The absolute error in photodiode responses to a white display is a test of *accuracy* (of both the Boks and display presentation), and is in the the order of hundreds of microseconds (on our reference system).
 
 Benchmarks {#benchmarks}
 ----------
@@ -107,15 +107,9 @@ The Boks should not have any noise. That is, the Boks should report the actual s
 Test your own system {#test-yourself}
 --------------------
 
-You can test the Boks your own system using the `unittest` script included with the Boks source. You can run the full test suite with the following command (the command line arguments specify which tests should be performed):
-
-	./unittest led buttons photodiode latency commspeed noise
-	
-On Linux, you can also run the `testreport` script, which runs a number of tests using the `unittest` script and automatically generates a .pdf file of the results ([example][test-report-example]):
-	
-	./testreport
+You can test the Boks your own system using the `unittest` and `testreport` scripts included with the Boks source. For an explanation, see the `readme.md`, which can be viewed online [here](unittest-readme).
 		
-Furthermore, you can test your Boks in OpenSesame using the `boks_test.opensesame` file included with the Boks source code.
+In addition, you can test your Boks in OpenSesame using the `boks_test.opensesame.tar.gz` file included with the Boks source code.
 
 [^system-1]: Acer Aspire V5-171, Intel Core I3-2365M @ 1.4Ghz, 6GB, 11.6" LCD
 [^system-2]: HP Compaq dc7900, Intel Core 2 Quad Q9400 @ 2.66Ghz, 3GB, 21" ViewSonic P227f CRT
@@ -123,3 +117,4 @@ Furthermore, you can test your Boks in OpenSesame using the `boks_test.opensesam
 [arduino]: http://arduino.cc/
 [wikipedia-precision]: http://en.wikipedia.org/wiki/Accuracy_and_precision
 [test-report-example]: /pdf/testlog-dev.boks-0.1.9.pdf
+[unittest-readme]: https://github.com/smathot/boks/tree/master/unittest

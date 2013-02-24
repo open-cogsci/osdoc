@@ -20,9 +20,9 @@ Overview
 
 - [Prices and models](/boks/getit)
 - Driver installation
-	- [Windows](/boks/drivers/#install-windows)
-	- [Linux](/boks/drivers/#install-linux)
-	- [Mac OS](/boks/drivers/#install-macos)
+	- [Windows](/boks/drivers/#windows)
+	- [Linux](/boks/drivers/#linux)
+	- [Mac OS](/boks/drivers/#macos)
 - Usage
 	- [OpenSesame plug-in](/boks/opensesame)
 	- [Python module](/boks/python)
