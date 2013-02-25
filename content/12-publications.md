@@ -29,6 +29,16 @@ OpenSesame in publications, theses, conference proceedings, etc.
 
 Despite the project's young age, references to OpenSesame are starting to appear. Below is a (presumably incomplete) list. If you have used OpenSesame for your work, or discuss the software in your work, please send a message or leave a post on the forum and your reference will be added to the list. All scholarly works are welcome, including theses.
 
+OpenSesame is used for, discussed in, or mentioned in:
+
+### 2013 / in press / online first
+
+###### Drager, K. (2013). Experimental Methods in Sociolinguistics. In J. Holmes & K. Hazen (eds.), *Research Methods in Sociolinguistics: A practical guide*, Wiley-Blackwell.
+
+###### Gordon, M. S., Russo, F. A., & MacDonald, E. (2013). Spectral information for detection of acoustic time to arrival. *Attention, Perception & Psychophysics*. doi:10.3758/s13414-013-0424-2
+
+###### Mathôt, S. (2013). *Visual Attention and Stability* (Doctoral dissertation). VU University, Amsterdam, Netherlands.
+
 ### 2012
 
 ###### Andrews, M., & Diaz, J. (2012). And now for something completely different: Python in cognitive science. *CogSci 2012 Proceedings.* Retrieved from <http://mindmodeling.org/cogsci2012/papers/0004/paper0004.pdf>
