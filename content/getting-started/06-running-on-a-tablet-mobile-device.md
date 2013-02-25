@@ -4,7 +4,7 @@ title: Running on a tablet/ mobile device
 group: Getting started
 permalink: /running-on-a-tablet-mobile-device/
 level: 1
-sortkey: 003.004
+sortkey: 003.006
 ---
 
 A frequently asked question is whether it is possible to run OpenSesame on a tablet device.  Below is a short description of the current options:
@@ -64,7 +64,7 @@ Furthermore, you will notice that Ubuntu is not very touch-friendly, and that ty
 Using an Android tablet {#android}
 -----------------------
 
-Currently, the only way to run OpenSesame on an Android tablet is by using Ubuntu, as described above for the Nexus 7. However, because Android has decent support for Python, it should be possible to develop a native OpenSesame port for Android.
+For information about the OpenSesame runtime for Android, see [this page][android]
 
 Using an iPad {#ipad}
 -------------
@@ -78,3 +78,4 @@ It is not possible to run OpenSesame on the iPad. The iPad does not appear to be
 [ppa]: https://launchpad.net/~smathot/+archive/cogscinl
 [quicksynergy]: http://code.google.com/p/quicksynergy/
 [ubuntu]: http://www.ubuntu.com/
+[android]: /getting-started/android/

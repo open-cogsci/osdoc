@@ -4,7 +4,7 @@ title: Choosing and configuring a system
 group: Getting started
 permalink: /choosing-and-configuring-a-system/
 level: 1
-sortkey: 003.007
+sortkey: 003.008
 ---
 
 When you are setting up a computer to run experiments, there are lots of choices to make. There is not a single "best" way, but here are a few pointers to get you started. Mostly derived from my personal experience, so feel free to correct and/ or complement this section.

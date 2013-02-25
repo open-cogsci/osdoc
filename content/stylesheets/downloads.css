@@ -8,7 +8,8 @@
 .button-doc,
 .button-forum,
 .button-torrent,
-.button-donate {
+.button-donate,
+.button-android {
 	display: block;
 	padding: 4px 0px 4px 32px;
 }
@@ -52,4 +53,8 @@
 
 .button-donate {
 	background: url('/img/button-donate.png') left center no-repeat;
+}
+
+.button-android {
+	background: url('/img/button-android.png') left center no-repeat;
 }

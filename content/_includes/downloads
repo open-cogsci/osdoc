@@ -18,6 +18,12 @@
 	</a>
 </p>
 
+<p class="button-android">
+	<a href="/getting-started/android">
+	OpenSesame runtime for Android
+	</a>
+</p>
+
 <p class="button-macos">
 	<a href="#macos">
 	Mac OS package (.zip)
