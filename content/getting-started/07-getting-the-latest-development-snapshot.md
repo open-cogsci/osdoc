@@ -4,7 +4,7 @@ title: Development snapshots and pre-release packages
 group: Getting started
 permalink: /getting-the-latest-development-snapshot/
 level: 1
-sortkey: 003.006
+sortkey: 003.007
 ---
 
 If you want to have the latest features and don't mind potential instability, you can grab the latest experimental source code. Currently, work is being done on
