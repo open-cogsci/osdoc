@@ -53,9 +53,11 @@ If you have tested the OpenSesame runtime for Android on a device, please [share
 
 *The OpenSesame runtime for Android requires Android 2.2 'Froyo' or later.*
 
-|**Device**		|**Android**		|**Status**		|
-|Nexus 7		|4.2.1				|Works			|
-|Eken M009S		|2.2				|Works			|
+|**Device**				|**Android**		|**Status**		|
+|Asus Transformer TF101	|4.0.3				|Works			|
+|Eken M009S				|2.2				|Works			|
+|Mpman MP434			|2.2.1				|Works			|
+|Nexus 7				|4.2.1				|Works			|
 
 Developing experiments for Android {#development}
 ----------------------------------
