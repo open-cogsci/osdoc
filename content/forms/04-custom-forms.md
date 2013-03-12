@@ -184,7 +184,7 @@ question2 = widgets.label(form, text='I like data', center=False)
 question3 = widgets.label(form, text='I like questionnaires', center=False)
 ratingScale1 = widgets.rating_scale(form, var='question1',
 	nodes=['Agree', "Don't know", 'Disagree'])
-ratingScale2 = widgets.rating_scale(form, var='question3',
+ratingScale2 = widgets.rating_scale(form, var='question2',
 	nodes=['Agree', "Don't know", 'Disagree'])
 ratingScale3 = widgets.rating_scale(form, var='question3',
 	nodes=['Agree', "Don't know", 'Disagree'])
