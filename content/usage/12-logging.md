@@ -9,7 +9,15 @@ sortkey: 004.012
 
 ##### Always triple check whether your data has been correctly logged before running your experiment!
 
-Using the logger item
+Overview
+--------
+
+- [Using the logger item](#logger)
+- [Using Python inline script](#python)
+- [Format of the data files](#format)
+- [Merging multiple data files into one large file](#datamerger)
+
+Using the logger item {#logger}
 ---------------------
 
 OpenSesame will not log your data automatically. Instead, you need to insert a *logger* item, typically at the end of your trial sequence.
@@ -26,7 +34,7 @@ The logger has a number of options:
 
 In general, you should create only one logger item, and reuse that item at different locations in your experiment if necessary. If you create multiple logger items (rather than using a single logger multiple times), they will all write to the same log file, and the result will be a mess!
 
-Using Python inline script
+Using Python inline script {#python}
 --------------------------
 
 You can write to the log file using the [`self.log()`][log-func], like so:
@@ -44,16 +52,35 @@ exp._log.write('This will be written to the log!')
 
 Note that you will generally not want to write to the log file directly and use a logger item at the same time: This will result in very messy log files.
 
-Format of the data files
+Format of the data files {#format}
 ------------------------
 
 If you have used the standard logger item, data files are in plain text, comma-separated format, which can be opened in all popular spreadsheets. If you are looking for high quality, free spreadsheet software, take a look at [Libre Office][libreoffice], [OpenOffice.org][openoffice] or [Gnumeric][]. If you use Microsoft Excel, you may need to use the 'import' function to open the data files, because Excel may not properly separate the columns otherwise.
 
-If you prefer to have all data in one large spreadsheet, rather than in separate files per subject, you may be interested in the [on-line spreadsheet merger][merger]. This tool also provides functionality to convert the spreadsheet to Excel format and to select/ exclude columns.
+Merging multiple data files into one large file {#datamerger}
+-----------------------------------------------
 
-[merger]: http://www.cogsci.nl/software/online-spreadsheet-merger
+For some purposes, such as using pivot tables, it may be convenient to merge all data files into one large file. You can do this with the Datamerger program, written by Daniel Schreij.
+
+![](/img/fig/fig4.12.2.png)
+
+You can download Datamerger for Windows and Mac OS from here:
+
+- <http://www.cogsci.nl/dschreij/datamerger/>
+
+For Ubuntu, you can install the `datamerger` package from the [Cogsci.nl PPA][ppa]:
+
+	sudo add-apt-repository ppa:smathot/cogscinl
+	sudo apt-get update
+	sudo apt-get install datamerger
+
+The source code is available from here:
+
+- <https://github.com/dschreij/Datamerger>
+
 [libreoffice]: http://www.libreoffice.org/
 [openoffice]: http://www.openoffice.org/
 [gnumeric]: http://projects.gnome.org/gnumeric/
 [log-func]: /python-inline-code/inlinescript-functions/#inline_script.log
 [codecs]: http://docs.python.org/2/library/codecs.html
+[ppa]: https://launchpad.net/~smathot/+archive/cogscinl/
