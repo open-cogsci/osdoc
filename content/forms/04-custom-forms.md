@@ -7,6 +7,8 @@ level: 1
 sortkey: 006.004
 ---
 
+##### If you experience performance issues when using forms, see [this post](/forms/performance-issues-and-troubleshooting/).
+
 Overview
 --------
 
