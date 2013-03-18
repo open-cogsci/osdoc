@@ -7,6 +7,8 @@ level: 1
 sortkey: 006.002
 ---
 
+##### If you experience performance issues when using forms, see [this post](/forms/performance-issues-and-troubleshooting/).
+
 Forms are simple interactive displays that can be used to implement questionnaires, instructions, text input displays, etc. You can use forms in three ways.
 
 - Use the form plug-ins, such as form_text_input, which offer ready-made forms. This is the easiest, but least flexible way of using forms. [(Read more)][plug-ins]

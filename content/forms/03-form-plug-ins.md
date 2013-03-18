@@ -7,6 +7,8 @@ level: 1
 sortkey: 006.003
 ---
 
+##### If you experience performance issues when using forms, see [this post](/forms/performance-issues-and-troubleshooting/).
+
 A number of commonly used forms are available as ready-made plug-ins. These allow you to drag some commonly used forms into your experiment, without any need for scripting.
 
 - **form_consent** is a simple digital consent form (disclaimer: some journals may require *written* consent)
