@@ -4,7 +4,7 @@ title: Questionnaire plug-ins
 group: Plug-ins
 permalink: /questionnaire-plug-ins/
 level: 1
-sortkey: 007.005
+sortkey: 007.006
 ---
 
 ##### As of OpenSesame 0.27, [forms][] provide a better way to implement questionnaires
