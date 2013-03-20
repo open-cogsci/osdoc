@@ -9,10 +9,15 @@ sortkey: 003.006
 
 A frequently asked question is whether it is possible to run OpenSesame on a tablet device.  Below is a short description of the current options:
 
-- [Using a Windows XP/Vista/ 7 tablet](#windows)
-- [Using a Google Nexus 7](#nexus7)
 - [Using an Android tablet](#android)
+- [Using a Windows XP/Vista/ 7 tablet](#windows)
+- [Using a Ubuntu on a Google Nexus 7](#nexus7)
 - [Using an iPad](#ipad)
+
+Using an Android tablet {#android}
+-----------------------
+
+For information about the OpenSesame runtime for Android, see [this page][android]
 
 Using a Windows XP/ Vista/ 7 tablet {#windows}
 -----------------------------------
@@ -60,11 +65,6 @@ In order to use LXDE, you need to log out, select LXDE, and log back in.
 Furthermore, you will notice that Ubuntu is not very touch-friendly, and that typing commands using the default 'OnBoard' virtual keyboard is painstaking. [Quicksynergy][] allows you to share the keyboard and mouse with your regular computer (Windows, Mac, or Linux). This improves things a lot, especially when configuring the device, etc.
 
 	sudo apt-get install quicksynergy
-
-Using an Android tablet {#android}
------------------------
-
-For information about the OpenSesame runtime for Android, see [this page][android]
 
 Using an iPad {#ipad}
 -------------
