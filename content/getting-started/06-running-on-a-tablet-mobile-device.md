@@ -11,7 +11,7 @@ A frequently asked question is whether it is possible to run OpenSesame on a tab
 
 - [Using an Android tablet](#android)
 - [Using a Windows XP/Vista/ 7 tablet](#windows)
-- [Using a Ubuntu on a Google Nexus 7](#nexus7)
+- [Using Ubuntu on a Google Nexus 7](#nexus7)
 - [Using an iPad](#ipad)
 
 Using an Android tablet {#android}
@@ -24,8 +24,8 @@ Using a Windows XP/ Vista/ 7 tablet {#windows}
 
 There are a number of tablets available that run a regular installation of Windows XP/ Vista/ 7, rather than a mobile operating system. These tablets are essentially just laptops sans keyboard, and thus allow you to run OpenSesame in the same way that you would on a regular computer. Unfortunately, such tablets are rare and relatively expensive.
 
-Using a Google Nexus 7
-----------------------
+Using Ubuntu on a Google Nexus 7 {#nexus7}
+------------------------------
 
 The [Google Nexus 7][nexus7] manufactured by ASUS is a relatively cheap Android tablet. At the time of writing, you can pick one up for around €250/  $260 / £200 for the [16Gb][nexus16] version, and around €200/ $230/ £190 for [8Gb][nexus8] version. This tablet is unique in the sense that the developers of [Ubuntu Linux][ubuntu] provide an installer that allows you to easily install Ubuntu onto this device (you can recover Android afterwards). Since OpenSesame runs on Ubuntu, this is a straightforward and affordable way to run your experiments on a tablet. A short demonstration is provided in the video below:
 
