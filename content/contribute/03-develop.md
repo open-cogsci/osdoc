@@ -39,7 +39,7 @@ Indentation should be tab based. *This is the most important style guideline of 
 
 ### Names, doc-strings, and line wrapping
 
-- Names should be lower case, with words separated by underscorses. 
+- Names should be lower case, with words separated by underscorses.
 - Each function should be accompanied by an informative doc string, of the format shown below. If a doc-string is redundant, for example, because a function overrides another function that has a doc-string, please indicate where the full doc-string can be found.
 - Please do not have lines of code extend beyond 79 characters (where a tab counts as 4 characters), with the exception of long strings that are awkward to break up.
 
@@ -47,24 +47,23 @@ Indentation should be tab based. *This is the most important style guideline of 
 def a_function(argument, keyword=None):
 
 	"""
-	All arguments, keywords, and return values should be documented as shown
-	below. 
+	Does something.
 	
 	Arguments:
-	argument	--	this is an argument
+	argument	--	This is an argument.
 	
 	Keyword arguments:
-	keyword		--	this is a keyword (default=None)
+	keyword		--	This is a keyword (default=None)
 	
 	Returns:
-	This function returns some values
+	This function returns some values.
 	"""
 	
 	pass
 	
 def a_simple_function():
 
-	"""This is a simple doc-string"
+	"""This is a simple doc-string"""
 	
 	pass
 	
