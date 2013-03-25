@@ -45,7 +45,8 @@ Mac OS {#macos}
 
 Support for Mac OS is experimental. Instructions for running OpenSesame from source on Mac OS can be found [here][macos-running-from-source].
 
-[opensesame_0.26-macos-2.zip][macos-package]
+- [opensesame\_0.27.1-macos-x86\_64-1.zip][macos-package-0.27.1]
+- [opensesame_0.26-macos-2.zip][macos-package-0.26]
 
 ##### We are looking for someone to improve and maintain the Mac OS packages for OpenSesame!
 
@@ -55,7 +56,8 @@ Other platforms {#other}
 If there are no packages provided for your platform, you will need to run OpenSesame from source, as [per these instructions][running-from-source].
 
 [archive]: http://files.cogsci.nl/software/opensesame/
-[macos-package]: http://files.cogsci.nl/software/opensesame/opensesame_0.26-macos-2.zip
+[macos-package-0.26]: http://files.cogsci.nl/software/opensesame/opensesame_0.26-macos-2.zip
+[macos-package-0.27.1]: http://files.cogsci.nl/software/opensesame/opensesame_0.27.1-macos-x86_64-1.zip
 [macos-running-from-source]: /getting-started/running-from-source#macos
 [ppa-cogscinl]: https://launchpad.net/~smathot/+archive/cogscinl
 [running-from-source]: /getting-started/running-from-source
