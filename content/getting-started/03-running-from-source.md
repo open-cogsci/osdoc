@@ -132,7 +132,7 @@ Website: <http://www.macports.org/install.php>
 
 Essentially, you can now install all required packages by running a single command in a terminal:
 
-	sudo port install py26-game py26-pyqt4 py26-serial py26-pil
+	sudo port install py27-game py27-pyqt4 py27-scintilla py27-serial py27-pil py27-opengl py27-pyaudio py27-wxpython30 opencv +python27
 
 This takes forever and, in my case, crashed a few times with a checksum error. You can simply recover from such errors by executing the following command:
 
@@ -140,11 +140,32 @@ This takes forever and, in my case, crashed a few times with a checksum error. Y
 
 Then you repeat the first command and MacPorts should be on its way again.
 
+#### Psychopy backend
+
+On newer OS X verions (>10.6) macports builds everything with the 64-bit architecture by default. Psychopy however only works correctly in 32-bit and will cause a crash if run in 64-bit mode (at least in version 1.76.00).
+If you want to use the psychopy backend, you will have to configure your macports to build everything in 32-bit by changing 
+
+	build_arch=x86_64
+
+to
+
+	build_arch=i386
+
+in /opt/local/etc/macports.conf
+
+After executing the above sudo port install command, you will have to install one extra package with macports:
+
+	sudo port install py27-pip
+
+After this, you can easily install psychopy and its dependency pyglet with the command:
+
+	sudo pip install pyglet psychopy
+
 #### Make the MacPorts Python the default Python
 
 Mac OS comes with a custom version of Python but, for our purpose (and many purposes), you need the official Python. This has already been installed by MacPorts, but you still need to make it the default. You can do this with the following command:
 
-	sudo port select --set python python26
+	sudo port select --set python python27
 
 ### Installing packages manually
 
