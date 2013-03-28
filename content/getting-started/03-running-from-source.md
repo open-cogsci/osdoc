@@ -118,32 +118,19 @@ The easiest way to install the necessary packages on Mac OS is probably using Ma
 
 #### Download Xcode
 
-The first thing that you need is Xcode, the Apple developer toolkit. Apple really wants you to buy the latest Xcode 4, which is not free, but apparently you can get Xcode 3 for free from their website. If you can't find it, might I suggest that you search your favorite pirate hangout for a copy. I tested this process with Xcode 3.2.5, but you can check the MacPorts website to see which versions of Xcode are supported.
+The first thing that you need is Xcode, the Apple developer toolkit. You can get the latest version of Xcode for free from their website (you do need to login with an apple account though).
 
 Website: <http://developer.apple.com/technologies/tools/whats-new.html>
 
 #### Download MacPorts
 
-I used MacPorts 1.9.2, but again, any reasonably recent version should be fine.
+You can download macports from its website on which you can also find the necessary documentation and a catalogue of all available packages.
 
 Website: <http://www.macports.org/install.php>
 
-#### Install dependencies
+#### Configuring MacPorts for psychopy support
 
-Essentially, you can now install all required packages by running a single command in a terminal:
-
-	sudo port install py27-game py27-pyqt4 py27-scintilla py27-serial py27-pil py27-opengl py27-pyaudio py27-wxpython30 opencv +python27
-
-This takes forever and, in my case, crashed a few times with a checksum error. You can simply recover from such errors by executing the following command:
-
-	sudo port clean --all [package_that_caused_the_error]
-
-Then you repeat the first command and MacPorts should be on its way again.
-
-#### Psychopy backend
-
-On newer OS X verions (>10.6) macports builds everything with the 64-bit architecture by default. Psychopy however only works correctly in 32-bit and will cause a crash if run in 64-bit mode (at least in version 1.76.00).
-If you want to use the psychopy backend, you will have to configure your macports to build everything in 32-bit by changing 
+Before you start building your Python environment, it is best to decide if want to be able to use OpenSesame's PsychoPy backend. On newer OS X verions (>10.6) macports builds everything with the 64-bit architecture by default, but Psychopy is unable to run in a 64-bit environment (yet, as of version 1.76.00) and will show unpredictable behaviour and crashes when it has to do so. If you would like to be able to use the psychopy backend, you will need to configure macports to compile everything with 32-bit architecture by changing
 
 	build_arch=x86_64
 
@@ -153,13 +140,38 @@ to
 
 in /opt/local/etc/macports.conf
 
-After executing the above sudo port install command, you will have to install one extra package with macports:
+You don't need the PsychoPy backend to be able to run OpenSesame, as it has other quality backends like expyriment or legacy (pygame), so feel free to skip this step if you never plan on using PsychoPy.
+
+#### Install dependencies
+
+Essentially, you can now install all required packages by running a single command in a terminal:
+
+	sudo port install py27-game py27-pyqt4 py27-scintilla py27-serial py27-pil py27-opengl py27-pyaudio opencv +python27
+
+This takes forever and, in my case, crashed a few times with a checksum error. You can simply recover from such errors by executing the following command:
+
+	sudo port clean --all [package_that_caused_the_error]
+
+Then you repeat the first command and MacPorts should be on its way again.
+
+#### Expyriment and Psychopy backends
+Next to the legacy backend which is based on pygame, OpenSesame also offers you to option of using expyriment or psychopy. In contrast to the legacy backend, both of these backends are hardware accelerated (OpenGL) and should have increased timing precision. 
+You can use pip to install the other two backends. To install pip, execute the following command:
 
 	sudo port install py27-pip
 
-After this, you can easily install psychopy and its dependency pyglet with the command:
+After the installation of pip is completed, you can easily install expyriment with:
 
-	sudo pip install pyglet psychopy
+	sudo pip install expyriment
+
+If you plan on using the PsychoPy backend, make sure your Python environment is running in 32-bit mode. You can install psychopy and its dependency pyglet with the commands:
+
+	sudo pip install pyglet 
+	sudo pip install psychopy
+	
+PsychoPy refuses to run without the wx library installed (which is weird, because OpenSesame doesn't use any of the wx GUI components of psychopy), so as a final step install wx with:
+
+	sudo port install py27-wxpython-dev
 
 #### Make the MacPorts Python the default Python
 
@@ -173,11 +185,13 @@ If you want to install all Opensesame dependecies yourself you need to download 
 
 #### Install Python
 
-The python installation that comes with OS X by default is usually of a very old version (and nowadays is only 64-bit). Therefore it is better to install the newest version:
+The python installation that comes with OS X by default is usually of an older version. Therefore it is better to install the newest version from python.org:
 
 Website: <http://www.python.org/>
 
 Direct download: http://www.python.org/ftp/python/2.7.3/python-2.7.3-macosx10.6.dmg
+
+Another option is to install the [Enthought Python Distribution (EPD)][EPD_Download] instead. This distribution includes Python, but also already many of the modules OpenSesame depends on ([View][EPD_Packages] a complete list). 
 
 #### Install PyGame
 
@@ -188,7 +202,7 @@ Direct download ((Mountain) Lion): <http://www.pygame.org/ftp/pygame-1.9.2pre-py
 
 #### Install PyQt4
 
-There is no official distribution (from Riverbank) available of PyQt4 for Mac OS X. However there are some well maintained unofficial distributions, but these miss the QScintilla module, which is required for the code editting window in OpenSesame. You need to download this file manually from the link provided below and move it in PyQt4 folder after installing it first.
+There is no official distribution (from Riverbank) available of PyQt4 for Mac OS X. However there are some well maintained unofficial distributions:
 
 Official website: <http://www.riverbankcomputing.co.uk/software/pyqt/intro>
 
@@ -196,22 +210,25 @@ Mac OS X distribution (PyQtX) website: <http://sourceforge.net/projects/pyqtx/>
 
 Direct download: <http://sourceforge.net/projects/pyqtx/files/latest/download>
 
-After PyQt4 is installed, download the QScintilla module (QSci.so) to the site-packages/PyQt4 folder (see section "Some final clean up" below, if you have trouble finding this folder).
+After PyQt4 is installed, download and install the QScintilla module, which is used for the inline script editor in OpenSesame:
+
+PyQScintillaX <http://sourceforge.net/projects/pyqtx/files/PyQScintillaX/>
 
 #### Install NumPy and SciPy
 
-Getting the latest version of NumPy or SciPy that works with the newer versions of the OS X (Lion/Mountain Lion) is a bit trickier, as the current official distributions of these packages are not supported yet by the newest OS X versions, due to the shift from 32-bit to 64-bit architecture. There is however a third-party installation script that takes care of this problem and gets numpy and scipy installed on your system, by compiling the latest versions of these packages from source.
+Getting the latest versions of NumPy or SciPy can be done in two ways:
 
-Official website: <http://numpy.scipy.org/>
-
-The installation script can be found at <http://fonnesbeck.github.com/ScipySuperpack/>  (Direct download: <https://raw.github.com/fonnesbeck/ScipySuperpack/master/install_superpack.sh>)
-along with the instructions of how to use it. Basically you just have to run
+You can use the installation script which can be found at <http://fonnesbeck.github.com/ScipySuperpack/>  (Direct download: <https://raw.github.com/fonnesbeck/ScipySuperpack/master/install_superpack.sh>)
+along with the instructions of how to use it. This script will automatically find the latest versions of numpy and scipy and install them for you. Basically you just have to run
 
 	sudo sh ./install_superpack.sh
 
 in the console in the folder which you downloaded the script.
 
-Alternatively, you can also download the packages and install them yourself from <https://github.com/fonnesbeck/ScipySuperpack/zipball/master> if the script doesn't work for you, or you'd like to keep matters in your own hand. Using the script however is recommended, as it gets the job done without problems and is way easier.
+Alternatively, you can download and install the packages from the projects' own websites:
+
+Numpy: <http://sourceforge.net/projects/numpy/files/NumPy/> (Direct download for version 1.7.0: <http://sourceforge.net/projects/numpy/files/NumPy/1.7.0/numpy-1.7.0-py2.7-python.org-macosx10.6.dmg/download>)
+Scipy: <http://sourceforge.net/projects/scipy/files/scipy/> (Direct download for version 0.11.0: <http://sourceforge.net/projects/scipy/files/scipy/0.11.0/scipy-0.11.0-py2.7-python.org-macosx10.6.dmg/download>)
 
 #### Install PsychoPy (optional, required for psycho back-end)
 
@@ -228,11 +245,11 @@ Download the appropriate egg for your version of Python (e.g. setuptools-0.6c9-p
 Run it as if it were a shell script, e.g. `sh setuptools-0.6c9-py2.7.egg`. Setuptools will install itself using the matching version of Python (e.g. python2.7), and will place the easy_install executable in the default location for installing Python scripts (as determined by the standard distutils configuration files, or by the Python installation).
 Afterwards, install most dependencies with the command:
 
-	sudo easy_install psychopy pyglet pyopengl pil
+	sudo easy_install psychopy pyglet pyopengl pil expyriment
 
 You may need to manually install Matplotlib, wxPython because (at the time of testing) these didn't install using easy_install. Make sure you install the versions that match your Python version.
 
-*NOTE:* The psychopy backend does not seem to work yet and crashes with a message "No default config present". This problem is caused by the underlying package pyglet of which, again, there is no suitable version for the newer 64-bit or cocoa versions of Mac OS X yet. We are working on this problem and hope to have it solved soon.
+*NOTE:* The psychopy backend does not seem to work yet and crashes. The reason is that PsychoPy can't cope with the newer 64-bit or cocoa versions of Mac OS X yet. Newer versions of psychopy hopefully solve this problem.
 
 #### Install wxPython (Optional, required for the PsychoPy back-end)
 
@@ -278,3 +295,5 @@ Run OpenSesame using one of the following commands:
 [python-portable]: /getting-started/running-with-python-portable
 [src_stable]: http://files.cogsci.nl/software/opensesame/
 [src_unstable]: https://github.com/smathot/OpenSesame
+[EPD_Download]: http://www.enthought.com/products/epd.php
+[EPD_Packages]: http://www.enthought.com/products/epdlibraries.php
