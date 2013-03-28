@@ -25,7 +25,14 @@ OpenSesame runtime for Android {#runtime}
 
 ### Download {#download}
 
-The OpenSesame runtime for Android is not currently available on the Android market / Google Play Store. You can download the latest OpenSesame runtime for Android package in `.apk` format from the list of pre-release packages:
+You can download the OpenSesame runtime for Android through the Android market / Google Play Store:
+
+<a href="https://play.google.com/store/apps/details?id=nl.cogsci.opensesame" style="border:none;">
+  <img alt="Get it on Google Play"
+       src="https://developer.android.com/images/brand/en_generic_rgb_wo_45.png" />
+</a>
+
+Alternatively, you can download the latest OpenSesame runtime for Android package in `.apk` format from the list of pre-release packages:
 
 - <http://files.cogsci.nl/software/opensesame/pre-releases/>
 
@@ -72,4 +79,5 @@ A few design tips:
 - Implement most user interactions through the *mouse_response* item. Screen touches are registered as mouse clicks.
 - The resolution for the `droid` backend is fixed at 1280x800. On Android, your experiment will be automatically scaled up or down depending on the resolution of the device, but the resolution that you design with is always 1280x800.
 
+[google-play]: https://play.google.com/store/apps/details?id=nl.cogsci.opensesame
 [forum]: http://forum.cogsci.nl/index.php?p=/discussion/333/a-video-of-opensesame-running-natively-on-android
