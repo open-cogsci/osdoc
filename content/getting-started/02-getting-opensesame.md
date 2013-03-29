@@ -46,7 +46,7 @@ Mac OS {#macos}
 Support for Mac OS is experimental. Instructions for running OpenSesame from source on Mac OS can be found [here][macos-running-from-source].
 The newest version of OpenSesame (0.27.1) comes in two *flavors*. One runs on 64-bit Python (from python.org) and of all its underlying packages were obtained by using the official distributables that are available from the developers' websites. Because psychopy is not able to run in a 64-bit Python environment (yet), this backend is not available in this version. The other version is completely built from the ground up with macports and is compiled in 32-bit. This version does contain the psychopy backend. Concerning their usage, there are no real noticable differences between these versions (except for the lack of the psychopy backend in one) and experiments created in one version should work perfectly in the other, so the decision of which one to use is completely up to you (upon initial testing, the 64-bit version seemed a bit more stable, but these tests were not really in-depth)
 
-Both versions have been built on *Mountain Lion* and, after initial tests on our systems, sadly did not seem to be backward compatible with older OS X versions. If they do work for you on pre-Mountain Lion macs, please let us know on <forum.cogsci.nl>.
+Both versions have been built on *Mountain Lion* and, after initial tests on our systems, sadly did not seem to be backward compatible with older OS X versions. If they do work for you on pre-Mountain Lion macs, please let us know on [the forum](http://forum.cogsci.nl).
 
 - [opensesame 0.27.1 64bit][macos-package-0.27.1-64bit]
 - [opensesame 0.27.1 32bit][macos-package-0.27.1-32bit]
