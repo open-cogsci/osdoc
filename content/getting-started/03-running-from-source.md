@@ -228,7 +228,7 @@ Alternatively, you can download and install the packages from the projects' own 
 Numpy: <http://sourceforge.net/projects/numpy/files/NumPy/> (Direct download version 1.7.0: <http://sourceforge.net/projects/numpy/files/NumPy/1.7.0/numpy-1.7.0-py2.7-python.org-macosx10.6.dmg/download>)
 Scipy: <http://sourceforge.net/projects/scipy/files/scipy/> (Direct download version 0.11.0: <http://sourceforge.net/projects/scipy/files/scipy/0.11.0/scipy-0.11.0-py2.7-python.org-macosx10.6.dmg/download>)
 
-#### Install PsychoPy (optional, required for psycho back-end)
+#### Install PsychoPy and Expyriment(optional)
 
 PsychoPy requires the installation of a number of dependencies. Most of these can be installed fairly easily using setuptools.
 
@@ -261,7 +261,7 @@ Website: <http://wxpython.org/>
 
 Direct download: <http://downloads.sourceforge.net/wxpython/wxPython2.9-osx-2.9.4.0-cocoa-py2.7.dmg>
 
-### Install PyOpenGL (Optional, required for opengl back-end)
+#### Install PyOpenGL (Optional, required for opengl or expyriment back-end)
 
 You can download PyOpenGL yourself or install it using easy_install (see "install PsychoPy").
 
@@ -269,7 +269,7 @@ Website: <http://pyopengl.sourceforge.net/>
 
 Direct download: <https://pypi.python.org/packages/source/P/PyOpenGL/PyOpenGL-3.0.2.tar.gz#md5=77becc24ffc0a6b28030aa109ad7ff8b>
 
-#### Run OpenSesame
+### Run OpenSesame
 
 Download the source code of the latest OpenSesame release here. Extract the .tar.gz to your home folder (any other location works analogously). Open a terminal and switch to the location of OpenSesame (this example assumes that the version is 0.26):
 
