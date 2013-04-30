@@ -8,7 +8,8 @@ sortkey: 0019.004
 show: True
 ---
 
-##### The Boks and documentation below is under development.
+The Boks and documentation below is under development.
+{: .page-notification}
 
 You can download the Boks software from here (select the latest release):
 

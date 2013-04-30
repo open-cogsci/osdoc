@@ -7,7 +7,8 @@ level: 1
 sortkey: 003.004
 --- 
 
-##### The OpenSesame runtime for Android is experimental.
+The OpenSesame runtime for Android is experimental.
+{: .page-notification}
 
 Overview
 --------

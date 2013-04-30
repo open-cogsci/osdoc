@@ -8,7 +8,8 @@ sortkey: 0019.005
 show: True
 ---
 
-##### The Boks and documentation below is under development.
+The Boks and documentation below is under development.
+{: .page-notification}
 
 If there is a Boks plug-in in your OpenSesame experiment, the `boks` can be accessed as `exp.boks` or `self.experiment.boks`:
 

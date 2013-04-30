@@ -8,7 +8,8 @@ sortkey: 0019.003
 show: True
 ---
 
-##### The Boks and documentation below is under development.
+The Boks and documentation below is under development.
+{: .page-notification}
 
 At the heart of the Boks is an [Arduino][] board. To use the Boks, you therefore need to install Arduino drivers, which are available for all platforms.
 

@@ -2,6 +2,7 @@
 	margin-left: 8px;
 }
 
+#content .page-notification,
 .moved,
 h5,
 #notification div {
@@ -17,6 +18,7 @@ h5,
 	background: #eeeeec url('/img/notification/android.png') no-repeat 8px 8px;
 }
 
+#content .page-notification,
 h5 {
 	background: #eeeeec url('/img/notification/page.png') no-repeat 8px 8px;
 }

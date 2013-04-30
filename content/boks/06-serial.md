@@ -8,7 +8,8 @@ sortkey: 0019.006
 show: True
 ---
 
-##### The Boks and documentation below is under development.
+The Boks and documentation below is under development.
+{: .page-notification}
 
 If you are using software that cannot make use of the Boks Python module, you can interact directly with the Boks through via the serial port. Communication occurs by sending a single command byte to the Boks. Depending on the command, the command byte should be followed by one or more bytes that serve as parameters. Depending on the command, the Boks responds by sending zero or more bytes in response. The command bytes are indicated in decimal notation in the square brackets.
 

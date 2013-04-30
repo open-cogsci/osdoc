@@ -32,6 +32,19 @@
 	padding: 4px;
 }
 
+#content .info-box {
+	font-size: 0.9em;
+	border-radius: 4px;
+	padding: 4px 16px 4px 16px;
+	background-color: #eeeeec;
+}
+
+#content .fig-caption {
+	font-style: italic;
+	font-size: 0.9em;
+}
+
+#content .reference,
 h6 {
 	font-size: 0.9em;
 	text-indent: -16px;
