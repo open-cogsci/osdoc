@@ -45,6 +45,9 @@ Gordon, M. S., Russo, F. A., & MacDonald, E. (2013). Spectral information for de
 Mathôt, S. (2013). *Visual Attention and Stability* (Doctoral dissertation). VU University, Amsterdam, Netherlands.
 {: .reference}
 
+Theeuwes, J., Mathôt, S., & Grainger, J. (2013). Exogenous object-centered attention. *Attention, Perception, & Psychophysics*. doi:10.3758/s13414-013-0459-4
+{: .reference}
+
 ### 2012
 
 Andrews, M., & Diaz, J. (2012). And now for something completely different: Python in cognitive science. *CogSci 2012 Proceedings.* Retrieved from <http://mindmodeling.org/cogsci2012/papers/0004/paper0004.pdf>
