@@ -17,6 +17,7 @@ Overview
 	- [Creating custom forms using OpenSesame script](#opensesame-script)
 	- [Creating custom forms using Python inline script](#python)
 	- [Non-interactive forms](#non-interactive)
+	- [Themes](#themes)
 	- [Available widgets and keywords](#widgets)
 - [Another example](#another-example)
 
@@ -123,6 +124,18 @@ Usually, a form will have an input field, a button, or some other interactive el
 	set only_render "yes"
 
 To this in Python inline-script, you call `form.render()`, instead of `form._exec()`.
+
+### Themes {#themes}
+
+Forms support theming. Currently, there are two themes available: 'gray' and 'plain'. The 'gray' theme is the default. Although the 'gray' theme is already quite plain, the 'plain' theme is even more basic. You can choose a theme like this in OpenSesame script ...
+
+	set theme plain
+	
+... and by using the `theme` keyword in Python inline script:
+
+{% highlight python %}
+form = widgets.form(self.experiment, theme='plain')
+{% endhighlight %}
 
 ### Available widgets and keywords {#widgets}
 

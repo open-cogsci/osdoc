@@ -112,3 +112,11 @@ Turns the led off.
 #### `CMD_GET_BTNCNT` [20]
 
 Returns the number of buttons on the Boks (including photodiode) as a single byte.
+
+##### `CMD_GET_SID` [21]
+
+Returns the serial id of the Boks as a 6 character string.
+
+##### `CMD_LINK_LED` [22]
+
+Puts the Boks into link-led mode, such that the LED will turn on when the photodiode is activated. Link-led mode is aborted when a non-0 byte is sent to the Boks.

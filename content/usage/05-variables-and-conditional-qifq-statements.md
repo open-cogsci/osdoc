@@ -160,13 +160,7 @@ The same principle applies to 'Show if' fields in sketchpad items. For example, 
 When are conditions evaluated? {#when-are-conditions-evaluated}
 ------------------------------
 
-OpenSesame calls every sequence twice: once to prepare and once for the actual running. Obviously, it makes a difference whether conditions are evaluated during the prepare or during the run phase. Potentially, this can be very confusing, so it's good to be explicit about when conditions are evaluated.
-
-In sequence items, the "Run if..." condition is evaluated at the last moment, during the run phase. Therefore, you can use a condition like `[correct] = 0` which depends on the results of a keyboard_response item which has been called just before.
-
-In sketchpad items, the 'Show if...' condition is evaluated during the prepare phase, when the sketchpad is constructed. This is because sketchpads are created on an offline canvas in advance, to prevent potential timing issues. However, this means that using a condition like `[correct] = 0` will cause an error, because during the first prepare phase the variable 'correct' has not yet been set (it is set during the first run phase, which follows the first prepare phase, assuming of course that there is a keyboard_item in the sequence).
-
-In feedback items, the 'Show if..,' condition is evaluated during the run phase. In fact, this is the only difference between sketchpad and feedback items. Therefore, a condition like `[correct] = 0` will work perfectly well in a feedback item. Because of this property, feedback items are well suited to provide feedback, as the name suggests. But for the same reason, feedback items are not as fast as sketchpad items and should not be used to present time critical displays (or at the very least you should verify that no timing issues arise).
+See [this page][prepare-run].
 
 Getting and setting variables in inline_script items {#getting-and-setting}
 ----------------------------------------------------
@@ -192,3 +186,4 @@ Note the asymmetry: You use `exp.set()`, rather than `self.set()`, even though y
 
 [tutorial]: /usage/step-by-step-tutorial/
 [feedback]: /usage/giving-feedback-to-participants/
+[prepare-run]: /usage/prepare-run#conditional-statements

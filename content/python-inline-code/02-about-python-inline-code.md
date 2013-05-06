@@ -16,12 +16,17 @@ Overview
 
 - [Learning Python](#learning)
 - [The inline_script item](#inline-script)
-- [Carry-over effects between runs](#carry-over)
-- [Importing modules](#modules)
-- [Defining globally accessible functions](#functions)
 - [The exp and win variables](#exp-win)
 - [The debug window](#debug)
 - [openexp modules](#openexp)
+- [Notes for 0.27.2 and later](#v0-27-2)
+	- [Shared variables](#shared-variables)
+	- [Transparent variables](#transparent-variables)
+- [Notes for 0.27.1 and earlier](#v0-27-1)
+	- [Carry-over effects between runs](#carry-over)
+	- [Importing modules](#modules)
+	- [Defining globally accessible functions](#functions)
+
 
 Learning Python {#learning}
 ---------------
@@ -71,8 +76,50 @@ self.sleep(1000)
 
 This works, because `sleep()` is a function of the `inline_script` object. For a complete list of `inline_script` functions, see [here][inline-script].
 
-Carry-over effects between runs {#carry-over}
--------------------------------
+Notes for 0.27.2 and later {#v0-27-2}
+--------------------------
+
+### Shared variables {#shared-variables}
+
+Variables defined in one inline_script are accessible in all other inline_scripts. Therefore, if, for example, you want to prepare a `canvas` object in the prepare phase of an inline_script and show it in the run phase, there is no need to declare the object `global` or to store as a property of the `exp` object. You can simply construct the `canvas` in one inline_script ...
+
+{% highlight python %}
+from openexp.canvas import canvas
+my_canvas = canvas(exp)
+my_canvas.fixdot()
+{% endhighlight %}
+
+... and show it in another inline_script ...
+
+{% highlight python %}
+my_canvas.show()
+{% endhighlight %}
+
+The same principle applies to functions and modules: Once you have defined a function or imported a module in one inline_script, it will be accessible in other inline_scripts as well.
+
+### Transparent variables {#shared-variables}
+
+Transparent variable management is experimental.
+{: .page-notification}
+
+In the general tab, you can enable the option 'Transparent variable management'. If enabled, experimental variables will be directly accessible in inline_script items. For example, if you have defined a variable called `my_var` in a loop item, you will be able to use that variable directly in an inline_script:
+	
+{% highlight python %}
+print my_var
+my_var = 'some value'
+{% endhighlight %}
+
+In contrast, if transparent variable management is disabled, you would need to use `self.get()` and `exp.set()`:
+	
+{% highlight python %}
+print self.get('my_var')
+exp.set('my_var', 'some value')
+{% endhighlight %}
+
+Notes for 0.27.1 and earlier {#v0-27-1}
+----------------------------
+
+### Carry-over effects between runs {#carry-over}
 
 By default, OpenSesame executes the user interface and experimental runs in the same process. In some cases, this can give unexpected results. Let's consider Experiment A that consists (only) of the following script ...
 
@@ -98,8 +145,7 @@ exp.my_canvas = canvas(exp)
 
 *Tip:* If you consistently encounter trouble when running your experiment for the second time (without closing OpenSesame), you can enable the *Run experiments in a separate process* option under *Preferences*. If you enable this option, OpenSesame will run your experiments as a separate program, using [opensesamerun][].
 
-Importing modules {#modules}
------------------
+### Importing modules {#modules}
 
 Because the code in an inline_script item is essentially the body of a function (see above), functions and modules may not work as you expect them to. For example, the following seemingly valid (although silly) piece of script ...
 
@@ -128,8 +174,7 @@ my_function()
 
 This may be a bit confusing, but the take home message is: If you get a `NameError` for a module/ package/ function that you have imported, try declaring that module/ package/ function global, as illustrated above.
 
-Defining globally accessible functions {#functions}
---------------------------------------
+### Defining globally accessible functions {#functions}
 
 Another neat trick is that you can declare functions global. Normally, you would not be able to define a function in one inline_script, and use it in another inline_script. By declaring a function global, you can circumvent this problem. So if you create the following inline_script ...
 

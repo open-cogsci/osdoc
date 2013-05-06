@@ -21,11 +21,7 @@ Outline
 The difference between feedback and sketchpad items {#difference}
 ---------------------------------------------------
 
-You may have noticed that feedback and sketchpad items are very similar. They both provide a drawable canvas that can be used as a stimulus display during the experiment. The crucial difference lies in the phase during which the canvas is constructed.
-
-For a sketchpad item, the canvas is constructed during the prepare phase of the sequence of which it is part. This is done to reduce the possibility of timing glitches, because constructing a canvas can take a bit of time, especially when it contains many and/ or complex stimuli. Consequently, the contents of a sketchpad cannot depend on what happens during the sequence, after the sketchpad has been prepared. Therefore, sketchpads are not very well suited to provide feedback.
-
-In contrast, for feedback items, the canvas is constructed when it is shown. Therefore, it may take some time for a feedback item to actually appear on the screen, it should not be used for presenting time critical stimuli. But, on the bright side, the contents of a feedback item can depend on what happened just before. Therefore, feedback items are well suited to provide feedback.
+See [this page][prepare-run].
 
 Relevant variables {#relevant-variables}
 ------------------
@@ -106,3 +102,4 @@ exp.set('acc', acc)
 {% endhighlight %}
 
 [variables]: /usage/variables-and-conditional-qifq-statements/#built-in-variables
+[prepare-run]: /usage/prepare-run#sketchpad-feedback
