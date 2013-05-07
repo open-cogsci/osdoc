@@ -7,6 +7,10 @@ body {
 	color: #2e3436;
 }
 
+#fullpage {
+	background-image:none!important;
+}
+
 a {
 	color: #3465a3;
 	text-decoration: none;
@@ -55,6 +59,8 @@ pre code,
 .highlight code {
 	border: none;
 	padding: none;
+	word-wrap: break-word;
+	white-space: pre-wrap;
 }
 
 a code {
@@ -68,11 +74,15 @@ a code {
 	background: #ffffff;
 }
 
+#fullpage,
 #maincontainer {
 	background-color: #ffffff;
-	padding: 8px;
 	border-radius: 4px;
 	box-shadow: 2px 2px 10px #888A85;
+}
+
+#maincontainer {
+	padding: 8px;
 }
 
 #maincontainer td {
@@ -96,4 +106,14 @@ a code {
 	border-top: solid 1px #888a85;
 	font-size: 0.7em;
 	color: #888a85;
+}
+
+#pdf-link {
+	float:right;
+	font-size: 0.8em;
+	margin-top: 16px;
+}
+
+#pdf-link a {
+	border: none;
 }

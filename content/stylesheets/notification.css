@@ -2,6 +2,13 @@
 	margin-left: 8px;
 }
 
+#pdf-notification {
+	font-size: 0.8em;
+	text-align: right;
+	margin-bottom: 8px;
+	border-bottom: solid 1px #555753;
+}
+
 #content .page-notification,
 .moved,
 h5,

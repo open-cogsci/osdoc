@@ -12,7 +12,7 @@
 	{% include flattr %}
 </head>
 
-<body>
+<body id='inpage'>
 
 {% include facebook %}
 {% include poll %}
@@ -39,6 +39,7 @@
 				{% if site.notifications == true %}
 				<div id='notification'>{% include notification %}</div>
 				{% endif %}
+				<div id='pdf-link'>{% include pdf-link %}</div>
 				<div id='content'>{% include content %}</div>
 			</div>
 		</td>

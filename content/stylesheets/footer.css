@@ -12,10 +12,10 @@
 	text-decoration: underline;
 }
 
-#footer #credits {
+#maincontainer #footer #credits {
 	float: left;
 }
 
-#footer #license {
+#maincontainer #footer #license {
 	float: right;
 }

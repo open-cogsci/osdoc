@@ -1,6 +1,5 @@
-#content {
-	float: left;
-	margin: 8px;
+#maincontainer #content {
+	margin: 8px 0px 8px 8px;
 }
 
 #content img {
