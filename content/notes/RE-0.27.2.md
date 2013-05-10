@@ -37,6 +37,6 @@ Bugs fixed:
 Windows packaging:
 
 - Use Python 2.7.4
-- All dependencies been updated to most recent version
+- All dependencies have been updated to most recent version
 
 [0.27 release notes]: /notes/0.27
