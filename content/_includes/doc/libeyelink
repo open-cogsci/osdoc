@@ -10,6 +10,7 @@
 <a href='#libeyelink.get_eyelink_clock_async'>get_eyelink_clock_async</a><br />
 <a href='#libeyelink.log'>log</a><br />
 <a href='#libeyelink.log_var'>log_var</a><br />
+<a href='#libeyelink.manual_drift_correction'>manual_drift_correction</a><br />
 <a href='#libeyelink.prepare_backdrop'>prepare_backdrop</a><br />
 <a href='#libeyelink.prepare_drift_correction'>prepare_drift_correction</a><br />
 <a href='#libeyelink.pupil_size'>pupil_size</a><br />
@@ -28,328 +29,315 @@
 <a href='#libeyelink.wait_for_saccade_end'>wait_for_saccade_end</a><br />
 <a href='#libeyelink.wait_for_saccade_start'>wait_for_saccade_start</a><br />
 </p>
-<div class='function'><span class='function_name'><a class='anchor' id='libeyelink.__init__'>libeyelink</a>.<b>__init__(experiment, resolution, data_file="default.edf", fg_color=(255, 255, 255), bg_color=(0, 0, 0), saccade_velocity_threshold=35, saccade_acceleration_threshold=9500, force_drift_correct=False)</b></span><div class='details'>
-Constructor. Initializes the connection to the Eyelink<br />
+<div class='function'><span class='function_name'><a class='anchor' id='libeyelink.__init__'>libeyelink</a>.<b>__init__(experiment, resolution, data_file=u'default.edf', fg_color=(255, 255, 255), bg_color=(0, 0, 0), saccade_velocity_threshold=35, saccade_acceleration_threshold=9500, force_drift_correct=False)</b></span><div class='details'>
+Constructor. Initializes the connection to the Eyelink.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>experiment </span> &rarr;  the experiment
+<span class='variable'>experiment		</span> &rarr; 	The experiment object.
 <br />
-<span class='variable'>resolution </span> &rarr;  (width, height) tuple
+<span class='variable'>resolution		</span> &rarr; 	A (width, height) tuple.
 <br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>data_file </span> &rarr;  the name of the EDF file (default.edf)
+<span class='variable'>data_file		</span> &rarr; 	The name of the EDF file. (default=u'default.edf')
 <br />
-<span class='variable'>fg_color </span> &rarr;  the foreground color for the calibration screen 
+<span class='variable'>fg_color		</span> &rarr; 	The foreground color for the calibration screen. 
 (default=255,255,255)<br />
-<span class='variable'>bg_color </span> &rarr;  the background color for the calibration screen 
+<span class='variable'>bg_color		</span> &rarr; 	The background color for the calibration screen. 
 (default=0,0,0)<br />
-<span class='variable'>saccade_velocity_threshold </span> &rarr;  velocity threshold used for saccade 
-detection (default=35)<br />
-<span class='variable'>saccade_acceleration_threshold </span> &rarr;  acceleration threshold used for 
-saccade detection (default=9500)<br />
-<span class='variable'>force_drift_correct </span> &rarr;  indicates whether drift correction should be 
-enabled. This is useful only for Eyelink 1000 models, for which drift correction is disabled by default (default=False)<br />
+<span class='variable'>saccade_velocity_threshold		</span> &rarr; 	The velocity threshold used for 
+saccade detection. (default=35)<br />
+<span class='variable'>saccade_acceleration_threshold	</span> &rarr; 	The acceleration threshold used 
+for saccade detection. (default=9500)<br />
+<span class='variable'>force_drift_correct				</span> &rarr; 	Indicates whether drift correction 
+should be enabled. This is useful only for Eyelink 1000 models, for which drift correction is disabled by default. (default=False)<br />
 <br />
 <span class='keyword'>Returns:</span>
 <br />
-True on connection success and False on connection failure<br />
+True on connection success and False on connection failure.<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='libeyelink.calibrate'>libeyelink</a>.<b>calibrate(beep=True, target_size=16)</b></span><div class='details'>
-Starts eyelink calibration<br />
+Starts eyelink calibration.<br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>beep </span> &rarr;  indicates whether the calibration target should beep (default=True)
-<br />
-<span class='variable'>target_size </span> &rarr;  the size of the calibration target (default=16)
+<span class='variable'>beep			</span> &rarr; 	Indicates whether or not the calibration target 
+should beep when jumping. (default=True)<br />
+<span class='variable'>target_size		</span> &rarr; 	The size of the calibration target. (default=16)
 <br />
 <br />
 <span class='keyword'>Exceptions:</span>
 <br />
-Raises an exceptions.runtime_error on failure<br />
+Raises an exceptions.runtime_error on failure.<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='libeyelink.close'>libeyelink</a>.<b>close()</b></span><div class='details'>
-Close the connection with the eyelink<br />
+Closes the connection with the eyelink.<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='libeyelink.connected'>libeyelink</a>.<b>connected()</b></span><div class='details'>
-Returs the status of the eyelink connection<br />
+Returns the status of the eyelink connection.<br />
 <br />
 <span class='keyword'>Returns:</span>
 <br />
-True if connected, False otherwise<br />
+True if connected, False otherwise.<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='libeyelink.drift_correction'>libeyelink</a>.<b>drift_correction(pos=None, fix_triggered=False)</b></span><div class='details'>
-Performs drift correction and falls back to the calibration screen if<br />
-necessary<br />
+Performs drift correction and falls back to the calibration screen if necessary. Pressing the 'escape' key during drift-correction will not immediately abort the experiment, but will ask for confirmation first.<br />
+<br />
+Note: This function is simply a wrapper around `fix_triggered_drift_correction()` and `manual_drift_correction()`.<br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>pos </span> &rarr;  the coordinate (x,y tuple) of the drift correction dot or None
-<br />
-for the display center (default = None)<br />
-<span class='variable'>fix_triggered </span> &rarr;  a boolean indicating whether drift correction should
-<br />
-be fixation triggered, rather than spacebar triggered<br />
-(default = False)<br />
+<span class='variable'>pos				</span> &rarr; 	The coordinates (x,y tuple) for drift correction 
+or None for the display center. (default=None)<br />
+<span class='variable'>fix_triggered	</span> &rarr; 	A boolean indicating whether drift correction 
+should be fixation triggered, rather than spacebar triggered. (default=False)<br />
 <br />
 <span class='keyword'>Returns:</span>
 <br />
-True on success, False on failure<br />
+True on success, False on failure.<br />
 <br />
 <span class='keyword'>Exceptions:</span>
 <br />
-Raises an exceptions.runtime_error on error<br />
+Raises an exceptions.runtime_error on error.<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='libeyelink.fix_triggered_drift_correction'>libeyelink</a>.<b>fix_triggered_drift_correction(pos=None, min_samples=30, max_dev=60, reset_threshold=10)</b></span><div class='details'>
-Performs fixation triggered drift correction and falls back to the<br />
-calibration screen if necessary. You can return to the set-up screen by<br />
-pressing the 'q' key.<br />
+Performs fixation triggered drift correction. You can return to the set-up screen by pressing the 'q' key. Pressing the 'escape' key during drift-correction will not immediately abort the experiment, but will ask for confirmation first.<br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>pos </span> &rarr;  the coordinate (x,y tuple) of the drift correction dot or None
+<span class='variable'>pos				</span> &rarr; 	The coordinate (x,y tuple) for drift correction 
+or None for the display center. (default=None)<br />
+<span class='variable'>min_samples		</span> &rarr; 	The minimum nr of stable samples that should be 
+acquired. (default=30)<br />
+<span class='variable'>max_dev			</span> &rarr; 	The maximum allowed deviation. (default=60)
 <br />
-for the display center (default = None)<br />
-<span class='variable'>min_samples </span> &rarr;  the minimum nr of stable samples that should be acquired
-<br />
-(default = 30)<br />
-<span class='variable'>max_dev </span> &rarr;  the maximum allowed deviation (default = 60)
-<br />
-<span class='variable'>reset_threshold </span> &rarr;  the maximum allowed deviation from one sample to the
-<br />
-next (default = 10)<br />
+<span class='variable'>reset_threshold	</span> &rarr; 	The maximum allowed deviation from one sample to 
+the next (default=10)<br />
 <br />
 <span class='keyword'>Returns:</span>
 <br />
-True on success, False on failure<br />
+True on success, False on failure.<br />
 <br />
 <span class='keyword'>Exceptions:</span>
 <br />
-Raises an exceptions.runtime_error on error<br />
+Raises an exceptions.runtime_error on error or on confirming 'abort experiment'.<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='libeyelink.get_eyelink_clock_async'>libeyelink</a>.<b>get_eyelink_clock_async()</b></span><div class='details'>
-Retrieve difference between tracker time (as found in tracker timestamps)<br />
-and experiment time.<br />
+Retrieve difference between tracker time (as found in tracker timestamps) and experiment time.<br />
 <br />
 <span class='keyword'>Returns:</span>
 <br />
-tracker time minus experiment time<br />
+The tracker time minus experiment time.<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='libeyelink.log'>libeyelink</a>.<b>log(msg)</b></span><div class='details'>
-Writes a message to the eyelink data file<br />
+Writes a message to the eyelink data file.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>msg </span> &rarr;  the message to be logged
+<span class='variable'>msg		</span> &rarr; 	The message to be logged.
 <br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='libeyelink.log_var'>libeyelink</a>.<b>log_var(var, val)</b></span><div class='details'>
-Writes a variable to the eyelink data file. This is a shortcut for<br />
-eyelink.log("var %s %s" % (var, val))<br />
+Writes a variable to the eyelink data file. This is a shortcut for eyelink.log("var %s %s" % (var, val)).<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>var </span> &rarr;  the variable name
+<span class='variable'>var		</span> &rarr;  The variable name.
 <br />
-<span class='variable'>val </span> &rarr;  the value
+<span class='variable'>val		</span> &rarr;  The value.
 <br />
+</div></div>
+<div class='function'><span class='function_name'><a class='anchor' id='libeyelink.manual_drift_correction'>libeyelink</a>.<b>manual_drift_correction(pos=None)</b></span><div class='details'>
+Performs manual (spacebar-triggered) drift correction. You can return to the set-up screen by pressing the 'q' key. Pressing the 'escape' key during drift-correction will not immediately abort the experiment, but will ask for confirmation first.<br />
+<br />
+<span class='keyword'>Keyword arguments:</span>
+<br />
+<span class='variable'>pos		</span> &rarr; 	The coordinate (x,y tuple) for drift correction dot or 
+None for the display center. (default=None)<br />
+<br />
+<span class='keyword'>Returns:</span>
+<br />
+True on success, False on failure.<br />
+<br />
+<span class='keyword'>Exceptions:</span>
+<br />
+Raises an exceptions.runtime_error on error or on confirming 'abort experiment'.<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='libeyelink.prepare_backdrop'>libeyelink</a>.<b>prepare_backdrop(canvas)</b></span><div class='details'>
-Convert a surface to the format required by the eyelink.<br />
-<br />
-WARNING: this function can take between 50-150 ms to complete, depending on the resolution of the image<br />
-and the cpu power of your machine. Do not use during time critical phases of your experiment<br />
+Converts a surface to the format required by the eyelink. WARNING: this function can take between 50-150 ms to complete, depending on the resolution of the image and the cpu power of your machine. Do not use during time critical phases of your experiment.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>canvas </span> &rarr;  an openexp canvas
+<span class='variable'>canvas		</span> &rarr; 	An openexp.canvas.
 <br />
 <br />
 <span class='keyword'>Returns:</span>
 <br />
-A tuple with in ((list) image in array2d format, (int) image width, (int) image height)<br />
+A (image, width, height) tuple, where image is a pygame.surfarray.array2d.<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='libeyelink.prepare_drift_correction'>libeyelink</a>.<b>prepare_drift_correction(pos)</b></span><div class='details'>
-Puts the tracker in drift correction mode<br />
+Puts the tracker in drift-correction mode.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>pos </span> &rarr;  the reference point
+<span class='variable'>pos		</span> &rarr; 	The reference point.
 <br />
 <br />
 <span class='keyword'>Exceptions:</span>
 <br />
-Raises an exceptions.runtime_error on error<br />
+Raises an exceptions.runtime_error on error.<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='libeyelink.pupil_size'>libeyelink</a>.<b>pupil_size()</b></span><div class='details'>
-Gets the most recent pupil size<br />
+Gets the most recent pupil size.<br />
 <br />
 <span class='keyword'>Returns:</span>
 <br />
-A float corresponding to the pupil size (in arbitrary units). The value<br />
--1 indicates missing data.<br />
+A float corresponding to the pupil size (in arbitrary units). The value -1 indicates missing data.<br />
 <br />
 <span class='keyword'>Exceptions:</span>
 <br />
-Raises an exceptions.runtime_error on failure<br />
+Raises an exceptions.runtime_error on failure.<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='libeyelink.sample'>libeyelink</a>.<b>sample()</b></span><div class='details'>
-Gets the most recent gaze sample<br />
+Gets the most recent gaze sample.<br />
 <br />
 <span class='keyword'>Returns:</span>
 <br />
-A tuple (x, y) containing the coordinates of the sample. The value<br />
-(-1, -1) indicates missing data.<br />
+A tuple (x, y) containing the coordinates of the sample. The value (-1, -1) indicates missing data.<br />
 <br />
 <span class='keyword'>Exceptions:</span>
 <br />
-Raises an exceptions.runtime_error on failure<br />
+Raises an exceptions.runtime_error on failure.<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='libeyelink.send_command'>libeyelink</a>.<b>send_command(cmd)</b></span><div class='details'>
-Sends a command to the eyelink<br />
+Sends a command to the eyelink.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>cmd </span> &rarr;  the eyelink command to be executed
+<span class='variable'>cmd		</span> &rarr; 	The eyelink command to be executed.
 <br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='libeyelink.set_backdrop'>libeyelink</a>.<b>set_backdrop(backdrop)</b></span><div class='details'>
-Set backdrop image of Eyelink computer. For better performance, it can be<br />
-useful to already convert the canvas to send to the eyelink in the prepare phase using eyelink.prepare_backdrop().<br />
-If speed is not an issue, you can also directly pass a openexp.canvas object and this function<br />
-will take care of the conversion<br />
+Sets backdrop image for the EyeLink computer. For better performance, it can be useful to convert the canvas to send to the eyelink in the prepare phase using eyelink.prepare_backdrop(). If speed is not an issue, you can also directly pass a openexp.canvas object and this function will take care of the conversion.<br />
 <br />
-WARNING: this function can take between 10-50 ms to complete, depending on the resolution of the image<br />
-and the cpu power of your machine. Do not use during time critical phases of your experiment<br />
+WARNING: this function can take between 10-50 ms to complete, depending on the resolution of the image and the cpu power of your machine. Do not use during time critical phases of your experiment.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>backdrop </span> &rarr; 
-<br />
-<br />
-an openexp canvas<br />
-OR<br />
-a tuple representation (created with prepare_backdrop()) containing<br />
-1. (list) a numpy array2d.tolist() representation of the image<br />
-2. (int)the width of the image<br />
-3. (int)the height of the image<br />
+<span class='variable'>backdrop	</span> &rarr; 	An openexp.canvas or a tuple representation as 
+returned by prepare_backdrop().<br />
 <br />
 <span class='keyword'>Returns:</span>
 <br />
-(int) The amount of time in ms the function took to complete<br />
+The amount of time in ms the function took to complete.<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='libeyelink.set_eye_used'>libeyelink</a>.<b>set_eye_used()</b></span><div class='details'>
-Sets the eye_used variable, based on the eyelink's report, which<br />
-specifies which eye is being tracked. If both eyes are being tracked,<br />
-the left eye is used.<br />
+Sets the eye_used variable, based on the eyelink's report, which specifies which eye is being tracked. If both eyes are being tracked, the left eye is used.<br />
 <br />
 <span class='keyword'>Exceptions:</span>
 <br />
-Raises an exceptions.runtime_error on failure<br />
+Raises an exceptions.runtime_error on failure.<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='libeyelink.start_recording'>libeyelink</a>.<b>start_recording()</b></span><div class='details'>
-Starts recording of gaze samples<br />
+Starts recording of gaze samples.<br />
 <br />
 <span class='keyword'>Exceptions:</span>
 <br />
-Raises an exceptions.runtime_error on failure<br />
+Raises an exceptions.runtime_error on failure.<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='libeyelink.status_msg'>libeyelink</a>.<b>status_msg(msg)</b></span><div class='details'>
-Sets the eyelink status message, which is displayed on the<br />
-eyelink experimenter pc<br />
+Sets the eyelink status message, which is displayed on the eyelink experimenter pc.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>msg </span> &rarr;  the status message
+<span class='variable'>msg		</span> &rarr; 	The status message.
 <br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='libeyelink.stop_recording'>libeyelink</a>.<b>stop_recording()</b></span><div class='details'>
-Stop recording of gaze samples<br />
+Stops recording of gaze samples.<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='libeyelink.wait_for_blink_end'>libeyelink</a>.<b>wait_for_blink_end()</b></span><div class='details'>
-Waits for a blink end<br />
+Waits for a blink end.<br />
 <br />
 <span class='keyword'>Returns:</span>
 <br />
-timestamp (in experiment time)<br />
+A timestamp in experiment time.<br />
 <br />
 <span class='keyword'>Exceptions:</span>
 <br />
-Raises an exceptions.runtime_error on failure<br />
+Raises an exceptions.runtime_error on failure.<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='libeyelink.wait_for_blink_start'>libeyelink</a>.<b>wait_for_blink_start()</b></span><div class='details'>
-Waits for a blink start<br />
+Waits for a blink start.<br />
 <br />
 <span class='keyword'>Returns:</span>
 <br />
-timestamp (in experiment time)<br />
+A timestamp in experiment time.<br />
 <br />
 <span class='keyword'>Exceptions:</span>
 <br />
-Raises an exceptions.runtime_error on failure<br />
+Raises an exceptions.runtime_error on failure.<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='libeyelink.wait_for_event'>libeyelink</a>.<b>wait_for_event(event)</b></span><div class='details'>
-Waits until an event has occurred<br />
+Waits until an event has occurred.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>event </span> &rarr;  eyelink event, like pylink.STARTSACC
+<span class='variable'>event	</span> &rarr;  An EyeLink event, such as pylink.STARTSACC.
 <br />
 <br />
 <span class='keyword'>Returns:</span>
 <br />
-A tuple (timestamp, event).<br />
-The event is in float_data format. The timestamp is in experiment time<br />
+A tuple (timestamp, event). The event is in float_data format. The timestamp is in experiment time.<br />
 <br />
 <span class='keyword'>Exceptions:</span>
 <br />
-Raises an exceptions.runtime_error on failure<br />
+Raises an exceptions.runtime_error on failure.<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='libeyelink.wait_for_fixation_end'>libeyelink</a>.<b>wait_for_fixation_end()</b></span><div class='details'>
-Waits for a fixation end<br />
+Waits for a fixation end.<br />
 <br />
 <span class='keyword'>Returns:</span>
 <br />
-timestamp (in experiment time), start_pos, end_pos<br />
+A (timestamp, start_pos, end_pos) tuple with timestamp in experiment time.<br />
 <br />
 <span class='keyword'>Exceptions:</span>
 <br />
-Raises an exceptions.runtime_error on failure<br />
+Raises an exceptions.runtime_error on failure.<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='libeyelink.wait_for_fixation_start'>libeyelink</a>.<b>wait_for_fixation_start()</b></span><div class='details'>
-Waits for a fixation start<br />
+Waits for a fixation start.<br />
 <br />
 <span class='keyword'>Returns:</span>
 <br />
-timestamp (in experiment time), start_pos<br />
+A (timestamp, start_pos) tuple with timestamp in experiment time.<br />
 <br />
 <span class='keyword'>Exceptions:</span>
 <br />
-Raises an exceptions.runtime_error on failure<br />
+Raises an exceptions.runtime_error on failure.<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='libeyelink.wait_for_saccade_end'>libeyelink</a>.<b>wait_for_saccade_end()</b></span><div class='details'>
-Waits for a saccade end<br />
+Waits for a saccade end.<br />
 <br />
 <span class='keyword'>Returns:</span>
 <br />
-timestamp in experiment time, start_pos, end_pos<br />
+A (timestamp, start_pos, end_pos) tuple with timestamp in experiment time.<br />
 <br />
 <span class='keyword'>Exceptions:</span>
 <br />
-Raises an exceptions.runtime_error on failure<br />
+Raises an exceptions.runtime_error on failure.<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='libeyelink.wait_for_saccade_start'>libeyelink</a>.<b>wait_for_saccade_start()</b></span><div class='details'>
-Waits for a saccade start<br />
+Waits for a saccade start.<br />
 <br />
 <span class='keyword'>Returns:</span>
 <br />
-timestamp in experiment time, start_pos<br />
+A (time, start_pos) tuple with timestamp in experiment time.<br />
 <br />
 <span class='keyword'>Exceptions:</span>
 <br />
-Raises an exceptions.runtime_error on failure<br />
+Raises an exceptions.runtime_error on failure.<br />
 </div></div>
 </div>

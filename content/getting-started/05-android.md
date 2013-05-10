@@ -73,9 +73,7 @@ If you have tested the OpenSesame runtime for Android on a device, please [share
 Developing experiments for Android {#development}
 ----------------------------------
 
-The OpenSesame runtime for Android requires the `droid` back-end, which is available as of OpenSesame 0.27.2, currently in pre-release. You can get the latest pre-release from here:
-
-- <http://files.cogsci.nl/software/opensesame/pre-releases/>
+The OpenSesame runtime for Android requires the `droid` back-end, which is available as of OpenSesame 0.27.2.
 
 A few design tips:
 

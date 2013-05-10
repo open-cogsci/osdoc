@@ -1,5 +1,5 @@
 <div class='pydoc'>
-<p><small>For OpenSesame 0.27.1</small></p>
+<p><small>For OpenSesame 0.27.2</small></p>
 <span class='class_name'>class <b>synth</b></span><br />
 <p class='details'><b>Function overview:</b><br />
 <a href='#synth.__init__'>__init__</a><br />
@@ -16,7 +16,7 @@
 <a href='#synth.volume'>volume</a><br />
 <a href='#synth.wait'>wait</a><br />
 </p>
-<div class='function'><span class='function_name'><a class='anchor' id='synth.__init__'>synth</a>.<b>__init__(experiment, osc = "sine", freq = 440, length = 100, attack = 0, decay = 5)</b></span><div class='details'>
+<div class='function'><span class='function_name'><a class='anchor' id='synth.__init__'>synth</a>.<b>__init__(experiment, osc="sine", freq=440, length=100, attack=0, decay=5)</b></span><div class='details'>
 Initializes the synthesizer.<br />
 <br />
 <span class='keyword'>Arguments:</span>

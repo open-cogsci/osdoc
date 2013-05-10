@@ -7,8 +7,6 @@ level: 1
 sortkey: 007.004
 ---
 
-##### This documentation refers to the new-style plug-in API, which is available as of OpenSesame 0.27.2.
-
 Overview
 --------
 

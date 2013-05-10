@@ -1,7 +1,8 @@
 OpenSesame documentation area
 =============================
 
-Copyright 2010-2012
+Copyright 2010-2013
+
 Sebastiaan Mathôt <s.mathot@cogsci.nl>
 
 About

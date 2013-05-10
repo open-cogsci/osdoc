@@ -1,5 +1,5 @@
 <div class='pydoc'>
-<p><small>For OpenSesame 0.27.1</small></p>
+<p><small>For OpenSesame 0.27.2</small></p>
 <span class='class_name'>class <b>experiment</b></span><br />
 <p class='details'><b>Function overview:</b><br />
 <a href='#experiment.__init__'>__init__</a><br />
@@ -22,17 +22,17 @@
 <a href='#experiment.time'>time</a><br />
 <a href='#experiment.unset'>unset</a><br />
 </p>
-<div class='function'><span class='function_name'><a class='anchor' id='experiment.__init__'>experiment</a>.<b>__init__(name='experiment', string=None, pool_folder=None)</b></span><div class='details'>
+<div class='function'><span class='function_name'><a class='anchor' id='experiment.__init__'>experiment</a>.<b>__init__(name=u'experiment', string=None, pool_folder=None)</b></span><div class='details'>
 Constructor. The experiment is created automatically be OpenSesame and you will generally not need to create it yourself.<br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>name </span> &rarr;  The name of the experiment (default='experiment').
+<span class='variable'>name 		</span> &rarr; 	The name of the experiment. (default='experiment')
 <br />
-<span class='variable'>string </span> &rarr;  A string containing the experiment definition (default=None).
-<br />
-<span class='variable'>pool_folder </span> &rarr;  A specific folder to be used for the file pool 
-(default=None).<br />
+<span class='variable'>string 		</span> &rarr; 	A string containing the experiment definition. 
+(default=None)<br />
+<span class='variable'>pool_folder	</span> &rarr; 	A specific folder to be used for the file pool. 
+(default=None)<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='experiment.auto_type'>experiment</a>.<b>auto_type(val)</b></span><div class='details'>
 <i>Inherited from <b>item</b></i><br /><br />Converts a value into the 'best fitting' or 'simplest' type that is compatible with the value.<br />
@@ -201,7 +201,7 @@ Returns the path to a file. First checks if the file is in the file pool and the
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>path </span> &rarr;  The filename.
+<span class='variable'>path	</span> &rarr; 	The filename.
 <br />
 <br />
 <span class='keyword'>Returns:</span>
@@ -327,7 +327,7 @@ Sets the subject number and parity (even/ odd). This function is called automati
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>nr </span> &rarr;  The subject nr.
+<span class='variable'>nr	</span> &rarr; 	The subject nr.
 <br />
 <br />
 <span class='keyword'>Example:</span>

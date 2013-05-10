@@ -7,6 +7,7 @@ level: 1
 sortkey: 010.006
 ---
 
+|May 10, 2013	| 0.27.2 *Frisky Freud* (maintenance)	|
 |Feb 13, 2013	| 0.27.1 *Frisky Freud* (maintenance)	|
 |Dec 11, 2012	| [0.27][] *Frisky Freud*				|
 |April 2, 2012 	| [0.26][] *Earnest Einstein*			|

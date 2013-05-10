@@ -81,7 +81,7 @@ Notes for 0.27.2 and later {#v0-27-2}
 
 ### Shared variables {#shared-variables}
 
-Variables defined in one inline_script are accessible in all other inline_scripts. Therefore, if, for example, you want to prepare a `canvas` object in the prepare phase of an inline_script and show it in the run phase, there is no need to declare the object `global` or to store as a property of the `exp` object. You can simply construct the `canvas` in one inline_script ...
+Variables defined in one inline_script are accessible in all other inline_scripts. Therefore, if, for example, you want to prepare a `canvas` object in the prepare phase of an inline_script and show it in the run phase, there is no need to declare the object `global` or to store it as a property of the `exp` object. You can simply construct the `canvas` in one inline_script ...
 
 {% highlight python %}
 from openexp.canvas import canvas
@@ -95,7 +95,7 @@ my_canvas.fixdot()
 my_canvas.show()
 {% endhighlight %}
 
-The same principle applies to functions and modules: Once you have defined a function or imported a module in one inline_script, it will be accessible in other inline_scripts as well.
+The same principle applies to functions and modules: Once you have defined a function or imported a module in one inline_script, it will be accessible in other inline_scripts as well. In other words, variables, functions, and modules are shared between inline_scripts.
 
 ### Transparent variables {#shared-variables}
 

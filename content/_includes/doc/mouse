@@ -1,12 +1,14 @@
 <div class='pydoc'>
-<p><small>For OpenSesame 0.27.1</small></p>
+<p><small>For OpenSesame 0.27.2</small></p>
 <span class='class_name'>class <b>mouse</b></span><br />
 <p class='details'><b>Function overview:</b><br />
 <a href='#mouse.__init__'>__init__</a><br />
 <a href='#mouse.flush'>flush</a><br />
 <a href='#mouse.get_click'>get_click</a><br />
 <a href='#mouse.get_pos'>get_pos</a><br />
+<a href='#mouse.get_pressed'>get_pressed</a><br />
 <a href='#mouse.set_buttonlist'>set_buttonlist</a><br />
+<a href='#mouse.set_pos'>set_pos</a><br />
 <a href='#mouse.set_timeout'>set_timeout</a><br />
 <a href='#mouse.set_visible'>set_visible</a><br />
 </p>
@@ -89,6 +91,22 @@ x, y = position
 print 'The cursor was at (%d, %d)' % (x, y)
 {% endhighlight %}<br />
 </div></div>
+<div class='function'><span class='function_name'><a class='anchor' id='mouse.get_pressed'>mouse</a>.<b>get_pressed()</b></span><div class='details'>
+Returns the current state of the mouse buttons. A True value means the button is currently being pressed.<br />
+<br />
+<span class='keyword'>Returns:</span>
+<br />
+A (button1, button2, button3) tuple.<br />
+<br />
+<span class='keyword'>Example:</span>
+<br />
+{% highlight python %}from openexp.mouse import mouse
+my_mouse = mouse(exp)
+buttons = my_mouse.get_pressed()
+b1, b2, b3 = buttons
+print 'Currently pressed mouse buttons: (%d, %d, %d)' % (b1, b2, b3)
+{% endhighlight %}<br />
+</div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='mouse.set_buttonlist'>mouse</a>.<b>set_buttonlist(buttonlist = None)</b></span><div class='details'>
 Sets a list of accepted buttons.<br />
 <br />
@@ -102,6 +120,21 @@ input (default=None).<br />
 {% highlight python %}from openexp.mouse import mouse
 my_mouse = mouse(exp)
 my_mouse.set_buttonlist( [1,2] )
+{% endhighlight %}<br />
+</div></div>
+<div class='function'><span class='function_name'><a class='anchor' id='mouse.set_pos'>mouse</a>.<b>set_pos(pos=(0,0))</b></span><div class='details'>
+Sets the mouse position.<br />
+<br />
+<span class='keyword'>Keyword arguments:</span>
+<br />
+<span class='variable'>pos </span> &rarr;  A (x,y) tuple for the new mouse coordinates (default = (0,0))
+<br />
+<br />
+<span class='keyword'>Example:</span>
+<br />
+{% highlight python %}from openexp.mouse import mouse
+my_mouse = mouse(exp)
+my_mouse.set_pos(pos=(0,0))
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='mouse.set_timeout'>mouse</a>.<b>set_timeout(timeout=None)</b></span><div class='details'>

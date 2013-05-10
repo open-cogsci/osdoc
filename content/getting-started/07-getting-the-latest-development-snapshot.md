@@ -9,7 +9,7 @@ sortkey: 003.007
 
 If you want to have the latest features and don't mind potential instability, you can grab the latest experimental source code. Currently, work is being done on
 
-- OpenSesame 0.27.2 *Frisky Freud* (bug-fix release in the 0.27 series)
+- OpenSesame 0.27.3 *Frisky Freud* (maintenance release in the 0.27 series)
 - OpenSesame 0.28.0 *Gutsy Gibson* (next major release)
 
 Pre-release packages

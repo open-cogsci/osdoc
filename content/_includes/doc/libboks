@@ -8,6 +8,7 @@
 <a href='#libboks.get_button_release'>get_button_release</a><br />
 <a href='#libboks.get_button_state'>get_button_state</a><br />
 <a href='#libboks.get_buttons'>get_buttons</a><br />
+<a href='#libboks.get_sid'>get_sid</a><br />
 <a href='#libboks.get_timeout'>get_timeout</a><br />
 <a href='#libboks.info'>info</a><br />
 <a href='#libboks.set_buttons'>set_buttons</a><br />
@@ -15,21 +16,23 @@
 <a href='#libboks.set_led'>set_led</a><br />
 <a href='#libboks.set_timeout'>set_timeout</a><br />
 </p>
-<div class='function'><span class='function_name'><a class='anchor' id='libboks.__init__'>libboks</a>.<b>__init__(port=None, experiment=None, baudrate=115200, buttons=None, timeout=None)</b></span><div class='details'>
-Constructor<br />
+<div class='function'><span class='function_name'><a class='anchor' id='libboks.__init__'>libboks</a>.<b>__init__(port=None, experiment=None, baudrate=115200, buttons=None, timeout=None, led=False)</b></span><div class='details'>
+Constructor. A Boks object is created automatically the first time that a Boks plug-in is prepared in OpenSesame.<br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>port	 		</span> &rarr;  	the port to which the device is connected, None 
-for autodetect, or 'dummy' to use the keyboard as dummy-boks (default=None)<br />
-<span class='variable'>experiment 		</span> &rarr; 	an OpenSesame experiment, or None to run in plain 
-Python mode (default=None)<br />
-<span class='variable'>baudrate 		</span> &rarr; 	the baudrate of the boks, or None to use default 
+<span class='variable'>port	 		</span> &rarr;  	The port to which the device is connected, None 
+for autodetect, or 'dummy' to use the keyboard as dummy-boks. (default=None)<br />
+<span class='variable'>experiment 		</span> &rarr; 	An OpenSesame experiment, or None to run in plain 
+Python mode. (default=None)<br />
+<span class='variable'>baudrate 		</span> &rarr; 	The baudrate of the boks, or None to use default. 
 (default=None)<br />
-<span class='variable'>buttons 		</span> &rarr; 	a list of buttons that are used, or None to use 
-all buttons (default=None)<br />
-<span class='variable'>timeout 		</span> &rarr; 	a timeout in milliseconds when collecting 
-responses or None for no timeout (default=None)<br />
+<span class='variable'>buttons 		</span> &rarr; 	A list of buttons that are used, or None to use 
+all buttons. (default=None)<br />
+<span class='variable'>timeout 		</span> &rarr; 	A timeout in milliseconds when collecting 
+responses or None for no timeout. (default=None)<br />
+<span class='variable'>led				</span> &rarr; 	Indicates whether the LED should be switched on. 
+(default=False)<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
@@ -122,6 +125,19 @@ A list of active buttons. For example, [1,2,3,4].<br />
 {% highlight python %}l = exp.boks.get_buttons()
 if 1 in l:
 	print 'Button 1 is currently being monitored'
+{% endhighlight %}<br />
+</div></div>
+<div class='function'><span class='function_name'><a class='anchor' id='libboks.get_sid'>libboks</a>.<b>get_sid()</b></span><div class='details'>
+Retrieves the Arduino serial ID.<br />
+<br />
+<span class='keyword'>Returns:</span>
+<br />
+A 7 character string containing the Arduino serial ID<br />
+<br />
+<span class='keyword'>Example:</span>
+<br />
+{% highlight python %}sid = exp.boks.get_sid()
+print 'The Arduino serial ID of the Boks is %s' % sid
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='libboks.get_timeout'>libboks</a>.<b>get_timeout()</b></span><div class='details'>
