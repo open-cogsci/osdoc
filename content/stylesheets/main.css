@@ -48,7 +48,12 @@ code {
 	border: solid 1px #d3d7cf;
 	background: #eeeeec;
 	border-radius: 2px;
-
+	/* Source: http://weblogtoolscollection.com/archives/2007/06/16/css-for-code-wrap-long-lines/ */
+	white-space: pre-wrap; /* css-3 */
+	white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+	white-space: -pre-wrap; /* Opera 4-6 */
+	white-space: -o-pre-wrap; /* Opera 7 */
+	word-wrap: break-word; /* Internet Explorer 5.5+ */
 }
 
 pre {
@@ -59,8 +64,6 @@ pre code,
 .highlight code {
 	border: none;
 	padding: none;
-	word-wrap: break-word;
-	white-space: pre-wrap;
 }
 
 a code {
