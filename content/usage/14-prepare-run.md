@@ -96,7 +96,7 @@ In general, items should follow the principle of performing as much as possible 
 
 ## Conditional statements ('Run if' and 'Show if') {#conditional-statements}
 
-In `sequence` items, the 'Run if' condition is evaluated at the last moment, during the run phase. Therefore, you can use a condition like `[correct] = 0` which depends on the results of a `keyboard_response` item which has been called just before.
+In `sequence` items, the 'Run if' condition is evaluated at the last moment, during the run phase. Therefore, you can use a condition like `[correct] = 0` which depends on the results of a `keyboard_response` item which has been called just before. It is important to take into account that the 'Run if' statement applies *only* to the run phase of an item--The prepare phase is *always* executed.
 
 In `sketchpad` items, the 'Show if' condition is evaluated during the prepare phase, when the `sketchpad` is constructed. In `feedback` items, the 'Show if' condition is evaluated during the run phase.
 													
