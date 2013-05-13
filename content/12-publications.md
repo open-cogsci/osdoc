@@ -42,6 +42,9 @@ Drager, K. (2013). Experimental Methods in Sociolinguistics. In J. Holmes & K. H
 Gordon, M. S., Russo, F. A., & MacDonald, E. (2013). Spectral information for detection of acoustic time to arrival. *Attention, Perception & Psychophysics*. doi:10.3758/s13414-013-0424-2
 {: .reference}
 
+Kilpeläinen, M., Olivers, C. N. L., & Theeuwes, J. (2013). The eyes like their targets on a stable background. *Journal of Vision*, *13*(6), e5. doi:10.1167/13.6.5
+{: .reference}
+
 Mathôt, S. (2013). *Visual Attention and Stability* (Doctoral dissertation). VU University, Amsterdam, Netherlands.
 {: .reference}
 
