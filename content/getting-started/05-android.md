@@ -7,7 +7,7 @@ level: 1
 sortkey: 003.004
 --- 
 
-The OpenSesame runtime for Android is experimental.
+[Help us](http://forum.cogsci.nl/index.php?p=/discussion/439/opensesame-mobile-call-for-testers) test the OpenSesame runtime for Android!
 {: .page-notification}
 
 Overview
