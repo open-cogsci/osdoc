@@ -65,7 +65,7 @@ If there are no packages provided for your platform, you will need to run OpenSe
 [archive]: http://files.cogsci.nl/software/opensesame/
 [macos-package-0.26]: http://files.cogsci.nl/software/opensesame/opensesame_0.26-macos-2.zip
 [macos-package-0.27.1-64bit]: http://www.cogsci.nl/dschreij/opensesame-mac/Opensesame-0.27.1-wo_psychopy-macos-x86_64-1.dmg
-[macos-package-0.27.1-32bit]: http://www.cogsci.nl/dschreij/opensesame-mac/Opensesame-0.27.1-macos-i386-1.dmg
+[macos-package-0.27.2-32bit]: http://www.cogsci.nl/dschreij/opensesame-mac/Opensesame-0.27.2-macos-i386-1.dmg
 [macos-running-from-source]: /getting-started/running-from-source#macos
 [ppa-cogscinl]: https://launchpad.net/~smathot/+archive/cogscinl
 [running-from-source]: /getting-started/running-from-source
