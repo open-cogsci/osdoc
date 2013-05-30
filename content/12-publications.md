@@ -10,19 +10,9 @@ sortkey: 0012.001
 How to cite OpenSesame
 ----------------------
 
-If you have used OpenSesame for your experiments, we would appreciate it if you cite one of the following references (style according to the Publication Manual of the American Psychological Association Ed. 5).
-
-### Preferred citation
+If you have used OpenSesame for your experiments, we would appreciate it if you cite the following paper:
 
 Mathôt, S., Schreij, D., & Theeuwes, J. (2012). OpenSesame: An open-source, graphical experiment builder for the social sciences. *Behavior Research Methods*, *44*(2), 314-324. [DOI:10.3758/s13428-011-0168-7][mathot_theeuwes_2012_brm]
-{: .reference}
-
-### Alternative citations
-
-Mathôt, S., & Theeuwes, J. (2010). OpenSesame (Version 0.23) [Computer software and manual]. Retrieved December 18, 2010, from <http://www.cogsci.nl/opensesame>
-{: .reference}
-
-Mathôt, S., Schreij, D., Theeuwes, J. (2011, Aug). *OpenSesame: A free, graphical experiment builder for the social sciences.* Poster presented at the 16th European Conference on Eye Movements, Marseille, France.
 {: .reference}
 
 Please note that OpenSesame relies on many modules for which we can take no credit. If you make extensive use of modules such as SciPy/ NumPy, PsychoPy, or Expyriment, please also cite the respective authors.
