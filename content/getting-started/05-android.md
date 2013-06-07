@@ -20,6 +20,7 @@ Overview
 	- [Limitations](#limitations)
 	- [Supported devices](#devices)
 - [Developing experiments for Android](#development)
+- [Forum topics](#forum)
 
 OpenSesame runtime for Android {#runtime}
 ------------------------------
@@ -33,9 +34,9 @@ You can download the OpenSesame runtime for Android through the Android market /
        src="https://developer.android.com/images/brand/en_generic_rgb_wo_45.png" />
 </a>
 
-Alternatively, you can download the latest OpenSesame runtime for Android package in `.apk` format from the list of pre-release packages:
+Alternatively, you can download the latest OpenSesame runtime for Android package in `.apk` format from here:
 
-- <http://files.cogsci.nl/software/opensesame/pre-releases/>
+- <http://files.cogsci.nl/software/opensesame/>
 
 Once you have installed this package (please refer to Google for tips on installing `.apk` packages on your device) the OpenSesame runtime will simply appear as an app.
 
@@ -54,6 +55,7 @@ Debug output is written to `/sdcard/opensesame-debug.txt`.
 - The *synth* item and `openexp.synth` module are not functional.
 - The *sampler* item and `openexp.sampler` module will ignore panning and pitching.
 - Participants may be eaten by dragons.
+- The `fixation_dot`, `touch_response`, and `notepad` plug-ins don't work.
 
 ### Supported devices {#devices}
 
@@ -79,6 +81,17 @@ A few design tips:
 
 - Implement most user interactions through the *mouse_response* item. Screen touches are registered as mouse clicks.
 - The resolution for the `droid` backend is fixed at 1280x800. On Android, your experiment will be automatically scaled up or down depending on the resolution of the device, but the resolution that you design with is always 1280x800.
+
+Forum topics {#forum}
+------------
+
+A general forum topic on the OpenSesame runtime for Android:
+	
+- <http://forum.cogsci.nl/index.php?p=/discussion/333/opensesame-runtime-for-android>
+
+Eoin Traver's project to test the OpenSesame runtime for Android (call for testers):
+	
+- <http://forum.cogsci.nl/index.php?p=/discussion/439/opensesame-mobile-call-for-testers>
 
 [google-play]: https://play.google.com/store/apps/details?id=nl.cogsci.opensesame
 [forum]: http://forum.cogsci.nl/index.php?p=/discussion/333/a-video-of-opensesame-running-natively-on-android
