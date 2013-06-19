@@ -49,3 +49,8 @@
 	);
 }
 
+.button img {
+	border: none!important;
+	padding: 0px!important;
+	box-shadow: none!important;
+}

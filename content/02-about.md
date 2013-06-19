@@ -7,7 +7,7 @@ level: 0
 sortkey: 002.001
 ---
 
-OpenSesame is a graphical, open-source experiment builder for the social sciences. It sports a modern and intuitive user interface that allows you to build complex experiments with a minimum of effort. With OpenSesame you can create a wide range of experiments: Psychophysics, reaction time tasks, and questionnaires, to name but a few. The [plug-in framework][plug-ins] and [Python scripting][python-scripting] allow you to incorporate [external devices][external-devices], such as eye trackers, response boxes, and parallel port devices, into your experiment.
+OpenSesame is a graphical, open-source experiment builder for the social sciences. It sports a modern and intuitive user interface that allows you to build complex experiments with a minimum of effort. With OpenSesame you can create a wide range of experiments. The [plug-in framework][plug-ins] and [Python scripting][python-scripting] allow you to incorporate [external devices][external-devices], such as eye trackers, response boxes, and parallel port devices, into your experiment.
 
 OpenSesame is freely available under the [General Public Licence][gpl].
 

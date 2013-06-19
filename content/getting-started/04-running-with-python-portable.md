@@ -15,7 +15,6 @@ About
 Basically, this means that you run OpenSesame from source using a portable, but full Python environment. This is different from the regular Windows packages, because the OpenSesame source is not compiled into a .exe file. This doesn't mean that it's slower, though. It's simply a different way of packaging, with a number of benefits:
 
 - PyLink and the [eyelink plug-ins][eyelink] are included, so it works out of the box with the Eyelink series of eye trackers
-- A few other non-default plug-ins, such as the [questionnaire plug-ins][questionnaire], are included
 - You get a portable Python environment that you can use for other purposes as well (e.g., for doing analyses)
 - You can directly edit the OpenSesame source code
 - You can easily download and run [the latest code snapshots][latest-code] from GitHub

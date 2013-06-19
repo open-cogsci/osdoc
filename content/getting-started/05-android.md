@@ -67,6 +67,7 @@ If you have tested the OpenSesame runtime for Android on a device, please [share
 |Asus Transformer TF101	|4.0.3				|Works			|
 |Eken M009S				|2.2				|Works			|
 |Samsung Galaxy S3 Mini	|4.1.2				|Works			|
+|Samsung Galaxy S3		|4.0.4				|Works			|
 |Mpman MP434			|2.2.1				|Works			|
 |Nexus 4				|4.2.2				|Works			|
 |Nexus 7				|4.2.1				|Works			|
