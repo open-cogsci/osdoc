@@ -1,16 +1,8 @@
 #socialbox {
-	border: solid 1px #d3d7cf;
-	padding: 6px 6px 0px 6px;
-	border-radius: 4px;
-	background: #d3d7cf;
-}
-
-#social #socialheader {
-	margin-top: 16px;
-	display: block;
-	font-size: 0.7em;
-	color: #555753;
-	text-align: center;
+	margin-bottom: 8px;
+	border-bottom: dotted 1px #d3d7fc;
+	padding-bottom: 4px;
+	padding-top: 2px;
 }
 
 #social .fb-like {
@@ -18,10 +10,6 @@
 }
 
 #socialbox {
-	border: solid 1px #d3d7cf;
-	padding: 6px 6px 0px 6px;
-	border-radius: 4px;
-	background: #d3d7cf;
 }
 
 #socialbox .addthis_toolbox {
@@ -32,14 +20,6 @@
 #at20mc a,
 #socialbox a {
 	border: None;
-}
-
-#social #socialheader {
-	margin-top: 16px;
-	display: block;
-	font-size: 0.7em;
-	color: #555753;
-	text-align: center;
 }
 
 #social .fb-like {
