@@ -23,6 +23,7 @@ Status of current translations {#status}
 
 |**Code**	|**Language**		|**Status***		|
 |`en_EN`	|English			|Default			|
+|`fr_FR`	|French				|In progress		|
 |`it_IT` 	|Italian			|Complete			|
 |`zh_CH`	|Chinese			|In progress		|
 
