@@ -21,10 +21,10 @@ Overview
 Status of current translations {#status}
 ------------------------------
 
-|**Code**	|**Language**		|**Status***		|
+|**Code**	|**Language**		|**Status**			|
 |`en_EN`	|English			|Default			|
-|`fr_FR`	|French				|In progress		|
 |`it_IT` 	|Italian			|Complete			|
+|`fr_FR`	|French				|In progress		|
 |`zh_CH`	|Chinese			|In progress		|
 
 Starting OpenSesame with a specific language {#select}
@@ -35,6 +35,8 @@ By default, OpenSesame will try to use the default locale of your operating syst
 ~~~
 opensesame --locale it_IT
 ~~~
+
+This will look for a file called `resources/ts/it_IT.ts`, and fall back to English if no such file exists.
 
 The four-step translation process {#steps}
 ---------------------------------
@@ -91,6 +93,6 @@ Once you are satisfied with your translations, save the `translations.ts` file u
 
 #### Submit through GitHub
 
-You can also submit (and update) your translation via GitHub. First, add your translation to your fork of OpenSesame, as `resources/ll_RR.ts`, where `ll` corresponds to the language and `RR` to the region. For example, `en_US` is US english, `fr_FR` is French, and `zh_CN` is Chinese. You can find a list of valid regions and languages [here](http://www.iana.org/assignments/language-subtag-registry). Next, submit a pull request to have your translation included in OpenSesame.
+You can also submit (and update) your translation via GitHub. First, add your translation to your fork of OpenSesame, as `resources/ts/ll_RR.ts`, where `ll` corresponds to the language and `RR` to the region. For example, `en_US` is US english, `fr_FR` is French, and `zh_CN` is Chinese. You can find a list of valid regions and languages [here](http://www.iana.org/assignments/language-subtag-registry). Next, submit a pull request to have your translation included in OpenSesame.
 
 [forum]: http://forum.cogsci.nl/
