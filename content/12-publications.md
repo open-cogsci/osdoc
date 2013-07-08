@@ -38,8 +38,8 @@ Gordon, M. S., Russo, F. A., & MacDonald, E. (2013). Spectral information for de
 Kilpeläinen, M., Olivers, C. N. L., & Theeuwes, J. (2013). The eyes like their targets on a stable background. *Journal of Vision*, *13*(6), e5. [doi:10.1167/13.6.5](http://dx.doi.org/10.1167/13.6.5)
 {: .reference}
 
-Mathôt, S. (2013). *Visual Attention and Stability* (Doctoral dissertation). VU University, Amsterdam, Netherlands.
-{: .reference} [doi:10.6084/m9.figshare.704402](http://dx.doi.org/10.6084/m9.figshare.704402)
+Mathôt, S. (2013). *Visual Attention and Stability* (Doctoral dissertation). VU University, Amsterdam, Netherlands. [doi:10.6084/m9.figshare.704402](http://dx.doi.org/10.6084/m9.figshare.704402)
+{: .reference} 
 
 Theeuwes, J., Mathôt, S., & Grainger, J. (2013). Exogenous object-centered attention. *Attention, Perception, & Psychophysics*. [doi:10.3758/s13414-013-0459-4](http://dx.doi.org/10.3758/s13414-013-0459-4)
 {: .reference}
