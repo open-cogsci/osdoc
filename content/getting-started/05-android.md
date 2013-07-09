@@ -19,6 +19,7 @@ Overview
 	- [Debugging](#debugging)
 	- [Limitations](#limitations)
 	- [Supported devices](#devices)
+	- [Disabling automatic updates](#updates)
 - [Developing experiments for Android](#development)
 - [Forum topics](#forum)
 
@@ -72,6 +73,10 @@ If you have tested the OpenSesame runtime for Android on a device, please [share
 |Nexus 4				|4.2.2				|Works			|
 |Nexus 7				|4.2.1				|Works			|
 |ZTE V970				|4.1.1				|Works			|
+
+### Disabling automatic updates {#updates}
+
+If you are using the OpenSesame runtime for Android in a production environment (e.g., while you are running an experiment), it is recommended to disable the Auto-update feature of the Google Play Store, at least for OpenSesame. This will prevent the app from being updated and potentially changing its behavior.
 
 Developing experiments for Android {#development}
 ----------------------------------

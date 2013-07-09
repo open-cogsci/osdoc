@@ -7,7 +7,7 @@ level: 1
 sortkey: 003.002
 ---
 
-The latest stable version of OpenSesame is 0.27.2 *Frisky Freud* ([release notes][]), the second maintenance release in the 0.27 series. If you are upgrading from 0.26, please read the [0.27 release notes][]. Older versions can be found [here][archive].
+The latest stable version of OpenSesame is 0.27.3 *Frisky Freud*, released on July 9 2013 ([release notes][]). If you are upgrading from 0.26, please read the [0.27 release notes][]. Older versions can be found [here][archive].
 
 Installation instructions and more download options can be found below the download buttons.
 
@@ -72,4 +72,4 @@ If there are no packages provided for your platform, you will need to run OpenSe
 [neurodebian]: http://neuro.debian.net/
 [python-portable]: /getting-started/running-with-python-portable/
 [0.27 release notes]: /notes/0.27
-[release notes]: /notes/0.27.2
+[release notes]: /notes/0.27.3

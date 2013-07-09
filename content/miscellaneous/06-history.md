@@ -7,8 +7,9 @@ level: 1
 sortkey: 010.006
 ---
 
-|May 10, 2013	| 0.27.2 *Frisky Freud* (maintenance)	|
-|Feb 13, 2013	| 0.27.1 *Frisky Freud* (maintenance)	|
+|Jul 9, 2013	| [0.27.3][] *Frisky Freud* (maintenance)	|
+|May 10, 2013	| [0.27.2][] *Frisky Freud* (maintenance)	|
+|Feb 13, 2013	| [0.27.1][] *Frisky Freud* (maintenance)	|
 |Dec 11, 2012	| [0.27][] *Frisky Freud*				|
 |April 2, 2012 	| [0.26][] *Earnest Einstein*			|
 |Nov 12, 2011 	| [0.25][] *Dashy Darwin*				|
@@ -40,3 +41,6 @@ sortkey: 010.006
 [0.24]: http://www.cogsci.nl/blog/software-updates/158-opensesame-024-qcody-crickq-released
 [0.25]: http://www.cogsci.nl/blog/software-updates/175-opensesame-025-released
 [0.26]: http://www.cogsci.nl/blog/software-updates/193-opensesame-026-qearnest-einsteinq-released
+[0.27.1]: /notes/0.27.1/
+[0.27.2]: /notes/0.27.2/
+[0.27.3]: /notes/0.27.3/

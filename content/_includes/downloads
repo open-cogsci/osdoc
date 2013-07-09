@@ -1,7 +1,7 @@
 <h3>Common downloads</h3>
 
 <p class="button-winexe">
-	<a target="_blank" href="http://files.cogsci.nl/software/opensesame/opensesame_0.27.2-win32-1.exe" >
+	<a target="_blank" href="http://files.cogsci.nl/software/opensesame/opensesame_0.27.3-win32-1.exe" >
 	Windows XP/Vista/7 installer (.exe)
 	</a>
 </p>
@@ -33,7 +33,7 @@
 <h3>Other downloads</h3>
 
 <p class="button-winzip">
-	<a target="_blank"  href="http://files.cogsci.nl/software/opensesame/opensesame_0.27.2-win32-1.zip">
+	<a target="_blank"  href="http://files.cogsci.nl/software/opensesame/opensesame_0.27.3-win32-1.zip">
 	Windows XP/Vista/7 no installation required (.zip)
 	</a>
 </p>
@@ -45,7 +45,7 @@
 </p>
 
 <p class="button-src">
-	<a target="_blank" href="http://files.cogsci.nl/software/opensesame/opensesame_0.27.2-1.tar.gz">
+	<a target="_blank" href="http://files.cogsci.nl/software/opensesame/opensesame_0.27.3-1.tar.gz">
 	Source code (.tar.gz)
 	</a>
 </p>
