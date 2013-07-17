@@ -7,16 +7,12 @@ level: 1
 sortkey: 004.003
 ---
 
-Creating a cat-faces experiment
--------------------------------
+The video below introduces the basic functionality of OpenSesame by providing a step-by-step walk-through for creating a 'cat-faces' experiment. In this experiment, the participant's task is to judge whether a (picture of a) cat is male or female. Quite tricky (the task, that is, creating the experiment is easy), but apparently people can do it after some training. This video has been created by [Chris Longmore][chris-longmore].
 
-The video below shows how to create a 'cat-faces' experiment. In this experiment, the participant's task is to judge whether a (picture of a) cat is male or female. Quite tricky (the task, that is, creating the experiment is easy), but apparently people can do it after some training. This video has been created by [Chris Longmore][chris-longmore].
+- Duration: 43 minutes
+- OpenSesame version: 0.27.2
 
-- Resources: the [photos][cat-faces-photos] and the [experiment][cat-faces-experiment]
-- Duration: 37 minutes
-- OpenSesame version: 0.24
-
-<iframe width="640" height="360" src="http://www.youtube.com/embed/sER5KKiuj5A" frameborder="0" allowfullscreen></iframe>
+<iframe width="640" height="360" src="//www.youtube.com/embed/-zMH65re1m0" frameborder="0" allowfullscreen></iframe>
 
 Creating an affordances/ orientation experiment
 -----------------------------------------------

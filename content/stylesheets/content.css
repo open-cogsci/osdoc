@@ -2,7 +2,8 @@
 	margin: 8px 0px 8px 8px;
 }
 
-#content img {
+#content img,
+#content .video {
 	border: solid 1px #888a85;
 	border-radius: 4px;
 	padding: 8px;
@@ -38,6 +39,7 @@
 	background-color: #eeeeec;
 }
 
+#content .vid-caption,
 #content .fig-caption {
 	font-style: italic;
 	font-size: 0.9em;
