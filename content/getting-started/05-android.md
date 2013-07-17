@@ -64,15 +64,16 @@ If you have tested the OpenSesame runtime for Android on a device, please [share
 
 *The OpenSesame runtime for Android requires Android 2.2 'Froyo' or later.*
 
-|**Device**				|**Android**		|**Status**		|
-|Asus Transformer TF101	|4.0.3				|Works			|
-|Eken M009S				|2.2				|Works			|
-|Samsung Galaxy S3 Mini	|4.1.2				|Works			|
-|Samsung Galaxy S3		|4.0.4				|Works			|
-|Mpman MP434			|2.2.1				|Works			|
-|Nexus 4				|4.2.2				|Works			|
-|Nexus 7				|4.2.1				|Works			|
-|ZTE V970				|4.1.1				|Works			|
+|**Device**				|**Android**				|**Status**		|
+|Asus Transformer TF101	|4.0.3						|Works			|
+|EEE PC 701 			|Android x86 4.0-r1			|Works			|
+|Eken M009S				|2.2						|Works			|
+|Samsung Galaxy S3 Mini	|4.1.2						|Works			|
+|Samsung Galaxy S3		|4.0.4						|Works			|
+|Mpman MP434			|2.2.1						|Works			|
+|Nexus 4				|4.2.2						|Works			|
+|Nexus 7				|4.2.1						|Works			|
+|ZTE V970				|4.1.1						|Works			|
 
 ### Disabling automatic updates {#updates}
 
@@ -85,7 +86,7 @@ The OpenSesame runtime for Android requires the `droid` back-end, which is avail
 
 A few design tips:
 
-- Implement most user interactions through the *mouse_response* item. Screen touches are registered as mouse clicks.
+- Implement most user interactions through the `mouse_response` item or `touch_response` plug-in. In general, screen touches are registered as mouse clicks.
 - The resolution for the `droid` backend is fixed at 1280x800. On Android, your experiment will be automatically scaled up or down depending on the resolution of the device, but the resolution that you design with is always 1280x800.
 
 Forum topics {#forum}
