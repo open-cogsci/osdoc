@@ -16,16 +16,16 @@ Overview
 
 - [Status of current translations](#status)
 - [Starting OpenSesame with a specific language](#select)
-- [The four-step translation process](#steps)
+- [The five-step translation process](#steps)
 
 Status of current translations {#status}
 ------------------------------
 
-|**Code**	|**Language**		|**Status**			|
-|`en_EN`	|English			|Default			|
-|`it_IT` 	|Italian			|Complete			|
-|`fr_FR`	|French				|In progress		|
-|`zh_CH`	|Chinese			|In progress		|
+|**Code**	|**Language**		|**Status**			|**Author(s)**				|
+|`en_EN`	|English			|Default			|							|
+|`it_IT` 	|Italian			|Complete			|Andrea Epifani				|
+|`fr_FR`	|French				|Complete			|Romain Monfollet			|
+|`zh_CH`	|Chinese			|In progress		|Jerry Li and Gabriel Chan	|
 
 Starting OpenSesame with a specific language {#select}
 --------------------------------------------
@@ -36,9 +36,9 @@ By default, OpenSesame will try to use the default locale of your operating syst
 opensesame --locale it_IT
 ~~~
 
-This will look for a file called `resources/ts/it_IT.ts`, and fall back to English if no such file exists.
+This will look for a file called `resources/locale/it_IT.qm`, and fall back to English if no such file exists.
 
-The four-step translation process {#steps}
+The five-step translation process {#steps}
 ---------------------------------
 
 ### Step 1: Download translatables.ts
@@ -84,8 +84,14 @@ Also, some strings contain wildcards, like so:
 These `%s` (and `%d`, `%f`, etc.) wildcards are blanks that are filled in on-the-fly by OpenSesame. Please respect these (removing a wild-card will crash the program!) and try to build an appropriate translation around them. So, for a Dutch translation this would become:
 
 	Vertel me meer over het %s item
+	
+### Step 4: Compile your translation to `.qm` and test it
 
-### Step 4: Save and submit your translations
+OpenSesame doesn't use the `.ts` file directly, but requires a file in `.qm` format. You can create this file easily from within Qt Linguist by selecting 'File -> Release as'. Create a `.qm` file with the same name (except for the extension) as the original file, and place it in the `resources/locale` subfolder of the OpenSesame folder. So, for example, if you're working on a French translation, your original source file would be `resources/ts/fr_FR.ts` and your compiled file would be `resources/locale/fr_FR.qm`.
+
+Once you have compiled your translation file to `.qm` format and placed it in the resources folder, run OpenSesame with your new locale as described [here](#select).
+
+### Step 5: Save and submit your translations
 
 #### Send by e-mail
 
