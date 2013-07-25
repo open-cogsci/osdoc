@@ -1,6 +1,6 @@
 ---
 layout: osdoc
-title: Index
+title: Home
 group: general
 level: 0
 sortkey: 001.001
@@ -25,6 +25,8 @@ Mathôt, S., Schreij, D., & Theeuwes, J. (2012). OpenSesame: An open-source, gra
 
 [Download][]{:.button}
 [Forum][]{:.button}
+
+# Site map
 
 <div id='index'>
 {% assign expanded = 1 %}
