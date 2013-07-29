@@ -35,6 +35,9 @@ Drager, K. (2013). Experimental Methods in Sociolinguistics. In J. Holmes & K. H
 Gordon, M. S., Russo, F. A., & MacDonald, E. (2013). Spectral information for detection of acoustic time to arrival. *Attention, Perception & Psychophysics*. [doi:10.3758/s13414-013-0424-2](http://dx.doi.org/10.3758/s13414-013-0424-2)
 {: .reference}
 
+Goudbeek, M. B., Haagmans, I., & Krahmer, E. J. (2013). The object without qualities: referring with negative properties. In M. Knauff, M. Pauen, N. Sebanz, & I. Wachsmuth (Eds.), *Proceedings of the 35th Annual Conference of the Cognitive Science Society* (pp. 2440–2445). Austin, TX: Cognitive Science Society.
+{: .reference}
+
 Kilpeläinen, M., Olivers, C. N. L., & Theeuwes, J. (2013). The eyes like their targets on a stable background. *Journal of Vision*, *13*(6), e5. [doi:10.1167/13.6.5](http://dx.doi.org/10.1167/13.6.5)
 {: .reference}
 
