@@ -58,6 +58,10 @@ class QtOrganizer(QtGui.QListWidget):
 		
 		key = i[u'sortkey']
 		big, small = str(key).split(u'.')
+		
+		big = big.rjust(3, '0')
+		small = small.rjust(3, '0')
+		
 		print big, small
 		if i[u'level'] == 0:
 			_small = u'X'
