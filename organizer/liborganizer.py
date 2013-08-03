@@ -116,7 +116,8 @@ def changeKey(i, key, path=None):
 	i[u'sortkey'] = float(u'%s.%s' % (big, small))	
 	if path != None:		
 		s = setInfo(path, i)
-		open(path, 'w').write(s)
+		if not '--dry' in sys.argv:
+			open(path, 'w').write(s)
 	return i
 
 def listContent(dirname=None, l=[]):
@@ -229,7 +230,8 @@ def move(fromKey, toKey):
 			i = changeKey(i, toKey, path=path)
 			_path = changePath(path, i, toKey)
 			if _path != path:
-				shutil.move(path, _path)
+				if not '--dry' in sys.argv:
+					shutil.move(path, _path)
 				path = _path
 			print u'  ->',
 			printItem(path, i)

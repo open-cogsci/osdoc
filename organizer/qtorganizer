@@ -58,10 +58,7 @@ class QtOrganizer(QtGui.QListWidget):
 		
 		key = i[u'sortkey']
 		big, small = str(key).split(u'.')
-		
-		big = big.rjust(3, '0')
-		small = small.rjust(3, '0')
-		
+				
 		print big, small
 		if i[u'level'] == 0:
 			_small = u'X'
@@ -84,11 +81,13 @@ class QtOrganizer(QtGui.QListWidget):
 		e	--	A QkeyEvent.
 		"""
 		
-		super(QtOrganizer, self).keyPressEvent(e)		
+		super(QtOrganizer, self).keyPressEvent(e)
 		if e.text() == u'+':
 			self.move(d=1)
 		elif e.text() == u'-':
 			self.move(d=-1)
+		elif e.text() == u'r':
+			self.refresh()
 
 def main():
 	
