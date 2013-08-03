@@ -4,6 +4,7 @@ title: Home
 group: general
 level: 0
 sortkey: 001.001
+permalink: /
 ---
 
 <div style='float:right;margin-left:16px;text-align:right;'>
