@@ -37,9 +37,11 @@ def getInfo(path):
 	s = open(path).read().decode(u'utf-8')
 	l = s.split(u'---')
 	if len(l) < 3:
-		print 'Failed to parse', path
+		print u'liborganizer:getInfo(): Failed to parse %s' % path
 		return None
-	y = yaml.load(l[1])
+	y = yaml.load(l[1])	
+	b, s = str(y[u'sortkey']).split(u'.')		
+	y['sortkey'] = b.rjust(3, '0') + u'.' + s.ljust(3, '0')
 	return y
 
 def setInfo(path, i):
@@ -78,12 +80,8 @@ def match(i, key):
 	True on a match, False otherwise.
 	"""
 	
-	big, small = str(i[u'sortkey']).split('.')
-	_big, _small = key.split(u'.')
-	big = big.rjust(3, '0')
-	_big = _big.rjust(3, '0')
-	small = small.rjust(3, '0')
-	_small = _small.rjust(3, '0')
+	big, small = i[u'sortkey'].split('.')
+	_big, _small = key.split('.')
 	return (_big == u'00X' or big == _big) and (_small == u'00X' or small == \
 		_small)
 
@@ -104,16 +102,14 @@ def changeKey(i, key, path=None):
 	A dictionary with updated YAML info.
 	"""
 	
-	big, small = str(i[u'sortkey']).split(u'.')
+	big, small = i[u'sortkey'].split(u'.')
 	_big, _small = key.split(u'.')
 	
 	if _big != u'X':
 		big = _big
 	if _small != u'X':
 		small = _small
-	_small = _small.rjust(3, '0')
-	small = small.rjust(3, '0')
-	i[u'sortkey'] = float(u'%s.%s' % (big, small))	
+	i[u'sortkey'] = u'%s.%s' % (big, small)
 	if path != None:		
 		s = setInfo(path, i)
 		if not '--dry' in sys.argv:
@@ -202,9 +198,9 @@ def changePath(path, i, toKey):
 	"""
 	
 	if i[u'level'] == 0:
-		s = str(toKey).split(u'.')[0].rjust(2, '0')
+		s = toKey.split(u'.')[0]
 	else:
-		s = str(toKey).split(u'.')[1].rjust(2, '0')
+		s = toKey.split(u'.')[1]
 	if u'X' not in s:
 		dirname = os.path.dirname(path)
 		basename = os.path.basename(path)	

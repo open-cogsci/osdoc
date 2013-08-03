@@ -57,18 +57,21 @@ class QtOrganizer(QtGui.QListWidget):
 		path, i = self.content[self.currentRow()]
 		
 		key = i[u'sortkey']
-		big, small = str(key).split(u'.')
-				
-		print big, small
+		big, small = key.split(u'.')
+						
 		if i[u'level'] == 0:
 			_small = u'X'
 			small = u'X'
-			_big = int(big) + d
+			_big = str(int(big) + d).rjust(3, '0')
 		else:
-			_small = int(small) + d
-			_big = big		
+			_small = str(int(small) + d).rjust(3, '0')
+			_big = big
+						
 		fromKey = u'%s.%s' % (big, small)
 		toKey = u'%s.%s' % (_big, _small)
+		
+		print 'QtOrganizer.move(): from %s to %s' % (fromKey, toKey)
+		
 		move(fromKey, toKey)
 		self.refresh()
 			
