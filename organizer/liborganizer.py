@@ -60,7 +60,7 @@ def setInfo(path, i):
 	
 	s = open(path).read().decode(u'utf-8')
 	l = s.split(u'---')
-	if len(l) != 3:
+	if len(l) < 3:
 		return None
 	l[1] = u'\n' + yaml.dump(i, default_flow_style=False)
 	s = u'---'.join(l)	
@@ -102,6 +102,7 @@ def changeKey(i, key, path=None):
 	A dictionary with updated YAML info.
 	"""
 	
+	print u'liborganizer.changeKey(): %s' % path
 	big, small = i[u'sortkey'].split(u'.')
 	_big, _small = key.split(u'.')
 	
@@ -113,7 +114,9 @@ def changeKey(i, key, path=None):
 	if path != None:		
 		s = setInfo(path, i)
 		if not '--dry' in sys.argv:
-			open(path, 'w').write(s)
+			f = open(path, 'w')
+			f.write(s)
+			f.close()
 	return i
 
 def listContent(dirname=None, l=[]):
