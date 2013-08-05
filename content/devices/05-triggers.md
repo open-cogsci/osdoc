@@ -61,9 +61,9 @@ Recommendations
 
 - Start your experiment with a 'zero' trigger to make sure all the pins are set to zero.  
 
-- It's recommended to use the Psycho back-end (using PsychoPy) instead of the legacy back-end (using PyGame) for your experiment. This is because PsychoPy takes the refresh rate of the monitor into account when returning time stamps, whereas PyGame does not. (PyGame does wait for the vertical refresh too, but this is not reflected in the time stamps. [Source][lvanderlinden]
+- It's recommended to use the Psycho back-end (using PsychoPy) instead of the legacy back-end (using PyGame) for your experiment. This is because PsychoPy takes the refresh rate of the monitor into account when returning time stamps, whereas PyGame does not. (PyGame does wait for the vertical refresh too, but this is not reflected in the time stamps. [Source: lvanderlinden][lvanderlinden]
     
-- Send the trigger code right after (instead of just before) the presentation of your stimulus (assuming that it's the stimulus onset you want to mark). By doing so you'll make sure that the time stamp is as accurately as possible and will not suffer from a small random jitter due to your monitor's refresh rate. [Source][lvanderlinden]
+- Send the trigger code right after (instead of just before) the presentation of your stimulus (assuming that it's the stimulus onset you want to mark). By doing so you'll make sure that the time stamp is as accurately as possible and will not suffer from a small random jitter due to your monitor's refresh rate. [Source: lvanderlinden][lvanderlinden]
 
 
 Troubleshooting
