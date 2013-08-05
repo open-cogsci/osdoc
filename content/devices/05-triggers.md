@@ -38,7 +38,7 @@ For Windows XP 32-bit & Vista 32/64-bit
 
 1) Download the DLPortIO driver from [32-bit][win32-dll] or [64-bit][win64-dll] and uncompress the zip archive.
 
-2) In the folder `install` there is an installer (`install.exe`). For some reason, you need to copy `dlportio.dll` and `dlportio.sys` to this `install` folder before the running the installer. 
+2) Go to `DriverLINX/drivers` folder and copy `dlportio.dll` and `dlportio.sys` to the `install` folder. This is the folder  where `install.exe` is located. .Then run `install.exe`
 
 3) You need to copy `dlportio.dll` to the OpenSesame folder (that is, the same folder that contains `opensesame.exe`).
 
