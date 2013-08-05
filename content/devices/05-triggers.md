@@ -8,7 +8,7 @@ sortkey: 009.005
 ---
 
 In EEG/ ERP studies it is common to send triggers to mark the time of significant events (e.g., the onset of a trial, presentation of a particular stimulus, etc.). Triggers are typically bytes that are sent via the parallel port to the EEG apparatus. This post shows how to send triggers using the parallel port trigger plugin.
-This plugin works in both linux and windows. In Windows `DLPortIO.dll` is used to access the parallel port. You can download the plugin from:
+This plugin works in both Linux and Windows. In Windows `DLPortIO.dll` is used to access the parallel port. You can download the plugin from:
 
 Linux:
 
@@ -22,14 +22,17 @@ $ sudo adduser user lp
 
 Windows:
 
-If you use a 32 bit system (typical for Windows XP), you can download a copy [here][win32-dll]. The .dll is located in the folder `DriverLINX/drivers` inside the .zip archive. If you use a 64 bit system (typical for Windows 7), you can download a copy [here][win64-dll].
+If you use a 32 bit system (typical for Windows XP), you can download a copy [here][win32-dll]. The .dll is located in the folder `DriverLINX/drivers` inside the .zip archive. If you use a 64 bit system, you can download a copy [here][win64-dll].
+
 
 For Windows XP x86
 
+In order for dlportio.dll to work, a driver has to be installed on your system. An installer (`install.exe`) is included in the .zip archive (see step 1), in the folder `install`. For some reason, you need to copy `dlportio.dll` and `dlportio.sys` to the install folder before the running the installer. Depending on your version of Windows, you may or may not have to deal with security issues (see troubleshooting below).
+
+You need to copy `dlportio.dll` to the OpenSesame folder (that is, the same folder that contains `opensesame.exe`).
 
 
-
-For Windows 7 x64:
+For Windows 7 x86 & 64:
 
 1) Download the DLPortIO x64 driver from http://real.kiev.ua/avreal/download/#DLPORTIO_TABLE and uncompress the zip archive.
 
@@ -51,18 +54,9 @@ To bypass this restriction one has to use a little helper program called "Digita
 
 9) Copy the DLPortIO.dll file to the folder containing opensesame.exe.
 
+10) You need to copy `dlportio.dll` to the OpenSesame folder (that is, the same folder that contains `opensesame.exe`).
 
 
-You need to copy `dlportio.dll` to the OpenSesame folder (that is, the same folder that contains `opensesame.exe`).
-
-Step 2: Install dlportio drivers on your system
------------------------------------------------
-
-In order for dlportio.dll to work, a driver has to be installed on your system. An installer (`install.exe`) is included in the .zip archive (see step 1), in the folder `install`. For some reason, you need to copy `dlportio.dll` and `dlportio.sys` to the install folder before the running the installer. Depending on your version of Windows, you may or may not have to deal with security issues (see troubleshooting below).
-
-
-
-Note that this send the trigger 1 to port 0x378 (=888). Change these values according to your set-up.
 
 Recommendations:
 
