@@ -21,14 +21,14 @@ $ sudo rmmod parport_pc
 $ sudo modprobe parport_pc  
 $ sudo adduser user lp  
 
-Then logout and login, and it should work.  
+Then logout and login, and you are ready to go!  
 
 
 ### For Windows XP & Vista 32-bit ###
 
 1) Download the 32-bit DLPortIO driver from [here][win32-dll] and uncompress the zip archive.
 
-2) Go to `DriverLINX/drivers` folder and copy `dlportio.dll` and `dlportio.sys` to the `install` folder. This is the folder  where `install.exe` is located. .Then run `install.exe`
+2) Go to `DriverLINX/drivers` folder and copy `dlportio.dll` and `dlportio.sys` to the `install` folder. This is the folder  where `install.exe` is located. Then run `install.exe`
 
 3) You need to copy `dlportio.dll` to the OpenSesame folder (that is, the same folder that contains `opensesame.exe`).
 
@@ -59,7 +59,11 @@ To bypass this restriction one has to use a little helper program called "Digita
 Recommendations
 ---------------
 
-Start your experiment with a 'zero' trigger to make sure all the pins are set to zero.  
+- Start your experiment with a 'zero' trigger to make sure all the pins are set to zero.  
+
+- It's recommended to use the Psycho back-end (using PsychoPy) instead of the legacy back-end (using PyGame) for your experiment. This is because PsychoPy takes the refresh rate of the monitor into account when returning time stamps, whereas PyGame does not. (PyGame does wait for the vertical refresh too, but this is not reflected in the time stamps. [Source][lvanderlinden]
+    
+- Send the trigger code right after (instead of just before) the presentation of your stimulus (assuming that it's the stimulus onset you want to mark). By doing so you'll make sure that the time stamp is as accurately as possible and will not suffer from a small random jitter due to your monitor's refresh rate. [Source][lvanderlinden]
 
 
 Troubleshooting
@@ -75,7 +79,7 @@ Please don't hesitate to post questions on the forum, or to let us know of your 
 References
 ----------
 
-- A post with elaborate installation instructions for DLPortIO on Windows 7 (thanks to absurd): [link][post-2]
+- A post with elaborate installation instructions for DLPortIO on Windows 7 (thanks to [absurd][absurd]): [link][post-2]
 
 [win32-dll]: http://files.cogsci.nl/misc/dlportio.zip
 [win7-32-dll]: http://real.kiev.ua/files/avreal/dlportio-32-bat.zip
@@ -84,4 +88,6 @@ References
 [post-2]: http://forum.cogsci.nl/index.php?p=/discussion/comment/745#Comment_745
 [plugin]: https://github.com/dev-jam/opensesame_plugin_parallel-port-trigger/archive/master.zip
 [dseo]: http://www.ngohq.com/home.php?page=dseo
+[lvanderlinden]: http://forum.cogsci.nl/index.php?p=/profile/4/lvanderlinden
+[absurd]: http://forum.cogsci.nl/index.php?p=/profile/342/absurd
 
