@@ -7,42 +7,44 @@ level: 1
 sortkey: 009.005
 ---
 
-In EEG/ ERP studies it is common to send triggers to mark the time of significant events (e.g., the onset of a trial, presentation of a particular stimulus, etc.). Triggers are typically bytes that are sent via the parallel port to the EEG apparatus. This post shows how to send triggers using the parallel port trigger plugin.
-This plugin works in both Linux and Windows. In Windows `DLPortIO.dll` is used to access the parallel port. 
+In EEG/ ERP studies it is common to send triggers to mark the time of significant events (e.g., the onset of a trial, presentation of a particular stimulus, etc.). Triggers are typically bytes that are sent via the parallel port to the EEG apparatus. This can be done with the parallel port trigger plugin which works in Linux and Windows. For Windows the `DLPortIO.dll` driver is used to access the parallel port. 
 
-You can download the plugin from: 
+You can download the plugin from [here][plugin]
 
-[here][plugin]
 
 Linux:
 
-In linux we have to use parport_pc. We can accomplish this by exectuting the following commands:
+In Linux we have to use parport_pc (tested in Debian Wheezy). We can accomplish this by exectuting the following commands:
 
 $ sudo rmmod lp
 $ sudo rmmod parport_pc
 $ sudo modprobe parport_pc
 $ sudo adduser user lp
 
+Then logout and login, and it should work. 
+
 
 Windows:
 
-If you use a 32 bit system (typical for Windows XP), you can download a copy [here][win32-dll]. The .dll is located in the folder `DriverLINX/drivers` inside the .zip archive. If you use a 64 bit system, you can download a copy [here][win64-dll].
+The .dll is located in the folder `DriverLINX/drivers` inside the .zip archive. If you use a 64 bit system, you can download a copy [here][win64-dll].
 
 
-For Windows XP x86
+For Windows XP 32-bit & Vista 32/64-bit
 
-In order for dlportio.dll to work, a driver has to be installed on your system. An installer (`install.exe`) is included in the .zip archive (see step 1), in the folder `install`. For some reason, you need to copy `dlportio.dll` and `dlportio.sys` to the install folder before the running the installer. Depending on your version of Windows, you may or may not have to deal with security issues (see troubleshooting below).
+1) Download the DLPortIO driver from [32-bit][win32-dll] or [64-bit][win64-dll] and uncompress the zip archive.
 
-You need to copy `dlportio.dll` to the OpenSesame folder (that is, the same folder that contains `opensesame.exe`).
+2) In the folder 'install' there is an installer ('install.exe'). For some reason, you need to copy 'dlportio.dll' and 'dlportio.sys' to this 'install' folder before the running the installer. 
+
+3) You need to copy 'dlportio.dll' to the OpenSesame folder (that is, the same folder that contains `opensesame.exe`).
 
 
-For Windows 7 x86 & 64:
+For Windows 7 32/64-bit:
 
-1) Download the DLPortIO x64 driver from [here][win64-dll] and uncompress the zip archive.
+1) Download the DLPortIO driver from [32-bit][win32-dll] or [64-bit][win64-dll] and uncompress the zip archive.
 
-2) As Windows 7 has a strengthened security system (at least compared to XP) one cannot simply install the DLPortIO x64 driver. This won't work as Windows 7 will block all attempts of installing a not officially signed (by Microsoft) driver. Good for the security of an average user -- bad for us.
+2) As Windows 7 has a strengthened security system (at least compared to XP) one cannot simply install the DLPortIO driver. This won't work as Windows 7 will block all attempts of installing a not officially signed (by Microsoft) driver. Good for the security of an average user -- bad for us.
 
-To bypass this restriction one has to use a little helper program called "Digital Signature Enforcement Overrider" (DSEO) which can be downloaded [here][dseo] (of course there are other possible ways to do this but this program is mentioned in the DLPortIO-64-readme.txt and one does not have to dive deeper into MS Windows 7 architecture specialities).
+To bypass this restriction one has to use a little helper program called "Digital Signature Enforcement Overrider" (DSEO) which can be downloaded [here][dseo] (of course there are other possible ways to do this but this program is mentioned in the DLPortIO-readme.txt and one does not have to dive deeper into MS Windows 7 architecture specialities).
 
 3) Start DSEO with administrator privileges (right click on dseo13b.exe, select "run as administrator"). Now the DSEO window pops up. It just presents a list of options which operation to run next.
 
@@ -56,15 +58,13 @@ To bypass this restriction one has to use a little helper program called "Digita
 
 8) Reboot
 
-9) Copy the DLPortIO.dll file to the folder containing opensesame.exe.
-
-10) You need to copy `dlportio.dll` to the OpenSesame folder (that is, the same folder that contains `opensesame.exe`).
+9) Copy the DLPortIO.dll file to the Opensesame folder (that is, the same folder that contains `opensesame.exe`).
 
 
 
 Recommendations:
 
-Start your experiment with a zero trigger to reset the port. 
+Start your experiment with a 'zero' trigger to make sure all the pins are set to zero. 
 
 
 Troubleshooting
@@ -75,6 +75,7 @@ There are a number of relevant forum topics in which trigger-related problems ar
 - A post about ghost triggers, i.e. unwanted triggers that are mysteriously registered by the EEG apparatus: [link][post-1]
 
 Please don't hesitate to post questions on the forum, or to let us know of your experiences (good or bad).
+
 
 References
 ----------
@@ -87,4 +88,3 @@ References
 [post-2]: http://forum.cogsci.nl/index.php?p=/discussion/comment/745#Comment_745
 [plugin]: https://github.com/dev-jam/opensesame_plugin_parallel-port-trigger/archive/master.zip
 [dseo]: http://www.ngohq.com/home.php?page=dseo
-
