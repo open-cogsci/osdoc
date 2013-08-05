@@ -28,11 +28,6 @@ $ sudo adduser user lp
 Then logout and login, and it should work. 
 
 
-Windows:
-
-The .dll is located in the folder `DriverLINX/drivers` inside the .zip archive. If you use a 64 bit system, you can download a copy [here][win64-dll].
-
-
 
 For Windows XP 32-bit & Vista 32/64-bit
 
