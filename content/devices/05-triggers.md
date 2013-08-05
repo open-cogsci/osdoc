@@ -12,13 +12,17 @@ In EEG/ ERP studies it is common to send triggers to mark the time of significan
 You can download the plugin from [here][plugin]
 
 
+
 Linux:
 
 In Linux we have to use the "parport_pc" module (tested in Debian Wheezy). We can accomplish this by executing the following commands:
 
 $ sudo rmmod lp
+
 $ sudo rmmod parport_pc
+
 $ sudo modprobe parport_pc
+
 $ sudo adduser user lp
 
 Then logout and login, and it should work. 
@@ -29,6 +33,7 @@ Windows:
 The .dll is located in the folder `DriverLINX/drivers` inside the .zip archive. If you use a 64 bit system, you can download a copy [here][win64-dll].
 
 
+
 For Windows XP 32-bit & Vista 32/64-bit
 
 1) Download the DLPortIO driver from [32-bit][win32-dll] or [64-bit][win64-dll] and uncompress the zip archive.
@@ -36,6 +41,7 @@ For Windows XP 32-bit & Vista 32/64-bit
 2) In the folder `install` there is an installer (`install.exe`). For some reason, you need to copy `dlportio.dll` and `dlportio.sys` to this `install` folder before the running the installer. 
 
 3) You need to copy `dlportio.dll` to the OpenSesame folder (that is, the same folder that contains `opensesame.exe`).
+
 
 
 For Windows 7 32/64-bit:
