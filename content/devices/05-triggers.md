@@ -61,9 +61,9 @@ Recommendations
 
 - Start your experiment with a 'zero' trigger to make sure all the pins are set to zero.  
 
-- It's recommended to use the Psycho back-end (using PsychoPy) instead of the legacy back-end (using PyGame) for your experiment. This is because PsychoPy takes the refresh rate of the monitor into account when returning time stamps, whereas PyGame does not. (PyGame does wait for the vertical refresh too, but this is not reflected in the time stamps. [Source: lvanderlinden][lvanderlinden]
+- It's recommended to use the Psycho back-end (using PsychoPy) instead of the legacy back-end (using PyGame) for your experiment. This is because PsychoPy takes the refresh rate of the monitor into account when returning time stamps, whereas PyGame does not. (PyGame does wait for the vertical refresh too, but this is not reflected in the time stamps. [Source: lvanderlinden][post-1]
     
-- Send the trigger code right after (instead of just before) the presentation of your stimulus (assuming that it's the stimulus onset you want to mark). By doing so you'll make sure that the time stamp is as accurately as possible and will not suffer from a small random jitter due to your monitor's refresh rate. [Source: lvanderlinden][lvanderlinden]
+- Send the trigger code right after (instead of just before) the presentation of your stimulus (assuming that it's the stimulus onset you want to mark). By doing so you'll make sure that the time stamp is as accurately as possible and will not suffer from a small random jitter due to your monitor's refresh rate. [Source: lvanderlinden][post-1]
 
 
 Troubleshooting
@@ -71,7 +71,7 @@ Troubleshooting
 
 There are a number of relevant forum topics in which trigger-related problems are discussed (and, for the most, solved!).
 
-- A post about ghost triggers, i.e. unwanted triggers that are mysteriously registered by the EEG apparatus: [link][post-1]
+- A post about ghost triggers, i.e. unwanted triggers that are mysteriously registered by the EEG apparatus: [link][post-2]
 
 Please don't hesitate to post questions on the forum, or to let us know of your experiences (good or bad).
 
@@ -79,15 +79,14 @@ Please don't hesitate to post questions on the forum, or to let us know of your 
 References
 ----------
 
-- A post with elaborate installation instructions for DLPortIO on Windows 7 (thanks to [absurd][absurd]): [link][post-2]
+- A post with elaborate installation instructions for DLPortIO on Windows 7 ([Source: absurd][post-3]).
 
 [win32-dll]: http://files.cogsci.nl/misc/dlportio.zip
 [win7-32-dll]: http://real.kiev.ua/files/avreal/dlportio-32-bat.zip
 [win7-64-dll]: http://real.kiev.ua/files/avreal/dlportio-64.zip
-[post-1]: http://forum.cogsci.nl/index.php?p=/discussion/comment/780#Comment_780
-[post-2]: http://forum.cogsci.nl/index.php?p=/discussion/comment/745#Comment_745
 [plugin]: https://github.com/dev-jam/opensesame_plugin_parallel-port-trigger/archive/master.zip
 [dseo]: http://www.ngohq.com/home.php?page=dseo
-[lvanderlinden]: http://forum.cogsci.nl/index.php?p=/discussion/comment/748#Comment_748
-[absurd]: http://forum.cogsci.nl/index.php?p=/discussion/comment/745#Comment_745
+[post-1]: http://forum.cogsci.nl/index.php?p=/discussion/comment/748#Comment_748
+[post-2]: http://forum.cogsci.nl/index.php?p=/discussion/comment/780#Comment_780
+[post-3]: http://forum.cogsci.nl/index.php?p=/discussion/comment/745#Comment_745
 
