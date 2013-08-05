@@ -75,7 +75,7 @@ Please don't hesitate to post questions on the forum, or to let us know of your 
 References
 ----------
 
-- A post with elaborate installation instructions for DLPortIO on Windows 7: [link][post-2]
+- A post with elaborate installation instructions for DLPortIO on Windows 7 (thanks to absurd): [link][post-2]
 
 [win32-dll]: http://files.cogsci.nl/misc/dlportio.zip
 [win7-32-dll]: http://real.kiev.ua/files/avreal/dlportio-32-bat.zip
