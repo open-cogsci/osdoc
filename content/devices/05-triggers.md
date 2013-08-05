@@ -88,6 +88,6 @@ References
 [post-2]: http://forum.cogsci.nl/index.php?p=/discussion/comment/745#Comment_745
 [plugin]: https://github.com/dev-jam/opensesame_plugin_parallel-port-trigger/archive/master.zip
 [dseo]: http://www.ngohq.com/home.php?page=dseo
-[lvanderlinden]: http://forum.cogsci.nl/index.php?p=/profile/4/lvanderlinden
-[absurd]: http://forum.cogsci.nl/index.php?p=/profile/342/absurd
+[lvanderlinden]: http://forum.cogsci.nl/index.php?p=/discussion/comment/748#Comment_748
+[absurd]: http://forum.cogsci.nl/index.php?p=/discussion/comment/745#Comment_745
 
