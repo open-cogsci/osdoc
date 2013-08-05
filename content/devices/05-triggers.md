@@ -36,35 +36,36 @@ For Windows XP & Vista 32-bit
   
   
   
-For Windows 7 32/64-bit:
-
+For Windows 7 32/64-bit:  
+  
 1) Download the DLPortIO driver [32-bit][win7-32-dll] or [64-bit][win7-64-dll] and uncompress the zip archive.  
   
-2) As Windows 7 has a strengthened security system (at least compared to XP) one cannot simply install the DLPortIO driver. This won't work as Windows 7 will block all attempts of installing a not officially signed (by Microsoft) driver. Good for the security of an average user -- bad for us.
+2) As Windows 7 has a strengthened security system (at least compared to XP) one cannot simply install the DLPortIO driver. This won't work as Windows 7 will block all attempts of installing a not officially signed (by Microsoft) driver. Good for the security of an average user -- bad for us.  
+  
+To bypass this restriction one has to use a little helper program called "Digital Signature Enforcement Overrider" (DSEO) which can be downloaded [here][dseo] (of course there are other possible ways to do this but this program is mentioned in the DLPortIO-readme.txt and one does not have to dive deeper into MS Windows 7 architecture specialities).  
+  
+3) Start DSEO with administrator privileges (right click on dseo13b.exe, select "run as administrator"). Now the DSEO window pops up. It just presents a list of options which operation to run next.  
+  
+4) Choose the option "sign driver/sys-file" and press ok. Now another window appears where you have to type in the absolute path to the DLPortIO.sys file (only this one, not the dll!). Remember to escape spaces in the path if you have any (don't ask how long that took me) otherwise your files will not be found. Pressing ok will sign the sys-file.  
+  
+5) Back in the DSEO list choose "enable test mode" and press ok. Then choose "exit" and restart your PC. (Windows 7 wrongly complains that DSEO might not be installed correctly -- just click on "yes, the software is installed correctly").  
+  
+6) After boot up is completed you'll see that something like "Windows 7 test mode built #number#" is written on the desktop just above the clock in the starter-bar. That's necessary. You have to be in test mode to run this unofficially signed driver.  
+  
+7) Now run `DLPortIO_install.bat` with administrator privileges (in Windows Explorer, right click the file, ...). Answer "yes" if Windows warns you about registry changes.  
+  
+8) Reboot  
+  
+9) Copy the `DLPortIO.dll` file to the Opensesame folder (that is, the same folder that contains `opensesame.exe`).  
+  
+  
+  
+Recommendations
+---------------
 
-To bypass this restriction one has to use a little helper program called "Digital Signature Enforcement Overrider" (DSEO) which can be downloaded [here][dseo] (of course there are other possible ways to do this but this program is mentioned in the DLPortIO-readme.txt and one does not have to dive deeper into MS Windows 7 architecture specialities).
-
-3) Start DSEO with administrator privileges (right click on dseo13b.exe, select "run as administrator"). Now the DSEO window pops up. It just presents a list of options which operation to run next.
-
-4) Choose the option "sign driver/sys-file" and press ok. Now another window appears where you have to type in the absolute path to the DLPortIO.sys file (only this one, not the dll!). Remember to escape spaces in the path if you have any (don't ask how long that took me) otherwise your files will not be found. Pressing ok will sign the sys-file.
-
-5) Back in the DSEO list choose "enable test mode" and press ok. Then choose "exit" and restart your PC. (Windows 7 wrongly complains that DSEO might not be installed correctly -- just click on "yes, the software is installed correctly").
-
-6) After boot up is completed you'll see that something like "Windows 7 test mode built #number#" is written on the desktop just above the clock in the starter-bar. That's necessary. You have to be in test mode to run this unofficially signed driver.
-
-7) Now run `DLPortIO_install.bat` with administrator privileges (in Windows Explorer, right click the file, ...). Answer "yes" if Windows warns you about registry changes.
-
-8) Reboot
-
-9) Copy the `DLPortIO.dll` file to the Opensesame folder (that is, the same folder that contains `opensesame.exe`).
-
-
-
-Recommendations:
-
-Start your experiment with a 'zero' trigger to make sure all the pins are set to zero. 
-
-
+Start your experiment with a 'zero' trigger to make sure all the pins are set to zero.  
+  
+  
 Troubleshooting
 ---------------
 
