@@ -8,11 +8,15 @@ sortkey: 009.005
 ---
 
 In EEG/ ERP studies it is common to send triggers to mark the time of significant events (e.g., the onset of a trial, presentation of a particular stimulus, etc.). Triggers are typically bytes that are sent via the parallel port to the EEG apparatus. This post shows how to send triggers using the parallel port trigger plugin.
-This plugin works in both Linux and Windows. In Windows `DLPortIO.dll` is used to access the parallel port. You can download the plugin from:
+This plugin works in both Linux and Windows. In Windows `DLPortIO.dll` is used to access the parallel port. 
+
+You can download the plugin from: 
+
+[here][plugin]
 
 Linux:
 
-In linux we have to use parport_pc. We can accomplish this by exectuting the following cmds:
+In linux we have to use parport_pc. We can accomplish this by exectuting the following commands:
 
 $ sudo rmmod lp
 $ sudo rmmod parport_pc
@@ -34,11 +38,11 @@ You need to copy `dlportio.dll` to the OpenSesame folder (that is, the same fold
 
 For Windows 7 x86 & 64:
 
-1) Download the DLPortIO x64 driver from http://real.kiev.ua/avreal/download/#DLPORTIO_TABLE and uncompress the zip archive.
+1) Download the DLPortIO x64 driver from [here][win64-dll] and uncompress the zip archive.
 
 2) As Windows 7 has a strengthened security system (at least compared to XP) one cannot simply install the DLPortIO x64 driver. This won't work as Windows 7 will block all attempts of installing a not officially signed (by Microsoft) driver. Good for the security of an average user -- bad for us.
 
-To bypass this restriction one has to use a little helper program called "Digital Signature Enforcement Overrider" (DSEO) which can be downloaded here: http://www.ngohq.com/home.php?page=dseo (of course there are other possible ways to do this but this program is mentioned in the DLPortIO-64-readme.txt and one does not have to dive deeper into MS Windows 7 architecture specialities).
+To bypass this restriction one has to use a little helper program called "Digital Signature Enforcement Overrider" (DSEO) which can be downloaded [here][dseo] (of course there are other possible ways to do this but this program is mentioned in the DLPortIO-64-readme.txt and one does not have to dive deeper into MS Windows 7 architecture specialities).
 
 3) Start DSEO with administrator privileges (right click on dseo13b.exe, select "run as administrator"). Now the DSEO window pops up. It just presents a list of options which operation to run next.
 
@@ -68,12 +72,19 @@ Troubleshooting
 
 There are a number of relevant forum topics in which trigger-related problems are discussed (and, for the most, solved!).
 
-- A post with elaborate installation instructions for DLPortIO on Windows 7: [link][post-1]
-- A post about ghost triggers, i.e. unwanted triggers that are mysteriously registered by the EEG apparatus: [link][post-2]
+- A post about ghost triggers, i.e. unwanted triggers that are mysteriously registered by the EEG apparatus: [link][post-1]
 
 Please don't hesitate to post questions on the forum, or to let us know of your experiences (good or bad).
 
+References
+----------
+
+- A post with elaborate installation instructions for DLPortIO on Windows 7: [link][post-2]
+
 [win32-dll]: http://files.cogsci.nl/misc/dlportio.zip
 [win64-dll]: http://real.kiev.ua/avreal/download/#DLPORTIO_TABLE
-[post-1]: http://forum.cogsci.nl/index.php?p=/discussion/comment/745#Comment_745
-[post-2]: http://forum.cogsci.nl/index.php?p=/discussion/comment/780#Comment_780
+[post-1]: http://forum.cogsci.nl/index.php?p=/discussion/comment/780#Comment_780
+[post-2]: http://forum.cogsci.nl/index.php?p=/discussion/comment/745#Comment_745
+[plugin]: https://github.com/dev-jam/opensesame_plugin_parallel-port-trigger/archive/master.zip
+[dseo]: http://www.ngohq.com/home.php?page=dseo
+
