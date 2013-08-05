@@ -29,9 +29,9 @@ Then logout and login, and it should work.
 
 
 
-For Windows XP 32-bit & Vista 32/64-bit
+For Windows XP & Vista 32-bit
 
-1) Download the DLPortIO driver from [32-bit][win32-dll] or [64-bit][win64-dll] and uncompress the zip archive.
+1) Download the DLPortIO driver from [32-bit][win32-dll] and uncompress the zip archive.
 
 2) Go to `DriverLINX/drivers` folder and copy `dlportio.dll` and `dlportio.sys` to the `install` folder. This is the folder  where `install.exe` is located. .Then run `install.exe`
 
@@ -41,7 +41,7 @@ For Windows XP 32-bit & Vista 32/64-bit
 
 For Windows 7 32/64-bit:
 
-1) Download the DLPortIO driver from [32-bit][win32-dll] or [64-bit][win64-dll] and uncompress the zip archive.
+1) Download the DLPortIO driver from [32-bit][win7-32-dll] or [64-bit][win7-64-dll] and uncompress the zip archive.
 
 2) As Windows 7 has a strengthened security system (at least compared to XP) one cannot simply install the DLPortIO driver. This won't work as Windows 7 will block all attempts of installing a not officially signed (by Microsoft) driver. Good for the security of an average user -- bad for us.
 
@@ -84,7 +84,8 @@ References
 - A post with elaborate installation instructions for DLPortIO on Windows 7: [link][post-2]
 
 [win32-dll]: http://files.cogsci.nl/misc/dlportio.zip
-[win64-dll]: http://real.kiev.ua/avreal/download/#DLPORTIO_TABLE
+[win7-32-dll]: http://real.kiev.ua/files/avreal/dlportio-32-bat.zip
+[win7-64-dll]: http://real.kiev.ua/files/avreal/dlportio-64.zip
 [post-1]: http://forum.cogsci.nl/index.php?p=/discussion/comment/780#Comment_780
 [post-2]: http://forum.cogsci.nl/index.php?p=/discussion/comment/745#Comment_745
 [plugin]: https://github.com/dev-jam/opensesame_plugin_parallel-port-trigger/archive/master.zip
