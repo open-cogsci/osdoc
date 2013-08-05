@@ -12,7 +12,7 @@ In EEG/ ERP studies it is common to send triggers to mark the time of significan
 You can download the plugin from [here][plugin]  
 
 
-## Linux ##
+### Linux ###
 
 In Linux we have to use the "parport_pc" module (tested in Debian Wheezy). We can accomplish this by executing the following commands:
 
@@ -24,7 +24,7 @@ $ sudo adduser user lp
 Then logout and login, and it should work.  
 
 
-For Windows XP & Vista 32-bit
+### For Windows XP & Vista 32-bit ###
 
 1) Download the 32-bit DLPortIO driver from [here][win32-dll] and uncompress the zip archive.
 
@@ -33,7 +33,7 @@ For Windows XP & Vista 32-bit
 3) You need to copy `dlportio.dll` to the OpenSesame folder (that is, the same folder that contains `opensesame.exe`).
 
 
-For Windows 7 32/64-bit:  
+### For Windows 7 32/64-bit ###
 
 1) Download the DLPortIO driver [32-bit][win7-32-dll] or [64-bit][win7-64-dll] and uncompress the zip archive.  
 
