@@ -14,7 +14,7 @@ You can download the plugin from [here][plugin]
 
 Linux:
 
-In Linux we have to use parport_pc (tested in Debian Wheezy). We can accomplish this by exectuting the following commands:
+In Linux we have to use the "parport_pc" module (tested in Debian Wheezy). We can accomplish this by executing the following commands:
 
 $ sudo rmmod lp
 $ sudo rmmod parport_pc
@@ -33,9 +33,9 @@ For Windows XP 32-bit & Vista 32/64-bit
 
 1) Download the DLPortIO driver from [32-bit][win32-dll] or [64-bit][win64-dll] and uncompress the zip archive.
 
-2) In the folder 'install' there is an installer ('install.exe'). For some reason, you need to copy 'dlportio.dll' and 'dlportio.sys' to this 'install' folder before the running the installer. 
+2) In the folder `install` there is an installer (`install.exe`). For some reason, you need to copy `dlportio.dll` and `dlportio.sys` to this `install` folder before the running the installer. 
 
-3) You need to copy 'dlportio.dll' to the OpenSesame folder (that is, the same folder that contains `opensesame.exe`).
+3) You need to copy `dlportio.dll` to the OpenSesame folder (that is, the same folder that contains `opensesame.exe`).
 
 
 For Windows 7 32/64-bit:
@@ -54,11 +54,11 @@ To bypass this restriction one has to use a little helper program called "Digita
 
 6) After boot up is completed you'll see that something like "Windows 7 test mode built #number#" is written on the desktop just above the clock in the starter-bar. That's necessary. You have to be in test mode to run this unofficially signed driver.
 
-7) Now run DLPortIO_install.bat with administrator privileges (in Windows Explorer, right click the file, ...). Answer "yes" if Windows warns you about registry changes.
+7) Now run `DLPortIO_install.bat` with administrator privileges (in Windows Explorer, right click the file, ...). Answer "yes" if Windows warns you about registry changes.
 
 8) Reboot
 
-9) Copy the DLPortIO.dll file to the Opensesame folder (that is, the same folder that contains `opensesame.exe`).
+9) Copy the `DLPortIO.dll` file to the Opensesame folder (that is, the same folder that contains `opensesame.exe`).
 
 
 
@@ -88,3 +88,4 @@ References
 [post-2]: http://forum.cogsci.nl/index.php?p=/discussion/comment/745#Comment_745
 [plugin]: https://github.com/dev-jam/opensesame_plugin_parallel-port-trigger/archive/master.zip
 [dseo]: http://www.ngohq.com/home.php?page=dseo
+
