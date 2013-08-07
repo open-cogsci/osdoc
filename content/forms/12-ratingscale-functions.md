@@ -1,10 +1,10 @@
 ---
+permalink: /ratingscale-functions/
+group: Forms
+level: 1
 layout: osdoc
 title: Rating_scale functions
-group: Forms
-permalink: /ratingscale-functions/
-level: 1
-sortkey: 006.011
+sortkey: 006.012
 ---
 
 The rating_scale widget is a horizontally aligned series of checkable boxes (nodes), optionally with a label attached to each node.

@@ -1,10 +1,10 @@
 ---
+permalink: /textinput-functions/
+group: Forms
+level: 1
 layout: osdoc
 title: Text_input functions
-group: Forms
-permalink: /textinput-functions/
-level: 1
-sortkey: 006.012
+sortkey: 006.013
 ---
 
 The text_input widget allows the participant to enter multi-character responses. (This widget has no relation to the text_input plug-in, which was created before forms where added to OpenSesame.)

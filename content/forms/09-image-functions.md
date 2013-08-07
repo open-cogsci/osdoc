@@ -1,10 +1,10 @@
 ---
+permalink: /image-functions/
+group: Forms
+level: 1
 layout: osdoc
 title: Image functions
-group: Forms
-permalink: /image-functions/
-level: 1
-sortkey: 006.008
+sortkey: 006.009
 ---
 
 The image widget is used to display a non-interactive image.

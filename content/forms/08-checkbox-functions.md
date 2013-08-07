@@ -1,10 +1,10 @@
 ---
+permalink: /checkbox-functions/
+group: Forms
+level: 1
 layout: osdoc
 title: Checkbox functions
-group: Forms
-permalink: /checkbox-functions/
-level: 1
-sortkey: 006.007
+sortkey: 006.008
 ---
 
 The checkbox widget is a checkable box accompanied by a string of text.

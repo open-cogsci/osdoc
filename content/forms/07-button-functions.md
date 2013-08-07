@@ -1,10 +1,10 @@
 ---
+permalink: /button-functions/
+group: Forms
+level: 1
 layout: osdoc
 title: Button functions
-group: Forms
-permalink: /button-functions/
-level: 1
-sortkey: 006.006
+sortkey: 006.007
 ---
 
 The button widget is a clickable text string, by default surrounded by a button-like frame.

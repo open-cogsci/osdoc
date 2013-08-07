@@ -1,10 +1,10 @@
 ---
+permalink: /label-functions/
+group: Forms
+level: 1
 layout: osdoc
 title: Label functions
-group: Forms
-permalink: /label-functions/
-level: 1
-sortkey: 006.010
+sortkey: 006.011
 ---
 
 The label widget is a non-interactive string of text.

@@ -1,10 +1,10 @@
 ---
+permalink: /form-functions/
+group: Forms
+level: 1
 layout: osdoc
 title: Form functions
-group: Forms
-permalink: /form-functions/
-level: 1
-sortkey: 006.013
+sortkey: 006.014
 ---
 
 The form is a container for widgets, such as labels, etc. If you use the form_base plug-in in combination with OpenSesame script, you do not need to explicitly create a form. However, if you use Python inline code, you do.

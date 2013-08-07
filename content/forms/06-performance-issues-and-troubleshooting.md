@@ -1,10 +1,10 @@
 ---
+permalink: /performance-issues-and-troubleshooting/
+group: Forms
+level: 1
 layout: osdoc
 title: Performance issues and troubleshooting
-group: Forms
-permalink: /performance-issues-and-troubleshooting/
-level: 1
-sortkey: 006.005
+sortkey: 006.006
 ---
 
 Performance issues {#performance}

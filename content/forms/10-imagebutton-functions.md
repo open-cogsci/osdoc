@@ -1,10 +1,10 @@
 ---
+permalink: /imagebutton-functions/
+group: Forms
+level: 1
 layout: osdoc
 title: Image_button functions
-group: Forms
-permalink: /imagebutton-functions/
-level: 1
-sortkey: 006.009
+sortkey: 006.010
 ---
 
 The image_button widget is a clickable image.
