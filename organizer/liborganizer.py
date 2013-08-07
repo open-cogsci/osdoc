@@ -68,7 +68,7 @@ def setInfo(path, i):
 	for key, value in i.iteritems():
 		yml += u'%s: %s\n' % (key, value)	
 	l[1] = yml
-	s = u'---'.join(l)	
+	s = u'---\n' + u'---'.join(l[1:])	
 	return s
 
 def match(i, key):
