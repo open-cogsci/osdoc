@@ -25,7 +25,7 @@ from liborganizer import *
 class QtOrganizer(QtGui.QListWidget):
 	
 	"""Implements the basic GUI for organizing osdoc."""
-    
+
 	def __init__(self):
 		
 		"""Constructor."""
@@ -60,8 +60,8 @@ class QtOrganizer(QtGui.QListWidget):
 		big, small = key.split(u'.')
 						
 		if i[u'level'] == 0:
-			_small = u'X'
-			small = u'X'
+			_small = u'00X'
+			small = u'00X'
 			_big = str(int(big) + d).rjust(3, '0')
 		else:
 			_small = str(int(small) + d).rjust(3, '0')

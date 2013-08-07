@@ -40,7 +40,7 @@ def getInfo(path):
 		print u'liborganizer:getInfo(): Failed to parse %s' % path
 		return None
 	y = yaml.load(l[1])	
-	b, s = str(y[u'sortkey']).split(u'.')		
+	b, s = str(y[u'sortkey']).split(u'.')
 	y['sortkey'] = b.rjust(3, '0') + u'.' + s.ljust(3, '0')
 	return y
 
@@ -58,11 +58,16 @@ def setInfo(path, i):
 	A string with the modified document.
 	"""
 	
+	# Sortkey has to be string, otherwise it will not be parsed correctly by
+	# yaml
 	s = open(path).read().decode(u'utf-8')
 	l = s.split(u'---')
 	if len(l) < 3:
 		return None
-	l[1] = u'\n' + yaml.dump(i, default_flow_style=False)
+	yml = u''
+	for key, value in i.iteritems():
+		yml += u'%s: %s\n' % (key, value)	
+	l[1] = yml
 	s = u'---'.join(l)	
 	return s
 
@@ -106,9 +111,9 @@ def changeKey(i, key, path=None):
 	big, small = i[u'sortkey'].split(u'.')
 	_big, _small = key.split(u'.')
 	
-	if _big != u'X':
+	if _big != u'00X':
 		big = _big
-	if _small != u'X':
+	if _small != u'00X':
 		small = _small
 	i[u'sortkey'] = u'%s.%s' % (big, small)
 	if path != None:		
@@ -204,6 +209,7 @@ def changePath(path, i, toKey):
 		s = toKey.split(u'.')[0]
 	else:
 		s = toKey.split(u'.')[1]
+	s = s[-2:]
 	if u'X' not in s:
 		dirname = os.path.dirname(path)
 		basename = os.path.basename(path)	
