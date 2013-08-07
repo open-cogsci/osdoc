@@ -21,11 +21,12 @@ Overview
 Status of current translations {#status}
 ------------------------------
 
-|**Code**	|**Language**		|**Status**			|**Author(s)**				|
-|`en_EN`	|English			|Default			|							|
-|`it_IT` 	|Italian			|Complete			|Andrea Epifani				|
-|`fr_FR`	|French				|Complete			|Romain Monfollet			|
-|`zh_CH`	|Chinese			|In progress		|Jerry Li and Gabriel Chan	|
+|**Code**	|**Language**		|**Status**			|**Author(s)**					|
+|`en_EN`	|English			|Default			|								|
+|`it_IT` 	|Italian			|Complete			|Andrea Epifani					|
+|`fr_FR`	|French				|Complete			|Romain Monfollet				|
+|`zh_CH`	|Chinese			|In progress		|Zhongquan Li and Gabriel Chan	|
+|`nl_NL`	|Dutch				|In progress		|Lotje van der Linden			|
 
 Starting OpenSesame with a specific language {#select}
 --------------------------------------------

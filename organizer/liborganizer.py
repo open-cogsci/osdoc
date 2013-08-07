@@ -36,9 +36,12 @@ def getInfo(path):
 	
 	s = open(path).read().decode(u'utf-8')
 	l = s.split(u'---')
-	if len(l) != 3:
+	if len(l) < 3:
+		print u'liborganizer:getInfo(): Failed to parse %s' % path
 		return None
-	y = yaml.load(l[1])
+	y = yaml.load(l[1])	
+	b, s = str(y[u'sortkey']).split(u'.')
+	y['sortkey'] = b.rjust(3, '0') + u'.' + s.ljust(3, '0')
 	return y
 
 def setInfo(path, i):
@@ -55,12 +58,17 @@ def setInfo(path, i):
 	A string with the modified document.
 	"""
 	
+	# Sortkey has to be string, otherwise it will not be parsed correctly by
+	# yaml
 	s = open(path).read().decode(u'utf-8')
 	l = s.split(u'---')
-	if len(l) != 3:
+	if len(l) < 3:
 		return None
-	l[1] = u'\n' + yaml.dump(i, default_flow_style=False)
-	s = u'---'.join(l)	
+	yml = u''
+	for key, value in i.iteritems():
+		yml += u'%s: %s\n' % (key, value)	
+	l[1] = yml
+	s = u'---\n' + u'---'.join(l[1:])	
 	return s
 
 def match(i, key):
@@ -77,12 +85,8 @@ def match(i, key):
 	True on a match, False otherwise.
 	"""
 	
-	big, small = str(i[u'sortkey']).split('.')
-	_big, _small = key.split(u'.')
-	big = big.rjust(3, u'0')
-	_big = _big.rjust(3, u'0')
-	small = small.rjust(3, u'0')
-	_small = _small.rjust(3, u'0')
+	big, small = i[u'sortkey'].split('.')
+	_big, _small = key.split('.')
 	return (_big == u'00X' or big == _big) and (_small == u'00X' or small == \
 		_small)
 
@@ -103,19 +107,21 @@ def changeKey(i, key, path=None):
 	A dictionary with updated YAML info.
 	"""
 	
-	big, small = str(i[u'sortkey']).split(u'.')
+	print u'liborganizer.changeKey(): %s' % path
+	big, small = i[u'sortkey'].split(u'.')
 	_big, _small = key.split(u'.')
 	
-	if _big != u'X':
+	if _big != u'00X':
 		big = _big
-	if _small != u'X':
+	if _small != u'00X':
 		small = _small
-	_small = _small.rjust(3, u'0')
-	small = small.rjust(3, u'0')
-	i[u'sortkey'] = float(u'%s.%s' % (big, small))	
+	i[u'sortkey'] = u'%s.%s' % (big, small)
 	if path != None:		
 		s = setInfo(path, i)
-		open(path, 'w').write(s)
+		if not '--dry' in sys.argv:
+			f = open(path, 'w')
+			f.write(s)
+			f.close()
 	return i
 
 def listContent(dirname=None, l=[]):
@@ -136,7 +142,9 @@ def listContent(dirname=None, l=[]):
 	if dirname == None:
 		dirname = sys.argv[-1].decode(sys.getfilesystemencoding())
 
-	for basename in os.listdir(dirname):	
+	for basename in os.listdir(dirname):			
+		if basename.startswith(u'_'):
+			continue		
 		path = os.path.join(dirname, basename)
 		if os.path.isdir(path):
 			l = listContent(dirname=path, l=l)
@@ -183,13 +191,14 @@ def printContent():
 	for path, i in l:
 		printItem(path, i)
 
-def changePath(path, toKey):
+def changePath(path, i, toKey):
 	
 	"""
 	Determines the new path based on a new key.
 	
 	Argument:
 	path	--	The old path.
+	i		--	A dictionary with YAML info.
 	toKey	--	The new key.
 	
 	Returns:
@@ -197,9 +206,10 @@ def changePath(path, toKey):
 	"""
 	
 	if i[u'level'] == 0:
-		s = str(toKey).split(u'.')[0].rjust(2, u'0')
+		s = toKey.split(u'.')[0]
 	else:
-		s = str(toKey).split(u'.')[1].rjust(2, u'0')
+		s = toKey.split(u'.')[1]
+	s = s[-2:]
 	if u'X' not in s:
 		dirname = os.path.dirname(path)
 		basename = os.path.basename(path)	
@@ -223,9 +233,10 @@ def move(fromKey, toKey):
 			print u'Move',
 			printItem(path, i)
 			i = changeKey(i, toKey, path=path)
-			_path = changePath(path, toKey)
+			_path = changePath(path, i, toKey)
 			if _path != path:
-				shutil.move(path, _path)
+				if not '--dry' in sys.argv:
+					shutil.move(path, _path)
 				path = _path
 			print u'  ->',
 			printItem(path, i)
