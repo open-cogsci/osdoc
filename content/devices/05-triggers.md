@@ -37,8 +37,7 @@ Then logout and login, and you are ready to go!
 
 1. Download the 32-bit or 64bit DLPortIO driver [here][win7-dll] and uncompress the zip archive.  
 
-2. As Windows 7 has a strengthened security system (at least compared to XP) one cannot simply install the DLPortIO driver. This won't work as Windows 7 will block all attempts of installing a not officially signed (by Microsoft) driver. Good for the security of an average user -- bad for us.  
-
+2. As Windows 7 has a strengthened security system (at least compared to XP) one cannot simply install the DLPortIO driver. This won't work as Windows 7 will block all attempts of installing a not officially signed (by Microsoft) driver. Good for the security of an average user -- bad for us. 
 To bypass this restriction one has to use a little helper program called "Digital Signature Enforcement Overrider" (DSEO) which can be downloaded [here][dseo] (of course there are other possible ways to do this but this program is mentioned in the DLPortIO-readme.txt and one does not have to dive deeper into MS Windows 7 architecture specialities).  
 
 3. Start DSEO with administrator privileges (right click on dseo13b.exe, select "run as administrator"). Now the DSEO window pops up. It just presents a list of options which operation to run next.  
