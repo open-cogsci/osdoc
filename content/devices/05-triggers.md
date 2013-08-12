@@ -16,6 +16,11 @@ The plugin has three input boxes:
   
 You can download the plugin from [here][plugin]  
 
+Screenshot
+----------
+
+![](/img/fig/fig7.7.1.png)
+
 
 ### Linux ###
 
