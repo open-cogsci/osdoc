@@ -34,6 +34,7 @@ Citation
 
 Although Expyriment is bundled with the binary distributions of OpenSesame, it is a separate project. When appropriate, please provide the following citation in addition to citing OpenSesame:
 
-###### Krause, F., & Lindemann, O. (2012). Expyriment (Version 0.5.2) [Software]. Available from <http://www.expyriment.org>
+Krause, F., & Lindemann, O. (in press). Expyriment: A Python library for cognitive and neuroscientific experiments. *Behavior Research Methods*.
+{: .reference}
 
 [expyriment]: http://www.expyriment.org
