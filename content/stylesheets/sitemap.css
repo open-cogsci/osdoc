@@ -1,0 +1,28 @@
+#bottompane #_sitemap {
+	border-top: solid 1px #888a85;
+	margin-top: 8px;
+}
+
+#bottompane table#_sitemap {
+	font-size: 0.7em;
+	width: 100%;
+}
+
+#bottompane #_sitemap a {
+	border: none;
+}
+
+#bottompane #_sitemap .level-0 {
+	font-weight: bold;
+}
+
+#bottompane #_sitemap .level-1 {
+}
+
+#bottompane #_sitemap td {
+	margin-top: 4px;
+	padding-right: 4px;
+	width: 16.67%;
+	text-indent: -8px;
+	padding: 0px 8px 8px 8px;
+}

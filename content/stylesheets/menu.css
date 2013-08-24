@@ -17,8 +17,13 @@
 	font-weight: bold;
 }
 
-#menu .external a {
+#menu .external a,
+#menu .sitemap a {
 	color: #4e9a06;
+}
+
+#menu .highlight a {
+	color: #c4a000;
 }
 
 #menu .external {
@@ -26,13 +31,14 @@
 	padding-left: 24px;
 }
 
-#menu .boks {
-	background: url('/img/menu/boks.png') no-repeat left center;
+#menu .sitemap {
+	background: url('/img/menu/sitemap.png') no-repeat left center;
 	padding-left: 24px;
 }
 
-#menu .highlight a {
-	color: #c4a000;
+#menu .boks {
+	background: url('/img/menu/boks.png') no-repeat left center;
+	padding-left: 24px;
 }
 
 #menu .highlight {

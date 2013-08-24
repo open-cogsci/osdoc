@@ -5,6 +5,7 @@ group: general
 level: 0
 sortkey: 001.001
 permalink: /
+singleton: true
 ---
 
 <div style='float:right;margin-left:16px;text-align:right;'>
@@ -26,13 +27,6 @@ Mathôt, S., Schreij, D., & Theeuwes, J. (2012). OpenSesame: An open-source, gra
 
 [Download][]{:.button}
 [Forum][]{:.button}
-
-# Site map
-
-<div id='index'>
-{% assign expanded = 1 %}
-{% include pages_list %}
-</div>
 
 [forum]: http://forum.cogsci.nl/
 [0.27 release notes]: /notes/0.27

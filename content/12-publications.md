@@ -5,6 +5,7 @@ group: General
 permalink: /publications/
 level: 0
 sortkey: 0012.001
+singleton: true
 ---
 
 How to cite OpenSesame
