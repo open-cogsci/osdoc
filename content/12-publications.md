@@ -30,6 +30,9 @@ OpenSesame is used for, discussed in, or mentioned in:
 Aigner, W., Hoffmann, S., & Rind, A. (2013). EvalBench: A software library for visualization evaluation. *Computer Graphics Forum*, *32*(3):1, 41–50. [doi:10.1111/cgf.12091](http://dx.doi.org/10.1111/cgf.12091)
 {: .reference}
 
+Dalmaijer, E., Van der Stigchel, S., Van der Linden, L., Kruijne, W., Schreij, D., & Mathôt, S. (2013, August). *OpenSesame Opens the Door to Open-Source and User-Friendly Eye-Tracking Research*. Poster presented at the European Conference on Eye Movements, Lund, Sweden. [PDF](http://cogsci.nl/esdalmaijer/eyetracker_plugins/downloads/Dalmaijer_et_al_2013_ECEM_poster.pdf)
+{: .reference}
+
 Drager, K. (2013). Experimental Methods in Sociolinguistics. In J. Holmes & K. Hazen (eds.), *Research Methods in Sociolinguistics: A practical guide*, Wiley-Blackwell.
 {: .reference}
 
