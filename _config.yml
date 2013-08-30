@@ -1,4 +1,4 @@
-notifications: false
+notifications: true
 pygments: true
 markdown: kramdown
 source: content
