@@ -2,40 +2,13 @@
 layout: osdoc
 title: APS tutorial
 group: Tutorials
+author: Sebastiaan Mathôt
 permalink: /aps-tutorial/
-level: 1
 ---
 
-![](/img/misc/aps2013.png)
+This OpenSesame workshop was presented at the 25th annual convention of the Association for Psychological Science (APS) on May 26, 2013. The workshop was co-sponsored by the Society of Multivariate Experimental Psychology ([SMEP][]). This page is a slightly modified version of the original workshop page, which can be found [here](/aps2013).
 
-This OpenSesame workshop was presented at the 25th annual convention of the Association for Psychological Science (APS) on May 26, 2013, 11:00AM - 1:20PM. The workshop was co-sponsored by the Society of Multivariate Experimental Psychology ([SMEP][]).
-
-Requirements {#requirements}
-------------
-
-### Expertise
-
-- No prior knowledge of, or experience with, OpenSesame and/ or Python is assumed.
-
-### Laptop
-
-- A laptop is *recommended (but not required)* for the pre-break tutorial, so that you can walk through the steps of the tutorial yourself. For the post-break part of the workshop, a laptop is required for each person or group, so that you can build your own experiment. If you bring a laptop, please install OpenSesame before the workshop.
-- OpenSesame is available for Windows XP/ 7/ 8, Linux, and Mac OS. If you are running Mac OS, you are advised to verify beforehand that OpenSesame runs properly on your system, as Mac OS support is still experimental.
-- If you have an Android tablet or phone, you can bring it along to see how OpenSesame works on a tablet!
-
-### Materials
-
-- The primary resource for the workshop is this page, which can be downloaded in `.pdf` format from [here][pdf]. Print-outs will be available for registered participants.
-
-Introduction {#introduction}
-------------
-
-You can download the introduction slides from [here][slides].
-
-Creating a simple experiment {#create}
-----------------------------
-
-### The goal
+## The goal
 
 We will create a simple optimal-viewing-position (OVP) experiment with a lexical-decision response. Participants briefly see a five-letter string and decide whether the string is a word or a non-word by pressing a key. The position of the word relative to fixation is varied. The typical finding is that participants are faster to name or discriminate a string of letters when they fixate *just left* of the center [(O'Regan & Jacobs, 1992)](#references). Presumably, this left-wards bias reflects the fact that most western languages are read from left to right, and that the left cerebral hemisphere is specialized in language processing. (When we fixate to the left, most of the word falls in the right visual field and is thus initially processed by the left hemisphere.)
 
@@ -47,7 +20,7 @@ In our experiment, each trial will start with a fixation stimulus, after which a
 
 The lexical-decision part of the experiment shows how to collect response-time data. To illustrate how you can implement questionnaires, we will also include a consent form and a few questions.
 
-### Step 1: Download and start OpenSesame
+## Step 1: Download and start OpenSesame
 
 You can download OpenSesame from [here][download]. OpenSesame is available for Windows, Linux, Mac OS (experimental), and Android (runtime only). This tutorial is written for OpenSesame 0.27 or later. (Earlier versions of OpenSesame do not support the form functionality that is used for the questionnaires.)
 
@@ -81,7 +54,7 @@ You can combine `loop`s and `sequence`s in a hierarchical way, to create trial b
 
 </div>
 
-### Step 2: Define the independent variables
+## Step 2: Define the independent variables
 
 We will limit ourselves to two independent variables: `word` and `displacement`. The variable `word` simply contains the word that the participant must identify on a given trial. The variable `displacement` is the horizontal displacement of the word in pixels, where 0 is the central position. Fortunately, we do not need to type in all combinations of `word` and `displacement`, but can use the `loop`'s variable wizard to generate a factorial design for us. To do this, select the *block_loop* item and click on the 'Variable wizard' button.
 
@@ -103,7 +76,7 @@ You can prepare your variable list in your favorite spreadsheet and copy-paste i
 
 </div>
 
-### Step 3: Add items to your trial sequence
+## Step 3: Add items to your trial sequence
 
 Right now, the *trial_sequence* contains only a single `sketchpad` item, which is called *sketchpad*. We want to have three `sketchpad`s, one for a fixation stimulus, one for the target word, and one for the mask. From the item toolbar, drag a `sketchpad` item onto the *trial_sequence* item in the overview area. This will add another `sketchpad`. Do this again to add the third `sketchpad`. Your *trial_sequence* now looks like this:
 
@@ -115,7 +88,7 @@ By default, OpenSesame assigns names such as *__sketchpad* to newly created item
 
 Often, you want to provide feedback to the participant after every trial. You can do this in various ways, but here we will use a `feedback` item. Drag a `feedback` item from item toolbar onto the *logger* in the *trial_sequence*. This will cause a new `feedback` item to be inserted before the *logger*. Rename the newly created item to *trial_feedback*.
 
-### Step 4: Design the *fixation*, *target*, and *mask* `sketchpad`s
+## Step 4: Design the *fixation*, *target*, and *mask* `sketchpad`s
 
 `sketchpad`s are one of the really powerful features of OpenSesame. They allow you to draw your stimulus displays using the built-in drawing tools. You can also use `sketchpad`s to create variably defined displays (i.e. displays that depend on variables), by first creating a prototype display, and then making certain aspects of this display variable. This may sound a bit abstract, but it's actually very easy.
 
@@ -165,7 +138,7 @@ Now it's time to create the mask, which has its own `sketchpad` item. Click on t
 
 The duration of the *mask* item should be set to 0 (it probably is already, again as a result of the `Extended template`). This might be slightly counter-intuitive, because it suggests that the *mask* will not be shown at all. But what this actually means is that OpenSesame will advance immediately to the next item, which is the *keyboard_response*. Because a *keyboard_response* item will not change what's on the display, the mask will remain visible until the participant presses a key.
 
-#### Step 5: Fine-tune the *keyboard_response*
+## Step 5: Fine-tune the *keyboard_response*
 
 The *keyboard_response* item already works, but it doesn't have a timeout and it reacts to all keys. To improve this, click on *keyboard_response* in the overview area to open its tab.
 
@@ -181,7 +154,7 @@ The participant's response will be stored as the variable `response`, and the re
 
 </div>
 
-### Step 6: Give content to the *trial_feedback* item
+## Step 6: Give content to the *trial_feedback* item
 
 Click on the *trial_feedback* item in the overview area to open its tab. We will add two stimuli and make use of the 'Show if' statement to determine which of these stimuli will actually be shown.
 
@@ -219,7 +192,7 @@ If you save your experiment in `.opensesame.tar.gz` format, your file pool will 
 
 </div>
 
-### Step 7: Test your experiment so far!
+## Step 7: Test your experiment so far!
 
 Congratulations, you now have a fully working experiment! Press the 'Run fullscreen' (`Control+R`) button in the main toolbar to run your experiment. To abort your experiment, press `escape`.
 
@@ -231,7 +204,7 @@ To quickly test your experiment in a window, you can click on the 'Quick run' bu
 
 </div>
 
-### Step 8: Add consent form and questionnaire
+## Step 8: Add consent form and questionnaire
 
 So far, the experiment is about collecting single key-press responses to visual stimuli. But, of course, you may often want to collect more complicated, questionnaire-like responses. This can be done using [forms][].
 
@@ -297,11 +270,11 @@ Forms, and text more generally, support a subset of HTML tags to allow for text 
 
 </div>
 
-### Step 9: Specify the number of blocks and trials
+## Step 9: Specify the number of blocks and trials
 
 Currently, your experiment just consists of a single practice block and a single experimental block, and each block consists of a small number of trials (depending on how many words you entered). You can make your experiment longer by adjusting the 'repeat' setting in the *block_loop*, *practice_loop*, and *experimental_loop* items.
 	
-### Step 10: Finished!
+## Step 10: Finished!
 
 ::20.png::Finished!
 
@@ -316,7 +289,10 @@ Brysbaert, M., & Nazir, T. (2005). Visual constraints in written word recognitio
 O'Regan, K. J., & Jacobs, A. M. (1992). Optimal viewing position effect in word recognition: A challenge to current theory. *Journal of Experimental Psychology: Human Perception and Performance*, *18*(1), 185-197.
 {: .reference}
 
-Math&ocirc;t, S., Schreij, D., & Theeuwes, J. (2012). OpenSesame: An open-source, graphical experiment builder for the social science. *Behavior Research Methods*, *44*(2), 313-324. [doi:10.3758/s13428-011-0168-7](http://dx.doi.org/10.3758%2Fs13428-011-0168-7)
+Mathôt, S. (2013, May). *An Introduction to Experiment Building with OpenSesame*. Workshop presented at the APS 25th Annual Convention, Washington, DC, United States. [doi:10.6084/m9.figshare.791576](http://dx.doi.org/10.6084/m9.figshare.791576)
+{: .reference}
+
+Mathôt, S., Schreij, D., & Theeuwes, J. (2012). OpenSesame: An open-source, graphical experiment builder for the social science. *Behavior Research Methods*, *44*(2), 313-324. [doi:10.3758/s13428-011-0168-7](http://dx.doi.org/10.3758%2Fs13428-011-0168-7)
 {: .reference}
 
 [download]: /getting-opensesame/download/
