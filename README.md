@@ -26,6 +26,8 @@ The `compile` script generates the sites. This script uses `jekyll` for the actu
 	
 	./compile --help
 	
+The site structure is read from `sitemap.txt`.
+	
 Dependencies
 ------------
 
@@ -41,11 +43,11 @@ Most dependencies are available from the Ubuntu repositories. Only [`htmlcompres
 License information
 -------------------
 
-### All files except those in the folder `organizer` fall under the CC-BY license
+### All files except `compile` fall under the CC-BY license
 
 <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">OpenSesame documentation area</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://osdoc.cogsci.nl" property="cc:attributionName" rel="cc:attributionURL">Sebastiaan Mathôt</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/smathot/osdoc" rel="dct:source">https://github.com/smathot/osdoc</a>.
 
-### All files in the folder `organizer` fall under the GNU General Public License 3
+### The file `compile` fall under the GNU General Public License 3
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
