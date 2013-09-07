@@ -20,6 +20,13 @@ The site content is available in the folder `content`.
 [kramdown]: http://kramdown.rubyforge.org/
 [jekyll]: https://github.com/mojombo/jekyll
 
+Site generation
+---------------
+
+The `compile` script generates the sites. This script uses `jekyll` for the actual site generation, but conducts some additional pre-processing and error checking. For a list of options, run:
+	
+	./compile --help
+
 License information
 -------------------
 

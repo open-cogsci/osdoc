@@ -31,4 +31,4 @@ Mathôt, S., Schreij, D., & Theeuwes, J. (2012). OpenSesame: An open-source, gra
 [forum]: http://forum.cogsci.nl/
 [0.27 release notes]: /notes/0.27
 [release notes]: /notes/0.27.3
-[download]: /getting-started/getting-opensesame/
+[download]: /getting-opensesame/download/

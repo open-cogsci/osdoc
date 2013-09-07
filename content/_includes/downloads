@@ -19,7 +19,7 @@
 </p>
 
 <p class="button-android">
-	<a href="/getting-started/android">
+	<a href="/getting-opensesame/android">
 	OpenSesame runtime for Android
 	</a>
 </p>
@@ -39,7 +39,7 @@
 </p>
 
 <p class="button-winzip">
-	<a href="/getting-started/running-with-python-portable">
+	<a href="/getting-opensesame/running-with-python-portable">
 	Windows XP/Vista/7 Python portable package (.zip)
 	</a>
 </p>

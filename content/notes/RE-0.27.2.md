@@ -16,7 +16,7 @@ Important note:
 
 New features and enhancements:
 
-- Support for Android ([link](/getting-started/android/))
+- Support for Android ([link](/getting-opensesame/android/))
 - Add `mouse.set_pos()` and `mouse.get_pressed()` functions
 - Add new plug-in API ([link](/plug-ins/create/))
 - Support Markdown for help files
