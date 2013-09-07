@@ -4,12 +4,12 @@
 
 #content img,
 #content .video {
-	border: solid 1px #888a85;
+	border: solid 1px @gray4;
 	border-radius: 4px;
 	padding: 8px;
 	max-width: 640px;
 	max-height: 480px;
-	box-shadow: 2px 2px 10px #888A85;
+	box-shadow: 2px 2px 10px @gray4;
 }
 
 #content .no-img-border img {
@@ -27,7 +27,7 @@
 #content table,
 #content tr,
 #content td {
-	border: dotted 1px #888a85;
+	border: dotted 1px @gray4;
 	border-collapse: collapse;
 	padding: 4px;
 }
@@ -36,7 +36,7 @@
 	font-size: 0.9em;
 	border-radius: 4px;
 	padding: 4px 16px 4px 16px;
-	background-color: #eeeeec;
+	background-color: @gray1;
 }
 
 #content .vid-caption,
@@ -52,4 +52,10 @@ h6 {
 	font-weight: normal;
 	padding: 0px 0px 4px 16px;
 	margin: 0px;
+}
+
+#content .author {
+	font-size: 0.9em;
+	font-weight: bold;
+	text-align: right;
 }

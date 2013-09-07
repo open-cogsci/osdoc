@@ -1,8 +1,7 @@
 OpenSesame documentation area
 =============================
 
-Copyright 2010-2013
-
+Copyright 2010-2013  
 Sebastiaan Mathôt <s.mathot@cogsci.nl>
 
 About
@@ -26,6 +25,18 @@ Site generation
 The `compile` script generates the sites. This script uses `jekyll` for the actual site generation, but conducts some additional pre-processing and error checking. For a list of options, run:
 	
 	./compile --help
+	
+Dependencies
+------------
+
+Most dependencies are available from the Ubuntu repositories. Only [`htmlcompressor.jar`](https://code.google.com/p/htmlcompressor/) and [`yui-compressor.jar`](https://github.com/yui/yuicompressor/downloads) must be downloaded from their respective websites and manually placed in the osdoc source folder.
+
+	jekyll
+	kramdown
+	node-less
+	linkchecker         # Optional, for checking for dead links
+	htmlcompressor.jar  # Optional, for compressing HTML
+	yuicompressor		# Optional, for compressing HTML
 
 License information
 -------------------

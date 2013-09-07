@@ -2,7 +2,11 @@
 <html>
 <head>
 	<meta charset="UTF-8" />
-	<meta name="author" content="Sebastiaan Mathot" />
+	{% if page.author %}
+	<meta name="author" content="{{ page.author }}" />
+	{% else %}
+	<meta name="author" content="Sebastiaan Mathôt" />
+	{% endif %}
 	<meta name="keywords" content="OpenSesame, Psychology, Python, Experiment builder, Open Source, Cross-platform" />
 	<meta name="description" content="Documentation for OpenSesame experiment builder" />
 	<title>{{ page.title }} - OpenSesame documentation area</title>

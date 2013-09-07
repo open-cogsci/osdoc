@@ -3,8 +3,6 @@ layout: osdoc
 title: Publications
 group: General
 permalink: /publications/
-level: 0
-sortkey: 0012.001
 singleton: true
 ---
 
@@ -30,7 +28,10 @@ OpenSesame is used for, discussed in, or mentioned in:
 Aigner, W., Hoffmann, S., & Rind, A. (2013). EvalBench: A software library for visualization evaluation. *Computer Graphics Forum*, *32*(3):1, 41–50. [doi:10.1111/cgf.12091](http://dx.doi.org/10.1111/cgf.12091)
 {: .reference}
 
-Dalmaijer, E., Van der Stigchel, S., Van der Linden, L., Kruijne, W., Schreij, D., & Mathôt, S. (2013, August). *OpenSesame Opens the Door to Open-Source and User-Friendly Eye-Tracking Research*. Poster presented at the European Conference on Eye Movements, Lund, Sweden. [PDF](http://cogsci.nl/esdalmaijer/eyetracker_plugins/downloads/Dalmaijer_et_al_2013_ECEM_poster.pdf)
+Brugmann, G., Goslin, J., & Duchamp-Viret, P. (in press). The speed of learning instructed stimulus-response association rules in human: Experimental data and model. *Brain research*. [(PDF)](http://www.tech.plym.ac.uk/soc/staff/GuidBugm/pub/SRLearningSpeed_Paper_v11_ToAppear.pdf)
+{:.reference}
+
+Dalmaijer, E., Van der Stigchel, S., Van der Linden, L., Kruijne, W., Schreij, D., & Mathôt, S. (2013, August). *OpenSesame Opens the Door to Open-Source and User-Friendly Eye-Tracking Research*. Poster presented at the European Conference on Eye Movements, Lund, Sweden. [(PDF)](http://cogsci.nl/esdalmaijer/eyetracker_plugins/downloads/Dalmaijer_et_al_2013_ECEM_poster.pdf)
 {: .reference}
 
 Drager, K. (2013). Experimental Methods in Sociolinguistics. In J. Holmes & K. Hazen (eds.), *Research Methods in Sociolinguistics: A practical guide*, Wiley-Blackwell.
@@ -45,11 +46,17 @@ Goudbeek, M. B., Haagmans, I., & Krahmer, E. J. (2013). The object without quali
 Kilpeläinen, M., Olivers, C. N. L., & Theeuwes, J. (2013). The eyes like their targets on a stable background. *Journal of Vision*, *13*(6), e5. [doi:10.1167/13.6.5](http://dx.doi.org/10.1167/13.6.5)
 {: .reference}
 
-Krause, F., & Lindemann, O. (in press). Expyriment: A Python library for cognitive and neuroscientific experiments. *Behavior Research Methods*.
+Krause, F., & Lindemann, O. (in press). Expyriment: A Python library for cognitive and neuroscientific experiments. *Behavior Research Methods*. [(PDF)](http://www.dcc.ru.nl/anc/~files/Krause_Lindemann_2013_XPY.pdf)
+{: .reference}
+
+van der Linden, L. & Vitu, F. (2013). *All eyes on the center of gravity: Initial saccadic landing positions on peripherally-presented daily-life objects are largely explained by low-level factors*. Talk presented at the 17th European Conference on Eye Movements (ECEM), Lund, Sweden. [doi:10.6084/m9.figshare.782254](http://dx.doi.org/10.6084/m9.figshare.782254)
+{: .reference}
+
+Mathôt, S. (2013, May). *An Introduction to Experiment Building with OpenSesame*. Workshop presented at the APS 25th Annual Convention, Washington, DC, United States. [doi:10.6084/m9.figshare.791576](http://dx.doi.org/10.6084/m9.figshare.791576)
 {: .reference}
 
 Mathôt, S. (2013). *Visual Attention and Stability* (Doctoral dissertation). VU University, Amsterdam, Netherlands. [doi:10.6084/m9.figshare.704402](http://dx.doi.org/10.6084/m9.figshare.704402)
-{: .reference} 
+{: .reference}
 
 Theeuwes, J., Mathôt, S., & Grainger, J. (2013). Exogenous object-centered attention. *Attention, Perception, & Psychophysics*. [doi:10.3758/s13414-013-0459-4](http://dx.doi.org/10.3758/s13414-013-0459-4)
 {: .reference}
