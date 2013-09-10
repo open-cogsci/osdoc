@@ -9,30 +9,28 @@ sortkey: 010.003
 
 Counterbalancing is a frequently used trick in psychological experiments. It means that you divide the participants into two groups and have each group perform a slightly different task, so that any imbalance in the task is canceled out.
 
-Overview
---------
+:--
+cmd: overview
+--:
 
-- [Why do counterbalancing?](#why)
-- [Counterbalancing video tutorial](#videotutorial)
-- [Counterbalancing example](#example)
-
-Why do counterbalancing? {#why}
-------------------------
+## Why do counterbalancing?
 
 Let's consider a task where participants press button A (left hand) when they see a green stimulus and button B (right hand) when they see a red stimulus. Your hypothesis is that red stimuli are processed faster than green stimuli (and you have come up with a clever, ecologically valid explanation for why this should be so), so you expect people to respond more quickly to the red stimuli. And this is exactly what you find! However, when you write a paper about it, you get the criticism that people are simply faster to respond with their right hand, because most people are right handed. And, due to the design of the experiment, you cannot distinguish this explanation from the color-based one. The solution is simple: You should have had 50% of the participants respond like "red → right hand, green → left hand", and the other 50% respond like "red -> left hand, green -> right hand". That's counterbalancing!
 
-Counterbalancing Video tutorial {#videotutorial}
--------------------------------
+## Counterbalancing Video tutorial
 
 The video below illustrates both a simple counterbalancing example, for two block orders or conditions, and a more complex example, for three or more block orders or conditions.
 
-<iframe width="640" height="360" src="//www.youtube.com/embed/zP8ucRtWU5g" frameborder="0" allowfullscreen></iframe>
+:--
+cmd: video
+src: youtube
+id: zP8ucRtWU5g
+width: 640
+height: 360
+caption: Video by [Chris Longmore](http://www.chrislongmore.co.uk/)
+--:
 
-Video by [Chris Longmore](http://www.chrislongmore.co.uk/)
-{: .vid-caption}
-
-Counterbalancing example {#example}
-------------------------
+## Counterbalancing example
 
 Counterbalancing in OpenSesame is fairly straightforward. When you start the experiment, you are asked for a subject number. This subject number is available in the experiment as the variable `subject_nr`. OpenSesame also creates another variable, `subject_parity`, which is 'odd' or 'even', depending on whether the subject number is odd or even. For more information on using variables, see [this article][variables].
 
