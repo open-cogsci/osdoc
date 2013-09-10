@@ -12,11 +12,13 @@
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4e347a093d7f9792"></script>
 <!-- AddThis Button END -->
 
-<div class="g-plusone" data-size="small" data-href="http://www.cogsci.nl/"></div>
-<br />
+<a href="https://twitter.com/cogscinl" class="twitter-follow-button" data-show-count="true" data-show-screen-name="false" data-dnt="true">Follow @cogscinl</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
 <div class="fb-like" data-href="http://www.facebook.com/cognitivescience" data-send="false" data-layout="button_count" data-width="172" data-show-faces="true"></div>
 
-<a href="https://twitter.com/cogscinl" class="twitter-follow-button" data-show-count="false">Follow @cogscinl</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+<br />
+<div class="g-plusone" data-size="small" data-href="http://www.cogsci.nl/"></div>
+<br />
+
 </div>

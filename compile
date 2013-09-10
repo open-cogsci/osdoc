@@ -21,6 +21,7 @@ along with osdoc.  If not, see <http://www.gnu.org/licenses/>.
 import os
 import sys
 import yaml
+import re
 import shutil
 import subprocess
 from md5 import md5
@@ -121,51 +122,162 @@ def optimizeHTML(path):
 			subprocess.call(cmd)
 			s2 = os.path.getsize(fname)
 			print u'\t%s (%d kB -> %d kB, %d%%)' % (fname, s1, s2,
-				(100.*s2/s1))			
-
-def parseImages(path, yaml, s):
+				(100.*s2/s1))
+			
+def parseOsdocYaml(path, info, s):
 	
 	"""
-	Parses `::fig_name::fig_caption` style images and converts this to
-	Markdown syntax. In addition, the figures are copied to hashed paths.
+	Parses OSDOC-specific YAML sections to implement specific functionality.
 	
 	Arguments:
 	path	--	The path to the page.
-	yaml	--	The page's YAML front matter.
+	info	--	A dictionaty with the page's front matter.
 	s		--	A string with the page content.
 	
 	Returns:
 	A string with the parsed page contents.
+	"""	
+	
+	import re
+	replacements = []
+	for r in re.finditer(':--(.*?)--:', s, re.M|re.S):
+		d = yaml.load(r.groups()[0])
+		if u'cmd' not in d:
+			raise Exception(u'Expecting `cmd` field in OSDOC YAML block')
+		if d[u'cmd'].lower() == u'figure':
+			md = parseOsdocFigure(path, info, d)
+			replacements.append( (r.group(), md) )
+		elif d[u'cmd'].lower() == u'overview':
+			replacements += parseOsdocOverview(path, info, d, r.group(), s)
+		elif d[u'cmd'].lower() == u'video':
+			md = parseOsdocVideo(path, info, d)
+			replacements.append( (r.group(), md) )
+		else:
+			print u'Unknown OSDOC YAML command: %s' % d[u'cmd']
+			sys.exit(1)
+	if len(replacements) > 0:
+		print u'Found %d OSDOC YAML blocks' % len(replacements)
+		for before, after in replacements:
+			s = s.replace(before, after)			
+	return s
+
+def parseOsdocOverview(path, info, d, block, s):
+	
+	"""
+	Parses an OSDOC YAML block to a MarkDown overview list
+	
+	Arguments:
+	path	--	The path to the page.
+	info	--	A dictionaty with the page's front matter.
+	d		--	An OSDOC YAML dictionary
+	block 	--	The original YAML block
+	s		--	The page contents
+	
+	Returns:
+	A list of (old, new) replacements to be made.
+	"""
+
+	headers = []
+	for i in re.finditer(r'^##(.*)', s, re.M):
+		h = i.group()		
+		if h.startswith(u'####'):
+			level = 4
+		elif h.startswith(u'###'):
+			level = 3
+		elif h.startswith(u'##'):
+			level = 2
+		if u'depth' in d and level > d[u'depth']:
+			continue
+		label = h[level:].strip()
+		# IDs should be lowercase alphanumeric strings with all spaces replaced
+		# by dashes.
+		_id = re.sub(ur'\W+', u'', label.replace(u' ', u'-')).lower()
+		headers.append( (level, h, label, _id) )		
+	replacements = []
+	md = u'## Overview\n\n'
+	for level, h, label, _id in headers:
+		md += u'\t' * (level-2) # Indent
+		md += u'- [%s](#%s)\n' % (label, _id)
+		replacements.append( (h, u'%s {#%s}' % (h, _id)) )
+	md += u'\n'		
+	replacements.append( (block, md) )
+	return replacements
+
+def parseOsdocFigure(path, info, d):
+	
+	"""
+	Parses an OSDOC YAML block to a MarkDown image plus figure caption
+	
+	Arguments:
+	path	--	The path to the page.
+	info	--	A dictionaty with the page's front matter.
+	d		--	An OSDOC YAML dictionary
+	
+	Returns:
+	A MarkDown string
 	"""
 	
-	lines = s.split(u'\n')
-	i = 0
-	n = 1
-	for l in lines:
-		if l.startswith(u'::'):
-			r = l.split(u'::')
-			if len(r) == 1:
-				raise Exception(u'Failed to parse lines "%s"' % l)
-			hashPath = os.path.join(u'_content', 'img', \
-				md5(path+yaml['permalink']+str(n)).hexdigest() + \
-					os.path.splitext(r[1])[1])
-			srcPath = os.path.join(path, u'img', yaml['permalink'][1:], r[1])
-			print '\t\t', srcPath, '=>', hashPath
-			shutil.copyfile(srcPath, hashPath)
-			lines[i] = u'![](/img/%s)' % os.path.basename(hashPath)
-			if len(r) > 1:
-				lines[i] += u'\n\n__Fig. %d.__ %s\n{: .fig-caption}\n' \
-					% (n, r[2])
-			n += 1
-		i += 1
-	return u'\n'.join(lines)
+	info[u'figures'] += 1
+	# A unique filename in '_content/img' with the same extension as the source
+	# image.
+	hashPath = os.path.join(u'_content', u'img', \
+		md5(path+info['permalink']+str(info[u'figures'])).hexdigest() + \
+		os.path.splitext(d[u'src'])[1])	
+	# The source path
+	srcPath = os.path.join(path, u'img', info['permalink'][1:], d[u'src'])		
+	print u'\t\t', srcPath, u'=>', hashPath
+	shutil.copyfile(srcPath, hashPath)
+	s = u'![](/img/%s)' % os.path.basename(hashPath)
+	if u'caption' in d:
+		s += u'\n\n__Figure %d.__ %s\n{: .fig-caption}\n' \
+			% (info[u'figures'], d[u'caption'])
+	return s
+
+def parseOsdocVideo(path, info, d):
+	
+	"""
+	Parses an OSDOC YAML block to an embedded video plus video caption
+	
+	Arguments:
+	path	--	The path to the page.
+	info	--	A dictionaty with the page's front matter.
+	d		--	An OSDOC YAML dictionary
+	
+	Returns:
+	A MarkDown string
+	"""
+	
+	info[u'videos'] += 1
+	if u'width' not in d:
+		d[u'width'] = 640
+	if u'height' not in d:
+		d[u'height'] = 480
+	if d[u'src'] == u'vimeo':
+		s = u"""<iframe src="//player.vimeo.com/video/%s?color=8ae234" width="%d" height="%d" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>""" \
+			% (d[u'id'], d[u'width'], d[u'height'])
+	elif d[u'src'] == u'youtube':
+		s = u"""<iframe width="%d" height="%d" src="//www.youtube.com/embed/%s" frameborder="0" allowfullscreen></iframe>""" \
+			% (d[u'width'], d[u'height'], d[u'id'])
+	else:
+		print u'Unknown video source: %s' % d[u'src']
+		sys.exit(1)
+	if u'caption' in d:
+		s += u'\n\n__Video %d.__ %s\n{: .vid-caption}\n' \
+			% (info[u'videos'], d[u'caption'])
+	return s
+
+def gitInfo(path):
+	
+	cmd = [u'git', u'log', u'--format="Revision <a href=\'https://github.com/smathot/osdoc/commit/%H\'>#%h</a> on %cd"', u'-n', u'1', path]
+	out, err = subprocess.Popen(cmd, stdout=subprocess.PIPE).communicate()
+	return out
 
 if __name__ == u'__main__':
 	
 	# Parse command line options
 	parser = OptionParser()
 	parser.add_option(u'-n', u'--nojekyll', dest=u'jekyll', help= \
-		u'Do not generate site with Jekyll', action=u'store_false', \
+		u'Do not generate #s = parseImages(os.path.dirname(path), yaml, s)site with Jekyll', action=u'store_false', \
 		default=True)
 	parser.add_option(u'-c', u'--check-links', dest=u'checkLinks', help= \
 		u'Check for dead links (requires linkchecker)', action=u'store_true', \
@@ -232,22 +344,29 @@ if __name__ == u'__main__':
 		else:
 			show = True
 		i = 0
-		for path, yaml in content:
-			if yaml[u'title'].lower() == title.lower():
+		for path, info in content:
+			if info[u'title'].lower() == title.lower():
 				targetPath = u'_' + path
 				if level > 0:
 					print u'\t',
 				else:
-					group = yaml[u'group']
+					group = info[u'group']
 				print '-> %s' % title
-				yaml[u'show'] = show
-				yaml[u'sortkey'] = u'%.3d.%.3d' % (sortkey[0], sortkey[1])
-				yaml[u'level'] = level
-				yaml[u'group'] = group
+				info[u'show'] = show
+				info[u'sortkey'] = u'%.3d.%.3d' % (sortkey[0], sortkey[1])
+				info[u'level'] = level
+				info[u'group'] = group
+				info[u'figures'] = 0
+				info[u'videos'] = 0
+				info[u'gitinfo'] = gitInfo(path)
+				info[u'gitlink'] = \
+					u'https://github.com/smathot/osdoc/blob/master/%s' \
+					% path
 				if options.group == None or group.lower() == \
 					options.group.lower() or title.lower() == u'home':
-					s = setInfo(path, yaml)
-					s = parseImages(os.path.dirname(path), yaml, s)
+					s = setInfo(path, info)
+					#s = parseImages(os.path.dirname(path), yaml, s)
+					s = parseOsdocYaml(os.path.dirname(path), info, s)
 					if not os.path.exists(os.path.dirname(targetPath)):
 						os.mkdir(os.path.dirname(targetPath))
 					open(targetPath.encode(sys.getfilesystemencoding()), \

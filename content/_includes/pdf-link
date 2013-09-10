@@ -1,1 +1,0 @@
-<a href='{{ page.url | remove:'index.html' | remove:'.html' }}index.pdf'><img src='/img/pdf.png' /></a>

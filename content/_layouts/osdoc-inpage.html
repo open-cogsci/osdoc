@@ -36,14 +36,14 @@
 
 <table width='100%' id='maincontainer'>
 	<tr>
-		<td colspan=2>
+		<td colspan=2 class='maincontainer-cell'>
 			<div id='toppane'>
 				<div id='header'>{% include header %}</div>
 			</div>
 		</td>
 	</tr>
 	<tr>
-		<td id="lefttd">
+		<td id="lefttd" class='maincontainer-cell'>
 			<div id='leftpane'>
 				<div id='social'>{% include social %}</div>
 				<div id='search'>{% include search %}</div>
@@ -51,18 +51,18 @@
 				<div id='sponsor'>{% include sponsor %}</div>
 			</div>
 		</td>
-		<td>
+		<td class='maincontainer-cell'>
 			<div id='rightpane'>
 				{% if site.notifications == true %}
 				<div id='notification'>{% include notification %}</div>
 				{% endif %}
-				<div id='pdf-link'>{% include pdf-link %}</div>
+				<div id='pagelinks'>{% include pagelinks %}</div>
 				<div id='content'>{% include content %}</div>
 			</div>
 		</td>
 	</tr>
 	<tr>
-		<td colspan=2>
+		<td colspan=2 class='maincontainer-cell'>
 			<div id='bottompane'>
 				<div id='site-map'>{% include sitemap %}</div>
 				<div id='footer'>{% include footer %}</div>

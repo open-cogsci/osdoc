@@ -83,7 +83,7 @@ a code {
 	padding: 8px;
 }
 
-#maincontainer td {
+#maincontainer .maincontainer-cell {
 	vertical-align: top;
 	padding: 0px;
 }
@@ -106,12 +106,18 @@ a code {
 	color: @gray4;
 }
 
-#pdf-link {
+#pagelinks {
 	float:right;
+	color: @gray4;
 	font-size: 0.8em;
 	margin-top: 16px;
 }
 
-#pdf-link a {
+#pagelinks a {
+	color: @gray4;
 	border: none;
+}
+
+#pagelinks a:hover {
+	color: @orange2;
 }
