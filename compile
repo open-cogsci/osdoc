@@ -218,6 +218,8 @@ def parseOsdocFigure(path, info, d):
 	"""
 	
 	info[u'figures'] += 1
+	if u'alt' not in d:
+		d[u'alt'] = u'No alt text specified'
 	# A unique filename in '_content/img' with the same extension as the source
 	# image.
 	hashPath = os.path.join(u'_content', u'img', \
@@ -227,7 +229,7 @@ def parseOsdocFigure(path, info, d):
 	srcPath = os.path.join(path, u'img', info['permalink'][1:], d[u'src'])		
 	print u'\t\t', srcPath, u'=>', hashPath
 	shutil.copyfile(srcPath, hashPath)
-	s = u'![](/img/%s)' % os.path.basename(hashPath)
+	s = u'![%s](/img/%s)' % (d[u'alt'], os.path.basename(hashPath))
 	if u'caption' in d:
 		s += u'\n\n__Figure %d.__ %s\n{: .fig-caption}\n' \
 			% (info[u'figures'], d[u'caption'])
@@ -253,10 +255,10 @@ def parseOsdocVideo(path, info, d):
 	if u'height' not in d:
 		d[u'height'] = 480
 	if d[u'src'] == u'vimeo':
-		s = u"""<iframe src="//player.vimeo.com/video/%s?color=8ae234" width="%d" height="%d" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>""" \
+		s = u"""<iframe src="//player.vimeo.com/video/%s?color=8ae234" width="%d" height="%d" class="video vimeo" allowfullscreen></iframe>""" \
 			% (d[u'id'], d[u'width'], d[u'height'])
 	elif d[u'src'] == u'youtube':
-		s = u"""<iframe width="%d" height="%d" src="//www.youtube.com/embed/%s" frameborder="0" allowfullscreen></iframe>""" \
+		s = u"""<iframe width="%d" height="%d" src="//www.youtube.com/embed/%s" class="video youtube" allowfullscreen></iframe>""" \
 			% (d[u'width'], d[u'height'], d[u'id'])
 	else:
 		print u'Unknown video source: %s' % d[u'src']
@@ -365,6 +367,8 @@ if __name__ == u'__main__':
 				if options.group == None or group.lower() == \
 					options.group.lower() or title.lower() == u'home':
 					s = setInfo(path, info)
+					# Fix missing alt tags
+					s = s.replace(u'![](', u'![No alt text specified](')
 					#s = parseImages(os.path.dirname(path), yaml, s)
 					s = parseOsdocYaml(os.path.dirname(path), info, s)
 					if not os.path.exists(os.path.dirname(targetPath)):

@@ -10,9 +10,9 @@
 					{% endif %}
 				{% else %}
 					{% if page.url == node.url %}
-						<span target="_blank" class="active {{node.menuclass}} level-{{ node.level}}"><a href="{{node.ext_url}}">{{node.title}}</a></span>
+						<span class="active {{node.menuclass}} level-{{ node.level}}"><a target="_blank" href="{{node.ext_url}}">{{node.title}}</a></span>
 					{% else %}
-						<span target="_blank" class="inactive {{node.menuclass}} level-{{ node.level}}"><a href="{{node.ext_url}}">{{node.title}}</a></span>
+						<span class="inactive {{node.menuclass}} level-{{ node.level}}"><a target="_blank" href="{{node.ext_url}}">{{node.title}}</a></span>
 					{% endif %}
 				{% endif %}
 			{% endif %}
