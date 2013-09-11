@@ -194,11 +194,11 @@ def parseOsdocOverview(path, info, d, block, s):
 		_id = re.sub(ur'\W+', u'', label.replace(u' ', u'-')).lower()
 		headers.append( (level, h, label, _id) )		
 	replacements = []
-	md = u'## Overview\n\n'
+	md = u'## [Overview](#overview) {#overview}\n\n'
 	for level, h, label, _id in headers:
 		md += u'\t' * (level-2) # Indent
 		md += u'- [%s](#%s)\n' % (label, _id)
-		replacements.append( (h, u'%s {#%s}' % (h, _id)) )
+		replacements.append( (h, u'%s [%s](#%s) {#%s}' % (u'#'*level, label, _id, _id)) )
 	md += u'\n'		
 	replacements.append( (block, md) )
 	return replacements
