@@ -2,7 +2,6 @@
 layout: osdoc
 title: APS tutorial
 group: Tutorials
-author: Sebastiaan Mathôt
 permalink: /aps-tutorial/
 ---
 
