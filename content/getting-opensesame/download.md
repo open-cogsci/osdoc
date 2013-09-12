@@ -3,17 +3,15 @@ layout: osdoc
 title: Download
 group: Getting OpenSesame
 permalink: /download/
-level: 1
 ---
 
-The latest stable version of OpenSesame is 0.27.3 *Frisky Freud*, released on July 9 2013 ([release notes][]). If you are upgrading from 0.26, please read the [0.27 release notes][]. Older versions can be found [here][archive].
+The latest stable version of OpenSesame is 0.27.4 *Frisky Freud*, released on September 13 2013 ([release notes][]). If you are upgrading from 0.26, please read the [0.27 release notes][]. Older versions can be found [here][archive].
 
 Installation instructions and more download options can be found below the download buttons.
 
 {% include downloads %}
 
-Windows XP / Vista / 7 {#windows}
-----------------------
+## Windows XP / Vista / 7
 
 There are a number of ways to run OpenSesame under Windows:
 
@@ -21,8 +19,7 @@ There are a number of ways to run OpenSesame under Windows:
 - Download the Windows portable .zip file (see link above) and extract it to a location of your choice.
 - Download the package based on Python portable, which comes with a slightly different set of modules. For more information, see [this article][python-portable].
 
-Ubuntu/ Debian/ Linux Mint {#ubuntu}
---------------------------
+## Ubuntu/ Debian/ Linux Mint
 
 The recommended way to install OpenSesame under Ubuntu/ Debian/ Linux Mint is through the [NeuroDebian][] repository (see their instructions on how to add NeuroDebian to your list of repositories). After you have added NeuroDebian to your software sources, you can install it using your package manager (Synaptic/ Add remove programs/ Ubuntu software center) or by typing the following lines in a terminal:
 
@@ -39,8 +36,7 @@ After you have installed OpenSesame, you can start OpenSesame from the menu or b
 
 	opensesame
 
-Mac OS {#macos}
-------
+## Mac OS
 
 Support for Mac OS is experimental. Instructions for running OpenSesame from source on Mac OS can be found [here][macos-running-from-source].
 The latest versions of OpenSesame (> 0.27.1) come in two *flavors*. One runs on 64-bit Python (from python.org) and of all its underlying packages were obtained by using the official distributables that are available from the developers' websites. Because psychopy is not able to run in a 64-bit Python environment (yet), this backend is not available in this version. The other version is completely built from the ground up with macports and is compiled in 32-bit. This version does contain the psychopy backend. Concerning their usage, there are no real noticable differences between these versions (except for the lack of the psychopy backend in one) and experiments created in one version should work perfectly in the other, so the decision of which one to use is completely up to you (upon initial testing, the 64-bit version seemed a bit more stable, but these tests were not really in-depth)
@@ -54,10 +50,10 @@ An older version of OpenSesame which should run on all OS X versions (>10.6) can
 
 - [opensesame_0.26-macos-2.zip][macos-package-0.26]
 
-##### We are looking for someone to improve and maintain the Mac OS packages for OpenSesame!
+We are looking for someone to improve and maintain the Mac OS packages for OpenSesame!
+(: .page-notification}
 
-Other platforms {#other}
----------------
+## Other platforms
 
 If there are no packages provided for your platform, you will need to run OpenSesame from source, as [per these instructions][running-from-source].
 
@@ -71,4 +67,4 @@ If there are no packages provided for your platform, you will need to run OpenSe
 [neurodebian]: http://neuro.debian.net/
 [python-portable]: /getting-opensesame/running-with-python-portable/
 [0.27 release notes]: /notes/0.27
-[release notes]: /notes/0.27.3
+[release notes]: /notes/0.27.4

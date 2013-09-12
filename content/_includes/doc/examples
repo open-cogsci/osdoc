@@ -1,4 +1,4 @@
-<p><small>This page was auto-generated on Fri May 10 16:10:13 2013</small></p>
+<p><small>This page was auto-generated on Thu Sep 12 16:26:37 2013</small></p>
 <p><b>Orientation effect</b><br />
 An affordances/ orientation effect type of experiment (cf. Symes et al. 2005, Vis Cog)<br />
 <a href="https://github.com/smathot/OpenSesame/raw/master/examples/affordances_orientation.opensesame.tar.gz">Download</a> - <a href="https://github.com/smathot/OpenSesame/blob/master/examples/affordances_orientation.opensesame.tar.gz">View on GitHub</a></p>
@@ -8,8 +8,9 @@ An affordances/ orientation effect type of experiment, modified for the Android 
 <p><b>Orientation effect (Boks version)</b><br />
 An affordances/ orientation effect type of experiment, modified for the Boks response device<br />
 <a href="https://github.com/smathot/OpenSesame/raw/master/examples/affordances_orientation_boks.opensesame.tar.gz">Download</a> - <a href="https://github.com/smathot/OpenSesame/blob/master/examples/affordances_orientation_boks.opensesame.tar.gz">View on GitHub</a></p>
-<p><b>Orientation effect (Mantra variation)</b><br />
-A variation on the affordances/ orientation effect experiment using the Mantra object tracker<br />
+No module named mantra_wait
+<p><b>Failed to generate example</b><br />
+Failed to generate example<br />
 <a href="https://github.com/smathot/OpenSesame/raw/master/examples/affordances_orientation_mantra.opensesame.tar.gz">Download</a> - <a href="https://github.com/smathot/OpenSesame/blob/master/examples/affordances_orientation_mantra.opensesame.tar.gz">View on GitHub</a></p>
 <p><b>Attentional capture for Android</b><br />
 An attention capture paradigm, modified for the Android runtime<br />
@@ -38,8 +39,9 @@ Demonstrates the basic functionallities of the joystick plugin<br />
 <p><b>Lexical decision</b><br />
 A simple lexical-decision example experiment<br />
 <a href="https://github.com/smathot/OpenSesame/raw/master/examples/lexical_decision.opensesame">Download</a> - <a href="https://github.com/smathot/OpenSesame/blob/master/examples/lexical_decision.opensesame">View on GitHub</a></p>
-<p><b>Mantra inline code example</b><br />
-A simple demonstration of how to control Mantra using inline code<br />
+No module named mantra_connect
+<p><b>Failed to generate example</b><br />
+Failed to generate example<br />
 <a href="https://github.com/smathot/OpenSesame/raw/master/examples/mantra_inline_code.opensesame.tar.gz">Download</a> - <a href="https://github.com/smathot/OpenSesame/blob/master/examples/mantra_inline_code.opensesame.tar.gz">View on GitHub</a></p>
 <p><b>Pip & Pop</b><br />
 A multisensory integration paradigm based on Van der Burg et al. (2008, JEP HPP)<br />

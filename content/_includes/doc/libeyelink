@@ -41,6 +41,7 @@ Constructor. Initializes the connection to the Eyelink.<br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
+<br />
 <span class='variable'>data_file		</span> &rarr; 	The name of the EDF file. (default=u'default.edf')
 <br />
 <span class='variable'>fg_color		</span> &rarr; 	The foreground color for the calibration screen. 

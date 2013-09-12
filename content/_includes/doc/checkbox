@@ -10,8 +10,8 @@
 <a href='#checkbox.set_rect'>set_rect</a><br />
 <a href='#checkbox.set_var'>set_var</a><br />
 </p>
-<div class='function'><span class='function_name'><a class='anchor' id='checkbox.__init__'>checkbox</a>.<b>__init__(form, text='checkbox', frame=False, group=None, checked=False, click_accepts=False, var=None)</b></span><div class='details'>
-Constructor<br />
+<div class='function'><span class='function_name'><a class='anchor' id='checkbox.__init__'>checkbox</a>.<b>__init__(form, text=u'checkbox', frame=False, group=None, checked=False, click_accepts=False, var=None)</b></span><div class='details'>
+Constructor.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
@@ -20,18 +20,18 @@ Constructor<br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>text </span> &rarr;  Checkbox text (default='checkbox').
+<span class='variable'>text </span> &rarr;  Checkbox text (default=u'checkbox').
 <br />
 <span class='variable'>frame </span> &rarr;  Indicates whether a frame should be drawn around the widget 
 (default=False).<br />
 <span class='variable'>group </span> &rarr;  If a group is specified, checking one checkbox from the group 
-will uncheck all other checkboxes in that group. (default=None).<br />
+will uncheck all other checkboxes in that group. Checkboxes that are part of a group cannot be unchecked, except by clicking on another checkbox in the group. The group keyword also affects how variables are stored (see the var keyword). (default=None).<br />
 <span class='variable'>checked </span> &rarr;  The checked state of the checkbox (default=False).
 <br />
 <span class='variable'>click_accepts </span> &rarr;  Indicates whether a click press should accept and 
 close the form (default=False).<br />
 <span class='variable'>var </span> &rarr;  The name of the experimental variable that should be used to log 
-the widget status. This variable will contain a semi-colon separated list of the text of all checked checkboxes in the same group, or 'no' if no checkbox in the group is checked. For the purpose of the variable, all checkboxes that are not part of a group are placed in the same group. (default=None).<br />
+the widget status. This variable will contain a semi-colon separated list of the text of all checked checkboxes in the same group, or 'no' if no checkbox in the group is checked. For the purpose of the variable, all checkboxes that are not part of a group are placed in the same group. For more information about the use of response variables in forms, see the form documentation page. (default=None).<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='checkbox.draw_frame'>checkbox</a>.<b>draw_frame(rect=None, style='normal')</b></span><div class='details'>
 <i>Inherited from <b>widget</b></i><br /><br />Draws a simple frame around the widget.<br />
@@ -62,7 +62,7 @@ Is called whenever the user clicks on the widget. Toggles the state of the check
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>pos </span> &rarr;  An (x, y) tuple.
+<span class='variable'>pos		</span> &rarr; 	An (x, y) tuple.
 <br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='checkbox.render'>checkbox</a>.<b>render()</b></span><div class='details'>
@@ -73,7 +73,7 @@ Sets the checked status of the checkbox.<br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>checked </span> &rarr;  The checked status (default=True).
+<span class='variable'>checked	</span> &rarr; 	The checked status. (default=True)
 <br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='checkbox.set_rect'>checkbox</a>.<b>set_rect(rect)</b></span><div class='details'>
@@ -85,16 +85,17 @@ Sets the checked status of the checkbox.<br />
 <br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='checkbox.set_var'>checkbox</a>.<b>set_var(val, var=None)</b></span><div class='details'>
-<i>Inherited from <b>widget</b></i><br /><br />Sets an experimental variable.<br />
+Sets an experimental variable.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>val </span> &rarr;  A value.
+<span class='variable'>val		</span> &rarr; 	A value.
 <br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>var </span> &rarr;  A variable name, or None to use widget default (default=None).
+<span class='variable'>var		</span> &rarr; 	A variable name, or None to use widget default.
 <br />
+(default=None)<br />
 </div></div>
 </div>

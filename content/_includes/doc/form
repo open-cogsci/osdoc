@@ -8,7 +8,7 @@
 <a href='#form.set_widget'>set_widget</a><br />
 <a href='#form.xy_to_index'>xy_to_index</a><br />
 </p>
-<div class='function'><span class='function_name'><a class='anchor' id='form.__init__'>form</a>.<b>__init__(experiment, cols=2, rows=2, spacing=10, margins=(100, 100, 100, 100), theme='gray', item=None)</b></span><div class='details'>
+<div class='function'><span class='function_name'><a class='anchor' id='form.__init__'>form</a>.<b>__init__(experiment, cols=2, rows=2, spacing=10, margins=(100, 100, 100, 100), theme=u'gray', item=None)</b></span><div class='details'>
 Constructor<br />
 <br />
 <span class='keyword'>Arguments:</span>

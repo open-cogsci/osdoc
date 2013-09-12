@@ -3,13 +3,7 @@ layout: osdoc
 title: Release notes for 0.27.4
 group: notes
 permalink: /0.27.4/
-level: 1
-sortkey: 999.999
-show: false
 ---
-
-OpenSesame 0.27.4 is currently in pre-release.
-{: .page-notification}
 
 OpenSesame 0.27.4 is the fourth maintenance release in the 0.27 'Frisky Freud' series, and was released on July 9 2013. If you are upgrading from 0.26, please read the [0.27 release notes][].
 
@@ -24,6 +18,8 @@ Bugs fixed:
 - Fix `color` keyword argument in `canvas.arrow()`
 - Fix `advanced_delay` plug-in to work with Unicode
 - Intercept `psychopy.core.quit()` to prevent PsychoPy from killing OpenSesame
+- Also prepare empty `canvas` objects in `xpyriment` back-end
+- Fix many missing icons with `gnome` theme under Linux
 
 Windows packaging:
 
