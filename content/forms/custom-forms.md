@@ -5,22 +5,14 @@ group: Forms
 permalink: /custom-forms/
 ---
 
-##### If you experience performance issues when using forms, see [this post](/forms/performance-issues-and-troubleshooting/).
+If you experience performance issues when using forms, see [this post](/forms/performance-issues-and-troubleshooting/).
+{: .page-notification}
 
-Overview
---------
+:--
+cmd: overview
+--:
 
-- [About forms, geometries, and widgets](#about)
-- [Creating custom forms](#custom)
-	- [Creating custom forms using OpenSesame script](#opensesame-script)
-	- [Creating custom forms using Python inline script](#python)
-	- [Non-interactive forms](#non-interactive)
-	- [Themes](#themes)
-	- [Available widgets and keywords](#widgets)
-- [Another example](#another-example)
-
-About forms, geometries, and widgets {#about}
-------------------------------------
+## About forms, geometries, and widgets
 
 A form is essentially a set of widgets (buttons, labels, text input fields, etc.) arranged into a grid with a particular geometry. In the image below you can see an example of a 2 (columns) by 3 (rows) form. A form geometry is quite simple, and consists of the following properties:
 
@@ -44,12 +36,11 @@ The images above are schematic examples. How this form actually looks in OpenSes
 
 ![](/img/fig/fig6.4.3.png)
 
-Creating custom forms {#custom}
----------------------
+## Creating custom forms
 
 There are two ways to create custom forms. The first way is to use the *form_base* plug-in, and specify your form using OpenSesame script. The second way is to use the `libopensesame.widgets` package and create your form using Python inline code. The Python way is slightly more flexible, but for most purposes both ways can be used.
 
-### Creating custom forms using OpenSesame script {#opensesame-script}
+### Creating forms using OpenSesame script
 
 We will create the form described above using OpenSesame script. First, drag the *form_base* plug-in into your experiment. Click on the newly created item to open its tab. Next, click on the 'Edit script' button (with the terminal icon), in the top-right of the tab area. This will open the script editor. Enter the following script to generate the form described above (see the comments for explanations).
 
@@ -80,7 +71,7 @@ We will create the form described above using OpenSesame script. First, drag the
 	widget 0 2 1 1 button text="$0.10"
 	widget 1 2 1 1 button text="$0.05"
 
-### Creating custom forms using Python inline script {#python}
+### Creating forms using Python inline script
 
 The exact same form can be created using an inline_script item and a bit of Python code. You will notice that the Python code somewhat resembles the OpenSesame script shown above. This is no wonder: The form_base plug-in essentially translates the OpenSesame script into Python code.
 
@@ -115,7 +106,7 @@ form.set_widget(button10cts, (1,2))
 button_clicked = form._exec()
 {% endhighlight %}
 
-### Non-interactive forms {#non-interactive}
+### Non-interactive forms
 
 Usually, a form will have an input field, a button, or some other interactive element. However, you can also use forms without having any interactive element. To do this in OpenSesame script, you set `only_render` to "yes":
 
@@ -123,7 +114,7 @@ Usually, a form will have an input field, a button, or some other interactive el
 
 To this in Python inline-script, you call `form.render()`, instead of `form._exec()`.
 
-### Themes {#themes}
+### Themes
 
 Forms support theming. Currently, there are two themes available: 'gray' and 'plain'. The 'gray' theme is the default. Although the 'gray' theme is already quite plain, the 'plain' theme is even more basic. You can choose a theme like this in OpenSesame script ...
 
@@ -135,7 +126,7 @@ Forms support theming. Currently, there are two themes available: 'gray' and 'pl
 form = widgets.form(self.experiment, theme='plain')
 {% endhighlight %}
 
-### Available widgets and keywords {#widgets}
+### Available widgets and keywords
 
 The following widgets are available:
 
@@ -169,8 +160,7 @@ Click on the links below to see a full description of keywords and functions (Py
 - [Text_input][]
 - [Form][]
 
-Another example {#another-example}
----------------
+## Another example
 
 The following OpenSesame script (in a form_base plug-in) will produce a questionnaire of three rating scales plus a next button:
 

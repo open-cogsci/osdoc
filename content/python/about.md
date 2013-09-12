@@ -9,25 +9,12 @@ In OpenSesame you can create fairly complex experiments using only the graphical
 
 You may also want to look at one of the example experiments using Python inline code, for realistic examples of inline_script items.
 
-Overview
---------
-
-- [Learning Python](#learning)
-- [The inline_script item](#inline-script)
-- [The exp and win variables](#exp-win)
-- [The debug window](#debug)
-- [openexp modules](#openexp)
-- [Notes for 0.27.2 and later](#v0-27-2)
-	- [Shared variables](#shared-variables)
-	- [Transparent variables](#transparent-variables)
-- [Notes for 0.27.1 and earlier](#v0-27-1)
-	- [Carry-over effects between runs](#carry-over)
-	- [Importing modules](#modules)
-	- [Defining globally accessible functions](#functions)
+:--
+cmd: overview
+--"
 
 
-Learning Python {#learning}
----------------
+## Learning Python
 
 This tutorial assumes that you are familiar with Python. Python is a widely used, intuitive and powerful programming language. For scientists in particular, Python is attractive, because it is excellently suited for data analysis and creating experiments. In addition, Python is freely available and cross-platform.
 
@@ -47,8 +34,7 @@ Or you can follow one of the many other introductions to Python that are floatin
 
 If you are interested in using OpenSesame in combination with PsychoPy, you may want to check out this tutorial on the GestaltRevision site (University of Leuven, Belgium): <http://gestaltrevision.be/wiki/coding>
 
-The inline_script item {#inline-script}
-----------------------
+## The inline_script item
 
 In order to use Python code you need to add an inline_script item to your experiment. You can do this by dragging the Python icon (the blue/yellow icon) from the item toolbar into the experiment sequence. After you have done this you will see something like the screenshot below.
 
@@ -74,10 +60,9 @@ self.sleep(1000)
 
 This works, because `sleep()` is a function of the `inline_script` object. For a complete list of `inline_script` functions, see [here][inline-script].
 
-Notes for 0.27.2 and later {#v0-27-2}
---------------------------
+## Notes for 0.27.2 and later
 
-### Shared variables {#shared-variables}
+### Shared variables
 
 Variables defined in one inline_script are accessible in all other inline_scripts. Therefore, if, for example, you want to prepare a `canvas` object in the prepare phase of an inline_script and show it in the run phase, there is no need to declare the object `global` or to store it as a property of the `exp` object. You can simply construct the `canvas` in one inline_script ...
 
@@ -95,7 +80,7 @@ my_canvas.show()
 
 The same principle applies to functions and modules: Once you have defined a function or imported a module in one inline_script, it will be accessible in other inline_scripts as well. In other words, variables, functions, and modules are shared between inline_scripts.
 
-### Transparent variables {#shared-variables}
+### Transparent variables
 
 Transparent variable management is experimental.
 {: .page-notification}
@@ -114,8 +99,7 @@ print self.get('my_var')
 exp.set('my_var', 'some value')
 {% endhighlight %}
 
-Notes for 0.27.1 and earlier {#v0-27-1}
-----------------------------
+## Notes for 0.27.1 and earlier
 
 ### Carry-over effects between runs {#carry-over}
 
@@ -143,7 +127,7 @@ exp.my_canvas = canvas(exp)
 
 *Tip:* If you consistently encounter trouble when running your experiment for the second time (without closing OpenSesame), you can enable the *Run experiments in a separate process* option under *Preferences*. If you enable this option, OpenSesame will run your experiments as a separate program, using [opensesamerun][].
 
-### Importing modules {#modules}
+### Importing modules
 
 Because the code in an inline_script item is essentially the body of a function (see above), functions and modules may not work as you expect them to. For example, the following seemingly valid (although silly) piece of script ...
 
@@ -172,7 +156,7 @@ my_function()
 
 This may be a bit confusing, but the take home message is: If you get a `NameError` for a module/ package/ function that you have imported, try declaring that module/ package/ function global, as illustrated above.
 
-### Defining globally accessible functions {#functions}
+### Defining globally accessible functions
 
 Another neat trick is that you can declare functions global. Normally, you would not be able to define a function in one inline_script, and use it in another inline_script. By declaring a function global, you can circumvent this problem. So if you create the following inline_script ...
 
@@ -190,13 +174,11 @@ def my_global_function():
 my_global_function()
 {% endhighlight %}
 
-The exp and win variables {#exp-win}
--------------------------
+## The exp and win variables
 
 In an inline_script (as of 0.25) there are two special variables: `exp` and `win`. Actually, there is nothing magical about these variables, they are simply synonyms for `self.experiment` and `self.experiment.window`, respectively. `exp` is the `experiment` object, which is described [here][experiment]. `win` is the window handle, which is dependent on the back-end that is used.
 
-The debug window {#debug}
-----------------
+## The debug window
 
 OpenSesame reroutes the standard output to the debug window, which you can activate using Control + D or through the menu (Menu -> View -> Show debug window). You can print to the debug window using the Python print statement:
 
@@ -210,8 +192,7 @@ By default, OpenSesame uses a simple, custom Python console in the debug window.
 
 ![](/img/fig/fig5.2.3.png)
 
-openexp modules {#openexp}
----------------
+## openexp modules
 
 OpenSesame comes with a set of Python modules for presenting stimuli, handling input, etc. There are 5 such modules and the full API (i.e., a list of functions) is available:
 
@@ -224,17 +205,17 @@ OpenSesame comes with a set of Python modules for presenting stimuli, handling i
 It is perfectly possible to bypass the openexp modules and use the back-end directly. For more information, see [this article][back-ends].
 
 [python]: http://www.python.org/
-[inline-script]: /python-inline-code/inlinescript-functions
-[experiment]: /python-inline-code/experiment-functions
-[canvas]: /python-inline-code/canvas-functions
-[keyboard]: /python-inline-code/keyboard-functions
-[mouse]: /python-inline-code/mouse-functions
-[sampler]: /python-inline-code/sampler-functions
-[synth]: /python-inline-code/synth-functions
+[inline-script]: /python/inline-script
+[experiment]: /python/experiment
+[canvas]: /python/canvas
+[keyboard]: /python/keyboard
+[mouse]: /python/mouse
+[sampler]: /python/sampler
+[synth]: /python/synth
 [back-ends]: /back-ends/about-back-ends
 [ipython]: http://ipython.org/
 [swaroop]: http://www.swaroopch.com/notes/Python
 [swaroop-direct]: http://www.ibiblio.org/swaroopch/byteofpython/files/120/byteofpython_120.pdf
 [downey]: http://www.greenteapress.com/thinkpython/
 [downey-direct]: http://www.greenteapress.com/thinkpython/thinkpython.pdf
-[opensesamerun]: /usage/opensesamerun-no-gui/
+[opensesamerun]: /usage/opensesamerun/

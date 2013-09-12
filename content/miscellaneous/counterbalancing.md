@@ -45,5 +45,5 @@ You probably don't want to create the entire experiment twice, so you let experi
 
 This may seem a bit abstract, but you will get a feeling for it if you play around a bit with the example experiment, which you can find [here][example].
 
-[variables]: /usage/variables-and-conditional-qifq-statements/
+[variables]: /usage/variables-and-conditional-statements/
 [example]: https://gist.github.com/4176984

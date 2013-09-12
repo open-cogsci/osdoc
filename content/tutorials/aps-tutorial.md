@@ -379,13 +379,13 @@ Mathôt, S., Schreij, D., & Theeuwes, J. (2012). OpenSesame: An open-source, gra
 {: .reference}
 
 [download]: /getting-opensesame/download/
-[feedback]: /usage/giving-feedback-to-participants/
+[feedback]: /usage/feedback/
 [forms]: /forms/about-forms/
 [forms-opensesame]: /forms/custom-forms/#opensesame-script
 [forms-performance]: /forms/performance-issues-and-troubleshooting/
 [forms-python]: /forms/custom-forms/#python
 [slides]: /attachments/aps2013-workshop-slides.pdf
-[variables]: /usage/variables-and-conditional-qifq-statements/#using-variables
+[variables]: /usage/variables-and-conditional-statements/#using-variables
 [responses]: /usage/collecting-responses/
 [tutorial]: /usage/step-by-step-tutorial/
 [html-subset]: /usage/text-formatting/

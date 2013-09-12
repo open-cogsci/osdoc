@@ -29,7 +29,7 @@ Most items are called 'always'. However, the green and red fixation dots have sp
 
 The variable “correct” is set automatically by the keyboard_response item. For more information about variables and conditional statements, see:
 	
-- [variables-and-conditional-qifq-statements/]
+- [usage/variables-and-conditional-statements/]
 
 ## `loop` items
 
@@ -66,4 +66,4 @@ caption: You can use nested `loop`-`sequence` structures to implement trials, bl
 The structure displayed in the screenshot above might look a bit confusing at first sight, but it becomes clearer when you think about it as a two nested `loop`-`sequence` structures. The first one (*block_loop* - *trial_sequence*) corresponds to a single block of trials. The second one (*experimental_loop* - *block_sequence*) corresponds to multiple blocks of trials, each followed by feedback to the participant. Many experiments will contain a structure of this kind.
 
 [timing]: /miscellaneous/timing
-[variables-and-conditional-qifq-statements/]: /variables-and-conditional-qifq-statements/
+[usage/variables-and-conditional-if-statements/]: /usage/variables-and-conditional-statements/

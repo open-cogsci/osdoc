@@ -12,7 +12,7 @@ OpenSesame 0.27.2 is the second maintenance release in the 0.27 'Frisky Freud' s
 
 Important note:
 	
-- The behavior of variables in inline_script items has changed slightly. Even though this is unlikely to affect existing experiments, you may want to read the notes regarding 'shared variables' [here](/python-inline-code/about-python-inline-code/#v0-27-2).
+- The behavior of variables in inline_script items has changed slightly. Even though this is unlikely to affect existing experiments, you may want to read the notes regarding 'shared variables' [here](/python/about/).
 
 New features and enhancements:
 
