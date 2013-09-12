@@ -2,7 +2,7 @@
 layout: osdoc
 title: Keyboard functions
 group: Python inline code
-permalink: /keyboard-functions/
+permalink: /keyboard/
 ---
 
 The `keyboard` class is used to collect keyboard responses. For example, the following script waits for a 'z' or 'x' key with a timeout of 3000ms:

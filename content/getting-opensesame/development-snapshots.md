@@ -3,23 +3,26 @@ layout: osdoc
 title: Development snapshots
 group: Getting OpenSesame
 permalink: /development-snapshots/
-level: 1
 ---
+
+:--
+cmd: overview
+--:
+
+## Current development versions
 
 If you want to have the latest features and don't mind potential instability, you can grab the latest experimental source code. Currently, work is being done on
 
 - OpenSesame 0.27.4 *Frisky Freud* (maintenance release in the 0.27 series)
 - OpenSesame 0.28.0 *Gutsy Gibson* (next major release)
 
-Pre-release packages
---------------------
+## Pre-release packages
 
 Pre-release packages are created occasionally, especially as an official release draws near. Windows packages and source archives can be found [here][pre-release]
 
 Ubuntu users can obtain the latest pre-release through the [opensesame-next PPA][ppa].
 
-The latest source code
-----------------------
+## The latest source code
 
 ### Using the GitHub website
 

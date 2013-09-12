@@ -2,7 +2,7 @@
 layout: osdoc
 title: Inline_script functions
 group: Python inline code
-permalink: /inlinescript-functions/
+permalink: /inline-script/
 ---
 
 When you are using the inline_script item, you are essentially writing the body of two functions (`prepare` and `run`) of an `inline_script` object. The `inline_script` object has many more functions which you can use, and these are listed below. To use these functions, you use the `self.[function_name]` notation. For example:

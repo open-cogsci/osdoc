@@ -2,7 +2,7 @@
 layout: osdoc
 title: Mouse functions
 group: Python inline code
-permalink: /mouse-functions/
+permalink: /mouse/
 ---
 
 The `mouse` class is used to collect mouse input. For example, the following script lets you move around a fixation dot with the mouse until a button is clicked:

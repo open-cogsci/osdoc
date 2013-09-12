@@ -1,0 +1,13 @@
+**Back-end**,**Session**,**Source**,**M (ms)**,**SD (ms)**
+[xpyriment],1,OpenSesame,100.00,0.62
+,,Photodiode,100.01,0.02
+,2,OpenSesame,100.01,0.79
+,,Photodiode,100.01,0.02
+[psycho],1,OpenSesame,100.00,0.01
+,,Photodiode,100.01,0.02
+,2,OpenSesame,100.00,0.01
+,,Photodiode,100.01,0.02
+[legacy],1,OpenSesame,90.00,0.52
+,,Photodiode,90.00,0.03
+,2,OpenSesame,90.00,0.49
+,,Photodiode,90.00,0.02

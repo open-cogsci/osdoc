@@ -3,62 +3,56 @@ layout: osdoc
 title: Running from source
 group: Getting started
 permalink: /running-from-source/
-level: 1
-sortkey: 003.003
 ---
 
-This post describes how to set up a complete Python environment on your computer, so you can run OpenSesame directly from the source code. Depending on your needs, you could also consider using Python portable, as described [here][python-portable].
+This post describes how to set up a complete Python environment on your computer, so you can run OpenSesame directly from the source code. Depending on your needs, you could also consider using the Python-portable-based package.
 
-Overview
---------
+:--
+cmd: overview
+--:
 
-- [Description of required packages](#description)
-- [Isn't Python always run from source?](#always)
-- [Reasons to run from source](#reasons)
-- [Instructions for Linux](#linux)
-- [Instructions for Windows](#windows)
-- [Instructions for Mac OS](#macos)
+## Description of required packages
 
-Description of required packages {#description}
---------------------------------
-
-OpenSesame depends on a number of other packages (dependencies), all of which are freely available. If you run OpenSesame from source you will need to manually install these packages. The minimum packages are:
+OpenSesame depends on a number of other packages (dependencies), all of which are freely available. If you run OpenSesame from source you will need to manually install these packages. The minimum packages, which allow you to run the [legacy] back-end only, are:
 
 - Python is the programming language in which OpenSesame is created.
 - PyGame is a library that is used for graphics and sound. It is essentially a wrapper around the Simple DirectMedia Layer.
 - (Py)Qt4 is the graphics toolkit that is used to construct the graphical user interface.
 - NumPy is an advanced mathematical library, which is used for various things.
 
-Isn't Python always run from source? {#always}
-------------------------------------
+## Isn't Python always run from source?
 
 Being clever, huh? But yes, actually you're right. However, the packages come with their own Python environment or, in the case of the Debian/ Ubuntu packages, all dependencies are installed automatically. If you run straight from the source code, you have to set up your own Python environment, which is a little extra work. But you don't need to compile anything, as, for example, you would need to do with a program written in C.
 
-Reasons to run from source {#reasons}
---------------------------
+## Reasons to run from source
 
 The most obvious reason to run from source is that there may not be a package available for your platform (if you run, say, Solaris). Another reason, which applies only to the Windows and Mac packages, is that these packages come with their own Python environment, which doesn't allow you to install additional modules. If you want to use specific modules, which are not included with the packages, you will have to run from source.
 
-Instructions for Linux {#linux}
-----------------------
+## Instructions for Linux
 
 ### Install dependencies
 
-On most modern Linux distributions Python is installed by default and you can simply install python-pygame, python-qt4, python-numpy and python-serial using your package manager. Under Ubuntu, you can do this with the following command:
+On most modern Linux distributions Python is installed by default and you can simply install `python-pygame`, `python-qt4`, and `python-numpy` using your package manager. Under Ubuntu, you can do this with the following command:
 
-	sudo apt-get install python-pygame python-numpy python-serial python-qt4 python-tk
+	sudo apt-get install python-pygame python-numpy python-qt4
 
-If you want to use the PsychoPy-based psycho back-end, you will also need to install PsychoPy. Under Ubuntu, you can do this with the following command: (If you are on a Debian/ Ubuntu system I would recommend adding the NeuroDebian repository to your software sources. NeuroDebian provides up to date packages of many neuroscience-related software. See these instructions.)
+If you want to use the [psycho] back-end, you will also need to install PsychoPy. Under Ubuntu, you can do this with the following command: (If you are on a Debian/ Ubuntu system I would recommend adding the NeuroDebian repository to your software sources. NeuroDebian provides up to date packages of many neuroscience-related software. See these instructions.)
 
 	sudo apt-get install psychopy
 
-If you want to use the OpenGL back-end, you will need to install python-opengl. Under Ubuntu you can do this with the following command:
-
-	sudo apt-get install python-opengl
+If you want to use the [xpyriment] back-end, you will also need to install Expyriment. Expyriment is available from Cogsci.nl PPA and can be installed as follows:
+	
+	sudo add-apt-repository ppa:smathot/cogscinl
+	sudo apt-get update
+	sudo apt-get install expyriment
 
 ### Run OpenSesame
 
-Download the source code of the latest OpenSesame release here. Extract the .tar.gz to your home folder (any other location works analogously). Open a terminal and switch to the location of OpenSesame (this example assumes that the version is 0.21):
+Download the source code of the latest OpenSesame release from GitHub:
+	
+- <https://github.com/smathot/OpenSesame>
+	
+Extract the `.tar.gz` to your home folder (any other location works analogously). Open a terminal and switch to the location of OpenSesame (this example assumes that the version is 0.21):
 
 	cd ~/opensesame-0.21
 
@@ -67,10 +61,7 @@ Run OpenSesame using one of the following commands:
 	python opensesame
 	python opensesame --debug
 
-Instructions for Windows {#windows}
-------------------------
-
-The links provided below are current as of Jan 20, 2011. Check the websites of the respective packages to check for more recent versions. Running OpenSesame from source has been tested on Windows XP.
+## Instructions for Windows
 
 ### Selecting the best version of Python
 
@@ -90,12 +81,15 @@ The following packages are optional, but there's a good chance you will want to 
 - Expyriment <http://www.expyriment.org>: Required for the xpyriment back-end
 - PyOpenGL <http://pyopengl.sourceforge.net/>: Required for psycho and xpyriment back-ends
 
-Please note that the packages listed above may, in turn, have dependencies that need to be installed. This is especially true for PsychoPy. For instructions, please refer to the respective homepages.
+Please note that the packages listed above may, in turn, have dependencies that need to be installed. This is especially true for PsychoPy. For instructions, please refer to the respective home pages.
 
-Run OpenSesame
---------------
+## Run OpenSesame
 
-Download the source code for the latest OpenSesame release [here][src_stable] or from [GitHub][src_unstable]. Extract the .tar.gz to `C:\` (any other location works analogously). You can extract .tar.gz files with WinRar. Open a command prompt (run command `cmd`) and switch to the location of OpenSesame (this example assumes that the version is 0.21):
+Download the source code for the latest OpenSesame release or the latest development snapshot from GitHub:
+	
+- <https://github.com/smathot/OpenSesame>
+	
+Extract the `.tar.gz` to `C:\` (any other location works analogously). You can extract `.tar.gz` files with WinRar or 7zip. Open a command prompt (run command `cmd`) and switch to the location of OpenSesame (this example assumes that the version is 0.21):
 
 	c:
 	cd c:\opensesame-0.21
@@ -107,8 +101,7 @@ Run OpenSesame using one of the following commands (this example assumes that yo
 
 It's convenient to create a batch file for running OpenSesame from source. You can do this simply by creating a file called `opensesame.bat` containing one of the commands above. You will then be able to run OpenSesame by executing the batch file.
 
-Instructions for Mac OS {#macos}
------------------------
+## Instructions for Mac OS
 
 There are two ways to prepare the software environment for running OpenSesame from source on Mac OS X. One is by downloading and installing all the packages manually. The other is to use MacPorts, which compiles all required packages from source. Basically MacPorts is a large repository containing the source code of programs that have been ported from Linux to Mac OS X (which are very related as Mac OS X is also a Unix based system, as you might know). Installing all the packages manually seems pretty labour-intensive, but will be the fastest way nevertheless as Macports takes an astoundingly long time to compile all dependencies (with a quad core cpu it can already take up to a full day). On the other hand, MacPorts does not have the dependecy hassle if you ever want to install additional packages, which require other packages again, etc. Macports sorts out and installs these depencies itself. You have to decide for yourself which method of composing the source environment you like best. Both will work fine for running OpenSesame from source.
 
@@ -285,3 +278,6 @@ Run OpenSesame using one of the following commands:
 [src_unstable]: https://github.com/smathot/OpenSesame
 [EPD_Download]: http://www.enthought.com/products/epd.php
 [EPD_Packages]: http://www.enthought.com/products/epdlibraries.php
+[xpyriment]: /back-ends/xpyriment
+[legacy]: /back-ends/legacy
+[psycho]: /back-ends/psycho

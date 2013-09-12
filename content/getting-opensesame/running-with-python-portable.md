@@ -3,11 +3,13 @@ layout: osdoc
 title: Running with Python portable
 group: Getting OpenSesame
 permalink: /running-with-python-portable/
-level: 1
 ---
 
-About
------
+:--
+cmd: overview
+--:
+
+## About
 
 [Edwin Dalmaijer][edwin] (Utrecht University) has bundled OpenSesame with [Portable Python][portable-python] (Windows only). As of OpenSesame 0.27.2, [WinPython][winpython] (another portable distribution of Python) is used in favor of Portable Python. The advantage of using WinPython is that it is tailord to scientific use, as is reflected in the fact that it contains Spyder (a code editor) and a number of analysis tools (e.g. NumPy and Matplotlib). For a full overview, please refer to the WinPython website.
 
@@ -20,8 +22,7 @@ Basically, this means that you run OpenSesame from source using a portable, but 
 
 A note of thanks goes out to Bob Rosbag (Utrecht University), who pointed us towards WinPython and helped modifying the package to suit our needs.
 
-Download and usage
-------------------
+## Download and usage
 
 If you have any questions, please post them on the forum.
 

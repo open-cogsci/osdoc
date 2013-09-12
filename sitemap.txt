@@ -23,7 +23,7 @@ tutorials
 #	python inline scripting tutorial
 	video tutorials
 usage
-	about sequences and loops
+	sequences and loops
 	variables and conditional ("if") statements
 	Text formatting (HTML subset)
 	Collecting responses

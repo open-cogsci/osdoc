@@ -2,7 +2,7 @@
 layout: osdoc
 title: About Python inline code
 group: Python inline code
-permalink: /about-python-inline-code/
+permalink: /about/
 ---
 
 In OpenSesame you can create fairly complex experiments using only the graphical user interface (GUI), but you will inevitably encounter situations in which the functionality provided by the GUI is insufficient. In these cases you can use the inline_script item to add Python code to your experiment.

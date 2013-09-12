@@ -1,0 +1,1 @@
+opensesamerun /usr/share/opensesame/examples/gaze_cuing.opensesame.tar.gz -s 1 -l /home/sebastiaan/Documents/subject1.tsv -f 

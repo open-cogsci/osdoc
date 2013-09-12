@@ -2,7 +2,7 @@
 layout: osdoc
 title: Synth functions
 group: Python inline code
-permalink: /synth-functions/
+permalink: /synth/
 ---
 
 The `synth` class provides basic sound synthesis functionality. For example, the following script generates a simple sound and plays it:

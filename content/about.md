@@ -90,4 +90,4 @@ OpenSesame is powered by the following libraries (and many more). Credits go out
 [pyopengl]: http://pyopengl.sourceforge.net/
 [plug-ins]: /plug-ins
 [external-devices]: /devices/
-[python-scripting]: /python-inline-code
+[python-scripting]: /python/about

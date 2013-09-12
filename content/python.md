@@ -2,7 +2,7 @@
 layout: osdoc
 title: Python inline code
 group: Python inline code
-permalink: /python-inline-code/
+permalink: /python/
 ---
 
 <div id='index'>
