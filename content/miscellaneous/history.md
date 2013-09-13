@@ -3,10 +3,9 @@ layout: osdoc
 title: Release history
 group: Miscellaneous
 permalink: /history/
-level: 1
-sortkey: 010.006
 ---
 
+|Sep 13, 2013	| [0.27.4][] *Frisky Freud* (maintenance)	|
 |Jul 9, 2013	| [0.27.3][] *Frisky Freud* (maintenance)	|
 |May 10, 2013	| [0.27.2][] *Frisky Freud* (maintenance)	|
 |Feb 13, 2013	| [0.27.1][] *Frisky Freud* (maintenance)	|
@@ -45,3 +44,4 @@ sortkey: 010.006
 [0.27.1]: /notes/0.27.1/
 [0.27.2]: /notes/0.27.2/
 [0.27.3]: /notes/0.27.3/
+[0.27.4]: /notes/0.27.4/
