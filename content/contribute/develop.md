@@ -3,12 +3,13 @@ layout: osdoc
 title: Develop
 group: contribute
 permalink: /develop/
-level: 1
-sortkey: 0013.003
 ---
 
-Getting the latest source code
-------------------------------
+:--
+cmd: overview
+--:
+
+## Getting the latest source code
 
 The OpenSesame source code is hosted on GitHub:
 
@@ -18,18 +19,17 @@ GitHub provides a straightforward way for collaborating on a project. If you're 
 
 The best (and easiest) way to contribute code is as follows:
 
-- Create a GitHub account.
-- Create a fork of OpenSesame <https://github.com/smathot/OpenSesame>.
-- Modify your fork.
-- Send a 'pull request', asking for your changes to be merged back into the main repository.
+1. Create a GitHub account.
+2. Create a fork of OpenSesame <https://github.com/smathot/OpenSesame>.
+3. Modify your fork.
+4. Send a 'pull request', asking for your changes to be merged back into the main repository.
 
 The two main branches of OpenSesame are:
 
 - `master` contains reasonably stable code.
 - `playground` contains potentially unstable code.
 
-Coding-style guidelines
------------------------
+## Coding-style guidelines
 
 The goal is to maintain a readable and consistent code base. Therefore, please consider the following style guidelines when contributing code:
 

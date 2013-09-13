@@ -3,8 +3,6 @@ layout: osdoc
 title: Documentation
 group: contribute
 permalink: /documentation/
-level: 1
-sortkey: 0013.005
 ---
 
 Feel free to submit improvements, additions, and corrections to the documentation!

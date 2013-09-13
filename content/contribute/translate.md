@@ -3,23 +3,17 @@ layout: osdoc
 title: Translate
 group: contribute
 permalink: /translate/
-level: 1
-sortkey: 0013.002
 ---
 
 In order to improve usability for non-English speaking users, the goal is to have OpenSesame adapt to the default language of the operating system. As of v0.27, the OpenSesame user interface is largely translatable. Very little technical skill is needed to contribute a translation.
 
 If you want to provide a translation, it's recommended to first send an enquiry to <lvanderlinden@cogsci.nl> or post a message on the [forum][], to make sure that your language is not already being worked on.
 
-Overview
---------
-
-- [Status of current translations](#status)
-- [Starting OpenSesame with a specific language](#select)
-- [The five-step translation process](#steps)
-
-Status of current translations {#status}
-------------------------------
+:--
+cmd: overview
+--:
+	
+## Status of current translations
 
 |**Code**	|**Language**		|**Status**			|**Author(s)**					|
 |`en_EN`	|English			|Default			|								|
@@ -28,19 +22,15 @@ Status of current translations {#status}
 |`zh_CH`	|Chinese			|In progress		|Zhongquan Li and Gabriel Chan	|
 |`nl_NL`	|Dutch				|In progress		|Lotje van der Linden			|
 
-Starting OpenSesame with a specific language {#select}
---------------------------------------------
+## Starting OpenSesame with a specific language
 
 By default, OpenSesame will try to use the default locale of your operating system, and fall back to English if a translation is not available. To start OpenSesame with a specific language, you can use the `--locale` command line argument. For example, to use the Italian translation start OpenSesame as follows:
 	
-~~~
-opensesame --locale it_IT
-~~~
+	opensesame --locale it_IT
 
 This will look for a file called `resources/locale/it_IT.qm`, and fall back to English if no such file exists.
 
-The five-step translation process {#steps}
----------------------------------
+## The five-step translation process
 
 ### Step 1: Download translatables.ts
 
