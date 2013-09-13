@@ -11,8 +11,7 @@ You may also want to look at one of the example experiments using Python inline 
 
 :--
 cmd: overview
---"
-
+--:
 
 ## Learning Python
 
@@ -59,6 +58,36 @@ self.sleep(1000)
 {% endhighlight %}
 
 This works, because `sleep()` is a function of the `inline_script` object. For a complete list of `inline_script` functions, see [here][inline-script].
+
+## The exp and win variables
+
+In an inline_script (as of 0.25) there are two special variables: `exp` and `win`. Actually, there is nothing magical about these variables, they are simply synonyms for `self.experiment` and `self.experiment.window`, respectively. `exp` is the `experiment` object, which is described [here][experiment]. `win` is the window handle, which is dependent on the back-end that is used.
+
+## The debug window
+
+OpenSesame reroutes the standard output to the debug window, which you can activate using Control + D or through the menu (Menu -> View -> Show debug window). You can print to the debug window using the Python print statement:
+
+{% highlight python %}
+print "This will appear in the debug window!"
+{% endhighlight %}
+
+![](/img/fig/fig5.2.2.png)
+
+By default, OpenSesame uses a simple, custom Python console in the debug window. However, you can also use [IPython][], which is a powerful interactive Python console. In order to do this, you need to run OpenSesame in a Python environment with IPython installed, and start OpenSesame with the command line argument `--ipython`.
+
+![](/img/fig/fig5.2.3.png)
+
+## openexp modules
+
+OpenSesame comes with a set of Python modules for presenting stimuli, handling input, etc. There are 5 such modules and the full API (i.e., a list of functions) is available:
+
+- [openexp.canvas.canvas][canvas] for display presentation
+- [openexp.keyboard.keyboard][keyboard] for response collection using the keyboard
+- [openexp.mouse.mouse][mouse] for response collection using the mouse
+- [openexp.sampler.sampler][sampler] for sound sample playback
+- [openexp.synth.synth][synth] for sound synthesis and playback
+
+It is perfectly possible to bypass the openexp modules and use the back-end directly. For more information, see [this article][back-ends].
 
 ## Notes for 0.27.2 and later
 
@@ -173,36 +202,6 @@ def my_global_function():
 # Inline_script 2
 my_global_function()
 {% endhighlight %}
-
-## The exp and win variables
-
-In an inline_script (as of 0.25) there are two special variables: `exp` and `win`. Actually, there is nothing magical about these variables, they are simply synonyms for `self.experiment` and `self.experiment.window`, respectively. `exp` is the `experiment` object, which is described [here][experiment]. `win` is the window handle, which is dependent on the back-end that is used.
-
-## The debug window
-
-OpenSesame reroutes the standard output to the debug window, which you can activate using Control + D or through the menu (Menu -> View -> Show debug window). You can print to the debug window using the Python print statement:
-
-{% highlight python %}
-print "This will appear in the debug window!"
-{% endhighlight %}
-
-![](/img/fig/fig5.2.2.png)
-
-By default, OpenSesame uses a simple, custom Python console in the debug window. However, you can also use [IPython][], which is a powerful interactive Python console. In order to do this, you need to run OpenSesame in a Python environment with IPython installed, and start OpenSesame with the command line argument `--ipython`.
-
-![](/img/fig/fig5.2.3.png)
-
-## openexp modules
-
-OpenSesame comes with a set of Python modules for presenting stimuli, handling input, etc. There are 5 such modules and the full API (i.e., a list of functions) is available:
-
-- [openexp.canvas.canvas][canvas] for display presentation
-- [openexp.keyboard.keyboard][keyboard] for response collection using the keyboard
-- [openexp.mouse.mouse][mouse] for response collection using the mouse
-- [openexp.sampler.sampler][sampler] for sound sample playback
-- [openexp.synth.synth][synth] for sound synthesis and playback
-
-It is perfectly possible to bypass the openexp modules and use the back-end directly. For more information, see [this article][back-ends].
 
 [python]: http://www.python.org/
 [inline-script]: /python/inline-script
