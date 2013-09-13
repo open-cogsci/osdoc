@@ -20,7 +20,7 @@ Triggers can be sent with the `parallel_port_trigger` plug-in which works under 
 The plugin has three input boxes:
 
 - The value ranges between 0-255 and specifies the trigger byte.
-- The duration (in ms) __TODO__
+- The duration (in ms) is the time that the trigger is on. Unless a 0 ms duration was specified, the trigger will be reset to 0 after this interval.
 - The port address has to be specified manually. This setting applies only to Windows and is ignored under Linux.
 
 You can download the plugin from here:

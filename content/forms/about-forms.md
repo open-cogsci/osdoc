@@ -5,7 +5,8 @@ group: Forms
 permalink: /about-forms/
 ---
 
-##### If you experience performance issues when using forms, see [this post](/forms/performance-issues-and-troubleshooting/).
+If you experience performance issues when using forms, see [this post](/forms/performance-issues-and-troubleshooting/).
+{: .page-notification}
 
 Forms are simple interactive displays that can be used to implement questionnaires, instructions, text input displays, etc. You can use forms in three ways.
 

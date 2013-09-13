@@ -3,8 +3,6 @@ layout: osdoc
 title: Plug-in installation
 group: Plug-ins
 permalink: /plug-in-installation/
-level: 1
-sortkey: 007.003
 ---
 
 Installation simply consists of copying the plug-in folder into one of the folders that OpenSesame searches for plug-ins. Note that you need to unpack the .zip files first! A number of plug-ins are included by default with OpenSesame, so if you're unsure you can see how these plug-ins are organized and organize the new plug-in in the same way.

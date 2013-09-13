@@ -14,39 +14,26 @@ To use OpenSesame with the Eyelink, there are two options:
 - *Easy:* Use the Python portable-based OpenSesame package ([link][python-portable]), which runs OpenSesame with Eyelink support out of the box.
 - *Advanced:* Install all dependencies per the instructions below.
 
-Overview
---------
+:--
+cmd: overview
+depth: 2
+--:
 
-- [Running in dummy mode](#dummy)
-- [SR Research forum](#forum)
-- [System requirements](#system-requirements)
-- [Step 1: Installing OpenSesame from source](#step-1)
-- [Step 2: Installing Eyelink display software](#step-2)
-- [Step 3: Installing the Python Imaging Library](#step-3)
-- [Step 4: Installing PyLink](#step-4)
-- [Step 5: Installing the OpenSesame Eyelink plug-ins](#step-5)
-- [Step 6: Running OpenSesame with Eyelink support!](#step-6)
-- [Tutorial, documentation, examples and function overview](#documentation)
-
-Running in dummy mode {#dummy}
----------------------
+## Running in dummy mode
 
 You need to walk through the steps below only for the computer to which the Eyelink is actually attached. You can easily install the OpenSesame eyelink plug-ins on your own computer, as per [step 5](#step-5), without having to install anything or having to run OpenSesame from source. Obviously, you can only run the plug-in in 'dummy mode' in this case, but this is very convenient while developing and testing your experiment.
 
-SR Research forum {#forum}
------------------
+## SR Research forum
 
 You will need to download some software from the SR Research forum. This is a closed forum, but you can register free of charge.
 
 - <https://www.sr-support.com/forums/>
 
-System requirements {#system-requirements}
--------------------
+## System requirements
 
 This tutorial has been written primarily for Windows XP 32-bit, for the simple reason that our own Eyelink PC uses this OS. Instructions for Ubuntu are also provided, but have not been tested extensively. You may still find this tutorial a useful resource when trying to install the OpenSesame Eyelink plug-ins on a different OS, but things will obviously work a little differently.
 
-Step 1: Installing OpenSesame from source {#step-1}
------------------------------------------
+## Step 1: Installing OpenSesame from source
 
 ### Windows XP
 
@@ -58,8 +45,7 @@ The Windows binary of OpenSesame comes with its own Python environment and can o
 
 Under Linux, you can simply install OpenSesame as described [here](/getting-opensesame/download/).
 
-Step 2: Installing the Python Imaging Library {#step-2}
----------------------------------------------
+## Step 2: Installing the Python Imaging Library
 
 ### Windows XP
 
@@ -73,8 +59,7 @@ The Python imaging library is probably installed already. If not, run the follow
 
 	sudo apt-get install python-imaging
 
-Step 3: Installing Eyelink display software {#step-3}
--------------------------------------------
+## Step 3: Installing Eyelink display software
 
 ### Windows XP
 
@@ -113,8 +98,7 @@ For more information, please visit:
 
 	- <https://www.sr-support.com/showthread.php?16-Linux-Display-Software-Package>
 	
-Step 4: Installing PyLink {#step-4}
--------------------------
+## Step 4: Installing PyLink
 
 PyLink is a Python wrapper around the display software. 
 
@@ -154,8 +138,7 @@ Download the correct PyLink for your distribution from here (make sure that you 
 
 Extract it to a location of your choice and rename the `pylink27` folder to `pylink`.
 
-Step 5: Installing the OpenSesame Eyelink plug-ins {#step-5}
---------------------------------------------------
+## Step 5: Installing the OpenSesame Eyelink plug-ins
 
 ### All platforms
 
@@ -167,8 +150,7 @@ Extract the archive and put all the folders (eyelink_calibrate, etc.) directly i
 
 - <http://osdoc.cogsci.nl/plug-ins/plug-in-installation>
 
-Step 6: Running OpenSesame with Eyelink support! {#step-6}
-------------------------------------------------
+## Step 6: Running OpenSesame with Eyelink support!
 
 ### Windows XP
 
@@ -186,8 +168,7 @@ You can start OpenSesame in the usual way from the applications menu, or by runn
 
 	opensesame
 
-Documentation, examples and function overview {#documentation}
----------------------------------------------
+## Documentation, examples and function overview
 
 You can find a tutorial for using the OpenSesame Eyelink plug-ins here [(PDF)][tutorial].
 

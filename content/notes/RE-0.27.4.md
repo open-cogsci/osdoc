@@ -5,7 +5,7 @@ group: notes
 permalink: /0.27.4/
 ---
 
-OpenSesame 0.27.4 is the fourth maintenance release in the 0.27 'Frisky Freud' series, and was released on July 9 2013. If you are upgrading from 0.26, please read the [0.27 release notes][].
+OpenSesame 0.27.4 is the fourth maintenance release in the 0.27 'Frisky Freud' series, and was released on September 13 2013. If you are upgrading from 0.26, please read the [0.27 release notes][].
 
 New features and enhancements:
 
@@ -20,6 +20,7 @@ Bugs fixed:
 - Intercept `psychopy.core.quit()` to prevent PsychoPy from killing OpenSesame
 - Also prepare empty `canvas` objects in `xpyriment` back-end
 - Fix many missing icons with `gnome` theme under Linux
+- Fix a bug where `self` was not properly registered in the run phase of `inline_script` items
 
 Windows packaging:
 
