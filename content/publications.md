@@ -6,18 +6,20 @@ permalink: /publications/
 singleton: true
 ---
 
-How to cite OpenSesame
-----------------------
+:--
+cmd: overview
+--:
+
+## How to cite OpenSesame
 
 If you have used OpenSesame for your experiments, we would appreciate it if you cite the following paper:
 
 Mathôt, S., Schreij, D., & Theeuwes, J. (2012). OpenSesame: An open-source, graphical experiment builder for the social sciences. *Behavior Research Methods*, *44*(2), 314-324. [doi:10.3758/s13428-011-0168-7](http://dx.doi.org/10.3758/s13428-011-0168-7)
 {: .reference}
 
-Please note that OpenSesame relies on many modules for which we can take no credit. If you make extensive use of modules such as SciPy/ NumPy, PsychoPy, or Expyriment, please also cite the respective authors.
+Please note that OpenSesame relies on many modules for which we can take no credit. If you make extensive use of modules such as SciPy/ NumPy, [PsychoPy][psycho], or [Expyriment][xpyriment], please also cite the respective authors.
 
-OpenSesame in publications, theses, conference proceedings, etc.
-----------------------------------------------------------------
+## OpenSesame in publications, theses, conference proceedings, etc.
 
 Despite the project's young age, references to OpenSesame are starting to appear. Below is a (presumably incomplete) list. If you have used OpenSesame for your work, or discuss the software in your work, please send a message or leave a post on the forum and your reference will be added to the list. All scholarly works are welcome, including theses.
 
@@ -50,6 +52,9 @@ Krause, F., & Lindemann, O. (in press). Expyriment: A Python library for cogniti
 {: .reference}
 
 van der Linden, L. & Vitu, F. (2013). *All eyes on the center of gravity: Initial saccadic landing positions on peripherally-presented daily-life objects are largely explained by low-level factors*. Talk presented at the 17th European Conference on Eye Movements (ECEM), Lund, Sweden. [doi:10.6084/m9.figshare.782254](http://dx.doi.org/10.6084/m9.figshare.782254)
+{: .reference}
+
+Mathôt, S., van der Linden, L., Grainger, J., Vitu, F. (in press). The pupillary light response reveals the focus of covert visual attention. *PLoS ONE*. [(PDF)](http://files.cogsci.nl/documents/mathot_et_al_in_press_plos_one.pdf)
 {: .reference}
 
 Mathôt, S. (2013, May). *An Introduction to Experiment Building with OpenSesame*. Workshop presented at the APS 25th Annual Convention, Washington, DC, United States. [doi:10.6084/m9.figshare.791576](http://dx.doi.org/10.6084/m9.figshare.791576)
@@ -112,3 +117,6 @@ Decock, J., & Van Looy, J. (2011). Forbidden or promising fruit? An experimental
 
 Mathôt, S., & Theeuwes, J. (2011). Mantra: An open method for object and movement tracking. *Behavior Research Methods*, *43*(4), 1182–1193. [doi:10.3758/s13428-011-0105-9](http://dx.doi.org/10.3758/s13428-011-0105-9)
 {: .reference}
+
+[psycho]: /back-ends/psycho
+[xpyriment]: /back-ends/xpyriment
