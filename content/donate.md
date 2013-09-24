@@ -3,16 +3,19 @@ layout: osdoc
 title: Donate
 group: General
 permalink: /donate/
-level: 0
-sortkey: 0014.001
 menuclass: highlight
 singleton: true
 ---
 
+:--
+cmd: overview
+--:
+
+## Why donate?
+
 We are a big project on a small budget! With your donation you support the continued development of OpenSesame. We use donations to buy hardware for development and testing, to cover travel expenses, to maintain the website, etc.
 
-Donate money
-------------
+## Donate money
 
 We currently accept donations through PayPal, which is a secure and flexible way to handle transactions. You do not need to have a PayPal account yourself. Click on the button below to donate an amount of your choosing. We fully appreciate all donations, including small ones.
 
@@ -26,8 +29,7 @@ We currently accept donations through PayPal, which is a secure and flexible way
 
 </div>
 
-Donate time
------------
+## Donate time
 
 Because, as they say, time is money. Find out how you can [contribute][].
 

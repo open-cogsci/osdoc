@@ -3,8 +3,6 @@ layout: osdoc
 title: Examples
 group: General
 permalink: /examples/
-level: 0
-sortkey: 011.001
 singleton: true
 ---
 

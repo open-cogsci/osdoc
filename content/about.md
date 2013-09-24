@@ -3,8 +3,6 @@ layout: osdoc
 title: About
 group: General
 permalink: /about/
-level: 0
-sortkey: 002.001
 singleton: true
 ---
 
