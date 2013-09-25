@@ -2,52 +2,34 @@
 layout: osdoc
 title: OpenSesame script syntax
 group: Usage
-permalink: /opensesame-scripts/
+permalink: /opensesame-script/
 ---
 
-Overview
---------
+:--
+cmd: overview
+--:
 
-- [About OpenSesame script](#about)
-- General remarks
-	- [Keywords](#keywords)
-	- [Comments](#comments)
-	- [Quotation](#quotation)
-	- [Types](#types)
-	- [Item-specific syntax](#item-specific-syntax)
-	- [Resolving path names](#path-names)
-- Statements
-	- [define](#define)
-	- [draw](#draw)
-	- [log](#log)
-	- [run](#run)
-	- [set](#set)
-	- [setcycle](#setcycle)
-	- [widget](#widget)
-
-About OpenSesame script {#about}
------------------------
+## About OpenSesame script
 
 OpenSesame script is a simple definitional language that defines an experiment. It is not a full fledged programming language, and does not include features such a `for` loops. The OpenSesame script is interpreted by an OpenSesame runtime environment.
 
 OpenSesame script is different from the Python scripts that are used in inline_script items. Python is a real programming language with all the flexibility and complexities that this entails. In contrast, OpenSesame script is used to define experiments in a simple, human-readable way.
 
-General remarks
----------------
+## General remarks
 
-### Keywords {#keywords}
+### Keywords
 
 Some items, such as form_base and sketchpad accept keywords. Keywords are of the form `keyword=value`. Keywords are optional and should fall back to a default value.
 
-### Comments {#comments}
+### Comments
 
 Strings preceded by a hash should be interpreted as comments.
 
-#### Example
+*Example*
 
 	# This is a comment
 
-### Quotation {#quotation}
+### Quotation
 
 Quotation is not necessary, except around strings that contain spaces or other forms of punctuation. So the following lines should be interpreted as identical:
 
@@ -60,20 +42,21 @@ However, the following lines are not. In fact, the first line is not valid, beca
 	set my_var my value
 	set my_var "my value"
 
-### Types {#types}
+### Types
 
 There are no types. No distinction is made between strings, integers, etc.
 
-### Item-specific syntax {#item-specific-syntax}
+### Item-specific syntax
 
 Some items have a specific syntax. This is indicated in the “Applies to” section for each of the keywords discussed below.
 
-### Resolving path names {#path-names}
+### Resolving path names
 
-TODO
+See:
 
-*define* statement {#define}
-------------------
+- [/python/experiment/#experiment.get_file](/python/experiment/#experiment.get_file)
+
+## *define* statement
 
 Starts the definition of an item. After a define statement, all lines are indented by a single tab. The end of the item definition is the first string that is no longer indented. Nested define statements are not allowed.
 
@@ -99,8 +82,7 @@ All items
 		set timeout "infinite"
 		set flush "yes"
 
-*draw* statement {#draw}
-----------------
+## *draw* statement
 
 Defines a visual element of a sketchpad or feedback item.
 
@@ -141,8 +123,7 @@ TODO
 
 	draw fixdot 0 0
 
-*log* statement {#log}
----------------
+## *log* statement
 
 Indicates that a variable should be written to the log-file.
 
@@ -162,8 +143,7 @@ logger
 
 	log response_time
 
-*run* statement {#run}
----------------
+## *run* statement
 
 Indicates that an item should be run. In the case of the sequence, the order of the run statements determines the order in which items are called. In the case of the parallel plug-in all items are called at the same item.
 
@@ -184,8 +164,7 @@ sequence
 
 	run correct_feedback '[correct] = 1'
 
-*set* statement {#set}
----------------
+## *set* statement
 
 Defines single-line variables.
 
@@ -217,8 +196,7 @@ Multi-line variables are defined using the `__[variable name]__` notation. This 
 	This is the second line.
 	__end__
 
-*setcycle* statement {#setcycle}
---------------------
+## *setcycle* statement
 
 Similar to the regular “set” statement, but sets a variable only during a specific cycle of a loop. This is the script equivalent of the loop table.
 
@@ -240,8 +218,7 @@ Loop
 
 	setcycle 0 cue valid
 
-*widget* statement {#widget}
-------------------
+## *widget* statement
 
 Adds a widget (buttons, labels, etc.) to a form. Valid keywords depend on the type of widget. The widget statement is not strictly part of the core OpenSesame syntax, but is used by the form_base plug-in.
 
