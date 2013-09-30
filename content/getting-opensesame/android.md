@@ -44,7 +44,7 @@ Debug output is written to `/sdcard/opensesame-debug.txt`.
 - The *synth* item and `openexp.synth` module are not functional.
 - The *sampler* item and `openexp.sampler` module will ignore panning and pitching.
 - Participants may be eaten by dragons.
-- The `fixation_dot`, `touch_response`, and `notepad` plug-ins don't work.
+- Not all common Python modules are available. For a list, see <http://pygame.renpy.org/api.html>.
 
 ### Supported devices
 
