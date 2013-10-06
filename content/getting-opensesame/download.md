@@ -53,7 +53,7 @@ An older version of OpenSesame which should run on all OS X versions (>10.6) can
 For other OS X versions of OpenSesame refer to http://www.cogsci.nl/dschreij/opensesame-mac/
 
 We are looking for someone to improve and maintain the Mac OS packages for OpenSesame!
-(: .page-notification}
+(:
 
 ## Other platforms
 
