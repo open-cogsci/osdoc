@@ -393,13 +393,16 @@ if __name__ == u'__main__':
 	# Parse command line options
 	parser = OptionParser()
 	parser.add_option(u'-n', u'--nojekyll', dest=u'jekyll', help= \
-		u'Do not generate #s = parseImages(os.path.dirname(path), yaml, s)site with Jekyll', action=u'store_false', \
+		u'Do not generate site with Jekyll', action=u'store_false', \
 		default=True)
 	parser.add_option(u'-c', u'--check-links', dest=u'checkLinks', help= \
 		u'Check for dead links (requires linkchecker)', action=u'store_true', \
 		default=False)
 	parser.add_option(u'-o', u'--optimize-html', dest=u'optimizeHTML', help= \
 		u'Optimize HTML (requires htmlcompressor.jar)', action=u'store_true', \
+		default=False)
+	parser.add_option(u'-t', u'--tarball', dest=u'tarball', help= \
+		u'Generate site tarball', action=u'store_true', \
 		default=False)
 	parser.add_option(u'-g', u'--group', dest=u'group', help= \
 		u'Only parse a specific group', default=None)
@@ -506,6 +509,14 @@ if __name__ == u'__main__':
 	if options.optimizeHTML:
 		print u'\nOptimizing HTML'
 		optimizeHTML(u'_site')
+		
+	# Optionally create a tarball of the site
+	if options.tarball:
+		print u'\nCreating tarball (osdoc.tar.gz)'
+		cmd = [u'tar', u'-zcvf', u'osdoc.tar.gz', u'-C', u'_site', u'.', \
+			u'--exclude-from=dev-scripts/excludefromgz.txt']
+		subprocess.call(cmd)
+		shutil.move(u'osdoc.tar.gz', u'_site')
 		
 	# Optionally check for dead links
 	if options.checkLinks:
