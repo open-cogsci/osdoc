@@ -47,8 +47,8 @@ The latest versions of OpenSesame (> 0.27.1) come in two *flavors*. One runs on 
 
 Both versions have been built on *Mountain Lion* and, after initial tests on our systems, sadly did not seem to be backward compatible with older OS X versions. If they do work for you on pre-Mountain Lion macs, please let us know on [the forum](http://forum.cogsci.nl).
 
-- [opensesame 0.27.4 64bit][macos-package-0.27.4-64bit]
-- [opensesame 0.27.2 32bit][macos-package-0.27.2-32bit]
+- [opensesame 0.27.4 64bit][macos-package-0.27.4-64bit] (without Psychopy backend)
+- [opensesame 0.27.2 32bit][macos-package-0.27.2-32bit] (including PsychoPy backend)
 
 An older version of OpenSesame which should run on all OS X versions (>10.6) can be found here:
 
