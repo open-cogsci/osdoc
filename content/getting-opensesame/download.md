@@ -54,7 +54,7 @@ An older version of OpenSesame which should run on all OS X versions (>10.6) can
 
 - [opensesame_0.26-macos-2.zip][macos-package-0.26]
 
-For other OS X versions of OpenSesame refer to http://www.cogsci.nl/dschreij/opensesame-mac/
+For other OS X versions of OpenSesame refer to <http://www.cogsci.nl/dschreij/opensesame-mac/>.
 
 ## Other platforms
 
