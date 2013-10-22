@@ -363,19 +363,18 @@ caption: Finished!
 
 Your experiment is now finished! Click on the 'Run fullscreen' (`Control+R`) button in the main toolbar to give it a test run.
 
-References {#references}
-----------
+## References
 
-Brysbaert, M., & Nazir, T. (2005). Visual constraints in written word recognition: evidence from the optimal viewing-position effect. *Journal of Research in Reading*, *28*(3), 216-228.
+Brysbaert, M., & Nazir, T. (2005). Visual constraints in written word recognition: evidence from the optimal viewing-position effect. *Journal of Research in Reading*, *28*(3), 216-228. doi:10.1111/j.1467-9817.2005.00266.x
 {: .reference}
 
-O'Regan, K. J., & Jacobs, A. M. (1992). Optimal viewing position effect in word recognition: A challenge to current theory. *Journal of Experimental Psychology: Human Perception and Performance*, *18*(1), 185-197.
+O'Regan, K. J., & Jacobs, A. M. (1992). Optimal viewing position effect in word recognition: A challenge to current theory. *Journal of Experimental Psychology: Human Perception and Performance*, *18*(1), 185-197. doi:10.1037/0096-1523.18.1.185
 {: .reference}
 
-Mathôt, S. (2013, May). *An Introduction to Experiment Building with OpenSesame*. Workshop presented at the APS 25th Annual Convention, Washington, DC, United States. [doi:10.6084/m9.figshare.791576](http://dx.doi.org/10.6084/m9.figshare.791576)
+Mathôt, S. (2013, May). *An Introduction to Experiment Building with OpenSesame*. Workshop presented at the APS 25th Annual Convention, Washington, DC, United States. doi:10.6084/m9.figshare.791576
 {: .reference}
 
-Mathôt, S., Schreij, D., & Theeuwes, J. (2012). OpenSesame: An open-source, graphical experiment builder for the social science. *Behavior Research Methods*, *44*(2), 313-324. [doi:10.3758/s13428-011-0168-7](http://dx.doi.org/10.3758%2Fs13428-011-0168-7)
+Mathôt, S., Schreij, D., & Theeuwes, J. (2012). OpenSesame: An open-source, graphical experiment builder for the social science. *Behavior Research Methods*, *44*(2), 313-324. doi:10.3758/s13428-011-0168-7
 {: .reference}
 
 [download]: /getting-opensesame/download/

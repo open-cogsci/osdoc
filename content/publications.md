@@ -64,6 +64,7 @@ Mathôt, S. (2013). *Visual Attention and Stability* (Doctoral dissertation). VU
 {: .reference}
 
 Schreij, D., Los, S. A., Theeuwes, J., Enns, J. T., & Olivers, C. N. (2013). The interaction between stimulus-driven and goal-driven orienting as revealed by eye movements. *Journal of Experimental Psychology: Human Perception and Performance*. doi:10.1037/a0034574
+{: .reference}
 
 Theeuwes, J., Mathôt, S., & Grainger, J. (2013). Exogenous object-centered attention. *Attention, Perception, & Psychophysics*. doi:10.3758/s13414-013-0459-4
 {: .reference}
