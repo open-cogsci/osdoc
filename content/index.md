@@ -22,7 +22,7 @@ caption: Video tutorial by [Chris Longmore].
 
 To cite OpenSesame in your work, please use the following reference:
 
-Mathôt, S., Schreij, D., & Theeuwes, J. (2012). OpenSesame: An open-source, graphical experiment builder for the social sciences. *Behavior Research Methods*, *44*(2), 314-324. [doi:10.3758/s13428-011-0168-7](http://dx.doi.org/10.3758/s13428-011-0168-7)
+Mathôt, S., Schreij, D., & Theeuwes, J. (2012). OpenSesame: An open-source, graphical experiment builder for the social sciences. *Behavior Research Methods*, *44*(2), 314-324. doi:10.3758/s13428-011-0168-7
 {: .reference}
 
 [Download][]{:.button}
