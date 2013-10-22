@@ -179,6 +179,11 @@ def parseOsdocYaml(path, info, s):
 		s = s.replace(before, after)
 	for a in appends:
 		s += '\n%s' % a
+	try:
+		from academicmarkdown import Filter
+		s = Filter.DOI(s)
+	except:
+		print u'Failed to import academicmarkdown. Not parsing DOIs.'	
 	return s
 
 def parseOsdocOverview(path, info, d, block, s):
@@ -436,7 +441,7 @@ if __name__ == u'__main__':
 		u'%s/_layouts/osdoc.html' % target)
 	
 	print u'\nCompiling .less to .css ...'
-	cmd = ['lessc', '--yui-compress', '%s/stylesheets/main.less' % src]
+	cmd = ['lesscpy', '-X', '%s/stylesheets/main.less' % src]
 	subprocess.call(cmd, stdout=open(u'%s/stylesheet.css' % target, u'w'))
 		
 	print u'\nListing content ...'
