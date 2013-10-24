@@ -15,9 +15,17 @@ cmd: overview
 
 We are a big project on a small budget! With your donation you support the continued development of OpenSesame. We use donations to buy hardware for development and testing, to cover travel expenses, to maintain the website, etc.
 
-## Donate money
+## Ways to donate
 
-We currently accept donations through PayPal, which is a secure and flexible way to handle transactions. You do not need to have a PayPal account yourself. Click on the button below to donate an amount of your choosing. We fully appreciate all donations, including small ones.
+### Small: Flattr
+
+Flattr is a 'microdonation' site that allows you to donate (very) small amounts to things that you like, such as software, videos, and blog posts.
+
+<a class="FlattrButton" style="display:none;" rev="flattr;button:compact;" href="http://www.cogsci.nl/"></a>
+
+### Medium: PayPal
+
+PayPal is a secure and flexible way to handle transactions. You can pay by credit card, and do not need to have a PayPal account yourself.
 
 <div class='no-img-border'>
 
@@ -29,8 +37,8 @@ We currently accept donations through PayPal, which is a secure and flexible way
 
 </div>
 
-## Donate time
+### Large: Institutional donations and sponsorship opportunities
 
-Because, as they say, time is money. Find out how you can [contribute][].
+For institutional donations and sponsorship opportunities, please send an inquiry to <opensesame@cogsci.nl>.
 
 [contribute]: /contribute

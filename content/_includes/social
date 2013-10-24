@@ -1,24 +1,17 @@
 <div id="socialbox">
 
-<!-- AddThis Button BEGIN -->
-<div class="addthis_toolbox addthis_default_style ">
-<a class="addthis_button_preferred_1"></a>
-<a class="addthis_button_preferred_2"></a>
-<a class="addthis_button_preferred_3"></a>
-<a class="addthis_button_preferred_4"></a>
-<a class="addthis_button_compact"></a>
-</div>
-<script type="text/javascript">var addthis_config = {"data_track_addressbar":false};</script>
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4e347a093d7f9792"></script>
-<!-- AddThis Button END -->
-
 <a href="https://twitter.com/cogscinl" class="twitter-follow-button" data-show-count="true" data-show-screen-name="false" data-dnt="true">Follow @cogscinl</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-<div class="fb-like" data-href="http://www.facebook.com/cognitivescience" data-send="false" data-layout="button_count" data-width="172" data-show-faces="true"></div>
+<div class="fb-like" data-href="http://www.facebook.com/cognitivescience" data-send="false" data-layout="button_count" data-width="172" data-show-faces="true"></div><br />
 
-<br />
 <div class="g-plusone" data-size="small" data-href="http://www.cogsci.nl/"></div>
-<br />
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="9ZVEYFRVFZVAN">
+<input type="image" src="http://osdoc.cogsci.nl/img/misc/paypal.png" border="0" name="submit" alt="PayPal, de veilige en complete manier van online betalen.">
+<img alt="" border="0" src="https://www.paypalobjects.com/nl_NL/i/scr/pixel.gif" width="1" height="1">
+</form>
 
 </div>
