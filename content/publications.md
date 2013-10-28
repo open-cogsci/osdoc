@@ -36,6 +36,9 @@ Brugmann, G., Goslin, J., & Duchamp-Viret, P. (in press). The speed of learning 
 Dalmaijer, E., Van der Stigchel, S., Van der Linden, L., Kruijne, W., Schreij, D., & Mathôt, S. (2013, August). *OpenSesame Opens the Door to Open-Source and User-Friendly Eye-Tracking Research*. Poster presented at the European Conference on Eye Movements, Lund, Sweden. [(PDF)](http://cogsci.nl/esdalmaijer/eyetracker_plugins/downloads/Dalmaijer_et_al_2013_ECEM_poster.pdf)
 {: .reference}
 
+Dalmaijer, E., Mathôt, S., & Van der Stigchel, S. (in press). PyGaze: an open-source, cross-platform toolbox for minimal-effort programming of eye-tracking experiments. *Behavior Research Methods*.
+{: .reference}
+
 Drager, K. (2013). Experimental Methods in Sociolinguistics. In J. Holmes & K. Hazen (eds.), *Research Methods in Sociolinguistics: A practical guide*, Wiley-Blackwell.
 {: .reference}
 
@@ -61,6 +64,9 @@ Mathôt, S. (2013, May). *An Introduction to Experiment Building with OpenSesame
 {: .reference}
 
 Mathôt, S. (2013). *Visual Attention and Stability* (Doctoral dissertation). VU University, Amsterdam, Netherlands. doi:10.6084/m9.figshare.704402
+{: .reference}
+
+Peters, G.-J. Y., de Bruin, M., & Crutzen, R. (2013). Everything should be as simple as possible, but no simpler: towards a protocol for accumulating evidence regarding the active content of health behaviour change interventions. *Health Psychology Review*. doi:10.1080/17437199.2013.848409
 {: .reference}
 
 Schreij, D., Los, S. A., Theeuwes, J., Enns, J. T., & Olivers, C. N. (2013). The interaction between stimulus-driven and goal-driven orienting as revealed by eye movements. *Journal of Experimental Psychology: Human Perception and Performance*. doi:10.1037/a0034574
