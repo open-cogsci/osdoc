@@ -54,6 +54,9 @@ Kilpeläinen, M., Olivers, C. N. L., & Theeuwes, J. (2013). The eyes like their 
 Krause, F., & Lindemann, O. (in press). Expyriment: A Python library for cognitive and neuroscientific experiments. *Behavior Research Methods*. doi:10.3758/s13428-013-0390-6
 {: .reference}
 
+Krukar, J., & Dalton, R. C. (2013). WALK, LOOK, REMEMBER: Art galleries as spaces facilitating memory. In *Proceedings of the Ninth International Space Syntax Symposium*. Seoul. Retrieved from <http://www.sss9.or.kr/paperpdf/scb/SSS9_2013_REF074_P.pdf>
+{: .reference}
+
 van der Linden, L. & Vitu, F. (2013). *All eyes on the center of gravity: Initial saccadic landing positions on peripherally-presented daily-life objects are largely explained by low-level factors*. Talk presented at the 17th European Conference on Eye Movements (ECEM), Lund, Sweden. doi:10.6084/m9.figshare.782254
 {: .reference}
 
