@@ -48,7 +48,7 @@ The latest versions of OpenSesame (> 0.27.1) come in two *flavors*. One runs on 
 Both versions have been built on *Mountain Lion* and, after initial tests on our systems, sadly did not seem to be backward compatible with older OS X versions. If they do work for you on pre-Mountain Lion macs, please let us know on [the forum](http://forum.cogsci.nl).
 
 - [opensesame 0.27.4 64bit][macos-package-0.27.4-64bit] (without Psychopy backend)
-- [opensesame 0.27.2 32bit][macos-package-0.27.2-32bit] (including PsychoPy backend)
+- [opensesame 0.27.4 32bit][macos-package-0.27.4-32bit] (including PsychoPy backend)
 
 An older version of OpenSesame which should run on all OS X versions (>10.6) can be found here:
 
@@ -63,7 +63,7 @@ If there are no packages provided for your platform, you will need to run OpenSe
 [archive]: http://files.cogsci.nl/software/opensesame/
 [macos-package-0.26]: http://files.cogsci.nl/software/opensesame/opensesame_0.26-macos-2.zip
 [macos-package-0.27.4-64bit]: http://www.cogsci.nl/dschreij/opensesame-mac/opensesame-0.27.4-macos-x86_64-1.dmg
-[macos-package-0.27.2-32bit]: http://www.cogsci.nl/dschreij/opensesame-mac/opensesame-0.27.2-macos-i386-1.dmg
+[macos-package-0.27.4-32bit]: http://www.cogsci.nl/dschreij/opensesame-mac/opensesame-0.27.4-macos-i386-1.dmg
 [macos-running-from-source]: /getting-opensesame/running-from-source#macos
 [ppa-cogscinl]: https://launchpad.net/~smathot/+archive/cogscinl
 [running-from-source]: /getting-opensesame/running-from-source
