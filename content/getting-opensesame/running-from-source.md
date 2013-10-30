@@ -17,12 +17,10 @@ OpenSesame depends on a number of other packages (dependencies), all of which ar
 
 - Python is the programming language in which OpenSesame is created.
 - PyGame is a library that is used for graphics and sound. It is essentially a wrapper around the Simple DirectMedia Layer.
-- (Py)Qt4 is the graphics toolkit that is used to construct the graphical user interface.
+- PyQt4 is the graphics toolkit that is used to construct the graphical user interface.
 - NumPy is an advanced mathematical library, which is used for various things.
-
-## Isn't Python always run from source?
-
-Being clever, huh? But yes, actually you're right. However, the packages come with their own Python environment or, in the case of the Debian/ Ubuntu packages, all dependencies are installed automatically. If you run straight from the source code, you have to set up your own Python environment, which is a little extra work. But you don't need to compile anything, as, for example, you would need to do with a program written in C.
+- QScintilla2 is a basic text-editor component
+- QProgEdit is an advanced text-editor component built on to of QScintilla2.
 
 ## Reasons to run from source
 
@@ -32,19 +30,13 @@ The most obvious reason to run from source is that there may not be a package av
 
 ### Install dependencies
 
-On most modern Linux distributions Python is installed by default and you can simply install `python-pygame`, `python-qt4`, and `python-numpy` using your package manager. Under Ubuntu, you can do this with the following command:
+Under Ubuntu, all dependencies are available via the official repositories or the Cogsci.nl PPA. Therefore, the easiest way to install all dependencies is by first adding the Cogsci.nl PPA, and then installing all dependencies in one go.
 
-	sudo apt-get install python-pygame python-numpy python-qt4
-
-If you want to use the [psycho] back-end, you will also need to install PsychoPy. Under Ubuntu, you can do this with the following command: (If you are on a Debian/ Ubuntu system I would recommend adding the NeuroDebian repository to your software sources. NeuroDebian provides up to date packages of many neuroscience-related software. See these instructions.)
-
-	sudo apt-get install psychopy
-
-If you want to use the [xpyriment] back-end, you will also need to install Expyriment. Expyriment is available from Cogsci.nl PPA and can be installed as follows:
-	
 	sudo add-apt-repository ppa:smathot/cogscinl
 	sudo apt-get update
-	sudo apt-get install expyriment
+	sudo apt-get install python-pygame python-numpy python-qt4 \
+		python-qscintilla2 psychopy expyriment python-qprogedit \
+		python-serial
 
 ### Run OpenSesame
 
@@ -73,6 +65,7 @@ You need to install at least the following packages:
 - PyGame <http://www.pygame.org/>
 - PyQt4 <http://www.riverbankcomputing.co.uk/software/pyqt/intro>
 - NumPy <http://numpy.scipy.org/>
+- QProgEdit <https://github.com/smathot/QProgEdit/>
 
 The following packages are optional, but there's a good chance you will want to install at least one of them:
 
@@ -83,7 +76,7 @@ The following packages are optional, but there's a good chance you will want to 
 
 Please note that the packages listed above may, in turn, have dependencies that need to be installed. This is especially true for PsychoPy. For instructions, please refer to the respective home pages.
 
-## Run OpenSesame
+### Run OpenSesame
 
 Download the source code for the latest OpenSesame release or the latest development snapshot from GitHub:
 	

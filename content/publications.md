@@ -60,7 +60,7 @@ Krukar, J., & Dalton, R. C. (2013). WALK, LOOK, REMEMBER: Art galleries as space
 van der Linden, L. & Vitu, F. (2013). *All eyes on the center of gravity: Initial saccadic landing positions on peripherally-presented daily-life objects are largely explained by low-level factors*. Talk presented at the 17th European Conference on Eye Movements (ECEM), Lund, Sweden. doi:10.6084/m9.figshare.782254
 {: .reference}
 
-Mathôt, S., van der Linden, L., Grainger, J., Vitu, F. (in press). The pupillary light response reveals the focus of covert visual attention. *PLoS ONE*. [(PDF)](http://files.cogsci.nl/documents/mathot_et_al_in_press_plos_one.pdf)
+Mathôt, S., van der Linden, L., Grainger, J., & Vitu, F. (2013). The pupillary response to light reflects the focus of covert visual attention. *PLoS ONE*, *8*(10), e78168. doi:10.1371/journal.pone.0078168
 {: .reference}
 
 Mathôt, S. (2013, May). *An Introduction to Experiment Building with OpenSesame*. Workshop presented at the APS 25th Annual Convention, Washington, DC, United States. doi:10.6084/m9.figshare.791576
