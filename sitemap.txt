@@ -84,6 +84,7 @@ Miscellaneous
 	Timing
 	Counterbalancing
 	Non-western alphabets
+	Visual angle
 	Teaching resources
 	Release history
 Examples
