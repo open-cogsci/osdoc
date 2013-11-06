@@ -154,6 +154,45 @@ def parseOsdocYaml(path, info, s):
 	"""	
 	
 	import re
+
+	# First check if the page is formatted for academicmarkdown
+	if u'parser' in info and info[u'parser'] == u'academicmarkdown':
+		from academicmarkdown import build, HTMLFilter
+		print u'Parsing %s (%s) with academicmarkdown' % (info[u'title'], path)
+		# We need to find all images, and copy these to the _content folder
+		for r in re.finditer(u'%--(.*?)--%', s, re.M|re.S):
+			try:
+				d = yaml.load(r.groups()[0])
+			except:
+				print u'Invalid YAML block: %s' % r.groups()[0]
+				continue
+			if not u'figure' in d:
+				continue
+			src = os.path.join(path, u'img', info['permalink'][1:], \
+				d[u'figure'][u'source'])
+			print u'Copying %s' % src
+			copyFile(src, u'_'+src)
+		# Add all source paths to the build path, so that we can reference to 
+		# figures etc without considering paths
+		build.path += [os.path.join(path, u'img', info['permalink'][1:]), \
+			os.path.join(path, u'lst', info['permalink'][1:]), \
+			os.path.join(path, u'tbl', info['permalink'][1:])]
+		# Set the correct templates
+		build.codeTemplate = u'jekyll'
+		build.figureTemplate = u'jekyll'		
+		# Disable markdown filters
+		build.mdFilters = []
+		# Enable clickable anchor headers
+		build.TOCAnchorHeaders = True
+		s = build.MD(s)
+		s = HTMLFilter.DOI(s)
+		# Remove the content/ part of figure paths, because it does not apply to
+		# the generated site.
+		s = s.replace(u'![content/', u'![/')
+		s = s.replace(u'(content/', u'(/')
+		return s
+		
+	# If not, use the deprecated OSDOC-specific YAML parser
 	replacements = []
 	appends = []
 	for r in re.finditer(':--(.*?)--:', s, re.M|re.S):
