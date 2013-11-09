@@ -26,7 +26,7 @@ figure:
  caption: A schematic illustration of degrees of visual angle. (Image adapted from [WikiMedia Commons](http://commons.wikimedia.org/wiki/File:Schematic_diagram_of_the_human_eye.svg).)
 --%
 
-The reason for using this somewhat odd measure of size is that it reflects the perceived size of a stimulus, which in psychological experiments is typically more important than its real size. For example, if you present a picture with a real width of 100 pixels on the monitor, the visual angle may correspond to 3°. If you move the monitor further away, the visual angle of the picture will decrease to, say, 2°. Visual angle thus reflects that the distance between a stimulus and an observer is important.
+The reason for using this somewhat odd measure of size is that it reflects the perceived size of a stimulus, which in psychological experiments is often more important than its real size. For example, if you present a picture with a real width of 100 pixels on the monitor, the visual angle may correspond to 3°. If you move the monitor further away, the visual angle of the picture will decrease to, say, 2°. Visual angle thus reflects that the distance between a stimulus and an observer is important.
 
 See also:
 
@@ -34,7 +34,7 @@ See also:
 
 ## Convert pixels to visual degrees
 
-You will need to know three things in order to covert pixels to visual degrees:
+You will need to know three things in order to convert pixels to visual degrees:
 
 - `h` is the height of the monitor in centimeters, which you can measure with a ruler. (e.g., 25cm)
 - `d` is the distance from the participant to the monitor in centimeters, which you can measure with a ruler. (e.g., 60cm)
