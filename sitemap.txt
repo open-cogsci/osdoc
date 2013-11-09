@@ -16,6 +16,7 @@ getting opensesame
 	runtime for android
 	running with python portable
 	running on a tablet/ mobile device
+	running on a raspberry pi
 	development snapshots
 tutorials
 	step-by-step tutorial
