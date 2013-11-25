@@ -30,13 +30,16 @@ OpenSesame is used for, discussed in, or mentioned in:
 Aigner, W., Hoffmann, S., & Rind, A. (2013). EvalBench: A software library for visualization evaluation. *Computer Graphics Forum*, *32*(3):1, 41–50. doi:10.1111/cgf.12091
 {: .reference}
 
+Boon, P. J., Theeuwes, J., & Belopolsky, A. V. (2013). Updating visual-spatial working memory during object movement. *Vision Research*. doi:10.1016/j.visres.2013.11.002
+{: .reference}
+
 Brugmann, G., Goslin, J., & Duchamp-Viret, P. (in press). The speed of learning instructed stimulus-response association rules in human: Experimental data and model. *Brain research*. [(PDF)](http://www.tech.plym.ac.uk/soc/staff/GuidBugm/pub/SRLearningSpeed_Paper_v11_ToAppear.pdf)
-{:.reference}
+{: .reference}
 
 Dalmaijer, E., Van der Stigchel, S., Van der Linden, L., Kruijne, W., Schreij, D., & Mathôt, S. (2013, August). *OpenSesame Opens the Door to Open-Source and User-Friendly Eye-Tracking Research*. Poster presented at the European Conference on Eye Movements, Lund, Sweden. [(PDF)](http://cogsci.nl/esdalmaijer/eyetracker_plugins/downloads/Dalmaijer_et_al_2013_ECEM_poster.pdf)
 {: .reference}
 
-Dalmaijer, E., Mathôt, S., & Van der Stigchel, S. (in press). PyGaze: an open-source, cross-platform toolbox for minimal-effort programming of eye-tracking experiments. *Behavior Research Methods*.
+Dalmaijer, E., Mathôt, S., & Van der Stigchel, S. (in press). PyGaze: an open-source, cross-platform toolbox for minimal-effort programming of eye-tracking experiments. *Behavior Research Methods*. doi:10.3758/s13428-013-0422-2
 {: .reference}
 
 Drager, K. (2013). Experimental Methods in Sociolinguistics. In J. Holmes & K. Hazen (eds.), *Research Methods in Sociolinguistics: A practical guide*, Wiley-Blackwell.
@@ -63,10 +66,16 @@ van der Linden, L. & Vitu, F. (2013). *All eyes on the center of gravity: Initia
 Mathôt, S., van der Linden, L., Grainger, J., & Vitu, F. (2013). The pupillary response to light reflects the focus of covert visual attention. *PLoS ONE*, *8*(10), e78168. doi:10.1371/journal.pone.0078168
 {: .reference}
 
+Mathôt, S. (2013, Nov). *Using OpenSesame to Run Experiments on the Raspberry Pi*. Talk presented at the 6th annual meeting of Cogiter, Paris, France. doi:10.6084/m9.figshare.861072
+{: .reference}
+
 Mathôt, S. (2013, May). *An Introduction to Experiment Building with OpenSesame*. Workshop presented at the APS 25th Annual Convention, Washington, DC, United States. doi:10.6084/m9.figshare.791576
 {: .reference}
 
 Mathôt, S. (2013). *Visual Attention and Stability* (Doctoral dissertation). VU University, Amsterdam, Netherlands. doi:10.6084/m9.figshare.704402
+{: .reference}
+
+Mueller, S. T., & Piper, B. J. (2013). The Psychology Experiment Building Language (PEBL) and PEBL test battery. *Journal of Neuroscience Methods*.
 {: .reference}
 
 Peters, G.-J. Y., de Bruin, M., & Crutzen, R. (2013). Everything should be as simple as possible, but no simpler: towards a protocol for accumulating evidence regarding the active content of health behaviour change interventions. *Health Psychology Review*. doi:10.1080/17437199.2013.848409
