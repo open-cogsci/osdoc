@@ -33,7 +33,7 @@ Aigner, W., Hoffmann, S., & Rind, A. (2013). EvalBench: A software library for v
 Boon, P. J., Theeuwes, J., & Belopolsky, A. V. (2013). Updating visual-spatial working memory during object movement. *Vision Research*. doi:10.1016/j.visres.2013.11.002
 {: .reference}
 
-Brugmann, G., Goslin, J., & Duchamp-Viret, P. (in press). The speed of learning instructed stimulus-response association rules in human: Experimental data and model. *Brain research*. [(PDF)](http://www.tech.plym.ac.uk/soc/staff/GuidBugm/pub/SRLearningSpeed_Paper_v11_ToAppear.pdf)
+Bugmann, G., Goslin, J., & Duchamp-Viret, P. (in 2013). The speed of learning instructed stimulus-response association rules in human: Experimental data and model. *Brain Research*, *1536*, 2-15. doi:10.1016/j.brainres.2013.07.046
 {: .reference}
 
 Dalmaijer, E., Van der Stigchel, S., Van der Linden, L., Kruijne, W., Schreij, D., & Mathôt, S. (2013, August). *OpenSesame Opens the Door to Open-Source and User-Friendly Eye-Tracking Research*. Poster presented at the European Conference on Eye Movements, Lund, Sweden. [(PDF)](http://cogsci.nl/esdalmaijer/eyetracker_plugins/downloads/Dalmaijer_et_al_2013_ECEM_poster.pdf)
