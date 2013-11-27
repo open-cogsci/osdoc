@@ -5,9 +5,6 @@ group: Getting OpenSesame
 permalink: /android/
 --- 
 
-[Help us](http://forum.cogsci.nl/index.php?p=/discussion/439/opensesame-mobile-call-for-testers) test the OpenSesame runtime for Android!
-{: .page-notification}
-
 :--
 cmd: overview
 --:
@@ -35,22 +32,9 @@ When you start the OpenSesame runtime, you will be asked where your experiments 
 
 The `Back` button serves the same purpose as the `Escape` key on regular systems, and will exit OpenSesame.
 
-### Debugging
-
-Debug output is written to `/sdcard/opensesame-debug.txt`.
-
-### Limitations
-
-- The *synth* item and `openexp.synth` module are not functional.
-- The *sampler* item and `openexp.sampler` module will ignore panning and pitching.
-- Participants may be eaten by dragons.
-- Not all common Python modules are available. For a list, see <http://pygame.renpy.org/api.html>.
-
 ### Supported devices
 
-If you have tested the OpenSesame runtime for Android on a device, please [share your experiences][forum].
-
-*The OpenSesame runtime for Android requires Android 2.2 'Froyo' or later.*
+If you have tested the OpenSesame runtime for Android on a device, please [share your experiences][forum]. Below is a list of devices that have been reported to work. In general, any device that runs Android 2.2. 'Froyo' or later appears to work.
 
 |**Device**				|**Android**				|**Status**		|
 |Asus Transformer TF101	|4.0.3						|Works			|
@@ -71,12 +55,31 @@ If you are using the OpenSesame runtime for Android in a production environment 
 
 ## Developing experiments for Android
 
-The OpenSesame runtime for Android requires the `droid` back-end, which is available as of OpenSesame 0.27.2.
+### Back-end
 
-A few design tips:
+The OpenSesame runtime for Android requires the [droid] back-end, which is available as of OpenSesame 0.27.2.
 
-- Implement most user interactions through the `mouse_response` item or `touch_response` plug-in. In general, screen touches are registered as mouse clicks.
-- The resolution for the `droid` backend is fixed at 1280x800. On Android, your experiment will be automatically scaled up or down depending on the resolution of the device, but the resolution that you design with is always 1280x800.
+### Design tips
+
+Implement most user interactions through the `mouse_response` item or `touch_response` plug-in. In general, screen touches are registered as mouse clicks. Using keyboard input will work as well, but it will show and hide the virtual keyboard after every key that is entered, which looks a bit messy.
+
+The resolution for the `droid` backend is fixed at 1280x800. On Android, your experiment will be automatically scaled up or down depending on the resolution of the device, but the resolution that you design with is always 1280x800.
+
+### Available Python modules
+
+The OpenSesame runtime for Android is based on the [PyGame subset 4 Android][pgs4a]. A list of available Python modules can be found here:
+
+- <http://pygame.renpy.org/api.html>
+
+### Debugging
+
+Debug output is written to `/sdcard/opensesame-debug.txt`.
+
+### Limitations
+
+- The *synth* item and `openexp.synth` module are not functional.
+- The *sampler* item and `openexp.sampler` module will ignore panning and pitching.
+- Participants may be eaten by dragons.
 
 ## Forum topics
 
@@ -90,3 +93,5 @@ Eoin Traver's project to test the OpenSesame runtime for Android (call for teste
 
 [google-play]: https://play.google.com/store/apps/details?id=nl.cogsci.opensesame
 [forum]: http://forum.cogsci.nl/index.php?p=/discussion/333/a-video-of-opensesame-running-natively-on-android
+[droid]: /back-ends/droid
+[pgs4a]: http://pygame.renpy.org/
