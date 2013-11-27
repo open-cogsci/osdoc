@@ -78,6 +78,9 @@ Mathôt, S. (2013). *Visual Attention and Stability* (Doctoral dissertation). VU
 Mueller, S. T., & Piper, B. J. (2013). The Psychology Experiment Building Language (PEBL) and PEBL test battery. *Journal of Neuroscience Methods*.
 {: .reference}
 
+Paivio, A. (2014). Bilingual dual coding theory and memory. In R. R. Heredia, J. Altarriba (eds.), *Foundations of Bilingual Memory*. New York, US: Springer Science. doi:10.1007/978-1-4614-9218-4_3
+{: .reference}
+
 Peters, G.-J. Y., de Bruin, M., & Crutzen, R. (2013). Everything should be as simple as possible, but no simpler: towards a protocol for accumulating evidence regarding the active content of health behaviour change interventions. *Health Psychology Review*. doi:10.1080/17437199.2013.848409
 {: .reference}
 
