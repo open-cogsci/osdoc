@@ -72,15 +72,16 @@ Back-ends
 	OpenGL
 	Droid
 External devices
-	Eyelink
-	SR Box
-	Serial and parallel port
-	Triggers for EEG/ ERP
-	SMI eye tracker
 	Ambulatory Monitoring System (VU-AMS)
-	Grip devices (U Plymouth)
 	Audio input
+	Grip devices (U Plymouth)
 	Joystick
+	Eyelink
+	Serial and parallel port
+	SMI eye tracker
+	SR Box
+	StimSync
+	Triggers for EEG/ ERP
 Miscellaneous
 	Timing
 	Counterbalancing

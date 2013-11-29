@@ -91,6 +91,9 @@ Peters, G.-J. Y., de Bruin, M., & Crutzen, R. (2013). Everything should be as si
 Schreij, D., Los, S. A., Theeuwes, J., Enns, J. T., & Olivers, C. N. (2013). The interaction between stimulus-driven and goal-driven orienting as revealed by eye movements. *Journal of Experimental Psychology: Human Perception and Performance*. doi:10.1037/a0034574
 {: .reference}
 
+Hanayik,T., & Rorden, C. (2013). StimSync: Open-source hardware for behavioral and MRI experiments. *Journal of Neuroscience Methods*. doi:10.1016/j.jneumeth.2013.11.017
+{: .reference}
+
 Theeuwes, J., Mathôt, S., & Grainger, J. (2013). Exogenous object-centered attention. *Attention, Perception, & Psychophysics*. doi:10.3758/s13414-013-0459-4
 {: .reference}
 
