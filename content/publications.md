@@ -45,6 +45,9 @@ Dalmaijer, E., Mathôt, S., & Van der Stigchel, S. (in press). PyGaze: an open-s
 Drager, K. (2013). Experimental Methods in Sociolinguistics. In J. Holmes & K. Hazen (eds.), *Research Methods in Sociolinguistics: A practical guide*, Wiley-Blackwell.
 {: .reference}
 
+Gildea, K. M., & Milburn, N. (2013). Open-source products for a lighting experiment device. *Behavior Research Methods*. doi:10.3758/s13428-013-0423-1
+{: .reference}
+
 Gordon, M. S., Russo, F. A., & MacDonald, E. (2013). Spectral information for detection of acoustic time to arrival. *Attention, Perception & Psychophysics*. doi:10.3758/s13414-013-0424-2
 {: .reference}
 
