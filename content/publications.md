@@ -54,6 +54,9 @@ Gordon, M. S., Russo, F. A., & MacDonald, E. (2013). Spectral information for de
 Goudbeek, M. B., Haagmans, I., & Krahmer, E. J. (2013). The object without qualities: referring with negative properties. In M. Knauff, M. Pauen, N. Sebanz, & I. Wachsmuth (Eds.), *Proceedings of the 35th Annual Conference of the Cognitive Science Society* (pp. 2440–2445). Austin, TX: Cognitive Science Society.
 {: .reference}
 
+Grainger, J., Mathôt, S., & Vitu, F. (in press). Tests of a model of multi-word reading: Effects of parafoveal flanking letters on foveal word recognition. *Acta Psychologica*.
+{: .reference}
+
 Huang, L. (2013). IPMP 2013 – A comprehensive data analysis
 tool for predictive microbiology, *International Journal of Food Microbiology*. doi:10.1016/j.ijfoodmicro.2013.11.019
 {: .reference}
