@@ -26,7 +26,8 @@ tutorials
 usage
 	sequences and loops
 	variables and conditional ("if") statements
-	Text formatting (HTML subset)
+	Text
+	:Text formatting (HTML subset)
 	Collecting responses
 	Giving feedback to participants
 	Sound playback and timing
@@ -85,7 +86,7 @@ External devices
 Miscellaneous
 	Timing
 	Counterbalancing
-	Non-western alphabets
+	:Non-western alphabets
 	Visual angle
 	Teaching resources
 	Release history
@@ -118,6 +119,7 @@ Boks
 	:release notes for 0.27.2
 	:release notes for 0.27.3
 	:release notes for 0.27.4
+	:release notes for 2.8.0
 :APS Workshop
 :Page not found
 :Experiments

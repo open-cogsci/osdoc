@@ -73,6 +73,7 @@ The following packages are optional, but there's a good chance you will want to 
 - PsychoPy <http://www.psychopy.org/>: Required for psycho back-end
 - Expyriment <http://www.expyriment.org>: Required for the xpyriment back-end
 - PyOpenGL <http://pyopengl.sourceforge.net/>: Required for psycho and xpyriment back-ends
+- python-bidi <https://pypi.python.org/pypi/python-bidi>: Required for bi-directional-text support
 
 Please note that the packages listed above may, in turn, have dependencies that need to be installed. This is especially true for PsychoPy. For instructions, please refer to the respective home pages.
 

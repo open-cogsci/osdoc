@@ -179,9 +179,10 @@ def parseOsdocYaml(path, info, s):
 			os.path.join(path, u'tbl', info['permalink'][1:])]
 		# Set the correct templates
 		build.codeTemplate = u'jekyll'
-		build.figureTemplate = u'jekyll'		
+		build.figureTemplate = u'jekyll'
 		# Disable markdown filters
-		build.mdFilters = []
+		build.preMarkdownFilters = []
+		build.postMarkdownFilters = []
 		# Enable clickable anchor headers
 		build.TOCAnchorHeaders = True
 		s = build.MD(s)
