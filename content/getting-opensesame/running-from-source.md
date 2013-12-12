@@ -3,24 +3,63 @@ layout: osdoc
 title: Running from source
 group: Getting started
 permalink: /running-from-source/
+parser: academicmarkdown
 ---
 
-This post describes how to set up a complete Python environment on your computer, so you can run OpenSesame directly from the source code. Depending on your needs, you could also consider using the Python-portable-based package.
+This post describes how to set up a complete Python environment on your computer, so you can run OpenSesame directly from the source code. Depending on your needs, you could also consider using the [winpython-based package].
 
-:--
-cmd: overview
---:
+%--
+toc:
+ mindepth: 2
+--%
 
-## Description of required packages
+## Download source code
 
-OpenSesame depends on a number of other packages (dependencies), all of which are freely available. If you run OpenSesame from source you will need to manually install these packages. The minimum packages, which allow you to run the [legacy] back-end only, are:
+Download the source code of the latest stable release from GitHub:
+	
+- <https://github.com/smathot/OpenSesame/releases>
 
-- Python is the programming language in which OpenSesame is created.
-- PyGame is a library that is used for graphics and sound. It is essentially a wrapper around the Simple DirectMedia Layer.
-- PyQt4 is the graphics toolkit that is used to construct the graphical user interface.
-- NumPy is an advanced mathematical library, which is used for various things.
-- QScintilla2 is a basic text-editor component
-- QProgEdit is an advanced text-editor component built on to of QScintilla2.
+Or download a snapshot of the latest source code. To obtain a reasonable stable snapshot, download from the `master` branch. To get the latest, greatest, and potentially very unstable snapshot, download from the `playground` branch.
+
+- <https://github.com/smathot/OpenSesame/>
+
+## Dependencies
+
+### Required
+
+The following packages are required to run a minimal version of the OpenSesame GUI, with only support for the [legacy] back-end and no sound support.
+
+- [Python](http://www.python.org) is the programming language in which OpenSesame is created.
+- [PyGame](http://www.pygame.org) is a library that is used for graphics and sound.
+- [PyQt4](http://www.riverbankcomputing.com/software/pyqt/download) is the graphics toolkit that is used to for the user interface.
+- [QScintilla2](http://www.riverbankcomputing.com/software/pyqt/download) is a basic text-editor component. In some cases, it is bundled with `PyQt4`.
+- [QProgEdit](https://github.com/smathot/QProgEdit) is an advanced text-editor component built on top of `QScintilla2`.
+
+### Optional
+
+The following packages are not required, but some functionality will be missing if they are not installed.
+
+- [Expyriment](http://www.expyriment.org/) is required for the [xpyriment] back-end.
+- [NumPy](http://www.numpy.org/) is an advanced mathematical library that is used for various things, such as sound support.
+- [PIL](http://www.pythonware.com/products/pil/) is an imaging library that is used for various things.
+- [PsychoPy](http://www.psychopy.org/) is required for the [psycho] back-end.
+- [pyflakes](https://pypi.python.org/pypi/pyflakes) is required for automatic validation of your Python scripts.
+- [Pyglet](http://www.pyglet.org/) is required by PsychoPy.
+- [PyOpenGL]() is required by PsychoPy and Expyriment.
+- [pySerial](http://pyserial.sourceforge.net/) is required for serial-port communications.
+- [python-bidi](https://pypi.python.org/pypi/python-bidi) is required for bi-directional-text support.
+- [python-markdown](https://pypi.python.org/pypi/Markdown) is required for viewing in-program help files.
+
+### Extra
+
+The following packages are not used directly by OpenSesame, but may come in handy while developing your experiments, and are included with the official Windows distribution of OpenSesame.
+
+- [PyAudio](http://people.csail.mit.edu/hubert/pyaudio/) is alternative library for sound recording and playback.
+- [Matplotlib](http://matplotlib.org/) is a library for plotting graphs.
+- [Scipy](http://www.scipy.org/) is a set of miscellaneous scientific routines.
+- [pyCairo](http://www.lfd.uci.edu/~gohlke/pythonlibs/#pycairo) is a library for vector graphics.
+- [pyParallel](http://pyserial.sourceforge.net/pyparallel.html) allows communication via the parallel port.
+- [OpenCV](http://opencv.org/) (Python bindings) is an extensive computer-vision library.
 
 ## Reasons to run from source
 
@@ -28,67 +67,26 @@ The most obvious reason to run from source is that there may not be a package av
 
 ## Instructions for Linux
 
-### Install dependencies
-
-Under Ubuntu, all dependencies are available via the official repositories or the Cogsci.nl PPA. Therefore, the easiest way to install all dependencies is by first adding the Cogsci.nl PPA, and then installing all dependencies in one go.
+Under Ubuntu, all dependencies are available via the official repositories or the [Cogsci.nl PPA]. Therefore, the easiest way to install all dependencies is by first adding the Cogsci.nl PPA, and then installing all dependencies in one go.
 
 	sudo add-apt-repository ppa:smathot/cogscinl
 	sudo apt-get update
 	sudo apt-get install python-pygame python-numpy python-qt4 \
 		python-qscintilla2 psychopy expyriment python-qprogedit \
 		python-serial
+		
+See [Dependencies] for a list of additional packages that you may want to install.
 
-### Run OpenSesame
-
-Download the source code of the latest OpenSesame release from GitHub:
-	
-- <https://github.com/smathot/OpenSesame>
-	
-Extract the `.tar.gz` to your home folder (any other location works analogously). Open a terminal and switch to the location of OpenSesame (this example assumes that the version is 0.21):
-
-	cd ~/opensesame-0.21
-
-Run OpenSesame using one of the following commands:
+To start OpenSesame, open a terminal in the folder where OpenSesame has been extracted and run OpenSesame using one of the following commands:
 
 	python opensesame
 	python opensesame --debug
 
 ## Instructions for Windows
 
-### Selecting the best version of Python
-
 There are multiple versions of Python available. OpenSesame has been tested extensively with Python 2.6 and 2.7. As of OpenSesame 0.27, Python 2.7 is the default version. Because 64-bit versions are not available for some of the required packages, it is recommended to stick to 32-bit versions of everything. Python 3.X will not work at all.
 
-You need to install at least the following packages:
-
-- Python <http://www.python.org/>
-- PyGame <http://www.pygame.org/>
-- PyQt4 <http://www.riverbankcomputing.co.uk/software/pyqt/intro>
-- NumPy <http://numpy.scipy.org/>
-- QProgEdit <https://github.com/smathot/QProgEdit/>
-
-The following packages are optional, but there's a good chance you will want to install at least one of them:
-
-- PySerial <http://pyserial.sourceforge.net/>: Required for SR box and other serial port communications
-- PsychoPy <http://www.psychopy.org/>: Required for psycho back-end
-- Expyriment <http://www.expyriment.org>: Required for the xpyriment back-end
-- PyOpenGL <http://pyopengl.sourceforge.net/>: Required for psycho and xpyriment back-ends
-- python-bidi <https://pypi.python.org/pypi/python-bidi>: Required for bi-directional-text support
-
-Please note that the packages listed above may, in turn, have dependencies that need to be installed. This is especially true for PsychoPy. For instructions, please refer to the respective home pages.
-
-### Run OpenSesame
-
-Download the source code for the latest OpenSesame release or the latest development snapshot from GitHub:
-	
-- <https://github.com/smathot/OpenSesame>
-	
-Extract the `.tar.gz` to `C:\` (any other location works analogously). You can extract `.tar.gz` files with WinRar or 7zip. Open a command prompt (run command `cmd`) and switch to the location of OpenSesame (this example assumes that the version is 0.21):
-
-	c:
-	cd c:\opensesame-0.21
-
-Run OpenSesame using one of the following commands (this example assumes that you have installed Python in `c:\Python27`):
+To start OpenSesame, open a command prompt in the folder where OpenSesame has been extracted and run OpenSesame using one of the following commands (this example assumes that you have installed Python in `c:\Python27`):
 
 	c:\Python27\python.exe opensesame
 	c:\Python27\python.exe opensesame --debug
@@ -267,11 +265,10 @@ Run OpenSesame using one of the following commands:
 	python opensesame
 	python opensesame --debug
 
-[python-portable]: /getting-opensesame/running-with-python-portable
-[src_stable]: http://files.cogsci.nl/software/opensesame/
-[src_unstable]: https://github.com/smathot/OpenSesame
+[winpython-based portable]: /getting-opensesame/running-with-python-portable/
 [EPD_Download]: http://www.enthought.com/products/epd.php
 [EPD_Packages]: http://www.enthought.com/products/epdlibraries.php
 [xpyriment]: /back-ends/xpyriment
 [legacy]: /back-ends/legacy
 [psycho]: /back-ends/psycho
+[cogsci.nl ppa]: https://launchpad.net/~smathot/+archive/cogscinl
