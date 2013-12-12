@@ -19,7 +19,7 @@ Download the source code of the latest stable release from GitHub:
 	
 - <https://github.com/smathot/OpenSesame/releases>
 
-Or download a snapshot of the latest source code. To obtain a reasonable stable snapshot, download from the `master` branch. To get the latest, greatest, and potentially very unstable snapshot, download from the `playground` branch.
+You can also download a development snapshot of the code. To obtain a reasonable stable snapshot, download from the `master` branch. To get the latest, greatest, and potentially very unstable snapshot, download from the `playground` branch.
 
 - <https://github.com/smathot/OpenSesame/>
 
@@ -46,7 +46,7 @@ The following packages are not required, but some functionality will be missing 
 - [pyflakes](https://pypi.python.org/pypi/pyflakes) is required for automatic validation of your Python scripts.
 - [Pyglet](http://www.pyglet.org/) is required by PsychoPy.
 - [PyOpenGL]() is required by PsychoPy and Expyriment.
-- [pySerial](http://pyserial.sourceforge.net/) is required for serial-port communications.
+- [pySerial](http://pyserial.sourceforge.net/) is required for serial-port communication.
 - [python-bidi](https://pypi.python.org/pypi/python-bidi) is required for bi-directional-text support.
 - [python-markdown](https://pypi.python.org/pypi/Markdown) is required for viewing in-program help files.
 
@@ -54,7 +54,7 @@ The following packages are not required, but some functionality will be missing 
 
 The following packages are not used directly by OpenSesame, but may come in handy while developing your experiments, and are included with the official Windows distribution of OpenSesame.
 
-- [PyAudio](http://people.csail.mit.edu/hubert/pyaudio/) is alternative library for sound recording and playback.
+- [PyAudio](http://people.csail.mit.edu/hubert/pyaudio/) is an alternative library for sound recording and playback.
 - [Matplotlib](http://matplotlib.org/) is a library for plotting graphs.
 - [Scipy](http://www.scipy.org/) is a set of miscellaneous scientific routines.
 - [pyCairo](http://www.lfd.uci.edu/~gohlke/pythonlibs/#pycairo) is a library for vector graphics.
@@ -75,7 +75,7 @@ Under Ubuntu, all dependencies are available via the official repositories or th
 		python-qscintilla2 psychopy expyriment python-qprogedit \
 		python-serial
 		
-See [Dependencies] for a list of additional packages that you may want to install.
+See [Dependencies](#dependencies) for a list of additional packages that you may want to install.
 
 To start OpenSesame, open a terminal in the folder where OpenSesame has been extracted and run OpenSesame using one of the following commands:
 
@@ -265,7 +265,7 @@ Run OpenSesame using one of the following commands:
 	python opensesame
 	python opensesame --debug
 
-[winpython-based portable]: /getting-opensesame/running-with-python-portable/
+[winpython-based package]: /getting-opensesame/running-with-python-portable/
 [EPD_Download]: http://www.enthought.com/products/epd.php
 [EPD_Packages]: http://www.enthought.com/products/epdlibraries.php
 [xpyriment]: /back-ends/xpyriment
