@@ -99,7 +99,7 @@ There are three ways to prepare the software environment for running OpenSesame 
 
 ### Download Xcode
 
-If you like to install using Homebrew or Macports, the first thing that you need to do is install Xcode, the Apple developer toolkit. You can get the latest version of Xcode for free from the App Store or from their website (you do need to login with an apple account though).
+If you want to install with Homebrew or Macports, the first thing that you need to do is install Xcode, the Apple developer toolkit. You can get the latest version of Xcode for free from the App Store or from their website (you do need to login with an apple account though).
 
 Website: <https://developer.apple.com/xcode/>
 
@@ -154,7 +154,7 @@ Mac OS comes with a custom version of Python but, for our purpose (and many purp
 
 	sudo port select --set python python27
 
-### Installing using homebrew
+### Installing with homebrew
 
 Homebrew is a newer and easier way to build a source tree on your mac. It has many benefits on top of macports, such as speed, and nowadays seems to have less trouble compiling and updating packages than macports does. 
 You can install homebrew as instructed on <http://http://brew.sh/>. Then issue the following command to get started:
