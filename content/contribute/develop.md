@@ -3,11 +3,16 @@ layout: osdoc
 title: Develop
 group: contribute
 permalink: /develop/
+parser: academicmarkdown
 ---
 
-:--
-cmd: overview
---:
+## Overview
+
+%--
+toc:
+ mindepth: 2
+ exclude: [Overview]
+--%
 
 ## Getting the latest source code
 
@@ -29,9 +34,33 @@ The two main branches of OpenSesame are:
 - `master` contains reasonably stable code.
 - `playground` contains potentially unstable code.
 
+## Developing a plug-in
+
+For plug-in development, see:
+	
+- [/plug-ins/create](/plug-ins/create)
+
 ## Coding-style guidelines
 
 The goal is to maintain a readable and consistent code base. Therefore, please consider the following style guidelines when contributing code:
+	
+### Exception handling
+
+Exceptions should be handled via the `libopensesame.exceptions.osexception` class. For example:
+
+{% highlight python %}
+from libopensesame.exceptions import osexception
+raise osexception(u'An error occurred')
+{% endhighlight %}
+
+### Printing debug output
+
+Debug output should be handled via `libopensesame.debug.msg()`, and is shown only when OpenSesame is started with the `--debug` command-line argument. For example:
+	
+{% highlight python %}
+from libopensesame import debug
+debug.msg(u'This will be shown only in debug mode')
+{% endhighlight %}
 
 ### Indentation
 
@@ -77,6 +106,10 @@ Assure that all functionality is Unicode safe. For new code, use *only* Unicode 
 my_value = 'a string' # not preferred
 my_value = u'a string' # preferred
 {% endhighlight %}
+
+For more information, see:
+	
+- <http://docs.python.org/2/howto/unicode.html>
 
 ### Other
 
