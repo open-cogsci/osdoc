@@ -95,17 +95,20 @@ It's convenient to create a batch file for running OpenSesame from source. You c
 
 ## Instructions for Mac OS
 
-There are two ways to prepare the software environment for running OpenSesame from source on Mac OS X. One is by downloading and installing all the packages manually. The other is to use MacPorts, which compiles all required packages from source. Basically MacPorts is a large repository containing the source code of programs that have been ported from Linux to Mac OS X (which are very related as Mac OS X is also a Unix based system, as you might know). Installing all the packages manually seems pretty labour-intensive, but will be the fastest way nevertheless as Macports takes an astoundingly long time to compile all dependencies (with a quad core cpu it can already take up to a full day). On the other hand, MacPorts does not have the dependecy hassle if you ever want to install additional packages, which require other packages again, etc. Macports sorts out and installs these depencies itself. You have to decide for yourself which method of composing the source environment you like best. Both will work fine for running OpenSesame from source.
+There are three ways to prepare the software environment for running OpenSesame from source on Mac OS X. One is by downloading and installing all the packages manually. The other is to use MacPorts, which compiles all required packages from source. Basically MacPorts is a large repository containing the source code of programs that have been ported from Linux to Mac OS X (which are very related as Mac OS X is also a Unix based system, as you might know). Installing all the packages manually seems pretty labour-intensive, but will be the fastest way nevertheless as Macports takes an astoundingly long time to compile all dependencies (with a quad core cpu it can already take up to a full day). On the other hand, MacPorts does not have the dependecy hassle if you ever want to install additional packages, which require other packages again, etc. Macports sorts out and installs these depencies itself. The final option is by using homebrew. This works on the same principle as macports, but if there are binary packages available for your system, hmoebrew will find these and install them instead. Therefore, it works much faster. The downside is that homebrew is 'less complete' than macports and you have to manually install most python packages (using easy_install and pip). You have to decide for yourself which method of composing the source environment you like best. All will work fine for running OpenSesame from source.
+
+### Download Xcode
+
+If you want to install with Homebrew or Macports, the first thing that you need to do is install Xcode, the Apple developer toolkit. You can get the latest version of Xcode for free from the App Store or from their website (you do need to login with an apple account though).
+
+Website: <https://developer.apple.com/xcode/>
+
+Using the App Store is preferable, as it will keep your version of X Code automatically up to date. You do need to also manually install the Command Line tools for X Code.
+
 
 ### Installing with MacPorts
 
-The easiest way to install the necessary packages on Mac OS is probably using MacPorts, a large repository of packages. It takes a long time (and by this I mean many hours!) to install all the packages that are required for running OpenSesame, because MacPorts works by compiling from source. But on the bright side, it's a pretty straightforward process.
-
-#### Download Xcode
-
-The first thing that you need is Xcode, the Apple developer toolkit. You can get the latest version of Xcode for free from their website (you do need to login with an apple account though).
-
-Website: <http://developer.apple.com/technologies/tools/whats-new.html>
+Another way to install the necessary packages on Mac OS is by using MacPorts, a large repository of packages. It takes a long time (and by this I mean many hours!) to install all the packages that are required for running OpenSesame, because MacPorts works by compiling from source. But on the bright side, it's a pretty straightforward process.
 
 #### Download MacPorts
 
@@ -113,19 +116,7 @@ You can download macports from its website on which you can also find the necess
 
 Website: <http://www.macports.org/install.php>
 
-#### Configuring MacPorts for psychopy support
-
-Before you start building your Python environment, it is best to decide if want to be able to use OpenSesame's PsychoPy backend. On newer OS X verions (>10.6) macports builds everything with the 64-bit architecture by default, but Psychopy is unable to run in a 64-bit environment (yet, as of version 1.76.00) and will show unpredictable behaviour and crashes when it has to do so. If you would like to be able to use the psychopy backend, you will need to configure macports to compile everything with 32-bit architecture by changing
-
-	build_arch=x86_64
-
-to
-
-	build_arch=i386
-
-in /opt/local/etc/macports.conf
-
-You don't need the PsychoPy backend to be able to run OpenSesame, as it has other quality backends like expyriment or legacy (pygame), so feel free to skip this step if you never plan on using PsychoPy.
+You can add +universal to your /opt/local/etc/macports/variants.conf to ask MacPorts to build all ports you install with that variant (thus 32-bit and 64-bit versions packed in the same module), without having to remember to type it at every install command. However, some ports have not yet been tested as universal binaries and may not build properly.
 
 #### Install dependencies
 
@@ -163,6 +154,58 @@ Mac OS comes with a custom version of Python but, for our purpose (and many purp
 
 	sudo port select --set python python27
 
+### Installing with homebrew
+
+Homebrew is a newer and easier way to build a source tree on your mac. It has many benefits on top of macports, such as speed, and nowadays seems to have less trouble compiling and updating packages than macports does. 
+You can install homebrew as instructed on <http://http://brew.sh/>. Then issue the following command to get started:
+
+    brew update
+    brew doctor
+		
+Solve any problem that this indicates, and then continue on to the real work by issuing:
+
+    brew install python qt pyqt qscintilla2 freetype portaudio
+
+Now for pygame:
+
+    brew tap homebrew/headonly
+	brew install --HEAD smpeg
+	brew install sdl sdl_image sdl_mixer sdl_ttf portmidi hg
+	pip install hg+http://bitbucket.org/pygame/pygame
+	
+Install the necessary python packages
+
+    sudo pip install pygopengl numpy pillow pyglet psychopy pyflakes markdown python-bidi pyserial
+	
+Install QProgEdit (from OpenSesame 2.8 on)
+
+    git clone https://github.com/smathot/QProgEdit.git
+	cd QProgEdit
+	sudo python setup.py install
+	cd ..
+	rm -R QProgEdit
+
+Install expyriment (from OpenSesame 0.27 on)
+
+    hg clone https://code.google.com/p/expyriment/
+	cd expyriment
+	sudo python setup.py install
+	cd ..
+	rm -R expyriment
+	
+You should now be able to run OpenSesame, but you'll notice you're missing some icons! You need to download the Faenza icon theme from <http://tiheum.deviantart.com/art/Faenza-Icons-173323228> and place it under resources/theme/default
+	
+The following packages are optional, but might be useful to install nevertheless:
+
+	sudo pip install matplotlib scipy pycairo pyparallel
+	
+For OpenCV (as it depends on numpy, do this *after* you issued the above pip commands)
+
+	brew tap homebrew/science
+	brew install opencv
+	
+you can find more detailed instructions on installing OpenCV at <http://www.jeffreythompson.org/blog/2013/08/22/update-installing-opencv-on-mac-mountain-lion/>
+	
 ### Installing packages manually
 
 If you want to install all Opensesame dependecies yourself you need to download and install the following package distributions:
