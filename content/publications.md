@@ -4,11 +4,16 @@ title: Publications
 group: General
 permalink: /publications/
 singleton: true
+parser: academicmarkdown
 ---
 
-:--
-cmd: overview
---:
+## Overview
+
+%--
+toc:
+ mindepth: 2
+ exclude: [Overview]
+--%
 
 ## How to cite OpenSesame
 
@@ -55,6 +60,9 @@ Goudbeek, M. B., Haagmans, I., & Krahmer, E. J. (2013). The object without quali
 {: .reference}
 
 Grainger, J., Mathôt, S., & Vitu, F. (in press). Tests of a model of multi-word reading: Effects of parafoveal flanking letters on foveal word recognition. *Acta Psychologica*.
+{: .reference}
+
+Hermens, F., Lachmann, T., & van Leeuwen, C. (2013). Is it really search or just matching? The influence of Goodness, number of stimuli and presentation sequence in same–different tasks. *Psychological Research*. doi:10.1007/s00426-013-0529-1
 {: .reference}
 
 Huang, L. (2013). IPMP 2013 – A comprehensive data analysis
