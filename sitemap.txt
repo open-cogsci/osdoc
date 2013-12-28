@@ -36,7 +36,7 @@ usage
 	Logging and reading data files
 	Video playback
 	The prepare-run strategy
-	common items
+	items
 python inline code
 	About Python inline code
 	Canvas functions

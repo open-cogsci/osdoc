@@ -1,9 +1,9 @@
 ---
 layout: osdoc
-title: Common items
+title: Items
 group: Usage
 permalink: /items/
 parser: academicmarkdown
 ---
 
-{% include common-items %}
+{% include item-help %}
