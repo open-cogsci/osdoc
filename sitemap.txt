@@ -97,6 +97,7 @@ Contribute
 	Translate
 	Develop
 	Documentation
+	Source-code structure
 Donate
 Forum
 Cogsci.nl
