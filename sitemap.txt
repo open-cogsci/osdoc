@@ -36,7 +36,7 @@ usage
 	Logging and reading data files
 	Video playback
 	The prepare-run strategy
-	items
+	:items
 python inline code
 	About Python inline code
 	Canvas functions
@@ -95,9 +95,9 @@ Examples
 Publications
 Contribute
 	Translate
-	Develop
 	Documentation
-	Source-code structure
+	Develop
+	Source-code architecture
 Donate
 Forum
 Cogsci.nl

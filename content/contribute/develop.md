@@ -40,6 +40,12 @@ For plug-in development, see:
 	
 - [/plug-ins/create](/plug-ins/create)
 
+## Source-code architecture
+
+For a description of the OpenSesame source-code architecture, see:
+
+- [/contribute/architecture](/contribute/architecture)
+
 ## Coding-style guidelines
 
 The goal is to maintain a readable and consistent code base. Therefore, please consider the following style guidelines when contributing code:
