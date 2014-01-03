@@ -29,8 +29,13 @@ Please note that OpenSesame relies on many modules for which we can take no cred
 Despite the project's young age, references to OpenSesame are starting to appear. Below is a (presumably incomplete) list. If you have used OpenSesame for your work, or discuss the software in your work, please send a message or leave a post on the forum and your reference will be added to the list. All scholarly works are welcome, including theses.
 
 OpenSesame is used for, discussed in, or mentioned in:
+	
+### 2014 / in press / online first
+	
+Grainger, J., Mathôt, S., & Vitu, F. (2014). Tests of a model of multi-word reading: Effects of parafoveal flanking letters on foveal word recognition. *Acta Psychologica*, *146*, 35-40. doi:10.1016/j.actpsy.2013.11.014
+{: .reference}
 
-### 2013 / in press / online first
+### 2013
 
 Aigner, W., Hoffmann, S., & Rind, A. (2013). EvalBench: A software library for visualization evaluation. *Computer Graphics Forum*, *32*(3):1, 41–50. doi:10.1111/cgf.12091
 {: .reference}
@@ -57,9 +62,6 @@ Gordon, M. S., Russo, F. A., & MacDonald, E. (2013). Spectral information for de
 {: .reference}
 
 Goudbeek, M. B., Haagmans, I., & Krahmer, E. J. (2013). The object without qualities: referring with negative properties. In M. Knauff, M. Pauen, N. Sebanz, & I. Wachsmuth (Eds.), *Proceedings of the 35th Annual Conference of the Cognitive Science Society* (pp. 2440–2445). Austin, TX: Cognitive Science Society.
-{: .reference}
-
-Grainger, J., Mathôt, S., & Vitu, F. (in press). Tests of a model of multi-word reading: Effects of parafoveal flanking letters on foveal word recognition. *Acta Psychologica*.
 {: .reference}
 
 Hermens, F., Lachmann, T., & van Leeuwen, C. (2013). Is it really search or just matching? The influence of Goodness, number of stimuli and presentation sequence in same–different tasks. *Psychological Research*. doi:10.1007/s00426-013-0529-1
