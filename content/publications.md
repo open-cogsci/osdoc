@@ -35,6 +35,9 @@ OpenSesame is used for, discussed in, or mentioned in:
 Grainger, J., Mathôt, S., & Vitu, F. (2014). Tests of a model of multi-word reading: Effects of parafoveal flanking letters on foveal word recognition. *Acta Psychologica*, *146*, 35-40. doi:10.1016/j.actpsy.2013.11.014
 {: .reference}
 
+Lange, F., & Eggert, F. (in press). Sweet delusion: Glucose drinks fail to counteract ego depletion. *Appetite*. doi:10.1016/j.appet.2013.12.020
+{: .reference}
+
 ### 2013
 
 Aigner, W., Hoffmann, S., & Rind, A. (2013). EvalBench: A software library for visualization evaluation. *Computer Graphics Forum*, *32*(3):1, 41–50. doi:10.1111/cgf.12091
