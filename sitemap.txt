@@ -21,7 +21,7 @@ getting opensesame
 tutorials
 	step-by-step tutorial
 	aps tutorial
-	:cambridge tutorial 2014
+	cambridge tutorial 2014
 #	python inline scripting tutorial
 	video tutorials
 usage
