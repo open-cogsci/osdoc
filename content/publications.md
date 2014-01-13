@@ -32,6 +32,9 @@ OpenSesame is used for, discussed in, or mentioned in:
 	
 ### 2014 / in press / online first
 	
+Garaizar, P., Vadillo, M. A., López-de-Ipiña, D., & Matute, H. (2014). Measuring software timing errors in the presentation of visual stimuli in cognitive neuroscience experiments. *PLoS ONE*, *9*(1), e85108. doi:10.1371/journal.pone.0085108
+{: .reference}
+
 Grainger, J., Mathôt, S., & Vitu, F. (2014). Tests of a model of multi-word reading: Effects of parafoveal flanking letters on foveal word recognition. *Acta Psychologica*, *146*, 35-40. doi:10.1016/j.actpsy.2013.11.014
 {: .reference}
 
