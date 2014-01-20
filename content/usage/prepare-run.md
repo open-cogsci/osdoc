@@ -3,11 +3,13 @@ layout: osdoc
 title: The prepare-run strategy
 group: Usage
 permalink: /prepare-run/
+parser: academicmarkdown
 ---
 
-:--
-cmd: overview
---:
+%--
+toc:
+ mindepth: 2
+--%
 
 ## About
 
