@@ -3,11 +3,13 @@ layout: osdoc
 title: Video playback
 group: Usage
 permalink: /video/
+parser: academicmarkdown
 ---
 
-:--
-cmd: overview
---:
+%--
+toc:
+ mindepth: 2
+--%
 
 ## media_player_vlc plug-in
 
@@ -31,12 +33,22 @@ In OpenSesame 0.26, a media_player plug-in based on FFMpeg was included by defau
 
 OpenCV is a powerful computer vision library, which contains (among many other things) routines for reading video files.
 
-- <http://opencv.willowgarage.com/documentation/python/index.html>
+- <http://docs.opencv.org/trunk/doc/py_tutorials/py_tutorials.html>
 
-The following snippet shows how to playback a video. This assumes that you are running the *legacy* back-end, or the *xpyriment* back-end without OpenGL.
+%LstExampleCV1 shows how to playback a video using `cv`, the Python module for OpenCV 1. %LstExampleCV2 shows (approximately) the same thing using `cv2`, the Python module for OpenCV 2. This assumes that you are running the *legacy* back-end, or the *xpyriment* back-end without OpenGL.
 
-:--
-cmd: listing
-src: opencv-example.py
-caption: Playing back video in an `inline_script` with OpenCV.
---:
+%--
+code:
+ id: LstExampleCV1
+ source: opencv-example.py
+ syntax: python
+ caption: "Playing back video in an `inline_script` with OpenCV 1."
+--%
+
+%--
+code:
+ id: LstExampleCV2
+ source: opencv2-example.py
+ syntax: python
+ caption: "Playing back video in an `inline_script` with OpenCV 2."
+--%
