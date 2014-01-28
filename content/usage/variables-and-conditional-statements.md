@@ -169,9 +169,9 @@ The same principle applies to 'Show if' fields in `sketchpad` items. For example
 
 %--
 figure:
- id: %FigShowIf
+ id: FigShowIf
  source: show-if.png
- caption: \'Show if\' statements can be used to indicate that certain elements from a `sketchpad` or `feedback` item should only be shown under specific circumstances.
+ caption: "'Show if' statements can be used to indicate that certain elements from a `sketchpad` or `feedback` item should only be shown under specific circumstances."
 --%
 
 Note that the moment at which a conditional statement is evaluated may affect how your experiment works. This is related to the prepare-run strategy employed by OpenSesame, which is explained here:
@@ -200,17 +200,17 @@ for input_value in test_values:
 {% endhighlight %}
 
 Let's walk through the output of this script one by one. (Here we focus on the things that go wrong, but don't be too concerned: In the overwhelming majority of cases smart variable works exactly how you would expect it to.)
-	
+
 	# In: 10
 	Input = "10" <type 'int'>
 	-> Output = "10" <type 'int'>
-	
+
 This is as you would expect, the `int` 10 stays the `int` 10.
 
 	# In: 010
 	Input = "8" <type 'int'>
 	-> Output = "8" <type 'int'>
-	
+
 This is odd. We specify 010, but according to the script we have specified the `int` 8. This is because Python interprets numbers with a leading zero as an octal numbers. And octal 10 equals decimal 8.
 
 	# In: 0x10
@@ -222,37 +222,37 @@ Again, we specify 0x10 but the script tells us that we have specified the `int` 
 	# In: 0b10
 	Input = "2" <type 'int'>
 	-> Output = "2" <type 'int'>
-	
+
 Same thing: The leading `0b` indicates that we are dealing with a binary number. And binary 10 equals decimal 2.
 
 	# In: '10'
 	Input = "10" <type 'str'>
 	-> Output = "10" <type 'int'>
-	
+
 Here we have smart variable typing at work. The `str` '10' has been converted to the `int` 10.
 
 	# In: '010'
 	Input = "010" <type 'str'>
 	-> Output = "10" <type 'int'>
-	
+
 Here again we have smart variable typing at work. The `str` '010' has been converted to the `int` 10. Note the difference between the interpretation of the `int` 010, which is interpreted as an octal number, and the `str` '010' which is not. This is a (confusing) property of Python.
 
 	# In: '0x10'
 	Input = "0x10" <type 'str'>
 	-> Output = "0x10" <type 'unicode'>
-	
+
 Similar to above, the `str` '0x10' is not interpreted as a hexadecimal number, although the `int` 0x10 is. This is a property of Python. Also, you see that the `str` comes out as `unicode`. This is because OpenSesame works internally with `unicode` objects, which is a special kind of string that is interchangeable with `str` objects for most purposes.
 
 	# In: '0b10'
 	Input = "0b10" <type 'str'>
 	-> Output = "0b10" <type 'unicode'>
-	
+
 Similar to the case of '0x10' above.
 
 	# In: ' 10'
 	Input = " 10" <type 'str'>
 	-> Output = "10" <type 'int'>
-	
+
 Finally, you see that the leading space is removed from the `str` ' 10', and that the value is converted to the `int` 10.
 
 ## Resolving recursion errors
