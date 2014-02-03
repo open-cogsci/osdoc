@@ -29,9 +29,9 @@ Please note that OpenSesame relies on many modules for which we can take no cred
 Despite the project's young age, references to OpenSesame are starting to appear. Below is a (presumably incomplete) list. If you have used OpenSesame for your work, or discuss the software in your work, please send a message or leave a post on the forum and your reference will be added to the list. All scholarly works are welcome, including theses.
 
 OpenSesame is used for, discussed in, or mentioned in:
-	
+
 ### 2014 / in press / online first
-	
+
 Garaizar, P., Vadillo, M. A., López-de-Ipiña, D., & Matute, H. (2014). Measuring software timing errors in the presentation of visual stimuli in cognitive neuroscience experiments. *PLoS ONE*, *9*(1), e85108. doi:10.1371/journal.pone.0085108
 {: .reference}
 
@@ -39,6 +39,9 @@ Grainger, J., Mathôt, S., & Vitu, F. (2014). Tests of a model of multi-word rea
 {: .reference}
 
 Lange, F., & Eggert, F. (in press). Sweet delusion: Glucose drinks fail to counteract ego depletion. *Appetite*. doi:10.1016/j.appet.2013.12.020
+{: .reference}
+
+Sall, R. J., Wright, T. J., & Boot, W. R. (2014). Driven to distraction? The effect of simulated red light running camera flashes on attention and oculomotor control. *Visual Cognition*, 1–17. doi:10.1080/13506285.2013.873509
 {: .reference}
 
 ### 2013
