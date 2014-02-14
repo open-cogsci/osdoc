@@ -1,4 +1,4 @@
-**[Edwin Dalmaijer](http://pygaze.org/esdalmaijer.html)**, developer
+**[Edwin Dalmaijer](http://www.pygaze.org/esdalmaijer/)**, developer
 
 ---
 
