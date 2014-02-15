@@ -25,7 +25,7 @@ size of the widget (default=True).<br />
 <span class='variable'>frame </span> &rarr;  Indicates whether a frame should be drawn around the widget 
 (default=False).<br />
 </div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='image.draw_frame'>image</a>.<b>draw_frame(rect=None, style='normal')</b></span><div class='details'>
+<div class='function'><span class='function_name'><a class='anchor' id='image.draw_frame'>image</a>.<b>draw_frame(rect=None, style=u'normal')</b></span><div class='details'>
 <i>Inherited from <b>widget</b></i><br /><br />Draws a simple frame around the widget.<br />
 <br />
 <span class='keyword'>Keyword arguments:</span>

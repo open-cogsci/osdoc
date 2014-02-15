@@ -1,5 +1,5 @@
 <div class='pydoc'>
-<p><small>For OpenSesame 0.27.4</small></p>
+<p><small>For OpenSesame 2.8.0</small></p>
 <span class='class_name'>class <b>inline_script</b></span><br />
 <p class='details'><b>Function overview:</b><br />
 <a href='#inline_script.__init__'>__init__</a><br />
@@ -19,6 +19,7 @@
 <a href='#inline_script.run'>run</a><br />
 <a href='#inline_script.sanitize'>sanitize</a><br />
 <a href='#inline_script.set'>set</a><br />
+<a href='#inline_script.set_response'>set_response</a><br />
 <a href='#inline_script.sleep'>sleep</a><br />
 <a href='#inline_script.time'>time</a><br />
 <a href='#inline_script.unset'>unset</a><br />
@@ -70,7 +71,7 @@ print type(self.auto_type(True)) # Prints 'unicode'
 <br />
 <span class='keyword'>Exceptions:</span>
 <br />
-Raises a runtime_error if col is not a valid color.<br />
+Raises a osexception if col is not a valid color.<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
@@ -78,7 +79,7 @@ Raises a runtime_error if col is not a valid color.<br />
 print self.color_check('red')
 # Ok
 print self.color_check('#FFFFFF')
-# Raises runtime_error
+# Raises osexception
 print self.color_check('this is not a color')
 {% endhighlight %}<br />
 </div></div>
@@ -152,7 +153,7 @@ whether containing variables should be processed (default=True).<br />
 <br />
 <span class='keyword'>Exceptions:</span>
 <br />
-A runtime_error is raised if the variable is not found.<br />
+A osexception is raised if the variable is not found.<br />
 <br />
 <span class='keyword'>Returns:</span>
 <br />
@@ -188,7 +189,7 @@ whether containing variables should be processed (default=True).<br />
 <br />
 <span class='keyword'>Exceptions:</span>
 <br />
-Raises a runtime_error if the variable is not defined and there is no default value, or if the variable value is not part of the 'valid' list.<br />
+Raises a osexception if the variable is not defined and there is no default value, or if the variable value is not part of the 'valid' list.<br />
 <br />
 <span class='keyword'>Returns:</span>
 <br />
@@ -328,6 +329,33 @@ The type of the value can be anything. However, see get() for an explanation of 
 <span class='keyword'>Example:</span>
 <br />
 {% highlight python %}exp.set('my_timestamp', self.time())
+{% endhighlight %}<br />
+</div></div>
+<div class='function'><span class='function_name'><a class='anchor' id='inline_script.set_response'>inline_script</a>.<b>set_response(response=None, response_time=None, correct=None)</b></span><div class='details'>
+<i>Inherited from <b>item</b></i><br /><br />Processes a response in such a way that feedback variables are updated as well.<br />
+<br />
+<span class='keyword'>Keyword arguments:</span>
+<br />
+<span class='variable'>response		</span> &rarr; 	The response value. (default=None)
+<br />
+<span class='variable'>response_time	</span> &rarr; 	The response time. (default=None)
+<br />
+<span class='variable'>correct			</span> &rarr; 	The correctness value. (default=None)
+<br />
+<br />
+<span class='keyword'>Example:</span>
+<br />
+{% highlight python %}from openexp.keyboard import keyboard
+my_keyboard = keyboard(exp)
+t1 = self.time()
+button, timestamp = my_keyboard.get_key()
+if button == 'left':
+	correct = 1
+else:
+	correct = 0
+rt = timestamp - t1
+self.set_response(response=button, response_time=rt, \
+	correct=correct)
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='inline_script.sleep'>inline_script</a>.<b>sleep(ms)</b></span><div class='details'>
