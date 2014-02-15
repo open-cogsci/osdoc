@@ -2,7 +2,7 @@
 layout: osdoc
 title: About forms
 group: Forms
-permalink: /about-forms/
+permalink: /about/
 ---
 
 If you experience performance issues when using forms, see [this post](/forms/performance-issues-and-troubleshooting/).
