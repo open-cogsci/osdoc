@@ -10,7 +10,7 @@ author: Edwin Dalmaijer
 About
 -----
 
-This tutorial is aimed at researchers and students that are already familiar with experimental research, and who might have used other experiment builders before. The tutorial is part of workshops that have been presented by [Edwin Dalmaijer](http://pygaze.org/esdalmaijer.html) at Utrecht University (March 2013), and at the University of Cambridge (January 2014).
+This tutorial is aimed at researchers and students that are already familiar with experimental research, and who might have used other experiment builders before. The tutorial is part of workshops that have been presented by [Edwin Dalmaijer](http://www.pygaze.org/esdalmaijer/) at Utrecht University (March 2013), and at the University of Cambridge (January 2014).
 
 The text will introduce you to OpenSesame's interface, by helping you program three different experiments: a questionnaire, a Posner cueing task, and an attentional capture paradigm (using the [EyeLink plug-ins](http://osdoc.cogsci.nl/devices/eyelink/)' dummy mode). After completing the tutorial, you should be able to create your own experiments using OpenSesame and even do a bit of [inline scripting](http://osdoc.cogsci.nl/python/about/).
 
