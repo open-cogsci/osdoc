@@ -38,6 +38,27 @@ If you are upgrading from 0.27.4, please read the [0.27.4 release notes][].
 
 ### Windows packaging
 
-- Update included libraries
+- Update included libraries. See `modules()` output below.
+
+~~~
+OpenSesame 2.8.0
+Python 2.7.6 (default, Nov 10 2013, 19:24:18) [MSC v.1500 32 bit (Intel)]
+OpenCV is not available
+OpenCV2 2.4.7
+QProgedit 1.0.0
+Expyriment 0.7.0b~opensesame2 (Revision 0b10a83590c31285a5d94b3b8479f302f1abc8f3; Python 2.7.6)
+NumPy 1.8.0
+PIL is available (version is unknown)
+PsychoPy 1.78.01
+PyAudio 0.2.7
+PyGame 1.9.1release
+Pyglet 1.1.4
+PyOpenGL 3.0.2
+PyQt 4.10.3
+PySerial 2.7
+python-bidi 0.3.4
+python-markdown 2.3.1
+SciPy 0.13.2
+~~~
 
 [0.27.4 release notes]: /notes/0.27
