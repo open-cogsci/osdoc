@@ -10,11 +10,11 @@ This page describes various issues related to timing, and provides benchmark res
 :--
 cmd: overview
 --:
-	
+
 ## Is OpenSesame capable of millisecond precision timing?
 
 The short answer is: yes. The long answer is the rest of this page.
-	
+
 ## Important considerations for time-critical experiments
 
 ### Check your timing!
@@ -98,7 +98,7 @@ cmd: figure
 src: stimulus-preparation-incorrect.png
 caption: "An example of an experimental structure in which the timing between successive presentations of `sketchpad` is confounded by stimulus-preparation time. The sequence of events in this case is as follows: prepare `sketchpad` (2 frames), show `sketchpad` (6 frames), prepare `sketchpad` (2 frames), show `sketchpad` (6 frames), etc."
 --:
-	
+
 Now let's consider the structure shown below. Suppose that the duration of `sketchpad1` is set to 95 ms, thus aiming for a 100 ms interval between `sketchpad1` and `sketchpad2`. In this case, both items are shown as part of the same `sequence` and the timing will not be confounded by stimulus-preparation time. On my test system the actual interval between `sketchpad1` and `sketchpad2` is therefore indeed 100 ms, or 6 frames on a 60 Hz monitor.
 
 Note that this only applies to the interval between `sketchpad1` and `sketchpad2`, because they are executed in that order as part of the same sequence. The interval between `sketchpad2` on run *i* and `sketchpad1` on run *i+1* is again confounded by stimulus-preparation time.
@@ -140,7 +140,7 @@ As described in [Understanding your monitor], the presentation of a new display 
 :--
 cmd: listing
 src: v-sync-check.py
-caption: A script that presents white and blue displays in rapid alternation. A lack of synchronization with the vertical refresh can be observed as horizontal lines running through the monitor.
+caption: A script that presents yellow and blue displays in rapid alternation. A lack of synchronization with the vertical refresh can be observed as horizontal lines running through the monitor.
 --:
 
 ### Testing consistency of timing and timestamp accuracy
@@ -150,7 +150,7 @@ Timing is consistent when you can present visual stimuli over and over again wit
 To keep things simple, let's assume that your monitor is running at 100 Hz, which means that a single frame takes 10 ms. The script then presents a white canvas for 1 frame (10 ms). Next, the script presents a black canvas for 9 frames (90 ms). Note that we have specified a duration of 85, which is rounded up as explained under [Making the refresh deadline]. Therefore, we expect that the interval between the onsets of two consecutive white displays will be 10 frames or 100 ms (= 10 ms + 90 ms).
 
 We can use two ways to verify whether the interval between two white displays is indeed 100 ms:
-	
+
 1. Using the timestamps reported by OpenSesame. This is the easiest way and is generally accurate when the back-end uses a blocking flip, as described in [Understanding your monitor].
 2. Using a photodiode that responds to the onsets of the white displays and logs the timestamps of these onsets to an external computer. This is the best way to verify the timing, because it does not rely on introspection of the software. Certain issues, such as TFT input lag, discussed in [Understanding your monitor], will come out only using external photodiode measurement.
 
@@ -158,7 +158,7 @@ We can use two ways to verify whether the interval between two white displays is
 cmd: listing
 src: interval-benchmark.py
 caption: A Python script to test the timing consistency and accuracy of display timestamps. You can paste this code into an `inline_script` item.
---: 
+--:
 
 I ran this script on Windows XP, using all three back-ends. I also recorded the onsets of the white displays using a photodiode connected to a second computer. The results are summarized in [Table 2].
 
@@ -189,7 +189,7 @@ cmd: figure
 src: clock-drift-system1.png
 caption: Windows XP, HP Compaq dc7900, Intel Core 2 Quad Q9400 @ 2.66Ghz, 3GB
 --:
-	
+
 The second system, shown in the figure below, showed no drift at all, at least not during this particular session.
 
 :--
@@ -210,13 +210,13 @@ A very nice set of benchmarks is available on the Expyriment website. This infor
 - <http://docs.expyriment.org/Timing.html>
 
 Expyriment includes a very useful test suite. You can launch this test suite by running the `test_suite.opensesame` example experiment, or by adding a simple `inline_script` to your experiment with the following lines of code:
-	
+
 :--
 cmd: listing
 src: expyriment-test-suite.py
 caption: A script to start the Expyriment test suite.
 --:
-	
+
 For more information, please visit:
 
 - <http://docs.expyriment.org/Testsuite.html>
