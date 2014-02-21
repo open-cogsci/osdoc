@@ -6,9 +6,7 @@ permalink: /2.8.0/
 parser: academicmarkdown
 ---
 
-If you are upgrading from 0.27.4, please read the [0.27.4 release notes][].
-
-## Changelog 
+## Changelog
 
 ### New functionality and improvements
 
