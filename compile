@@ -29,17 +29,17 @@ from md5 import md5
 from optparse import OptionParser
 
 def getInfo(path):
-	
+
 	"""
 	Retrieves YAML info from a Markdown document.
-	
+
 	Arguments:
 	path	--	The path to the document.
-	
+
 	Returns:
 	A dictionary with YAML info.
 	"""
-	
+
 	s = open(path).read().decode(u'utf-8')
 	l = s.split(u'---')
 	if len(l) < 3:
@@ -49,19 +49,19 @@ def getInfo(path):
 	return y
 
 def setInfo(path, i):
-	
+
 	"""
 	Modifies the YAML infor inside a Markdown document. The file is not modified
 	directly, but returned as a string.
-	
+
 	Arguments:
 	path	--	The patch to the document.
 	i		--	A dictionary with the YAML info.
-	
+
 	Returns:
 	A string with the modified document.
 	"""
-	
+
 	# Sortkey has to be string, otherwise it will not be parsed correctly by
 	# yaml
 	s = open(path).read().decode(u'utf-8')
@@ -70,29 +70,29 @@ def setInfo(path, i):
 		return None
 	yml = u''
 	for key, value in i.iteritems():
-		yml += u'%s: %s\n' % (key, value)	
+		yml += u'%s: %s\n' % (key, value)
 	l[1] = yml
-	s = u'---\n' + u'---'.join(l[1:])	
+	s = u'---\n' + u'---'.join(l[1:])
 	return s
 
 def listContent(dirname=u'content', l=[]):
-	
+
 	"""
 	Lists all content files in a given directory.
-	
+
 	Keyword arguments:
 	dirname		--	The content directory or None to use the last command line
 					parameter. (default=None)
 	l			--	A list to append the files to (for recursion purposes).
 					(default=[])
-	
+
 	Returns:
 	A list of all content Markdown files.
 	"""
-	
-	for basename in os.listdir(dirname):			
+
+	for basename in os.listdir(dirname):
 		if basename.startswith(u'_'):
-			continue		
+			continue
 		path = os.path.join(dirname, basename)
 		if os.path.isdir(path):
 			l = listContent(dirname=path, l=l)
@@ -104,19 +104,19 @@ def listContent(dirname=u'content', l=[]):
 	return l
 
 def optimizeHTML(path):
-	
+
 	"""
 	Recursively compress all HTML files in the path using htmlcompressor.jar
-	
+
 	Arguments:
 	path		-- The folder path to optimize.
 	"""
-	
+
 	for fname in os.listdir(path):
 		fname = os.path.join(path, fname)
 		if os.path.isdir(fname):
 			optimizeHTML(fname)
-		elif fname.lower().endswith(u'.html'):			
+		elif fname.lower().endswith(u'.html'):
 			s1 = os.path.getsize(fname)
 			cmd = [u'java', u'-jar', u'htmlcompressor.jar', u'--compress-js', \
 				fname, u'-o', fname]
@@ -124,35 +124,35 @@ def optimizeHTML(path):
 			s2 = os.path.getsize(fname)
 			print u'\t%s (%d kB -> %d kB, %d%%)' % (fname, s1, s2,
 				(100.*s2/s1))
-			
+
 def copyFile(fromPath, toPath):
-	
+
 	"""
 	Copies a file and creates the target folder structure if it doesn't exist.
-	
+
 	Arguments:
 	fromPath	--	The source file.
-	toPath		--	The target file.	
+	toPath		--	The target file.
 	"""
-	
+
 	if not os.path.exists(os.path.dirname(toPath)):
 		os.makedirs(os.path.dirname(toPath))
 	shutil.copyfile(fromPath, toPath)
-			
+
 def parseOsdocYaml(path, info, s):
-	
+
 	"""
 	Parses OSDOC-specific YAML sections to implement specific functionality.
-	
+
 	Arguments:
 	path	--	The path to the page.
 	info	--	A dictionaty with the page's front matter.
 	s		--	A string with the page content.
-	
+
 	Returns:
 	A string with the parsed page contents.
-	"""	
-	
+	"""
+
 	import re
 
 	# First check if the page is formatted for academicmarkdown
@@ -172,7 +172,7 @@ def parseOsdocYaml(path, info, s):
 				d[u'figure'][u'source'])
 			print u'Copying %s' % src
 			copyFile(src, u'_'+src)
-		# Add all source paths to the build path, so that we can reference to 
+		# Add all source paths to the build path, so that we can reference to
 		# figures etc without considering paths
 		build.path += [os.path.join(path, u'img', info['permalink'][1:]), \
 			os.path.join(path, u'lst', info['permalink'][1:]), \
@@ -180,11 +180,13 @@ def parseOsdocYaml(path, info, s):
 		# Set the correct templates
 		build.codeTemplate = u'jekyll'
 		build.figureTemplate = u'jekyll'
+		build.tableTemplate = u'kramdown'
 		# Disable markdown filters
 		build.preMarkdownFilters = []
 		build.postMarkdownFilters = []
 		# Enable clickable anchor headers
 		build.TOCAnchorHeaders = True
+		build.TOCAppendHeaderRefs = True
 		s = build.MD(s)
 		s = HTMLFilter.DOI(s)
 		# Remove the content/ part of figure paths, because it does not apply to
@@ -192,7 +194,7 @@ def parseOsdocYaml(path, info, s):
 		s = s.replace(u'![content/', u'![/')
 		s = s.replace(u'(content/', u'(/')
 		return s
-		
+
 	# If not, use the deprecated OSDOC-specific YAML parser
 	replacements = []
 	appends = []
@@ -223,21 +225,21 @@ def parseOsdocYaml(path, info, s):
 		from academicmarkdown import Filter
 		s = Filter.DOI(s)
 	except:
-		print u'Failed to import academicmarkdown. Not parsing DOIs.'	
+		print u'Failed to import academicmarkdown. Not parsing DOIs.'
 	return s
 
 def parseOsdocOverview(path, info, d, block, s):
-	
+
 	"""
 	Parses an OSDOC YAML block to a MarkDown overview list.
-	
+
 	Arguments:
 	path	--	The path to the page.
 	info	--	A dictionary with the page's front matter.
 	d		--	An OSDOC YAML dictionary.
 	block 	--	The original YAML block.
 	s		--	The page contents.
-	
+
 	Returns:
 	A (replacements, appends) list, where replacements is a list of (old, new)
 	tuples and appends is a list of lines that should be appended to the
@@ -246,7 +248,7 @@ def parseOsdocOverview(path, info, d, block, s):
 
 	headers = []
 	for i in re.finditer(r'^##(.*)', s, re.M):
-		h = i.group()		
+		h = i.group()
 		if h.startswith(u'####'):
 			level = 4
 		elif h.startswith(u'###'):
@@ -259,7 +261,7 @@ def parseOsdocOverview(path, info, d, block, s):
 		# IDs should be lowercase alphanumeric strings with all spaces replaced
 		# by dashes.
 		_id = re.sub(ur'\W+', u'', label.replace(u' ', u'-')).lower()
-		headers.append( (level, h, label, _id) )		
+		headers.append( (level, h, label, _id) )
 	replacements = []
 	appends = []
 	md = u'## [Overview](#overview) {#overview}\n\n'
@@ -269,28 +271,28 @@ def parseOsdocOverview(path, info, d, block, s):
 		replacements.append( (h, u'%s [%s](#%s) {#%s}' % (u'#'*level, label, \
 			_id, _id)) )
 		appends.append(u'[%s]: #%s' % (label, _id))
-	md += u'\n'		
+	md += u'\n'
 	replacements.append( (block, md) )
 	return replacements, appends
 
 def parseOsdocTable(path, info, d, block, s):
-	
+
 	"""
 	Parses an OSDOC YAML block to a MarkDown table.
-	
+
 	Arguments:
 	path	--	The path to the page.
 	info	--	A dictionary with the page's front matter.
 	d		--	An OSDOC YAML dictionary.
 	block 	--	The original YAML block.
 	s		--	The page contents.
-	
+
 	Returns:
 	A (replacements, appends) list, where replacements is a list of (old, new)
 	tuples and appends is a list of lines that should be appended to the
 	content.
 	"""
-	
+
 	info[u'tables'] += 1
 	srcPath = os.path.join(path, u'tbl', info['permalink'][1:], d[u'src'])
 	s = u''
@@ -307,23 +309,23 @@ def parseOsdocTable(path, info, d, block, s):
 	return replacements, appends
 
 def parseOsdocListing(path, info, d, block, s):
-	
+
 	"""
 	Parses an OSDOC YAML block to a MarkDown code block.
-	
+
 	Arguments:
 	path	--	The path to the page.
 	info	--	A dictionary with the page's front matter.
 	d		--	An OSDOC YAML dictionary.
 	block 	--	The original YAML block.
 	s		--	The page contents.
-	
+
 	Returns:
 	A (replacements, appends) list, where replacements is a list of (old, new)
 	tuples and appends is a list of lines that should be appended to the
 	content.
 	"""
-	
+
 	info[u'listings'] += 1
 	srcPath = os.path.join(path, u'lst', info['permalink'][1:], d[u'src'])
 	if os.path.splitext(srcPath)[1] == u'.py':
@@ -340,23 +342,23 @@ def parseOsdocListing(path, info, d, block, s):
 	return replacements, appends
 
 def parseOsdocFigure(path, info, d, block, s):
-	
+
 	"""
 	Parses an OSDOC YAML block to a MarkDown figure.
-	
+
 	Arguments:
 	path	--	The path to the page.
 	info	--	A dictionary with the page's front matter.
 	d		--	An OSDOC YAML dictionary.
 	block 	--	The original YAML block.
 	s		--	The page contents.
-	
+
 	Returns:
 	A (replacements, appends) list, where replacements is a list of (old, new)
 	tuples and appends is a list of lines that should be appended to the
 	content.
 	"""
-	
+
 	info[u'figures'] += 1
 	if u'alt' not in d:
 		d[u'alt'] = u'No alt text specified'
@@ -378,23 +380,23 @@ def parseOsdocFigure(path, info, d, block, s):
 	return replacements, appends
 
 def parseOsdocVideo(path, info, d, block, s):
-	
+
 	"""
 	Parses an OSDOC YAML block to a MarkDown video.
-	
+
 	Arguments:
 	path	--	The path to the page.
 	info	--	A dictionary with the page's front matter.
 	d		--	An OSDOC YAML dictionary.
 	block 	--	The original YAML block.
 	s		--	The page contents.
-	
+
 	Returns:
 	A (replacements, appends) list, where replacements is a list of (old, new)
 	tuples and appends is a list of lines that should be appended to the
 	content.
 	"""
-	
+
 	info[u'videos'] += 1
 	if u'width' not in d:
 		d[u'width'] = 640
@@ -418,23 +420,23 @@ def parseOsdocVideo(path, info, d, block, s):
 	return replacements, appends
 
 def gitInfo(path):
-	
+
 	"""
 	Generates a string with git information for a given page.
-	
+
 	Arguments:
 	path		--	The path to the page.
-	
+
 	Returns:
 	A string with git info.
 	"""
-	
+
 	cmd = [u'git', u'log', u'--format="Revision <a href=\'https://github.com/smathot/osdoc/commit/%H\'>#%h</a> on %cd"', u'-n', u'1', path]
 	out, err = subprocess.Popen(cmd, stdout=subprocess.PIPE).communicate()
 	return out
 
 if __name__ == u'__main__':
-	
+
 	# Parse command line options
 	parser = OptionParser()
 	parser.add_option(u'-n', u'--nojekyll', dest=u'jekyll', help= \
@@ -460,33 +462,33 @@ if __name__ == u'__main__':
 	parser.add_option(u'--layout', dest=u'layout', help= \
 		u'Layout file', default=u'inpage')
 	options, args = parser.parse_args()
-	
+
 	src = options.src
 	target = options.target
-		
+
 	# Recreate the target folder
 	print u'\nRecreating target folder (%s)...' % target
 	if os.path.exists(target):
 		shutil.rmtree(target)
 	os.mkdir(target)
-	
+
 	# Copy all non-page resources
 	print u'\nCopying non-page resources ...'
 	shutil.copytree(u'%s/_includes' % src, u'%s/_includes' % target)
-	shutil.copytree(u'%s/_layouts' % src, u'%s/_layouts' % target)	
+	shutil.copytree(u'%s/_layouts' % src, u'%s/_layouts' % target)
 	shutil.copytree(u'%s/attachments' % src, u'%s/attachments' % target)
 	shutil.copytree(u'%s/img' % src, u'%s/img' % target)
 	shutil.copy(u'%s/favicon.ico' % src, u'%s/favicon.ico' % target)
 	shutil.copy(u'%s/_layouts/osdoc-%s.html' % (src, options.layout), \
 		u'%s/_layouts/osdoc.html' % target)
-	
+
 	print u'\nCompiling .less to .css ...'
 	cmd = ['lesscpy', '-X', '%s/stylesheets/main.less' % src]
 	subprocess.call(cmd, stdout=open(u'%s/stylesheet.css' % target, u'w'))
-		
+
 	print u'\nListing content ...'
 	content = listContent()
-	
+
 	print u'\nCompiling pages ...'
 	sortkey = [0,0]
 	group = 'General'
@@ -500,7 +502,7 @@ if __name__ == u'__main__':
 			level = 1
 		else:
 			sortkey[0] += 1
-			level = 0			
+			level = 0
 		title = title.strip()
 		if title.startswith(u':'):
 			show = False
@@ -547,14 +549,14 @@ if __name__ == u'__main__':
 
 	# Optionally generate the site with jekyll
 	if options.jekyll:
-		print u'\nLaunching jekyll'	
+		print u'\nLaunching jekyll'
 		subprocess.call([u'jekyll'])
-		
+
 	# Optionally optimze the HTML using htmlcompress
 	if options.optimizeHTML:
 		print u'\nOptimizing HTML'
 		optimizeHTML(u'_site')
-		
+
 	# Optionally create a tarball of the site
 	if options.tarball:
 		print u'\nCreating tarball (osdoc.tar.gz)'
@@ -562,16 +564,16 @@ if __name__ == u'__main__':
 			u'--exclude-from=dev-scripts/excludefromgz.txt']
 		subprocess.call(cmd)
 		shutil.move(u'osdoc.tar.gz', u'_site')
-		
+
 	# Optionally check for dead links
 	if options.checkLinks:
-		print u'\nChecking for dead links'		
+		print u'\nChecking for dead links'
 		cmd = [u'linkchecker', u'--no-warnings', u'-o', u'csv', \
 			u'http://localhost:8000']
-		subprocess.call(cmd, stdout=open(u'deadlinks.log', u'w'))		
-		nErr = 0		
+		subprocess.call(cmd, stdout=open(u'deadlinks.log', u'w'))
+		nErr = 0
 		for l in open(u'deadlinks.log').read().split(u'\n')[4:]:
-			r = l.split(u';')	
+			r = l.split(u';')
 			if len(r) < 6 or r[0] == u'urlname':
 				continue
 			url = r[0]
@@ -581,7 +583,7 @@ if __name__ == u'__main__':
 				continue
 			parent = r[1]
 			warning = r[3]
-			valid = r[5] == u'False'	
+			valid = r[5] == u'False'
 			nErr += 1
 			print '%s\n\tin %s' % (url, parent)
 		print u'%d dead link(s) found' % nErr

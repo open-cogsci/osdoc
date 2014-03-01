@@ -12,8 +12,7 @@ OpenSesame is freely available under the [General Public Licence][gpl].
 
 ![](/img/fig/fig1.2.1.png)
 
-The team
---------
+## The team
 
 OpenSesame is developed by a loose collection of individuals. Anyone is welcome to join the team of regular contributors.
 
@@ -56,8 +55,7 @@ OpenSesame is developed by a loose collection of individuals. Anyone is welcome 
 	</tr>
 </table>
 
-Acknowledgements
-----------------
+## Acknowledgements
 
 Many thanks go out to Jan Theeuwes, Wouter Kruijne, Jarik den Hartog, Cor Stoof, the entire Department of Cognitive Psychology at the VU University, Jonathan Grainger, Françoise Vitu, Eric Castet, the rest of the people at the LPC in Marseille, and Andrea Epifani.
 
@@ -78,7 +76,7 @@ OpenSesame is powered by the following libraries (and many more). Credits go out
 [sr-research]: http://www.sr-research.com/
 [gpl]: http://www.gnu.org/licenses/gpl.html
 [python]: http://www.python.org/
-[qt4]: http://qt.nokia.com/
+[qt4]: http://qt-project.org/
 [pygame]: http://www.pygame.org/
 [pyserial]: http://pyserial.sourceforge.net/
 [faenza]: http://tiheum.deviantart.com/art/Faenza-Icons-173323228

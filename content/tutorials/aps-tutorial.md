@@ -184,11 +184,11 @@ Of course, we don't want the word to always be presented in the center. To make 
 To change the horizontal position of the word, you can use the `displacement` variable to indicate the X-coordinate of the stimulus, again using the square-bracket notation, like so :
 
 	draw textline [displacement] 0.0 "[word]" center=1 color=white font_family="mono" font_size=38 font_italic=no font_bold=no show_if="always"
-	
+
 Also, while we're at it, change the duration to 150:
 
 	set duration 150
-	
+
 To apply the changes, click on the 'Apply and close' button at the bottom-right of the tab. You will notice that the word is now no longer visible. Instead, OpenSesame says that one object is not shown, because it is defined using variables. Don't worry, it will be shown during the experiment!
 
 Now it's time to create the mask, which has its own `sketchpad` item. Click on the *mask* item in the overview area. You will probably find that there is a fixation dot in the center, which is part of the 'Extended template' that you started with. Right-click on the fixation dot and select 'Delete'. Now, draw the mask in the same way that you drew the word, except that you use the text `#####`, instead of `[word]`. Don't forget to set the font size to 38 and to make the X-coordinate of the mask variable!
@@ -332,7 +332,7 @@ You will notice that *form_base* does not have any controls. Instead, it just sa
 
 	# A button on the last row. Clicking the button will exit the form.
 	widget 0 4 4 1 button text='Ok'
-	
+
 The resulting form looks like this (colors and fonts may differ, depending on the settings of your experiment):
 
 :--
@@ -352,7 +352,7 @@ Forms, and text more generally, support a subset of HTML tags to allow for text 
 ## Step 9: Specify the number of blocks and trials
 
 Currently, your experiment just consists of a single practice block and a single experimental block, and each block consists of a small number of trials (depending on how many words you entered). You can make your experiment longer by adjusting the 'repeat' setting in the *block_loop*, *practice_loop*, and *experimental_loop* items.
-	
+
 ## Step 10: Finished!
 
 :--
@@ -379,7 +379,7 @@ Mathôt, S., Schreij, D., & Theeuwes, J. (2012). OpenSesame: An open-source, gra
 
 [download]: /getting-opensesame/download/
 [feedback]: /usage/feedback/
-[forms]: /forms/about-forms/
+[forms]: /forms/about/
 [forms-opensesame]: /forms/custom-forms/#opensesame-script
 [forms-performance]: /forms/performance-issues-and-troubleshooting/
 [forms-python]: /forms/custom-forms/#python

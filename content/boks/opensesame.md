@@ -29,4 +29,4 @@ After you have dragged a Boks item into your experiment, you see the following c
 
 The Boks model and the firmware version will be detected by the plug-in. In addition, you can test whether the Boks functions properly by clicking on the *Start test* button.
 
-[plug-in installation]: /plug-ins/plug-in-installation/
+[plug-in installation]: /plug-ins/installation/

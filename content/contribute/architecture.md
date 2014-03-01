@@ -35,7 +35,7 @@ figure:
 ### The `openexp` package
 
 The `openexp` package (yellow in %FigUML) implements input and output in a way that is not tied to a specific mechanism. For example, whenever something needs to be shown on the display, an instance of `canvas` is created, as shown in %OpenexpExample:
-	
+
 %--
 code:
  source: openexp-example.py
@@ -65,7 +65,7 @@ code:
 --%
 
 The four most important `item` methods are:
-	
+
 - `prepare()` implements the item's prepare phase.
 - `run()` implements the item's run phase.
 - `from_string()` parses an OpenSesame script into an item.
@@ -80,7 +80,7 @@ The `libqtopensesame` package (green in %FigUML) implements the OpenSesame GUI. 
 The `libqtopensesame.items` sub-package is the GUI counterpart of `libopensesame`. At the heart of this package is the `qtitem` class, which provides the basic GUI functionality that is common to all items. Every item class from `libopensesame` has a counterpart in `libqtopensesame.items`, in which the runtime functionality is extended with GUI functionality. Basically, what an item does is implemented in `libopensesame`, while its GUI controls are implemented in `libtopensesame.items`.
 
 The four most important `qtitem` methods are:
-	
+
 - `apply_edit_changes()` updates the item based on changes in the GUI.
 - `edit_widget()` updates the GUI based on the status of the item.
 - `init_edit_widget()` constructs the item's GUI controls.
@@ -99,7 +99,7 @@ Click on the links below to view the relevant source-code files on GitHub.
 
 {% include architecture %}
 
-[factory]: http://to.do
-[adapters]: http://to.do
+[factory]: http://en.wikipedia.org/wiki/Factory_method_pattern
+[adapters]: http://en.wikipedia.org/wiki/Adapter_pattern
 [back-ends]: /back-ends/
-[forum]: http://to.do
+[forum]: http://forum.cogsci.nl

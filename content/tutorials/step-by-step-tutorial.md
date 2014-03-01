@@ -144,7 +144,7 @@ __The `loop`-`sequence` structure__ -- You often want to repeat a sequence of ev
 
 __URL__ -- For more information about loops and sequences, see:
 
-- [/usage/about-sequences-and-loops](/usage/about-sequences-and-loops)
+- [/usage/sequences-and-loops](/usage/sequences-and-loops)
 
 </div>
 
@@ -584,7 +584,7 @@ __Tip__ -- Make sure that the (foreground) color is set to black. Otherwise you 
 
 __URL__ -- For more information about feedback, see:
 
-- [/usage/giving-feedback-to-participants](/usage/giving-feedback-to-participants)
+- [/usage/feedback](/usage/feedback)
 
 </div>
 
@@ -688,7 +688,7 @@ Brand, A., & Bradley, M. T. (2011). Assessing the effects of technical variance 
 
 Damian, M. F. (2010). Does variability in human performance outweigh imprecision in response devices such as computer keyboards? *Behavior Research Methods*, *42*, 205-211. doi:10.3758/BRM.42.1.205
 
-Friesen, C. K., & Kingstone, A. (1998). The eyes have it! Reflexive orienting is triggered by nonpredictive gaze. *Psychonomic Bulletin & Review*, *5*, 490–495.
+Friesen, C. K., & Kingstone, A. (1998). The eyes have it! Reflexive orienting is triggered by nonpredictive gaze. *Psychonomic Bulletin & Review*, *5*, 490–495. doi:10.3758/BF03208827
 
 Krause, F., & Lindemann, O. (2013). Expyriment: A Python library for cognitive and neuroscientific experiments. *Behavior Research Methods*. doi:10.3758/s13428-013-0390-6
 
@@ -711,8 +711,8 @@ Ulrich, R., & Giray, M. (1989). Time resolution of clocks: Effects on reaction t
 [step6]: /attachments/gaze-cuing/tutorial_step6.opensesame.tar.gz
 [step7]: /attachments/gaze-cuing/tutorial_step7.opensesame.tar.gz
 [step8]: /attachments/gaze-cuing/tutorial_step8.opensesame.tar.gz
-[step10]: /attachments/gaze-cuing/tutorial_step9.opensesame.tar.gz
-[step11]: /attachments/gaze-cuing/tutorial_step10.opensesame.tar.gz
-[step12]: /attachments/gaze-cuing/tutorial_step11.opensesame.tar.gz
+[step10]: /attachments/gaze-cuing/tutorial_step10.opensesame.tar.gz
+[step11]: /attachments/gaze-cuing/tutorial_step11.opensesame.tar.gz
+[step12]: /attachments/gaze-cuing/tutorial_step12.opensesame.tar.gz
 [finished-experiment]: /attachments/gaze-cuing/gaze-cuing.opensesame.tar.gz
 [python inline scripting]: /python/about

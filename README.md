@@ -1,6 +1,6 @@
 # OpenSesame documentation area
 
-Copyright 2010-2014  
+Copyright 2010-2014
 Sebastiaan Mathôt <s.mathot@cogsci.nl>
 
 ## About
@@ -20,19 +20,19 @@ The site content is available in the folder `content`.
 ## Site generation
 
 The `compile` script generates the sites. This script uses `jekyll` for the actual site generation, but conducts some additional pre-processing and error checking. To compile the site, run:
-	
+
 	./compile
-	
+
 To compile the site and optimize (minify) the HTML files, run:
-	
+
 	./compile --optimize-html
 
 For a complete list of options, run:
-	
+
 	./compile --help
-	
+
 The site structure is read from `sitemap.txt`.
-	
+
 ## Dependencies
 
 Most dependencies are available from the Ubuntu repositories or from the [Cogsci.nl PPA](https://launchpad.net/~smathot/+archive/cogscinl/). Only [`htmlcompressor.jar`](https://code.google.com/p/htmlcompressor/) and [`yui-compressor.jar`](https://github.com/yui/yuicompressor/downloads) must be downloaded from their respective websites and manually placed in the osdoc source folder.
