@@ -38,6 +38,9 @@ Garaizar, P., Vadillo, M. A., López-de-Ipiña, D., & Matute, H. (2014). Measuri
 Grainger, J., Mathôt, S., & Vitu, F. (2014). Tests of a model of multi-word reading: Effects of parafoveal flanking letters on foveal word recognition. *Acta Psychologica*, *146*, 35-40. doi:10.1016/j.actpsy.2013.11.014
 {: .reference}
 
+Hermens, F., Kral, D., & Rosenbaum, D. A. (2014). Limits of end-state planning. *Acta Psychologica*, *148*, 148–162. doi:10.1016/j.actpsy.2014.01.009
+{: .reference}
+
 Lange, F., & Eggert, F. (in press). Sweet delusion: Glucose drinks fail to counteract ego depletion. *Appetite*. doi:10.1016/j.appet.2013.12.020
 {: .reference}
 
