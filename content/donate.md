@@ -4,12 +4,16 @@ title: Donate
 group: General
 permalink: /donate/
 menuclass: highlight
-singleton: true
+parser: academicmarkdown
 ---
 
-:--
-cmd: overview
---:
+## Overview
+
+%--
+toc:
+ mindepth: 2
+ exclude: [Overview]
+--%
 
 ## Why donate?
 
