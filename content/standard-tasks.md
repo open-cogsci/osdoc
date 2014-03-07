@@ -43,6 +43,15 @@ If you have implemented a task that you feel has a high re-use potential, we wan
 1. Edit this page on GitHub, add your experiment, and send a pull request. To do this, you need to have a GitHub account.
 	- <https://github.com/smathot/osdoc/blob/master/content/standard-tasks.md>
 2. Drop a note on the forum to let us know about your experiment.
-	- <http://forum.cogsci/>
+	- <http://www.cogsci.nl/forum/index.php?p=/discussion/823/>
 
-[gpl-2]: <http://www.gnu.org/licenses/gpl-2.0.html>
+Please provide the following information:
+
+1. A description of your task.
+2. A (list of) developer(s).
+3. A URL where people can download the task.
+4. Citation information.
+5. A license, such as the [GPL-3].
+
+[gpl-2]: http://www.gnu.org/licenses/gpl-2.0.html
+[gpl-3]: https://www.gnu.org/copyleft/gpl.html

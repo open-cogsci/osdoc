@@ -94,7 +94,7 @@ Miscellaneous
 	Teaching resources
 	Release history
 Examples
-:Standard tasks
+Standard tasks
 Publications
 Contribute
 	Translate
