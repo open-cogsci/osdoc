@@ -41,8 +41,9 @@ Conjunctive Continuous Performance Task (CCPT) is a sustained attention test dev
 If you have implemented a task that you feel has a high re-use potential, we want to know about it! You can have your task included in this list in two ways:
 
 1. Edit this page on GitHub, add your experiment, and send a pull request. To do this, you need to have a GitHub account.
-	- <https://github.com/smathot/osdoc/blob/master/content/standard-tasks.md>
-2. Drop a note on the forum to let us know about your experiment.
+	- This page on GitHub: <https://github.com/smathot/osdoc/blob/master/content/standard-tasks.md>
+	- Instructions on how to edit a page: [/contribute/documentation](/contribute/documentation)
+2. Or drop a note on the forum to let us know about your experiment.
 	- <http://www.cogsci.nl/forum/index.php?p=/discussion/823/>
 
 Please provide the following information:
