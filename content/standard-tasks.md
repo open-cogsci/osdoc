@@ -4,6 +4,7 @@ title: Standard tasks
 group: General
 permalink: /standard-tasks/
 parser: academicmarkdown
+singleton: true
 ---
 
 This page provides an overview of standard tasks with a high re-use potential that have been implemented in OpenSesame.

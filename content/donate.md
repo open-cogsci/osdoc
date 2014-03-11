@@ -5,6 +5,7 @@ group: General
 permalink: /donate/
 menuclass: highlight
 parser: academicmarkdown
+singleton: true
 ---
 
 ## Overview

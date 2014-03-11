@@ -41,6 +41,9 @@ Grainger, J., Mathôt, S., & Vitu, F. (2014). Tests of a model of multi-word rea
 Hermens, F., Kral, D., & Rosenbaum, D. A. (2014). Limits of end-state planning. *Acta Psychologica*, *148*, 148–162. doi:10.1016/j.actpsy.2014.01.009
 {: .reference}
 
+Holliday, J. J. (2014). The perceptual assimilation of Korean obstruents by native Mandarin listenersa). *The Journal of the Acoustical Society of America*, *135*(3), 1585–1595. doi:10.1121/1.4863653
+{: .reference}
+
 Lange, F., & Eggert, F. (in press). Sweet delusion: Glucose drinks fail to counteract ego depletion. *Appetite*. doi:10.1016/j.appet.2013.12.020
 {: .reference}
 
