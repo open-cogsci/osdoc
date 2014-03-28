@@ -175,7 +175,7 @@ Now for pygame:
 
 Install the necessary python packages
 
-    sudo pip install pygopengl numpy pillow pyglet psychopy pyflakes markdown python-bidi pyserial
+    sudo pip install pyopengl numpy pillow pyglet psychopy pyflakes markdown python-bidi pyserial
 
 Install QProgEdit (from OpenSesame 2.8 on)
 
