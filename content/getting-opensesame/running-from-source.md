@@ -16,7 +16,7 @@ toc:
 ## Download source code
 
 Download the source code of the latest stable release from GitHub:
-	
+
 - <https://github.com/smathot/OpenSesame/releases>
 
 You can also download a development snapshot of the code. To obtain a reasonable stable snapshot, download from the `master` branch. To get the latest, greatest, and potentially very unstable snapshot, download from the `playground` branch.
@@ -74,7 +74,7 @@ Under Ubuntu, all dependencies are available via the official repositories or th
 	sudo apt-get install python-pygame python-numpy python-qt4 \
 		python-qscintilla2 psychopy expyriment python-qprogedit \
 		python-serial
-		
+
 See [Dependencies](#dependencies) for a list of additional packages that you may want to install.
 
 To start OpenSesame, open a terminal in the folder where OpenSesame has been extracted and run OpenSesame using one of the following commands:
@@ -122,7 +122,7 @@ You can add +universal to your /opt/local/etc/macports/variants.conf to ask MacP
 
 Essentially, you can now install all required packages by running a single command in a terminal:
 
-	sudo port install py27-game py27-pyqt4 py27-scintilla py27-serial py27-pil py27-opengl py27-pyaudio opencv +python27
+	sudo port install py27-game py27-pyqt4 py27-qscintilla py27-serial py27-pil py27-opengl py27-pyaudio opencv +python27
 
 This takes forever and, in my case, crashed a few times with a checksum error. You can simply recover from such errors by executing the following command:
 
@@ -141,9 +141,9 @@ After the installation of pip is completed, you can easily install expyriment wi
 
 If you plan on using the PsychoPy backend, make sure your Python environment is running in 32-bit mode. You can install psychopy and its dependency pyglet with the commands:
 
-	sudo pip install pyglet 
+	sudo pip install pyglet
 	sudo pip install psychopy
-	
+
 PsychoPy refuses to run without the wxPython library installed (which is weird, because OpenSesame doesn't use any of the wx GUI components of psychopy), so as a final step install wxPython with:
 
 	sudo port install py27-wxpython-dev
@@ -156,12 +156,12 @@ Mac OS comes with a custom version of Python but, for our purpose (and many purp
 
 ### Installing with homebrew
 
-Homebrew is a newer and easier way to build a source tree on your mac. It has many benefits on top of macports, such as speed, and nowadays seems to have less trouble compiling and updating packages than macports does. 
+Homebrew is a newer and easier way to build a source tree on your mac. It has many benefits on top of macports, such as speed, and nowadays seems to have less trouble compiling and updating packages than macports does.
 You can install homebrew as instructed on <http://brew.sh/>. Then issue the following command to get started:
 
     brew update
     brew doctor
-		
+
 Solve any problem that this indicates, and then continue on to the real work by issuing:
 
     brew install python qt pyqt qscintilla2 freetype portaudio
@@ -172,11 +172,11 @@ Now for pygame:
 	brew install --HEAD smpeg
 	brew install sdl sdl_image sdl_mixer sdl_ttf portmidi hg
 	pip install hg+http://bitbucket.org/pygame/pygame
-	
+
 Install the necessary python packages
 
     sudo pip install pygopengl numpy pillow pyglet psychopy pyflakes markdown python-bidi pyserial
-	
+
 Install QProgEdit (from OpenSesame 2.8 on)
 
     git clone https://github.com/smathot/QProgEdit.git
@@ -192,20 +192,20 @@ Install expyriment (from OpenSesame 0.27 on)
 	sudo python setup.py install
 	cd ..
 	rm -R expyriment
-	
+
 You should now be able to run OpenSesame, but you'll notice you're missing some icons! You need to download the Faenza icon theme from <http://tiheum.deviantart.com/art/Faenza-Icons-173323228> and place it under resources/theme/default
-	
+
 The following packages are optional, but might be useful to install nevertheless:
 
 	sudo pip install matplotlib scipy pycairo pyparallel
-	
+
 For OpenCV (as it depends on numpy, do this *after* you issued the above pip commands)
 
 	brew tap homebrew/science
 	brew install opencv
-	
+
 you can find more detailed instructions on installing OpenCV at <http://www.jeffreythompson.org/blog/2013/08/22/update-installing-opencv-on-mac-mountain-lion/>
-	
+
 ### Installing packages manually
 
 If you want to install all Opensesame dependecies yourself you need to download and install the following package distributions:
@@ -218,7 +218,7 @@ Website: <http://www.python.org/>
 
 Direct download: http://www.python.org/ftp/python/2.7.3/python-2.7.3-macosx10.6.dmg
 
-Another option is to install the [Enthought Python Distribution (EPD)][EPD_Download] instead. This distribution includes Python and many of the modules OpenSesame depends on ([view][EPD_Packages] a complete list). 
+Another option is to install the [Enthought Python Distribution (EPD)][EPD_Download] instead. This distribution includes Python and many of the modules OpenSesame depends on ([view][EPD_Packages] a complete list).
 
 #### Install PyGame
 
@@ -268,7 +268,7 @@ As described on the website, installation should proceed through the following s
 
 Download the appropriate egg for your version of Python (e.g. setuptools-0.6c9-py2.7.egg). Do NOT rename it.
 
-Run it as if it were a shell script, e.g. 
+Run it as if it were a shell script, e.g.
 
 	sh setuptools-0.6c9-py2.7.egg
 

@@ -3,15 +3,18 @@ layout: osdoc
 title: Development snapshots
 group: Getting OpenSesame
 permalink: /development-snapshots/
+parser: academicmarkdown
 ---
 
-:--
-cmd: overview
---:
+If you want to have the latest features and don't mind potential instability, you can grab the latest experimental source code.
 
-## Current development versions
+## Overview
 
-If you want to have the latest features and don't mind potential instability, you can grab the latest experimental source code. Currently, work is being done on OpenSesame 2.8.0 *Gutsy Gibson*.
+%--
+toc:
+ mindepth: 2
+ exclude: [Overview]
+--%
 
 ## Pre-release packages
 
