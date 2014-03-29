@@ -43,7 +43,24 @@ With thanks to Daniel Schreij and Ronald Sprouse for their code contributions.
 - Update included libraries. See `modules()` output below.
 
 ~~~
-TODO
+OpenSesame 2.8.1
+Python 2.7.6 (default, Nov 10 2013, 19:24:18) [MSC v.1500 32 bit (Intel)]
+OpenCV is not available
+OpenCV2 2.4.7
+QProgedit 1.2.2
+Expyriment 0.7.0 (Revision 7a6b73d; Python 2.7.6)
+NumPy 1.8.0
+PIL is available (version is unknown)
+PsychoPy 1.80.00
+PyAudio 0.2.7
+PyGame 1.9.1release
+Pyglet 1.1.4
+PyOpenGL 3.0.2
+PyQt 4.10.4
+PySerial 2.7
+python-bidi 0.3.4
+python-markdown 2.3.1
+SciPy 0.13.3
 ~~~
 
 [2.8.0 release notes]: /notes/2.8.0
