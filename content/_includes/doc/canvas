@@ -1,5 +1,5 @@
 <div class='pydoc'>
-<p><small>For OpenSesame 2.8.0</small></p>
+<p><small>For OpenSesame 2.8.1</small></p>
 <span class='class_name'>class <b>canvas</b></span><br />
 <p class='details'><b>Function overview:</b><br />
 <a href='#canvas.__init__'>__init__</a><br />
@@ -223,7 +223,7 @@ my_canvas = canvas(exp)
 my_canvas.fixdot()
 {% endhighlight %}<br />
 </div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='canvas.gabor'>canvas</a>.<b>gabor(x, y, orient, freq, env="gaussian", size=96, stdev=12, phase=0, col1="white", col2="black", bgmode="avg")</b></span><div class='details'>
+<div class='function'><span class='function_name'><a class='anchor' id='canvas.gabor'>canvas</a>.<b>gabor(x, y, orient, freq, env=u"gaussian", size=96, stdev=12, phase=0, col1=u"white", col2=u"black", bgmode=u"avg")</b></span><div class='details'>
 Draws a Gabor patch. The exact rendering of the Gabor patch depends on the back-end.<br />
 <br />
 <span class='keyword'>Arguments:</span>
@@ -317,7 +317,7 @@ h = self.get('height')
 my_canvas.line(0, 0, w, h)
 {% endhighlight %}<br />
 </div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='canvas.noise_patch'>canvas</a>.<b>noise_patch(x, y, env="gaussian", size=96, stdev=12, col1="white", col2="black", bgmode="avg")</b></span><div class='details'>
+<div class='function'><span class='function_name'><a class='anchor' id='canvas.noise_patch'>canvas</a>.<b>noise_patch(x, y, env=u"gaussian", size=96, stdev=12, col1=u"white", col2=u"black", bgmode=u"avg")</b></span><div class='details'>
 Draws a patch of noise, with an envelope. The exact rendering of the noise patch depends on the back-end.<br />
 <br />
 <span class='keyword'>Arguments:</span>

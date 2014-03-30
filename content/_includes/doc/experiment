@@ -1,5 +1,5 @@
 <div class='pydoc'>
-<p><small>For OpenSesame 2.8.0</small></p>
+<p><small>For OpenSesame 2.8.1</small></p>
 <span class='class_name'>class <b>experiment</b></span><br />
 <p class='details'><b>Function overview:</b><br />
 <a href='#experiment.__init__'>__init__</a><br />
@@ -59,12 +59,12 @@ The same value converted to the 'best fitting' type.<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}print type(self.auto_type('1')) # Prints 'int'
-print type(self.auto_type('1.1')) # Prints 'float'
-print type(self.auto_type('some text')) # Prints 'unicode'
+{% highlight python %}print(type(self.auto_type('1'))) # Prints 'int'
+print(type(self.auto_type('1.1'))) # Prints 'float'
+print(type(self.auto_type('some text'))) # Prints 'unicode'
 # Note: Boolean values are converted to 'yes' / 'no' and are
 # therefore also returned as unicode objects.
-print type(self.auto_type(True)) # Prints 'unicode'
+print(type(self.auto_type(True))) # Prints 'unicode'
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='experiment.color_check'>experiment</a>.<b>color_check(col)</b></span><div class='details'>
@@ -82,11 +82,11 @@ Raises a osexception if col is not a valid color.<br />
 <span class='keyword'>Example:</span>
 <br />
 {% highlight python %}# Ok
-print self.color_check('red')
+print(self.color_check('red'))
 # Ok
-print self.color_check('#FFFFFF')
+print(self.color_check('#FFFFFF'))
 # Raises osexception
-print self.color_check('this is not a color')
+print(self.color_check('this is not a color'))
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='experiment.eval_text'>experiment</a>.<b>eval_text(text, round_float=False, soft_ignore=False, quote_str=False)</b></span><div class='details'>
@@ -114,7 +114,7 @@ The evaluated text.<br />
 <br />
 {% highlight python %}exp.set('var', 'evaluated')
 # Prints 'This string has been evaluated
-print self.eval_text('This string has been [var]')
+print(self.eval_text('This string has been [var]'))
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='experiment.file_in_pool'>experiment</a>.<b>file_in_pool(path)</b></span><div class='details'>
@@ -127,7 +127,7 @@ A Boolean indicating if the file is in the pool.<br />
 <span class='keyword'>Example:</span>
 <br />
 {% highlight python %}if not exp.file_in_pool('my_image.png'):
-	print 'my_image.png could not be found!'
+	print('my_image.png could not be found!')
 else:
 	image_path = exp.get_file('my_image.png')
 	my_canvas = exp.offline_canvas()
@@ -168,14 +168,14 @@ The value.<br />
 <span class='keyword'>Example:</span>
 <br />
 {% highlight python %}if self.get('cue') == 'valid':
-	print 'This is a validly cued trial'
+	print('This is a validly cued trial')
 {% endhighlight %}
 <br />
 Example 2:<br />
 {% highlight python %}exp.set('var1', 'I like [var2]')
 exp.set('var2', 'OpenSesame')
-print self.get('var1') # prints 'I like OpenSesame'
-print self.get('var1', _eval=False) # prints 'I like [var2]'
+print(self.get('var1')) # prints 'I like OpenSesame'
+print(self.get('var1', _eval=False)) # prints 'I like [var2]'
 {% endhighlight %}
 <br />
 </div></div>
@@ -204,7 +204,7 @@ The value<br />
 <span class='keyword'>Example:</span>
 <br />
 {% highlight python %}if self.get_check('cue', default='invalid') == 'valid':
-	print 'This is a validly-cued trial'
+	print('This is a validly-cued trial')
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='experiment.get_file'>experiment</a>.<b>get_file(path)</b></span><div class='details'>
@@ -240,7 +240,7 @@ A list of variable names or an empty list if the string contains no references.<
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}print self.get_refs('There are [two] [references] here')
+{% highlight python %}print(self.get_refs('There are [two] [references] here'))
 # Prints ['two', 'references']
 {% endhighlight %}<br />
 </div></div>
@@ -259,7 +259,7 @@ True if the variable exists, False if not.<br />
 <span class='keyword'>Example:</span>
 <br />
 {% highlight python %}if not self.has('response'):
-	print 'No response has been collected yet'
+	print('No response has been collected yet')
 {% endhighlight %}
 <br />
 </div></div>
@@ -307,9 +307,9 @@ A sanitized unicode string<br />
 <span class='keyword'>Example:</span>
 <br />
 {% highlight python %}# Prints 'Universit Aix-Marseille'
-print self.sanitize('\"Université Aix-Marseille\"')
+print(self.sanitize('\"Université Aix-Marseille\"'))
 # Prints 'UniversitAixMarseille'
-print self.sanitize('\"Université Aix-Marseille\""', strict=True)
+print(self.sanitize('\"Université Aix-Marseille\""', strict=True))
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='experiment.set'>experiment</a>.<b>set(var, val)</b></span><div class='details'>
@@ -371,8 +371,8 @@ Sets the subject number and parity (even/ odd). This function is called automati
 <span class='keyword'>Example:</span>
 <br />
 {% highlight python %}exp.set_subject(1)
-print 'Subject nr = %d' % exp.get('subject_nr')
-print 'Subject parity = %s' % exp.get('subject_parity')
+print('Subject nr = %d' % exp.get('subject_nr'))
+print('Subject parity = %s' % exp.get('subject_parity'))
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='experiment.sleep'>experiment</a>.<b>sleep(ms)</b></span><div class='details'>
@@ -397,7 +397,7 @@ A timestamp of the current time.<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}print 'The time is %s' % self.time()
+{% highlight python %}print('The time is %s' % self.time())
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='experiment.unset'>experiment</a>.<b>unset(var)</b></span><div class='details'>
@@ -411,9 +411,9 @@ A timestamp of the current time.<br />
 <span class='keyword'>Example:</span>
 <br />
 {% highlight python %}self.set('var', 'Hello world!')
-print self.get('var') # Prints 'Hello world!'
+print(self.get('var')) # Prints 'Hello world!'
 self.unset('variable_to_forget')
-print self.get('var') # Gives error!
+print(self.get('var')) # Gives error!
 {% endhighlight %}<br />
 </div></div>
 </div>

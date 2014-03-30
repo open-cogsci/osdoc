@@ -41,7 +41,7 @@ A timestamp, buttonlist tuple. The buttonlist consists of a list of button numbe
 {% highlight python %}exp.srbox.start()
 timestamp, buttonlist = exp.srbox.get_button_press(allowed_buttons=[1,2])
 if 1 in buttonlist:
-		print 'Button 1 was pressed!'
+		print('Button 1 was pressed!')
 exp.srbox.stop()
 {% endhighlight %}<br />
 </div></div>
@@ -61,19 +61,19 @@ Turns on sending mode, to start giving output.<br />
 {% highlight python %}exp.srbox.start()
 timestamp, buttonlist = exp.srbox.get_button_press(allowed_buttons=[1,2])
 if 1 in buttonlist:
-		print 'Button 1 was pressed!'
+		print('Button 1 was pressed!')
 exp.srbox.stop()
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='libsrbox.stop'>libsrbox</a>.<b>stop()</b></span><div class='details'>
-Turns of sending mode, to stop giving output.<br />
+Turns off sending mode, to stop giving output.<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
 {% highlight python %}exp.srbox.start()
 timestamp, buttonlist = exp.srbox.get_button_press(allowed_buttons=[1,2])
 if 1 in buttonlist:
-		print 'Button 1 was pressed!'
+		print('Button 1 was pressed!')
 exp.srbox.stop()
 {% endhighlight %}<br />
 </div></div>

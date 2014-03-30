@@ -6,9 +6,6 @@ permalink: /2.8.1/
 parser: academicmarkdown
 ---
 
-2.8.1 is in pre-release.
-{.page-notification}
-
 OpenSesame 2.8.1 is the first maintenance release in the 2.8 series. If you are upgrading from 0.27.4 or earlier, please also read the [2.8.0 release notes].
 
 ## Credits
