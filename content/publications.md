@@ -32,6 +32,9 @@ OpenSesame is used for, discussed in, or mentioned in:
 
 ### 2014 / in press / online first
 
+Bucker, B., & Theeuwes, J. (2014). The effect of reward on orienting and reorienting in exogenous cuing. *Cognitive, Affective, & Behavioral Neuroscience*, 1–12. doi:10.3758/s13415-014-0278-7
+{: .reference}
+
 Garaizar, P., Vadillo, M. A., López-de-Ipiña, D., & Matute, H. (2014). Measuring software timing errors in the presentation of visual stimuli in cognitive neuroscience experiments. *PLoS ONE*, *9*(1), e85108. doi:10.1371/journal.pone.0085108
 {: .reference}
 
