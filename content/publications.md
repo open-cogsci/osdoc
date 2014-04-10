@@ -50,6 +50,9 @@ Holliday, J. J. (2014). The perceptual assimilation of Korean obstruents by nati
 Lange, F., & Eggert, F. (in press). Sweet delusion: Glucose drinks fail to counteract ego depletion. *Appetite*. doi:10.1016/j.appet.2013.12.020
 {: .reference}
 
+Nazareth, D. S. (2014). *The Fluency Effect as the Underlying Variable for Judging Beauty and Usability* (Master’s thesis). University of Twente, Enschede, Netherlands. Retrieved from <http://purl.utwente.nl/essays/64908>
+{: .reference}
+
 Sall, R. J., Wright, T. J., & Boot, W. R. (2014). Driven to distraction? The effect of simulated red light running camera flashes on attention and oculomotor control. *Visual Cognition*, 1–17. doi:10.1080/13506285.2013.873509
 {: .reference}
 
