@@ -20,7 +20,7 @@ video:
  width: 640
  height: 360
  caption: |
-  Video tutorial by [Chris Longmore].
+  Video tutorial by <a href="http://chrislongmore.co.uk/">Chris Longmore</a>.
 --%
 
 To cite OpenSesame in your work, please use the following reference:
