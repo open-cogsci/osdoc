@@ -30,12 +30,21 @@ This is an open implementation of the CombiTVA paradigm [(Vangkilde, Bundesen & 
 
 ### Conjunctive continuous performance task
 
-Conjunctive Continuous Performance Task (CCPT) is a sustained attention test developed and validated by [Shalev et al (2011)](http://www.sciencedirect.com/science/article/pii/S002839321100251X). This is the visual variant of the CCPT implemented in OpenSesame.
+Conjunctive Continuous Performance Task (CCPT) is a sustained attention test developed and validated by [Shalev et al (2011)](http://www.sciencedirect.com/science/article/pii/S002839321100251X). This is the visual variant of the CCPT implemented in OpenSesame. Available in English and German.
 
-- __Developer:__ Chris Filo Gorgolewski
+- __Developer:__ Krzysztof J. Gorgolewski
 - __URL:__ <https://github.com/NeuroanatomyAndConnectivity/ConjunctiveContinuousPerformanceTask>
 - __License:__ ?
-- __Citation:__ Gorgolewski., C. F. (2014). *Conjunctive Continuous Performance Task (CCPT)*. Retrieved from <https://github.com/NeuroanatomyAndConnectivity/ConjunctiveContinuousPerformanceTask>
+- __Citation:__ Gorgolewski., K. J. (2014). *Conjunctive Continuous Performance Task (CCPT)*. Retrieved from <https://github.com/NeuroanatomyAndConnectivity/ConjunctiveContinuousPerformanceTask>
+
+### Mini version of the New York Cognition Questionnaire 
+
+New York Cognition Questionnaire (NYC-Q) is a questionnaire probing the content and form of self generated thoughts (mindwandering). This is a minimal version of the NYC-Q suitable for using after behavioural tests or resting state fMRI scans. Available in English and German.
+
+- __Developer:__ Krzysztof J. Gorgolewski
+- __URL:__ <https://github.com/NeuroanatomyAndConnectivity/NYC-Q/blob/master/scripts/questionnaire/inscanner-NYCQ.opensesame>
+- __License:__ ?
+- __Citation:__ Gorgolewski., K. J. (2014). *Mini version of the New York Cognition Questionnaire (min-NYC-Q)*. Retrieved from <https://github.com/NeuroanatomyAndConnectivity/NYC-Q/blob/master/scripts/questionnaire/inscanner-NYCQ.opensesame>
 
 ## Adding your own task
 
