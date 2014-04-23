@@ -95,16 +95,87 @@ It's convenient to create a batch file for running OpenSesame from source. You c
 
 ## Instructions for Mac OS
 
-There are three ways to prepare the software environment for running OpenSesame from source on Mac OS X. One is by downloading and installing all the packages manually. The other is to use MacPorts, which compiles all required packages from source. Basically MacPorts is a large repository containing the source code of programs that have been ported from Linux to Mac OS X (which are very related as Mac OS X is also a Unix based system, as you might know). Installing all the packages manually seems pretty labour-intensive, but will be the fastest way nevertheless as Macports takes an astoundingly long time to compile all dependencies (with a quad core cpu it can already take up to a full day). On the other hand, MacPorts does not have the dependecy hassle if you ever want to install additional packages, which require other packages again, etc. Macports sorts out and installs these depencies itself. The final option is by using homebrew. This works on the same principle as macports, but if there are binary packages available for your system, hmoebrew will find these and install them instead. Therefore, it works much faster. The downside is that homebrew is 'less complete' than macports and you have to manually install most python packages (using easy_install and pip). You have to decide for yourself which method of composing the source environment you like best. All will work fine for running OpenSesame from source.
+There are three ways to prepare the software environment for running OpenSesame from source on Mac OS X. You can either download and install all required packages manually, or compose the required source environment by using the repository-based package managers MacPorts or Homebrew. The easiest and preferred method nowadays to get OpenSesame working is by using Homebrew. This package manager works very fast, handles dependency requirements very well, and is very well maintained. The other package manager, MacPorts, is basically a large repository containing the source code of programs that have been ported from Linux to Mac OS X (which are very related as Mac OS X is also a Unix based system, as you might know). Compared to Homebrew, Macports takes an astoundingly long time to compile all dependencies. Furthermore, even though Macports used to work very well, it nowadays experiences a lot of 'breaks' due to dependency issues. The downside of homebrew is that it is 'less complete' than macports and you have to manually install many python packages (using easy_install or pip). 
 
 ### Download Xcode
 
-If you want to install with Homebrew or Macports, the first thing that you need to do is install Xcode, the Apple developer toolkit. You can get the latest version of Xcode for free from the App Store or from their website (you do need to login with an apple account though).
+If you want to install with either Homebrew or Macports, the first thing that you need to do is install Xcode, the Apple developer toolkit. You can get the latest version of Xcode for free from the App Store or from their website (you do need to login with an apple account though).
 
 Website: <https://developer.apple.com/xcode/>
 
-Using the App Store is preferable, as it will keep your version of X Code automatically up to date. You do need to also manually install the Command Line tools for X Code.
+Using the App Store is preferable, as it will keep your version of X Code automatically up to date. You do need to also manually install the Command Line tools for X Code (and do this each time again after it is updated).
 
+### Installing with Homebrew
+
+Homebrew is a newer and easier way to build a source tree on your mac. It has many benefits on top of macports, such as speed, and nowadays seems to have less trouble compiling and updating packages than macports does. 
+You can install homebrew as instructed on <http://http://brew.sh/>. Then issue the following command to get started:
+
+    brew update
+    brew doctor
+
+Solve any issues that the 'doctor' command comes up with. This should be easy and usually the solutions (in the form of simple commands) are already given together with the problem statement.
+	
+Next, add some other required repositories, by using homebrew's "tap" command:
+    
+	brew tap homebrew/python
+	brew tap homebrew/headonly
+	brew tap homebrew/science	
+		
+Now it's time to start installing homebrew's own python environment. It's not really necessary to install another Python environment next to your system's python, but the Homebrew version is generally newer and better contained, so it is definitely recommended to do this.
+
+    brew install python qt pyqt qscintilla2 freetype portaudio numpy scipy portmidi hg pillow
+
+For pygame, it is preferable to first install the SDL libraries and smpeg (these are all better than the version that came with OS X, which seem to miss some important functionality):
+
+	brew install --HEAD smpeg
+	brew install sdl sdl_image sdl_mixer sdl_ttf pygame
+	
+Install the necessary python packages
+
+    pip install pygopengl pyflakes markdown python-bidi pyserial billiard
+	
+Install QProgEdit (from OpenSesame 2.8 on)
+
+    git clone https://github.com/smathot/QProgEdit.git
+	cd QProgEdit
+	python setup.py install
+	cd ..
+	rm -R QProgEdit
+
+Install expyriment (from OpenSesame 0.27 on)
+
+    git clone https://github.com/expyriment/expyriment.git
+	cd expyriment
+	python setup.py install
+	cd ..
+	rm -R expyriment
+	
+Install psychopy and its dependency pyglet. For psychopy to work, you (currently) need the latest repository versions from both pyglet and psychopy
+
+First install pyglet:
+
+    hg clone https://code.google.com/p/pyglet/
+	cd pyglet
+	python setup.py install
+	cd ..
+	rm -R pyglet
+
+Then install psychopy:
+
+    git clone https://github.com/psychopy/psychopy.git
+	cd psychopy
+	python setup.py install
+	cd ..
+	rm -R psychopy
+	
+You should now be able to run OpenSesame, but you'll notice you're missing some icons! You need to download the Faenza icon theme from <http://tiheum.deviantart.com/art/Faenza-Icons-173323228> and place it under resources/theme/default
+	
+The following packages are optional, but might be useful to install nevertheless:
+
+	brew install matplotlib opencv
+	pip install scipy pycairo pyparallel scikit-image
+	
+you can find more detailed instructions on installing OpenCV at <http://www.jeffreythompson.org/blog/2013/08/22/update-installing-opencv-on-mac-mountain-lion/>
 
 ### Installing with MacPorts
 
@@ -122,7 +193,7 @@ You can add +universal to your /opt/local/etc/macports/variants.conf to ask MacP
 
 Essentially, you can now install all required packages by running a single command in a terminal:
 
-	sudo port install py27-game py27-pyqt4 py27-qscintilla py27-serial py27-pil py27-opengl py27-pyaudio opencv +python27
+	sudo port install py27-game py27-pyqt4 py27-scintilla py27-serial py27-pil py27-opengl py27-pyaudio opencv +python27 py27-pip
 
 This takes forever and, in my case, crashed a few times with a checksum error. You can simply recover from such errors by executing the following command:
 
@@ -130,20 +201,47 @@ This takes forever and, in my case, crashed a few times with a checksum error. Y
 
 Then you repeat the first command and MacPorts should be on its way again.
 
+Install the remaining necessary python packages by using pip
+
+    sudo pip install pyflakes markdown python-bidi pyserial billiard
+	
+Install QProgEdit (the default code editor from OpenSesame 2.8 on)
+
+    git clone https://github.com/smathot/QProgEdit.git
+	cd QProgEdit
+	sudo python setup.py install
+	cd ..
+	rm -R QProgEdit
+
 #### Expyriment and Psychopy backends
-Next to the legacy backend, which is based on pygame, OpenSesame also offers you the option of using expyriment or psychopy. In contrast to the legacy backend, both of these backends are hardware accelerated (OpenGL) and should have increased timing precision. You can use the python package manager 'pip' to install the other two backends. If you don't have pip installed, you can do so by executing the following command:
+Next to the legacy backend, which is based on pygame, OpenSesame also offers you the option of using expyriment or psychopy. In contrast to the legacy backend, both of these backends are hardware accelerated (OpenGL) and should have increased timing precision.
 
-	sudo port install py27-pip
+Install expyriment (from OpenSesame 0.27 on)
 
-After the installation of pip is completed, you can easily install expyriment with:
+    git clone https://github.com/expyriment/expyriment.git
+    cd expyriment
+    sudo python setup.py install
+    cd ..
+    rm -R expyriment
+	
+Install psychopy and its dependency pyglet:
 
-	sudo pip install expyriment
+First install pyglet:
 
-If you plan on using the PsychoPy backend, make sure your Python environment is running in 32-bit mode. You can install psychopy and its dependency pyglet with the commands:
+    hg clone https://code.google.com/p/pyglet/
+    cd pyglet
+    sudo python setup.py install
+    cd ..
+    rm -R pyglet
 
-	sudo pip install pyglet
-	sudo pip install psychopy
+Then install psychopy:
 
+    git clone https://github.com/psychopy/psychopy.git
+    cd psychopy
+    python setup.py install
+    cd ..
+    rm -R psychopy
+	
 PsychoPy refuses to run without the wxPython library installed (which is weird, because OpenSesame doesn't use any of the wx GUI components of psychopy), so as a final step install wxPython with:
 
 	sudo port install py27-wxpython-dev
@@ -153,58 +251,6 @@ PsychoPy refuses to run without the wxPython library installed (which is weird, 
 Mac OS comes with a custom version of Python but, for our purpose (and many purposes), you need the official Python. This has already been installed by MacPorts, but you still need to make it the default. You can do this with the following command:
 
 	sudo port select --set python python27
-
-### Installing with homebrew
-
-Homebrew is a newer and easier way to build a source tree on your mac. It has many benefits on top of macports, such as speed, and nowadays seems to have less trouble compiling and updating packages than macports does.
-You can install homebrew as instructed on <http://brew.sh/>. Then issue the following command to get started:
-
-    brew update
-    brew doctor
-
-Solve any problem that this indicates, and then continue on to the real work by issuing:
-
-    brew install python qt pyqt qscintilla2 freetype portaudio
-
-Now for pygame:
-
-    brew tap homebrew/headonly
-	brew install --HEAD smpeg
-	brew install sdl sdl_image sdl_mixer sdl_ttf portmidi hg
-	pip install hg+http://bitbucket.org/pygame/pygame
-
-Install the necessary python packages
-
-    sudo pip install pyopengl numpy pillow pyglet psychopy pyflakes markdown python-bidi pyserial
-
-Install QProgEdit (from OpenSesame 2.8 on)
-
-    git clone https://github.com/smathot/QProgEdit.git
-	cd QProgEdit
-	sudo python setup.py install
-	cd ..
-	rm -R QProgEdit
-
-Install expyriment (from OpenSesame 0.27 on)
-
-    hg clone https://code.google.com/p/expyriment/
-	cd expyriment
-	sudo python setup.py install
-	cd ..
-	rm -R expyriment
-
-You should now be able to run OpenSesame, but you'll notice you're missing some icons! You need to download the Faenza icon theme from <http://tiheum.deviantart.com/art/Faenza-Icons-173323228> and place it under resources/theme/default
-
-The following packages are optional, but might be useful to install nevertheless:
-
-	sudo pip install matplotlib scipy pycairo pyparallel
-
-For OpenCV (as it depends on numpy, do this *after* you issued the above pip commands)
-
-	brew tap homebrew/science
-	brew install opencv
-
-you can find more detailed instructions on installing OpenCV at <http://www.jeffreythompson.org/blog/2013/08/22/update-installing-opencv-on-mac-mountain-lion/>
 
 ### Installing packages manually
 
