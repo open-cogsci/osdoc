@@ -214,34 +214,33 @@ Install QProgEdit (the default code editor from OpenSesame 2.8 on)
 	rm -R QProgEdit
 
 #### Expyriment and Psychopy backends
-Next to the legacy backend, which is based on pygame, OpenSesame also offers you the option of using expyriment or psychopy. In contrast to the legacy backend, both of these backends are hardware accelerated (OpenGL) and should have increased timing precision. You can use the python package manager 'pip' to install the other two backends. If you don't have pip installed, you can do so by executing the following command:
+Next to the legacy backend, which is based on pygame, OpenSesame also offers you the option of using expyriment or psychopy. In contrast to the legacy backend, both of these backends are hardware accelerated (OpenGL) and should have increased timing precision.
 
 Install expyriment (from OpenSesame 0.27 on)
 
     git clone https://github.com/expyriment/expyriment.git
-	cd expyriment
-	sudo python setup.py install
-	cd ..
-	rm -R expyriment
+    cd expyriment
+    sudo python setup.py install
+    cd ..
+    rm -R expyriment
 	
-Install psychopy and its dependency pyglet
-For psychopy to work, you (currently) need the latest repository versions from both pyglet and psychopy
+Install psychopy and its dependency pyglet:
 
 First install pyglet:
 
     hg clone https://code.google.com/p/pyglet/
-	cd pyglet
-	sudo python setup.py install
-	cd ..
-	rm -R pyglet
+    cd pyglet
+    sudo python setup.py install
+    cd ..
+    rm -R pyglet
 
 Then install psychopy:
 
     git clone https://github.com/psychopy/psychopy.git
-	cd psychopy
-	python setup.py install
-	cd ..
-	rm -R psychopy
+    cd psychopy
+    python setup.py install
+    cd ..
+    rm -R psychopy
 	
 PsychoPy refuses to run without the wxPython library installed (which is weird, because OpenSesame doesn't use any of the wx GUI components of psychopy), so as a final step install wxPython with:
 
