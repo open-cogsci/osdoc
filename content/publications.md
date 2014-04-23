@@ -50,6 +50,12 @@ Holliday, J. J. (2014). The perceptual assimilation of Korean obstruents by nati
 Lange, F., & Eggert, F. (in press). Sweet delusion: Glucose drinks fail to counteract ego depletion. *Appetite*. doi:10.1016/j.appet.2013.12.020
 {: .reference}
 
+Van Moorselaar, D., Theeuwes, J., & L, N. (2014). In competition for the attentional template: Can multiple items within visual working memory guide attention? *Journal of Experimental Psychology: Human Perception and Performance*. doi:10.1037/a0036229
+{: .reference}
+
+Mueller, S. T., & Piper, B. J. (2014). The Psychology Experiment Building Language (PEBL) and PEBL test battery. *Journal of Neuroscience Methods*, *222*, 250–259. doi:10.1016/j.jneumeth.2013.10.024
+{: .reference}
+
 Nazareth, D. S. (2014). *The Fluency Effect as the Underlying Variable for Judging Beauty and Usability* (Master’s thesis). University of Twente, Enschede, Netherlands. Retrieved from <http://purl.utwente.nl/essays/64908>
 {: .reference}
 
@@ -116,9 +122,6 @@ Mathôt, S. (2013, May). *An Introduction to Experiment Building with OpenSesame
 Mathôt, S. (2013). *Visual Attention and Stability* (Doctoral dissertation). VU University, Amsterdam, Netherlands. doi:10.6084/m9.figshare.704402
 {: .reference}
 
-Mueller, S. T., & Piper, B. J. (2013). The Psychology Experiment Building Language (PEBL) and PEBL test battery. *Journal of Neuroscience Methods*.
-{: .reference}
-
 Paivio, A. (2014). Bilingual dual coding theory and memory. In R. R. Heredia, J. Altarriba (eds.), *Foundations of Bilingual Memory*. New York, US: Springer Science. doi:10.1007/978-1-4614-9218-4_3
 {: .reference}
 
@@ -128,7 +131,7 @@ Peters, G.-J. Y., de Bruin, M., & Crutzen, R. (2013). Everything should be as si
 Schreij, D., Los, S. A., Theeuwes, J., Enns, J. T., & Olivers, C. N. (2013). The interaction between stimulus-driven and goal-driven orienting as revealed by eye movements. *Journal of Experimental Psychology: Human Perception and Performance*. doi:10.1037/a0034574
 {: .reference}
 
-Hanayik,T., & Rorden, C. (2013). StimSync: Open-source hardware for behavioral and MRI experiments. *Journal of Neuroscience Methods*. doi:10.1016/j.jneumeth.2013.11.017
+Rorden, C., & Hanayik,T. (2013). StimSync: Open-source hardware for behavioral and MRI experiments. *Journal of Neuroscience Methods*. doi:10.1016/j.jneumeth.2013.11.017
 {: .reference}
 
 Theeuwes, J., Mathôt, S., & Grainger, J. (2013). Exogenous object-centered attention. *Attention, Perception, & Psychophysics*. doi:10.3758/s13414-013-0459-4
