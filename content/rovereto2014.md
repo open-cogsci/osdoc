@@ -35,9 +35,10 @@ toc:
 - No prior experience with OpenSesame is assumed.
 - No prior experience with Python is assumed for the main tutorial. The 'Extra' sections require a basic understanding of Python syntax.
 
-### Laptop
+### Equipment
 
-- A laptop is recommended (but not required) so that you can walk through the steps of the tutorial yourself. If you bring a laptop, please install OpenSesame before the workshop.
+- University computers with OpenSesame pre-installed will be available during the workshop.
+- If you bring your own laptop, please install OpenSesame before the workshop.
 - OpenSesame is available for Windows XP/ 7/ 8, Linux, and Mac OS. If you are running Mac OS, you are advised to verify beforehand that OpenSesame runs properly on your system, because Mac OS support is still experimental.
 - If you have an Android tablet or phone, you can bring it along to run your experiment on a tablet! If you bring an Android device, please install the [OpenSesame runtime for Android] before the workshop.
 
@@ -57,7 +58,7 @@ The task is to report whether a dog or a cat is shown, by tapping (or clicking) 
 
 %--
 figure:
- id: FiMeowingCapybara
+ id: FigMeowingCapybara
  source: meowing-capybara.png
  caption: |
   Don't be fooled by meowing capybaras! ([Source](http://commons.wikimedia.org/wiki/File:Capybara_Hattiesburg_Zoo_\(70909b-58\)_2560x1600.jpg))
@@ -543,7 +544,7 @@ if button == None:
 		timeout=response_timeout-animal_duration)
 # If both the first and the second attempt to get a mouseclick timed out, we
 # set the response to 'None' ...
-if button == None:	
+if button == None:
 	response = 'None'
 # ... but if we were able to get a response, we determine the coordinates of the
 # click (or touch). If it is on the left side of the screen, we set the response
