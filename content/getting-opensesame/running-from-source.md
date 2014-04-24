@@ -95,7 +95,7 @@ It's convenient to create a batch file for running OpenSesame from source. You c
 
 ## Instructions for Mac OS
 
-There are three ways to prepare the software environment for running OpenSesame from source on Mac OS X. You can either download and install all required packages manually, or compose the required source environment by using the repository-based package managers MacPorts or Homebrew. The easiest and preferred method nowadays to get OpenSesame working is by using Homebrew. This package manager works very fast, handles dependency requirements very well, and is very well maintained. The other package manager, MacPorts, is basically a large repository containing the source code of programs that have been ported from Linux to Mac OS X (which are very related as Mac OS X is also a Unix based system, as you might know). Compared to Homebrew, Macports takes an astoundingly long time to compile all dependencies. Furthermore, even though Macports used to work very well, it nowadays experiences a lot of 'breaks' due to dependency issues. The downside of homebrew is that it is 'less complete' than macports and you have to manually install many python packages (using easy_install or pip). 
+There are three ways to prepare the software environment for running OpenSesame from source on Mac OS X. You can either download and install all required packages manually, or compose the required source environment by using the repository-based package managers MacPorts or Homebrew. The easiest and preferred method nowadays to get OpenSesame working is by using Homebrew. This package manager works very fast, handles dependency requirements very well, and is very well maintained. The other package manager, MacPorts, is basically a large repository containing the source code of programs that have been ported from Linux to Mac OS X (which are very related as Mac OS X is also a Unix based system, as you might know). Compared to Homebrew, Macports takes an astoundingly long time to compile all dependencies. Furthermore, even though Macports used to work very well, it nowadays experiences a lot of 'breaks' due to dependency issues. The downside of homebrew is that it is 'less complete' than macports and you have to manually install many python packages (using easy_install or pip).
 
 ### Download Xcode
 
@@ -107,20 +107,20 @@ Using the App Store is preferable, as it will keep your version of X Code automa
 
 ### Installing with Homebrew
 
-Homebrew is a newer and easier way to build a source tree on your mac. It has many benefits on top of macports, such as speed, and nowadays seems to have less trouble compiling and updating packages than macports does. 
+Homebrew is a newer and easier way to build a source tree on your mac. It has many benefits on top of macports, such as speed, and nowadays seems to have less trouble compiling and updating packages than macports does.
 You can install homebrew as instructed on <http://http://brew.sh/>. Then issue the following command to get started:
 
     brew update
     brew doctor
 
 Solve any issues that the 'doctor' command comes up with. This should be easy and usually the solutions (in the form of simple commands) are already given together with the problem statement.
-	
+
 Next, add some other required repositories, by using homebrew's "tap" command:
-    
+
 	brew tap homebrew/python
 	brew tap homebrew/headonly
-	brew tap homebrew/science	
-		
+	brew tap homebrew/science
+
 Now it's time to start installing homebrew's own python environment. It's not really necessary to install another Python environment next to your system's python, but the Homebrew version is generally newer and better contained, so it is definitely recommended to do this.
 
     brew install python qt pyqt qscintilla2 freetype portaudio numpy scipy portmidi hg pillow
@@ -129,11 +129,11 @@ For pygame, it is preferable to first install the SDL libraries and smpeg (these
 
 	brew install --HEAD smpeg
 	brew install sdl sdl_image sdl_mixer sdl_ttf pygame
-	
+
 Install the necessary python packages
 
     pip install pygopengl pyflakes markdown python-bidi pyserial billiard
-	
+
 Install QProgEdit (from OpenSesame 2.8 on)
 
     git clone https://github.com/smathot/QProgEdit.git
@@ -149,7 +149,7 @@ Install expyriment (from OpenSesame 0.27 on)
 	python setup.py install
 	cd ..
 	rm -R expyriment
-	
+
 Install psychopy and its dependency pyglet. For psychopy to work, you (currently) need the latest repository versions from both pyglet and psychopy
 
 First install pyglet:
@@ -167,14 +167,14 @@ Then install psychopy:
 	python setup.py install
 	cd ..
 	rm -R psychopy
-	
+
 You should now be able to run OpenSesame, but you'll notice you're missing some icons! You need to download the Faenza icon theme from <http://tiheum.deviantart.com/art/Faenza-Icons-173323228> and place it under resources/theme/default
-	
+
 The following packages are optional, but might be useful to install nevertheless:
 
 	brew install matplotlib opencv
 	pip install scipy pycairo pyparallel scikit-image
-	
+
 you can find more detailed instructions on installing OpenCV at <http://www.jeffreythompson.org/blog/2013/08/22/update-installing-opencv-on-mac-mountain-lion/>
 
 ### Installing with MacPorts
@@ -204,7 +204,7 @@ Then you repeat the first command and MacPorts should be on its way again.
 Install the remaining necessary python packages by using pip
 
     sudo pip install pyflakes markdown python-bidi pyserial billiard
-	
+
 Install QProgEdit (the default code editor from OpenSesame 2.8 on)
 
     git clone https://github.com/smathot/QProgEdit.git
@@ -214,6 +214,7 @@ Install QProgEdit (the default code editor from OpenSesame 2.8 on)
 	rm -R QProgEdit
 
 #### Expyriment and Psychopy backends
+
 Next to the legacy backend, which is based on pygame, OpenSesame also offers you the option of using expyriment or psychopy. In contrast to the legacy backend, both of these backends are hardware accelerated (OpenGL) and should have increased timing precision.
 
 Install expyriment (from OpenSesame 0.27 on)
@@ -223,7 +224,7 @@ Install expyriment (from OpenSesame 0.27 on)
     sudo python setup.py install
     cd ..
     rm -R expyriment
-	
+
 Install psychopy and its dependency pyglet:
 
 First install pyglet:
@@ -241,7 +242,7 @@ Then install psychopy:
     python setup.py install
     cd ..
     rm -R psychopy
-	
+
 PsychoPy refuses to run without the wxPython library installed (which is weird, because OpenSesame doesn't use any of the wx GUI components of psychopy), so as a final step install wxPython with:
 
 	sudo port install py27-wxpython-dev
