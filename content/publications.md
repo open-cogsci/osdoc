@@ -47,6 +47,9 @@ Hermens, F., Kral, D., & Rosenbaum, D. A. (2014). Limits of end-state planning. 
 Holliday, J. J. (2014). The perceptual assimilation of Korean obstruents by native Mandarin listenersa). *The Journal of the Acoustical Society of America*, *135*(3), 1585–1595. doi:10.1121/1.4863653
 {: .reference}
 
+Ishii, A., Tanaka, M., & Watanabe, Y. (2014). The neural substrates of self-evaluation of mental fatigue: A magnetoencephalography study. *PLoS ONE*, *9*(4), e95763. doi:10.1371/journal.pone.0095763
+{: .reference}
+
 Lange, F., & Eggert, F. (in press). Sweet delusion: Glucose drinks fail to counteract ego depletion. *Appetite*. doi:10.1016/j.appet.2013.12.020
 {: .reference}
 
