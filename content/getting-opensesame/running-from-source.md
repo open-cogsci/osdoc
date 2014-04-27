@@ -132,7 +132,7 @@ For pygame, it is preferable to first install the SDL libraries and smpeg (these
 
 Install the necessary python packages
 
-    pip install pygopengl pyflakes markdown python-bidi pyserial billiard
+    pip install pyopengl pyflakes markdown python-bidi pyserial billiard
 
 Install QProgEdit (from OpenSesame 2.8 on)
 
@@ -173,7 +173,7 @@ You should now be able to run OpenSesame, but you'll notice you're missing some 
 The following packages are optional, but might be useful to install nevertheless:
 
 	brew install matplotlib opencv
-	pip install scipy pycairo pyparallel scikit-image
+	pip install pycairo pyparallel scikit-image
 
 you can find more detailed instructions on installing OpenCV at <http://www.jeffreythompson.org/blog/2013/08/22/update-installing-opencv-on-mac-mountain-lion/>
 
