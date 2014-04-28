@@ -88,6 +88,7 @@ External devices
 Miscellaneous
 	Timing
 	Counterbalancing
+	Git and versioning
 	:Non-western alphabets
 	Visual angle
 	Runners
