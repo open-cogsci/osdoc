@@ -53,7 +53,7 @@ New York Cognition Questionnaire (NYC-Q) is a questionnaire probing the content 
 - __Developer:__ Eoin Travers
 - __URL:__ <http://eointravers.github.io/blog/2014/03/os-mousetracking/>
 - __License:__ ?
-- __Citation:__ Travers, E. (2014) *OpenSesame mouse-tracking script*. http://eointravers.github.io/blog/2014/03/os-mousetracking/>
+- __Citation:__ Travers, E. (2014) *OpenSesame mouse-tracking script*. Retrieved from <http://eointravers.github.io/blog/2014/03/os-mousetracking/>
 
 
 ## Adding your own task
