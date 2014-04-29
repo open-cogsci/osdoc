@@ -46,6 +46,16 @@ New York Cognition Questionnaire (NYC-Q) is a questionnaire probing the content 
 - __License:__ ?
 - __Citation:__ Gorgolewski., K. J. (2014). *Mini version of the New York Cognition Questionnaire (min-NYC-Q)*. Retrieved from <https://github.com/NeuroanatomyAndConnectivity/NYC-Q/blob/master/scripts/questionnaire/inscanner-NYCQ.opensesame>
 
+### Mouse-tracking
+
+[Spivey, Grosjean and Knoblich (2005)](http://www.pnas.org/content/102/29/10393) introduced the mouse-tracking paradigm, in which participants' mouse trajectories are recorded as they move the cursor from a starting point to click on one of two or more responses. The path of the mouse cursor can be analysed to infer instantaneous attraction towards competing responses over the course of a trial.
+
+- __Developer:__ Eoin Travers
+- __URL:__ <http://eointravers.github.io/blog/2014/03/os-mousetracking/>
+- __License:__ ?
+- __Citation:__ Travers, E. (2014) *OpenSesame mouse-tracking script*. Retrieved from <http://eointravers.github.io/blog/2014/03/os-mousetracking/>
+
+
 ## Adding your own task
 
 If you have implemented a task that you feel has a high re-use potential, we want to know about it! You can have your task included in this list in two ways:
