@@ -37,7 +37,7 @@ Conjunctive Continuous Performance Task (CCPT) is a sustained attention test dev
 - __License:__ ?
 - __Citation:__ Gorgolewski., K. J. (2014). *Conjunctive Continuous Performance Task (CCPT)*. Retrieved from <https://github.com/NeuroanatomyAndConnectivity/ConjunctiveContinuousPerformanceTask>
 
-### Mini version of the New York Cognition Questionnaire 
+### Mini version of the New York Cognition Questionnaire
 
 New York Cognition Questionnaire (NYC-Q) is a questionnaire probing the content and form of self generated thoughts (mindwandering). This is a minimal version of the NYC-Q suitable for using after behavioural tests or resting state fMRI scans. Available in English and German.
 
@@ -73,6 +73,10 @@ Please provide the following information:
 3. A URL where people can download the task.
 4. Citation information.
 5. A license, such as the [GPL-3].
+
+For tips on how to develop a Git-friendly experiment, see:
+
+- [/miscellaneous/git](/miscellaneous/git)
 
 [gpl-2]: http://www.gnu.org/licenses/gpl-2.0.html
 [gpl-3]: https://www.gnu.org/copyleft/gpl.html

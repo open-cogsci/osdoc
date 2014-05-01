@@ -103,7 +103,7 @@ Contribute
 	Develop
 	Source-code architecture
 Donate
-:Rovereto workshop
+Rovereto workshop
 Forum
 Cogsci.nl
 BRM Paper
