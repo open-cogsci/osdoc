@@ -193,6 +193,8 @@ def parseOsdocYaml(path, info, s):
 		# the generated site.
 		s = s.replace(u'![content/', u'![/')
 		s = s.replace(u'(content/', u'(/')
+		# Remove the three newly added entries from the build path.
+		build.path = build.path[:-3]
 		return s
 
 	# If not, use the deprecated OSDOC-specific YAML parser

@@ -8,7 +8,7 @@ permalink: /rovereto2014/
 ext_url: /rovereto2014
 ---
 
-This tutorial is part of an OpenSesame workshop that will be held at the Center for Mind/ Brain Sciences at the University of Trento on May 7th, 9:00.
+This tutorial is part of an OpenSesame workshop that will take place at the Center for Mind/ Brain Sciences at the University of Trento on May 7th, 9:00.
 
 %--
 figure:
@@ -37,7 +37,7 @@ toc:
 
 ### Equipment
 
-- University computers with OpenSesame pre-installed will be available during the workshop.
+- University computers on which OpenSesame is pre-installed will be available during the workshop.
 - If you bring your own laptop, please install OpenSesame before the workshop.
 - OpenSesame is available for Windows XP/ 7/ 8, Linux, and Mac OS. If you are running Mac OS, you are advised to verify beforehand that OpenSesame runs properly on your system, because Mac OS support is still experimental.
 - If you have an Android tablet or phone, you can bring it along to run your experiment on a tablet! If you bring an Android device, please install the [OpenSesame runtime for Android] before the workshop.
@@ -54,7 +54,7 @@ You can download the introduction slides from [here][slides].
 
 We will create a simple animal-filled multisensory integration task, in which participants see a picture of a dog, cat, or capybara. In addition, a meowing or barking sound is played. To make things more fun, we will design the experiment so that you can run it on an Android device, using the [OpenSesame runtime for Android]. You will see that this requires hardly any additional effort.
 
-The task is to report whether a dog or a cat is shown, by tapping (or clicking) on the left (dog) or right (cat) side of the screen. No response should be given when a capybara is shown (i.e. those are catch trials). The prediction is simple: Participants should be faster to identify dogs when a barking sound is played, and faster to identify cats when a meowing sound is played. In other words, we expect a multisensory congruency effect. A secondary prediction is that when participants see a capybara, they are more likely to report seeing a dog when they hear a bark, and more likely to report seeing a cat when they hear a meow.
+The participant's task is to report whether a dog or a cat is shown, by tapping (or clicking) on the left (dog) or right (cat) side of the screen. No response should be given when a capybara is shown (i.e. those are catch trials). The prediction is simple: Participants should be faster to identify dogs when a barking sound is played, and faster to identify cats when a meowing sound is played. In other words, we expect a multisensory congruency effect. A secondary prediction is that when participants see a capybara, they are more likely to report seeing a dog when they hear a bark, and more likely to report seeing a cat when they hear a meow.
 
 %--
 figure:
@@ -70,7 +70,7 @@ OpenSesame is available for Windows, Linux, Mac OS (experimental), and Android (
 
 - <http://osdoc.cogsci.nl/>
 
-When you start OpenSesame, you will be given a choice of template experiments, and a list of recently opened experiments (if any).
+When you start OpenSesame, you will be given a choice of template experiments, and a list of recently opened experiments (if any, see %FigStartup).
 
 %--
 figure:
@@ -80,7 +80,7 @@ figure:
   The OpenSesame window on start-up.
 --%
 
-The 'Droid template' provides a good starting point for creating an Android-based experiment. However, in this tutorial we will create the entire experiment from scratch. Therefore, we will continue with the 'default template', which is loaded by default when OpenSesame is launched.
+The 'Droid template' provides a good starting point for creating Android-based experiments. However, in this tutorial we will create the entire experiment from scratch. Therefore, we will continue with the 'default template', which is already loaded when OpenSesame is launched (%FigDefaultTemplate).
 
 %--
 figure:
@@ -176,7 +176,7 @@ For this experiment, we will use images of cats, dogs, and capybaras. We will al
 
 - [/attachments/cats-dogs-capybaras/stimuli.zip](/attachments/cats-dogs-capybaras/stimuli.zip)
 
-Download `stimuli.zip` and extract it somewhere (to your desktop, for example). Next, in OpenSesame, click on the 'Show file pool' button in the main toolbar (or: Menu →View → Show file pool). This will show the file pool, by default on the right side of the window. The easiest way to add the stimuli to the file pool is by dragging them from the desktop (or wherever you have extracted the files to) into the file pool. Alternatively, you can click on the '+' button in the file pool and add files using the file-selection dialog that appears. The file pool will be automatically saved with your experiment if you save your experiment in the `.opensesame.tar.gz` format (which is the default format).
+Download `stimuli.zip` and extract it somewhere (to your desktop, for example). Next, in OpenSesame, click on the 'Show file pool' button in the main toolbar (or: Menu →View → Show file pool). This will show the file pool, by default on the right side of the window. The easiest way to add the stimuli to the file pool is by dragging them from the desktop (or wherever you have extracted the files to) into the file pool. Alternatively, you can click on the '+' button in the file pool and add files using the file-selection dialog that appears. The file pool will automatically be saved with your experiment if you save your experiment in the `.opensesame.tar.gz` format (which is the default format).
 
 After you have added all stimuli, your file pool looks as in %FigStep4.
 
@@ -234,7 +234,7 @@ figure:
 
 ## Step 7: Define the central fixation dot
 
-Click on *fixation_dot* in the overview area. This will open a basic drawing board that you can use to design your stimulus displays. To draw a central fixation dot, first click on the fixation-dot icon (with the small gray circle) and then click on the center of the display, i.e. at position `0, 0`.
+Click on *fixation_dot* in the overview area. This will open a basic drawing board that you can use to design your stimulus displays. To draw a central fixation dot, first click on the fixation-dot icon (with the small gray circle) and then click on the center of the display, i.e. at position (0, 0).
 
 We also need to specify for how long the fixation dot is visible. To do so, change the duration from 'keypress' to 495 ms, in order to specify a 500 ms duration. (See Background box 4 for an explanation.)
 
@@ -291,7 +291,7 @@ For more information about using variables, see:
 
 ## Step 9: Define the animal picture
 
-Open *animal_picture*. This will again open a `sketchpad` drawing board. Now select the image tool by clicking on the button with the aquarium-like icon. Click on the center of the screen (0, 0). The 'Select file from pool' dialog will appear. Select the file `capybara1.png` and click on 'Select'. The capybara will now lazily stare at you from the center of the screen! But of course, we don't always want to show the same capybara, attractive though it may be. Instead, we want to have the image depend on the variables `animal` and `pic_nr` that we have defined in the *block_loop* (Step 5).
+Open *animal_picture*. This will again open a `sketchpad` drawing board. Now select the image tool by clicking on the button with the aquarium-like icon. Click on the center of the screen (0, 0). The 'Select file from pool' dialog will appear. Select the file `capybara1.png` and click on 'Select'. The capybara will now lazily stare at you from the center of the screen. But of course, we don't always want to show the same capybara. Instead, we want to have the image depend on the variables `animal` and `pic_nr` that we have defined in the *block_loop* (Step 5).
 
 We can use the basic same trick as we did for *animal_sound*, although things work slightly differently for images. First, right-click on the capybara and select 'Edit'. This will allow you to edit the following line of OpenSesame script that corresponds to the capybara picture:
 
@@ -335,7 +335,7 @@ figure:
   The `touch_response` item records display taps and mouse clicks and assigns a response value based on a grid.
 --%
 
-In our case, we simply divide the screen into a left and a right side, which means that we have to set the number of columns to 2 and the number of rows to 1 (it is by default). Following the logic shown in %FigTouchResponse, the left side of the display now corresponds to a 1 response, and the right side corresponds to a 2 response. (Note that we are therefore much more liberal than the visual response circles of %FigStep9 suggest.)
+In our case, we simply divide the screen into a left and a right side, which means that we have to set the number of columns to 2 and the number of rows to 1 (it is by default). Following the logic shown in %FigTouchResponse, the left side of the display now corresponds to a 1 response, and the right side corresponds to a 2 response. (Note that we are therefore much more liberal than the visual response circles of %FigStep9 suggest, because we accept taps/ clicks anywhere on the screen.)
 
 Finally, we have to make it possible for participants *not* to respond, because the response should be withheld on capybara trials. To do so, we change the 'Timeout' field from 'infinite' to '2000'. This means that the response will automatically time out after 2000 ms. When this happens, the response will be set to 'None' and the experiment will continue.
 
@@ -439,7 +439,7 @@ __Tip__ -- A test run is executed even faster by clicking the orange 'Run in win
 
 ## Extra (easy): A smarter way to define the correct response
 
-In Step 11, we have defined `correct_response` variable manually. This works, but it takes time and is prone to error. A smarter way is to use an `inline_script` and a bit of deductive logic to determine the correct response for a given trial. First, open *block_loop* and remove the `correct_response` column, because we don't need it anymore. Next, drag an `inline_script` item from the item toolbar to the start of the *trial_sequence*. Open the *prepare* tab of the `inline_script` and add the following script:
+In Step 11, we have defined `correct_response` variable manually. This works, but it takes time and is prone to mistakes. A smarter way is to use an `inline_script` and a bit of deductive logic to determine the correct response for a given trial. First, open *block_loop* and remove the `correct_response` column, because we don't need it anymore. Next, drag an `inline_script` item from the item toolbar to the start of the *trial_sequence*. Open the *prepare* tab of the `inline_script` and add the following script:
 
 {% highlight python %}
 if self.get('animal') == 'dog':
@@ -459,6 +459,21 @@ The script itself is almost human-readable language, at least if you know the fo
 - [/python/about/](/python/about/)
 
 We can summarize the script as follows: If the picture is a dog, the correct response is 1. But if the picture is a cat, the correct response is 2. If the picture is neither (and by exclusion must therefore be a capybara), the correct response is no response, or a timeout (indicated by 'None').
+
+Finally, let's consider the following variation of the script above:
+
+{% highlight python %}
+if self.get('animal') == 'dog':
+	exp.set('correct_response', 1)
+elif self.get('animal') == 'cat':
+	exp.set('correct_response', 2)
+elif self.get('animal') == 'capybara':
+	exp.set('correct_response', None)
+else:
+	raise Exception('%s is not a valid animal!' % self.get('animal'))
+{% endhighlight %}
+
+Here we allow for the possibility an animal is neither a dog, nor a cat, nor a capybara. And if we encounter such an exotic creature, we abort the experiment with an error message, by raising an `Exception`. This may feel like a silly thing to do, because we have programmed the experiment ourselves, and we (think we) know with 100% certainty that it includes only cats, dogs, and capybaras. But it is nevertheless good practice to add these kinds of sanity checks to your experiment, to protect yourself from typos, logical errors, etc. The more complex your experiment becomes, the more important these kinds of checks are. Never assume that your code is bug-free!
 
 ## Extra (medium): Add breaks and per-block feedback
 
@@ -507,7 +522,7 @@ pic_nr = self.get('pic_nr')
 # ... use these variables to determine the picture filename (e.g., 'cat1.png') ...
 picture_name = '%s%d.png' % (animal, pic_nr)
 # ... and get the full path to the picture in the file pool.
-picture_path = exp.get_file(picture_path)
+picture_path = exp.get_file(picture_name)
 # Now create a canvas and draw the animal picture on it
 my_animal_canvas = canvas(exp)
 my_animal_canvas.image(picture_path)
@@ -527,8 +542,9 @@ response_timeout = 3000
 # Show the canvas with the animal picture and remember the presentation
 # timestamp
 target_timestamp = my_animal_canvas.show()
-# Collect a mouseclick (= touch on Android) with a timeout of 500 ms
-button, position, response_timestamp = my_mouse.get_click( \
+# Collect a mouseclick (= touch on Android) with a timeout specified in
+# animal_duration
+button, position, response_timestamp = my_mouse.get_click(
 	timeout=animal_duration)
 # If the response time was less than animal_duration, sleep for the remainder of
 # the time to make sure that the animal picture always stays on the screen for
@@ -540,7 +556,7 @@ my_blank_canvas.show()
 # If the previous response collection timed out (i.e. button == None), then we
 # need to poll for a mouse click again.
 if button == None:
-	button, position, response_timestamp = my_mouse.get_click( \
+	button, position, response_timestamp = my_mouse.get_click(
 		timeout=response_timeout-animal_duration)
 # If both the first and the second attempt to get a mouseclick timed out, we
 # set the response to 'None' ...
