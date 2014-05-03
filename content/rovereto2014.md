@@ -473,7 +473,7 @@ else:
 	raise Exception('%s is not a valid animal!' % self.get('animal'))
 {% endhighlight %}
 
-Here we allow for the possibility an animal is neither a dog, nor a cat, nor a capybara. And if we encounter such an exotic creature, we abort the experiment with an error message, by raising an `Exception`. This may feel like a silly thing to do, because we have programmed the experiment ourselves, and we (think we) know with 100% certainty that it includes only cats, dogs, and capybaras. But it is nevertheless good practice to add these kinds of sanity checks to your experiment, to protect yourself from typos, logical errors, etc. The more complex your experiment becomes, the more important these kinds of checks are. Never assume that your code is bug-free!
+Here we allow for the possibility that an animal is neither a dog, nor a cat, nor a capybara. And if we encounter such an exotic creature, we abort the experiment with an error message, by raising an `Exception`. This may feel like a silly thing to do, because we have programmed the experiment ourselves, and we (think we) know with 100% certainty that it includes only cats, dogs, and capybaras. But it is nevertheless good practice to add these kinds of sanity checks to your experiment, to protect yourself from typos, logical errors, etc. The more complex your experiment becomes, the more important these kinds of checks are. Never assume that your code is bug-free!
 
 ## Extra (medium): Add breaks and per-block feedback
 
