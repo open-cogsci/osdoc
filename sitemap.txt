@@ -24,6 +24,7 @@ tutorials
 	cambridge tutorial 2014
 #	python inline scripting tutorial
 	video tutorials
+	mouse-tracking tutorial
 usage
 	sequences and loops
 	variables and conditional ("if") statements
