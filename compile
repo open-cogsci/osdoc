@@ -574,7 +574,8 @@ if __name__ == u'__main__':
 			u'http://localhost:8000']
 		subprocess.call(cmd, stdout=open(u'deadlinks.log', u'w'))
 		nErr = 0
-		for l in open(u'deadlinks.log').read().split(u'\n')[4:]:
+		for l in open(u'deadlinks.log').read().decode(u'utf-8').split(
+			u'\n')[4:]:
 			r = l.split(u';')
 			if len(r) < 6 or r[0] == u'urlname':
 				continue
