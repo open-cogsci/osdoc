@@ -53,6 +53,9 @@ Ishii, A., Tanaka, M., & Watanabe, Y. (2014). The neural substrates of self-eval
 Failing, M. F., & Theeuwes, J. (2014). Exogenous visual orienting by reward. *Journal of Vision*, *14*(5), 6. doi:10.1167/14.5.6
 {: .reference}
 
+Faneros, M. A. (2014). *A Comparison of Contemporary Executive Function Models* (Doctoral dissertation). University of Oklahoma, Norman, OK, United States of America. Retrieved from: <https://shareok.org/bitstream/handle/11244/10368/2014_Faneros_Michael_Dissertation.pdf>
+{: .reference}
+
 Lange, F., & Eggert, F. (in press). Sweet delusion: Glucose drinks fail to counteract ego depletion. *Appetite*. doi:10.1016/j.appet.2013.12.020
 {: .reference}
 
@@ -66,6 +69,9 @@ Nazareth, D. S. (2014). *The Fluency Effect as the Underlying Variable for Judgi
 {: .reference}
 
 Sall, R. J., Wright, T. J., & Boot, W. R. (2014). Driven to distraction? The effect of simulated red light running camera flashes on attention and oculomotor control. *Visual Cognition*, 1–17. doi:10.1080/13506285.2013.873509
+{: .reference}
+
+Theeuwes, J., Mathôt, S., & Grainger, J. (in press). Object-centered orienting and IOR. *Attention, Perception, & Psychophysics.*
 {: .reference}
 
 ### 2013
