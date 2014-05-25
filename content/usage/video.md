@@ -11,6 +11,12 @@ toc:
  mindepth: 2
 --%
 
+## media_player_gst plug-in
+
+The `media_player_gst` plug-in is built on the Gstreamer framework. Downloads and installation instructions can be found here:
+	
+- <https://github.com/dschreij/media_player_gst/>
+
 ## media_player_vlc plug-in
 
 As of OpenSesame 0.27, a plug-in based on the well-known VLC media player is included by default in the Windows release. You can download the latest version of the plug-in from here:
