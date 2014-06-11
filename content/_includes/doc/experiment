@@ -1,5 +1,5 @@
 <div class='pydoc'>
-<p><small>For OpenSesame 2.8.1</small></p>
+<p><small>For OpenSesame 2.8.2</small></p>
 <span class='class_name'>class <b>experiment</b></span><br />
 <p class='details'><b>Function overview:</b><br />
 <a href='#experiment.__init__'>__init__</a><br />
@@ -21,6 +21,7 @@
 <a href='#experiment.set_subject'>set_subject</a><br />
 <a href='#experiment.sleep'>sleep</a><br />
 <a href='#experiment.time'>time</a><br />
+<a href='#experiment.unistr'>unistr</a><br />
 <a href='#experiment.unset'>unset</a><br />
 </p>
 <div class='function'><span class='function_name'><a class='anchor' id='experiment.__init__'>experiment</a>.<b>__init__(name=u'experiment', string=None, pool_folder=None, experiment_path=None, fullscreen=False, auto_response=False, logfile=u'defaultlog.csv', subject_nr=0)</b></span><div class='details'>
@@ -208,7 +209,7 @@ The value<br />
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='experiment.get_file'>experiment</a>.<b>get_file(path)</b></span><div class='details'>
-Returns the path to a file. First checks if the file is in the file pool and then the folder of the current experiment (if any). Otherwise, simply returns the path.<br />
+Returns the path to a file. First checks if the file is in the file pool and then the folder of the current experiment (if any), or in the `__pool__` subfolder of the current experiment. Otherwise, simply returns the path.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
@@ -266,8 +267,8 @@ True if the variable exists, False if not.<br />
 <div class='function'><span class='function_name'><a class='anchor' id='experiment.log'>experiment</a>.<b>log(msg)</b></span><div class='details'>
 <i>Inherited from <b>item</b></i><br /><br />Writes a message to the log file. Note that using the log() function in combination with a logger item may result in messy log files.<br />
 <br />
-<span class='variable'>msg </span> &rarr;  A message.
-<br />
+<span class='variable'>msg	</span> &rarr; 	A message. This can be any type and will we be converted to a 
+unicode string using the logic described in `unistr()`.<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
@@ -399,6 +400,24 @@ A timestamp of the current time.<br />
 <br />
 {% highlight python %}print('The time is %s' % self.time())
 {% endhighlight %}<br />
+</div></div>
+<div class='function'><span class='function_name'><a class='anchor' id='experiment.unistr'>experiment</a>.<b>unistr(val)</b></span><div class='details'>
+<i>Inherited from <b>item</b></i><br /><br />Converts a value to a unicode string. This function is mostly necessary to make sure that normal strings with special characters are correctly encoded into unicode, and don't result in TypeErrors.<br />
+<br />
+The conversion logic is as follows:<br />
+<br />
+- unicode values are returned unchanged.<br />
+- str values are decoded using utf-8.<br />
+- all other types are typecast to unicode, assuming utf-8 encoding where applicable.<br />
+<br />
+<span class='keyword'>Arguments:</span>
+<br />
+<span class='variable'>val </span> &rarr;  A value of any type.
+<br />
+<br />
+<span class='keyword'>Returns:</span>
+<br />
+A unicode string.<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='experiment.unset'>experiment</a>.<b>unset(var)</b></span><div class='details'>
 <i>Inherited from <b>item</b></i><br /><br />Unsets (forgets) an OpenSesame variable.<br />
