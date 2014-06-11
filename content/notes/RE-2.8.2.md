@@ -39,7 +39,7 @@ Thanks to Daniel Schreij ([@dschreij](https://github.com/dschreij/)) for his cod
 - Includes a slightly patched version of PsychoPy 1.80.05 that addresses an important issue with keypress timestamps.
 
 ~~~
-OpenSesame 2.8.2~pre6
+OpenSesame 2.8.2
 Python 2.7.6 (default, Nov 10 2013, 19:24:18) [MSC v.1500 32 bit (Intel)]
 OpenCV is not available
 OpenCV2 2.4.9
@@ -47,7 +47,7 @@ QProgedit 1.3.2
 Expyriment 0.7.0 (Revision 7a6b73d; Python 2.7.6)
 NumPy 1.8.1
 PIL is available (version is unknown)
-PsychoPy 1.80.05-opensesame-2
+PsychoPy 1.80.05-opensesame-1
 PyAudio 0.2.7
 PyGame 1.9.1release
 Pyglet 1.1.4
