@@ -5,6 +5,8 @@ group: Miscellaneous
 permalink: /history/
 ---
 
+|June 11, 2014	| [2.8.2][] *Gutsy Gibson* (maintenance)	|
+|Mar 31, 2014	| [2.8.1][] *Gutsy Gibson* (maintenance)	|
 |Feb 16, 2014	| [2.8.0][] *Gutsy Gibson*|
 |Sep 13, 2013	| [0.27.4][] *Frisky Freud* (maintenance)	|
 |Jul 9, 2013	| [0.27.3][] *Frisky Freud* (maintenance)	|
@@ -47,3 +49,5 @@ permalink: /history/
 [0.27.3]: /notes/0.27.3/
 [0.27.4]: /notes/0.27.4/
 [2.8.0]: /notes/2.8.0/
+[2.8.1]: /notes/2.8.1/
+[2.8.2]: /notes/2.8.2/

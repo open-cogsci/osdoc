@@ -10,32 +10,44 @@ OpenSesame 2.8.2 is the second maintenance release in the 2.8 series. If you are
 
 ## Credits
 
-TODO
+Thanks to Daniel Schreij ([@dschreij](https://github.com/dschreij/)) for his code contributions (as always!).
 
 ## Changelog
 
-### Bugs fixed
-
-TODO
-
 ### Improvements
 
-TODO
+- Improve support for psycho back-end on OSX
+- Improve support for multiprocessing on OSX
+- Open experiments by dropping on the overview area
+- Add fallback pool folder to facilitate versioning
+- Allow margins, spacing, and theme to be specified in `form_multiple_choice` plug-in (#255)
+- Safely convert messages to unicode in `item.log()`
+
+### Bugs fixed
+
+- Fix autosave folder dialog on OSX (#250)
+- Fix sampler crashing on filenames with special characters (#244)
+- All items set `time_[item name]` variables (#243)
+- Do not crash on purely numeric text when using bi-direction language
+	support (#253)
+- Correctly evaluate conditional statements with special characters
+- Fixed confusion in tab manager when saving while having an open and modified item script
 
 ### Windows packaging
 
 - Update included libraries. See `modules()` output below.
+- Includes a slightly patched version of PsychoPy 1.80.05 that addresses an important issue with keypress timestamps.
 
 ~~~
-OpenSesame 2.8.2~pre1
+OpenSesame 2.8.2~pre6
 Python 2.7.6 (default, Nov 10 2013, 19:24:18) [MSC v.1500 32 bit (Intel)]
 OpenCV is not available
 OpenCV2 2.4.9
-QProgedit 1.2.3
+QProgedit 1.3.2
 Expyriment 0.7.0 (Revision 7a6b73d; Python 2.7.6)
 NumPy 1.8.1
 PIL is available (version is unknown)
-PsychoPy 1.80.04
+PsychoPy 1.80.05-opensesame-2
 PyAudio 0.2.7
 PyGame 1.9.1release
 Pyglet 1.1.4
