@@ -59,7 +59,7 @@ Faneros, M. A. (2014). *A Comparison of Contemporary Executive Function Models* 
 Lange, F., & Eggert, F. (in press). Sweet delusion: Glucose drinks fail to counteract ego depletion. *Appetite*. doi:10.1016/j.appet.2013.12.020
 {: .reference}
 
-Van Moorselaar, D., Theeuwes, J., & L, N. (2014). In competition for the attentional template: Can multiple items within visual working memory guide attention? *Journal of Experimental Psychology: Human Perception and Performance*. doi:10.1037/a0036229
+Van Moorselaar, D., Theeuwes, J., & Olivers, C. N. L. (2014). In competition for the attentional template: Can multiple items within visual working memory guide attention? *Journal of Experimental Psychology: Human Perception and Performance*. doi:10.1037/a0036229
 {: .reference}
 
 Mueller, S. T., & Piper, B. J. (2014). The Psychology Experiment Building Language (PEBL) and PEBL test battery. *Journal of Neuroscience Methods*, *222*, 250–259. doi:10.1016/j.jneumeth.2013.10.024
@@ -85,7 +85,7 @@ Boon, P. J., Theeuwes, J., & Belopolsky, A. V. (2013). Updating visual-spatial w
 Bugmann, G., Goslin, J., & Duchamp-Viret, P. (in 2013). The speed of learning instructed stimulus-response association rules in human: Experimental data and model. *Brain Research*, *1536*, 2-15. doi:10.1016/j.brainres.2013.07.046
 {: .reference}
 
-Dalmaijer, E., Van der Stigchel, S., Van der Linden, L., Kruijne, W., Schreij, D., & Mathôt, S. (2013, August). *OpenSesame Opens the Door to Open-Source and User-Friendly Eye-Tracking Research*. Poster presented at the European Conference on Eye Movements, Lund, Sweden. [(PDF)](http://cogsci.nl/esdalmaijer/eyetracker_plugins/downloads/Dalmaijer_et_al_2013_ECEM_poster.pdf)
+Dalmaijer, E., Van der Stigchel, S., Van der Linden, L., Kruijne, W., Schreij, D., & Mathôt, S. (2013, August). *OpenSesame Opens the Door to Open-Source and User-Friendly Eye-Tracking Research*. Poster presented at the European Conference on Eye Movements, Lund, Sweden. Retrieved from <http://cogsci.nl/esdalmaijer/eyetracker_plugins/downloads/Dalmaijer_et_al_2013_ECEM_poster.pdf>
 {: .reference}
 
 Dalmaijer, E., Mathôt, S., & Van der Stigchel, S. (in press). PyGaze: an open-source, cross-platform toolbox for minimal-effort programming of eye-tracking experiments. *Behavior Research Methods*. doi:10.3758/s13428-013-0422-2
@@ -170,6 +170,9 @@ de Groot, F., Huettig, F., & Olivers, C. N. L. (2012, July). *Attentional captur
 {: .reference}
 
 Holliday, J. J. (2012). *The Emergence of L2 Phonological Contrast in Perception: The Case of Korean Sibilant Fricatives* (Doctoral dissertation). Ohio State University, Columbus, OH, United States.
+{: .reference}
+
+Kanayet, F. J. (2012). *Components of the Neural Valuation Network of Monetary Rewards* (Doctoral dissertation.). Ohio State University, Columbus, OH, United States. Retrieved from <http://rave.ohiolink.edu/etdc/view?acc_num=osu1345522521>
 {: .reference}
 
 Mathôt, S., & Theeuwes, J. (2012). It’s all about the transient: Intra-saccadic abrupt onsets do not capture attention. *Journal of Eye Movement Research*, *5*(2), 1–12.
