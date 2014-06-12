@@ -108,7 +108,7 @@ Using the App Store is preferable, as it will keep your version of X Code automa
 ### Installing with Homebrew
 
 Homebrew is a newer and easier way to build a source tree on your mac. It has many benefits on top of macports, such as speed, and nowadays seems to have less trouble compiling and updating packages than macports does.
-You can install homebrew as instructed on <http://http://brew.sh/>. Then issue the following command to get started:
+You can install homebrew as instructed on <http://brew.sh/>. Then issue the following command to get started:
 
     brew update
     brew doctor
