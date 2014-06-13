@@ -7,13 +7,13 @@
 </p>
 
 <p class="button-debian">
-	<a target="_blank" href="http://neuro.debian.net/pkgs/opensesame.html">
-	Ubuntu/ Debian package (NeuroDebian repository)
+	<a href="#ubuntu">
+	Ubuntu/ Debian package
 	</a>
 </p>
 
 <p class="button-arch">
-	<a target="_blank" href="http://aur.archlinux.org/packages.php?ID=57142" >
+	<a target="_blank" href="https://aur.archlinux.org/packages/opensesame/" >
 	Arch Linux package
 	</a>
 </p>
@@ -40,12 +40,12 @@
 
 <p class="button-winzip">
 	<a href="/getting-opensesame/running-with-python-portable">
-	Windows XP/Vista/7 Python portable package (.zip)
+	Windows XP/Vista/7 WinPython-based package
 	</a>
 </p>
 
 <p class="button-src">
-	<a target="_blank" href="http://files.cogsci.nl/software/opensesame/opensesame_2.8.2-1.tar.gz">
+	<a target="_blank" href="http://files.cogsci.nl/software/opensesame/opensesame_2.8.2-2.tar.gz">
 	Source code (.tar.gz)
 	</a>
 </p>

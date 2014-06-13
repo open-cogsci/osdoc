@@ -22,16 +22,18 @@ Thanks to Daniel Schreij ([@dschreij](https://github.com/dschreij/)) for his cod
 - Add fallback pool folder to facilitate versioning
 - Allow margins, spacing, and theme to be specified in `form_multiple_choice` plug-in (#255)
 - Safely convert messages to unicode in `item.log()`
+- Fall back to temporary folder when the default logfile is not writable in quickrun mode
 
 ### Bugs fixed
 
 - Fix autosave folder dialog on OSX (#250)
 - Fix sampler crashing on filenames with special characters (#244)
 - All items set `time_[item name]` variables (#243)
-- Do not crash on purely numeric text when using bi-direction language
-	support (#253)
+- Do not crash on purely numeric text when using bi-direction language support (#253)
 - Correctly evaluate conditional statements with special characters
 - Fixed confusion in tab manager when saving while having an open and modified item script
+- Fix translation bug for non-ASCII str objects
+- Fix a unicode bug where exceptions with images with special-character paths where obscured
 
 ### Windows packaging
 
