@@ -115,15 +115,31 @@ You can install homebrew as instructed on <http://brew.sh/>. Then issue the foll
 
 Solve any issues that the 'doctor' command comes up with. This should be easy and usually the solutions (in the form of simple commands) are already given together with the problem statement.
 
-Next, add some other required repositories, by using homebrew's "tap" command:
+Next, add some other required repositories by using homebrew's "tap" command:
 
 	brew tap homebrew/python
 	brew tap homebrew/headonly
 	brew tap homebrew/science
 
-Now it's time to start installing homebrew's own python environment. It's not really necessary to install another Python environment next to your system's python, but the Homebrew version is generally newer and better contained, so it is definitely recommended to do this.
+Now it's time to start installing homebrew's own python environment. It's not really necessary to install another Python environment next to your system's python, but the Homebrew version is generally newer and better maintained, so it is definitely recommendable to do this.
 
-    brew install python qt pyqt qscintilla2 freetype portaudio numpy scipy portmidi hg pillow
+    brew install python 
+	
+After python has been installed, you have to make it the 'default' python used by OS X. This means that the home-brewed python interpreter will be used whenever you issue the command 'python' in a terminal instead of the default system python. To do this type the command
+
+    echo export PATH="/usr/local/bin:$PATH" >> ~/.bash_profile
+
+This will position the reference to the folder in which all your homebrew stuff is located (/usr/local/bin) in front of the rest of the PATH variable. From now on, whenever you issue a command in your terminal, OS X will look in this folder first for the script or program to execute and if it doesn't find it there, it will continue to look in the other folders in the PATH variable. Close and reopen your terminal or enter the command
+
+	source ~/.bash_profile
+	
+to rerun the commands written in your .bash_profile. If you then run the command
+
+    which python
+	
+it should output something like '/usr/local/bin/python'. If it still outputs '/usr/bin/python', OSX is still using the default system python, which is not what you want. You can now continue with installing the rest of the required packages by executing
+	
+	brew install qt pyqt qscintilla2 freetype portaudio numpy scipy portmidi hg pillow
 
 For pygame, it is preferable to first install the SDL libraries and smpeg (these are all better than the version that came with OS X, which seem to miss some important functionality):
 
@@ -160,9 +176,16 @@ First install pyglet:
 	cd ..
 	rm -R pyglet
 
-Then install psychopy:
-
-    git clone https://github.com/psychopy/psychopy.git
+To get psychopy to work on 64-bit OS X variants, we had to slightly alter psychopy's source code. These changes are still under review by Jon Peirce who created psychopy and he has not taken them up yet in his main repository. Until that has happened, you have to obtain a copy of psychopy from our unofficial git repository by issuing the command
+	
+    git clone https://github.com/dschreij/psychopy.git
+	
+Once the required changes have been merged in the official psychopy repository, you can get it from there again with the command:
+	
+	git clone https://github.com/psychopy/psychopy.git
+	
+Install it and do some cleanup with:
+	
 	cd psychopy
 	python setup.py install
 	cd ..
