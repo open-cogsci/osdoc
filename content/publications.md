@@ -35,6 +35,12 @@ OpenSesame is used for, discussed in, or mentioned in:
 Bucker, B., & Theeuwes, J. (2014). The effect of reward on orienting and reorienting in exogenous cuing. *Cognitive, Affective, & Behavioral Neuroscience*, 1–12. doi:10.3758/s13415-014-0278-7
 {: .reference}
 
+Cohen, C. (2014). *Contrast-Dependent Pronunciation Variation: A Case Study of Russian*. Retrieved from: <http://www.linguistics.berkeley.edu/~cpccohen/CohenRUProduction.pdf>
+{: .reference}
+
+Garaizar, P., & Reips, U.-D. (2014). Visual DMDX: A web-based authoring tool for DMDX, a Windows display program with millisecond accuracy. *Behavior Research Methods*, 1–12. doi:10.3758/s13428-014-0493-8
+{: .reference}
+
 Garaizar, P., Vadillo, M. A., López-de-Ipiña, D., & Matute, H. (2014). Measuring software timing errors in the presentation of visual stimuli in cognitive neuroscience experiments. *PLoS ONE*, *9*(1), e85108. doi:10.1371/journal.pone.0085108
 {: .reference}
 
@@ -71,7 +77,7 @@ Nazareth, D. S. (2014). *The Fluency Effect as the Underlying Variable for Judgi
 Sall, R. J., Wright, T. J., & Boot, W. R. (2014). Driven to distraction? The effect of simulated red light running camera flashes on attention and oculomotor control. *Visual Cognition*, 1–17. doi:10.1080/13506285.2013.873509
 {: .reference}
 
-Theeuwes, J., Mathôt, S., & Grainger, J. (in press). Object-centered orienting and IOR. *Attention, Perception, & Psychophysics.*
+Theeuwes, J., Mathôt, S., & Grainger, J. (2014). Object-centered orienting and IOR, *Attention, Perception, & Psychophysics*. doi:10.3758/s13414-014-0718-z
 {: .reference}
 
 ### 2013
