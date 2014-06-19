@@ -406,7 +406,7 @@ results.to_pickle('path/to/save/results.pkl') # Save as Python variables
 And now we have a mouse-tracking experiment!
 If you're interested, give this a go, and let us know how you got on in the comments section. If, in the fullness of time, you use the code in this article to collect data that's being published, please considering citing this page.
 
-Finally, [click here to download the finished experiment]({filename}/files/mousetracking.zip).
+Finally, [click here to download the finished experiment](http://eointravers.github.io/files/mousetracking.zip).
 You'll need to keep the folder 'Materials' in the same directory as the experiment for it to work.
 
 
