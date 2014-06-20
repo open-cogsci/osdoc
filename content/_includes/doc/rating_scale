@@ -32,7 +32,7 @@ the widget status. The value that is logged is the number of the node that was s
 <span class='variable'>default			</span> &rarr; 	The node that is selected by default, or None to 
 select no node. The value corresponds to the node number, where 0 is the first node. (default=None)<br />
 </div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='rating_scale.draw_frame'>rating_scale</a>.<b>draw_frame(rect=None, style='normal')</b></span><div class='details'>
+<div class='function'><span class='function_name'><a class='anchor' id='rating_scale.draw_frame'>rating_scale</a>.<b>draw_frame(rect=None, style=u'normal')</b></span><div class='details'>
 <i>Inherited from <b>widget</b></i><br /><br />Draws a simple frame around the widget.<br />
 <br />
 <span class='keyword'>Keyword arguments:</span>

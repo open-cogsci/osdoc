@@ -3,35 +3,42 @@ layout: osdoc
 title: Variables and conditional ("if") statements
 group: Usage
 permalink: /variables-and-conditional-statements/
+parser: academicmarkdown
 ---
 
 Variables are a crucial part of any psychological experiment. Two classes of variables are distinguished: independent variables, which are manipulated by the researcher (and are independent of the participant's response), and dependent variables, which depend on the participant's response. The aim of the prototypical psychological experiment is to see if manipulating one or more independent variables has an effect on one or more dependent variables. For example, you may manipulate a participant's mood by presenting emotional pictures of different valences, and see if this affects response times. In this case, you manipulate the independent variable `emotion` and measure the effect on the dependent variable `response time`.
 
 But you probably know all this. What you may not know is how to apply this knowledge to OpenSesame.
 
-:--
-cmd: overview
---:
+## Overview
+
+%--
+toc:
+ mindepth: 2
+ exclude: [Overview]
+--%
 
 ## The variable inspector
 
-The variable inspector provides a convenient overview of the available variables. You can activate the variable inspector by pressing Control + I or through the menu (Menu → View → Show variable inspector).
+The variable inspector provides a convenient overview of the available variables (%FigVariableInspector). You can activate the variable inspector by pressing Control + I or through the menu (Menu → View → Show variable inspector).
 
-:--
-cmd: figure
-src: variable-inspector.png
-caption: The variable inspector provides an overview of all variables that OpenSesame knows about.
---:
+%--
+figure:
+ id: FigVariableInspector
+ source: variable-inspector.png
+ caption: The variable inspector provides an overview of all variables that OpenSesame knows about.
+--%
 
 ## Defining variables
 
-The simplest way to define variables is through a `loop` item. For example, in the screenshot below you can see that a variable named `target` has been defined. The *trial_sequence* item is called once while `target` is set to 'left' and once while 'target' is set to 'right'.
+The simplest way to define variables is through a `loop` item. For example, in %FigLoop you can see that a variable named `target` has been defined. The *trial_sequence* item is called once while `target` is set to 'left' and once while 'target' is set to 'right'.
 
-:--
-cmd: figure
-src: defining-variables-in-a-loop.png
-caption: The most common way to define independent variables is using the `loop` table.
---:
+%--
+figure:
+ id: FigLoop
+ source: defining-variables-in-a-loop.png
+ caption: The most common way to define independent variables is using the `loop` table.
+--%
 
 ## Built-in variables
 
@@ -47,6 +54,8 @@ The following variables are always available:
 |`width`				|The width-part of the display resolution. E.g., '1024'|
 |`subject_nr`			|The subject number, which is asked when the experiment is started.|
 |`subject_parity`		|Is 'odd' if `subject_nr` is odd and 'even' if `subject_nr` is even. Useful for counterbalancing.|
+|`experiment_path`		|Contains the folder of the current experiment, without the experiment filename itself. If the experiment is unsaved, it has the value 'None'.|
+|`pool_folder`			|Contains the folder where the contents of the file pool have been extracted to. This is generally a temporary folder.|
 
 ### Item variables
 
@@ -76,36 +85,38 @@ Feedback variables maintain a running average of accuracy and response times.
 |`acc`							|Synonym for `accuracy`|
 
 For more information, see:
-	
+
 - [usage/feedback](/usage/feedback)
 
 ## Using variables
 
-Simply put, when you see a value in the OpenSesame GUI, you can replace that value by a variable using the '[variable name]' notation. For example, if you have defined a variable `soa` in a `loop` item, you can use this variable for the duration of a sketchpad as follows:
+Simply put, wherever you see a value in the OpenSesame GUI, you can replace that value by a variable using the '[variable name]' notation. For example, if you have defined a variable `soa` in a `loop` item, you can use this variable for the duration of a sketchpad as shown in %FigSketchpad.
 
-:--
-cmd: figure
-src: variable-duration.png
-caption: The duration '[soa]' indicates that the duration of the `sketchpad` depends on the variable `soa`.
---:
+%--
+figure:
+ id: FigSketchpad
+ source: variable-duration.png
+ caption: The duration '[soa]' indicates that the duration of the `sketchpad` depends on the variable `soa`.
+--%
 
-This works throughout the OpenSesame GUI. For example, if you have the defined a variable `my_freq`, you can use this variable as the frequency in a `synth` item:
+This works throughout the OpenSesame GUI. For example, if you have the defined a variable `my_freq`, you can use this variable as the frequency in a `synth` item, as shown in %FigSynth.
 
-:--
-cmd: figure
-src: variable-frequency.png
-caption: The frequency '[my_freq]' indicates that the frequency of the `synth` depends on the variable `my_freq`.
---:
+%--
+figure:
+ id: FigSynth
+ source: variable-frequency.png
+ caption: The frequency '[my_freq]' indicates that the frequency of the `synth` depends on the variable `my_freq`.
+--%
 
-Sometimes, the GUI doesn't let you type in arbitrary text. For example, the length field the `synth` only accepts numbers, so you cannot enter something like '[len]'. However, you can still use a variable length in the following way. Click on the 'Edit script' button at the top right of the tab. Now replace the following line
+Sometimes, the GUI doesn't let you type in arbitrary text. For example, the length field the `synth` only accepts numbers, so you cannot enter something like '[len]'. However, you can still use a variable length in the following way. Click on the 'Edit script' button at the top right of the tab. Now replace the following line ...
 
 	set length "100"
 
-by
+... by ...
 
 	set length [len]
 
-and press 'apply'.
+... and press 'apply'.
 
 ## Getting and setting variables in inline_script items
 
@@ -130,13 +141,14 @@ Note the asymmetry: You use `exp.set()`, rather than `self.set()`, even though y
 
 Conditional statements, or 'if statements', provide a way to indicate that something should happen only under specific circumstances, such when a certain variable has a specific value. In OpenSesame you can use conditional statements in `sequence`, `sketchpad`, and `feedback` items.
 
-If you open a `sequence` item, you will see that every item from the sequence has a 'Run if...' option. The default value is 'always', in which case the item is always called, but you can also enter a condition here. For example, if you want to show a green fixation dot after a correct response, and a red fixation dot after an incorrect response, you can create a sequence like the following (this makes use of the fact that a `keyboard_response` item automatically sets the `correct` variable, as discussed above):
+If you open a `sequence` item, you will see that every item from the sequence has a 'Run if...' option. The default value is 'always', in which case the item is always called, but you can also enter a condition here. For example, if you want to show a green fixation dot after a correct response, and a red fixation dot after an incorrect response, you can create a sequence like the following (this makes use of the fact that a `keyboard_response` item automatically sets the `correct` variable, as discussed above) as shown in %FigRunIf.
 
-:--
-cmd: figure
-src: run-if.png
-caption: \'Run if\' statements can be used to indicate that certain items from a `sequence` should only be executed under specific circumstances.
---:
+%--
+figure:
+ id: FigRunIf
+ source: run-if.png
+ caption: \'Run if\' statements can be used to indicate that certain items from a `sequence` should only be executed under specific circumstances.
+--%
 
 You can use more complex conditions as well. Let's take a look at a few examples:
 
@@ -153,16 +165,17 @@ Alternatively, you can use Python code in your conditional statements. To indica
 
 Note that you cannot use the square-bracket syntax when using Python code. Instead, you use `self.get()` to retrieve a variable, like you would in an `inline_script`.
 
-The same principle applies to 'Show if' fields in `sketchpad` items. For example, if you want to draw a leftwards arrow only if the variable `cue` has been set to 'right', simply type the proper condition in the 'Show if ...' field and draw the arrow, as in the screenshot below. Make sure that you draw the arrow after you have set the condition.
+The same principle applies to 'Show if' fields in `sketchpad` items. For example, if you want to draw a leftwards arrow only if the variable `cue` has been set to 'right', simply type the proper condition in the 'Show if ...' field and draw the arrow, as in %FigShowIf. Make sure that you draw the arrow after you have set the condition.
 
-:--
-cmd: figure
-src: show-if.png
-caption: \'Show if\' statements can be used to indicate that certain elements from a `sketchpad` or `feedback` item should only be shown under specific circumstances.
---:
+%--
+figure:
+ id: FigShowIf
+ source: show-if.png
+ caption: "'Show if' statements can be used to indicate that certain elements from a `sketchpad` or `feedback` item should only be shown under specific circumstances."
+--%
 
 Note that the moment at which a conditional statement is evaluated may affect how your experiment works. This is related to the prepare-run strategy employed by OpenSesame, which is explained here:
-	
+
 - [usage/prepare-run](/usage/prepare-run)
 
 ## Smart variable typing (and some pitfalls)
@@ -187,17 +200,17 @@ for input_value in test_values:
 {% endhighlight %}
 
 Let's walk through the output of this script one by one. (Here we focus on the things that go wrong, but don't be too concerned: In the overwhelming majority of cases smart variable works exactly how you would expect it to.)
-	
+
 	# In: 10
 	Input = "10" <type 'int'>
 	-> Output = "10" <type 'int'>
-	
+
 This is as you would expect, the `int` 10 stays the `int` 10.
 
 	# In: 010
 	Input = "8" <type 'int'>
 	-> Output = "8" <type 'int'>
-	
+
 This is odd. We specify 010, but according to the script we have specified the `int` 8. This is because Python interprets numbers with a leading zero as an octal numbers. And octal 10 equals decimal 8.
 
 	# In: 0x10
@@ -209,51 +222,52 @@ Again, we specify 0x10 but the script tells us that we have specified the `int` 
 	# In: 0b10
 	Input = "2" <type 'int'>
 	-> Output = "2" <type 'int'>
-	
+
 Same thing: The leading `0b` indicates that we are dealing with a binary number. And binary 10 equals decimal 2.
 
 	# In: '10'
 	Input = "10" <type 'str'>
 	-> Output = "10" <type 'int'>
-	
+
 Here we have smart variable typing at work. The `str` '10' has been converted to the `int` 10.
 
 	# In: '010'
 	Input = "010" <type 'str'>
 	-> Output = "10" <type 'int'>
-	
+
 Here again we have smart variable typing at work. The `str` '010' has been converted to the `int` 10. Note the difference between the interpretation of the `int` 010, which is interpreted as an octal number, and the `str` '010' which is not. This is a (confusing) property of Python.
 
 	# In: '0x10'
 	Input = "0x10" <type 'str'>
 	-> Output = "0x10" <type 'unicode'>
-	
+
 Similar to above, the `str` '0x10' is not interpreted as a hexadecimal number, although the `int` 0x10 is. This is a property of Python. Also, you see that the `str` comes out as `unicode`. This is because OpenSesame works internally with `unicode` objects, which is a special kind of string that is interchangeable with `str` objects for most purposes.
 
 	# In: '0b10'
 	Input = "0b10" <type 'str'>
 	-> Output = "0b10" <type 'unicode'>
-	
+
 Similar to the case of '0x10' above.
 
 	# In: ' 10'
 	Input = " 10" <type 'str'>
 	-> Output = "10" <type 'int'>
-	
+
 Finally, you see that the leading space is removed from the `str` ' 10', and that the value is converted to the `int` 10.
 
 ## Resolving recursion errors
 
-Sometimes, you may encounter a runtime error of the following type:
+Sometimes, you may encounter a runtime error of the following type (%FigRecursion):
 
 	Recursion detected! Is variable 'freq' defined
 	in terms of itself (e.g., 'var = [var]')
 
-:--
-cmd: figure
-src: recursion-error.png
-caption: If you see an error message of this type, you have probably used a variable name that was already in use by OpenSesame, resulting in a recursion error.
---:
+%--
+figure:
+ id: FigRecursion
+ source: recursion-error.png
+ caption: If you see an error message of this type, you have probably used a variable name that was already in use by OpenSesame, resulting in a recursion error.
+--%
 
 This error maybe confusing at first, but is easy to prevent once you understand it. The problem is that the `synth` item (in this example) uses an item-level variable that is called `freq`. Therefore, if you try to use a global variable called `freq` to specify the item's internal variable called `freq`, OpenSesame will get into an infinite recursion!
 

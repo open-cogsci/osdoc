@@ -4,11 +4,16 @@ title: Publications
 group: General
 permalink: /publications/
 singleton: true
+parser: academicmarkdown
 ---
 
-:--
-cmd: overview
---:
+## Overview
+
+%--
+toc:
+ mindepth: 2
+ exclude: [Overview]
+--%
 
 ## How to cite OpenSesame
 
@@ -25,7 +30,57 @@ Despite the project's young age, references to OpenSesame are starting to appear
 
 OpenSesame is used for, discussed in, or mentioned in:
 
-### 2013 / in press / online first
+### 2014 / in press / online first
+
+Bucker, B., & Theeuwes, J. (2014). The effect of reward on orienting and reorienting in exogenous cuing. *Cognitive, Affective, & Behavioral Neuroscience*, 1–12. doi:10.3758/s13415-014-0278-7
+{: .reference}
+
+Cohen, C. (2014). *Contrast-Dependent Pronunciation Variation: A Case Study of Russian*. Retrieved from: <http://www.linguistics.berkeley.edu/~cpccohen/CohenRUProduction.pdf>
+{: .reference}
+
+Garaizar, P., & Reips, U.-D. (2014). Visual DMDX: A web-based authoring tool for DMDX, a Windows display program with millisecond accuracy. *Behavior Research Methods*, 1–12. doi:10.3758/s13428-014-0493-8
+{: .reference}
+
+Garaizar, P., Vadillo, M. A., López-de-Ipiña, D., & Matute, H. (2014). Measuring software timing errors in the presentation of visual stimuli in cognitive neuroscience experiments. *PLoS ONE*, *9*(1), e85108. doi:10.1371/journal.pone.0085108
+{: .reference}
+
+Grainger, J., Mathôt, S., & Vitu, F. (2014). Tests of a model of multi-word reading: Effects of parafoveal flanking letters on foveal word recognition. *Acta Psychologica*, *146*, 35-40. doi:10.1016/j.actpsy.2013.11.014
+{: .reference}
+
+Hermens, F., Kral, D., & Rosenbaum, D. A. (2014). Limits of end-state planning. *Acta Psychologica*, *148*, 148–162. doi:10.1016/j.actpsy.2014.01.009
+{: .reference}
+
+Holliday, J. J. (2014). The perceptual assimilation of Korean obstruents by native Mandarin listenersa). *The Journal of the Acoustical Society of America*, *135*(3), 1585–1595. doi:10.1121/1.4863653
+{: .reference}
+
+Ishii, A., Tanaka, M., & Watanabe, Y. (2014). The neural substrates of self-evaluation of mental fatigue: A magnetoencephalography study. *PLoS ONE*, *9*(4), e95763. doi:10.1371/journal.pone.0095763
+{: .reference}
+
+Failing, M. F., & Theeuwes, J. (2014). Exogenous visual orienting by reward. *Journal of Vision*, *14*(5), 6. doi:10.1167/14.5.6
+{: .reference}
+
+Faneros, M. A. (2014). *A Comparison of Contemporary Executive Function Models* (Doctoral dissertation). University of Oklahoma, Norman, OK, United States of America. Retrieved from: <https://shareok.org/bitstream/handle/11244/10368/2014_Faneros_Michael_Dissertation.pdf>
+{: .reference}
+
+Lange, F., & Eggert, F. (in press). Sweet delusion: Glucose drinks fail to counteract ego depletion. *Appetite*. doi:10.1016/j.appet.2013.12.020
+{: .reference}
+
+Van Moorselaar, D., Theeuwes, J., & Olivers, C. N. L. (2014). In competition for the attentional template: Can multiple items within visual working memory guide attention? *Journal of Experimental Psychology: Human Perception and Performance*. doi:10.1037/a0036229
+{: .reference}
+
+Mueller, S. T., & Piper, B. J. (2014). The Psychology Experiment Building Language (PEBL) and PEBL test battery. *Journal of Neuroscience Methods*, *222*, 250–259. doi:10.1016/j.jneumeth.2013.10.024
+{: .reference}
+
+Nazareth, D. S. (2014). *The Fluency Effect as the Underlying Variable for Judging Beauty and Usability* (Master’s thesis). University of Twente, Enschede, Netherlands. Retrieved from <http://purl.utwente.nl/essays/64908>
+{: .reference}
+
+Sall, R. J., Wright, T. J., & Boot, W. R. (2014). Driven to distraction? The effect of simulated red light running camera flashes on attention and oculomotor control. *Visual Cognition*, 1–17. doi:10.1080/13506285.2013.873509
+{: .reference}
+
+Theeuwes, J., Mathôt, S., & Grainger, J. (2014). Object-centered orienting and IOR, *Attention, Perception, & Psychophysics*. doi:10.3758/s13414-014-0718-z
+{: .reference}
+
+### 2013
 
 Aigner, W., Hoffmann, S., & Rind, A. (2013). EvalBench: A software library for visualization evaluation. *Computer Graphics Forum*, *32*(3):1, 41–50. doi:10.1111/cgf.12091
 {: .reference}
@@ -36,7 +91,7 @@ Boon, P. J., Theeuwes, J., & Belopolsky, A. V. (2013). Updating visual-spatial w
 Bugmann, G., Goslin, J., & Duchamp-Viret, P. (in 2013). The speed of learning instructed stimulus-response association rules in human: Experimental data and model. *Brain Research*, *1536*, 2-15. doi:10.1016/j.brainres.2013.07.046
 {: .reference}
 
-Dalmaijer, E., Van der Stigchel, S., Van der Linden, L., Kruijne, W., Schreij, D., & Mathôt, S. (2013, August). *OpenSesame Opens the Door to Open-Source and User-Friendly Eye-Tracking Research*. Poster presented at the European Conference on Eye Movements, Lund, Sweden. [(PDF)](http://cogsci.nl/esdalmaijer/eyetracker_plugins/downloads/Dalmaijer_et_al_2013_ECEM_poster.pdf)
+Dalmaijer, E., Van der Stigchel, S., Van der Linden, L., Kruijne, W., Schreij, D., & Mathôt, S. (2013, August). *OpenSesame Opens the Door to Open-Source and User-Friendly Eye-Tracking Research*. Poster presented at the European Conference on Eye Movements, Lund, Sweden. Retrieved from <http://cogsci.nl/esdalmaijer/eyetracker_plugins/downloads/Dalmaijer_et_al_2013_ECEM_poster.pdf>
 {: .reference}
 
 Dalmaijer, E., Mathôt, S., & Van der Stigchel, S. (in press). PyGaze: an open-source, cross-platform toolbox for minimal-effort programming of eye-tracking experiments. *Behavior Research Methods*. doi:10.3758/s13428-013-0422-2
@@ -54,7 +109,7 @@ Gordon, M. S., Russo, F. A., & MacDonald, E. (2013). Spectral information for de
 Goudbeek, M. B., Haagmans, I., & Krahmer, E. J. (2013). The object without qualities: referring with negative properties. In M. Knauff, M. Pauen, N. Sebanz, & I. Wachsmuth (Eds.), *Proceedings of the 35th Annual Conference of the Cognitive Science Society* (pp. 2440–2445). Austin, TX: Cognitive Science Society.
 {: .reference}
 
-Grainger, J., Mathôt, S., & Vitu, F. (in press). Tests of a model of multi-word reading: Effects of parafoveal flanking letters on foveal word recognition. *Acta Psychologica*.
+Hermens, F., Lachmann, T., & van Leeuwen, C. (2013). Is it really search or just matching? The influence of Goodness, number of stimuli and presentation sequence in same–different tasks. *Psychological Research*. doi:10.1007/s00426-013-0529-1
 {: .reference}
 
 Huang, L. (2013). IPMP 2013 – A comprehensive data analysis
@@ -85,9 +140,6 @@ Mathôt, S. (2013, May). *An Introduction to Experiment Building with OpenSesame
 Mathôt, S. (2013). *Visual Attention and Stability* (Doctoral dissertation). VU University, Amsterdam, Netherlands. doi:10.6084/m9.figshare.704402
 {: .reference}
 
-Mueller, S. T., & Piper, B. J. (2013). The Psychology Experiment Building Language (PEBL) and PEBL test battery. *Journal of Neuroscience Methods*.
-{: .reference}
-
 Paivio, A. (2014). Bilingual dual coding theory and memory. In R. R. Heredia, J. Altarriba (eds.), *Foundations of Bilingual Memory*. New York, US: Springer Science. doi:10.1007/978-1-4614-9218-4_3
 {: .reference}
 
@@ -97,7 +149,7 @@ Peters, G.-J. Y., de Bruin, M., & Crutzen, R. (2013). Everything should be as si
 Schreij, D., Los, S. A., Theeuwes, J., Enns, J. T., & Olivers, C. N. (2013). The interaction between stimulus-driven and goal-driven orienting as revealed by eye movements. *Journal of Experimental Psychology: Human Perception and Performance*. doi:10.1037/a0034574
 {: .reference}
 
-Hanayik,T., & Rorden, C. (2013). StimSync: Open-source hardware for behavioral and MRI experiments. *Journal of Neuroscience Methods*. doi:10.1016/j.jneumeth.2013.11.017
+Rorden, C., & Hanayik,T. (2013). StimSync: Open-source hardware for behavioral and MRI experiments. *Journal of Neuroscience Methods*. doi:10.1016/j.jneumeth.2013.11.017
 {: .reference}
 
 Theeuwes, J., Mathôt, S., & Grainger, J. (2013). Exogenous object-centered attention. *Attention, Perception, & Psychophysics*. doi:10.3758/s13414-013-0459-4
@@ -124,6 +176,9 @@ de Groot, F., Huettig, F., & Olivers, C. N. L. (2012, July). *Attentional captur
 {: .reference}
 
 Holliday, J. J. (2012). *The Emergence of L2 Phonological Contrast in Perception: The Case of Korean Sibilant Fricatives* (Doctoral dissertation). Ohio State University, Columbus, OH, United States.
+{: .reference}
+
+Kanayet, F. J. (2012). *Components of the Neural Valuation Network of Monetary Rewards* (Doctoral dissertation.). Ohio State University, Columbus, OH, United States. Retrieved from <http://rave.ohiolink.edu/etdc/view?acc_num=osu1345522521>
 {: .reference}
 
 Mathôt, S., & Theeuwes, J. (2012). It’s all about the transient: Intra-saccadic abrupt onsets do not capture attention. *Journal of Eye Movement Research*, *5*(2), 1–12.

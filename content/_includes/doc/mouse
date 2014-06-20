@@ -1,5 +1,5 @@
 <div class='pydoc'>
-<p><small>For OpenSesame 0.27.4</small></p>
+<p><small>For OpenSesame 2.8.2</small></p>
 <span class='class_name'>class <b>mouse</b></span><br />
 <p class='details'><b>Function overview:</b><br />
 <a href='#mouse.__init__'>__init__</a><br />
@@ -72,7 +72,7 @@ A (button, position, timestamp) tuple. The button and position are None if a tim
 my_mouse = mouse(exp)
 button, position, timestamp = my_mouse.get_click()
 if button == None:
-	print 'A timeout occurred!'
+	print('A timeout occurred!')
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='mouse.get_pos'>mouse</a>.<b>get_pos()</b></span><div class='details'>
@@ -88,7 +88,7 @@ A (position, timestamp) tuple.<br />
 my_mouse = mouse(exp)
 position, timestamp = my_mouse.get_pos()
 x, y = position
-print 'The cursor was at (%d, %d)' % (x, y)
+print('The cursor was at (%d, %d)' % (x, y))
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='mouse.get_pressed'>mouse</a>.<b>get_pressed()</b></span><div class='details'>
@@ -104,7 +104,7 @@ A (button1, button2, button3) tuple.<br />
 my_mouse = mouse(exp)
 buttons = my_mouse.get_pressed()
 b1, b2, b3 = buttons
-print 'Currently pressed mouse buttons: (%d, %d, %d)' % (b1, b2, b3)
+print('Currently pressed mouse buttons: (%d, %d, %d)' % (b1, b2, b3))
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='mouse.set_buttonlist'>mouse</a>.<b>set_buttonlist(buttonlist = None)</b></span><div class='details'>

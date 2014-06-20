@@ -3,22 +3,18 @@ layout: osdoc
 title: Creating a plug-in
 group: Plug-ins
 permalink: /create/
-level: 1
-sortkey: 007.004
+parser: academicmarkdown
 ---
 
-Overview
---------
+## Overview
 
-- [Relevant files](#files)
-- [Icons](#icons)
-- [Help file](#help)
-- [Defining the GUI](#gui)
-- [Writing the main plug-in code](#code)
-- [Examples](#examples)
+%--
+toc:
+ mindepth: 2
+ exclude: [Overview]
+--%
 
-Relevant files {#files}
---------------
+## Relevant files
 
 Let's assume that your plug-in is called `my_plugin`. In that case, your plug-in corresponds to a folder called `my_plugin`, containing at least the following 5 files:
 
@@ -29,20 +25,17 @@ Let's assume that your plug-in is called `my_plugin`. In that case, your plug-in
 		my_plugin_large.png
 		my_plugin.py
 
-Icons {#icons}
------
+## Icons
 
 Your plug-in needs two icons. A small 16x16-pixel icon, which is called `my_plugin.png` and is shown in the overview area, and a larger 32x32-pixel icon, which is called `my_plugin_large.png`. These files need to be placed directly in the plug-in folder.
 
-Help file {#help}
----------
+## Help file
 
-You can provide a help file in [Markdown][] or [HTML][] format. To add a Markdown help file, simply create a file called `my_plugin.md` in the plug-in folder. For an HTML help file, create a file called `my_plugin.html`. Markdown format is generally preferred, because it is easier to read. Strictly speaking, the help file is optional, and your plug-in will work without it. However, an informative help file is an essential part of a good plug-in.
+You can provide a help file in [Markdown] or [HTML] format. To add a Markdown help file, simply create a file called `my_plugin.md` in the plug-in folder. For an HTML help file, create a file called `my_plugin.html`. Markdown format is generally preferred, because it is easier to read. Strictly speaking, the help file is optional, and your plug-in will work without it. However, an informative help file is an essential part of a good plug-in.
 
-Defining the GUI {#gui}
-----------------
+## Defining the GUI
 
-The GUI is defined in a file called `info.json`. [JSON][] is an easily readable format, and provides a quick and straight-forward way to define your plug-in controls, and specify various kinds of information. Make sure that your file is syntactically-valid JSON, for example using a validator such as [jsonlint.com][].
+The GUI is defined in a file called `info.json`. [JSON] is an easily readable format, and provides a quick and straight-forward way to define your plug-in controls, and specify various kinds of information. Make sure that your file is syntactically-valid JSON, for example using a validator such as [jsonlint.com].
 
 The top-level fields, such as `author` and `url` are used to specify all kinds of information. You can add anything you like here. An important field is `category`, which specifies in which group the plug-in should appear in the item toolbar (e.g. 'Visual stimuli', etc.).
 
@@ -83,8 +76,7 @@ The `control` field contains a list of controls. Each control is itself an objec
 
 See the `auto_example` [example](#examples) for a full list of all controls and options.
 
-Writing the main plug-in code {#code}
------------------------------
+## Writing the main plug-in code
 
 The main plug-in code is placed in `my_plugin.py`. This file has two classes: The first is `my_plugin`, which contains the runtime part of the plug-in. The second is `qtmy_plugin`, which controls the GUI and is almost empty in most cases, because the controls are defined in `info.json`. In many cases, you will only be concerned with three methods:
 
@@ -135,8 +127,7 @@ class qtmy_plugin(my_plugin, qtautoplugin):
 		qtautoplugin.__init__(self, __file__)
 {% endhighlight %}
 
-Examples {#examples}
---------
+## Examples
 
 - the [`auto_example`][auto_example] plug-in is a dummy plug-in that contains a lot of information, and a detailed `info.json` that you can use as a basis for your own plug-in.
 - the [`fixation_dot`][fixation_dot] plug-in is a simple, but functional example.

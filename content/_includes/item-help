@@ -1,0 +1,401 @@
+<div class="page-notification">
+This page is generated automatically from item-specific help pages. These pages can be viewed in OpenSesame by clicking on the help icon in the top-right of the tab area.
+</div>
+<h2 id="overview">Overview</h2>
+<ul>
+<li><a href="#commonly-used-items">Commonly used items</a>
+<ul>
+<li><a href="#feedback-items">Feedback items</a></li>
+<li><a href="#inline_script-items">Inline_script items</a></li>
+<li><a href="#keyboard_response-items">Keyboard_response items</a></li>
+<li><a href="#logger-items">Logger items</a></li>
+<li><a href="#loop-items">Loop items</a></li>
+<li><a href="#mouse_response-items">Mouse_response items</a></li>
+<li><a href="#sampler-items">Sampler items</a></li>
+<li><a href="#sequence-items">Sequence items</a></li>
+<li><a href="#sketchpad-items">Sketchpad items</a></li>
+<li><a href="#synth-items">Synth items</a></li>
+</ul></li>
+<li><a href="#plug-ins">Plug-ins</a>
+<ul>
+<li><a href="#advanced_delay">Advanced_delay</a></li>
+<li><a href="#fixation-dot">Fixation dot</a></li>
+<li><a href="#form_base-plug-in">Form_base plug-in</a></li>
+<li><a href="#form_consent-plug-in">Form_consent plug-in</a></li>
+<li><a href="#form_multiple_choice-plug-in">Form_multiple_choice plug-in</a></li>
+<li><a href="#form_text_display-plug-in">Form_text_display plug-in</a></li>
+<li><a href="#form_text_input-plug-in">Form_text_input plug-in</a></li>
+<li><a href="#joystick-plug-in">Joystick plug-in</a></li>
+<li><a href="#notepad">Notepad</a></li>
+<li><a href="#reset_feedback">Reset_feedback</a></li>
+<li><a href="#text_display">Text_display</a></li>
+<li><a href="#touch-response">Touch response</a></li>
+</ul></li>
+</ul>
+<h2 id="commonly-used-items">Commonly used items</h2>
+<h3 id="feedback-items">Feedback items</h3>
+<p><code>feedback</code> items can be used to inform participants of their performance. <code>feedback</code> items are very similar to <code>sketchpad</code> items, but differ in the moment at which they are prepared. <code>feedback</code> items are not prepared in advance, which means that they can be used to display up-to-date information about response times, etc. On the other hand, this lack of preparation also means that they may introduce a small delay in your experiment. Therefore, you should not use <code>feedback</code> items to present time-critical displays.</p>
+<p>To provide feedback, you can make use of the built-in feedback variables, such as <code>avg_rt</code> and <code>acc</code>, for example by adding the following lines of text to your <code>feedback</code> item:</p>
+<pre><code>Your average response time was [avg_rt] ms
+Your accuracy was [acc] %</code></pre>
+<p>For more information, see:</p>
+<ul>
+<li><a href="http://osdoc.cogsci.nl/usage/feedback/">http://osdoc.cogsci.nl/usage/feedback/</a></li>
+</ul>
+<hr />
+
+<h3 id="inline_script-items">Inline_script items</h3>
+<p>You can do a lot with the graphical interface of OpenSesame, but for certain complex tasks you will have to use scripting/ programming. This is where the <code>inline_script</code> item comes in. You can use regular <a href="http://www.python.org/%20&lt;hr%20/&gt;">Python</a> code in your <code>inline_script</code>. Python is a modern, powerful, high-level programming language. There are numerous libraries available for Python, so there is really no limit to what you can do using <code>inline_script</code> items.</p>
+<p>For more information about using Python scripting, see:</p>
+<ul>
+<li><a href="http://osdoc.cogsci.nl/python/about/">http://osdoc.cogsci.nl/python/about/</a></li>
+</ul>
+<h4 id="a-tab-to-prepare-and-a-tab-to-run">A tab to prepare and a tab to run</h4>
+<p>The <code>inline_script</code> item contains two scripts. The <em>Prepare</em> phase script is called first, before the <code>sequence</code> that contains the <code>inline_script</code> is executed. This allows you to do perform some time-consuming tasks in advance, so that the <em>Run</em> phase goes smoothly. The <em>Run</em> phase script is called during the actual running of the sequence that the <code>inline_script</code> is part of. So if you want to present a stimulus display in your <code>inline_script</code>, it is good practice to construct the display in the <em>Prepare</em> phase and show it in the <em>Run</em> phase. Note that this is purely a convention, from which you can deviate as circumstances dictate.</p>
+<p>For more information about the prepare-run strategy, see:</p>
+<ul>
+<li><a href="http://osdoc.cogsci.nl/usage/prepare-run/">http://osdoc.cogsci.nl/usage/prepare-run/</a></li>
+</ul>
+<h4 id="printing-debug-output">Printing debug output</h4>
+<p>You can print to the debug window using the Python <code>print</code> statement/ function:</p>
+<pre><code>print(&#39;This will appear in the debug window!&#39;)</code></pre>
+<p>In general, the debug window functions as the standard output while the experiment is running.</p>
+<h3 id="keyboard_response-items">Keyboard_response items</h3>
+<p>The <code>keyboard_response</code> item is the primary way to collect keypress responses.</p>
+<h4 id="options">Options</h4>
+<ul>
+<li><em>Correct response</em> is the name of the expected response. Usually you will set the <code>correct_response</code> variable elsewhere (e.g., in a <code>loop</code> item) and you can leave this field empty.</li>
+<li><em>Allowed responses</em> is a semicolon-separated list of keys that are accepted, e.g., ‘a;b;/’.</li>
+<li><em>Timeout</em> contains a maximum response time in milliseconds or ‘infinite’ for no timeout.</li>
+<li><em>Flush pending keypresses</em> indicates that old, pending responses should be discarded.</li>
+</ul>
+<h4 id="response-variables">Response variables</h4>
+<ul>
+<li><code>response</code> is the name of the response key or ‘None’ if a timeout occurs.</li>
+<li><code>response_time</code> is the time between the start of the response interval and the response.</li>
+<li><code>correct</code> is 1 if <code>response</code> matches <code>correct_response</code> and 0 otherwise.</li>
+<li><code>average_response_time</code> is the average response time since the last feedback item.</li>
+<li><code>avg_rt</code> is a synonym for <code>average_response_time</code>.</li>
+<li><code>accuracy</code> is the average percentage of correct responses since the last feedback item.</li>
+<li><code>acc</code> is a synonym for <code>accuracy</code>.</li>
+</ul>
+<p>For more information about response variables, see:</p>
+<ul>
+<li><a href="http://osdoc.cogsci.nl/usage/variables-and-conditional-statements/#responsevariables">http://osdoc.cogsci.nl/usage/variables-and-conditional-statements/#responsevariables</a></li>
+</ul>
+<h4 id="names-of-keys">Names of keys</h4>
+<p>Keys are generally identified by their character and/ or their description (depending on which is applicable). For example, the <code>/</code> key is identified as ‘slash’ and ‘/’. The <code>a</code> is just identified as ‘a’. The left-arrow key is just identified as ‘left’. For a full list of available key names, click on the ‘List available keys’ button.</p>
+<p>For more information, see:</p>
+<ul>
+<li><a href="http://osdoc.cogsci.nl/usage/collecting-responses/">http://osdoc.cogsci.nl/usage/collecting-responses/</a></li>
+</ul>
+<hr />
+
+<h3 id="logger-items">Logger items</h3>
+<p><em>The one rule to rule them all is: Always triple-check whether all relevant variables are logged!</em></p>
+<p>The <code>logger</code> item is the primary way to log your data to file.</p>
+<h4 id="selecting-variables">Selecting variables</h4>
+<p>In the <code>logger</code> you can indicate which variables you want to log. By default, the <code>logger</code> tries to auto-detect and log all variables. This is a safe bet, but results in large logfiles that contain a lot of unnecessary information. If you uncheck the auto-detect option, you can select variables from a list that contains all variables that OpenSesame is aware of. If, for some reason, the variable that you want to log does not appear in the list, you can add it using the ‘Add custom variable’ button. If you are unsure which variables you want to log, you can click on the Smart select button, which will select variables that are likely to be of interest.</p>
+<h4 id="options-1">Options</h4>
+<ul>
+<li><em>Use ‘NA’ for variables that have not been set</em> indicates that the <code>logger</code> should not throw an exception when it tries to log a non-existent variable. Instead, it will log the value ‘NA’ (for ‘not available’). This can be useful when you want to log a variable that has not been set the first time that the <code>logger</code> item is called, for example because that variable is only applicable to the last part of your experiment.</li>
+<li><em>Automatically detect and log all variables</em> indicates that the <code>logger</code> should auto-detect and log all variables.</li>
+<li><em>Put quotes around values</em> indicates that fields in the logfile should be quoted using double quotes.</li>
+</ul>
+<h4 id="format-of-the-logfile">Format of the logfile</h4>
+<p>The logfile is in plain-text, comma-separated format. This format can be opened in most text-editors (although Windows Notepad may not handle the line-endings properly) and spreadsheets.</p>
+<p>For more information, see:</p>
+<ul>
+<li><a href="http://osdoc.cogsci.nl/usage/logging/">http://osdoc.cogsci.nl/usage/logging/</a></li>
+</ul>
+<hr />
+
+<h3 id="loop-items">Loop items</h3>
+<p>A <code>loop</code> item calls another item (the ‘item to run’) multiple times, while varying your independent variables. <code>loop</code>s are the main way to define independent variables, and to divide your experiment into trials and blocks.</p>
+<h4 id="the-loop-table">The loop table</h4>
+<p>In the <code>loop</code> table you can specify variables, each of which corresponds to a single column. The rows in the table correspond to cycles. A cycle corresponds to a ‘level’ or one unique combination of independent variables. You can specify the number of cycles by entering a number in the <em>cycles</em> input field. The <em>repeat</em> option corresponds to the number of times that all cycles should be executed. You can set this to a non-integer value. For example, by setting repeat to 0.5, half of all cycles will be executed.</p>
+<p>The <em>order</em> option indicates whether the cycles should be executed sequentially or in random order. Randomization is complete, in the sense that the complete list of <code>number-of-cycles x repeat</code> trials is randomized.</p>
+<p>If you check <em>Show advanced options</em>, three more options become visible:</p>
+<ul>
+<li><em>Break if</em> is a conditional statement that allows you to specify a stop criterion. For example, if you enter <code>[correct] = 1</code>, the <code>loop</code> will be aborted when the participants provides a correct response.</li>
+<li><em>At loop start, skip the first [X] cycle(s)</em> allows you to specify how many cycles should be skipped. For example, if you set this value to ‘2’, the <code>loop</code> will skip the first two cycles and start at cycle 3. This options is only available when <em>order</em> is set to ‘sequential’.</li>
+<li>If you check <em>Run skipped cycles at end of loop (offset mode)</em>, the cycles that are skipped initially, as specified above, are still executed at the end of the <code>loop</code>.</li>
+</ul>
+<h4 id="using-python-functions">Using Python functions</h4>
+<p>Most of the time you will enter static values into the <code>loop</code> table. For example, you may have a variable called <code>cue</code>, which is either ‘right’ or ‘left’. However, you can also use functions instead of static values. This is indicated by prepending an ‘=’ character. For example, to draw a random number between 0 and 100, you can enter the following into a cell in the loop table:</p>
+<pre><code>=randint(0,100)</code></pre>
+<p>More generally,you can enter any valid Python statement after the ‘=’ sign. An overview of of useful functions can be found in the Python documentation:</p>
+<ul>
+<li>Random functions: <a href="http://docs.python.org/library/random.html">http://docs.python.org/library/random.html</a></li>
+<li>Mathematical: <a href="http://docs.python.org/library/math.html">http://docs.python.org/library/math.html</a></li>
+</ul>
+<h4 id="convenient-ways-of-creating-a-large-loop-table">Convenient ways of creating a large loop table</h4>
+<p>If you have multiple variables with multiple levels, it is a daunting task to create an entire full-factorial <code>loop</code> table by hand. In this case you can use the variable wizard, which can be started by clicking on the <em>Variable wizard</em> button at the top right of the <code>loop</code> table. In the variable wizard you can specify your variables and the levels of your variables to quickly create a full-factorial design. You can also prepare your <code>loop</code> variables in your favorite spreadsheet (e.g., OpenOffice Calc or Microsoft Excel) and paste them into the <code>loop</code> table.</p>
+<p>Fore more information, see:</p>
+<ul>
+<li><a href="http://osdoc.cogsci.nl/usage/variables-and-conditional-statements/#definingvariables">http://osdoc.cogsci.nl/usage/variables-and-conditional-statements/#definingvariables</a></li>
+</ul>
+<hr />
+
+<h3 id="mouse_response-items">Mouse_response items</h3>
+<p>The <code>mouse_response</code> item works analogously to the <code>keyboard_response</code> item, with the obvious difference that mouse clicks are recorded instead of key presses.</p>
+<h4 id="names-of-mouse-buttons">Names of mouse buttons</h4>
+<p>Mouse buttons have a number (<code>1</code>, etc.) as well as a name (<code>left_button</code>, etc.). Both can be used to specify correct and allowed responses, but numbers will be used for logging.</p>
+<ul>
+<li><code>left_button</code> corresponds to <code>1</code></li>
+<li><code>middle_button</code> corresponds to <code>2</code></li>
+<li><code>right_button</code> corresponds to <code>3</code></li>
+<li><code>scroll_up</code> corresponds to <code>4</code></li>
+<li><code>scroll_down</code> corresponds to <code>5</code></li>
+</ul>
+<p>For more information, see the help page of the <code>keyboard_response</code> and the documentation:</p>
+<ul>
+<li><a href="http://osdoc.cogsci.nl/usage/collecting-responses/">http://osdoc.cogsci.nl/usage/collecting-responses/</a></li>
+</ul>
+<hr />
+
+<h3 id="sampler-items">Sampler items</h3>
+<p><code>Sampler</code> items allow you to play sound files. Only files in <code>.wav or</code> <code>.ogg</code> format can be used. If you need to convert sound files, for example from <code>.mp3</code> format, you can use <a href="http://audacity.sourceforge.net/">Audacity</a>, an excellent open-source sound editor.</p>
+<h4 id="options-2">Options</h4>
+<p>You can specify a number of options:</p>
+<ul>
+<li><em>Volume</em> between 0 and 100%</li>
+<li><em>Pan</em> turns the right (negative values) or left (positive values) channel down. Setting pan to -20 or 20 completely mutes the right or left channel, respectively.</li>
+<li><em>Pitch</em> indicates the speed at which the sample is played. Values higher than 100% indicate a speed-up, values lower than 100% indicate a slowing down.</li>
+<li><em>Stop after</em> indicates how long the sample should be played. For example, a value of 100 ms means that the sample will be stopped after 100 ms, regardless of how long the sample is. A value of 0 ms means playing the full sample.</li>
+<li><em>Fade in</em> indicates the fade in time for the sample.</li>
+<li><em>Duration</em> indicates the duration of the sampler item, before the next item is presented. This doesn’t need to match the length of the sample. For example, the duration of the sampler may be set to 0 ms, to advance directly to the next item (e.g., a sketchpad), while the sample continues playing. In addition to a numeric value, you can set duration to ‘keypress’, to wait for a keyboard press, ‘mouseclick’, to wait for a mouse click, or ‘sound’, to wait until the sampler has finished playing.</li>
+</ul>
+<h4 id="sampling-rate">Sampling rate</h4>
+<p>Sound files are always played back at the sampling rate that is used by the OpenSesame sampler back-end. If your sample appears to be sped up or slowed down, you can adjust the sampling rate of your sound file in a sound editor or change the sampling rate used by the OpenSesame sampler back-end (under ‘Show back-end settings and info’ in the General tab).</p>
+<p>For more information, see:</p>
+<ul>
+<li><a href="http://osdoc.cogsci.nl/usage/sound/">http://osdoc.cogsci.nl/usage/sound/</a></li>
+</ul>
+<hr />
+
+<h3 id="sequence-items">Sequence items</h3>
+<p>In an experiment, you generally have a number of events that occur sequentially. For example, in a trial, you may present a fixation point, followed by a number of stimulus displays, followed in turn by response collection and response logging. This is where the <code>sequence</code> item comes in.</p>
+<h4 id="sequences-are-sequential">Sequences are sequential</h4>
+<p><code>sequence</code>s are run from top to bottom, i.e. the first item is the item that is presented at the top. You can change the order of the <code>sequence</code> by picking up items by their grab handle (on the left) and dragging them to a new position. You can remove items from a <code>sequence</code> by right-clicking an item and selecting ‘Delete’.</p>
+<h4 id="appending-items-to-the-sequence">Appending items to the sequence</h4>
+<p>You can add items to a <code>sequence</code> by clicking on the buttons at the bottom of the tab. The <em>Append existing item</em> button appends an existing item to the sequence table, without creating a new item. This way you can add a single item (a fixation dot display, say) multiple times to a <code>sequence</code>. The <em>Append new item</em> button creates a new item and appends it to the <code>sequence</code>.</p>
+<h4 id="run-if-statements">Run-if statements</h4>
+<p>A very convenient feature of the sequence item is that you can use conditional (‘if’) statements to determine whether or not a particular item should be executed. For example, if you want a display to be presented only if a participant has made an incorrect response, you can set the Run-if statement to</p>
+<pre><code>[correct] = 0</code></pre>
+<p>If you leave the Run-if statement empty or enter ‘always’, the item will always be executed.</p>
+<p>For more information, see also:</p>
+<ul>
+<li><a href="http://osdoc.cogsci.nl/usage/variables-and-conditional-statements/#usingconditionalifstatements">http://osdoc.cogsci.nl/usage/variables-and-conditional-statements/#usingconditionalifstatements</a></li>
+</ul>
+<hr />
+
+<h3 id="sketchpad-items">Sketchpad items</h3>
+<p>The <code>sketchpad</code> item is the main way to present visual stimuli. The <code>sketchpad</code> provides simple built-in drawing tools that allow you to very easily draw stimulus displays.</p>
+<h4 id="duration">Duration</h4>
+<p>The <em>Duration</em> entry can be set to any positive numeric value which reflects the duration of the sketchpad in ms. If you want no duration, for example because the next item is a <code>keyboard_response</code>, you can enter ‘0’. You can also enter ‘keypress’ or ‘mouseclick’ to show a <code>sketchpad</code> until a key is pressed or a mouse button is clicked, respectively.</p>
+<p>Note that your experiment will pause for the duration of a <code>sketchpad</code> item, and will not automagically start collecting responses. Therefore, if you want to collect the responses to a <code>sketchpad</code>, you generally set its <em>Duration</em> to 0 ms, and have it followed by a <code>keyboard_response</code> item. This principle is demonstrated in the online <a href="http://osdoc.cogsci.nl/tutorials/">tutorials</a>.</p>
+<h4 id="show-if-statements">Show-if statements</h4>
+<p>You can use the Show-if field in the <code>sketchpad</code> to specify conditions under which elements should be shown. For example, if you want to have the direction of an arrow depend on the variable <code>cue</code>, you could draw two arrows and use <code>[cue] = left</code> and <code>[cue] = right</code> show-if statements to determine which arrow should be shown on a given trial.</p>
+<p>For more information, see:</p>
+<ul>
+<li><a href="http://osdoc.cogsci.nl/usage/variables-and-conditional-statements/#usingconditionalifstatements">http://osdoc.cogsci.nl/usage/variables-and-conditional-statements/#usingconditionalifstatements</a></li>
+</ul>
+<h4 id="sketchpad-items-are-prepared-in-advance-feedback-items-are-not">Sketchpad items are prepared in advance, feedback items are not</h4>
+<p>For performance considerations, a <code>sketchpad</code> is prepared before the execution of the <code>sequence</code> that it is part of. Therefore, its contents cannot depend on what happens during the <code>sequence</code> (after the <code>sketchpad</code> has already been prepared). This is not the case for <code>feedback</code> items, which are prepared at runtime and can therefore be used to provide immediate feedback to participants.</p>
+<hr />
+
+<h3 id="synth-items">Synth items</h3>
+<p>The <code>synth</code> item is a basic sound synthesizer. You can specify a number of options:</p>
+<ul>
+<li><em>Waveform</em> can be set to sine, sawtooth, square, or white noise</li>
+<li><em>Attack</em> is the time it takes for the sound the reach maximum volume (i.e. fade in).</li>
+<li><em>Decay</em> is the time it takes for the sound to die out (i.e. fade out). Note that the decay occurs within the length of the sound.</li>
+<li><em>Volume</em> between 0 and 100%</li>
+<li><em>Pan</em> turns the right (negative values) or left (positive values) channel down. Setting pan to -20 or 20 completely mutes the right or left channel, respectively.</li>
+<li><em>Length</em> indicates the length of the sound (in milliseconds).</li>
+<li><em>Duration</em> indicates the duration of the <code>synth</code> item, before the next item is presented. This doesn’t need to match the length of the sound. For example, the duration of the <code>synth</code> may be set to 0ms, in order to advance directly to the next item (e.g., a <code>sketchpad</code>), while the sound continues playing in the background. In addition to a numeric value, you can set the duration to ‘keypress’, to wait for a keyboard press, ‘mouseclick’, to wait for a mouse click, or ‘sound’, to wait until the <code>synth</code> has finished playing.</li>
+</ul>
+<p>For more information about sound playback, see:</p>
+<ul>
+<li><a href="http://osdoc.cogsci.nl/usage/sound/">http://osdoc.cogsci.nl/usage/sound/</a></li>
+</ul>
+<hr />
+
+
+<h2 id="plug-ins">Plug-ins</h2>
+<div class="page-notification">
+This is a plug-in and may not be installed by default. For plug-in installation instructions, see <a href='/plug-ins/installation'>here</a>.
+</div>
+<h3 id="advanced_delay">Advanced_delay</h3>
+<p>The <code>advanced_delay</code> plug-in delays the experiment for a pre-specified average duration plus a random margin.</p>
+<ul>
+<li><em>Duration</em> is the average duration of the delay in milliseconds.</li>
+<li><em>Jitter</em> is the size of the variation in the delay in milliseconds.</li>
+<li><em>Jitter mode</em> is the how the jitter is calculated:
+<ul>
+<li><em>Standard deviation</em> will draw the variation from a Gaussian distribution with Jitter as the the standard deviation.</li>
+<li><em>Uniform</em> will draw the variation in duration from a uniform distribution.</li>
+</ul></li>
+</ul>
+<hr />
+
+
+<div class='page-notification'>
+This is a plug-in and may not be installed by default. For plug-in installation instructions, see <a href='/plug-ins/installation'>here</a>.
+</div>
+<h3 id="fixation-dot">Fixation dot</h3>
+<p>The <code>fixation_dot</code> plug-in is a convenience plug-in. That is, it does nothing that could not be done using a <code>sketchpad</code> item, but is more convenient if you want to present only a central-fixation dot.</p>
+<p>The following options are available:</p>
+<ul>
+<li><code>Style</code> specifies the style of the fixation dot.</li>
+<li><code>Duration</code> should be a positive integer value, ‘keypress’, or ‘mouseclick’, to wait respectively for a specified interval in milliseconds, until a key has been pressed, or until a mouse button has been clicked.</li>
+<li><code>Foreground color</code> should be an English color name (e.g., ‘blue’) or an HTML color value (e.g., ‘#0000FF’).</li>
+<li><code>Background color</code> should be an English color name (e.g., ‘blue’) or an HTML color value (e.g., ‘#0000FF’).</li>
+<li>The <code>X</code> and <code>Y</code> coordinates reflect the position of the fixation dot.</li>
+</ul>
+<hr />
+
+
+<div class='page-notification'>
+This is a plug-in and may not be installed by default. For plug-in installation instructions, see <a href='/plug-ins/installation'>here</a>.
+</div>
+<h3 id="form_base-plug-in">Form_base plug-in</h3>
+<p>The <code>form_base</code> plug-in allows you to create custom forms through OpenSesame script.</p>
+<p>For more information, see:</p>
+<ul>
+<li><a href="http://osdoc.cogsci.nl/forms/custom-forms/">http://osdoc.cogsci.nl/forms/custom-forms/</a></li>
+</ul>
+<hr />
+
+
+<div class='page-notification'>
+This is a plug-in and may not be installed by default. For plug-in installation instructions, see <a href='/plug-ins/installation'>here</a>.
+</div>
+<h3 id="form_consent-plug-in">Form_consent plug-in</h3>
+<p>The <code>form_consent</code> plug-in provides a basic digital consent form.</p>
+<p>For more information, see:</p>
+<ul>
+<li><a href="http://osdoc.cogsci.nl/forms/form-plug-ins/">http://osdoc.cogsci.nl/forms/form-plug-ins/</a></li>
+</ul>
+<hr />
+
+
+<div class='page-notification'>
+This is a plug-in and may not be installed by default. For plug-in installation instructions, see <a href='/plug-ins/installation'>here</a>.
+</div>
+<h3 id="form_multiple_choice-plug-in">Form_multiple_choice plug-in</h3>
+<p>The <code>form_multiple_choice</code> plug-in provides a single multiple-choice question.</p>
+<p>For more information, see:</p>
+<ul>
+<li><a href="http://osdoc.cogsci.nl/forms/form-plug-ins/">http://osdoc.cogsci.nl/forms/form-plug-ins/</a></li>
+</ul>
+<hr />
+
+
+<div class='page-notification'>
+This is a plug-in and may not be installed by default. For plug-in installation instructions, see <a href='/plug-ins/installation'>here</a>.
+</div>
+<h3 id="form_text_display-plug-in">Form_text_display plug-in</h3>
+<p>The <code>form_text_display</code> plug-in is a simple form consisting of a title, content, and an Ok button.</p>
+<p>For more information, see:</p>
+<ul>
+<li><a href="http://osdoc.cogsci.nl/forms/form-plug-ins/">http://osdoc.cogsci.nl/forms/form-plug-ins/</a></li>
+</ul>
+<hr />
+
+
+<div class='page-notification'>
+This is a plug-in and may not be installed by default. For plug-in installation instructions, see <a href='/plug-ins/installation'>here</a>.
+</div>
+<h3 id="form_text_input-plug-in">Form_text_input plug-in</h3>
+<p>The <code>form_text_input</code> plug-in is a simple multi-character input form consisting of a title, question, and text-input area.</p>
+<p>For more information, see:</p>
+<ul>
+<li><a href="http://osdoc.cogsci.nl/forms/form-plug-ins/">http://osdoc.cogsci.nl/forms/form-plug-ins/</a></li>
+</ul>
+<hr />
+
+
+<div class='page-notification'>
+This is a plug-in and may not be installed by default. For plug-in installation instructions, see <a href='/plug-ins/installation'>here</a>.
+</div>
+<h3 id="joystick-plug-in">Joystick plug-in</h3>
+<p>The <code>joystick</code> plug-in handles input from joystick devices, including trackballs and video-game-style gamepads. Using the joystick module of PyGame, the <code>joystick</code> plug-in allows for the use of a joystick with buttons, axes, trackballs, and hats.</p>
+<h4 id="options-and-response-variables">Options and response variables</h4>
+<p>The <code>joystick</code> plug-in works analogously to the <code>keyboard_response</code> item. For more information, see the <code>keyboard_response</code>-item help or visit:</p>
+<ul>
+<li><a href="http://osdoc.cogsci.nl/usage/collecting-responses/">http://osdoc.cogsci.nl/usage/collecting-responses/</a></li>
+</ul>
+<h4 id="button-names">Button names</h4>
+<p>Depending on the kind of joystick or gamepad you use, a different number of buttons, axes, tracksballs, and hats are available. Please make sure you know which button corresponds to which button number (same goes for axes, hats and trackballs).</p>
+<p>For more information, see:</p>
+<ul>
+<li><a href="http://osdoc.cogsci.nl/devices/joystick/">http://osdoc.cogsci.nl/devices/joystick/</a></li>
+</ul>
+<hr />
+
+
+<div class='page-notification'>
+This is a plug-in and may not be installed by default. For plug-in installation instructions, see <a href='/plug-ins/installation'>here</a>.
+</div>
+<h3 id="notepad">Notepad</h3>
+<p>The notepad is a simple plug-in that allows you to annotate your experiment. It does not offer any real functionality.</p>
+<hr />
+
+
+<div class='page-notification'>
+This is a plug-in and may not be installed by default. For plug-in installation instructions, see <a href='/plug-ins/installation'>here</a>.
+</div>
+<h3 id="reset_feedback">Reset_feedback</h3>
+<p><em>Tip: This plug-in has the same effect as presenting a <code>feedback</code> item with a duration of 0 ms.</em></p>
+<p>If you do not reset feedback variables, you may confound your feedback with responses that are not relevant to the task. For example, the key presses made during the instruction phase may affect the feedback during the first block of the experiment. Therefore, you will need to reset the feedback variables at appropriate moments.</p>
+<p>This plug-in will reset the following variables to 0:</p>
+<ul>
+<li><code>total_response_time</code></li>
+<li><code>total_response</code></li>
+<li><code>acc</code></li>
+<li><code>accuracy</code></li>
+<li><code>avg_rt</code></li>
+<li><code>average_response_time</code></li>
+</ul>
+<p>For more information, see:</p>
+<ul>
+<li><a href="http://osdoc.cogsci.nl/usage/feedback/">http://osdoc.cogsci.nl/usage/feedback/</a></li>
+</ul>
+<hr />
+
+
+<div class='page-notification'>
+This is a plug-in and may not be installed by default. For plug-in installation instructions, see <a href='/plug-ins/installation'>here</a>.
+</div>
+<h3 id="text_display">Text_display</h3>
+<p><em>Tip: <a href="http://osdoc.cogsci.nl/forms">Forms</a> provide a more flexible way to present text stimuli and collect text responses.</em></p>
+<p>The <code>text_display</code> item is a convenience plug-in. That is, it does nothing which could not be done using a <code>sketchpad</code> item, but is more convenient if you want to display a large portion of text.</p>
+<p>The following options are available:</p>
+<ul>
+<li><em>Duration</em> should be a positive integer value, ‘keypress’, or ‘mouseclick’, to wait respectively for a specified interval in milliseconds, until a key has been pressed, or until a mouse button has been clicked.</li>
+<li><em>Foreground color</em> should be an English color name (e.g., ‘blue’) or an HTML color value (e.g., ‘#0000FF’).</li>
+<li><em>Background color</em> should be an English color name (e.g., ‘blue’) or an HTML color value (e.g., ‘#0000FF’).</li>
+<li><em>Font family</em> is mono, sans or serif.</li>
+<li><em>Font size</em> reflects the size of the font in points.</li>
+<li><em>Align</em> is either left, center, or right.</li>
+</ul>
+<hr />
+
+
+<div class='page-notification'>
+This is a plug-in and may not be installed by default. For plug-in installation instructions, see <a href='/plug-ins/installation'>here</a>.
+</div>
+<h3 id="touch-response">Touch response</h3>
+<p>The <code>touch_response</code> plug-in allows you to work with touch responses (or mouse clicks) in an easy way, by dividing the display into rows and columns. Each response is encoded by a single number, which corresponds to the position counting from left-to-right and top-down. For example, if you have specified 2 columns and 3 rows, the display is divided into the following response regions:</p>
+<pre><code>1   2
+3   4
+5   6</code></pre>
+<p>Similarly, if you have specified 4 columns and 1 row, the display is sliced horizontally into the following response regions:</p>
+<pre><code>1   2   3   4</code></pre>
+<hr />
+
+
+
+

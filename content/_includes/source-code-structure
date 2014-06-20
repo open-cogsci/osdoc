@@ -1,0 +1,2594 @@
+<h2 id="overview">Overview</h2>
+<ul>
+<li><a href="#openexp">openexp</a>
+<ul>
+<li><a href="#backend_info">backend_info</a></li>
+<li><a href="#canvas">canvas</a></li>
+<li><a href="#exceptions">exceptions</a></li>
+<li><a href="#keyboard">keyboard</a></li>
+<li><a href="#mouse">mouse</a></li>
+<li><a href="#sampler">sampler</a></li>
+<li><a href="#synth">synth</a></li>
+<li><a href="#_canvas">_canvas</a>
+<ul>
+<li><a href="#droid">droid</a></li>
+<li><a href="#legacy">legacy</a></li>
+<li><a href="#libopengl">libopengl</a></li>
+<li><a href="#opengl">opengl</a></li>
+<li><a href="#psycho">psycho</a></li>
+<li><a href="#xpyriment">xpyriment</a></li>
+</ul></li>
+<li><a href="#_keyboard">_keyboard</a>
+<ul>
+<li><a href="#droid">droid</a></li>
+<li><a href="#legacy">legacy</a></li>
+<li><a href="#psycho">psycho</a></li>
+</ul></li>
+<li><a href="#_mouse">_mouse</a>
+<ul>
+<li><a href="#droid">droid</a></li>
+<li><a href="#legacy">legacy</a></li>
+<li><a href="#psycho">psycho</a></li>
+<li><a href="#xpyriment">xpyriment</a></li>
+</ul></li>
+<li><a href="#_sampler">_sampler</a>
+<ul>
+<li><a href="#legacy">legacy</a></li>
+</ul></li>
+<li><a href="#_synth">_synth</a>
+<ul>
+<li><a href="#droid">droid</a></li>
+<li><a href="#legacy">legacy</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#libopensesame">libopensesame</a>
+<ul>
+<li><a href="#debug">debug</a></li>
+<li><a href="#exceptions">exceptions</a></li>
+<li><a href="#experiment">experiment</a></li>
+<li><a href="#feedback">feedback</a></li>
+<li><a href="#generic_response">generic_response</a></li>
+<li><a href="#html">html</a></li>
+<li><a href="#inline_script">inline_script</a></li>
+<li><a href="#item">item</a></li>
+<li><a href="#keyboard_response">keyboard_response</a></li>
+<li><a href="#logger">logger</a></li>
+<li><a href="#loop">loop</a></li>
+<li><a href="#misc">misc</a></li>
+<li><a href="#mouse_response">mouse_response</a></li>
+<li><a href="#plugins">plugins</a></li>
+<li><a href="#regexp">regexp</a></li>
+<li><a href="#sampler">sampler</a></li>
+<li><a href="#sequence">sequence</a></li>
+<li><a href="#sketchpad">sketchpad</a></li>
+<li><a href="#synth">synth</a></li>
+<li><a href="#type_check">type_check</a></li>
+<li><a href="#widgets">widgets</a>
+<ul>
+<li><a href="#button">button</a></li>
+<li><a href="#checkbox">checkbox</a></li>
+<li><a href="#form">form</a></li>
+<li><a href="#image">image</a></li>
+<li><a href="#image_button">image_button</a></li>
+<li><a href="#label">label</a></li>
+<li><a href="#rating_scale">rating_scale</a></li>
+<li><a href="#text_input">text_input</a></li>
+<li><a href="#widget">widget</a></li>
+<li><a href="#themes">themes</a>
+<ul>
+<li><a href="#gray">gray</a></li>
+<li><a href="#plain">plain</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><a href="#libqtopensesame">libqtopensesame</a>
+<ul>
+<li><a href="#qtopensesame">qtopensesame</a></li>
+<li><a href="#qtopensesamerun">qtopensesamerun</a></li>
+<li><a href="#actions">actions</a>
+<ul>
+<li><a href="#plugin_action">plugin_action</a></li>
+<li><a href="#recent_action">recent_action</a></li>
+</ul></li>
+<li><a href="#dialogs">dialogs</a>
+<ul>
+<li><a href="#new_loop_sequence_dialog">new_loop_sequence_dialog</a></li>
+<li><a href="#replace_dialog">replace_dialog</a></li>
+<li><a href="#sketchpad_dialog">sketchpad_dialog</a></li>
+</ul></li>
+<li><a href="#items">items</a>
+<ul>
+<li><a href="#experiment">experiment</a></li>
+<li><a href="#feedback">feedback</a></li>
+<li><a href="#feedpad">feedpad</a></li>
+<li><a href="#inline_script">inline_script</a></li>
+<li><a href="#keyboard_response">keyboard_response</a></li>
+<li><a href="#logger">logger</a></li>
+<li><a href="#loop">loop</a></li>
+<li><a href="#mouse_response">mouse_response</a></li>
+<li><a href="#qtautoplugin">qtautoplugin</a></li>
+<li><a href="#qtitem">qtitem</a></li>
+<li><a href="#qtplugin">qtplugin</a></li>
+<li><a href="#sampler">sampler</a></li>
+<li><a href="#sequence">sequence</a></li>
+<li><a href="#sketchpad">sketchpad</a></li>
+<li><a href="#synth">synth</a></li>
+</ul></li>
+<li><a href="#misc">misc</a>
+<ul>
+<li><a href="#config">config</a></li>
+<li><a href="#dispatch">dispatch</a></li>
+<li><a href="#dummy">dummy</a></li>
+<li><a href="#includes">includes</a></li>
+<li><a href="#process">process</a></li>
+<li><a href="#template_info">template_info</a></li>
+<li><a href="#theme">theme</a></li>
+</ul></li>
+<li><a href="#runners">runners</a>
+<ul>
+<li><a href="#base_runner">base_runner</a></li>
+<li><a href="#external_runner">external_runner</a></li>
+<li><a href="#inprocess_runner">inprocess_runner</a></li>
+<li><a href="#multiprocess_runner">multiprocess_runner</a></li>
+</ul></li>
+<li><a href="#ui">ui</a>
+<ul>
+<li><a href="#backend_settings_ui">backend_settings_ui</a></li>
+<li><a href="#credits_widget_ui">credits_widget_ui</a></li>
+<li><a href="#font_widget_ui">font_widget_ui</a></li>
+<li><a href="#gabor_dialog_ui">gabor_dialog_ui</a></li>
+<li><a href="#general_script_editor_ui">general_script_editor_ui</a></li>
+<li><a href="#general_widget_ui">general_widget_ui</a></li>
+<li><a href="#loop_widget_ui">loop_widget_ui</a></li>
+<li><a href="#loop_wizard_dialog_ui">loop_wizard_dialog_ui</a></li>
+<li><a href="#new_loop_sequence_ui">new_loop_sequence_ui</a></li>
+<li><a href="#noise_patch_dialog_ui">noise_patch_dialog_ui</a></li>
+<li><a href="#notification_dialog_ui">notification_dialog_ui</a></li>
+<li><a href="#opensesame_ui">opensesame_ui</a></li>
+<li><a href="#opensesamerun_ui">opensesamerun_ui</a></li>
+<li><a href="#pool_widget_ui">pool_widget_ui</a></li>
+<li><a href="#preferences_widget_ui">preferences_widget_ui</a></li>
+<li><a href="#replace_dialog_ui">replace_dialog_ui</a></li>
+<li><a href="#sampler_widget_ui">sampler_widget_ui</a></li>
+<li><a href="#sketchpad_widget_ui">sketchpad_widget_ui</a></li>
+<li><a href="#start_new_widget_ui">start_new_widget_ui</a></li>
+<li><a href="#synth_widget_ui">synth_widget_ui</a></li>
+<li><a href="#text_input_dialog_ui">text_input_dialog_ui</a></li>
+<li><a href="#update_dialog_ui">update_dialog_ui</a></li>
+<li><a href="#user_hint_widget_ui">user_hint_widget_ui</a></li>
+<li><a href="#webbrowser_widget_ui">webbrowser_widget_ui</a></li>
+</ul></li>
+<li><a href="#widgets">widgets</a>
+<ul>
+<li><a href="#backend_settings">backend_settings</a></li>
+<li><a href="#color_edit">color_edit</a></li>
+<li><a href="#credits_widget">credits_widget</a></li>
+<li><a href="#draggables">draggables</a></li>
+<li><a href="#font_widget">font_widget</a></li>
+<li><a href="#general_properties">general_properties</a></li>
+<li><a href="#general_script_editor">general_script_editor</a></li>
+<li><a href="#good_looking_table">good_looking_table</a></li>
+<li><a href="#header_widget">header_widget</a></li>
+<li><a href="#item_context_menu">item_context_menu</a></li>
+<li><a href="#loop_table">loop_table</a></li>
+<li><a href="#pool_widget">pool_widget</a></li>
+<li><a href="#preferences_widget">preferences_widget</a></li>
+<li><a href="#pyterm">pyterm</a></li>
+<li><a href="#pyterm_ipython">pyterm_ipython</a></li>
+<li><a href="#pyterm_original">pyterm_original</a></li>
+<li><a href="#sketchpad_widget">sketchpad_widget</a></li>
+<li><a href="#start_new_widget">start_new_widget</a></li>
+<li><a href="#statusbar">statusbar</a></li>
+<li><a href="#tab_widget">tab_widget</a></li>
+<li><a href="#toolbar_items">toolbar_items</a></li>
+<li><a href="#tree_overview">tree_overview</a></li>
+<li><a href="#unused_widget">unused_widget</a></li>
+<li><a href="#user_hint_widget">user_hint_widget</a></li>
+<li><a href="#variable_inspector">variable_inspector</a></li>
+<li><a href="#webbrowser">webbrowser</a></li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="openexp">openexp</h2>
+<p>The <code>openexp</code> package contains the functionality required for low-level input and output. Depending on the back-end that is selected, the ‘abstract’ classes (<code>openexp.canvas.canvas</code> etc.) morph into one of the `openexp._canvas.[backend].[backend] classes. This strategy, which resembles a factory design pattern, allows you to instantiate the ‘abstract’ classes without having to specify the exact back-end that is to be used.</p>
+<p>More info:</p>
+<ul>
+<li>Type: package</li>
+<li>Full name: <code>openexp</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/openexp/__init__.py">https://github.com/smathot/OpenSesame/blob/master/openexp/__init__.py</a></li>
+</ul>
+<h3 id="backend_info">backend_info</h3>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>function: <code>match()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>openexp.backend_info</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/openexp/backend_info.py">https://github.com/smathot/OpenSesame/blob/master/openexp/backend_info.py</a></li>
+</ul>
+<h3 id="canvas">canvas</h3>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>canvas</code></li>
+<li>function: <code>clean_up()</code></li>
+<li>function: <code>close_display()</code></li>
+<li>function: <code>gabor_file()</code></li>
+<li>function: <code>init_display()</code></li>
+<li>function: <code>noise_file()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>openexp.canvas</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/openexp/canvas.py">https://github.com/smathot/OpenSesame/blob/master/openexp/canvas.py</a></li>
+</ul>
+<h3 id="exceptions">exceptions</h3>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>ArithmeticError</code></li>
+<li>class: <code>AssertionError</code></li>
+<li>class: <code>AttributeError</code></li>
+<li>class: <code>BaseException</code></li>
+<li>class: <code>BufferError</code></li>
+<li>class: <code>BytesWarning</code></li>
+<li>class: <code>DeprecationWarning</code></li>
+<li>class: <code>EOFError</code></li>
+<li>class: <code>EnvironmentError</code></li>
+<li>class: <code>Exception</code></li>
+<li>class: <code>FloatingPointError</code></li>
+<li>class: <code>FutureWarning</code></li>
+<li>class: <code>GeneratorExit</code></li>
+<li>class: <code>IOError</code></li>
+<li>class: <code>ImportError</code></li>
+<li>class: <code>ImportWarning</code></li>
+<li>class: <code>IndentationError</code></li>
+<li>class: <code>IndexError</code></li>
+<li>class: <code>KeyError</code></li>
+<li>class: <code>KeyboardInterrupt</code></li>
+<li>class: <code>LookupError</code></li>
+<li>class: <code>MemoryError</code></li>
+<li>class: <code>NameError</code></li>
+<li>class: <code>NotImplementedError</code></li>
+<li>class: <code>OSError</code></li>
+<li>class: <code>OverflowError</code></li>
+<li>class: <code>PendingDeprecationWarning</code></li>
+<li>class: <code>ReferenceError</code></li>
+<li>class: <code>RuntimeError</code></li>
+<li>class: <code>RuntimeWarning</code></li>
+<li>class: <code>StandardError</code></li>
+<li>class: <code>StopIteration</code></li>
+<li>class: <code>SyntaxError</code></li>
+<li>class: <code>SyntaxWarning</code></li>
+<li>class: <code>SystemError</code></li>
+<li>class: <code>SystemExit</code></li>
+<li>class: <code>TabError</code></li>
+<li>class: <code>TypeError</code></li>
+<li>class: <code>UnboundLocalError</code></li>
+<li>class: <code>UnicodeDecodeError</code></li>
+<li>class: <code>UnicodeEncodeError</code></li>
+<li>class: <code>UnicodeError</code></li>
+<li>class: <code>UnicodeTranslateError</code></li>
+<li>class: <code>UnicodeWarning</code></li>
+<li>class: <code>UserWarning</code></li>
+<li>class: <code>ValueError</code></li>
+<li>class: <code>Warning</code></li>
+<li>class: <code>ZeroDivisionError</code></li>
+<li>class: <code>canvas_error</code></li>
+<li>class: <code>openexp_error</code></li>
+<li>class: <code>osexception</code></li>
+<li>class: <code>response_error</code></li>
+<li>class: <code>sample_error</code></li>
+<li>class: <code>synth_error</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>openexp.exceptions</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/openexp/exceptions.py">https://github.com/smathot/OpenSesame/blob/master/openexp/exceptions.py</a></li>
+</ul>
+<h3 id="keyboard">keyboard</h3>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>keyboard</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>openexp.keyboard</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/openexp/keyboard.py">https://github.com/smathot/OpenSesame/blob/master/openexp/keyboard.py</a></li>
+</ul>
+<h3 id="mouse">mouse</h3>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>mouse</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>openexp.mouse</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/openexp/mouse.py">https://github.com/smathot/OpenSesame/blob/master/openexp/mouse.py</a></li>
+</ul>
+<h3 id="sampler">sampler</h3>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>sampler</code></li>
+<li>function: <code>close_sound()</code></li>
+<li>function: <code>init_sound()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>openexp.sampler</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/openexp/sampler.py">https://github.com/smathot/OpenSesame/blob/master/openexp/sampler.py</a></li>
+</ul>
+<h3 id="synth">synth</h3>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>synth</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>openexp.synth</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/openexp/synth.py">https://github.com/smathot/OpenSesame/blob/master/openexp/synth.py</a></li>
+</ul>
+<h3 id="canvas-1">_canvas</h3>
+<p>No docstring specified.</p>
+<p>More info:</p>
+<ul>
+<li>Type: package</li>
+<li>Full name: <code>openexp._canvas</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/openexp/_canvas/__init__.py">https://github.com/smathot/OpenSesame/blob/master/openexp/_canvas/__init__.py</a></li>
+</ul>
+<h4 id="droid">droid</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>droid</code></li>
+<li>class: <code>legacy</code></li>
+<li>class: <code>osexception</code></li>
+<li>function: <code>close_display()</code></li>
+<li>function: <code>init_display()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>openexp._canvas.droid</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/openexp/_canvas/droid.py">https://github.com/smathot/OpenSesame/blob/master/openexp/_canvas/droid.py</a></li>
+</ul>
+<h4 id="legacy">legacy</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>Color</code></li>
+<li>class: <code>Rect</code></li>
+<li>class: <code>legacy</code></li>
+<li>class: <code>osexception</code></li>
+<li>function: <code>_color()</code></li>
+<li>function: <code>_gabor()</code></li>
+<li>function: <code>_match_env()</code></li>
+<li>function: <code>_noise_patch()</code></li>
+<li>function: <code>close_display()</code></li>
+<li>function: <code>init_display()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>openexp._canvas.legacy</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/openexp/_canvas/legacy.py">https://github.com/smathot/OpenSesame/blob/master/openexp/_canvas/legacy.py</a></li>
+</ul>
+<h4 id="libopengl">libopengl</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>ArrayDatatype</code></li>
+<li>class: <code>Color</code></li>
+<li>class: <code>Error</code></li>
+<li>class: <code>GLError</code></li>
+<li>class: <code>GLUError</code></li>
+<li>class: <code>GLUQuadric</code></li>
+<li>class: <code>GLUTError</code></li>
+<li>class: <code>GLUTerror</code></li>
+<li>class: <code>GLUerror</code></li>
+<li>class: <code>GLUnurbsObj</code></li>
+<li>class: <code>GLUnurbs</code></li>
+<li>class: <code>GLUquadricObj</code></li>
+<li>class: <code>GLUquadric</code></li>
+<li>class: <code>GLUtesselatorObj</code></li>
+<li>class: <code>GLUtesselator</code></li>
+<li>class: <code>GLUtriangulatorObj</code></li>
+<li>class: <code>GLbitfield</code></li>
+<li>class: <code>GLboolean</code></li>
+<li>class: <code>GLbyte</code></li>
+<li>class: <code>GLclampd</code></li>
+<li>class: <code>GLclampf</code></li>
+<li>class: <code>GLdouble</code></li>
+<li>class: <code>GLenumArray</code></li>
+<li>class: <code>GLenum</code></li>
+<li>class: <code>GLerror</code></li>
+<li>class: <code>GLfloat</code></li>
+<li>class: <code>GLint</code></li>
+<li>class: <code>GLshort</code></li>
+<li>class: <code>GLsizei</code></li>
+<li>class: <code>GLubyte</code></li>
+<li>class: <code>GLuint</code></li>
+<li>class: <code>GLushort</code></li>
+<li>class: <code>LowImage</code></li>
+<li>class: <code>OGLSprite</code></li>
+<li>class: <code>Rect</code></li>
+<li>function: <code>clearScreen()</code></li>
+<li>function: <code>doBlockingFlip()</code></li>
+<li>function: <code>getGLVersion()</code></li>
+<li>function: <code>glColor()</code></li>
+<li>function: <code>glFeedbackBuffer()</code></li>
+<li>function: <code>glGetPointerv()</code></li>
+<li>function: <code>glGetTexImage()</code></li>
+<li>function: <code>glGetTexImageb()</code></li>
+<li>function: <code>glGetTexImaged()</code></li>
+<li>function: <code>glGetTexImagef()</code></li>
+<li>function: <code>glGetTexImagei()</code></li>
+<li>function: <code>glGetTexImages()</code></li>
+<li>function: <code>glGetTexImageub()</code></li>
+<li>function: <code>glGetTexImageui()</code></li>
+<li>function: <code>glGetTexImageus()</code></li>
+<li>function: <code>glMap1d()</code></li>
+<li>function: <code>glMap1f()</code></li>
+<li>function: <code>glMap2d()</code></li>
+<li>function: <code>glMap2f()</code></li>
+<li>function: <code>glMaterial()</code></li>
+<li>function: <code>glRasterPos()</code></li>
+<li>function: <code>glReadPixels()</code></li>
+<li>function: <code>glReadPixelsb()</code></li>
+<li>function: <code>glReadPixelsd()</code></li>
+<li>function: <code>glReadPixelsf()</code></li>
+<li>function: <code>glReadPixelsi()</code></li>
+<li>function: <code>glReadPixelss()</code></li>
+<li>function: <code>glReadPixelsub()</code></li>
+<li>function: <code>glReadPixelsui()</code></li>
+<li>function: <code>glReadPixelsus()</code></li>
+<li>function: <code>glRenderMode()</code></li>
+<li>function: <code>glSelectBuffer()</code></li>
+<li>function: <code>glTexParameter()</code></li>
+<li>function: <code>glVertex()</code></li>
+<li>function: <code>gluNurbsCallback()</code></li>
+<li>function: <code>gluQuadricCallback()</code></li>
+<li>function: <code>gluTessBeginPolygon()</code></li>
+<li>function: <code>gluTessCallback()</code></li>
+<li>function: <code>gluTessVertex()</code></li>
+<li>function: <code>lazy()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>openexp._canvas.libopengl</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/openexp/_canvas/libopengl.py">https://github.com/smathot/OpenSesame/blob/master/openexp/_canvas/libopengl.py</a></li>
+</ul>
+<h4 id="opengl">opengl</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>Color</code></li>
+<li>class: <code>Rect</code></li>
+<li>class: <code>opengl</code></li>
+<li>class: <code>osexception</code></li>
+<li>function: <code>close_display()</code></li>
+<li>function: <code>init_display()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>openexp._canvas.opengl</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/openexp/_canvas/opengl.py">https://github.com/smathot/OpenSesame/blob/master/openexp/_canvas/opengl.py</a></li>
+</ul>
+<h4 id="psycho">psycho</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>osexception</code></li>
+<li>class: <code>psycho</code></li>
+<li>function: <code>_psychopy_clean_quit()</code></li>
+<li>function: <code>_sleep()</code></li>
+<li>function: <code>_time()</code></li>
+<li>function: <code>close_display()</code></li>
+<li>function: <code>init_display()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>openexp._canvas.psycho</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/openexp/_canvas/psycho.py">https://github.com/smathot/OpenSesame/blob/master/openexp/_canvas/psycho.py</a></li>
+</ul>
+<h4 id="xpyriment">xpyriment</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>osexception</code></li>
+<li>class: <code>xpyriment</code></li>
+<li>function: <code>c2p()</code></li>
+<li>function: <code>close_display()</code></li>
+<li>function: <code>coordinates2position()</code></li>
+<li>function: <code>init_display()</code></li>
+<li>function: <code>p2v()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>openexp._canvas.xpyriment</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/openexp/_canvas/xpyriment.py">https://github.com/smathot/OpenSesame/blob/master/openexp/_canvas/xpyriment.py</a></li>
+</ul>
+<h3 id="keyboard-1">_keyboard</h3>
+<p>No docstring specified.</p>
+<p>More info:</p>
+<ul>
+<li>Type: package</li>
+<li>Full name: <code>openexp._keyboard</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/openexp/_keyboard/__init__.py">https://github.com/smathot/OpenSesame/blob/master/openexp/_keyboard/__init__.py</a></li>
+</ul>
+<h4 id="droid-1">droid</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>Color</code></li>
+<li>class: <code>Rect</code></li>
+<li>class: <code>droid</code></li>
+<li>class: <code>legacy</code></li>
+<li>class: <code>osexception</code></li>
+<li>function: <code>close_display()</code></li>
+<li>function: <code>init_display()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>openexp._keyboard.droid</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/openexp/_keyboard/droid.py">https://github.com/smathot/OpenSesame/blob/master/openexp/_keyboard/droid.py</a></li>
+</ul>
+<h4 id="legacy-1">legacy</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>Color</code></li>
+<li>class: <code>Rect</code></li>
+<li>class: <code>legacy</code></li>
+<li>class: <code>osexception</code></li>
+<li>function: <code>_color()</code></li>
+<li>function: <code>_gabor()</code></li>
+<li>function: <code>_match_env()</code></li>
+<li>function: <code>_noise_patch()</code></li>
+<li>function: <code>close_display()</code></li>
+<li>function: <code>init_display()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>openexp._keyboard.legacy</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/openexp/_keyboard/legacy.py">https://github.com/smathot/OpenSesame/blob/master/openexp/_keyboard/legacy.py</a></li>
+</ul>
+<h4 id="psycho-1">psycho</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>osexception</code></li>
+<li>class: <code>psycho</code></li>
+<li>function: <code>_psychopy_clean_quit()</code></li>
+<li>function: <code>_sleep()</code></li>
+<li>function: <code>_time()</code></li>
+<li>function: <code>close_display()</code></li>
+<li>function: <code>init_display()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>openexp._keyboard.psycho</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/openexp/_keyboard/psycho.py">https://github.com/smathot/OpenSesame/blob/master/openexp/_keyboard/psycho.py</a></li>
+</ul>
+<h3 id="mouse-1">_mouse</h3>
+<p>No docstring specified.</p>
+<p>More info:</p>
+<ul>
+<li>Type: package</li>
+<li>Full name: <code>openexp._mouse</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/openexp/_mouse/__init__.py">https://github.com/smathot/OpenSesame/blob/master/openexp/_mouse/__init__.py</a></li>
+</ul>
+<h4 id="droid-2">droid</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>Color</code></li>
+<li>class: <code>Rect</code></li>
+<li>class: <code>droid</code></li>
+<li>class: <code>legacy</code></li>
+<li>class: <code>osexception</code></li>
+<li>function: <code>close_display()</code></li>
+<li>function: <code>init_display()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>openexp._mouse.droid</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/openexp/_mouse/droid.py">https://github.com/smathot/OpenSesame/blob/master/openexp/_mouse/droid.py</a></li>
+</ul>
+<h4 id="legacy-2">legacy</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>Color</code></li>
+<li>class: <code>Rect</code></li>
+<li>class: <code>legacy</code></li>
+<li>class: <code>osexception</code></li>
+<li>function: <code>_color()</code></li>
+<li>function: <code>_gabor()</code></li>
+<li>function: <code>_match_env()</code></li>
+<li>function: <code>_noise_patch()</code></li>
+<li>function: <code>close_display()</code></li>
+<li>function: <code>init_display()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>openexp._mouse.legacy</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/openexp/_mouse/legacy.py">https://github.com/smathot/OpenSesame/blob/master/openexp/_mouse/legacy.py</a></li>
+</ul>
+<h4 id="psycho-2">psycho</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>osexception</code></li>
+<li>class: <code>psycho</code></li>
+<li>function: <code>_psychopy_clean_quit()</code></li>
+<li>function: <code>_sleep()</code></li>
+<li>function: <code>_time()</code></li>
+<li>function: <code>close_display()</code></li>
+<li>function: <code>init_display()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>openexp._mouse.psycho</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/openexp/_mouse/psycho.py">https://github.com/smathot/OpenSesame/blob/master/openexp/_mouse/psycho.py</a></li>
+</ul>
+<h4 id="xpyriment-1">xpyriment</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>Color</code></li>
+<li>class: <code>Rect</code></li>
+<li>class: <code>osexception</code></li>
+<li>class: <code>xpyriment</code></li>
+<li>function: <code>c2p()</code></li>
+<li>function: <code>close_display()</code></li>
+<li>function: <code>coordinates2position()</code></li>
+<li>function: <code>init_display()</code></li>
+<li>function: <code>p2v()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>openexp._mouse.xpyriment</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/openexp/_mouse/xpyriment.py">https://github.com/smathot/OpenSesame/blob/master/openexp/_mouse/xpyriment.py</a></li>
+</ul>
+<h3 id="sampler-1">_sampler</h3>
+<p>No docstring specified.</p>
+<p>More info:</p>
+<ul>
+<li>Type: package</li>
+<li>Full name: <code>openexp._sampler</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/openexp/_sampler/__init__.py">https://github.com/smathot/OpenSesame/blob/master/openexp/_sampler/__init__.py</a></li>
+</ul>
+<h4 id="legacy-3">legacy</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>Color</code></li>
+<li>class: <code>Rect</code></li>
+<li>class: <code>legacy</code></li>
+<li>class: <code>osexception</code></li>
+<li>function: <code>_color()</code></li>
+<li>function: <code>_gabor()</code></li>
+<li>function: <code>_match_env()</code></li>
+<li>function: <code>_noise_patch()</code></li>
+<li>function: <code>close_display()</code></li>
+<li>function: <code>close_sound()</code></li>
+<li>function: <code>init_display()</code></li>
+<li>function: <code>init_sound()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>openexp._sampler.legacy</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/openexp/_sampler/legacy.py">https://github.com/smathot/OpenSesame/blob/master/openexp/_sampler/legacy.py</a></li>
+</ul>
+<h3 id="synth-1">_synth</h3>
+<p>No docstring specified.</p>
+<p>More info:</p>
+<ul>
+<li>Type: package</li>
+<li>Full name: <code>openexp._synth</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/openexp/_synth/__init__.py">https://github.com/smathot/OpenSesame/blob/master/openexp/_synth/__init__.py</a></li>
+</ul>
+<h4 id="droid-3">droid</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>Color</code></li>
+<li>class: <code>Rect</code></li>
+<li>class: <code>droid</code></li>
+<li>class: <code>legacy</code></li>
+<li>class: <code>osexception</code></li>
+<li>function: <code>close_display()</code></li>
+<li>function: <code>init_display()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>openexp._synth.droid</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/openexp/_synth/droid.py">https://github.com/smathot/OpenSesame/blob/master/openexp/_synth/droid.py</a></li>
+</ul>
+<h4 id="legacy-4">legacy</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>Color</code></li>
+<li>class: <code>Rect</code></li>
+<li>class: <code>legacy</code></li>
+<li>class: <code>osexception</code></li>
+<li>function: <code>_color()</code></li>
+<li>function: <code>_gabor()</code></li>
+<li>function: <code>_match_env()</code></li>
+<li>function: <code>_noise_patch()</code></li>
+<li>function: <code>close_display()</code></li>
+<li>function: <code>close_sound()</code></li>
+<li>function: <code>init_display()</code></li>
+<li>function: <code>init_sound()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>openexp._synth.legacy</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/openexp/_synth/legacy.py">https://github.com/smathot/OpenSesame/blob/master/openexp/_synth/legacy.py</a></li>
+</ul>
+<h2 id="libopensesame">libopensesame</h2>
+<p>No docstring specified.</p>
+<p>More info:</p>
+<ul>
+<li>Type: package</li>
+<li>Full name: <code>libopensesame</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libopensesame/__init__.py">https://github.com/smathot/OpenSesame/blob/master/libopensesame/__init__.py</a></li>
+</ul>
+<h3 id="debug">debug</h3>
+<p>Provides printing of debug output, which is only shown when OpenSesame is started in debug mode by passing the <code>--debug</code> command-line argument, optionally with a full stacktrace if the <code>--stack</code> argument is passed as well. To print debug output, simply use the following structure:</p>
+<pre><code>from libopensesame import debug
+debug.print(u&#39;This is a debug message&#39;)</code></pre>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>function: <code>format_stack()</code></li>
+<li>function: <code>msg()</code></li>
+<li>function: <code>parse_stack()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libopensesame.debug</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libopensesame/debug.py">https://github.com/smathot/OpenSesame/blob/master/libopensesame/debug.py</a></li>
+</ul>
+<h3 id="exceptions-1">exceptions</h3>
+<p>Provides the <code>osexception</code> class for throwing OpenSesame-specific exceptions.</p>
+<pre><code>from libopensesame.exceptions import osexception
+raise osexception(u&#39;This is a custom exception!&#39;)</code></pre>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>ArithmeticError</code></li>
+<li>class: <code>AssertionError</code></li>
+<li>class: <code>AttributeError</code></li>
+<li>class: <code>BaseException</code></li>
+<li>class: <code>BufferError</code></li>
+<li>class: <code>BytesWarning</code></li>
+<li>class: <code>DeprecationWarning</code></li>
+<li>class: <code>EOFError</code></li>
+<li>class: <code>EnvironmentError</code></li>
+<li>class: <code>Exception</code></li>
+<li>class: <code>FloatingPointError</code></li>
+<li>class: <code>FutureWarning</code></li>
+<li>class: <code>GeneratorExit</code></li>
+<li>class: <code>IOError</code></li>
+<li>class: <code>ImportError</code></li>
+<li>class: <code>ImportWarning</code></li>
+<li>class: <code>IndentationError</code></li>
+<li>class: <code>IndexError</code></li>
+<li>class: <code>KeyError</code></li>
+<li>class: <code>KeyboardInterrupt</code></li>
+<li>class: <code>LookupError</code></li>
+<li>class: <code>MemoryError</code></li>
+<li>class: <code>NameError</code></li>
+<li>class: <code>NotImplementedError</code></li>
+<li>class: <code>OSError</code></li>
+<li>class: <code>OverflowError</code></li>
+<li>class: <code>PendingDeprecationWarning</code></li>
+<li>class: <code>ReferenceError</code></li>
+<li>class: <code>RuntimeError</code></li>
+<li>class: <code>RuntimeWarning</code></li>
+<li>class: <code>StandardError</code></li>
+<li>class: <code>StopIteration</code></li>
+<li>class: <code>SyntaxError</code></li>
+<li>class: <code>SyntaxWarning</code></li>
+<li>class: <code>SystemError</code></li>
+<li>class: <code>SystemExit</code></li>
+<li>class: <code>TabError</code></li>
+<li>class: <code>TypeError</code></li>
+<li>class: <code>UnboundLocalError</code></li>
+<li>class: <code>UnicodeDecodeError</code></li>
+<li>class: <code>UnicodeEncodeError</code></li>
+<li>class: <code>UnicodeError</code></li>
+<li>class: <code>UnicodeTranslateError</code></li>
+<li>class: <code>UnicodeWarning</code></li>
+<li>class: <code>UserWarning</code></li>
+<li>class: <code>ValueError</code></li>
+<li>class: <code>Warning</code></li>
+<li>class: <code>ZeroDivisionError</code></li>
+<li>class: <code>canvas_error</code></li>
+<li>class: <code>form_error</code></li>
+<li>class: <code>openexp_error</code></li>
+<li>class: <code>osexception</code></li>
+<li>class: <code>response_error</code></li>
+<li>class: <code>runtime_error</code></li>
+<li>class: <code>sample_error</code></li>
+<li>class: <code>script_error</code></li>
+<li>class: <code>synth_error</code></li>
+<li>function: <code>escape_html()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libopensesame.exceptions</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libopensesame/exceptions.py">https://github.com/smathot/OpenSesame/blob/master/libopensesame/exceptions.py</a></li>
+</ul>
+<h3 id="experiment">experiment</h3>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>experiment</code></li>
+<li>class: <code>osexception</code></li>
+<li>function: <code>clean_up()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libopensesame.experiment</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libopensesame/experiment.py">https://github.com/smathot/OpenSesame/blob/master/libopensesame/experiment.py</a></li>
+</ul>
+<h3 id="feedback">feedback</h3>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>feedback</code></li>
+<li>class: <code>osexception</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libopensesame.feedback</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libopensesame/feedback.py">https://github.com/smathot/OpenSesame/blob/master/libopensesame/feedback.py</a></li>
+</ul>
+<h3 id="generic_response">generic_response</h3>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>generic_response</code></li>
+<li>class: <code>osexception</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libopensesame.generic_response</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libopensesame/generic_response.py">https://github.com/smathot/OpenSesame/blob/master/libopensesame/generic_response.py</a></li>
+</ul>
+<h3 id="html">html</h3>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>HTMLParser</code></li>
+<li>class: <code>html</code></li>
+<li>function: <code>bidi_func()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libopensesame.html</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libopensesame/html.py">https://github.com/smathot/OpenSesame/blob/master/libopensesame/html.py</a></li>
+</ul>
+<h3 id="inline_script">inline_script</h3>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>inline_script</code></li>
+<li>class: <code>osexception</code></li>
+<li>function: <code>restore_state()</code></li>
+<li>function: <code>save_state()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libopensesame.inline_script</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libopensesame/inline_script.py">https://github.com/smathot/OpenSesame/blob/master/libopensesame/inline_script.py</a></li>
+</ul>
+<h3 id="item">item</h3>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>item</code></li>
+<li>class: <code>osexception</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libopensesame.item</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libopensesame/item.py">https://github.com/smathot/OpenSesame/blob/master/libopensesame/item.py</a></li>
+</ul>
+<h3 id="keyboard_response">keyboard_response</h3>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>keyboard_response</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libopensesame.keyboard_response</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libopensesame/keyboard_response.py">https://github.com/smathot/OpenSesame/blob/master/libopensesame/keyboard_response.py</a></li>
+</ul>
+<h3 id="logger">logger</h3>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>logger</code></li>
+<li>class: <code>osexception</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libopensesame.logger</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libopensesame/logger.py">https://github.com/smathot/OpenSesame/blob/master/libopensesame/logger.py</a></li>
+</ul>
+<h3 id="loop">loop</h3>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>Random</code></li>
+<li>class: <code>SystemRandom</code></li>
+<li>class: <code>WichmannHill</code></li>
+<li>class: <code>loop</code></li>
+<li>class: <code>osexception</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libopensesame.loop</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libopensesame/loop.py">https://github.com/smathot/OpenSesame/blob/master/libopensesame/loop.py</a></li>
+</ul>
+<h3 id="misc">misc</h3>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>function: <code>change_working_dir()</code></li>
+<li>function: <code>escape_html()</code></li>
+<li>function: <code>filesystem_encoding()</code></li>
+<li>function: <code>home_folder()</code></li>
+<li>function: <code>messagebox()</code></li>
+<li>function: <code>module_versions()</code></li>
+<li>function: <code>open_url()</code></li>
+<li>function: <code>opensesame_folder()</code></li>
+<li>function: <code>opensesamerun_options()</code></li>
+<li>function: <code>opensesamerun_ready()</code></li>
+<li>function: <code>resource()</code></li>
+<li>function: <code>strip_html()</code></li>
+<li>function: <code>strip_tags()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libopensesame.misc</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libopensesame/misc.py">https://github.com/smathot/OpenSesame/blob/master/libopensesame/misc.py</a></li>
+</ul>
+<h3 id="mouse_response">mouse_response</h3>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>mouse_response</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libopensesame.mouse_response</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libopensesame/mouse_response.py">https://github.com/smathot/OpenSesame/blob/master/libopensesame/mouse_response.py</a></li>
+</ul>
+<h3 id="plugins">plugins</h3>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>function: <code>import_plugin()</code></li>
+<li>function: <code>is_plugin()</code></li>
+<li>function: <code>list_plugins()</code></li>
+<li>function: <code>load_plugin()</code></li>
+<li>function: <code>plugin_category()</code></li>
+<li>function: <code>plugin_disabled()</code></li>
+<li>function: <code>plugin_folder()</code></li>
+<li>function: <code>plugin_folders()</code></li>
+<li>function: <code>plugin_icon_large()</code></li>
+<li>function: <code>plugin_icon_small()</code></li>
+<li>function: <code>plugin_property()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libopensesame.plugins</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libopensesame/plugins.py">https://github.com/smathot/OpenSesame/blob/master/libopensesame/plugins.py</a></li>
+</ul>
+<h3 id="regexp">regexp</h3>
+<p>No docstring specified.</p>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libopensesame.regexp</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libopensesame/regexp.py">https://github.com/smathot/OpenSesame/blob/master/libopensesame/regexp.py</a></li>
+</ul>
+<h3 id="sampler-2">sampler</h3>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>osexception</code></li>
+<li>class: <code>sampler</code></li>
+<li>function: <code>close_sound()</code></li>
+<li>function: <code>init_sound()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libopensesame.sampler</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libopensesame/sampler.py">https://github.com/smathot/OpenSesame/blob/master/libopensesame/sampler.py</a></li>
+</ul>
+<h3 id="sequence">sequence</h3>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>osexception</code></li>
+<li>class: <code>sequence</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libopensesame.sequence</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libopensesame/sequence.py">https://github.com/smathot/OpenSesame/blob/master/libopensesame/sequence.py</a></li>
+</ul>
+<h3 id="sketchpad">sketchpad</h3>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>osexception</code></li>
+<li>class: <code>sketchpad</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libopensesame.sketchpad</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libopensesame/sketchpad.py">https://github.com/smathot/OpenSesame/blob/master/libopensesame/sketchpad.py</a></li>
+</ul>
+<h3 id="synth-2">synth</h3>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>osexception</code></li>
+<li>class: <code>synth</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libopensesame.synth</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libopensesame/synth.py">https://github.com/smathot/OpenSesame/blob/master/libopensesame/synth.py</a></li>
+</ul>
+<h3 id="type_check">type_check</h3>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>osexception</code></li>
+<li>function: <code>float_list()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libopensesame.type_check</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libopensesame/type_check.py">https://github.com/smathot/OpenSesame/blob/master/libopensesame/type_check.py</a></li>
+</ul>
+<h3 id="widgets">widgets</h3>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>button</code></li>
+<li>class: <code>checkbox</code></li>
+<li>class: <code>form</code></li>
+<li>class: <code>image_button</code></li>
+<li>class: <code>image</code></li>
+<li>class: <code>label</code></li>
+<li>class: <code>rating_scale</code></li>
+<li>class: <code>text_input</code></li>
+<li>class: <code>widget</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: package</li>
+<li>Full name: <code>libopensesame.widgets</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libopensesame/widgets/__init__.py">https://github.com/smathot/OpenSesame/blob/master/libopensesame/widgets/__init__.py</a></li>
+</ul>
+<h4 id="button">button</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>button</code></li>
+<li>class: <code>label</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libopensesame.widgets.button</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libopensesame/widgets/button.py">https://github.com/smathot/OpenSesame/blob/master/libopensesame/widgets/button.py</a></li>
+</ul>
+<h4 id="checkbox">checkbox</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>button</code></li>
+<li>class: <code>checkbox</code></li>
+<li>class: <code>osexception</code></li>
+<li>function: <code>_()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libopensesame.widgets.checkbox</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libopensesame/widgets/checkbox.py">https://github.com/smathot/OpenSesame/blob/master/libopensesame/widgets/checkbox.py</a></li>
+</ul>
+<h4 id="form">form</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>canvas</code></li>
+<li>class: <code>form</code></li>
+<li>class: <code>mouse</code></li>
+<li>class: <code>osexception</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libopensesame.widgets.form</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libopensesame/widgets/form.py">https://github.com/smathot/OpenSesame/blob/master/libopensesame/widgets/form.py</a></li>
+</ul>
+<h4 id="image">image</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>image</code></li>
+<li>class: <code>osexception</code></li>
+<li>class: <code>widget</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libopensesame.widgets.image</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libopensesame/widgets/image.py">https://github.com/smathot/OpenSesame/blob/master/libopensesame/widgets/image.py</a></li>
+</ul>
+<h4 id="image_button">image_button</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>image_button</code></li>
+<li>class: <code>image</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libopensesame.widgets.image_button</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libopensesame/widgets/image_button.py">https://github.com/smathot/OpenSesame/blob/master/libopensesame/widgets/image_button.py</a></li>
+</ul>
+<h4 id="label">label</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>label</code></li>
+<li>class: <code>widget</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libopensesame.widgets.label</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libopensesame/widgets/label.py">https://github.com/smathot/OpenSesame/blob/master/libopensesame/widgets/label.py</a></li>
+</ul>
+<h4 id="rating_scale">rating_scale</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>osexception</code></li>
+<li>class: <code>rating_scale</code></li>
+<li>class: <code>widget</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libopensesame.widgets.rating_scale</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libopensesame/widgets/rating_scale.py">https://github.com/smathot/OpenSesame/blob/master/libopensesame/widgets/rating_scale.py</a></li>
+</ul>
+<h4 id="text_input">text_input</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>keyboard</code></li>
+<li>class: <code>label</code></li>
+<li>class: <code>text_input</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libopensesame.widgets.text_input</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libopensesame/widgets/text_input.py">https://github.com/smathot/OpenSesame/blob/master/libopensesame/widgets/text_input.py</a></li>
+</ul>
+<h4 id="widget">widget</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>_form</code></li>
+<li>class: <code>osexception</code></li>
+<li>class: <code>widget</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libopensesame.widgets.widget</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libopensesame/widgets/widget.py">https://github.com/smathot/OpenSesame/blob/master/libopensesame/widgets/widget.py</a></li>
+</ul>
+<h4 id="themes">themes</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>button</code></li>
+<li>class: <code>checkbox</code></li>
+<li>class: <code>form</code></li>
+<li>class: <code>image_button</code></li>
+<li>class: <code>image</code></li>
+<li>class: <code>label</code></li>
+<li>class: <code>rating_scale</code></li>
+<li>class: <code>text_input</code></li>
+<li>class: <code>widget</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: package</li>
+<li>Full name: <code>libopensesame.widgets.themes</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libopensesame/widgets/themes/__init__.py">https://github.com/smathot/OpenSesame/blob/master/libopensesame/widgets/themes/__init__.py</a></li>
+</ul>
+<h5 id="gray">gray</h5>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>gray</code></li>
+<li>class: <code>plain</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libopensesame.widgets.themes.gray</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libopensesame/widgets/themes/gray.py">https://github.com/smathot/OpenSesame/blob/master/libopensesame/widgets/themes/gray.py</a></li>
+</ul>
+<h5 id="plain">plain</h5>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>plain</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libopensesame.widgets.themes.plain</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libopensesame/widgets/themes/plain.py">https://github.com/smathot/OpenSesame/blob/master/libopensesame/widgets/themes/plain.py</a></li>
+</ul>
+<h2 id="libqtopensesame">libqtopensesame</h2>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>button</code></li>
+<li>class: <code>checkbox</code></li>
+<li>class: <code>form</code></li>
+<li>class: <code>image_button</code></li>
+<li>class: <code>image</code></li>
+<li>class: <code>label</code></li>
+<li>class: <code>rating_scale</code></li>
+<li>class: <code>text_input</code></li>
+<li>class: <code>widget</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: package</li>
+<li>Full name: <code>libqtopensesame</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/__init__.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/__init__.py</a></li>
+</ul>
+<h3 id="qtopensesame">qtopensesame</h3>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>osexception</code></li>
+<li>class: <code>qtopensesame</code></li>
+<li>function: <code>_()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.qtopensesame</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/qtopensesame.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/qtopensesame.py</a></li>
+</ul>
+<h3 id="qtopensesamerun">qtopensesamerun</h3>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>qtopensesamerun</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.qtopensesamerun</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/qtopensesamerun.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/qtopensesamerun.py</a></li>
+</ul>
+<h3 id="actions">actions</h3>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>button</code></li>
+<li>class: <code>checkbox</code></li>
+<li>class: <code>form</code></li>
+<li>class: <code>image_button</code></li>
+<li>class: <code>image</code></li>
+<li>class: <code>label</code></li>
+<li>class: <code>rating_scale</code></li>
+<li>class: <code>text_input</code></li>
+<li>class: <code>widget</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: package</li>
+<li>Full name: <code>libqtopensesame.actions</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/actions/__init__.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/actions/__init__.py</a></li>
+</ul>
+<h4 id="plugin_action">plugin_action</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>plugin_action</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.actions.plugin_action</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/actions/plugin_action.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/actions/plugin_action.py</a></li>
+</ul>
+<h4 id="recent_action">recent_action</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>recent_action</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.actions.recent_action</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/actions/recent_action.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/actions/recent_action.py</a></li>
+</ul>
+<h3 id="dialogs">dialogs</h3>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>button</code></li>
+<li>class: <code>checkbox</code></li>
+<li>class: <code>form</code></li>
+<li>class: <code>image_button</code></li>
+<li>class: <code>image</code></li>
+<li>class: <code>label</code></li>
+<li>class: <code>rating_scale</code></li>
+<li>class: <code>text_input</code></li>
+<li>class: <code>widget</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: package</li>
+<li>Full name: <code>libqtopensesame.dialogs</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/dialogs/__init__.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/dialogs/__init__.py</a></li>
+</ul>
+<h4 id="new_loop_sequence_dialog">new_loop_sequence_dialog</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>new_loop_sequence_dialog</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.dialogs.new_loop_sequence_dialog</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/dialogs/new_loop_sequence_dialog.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/dialogs/new_loop_sequence_dialog.py</a></li>
+</ul>
+<h4 id="replace_dialog">replace_dialog</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>replace_dialog</code></li>
+<li>function: <code>_()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.dialogs.replace_dialog</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/dialogs/replace_dialog.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/dialogs/replace_dialog.py</a></li>
+</ul>
+<h4 id="sketchpad_dialog">sketchpad_dialog</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>sketchpad_dialog</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.dialogs.sketchpad_dialog</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/dialogs/sketchpad_dialog.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/dialogs/sketchpad_dialog.py</a></li>
+</ul>
+<h3 id="items">items</h3>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>button</code></li>
+<li>class: <code>checkbox</code></li>
+<li>class: <code>form</code></li>
+<li>class: <code>image_button</code></li>
+<li>class: <code>image</code></li>
+<li>class: <code>label</code></li>
+<li>class: <code>rating_scale</code></li>
+<li>class: <code>text_input</code></li>
+<li>class: <code>widget</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: package</li>
+<li>Full name: <code>libqtopensesame.items</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/items/__init__.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/items/__init__.py</a></li>
+</ul>
+<h4 id="experiment-1">experiment</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>experiment</code></li>
+<li>class: <code>osexception</code></li>
+<li>function: <code>clean_up()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.items.experiment</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/items/experiment.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/items/experiment.py</a></li>
+</ul>
+<h4 id="feedback-1">feedback</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>feedback</code></li>
+<li>class: <code>osexception</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.items.feedback</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/items/feedback.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/items/feedback.py</a></li>
+</ul>
+<h4 id="feedpad">feedpad</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>feedpad</code></li>
+<li>function: <code>_()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.items.feedpad</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/items/feedpad.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/items/feedpad.py</a></li>
+</ul>
+<h4 id="inline_script-1">inline_script</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>inline_script</code></li>
+<li>class: <code>osexception</code></li>
+<li>function: <code>_()</code></li>
+<li>function: <code>restore_state()</code></li>
+<li>function: <code>save_state()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.items.inline_script</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/items/inline_script.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/items/inline_script.py</a></li>
+</ul>
+<h4 id="keyboard_response-1">keyboard_response</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>keyboard_response</code></li>
+<li>class: <code>keyboard</code></li>
+<li>function: <code>_()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.items.keyboard_response</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/items/keyboard_response.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/items/keyboard_response.py</a></li>
+</ul>
+<h4 id="logger-1">logger</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>logger</code></li>
+<li>class: <code>osexception</code></li>
+<li>function: <code>_()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.items.logger</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/items/logger.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/items/logger.py</a></li>
+</ul>
+<h4 id="loop-1">loop</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>Random</code></li>
+<li>class: <code>SystemRandom</code></li>
+<li>class: <code>WichmannHill</code></li>
+<li>class: <code>loop</code></li>
+<li>class: <code>osexception</code></li>
+<li>function: <code>_()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.items.loop</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/items/loop.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/items/loop.py</a></li>
+</ul>
+<h4 id="mouse_response-1">mouse_response</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>mouse_response</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.items.mouse_response</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/items/mouse_response.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/items/mouse_response.py</a></li>
+</ul>
+<h4 id="qtautoplugin">qtautoplugin</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>qtautoplugin</code></li>
+<li>class: <code>qtplugin</code></li>
+<li>function: <code>_()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.items.qtautoplugin</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/items/qtautoplugin.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/items/qtautoplugin.py</a></li>
+</ul>
+<h4 id="qtitem">qtitem</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>qtitem</code></li>
+<li>function: <code>_()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.items.qtitem</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/items/qtitem.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/items/qtitem.py</a></li>
+</ul>
+<h4 id="qtplugin">qtplugin</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>qtplugin</code></li>
+<li>function: <code>_()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.items.qtplugin</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/items/qtplugin.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/items/qtplugin.py</a></li>
+</ul>
+<h4 id="sampler-3">sampler</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>osexception</code></li>
+<li>class: <code>sampler</code></li>
+<li>function: <code>_()</code></li>
+<li>function: <code>close_sound()</code></li>
+<li>function: <code>init_sound()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.items.sampler</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/items/sampler.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/items/sampler.py</a></li>
+</ul>
+<h4 id="sequence-1">sequence</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>action_button</code></li>
+<li>class: <code>osexception</code></li>
+<li>class: <code>sequence</code></li>
+<li>function: <code>_()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.items.sequence</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/items/sequence.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/items/sequence.py</a></li>
+</ul>
+<h4 id="sketchpad-1">sketchpad</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>osexception</code></li>
+<li>class: <code>sketchpad</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.items.sketchpad</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/items/sketchpad.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/items/sketchpad.py</a></li>
+</ul>
+<h4 id="synth-3">synth</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>osexception</code></li>
+<li>class: <code>synth</code></li>
+<li>function: <code>_()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.items.synth</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/items/synth.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/items/synth.py</a></li>
+</ul>
+<h3 id="misc-1">misc</h3>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>QCoreApplication</code></li>
+<li>class: <code>button</code></li>
+<li>class: <code>checkbox</code></li>
+<li>class: <code>form</code></li>
+<li>class: <code>image_button</code></li>
+<li>class: <code>image</code></li>
+<li>class: <code>label</code></li>
+<li>class: <code>rating_scale</code></li>
+<li>class: <code>text_input</code></li>
+<li>class: <code>widget</code></li>
+<li>function: <code>_()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: package</li>
+<li>Full name: <code>libqtopensesame.misc</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/misc/__init__.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/misc/__init__.py</a></li>
+</ul>
+<h4 id="config">config</h4>
+<p>This module is used to maintain configuration settings. There is a old and a new style API. The new one is obviously preferred for new code. When this module is first loaded, a single instance of the <code>config</code> class is instantiated, whicn is subsequently used for all configuration getting and setting (i.e. a singleton design pattern).</p>
+<p>Old style:</p>
+<pre><code>from libqtopensesame.misc import config
+config.set_config(&#39;my_setting&#39;, &#39;my_value&#39;)
+print config.get_config(&#39;my_setting&#39;)</code></pre>
+<p>New style:</p>
+<pre><code>from libqtopensesame.misc.config import cfg
+cfg.my_setting = &#39;my_value&#39; # set
+print cfg.my_setting # get</code></pre>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>config</code></li>
+<li>class: <code>osexception</code></li>
+<li>function: <code>get_config()</code></li>
+<li>function: <code>parse_cmdline_args()</code></li>
+<li>function: <code>restore_config()</code></li>
+<li>function: <code>save_config()</code></li>
+<li>function: <code>set_config()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.misc.config</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/misc/config.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/misc/config.py</a></li>
+</ul>
+<h4 id="dispatch">dispatch</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>dispatch</code></li>
+<li>function: <code>_()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.misc.dispatch</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/misc/dispatch.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/misc/dispatch.py</a></li>
+</ul>
+<h4 id="dummy">dummy</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>QCoreApplication</code></li>
+<li>class: <code>button</code></li>
+<li>class: <code>checkbox</code></li>
+<li>class: <code>form</code></li>
+<li>class: <code>image_button</code></li>
+<li>class: <code>image</code></li>
+<li>class: <code>label</code></li>
+<li>class: <code>qtautoplugin</code></li>
+<li>class: <code>qtplugin</code></li>
+<li>class: <code>rating_scale</code></li>
+<li>class: <code>text_input</code></li>
+<li>class: <code>widget</code></li>
+<li>function: <code>_()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.misc.dummy</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/misc/dummy.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/misc/dummy.py</a></li>
+</ul>
+<h4 id="includes">includes</h4>
+<p>No docstring specified.</p>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.misc.includes</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/misc/includes.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/misc/includes.py</a></li>
+</ul>
+<h4 id="process">process</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>ExperimentProcess</code></li>
+<li>class: <code>OutputChannel</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.misc.process</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/misc/process.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/misc/process.py</a></li>
+</ul>
+<h4 id="template_info">template_info</h4>
+<p>No docstring specified.</p>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.misc.template_info</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/misc/template_info.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/misc/template_info.py</a></li>
+</ul>
+<h4 id="theme">theme</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>theme</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.misc.theme</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/misc/theme.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/misc/theme.py</a></li>
+</ul>
+<h3 id="runners">runners</h3>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>QCoreApplication</code></li>
+<li>class: <code>base_runner</code></li>
+<li>class: <code>button</code></li>
+<li>class: <code>checkbox</code></li>
+<li>class: <code>external_runner</code></li>
+<li>class: <code>form</code></li>
+<li>class: <code>image_button</code></li>
+<li>class: <code>image</code></li>
+<li>class: <code>inprocess_runner</code></li>
+<li>class: <code>label</code></li>
+<li>class: <code>multiprocess_runner</code></li>
+<li>class: <code>qtautoplugin</code></li>
+<li>class: <code>qtplugin</code></li>
+<li>class: <code>rating_scale</code></li>
+<li>class: <code>text_input</code></li>
+<li>class: <code>widget</code></li>
+<li>function: <code>_()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: package</li>
+<li>Full name: <code>libqtopensesame.runners</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/runners/__init__.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/runners/__init__.py</a></li>
+</ul>
+<h4 id="base_runner">base_runner</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>base_runner</code></li>
+<li>class: <code>experiment</code></li>
+<li>class: <code>osexception</code></li>
+<li>function: <code>_()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.runners.base_runner</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/runners/base_runner.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/runners/base_runner.py</a></li>
+</ul>
+<h4 id="external_runner">external_runner</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>base_runner</code></li>
+<li>class: <code>external_runner</code></li>
+<li>class: <code>osexception</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.runners.external_runner</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/runners/external_runner.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/runners/external_runner.py</a></li>
+</ul>
+<h4 id="inprocess_runner">inprocess_runner</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>base_runner</code></li>
+<li>class: <code>inprocess_runner</code></li>
+<li>class: <code>osexception</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.runners.inprocess_runner</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/runners/inprocess_runner.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/runners/inprocess_runner.py</a></li>
+</ul>
+<h4 id="multiprocess_runner">multiprocess_runner</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>base_runner</code></li>
+<li>class: <code>multiprocess_runner</code></li>
+<li>class: <code>osexception</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.runners.multiprocess_runner</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/runners/multiprocess_runner.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/runners/multiprocess_runner.py</a></li>
+</ul>
+<h3 id="ui">ui</h3>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>QCoreApplication</code></li>
+<li>class: <code>base_runner</code></li>
+<li>class: <code>button</code></li>
+<li>class: <code>checkbox</code></li>
+<li>class: <code>external_runner</code></li>
+<li>class: <code>form</code></li>
+<li>class: <code>image_button</code></li>
+<li>class: <code>image</code></li>
+<li>class: <code>inprocess_runner</code></li>
+<li>class: <code>label</code></li>
+<li>class: <code>multiprocess_runner</code></li>
+<li>class: <code>qtautoplugin</code></li>
+<li>class: <code>qtplugin</code></li>
+<li>class: <code>rating_scale</code></li>
+<li>class: <code>text_input</code></li>
+<li>class: <code>widget</code></li>
+<li>function: <code>_()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: package</li>
+<li>Full name: <code>libqtopensesame.ui</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/ui/__init__.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/ui/__init__.py</a></li>
+</ul>
+<h4 id="backend_settings_ui">backend_settings_ui</h4>
+<p>Auto-generated object.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>Ui_widget_backend_settings</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.ui.backend_settings_ui</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/ui/backend_settings_ui.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/ui/backend_settings_ui.py</a></li>
+</ul>
+<h4 id="credits_widget_ui">credits_widget_ui</h4>
+<p>Auto-generated object.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>Ui_widget_credits</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.ui.credits_widget_ui</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/ui/credits_widget_ui.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/ui/credits_widget_ui.py</a></li>
+</ul>
+<h4 id="font_widget_ui">font_widget_ui</h4>
+<p>Auto-generated object.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>Ui_font_widget</code></li>
+<li>function: <code>_translate()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.ui.font_widget_ui</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/ui/font_widget_ui.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/ui/font_widget_ui.py</a></li>
+</ul>
+<h4 id="gabor_dialog_ui">gabor_dialog_ui</h4>
+<p>Auto-generated object.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>Ui_gabor_dialog</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.ui.gabor_dialog_ui</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/ui/gabor_dialog_ui.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/ui/gabor_dialog_ui.py</a></li>
+</ul>
+<h4 id="general_script_editor_ui">general_script_editor_ui</h4>
+<p>Auto-generated object.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>Ui_widget_general_script_editor</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.ui.general_script_editor_ui</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/ui/general_script_editor_ui.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/ui/general_script_editor_ui.py</a></li>
+</ul>
+<h4 id="general_widget_ui">general_widget_ui</h4>
+<p>Auto-generated object.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>Ui_general_widget</code></li>
+<li>class: <code>color_edit</code></li>
+<li>class: <code>font_widget</code></li>
+<li>function: <code>_translate()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.ui.general_widget_ui</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/ui/general_widget_ui.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/ui/general_widget_ui.py</a></li>
+</ul>
+<h4 id="loop_widget_ui">loop_widget_ui</h4>
+<p>Auto-generated object.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>Ui_loop_widget</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.ui.loop_widget_ui</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/ui/loop_widget_ui.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/ui/loop_widget_ui.py</a></li>
+</ul>
+<h4 id="loop_wizard_dialog_ui">loop_wizard_dialog_ui</h4>
+<p>Auto-generated object.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>Ui_loop_wizard_dialog</code></li>
+<li>class: <code>good_looking_table</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.ui.loop_wizard_dialog_ui</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/ui/loop_wizard_dialog_ui.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/ui/loop_wizard_dialog_ui.py</a></li>
+</ul>
+<h4 id="new_loop_sequence_ui">new_loop_sequence_ui</h4>
+<p>Auto-generated object.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>Ui_new_loop_sequence_dialog</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.ui.new_loop_sequence_ui</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/ui/new_loop_sequence_ui.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/ui/new_loop_sequence_ui.py</a></li>
+</ul>
+<h4 id="noise_patch_dialog_ui">noise_patch_dialog_ui</h4>
+<p>Auto-generated object.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>Ui_noise_patch_dialog</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.ui.noise_patch_dialog_ui</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/ui/noise_patch_dialog_ui.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/ui/noise_patch_dialog_ui.py</a></li>
+</ul>
+<h4 id="notification_dialog_ui">notification_dialog_ui</h4>
+<p>Auto-generated object.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>Ui_notification_dialog</code></li>
+<li>function: <code>_translate()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.ui.notification_dialog_ui</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/ui/notification_dialog_ui.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/ui/notification_dialog_ui.py</a></li>
+</ul>
+<h4 id="opensesame_ui">opensesame_ui</h4>
+<p>Auto-generated object.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>Ui_opensesame_mainwindow</code></li>
+<li>class: <code>console</code></li>
+<li>class: <code>statusbar</code></li>
+<li>class: <code>tab_widget</code></li>
+<li>class: <code>toolbar_items</code></li>
+<li>class: <code>tree_overview</code></li>
+<li>class: <code>variable_inspector</code></li>
+<li>function: <code>_translate()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.ui.opensesame_ui</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/ui/opensesame_ui.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/ui/opensesame_ui.py</a></li>
+</ul>
+<h4 id="opensesamerun_ui">opensesamerun_ui</h4>
+<p>Auto-generated object.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>Ui_opensesamerun_mainwindow</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.ui.opensesamerun_ui</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/ui/opensesamerun_ui.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/ui/opensesamerun_ui.py</a></li>
+</ul>
+<h4 id="pool_widget_ui">pool_widget_ui</h4>
+<p>Auto-generated object.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>Ui_pool_widget</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.ui.pool_widget_ui</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/ui/pool_widget_ui.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/ui/pool_widget_ui.py</a></li>
+</ul>
+<h4 id="preferences_widget_ui">preferences_widget_ui</h4>
+<p>Auto-generated object.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>Ui_preferences_widget</code></li>
+<li>function: <code>_translate()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.ui.preferences_widget_ui</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/ui/preferences_widget_ui.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/ui/preferences_widget_ui.py</a></li>
+</ul>
+<h4 id="replace_dialog_ui">replace_dialog_ui</h4>
+<p>Auto-generated object.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>Ui_replace_dialog</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.ui.replace_dialog_ui</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/ui/replace_dialog_ui.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/ui/replace_dialog_ui.py</a></li>
+</ul>
+<h4 id="sampler_widget_ui">sampler_widget_ui</h4>
+<p>Auto-generated object.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>Ui_sampler_widget</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.ui.sampler_widget_ui</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/ui/sampler_widget_ui.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/ui/sampler_widget_ui.py</a></li>
+</ul>
+<h4 id="sketchpad_widget_ui">sketchpad_widget_ui</h4>
+<p>Auto-generated object.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>Ui_sketchpad_widget</code></li>
+<li>class: <code>color_edit</code></li>
+<li>class: <code>font_widget</code></li>
+<li>function: <code>_translate()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.ui.sketchpad_widget_ui</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/ui/sketchpad_widget_ui.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/ui/sketchpad_widget_ui.py</a></li>
+</ul>
+<h4 id="start_new_widget_ui">start_new_widget_ui</h4>
+<p>Auto-generated object.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>Ui_widget_start_new</code></li>
+<li>class: <code>credits_widget</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.ui.start_new_widget_ui</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/ui/start_new_widget_ui.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/ui/start_new_widget_ui.py</a></li>
+</ul>
+<h4 id="synth_widget_ui">synth_widget_ui</h4>
+<p>Auto-generated object.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>Ui_synth_widget</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.ui.synth_widget_ui</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/ui/synth_widget_ui.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/ui/synth_widget_ui.py</a></li>
+</ul>
+<h4 id="text_input_dialog_ui">text_input_dialog_ui</h4>
+<p>Auto-generated object.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>Ui_text_input_dialog</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.ui.text_input_dialog_ui</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/ui/text_input_dialog_ui.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/ui/text_input_dialog_ui.py</a></li>
+</ul>
+<h4 id="update_dialog_ui">update_dialog_ui</h4>
+<p>Auto-generated object.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>Ui_update_dialog</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.ui.update_dialog_ui</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/ui/update_dialog_ui.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/ui/update_dialog_ui.py</a></li>
+</ul>
+<h4 id="user_hint_widget_ui">user_hint_widget_ui</h4>
+<p>Auto-generated object.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>Ui_user_hint_widget</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.ui.user_hint_widget_ui</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/ui/user_hint_widget_ui.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/ui/user_hint_widget_ui.py</a></li>
+</ul>
+<h4 id="webbrowser_widget_ui">webbrowser_widget_ui</h4>
+<p>Auto-generated object.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>Ui_webbrowser_widget</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.ui.webbrowser_widget_ui</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/ui/webbrowser_widget_ui.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/ui/webbrowser_widget_ui.py</a></li>
+</ul>
+<h3 id="widgets-1">widgets</h3>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>QCoreApplication</code></li>
+<li>class: <code>base_runner</code></li>
+<li>class: <code>button</code></li>
+<li>class: <code>checkbox</code></li>
+<li>class: <code>external_runner</code></li>
+<li>class: <code>form</code></li>
+<li>class: <code>image_button</code></li>
+<li>class: <code>image</code></li>
+<li>class: <code>inprocess_runner</code></li>
+<li>class: <code>label</code></li>
+<li>class: <code>multiprocess_runner</code></li>
+<li>class: <code>qtautoplugin</code></li>
+<li>class: <code>qtplugin</code></li>
+<li>class: <code>rating_scale</code></li>
+<li>class: <code>text_input</code></li>
+<li>class: <code>widget</code></li>
+<li>function: <code>_()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: package</li>
+<li>Full name: <code>libqtopensesame.widgets</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/widgets/__init__.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/widgets/__init__.py</a></li>
+</ul>
+<h4 id="backend_settings">backend_settings</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>Ui_widget_backend_settings</code></li>
+<li>class: <code>backend_settings</code></li>
+<li>class: <code>settings_edit</code></li>
+<li>class: <code>settings_widget</code></li>
+<li>function: <code>_()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.widgets.backend_settings</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/widgets/backend_settings.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/widgets/backend_settings.py</a></li>
+</ul>
+<h4 id="color_edit">color_edit</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>color_edit</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.widgets.color_edit</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/widgets/color_edit.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/widgets/color_edit.py</a></li>
+</ul>
+<h4 id="credits_widget">credits_widget</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>Ui_widget_credits</code></li>
+<li>class: <code>credits_widget</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.widgets.credits_widget</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/widgets/credits_widget.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/widgets/credits_widget.py</a></li>
+</ul>
+<h4 id="draggables">draggables</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>draggable_handle</code></li>
+<li>class: <code>draggable_list</code></li>
+<li>class: <code>draggable_widget_container</code></li>
+<li>class: <code>open_button</code></li>
+<li>class: <code>run_if_edit</code></li>
+<li>function: <code>_()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.widgets.draggables</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/widgets/draggables.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/widgets/draggables.py</a></li>
+</ul>
+<h4 id="font_widget">font_widget</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>font_widget</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.widgets.font_widget</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/widgets/font_widget.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/widgets/font_widget.py</a></li>
+</ul>
+<h4 id="general_properties">general_properties</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>general_header_widget</code></li>
+<li>class: <code>general_properties</code></li>
+<li>function: <code>_()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.widgets.general_properties</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/widgets/general_properties.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/widgets/general_properties.py</a></li>
+</ul>
+<h4 id="general_script_editor">general_script_editor</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>Ui_widget_general_script_editor</code></li>
+<li>class: <code>general_script_editor</code></li>
+<li>function: <code>_()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.widgets.general_script_editor</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/widgets/general_script_editor.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/widgets/general_script_editor.py</a></li>
+</ul>
+<h4 id="good_looking_table">good_looking_table</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>good_looking_table</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.widgets.good_looking_table</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/widgets/good_looking_table.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/widgets/good_looking_table.py</a></li>
+</ul>
+<h4 id="header_widget">header_widget</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>header_widget</code></li>
+<li>function: <code>_()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.widgets.header_widget</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/widgets/header_widget.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/widgets/header_widget.py</a></li>
+</ul>
+<h4 id="item_context_menu">item_context_menu</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>item_context_menu</code></li>
+<li>function: <code>_()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.widgets.item_context_menu</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/widgets/item_context_menu.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/widgets/item_context_menu.py</a></li>
+</ul>
+<h4 id="loop_table">loop_table</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>loop_table</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.widgets.loop_table</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/widgets/loop_table.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/widgets/loop_table.py</a></li>
+</ul>
+<h4 id="pool_widget">pool_widget</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>pool_widget</code></li>
+<li>function: <code>_()</code></li>
+<li>function: <code>select_from_pool()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.widgets.pool_widget</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/widgets/pool_widget.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/widgets/pool_widget.py</a></li>
+</ul>
+<h4 id="preferences_widget">preferences_widget</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>preferences_widget</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.widgets.preferences_widget</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/widgets/preferences_widget.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/widgets/preferences_widget.py</a></li>
+</ul>
+<h4 id="pyterm">pyterm</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>console</code></li>
+<li>class: <code>output_buffer</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.widgets.pyterm</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/widgets/pyterm.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/widgets/pyterm.py</a></li>
+</ul>
+<h4 id="pyterm_ipython">pyterm_ipython</h4>
+<p>Failed to import module.</p>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.widgets.pyterm_ipython</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/widgets/pyterm_ipython.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/widgets/pyterm_ipython.py</a></li>
+</ul>
+<h4 id="pyterm_original">pyterm_original</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>console</code></li>
+<li>class: <code>output_buffer</code></li>
+<li>class: <code>pyterm</code></li>
+<li>function: <code>_()</code></li>
+<li>function: <code>modules()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.widgets.pyterm_original</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/widgets/pyterm_original.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/widgets/pyterm_original.py</a></li>
+</ul>
+<h4 id="sketchpad_widget">sketchpad_widget</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>canvas</code></li>
+<li>class: <code>edit_item_button</code></li>
+<li>class: <code>osexception</code></li>
+<li>class: <code>remove_item_button</code></li>
+<li>class: <code>sketchpad_widget</code></li>
+<li>function: <code>_()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.widgets.sketchpad_widget</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/widgets/sketchpad_widget.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/widgets/sketchpad_widget.py</a></li>
+</ul>
+<h4 id="start_new_widget">start_new_widget</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>Ui_widget_start_new</code></li>
+<li>class: <code>start_new_widget</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.widgets.start_new_widget</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/widgets/start_new_widget.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/widgets/start_new_widget.py</a></li>
+</ul>
+<h4 id="statusbar">statusbar</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>statusbar</code></li>
+<li>function: <code>_()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.widgets.statusbar</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/widgets/statusbar.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/widgets/statusbar.py</a></li>
+</ul>
+<h4 id="tab_widget">tab_widget</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>tab_widget</code></li>
+<li>function: <code>_()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.widgets.tab_widget</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/widgets/tab_widget.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/widgets/tab_widget.py</a></li>
+</ul>
+<h4 id="toolbar_items">toolbar_items</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>toolbar_items</code></li>
+<li>class: <code>toolbar_label</code></li>
+<li>class: <code>widget_item</code></li>
+<li>function: <code>_()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.widgets.toolbar_items</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/widgets/toolbar_items.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/widgets/toolbar_items.py</a></li>
+</ul>
+<h4 id="tree_overview">tree_overview</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>tree_overview</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.widgets.tree_overview</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/widgets/tree_overview.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/widgets/tree_overview.py</a></li>
+</ul>
+<h4 id="unused_widget">unused_widget</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>unused_widget</code></li>
+<li>function: <code>_()</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.widgets.unused_widget</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/widgets/unused_widget.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/widgets/unused_widget.py</a></li>
+</ul>
+<h4 id="user_hint_widget">user_hint_widget</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>user_hint_widget</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.widgets.user_hint_widget</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/widgets/user_hint_widget.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/widgets/user_hint_widget.py</a></li>
+</ul>
+<h4 id="variable_inspector">variable_inspector</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>sortable</code></li>
+<li>class: <code>variable_inspector</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.widgets.variable_inspector</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/widgets/variable_inspector.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/widgets/variable_inspector.py</a></li>
+</ul>
+<h4 id="webbrowser">webbrowser</h4>
+<p>No docstring specified.</p>
+<p>Provides (may include functions and classes imported from other modules):</p>
+<ul>
+<li>class: <code>small_webview</code></li>
+<li>class: <code>webbrowser</code></li>
+</ul>
+<p>More info:</p>
+<ul>
+<li>Type: module</li>
+<li>Full name: <code>libqtopensesame.widgets.webbrowser</code></li>
+<li>Source: <a href="https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/widgets/webbrowser.py">https://github.com/smathot/OpenSesame/blob/master/libqtopensesame/widgets/webbrowser.py</a></li>
+</ul>

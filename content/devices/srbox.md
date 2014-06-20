@@ -3,11 +3,16 @@ layout: osdoc
 title: SR Box
 group: Devices
 permalink: /srbox/
+parser: academicmarkdown
 ---
 
-:--
-cmd: overview
---:
+## Overview
+
+%--
+toc:
+ mindepth: 2
+ exclude: [Overview]
+--%
 
 ## About the srbox plug-in
 

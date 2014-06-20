@@ -12,7 +12,7 @@ If you want to provide a translation, it's recommended to first send an enquiry 
 :--
 cmd: overview
 --:
-	
+
 ## Status of current translations
 
 |**Code**	|**Language**		|**Status**			|**Author(s)**					|
@@ -25,7 +25,7 @@ cmd: overview
 ## Starting OpenSesame with a specific language
 
 By default, OpenSesame will try to use the default locale of your operating system, and fall back to English if a translation is not available. To start OpenSesame with a specific language, you can use the `--locale` command line argument. For example, to use the Italian translation start OpenSesame as follows:
-	
+
 	opensesame --locale it_IT
 
 This will look for a file called `resources/locale/it_IT.qm`, and fall back to English if no such file exists.
@@ -46,7 +46,7 @@ QtLinguist is a graphical tool that will assist you in the translation process. 
 
 #### Windows and Mac OS
 
-You can download it as part of the Qt development toolkit (<http://qt.nokia.com/downloads>) or as a standalone program (<http://code.google.com/p/qtlinguistdownload/>). The standalone option is probably easiest for most people.
+You can download it as part of the Qt development toolkit (<http://qt-project.org/downloads>) or as a standalone program (<http://code.google.com/p/qtlinguistdownload/>). The standalone option is probably easiest for most people.
 
 #### Linux
 
@@ -75,7 +75,7 @@ Also, some strings contain wildcards, like so:
 These `%s` (and `%d`, `%f`, etc.) wildcards are blanks that are filled in on-the-fly by OpenSesame. Please respect these (removing a wild-card will crash the program!) and try to build an appropriate translation around them. So, for a Dutch translation this would become:
 
 	Vertel me meer over het %s item
-	
+
 ### Step 4: Compile your translation to `.qm` and test it
 
 OpenSesame doesn't use the `.ts` file directly, but requires a file in `.qm` format. You can create this file easily from within Qt Linguist by selecting 'File -> Release as'. Create a `.qm` file with the same name (except for the extension) as the original file, and place it in the `resources/locale` subfolder of the OpenSesame folder. So, for example, if you're working on a French translation, your original source file would be `resources/ts/fr_FR.ts` and your compiled file would be `resources/locale/fr_FR.qm`.

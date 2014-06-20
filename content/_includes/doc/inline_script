@@ -1,5 +1,5 @@
 <div class='pydoc'>
-<p><small>For OpenSesame 0.27.4</small></p>
+<p><small>For OpenSesame 2.8.2</small></p>
 <span class='class_name'>class <b>inline_script</b></span><br />
 <p class='details'><b>Function overview:</b><br />
 <a href='#inline_script.__init__'>__init__</a><br />
@@ -19,8 +19,10 @@
 <a href='#inline_script.run'>run</a><br />
 <a href='#inline_script.sanitize'>sanitize</a><br />
 <a href='#inline_script.set'>set</a><br />
+<a href='#inline_script.set_response'>set_response</a><br />
 <a href='#inline_script.sleep'>sleep</a><br />
 <a href='#inline_script.time'>time</a><br />
+<a href='#inline_script.unistr'>unistr</a><br />
 <a href='#inline_script.unset'>unset</a><br />
 </p>
 <div class='function'><span class='function_name'><a class='anchor' id='inline_script.__init__'>inline_script</a>.<b>__init__(name, experiment, string=None)</b></span><div class='details'>
@@ -52,12 +54,12 @@ The same value converted to the 'best fitting' type.<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}print type(self.auto_type('1')) # Prints 'int'
-print type(self.auto_type('1.1')) # Prints 'float'
-print type(self.auto_type('some text')) # Prints 'unicode'
+{% highlight python %}print(type(self.auto_type('1'))) # Prints 'int'
+print(type(self.auto_type('1.1'))) # Prints 'float'
+print(type(self.auto_type('some text'))) # Prints 'unicode'
 # Note: Boolean values are converted to 'yes' / 'no' and are
 # therefore also returned as unicode objects.
-print type(self.auto_type(True)) # Prints 'unicode'
+print(type(self.auto_type(True))) # Prints 'unicode'
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='inline_script.color_check'>inline_script</a>.<b>color_check(col)</b></span><div class='details'>
@@ -70,16 +72,16 @@ print type(self.auto_type(True)) # Prints 'unicode'
 <br />
 <span class='keyword'>Exceptions:</span>
 <br />
-Raises a runtime_error if col is not a valid color.<br />
+Raises a osexception if col is not a valid color.<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
 {% highlight python %}# Ok
-print self.color_check('red')
+print(self.color_check('red'))
 # Ok
-print self.color_check('#FFFFFF')
-# Raises runtime_error
-print self.color_check('this is not a color')
+print(self.color_check('#FFFFFF'))
+# Raises osexception
+print(self.color_check('this is not a color'))
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='inline_script.copy_sketchpad'>inline_script</a>.<b>copy_sketchpad(sketchpad_name)</b></span><div class='details'>
@@ -124,7 +126,7 @@ The evaluated text.<br />
 <br />
 {% highlight python %}exp.set('var', 'evaluated')
 # Prints 'This string has been evaluated
-print self.eval_text('This string has been [var]')
+print(self.eval_text('This string has been [var]'))
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='inline_script.flush_log'>inline_script</a>.<b>flush_log()</b></span><div class='details'>
@@ -152,7 +154,7 @@ whether containing variables should be processed (default=True).<br />
 <br />
 <span class='keyword'>Exceptions:</span>
 <br />
-A runtime_error is raised if the variable is not found.<br />
+A osexception is raised if the variable is not found.<br />
 <br />
 <span class='keyword'>Returns:</span>
 <br />
@@ -161,14 +163,14 @@ The value.<br />
 <span class='keyword'>Example:</span>
 <br />
 {% highlight python %}if self.get('cue') == 'valid':
-	print 'This is a validly cued trial'
+	print('This is a validly cued trial')
 {% endhighlight %}
 <br />
 Example 2:<br />
 {% highlight python %}exp.set('var1', 'I like [var2]')
 exp.set('var2', 'OpenSesame')
-print self.get('var1') # prints 'I like OpenSesame'
-print self.get('var1', _eval=False) # prints 'I like [var2]'
+print(self.get('var1')) # prints 'I like OpenSesame'
+print(self.get('var1', _eval=False)) # prints 'I like [var2]'
 {% endhighlight %}
 <br />
 </div></div>
@@ -188,7 +190,7 @@ whether containing variables should be processed (default=True).<br />
 <br />
 <span class='keyword'>Exceptions:</span>
 <br />
-Raises a runtime_error if the variable is not defined and there is no default value, or if the variable value is not part of the 'valid' list.<br />
+Raises a osexception if the variable is not defined and there is no default value, or if the variable value is not part of the 'valid' list.<br />
 <br />
 <span class='keyword'>Returns:</span>
 <br />
@@ -197,7 +199,7 @@ The value<br />
 <span class='keyword'>Example:</span>
 <br />
 {% highlight python %}if self.get_check('cue', default='invalid') == 'valid':
-	print 'This is a validly-cued trial'
+	print('This is a validly-cued trial')
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='inline_script.get_refs'>inline_script</a>.<b>get_refs(text)</b></span><div class='details'>
@@ -214,7 +216,7 @@ A list of variable names or an empty list if the string contains no references.<
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}print self.get_refs('There are [two] [references] here')
+{% highlight python %}print(self.get_refs('There are [two] [references] here'))
 # Prints ['two', 'references']
 {% endhighlight %}<br />
 </div></div>
@@ -233,15 +235,15 @@ True if the variable exists, False if not.<br />
 <span class='keyword'>Example:</span>
 <br />
 {% highlight python %}if not self.has('response'):
-	print 'No response has been collected yet'
+	print('No response has been collected yet')
 {% endhighlight %}
 <br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='inline_script.log'>inline_script</a>.<b>log(msg)</b></span><div class='details'>
 <i>Inherited from <b>item</b></i><br /><br />Writes a message to the log file. Note that using the log() function in combination with a logger item may result in messy log files.<br />
 <br />
-<span class='variable'>msg </span> &rarr;  A message.
-<br />
+<span class='variable'>msg	</span> &rarr; 	A message. This can be any type and will we be converted to a 
+unicode string using the logic described in `unistr()`.<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
@@ -304,9 +306,9 @@ A sanitized unicode string<br />
 <span class='keyword'>Example:</span>
 <br />
 {% highlight python %}# Prints 'Universit Aix-Marseille'
-print self.sanitize('\"Université Aix-Marseille\"')
+print(self.sanitize('\"Université Aix-Marseille\"'))
 # Prints 'UniversitAixMarseille'
-print self.sanitize('\"Université Aix-Marseille\""', strict=True)
+print(self.sanitize('\"Université Aix-Marseille\""', strict=True))
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='inline_script.set'>inline_script</a>.<b>set(var, val)</b></span><div class='details'>
@@ -328,6 +330,33 @@ The type of the value can be anything. However, see get() for an explanation of 
 <span class='keyword'>Example:</span>
 <br />
 {% highlight python %}exp.set('my_timestamp', self.time())
+{% endhighlight %}<br />
+</div></div>
+<div class='function'><span class='function_name'><a class='anchor' id='inline_script.set_response'>inline_script</a>.<b>set_response(response=None, response_time=None, correct=None)</b></span><div class='details'>
+<i>Inherited from <b>item</b></i><br /><br />Processes a response in such a way that feedback variables are updated as well.<br />
+<br />
+<span class='keyword'>Keyword arguments:</span>
+<br />
+<span class='variable'>response		</span> &rarr; 	The response value. (default=None)
+<br />
+<span class='variable'>response_time	</span> &rarr; 	The response time. (default=None)
+<br />
+<span class='variable'>correct			</span> &rarr; 	The correctness value. (default=None)
+<br />
+<br />
+<span class='keyword'>Example:</span>
+<br />
+{% highlight python %}from openexp.keyboard import keyboard
+my_keyboard = keyboard(exp)
+t1 = self.time()
+button, timestamp = my_keyboard.get_key()
+if button == 'left':
+	correct = 1
+else:
+	correct = 0
+rt = timestamp - t1
+self.set_response(response=button, response_time=rt, \
+	correct=correct)
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='inline_script.sleep'>inline_script</a>.<b>sleep(ms)</b></span><div class='details'>
@@ -352,8 +381,26 @@ A timestamp of the current time.<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
-{% highlight python %}print 'The time is %s' % self.time()
+{% highlight python %}print('The time is %s' % self.time())
 {% endhighlight %}<br />
+</div></div>
+<div class='function'><span class='function_name'><a class='anchor' id='inline_script.unistr'>inline_script</a>.<b>unistr(val)</b></span><div class='details'>
+<i>Inherited from <b>item</b></i><br /><br />Converts a value to a unicode string. This function is mostly necessary to make sure that normal strings with special characters are correctly encoded into unicode, and don't result in TypeErrors.<br />
+<br />
+The conversion logic is as follows:<br />
+<br />
+- unicode values are returned unchanged.<br />
+- str values are decoded using utf-8.<br />
+- all other types are typecast to unicode, assuming utf-8 encoding where applicable.<br />
+<br />
+<span class='keyword'>Arguments:</span>
+<br />
+<span class='variable'>val </span> &rarr;  A value of any type.
+<br />
+<br />
+<span class='keyword'>Returns:</span>
+<br />
+A unicode string.<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='inline_script.unset'>inline_script</a>.<b>unset(var)</b></span><div class='details'>
 <i>Inherited from <b>item</b></i><br /><br />Unsets (forgets) an OpenSesame variable.<br />
@@ -366,9 +413,9 @@ A timestamp of the current time.<br />
 <span class='keyword'>Example:</span>
 <br />
 {% highlight python %}self.set('var', 'Hello world!')
-print self.get('var') # Prints 'Hello world!'
+print(self.get('var')) # Prints 'Hello world!'
 self.unset('variable_to_forget')
-print self.get('var') # Gives error!
+print(self.get('var')) # Gives error!
 {% endhighlight %}<br />
 </div></div>
 </div>

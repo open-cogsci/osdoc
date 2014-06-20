@@ -49,6 +49,6 @@ Screenshot
 ![](/img/fig/fig7.5.1.png)
 
 [forms]: /forms
-[installation]: /plug-ins/plug-in-installation/
+[installation]: /plug-ins/installation/
 [htmllib]: http://files.cogsci.nl/software/opensesame/plugins/questionnaire_plugins/resources/htmllib.zip
 [markupbase]: http://www.koders.com/python/fid4CD0462C6AD8D7AFBAE9FF73227BB9C594388037.aspx?s=cdef%3atimer

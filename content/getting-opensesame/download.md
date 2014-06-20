@@ -5,7 +5,7 @@ group: Getting OpenSesame
 permalink: /download/
 ---
 
-The latest stable version of OpenSesame is 0.27.4 *Frisky Freud*, released on September 13 2013 ([release notes][]). If you are upgrading from 0.26, please read the [0.27 release notes][]. Older versions can be found [here][archive].
+Welcome to the OpenSesame documentation area! Here you can find everything you always wanted to know about your favorite free and cross-platform experiment builder. The latest stable version of OpenSesame is 2.8.2 *Gutsy Gibson*, released on June 11 2014 ([release notes]). Older versions can be found [here][archive].
 
 Installation instructions and more download options can be found below the download buttons.
 
@@ -17,24 +17,30 @@ There are a number of ways to run OpenSesame under Windows:
 
 - Use the automated installer (see link above). After installation, you can run OpenSesame from the start menu.
 - Download the Windows portable .zip file (see link above) and extract it to a location of your choice.
-- Download the package based on Python portable, which comes with a slightly different set of modules. For more information, see [this article][python-portable].
+- Download the WinPython-based package, which comes with a slightly different set of modules and offers more flexibility for advanced users. For more information, see [this article][python-portable].
 
-## Ubuntu/ Debian/ Linux Mint
+## Ubuntu/ Debian/ Linux Mint {#ubuntu}
 
-The recommended way to install OpenSesame under Ubuntu/ Debian/ Linux Mint is through the [NeuroDebian][] repository (see their instructions on how to add NeuroDebian to your list of repositories). After you have added NeuroDebian to your software sources, you can install it using your package manager (Synaptic/ Add remove programs/ Ubuntu software center) or by typing the following lines in a terminal:
+OpenSesame is available through [NeuroDebian] (for Debian, Ubuntu, Linux Mint, and other derivatives) and the [Cogsci.nl PPA] (Ubuntu only). The [Cogsci.nl PPA] generally has the most up-to-date version.
 
-	sudo apt-get update
-	sudo apt-get install opensesame
+### Cogsci.nl PPA
 
-If you encounter problems or if your distribution is not supported by NeuroDebian, you can also install OpenSesame via the [ppa:smathot/cogscinl][ppa-cogscinl] Ubuntu repository. If you experience missing icons, please install the package `gnome-icon-theme-full`.
+To add the [Cogsci.nl PPA] to your software sources and install OpenSesame, run the following commands in a terminal:
 
 	sudo add-apt-repository ppa:smathot/cogscinl
 	sudo apt-get update
 	sudo apt-get install opensesame
 
-After you have installed OpenSesame, you can start OpenSesame from the menu or by opening a terminal and running:
+If you experience missing icons, please install the package `gnome-icon-theme-full`.
 
-	opensesame
+	sudo apt-get install gnome-icon-theme-full
+
+### NeuroDebian
+
+Instructions for adding [NeuroDebian] to your software sources can be found on the [NeuroDebian] website. Once you have done this, you can install OpenSesame by running the following commands in a terminal:
+
+	sudo apt-get update
+	sudo apt-get install opensesame
 
 ## Mac OS {#macos}
 
@@ -69,5 +75,6 @@ If there are no packages provided for your platform, you will need to run OpenSe
 [running-from-source]: /getting-opensesame/running-from-source
 [neurodebian]: http://neuro.debian.net/
 [python-portable]: /getting-opensesame/running-with-python-portable/
-[0.27 release notes]: /notes/0.27
-[release notes]: /notes/0.27.4
+[release notes]: /notes/2.8.2
+[cogsci.nl ppa]: https://launchpad.net/~smathot/+archive/cogscinl
+[neurodebian]: http://neuro.debian.net/

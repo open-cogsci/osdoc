@@ -3,11 +3,18 @@ layout: osdoc
 title: Psycho
 group: Back-ends
 permalink: /psycho/
-level: 1
-sortkey: 008.004
+parser: academicmarkdown
 ---
 
 The psycho back-end is built on top of [PsychoPy][], a library that has been designed specifically for creating psychological experiments. It is hardware accelerated and provides high level routines for creating complex visual stimuli (drifting gratings, etc.). If you care about timing and plan on creating complex stimuli, Psycho is a good choice.
+
+## Overview
+
+%--
+toc:
+ mindepth: 2
+ exclude: [Overview]
+--%
 
 ## Using PsychoPy directly
 
@@ -22,7 +29,15 @@ win.flip()
 
 An example experiment that uses PsychoPy can be found here: [tilt_adaptation_psychopy.opensesame][example]
 
-In addition, you can find a tutorial on using PsychoPy from within OpenSesame [here][tutorial].
+## Tutorials
+
+A tutorial specifically for using PsychoPy from within OpenSesame:
+
+- <http://www.cogsci.nl/blog/tutorials/211-a-bit-about-patches-textures-and-masks-in-psychopy>
+
+And a more general PsychoPy tutorial:
+
+- <http://gestaltrevision.be/wiki/coding>
 
 ## Citation
 
@@ -36,4 +51,3 @@ Peirce, J. W. (2009). Generating stimuli for neuroscience using PsychoPy. *Front
 
 [psychopy]: http://www.psychopy.org/
 [example]: https://github.com/smathot/OpenSesame/blob/master/examples/tilt_adaptation_psychopy.opensesame
-[tutorial]: http://www.cogsci.nl/blog/tutorials/211-a-bit-about-patches-textures-and-masks-in-psychopy

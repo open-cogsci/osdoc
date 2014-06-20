@@ -1,5 +1,5 @@
 <div class='pydoc'>
-<p><small>For OpenSesame 0.27.4</small></p>
+<p><small>For OpenSesame 2.8.2</small></p>
 <span class='class_name'>class <b>synth</b></span><br />
 <p class='details'><b>Function overview:</b><br />
 <a href='#synth.__init__'>__init__</a><br />
@@ -74,7 +74,7 @@ my_sampler = sampler(exp, src)
 my_sampler.play()
 self.sleep(100)
 if my_sampler.is_playing():
-	print 'The sampler is still playing!'
+	print('The sampler is still playing!')
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='synth.key_to_freq'>synth</a>.<b>key_to_freq(key)</b></span><div class='details'>
@@ -93,7 +93,7 @@ An integer value containing the frequency in hertz.<br />
 <br />
 {% highlight python %}from openexp.synth import synth
 my_synth = synth(exp)
-print 'An a2 is %d Hz' % my_synth.key_to_freq('a2')
+print('An a2 is %d Hz' % my_synth.key_to_freq('a2'))
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='synth.pan'>synth</a>.<b>pan(p)</b></span><div class='details'>
@@ -143,7 +143,7 @@ my_sampler = sampler(exp, src)
 my_sampler.pitch(2.0)
 {% endhighlight %}<br />
 </div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='synth.play'>synth</a>.<b>play(block = False)</b></span><div class='details'>
+<div class='function'><span class='function_name'><a class='anchor' id='synth.play'>synth</a>.<b>play(block=False)</b></span><div class='details'>
 <i>Inherited from <b>legacy</b></i><br /><br />Plays the sound.<br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
@@ -229,7 +229,7 @@ src = exp.get_file('my_sound.ogg')
 my_sampler = sampler(exp, src)
 my_sampler.play()
 my_sampler.wait()
-print 'The sampler is finished!'
+print('The sampler is finished!')
 {% endhighlight %}<br />
 </div></div>
 </div>

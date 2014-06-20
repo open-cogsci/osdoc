@@ -1,5 +1,5 @@
 <div class='pydoc'>
-<p><small>For OpenSesame 0.27.4</small></p>
+<p><small>For OpenSesame 2.8.2</small></p>
 <span class='class_name'>class <b>canvas</b></span><br />
 <p class='details'><b>Function overview:</b><br />
 <a href='#canvas.__init__'>__init__</a><br />
@@ -17,6 +17,7 @@
 <a href='#canvas.prepare'>prepare</a><br />
 <a href='#canvas.rect'>rect</a><br />
 <a href='#canvas.set_bgcolor'>set_bgcolor</a><br />
+<a href='#canvas.set_bidi'>set_bidi</a><br />
 <a href='#canvas.set_fgcolor'>set_fgcolor</a><br />
 <a href='#canvas.set_font'>set_font</a><br />
 <a href='#canvas.set_penwidth'>set_penwidth</a><br />
@@ -191,17 +192,29 @@ h = self.get('height')-10
 my_canvas.ellipse(10, 10, w, h, fill=True)
 {% endhighlight %}<br />
 </div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='canvas.fixdot'>canvas</a>.<b>fixdot(x=None, y=None, color=None)</b></span><div class='details'>
-Draws a standard fixation dot, which is a big circle (radius = 8px) with the foreground color and a smaller circle (radius = 2px) of the background color.<br />
+<div class='function'><span class='function_name'><a class='anchor' id='canvas.fixdot'>canvas</a>.<b>fixdot(x=None, y=None, color=None, style=u'default')</b></span><div class='details'>
+Draws a fixation dot. Various styles are available ('default' equals 'medium-open'):<br />
+<br />
+- 'large-filled' is a filled circle with a 16px radius.<br />
+- 'medium-filled' is a filled circle with an 8px radius.<br />
+- 'small-filled' is a filled circle with a 4px radius.<br />
+- 'large-open' is a filled circle with a 16px radius and a 2px hole.<br />
+- 'medium-open' is a filled circle with an 8px radius and a 2px hole.<br />
+- 'small-open' is a filled circle with a 4px radius and a 2px hole.<br />
+- 'large-cross' is 16px cross.<br />
+- 'medium-cross' is an 8px cross.<br />
+- 'small-cross' is a 4px cross.<br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>x </span> &rarr;  The center X coordinate. None = center (default=None).
+<span class='variable'>x		</span> &rarr; 	The center X coordinate. None = center (default=None).
 <br />
-<span class='variable'>y </span> &rarr;  The center Y coordinate. None = center (default=None).
+<span class='variable'>y 		</span> &rarr; 	The center Y coordinate. None = center (default=None).
 <br />
-<span class='variable'>color </span> &rarr;  A custom human-readable foreground color. This does not affect 
-the default foreground color as set by set_fgcolor(). (Default=None)<br />
+<span class='variable'>color	</span> &rarr; 	A custom human-readable foreground color. This does not 
+affect the default foreground color as set by set_fgcolor(). (default=None)<br />
+<span class='variable'>style	</span> &rarr; 	One of: default, large-filled, medium-filled, small-filled, 
+large-open, medium-open, small-open, large-cross, medium-cross, small-cross. default equals medium-open. (default=u'default')<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
@@ -210,7 +223,7 @@ my_canvas = canvas(exp)
 my_canvas.fixdot()
 {% endhighlight %}<br />
 </div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='canvas.gabor'>canvas</a>.<b>gabor(x, y, orient, freq, env="gaussian", size=96, stdev=12, phase=0, col1="white", col2="black", bgmode="avg")</b></span><div class='details'>
+<div class='function'><span class='function_name'><a class='anchor' id='canvas.gabor'>canvas</a>.<b>gabor(x, y, orient, freq, env=u"gaussian", size=96, stdev=12, phase=0, col1=u"white", col2=u"black", bgmode=u"avg")</b></span><div class='details'>
 Draws a Gabor patch. The exact rendering of the Gabor patch depends on the back-end.<br />
 <br />
 <span class='keyword'>Arguments:</span>
@@ -304,7 +317,7 @@ h = self.get('height')
 my_canvas.line(0, 0, w, h)
 {% endhighlight %}<br />
 </div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='canvas.noise_patch'>canvas</a>.<b>noise_patch(x, y, env="gaussian", size=96, stdev=12, col1="white", col2="black", bgmode="avg")</b></span><div class='details'>
+<div class='function'><span class='function_name'><a class='anchor' id='canvas.noise_patch'>canvas</a>.<b>noise_patch(x, y, env=u"gaussian", size=96, stdev=12, col1=u"white", col2=u"black", bgmode=u"avg")</b></span><div class='details'>
 Draws a patch of noise, with an envelope. The exact rendering of the noise patch depends on the back-end.<br />
 <br />
 <span class='keyword'>Arguments:</span>
@@ -412,6 +425,15 @@ my_canvas.set_bgcolor('gray')
 my_canvas.clear()
 {% endhighlight %}<br />
 </div></div>
+<div class='function'><span class='function_name'><a class='anchor' id='canvas.set_bidi'>canvas</a>.<b>set_bidi(bidi)</b></span><div class='details'>
+Enables or disables bi-directional text support.<br />
+<br />
+<span class='keyword'>Arguments:</span>
+<br />
+<span class='variable'>bidi	</span> &rarr; 	True to enable bi-directional text support, False to
+<br />
+disable.<br />
+</div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='canvas.set_fgcolor'>canvas</a>.<b>set_fgcolor(color)</b></span><div class='details'>
 Sets the foreground color for subsequent drawing operations.<br />
 <br />
@@ -435,8 +457,8 @@ Sets the font for subsequent drawing operations.<br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>style </span> &rarr;  A font style. This can be one of the three standard styles 
-('mono', 'sans', or 'serif') or a system font (e.g., 'arial'). (Default=None)<br />
+<span class='variable'>style </span> &rarr;  A font style. This can be one of the default fonts 
+(e.g., 'mono'), a system font (e.g., 'arial'). or the name of a `.ttf` font file in the file pool (without the `.ttf` extension).<br />
 <span class='variable'>size </span> &rarr;  A font size in pixels (default=None).
 <br />
 <span class='variable'>italic </span> &rarr;  Indicates if the font should be italic (default=None).
@@ -486,28 +508,38 @@ t = my_canvas.show()
 exp.set('time_fixdot', t)
 {% endhighlight %}<br />
 </div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='canvas.text'>canvas</a>.<b>text(text, center=True, x=None, y=None, max_width=None, color=None, html=True)</b></span><div class='details'>
+<div class='function'><span class='function_name'><a class='anchor' id='canvas.text'>canvas</a>.<b>text(text, center=True, x=None, y=None, max_width=None, color=None, bidi=None, html=True)</b></span><div class='details'>
 Draws text.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
-<span class='variable'>text </span> &rarr;  The text string.
+<span class='variable'>text		</span> &rarr; 	The text string.
 <br />
 <br />
 <span class='keyword'>Keyword arguments:</span>
 <br />
-<span class='variable'>center </span> &rarr;  A Boolean indicating whether the coordinates reflect the 
+<span class='variable'>center		</span> &rarr; 	A Boolean indicating whether the coordinates reflect the
+<br />
 center (True) or top-left (default=True).<br />
-<span class='variable'>x </span> &rarr;  The X coordinate. None = center. (Default=None)
+<span class='variable'>x			</span> &rarr; 	The X coordinate. None = center. (Default=None)
 <br />
-<span class='variable'>y </span> &rarr;  The Y coordinate. None = center. (Default=None)
+<span class='variable'>y			</span> &rarr; 	The Y coordinate. None = center. (Default=None)
 <br />
-<span class='variable'>max_width </span> &rarr;  The maximum width of the text, before wrapping to a new 
+<span class='variable'>max_width	</span> &rarr; 	The maximum width of the text, before wrapping to a new
+<br />
 line, or None to wrap at screen edge (default=None)<br />
-<span class='variable'>color </span> &rarr;  A custom human-readable foreground color. This does not affect 
-the default foreground color as set by set_fgcolor(). (Default=None)<br />
-<span class='variable'>html </span> &rarr;  Indicates whether HTML tags should be parsed (default=True).
+<span class='variable'>color		</span> &rarr; 	A custom human-readable foreground color. This does not
 <br />
+affect the default foreground color as set by<br />
+set_fgcolor(). (Default=None)<br />
+<span class='variable'>bidi		</span> &rarr; 	True or False for bi-directional text support, or None
+<br />
+to use experiment default. This does not affect the<br />
+default bidi setting as set by set_bidi().<br />
+(Default=None)<br />
+<span class='variable'>html		</span> &rarr; 	Indicates whether HTML tags should be parsed
+<br />
+(default=True).<br />
 <br />
 <span class='keyword'>Example:</span>
 <br />
