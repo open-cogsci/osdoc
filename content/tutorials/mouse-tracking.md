@@ -49,7 +49,7 @@ I've provided the complete `.opensesame` file for this experiment at the bottom 
 
 </div>
 
-#### The Experiment
+## The Experiment
 
 %--
 figure:
@@ -70,7 +70,7 @@ The rest here is largely aesthetic, but I've gone for white background, black fo
 
 You'll need to delete the `getting_started` and the `welcome` items.
 
-#### Setting everything up
+### Setting everything up
 
 Before anything else happens, we'll need to define our keyboard, mouse, and canvas (the imaginary page on which your visual stimuli are 'drawn') in Python, so that we can use them later on.
 We'll create an `inline_script` item at the very start of your experiment by selecting the `experiment` item in the Overview, and using the 'Append new item' menu.
@@ -122,25 +122,25 @@ exp.set("variable_name", variable_name)
 
 </div>
 
-#### The trial
+### The trial
 
 In this example, we're going to place all of the code for a trial in a single `inline_script` at the start of the `trial_sequence`, and call it `question_script`.
 In the `Prepare phase` tab of this, we have the following:
 
 {% highlight python %}
-## Constants
+# Constants
 max_response_time = 3000
 fixation_length = 1500
 error_message_duration = 1000
 max_init_time = 800
 sample_rate = 30
 
-## Images
+# Images
 start_button = exp.get_file('materials/start.png')
 yes_button = exp.get_file('materials/yes.png')
 no_button = exp.get_file('materials/no.png')
 
-## Text
+# Text
 timeout_message = "Too slow!\n\
 Try to respond more quickly.\n\
 Press any key to continue."
@@ -150,23 +150,23 @@ as you see the target, even if you're not\n\
 sure of your response yet\n\
 Press any key to continue."
 error_message = "<span color='red'>Wrong!</span>" # Text can use some HTML tags
-## Turn our OpenSesame variables into plain Python ones
+# Turn our OpenSesame variables into plain Python ones
 probe = exp.get('probe')
 condition = exp.get('condition')
 
-## Some dimensions
-## Our start button is 80x80 pixels.
-## Change these values if using a different sized image.
+# Some dimensions
+# Our start button is 80x80 pixels.
+# Change these values if using a different sized image.
 half_start_w = 40
 half_start_h = 40
-## Likewise for the response images
+# Likewise for the response images
 response_w = 256
 response_h = 157
-## Get the size of the screen
+# Get the size of the screen
 mx = my_canvas.xcenter()
 my = my_canvas.ycenter()
 
-## Some empty lists for recording mouse data
+# Some empty lists for recording mouse data
 xList, yList, tList = [], [], []
 {% endhighlight %}
 
@@ -176,7 +176,7 @@ Moving on to the `Run phase` tab, there's a lot of code, so I'm going to break i
 First, we have this:
 
 {% highlight python %}
-## Draw Start Button
+# Draw Start Button
 my_canvas.clear()
 my_canvas.image(start_button, True, mx, (2*my) - half_start_h)
 my_canvas.image(yes_button, False, 0, 0)
@@ -191,9 +191,9 @@ while 1:
 		my_canvas.clear()
 		break
 
-## Hide the mouse
+# Hide the mouse
 my_mouse.set_visible(visible=False)
-## Fixation
+# Fixation
 tick = fixation_length / 3 # a 'tick' lasts 1/3 of the total fixation.
 my_canvas.clear()
 my_canvas.image(yes_button, False, 0, 0)
@@ -211,13 +211,13 @@ my_canvas.image(no_button, False, 2*mx - response_w, 0)
 my_canvas.show()
 exp.sleep(tick)
 
-## Show the stimuli
+# Show the stimuli
 my_canvas.clear()
 my_canvas.text(probe)
 my_canvas.image(yes_button, False, 0, 0)
 my_canvas.image(no_button, False, 2*mx - response_w, 0)
 my_canvas.show()
-## Show the mouse, and move it to the starting point
+# Show the mouse, and move it to the starting point
 my_mouse.set_visible(visible=True)
 my_mouse.set_pos(pos=(mx, (2*my)-half_start_h))
 {% endhighlight %}
@@ -227,7 +227,7 @@ What we've done here is show a start button (along with the two responses), and 
 Next:
 
 {% highlight python %}
-## The actual mouse tracking
+# The actual mouse tracking
 t0 = start = exp.time()
 t1 = t0 + sample_rate
 resp = 0
@@ -275,14 +275,14 @@ This complicated looking loop does a few things:
 Afterwards, we have this:
 
 {% highlight python %}
-## Let's figure out if the response was correct
+# Let's figure out if the response was correct
 if condition == 'truth':
 	correct_response = 1
 else:
 	correct_response = 2
 accuracy = int(resp == correct_response)
 
-## Figure out if the mouse had left the start button by max_init_time
+# Figure out if the mouse had left the start button by max_init_time
 for i in range(len(yList)):
 	y = yList[i]
 	if y < ((2*my) - (2*half_start_h)):
@@ -291,21 +291,21 @@ for i in range(len(yList)):
 init_time = tList[init_step] # 	The time of that sample
 slow_start = int(init_time > max_init_time)
 
-## Show a message if wrong answer (optional)
+# Show a message if wrong answer (optional)
 if accuracy == 0 and not timed_out:
 	my_canvas.clear()
 	my_canvas.text(error_message)
 	my_canvas.show()
 	exp.sleep(error_message_duration)
 
-## Show a message if the trial has timed out without a response
+# Show a message if the trial has timed out without a response
 if timed_out:
 	my_canvas.clear()
 	my_canvas.text(timeout_message)
 	my_canvas.show()
 	timed_out = False
 	my_keyboard.get_key()
-## Show a message if participant took too long to start moving
+# Show a message if participant took too long to start moving
 if (slow_start and not timed_out):
 	my_canvas.clear()
 	my_canvas.text(slow_start_message)
@@ -319,7 +319,7 @@ Most of this is explained in the comments: we figure out if the response was the
 Finally, we have this:
 
 {% highlight python %}
-## Standard Logging (the probe and code variables are taken care of automatically)
+# Standard Logging (the probe and code variables are taken care of automatically)
 self.experiment.set("response", resp)
 self.experiment.set("accuracy", accuracy)
 self.experiment.set("rt", rt)
@@ -327,9 +327,9 @@ self.experiment.set("xTrajectory", str(xList))
 self.experiment.set("yTrajectory", str(yList))
 self.experiment.set("tTrajectory", str(tList))
 
-## Saves data in as Python variables
+# Saves data in as Python variables
 
-## Make a dict to hold data from this trial
+# Make a dict to hold data from this trial
 trial_data = {}
 trial_data['height'] = exp.get('height')
 trial_data['subject_nr'] = exp.get('subject_nr')
@@ -344,7 +344,7 @@ trial_data['yTrajectory'] = yList
 trial_data['tTrajectory'] = tList
 trial_data['count_trial_sequence'] = exp.get('count_trial_sequence')
 
-## Add this dict to the list
+# Add this dict to the list
 exp.data.append(trial_data)
 {% endhighlight %}
 
@@ -352,7 +352,7 @@ The first bit here turns our python variables (resp, accuracy, rt, xList, yList,
 
 The second, which is more novel, makes a python dictionary (dict) item called `trial_data`. We store all the variables we want to log here, along with the appropriate labels, and add it to the list we made at the start. I'll explain what variables you should be including here shortly. Also note (but don't worry too much) that some of what we're logging here is just python variables (resp, accuracy, etc.), while some are OpenSesame variables, retrieved using the `exp.get()` command.
 
-#### Logger
+### Logger
 
 After each `question_script`, you'll need to actually write the data to the logfile. The `logger` item in OpenSesame does this in a straightforward way, but it does require a little bit of care in picking the right variables (you could just long everything, but I find this just creates more work down the line).
 In our case, it's actually easier to edit the `logger` script than to use the GUI, like so (click the icon shown in %fig_osmt_scripticon):
@@ -390,7 +390,7 @@ Obviously, these are the same variables that we logged in the python logging bit
 Make sure you click 'Apply and close' when you're done here, or your changes won't be saved.
 Afterwards, the logger GUI should have those variables selected.
 
-#### Finishing up
+### Finishing up
 
 OpenSesame automatically saves the csv logfile, even if the experiment crashes, so you don't have to worry about that.
 We need to add a few more lines of code to save the python variables though (hopefully, in the future, OpenSesame can do this automatically too).
@@ -400,7 +400,7 @@ Fill it with this (in the `Run phase` tab):
 {% highlight python %}
 import os
 subject_nr = exp.get('subject_nr')
-## Save the file as 'subject_1.py', for example, in the same folder as the experiment.
+# Save the file as 'subject_1.py', for example, in the same folder as the experiment.
 path = os.path.join(exp.experiment_path, 'subject-%i.py' % subject_nr)
 saveFile = open(path, "w")
 out = "data = " + repr(exp.data)
@@ -422,14 +422,14 @@ import os
 data_dir = 'path/to/datafiles/'
 all_data = []
 
-## One big list of trial_dict items
+# One big list of trial_dict items
 for filename in os.listdir(data_dir): # For all the files in this directory
     if filename[:3] == '.py' # If it's a python file...
     filepath = os.path.join(data_dir, filename)
     exec(filepath) # This executes 'data = [...list...]'
     all_data.append(data)
 
-## Turn it all into a Pandas DataFrame
+# Turn it all into a Pandas DataFrame
 results = pd.DataFrame(all_data)
 results.to_csv('path/to/save/results.csv') # Save as a table
 results.to_pickle('path/to/save/results.pkl') # Save as Python variables
