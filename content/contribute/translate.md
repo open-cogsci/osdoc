@@ -3,15 +3,20 @@ layout: osdoc
 title: Translate
 group: contribute
 permalink: /translate/
+parser: academicmarkdown
 ---
 
 In order to improve usability for non-English speaking users, the goal is to have OpenSesame adapt to the default language of the operating system. As of v0.27, the OpenSesame user interface is largely translatable. Very little technical skill is needed to contribute a translation.
 
-If you want to provide a translation, it's recommended to first send an enquiry to <lvanderlinden@cogsci.nl> or post a message on the [forum][], to make sure that your language is not already being worked on.
+If you want to provide a translation, it's recommended to first send an inquiry to <lvanderlinden@cogsci.nl> or post a message on the [forum][], to make sure that your language is not already being worked on.
 
-:--
-cmd: overview
---:
+## Overview
+
+%--
+toc:
+ mindepth: 2
+ exclude: [Overview]
+--%
 
 ## Status of current translations
 
@@ -19,8 +24,9 @@ cmd: overview
 |`en_EN`	|English			|Default			|								|
 |`it_IT` 	|Italian			|Complete			|Andrea Epifani					|
 |`fr_FR`	|French				|Complete			|Romain Monfollet				|
-|`zh_CH`	|Chinese			|In progress		|Zhongquan Li and Gabriel Chan	|
-|`nl_NL`	|Dutch				|In progress		|Lotje van der Linden			|
+|`zh_CN`	|Chinese			|Complete			|[Zhongquan Li](https://github.com/zqlinju) and Gabriel Chan	|
+|`nl_NL`	|Dutch				|In progress		|[Lotje van der Linden](https://github.com/lvanderlinden)			|
+|`de_DE`	|German				|In progress		|[Timo Lüke](https://github.com/researchtool)	|
 
 ## Starting OpenSesame with a specific language
 
