@@ -25,6 +25,7 @@ tutorials
 #	python inline scripting tutorial
 	video tutorials
 	mouse-tracking tutorial
+	cats, dogs, and capybaras
 usage
 	sequences and loops
 	variables and conditional ("if") statements
@@ -104,7 +105,7 @@ Contribute
 	Develop
 	Source-code architecture
 Donate
-Rovereto workshop
+:Rovereto workshop
 Forum
 Cogsci.nl
 BRM Paper
