@@ -5,7 +5,7 @@ group: Getting OpenSesame
 permalink: /download/
 ---
 
-Welcome to the OpenSesame documentation area! Here you can find everything you always wanted to know about your favorite free and cross-platform experiment builder. The latest stable version of OpenSesame is 2.8.2 *Gutsy Gibson*, released on June 11 2014 ([release notes]). Older versions can be found [here][archive].
+Welcome to the OpenSesame documentation area! Here you can find everything you always wanted to know about your favorite free and cross-platform experiment builder. The latest stable version of OpenSesame is 2.8.3 *Gutsy Gibson*, released on July 10 2014 ([release notes]). Older versions can be found [here][archive].
 
 Installation instructions and more download options can be found below the download buttons.
 
@@ -75,6 +75,6 @@ If there are no packages provided for your platform, you will need to run OpenSe
 [running-from-source]: /getting-opensesame/running-from-source
 [neurodebian]: http://neuro.debian.net/
 [python-portable]: /getting-opensesame/running-with-python-portable/
-[release notes]: /notes/2.8.2
+[release notes]: /notes/2.8.3
 [cogsci.nl ppa]: https://launchpad.net/~smathot/+archive/cogscinl
 [neurodebian]: http://neuro.debian.net/

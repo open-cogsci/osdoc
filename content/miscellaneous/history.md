@@ -5,6 +5,7 @@ group: Miscellaneous
 permalink: /history/
 ---
 
+|July 10, 2014	| [2.8.3][] *Gutsy Gibson* (maintenance)	|
 |June 11, 2014	| [2.8.2][] *Gutsy Gibson* (maintenance)	|
 |Mar 31, 2014	| [2.8.1][] *Gutsy Gibson* (maintenance)	|
 |Feb 16, 2014	| [2.8.0][] *Gutsy Gibson*|
@@ -51,3 +52,4 @@ permalink: /history/
 [2.8.0]: /notes/2.8.0/
 [2.8.1]: /notes/2.8.1/
 [2.8.2]: /notes/2.8.2/
+[2.8.3]: /notes/2.8.3/

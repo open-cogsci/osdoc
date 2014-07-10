@@ -6,21 +6,26 @@ permalink: /2.8.3/
 parser: academicmarkdown
 ---
 
-OpenSesame 2.8.3 is the third  maintenance release in the 2.8 series. If you are upgrading from 0.27.4 or earlier, please also read the [2.8.0 release notes].
+OpenSesame 2.8.3 is the third maintenance release in the 2.8 series. If you are upgrading from 0.27.4 or earlier, please also read the [2.8.0 release notes].
 
 ## Credits
 
-TODO
+Thanks to Timo Lüke for contributing a German translation, and Vladimir Kosonogov for contributing a Russian translation.
 
 ## Changelog
 
 ### Improvements
 
-TODO
+- Add German translation (de_DE)
+- Add Russian translation (ru_RU)
+- Remember experiment and logfile folders on Android (#259)
+- Add show_virtual_keyboard() function to keyboard back-ends (#254)
 
 ### Bugs fixed
 
-TODO
+- Fix canvas.arrow() docstring
+- canvas.text_size() respects line breaks and formatting (#262)
+- Advanced loop settings are preserved in GUI (#263)
 
 ### Windows packaging
 

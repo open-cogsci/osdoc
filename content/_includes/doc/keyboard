@@ -1,5 +1,5 @@
 <div class='pydoc'>
-<p><small>For OpenSesame 2.8.2</small></p>
+<p><small>For OpenSesame 2.8.3</small></p>
 <span class='class_name'>class <b>keyboard</b></span><br />
 <p class='details'><b>Function overview:</b><br />
 <a href='#keyboard.__init__'>__init__</a><br />
@@ -8,6 +8,7 @@
 <a href='#keyboard.get_mods'>get_mods</a><br />
 <a href='#keyboard.set_keylist'>set_keylist</a><br />
 <a href='#keyboard.set_timeout'>set_timeout</a><br />
+<a href='#keyboard.show_virtual_keyboard'>show_virtual_keyboard</a><br />
 </p>
 <div class='function'><span class='function_name'><a class='anchor' id='keyboard.__init__'>keyboard</a>.<b>__init__(experiment, keylist=None, timeout=None)</b></span><div class='details'>
 Intializes the keyboard object.<br />
@@ -130,6 +131,31 @@ for no timeout (default=None).<br />
 {% highlight python %}from openexp.keyboard import keyboard
 my_keyboard = keyboard(exp)
 my_keyboard.set_timeout(2000)
+{% endhighlight %}<br />
+</div></div>
+<div class='function'><span class='function_name'><a class='anchor' id='keyboard.show_virtual_keyboard'>keyboard</a>.<b>show_virtual_keyboard(visible=True)</b></span><div class='details'>
+Shows or hides a virtual keyboard if this is supported by the back-end.<br />
+This function is only necessary if you want the virtual keyboard to<br />
+remain visible while collecting multicharacter responses. Otherwise,<br />
+get_key() will implicitly shown and hide the keyboard for a single-<br />
+character response.<br />
+<br />
+This function does nothing for back-ends that do not support virtual<br />
+keyboards.<br />
+<br />
+<span class='keyword'>Arguments:</span>
+<br />
+<span class='variable'>visible		</span> &rarr; 	True if the keyboard should be shown, False otherwise.
+<br />
+<br />
+<span class='keyword'>Example:</span>
+<br />
+{% highlight python %}from openexp.keyboard import keyboard
+my_keyboard = keyboard(exp)
+my_keyboard.show_virtual_keyboard(True)
+response1, timestamp2 = my_keyboard.get_key()
+response2, timestamp2 = my_keyboard.get_key()
+my_keyboard.show_virtual_keyboard(False)
 {% endhighlight %}<br />
 </div></div>
 </div>

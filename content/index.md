@@ -10,7 +10,7 @@ parser: academicmarkdown
 ![Affiliations](/img/affiliations.png "Affiliations")
 {: .float-right}
 
-Welcome to the OpenSesame documentation area! Here you can find everything you always wanted to know about your favorite free and cross-platform experiment builder. The latest stable version of OpenSesame is 2.8.2 *Gutsy Gibson*, released on June 11 2014 ([release notes]).
+Welcome to the OpenSesame documentation area! Here you can find everything you always wanted to know about your favorite free and cross-platform experiment builder. The latest stable version of OpenSesame is 2.8.3 *Gutsy Gibson*, released on July 10 2014 ([release notes]).
 
 %--
 video:
@@ -32,6 +32,6 @@ Mathôt, S., Schreij, D., & Theeuwes, J. (2012). OpenSesame: An open-source, gra
 [Forum][]{:.button}
 
 [forum]: http://forum.cogsci.nl/
-[release notes]: /notes/2.8.2
+[release notes]: /notes/2.8.3
 [download]: /getting-opensesame/download/
 [chris longmore]: http://www.chrislongmore.co.uk/

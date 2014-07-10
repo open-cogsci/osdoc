@@ -26,7 +26,8 @@ toc:
 |`fr_FR`	|French				|Complete			|Romain Monfollet				|
 |`zh_CN`	|Chinese			|Complete			|[Zhongquan Li](https://github.com/zqlinju) and Gabriel Chan	|
 |`nl_NL`	|Dutch				|In progress		|[Lotje van der Linden](https://github.com/lvanderlinden)			|
-|`de_DE`	|German				|In progress		|[Timo Lüke](https://github.com/researchtool)	|
+|`de_DE`	|German				|Complete			|Timo Lüke				|
+|`ru_RU`	|Russian 			|Complete			|Vladimir Kosonogov		|
 
 ## Starting OpenSesame with a specific language
 

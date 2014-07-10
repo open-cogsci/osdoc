@@ -1,5 +1,5 @@
 <div class='pydoc'>
-<p><small>For OpenSesame 2.8.2</small></p>
+<p><small>For OpenSesame 2.8.3</small></p>
 <span class='class_name'>class <b>canvas</b></span><br />
 <p class='details'><b>Function overview:</b><br />
 <a href='#canvas.__init__'>__init__</a><br />
@@ -94,7 +94,7 @@ the default foreground color as set by set_fgcolor(). (Default=None)<br />
 my_canvas = canvas(exp)
 w = self.get('width')/2
 h = self.get('height')/2
-my_canvas.line(0, 0, w, h, arrow_size=10)
+my_canvas.arrow(0, 0, w, h, arrow_size=10)
 {% endhighlight %}<br />
 </div></div>
 <div class='function'><span class='function_name'><a class='anchor' id='canvas.circle'>canvas</a>.<b>circle(x, y, r, fill=False, color=None)</b></span><div class='details'>
@@ -548,13 +548,28 @@ my_canvas = canvas(exp)
 my_canvas.text('Some text with <b>boldface</b> and <i>italics</i>')
 {% endhighlight %}<br />
 </div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='canvas.text_size'>canvas</a>.<b>text_size(text)</b></span><div class='details'>
+<div class='function'><span class='function_name'><a class='anchor' id='canvas.text_size'>canvas</a>.<b>text_size(text, max_width=None, bidi=None, html=True)</b></span><div class='details'>
 Determines the size of a text string in pixels.<br />
 <br />
 <span class='keyword'>Arguments:</span>
 <br />
 <span class='variable'>text </span> &rarr;  The text string.
 <br />
+<br />
+<span class='keyword'>Keyword arguments:</span>
+<br />
+<span class='variable'>max_width	</span> &rarr; 	The maximum width of the text, before wrapping to a new
+<br />
+line, or None to wrap at screen edge (default=None)<br />
+set_fgcolor(). (Default=None)<br />
+<span class='variable'>bidi		</span> &rarr; 	True or False for bi-directional text support, or None
+<br />
+to use experiment default. This does not affect the<br />
+default bidi setting as set by set_bidi().<br />
+(Default=None)<br />
+<span class='variable'>html		</span> &rarr; 	Indicates whether HTML tags should be parsed
+<br />
+(default=True).<br />
 <br />
 <span class='keyword'>Returns:</span>
 <br />

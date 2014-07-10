@@ -209,7 +209,7 @@ figure:
  id: FigClockDrift1
  source: clock-drift-system1.png
  caption: Windows XP, HP Compaq dc7900, Intel Core 2 Quad Q9400 @ 2.66Ghz, 3GB
---:
+--%
 
 The second system, shown in %FigClockDrift2, showed no drift at all, at least not during this particular session.
 
