@@ -176,29 +176,22 @@ First install pyglet:
 	cd ..
 	rm -R pyglet
 
-To get psychopy to work on 64-bit OS X variants, we had to slightly alter psychopy's source code. These changes are still under review by Jon Peirce who created psychopy and he has not taken them up yet in his main repository. Until that has happened, you have to obtain a copy of psychopy from our unofficial git repository by issuing the command
-	
-    git clone https://github.com/dschreij/psychopy.git
-	
-Once the required changes have been merged in the official psychopy repository, you can get it from there again with the command:
+Then psychopy. Install it and do some cleanup with:
 	
 	git clone https://github.com/psychopy/psychopy.git
-	
-Install it and do some cleanup with:
-	
 	cd psychopy
 	python setup.py install
 	cd ..
 	rm -R psychopy
 
-You should now be able to run OpenSesame, but you'll notice you're missing some icons! You need to download the Faenza icon theme from <http://tiheum.deviantart.com/art/Faenza-Icons-173323228> and place it under resources/theme/default
+During installing you might receive an error with the message "Unknown locale UTF8". You can easily fix this by placing the line "LC_ALL=en_US.UTF8" in your ~/.bash_profile and then re-open your terminal.
+
+You should now be able to run OpenSesame, but you'll notice you're missing some icons! You need to download the Faenza icon theme from <http://tiheum.deviantart.com/art/Faenza-Icons-173323228> and place it under resources/theme/default/. Furthermore, there is a quirk in that multiprocessing won't work when the main file is not present as a .py file, which is the case for opensesame. To enable the multiprocessing support, you need to rename the opensesame file to opensesame.py, then if you run an experiment now once, you'll see that opensesame.pyc will have been created. From the moment this file is present, Python will use the .pyc when spawning new processes and you can now rename back opensesame.py to opensesame again. This is a weird fix to get multiprocessing working, but at the moment it is the only one we know.
 
 The following packages are optional, but might be useful to install nevertheless:
 
 	brew install matplotlib opencv
 	pip install pycairo pyparallel scikit-image
-
-you can find more detailed instructions on installing OpenCV at <http://www.jeffreythompson.org/blog/2013/08/22/update-installing-opencv-on-mac-mountain-lion/>
 
 ### Installing with MacPorts
 
