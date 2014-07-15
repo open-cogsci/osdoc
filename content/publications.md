@@ -38,6 +38,12 @@ Bucker, B., & Theeuwes, J. (2014). The effect of reward on orienting and reorien
 Cohen, C. (2014). *Contrast-Dependent Pronunciation Variation: A Case Study of Russian*. Retrieved from: <http://www.linguistics.berkeley.edu/~cpccohen/CohenRUProduction.pdf>
 {: .reference}
 
+Failing, M. F., & Theeuwes, J. (2014). Exogenous visual orienting by reward. *Journal of Vision*, *14*(5), 6. doi:10.1167/14.5.6
+{: .reference}
+
+Faneros, M. A. (2014). *A Comparison of Contemporary Executive Function Models* (Doctoral dissertation). University of Oklahoma, Norman, OK, United States of America. Retrieved from: <https://shareok.org/bitstream/handle/11244/10368/2014_Faneros_Michael_Dissertation.pdf>
+{: .reference}
+
 Garaizar, P., & Reips, U.-D. (2014). Visual DMDX: A web-based authoring tool for DMDX, a Windows display program with millisecond accuracy. *Behavior Research Methods*, 1–12. doi:10.3758/s13428-014-0493-8
 {: .reference}
 
@@ -56,11 +62,8 @@ Holliday, J. J. (2014). The perceptual assimilation of Korean obstruents by nati
 Ishii, A., Tanaka, M., & Watanabe, Y. (2014). The neural substrates of self-evaluation of mental fatigue: A magnetoencephalography study. *PLoS ONE*, *9*(4), e95763. doi:10.1371/journal.pone.0095763
 {: .reference}
 
-Failing, M. F., & Theeuwes, J. (2014). Exogenous visual orienting by reward. *Journal of Vision*, *14*(5), 6. doi:10.1167/14.5.6
-{: .reference}
-
-Faneros, M. A. (2014). *A Comparison of Contemporary Executive Function Models* (Doctoral dissertation). University of Oklahoma, Norman, OK, United States of America. Retrieved from: <https://shareok.org/bitstream/handle/11244/10368/2014_Faneros_Michael_Dissertation.pdf>
-{: .reference}
+Krukar, J. (2014). Walk, look, remember: The influence of the gallery’s spatial layout on human memory for an art exhibition. Behavioral Sciences, 4(3), 181–201. doi:10.3390/bs4030181
+{: .reference{
 
 Lange, F., & Eggert, F. (in press). Sweet delusion: Glucose drinks fail to counteract ego depletion. *Appetite*. doi:10.1016/j.appet.2013.12.020
 {: .reference}
