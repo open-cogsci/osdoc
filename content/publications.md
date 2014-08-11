@@ -62,6 +62,9 @@ Holliday, J. J. (2014). The perceptual assimilation of Korean obstruents by nati
 Ishii, A., Tanaka, M., & Watanabe, Y. (2014). The neural substrates of self-evaluation of mental fatigue: A magnetoencephalography study. *PLoS ONE*, *9*(4), e95763. doi:10.1371/journal.pone.0095763
 {: .reference}
 
+Kapoor, H. (2014). The creative side of the Dark Triad. *Creativity Research Journal*.
+{: .reference}
+
 Krukar, J. (2014). Walk, look, remember: The influence of the gallery’s spatial layout on human memory for an art exhibition. Behavioral Sciences, 4(3), 181–201. doi:10.3390/bs4030181
 {: .reference{
 
@@ -75,6 +78,9 @@ Mueller, S. T., & Piper, B. J. (2014). The Psychology Experiment Building Langua
 {: .reference}
 
 Nazareth, D. S. (2014). *The Fluency Effect as the Underlying Variable for Judging Beauty and Usability* (Master’s thesis). University of Twente, Enschede, Netherlands. Retrieved from <http://purl.utwente.nl/essays/64908>
+{: .reference}
+
+Sagana, A., Sauerland, M., & Merckelbach, H. (2014). Memory impairment is not sufficient for choice blindness to occur. *Frontiers in Psychology*, *5*. doi:10.3389/fpsyg.2014.00449
 {: .reference}
 
 Sall, R. J., Wright, T. J., & Boot, W. R. (2014). Driven to distraction? The effect of simulated red light running camera flashes on attention and oculomotor control. *Visual Cognition*, 1–17. doi:10.1080/13506285.2013.873509
@@ -147,6 +153,9 @@ Paivio, A. (2014). Bilingual dual coding theory and memory. In R. R. Heredia, J.
 {: .reference}
 
 Peters, G.-J. Y., de Bruin, M., & Crutzen, R. (2013). Everything should be as simple as possible, but no simpler: towards a protocol for accumulating evidence regarding the active content of health behaviour change interventions. *Health Psychology Review*. doi:10.1080/17437199.2013.848409
+{: .reference}
+
+Prestwood, V. (2013). *The Integratibility of Words and Their Referents into Embodied Representations*. (Honors Thesis). Retrieved from <http://diginole.lib.fsu.edu/uhm/206>
 {: .reference}
 
 Schreij, D., Los, S. A., Theeuwes, J., Enns, J. T., & Olivers, C. N. (2013). The interaction between stimulus-driven and goal-driven orienting as revealed by eye movements. *Journal of Experimental Psychology: Human Perception and Performance*. doi:10.1037/a0034574
