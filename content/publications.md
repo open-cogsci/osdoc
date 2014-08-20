@@ -65,6 +65,9 @@ Ishii, A., Tanaka, M., & Watanabe, Y. (2014). The neural substrates of self-eval
 Kapoor, H. (2014). The creative side of the Dark Triad. *Creativity Research Journal*.
 {: .reference}
 
+Katz, C., & Knops, A. (2014). Operational momentum in multiplication and division? *PLoS ONE*, *9*(8), e104777. doi:10.1371/journal.pone.0104777
+{: .reference}
+
 Krukar, J. (2014). Walk, look, remember: The influence of the gallery’s spatial layout on human memory for an art exhibition. Behavioral Sciences, 4(3), 181–201. doi:10.3390/bs4030181
 {: .reference{
 
