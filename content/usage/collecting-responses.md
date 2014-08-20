@@ -5,9 +5,10 @@ group: Usage
 permalink: /collecting-responses/
 ---
 
-:--
-cmd: overview
---:
+%--
+toc:
+ mindepth: 2
+--%
 
 ## Response items
 

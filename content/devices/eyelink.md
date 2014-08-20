@@ -3,8 +3,6 @@ layout: osdoc
 title: Eyelink
 group: Devices
 permalink: /eyelink/
-level: 1
-sortkey: 009.002
 ---
 
 The Eyelink series of eye trackers, produced by SR Research, are one of the most commonly used eye trackers in psychological research. SR Research provides Python bindings for the Eyelink, which are used by the OpenSesame Eyelink plug-ins. The license of the Eyelink Python bindings is incompatible with the license used by OpenSesame. For that reason, the Eyelink does not work out of the box with the official distribution of OpenSesame.
@@ -14,10 +12,10 @@ To use OpenSesame with the Eyelink, there are two options:
 - *Easy:* Use the Python portable-based OpenSesame package ([link][python-portable]), which runs OpenSesame with Eyelink support out of the box.
 - *Advanced:* Install all dependencies per the instructions below.
 
-:--
-cmd: overview
-depth: 2
---:
+%--
+toc:
+ mindepth: 2
+--%
 
 ## Running in dummy mode
 

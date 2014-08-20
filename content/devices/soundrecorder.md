@@ -5,9 +5,10 @@ group: Devices
 permalink: /soundrecorder/
 ---
 
-:--
-cmd: overview
---:
+%--
+toc:
+ mindepth: 2
+--%
 
 ## About the sound recorder plug-ins
 

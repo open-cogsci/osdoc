@@ -7,9 +7,10 @@ permalink: /sequences-and-loops/
 
 The `loop` and `sequence` items are two special items that add structure to your experiment. Understanding how `loop`s and `sequence`s work is one of the trickier aspects of working with OpenSesame.
 
-:--
-cmd: overview
---:
+%--
+toc:
+ mindepth: 2
+--%
 
 ## `sequence` items
 
@@ -17,11 +18,13 @@ A `sequence` is a list of items that is executed sequentially. For every item in
 
 A typical situation where a `sequence` is used is as a trial: A single trial will often correspond to a single `sequence` item. This illustrated in the screenshot below.
 
-:--
-cmd: figure
-src: 1.png
-caption: A single trial often corresponds to a single `sequence` item.
---:
+%--
+figure:
+ id: FigTrial
+ source: 1.png
+ caption: |
+  A single trial often corresponds to a single `sequence` item.
+--%
 
 In this example trial, there is a *trial_sequence*, which consists of a fixation dot (a `sketchpad` item), a target display (another `sketchpad`), a response collection item (a `keyboard_response`), a green fixation dot (another `sketchpad`), a red fixation dot (another `sketchpad`), and a data logging item (a `logger`).
 
@@ -37,11 +40,13 @@ The variable “correct” is set automatically by the keyboard_response item. F
 
 A typical situation where a loop is `used` is to form a block of trials. In that case, the item-to-run is a trial sequence, which is called multiple times. This is illustrated in the screenshot below.
 
-:--
-cmd: figure
-src: 2.png
-caption: A `loop` item provides a table in which you can define your independent variables.
---:
+%--
+figure:
+ id: FigLoopTable
+ source: 2.png
+ caption: |
+  A `loop` item provides a table in which you can define your independent variables.
+--%
 
 In this example `loop`, three independent variables have been defined: `object`, `orientation`, and `correct_response`. There are eight different cycles, or combinations ('knife, left, z', 'knife, right, z', etc.). Because 'repeat' is set to 3, every combination is called three times. Therefore, the item *trial_sequence* is called 8 x 3 = 24 times. The 'order' is set to 'random', which means that a random cycle is selected (without replacement) for every call of the item *trial_sequence*.
 
@@ -49,19 +54,23 @@ In this example `loop`, three independent variables have been defined: `object`,
 
 `Loop`s and `sequence`s are often combined to create a structure in which multiple items are repeated. As we've seen, a typical example of a `loop`-`sequence` structure is a single block of trials. Here a single trial is a `sequence`, which is called repeatedly by a `loop` to form a block of trials, as shown in the screenshots below.
 
-:--
-cmd: figure
-src: 3.png
-caption: A block of trials often corresponds to a `loop` item, which in turn calls a `sequence` item that corresponds to a single trial.
---:
+%--
+figure:
+ id: FigBlock
+ source: 3.png
+ caption: |
+  A block of trials often corresponds to a `loop` item, which in turn calls a `sequence` item that corresponds to a single trial.
+--%
 
 One level up in the hierarchy of the experiment, there is another `loop`-`sequence` structure, which corresponds to multiple blocks of trials. Here, a `sequence` (the *block_sequence* in the figure) calls a single block of trials (the *block_loop*), followed by a `feedback` item. This `sequence` is repeatedly called by a `loop` (the *experimental_loop*), so that there are multiple blocks of trials, each followed by feedback.
 
-:--
-cmd: figure
-src: 4.png
-caption: You can use nested `loop`-`sequence` structures to implement trials, blocks of trials, blocks of blocks, etc.
---:
+%--
+figure:
+ id: FigLoopSequence
+ source: 4.png
+ caption: |
+  You can use nested `loop`-`sequence` structures to implement trials, blocks of trials, blocks of blocks, etc.
+--%
 
 The structure displayed in the screenshot above might look a bit confusing at first sight, but it becomes clearer when you think about it as a two nested `loop`-`sequence` structures. The first one (*block_loop* - *trial_sequence*) corresponds to a single block of trials. The second one (*experimental_loop* - *block_sequence*) corresponds to multiple blocks of trials, each followed by feedback to the participant. Many experiments will contain a structure of this kind.
 

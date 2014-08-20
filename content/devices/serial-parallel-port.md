@@ -7,9 +7,10 @@ permalink: /serial-parallel-port/
 
 Some external devices are connected to the computer through the serial or parallel port or, as is increasingly common, through a USB connection that simulates a serial port.
 
-:--
-cmd: overview
---:
+%--
+toc:
+ mindepth: 2
+--%
 
 ## Triggers
 

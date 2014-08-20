@@ -7,27 +7,32 @@ permalink: /aps-tutorial/
 
 This OpenSesame workshop was presented at the 25th annual convention of the Association for Psychological Science (APS) on May 26, 2013. The workshop was co-sponsored by the Society of Multivariate Experimental Psychology ([SMEP][]). This page is a slightly modified version of the original workshop page, which can be found [here](/aps2013).
 
-:--
-cmd: overview
---:
+%--
+toc:
+ mindepth: 2
+--%
 
 ## The goal
 
 We will create a simple optimal-viewing-position (OVP) experiment with a lexical-decision response. Participants briefly see a five-letter string and decide whether the string is a word or a non-word by pressing a key. The position of the word relative to fixation is varied. The typical finding is that participants are faster to name or discriminate a string of letters when they fixate *just left* of the center [(O'Regan & Jacobs, 1992)](#references). Presumably, this left-wards bias reflects the fact that most western languages are read from left to right, and that the left cerebral hemisphere is specialized in language processing. (When we fixate to the left, most of the word falls in the right visual field and is thus initially processed by the left hemisphere.)
 
-:--
-cmd: figure
-src: 1.png
-caption: Lexical-decision times are lowest when participants fixate slightly to the left of the word center. In this example, using 7 (blue) and 5 (orange) letter words, the size of this effect is about 0.63 and 0.70 in letter units. [(Adapted from Brysbaert & Nazir, 2005)](#references).
---:
+%--
+figure:
+ id: FigResults
+ source: 1.png
+ caption: |
+  Lexical-decision times are lowest when participants fixate slightly to the left of the word center. In this example, using 7 (blue) and 5 (orange) letter words, the size of this effect is about 0.63 and 0.70 in letter units. [(Adapted from Brysbaert & Nazir, 2005)](#references).
+--%
 
 In our experiment, each trial will start with a fixation stimulus, after which a five-letter string will be presented. After 150 ms, the string is masked by five hash-tags. The participant's task is to indicate as quickly and accurately as possible whether the target was a word or a non-word.
 
-:--
-cmd: figure
-src: 2.png
-caption: Schematic example of the trial sequence.
---:
+%--
+figure:
+ id: FigTrialSequence
+ source: 2.png
+ caption: |
+  Schematic example of the trial sequence.
+--%
 
 The lexical-decision part of the experiment shows how to collect response-time data. To illustrate how you can implement questionnaires, we will also include a consent form and a few questions.
 
@@ -37,19 +42,23 @@ You can download OpenSesame from [here][download]. OpenSesame is available for W
 
 When you start OpenSesame, you will be given a choice of template experiments, and a list of recently opened experiments (if any).
 
-:--
-cmd: figure
-src: 3.png
-caption: The OpenSesame window on start-up.
---:
+%--
+figure:
+ id: FigStartup
+ source: 3.png
+ caption: |
+  The OpenSesame window on start-up.
+--%
 
 The 'Extended template' provides a good starting point for many experiments, because it already contains the basic structure of a typical block-trial-based experiment. To save time, we will use this template here. Double-click on the 'Extended template' in the 'Get started!' tab.
 
-:--
-cmd: figure
-src: 4.png
-caption: The structure of the 'Extended template' as seen in the overview area.
---:
+%--
+figure:
+ id: FigExtendedTemplate
+ source: 4.png
+ caption: |
+  The structure of the 'Extended template' as seen in the overview area.
+--%
 
 <div class='info-box' markdown='1'>
 
@@ -61,21 +70,25 @@ To give structure to your experiment, two types of items are especially importan
 
 A `loop` is where, in most cases, you define your independent variables. In a `loop` you can create a table, where each column corresponds to a variable, and each row corresponds to a single run of the 'item to run'. To make this more concrete, let's consider the following *block_loop*:
 
-:--
-cmd: figure
-src: 5.png
-caption: An example of variables defined in a loop table. (This example is not related to the experiment created in this tutorial.
---:
+%--
+figure:
+ id: FigLoopTable
+ source: 5.png
+ caption: |
+  An example of variables defined in a loop table. (This example is not related to the experiment created in this tutorial.
+--%
 
 This *block_loop* will execute *trial_sequence* four times. Once while `soa` is 100 and `target` is 'F', once while `soa` is 100 and `target` is 'H', etc. The order in which the rows are walked through is random, but can also be set to sequential in the top-right of the tab.
 
 A `sequence` consists of a series of items that are executed one after another. A prototypical `sequence` is the *trial_sequence*, which corresponds to a single trial. For example, a basic *trial_sequence* might consist of a `sketchpad`, to present a stimulus, a `keyboard_response`, to collect a response, and a `logger`, to write the trial information to the log file.
 
-:--
-cmd: figure
-src: 6.png
-caption: An example of a `sequence` item used as a trial sequence. (This example is not related to the experiment created in this tutorial.
---:
+%--
+figure:
+ id: FigExampleSequence
+ source: 6.png
+ caption: |
+  An example of a `sequence` item used as a trial sequence. (This example is not related to the experiment created in this tutorial.
+--%
 
 You can combine `loop`s and `sequence`s in a hierarchical way, to create trial blocks, and practice and experimental phases. For example, the *trial_sequence* is called by the *block_loop*. Together, these correspond to a single block of trials. One level up, the *block_sequence* is called by the *practice_loop*. Together, these correspond to the practice phase of the experiment.
 
@@ -87,21 +100,25 @@ We will limit ourselves to two independent variables: `word` and `displacement`.
 
 Type the variable names on the first row of the variable wizard, an each level at the rows below. For `word`, just select some arbitrary five-letter words and non-words. (Or, if you're a psycholinguist, feel free to make an informed selection.) For `displacement`, we choose -60, -30, 0, 30, and 60. This corresponds to the horizontal displacement in pixels. Later, we will choose the font size such that 30 px corresponds to the width of a single letter. Click on the 'Ok' button to generate your design.
 
-:--
-cmd: figure
-src: 7.png
-caption: The loop wizard quickly generates full-factorial designs.
---:
+%--
+figure:
+ id: FigLoopWizard
+ source: 7.png
+ caption: |
+  The loop wizard quickly generates full-factorial designs.
+--%
 
 It is often convenient to tell OpenSesame what the correct response is on a given trial, by setting the `correct_response` variable. If you do this, OpenSesame will automatically keep track of feedback variables (`correct`, `avg_rt`, and `acc`) as described [here][feedback].
 
 Click on the 'Add variable' button in the *block_loop*, enter 'correct_response' and press `Enter`. You will now have an empty column for your newly created `correct_response` variable. In the rows with non-words, set `correct_response` to 'm'. In the rows with words, set `correct_response` to 'z'.
 
-:--
-cmd: figure
-src: 8.png
-caption: The loop table after you have manually added the `correct_response` variable.
---:
+%--
+figure:
+ id: FigLoopTable2
+ source: 8.png
+ caption: |
+  The loop table after you have manually added the `correct_response` variable.
+--%
 
 <div class='info-box' markdown='1'>
 
@@ -115,19 +132,23 @@ You can prepare your variable list in your favorite spreadsheet and copy-paste i
 
 Right now, the *trial_sequence* contains only a single `sketchpad` item, which is called *sketchpad*. We want to have three `sketchpad`s, one for a fixation stimulus, one for the target word, and one for the mask. From the item toolbar, drag a `sketchpad` item onto the *trial_sequence* item in the overview area. This will add another `sketchpad`. Do this again to add the third `sketchpad`. Your *trial_sequence* now looks like this:
 
-:--
-cmd: figure
-src: 9.png
-caption: Your *trial_sequence* after you have added two new sketchpads.
---:
+%--
+figure:
+ id: FigTrialSequence2
+ source: 9.png
+ caption: |
+  Your *trial_sequence* after you have added two new sketchpads.
+--%
 
 By default, OpenSesame assigns names such as *__sketchpad* to newly created items. These names are not very informative, and it is good practice to change them. You can do this by right-clicking on the items in the overview area, and selecting 'rename'. Here we will rename the `sketchpad`s to *fixation*, *target*, and *mask*.
 
-:--
-cmd: figure
-src: 10.png
-caption: Your *trial_sequence* after you have give the new sketchpads more informative names.
---:
+%--
+figure:
+ id: Fig10
+ source: 10.png
+ caption: |
+  Your *trial_sequence* after you have give the new sketchpads more informative names.
+--%
 
 Often, you want to provide feedback to the participant after every trial. You can do this in various ways, but here we will use a `feedback` item. Drag a `feedback` item from item toolbar onto the *logger* in the *trial_sequence*. This will cause a new `feedback` item to be inserted before the *logger*. Rename the newly created item to *trial_feedback*.
 
@@ -137,11 +158,13 @@ Often, you want to provide feedback to the participant after every trial. You ca
 
 First, click on the *fixation* item. This will open a tab with drawing tools. If you're working on a small screen, this may not fit well on your screen, in which case you can click on 'Open editor in new window' to open a new window with only the drawing tools.
 
-:--
-cmd: figure
-src: 11.png
-caption: A blank `sketchpad` item.
---:
+%--
+figure:
+ id: Fig11
+ source: 11.png
+ caption: |
+  A blank `sketchpad` item.
+--%
 
 A fixation dot is available as a drawing primitive, so you can just click on the fixation-dot icon and then click on the middle of the display to draw a central fixation dot (the coordinates are shown in the top-right, where 0,0 is the center).
 
@@ -149,11 +172,13 @@ However, in OVP studies it is also common to draw two vertical fixation bars, ab
 
 Right now the duration is set to 'keypress', which means that the *fixation* `sketchpad` will be shown until the participant presses a key. Change this value to a sensible duration, such as '1000' (ms).
 
-:--
-cmd: figure
-src: 12.png
-caption: A `sketchpad` item with fixation bars and a 1000 ms duration.
---:
+%--
+figure:
+ id: Fig12
+ source: 12.png
+ caption: |
+  A `sketchpad` item with fixation bars and a 1000 ms duration.
+--%
 
 Next, close the `sketchpad` window (only if you have opened a new window before) and open the *target* item by clicking on it in the overview area.
 
@@ -161,19 +186,23 @@ The *target* `sketchpad` should contain only a single word, which we have define
 
 First, click on the 'Ab' icon to select the text tool. When the text tool is selected, a number of controls will appear that let you customize the font etc. In this case, a monospace font (`mono`) of 38 pt will do just fine.
 
-:--
-cmd: figure
-src: 13.png
-caption: The text drawing-tool of the `sketchpad` item.
---:
+%--
+figure:
+ id: Fig13
+ source: 13.png
+ caption: |
+  The text drawing-tool of the `sketchpad` item.
+--%
 
 Click on the center of the screen. This will pop up a dialog asking you to specify a text. Enter `[word]` and click on 'Ok'. OpenSesame will automatically interpret the square brackets as indicating that we're dealing with a variable, as described [here][variables].
 
-:--
-cmd: figure
-src: 14.png
-caption: Text in a `sketchpad` item. The square brackets indicate that 'word' should be interpreted as a variable name.
---:
+%--
+figure:
+ id: Fig14
+ source: 14.png
+ caption: |
+  Text in a `sketchpad` item. The square brackets indicate that 'word' should be interpreted as a variable name.
+--%
 
 Of course, we don't want the word to always be presented in the center. To make the position of the word variable, we need to make a small adjustment to the OpenSesame script. Click on the 'Edit script' button in the top-right of the tab. This will open a script editor that contains the auto-generated script:
 
@@ -193,11 +222,13 @@ To apply the changes, click on the 'Apply and close' button at the bottom-right 
 
 Now it's time to create the mask, which has its own `sketchpad` item. Click on the *mask* item in the overview area. You will probably find that there is a fixation dot in the center, which is part of the 'Extended template' that you started with. Right-click on the fixation dot and select 'Delete'. Now, draw the mask in the same way that you drew the word, except that you use the text `#####`, instead of `[word]`. Don't forget to set the font size to 38 and to make the X-coordinate of the mask variable!
 
-:--
-cmd: figure
-src: 15.png
-caption: A string of five hash-tags is used for the mask.
---:
+%--
+figure:
+ id: Fig15
+ source: 15.png
+ caption: |
+  A string of five hash-tags is used for the mask.
+--%
 
 The duration of the *mask* item should be set to 0 (it probably is already, again as a result of the `Extended template`). This might be slightly counter-intuitive, because it suggests that the *mask* will not be shown at all. But what this actually means is that OpenSesame will advance immediately to the next item, which is the *keyboard_response*. Because a *keyboard_response* item will not change what's on the display, the mask will remain visible until the participant presses a key.
 
@@ -207,11 +238,13 @@ The *keyboard_response* item already works, but it doesn't have a timeout and it
 
 You don't need to add anything to the 'Correct response' field: If you leave it empty, the variable `correct_response` will be used by default (if your enter, say, '[cresp]', the variable `cresp` would be used instead). In the 'Allowed responses' field, enter 'z;m' to indicate that all keys except `z` and `m` should be ignored. In the 'Timeout' field, add an appropriate timeout value, such as '5000' (ms).
 
-:--
-cmd: figure
-src: 16.png
-caption: The `keyboard_response` item.
---:
+%--
+figure:
+ id: Fig16
+ source: 16.png
+ caption: |
+  The `keyboard_response` item.
+--%
 
 <div class='info-box' markdown='1'>
 
@@ -243,11 +276,13 @@ Here are two good stimuli for feedback: A smiley face for correct responses, and
 
 Right-click on the smiley and frowney faces and save them to your computer. Now select the image tool in the `feedback` item by clicking on the aquarium-like icon. We will first draw the smiley face, so enter `[correct] = 1` in the 'Show if' field (i.e. show only after a correct response). Next, click in the center of the canvas. This will pop up a file pool dialog, asking you to select an image. Currently, the file pool does not contain any items, so we first need to import the smiley and frowney faces. The easiest way to do this is to drag them into the file-pool selection dialog, from your Downloads folder or wherever the images are located.
 
-:--
-cmd: figure
-src: 17.png
-caption: The file-pool selection dialog.
---:
+%--
+figure:
+ id: Fig17
+ source: 17.png
+ caption: |
+  The file-pool selection dialog.
+--%
 
 Select `smiley.png` and click on the 'Select' button.
 
@@ -289,11 +324,13 @@ If you find that forms are really slow on your system, see [this article][forms-
 
 Forms are very flexible. A number of commonly-used forms are available as plug-ins, but almost any kind of form can be easily implemented using [OpenSesame script][forms-opensesame] or, for more advanced users, [Python script][forms-python]. We will start simple, with the `form_consent` plug-in. Drag a new `form_consent` from the item toolbar onto the *experiment* `sequence` in the overview area. This will add a digital consent form to the start of your experiment.
 
-:--
-cmd: figure
-src: 18.png
-caption: The `form_consent` plug-in.
---:
+%--
+figure:
+ id: Fig18
+ source: 18.png
+ caption: |
+  The `form_consent` plug-in.
+--%
 
 We will also record the gender, age and handedness of each participant. We could to this by inserting two `form_multiple_choice` items (for gender and handedness) and a `form_text_input` (for age) item into the experiment. That would the easiest way, but it's nicer to combine these questions in a single form. To do this, you need to define your own form with the `form_base` plug-in. So drag a new `form_base` item into your experiment, just below *form_consent*.
 
@@ -335,11 +372,13 @@ You will notice that *form_base* does not have any controls. Instead, it just sa
 
 The resulting form looks like this (colors and fonts may differ, depending on the settings of your experiment):
 
-:--
-cmd: figure
-src: 19.png
-caption: A form in action!
---:
+%--
+figure:
+ id: Fig19
+ source: 19.png
+ caption: |
+  A form in action!
+--%
 
 <div class='info-box' markdown='1'>
 
@@ -355,11 +394,13 @@ Currently, your experiment just consists of a single practice block and a single
 
 ## Step 10: Finished!
 
-:--
-cmd: figure
-src: 20.png
-caption: Finished!
---:
+%--
+figure:
+ id: Fig20
+ source: 20.png
+ caption: |
+  Finished!
+--%
 
 Your experiment is now finished! Click on the 'Run fullscreen' (`Control+R`) button in the main toolbar to give it a test run.
 

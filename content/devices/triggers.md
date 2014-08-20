@@ -5,9 +5,10 @@ group: Devices
 permalink: /triggers/
 ---
 
-:--
-cmd: overview
---:
+%--
+toc:
+ mindepth: 2
+--%
 
 ## About triggers
 
@@ -27,11 +28,13 @@ You can download the plugin from here:
 
 - <https://github.com/dev-jam/opensesame_plugin_parallel-port-trigger>
 
-:--
-cmd: figure
-src: plugin-screenshot.png
-caption: A screenshot of the `parallel_port_trigger` plug-in.
---:
+%--
+figure:
+ id: FigScreenshot
+ source: plugin-screenshot.png
+ caption: |
+  A screenshot of the `parallel_port_trigger` plug-in.
+--%
 	
 ## Using `dportio.dll` in a Python inline Script (Windows only)
 

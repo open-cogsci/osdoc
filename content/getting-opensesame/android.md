@@ -5,9 +5,10 @@ group: Getting OpenSesame
 permalink: /android/
 --- 
 
-:--
-cmd: overview
---:
+%--
+toc:
+ mindepth: 2
+--%
 
 ## OpenSesame runtime for Android
 

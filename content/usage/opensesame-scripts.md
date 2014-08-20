@@ -5,9 +5,10 @@ group: Usage
 permalink: /opensesame-script/
 ---
 
-:--
-cmd: overview
---:
+%--
+toc:
+ mindepth: 2
+--%
 
 ## About OpenSesame script
 

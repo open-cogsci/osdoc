@@ -5,9 +5,10 @@ group: Tutorials
 permalink: /video-tutorials/
 ---
 
-:--
-cmd: overview
---:
+%--
+toc:
+ mindepth: 2
+--%
 
 ## Creating a cat-faces experiment
 
@@ -16,14 +17,16 @@ The video below introduces the basic functionality of OpenSesame by providing a 
 - Duration: 43 minutes
 - OpenSesame version: 0.27.2
 
-:--
-cmd: video
-src: youtube
-id: -zMH65re1m0
-height: 360
-width: 640
-caption: This video tutorial has been created by [Chris Longmore][chris-longmore].
---:
+%--
+video:
+ source: youtube
+ id: VidScreencast
+ videoid: -zMH65re1m0
+ width: 640
+ height: 360
+ caption: |
+  Video tutorial by <a href="http://chrislongmore.co.uk/">Chris Longmore</a>.
+--%
 
 ## Implementing counterbalancing
 
@@ -32,14 +35,16 @@ The video below shows how you can implement counterbalancing in OpenSesame.
 - Duration: 26 minutes
 - OpenSesame version: 0.27.2
 
-:--
-cmd: video
-src: youtube
-id: zP8ucRtWU5g
-height: 360
-width: 640
-caption: This video tutorial has been created by [Chris Longmore][chris-longmore].
---:
+%--
+video:
+ source: youtube
+ id: VidCounterbalancing
+ videoid: zP8ucRtWU5g
+ width: 640
+ height: 360
+ caption: |
+  Video tutorial by <a href="http://chrislongmore.co.uk/">Chris Longmore</a>.
+--%
 
 ## Creating an affordances/ orientation experiment
 
@@ -48,14 +53,16 @@ The video below shows how to create a typical 'affordances/ orientation effect;-
 - Duration: 8 minutes
 - OpenSesame version: 0.23
 
-:--
-cmd: video
-src: youtube
-id: Liq9WCtN0Zk
-height: 360
-width: 640
-caption: Creating an affordances/ orientation experiment.
---:
+%--
+video:
+ source: youtube
+ id: VidScreencastOld
+ videoid: Liq9WCtN0Zk
+ width: 640
+ height: 360
+ caption: |
+  Creating an affordances/ orientation experiment.
+--%
 
 [chris-longmore]: http://www.chrislongmore.co.uk/
 [tutorial]: /tutorials/step-by-step-tutorial

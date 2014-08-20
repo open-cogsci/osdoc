@@ -154,272 +154,46 @@ def parseOsdocYaml(path, info, s):
 	"""
 
 	import re
+	from academicmarkdown import build, HTMLFilter
 
-	# First check if the page is formatted for academicmarkdown
-	if u'parser' in info and info[u'parser'] == u'academicmarkdown':
-		from academicmarkdown import build, HTMLFilter
-		print u'Parsing %s (%s) with academicmarkdown' % (info[u'title'], path)
-		# We need to find all images, and copy these to the _content folder
-		for r in re.finditer(u'%--(.*?)--%', s, re.M|re.S):
-			try:
-				d = yaml.load(r.groups()[0])
-			except:
-				print u'Invalid YAML block: %s' % r.groups()[0]
-				continue
-			if not u'figure' in d:
-				continue
-			src = os.path.join(path, u'img', info['permalink'][1:], \
-				d[u'figure'][u'source'])
-			print u'Copying %s' % src
-			copyFile(src, u'_'+src)
-		# Add all source paths to the build path, so that we can reference to
-		# figures etc without considering paths
-		build.path += [os.path.join(path, u'img', info['permalink'][1:]), \
-			os.path.join(path, u'lst', info['permalink'][1:]), \
-			os.path.join(path, u'tbl', info['permalink'][1:])]
-		# Set the correct templates
-		build.codeTemplate = u'jekyll'
-		build.figureTemplate = u'jekyll'
-		build.tableTemplate = u'kramdown'
-		# Disable markdown filters
-		build.preMarkdownFilters = []
-		build.postMarkdownFilters = []
-		# Enable clickable anchor headers
-		build.TOCAnchorHeaders = True
-		build.TOCAppendHeaderRefs = True
-		s = build.MD(s)
-		s = HTMLFilter.DOI(s)
-		# Remove the content/ part of figure paths, because it does not apply to
-		# the generated site.
-		s = s.replace(u'![content/', u'![/')
-		s = s.replace(u'(content/', u'(/')
-		# Remove the three newly added entries from the build path.
-		build.path = build.path[:-3]
-		return s
-
-	# If not, use the deprecated OSDOC-specific YAML parser
-	replacements = []
-	appends = []
-	for r in re.finditer(':--(.*?)--:', s, re.M|re.S):
-		d = yaml.load(r.groups()[0])
-		if u'cmd' not in d:
-			raise Exception(u'Expecting `cmd` field in OSDOC YAML block')
-		if d[u'cmd'].lower() == u'figure':
-			r, a = parseOsdocFigure(path, info, d, r.group(), s)
-		elif d[u'cmd'].lower() == u'overview':
-			r, a = parseOsdocOverview(path, info, d, r.group(), s)
-		elif d[u'cmd'].lower() == u'video':
-			r, a = parseOsdocVideo(path, info, d, r.group(), s)
-		elif d[u'cmd'].lower() == u'listing':
-			r, a = parseOsdocListing(path, info, d, r.group(), s)
-		elif d[u'cmd'].lower() == u'table':
-			r, a = parseOsdocTable(path, info, d, r.group(), s)
-		else:
-			print u'Unknown OSDOC YAML command: %s' % d[u'cmd']
-			sys.exit(1)
-		replacements += r
-		appends += a
-	for before, after in replacements:
-		s = s.replace(before, after)
-	for a in appends:
-		s += '\n%s' % a
-	try:
-		from academicmarkdown import Filter
-		s = Filter.DOI(s)
-	except:
-		print u'Failed to import academicmarkdown. Not parsing DOIs.'
-	return s
-
-def parseOsdocOverview(path, info, d, block, s):
-
-	"""
-	Parses an OSDOC YAML block to a MarkDown overview list.
-
-	Arguments:
-	path	--	The path to the page.
-	info	--	A dictionary with the page's front matter.
-	d		--	An OSDOC YAML dictionary.
-	block 	--	The original YAML block.
-	s		--	The page contents.
-
-	Returns:
-	A (replacements, appends) list, where replacements is a list of (old, new)
-	tuples and appends is a list of lines that should be appended to the
-	content.
-	"""
-
-	headers = []
-	for i in re.finditer(r'^##(.*)', s, re.M):
-		h = i.group()
-		if h.startswith(u'####'):
-			level = 4
-		elif h.startswith(u'###'):
-			level = 3
-		elif h.startswith(u'##'):
-			level = 2
-		if u'depth' in d and level > d[u'depth']:
+	print u'Parsing %s (%s) with academicmarkdown' % (info[u'title'], path)
+	# We need to find all images, and copy these to the _content folder
+	for r in re.finditer(u'%--(.*?)--%', s, re.M|re.S):
+		try:
+			d = yaml.load(r.groups()[0])
+		except:
+			print u'Invalid YAML block: %s' % r.groups()[0]
 			continue
-		label = h[level:].strip()
-		# IDs should be lowercase alphanumeric strings with all spaces replaced
-		# by dashes.
-		_id = re.sub(ur'\W+', u'', label.replace(u' ', u'-')).lower()
-		headers.append( (level, h, label, _id) )
-	replacements = []
-	appends = []
-	md = u'## [Overview](#overview) {#overview}\n\n'
-	for level, h, label, _id in headers:
-		md += u'\t' * (level-2) # Indent
-		md += u'- [%s](#%s)\n' % (label, _id)
-		replacements.append( (h, u'%s [%s](#%s) {#%s}' % (u'#'*level, label, \
-			_id, _id)) )
-		appends.append(u'[%s]: #%s' % (label, _id))
-	md += u'\n'
-	replacements.append( (block, md) )
-	return replacements, appends
-
-def parseOsdocTable(path, info, d, block, s):
-
-	"""
-	Parses an OSDOC YAML block to a MarkDown table.
-
-	Arguments:
-	path	--	The path to the page.
-	info	--	A dictionary with the page's front matter.
-	d		--	An OSDOC YAML dictionary.
-	block 	--	The original YAML block.
-	s		--	The page contents.
-
-	Returns:
-	A (replacements, appends) list, where replacements is a list of (old, new)
-	tuples and appends is a list of lines that should be appended to the
-	content.
-	"""
-
-	info[u'tables'] += 1
-	srcPath = os.path.join(path, u'tbl', info['permalink'][1:], d[u'src'])
-	s = u''
-	with open(srcPath, u'rb') as csvFile:
-		csvReader = csv.reader(csvFile, delimiter=',', quotechar='"')
-		for row in csvReader:
-			s += ('|' + '|'.join(row) + '|\n').decode(u'utf-8')
-	if u'caption' in d:
-		s += u'\n__Table %d.__ %s\n{: .tbl-caption #table-%d}\n' \
-			% (info[u'tables'], d[u'caption'], info[u'tables'])
-	replacements = [ (block, s) ]
-	appends = [ u'[Table %d]: #table-%d' % (info[u'tables'], \
-		info[u'tables']) ]
-	return replacements, appends
-
-def parseOsdocListing(path, info, d, block, s):
-
-	"""
-	Parses an OSDOC YAML block to a MarkDown code block.
-
-	Arguments:
-	path	--	The path to the page.
-	info	--	A dictionary with the page's front matter.
-	d		--	An OSDOC YAML dictionary.
-	block 	--	The original YAML block.
-	s		--	The page contents.
-
-	Returns:
-	A (replacements, appends) list, where replacements is a list of (old, new)
-	tuples and appends is a list of lines that should be appended to the
-	content.
-	"""
-
-	info[u'listings'] += 1
-	srcPath = os.path.join(path, u'lst', info['permalink'][1:], d[u'src'])
-	if os.path.splitext(srcPath)[1] == u'.py':
-		s = u'{%% highlight python %%}\n%s\n{%% endhighlight %%}\n'
-	else:
-		s = u'~~~\n%s~~~\n'
-	s = s % open(srcPath).read()
-	if u'caption' in d:
-		s += u'\n\n__Listing %d.__ %s\n{: .lst-caption #listing-%d}\n' \
-			% (info[u'listings'], d[u'caption'], info[u'listings'])
-	replacements = [ (block, s) ]
-	appends = [ u'[Listing %d]: #listing-%d' % (info[u'listings'], \
-		info[u'listings']) ]
-	return replacements, appends
-
-def parseOsdocFigure(path, info, d, block, s):
-
-	"""
-	Parses an OSDOC YAML block to a MarkDown figure.
-
-	Arguments:
-	path	--	The path to the page.
-	info	--	A dictionary with the page's front matter.
-	d		--	An OSDOC YAML dictionary.
-	block 	--	The original YAML block.
-	s		--	The page contents.
-
-	Returns:
-	A (replacements, appends) list, where replacements is a list of (old, new)
-	tuples and appends is a list of lines that should be appended to the
-	content.
-	"""
-
-	info[u'figures'] += 1
-	if u'alt' not in d:
-		d[u'alt'] = u'No alt text specified'
-	# Full path to the source image
-	srcPath = os.path.join(path, u'img', info['permalink'][1:], d[u'src'])
-	# The path as it should be linked
-	linkPath = srcPath[8:]
-	# Full path to the target image
-	targetPath = u'_' + srcPath
-	copyFile(srcPath, targetPath)
-	print srcPath
-	s = u'![%s](/%s)' % (d[u'alt'], linkPath)
-	if u'caption' in d:
-		s += u'\n\n__Figure %d.__ %s\n{: .fig-caption #figure-%d}\n' \
-			% (info[u'figures'], d[u'caption'], info[u'figures'])
-	replacements = [ (block, s) ]
-	appends = [ u'[Figure %d]: #figure-%d' % (info[u'figures'], \
-		info[u'figures']) ]
-	return replacements, appends
-
-def parseOsdocVideo(path, info, d, block, s):
-
-	"""
-	Parses an OSDOC YAML block to a MarkDown video.
-
-	Arguments:
-	path	--	The path to the page.
-	info	--	A dictionary with the page's front matter.
-	d		--	An OSDOC YAML dictionary.
-	block 	--	The original YAML block.
-	s		--	The page contents.
-
-	Returns:
-	A (replacements, appends) list, where replacements is a list of (old, new)
-	tuples and appends is a list of lines that should be appended to the
-	content.
-	"""
-
-	info[u'videos'] += 1
-	if u'width' not in d:
-		d[u'width'] = 640
-	if u'height' not in d:
-		d[u'height'] = 480
-	if d[u'src'] == u'vimeo':
-		s = u"""<iframe src="//player.vimeo.com/video/%s?color=8ae234" width="%d" height="%d" class="video vimeo" allowfullscreen></iframe>""" \
-			% (d[u'id'], d[u'width'], d[u'height'])
-	elif d[u'src'] == u'youtube':
-		s = u"""<iframe width="%d" height="%d" src="//www.youtube.com/embed/%s" class="video youtube" allowfullscreen></iframe>""" \
-			% (d[u'width'], d[u'height'], d[u'id'])
-	else:
-		print u'Unknown video source: %s' % d[u'src']
-		sys.exit(1)
-	if u'caption' in d:
-		s += u'\n\n__Video %d.__ %s\n{: .vid-caption #video-%d}\n' \
-			% (info[u'videos'], d[u'caption'], info[u'videos'])
-	replacements = [ (block, s) ]
-	appends = [u'[Video %d]: #video-%d' % (info[u'videos'], \
-		info[u'videos']) ]
-	return replacements, appends
+		if not u'figure' in d:
+			continue
+		src = os.path.join(path, u'img', info['permalink'][1:], \
+			d[u'figure'][u'source'])
+		print u'Copying %s' % src
+		copyFile(src, u'_'+src)
+	# Add all source paths to the build path, so that we can reference to
+	# figures etc without considering paths
+	build.path += [os.path.join(path, u'img', info['permalink'][1:]), \
+		os.path.join(path, u'lst', info['permalink'][1:]), \
+		os.path.join(path, u'tbl', info['permalink'][1:])]
+	# Set the correct templates
+	build.codeTemplate = u'jekyll'
+	build.figureTemplate = u'jekyll'
+	build.tableTemplate = u'kramdown'
+	# Disable markdown filters
+	build.preMarkdownFilters = []
+	build.postMarkdownFilters = []
+	# Enable clickable anchor headers
+	build.TOCAnchorHeaders = True
+	build.TOCAppendHeaderRefs = True
+	s = build.MD(s)
+	s = HTMLFilter.DOI(s)
+	# Remove the content/ part of figure paths, because it does not apply to
+	# the generated site.
+	s = s.replace(u'![content/', u'![/')
+	s = s.replace(u'(content/', u'(/')
+	# Remove the three newly added entries from the build path.
+	build.path = build.path[:-3]
+	return s
 
 def gitInfo(path):
 
@@ -550,7 +324,7 @@ if __name__ == u'__main__':
 			raise Exception(u'Multiple matches for "%s"' % title)
 		if i == 0:
 			raise Exception(u'Failed to find "%s"' % title)
-	quit()
+
 	# Optionally generate the site with jekyll
 	if options.jekyll:
 		print u'\nCreating _config.yml'

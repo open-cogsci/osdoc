@@ -5,9 +5,10 @@ group: Getting OpenSesame
 permalink: /running-with-python-portable/
 ---
 
-:--
-cmd: overview
---:
+%--
+toc:
+ mindepth: 2
+--%
 
 ## About
 

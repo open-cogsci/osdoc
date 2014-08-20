@@ -3,15 +3,14 @@ layout: osdoc
 title: Counterbalancing
 group: Miscellaneous
 permalink: /counterbalancing/
-level: 1
-sortkey: 010.003
 ---
 
 Counterbalancing is a frequently used trick in psychological experiments. It means that you divide the participants into two groups and have each group perform a slightly different task, so that any imbalance in the task is canceled out.
 
-:--
-cmd: overview
---:
+%--
+toc:
+ mindepth: 2
+--%
 
 ## Why do counterbalancing?
 
@@ -21,14 +20,16 @@ Let's consider a task where participants press button A (left hand) when they se
 
 The video below illustrates both a simple counterbalancing example, for two block orders or conditions, and a more complex example, for three or more block orders or conditions.
 
-:--
-cmd: video
-src: youtube
-id: zP8ucRtWU5g
-width: 640
-height: 360
-caption: Video by [Chris Longmore](http://www.chrislongmore.co.uk/)
---:
+%--
+video:
+ source: youtube
+ id: VidScreencast
+ videoid: zP8ucRtWU5g
+ width: 640
+ height: 360
+ caption: |
+  Video by [Chris Longmore](http://www.chrislongmore.co.uk/)
+--%
 
 ## Counterbalancing example
 

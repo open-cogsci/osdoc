@@ -8,19 +8,22 @@ permalink: /logging/
 Always triple check whether your data has been correctly logged before running your experiment!
 {: .page-notification}
 
-:--
-cmd: overview
---:
+%--
+toc:
+ mindepth: 2
+--%
 	
 ## Using the logger item
 
 OpenSesame will not log your data automatically. Instead, you need to insert a *logger* item, typically at the end of your trial sequence.
 
-:--
-cmd: figure
-src: logger.png
-caption: The `logger` item.
---:
+%--
+figure:
+ id: FigLogger
+ source: logger.png
+ caption: |
+  The `logger` item.
+--%
 
 The logger has a number of options:
 
@@ -55,11 +58,13 @@ If you have used the standard logger item, data files are in plain text, comma-s
 
 For some purposes, such as using pivot tables, it may be convenient to merge all data files into one large file. You can do this with the Datamerger program, written by Daniel Schreij.
 
-:--
-cmd: figure
-src: datamerger.png
-caption: The DataMerger program allows you to merge multiple files into one large file.
---:
+%--
+figure:
+ id: FigDatamerger
+ source: datamerger.png
+ caption: |
+  The DataMerger program allows you to merge multiple files into one large file.
+--%
 
 You can download Datamerger for Windows and Mac OS from here:
 

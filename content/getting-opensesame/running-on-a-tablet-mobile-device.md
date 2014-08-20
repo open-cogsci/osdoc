@@ -7,9 +7,10 @@ permalink: /running-on-a-tablet-mobile-device/
 
 A frequently asked question is whether it is possible to run OpenSesame on a tablet device.  Below is a short description of the current options.
 
-:--
-cmd: overview
---:
+%--
+toc:
+ mindepth: 2
+--%
 
 ## Using an Android tablet
 

@@ -7,9 +7,10 @@ permalink: /grip-devices/
 
 The grip devices are a pair of custom input devices that are used (primarily at the University of Plymouth) to collect responses made using a power and a precision grip. Essentially, the grip-devices are like a button box, except you need to squeeze either a big cylinder (power grip) or a small button (precision grip) to give a response.
 
-:--
-cmd: overview
---:
+%--
+toc:
+ mindepth: 2
+--%
 
 ## port_reader plug-in
 

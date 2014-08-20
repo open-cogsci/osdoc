@@ -5,9 +5,10 @@ layout: osdoc
 title: Performance issues and troubleshooting
 ---
 
-:--
-cmd: overview
---:
+%--
+toc:
+ mindepth: 2
+--%
 
 ## Performance issues
 

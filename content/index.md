@@ -4,7 +4,6 @@ title: Home
 group: general
 permalink: /
 singleton: true
-parser: academicmarkdown
 ---
 
 ![Affiliations](/img/affiliations.png "Affiliations")
