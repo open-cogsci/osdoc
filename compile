@@ -470,9 +470,9 @@ if __name__ == u'__main__':
 
 	# Recreate the target folder
 	print u'\nRecreating target folder (%s)...' % target
-	if os.path.exists(target):
-		shutil.rmtree(target)
-	os.mkdir(target)
+	if os.path.exists('_content'):
+		shutil.rmtree('_content')
+	os.makedirs(target)
 
 	# Copy all non-page resources
 	print u'\nCopying non-page resources ...'
@@ -514,7 +514,10 @@ if __name__ == u'__main__':
 		i = 0
 		for path, info in content:
 			if info[u'title'].lower() == title.lower():
-				targetPath = u'_' + path
+				# Strip of the 'content' bit from the path and prepend the
+				# target path.
+				targetPath = target + path[7:]
+				print targetPath
 				if level > 0:
 					print u'\t',
 				else:
@@ -537,7 +540,6 @@ if __name__ == u'__main__':
 					s = setInfo(path, info)
 					# Fix missing alt tags
 					s = s.replace(u'![](', u'![No alt text specified](')
-					#s = parseImages(os.path.dirname(path), yaml, s)
 					s = parseOsdocYaml(os.path.dirname(path), info, s)
 					if not os.path.exists(os.path.dirname(targetPath)):
 						os.mkdir(os.path.dirname(targetPath))
@@ -548,9 +550,17 @@ if __name__ == u'__main__':
 			raise Exception(u'Multiple matches for "%s"' % title)
 		if i == 0:
 			raise Exception(u'Failed to find "%s"' % title)
-
+	quit()
 	# Optionally generate the site with jekyll
 	if options.jekyll:
+		print u'\nCreating _config.yml'
+		cfg = {
+			'notifications' : True,
+			'pygments':	True,
+			'markdown': 'kramdown',
+			'source': target,
+			}
+		yaml.dump(cfg, open('_config.yml', 'w'))
 		print u'\nLaunching jekyll'
 		subprocess.call([u'jekyll'])
 
