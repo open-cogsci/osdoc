@@ -125,6 +125,49 @@ def optimizeHTML(path):
 			print u'\t%s (%d kB -> %d kB, %d%%)' % (fname, s1, s2,
 				(100.*s2/s1))
 
+def adjustRootRelativeURLs(path, prefix):
+
+	"""
+	desc:
+		Recursively walks through a folder and replaces all root-relative URLs
+		by a prefixed URL. Processes HTML and CSS files.
+
+	arguments:
+		path:		The path to walk through.
+		prefix:		The prefix to add.
+	"""
+
+	for fname in os.listdir(path):
+		fname = os.path.join(path, fname)
+		if os.path.isdir(fname):
+			adjustRootRelativeURLs(fname, prefix)
+			continue
+		if fname.lower().endswith(u'.html'):
+			html = open(fname).read().decode(u'utf-8')
+			regex = u'(?P<_type>href|src)\\s*=\\s*["\'](?P<url>/.*?)["\']'
+			for g in re.finditer(regex, html):
+				url = g.group(u'url')
+				if url.startswith(u'//'):
+					print(u'Ignoring odd URL in %s: %s' % (fname, url))
+					continue
+				old = g.group()
+				new = u'%s="/%s%s"' % (g.group(u'_type'), prefix, url)
+				html = html.replace(old, new)
+			open(fname, u'w').write(html.encode(u'utf-8'))
+		elif fname.lower().endswith(u'.css'):
+			css = open(fname).read().decode(u'utf-8')
+			open(fname, u'w').write(css.encode(u'utf-8'))
+			regex = u'url\(["\'](?P<url>.*?)["\']\)'
+			for g in re.finditer(regex, css):
+				url = g.group(u'url')
+				if url.startswith(u'//'):
+					print(u'Ignoring odd URL in %s: %s' % (fname, url))
+					continue
+				old = g.group()
+				new = u'url(\'/%s%s\')' % (prefix, url)
+				css = css.replace(old, new)
+			open(fname, u'w').write(css.encode(u'utf-8'))
+
 def copyFile(fromPath, toPath):
 
 	"""
@@ -211,6 +254,24 @@ def gitInfo(path):
 	out, err = subprocess.Popen(cmd, stdout=subprocess.PIPE).communicate()
 	return out
 
+def generateVersionList(prefix):
+
+	"""
+	desc:
+		Creates content/_includes/version
+	"""
+
+	d = yaml.load(open(u'versions.yml').read())
+	html = u''
+	for version in d:
+		if prefix == version[u'prefix']:
+			html += u'<option value="%(prefix)s" selected>%(desc)s</option>\n' \
+				% version
+		else:
+			html += u'<option value="%(prefix)s">%(desc)s</option>\n' \
+				% version
+	open(u'_content/_includes/version', u'w').write(html)
+
 if __name__ == u'__main__':
 
 	# Parse command line options
@@ -224,43 +285,42 @@ if __name__ == u'__main__':
 	parser.add_option(u'-o', u'--optimize-html', dest=u'optimizeHTML', help= \
 		u'Optimize HTML (requires htmlcompressor.jar)', action=u'store_true', \
 		default=False)
+	parser.add_option(u'-p', u'--prefix', dest=u'prefix', help=u'Site prefix',
+		action=u'store', default='')
+	parser.add_option(u'-s', u'--status', dest=u'status',
+		help=u'Site status (current, dev, or old)', action=u'store',
+		default='current')
 	parser.add_option(u'-t', u'--tarball', dest=u'tarball', help= \
 		u'Generate site tarball', action=u'store_true', \
 		default=False)
 	parser.add_option(u'-g', u'--group', dest=u'group', help= \
 		u'Only parse a specific group', default=None)
-	parser.add_option(u'-s', u'--sitemap', dest=u'sitemap', help= \
-		u'Indicate sitemap file', default=u'sitemap.txt')
-	parser.add_option(u'--src', dest=u'src', help= \
-		u'Source folder', default=u'content')
-	parser.add_option(u'--target', dest=u'target', help= \
-		u'Target folder', default=u'_content')
 	parser.add_option(u'--layout', dest=u'layout', help= \
 		u'Layout file', default=u'inpage')
 	options, args = parser.parse_args()
 
-	src = options.src
-	target = options.target
-
 	# Recreate the target folder
-	print u'\nRecreating target folder (%s)...' % target
+	print u'\nRecreating _content ...'
 	if os.path.exists('_content'):
 		shutil.rmtree('_content')
-	os.makedirs(target)
+	os.makedirs('_content')
 
 	# Copy all non-page resources
 	print u'\nCopying non-page resources ...'
-	shutil.copytree(u'%s/_includes' % src, u'%s/_includes' % target)
-	shutil.copytree(u'%s/_layouts' % src, u'%s/_layouts' % target)
-	shutil.copytree(u'%s/attachments' % src, u'%s/attachments' % target)
-	shutil.copytree(u'%s/img' % src, u'%s/img' % target)
-	shutil.copy(u'%s/favicon.ico' % src, u'%s/favicon.ico' % target)
-	shutil.copy(u'%s/_layouts/osdoc-%s.html' % (src, options.layout), \
-		u'%s/_layouts/osdoc.html' % target)
+	shutil.copytree(u'content/_includes', u'_content/_includes')
+	shutil.copytree(u'content/_layouts', u'_content/_layouts')
+	shutil.copytree(u'content/attachments', u'_content/attachments')
+	shutil.copytree(u'content/img', u'_content/img')
+	shutil.copy(u'content/favicon.ico', u'_content/favicon.ico')
+	shutil.copy(u'content/_layouts/osdoc-%s.html' % (options.layout),
+		u'_content/_layouts/osdoc.html')
+
+	print(u'Generating version list')
+	generateVersionList(options.prefix)
 
 	print u'\nCompiling .less to .css ...'
-	cmd = ['lesscpy', '-X', '%s/stylesheets/main.less' % src]
-	subprocess.call(cmd, stdout=open(u'%s/stylesheet.css' % target, u'w'))
+	cmd = ['lesscpy', '-X', 'content/stylesheets/main.less']
+	subprocess.call(cmd, stdout=open(u'_content/stylesheet.css', u'w'))
 
 	print u'\nListing content ...'
 	content = listContent()
@@ -268,8 +328,7 @@ if __name__ == u'__main__':
 	print u'\nCompiling pages ...'
 	sortkey = [0,0]
 	group = 'General'
-	sitemap = open(options.sitemap.encode(sys.getfilesystemencoding())).read() \
-		.decode(u'utf-8')
+	sitemap = open('sitemap.txt').read().decode(u'utf-8')
 	for title in sitemap.split(u'\n'):
 		if title.startswith(u'#') or title.strip() == u'':
 			continue
@@ -290,8 +349,7 @@ if __name__ == u'__main__':
 			if info[u'title'].lower() == title.lower():
 				# Strip of the 'content' bit from the path and prepend the
 				# target path.
-				targetPath = target + path[7:]
-				print targetPath
+				targetPath = '_'+path
 				if level > 0:
 					print u'\t',
 				else:
@@ -329,19 +387,33 @@ if __name__ == u'__main__':
 	if options.jekyll:
 		print u'\nCreating _config.yml'
 		cfg = {
-			'notifications' : True,
+			'notifications' : False,
+			'status' : options.status,
 			'pygments':	True,
 			'markdown': 'kramdown',
-			'source': target,
+			'source': '_content',
+			'destination': '_tmp',
 			}
 		yaml.dump(cfg, open('_config.yml', 'w'))
 		print u'\nLaunching jekyll'
 		subprocess.call([u'jekyll'])
 
+	if options.prefix != '':
+		print(u'Adjusting root-relative URLs')
+		adjustRootRelativeURLs('_tmp', options.prefix)
+		siteFolder = u'_site/%s' % options.prefix
+	else:
+		siteFolder = u'_site'
+
+	print(u'Moving site to %s' % siteFolder)
+	if os.path.exists(siteFolder):
+		shutil.rmtree(siteFolder)
+	shutil.move(u'_tmp', siteFolder)
+
 	# Optionally optimze the HTML using htmlcompress
 	if options.optimizeHTML:
 		print u'\nOptimizing HTML'
-		optimizeHTML(u'_site')
+		optimizeHTML(siteFolder)
 
 	# Optionally create a tarball of the site
 	if options.tarball:
@@ -349,7 +421,7 @@ if __name__ == u'__main__':
 		cmd = [u'tar', u'-zcvf', u'osdoc.tar.gz', u'-C', u'_site', u'.', \
 			u'--exclude-from=dev-scripts/excludefromgz.txt']
 		subprocess.call(cmd)
-		shutil.move(u'osdoc.tar.gz', u'_site')
+		shutil.move(u'osdoc.tar.gz', u'siteFolder')
 
 	# Optionally check for dead links
 	if options.checkLinks:

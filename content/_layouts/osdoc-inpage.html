@@ -28,6 +28,13 @@
 	{% include stylesheets %}
 	{% include google %}
 	{% include flattr %}
+	<script type="text/javascript">
+	function selectVersion() {
+		var myselect = document.getElementById("versionSelect");
+		version = myselect.options[myselect.selectedIndex].value;
+		window.location.href = location.protocol + "//" + window.location.host + "/"+version;
+	}
+	</script>
 </head>
 
 <body id='inpage'>
@@ -40,6 +47,22 @@
 		<td colspan=2 class='maincontainer-cell'>
 			<div id='toppane'>
 				<div id='header'>{% include header %}</div>
+				<div id='version'>
+				Your version of OpenSesame:
+				<select id="versionSelect" onchange="selectVersion()">
+				{% include version %}
+				</select>
+				{% if site.status == "dev" %}
+				<span id="warning">
+				Note: This is preliminary documentation for a development version of OpenSesame.
+				</span>
+				{% endif %}
+				{% if site.status == "old" %}
+				<span id="warning">
+				Note: This documentation is for an older version of OpenSesame and is no longer maintained.
+				</span>
+				{% endif %}
+				</div>
 			</div>
 		</td>
 	</tr>
