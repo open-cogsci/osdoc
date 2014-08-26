@@ -38,12 +38,11 @@ if __name__ == u'__main__':
 		generateExamples()
 	# First compile the site with fullpage layout, so that we can generate PDFs
 	siteFolder = compileSite(layout=u'fullpage', gitInfo=True,
-		group=options.group, branch=options.branch, status=options.status)
+		group=options.group)
 	pdfWalk(siteFolder)
 	# Now compile the site with inpage (=normal) layout, and move all PDFs
 	# into the site.
-	compileSite(optimizeHTML=True, group=options.group,
-		branch=options.branch, status=options.status)
+	compileSite(optimizeHTML=True, group=options.group)
 	pdfRestore(siteFolder)
 	# Create a tarball for the site
 	createTarball(siteFolder)
