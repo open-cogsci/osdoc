@@ -1,0 +1,7 @@
+<script type="text/javascript">
+function selectVersion() {
+	var myselect = document.getElementById("versionSelect");
+	version = myselect.options[myselect.selectedIndex].value;
+	window.location.href = location.protocol + "//" + window.location.host + "/"+version;
+}
+</script>

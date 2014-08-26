@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 """
@@ -26,18 +25,21 @@ import shutil
 import subprocess
 import csv
 from md5 import md5
-from optparse import OptionParser
+from libosdoc.versions import generateVersionList, branchStatus
+from libosdoc.pdf import pdfWalk
+from libosdoc.gitinfo import setGitInfo, gitBranch
 
 def getInfo(path):
 
 	"""
-	Retrieves YAML info from a Markdown document.
+	desc:
+		Retrieves YAML info from a Markdown document.
 
-	Arguments:
-	path	--	The path to the document.
+	arguments:
+		path:	The path to the document.
 
-	Returns:
-	A dictionary with YAML info.
+	returns:
+		A dictionary with YAML info.
 	"""
 
 	s = open(path).read().decode(u'utf-8')
@@ -51,15 +53,16 @@ def getInfo(path):
 def setInfo(path, i):
 
 	"""
-	Modifies the YAML infor inside a Markdown document. The file is not modified
-	directly, but returned as a string.
+	desc:
+		Modifies the YAML info inside a Markdown document. The file is not
+		modified directly, but returned as a string.
 
-	Arguments:
-	path	--	The patch to the document.
-	i		--	A dictionary with the YAML info.
+	arguments:
+		path:	The path to the document.
+		i:		A dictionary with the YAML info.
 
-	Returns:
-	A string with the modified document.
+	returns:
+		A string with the modified document.
 	"""
 
 	# Sortkey has to be string, otherwise it will not be parsed correctly by
@@ -78,18 +81,19 @@ def setInfo(path, i):
 def listContent(dirname=u'content', l=[]):
 
 	"""
-	Lists all content files in a given directory.
+	desc:
+		Lists all content files in a given directory.
 
-	Keyword arguments:
-	dirname		--	The content directory or None to use the last command line
-					parameter. (default=None)
-	l			--	A list to append the files to (for recursion purposes).
-					(default=[])
+	keywords:
+		dirname:	The content directory or None to use the last command line
+					parameter.
+		l:			A list to append the files to (for recursion purposes).
 
-	Returns:
-	A list of all content Markdown files.
+	returns:
+		A list of all content Markdown files.
 	"""
 
+	print(u'\nListing content (%s) ...' % dirname)
 	for basename in os.listdir(dirname):
 		if basename.startswith(u'_'):
 			continue
@@ -100,47 +104,51 @@ def listContent(dirname=u'content', l=[]):
 			i = getInfo(path)
 			if i != None:
 				l.append((path, i))
-				print path
+				print(u'+ %s (%d)' % (path, len(l)))
 	return l
 
-def optimizeHTML(path):
+def callOptimizeHTML(path):
 
 	"""
-	Recursively compress all HTML files in the path using htmlcompressor.jar
+	desc:
+		Recursively compresses all HTML files in the path using
+		htmlcompressor.jar
 
-	Arguments:
-	path		-- The folder path to optimize.
+	arguments:
+		path:	The folder path to optimize.
 	"""
 
+	print(u'\nOptimizing HTML')
 	for fname in os.listdir(path):
 		fname = os.path.join(path, fname)
 		if os.path.isdir(fname):
-			optimizeHTML(fname)
+			callOptimizeHTML(fname)
 		elif fname.lower().endswith(u'.html'):
 			s1 = os.path.getsize(fname)
-			cmd = [u'java', u'-jar', u'htmlcompressor.jar', u'--compress-js', \
+			cmd = [u'java', u'-jar', u'htmlcompressor.jar', u'--compress-js',
 				fname, u'-o', fname]
 			subprocess.call(cmd)
 			s2 = os.path.getsize(fname)
 			print u'\t%s (%d kB -> %d kB, %d%%)' % (fname, s1, s2,
 				(100.*s2/s1))
 
-def adjustRootRelativeURLs(path, prefix):
+def adjustRootRelativeURLs(path, branch):
 
 	"""
 	desc:
 		Recursively walks through a folder and replaces all root-relative URLs
-		by a prefixed URL. Processes HTML and CSS files.
+		by a branched URL. Processes HTML and CSS files.
 
 	arguments:
 		path:		The path to walk through.
-		prefix:		The prefix to add.
+		branch:		The branch to add.
 	"""
 
+	print(u'Adjusting root-relative URLs')
 	for fname in os.listdir(path):
 		fname = os.path.join(path, fname)
 		if os.path.isdir(fname):
-			adjustRootRelativeURLs(fname, prefix)
+			adjustRootRelativeURLs(fname, branch)
 			continue
 		if fname.lower().endswith(u'.html'):
 			html = open(fname).read().decode(u'utf-8')
@@ -151,7 +159,7 @@ def adjustRootRelativeURLs(path, prefix):
 					print(u'Ignoring odd URL in %s: %s' % (fname, url))
 					continue
 				old = g.group()
-				new = u'%s="/%s%s"' % (g.group(u'_type'), prefix, url)
+				new = u'%s="/%s%s"' % (g.group(u'_type'), branch, url)
 				html = html.replace(old, new)
 			open(fname, u'w').write(html.encode(u'utf-8'))
 		elif fname.lower().endswith(u'.css'):
@@ -164,7 +172,7 @@ def adjustRootRelativeURLs(path, prefix):
 					print(u'Ignoring odd URL in %s: %s' % (fname, url))
 					continue
 				old = g.group()
-				new = u'url(\'/%s%s\')' % (prefix, url)
+				new = u'url(\'/%s%s\')' % (branch, url)
 				css = css.replace(old, new)
 			open(fname, u'w').write(css.encode(u'utf-8'))
 
@@ -241,93 +249,57 @@ def parseOsdocYaml(path, info, s):
 def gitInfo(path):
 
 	"""
-	Generates a string with git information for a given page.
+	desc:
+		Generates a string with git information for a given page.
 
-	Arguments:
-	path		--	The path to the page.
+	arguments:
+		path:	The path to the page.
 
-	Returns:
-	A string with git info.
+	returns:
+		A string with git info.
 	"""
 
 	cmd = [u'git', u'log', u'--format="Revision <a href=\'https://github.com/smathot/osdoc/commit/%H\'>#%h</a> on %cd"', u'-n', u'1', path]
 	out, err = subprocess.Popen(cmd, stdout=subprocess.PIPE).communicate()
 	return out
 
-def generateVersionList(prefix):
+def compileLess():
 
 	"""
 	desc:
-		Creates content/_includes/version
+		Compiles the less stylesheets to css.
 	"""
 
-	d = yaml.load(open(u'versions.yml').read())
-	html = u''
-	for version in d:
-		if prefix == version[u'prefix']:
-			html += u'<option value="%(prefix)s" selected>%(desc)s</option>\n' \
-				% version
-		else:
-			html += u'<option value="%(prefix)s">%(desc)s</option>\n' \
-				% version
-	open(u'_content/_includes/version', u'w').write(html)
+	print(u'\nCompiling .less to .css ...')
+	cmd = ['lesscpy', '-X', 'content/stylesheets/main.less']
+	subprocess.call(cmd, stdout=open(u'_content/stylesheet.css', u'w'))
 
-if __name__ == u'__main__':
+def copyResources(layout):
 
-	# Parse command line options
-	parser = OptionParser()
-	parser.add_option(u'-n', u'--nojekyll', dest=u'jekyll', help= \
-		u'Do not generate site with Jekyll', action=u'store_false', \
-		default=True)
-	parser.add_option(u'-c', u'--check-links', dest=u'checkLinks', help= \
-		u'Check for dead links (requires linkchecker)', action=u'store_true', \
-		default=False)
-	parser.add_option(u'-o', u'--optimize-html', dest=u'optimizeHTML', help= \
-		u'Optimize HTML (requires htmlcompressor.jar)', action=u'store_true', \
-		default=False)
-	parser.add_option(u'-p', u'--prefix', dest=u'prefix', help=u'Site prefix',
-		action=u'store', default='')
-	parser.add_option(u'-s', u'--status', dest=u'status',
-		help=u'Site status (current, dev, or old)', action=u'store',
-		default='current')
-	parser.add_option(u'-t', u'--tarball', dest=u'tarball', help= \
-		u'Generate site tarball', action=u'store_true', \
-		default=False)
-	parser.add_option(u'-g', u'--group', dest=u'group', help= \
-		u'Only parse a specific group', default=None)
-	parser.add_option(u'--layout', dest=u'layout', help= \
-		u'Layout file', default=u'inpage')
-	options, args = parser.parse_args()
+	"""
+	desc:
+		Copies non-Markdown resources.
+	"""
 
-	# Recreate the target folder
-	print u'\nRecreating _content ...'
-	if os.path.exists('_content'):
-		shutil.rmtree('_content')
-	os.makedirs('_content')
-
-	# Copy all non-page resources
-	print u'\nCopying non-page resources ...'
+	print(u'\nCopying non-page resources ...')
 	shutil.copytree(u'content/_includes', u'_content/_includes')
 	shutil.copytree(u'content/_layouts', u'_content/_layouts')
 	shutil.copytree(u'content/attachments', u'_content/attachments')
 	shutil.copytree(u'content/img', u'_content/img')
 	shutil.copy(u'content/favicon.ico', u'_content/favicon.ico')
-	shutil.copy(u'content/_layouts/osdoc-%s.html' % (options.layout),
+	shutil.copy(u'content/_layouts/osdoc-%s.html' % (layout),
 		u'_content/_layouts/osdoc.html')
 
-	print(u'Generating version list')
-	generateVersionList(options.prefix)
+def preprocessMarkdown(content, group):
 
-	print u'\nCompiling .less to .css ...'
-	cmd = ['lesscpy', '-X', 'content/stylesheets/main.less']
-	subprocess.call(cmd, stdout=open(u'_content/stylesheet.css', u'w'))
+	"""
+	desc:
+		Pre-processes the markdown source with academicmarkdown.
+	"""
 
-	print u'\nListing content ...'
-	content = listContent()
-
-	print u'\nCompiling pages ...'
+	print(u'\nCompiling pages ...')
 	sortkey = [0,0]
-	group = 'General'
+	_group = 'General'
 	sitemap = open('sitemap.txt').read().decode(u'utf-8')
 	for title in sitemap.split(u'\n'):
 		if title.startswith(u'#') or title.strip() == u'':
@@ -353,12 +325,12 @@ if __name__ == u'__main__':
 				if level > 0:
 					print u'\t',
 				else:
-					group = info[u'group']
-				print '-> %s' % title
+					_group = info[u'group']
+				print '-> %s (%s)' % (title, path)
 				info[u'show'] = show
 				info[u'sortkey'] = u'%.3d.%.3d' % (sortkey[0], sortkey[1])
 				info[u'level'] = level
-				info[u'group'] = group
+				info[u'group'] = _group
 				info[u'figures'] = 0
 				info[u'videos'] = 0
 				info[u'listings'] = 0
@@ -367,8 +339,8 @@ if __name__ == u'__main__':
 				info[u'gitlink'] = \
 					u'https://github.com/smathot/osdoc/blob/master/%s' \
 					% path
-				if options.group == None or group.lower() == \
-					options.group.lower() or title.lower() == u'home':
+				if group == None or group.lower() == \
+					_group.lower() or title.lower() == u'home':
 					s = setInfo(path, info)
 					# Fix missing alt tags
 					s = s.replace(u'![](', u'![No alt text specified](')
@@ -383,66 +355,137 @@ if __name__ == u'__main__':
 		if i == 0:
 			raise Exception(u'Failed to find "%s"' % title)
 
-	# Optionally generate the site with jekyll
-	if options.jekyll:
-		print u'\nCreating _config.yml'
-		cfg = {
-			'notifications' : False,
-			'status' : options.status,
-			'pygments':	True,
-			'markdown': 'kramdown',
-			'source': '_content',
-			'destination': '_tmp',
-			}
-		yaml.dump(cfg, open('_config.yml', 'w'))
-		print u'\nLaunching jekyll'
-		subprocess.call([u'jekyll'])
+def runJekyll(status):
 
-	if options.prefix != '':
-		print(u'Adjusting root-relative URLs')
-		adjustRootRelativeURLs('_tmp', options.prefix)
-		siteFolder = u'_site/%s' % options.prefix
+	"""
+	desc:
+		Compiles the site to HTML with Jekyll.
+	"""
+
+	print(u'\nCreating _config.yml')
+	cfg = {
+		'notifications' : False,
+		'status' : status,
+		'pygments':	True,
+		'markdown': 'kramdown',
+		'source': '_content',
+		'destination': '_tmp',
+		}
+	yaml.dump(cfg, open('_config.yml', 'w'))
+	print u'\nLaunching jekyll'
+	subprocess.call([u'jekyll'])
+
+def createTarball(siteFolder):
+
+	"""
+	desc:
+		Creates a tarball of the site.
+	"""
+
+	print(u'\nCreating tarball (osdoc.tar.gz)')
+	cmd = [u'tar', u'-zcvf', u'osdoc.tar.gz', u'-C', u'_site', u'.', \
+		u'--exclude-from=dev-scripts/excludefromgz.txt']
+	subprocess.call(cmd)
+	shutil.move(u'osdoc.tar.gz', siteFolder)
+
+def checkDeadLinks(branch):
+
+	"""
+	desc:
+		Checks the site for dead links.
+	"""
+
+	print(u'\nChecking for dead links')
+	cmd = [u'linkchecker', u'--no-warnings', u'-o', u'csv', \
+		u'http://localhost:8000/%s' % branch]
+	subprocess.call(cmd, stdout=open(u'deadlinks.log', u'w'))
+	nErr = 0
+	for l in open(u'deadlinks.log').read().decode(u'utf-8').split(
+		u'\n')[4:]:
+		r = l.split(u';')
+		if len(r) < 6 or r[0] == u'urlname':
+			continue
+		url = r[0]
+		# Don't check index.pdf pages, as they are generated later on, and
+		# don't check e-mail addresses.
+		if url.endswith(u'index.pdf') or url.startswith(u'mailto:'):
+			continue
+		parent = r[1]
+		warning = r[3]
+		valid = r[5] == u'False'
+		nErr += 1
+		print '%s\n\tin %s' % (url, parent)
+	print u'%d dead link(s) found' % nErr
+
+def compileSite(layout=u'inpage', group=None, jekyll=True, optimizeHTML=False,
+	tarball=False,	checkLinks=False, gitInfo=False):
+
+	"""
+	desc:
+		Compiles the site.
+
+	keywords:
+		layout:
+			desc:	Indicates the layout to be used. Should be 'fullpage' or
+					'inpage'.
+			type:	[str, unicode]
+		group:
+			desc:	The name of a group (subsection) to speed up compilation for
+					debugging purposes.
+			type:	[str, unicode, NoneType]
+		jekyll:
+			desc:	Indicates whether Jekyll should be called to compile the
+					site source to HTML.
+			type:	bool
+		optimizeHTML:
+			desc:	Indicates whether HTML should be optimized/ minified.
+			type:	bool
+		tarball:
+			desc:	Indicates whether a tarball of the site should be generated.
+			type:	bool
+		checkLinks:
+			desc:	Indicates whether the site should be checked for dead links.
+			type:	bool
+		gitInfo:
+			desc:	Indicates whether gitinfo should be updated.
+			type:	bool
+
+	returns:
+		desc:	The folder where the site has been generated.
+		type:	unicode
+	"""
+
+	assert(layout in [u'fullpage', u'inpage'])
+	branch = gitBranch()
+	status = branchStatus(branch)
+	print(u'Branch:\t%s\nStatus:\t%s\n' % (branch, status))
+	raw_input(u'Press enter to generate')
+	if gitInfo:
+		setGitInfo()
+	print(u'\nRecreating _content ...')
+	if os.path.exists('_content'):
+		shutil.rmtree('_content')
+	os.makedirs('_content')
+	copyResources(layout)
+	generateVersionList(branch)
+	compileLess()
+	content = listContent(l=[])
+	preprocessMarkdown(content=content, group=group)
+	if jekyll:
+		runJekyll(status)
+	if branch != '':
+		adjustRootRelativeURLs('_tmp', branch)
+		siteFolder = u'_site/%s' % branch
 	else:
 		siteFolder = u'_site'
-
 	print(u'Moving site to %s' % siteFolder)
 	if os.path.exists(siteFolder):
 		shutil.rmtree(siteFolder)
 	shutil.move(u'_tmp', siteFolder)
-
-	# Optionally optimze the HTML using htmlcompress
-	if options.optimizeHTML:
-		print u'\nOptimizing HTML'
-		optimizeHTML(siteFolder)
-
-	# Optionally create a tarball of the site
-	if options.tarball:
-		print u'\nCreating tarball (osdoc.tar.gz)'
-		cmd = [u'tar', u'-zcvf', u'osdoc.tar.gz', u'-C', u'_site', u'.', \
-			u'--exclude-from=dev-scripts/excludefromgz.txt']
-		subprocess.call(cmd)
-		shutil.move(u'osdoc.tar.gz', u'siteFolder')
-
-	# Optionally check for dead links
-	if options.checkLinks:
-		print u'\nChecking for dead links'
-		cmd = [u'linkchecker', u'--no-warnings', u'-o', u'csv', \
-			u'http://localhost:8000']
-		subprocess.call(cmd, stdout=open(u'deadlinks.log', u'w'))
-		nErr = 0
-		for l in open(u'deadlinks.log').read().decode(u'utf-8').split(
-			u'\n')[4:]:
-			r = l.split(u';')
-			if len(r) < 6 or r[0] == u'urlname':
-				continue
-			url = r[0]
-			# Don't check index.pdf pages, as they are generated later on, and
-			# don't check e-mail addresses.
-			if url.endswith(u'index.pdf') or url.startswith(u'mailto:'):
-				continue
-			parent = r[1]
-			warning = r[3]
-			valid = r[5] == u'False'
-			nErr += 1
-			print '%s\n\tin %s' % (url, parent)
-		print u'%d dead link(s) found' % nErr
+	if optimizeHTML:
+		callOptimizeHTML(siteFolder)
+	if tarball:
+		createTarball(siteFolder)
+	if checkLinks:
+		checkDeadLinks(branch)
+	return siteFolder

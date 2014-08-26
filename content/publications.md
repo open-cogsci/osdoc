@@ -89,6 +89,9 @@ Sagana, A., Sauerland, M., & Merckelbach, H. (2014). Memory impairment is not su
 Sall, R. J., Wright, T. J., & Boot, W. R. (2014). Driven to distraction? The effect of simulated red light running camera flashes on attention and oculomotor control. *Visual Cognition*, 1–17. doi:10.1080/13506285.2013.873509
 {: .reference}
 
+Silva, F. J., Hope, M. I. ten, & Tucker, A. L. (2014). Adult humans’ understanding of support relations: an up-linkage replication. *Learning & Behavior*. doi:10.3758/s13420-014-0151-0
+{: .reference}
+
 Theeuwes, J., Mathôt, S., & Grainger, J. (2014). Object-centered orienting and IOR, *Attention, Perception, & Psychophysics*. doi:10.3758/s13414-014-0718-z
 {: .reference}
 
