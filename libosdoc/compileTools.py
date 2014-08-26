@@ -118,7 +118,6 @@ def callOptimizeHTML(path):
 		path:	The folder path to optimize.
 	"""
 
-	print(u'\nOptimizing HTML')
 	for fname in os.listdir(path):
 		fname = os.path.join(path, fname)
 		if os.path.isdir(fname):
@@ -129,7 +128,7 @@ def callOptimizeHTML(path):
 				fname, u'-o', fname]
 			subprocess.call(cmd)
 			s2 = os.path.getsize(fname)
-			print u'\t%s (%d kB -> %d kB, %d%%)' % (fname, s1, s2,
+			print u'Optimized:\t%s (%d kB -> %d kB, %d%%)' % (fname, s1, s2,
 				(100.*s2/s1))
 
 def adjustRootRelativeURLs(path, branch):
@@ -144,7 +143,7 @@ def adjustRootRelativeURLs(path, branch):
 		branch:		The branch to add.
 	"""
 
-	print(u'Adjusting root-relative URLs')
+	print(u'Adjusting root-relative URLs (%s)' % path)
 	for fname in os.listdir(path):
 		fname = os.path.join(path, fname)
 		if os.path.isdir(fname):
@@ -383,7 +382,7 @@ def createTarball(siteFolder):
 	"""
 
 	print(u'\nCreating tarball (osdoc.tar.gz)')
-	cmd = [u'tar', u'-zcvf', u'osdoc.tar.gz', u'-C', u'_site', u'.', \
+	cmd = [u'tar', u'-zcvf', u'osdoc.tar.gz', u'-C', siteFolder, u'.', \
 		u'--exclude-from=dev-scripts/excludefromgz.txt']
 	subprocess.call(cmd)
 	shutil.move(u'osdoc.tar.gz', siteFolder)
@@ -459,7 +458,6 @@ def compileSite(layout=u'inpage', group=None, jekyll=True, optimizeHTML=False,
 	branch = gitBranch()
 	status = branchStatus(branch)
 	print(u'Branch:\t%s\nStatus:\t%s\n' % (branch, status))
-	raw_input(u'Press enter to generate')
 	if gitInfo:
 		setGitInfo()
 	print(u'\nRecreating _content ...')

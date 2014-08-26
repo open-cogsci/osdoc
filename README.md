@@ -13,25 +13,27 @@ All files are formatted with Markdown syntax, and are compiled using [Kramdown][
 
 The site content is available in the folder `content`.
 
-[academicmarkdown]: https://github.com/smathot/academicmarkdown
-[kramdown]: http://kramdown.rubyforge.org/
-[jekyll]: https://github.com/mojombo/jekyll
+- [academicmarkdown]: https://github.com/smathot/academicmarkdown
+- [kramdown]: http://kramdown.rubyforge.org/
+- [jekyll]: https://github.com/mojombo/jekyll
+
+## Important files and folders
+
+- `sitemap.txt` contains the site structure.
+- `versions.yml` contains a description of all branches of the documentation. Each branch corresponds to a different documentation site, and lives in a different git branch of the repository.
+- `content/*` contains the site content.
 
 ## Site generation
 
-The `compile` script generates the sites. This script uses `jekyll` for the actual site generation, but conducts some additional pre-processing and error checking. To compile the site, run:
+To generate the full documentation site for the currently active branch, run:
 
-	./compile
+	python generate.py
 
-To compile the site and optimize (minify) the HTML files, run:
+This will generate the site in the folder `_site/[branch]`. The status of the current branch is read from `versions.yml`.
 
-	./compile --optimize-html
+To quickly generate the site, while skipping PDF generation and optimization:
 
-For a complete list of options, run:
-
-	./compile --help
-
-The site structure is read from `sitemap.txt`.
+	python compile.py
 
 ## Dependencies
 
@@ -39,6 +41,7 @@ Most dependencies are available from the Ubuntu repositories or from the [Cogsci
 
 	jekyll
 	python-academicmarkdown
+	python-yaml
 	kramdown
 	node-less
 	linkchecker         # Optional, for checking for dead links
@@ -48,4 +51,3 @@ Most dependencies are available from the Ubuntu repositories or from the [Cogsci
 ## License information
 
 <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">OpenSesame documentation area</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://osdoc.cogsci.nl" property="cc:attributionName" rel="cc:attributionURL">Sebastiaan Mathôt</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/smathot/osdoc" rel="dct:source">https://github.com/smathot/osdoc</a>.
-
