@@ -333,7 +333,7 @@ def createHtaccess(siteFolder, branch):
 	"""
 
 	s = u"""RewriteEngine On
-RewriteRule    ^current/([^0-9]*)/?$    %s/$1   [NC,L]
+RewriteRule    ^current?$    %s/$1   [NC,L]
 RewriteRule    ^([^0-9]*)/?$    %s/$1   [NC,L]
 """ % (branch, branch)
 	path = os.path.join(os.path.dirname(siteFolder), u'.htaccess')
