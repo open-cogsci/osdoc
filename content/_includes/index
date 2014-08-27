@@ -1,3 +1,0 @@
-{% assign expanded = 1 %}
-{% include pages_list %}
-
