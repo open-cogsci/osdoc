@@ -13,10 +13,6 @@ All files are formatted with Markdown syntax, and are compiled using [Kramdown][
 
 The site content is available in the folder `content`.
 
-- [academicmarkdown]: https://github.com/smathot/academicmarkdown
-- [kramdown]: http://kramdown.rubyforge.org/
-- [jekyll]: https://github.com/mojombo/jekyll
-
 ## Important files and folders
 
 - `sitemap.txt` contains the site structure.
@@ -39,7 +35,7 @@ The site is generated in two stages. First, the site is pre-compiled and stored 
 
 ## Dependencies
 
-Most dependencies are available from the Ubuntu repositories or from the [Cogsci.nl PPA](https://launchpad.net/~smathot/+archive/cogscinl/). Only [`htmlcompressor.jar`](https://code.google.com/p/htmlcompressor/) and [`yui-compressor.jar`](https://github.com/yui/yuicompressor/downloads) must be downloaded from their respective websites and manually placed in the osdoc source folder.
+Most dependencies are available from the Ubuntu repositories or from the [Cogsci.nl PPA][]. Only [htmlcompressor.jar][] and [yui-compressor.jar][] must be downloaded from their respective websites and manually placed in the osdoc source folder.
 
 	jekyll
 	python-academicmarkdown
@@ -52,8 +48,11 @@ Most dependencies are available from the Ubuntu repositories or from the [Cogsci
 
 ## License information
 
-`_plugins/pandoc_markdown.rb` is taken from <https://github.com/dsanson/jekyll-pandoc-plugin> under an MIT license.
-
-All other content:
-
 <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">OpenSesame documentation area</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://osdoc.cogsci.nl" property="cc:attributionName" rel="cc:attributionURL">Sebastiaan Mathôt</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/smathot/osdoc" rel="dct:source">https://github.com/smathot/osdoc</a>.
+
+[academicmarkdown]: https://github.com/smathot/academicmarkdown
+[kramdown]: http://kramdown.rubyforge.org/
+[jekyll]: https://github.com/mojombo/jekyll
+[cogsci.nl ppa]: https://launchpad.net/~smathot/+archive/cogscinl/
+[htmlcompressor.jar]: https://code.google.com/p/htmlcompressor/
+[yui-compressor.jar]: https://github.com/yui/yuicompressor/downloads
