@@ -3,8 +3,6 @@ layout: osdoc
 title: Drivers
 group: Boks
 permalink: /drivers/
-level: 1
-sortkey: 0019.003
 show: True
 ---
 

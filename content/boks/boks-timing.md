@@ -3,8 +3,6 @@ layout: osdoc
 title: Boks timing
 group: Boks
 permalink: /timing/
-level: 1
-sortkey: 0019.007
 show: True
 ---
 

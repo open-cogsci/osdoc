@@ -3,8 +3,6 @@ layout: osdoc
 title: Models and prices
 group: Boks
 permalink: /getit/
-level: 1
-sortkey: 0019.002
 show: True
 ---
 

@@ -3,8 +3,6 @@ layout: osdoc
 title: Teaching resources
 group: Miscellaneous
 permalink: /teaching-resources/
-level: 1
-sortkey: 010.005
 ---
 
 Using OpenSesame for teaching

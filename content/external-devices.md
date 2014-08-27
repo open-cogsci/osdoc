@@ -3,8 +3,6 @@ layout: osdoc
 title: External devices
 group: Devices
 permalink: /devices/
-level: 0
-sortkey: 009.001
 ---
 
 <div id='index'>

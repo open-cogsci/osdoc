@@ -3,8 +3,6 @@ layout: osdoc
 title: OpenGL
 group: Back-ends
 permalink: /opengl/
-level: 1
-sortkey: 008.006
 ---
 
 The opengl back-end is built on top of [PyGame][] in OpenGL mode, using [PyOpenGL][]. The upside is that this back-end is hardware accelerated, temporally precise, and can potentially be used for all kinds of fancy drawing operations (3D etc.). The downside is that it is tricky to use directly. For more information, please refer to the documentation of [PyGame][] and [PyOpenGL][].

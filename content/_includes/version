@@ -1,11 +1,11 @@
 {% if site.status == "dev" %}
 <span id="warning">
-You are viewing preliminary documentation for a development version of OpenSesame
+You are viewing preliminary documentation for a development version of OpenSesame. Click <a href='/current'>here</a> to view the current documentation.
 </span>
 {% endif %}
 {% if site.status == "old" %}
 <span id="warning">
-You are viewing unmaintained documentation for an older version of OpenSesame
+You are viewing unmaintained documentation for an older version of OpenSesame. Click <a href='/current'>here</a> to view the current documentation.
 </span>
 {% endif %}
 

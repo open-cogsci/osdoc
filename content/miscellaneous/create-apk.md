@@ -3,9 +3,7 @@ layout: osdoc
 title: Create APK
 group: Miscellaneous
 permalink: /create-apk/
-level: 1
 show: False
-sortkey: 010.007
 ---
 
 This page is under development.

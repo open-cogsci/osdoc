@@ -3,8 +3,6 @@ layout: osdoc
 title: OpenSesame plug-in
 group: Boks
 permalink: /opensesame/
-level: 1
-sortkey: 0019.004
 show: True
 ---
 

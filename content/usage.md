@@ -3,8 +3,6 @@ layout: osdoc
 title: Usage
 group: Usage
 permalink: /usage/
-level: 0
-sortkey: 004.001
 ---
 
 <div id='index'>

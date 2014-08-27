@@ -3,6 +3,7 @@ layout: osdoc
 title: Download
 group: Getting OpenSesame
 permalink: /download/
+current-only: true
 ---
 
 Welcome to the OpenSesame documentation area! Here you can find everything you always wanted to know about your favorite free and cross-platform experiment builder. The latest stable version of OpenSesame is 2.8.3 *Gutsy Gibson*, released on July 10 2014 ([release notes]). Older versions can be found [here][archive].

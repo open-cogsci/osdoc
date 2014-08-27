@@ -34,6 +34,9 @@ if __name__ == u'__main__':
 	parser.add_option(u'-o', u'--optimize-html', dest=u'optimizeHTML',
 		help=u'Optimize HTML (requires htmlcompressor.jar)',
 		action=u'store_true', default=False)
+	parser.add_option(u'-a', u'--htaccess', dest=u'htaccess',
+		help=u'Create .htaccess (if branch is current)',
+		action=u'store_true', default=False)
 	parser.add_option(u'-t', u'--tarball', dest=u'tarball',
 		help=u'Generate site tarball', action=u'store_true', default=False)
 	parser.add_option(u'-g', u'--group', dest=u'group',
@@ -43,5 +46,5 @@ if __name__ == u'__main__':
 	options, args = parser.parse_args()
 	compileTools.compileSite(jekyll=options.jekyll,
 		checkLinks=options.checkLinks, optimizeHTML=options.optimizeHTML,
-		tarball=options.tarball, group=options.group,
+		tarball=options.tarball, group=options.group, htaccess=options.htaccess,
 		layout=options.layout)

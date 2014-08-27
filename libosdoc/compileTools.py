@@ -25,8 +25,12 @@ import shutil
 import subprocess
 import csv
 from md5 import md5
+import re
+from academicmarkdown import build, HTMLFilter
 from libosdoc.versions import generateVersionList, branchStatus
 from libosdoc.pdf import pdfWalk
+from libosdoc.jekyll import runJekyll
+from libosdoc.html import callOptimizeHTML, adjustRootRelativeURLs
 from libosdoc.gitinfo import setGitInfo, gitBranch
 
 def getInfo(path):
@@ -107,104 +111,37 @@ def listContent(dirname=u'content', l=[]):
 				print(u'+ %s (%d)' % (path, len(l)))
 	return l
 
-def callOptimizeHTML(path):
-
-	"""
-	desc:
-		Recursively compresses all HTML files in the path using
-		htmlcompressor.jar
-
-	arguments:
-		path:	The folder path to optimize.
-	"""
-
-	for fname in os.listdir(path):
-		fname = os.path.join(path, fname)
-		if os.path.isdir(fname):
-			callOptimizeHTML(fname)
-		elif fname.lower().endswith(u'.html'):
-			s1 = os.path.getsize(fname)
-			cmd = [u'java', u'-jar', u'htmlcompressor.jar', u'--compress-js',
-				fname, u'-o', fname]
-			subprocess.call(cmd)
-			s2 = os.path.getsize(fname)
-			print u'Optimized:\t%s (%d kB -> %d kB, %d%%)' % (fname, s1, s2,
-				(100.*s2/s1))
-
-def adjustRootRelativeURLs(path, branch):
-
-	"""
-	desc:
-		Recursively walks through a folder and replaces all root-relative URLs
-		by a branched URL. Processes HTML and CSS files.
-
-	arguments:
-		path:		The path to walk through.
-		branch:		The branch to add.
-	"""
-
-	print(u'Adjusting root-relative URLs (%s)' % path)
-	for fname in os.listdir(path):
-		fname = os.path.join(path, fname)
-		if os.path.isdir(fname):
-			adjustRootRelativeURLs(fname, branch)
-			continue
-		if fname.lower().endswith(u'.html'):
-			html = open(fname).read().decode(u'utf-8')
-			regex = u'(?P<_type>href|src)\\s*=\\s*["\'](?P<url>/.*?)["\']'
-			for g in re.finditer(regex, html):
-				url = g.group(u'url')
-				if url.startswith(u'//'):
-					print(u'Ignoring odd URL in %s: %s' % (fname, url))
-					continue
-				old = g.group()
-				new = u'%s="/%s%s"' % (g.group(u'_type'), branch, url)
-				html = html.replace(old, new)
-			open(fname, u'w').write(html.encode(u'utf-8'))
-		elif fname.lower().endswith(u'.css'):
-			css = open(fname).read().decode(u'utf-8')
-			open(fname, u'w').write(css.encode(u'utf-8'))
-			regex = u'url\(["\'](?P<url>.*?)["\']\)'
-			for g in re.finditer(regex, css):
-				url = g.group(u'url')
-				if url.startswith(u'//'):
-					print(u'Ignoring odd URL in %s: %s' % (fname, url))
-					continue
-				old = g.group()
-				new = u'url(\'/%s%s\')' % (branch, url)
-				css = css.replace(old, new)
-			open(fname, u'w').write(css.encode(u'utf-8'))
-
 def copyFile(fromPath, toPath):
 
 	"""
-	Copies a file and creates the target folder structure if it doesn't exist.
+	desc:
+		Copies a file and creates the target folder structure if it doesn't
+		exist.
 
-	Arguments:
-	fromPath	--	The source file.
-	toPath		--	The target file.
+	arguments:
+		fromPath:	The source file.
+		toPath:		The target file.
 	"""
 
 	if not os.path.exists(os.path.dirname(toPath)):
 		os.makedirs(os.path.dirname(toPath))
 	shutil.copyfile(fromPath, toPath)
 
-def parseOsdocYaml(path, info, s):
+def preprocessPage(path, info, s, status):
 
 	"""
-	Parses OSDOC-specific YAML sections to implement specific functionality.
+	desc:
+		Pre-processes a page with academicmarkdown.
 
-	Arguments:
-	path	--	The path to the page.
-	info	--	A dictionaty with the page's front matter.
-	s		--	A string with the page content.
+	arguments:
+		path:	The path to the page.
+		info:	A dictionary with the page's front matter.
+		s:		A string with the page content.
+		status:	The site status.
 
-	Returns:
-	A string with the parsed page contents.
+	returns:
+		A string with the parsed page contents.
 	"""
-
-	import re
-	from academicmarkdown import build, HTMLFilter
 
 	print u'Parsing %s (%s) with academicmarkdown' % (info[u'title'], path)
 	# We need to find all images, and copy these to the _content folder
@@ -235,7 +172,12 @@ def parseOsdocYaml(path, info, s):
 	# Enable clickable anchor headers
 	build.TOCAnchorHeaders = True
 	build.TOCAppendHeaderRefs = True
-	s = build.MD(s)
+	if status == u'current' or u'current-only' not in info or \
+		not info[u'current-only']:
+		s = build.MD(s)
+	else:
+		s = u'---\n%s\n---\n{%% include current-only %%}' % yaml.dump(info)
+		print s
 	s = HTMLFilter.DOI(s)
 	# Remove the content/ part of figure paths, because it does not apply to
 	# the generated site.
@@ -244,23 +186,6 @@ def parseOsdocYaml(path, info, s):
 	# Remove the three newly added entries from the build path.
 	build.path = build.path[:-3]
 	return s
-
-def gitInfo(path):
-
-	"""
-	desc:
-		Generates a string with git information for a given page.
-
-	arguments:
-		path:	The path to the page.
-
-	returns:
-		A string with git info.
-	"""
-
-	cmd = [u'git', u'log', u'--format="Revision <a href=\'https://github.com/smathot/osdoc/commit/%H\'>#%h</a> on %cd"', u'-n', u'1', path]
-	out, err = subprocess.Popen(cmd, stdout=subprocess.PIPE).communicate()
-	return out
 
 def compileLess():
 
@@ -289,11 +214,16 @@ def copyResources(layout):
 	shutil.copy(u'content/_layouts/osdoc-%s.html' % (layout),
 		u'_content/_layouts/osdoc.html')
 
-def preprocessMarkdown(content, group):
+def preprocessSite(content, group, status):
 
 	"""
 	desc:
-		Pre-processes the markdown source with academicmarkdown.
+		Pre-processes the full site.
+
+	arguments:
+		content:	A content list, as generated by listContent().
+		group:		A group to include or None to include all groups.
+		status:		The site status.
 	"""
 
 	print(u'\nCompiling pages ...')
@@ -334,7 +264,6 @@ def preprocessMarkdown(content, group):
 				info[u'videos'] = 0
 				info[u'listings'] = 0
 				info[u'tables'] = 0
-				info[u'gitinfo'] = gitInfo(path)
 				info[u'gitlink'] = \
 					u'https://github.com/smathot/osdoc/blob/master/%s' \
 					% path
@@ -343,7 +272,7 @@ def preprocessMarkdown(content, group):
 					s = setInfo(path, info)
 					# Fix missing alt tags
 					s = s.replace(u'![](', u'![No alt text specified](')
-					s = parseOsdocYaml(os.path.dirname(path), info, s)
+					s = preprocessPage(os.path.dirname(path), info, s, status)
 					if not os.path.exists(os.path.dirname(targetPath)):
 						os.mkdir(os.path.dirname(targetPath))
 					open(targetPath.encode(sys.getfilesystemencoding()), \
@@ -353,26 +282,6 @@ def preprocessMarkdown(content, group):
 			raise Exception(u'Multiple matches for "%s"' % title)
 		if i == 0:
 			raise Exception(u'Failed to find "%s"' % title)
-
-def runJekyll(status):
-
-	"""
-	desc:
-		Compiles the site to HTML with Jekyll.
-	"""
-
-	print(u'\nCreating _config.yml')
-	cfg = {
-		'notifications' : False,
-		'status' : status,
-		'pygments':	True,
-		'markdown': 'kramdown',
-		'source': '_content',
-		'destination': '_tmp',
-		}
-	yaml.dump(cfg, open('_config.yml', 'w'))
-	print u'\nLaunching jekyll'
-	subprocess.call([u'jekyll'])
 
 def createTarball(siteFolder):
 
@@ -416,8 +325,24 @@ def checkDeadLinks(branch):
 		print '%s\n\tin %s' % (url, parent)
 	print u'%d dead link(s) found' % nErr
 
+def createHtaccess(siteFolder, branch):
+
+	"""
+	desc:
+		Creates an .htaccess file in the parent folder.
+	"""
+
+	s = u"""RewriteEngine On
+RewriteRule    ^current/([^0-9]*)/?$    %s/$1   [NC,L]
+RewriteRule    ^([^0-9]*)/?$    %s/$1   [NC,L]
+""" % (branch, branch)
+	path = os.path.join(os.path.dirname(siteFolder), u'.htaccess')
+	open(path, u'w').write(s)
+	print(u'Created %s' % path)
+
+
 def compileSite(layout=u'inpage', group=None, jekyll=True, optimizeHTML=False,
-	tarball=False,	checkLinks=False, gitInfo=False):
+	tarball=False,	checkLinks=False, gitInfo=False, htaccess=False):
 
 	"""
 	desc:
@@ -448,6 +373,11 @@ def compileSite(layout=u'inpage', group=None, jekyll=True, optimizeHTML=False,
 		gitInfo:
 			desc:	Indicates whether gitinfo should be updated.
 			type:	bool
+		htaccess:
+			desc:	Indicates whether an .htaccess file should generated in the
+					parent folder, to rewrite branchless URLS to the current
+					branch.
+			type:	bool
 
 	returns:
 		desc:	The folder where the site has been generated.
@@ -468,7 +398,7 @@ def compileSite(layout=u'inpage', group=None, jekyll=True, optimizeHTML=False,
 	generateVersionList(branch)
 	compileLess()
 	content = listContent(l=[])
-	preprocessMarkdown(content=content, group=group)
+	preprocessSite(content=content, group=group, status=status)
 	if jekyll:
 		runJekyll(status)
 	if branch != '':
@@ -486,4 +416,6 @@ def compileSite(layout=u'inpage', group=None, jekyll=True, optimizeHTML=False,
 		createTarball(siteFolder)
 	if checkLinks:
 		checkDeadLinks(branch)
+	if htaccess and status == u'current':
+		createHtaccess(siteFolder, branch)
 	return siteFolder

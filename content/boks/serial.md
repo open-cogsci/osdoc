@@ -3,8 +3,6 @@ layout: osdoc
 title: Serial port communication
 group: Boks
 permalink: /serial/
-level: 1
-sortkey: 0019.006
 show: True
 ---
 

@@ -3,8 +3,6 @@ layout: osdoc
 title: Source code and firmware
 group: Boks
 permalink: /source/
-level: 1
-sortkey: 0019.008
 show: True
 ---
 

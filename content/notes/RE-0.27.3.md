@@ -3,8 +3,6 @@ layout: osdoc
 title: Release notes for 0.27.3
 group: notes
 permalink: /0.27.3/
-level: 1
-sortkey: 999.999
 show: false
 ---
 

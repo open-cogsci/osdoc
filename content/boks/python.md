@@ -3,8 +3,6 @@ layout: osdoc
 title: Python library
 group: Boks
 permalink: /python/
-level: 1
-sortkey: 0019.005
 show: True
 ---
 

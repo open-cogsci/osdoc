@@ -3,8 +3,6 @@ layout: osdoc
 title: Miscellaneous
 group: Miscellaneous
 permalink: /miscellaneous/
-level: 0
-sortkey: 010.001
 ---
 
 <div id='index'>

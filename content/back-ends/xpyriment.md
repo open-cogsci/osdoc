@@ -3,8 +3,6 @@ layout: osdoc
 title: Xpyriment
 group: Back-ends
 permalink: /xpyriment/
-level: 1
-sortkey: 008.003
 ---
 
 The xpyriment back-end is built on top of [Expyriment][], a library that has been designed specifically for creating cognitive and neuroscientific experiments. It is a light-weight hardware-accelerated back-end with excellent timing properties. If you care about temporal precision, but do not plan on generating complex stimuli (i.e. Gabor patches, random-dot gratings, etc.) xpyriment is a good choice.

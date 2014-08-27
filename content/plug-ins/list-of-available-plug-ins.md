@@ -3,8 +3,6 @@ layout: osdoc
 title: List of available plug-ins
 group: Plug-ins
 permalink: /list-of-available-plug-ins/
-level: 1
-sortkey: 007.004
 ---
 
 Unless otherwise indicated, plug-ins are cross-platform, so you can use the same plug-in files regardless of your operating system. Depending on how you obtained OpenSesame, a number of plug-ins is usually included by default.
