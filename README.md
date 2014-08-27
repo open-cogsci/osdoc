@@ -9,7 +9,7 @@ This repository contains the source for <http://osdoc.cogsci.nl/>.
 
 ## Format
 
-All files are formatted with Markdown syntax, and are compiled using [Kramdown][] or (for the newer pages) [academicmarkdown][]. [Jekyll][] is used to generate the site structure. For documentation, see the respective homepages of these tools.
+All files are formatted with Markdown syntax. They are pre-compiled with [academicmarkdown][], and converted to `.html` using [Kramdown][]. [Jekyll][] is used to generate the site structure. For documentation, see the respective homepages of these tools.
 
 The site content is available in the folder `content`.
 
