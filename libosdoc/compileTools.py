@@ -214,7 +214,7 @@ def copyResources(layout):
 	shutil.copy(u'content/_layouts/osdoc-%s.html' % (layout),
 		u'_content/_layouts/osdoc.html')
 
-def preprocessSite(content, group, status):
+def preprocessSite(content, group, branch, status):
 
 	"""
 	desc:
@@ -230,6 +230,7 @@ def preprocessSite(content, group, status):
 	sortkey = [0,0]
 	_group = 'General'
 	sitemap = open('sitemap.txt').read().decode(u'utf-8')
+	YAMLSitemap = {}
 	for title in sitemap.split(u'\n'):
 		if title.startswith(u'#') or title.strip() == u'':
 			continue
@@ -277,11 +278,27 @@ def preprocessSite(content, group, status):
 						os.mkdir(os.path.dirname(targetPath))
 					open(targetPath.encode(sys.getfilesystemencoding()), \
 						u'w').write(s.encode(u'utf-8'))
+					# Generate the YAML sitemap, which is read automatically by
+					# OpenSesame to browse the online documentation.
+					if u'menuclass' not in info or \
+						info[u'menuclass'] != u'external':
+						title = title.capitalize().encode(u'utf-8')
+						_group = _group.capitalize().encode(u'utf-8')
+						path = u'/%s/%s.html' % (branch, path[:-3])
+						path = path.encode(u'-utf-8')
+						if _group == 'General':
+							YAMLSitemap[title] = path
+						else:
+							if _group not in YAMLSitemap:
+								YAMLSitemap[_group] = {}
+							YAMLSitemap[_group][title] = path
 				i += 1
 		if i > 1:
 			raise Exception(u'Multiple matches for "%s"' % title)
 		if i == 0:
 			raise Exception(u'Failed to find "%s"' % title)
+	open(os.path.join(u'_content', u'sitemap.yml'), u'w').write(
+		yaml.dump(YAMLSitemap, default_flow_style=False))
 
 def createTarball(siteFolder):
 
@@ -340,7 +357,6 @@ RewriteRule    ^([^0-9]*)/?$    %s/$1   [NC,L]
 	open(path, u'w').write(s)
 	print(u'Created %s' % path)
 
-
 def compileSite(layout=u'inpage', group=None, jekyll=True, optimizeHTML=False,
 	tarball=False,	checkLinks=False, gitInfo=False, htaccess=False):
 
@@ -398,7 +414,7 @@ def compileSite(layout=u'inpage', group=None, jekyll=True, optimizeHTML=False,
 	generateVersionList(branch)
 	compileLess()
 	content = listContent(l=[])
-	preprocessSite(content=content, group=group, status=status)
+	preprocessSite(content=content, group=group, status=status, branch=branch)
 	if jekyll:
 		runJekyll(status)
 	if branch != '':
