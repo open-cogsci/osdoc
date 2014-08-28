@@ -1,170 +1,339 @@
-<div class='pydoc'>
-<p><small>For OpenSesame 2.8.3</small></p>
-<span class='class_name'>class <b>mouse</b></span><br />
-<p class='details'><b>Function overview:</b><br />
-<a href='#mouse.__init__'>__init__</a><br />
-<a href='#mouse.flush'>flush</a><br />
-<a href='#mouse.get_click'>get_click</a><br />
-<a href='#mouse.get_pos'>get_pos</a><br />
-<a href='#mouse.get_pressed'>get_pressed</a><br />
-<a href='#mouse.set_buttonlist'>set_buttonlist</a><br />
-<a href='#mouse.set_pos'>set_pos</a><br />
-<a href='#mouse.set_timeout'>set_timeout</a><br />
-<a href='#mouse.set_visible'>set_visible</a><br />
-</p>
-<div class='function'><span class='function_name'><a class='anchor' id='mouse.__init__'>mouse</a>.<b>__init__(experiment, buttonlist=None, timeout=None, visible=False)</b></span><div class='details'>
-Intializes the mouse object.<br />
-<br />
-<span class='keyword'>Arguments:</span>
-<br />
-<span class='variable'>experiment </span> &rarr;  An instance of libopensesame.experiment.experiment.
-<br />
-<br />
-<span class='keyword'>Keyword arguments:</span>
-<br />
-<span class='variable'>buttonlist </span> &rarr;  A list of buttons that are accepted or None to accept all 
-input (default = None).<br />
-<span class='variable'>timeout </span> &rarr;  An integer value specifying a timeout in milliseconds or None 
-for no timeout (default = None).<br />
-<span class='variable'>visible </span> &rarr;  A Boolean indicating the visibility of the cursor 
-(default=False).<br />
-<br />
-<span class='keyword'>Example:</span>
-<br />
-{% highlight python %}from openexp.mouse import mouse
+<div class="ClassDoc YAMLDoc" id="mouse" markdown="1">
+
+# class __mouse__
+
+The `mouse` class is used to collect mouse input.
+
+__Important note:__
+
+When using a `mouse` all coordinates are specified relative to the
+top-left of the display, and not, as in `sketchpad`s, relative to the
+display center. For example, the following script will determine the
+deviation of a mouse click relative to the display center.
+
+__Example:__
+
+{% highlight python %}
+from openexp.mouse import mouse
+from openexp.canvas import canvas
 my_mouse = mouse(exp)
-{% endhighlight %}<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='mouse.flush'>mouse</a>.<b>flush()</b></span><div class='details'>
-Clears all pending input, not limited to the mouse.<br />
-<br />
-<span class='keyword'>Returns:</span>
-<br />
-True if a button had been clicked (i.e., if there was something to flush) and False otherwise.<br />
-<br />
-<span class='keyword'>Example:</span>
-<br />
-{% highlight python %}from openexp.mouse import mouse
+my_canvas = canvas(exp)
+while True:
+        button, position, timestamp = my_mouse.get_click(timeout=20)
+        if button != None:
+                break
+        pos, time = my_mouse.get_pos()
+        my_canvas.clear()
+        my_canvas.fixdot(pos[0], pos[1])
+        my_canvas.show()
+{% endhighlight %}
+
+__Function list:__
+
+
+- [function __mouse.\_\_init\_\___(experiment, visible=False, timeout=None, buttonlist=None)](#function-__mouse__init____experiment-visiblefalse-timeoutnone-buttonlistnone)
+- [function __mouse.flush__()](#function-__mouseflush__)
+- [function __mouse.get_click__(visible=None, timeout=None, buttonlist=None)](#function-__mouseget_click__visiblenone-timeoutnone-buttonlistnone)
+- [function __mouse.get_pos__()](#function-__mouseget_pos__)
+- [function __mouse.get_pressed__()](#function-__mouseget_pressed__)
+- [function __mouse.set_buttonlist__(buttonlist=None)](#function-__mouseset_buttonlist__buttonlistnone)
+- [function __mouse.set_pos__(pos=(0, 0))](#function-__mouseset_pos__pos0-0)
+- [function __mouse.set_timeout__(timeout=None)](#function-__mouseset_timeout__timeoutnone)
+- [function __mouse.set_visible__(visible=True)](#function-__mouseset_visible__visibletrue)
+- [function __mouse.synonyms__(button)](#function-__mousesynonyms__button)
+
+
+
+
+
+<div class="FunctionDoc YAMLDoc" id="mouse-__init__" markdown="1">
+
+## [function __mouse.\_\_init\_\___(experiment, visible=False, timeout=None, buttonlist=None)](#function-__mouse__init____experiment-visiblefalse-timeoutnone-buttonlistnone) {#function-__mouse__init____experiment-visiblefalse-timeoutnone-buttonlistnone}
+
+Intializes the mouse object.
+
+__Example:__
+
+{% highlight python %}
+from openexp.mouse import mouse
+my_mouse = mouse(exp)
+{% endhighlight %}
+
+__Arguments:__
+
+- `experiment` -- The experiment object.
+	- Type: experiment
+
+__Keywords:__
+
+- `visible` -- True to show the cursor, False to hide.
+	- Default: False
+	- Type: bool
+- `buttonlist` -- A list of buttons that are accepted or `None` to accept all buttons.
+	- Default: None
+	- Type: list, NoneType
+- `timeout` -- A numeric value specifying a timeout in milliseconds or `None` for no (i.e. infinite) timeout.
+	- Default: None
+	- Type: int, float, NoneType
+
+</div>
+
+[mouse.__init__]: #mouse-__init__
+[__init__]: #mouse-__init__
+
+<div class="FunctionDoc YAMLDoc" id="mouse-flush" markdown="1">
+
+## [function __mouse.flush__()](#function-__mouseflush__) {#function-__mouseflush__}
+
+Clears all pending input, not limited to the mouse.
+
+__Example:__
+
+{% highlight python %}
+from openexp.mouse import mouse
 my_mouse = mouse(exp)
 my_mouse.flush()
 button, position, timestamp = my_mouse.get_click()
-{% endhighlight %}<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='mouse.get_click'>mouse</a>.<b>get_click(buttonlist=None, timeout=None, visible=None)</b></span><div class='details'>
-Waits for mouse input.<br />
-<br />
-<span class='keyword'>Keyword arguments:</span>
-<br />
-<span class='variable'>buttonlist </span> &rarr;  A list of buttons that are accepted or None to use the 
-default. This parameter does not change the default keylist (default=None).<br />
-<span class='variable'>timeout </span> &rarr;  An integer value specifying a timeout in milliseconds or None 
-to use the default. This parameter does not change the default timeout (default=None).<br />
-<span class='variable'>visible </span> &rarr;  A Boolean indicating the visibility of the target or None to 
-use the default. This parameter does not change the default visibility (default=False).<br />
-<br />
-<span class='keyword'>Returns:</span>
-<br />
-A (button, position, timestamp) tuple. The button and position are None if a timeout occurs. Position is an (x, y) tuple in screen coordinates.<br />
-<br />
-<span class='keyword'>Example:</span>
-<br />
-{% highlight python %}from openexp.mouse import mouse
+{% endhighlight %}
+
+__Returns:__
+
+True if a button had been clicked (i.e., if there was something to flush) and False otherwise.
+
+- Type: bool
+
+</div>
+
+[mouse.flush]: #mouse-flush
+[flush]: #mouse-flush
+
+<div class="FunctionDoc YAMLDoc" id="mouse-get_click" markdown="1">
+
+## [function __mouse.get_click__(visible=None, timeout=None, buttonlist=None)](#function-__mouseget_click__visiblenone-timeoutnone-buttonlistnone) {#function-__mouseget_click__visiblenone-timeoutnone-buttonlistnone}
+
+Waits for mouse input.
+
+__Example:__
+
+{% highlight python %}
+from openexp.mouse import mouse
 my_mouse = mouse(exp)
 button, position, timestamp = my_mouse.get_click()
 if button == None:
-	print('A timeout occurred!')
-{% endhighlight %}<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='mouse.get_pos'>mouse</a>.<b>get_pos()</b></span><div class='details'>
-Returns the current location of the cursor.<br />
-<br />
-<span class='keyword'>Returns:</span>
-<br />
-A (position, timestamp) tuple.<br />
-<br />
-<span class='keyword'>Example:</span>
-<br />
-{% highlight python %}from openexp.mouse import mouse
+        print('A timeout occurred!')
+{% endhighlight %}
+
+__Keywords:__
+
+- `visible` -- True to show the cursor, False to hide.
+	- Default: None
+	- Type: bool
+- `buttonlist` -- A list of buttons that are accepted or `None` to accept all buttons.
+	- Default: None
+	- Type: list, NoneType
+- `timeout` -- A numeric value specifying a timeout in milliseconds or `None` for no (i.e. infinite) timeout.
+	- Default: None
+	- Type: int, float, NoneType
+
+__Returns:__
+
+A (button, position, timestamp) tuple. The button and position are `None` if a timeout occurs. Position is an (x, y) tuple in screen coordinates.
+
+- Type: tuple
+
+</div>
+
+[mouse.get_click]: #mouse-get_click
+[get_click]: #mouse-get_click
+
+<div class="FunctionDoc YAMLDoc" id="mouse-get_pos" markdown="1">
+
+## [function __mouse.get_pos__()](#function-__mouseget_pos__) {#function-__mouseget_pos__}
+
+Returns the current position of the cursor.
+
+__Example:__
+
+{% highlight python %}
+from openexp.mouse import mouse
 my_mouse = mouse(exp)
 position, timestamp = my_mouse.get_pos()
 x, y = position
 print('The cursor was at (%d, %d)' % (x, y))
-{% endhighlight %}<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='mouse.get_pressed'>mouse</a>.<b>get_pressed()</b></span><div class='details'>
-Returns the current state of the mouse buttons. A True value means the button is currently being pressed.<br />
-<br />
-<span class='keyword'>Returns:</span>
-<br />
-A (button1, button2, button3) tuple.<br />
-<br />
-<span class='keyword'>Example:</span>
-<br />
-{% highlight python %}from openexp.mouse import mouse
+{% endhighlight %}
+
+__Returns:__
+
+A (position, timestamp) tuple.
+
+- Type: tuple
+
+</div>
+
+[mouse.get_pos]: #mouse-get_pos
+[get_pos]: #mouse-get_pos
+
+<div class="FunctionDoc YAMLDoc" id="mouse-get_pressed" markdown="1">
+
+## [function __mouse.get_pressed__()](#function-__mouseget_pressed__) {#function-__mouseget_pressed__}
+
+Returns the current state of the mouse buttons. A True value means the button is currently being pressed.
+
+__Example:__
+
+{% highlight python %}
+from openexp.mouse import mouse
 my_mouse = mouse(exp)
 buttons = my_mouse.get_pressed()
 b1, b2, b3 = buttons
-print('Currently pressed mouse buttons: (%d, %d, %d)' % (b1, b2, b3))
-{% endhighlight %}<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='mouse.set_buttonlist'>mouse</a>.<b>set_buttonlist(buttonlist = None)</b></span><div class='details'>
-Sets a list of accepted buttons.<br />
-<br />
-<span class='keyword'>Keyword arguments:</span>
-<br />
-<span class='variable'>buttonlist </span> &rarr;  A list of buttons that are accepted or None to accept all 
-input (default=None).<br />
-<br />
-<span class='keyword'>Example:</span>
-<br />
-{% highlight python %}from openexp.mouse import mouse
+print('Currently pressed mouse buttons: (%d,%d,%d)' % (b1,b2,b3))
+{% endhighlight %}
+
+__Returns:__
+
+A (button1, button2, button3) tuple of boolean values.
+
+- Type: tuple.
+
+</div>
+
+[mouse.get_pressed]: #mouse-get_pressed
+[get_pressed]: #mouse-get_pressed
+
+<div class="FunctionDoc YAMLDoc" id="mouse-set_buttonlist" markdown="1">
+
+## [function __mouse.set_buttonlist__(buttonlist=None)](#function-__mouseset_buttonlist__buttonlistnone) {#function-__mouseset_buttonlist__buttonlistnone}
+
+Sets a list of accepted buttons.
+
+__Example:__
+
+{% highlight python %}
+from openexp.mouse import mouse
 my_mouse = mouse(exp)
 my_mouse.set_buttonlist( [1,2] )
-{% endhighlight %}<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='mouse.set_pos'>mouse</a>.<b>set_pos(pos=(0,0))</b></span><div class='details'>
-Sets the mouse position.<br />
-<br />
-<span class='keyword'>Keyword arguments:</span>
-<br />
-<span class='variable'>pos </span> &rarr;  A (x,y) tuple for the new mouse coordinates (default = (0,0))
-<br />
-<br />
-<span class='keyword'>Example:</span>
-<br />
-{% highlight python %}from openexp.mouse import mouse
+{% endhighlight %}
+
+__Keywords:__
+
+- `buttonlist` -- A list of buttons that are accepted or `None` to accept all buttons.
+	- Default: None
+	- Type: list, NoneType
+
+</div>
+
+[mouse.set_buttonlist]: #mouse-set_buttonlist
+[set_buttonlist]: #mouse-set_buttonlist
+
+<div class="FunctionDoc YAMLDoc" id="mouse-set_pos" markdown="1">
+
+## [function __mouse.set_pos__(pos=(0, 0))](#function-__mouseset_pos__pos0-0) {#function-__mouseset_pos__pos0-0}
+
+Sets the position of the mouse cursor.
+
+__Example:__
+
+{% highlight python %}
+from openexp.mouse import mouse
 my_mouse = mouse(exp)
 my_mouse.set_pos(pos=(0,0))
-{% endhighlight %}<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='mouse.set_timeout'>mouse</a>.<b>set_timeout(timeout=None)</b></span><div class='details'>
-Sets a timeout.<br />
-<br />
-<span class='keyword'>Keyword arguments:</span>
-<br />
-<span class='variable'>timeout </span> &rarr;  An integer value specifying a timeout in milliseconds or None 
-for no timeout (default=None).<br />
-<br />
-<span class='keyword'>Example:</span>
-<br />
-{% highlight python %}from openexp.mouse import mouse
+{% endhighlight %}
+
+__Keywords:__
+
+- `pos` -- An (x,y) tuple for the new mouse coordinates.
+	- Default: (0, 0)
+	- Type: tuple
+
+</div>
+
+[mouse.set_pos]: #mouse-set_pos
+[set_pos]: #mouse-set_pos
+
+<div class="FunctionDoc YAMLDoc" id="mouse-set_timeout" markdown="1">
+
+## [function __mouse.set_timeout__(timeout=None)](#function-__mouseset_timeout__timeoutnone) {#function-__mouseset_timeout__timeoutnone}
+
+Sets a timeout.
+
+__Example:__
+
+{% highlight python %}
+from openexp.mouse import mouse
 my_mouse = mouse(exp)
 my_mouse.set_timeout(2000)
-{% endhighlight %}<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='mouse.set_visible'>mouse</a>.<b>set_visible(visible=True)</b></span><div class='details'>
-Sets the visibility of the cursor.<br />
-<br />
-<span class='keyword'>Keyword arguments:</span>
-<br />
-<span class='variable'>visible </span> &rarr;  A Boolean indicating the visibility of the cursor 
-(default=True).<br />
-<br />
-<span class='keyword'>Example:</span>
-<br />
-{% highlight python %}from openexp.mouse import mouse
+{% endhighlight %}
+
+__Keywords:__
+
+- `timeout` -- A numeric value specifying a timeout in milliseconds or `None` for no (i.e. infinite) timeout.
+	- Default: None
+	- Type: int, float, NoneType
+
+</div>
+
+[mouse.set_timeout]: #mouse-set_timeout
+[set_timeout]: #mouse-set_timeout
+
+<div class="FunctionDoc YAMLDoc" id="mouse-set_visible" markdown="1">
+
+## [function __mouse.set_visible__(visible=True)](#function-__mouseset_visible__visibletrue) {#function-__mouseset_visible__visibletrue}
+
+Sets the visibility of the cursor.
+
+__Example:__
+
+{% highlight python %}
+from openexp.mouse import mouse
 my_mouse = mouse(exp)
 my_mouse.set_visible()
-{% endhighlight %}<br />
-</div></div>
+{% endhighlight %}
+
+__Keywords:__
+
+- `visible` -- True to show the cursor, False to hide.
+	- Default: True
+	- Type: bool
+
 </div>
+
+[mouse.set_visible]: #mouse-set_visible
+[set_visible]: #mouse-set_visible
+
+<div class="FunctionDoc YAMLDoc" id="mouse-synonyms" markdown="1">
+
+## [function __mouse.synonyms__(button)](#function-__mousesynonyms__button) {#function-__mousesynonyms__button}
+
+Gives a list of synonyms for a mouse button. For example, 1 and 'left_click' are synonyms.
+
+__Arguments:__
+
+- `button` -- A button value.
+	- Type: int, str, unicode
+
+__Returns:__
+
+A list of synonyms.
+
+- Type: list
+
+</div>
+
+[mouse.synonyms]: #mouse-synonyms
+[synonyms]: #mouse-synonyms
+
+</div>
+
+[mouse]: #mouse
+
+
+[function __mouse.\_\_init\_\___(experiment, visible=False, timeout=None, buttonlist=None)]: #function-__mouse__init____experiment-visiblefalse-timeoutnone-buttonlistnone
+[function __mouse.flush__()]: #function-__mouseflush__
+[function __mouse.get_click__(visible=None, timeout=None, buttonlist=None)]: #function-__mouseget_click__visiblenone-timeoutnone-buttonlistnone
+[function __mouse.get_pos__()]: #function-__mouseget_pos__
+[function __mouse.get_pressed__()]: #function-__mouseget_pressed__
+[function __mouse.set_buttonlist__(buttonlist=None)]: #function-__mouseset_buttonlist__buttonlistnone
+[function __mouse.set_pos__(pos=(0, 0))]: #function-__mouseset_pos__pos0-0
+[function __mouse.set_timeout__(timeout=None)]: #function-__mouseset_timeout__timeoutnone
+[function __mouse.set_visible__(visible=True)]: #function-__mouseset_visible__visibletrue
+[function __mouse.synonyms__(button)]: #function-__mousesynonyms__button

@@ -1,85 +1,181 @@
-<div class='pydoc'>
-<span class='class_name'>class <b>label</b></span><br />
-<p class='details'><b>Function overview:</b><br />
-<a href='#label.__init__'>__init__</a><br />
-<a href='#label.draw_frame'>draw_frame</a><br />
-<a href='#label.draw_text'>draw_text</a><br />
-<a href='#label.on_mouse_click'>on_mouse_click</a><br />
-<a href='#label.render'>render</a><br />
-<a href='#label.set_rect'>set_rect</a><br />
-<a href='#label.set_var'>set_var</a><br />
-</p>
-<div class='function'><span class='function_name'><a class='anchor' id='label.__init__'>label</a>.<b>__init__(form, text=u'label', frame=False, center=True)</b></span><div class='details'>
-Constructor.<br />
-<br />
-<span class='keyword'>Arguments:</span>
-<br />
-<span class='variable'>form </span> &rarr;  The parent form.
-<br />
-<br />
-<span class='keyword'>Keyword arguments:</span>
-<br />
-<span class='variable'>text </span> &rarr;  A string of text (default='label').
-<br />
-<span class='variable'>frame </span> &rarr;  Indicates whether a frame should be drawn around the widget 
-(default=False).<br />
-<span class='variable'>center </span> &rarr;  Indicates whether the text should be centered (default=True).
-<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='label.draw_frame'>label</a>.<b>draw_frame(rect=None, style=u'normal')</b></span><div class='details'>
-<i>Inherited from <b>widget</b></i><br /><br />Draws a simple frame around the widget.<br />
-<br />
-<span class='keyword'>Keyword arguments:</span>
-<br />
-<span class='variable'>rect </span> &rarr;  A (left, top, width, height) tuple for the frame geometry or
-<br />
-None to use the widget geometry (default=None).<br />
-<span class='variable'>style </span> &rarr;  'normal', 'active', 'light' (default='normal').
-<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='label.draw_text'>label</a>.<b>draw_text(text, html=True)</b></span><div class='details'>
-Draws text in the widget.<br />
-<br />
-<span class='keyword'>Arguments:</span>
-<br />
-<span class='variable'>text </span> &rarr;  The text to draw.
-<br />
-<br />
-<span class='keyword'>Keyword arguments:</span>
-<br />
-<span class='variable'>html </span> &rarr;  Indicates whether HTML should be parsed (default=True).
-<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='label.on_mouse_click'>label</a>.<b>on_mouse_click(pos)</b></span><div class='details'>
-<i>Inherited from <b>widget</b></i><br /><br />Is called whenever the user clicks on the widget<br />
-<br />
-<span class='keyword'>Arguments:</span>
-<br />
-<span class='variable'>pos </span> &rarr;  An (x, y) tuple
-<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='label.render'>label</a>.<b>render()</b></span><div class='details'>
-Draws the widget.<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='label.set_rect'>label</a>.<b>set_rect(rect)</b></span><div class='details'>
-<i>Inherited from <b>widget</b></i><br /><br />Sets the widget geometry.<br />
-<br />
-<span class='keyword'>Arguments:</span>
-<br />
-<span class='variable'>rect </span> &rarr;  A (left, top, width, height) tuple.
-<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='label.set_var'>label</a>.<b>set_var(val, var=None)</b></span><div class='details'>
-<i>Inherited from <b>widget</b></i><br /><br />Sets an experimental variable.<br />
-<br />
-<span class='keyword'>Arguments:</span>
-<br />
-<span class='variable'>val </span> &rarr;  A value.
-<br />
-<br />
-<span class='keyword'>Keyword arguments:</span>
-<br />
-<span class='variable'>var </span> &rarr;  A variable name, or None to use widget default (default=None).
-<br />
-</div></div>
+<div class="ClassDoc YAMLDoc" id="label" markdown="1">
+
+# class __label__
+
+The label widget is a non-interactive string of text.
+
+__Example (OpenSesame script):__
+
+~~~
+widget 0 0 1 1 label text='My text'
+~~~
+
+__Example (Python):__
+
+{% highlight python %}
+from libopensesame import widgets
+form = widgets.form(self.experiment)
+label = widgets.label(form, text='My text')
+form.set_widget(label, (0,0))
+form._exec()
+{% endhighlight %}
+
+__Function list:__
+
+
+- [function __label.\_\_init\_\___(form, text=u'label', frame=False, center=True)](#function-__label__init____form-textulabel-framefalse-centertrue)
+- [function __label.draw_frame__(style=u'normal', rect=None)](#function-__labeldraw_frame__styleunormal-rectnone)
+- [function __label.draw_text__(text, html=True)](#function-__labeldraw_text__text-htmltrue)
+- [function __label.on_mouse_click__(pos)](#function-__labelon_mouse_click__pos)
+- [function __label.render__()](#function-__labelrender__)
+- [function __label.set_rect__(rect)](#function-__labelset_rect__rect)
+- [function __label.set_var__(val, var=None)](#function-__labelset_var__val-varnone)
+
+
+
+<div class="FunctionDoc YAMLDoc" id="label-__init__" markdown="1">
+
+## [function __label.\_\_init\_\___(form, text=u'label', frame=False, center=True)](#function-__label__init____form-textulabel-framefalse-centertrue) {#function-__label__init____form-textulabel-framefalse-centertrue}
+
+Constructor.
+
+__Arguments:__
+
+- `form` -- The parent form.
+	- Type: form
+
+__Keywords:__
+
+- `text` -- The label text.
+	- Default: u'label'
+	- Type: str, unicode
+- `frame` -- Indicates whether a frame should be drawn around the widget.
+	- Default: False
+	- Type: bool
+- `center` -- Indicates whether the text should be centerd.
+	- Default: True
+	- Type: bool
+
 </div>
+
+[label.__init__]: #label-__init__
+[__init__]: #label-__init__
+
+<div class="FunctionDoc YAMLDoc" id="label-draw_frame" markdown="1">
+
+## [function __label.draw_frame__(style=u'normal', rect=None)](#function-__labeldraw_frame__styleunormal-rectnone) {#function-__labeldraw_frame__styleunormal-rectnone}
+
+Draws a simple frame around the widget.
+
+__Keywords:__
+
+- `style` -- A visual style. Should be 'normal', 'active', or 'light'.
+	- Default: u'normal'
+	- Type: str, unicode
+- `rect` -- A (left, top, width, height) tuple for the frame geometry or `None` to use the widget geometry.
+	- Default: None
+	- Type: tuple, NoneType
+
+</div>
+
+[label.draw_frame]: #label-draw_frame
+[draw_frame]: #label-draw_frame
+
+<div class="FunctionDoc YAMLDoc" id="label-draw_text" markdown="1">
+
+## [function __label.draw_text__(text, html=True)](#function-__labeldraw_text__text-htmltrue) {#function-__labeldraw_text__text-htmltrue}
+
+Draws text inside the widget.
+
+__Arguments:__
+
+- `text` -- The text to draw.
+	- Type: str, unicode
+
+__Keywords:__
+
+- `html` -- Indicates whether HTML should be parsed.
+	- Default: True
+	- Type: bool
+
+</div>
+
+[label.draw_text]: #label-draw_text
+[draw_text]: #label-draw_text
+
+<div class="FunctionDoc YAMLDoc" id="label-on_mouse_click" markdown="1">
+
+## [function __label.on_mouse_click__(pos)](#function-__labelon_mouse_click__pos) {#function-__labelon_mouse_click__pos}
+
+Is called whenever the user clicks on the widget.
+
+__Arguments:__
+
+- `pos` -- An (x, y) coordinates tuple.
+	- Type: tuple
+
+</div>
+
+[label.on_mouse_click]: #label-on_mouse_click
+[on_mouse_click]: #label-on_mouse_click
+
+<div class="FunctionDoc YAMLDoc" id="label-render" markdown="1">
+
+## [function __label.render__()](#function-__labelrender__) {#function-__labelrender__}
+
+Draws the widget.
+
+</div>
+
+[label.render]: #label-render
+[render]: #label-render
+
+<div class="FunctionDoc YAMLDoc" id="label-set_rect" markdown="1">
+
+## [function __label.set_rect__(rect)](#function-__labelset_rect__rect) {#function-__labelset_rect__rect}
+
+Sets the widget geometry.
+
+__Arguments:__
+
+- `rect` -- A (left, top, width, height) tuple.
+	- Type: tuple
+
+</div>
+
+[label.set_rect]: #label-set_rect
+[set_rect]: #label-set_rect
+
+<div class="FunctionDoc YAMLDoc" id="label-set_var" markdown="1">
+
+## [function __label.set_var__(val, var=None)](#function-__labelset_var__val-varnone) {#function-__labelset_var__val-varnone}
+
+Sets an experimental variable.
+
+__Arguments:__
+
+- `val` -- A value.
+
+__Keywords:__
+
+- `var` -- A variable name, or None to use widget default.
+	- Default: None
+	- Type: str, unicode, NoneType
+
+</div>
+
+[label.set_var]: #label-set_var
+[set_var]: #label-set_var
+
+</div>
+
+[label]: #label
+
+
+[function __label.\_\_init\_\___(form, text=u'label', frame=False, center=True)]: #function-__label__init____form-textulabel-framefalse-centertrue
+[function __label.draw_frame__(style=u'normal', rect=None)]: #function-__labeldraw_frame__styleunormal-rectnone
+[function __label.draw_text__(text, html=True)]: #function-__labeldraw_text__text-htmltrue
+[function __label.on_mouse_click__(pos)]: #function-__labelon_mouse_click__pos
+[function __label.render__()]: #function-__labelrender__
+[function __label.set_rect__(rect)]: #function-__labelset_rect__rect
+[function __label.set_var__(val, var=None)]: #function-__labelset_var__val-varnone

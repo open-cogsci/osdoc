@@ -1,101 +1,212 @@
-<div class='pydoc'>
-<span class='class_name'>class <b>checkbox</b></span><br />
-<p class='details'><b>Function overview:</b><br />
-<a href='#checkbox.__init__'>__init__</a><br />
-<a href='#checkbox.draw_frame'>draw_frame</a><br />
-<a href='#checkbox.draw_text'>draw_text</a><br />
-<a href='#checkbox.on_mouse_click'>on_mouse_click</a><br />
-<a href='#checkbox.render'>render</a><br />
-<a href='#checkbox.set_checked'>set_checked</a><br />
-<a href='#checkbox.set_rect'>set_rect</a><br />
-<a href='#checkbox.set_var'>set_var</a><br />
-</p>
-<div class='function'><span class='function_name'><a class='anchor' id='checkbox.__init__'>checkbox</a>.<b>__init__(form, text=u'checkbox', frame=False, group=None, checked=False, click_accepts=False, var=None)</b></span><div class='details'>
-Constructor.<br />
-<br />
-<span class='keyword'>Arguments:</span>
-<br />
-<span class='variable'>form </span> &rarr;  The parent form.
-<br />
-<br />
-<span class='keyword'>Keyword arguments:</span>
-<br />
-<span class='variable'>text </span> &rarr;  Checkbox text (default=u'checkbox').
-<br />
-<span class='variable'>frame </span> &rarr;  Indicates whether a frame should be drawn around the widget 
-(default=False).<br />
-<span class='variable'>group </span> &rarr;  If a group is specified, checking one checkbox from the group 
-will uncheck all other checkboxes in that group. Checkboxes that are part of a group cannot be unchecked, except by clicking on another checkbox in the group. The group keyword also affects how variables are stored (see the var keyword). (default=None).<br />
-<span class='variable'>checked </span> &rarr;  The checked state of the checkbox (default=False).
-<br />
-<span class='variable'>click_accepts </span> &rarr;  Indicates whether a click press should accept and 
-close the form (default=False).<br />
-<span class='variable'>var </span> &rarr;  The name of the experimental variable that should be used to log 
-the widget status. This variable will contain a semi-colon separated list of the text of all checked checkboxes in the same group, or 'no' if no checkbox in the group is checked. For the purpose of the variable, all checkboxes that are not part of a group are placed in the same group. For more information about the use of response variables in forms, see the form documentation page. (default=None).<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='checkbox.draw_frame'>checkbox</a>.<b>draw_frame(rect=None, style=u'normal')</b></span><div class='details'>
-<i>Inherited from <b>widget</b></i><br /><br />Draws a simple frame around the widget.<br />
-<br />
-<span class='keyword'>Keyword arguments:</span>
-<br />
-<span class='variable'>rect </span> &rarr;  A (left, top, width, height) tuple for the frame geometry or
-<br />
-None to use the widget geometry (default=None).<br />
-<span class='variable'>style </span> &rarr;  'normal', 'active', 'light' (default='normal').
-<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='checkbox.draw_text'>checkbox</a>.<b>draw_text(text, html=True)</b></span><div class='details'>
-<i>Inherited from <b>label</b></i><br /><br />Draws text in the widget.<br />
-<br />
-<span class='keyword'>Arguments:</span>
-<br />
-<span class='variable'>text </span> &rarr;  The text to draw.
-<br />
-<br />
-<span class='keyword'>Keyword arguments:</span>
-<br />
-<span class='variable'>html </span> &rarr;  Indicates whether HTML should be parsed (default=True).
-<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='checkbox.on_mouse_click'>checkbox</a>.<b>on_mouse_click(pos)</b></span><div class='details'>
-Is called whenever the user clicks on the widget. Toggles the state of the checkbox.<br />
-<br />
-<span class='keyword'>Arguments:</span>
-<br />
-<span class='variable'>pos		</span> &rarr; 	An (x, y) tuple.
-<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='checkbox.render'>checkbox</a>.<b>render()</b></span><div class='details'>
-Draws the widget.<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='checkbox.set_checked'>checkbox</a>.<b>set_checked(checked=True)</b></span><div class='details'>
-Sets the checked status of the checkbox.<br />
-<br />
-<span class='keyword'>Keyword arguments:</span>
-<br />
-<span class='variable'>checked	</span> &rarr; 	The checked status. (default=True)
-<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='checkbox.set_rect'>checkbox</a>.<b>set_rect(rect)</b></span><div class='details'>
-<i>Inherited from <b>widget</b></i><br /><br />Sets the widget geometry.<br />
-<br />
-<span class='keyword'>Arguments:</span>
-<br />
-<span class='variable'>rect </span> &rarr;  A (left, top, width, height) tuple.
-<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='checkbox.set_var'>checkbox</a>.<b>set_var(val, var=None)</b></span><div class='details'>
-Sets an experimental variable.<br />
-<br />
-<span class='keyword'>Arguments:</span>
-<br />
-<span class='variable'>val		</span> &rarr; 	A value.
-<br />
-<br />
-<span class='keyword'>Keyword arguments:</span>
-<br />
-<span class='variable'>var		</span> &rarr; 	A variable name, or None to use widget default.
-<br />
-(default=None)<br />
-</div></div>
+<div class="ClassDoc YAMLDoc" id="checkbox" markdown="1">
+
+# class __checkbox__
+
+The checkbox widget is a checkable box accompanied by a string of text.
+
+__Example (OpenSesame script):__
+
+~~~
+widget 0 0 1 1 checkbox group="group" text="Option 1"
+widget 0 1 1 1 checkbox group="group" text="Option 2"
+~~~
+
+__Example (Python):__
+
+{% highlight python %}
+from libopensesame import widgets
+form = widgets.form(self.experiment)
+checkbox1 = widgets.checkbox(form, text='Option 1', group='group')
+checkbox2 = widgets.checkbox(form, text='Option 2', group='group')
+form.set_widget(checkbox1, (0,0))
+form.set_widget(checkbox2, (0,1))
+{% endhighlight %}
+
+__Function list:__
+
+
+- [function __checkbox.\_\_init\_\___(form, group=None, text=u'checkbox', frame=False, click_accepts=False, var=None, checked=False)](#function-__checkbox__init____form-groupnone-textucheckbox-framefalse-click_acceptsfalse-varnone-checkedfalse)
+- [function __checkbox.draw_frame__(style=u'normal', rect=None)](#function-__checkboxdraw_frame__styleunormal-rectnone)
+- [function __checkbox.draw_text__(text, html=True)](#function-__checkboxdraw_text__text-htmltrue)
+- [function __checkbox.on_mouse_click__(pos)](#function-__checkboxon_mouse_click__pos)
+- [function __checkbox.render__()](#function-__checkboxrender__)
+- [function __checkbox.set_checked__(checked=True)](#function-__checkboxset_checked__checkedtrue)
+- [function __checkbox.set_rect__(rect)](#function-__checkboxset_rect__rect)
+- [function __checkbox.set_var__(val, var=None)](#function-__checkboxset_var__val-varnone)
+
+
+
+<div class="FunctionDoc YAMLDoc" id="checkbox-__init__" markdown="1">
+
+## [function __checkbox.\_\_init\_\___(form, group=None, text=u'checkbox', frame=False, click_accepts=False, var=None, checked=False)](#function-__checkbox__init____form-groupnone-textucheckbox-framefalse-click_acceptsfalse-varnone-checkedfalse) {#function-__checkbox__init____form-groupnone-textucheckbox-framefalse-click_acceptsfalse-varnone-checkedfalse}
+
+Constructor.
+
+__Arguments:__
+
+- `form` -- The parent form.
+	- Type: form
+
+__Keywords:__
+
+- `group` -- If a group is specified, checking one checkbox from the group will uncheck all other checkboxes in that group. Checkboxes that are part of a group cannot be unchecked, except by clicking on another checkbox in the group. The `group` keyword also affects how variables are stored (see the `var` keyword).
+	- Default: None
+	- Type: str, unicode, NoneType
+- `click_accepts` -- Indicates whether a click press should accept and close the form.
+	- Default: False
+	- Type: bool
+- `var` -- The name of the experimental variable that should be used to log the widget status. This variable will contain a semi-colon separated list of the text of all checked checkboxes in the same group, or 'no' if no checkbox in the group is checked. For the purpose of the variable, all checkboxes that are not part of a group are placed in the same group. For more information about the use of response variables in forms, see the form documentation page.
+	- Default: None
+	- Type: str, unicode, NoneType
+- `text` -- Checkbox text.
+	- Default: u'checkbox'
+	- Type: str, unicode
+- `frame` -- Indicates whether a frame should be drawn around the widget.
+	- Default: False
+	- Type: bool
+- `checked` -- The initial checked state of the checkbox.
+	- Default: False
+	- Type: bool
+
 </div>
+
+[checkbox.__init__]: #checkbox-__init__
+[__init__]: #checkbox-__init__
+
+<div class="FunctionDoc YAMLDoc" id="checkbox-draw_frame" markdown="1">
+
+## [function __checkbox.draw_frame__(style=u'normal', rect=None)](#function-__checkboxdraw_frame__styleunormal-rectnone) {#function-__checkboxdraw_frame__styleunormal-rectnone}
+
+Draws a simple frame around the widget.
+
+__Keywords:__
+
+- `style` -- A visual style. Should be 'normal', 'active', or 'light'.
+	- Default: u'normal'
+	- Type: str, unicode
+- `rect` -- A (left, top, width, height) tuple for the frame geometry or `None` to use the widget geometry.
+	- Default: None
+	- Type: tuple, NoneType
+
+</div>
+
+[checkbox.draw_frame]: #checkbox-draw_frame
+[draw_frame]: #checkbox-draw_frame
+
+<div class="FunctionDoc YAMLDoc" id="checkbox-draw_text" markdown="1">
+
+## [function __checkbox.draw_text__(text, html=True)](#function-__checkboxdraw_text__text-htmltrue) {#function-__checkboxdraw_text__text-htmltrue}
+
+Draws text inside the widget.
+
+__Arguments:__
+
+- `text` -- The text to draw.
+	- Type: str, unicode
+
+__Keywords:__
+
+- `html` -- Indicates whether HTML should be parsed.
+	- Default: True
+	- Type: bool
+
+</div>
+
+[checkbox.draw_text]: #checkbox-draw_text
+[draw_text]: #checkbox-draw_text
+
+<div class="FunctionDoc YAMLDoc" id="checkbox-on_mouse_click" markdown="1">
+
+## [function __checkbox.on_mouse_click__(pos)](#function-__checkboxon_mouse_click__pos) {#function-__checkboxon_mouse_click__pos}
+
+Is called whenever the user clicks on the widget. Toggles the state of the checkbox.
+
+__Arguments:__
+
+- `pos` -- An (x, y) coordinate tuple.
+	- Type: tuple
+
+</div>
+
+[checkbox.on_mouse_click]: #checkbox-on_mouse_click
+[on_mouse_click]: #checkbox-on_mouse_click
+
+<div class="FunctionDoc YAMLDoc" id="checkbox-render" markdown="1">
+
+## [function __checkbox.render__()](#function-__checkboxrender__) {#function-__checkboxrender__}
+
+Draws the widget.
+
+</div>
+
+[checkbox.render]: #checkbox-render
+[render]: #checkbox-render
+
+<div class="FunctionDoc YAMLDoc" id="checkbox-set_checked" markdown="1">
+
+## [function __checkbox.set_checked__(checked=True)](#function-__checkboxset_checked__checkedtrue) {#function-__checkboxset_checked__checkedtrue}
+
+Sets the checked status of the checkbox.
+
+__Keywords:__
+
+- `checked` -- The checked status.
+	- Default: True
+	- Type: bool
+
+</div>
+
+[checkbox.set_checked]: #checkbox-set_checked
+[set_checked]: #checkbox-set_checked
+
+<div class="FunctionDoc YAMLDoc" id="checkbox-set_rect" markdown="1">
+
+## [function __checkbox.set_rect__(rect)](#function-__checkboxset_rect__rect) {#function-__checkboxset_rect__rect}
+
+Sets the widget geometry.
+
+__Arguments:__
+
+- `rect` -- A (left, top, width, height) tuple.
+	- Type: tuple
+
+</div>
+
+[checkbox.set_rect]: #checkbox-set_rect
+[set_rect]: #checkbox-set_rect
+
+<div class="FunctionDoc YAMLDoc" id="checkbox-set_var" markdown="1">
+
+## [function __checkbox.set_var__(val, var=None)](#function-__checkboxset_var__val-varnone) {#function-__checkboxset_var__val-varnone}
+
+Sets an experimental variable.
+
+__Arguments:__
+
+- `val` -- A value.
+	- Type: str, unicode
+
+__Keywords:__
+
+- `var` -- A variable name, or `None` to use widget default.
+	- Default: None
+	- Type: str, unicode, NoneType
+
+</div>
+
+[checkbox.set_var]: #checkbox-set_var
+[set_var]: #checkbox-set_var
+
+</div>
+
+[checkbox]: #checkbox
+
+
+[function __checkbox.\_\_init\_\___(form, group=None, text=u'checkbox', frame=False, click_accepts=False, var=None, checked=False)]: #function-__checkbox__init____form-groupnone-textucheckbox-framefalse-click_acceptsfalse-varnone-checkedfalse
+[function __checkbox.draw_frame__(style=u'normal', rect=None)]: #function-__checkboxdraw_frame__styleunormal-rectnone
+[function __checkbox.draw_text__(text, html=True)]: #function-__checkboxdraw_text__text-htmltrue
+[function __checkbox.on_mouse_click__(pos)]: #function-__checkboxon_mouse_click__pos
+[function __checkbox.render__()]: #function-__checkboxrender__
+[function __checkbox.set_checked__(checked=True)]: #function-__checkboxset_checked__checkedtrue
+[function __checkbox.set_rect__(rect)]: #function-__checkboxset_rect__rect
+[function __checkbox.set_var__(val, var=None)]: #function-__checkboxset_var__val-varnone

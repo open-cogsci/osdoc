@@ -1,80 +1,151 @@
-<div class='pydoc'>
-<span class='class_name'>class <b>libsrbox</b></span><br />
-<p class='details'><b>Function overview:</b><br />
-<a href='#libsrbox.__init__'>__init__</a><br />
-<a href='#libsrbox.close'>close</a><br />
-<a href='#libsrbox.get_button_press'>get_button_press</a><br />
-<a href='#libsrbox.send'>send</a><br />
-<a href='#libsrbox.start'>start</a><br />
-<a href='#libsrbox.stop'>stop</a><br />
-</p>
-<div class='function'><span class='function_name'><a class='anchor' id='libsrbox.__init__'>libsrbox</a>.<b>__init__(experiment, dev=None)</b></span><div class='details'>
-Constructor. Connects to the SR Box.<br />
-<br />
-<span class='keyword'>Arguments:</span>
-<br />
-<span class='variable'>experiment </span> &rarr;  Opensesame experiment.
-<br />
-<br />
-Keywords arguments:<br />
-<span class='variable'>dev </span> &rarr;  The srbox device port or None for auto-detect (default=None).
-<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='libsrbox.close'>libsrbox</a>.<b>close()</b></span><div class='details'>
-Closes the connection to the srbox. This is (sometimes?) required in order to re-use the SR Box in the same session of OpenSesame.<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='libsrbox.get_button_press'>libsrbox</a>.<b>get_button_press(allowed_buttons=None, timeout=None)</b></span><div class='details'>
-Gets a button press from the SR box.<br />
-<br />
-Keywords arguments:<br />
-<span class='variable'>allowed_buttons </span> &rarr;  A list of buttons that are accepted or None to accept 
-all buttons. Valid buttons are integers 1 through 8. (default=None)<br />
-<span class='variable'>timeout </span> &rarr;  A timeout value or None for no timeout. (default=None)
-<br />
-<br />
-<span class='keyword'>Returns:</span>
-<br />
-A timestamp, buttonlist tuple. The buttonlist consists of a list of button numbers.<br />
-<br />
-<span class='keyword'>Example:</span>
-<br />
-{% highlight python %}exp.srbox.start()
-timestamp, buttonlist = exp.srbox.get_button_press(allowed_buttons=[1,2])
+<div class="ClassDoc YAMLDoc" id="libsrbox" markdown="1">
+
+# class __libsrbox__
+
+If you insert the srbox plugin at the start of your experiment, an
+instance of `libsrbox` automatically becomes part of the experiment
+object and can be accessed from within an inline_script item as
+`exp.srbox`.
+
+__Important note 1:__
+
+If you do not specify a device, the plug-in will try to autodetect the
+SR Box port. However, on some systems this freezes the experiment, so
+it is better to explicitly specify a device.
+
+__Important note 2:__
+
+You need to call [libsrbox.start] to put the SR Box in sending mode,
+before calling [libsrbox.get_button_press] to collect a button press.
+
+__Function list:__
+
+
+- [function __libsrbox.\_\_init\_\___(experiment, dev=None)](#function-__libsrbox__init____experiment-devnone)
+- [function __libsrbox.close__()](#function-__libsrboxclose__)
+- [function __libsrbox.get_button_press__(allowed_buttons=None, timeout=None)](#function-__libsrboxget_button_press__allowed_buttonsnone-timeoutnone)
+- [function __libsrbox.send__(ch)](#function-__libsrboxsend__ch)
+- [function __libsrbox.start__()](#function-__libsrboxstart__)
+- [function __libsrbox.stop__()](#function-__libsrboxstop__)
+
+
+
+__Example:__
+
+{% highlight python %}
+t0 = self.time()
+exp.srbox.start()
+t1, buttonlist = exp.srbox.get_button_press(allowed_buttons=[1,2])
 if 1 in buttonlist:
-		print('Button 1 was pressed!')
+        response_time = t1 - t0
+        print('Button 1 was pressed in %d ms!' % response_time)
 exp.srbox.stop()
-{% endhighlight %}<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='libsrbox.send'>libsrbox</a>.<b>send(ch)</b></span><div class='details'>
-Sends a single character.<br />
-<br />
-<span class='keyword'>Arguments:</span>
-<br />
-<span class='variable'>ch </span> &rarr;  The character to send.
-<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='libsrbox.start'>libsrbox</a>.<b>start()</b></span><div class='details'>
-Turns on sending mode, to start giving output.<br />
-<br />
-<span class='keyword'>Example:</span>
-<br />
-{% highlight python %}exp.srbox.start()
-timestamp, buttonlist = exp.srbox.get_button_press(allowed_buttons=[1,2])
-if 1 in buttonlist:
-		print('Button 1 was pressed!')
-exp.srbox.stop()
-{% endhighlight %}<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='libsrbox.stop'>libsrbox</a>.<b>stop()</b></span><div class='details'>
-Turns off sending mode, to stop giving output.<br />
-<br />
-<span class='keyword'>Example:</span>
-<br />
-{% highlight python %}exp.srbox.start()
-timestamp, buttonlist = exp.srbox.get_button_press(allowed_buttons=[1,2])
-if 1 in buttonlist:
-		print('Button 1 was pressed!')
-exp.srbox.stop()
-{% endhighlight %}<br />
-</div></div>
+{% endhighlight %}
+
+<div class="FunctionDoc YAMLDoc" id="libsrbox-__init__" markdown="1">
+
+## [function __libsrbox.\_\_init\_\___(experiment, dev=None)](#function-__libsrbox__init____experiment-devnone) {#function-__libsrbox__init____experiment-devnone}
+
+Constructor. An `srbox` object is created automatically by the `srbox` plug-in, and you do not generally need to call the constructor yourself.
+
+__Arguments:__
+
+- `experiment` -- An Opensesame experiment.
+	- Type: experiment
+
+__Keywords:__
+
+- `dev` -- No description
+	- Default: None
+
 </div>
+
+[libsrbox.__init__]: #libsrbox-__init__
+[__init__]: #libsrbox-__init__
+
+<div class="FunctionDoc YAMLDoc" id="libsrbox-close" markdown="1">
+
+## [function __libsrbox.close__()](#function-__libsrboxclose__) {#function-__libsrboxclose__}
+
+Closes the connection to the srbox.
+
+</div>
+
+[libsrbox.close]: #libsrbox-close
+[close]: #libsrbox-close
+
+<div class="FunctionDoc YAMLDoc" id="libsrbox-get_button_press" markdown="1">
+
+## [function __libsrbox.get_button_press__(allowed_buttons=None, timeout=None)](#function-__libsrboxget_button_press__allowed_buttonsnone-timeoutnone) {#function-__libsrboxget_button_press__allowed_buttonsnone-timeoutnone}
+
+Collect a button press from the SR box. This function will return right away if a button is already pressed.
+
+__Keywords:__
+
+- `allowed_buttons` -- A list of buttons that are accepted or `None` to accept all buttons. Valid buttons are integers 1 through 8.
+	- Default: None
+	- Type: list, NoneType
+- `timeout` -- A timeout value in milliseconds or `None` for no timeout.
+	- Default: None
+	- Type: int, float, NoneType
+
+__Returns:__
+
+A timestamp, buttonlist tuple. The buttonlist consists of a list of button numbers.
+
+- Type: tuple
+
+</div>
+
+[libsrbox.get_button_press]: #libsrbox-get_button_press
+[get_button_press]: #libsrbox-get_button_press
+
+<div class="FunctionDoc YAMLDoc" id="libsrbox-send" markdown="1">
+
+## [function __libsrbox.send__(ch)](#function-__libsrboxsend__ch) {#function-__libsrboxsend__ch}
+
+Sends a single character to the SR Box.
+
+__Arguments:__
+
+- `ch` -- The character to send.
+	- Type: str
+
+</div>
+
+[libsrbox.send]: #libsrbox-send
+[send]: #libsrbox-send
+
+<div class="FunctionDoc YAMLDoc" id="libsrbox-start" markdown="1">
+
+## [function __libsrbox.start__()](#function-__libsrboxstart__) {#function-__libsrboxstart__}
+
+Turns on sending mode, so that the SR Box starts to send output. The SR Box must be in sending mode when you call [libsrbox.get_button_press].
+
+</div>
+
+[libsrbox.start]: #libsrbox-start
+[start]: #libsrbox-start
+
+<div class="FunctionDoc YAMLDoc" id="libsrbox-stop" markdown="1">
+
+## [function __libsrbox.stop__()](#function-__libsrboxstop__) {#function-__libsrboxstop__}
+
+Turns off sending mode, so that the SR Box stops giving output.
+
+</div>
+
+[libsrbox.stop]: #libsrbox-stop
+[stop]: #libsrbox-stop
+
+</div>
+
+[libsrbox]: #libsrbox
+
+
+[function __libsrbox.\_\_init\_\___(experiment, dev=None)]: #function-__libsrbox__init____experiment-devnone
+[function __libsrbox.close__()]: #function-__libsrboxclose__
+[function __libsrbox.get_button_press__(allowed_buttons=None, timeout=None)]: #function-__libsrboxget_button_press__allowed_buttonsnone-timeoutnone
+[function __libsrbox.send__(ch)]: #function-__libsrboxsend__ch
+[function __libsrbox.start__()]: #function-__libsrboxstart__
+[function __libsrbox.stop__()]: #function-__libsrboxstop__

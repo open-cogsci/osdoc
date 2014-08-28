@@ -1,161 +1,257 @@
-<div class='pydoc'>
-<p><small>For OpenSesame 2.8.3</small></p>
-<span class='class_name'>class <b>keyboard</b></span><br />
-<p class='details'><b>Function overview:</b><br />
-<a href='#keyboard.__init__'>__init__</a><br />
-<a href='#keyboard.flush'>flush</a><br />
-<a href='#keyboard.get_key'>get_key</a><br />
-<a href='#keyboard.get_mods'>get_mods</a><br />
-<a href='#keyboard.set_keylist'>set_keylist</a><br />
-<a href='#keyboard.set_timeout'>set_timeout</a><br />
-<a href='#keyboard.show_virtual_keyboard'>show_virtual_keyboard</a><br />
-</p>
-<div class='function'><span class='function_name'><a class='anchor' id='keyboard.__init__'>keyboard</a>.<b>__init__(experiment, keylist=None, timeout=None)</b></span><div class='details'>
-Intializes the keyboard object.<br />
-<br />
-Keys can be identified either by character or name. This is case insensitive. Naming keys using ASCII (integer) key codes is deprecated.<br />
-<br />
-For example:<br />
-- The key 'a' is represented by 'a' and 'A'.<br />
-- The up arrow is represented by 'up' and 'UP'.<br />
-- The '/' key is represented by '/', 'slash', and 'SLASH'.<br />
-- The spacebar is represented by 'space' and 'SPACE'.<br />
-<br />
-For a complete list of available key names, click on the 'list available keys' button in the keyboard_response tab within OpenSesame.<br />
-<br />
-<span class='keyword'>Arguments:</span>
-<br />
-<span class='variable'>experiment </span> &rarr;  An instance of libopensesame.experiment.experiment.
-<br />
-<br />
-<span class='keyword'>Keyword arguments:</span>
-<br />
-<span class='variable'>keylist </span> &rarr;  A list of human-readable keys that are accepted or None to 
-accept all keys (default=None).<br />
-<span class='variable'>timeout </span> &rarr;  An integer value specifying a timeout in milliseconds or None 
-for no timeout (default=None).<br />
-<br />
-<span class='keyword'>Example:</span>
-<br />
-{% highlight python %}from openexp.keyboard import keyboard
+<div class="ClassDoc YAMLDoc" id="keyboard" markdown="1">
+
+# class __keyboard__
+
+The `keyboard` class is used to collect keyboard responses.
+
+__Example:__
+
+{% highlight python %}
+# Wait for a 'z' or 'x' key with a timeout of 3000 ms
+from openexp.keyboard import keyboard
+my_keyboard = keyboard(exp, keylist=['z', 'x'], timeout=3000)
+start_time = self.time()
+key, end_time = my_keyboard.get_key()
+exp.set('response', key)
+exp.set('response_time', end_time - start_time)
+{% endhighlight %}
+
+__Function list:__
+
+
+- [function __keyboard.\_\_init\_\___(experiment, keylist=None, timeout=None)](#function-__keyboard__init____experiment-keylistnone-timeoutnone)
+- [function __keyboard.flush__()](#function-__keyboardflush__)
+- [function __keyboard.get_key__(keylist=None, timeout=None)](#function-__keyboardget_key__keylistnone-timeoutnone)
+- [function __keyboard.get_mods__()](#function-__keyboardget_mods__)
+- [function __keyboard.set_keylist__(keylist=None)](#function-__keyboardset_keylist__keylistnone)
+- [function __keyboard.set_timeout__(timeout=None)](#function-__keyboardset_timeout__timeoutnone)
+- [function __keyboard.show_virtual_keyboard__(visible=True)](#function-__keyboardshow_virtual_keyboard__visibletrue)
+
+
+
+
+
+<div class="FunctionDoc YAMLDoc" id="keyboard-__init__" markdown="1">
+
+## [function __keyboard.\_\_init\_\___(experiment, keylist=None, timeout=None)](#function-__keyboard__init____experiment-keylistnone-timeoutnone) {#function-__keyboard__init____experiment-keylistnone-timeoutnone}
+
+Constructor. Intializes the keyboard object.
+
+Keys can be identified either by character or name. This is case
+insensitive. Naming keys using ASCII (integer) key codes is
+deprecated.
+
+For example:
+
+- The key 'a' is represented by 'a' and 'A'.
+- The up arrow is represented by 'up' and 'UP'.
+- The '/' key is represented by '/', 'slash', and 'SLASH'.
+- The spacebar is represented by 'space' and 'SPACE'.
+
+For a complete list of available key names, click on the
+'list available keys' button in the keyboard_response tab within
+OpenSesame.
+
+__Example:__
+
+{% highlight python %}
+from openexp.keyboard import keyboard
 my_keyboard = keyboard(exp, keylist=['z', 'm'], timeout=2000)
-{% endhighlight %}<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='keyboard.flush'>keyboard</a>.<b>flush()</b></span><div class='details'>
-Clears all pending input, not limited to the keyboard.<br />
-<br />
-<span class='keyword'>Exceptions:</span>
-<br />
-An osexception if 'escape' was pressed<br />
-<br />
-<span class='keyword'>Returns:</span>
-<br />
-True if a key had been pressed (i.e., if there was something to flush) and False otherwise.<br />
-<br />
-<span class='keyword'>Example:</span>
-<br />
-{% highlight python %}from openexp.keyboard import keyboard
-my_keyboard = keyboard(exp)
-my_keyboard.flush()
-response, timestamp = my_keyboard.get_key()
-{% endhighlight %}<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='keyboard.get_key'>keyboard</a>.<b>get_key(keylist=None, timeout=None)</b></span><div class='details'>
-Waits for keyboard input.<br />
-<br />
-<span class='keyword'>Keyword arguments:</span>
-<br />
-<span class='variable'>keylist </span> &rarr;  A list of human-readable keys that are accepted or None to 
-use the default. This parameter does not change the default keylist (default=None).<br />
-<span class='variable'>timeout </span> &rarr;  An integer value specifying a timeout in milliseconds or None 
-to use the default. This parameter does not change the default timeout (default=None).<br />
-<br />
-<span class='keyword'>Exceptions:</span>
-<br />
-An osexception if 'escape' was pressed.<br />
-<br />
-<span class='keyword'>Returns:</span>
-<br />
-A (key, timestamp) tuple. The key is None if a timeout occurs.<br />
-<br />
-<span class='keyword'>Example:</span>
-<br />
-{% highlight python %}from openexp.keyboard import keyboard
+{% endhighlight %}
+
+__Arguments:__
+
+- `experiment` -- The experiment object.
+	- Type: experiment
+
+__Keywords:__
+
+- `keylist` -- A list of human-readable keys that are accepted or `None` to accept all keys.
+	- Default: None
+	- Type: list, NoneType
+- `timeout` -- A numeric value specifying a timeout in milliseconds or `None` for no (i.e. infinite) timeout.
+	- Default: None
+	- Type: int, float, NoneType
+
+</div>
+
+[keyboard.__init__]: #keyboard-__init__
+[__init__]: #keyboard-__init__
+
+<div class="FunctionDoc YAMLDoc" id="keyboard-flush" markdown="1">
+
+## [function __keyboard.flush__()](#function-__keyboardflush__) {#function-__keyboardflush__}
+
+Clears all pending keyboard input, not limited to the keyboard.
+
+__Returns:__
+
+True if a key had been pressed (i.e., if there was something to flush) and False otherwise.
+
+- Type: bool
+
+</div>
+
+[keyboard.flush]: #keyboard-flush
+[flush]: #keyboard-flush
+
+<div class="FunctionDoc YAMLDoc" id="keyboard-get_key" markdown="1">
+
+## [function __keyboard.get_key__(keylist=None, timeout=None)](#function-__keyboardget_key__keylistnone-timeoutnone) {#function-__keyboardget_key__keylistnone-timeoutnone}
+
+Collects a single key press.
+
+__Example:__
+
+{% highlight python %}
+from openexp.keyboard import keyboard
 my_keyboard = keyboard(exp, timeout=2000)
 response, timestamp = my_keyboard.get_key()
 if response == None:
-	print('A timeout occurred!')
-{% endhighlight %}<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='keyboard.get_mods'>keyboard</a>.<b>get_mods()</b></span><div class='details'>
-Returns a list of keyboard moderators (e.g., shift, alt, etc.) that are currently pressed.<br />
-<br />
-<span class='keyword'>Returns:</span>
-<br />
-A list of keyboard moderators. An empty list is returned if no moderators are pressed.<br />
-<br />
-<span class='keyword'>Example:</span>
-<br />
-{% highlight python %}from openexp.keyboard import keyboard
+        print('A timeout occurred!')
+{% endhighlight %}
+
+__Keywords:__
+
+- `keylist` -- A list of human-readable keys that are accepted or `None` to accept all keys.
+	- Default: None
+	- Type: list, NoneType
+- `timeout` -- A numeric value specifying a timeout in milliseconds or `None` for no (i.e. infinite) timeout.
+	- Default: None
+	- Type: int, float, NoneType
+
+__Returns:__
+
+A `(key, timestamp)` tuple. `key` is None if a timeout occurs.
+
+- Type: tuple
+
+</div>
+
+[keyboard.get_key]: #keyboard-get_key
+[get_key]: #keyboard-get_key
+
+<div class="FunctionDoc YAMLDoc" id="keyboard-get_mods" markdown="1">
+
+## [function __keyboard.get_mods__()](#function-__keyboardget_mods__) {#function-__keyboardget_mods__}
+
+Returns a list of keyboard moderators (e.g., shift, alt, etc.) that are currently pressed.
+
+__Example:__
+
+{% highlight python %}
+from openexp.keyboard import keyboard
 my_keyboard = keyboard(exp)
 moderators = my_keyboard.get_mods()
 if 'shift' in moderators:
-	print('The shift-key is down!')
-{% endhighlight %}<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='keyboard.set_keylist'>keyboard</a>.<b>set_keylist(keylist=None)</b></span><div class='details'>
-Sets a list of accepted keys.<br />
-<br />
-<span class='keyword'>Keyword arguments:</span>
-<br />
-<span class='variable'>keylist </span> &rarr;  A list of keys that are accepted or None to accept all keys 
-(default=None).<br />
-<br />
-<span class='keyword'>Example:</span>
-<br />
-{% highlight python %}from openexp.keyboard import keyboard
+        print('The shift-key is down!')
+{% endhighlight %}
+
+__Returns:__
+
+A list of keyboard moderators. An empty list is returned if no moderators are pressed.
+
+- Type: list
+
+</div>
+
+[keyboard.get_mods]: #keyboard-get_mods
+[get_mods]: #keyboard-get_mods
+
+<div class="FunctionDoc YAMLDoc" id="keyboard-set_keylist" markdown="1">
+
+## [function __keyboard.set_keylist__(keylist=None)](#function-__keyboardset_keylist__keylistnone) {#function-__keyboardset_keylist__keylistnone}
+
+Sets the list of accepted keys.
+
+__Example:__
+
+{% highlight python %}
+from openexp.keyboard import keyboard
 my_keyboard = keyboard(exp)
 my_keyboard.set_keylist( ['z', 'm'] )
-{% endhighlight %}<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='keyboard.set_timeout'>keyboard</a>.<b>set_timeout(timeout=None)</b></span><div class='details'>
-Sets a timeout.<br />
-<br />
-<span class='keyword'>Keyword arguments:</span>
-<br />
-<span class='variable'>timeout </span> &rarr;  An integer value specifying a timeout in milliseconds or None 
-for no timeout (default=None).<br />
-<br />
-<span class='keyword'>Example:</span>
-<br />
-{% highlight python %}from openexp.keyboard import keyboard
+{% endhighlight %}
+
+__Keywords:__
+
+- `keylist` -- A list of human-readable keys that are accepted or `None` to accept all keys.
+	- Default: None
+	- Type: list, NoneType
+
+</div>
+
+[keyboard.set_keylist]: #keyboard-set_keylist
+[set_keylist]: #keyboard-set_keylist
+
+<div class="FunctionDoc YAMLDoc" id="keyboard-set_timeout" markdown="1">
+
+## [function __keyboard.set_timeout__(timeout=None)](#function-__keyboardset_timeout__timeoutnone) {#function-__keyboardset_timeout__timeoutnone}
+
+Sets a timeout.
+
+__Example:__
+
+{% highlight python %}
+from openexp.keyboard import keyboard
 my_keyboard = keyboard(exp)
 my_keyboard.set_timeout(2000)
-{% endhighlight %}<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='keyboard.show_virtual_keyboard'>keyboard</a>.<b>show_virtual_keyboard(visible=True)</b></span><div class='details'>
-Shows or hides a virtual keyboard if this is supported by the back-end.<br />
-This function is only necessary if you want the virtual keyboard to<br />
-remain visible while collecting multicharacter responses. Otherwise,<br />
-get_key() will implicitly shown and hide the keyboard for a single-<br />
-character response.<br />
-<br />
-This function does nothing for back-ends that do not support virtual<br />
-keyboards.<br />
-<br />
-<span class='keyword'>Arguments:</span>
-<br />
-<span class='variable'>visible		</span> &rarr; 	True if the keyboard should be shown, False otherwise.
-<br />
-<br />
-<span class='keyword'>Example:</span>
-<br />
-{% highlight python %}from openexp.keyboard import keyboard
+{% endhighlight %}
+
+__Keywords:__
+
+- `timeout` -- A numeric value specifying a timeout in milliseconds or `None` for no (i.e. infinite) timeout.
+	- Default: None
+	- Type: int, float, NoneType
+
+</div>
+
+[keyboard.set_timeout]: #keyboard-set_timeout
+[set_timeout]: #keyboard-set_timeout
+
+<div class="FunctionDoc YAMLDoc" id="keyboard-show_virtual_keyboard" markdown="1">
+
+## [function __keyboard.show_virtual_keyboard__(visible=True)](#function-__keyboardshow_virtual_keyboard__visibletrue) {#function-__keyboardshow_virtual_keyboard__visibletrue}
+
+Shows or hides a virtual keyboard if this is supported by the
+back-end. This function is only necessary if you want the virtual
+keyboard to remain visible while collecting multicharacter
+responses. Otherwise, [keyboard.get_key] will implicitly shown and
+hide the keyboard for a single-character response.
+
+This function does nothing for back-ends that do not support virtual
+keyboards.
+
+__Example:__
+
+{% highlight python %}
+from openexp.keyboard import keyboard
 my_keyboard = keyboard(exp)
 my_keyboard.show_virtual_keyboard(True)
 response1, timestamp2 = my_keyboard.get_key()
 response2, timestamp2 = my_keyboard.get_key()
 my_keyboard.show_virtual_keyboard(False)
-{% endhighlight %}<br />
-</div></div>
+{% endhighlight %}
+
+__Keywords:__
+
+- `visible` -- True if the keyboard should be shown, False otherwise.
+	- Default: True
+	- Type: bool
+
 </div>
+
+[keyboard.show_virtual_keyboard]: #keyboard-show_virtual_keyboard
+[show_virtual_keyboard]: #keyboard-show_virtual_keyboard
+
+</div>
+
+[keyboard]: #keyboard
+
+
+[function __keyboard.\_\_init\_\___(experiment, keylist=None, timeout=None)]: #function-__keyboard__init____experiment-keylistnone-timeoutnone
+[function __keyboard.flush__()]: #function-__keyboardflush__
+[function __keyboard.get_key__(keylist=None, timeout=None)]: #function-__keyboardget_key__keylistnone-timeoutnone
+[function __keyboard.get_mods__()]: #function-__keyboardget_mods__
+[function __keyboard.set_keylist__(keylist=None)]: #function-__keyboardset_keylist__keylistnone
+[function __keyboard.set_timeout__(timeout=None)]: #function-__keyboardset_timeout__timeoutnone
+[function __keyboard.show_virtual_keyboard__(visible=True)]: #function-__keyboardshow_virtual_keyboard__visibletrue

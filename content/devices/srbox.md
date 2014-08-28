@@ -42,6 +42,4 @@ As of 0.25, the srbox plugin is included with OpenSesame by default, so no insta
 
 ## Using the SR Box from Python inline code
 
-If you insert the srbox plugin at the start of your experiment, an `srbox` object automatically becomes part of the experiment object and can be accessed from within an inline_script item as `exp.srbox`. Below is a list of available functions.
-
 {% include doc/libsrbox %}

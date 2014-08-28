@@ -1,438 +1,734 @@
-<div class='pydoc'>
-<p><small>For OpenSesame 2.8.3</small></p>
-<span class='class_name'>class <b>experiment</b></span><br />
-<p class='details'><b>Function overview:</b><br />
-<a href='#experiment.__init__'>__init__</a><br />
-<a href='#experiment.auto_type'>auto_type</a><br />
-<a href='#experiment.color_check'>color_check</a><br />
-<a href='#experiment.eval_text'>eval_text</a><br />
-<a href='#experiment.file_in_pool'>file_in_pool</a><br />
-<a href='#experiment.flush_log'>flush_log</a><br />
-<a href='#experiment.get'>get</a><br />
-<a href='#experiment.get_check'>get_check</a><br />
-<a href='#experiment.get_file'>get_file</a><br />
-<a href='#experiment.get_refs'>get_refs</a><br />
-<a href='#experiment.has'>has</a><br />
-<a href='#experiment.log'>log</a><br />
-<a href='#experiment.resolution'>resolution</a><br />
-<a href='#experiment.sanitize'>sanitize</a><br />
-<a href='#experiment.set'>set</a><br />
-<a href='#experiment.set_response'>set_response</a><br />
-<a href='#experiment.set_subject'>set_subject</a><br />
-<a href='#experiment.sleep'>sleep</a><br />
-<a href='#experiment.time'>time</a><br />
-<a href='#experiment.unistr'>unistr</a><br />
-<a href='#experiment.unset'>unset</a><br />
-</p>
-<div class='function'><span class='function_name'><a class='anchor' id='experiment.__init__'>experiment</a>.<b>__init__(name=u'experiment', string=None, pool_folder=None, experiment_path=None, fullscreen=False, auto_response=False, logfile=u'defaultlog.csv', subject_nr=0)</b></span><div class='details'>
-Constructor. The experiment is created automatically be OpenSesame and you will generally not need to create it yourself.<br />
-<br />
-<span class='keyword'>Keyword arguments:</span>
-<br />
-<span class='variable'>name 			</span> &rarr; 	The name of the experiment. (default=u'experiment')
-<br />
-<span class='variable'>string 			</span> &rarr; 	A string containing the experiment definition. 
-(default=None)<br />
-<span class='variable'>pool_folder		</span> &rarr; 	A specific folder to be used for the file pool. 
-(default=None)<br />
-<span class='variable'>experiment_path	</span> &rarr; 	The path of the experiment file. (default=None)
-<br />
-<span class='variable'>fullscreen		</span> &rarr; 	Indicates whether the experiment should be 
-executed in fullscreen. (default=False)<br />
-<span class='variable'>auto_response	</span> &rarr; 	Indicates whether auto-response mode should be 
-enabled. (default=False)<br />
-<span class='variable'>logfile			</span> &rarr; 	The logfile path. (default=u'defaultlog.csv')
-<br />
-<span class='variable'>subject_nr		</span> &rarr; 	The subject number. (default=0)
-<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='experiment.auto_type'>experiment</a>.<b>auto_type(val)</b></span><div class='details'>
-<i>Inherited from <b>item</b></i><br /><br />Converts a value into the 'best fitting' or 'simplest' type that is compatible with the value.<br />
-<br />
-<span class='keyword'>Arguments:</span>
-<br />
-<span class='variable'>val </span> &rarr;  A value.
-<br />
-<br />
-<span class='keyword'>Returns:</span>
-<br />
-The same value converted to the 'best fitting' type.<br />
-<br />
-<span class='keyword'>Example:</span>
-<br />
-{% highlight python %}print(type(self.auto_type('1'))) # Prints 'int'
-print(type(self.auto_type('1.1'))) # Prints 'float'
-print(type(self.auto_type('some text'))) # Prints 'unicode'
-# Note: Boolean values are converted to 'yes' / 'no' and are
-# therefore also returned as unicode objects.
-print(type(self.auto_type(True))) # Prints 'unicode'
-{% endhighlight %}<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='experiment.color_check'>experiment</a>.<b>color_check(col)</b></span><div class='details'>
-<i>Inherited from <b>item</b></i><br /><br />Checks whether a string is a valid color name.<br />
-<br />
-<span class='keyword'>Arguments:</span>
-<br />
-<span class='variable'>col </span> &rarr;  The color to check.
-<br />
-<br />
-<span class='keyword'>Exceptions:</span>
-<br />
-Raises a osexception if col is not a valid color.<br />
-<br />
-<span class='keyword'>Example:</span>
-<br />
-{% highlight python %}# Ok
+<div class="ClassDoc YAMLDoc" id="experiment" markdown="1">
+
+# class __experiment__
+
+The `experiment` object controls the flow of the experiment. If you are
+writing Python inline code, there are a few functions in the experiment
+object that may be useful, mostly to `get` and `set` variables, and to
+retrieve files from the file pool. The `experiment` object is a property
+of the `inline_script` object, so you can access it as `self.experiment`
+in an inline_script. For convenience, you can also refer to it simply as
+`exp`. For example, the following script retrieves the full path to a
+file from the pool, shows it using a canvas, and stores the timestamp of
+the display presentation as `canvas_timestamp`, so it can be logged:
+
+__Example:__
+
+{% highlight python %}
+from openexp.canvas import canvas
+my_canvas = canvas(exp)
+my_canvas.image(exp.get_file('my_image.png'))
+timestamp = my_canvas.show()
+exp.set('canvas_timestamp', timestamp)
+{% endhighlight %}
+
+__Function list:__
+
+
+- [function __experiment.\_\_init\_\___(auto_response=False, fullscreen=False, name=u'experiment', pool_folder=None, items=None, workspace=None, experiment_path=None, subject_nr=0, logfile=u'defaultlog.csv', string=None)](#function-__experiment__init____auto_responsefalse-fullscreenfalse-nameuexperiment-pool_foldernone-itemsnone-workspacenone-experiment_pathnone-subject_nr0-logfileudefaultlogcsv-stringnone)
+- [function __experiment.auto_type__(val)](#function-__experimentauto_type__val)
+- [function __experiment.color_check__(col)](#function-__experimentcolor_check__col)
+- [function __experiment.eval_text__(text, soft_ignore=False, round_float=False, quote_str=False)](#function-__experimenteval_text__text-soft_ignorefalse-round_floatfalse-quote_strfalse)
+- [function __experiment.file_in_pool__(path)](#function-__experimentfile_in_pool__path)
+- [function __experiment.flush_log__()](#function-__experimentflush_log__)
+- [function __experiment.get__(var, _eval=True)](#function-__experimentget__var-_evaltrue)
+- [function __experiment.get_check__(var, default=None, _eval=True, valid=None)](#function-__experimentget_check__var-defaultnone-_evaltrue-validnone)
+- [function __experiment.get_file__(path)](#function-__experimentget_file__path)
+- [function __experiment.get_refs__(text)](#function-__experimentget_refs__text)
+- [function __experiment.has__(var)](#function-__experimenthas__var)
+- [function __experiment.log__(msg)](#function-__experimentlog__msg)
+- [function __experiment.reset__()](#function-__experimentreset__)
+- [function __experiment.resolution__()](#function-__experimentresolution__)
+- [function __experiment.sanitize__(s, strict=False, allow_vars=True)](#function-__experimentsanitize__s-strictfalse-allow_varstrue)
+- [function __experiment.set__(var, val)](#function-__experimentset__var-val)
+- [function __experiment.set_response__(response=None, response_time=None, correct=None)](#function-__experimentset_response__responsenone-response_timenone-correctnone)
+- [function __experiment.set_subject__(nr)](#function-__experimentset_subject__nr)
+- [function __experiment.sleep__(ms)](#function-__experimentsleep__ms)
+- [function __experiment.time__()](#function-__experimenttime__)
+- [function __experiment.unistr__(val)](#function-__experimentunistr__val)
+- [function __experiment.unset__(var)](#function-__experimentunset__var)
+
+
+
+<div class="FunctionDoc YAMLDoc" id="experiment-__init__" markdown="1">
+
+## [function __experiment.\_\_init\_\___(auto_response=False, fullscreen=False, name=u'experiment', pool_folder=None, items=None, workspace=None, experiment_path=None, subject_nr=0, logfile=u'defaultlog.csv', string=None)](#function-__experiment__init____auto_responsefalse-fullscreenfalse-nameuexperiment-pool_foldernone-itemsnone-workspacenone-experiment_pathnone-subject_nr0-logfileudefaultlogcsv-stringnone) {#function-__experiment__init____auto_responsefalse-fullscreenfalse-nameuexperiment-pool_foldernone-itemsnone-workspacenone-experiment_pathnone-subject_nr0-logfileudefaultlogcsv-stringnone}
+
+Constructor. The experiment is created automatically be OpenSesame and you will generally not need to create it yourself.
+
+__Keywords:__
+
+- `auto_response` -- Indicates whether auto-response mode should be enabled.
+	- Default: False
+	- Type: bool
+- `fullscreen` -- Indicates whether the experiment should be executed in fullscreen.
+	- Default: False
+	- Type: bool
+- `name` -- The name of the experiment.
+	- Default: u'experiment'
+	- Type: str, unicode
+- `pool_folder` -- A specific folder to be used for the file pool, or `None` to use a new temporary folder.
+	- Default: None
+	- Type: str, unicode, NoneType
+- `items` -- An `item_store` object to be used for storing items internally, or `None` to create a new item store.
+	- Default: None
+	- Type: item_store, NoneType
+- `experiment_path` -- The path of the experiment file. This will need to be specified even if a filename was passed using the `string` keyword.
+	- Default: None
+	- Type: str, unicode, NoneType
+- `workspace` -- A `python_workspace` object to be used for executing custom Python code, or `None` to create a new workspace.
+	- Default: None
+	- Type: python_workspace, NoneType
+- `subject_nr` -- The subject number.
+	- Default: 0
+	- Type: int
+- `logfile` -- The logfile path.
+	- Default: u'defaultlog.csv'
+	- Type: unicode, str
+- `string` -- A string containing the experiment definition, the name of an OpenSesame experiment file, or `None` to create a blank experiment.
+	- Default: None
+	- Type: str, unicode, NoneType
+
+</div>
+
+[experiment.__init__]: #experiment-__init__
+[__init__]: #experiment-__init__
+
+<div class="FunctionDoc YAMLDoc" id="experiment-auto_type" markdown="1">
+
+## [function __experiment.auto_type__(val)](#function-__experimentauto_type__val) {#function-__experimentauto_type__val}
+
+Converts a value into the 'best fitting' or 'simplest' type that is compatible with the value.
+
+__Arguments:__
+
+- `val` -- A value. This can be any type.
+
+__Returns:__
+
+The same value converted to the 'best fitting' type.
+
+- Type: unicode, int, float
+
+</div>
+
+[experiment.auto_type]: #experiment-auto_type
+[auto_type]: #experiment-auto_type
+
+<div class="FunctionDoc YAMLDoc" id="experiment-color_check" markdown="1">
+
+## [function __experiment.color_check__(col)](#function-__experimentcolor_check__col) {#function-__experimentcolor_check__col}
+
+Checks whether a string is a valid color name. Raises an exception if `col` is not a valid color.
+
+__Example:__
+
+{% highlight python %}
+# Ok
 print(self.color_check('red'))
 # Ok
 print(self.color_check('#FFFFFF'))
 # Raises osexception
 print(self.color_check('this is not a color'))
-{% endhighlight %}<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='experiment.eval_text'>experiment</a>.<b>eval_text(text, round_float=False, soft_ignore=False, quote_str=False)</b></span><div class='details'>
-<i>Inherited from <b>item</b></i><br /><br />Evaluates a string of text, so that all variable references (e.g., '[var]') are replaced by values.<br />
-<br />
-<span class='keyword'>Arguments:</span>
-<br />
-<span class='variable'>text </span> &rarr;  The text to be evaluated.
-<br />
-<br />
-<span class='keyword'>Keyword arguments:</span>
-<br />
-<span class='variable'>round_float </span> &rarr;  A Boolean indicating whether float values should be 
-rounded to a precision of [round_decimals]. round_decimals is an OpenSesame variable that has a default value of 2. (Default=False)<br />
-<span class='variable'>soft_ignore </span> &rarr;  A Boolean indicating whether missing variables should be 
-ignored, rather than cause an exception (default=False).<br />
-<span class='variable'>quote_str </span> &rarr;  A Boolean indicating whether string variables should be 
-surrounded by single quotes (default=False).<br />
-<br />
-<span class='keyword'>Returns:</span>
-<br />
-The evaluated text.<br />
-<br />
-<span class='keyword'>Example:</span>
-<br />
-{% highlight python %}exp.set('var', 'evaluated')
-# Prints 'This string has been evaluated
-print(self.eval_text('This string has been [var]'))
-{% endhighlight %}<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='experiment.file_in_pool'>experiment</a>.<b>file_in_pool(path)</b></span><div class='details'>
-Checks if a file is in the file pool.<br />
-<br />
-<span class='keyword'>Returns:</span>
-<br />
-A Boolean indicating if the file is in the pool.<br />
-<br />
-<span class='keyword'>Example:</span>
-<br />
-{% highlight python %}if not exp.file_in_pool('my_image.png'):
-	print('my_image.png could not be found!')
-else:
-	image_path = exp.get_file('my_image.png')
-	my_canvas = exp.offline_canvas()
-	my_canvas.image(image_path)
-{% endhighlight %}<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='experiment.flush_log'>experiment</a>.<b>flush_log()</b></span><div class='details'>
-<i>Inherited from <b>item</b></i><br /><br />Forces any pending write operations to the log file to be written to disk.<br />
-<br />
-<span class='keyword'>Example:</span>
-<br />
-{% highlight python %}self.log('TRIAL FINISHED')
-self.flush_log()
-{% endhighlight %}<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='experiment.get'>experiment</a>.<b>get(var, _eval=True)</b></span><div class='details'>
-<i>Inherited from <b>item</b></i><br /><br />Returns the value of an OpenSesame variable. Checks first if the variable exists 'locally' in the item and, if not, checks if the variable exists 'globally' in the experiment.<br />
-<br />
-The type of the returned value can be int, float, or unicode (string). The appropriate type is automatically selected, e.g. '10' is returned as int, '10.1' as float, and 'some text' as unicode.<br />
-<br />
-The _eval parameter is used to specify whether the value of the variable should be evaluated, in case it contains references to other variables. This is best illustrated by example 2 below.<br />
-<br />
-<span class='keyword'>Arguments:</span>
-<br />
-<span class='variable'>var </span> &rarr;  The name of an OpenSesame variable.
-<br />
-<span class='variable'>_eval </span> &rarr;  Indicates whether the variable should be evaluated, i.e. 
-whether containing variables should be processed (default=True).<br />
-<br />
-<span class='keyword'>Exceptions:</span>
-<br />
-A osexception is raised if the variable is not found.<br />
-<br />
-<span class='keyword'>Returns:</span>
-<br />
-The value.<br />
-<br />
-<span class='keyword'>Example:</span>
-<br />
-{% highlight python %}if self.get('cue') == 'valid':
-	print('This is a validly cued trial')
 {% endhighlight %}
-<br />
-Example 2:<br />
-{% highlight python %}exp.set('var1', 'I like [var2]')
+
+__Arguments:__
+
+- `col` -- The color to check.
+
+</div>
+
+[experiment.color_check]: #experiment-color_check
+[color_check]: #experiment-color_check
+
+<div class="FunctionDoc YAMLDoc" id="experiment-eval_text" markdown="1">
+
+## [function __experiment.eval_text__(text, soft_ignore=False, round_float=False, quote_str=False)](#function-__experimenteval_text__text-soft_ignorefalse-round_floatfalse-quote_strfalse) {#function-__experimenteval_text__text-soft_ignorefalse-round_floatfalse-quote_strfalse}
+
+Evaluates a string of text, so that all variable references (e.g., '[var]') are replaced by values.
+
+__Example:__
+
+{% highlight python %}
+exp.set('var', 'evaluated')
+print(self.eval_text('This string has been [var]'))
+# Prints 'This string has been evaluated
+{% endhighlight %}
+
+__Arguments:__
+
+- `text` -- The text to be evaluated. This can be any type, but only str and unicode types will be evaluated.
+
+__Keywords:__
+
+- `soft_ignore` -- A Boolean indicating whether missing variables should be ignored, rather than cause an exception.
+	- Default: False
+	- Type: bool
+- `round_float` -- A Boolean indicating whether float values should be rounded to a precision of [round_decimals]. round_decimals is an OpenSesame variable that has a default value of 2.
+	- Default: False
+	- Type: bool
+- `quote_str` -- A Boolean indicating whether string variables should be surrounded by single quotes (default=False).
+	- Default: False
+	- Type: bool
+
+__Returns:__
+
+The evaluated text.
+
+- Type: unicode, int, float
+
+</div>
+
+[experiment.eval_text]: #experiment-eval_text
+[eval_text]: #experiment-eval_text
+
+<div class="FunctionDoc YAMLDoc" id="experiment-file_in_pool" markdown="1">
+
+## [function __experiment.file_in_pool__(path)](#function-__experimentfile_in_pool__path) {#function-__experimentfile_in_pool__path}
+
+Checks if a file is in the file pool.
+
+__Example:__
+
+{% highlight python %}
+if not exp.file_in_pool('my_image.png'):
+        print('my_image.png could not be found!')
+else:
+        image_path = exp.get_file('my_image.png')
+        my_canvas = exp.offline_canvas()
+        my_canvas.image(image_path)
+{% endhighlight %}
+
+__Arguments:__
+
+- `path` -- No description
+
+__Returns:__
+
+A bool indicating if the file is in the pool.
+
+- Type: bool
+
+</div>
+
+[experiment.file_in_pool]: #experiment-file_in_pool
+[file_in_pool]: #experiment-file_in_pool
+
+<div class="FunctionDoc YAMLDoc" id="experiment-flush_log" markdown="1">
+
+## [function __experiment.flush_log__()](#function-__experimentflush_log__) {#function-__experimentflush_log__}
+
+Forces any pending write operations to the log file to be written to disk.
+
+__Example:__
+
+{% highlight python %}
+self.log('TRIAL FINISHED')
+self.flush_log()
+{% endhighlight %}
+
+</div>
+
+[experiment.flush_log]: #experiment-flush_log
+[flush_log]: #experiment-flush_log
+
+<div class="FunctionDoc YAMLDoc" id="experiment-get" markdown="1">
+
+## [function __experiment.get__(var, _eval=True)](#function-__experimentget__var-_evaltrue) {#function-__experimentget__var-_evaltrue}
+
+Returns the value of an OpenSesame variable. Checks first if the
+variable exists 'locally' in the item and, if not, checks if the
+variable exists 'globally' in the experiment.
+
+The type of the returned value can be int, float, or unicode
+(string). The appropriate type is automatically selected, e.g. '10'
+is returned as int, '10.1' as float, and 'some text' as unicode.
+
+The _eval parameter is used to specify whether the value of the
+variable should be evaluated, in case it contains references to
+other variables. This is best illustrated by example 2 below.
+
+__Example:__
+
+{% highlight python %}
+# Example 1
+if self.get('cue') == 'valid':
+        print('This is a validly cued trial')
+
+# Example 2
+exp.set('var1', 'I like [var2]')
 exp.set('var2', 'OpenSesame')
 print(self.get('var1')) # prints 'I like OpenSesame'
 print(self.get('var1', _eval=False)) # prints 'I like [var2]'
 {% endhighlight %}
-<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='experiment.get_check'>experiment</a>.<b>get_check(var, default=None, valid=None, _eval=True)</b></span><div class='details'>
-<i>Inherited from <b>item</b></i><br /><br />Similar to get(), but falls back to a default if the variable has not been set. It also raises an error if the value is not part of the valid list.<br />
-<br />
-<span class='keyword'>Arguments:</span>
-<br />
-<span class='variable'>var </span> &rarr;  The name of an OpenSesame variable
-<br />
-<span class='variable'>default </span> &rarr;  A default 'fallback' value or None for no fallback, in which 
-case an exception is rased if the value does not exist.<br />
-<span class='variable'>valid </span> &rarr;  A list of allowed values (or None for no restrictions). An 
-exception is raised if the value is not an allowed value.<br />
-<span class='variable'>_eval </span> &rarr;  Indicates whether the variable should be evaluated, i.e. 
-whether containing variables should be processed (default=True).<br />
-<br />
-<span class='keyword'>Exceptions:</span>
-<br />
-Raises a osexception if the variable is not defined and there is no default value, or if the variable value is not part of the 'valid' list.<br />
-<br />
-<span class='keyword'>Returns:</span>
-<br />
-The value<br />
-<br />
-<span class='keyword'>Example:</span>
-<br />
-{% highlight python %}if self.get_check('cue', default='invalid') == 'valid':
-	print('This is a validly-cued trial')
-{% endhighlight %}<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='experiment.get_file'>experiment</a>.<b>get_file(path)</b></span><div class='details'>
-Returns the path to a file. First checks if the file is in the file pool and then the folder of the current experiment (if any), or in the `__pool__` subfolder of the current experiment. Otherwise, simply returns the path.<br />
-<br />
-<span class='keyword'>Arguments:</span>
-<br />
-<span class='variable'>path	</span> &rarr; 	The filename.
-<br />
-<br />
-<span class='keyword'>Returns:</span>
-<br />
-The full path to the file.<br />
-<br />
-<span class='keyword'>Example:</span>
-<br />
-{% highlight python %}image_path = exp.get_file('my_image.png')
+
+__Arguments:__
+
+- `var` -- The name of an OpenSesame variable.
+	- Type: str, unicode
+
+__Keywords:__
+
+- `_eval` -- Indicates whether the variable should be evaluated, i.e. whether containing variables should be processed.
+	- Default: True
+	- Type: bool
+
+__Returns:__
+
+The value.
+
+- Type: unicode, int, float
+
+</div>
+
+[experiment.get]: #experiment-get
+[get]: #experiment-get
+
+<div class="FunctionDoc YAMLDoc" id="experiment-get_check" markdown="1">
+
+## [function __experiment.get_check__(var, default=None, _eval=True, valid=None)](#function-__experimentget_check__var-defaultnone-_evaltrue-validnone) {#function-__experimentget_check__var-defaultnone-_evaltrue-validnone}
+
+Similar to get(), but falls back to a default if the variable has not been set. It also raises an error if the value is not part of the valid list.
+
+__Example:__
+
+{% highlight python %}
+if self.get_check('cue', default='invalid') == 'valid':
+        print('This is a validly-cued trial')
+{% endhighlight %}
+
+__Arguments:__
+
+- `var` -- The name of an OpenSesame variable
+	- Type: unicode, str
+
+__Keywords:__
+
+- `default` -- A default 'fallback' value or None for no fallback, in which case an exception is rased if the variable does not exist.
+	- Default: None
+	- Type: unicode, float, int
+- `_eval` -- Indicates whether the variable should be evaluated, i.e. whether containing variables should be processed.
+	- Default: True
+	- Type: bool
+- `valid` -- A list of allowed values (or None for no restrictions). An exception is raised if the value is not an allowed value.
+	- Default: None
+	- Type: list, NoneType
+
+__Returns:__
+
+The value
+
+- Type: unicode, float, int
+
+</div>
+
+[experiment.get_check]: #experiment-get_check
+[get_check]: #experiment-get_check
+
+<div class="FunctionDoc YAMLDoc" id="experiment-get_file" markdown="1">
+
+## [function __experiment.get_file__(path)](#function-__experimentget_file__path) {#function-__experimentget_file__path}
+
+Returns the full path to a file. The logic is as follows:
+
+1. First checks if `path` is a file in the file pool.
+2. If not, check if `path` is a file in the folder of the current
+   experiment (if any).
+3. If not, check if `path` is a file in the `__pool__` subfolder of
+   the current experiment.
+4. If not, simply return `path`.
+
+__Example:__
+
+{% highlight python %}
+image_path = exp.get_file('my_image.png')
 my_canvas = exp.offline_canvas()
 my_canvas.image(image_path)
-{% endhighlight %}<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='experiment.get_refs'>experiment</a>.<b>get_refs(text)</b></span><div class='details'>
-<i>Inherited from <b>item</b></i><br /><br />Returns a list of variables that are referred to by a string of text.<br />
-<br />
-<span class='keyword'>Arguments:</span>
-<br />
-<span class='variable'>text </span> &rarr;  A string of text.
-<br />
-<br />
-<span class='keyword'>Returns:</span>
-<br />
-A list of variable names or an empty list if the string contains no references.<br />
-<br />
-<span class='keyword'>Example:</span>
-<br />
-{% highlight python %}print(self.get_refs('There are [two] [references] here'))
-# Prints ['two', 'references']
-{% endhighlight %}<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='experiment.has'>experiment</a>.<b>has(var)</b></span><div class='details'>
-<i>Inherited from <b>item</b></i><br /><br />Checks if an OpenSesame variable exists, either in the item or in the experiment.<br />
-<br />
-<span class='keyword'>Arguments:</span>
-<br />
-<span class='variable'>var </span> &rarr;  The name of an OpenSesame variable.
-<br />
-<br />
-<span class='keyword'>Returns:</span>
-<br />
-True if the variable exists, False if not.<br />
-<br />
-<span class='keyword'>Example:</span>
-<br />
-{% highlight python %}if not self.has('response'):
-	print('No response has been collected yet')
 {% endhighlight %}
-<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='experiment.log'>experiment</a>.<b>log(msg)</b></span><div class='details'>
-<i>Inherited from <b>item</b></i><br /><br />Writes a message to the log file. Note that using the log() function in combination with a logger item may result in messy log files.<br />
-<br />
-<span class='variable'>msg	</span> &rarr; 	A message. This can be any type and will we be converted to a 
-unicode string using the logic described in `unistr()`.<br />
-<br />
-<span class='keyword'>Example:</span>
-<br />
-{% highlight python %}self.log('TIMESTAMP = %s' % self.time())
-{% endhighlight %}<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='experiment.resolution'>experiment</a>.<b>resolution()</b></span><div class='details'>
-<i>Inherited from <b>item</b></i><br /><br />Returns the display resolution and check whether the resolution is valid.<br />
-<br />
-Note: The meaning of 'resolution' depends on the back-end. For example, the legacy and OpenGL back-ends change the actual resolution of the display, whereas the other back-ends do not alter the actual display resolution, 	but create a 'virtual display' with the requested resolution that is presented in the center of the display.<br />
-<br />
-<span class='keyword'>Returns:</span>
-<br />
-A (width, height) tuple<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='experiment.sanitize'>experiment</a>.<b>sanitize(s, strict=False, allow_vars=True)</b></span><div class='details'>
-<i>Inherited from <b>item</b></i><br /><br />Removes invalid characters (notably quotes) from the string.<br />
-<br />
-<span class='keyword'>Arguments:</span>
-<br />
-<span class='variable'>s </span> &rarr;  The string (unicode or str) to be sanitized.
-<br />
-<br />
-<span class='keyword'>Keyword arguments:</span>
-<br />
-<span class='variable'>strict </span> &rarr;  If True, all except underscores and alphanumeric characters are
-<br />
-stripped (default=False).<br />
-<span class='variable'>allow_vars </span> &rarr;  If True, square brackets are not sanitized, so you can use
-<br />
-variables (default=True).<br />
-<br />
-<span class='keyword'>Returns:</span>
-<br />
-A sanitized unicode string<br />
-<br />
-<span class='keyword'>Example:</span>
-<br />
-{% highlight python %}# Prints 'Universit Aix-Marseille'
-print(self.sanitize('\"Université Aix-Marseille\"'))
+
+__Arguments:__
+
+- `path` -- A filename. This can be any type, but will be coerced to `unicode` if it is not `unicode`.
+
+__Returns:__
+
+The full path to the file.
+
+- Type: unicode
+
+</div>
+
+[experiment.get_file]: #experiment-get_file
+[get_file]: #experiment-get_file
+
+<div class="FunctionDoc YAMLDoc" id="experiment-get_refs" markdown="1">
+
+## [function __experiment.get_refs__(text)](#function-__experimentget_refs__text) {#function-__experimentget_refs__text}
+
+Returns a list of variables that are referred to by a string of text.
+
+__Arguments:__
+
+- `text` -- A string of text. This can be any type, but will coerced to unicode if it is not unicode.
+
+__Returns:__
+
+A list of variable names or an empty list if the string contains no references.
+
+- Type: list
+
+</div>
+
+[experiment.get_refs]: #experiment-get_refs
+[get_refs]: #experiment-get_refs
+
+<div class="FunctionDoc YAMLDoc" id="experiment-has" markdown="1">
+
+## [function __experiment.has__(var)](#function-__experimenthas__var) {#function-__experimenthas__var}
+
+Checks if an OpenSesame variable exists, either in the item or in the experiment.
+
+__Example:__
+
+{% highlight python %}
+if not self.has('response'):
+        print('No response has been collected yet')
+{% endhighlight %}
+
+__Arguments:__
+
+- `var` -- The name of an OpenSesame variable.
+	- Type: str, unicode
+
+__Returns:__
+
+True if the variable exists, False if not.
+
+- Type: bool
+
+</div>
+
+[experiment.has]: #experiment-has
+[has]: #experiment-has
+
+<div class="FunctionDoc YAMLDoc" id="experiment-log" markdown="1">
+
+## [function __experiment.log__(msg)](#function-__experimentlog__msg) {#function-__experimentlog__msg}
+
+Writes a message to the log file. Note that using the `log()` function in combination with a logger item may result in messy log files.
+
+__Example:__
+
+{% highlight python %}
+self.log('TIMESTAMP = %s' % self.time())
+{% endhighlight %}
+
+__Arguments:__
+
+- `msg` -- A message. This can be any type and will we be converted to a unicode string using the logic described in [unistr].
+
+</div>
+
+[experiment.log]: #experiment-log
+[log]: #experiment-log
+
+<div class="FunctionDoc YAMLDoc" id="experiment-reset" markdown="1">
+
+## [function __experiment.reset__()](#function-__experimentreset__) {#function-__experimentreset__}
+
+Resets all item variables to their default value.
+
+</div>
+
+[experiment.reset]: #experiment-reset
+[reset]: #experiment-reset
+
+<div class="FunctionDoc YAMLDoc" id="experiment-resolution" markdown="1">
+
+## [function __experiment.resolution__()](#function-__experimentresolution__) {#function-__experimentresolution__}
+
+Returns the display resolution and checks whether the resolution is
+valid.
+
+__Important note:__
+
+The meaning of 'resolution' depends on the back-end. For example,
+the legacy back-end changes the actual resolution of the display,
+whereas the other back-ends do not alter the actual display
+resolution, but create a 'virtual display' with the requested
+resolution that is presented in the center of the display.
+
+__Returns:__
+
+A (width, height) tuple
+
+- Type: tuple
+
+</div>
+
+[experiment.resolution]: #experiment-resolution
+[resolution]: #experiment-resolution
+
+<div class="FunctionDoc YAMLDoc" id="experiment-sanitize" markdown="1">
+
+## [function __experiment.sanitize__(s, strict=False, allow_vars=True)](#function-__experimentsanitize__s-strictfalse-allow_varstrue) {#function-__experimentsanitize__s-strictfalse-allow_varstrue}
+
+Removes invalid characters (notably quotes) from the string.
+
+__Example:__
+
+{% highlight python %}
+# Prints 'Universit Aix-Marseille'
+print(self.sanitize('"Université Aix-Marseille"'))
 # Prints 'UniversitAixMarseille'
-print(self.sanitize('\"Université Aix-Marseille\""', strict=True))
-{% endhighlight %}<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='experiment.set'>experiment</a>.<b>set(var, val)</b></span><div class='details'>
-<i>Inherited from <b>item</b></i><br /><br />Sets an OpenSesame variable.<br />
-<br />
-If you want to set a variable so that it is available in other items as well (such as the logger item, so you can log the variable), you need to use the set() function from the experiment. So, in an inline_script item you would generally set a variable with exp.set(), rather than self.set().<br />
-<br />
-Please note that you can only set simple variable types (str, unicode, float, and int). If you use the set function to save an object, it will be converted to a string representation. To make complex variables globally accessible in your experiment, please use the global keyword.<br />
-<br />
-The type of the value can be anything. However, see get() for an explanation of how data-types are handled.<br />
-<br />
-<span class='keyword'>Arguments:</span>
-<br />
-<span class='variable'>var </span> &rarr;  The name of an OpenSesame variable.
-<br />
-<span class='variable'>val </span> &rarr;  The value.
-<br />
-<br />
-<span class='keyword'>Example:</span>
-<br />
-{% highlight python %}exp.set('my_timestamp', self.time())
-{% endhighlight %}<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='experiment.set_response'>experiment</a>.<b>set_response(response=None, response_time=None, correct=None)</b></span><div class='details'>
-<i>Inherited from <b>item</b></i><br /><br />Processes a response in such a way that feedback variables are updated as well.<br />
-<br />
-<span class='keyword'>Keyword arguments:</span>
-<br />
-<span class='variable'>response		</span> &rarr; 	The response value. (default=None)
-<br />
-<span class='variable'>response_time	</span> &rarr; 	The response time. (default=None)
-<br />
-<span class='variable'>correct			</span> &rarr; 	The correctness value. (default=None)
-<br />
-<br />
-<span class='keyword'>Example:</span>
-<br />
-{% highlight python %}from openexp.keyboard import keyboard
+print(self.sanitize('"Université Aix-Marseille""', strict=True))
+{% endhighlight %}
+
+__Arguments:__
+
+- `s` -- The string to be sanitized. This can be any type, but if it is not unicode, it will be coerced to unicode.
+
+__Keywords:__
+
+- `strict` -- If True, all except underscores and alphanumeric characters are stripped.
+	- Default: False
+	- Type: bool
+- `allow_vars` -- If True, square brackets are not sanitized, so you can use variables.
+	- Default: True
+	- Type: bool
+
+__Returns:__
+
+A sanitized string.
+
+- Type: unicode
+
+</div>
+
+[experiment.sanitize]: #experiment-sanitize
+[sanitize]: #experiment-sanitize
+
+<div class="FunctionDoc YAMLDoc" id="experiment-set" markdown="1">
+
+## [function __experiment.set__(var, val)](#function-__experimentset__var-val) {#function-__experimentset__var-val}
+
+Sets an OpenSesame variable.
+
+If you want to set a variable so that it is available in other items
+as well (such as the logger item, so you can log the variable), you
+need to use the set() function from the experiment. So, in an
+inline_script item you would generally set a variable with
+exp.set(), rather than self.set().
+
+__Important note:__
+
+You can only set simple variable types (unicode, float, and int).
+If you use the set function to save another type of variable, it
+will be converted to a unicode representation.
+
+__Example:__
+
+{% highlight python %}
+exp.set('my_timestamp', self.time())
+{% endhighlight %}
+
+__Arguments:__
+
+- `var` -- The name of an experimental variable.
+	- Type: str, unicode
+- `val` -- A value.
+
+</div>
+
+[experiment.set]: #experiment-set
+[set]: #experiment-set
+
+<div class="FunctionDoc YAMLDoc" id="experiment-set_response" markdown="1">
+
+## [function __experiment.set_response__(response=None, response_time=None, correct=None)](#function-__experimentset_response__responsenone-response_timenone-correctnone) {#function-__experimentset_response__responsenone-response_timenone-correctnone}
+
+Processes a response in such a way that feedback variables are updated as well.
+
+__Example:__
+
+{% highlight python %}
+from openexp.keyboard import keyboard
 my_keyboard = keyboard(exp)
 t1 = self.time()
 button, timestamp = my_keyboard.get_key()
 if button == 'left':
-	correct = 1
+        correct = 1
 else:
-	correct = 0
+        correct = 0
 rt = timestamp - t1
-self.set_response(response=button, response_time=rt, \
-	correct=correct)
-{% endhighlight %}<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='experiment.set_subject'>experiment</a>.<b>set_subject(nr)</b></span><div class='details'>
-Sets the subject number and parity (even/ odd). This function is called automatically when an experiment is started, so you do not generally need to call it yourself.<br />
-<br />
-<span class='keyword'>Arguments:</span>
-<br />
-<span class='variable'>nr	</span> &rarr; 	The subject nr.
-<br />
-<br />
-<span class='keyword'>Example:</span>
-<br />
-{% highlight python %}exp.set_subject(1)
+self.set_response(response=button, response_time=rt,
+        correct=correct)
+{% endhighlight %}
+
+__Keywords:__
+
+- `response` -- The response value.
+	- Default: None
+- `response_time` -- The response time, or None.
+	- Default: None
+	- Type: int, float, NoneType
+- `correct` -- The correctness value, which should be 0, 1, True, False, or None.
+	- Default: None
+	- Type: int, bool, NoneType
+
+</div>
+
+[experiment.set_response]: #experiment-set_response
+[set_response]: #experiment-set_response
+
+<div class="FunctionDoc YAMLDoc" id="experiment-set_subject" markdown="1">
+
+## [function __experiment.set_subject__(nr)](#function-__experimentset_subject__nr) {#function-__experimentset_subject__nr}
+
+Sets the subject number and parity (even/ odd). This function is called automatically when an experiment is started, so you do not generally need to call it yourself.
+
+__Example:__
+
+{% highlight python %}
+exp.set_subject(1)
 print('Subject nr = %d' % exp.get('subject_nr'))
 print('Subject parity = %s' % exp.get('subject_parity'))
-{% endhighlight %}<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='experiment.sleep'>experiment</a>.<b>sleep(ms)</b></span><div class='details'>
-<i>Inherited from <b>item</b></i><br /><br />Sleeps for a specified duration.<br />
-<br />
-<span class='keyword'>Arguments:</span>
-<br />
-<span class='variable'>ms </span> &rarr;  An integer value specifying the duration in milliseconds.
-<br />
-<br />
-<span class='keyword'>Example:</span>
-<br />
-{% highlight python %}self.sleep(1000) # Sleeps one second
-{% endhighlight %}<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='experiment.time'>experiment</a>.<b>time()</b></span><div class='details'>
-<i>Inherited from <b>item</b></i><br /><br />Returns the current time.<br />
-<br />
-<span class='keyword'>Returns:</span>
-<br />
-A timestamp of the current time.<br />
-<br />
-<span class='keyword'>Example:</span>
-<br />
-{% highlight python %}print('The time is %s' % self.time())
-{% endhighlight %}<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='experiment.unistr'>experiment</a>.<b>unistr(val)</b></span><div class='details'>
-<i>Inherited from <b>item</b></i><br /><br />Converts a value to a unicode string. This function is mostly necessary to make sure that normal strings with special characters are correctly encoded into unicode, and don't result in TypeErrors.<br />
-<br />
-The conversion logic is as follows:<br />
-<br />
-- unicode values are returned unchanged.<br />
-- str values are decoded using utf-8.<br />
-- all other types are typecast to unicode, assuming utf-8 encoding where applicable.<br />
-<br />
-<span class='keyword'>Arguments:</span>
-<br />
-<span class='variable'>val </span> &rarr;  A value of any type.
-<br />
-<br />
-<span class='keyword'>Returns:</span>
-<br />
-A unicode string.<br />
-</div></div>
-<div class='function'><span class='function_name'><a class='anchor' id='experiment.unset'>experiment</a>.<b>unset(var)</b></span><div class='details'>
-<i>Inherited from <b>item</b></i><br /><br />Unsets (forgets) an OpenSesame variable.<br />
-<br />
-<span class='keyword'>Arguments:</span>
-<br />
-<span class='variable'>var </span> &rarr;  The name of an OpenSesame variable.
-<br />
-<br />
-<span class='keyword'>Example:</span>
-<br />
-{% highlight python %}self.set('var', 'Hello world!')
+{% endhighlight %}
+
+__Arguments:__
+
+- `nr` -- The subject nr.
+	- Type: int
+
+</div>
+
+[experiment.set_subject]: #experiment-set_subject
+[set_subject]: #experiment-set_subject
+
+<div class="FunctionDoc YAMLDoc" id="experiment-sleep" markdown="1">
+
+## [function __experiment.sleep__(ms)](#function-__experimentsleep__ms) {#function-__experimentsleep__ms}
+
+Sleeps for a specified duration.
+
+__Example:__
+
+{% highlight python %}
+self.sleep(1000) # Sleeps one second
+{% endhighlight %}
+
+__Arguments:__
+
+- `ms` -- An value specifying the duration in milliseconds.
+	- Type: int, float
+
+</div>
+
+[experiment.sleep]: #experiment-sleep
+[sleep]: #experiment-sleep
+
+<div class="FunctionDoc YAMLDoc" id="experiment-time" markdown="1">
+
+## [function __experiment.time__()](#function-__experimenttime__) {#function-__experimenttime__}
+
+Returns a timestamp for the current time. This timestamp only has a relative meaning, i.e. you can use it to determine the interval between two moments, but not the actual time. Whether the timestamp is a `float` or `int` depends on the back-end.
+
+__Example:__
+
+{% highlight python %}
+print('The time is %s' % self.time())
+{% endhighlight %}
+
+__Returns:__
+
+A timestamp of the current time.
+
+- Type: int, float
+
+</div>
+
+[experiment.time]: #experiment-time
+[time]: #experiment-time
+
+<div class="FunctionDoc YAMLDoc" id="experiment-unistr" markdown="1">
+
+## [function __experiment.unistr__(val)](#function-__experimentunistr__val) {#function-__experimentunistr__val}
+
+Converts a value to a unicode string. This function is mostly
+necessary to make sure that normal strings with special characters
+are correctly encoded into unicode, and don't result in TypeErrors.
+
+The conversion logic is as follows:
+
+- unicode values are returned unchanged.
+- str values are decoded using utf-8.
+- all other types are typecast to unicode, assuming utf-8 encoding
+  where applicable.
+
+__Arguments:__
+
+- `val` -- A value of any type.
+
+__Returns:__
+
+A unicode string.
+
+- Type: unicode
+
+</div>
+
+[experiment.unistr]: #experiment-unistr
+[unistr]: #experiment-unistr
+
+<div class="FunctionDoc YAMLDoc" id="experiment-unset" markdown="1">
+
+## [function __experiment.unset__(var)](#function-__experimentunset__var) {#function-__experimentunset__var}
+
+Unsets (forgets) an OpenSesame variable.
+
+__Example:__
+
+{% highlight python %}
+self.set('var', 'Hello world!')
 print(self.get('var')) # Prints 'Hello world!'
 self.unset('variable_to_forget')
 print(self.get('var')) # Gives error!
-{% endhighlight %}<br />
-</div></div>
+{% endhighlight %}
+
+__Arguments:__
+
+- `var` -- The name of an OpenSesame variable.
+	- Type: str, unicode
+
 </div>
+
+[experiment.unset]: #experiment-unset
+[unset]: #experiment-unset
+
+</div>
+
+[experiment]: #experiment
+
+
+[function __experiment.\_\_init\_\___(auto_response=False, fullscreen=False, name=u'experiment', pool_folder=None, items=None, workspace=None, experiment_path=None, subject_nr=0, logfile=u'defaultlog.csv', string=None)]: #function-__experiment__init____auto_responsefalse-fullscreenfalse-nameuexperiment-pool_foldernone-itemsnone-workspacenone-experiment_pathnone-subject_nr0-logfileudefaultlogcsv-stringnone
+[function __experiment.auto_type__(val)]: #function-__experimentauto_type__val
+[function __experiment.color_check__(col)]: #function-__experimentcolor_check__col
+[function __experiment.eval_text__(text, soft_ignore=False, round_float=False, quote_str=False)]: #function-__experimenteval_text__text-soft_ignorefalse-round_floatfalse-quote_strfalse
+[function __experiment.file_in_pool__(path)]: #function-__experimentfile_in_pool__path
+[function __experiment.flush_log__()]: #function-__experimentflush_log__
+[function __experiment.get__(var, _eval=True)]: #function-__experimentget__var-_evaltrue
+[function __experiment.get_check__(var, default=None, _eval=True, valid=None)]: #function-__experimentget_check__var-defaultnone-_evaltrue-validnone
+[function __experiment.get_file__(path)]: #function-__experimentget_file__path
+[function __experiment.get_refs__(text)]: #function-__experimentget_refs__text
+[function __experiment.has__(var)]: #function-__experimenthas__var
+[function __experiment.log__(msg)]: #function-__experimentlog__msg
+[function __experiment.reset__()]: #function-__experimentreset__
+[function __experiment.resolution__()]: #function-__experimentresolution__
+[function __experiment.sanitize__(s, strict=False, allow_vars=True)]: #function-__experimentsanitize__s-strictfalse-allow_varstrue
+[function __experiment.set__(var, val)]: #function-__experimentset__var-val
+[function __experiment.set_response__(response=None, response_time=None, correct=None)]: #function-__experimentset_response__responsenone-response_timenone-correctnone
+[function __experiment.set_subject__(nr)]: #function-__experimentset_subject__nr
+[function __experiment.sleep__(ms)]: #function-__experimentsleep__ms
+[function __experiment.time__()]: #function-__experimenttime__
+[function __experiment.unistr__(val)]: #function-__experimentunistr__val
+[function __experiment.unset__(var)]: #function-__experimentunset__var
