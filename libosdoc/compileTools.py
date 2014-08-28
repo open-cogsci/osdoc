@@ -283,15 +283,15 @@ def preprocessSite(content, group, branch, status):
 					if u'menuclass' not in info or \
 						info[u'menuclass'] != u'external':
 						title = title.capitalize().encode(u'utf-8')
-						_group = _group.capitalize().encode(u'utf-8')
+						__group = _group.capitalize().encode(u'utf-8')
 						path = u'/%s/%s.html' % (branch, path[:-3])
 						path = path.encode(u'-utf-8')
-						if _group == 'General':
+						if __group == 'General':
 							YAMLSitemap[title] = path
 						else:
 							if _group not in YAMLSitemap:
-								YAMLSitemap[_group] = {}
-							YAMLSitemap[_group][title] = path
+								YAMLSitemap[__group] = {}
+							YAMLSitemap[__group][title] = path
 				i += 1
 		if i > 1:
 			raise Exception(u'Multiple matches for "%s"' % title)
