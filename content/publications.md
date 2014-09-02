@@ -35,6 +35,9 @@ OpenSesame is used for, discussed in, or mentioned in:
 Bucker, B., & Theeuwes, J. (2014). The effect of reward on orienting and reorienting in exogenous cuing. *Cognitive, Affective, & Behavioral Neuroscience*, 1–12. doi:10.3758/s13415-014-0278-7
 {: .reference}
 
+Brennan, A. A. (2014). *When Two Heads Are Better Than One: The Independent Versus Interactive Benefits of Collaborative Cognition* (PhD thesis). University of British Columbia, Vancouver, Canada.
+{: .reference}
+
 Cohen, C. (2014). *Contrast-Dependent Pronunciation Variation: A Case Study of Russian*. Retrieved from: <http://www.linguistics.berkeley.edu/~cpccohen/CohenRUProduction.pdf>
 {: .reference}
 
@@ -69,9 +72,12 @@ Katz, C., & Knops, A. (2014). Operational momentum in multiplication and divisio
 {: .reference}
 
 Krukar, J. (2014). Walk, look, remember: The influence of the gallery’s spatial layout on human memory for an art exhibition. Behavioral Sciences, 4(3), 181–201. doi:10.3390/bs4030181
-{: .reference{
+{: .reference}
 
-Lange, F., & Eggert, F. (in press). Sweet delusion: Glucose drinks fail to counteract ego depletion. *Appetite*. doi:10.1016/j.appet.2013.12.020
+Lange, F., & Eggert, F. (2014). Sweet delusion: Glucose drinks fail to counteract ego depletion. *Appetite*, *75*, 54-63. doi:10.1016/j.appet.2013.12.020
+{: .reference}
+
+Lange, F., Seer, C., Rapior, M., Rose, J., & Eggert, F. (2014). Turn it all you want: Still no effect of sugar consumption on ego depletion. *Journal of European Psychology Students*, *5*(3), 1–8. doi:10.5334/jeps.cc
 {: .reference}
 
 Van Moorselaar, D., Theeuwes, J., & Olivers, C. N. L. (2014). In competition for the attentional template: Can multiple items within visual working memory guide attention? *Journal of Experimental Psychology: Human Perception and Performance*. doi:10.1037/a0036229
