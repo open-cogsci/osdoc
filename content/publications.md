@@ -56,6 +56,9 @@ Garaizar, P., Vadillo, M. A., López-de-Ipiña, D., & Matute, H. (2014). Measuri
 Grainger, J., Mathôt, S., & Vitu, F. (2014). Tests of a model of multi-word reading: Effects of parafoveal flanking letters on foveal word recognition. *Acta Psychologica*, *146*, 35-40. doi:10.1016/j.actpsy.2013.11.014
 {: .reference}
 
+Van der Ham, I. J., & van den Hoven, J. (2014). Lateralization of route continuation and route order. In *Spatial Cognition IX* (pp. 137–146). Springer. Retrieved from <http://link.springer.com/chapter/10.1007/978-3-319-11215-2_10>
+{: .reference}
+
 Hermens, F., Kral, D., & Rosenbaum, D. A. (2014). Limits of end-state planning. *Acta Psychologica*, *148*, 148–162. doi:10.1016/j.actpsy.2014.01.009
 {: .reference}
 
@@ -63,6 +66,9 @@ Holliday, J. J. (2014). The perceptual assimilation of Korean obstruents by nati
 {: .reference}
 
 Ishii, A., Tanaka, M., & Watanabe, Y. (2014). The neural substrates of self-evaluation of mental fatigue: A magnetoencephalography study. *PLoS ONE*, *9*(4), e95763. doi:10.1371/journal.pone.0095763
+{: .reference}
+
+Jiang, Y. (2014). Measuring facial expression and emotional experience under diverse social context in a negative emotional setting. In A. J. Spink, L.W.S. Loijens, M. Woloszynowska-Fraser, & L. P. J. J. Noldus (Eds.), Proceedings of Measuring Behavior. Retrieved from <http://www.measuringbehavior.org/files/2014/Proceedings/Jiang,%20Y.%20-%20MB2014.pdf>
 {: .reference}
 
 Kapoor, H. (2014). The creative side of the Dark Triad. *Creativity Research Journal*.
