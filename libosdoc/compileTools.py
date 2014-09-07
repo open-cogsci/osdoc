@@ -284,7 +284,7 @@ def preprocessSite(content, group, branch, status):
 						info[u'menuclass'] != u'external':
 						title = title.capitalize().encode(u'utf-8')
 						__group = _group.capitalize().encode(u'utf-8')
-						path = u'/%s/%s.html' % (branch, path[8:-3])
+						path = u'/%s/%s/' % (branch, path[8:-3])
 						path = path.encode(u'-utf-8')
 						if __group == 'General':
 							YAMLSitemap[title] = path
