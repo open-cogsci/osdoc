@@ -3,21 +3,23 @@ layout: osdoc
 title: Source code and firmware
 group: Boks
 permalink: /source/
-show: True
 ---
 
-The Boks and documentation below is under development.
-{: .page-notification}
+## Overview
 
-Source code
------------
+%--
+toc:
+ exclude: [Overview]
+ mindepth: 2
+--%
+
+## Source code
 
 The source code for the Boks is hosted on GitHub:
 
 - <https://github.com/smathot/boks/tags>
 
-Firmware
---------
+## Firmware
 
 To update the firmware on the Boks, first download the source code from GitHub. You will find the firmware in the `arduino/boks` folder. To upload the firmware to the Boks, you can follow one of the following procedures:
 

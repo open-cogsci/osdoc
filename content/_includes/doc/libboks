@@ -2,11 +2,48 @@
 
 # class __libboks__
 
-Python library to interface with Boks, a button box for psychological and neuroscientific experiments.
+A Python library to interface with Boks, a button box for psychological
+and neuroscientific experiments.
+
+If there is a Boks plug-in in your OpenSesame experiment, the `boks`
+object can be accessed as `exp.boks` or `self.experiment.boks`.
+
+__Example__:
+
+{% highlight python %}
+# Collect a response time with a 2000ms timeout
+exp.boks.set_timeout(2000)
+t1 = self.time()
+button, t2 = exp.boks.get_button_press()
+exp.set('response', button)
+exp.set('response_time', t2-t1)
+{% endhighlight %}
+
+__Function list:__
+
+
+- [function __libboks.\_\_init\_\___(baudrate=115200, led=False, buttons=None, experiment=None, timeout=None, port=None)](#function-__libboks__init____baudrate115200-ledfalse-buttonsnone-experimentnone-timeoutnone-portnone)
+- [function __libboks.button_count__()](#function-__libboksbutton_count__)
+- [function __libboks.close__()](#function-__libboksclose__)
+- [function __libboks.get_button_press__()](#function-__libboksget_button_press__)
+- [function __libboks.get_button_release__()](#function-__libboksget_button_release__)
+- [function __libboks.get_button_state__()](#function-__libboksget_button_state__)
+- [function __libboks.get_buttons__()](#function-__libboksget_buttons__)
+- [function __libboks.get_sid__()](#function-__libboksget_sid__)
+- [function __libboks.get_timeout__()](#function-__libboksget_timeout__)
+- [function __libboks.info__()](#function-__libboksinfo__)
+- [function __libboks.set_buttons__(buttons)](#function-__libboksset_buttons__buttons)
+- [function __libboks.set_continuous__(continuous=True)](#function-__libboksset_continuous__continuoustrue)
+- [function __libboks.set_led__(on=True)](#function-__libboksset_led__ontrue)
+- [function __libboks.set_timeout__(timeout)](#function-__libboksset_timeout__timeout)
+
+
+
+
 
 <div class="FunctionDoc YAMLDoc" id="libboks-__init__" markdown="1">
 
-## function __libboks.\_\_init\_\___(baudrate=115200, led=False, buttons=None, experiment=None, timeout=None, port=None)
+## [function __libboks.\_\_init\_\___(baudrate=115200, led=False, buttons=None, experiment=None, timeout=None, port=None)](#function-__libboks__init____baudrate115200-ledfalse-buttonsnone-experimentnone-timeoutnone-portnone) {#function-__libboks__init____baudrate115200-ledfalse-buttonsnone-experimentnone-timeoutnone-portnone}
 
 Constructor. A Boks object is created automatically the first time that a Boks plug-in is prepared in OpenSesame.
 
@@ -49,7 +86,7 @@ __Keywords:__
 
 <div class="FunctionDoc YAMLDoc" id="libboks-button_count" markdown="1">
 
-## function __libboks.button_count__()
+## [function __libboks.button_count__()](#function-__libboksbutton_count__) {#function-__libboksbutton_count__}
 
 Gets the number of buttons that are physically present on the device. This number includes the photodiode, so a Boks with four buttons and a photodiode will be reported as having five buttons.
 
@@ -73,7 +110,7 @@ The number of buttons
 
 <div class="FunctionDoc YAMLDoc" id="libboks-close" markdown="1">
 
-## function __libboks.close__()
+## [function __libboks.close__()](#function-__libboksclose__) {#function-__libboksclose__}
 
 Neatly close the device. This will deactivate the boks and close the serial port connection. OpenSesame will do this automatically when the experiment ends.
 
@@ -90,13 +127,26 @@ exp.boks.close()
 
 <div class="FunctionDoc YAMLDoc" id="libboks-get_button_press" markdown="1">
 
-## function __libboks.get_button_press__()
+## [function __libboks.get_button_press__()](#function-__libboksget_button_press__) {#function-__libboksget_button_press__}
 
 Collects a button press.
 
+__Example:__
+
+{% highlight python %}
+# Collect a response with a 2000ms timeout
+exp.boks.set_timeout(2000)
+t1 = self.time()
+button, t2 = exp.boks.get_button_press()
+exp.set('response', button)
+exp.set('response_time', t2-t1)
+{% endhighlight %}
+
 __Returns:__
 
-A (button, timestamp) tuple. If a timeout occured, the button is `None`, otherwise buttons are integers. The timestamp is a float value in milliseconds.
+A (button, timestamp) tuple. If a timeout occured, `button` is
+`None`, otherwise `button` is an integers. `timestamp` is a
+float value in milliseconds.
 
 - Type: tuple
 
@@ -107,7 +157,7 @@ A (button, timestamp) tuple. If a timeout occured, the button is `None`, otherwi
 
 <div class="FunctionDoc YAMLDoc" id="libboks-get_button_release" markdown="1">
 
-## function __libboks.get_button_release__()
+## [function __libboks.get_button_release__()](#function-__libboksget_button_release__) {#function-__libboksget_button_release__}
 
 Collects a button release.
 
@@ -124,7 +174,11 @@ exp.set('response_time', t2-t1)
 
 __Returns:__
 
-A (button, timestamp) tuple. If a timeout occured, the button is None. Otherwise buttons are integers. The timestamp is a float value in milliseconds.
+A (button, timestamp) tuple. If a timeout occured, `button` is
+`None`, otherwise `button` is an integers. `timestamp` is a
+float value in milliseconds.
+
+- Type: tuple
 
 </div>
 
@@ -133,7 +187,7 @@ A (button, timestamp) tuple. If a timeout occured, the button is None. Otherwise
 
 <div class="FunctionDoc YAMLDoc" id="libboks-get_button_state" markdown="1">
 
-## function __libboks.get_button_state__()
+## [function __libboks.get_button_state__()](#function-__libboksget_button_state__) {#function-__libboksget_button_state__}
 
 Checks which buttons are currently pressed.
 
@@ -142,7 +196,7 @@ __Example:__
 {% highlight python %}
 l = exp.boks.get_button_state()
 if 1 in l:
-        print 'Button 1 is pressed'
+        print('Button 1 is pressed')
 {% endhighlight %}
 
 __Returns:__
@@ -158,7 +212,7 @@ A list of buttons that are currently pressed.
 
 <div class="FunctionDoc YAMLDoc" id="libboks-get_buttons" markdown="1">
 
-## function __libboks.get_buttons__()
+## [function __libboks.get_buttons__()](#function-__libboksget_buttons__) {#function-__libboksget_buttons__}
 
 Retrieves the list of buttons that are 'active', i.e. that are used by [get_button_press], [get_button_release], and [get_button_state].
 
@@ -167,7 +221,7 @@ __Example:__
 {% highlight python %}
 l = exp.boks.get_buttons()
 if 1 in l:
-        print 'Button 1 is currently being monitored'
+        print('Button 1 is currently being monitored')
 {% endhighlight %}
 
 __Returns:__
@@ -183,7 +237,7 @@ A list of active buttons.
 
 <div class="FunctionDoc YAMLDoc" id="libboks-get_sid" markdown="1">
 
-## function __libboks.get_sid__()
+## [function __libboks.get_sid__()](#function-__libboksget_sid__) {#function-__libboksget_sid__}
 
 Retrieves the Arduino serial ID.
 
@@ -207,7 +261,7 @@ A 7 character string containing the Arduino serial ID.
 
 <div class="FunctionDoc YAMLDoc" id="libboks-get_timeout" markdown="1">
 
-## function __libboks.get_timeout__()
+## [function __libboks.get_timeout__()](#function-__libboksget_timeout__) {#function-__libboksget_timeout__}
 
 Gets the timeout used by [get_button_press] and [get_button_release].
 
@@ -232,7 +286,7 @@ A timeout value in milliseconds or `None` if no timeout is set.
 
 <div class="FunctionDoc YAMLDoc" id="libboks-info" markdown="1">
 
-## function __libboks.info__()
+## [function __libboks.info__()](#function-__libboksinfo__) {#function-__libboksinfo__}
 
 Gets boks device info.
 
@@ -257,7 +311,7 @@ A (firmware_version, model) tuple. The firmware_version is a string of the forma
 
 <div class="FunctionDoc YAMLDoc" id="libboks-set_buttons" markdown="1">
 
-## function __libboks.set_buttons__(buttons)
+## [function __libboks.set_buttons__(buttons)](#function-__libboksset_buttons__buttons) {#function-__libboksset_buttons__buttons}
 
 Sets which buttons should be used for [get_button_press], [get_button_release], and [get_button_state].
 
@@ -284,7 +338,7 @@ __Arguments:__
 
 <div class="FunctionDoc YAMLDoc" id="libboks-set_continuous" markdown="1">
 
-## function __libboks.set_continuous__(continuous=True)
+## [function __libboks.set_continuous__(continuous=True)](#function-__libboksset_continuous__continuoustrue) {#function-__libboksset_continuous__continuoustrue}
 
 Determines whether [get_button_press] and [get_button_release] are triggered only by signal changes (discontinuous) or also by continuous signals. The Boks is by default in discontinuous mode, which is generally what you want. For example, in continuous mode, [get_button_press] will respond right away if any of the buttons is already pressed, whereas you are generally interested only in buttons that go from not being pressed to being pressed.
 
@@ -312,7 +366,7 @@ __Keywords:__
 
 <div class="FunctionDoc YAMLDoc" id="libboks-set_led" markdown="1">
 
-## function __libboks.set_led__(on=True)
+## [function __libboks.set_led__(on=True)](#function-__libboksset_led__ontrue) {#function-__libboksset_led__ontrue}
 
 Turns the LED on or off.
 
@@ -340,7 +394,7 @@ __Keywords:__
 
 <div class="FunctionDoc YAMLDoc" id="libboks-set_timeout" markdown="1">
 
-## function __libboks.set_timeout__(timeout)
+## [function __libboks.set_timeout__(timeout)](#function-__libboksset_timeout__timeout) {#function-__libboksset_timeout__timeout}
 
 Sets the timeout used by [get_button_press] and [get_button_release].
 
@@ -362,24 +416,22 @@ __Arguments:__
 [libboks.set_timeout]: #libboks-set_timeout
 [set_timeout]: #libboks-set_timeout
 
-<div class="FunctionDoc YAMLDoc" id="libboks-time" markdown="1">
-
-## function __libboks.time__()
-
-A time function. In OpenSesame mode, the OpenSesame timer will be used instead.
-
-__Returns:__
-
-A timestamp in milliseconds
-
-- Type: float
-
-</div>
-
-[libboks.time]: #libboks-time
-[time]: #libboks-time
-
 </div>
 
 [libboks]: #libboks
 
+
+[function __libboks.\_\_init\_\___(baudrate=115200, led=False, buttons=None, experiment=None, timeout=None, port=None)]: #function-__libboks__init____baudrate115200-ledfalse-buttonsnone-experimentnone-timeoutnone-portnone
+[function __libboks.button_count__()]: #function-__libboksbutton_count__
+[function __libboks.close__()]: #function-__libboksclose__
+[function __libboks.get_button_press__()]: #function-__libboksget_button_press__
+[function __libboks.get_button_release__()]: #function-__libboksget_button_release__
+[function __libboks.get_button_state__()]: #function-__libboksget_button_state__
+[function __libboks.get_buttons__()]: #function-__libboksget_buttons__
+[function __libboks.get_sid__()]: #function-__libboksget_sid__
+[function __libboks.get_timeout__()]: #function-__libboksget_timeout__
+[function __libboks.info__()]: #function-__libboksinfo__
+[function __libboks.set_buttons__(buttons)]: #function-__libboksset_buttons__buttons
+[function __libboks.set_continuous__(continuous=True)]: #function-__libboksset_continuous__continuoustrue
+[function __libboks.set_led__(on=True)]: #function-__libboksset_led__ontrue
+[function __libboks.set_timeout__(timeout)]: #function-__libboksset_timeout__timeout

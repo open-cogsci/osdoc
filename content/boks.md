@@ -6,14 +6,17 @@ permalink: /boks/
 menuclass: boks
 ---
 
-##### The Boks and documentation below is under development.
+The Boks is an open-source response box for use in psychological and neuroscientific experiments. The hardware is developed by [responseboks.eu](http://www.responseboks.eu/), a Dutch electronics company. The software is developed by the OpenSesame community. Part of the price is a direct donation to the OpenSesame project, so your purchase of the Boks helps to maintain OpenSesame!
 
-The Boks is an open-source response box for use in psychological and neuroscientific experiments. The hardware is developed by [Beter Elektro](http://www.beterelektro.nl/), a Dutch electronics company. The software is developed by the OpenSesame community. Part of the price is a direct donation to the OpenSesame project, so your purchase of the Boks helps to maintain OpenSesame!
+%--
+figure:
+ id: FigBoks
+ source: FigBoks.png
+ caption: |
+  A Two-Button Boks.
+--%
 
-![](/img/fig/fig19.1.1.png)
-
-Overview
---------
+## Overview
 
 - [Prices and models](/boks/getit)
 - Driver installation

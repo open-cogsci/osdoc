@@ -3,26 +3,26 @@ layout: osdoc
 title: Boks timing
 group: Boks
 permalink: /timing/
-show: True
 ---
 
-The Boks and documentation below is under development.
-{: .page-notification}
+## Overview
 
-Overview
---------
+%--
+toc:
+ exclude: [Overview]
+ mindepth: 2
+--%
 
-- [Communication](#communication)
-- [Precision vs accuracy](#precision-vs-accuracy)
-- [Bencmarks](#benchmarks)
-- [Test your own system](#test-yourself)
-
-Communication {#communication}
--------------
+## Communication
 
 Most response boxes send a continuous stream of characters, and the response time is determined by the moment at which the computer receives a particular character that corresponds to a button press. In contrast, the Boks uses a communication protocol that has been specifically designed to address the primary challenge to temporal precision and accuracy: The delays that occur in sending and receiving data via the USB port.
 
-![](/img/fig/fig19.7.1.png)
+%--
+figure:
+ id: FigSchematic
+ source: FigSchematic.png
+ caption: A schematic of the information transfer between *The Boks* and the computer.
+--%
 
 In the figure above, you can see a schematic of the communication that occurs between the computer and the Boks during the collection of a button press.
 
@@ -49,15 +49,13 @@ t2 = exp.time()
 response_time = t2-t1
 {% endhighlight %}
 
-Precision vs accuracy {#precision-vs-accuracy}
----------------------
+## Precision vs accuracy
 
 As explained on [Wikipedia][wikipedia-precision], there is a conceptual difference between the 'precision' and the 'accuracy' of a measurement. The accuracy of a system reflects the extent to which the measured value corresponds to the true value, i.e. is unbiased. The precision of a system reflects the extent to which measurements are constant, i.e. have little variability.
 
 In virtually all circumstances, the temporal precision of response measurements is far more important than the accuracy, because variability is what reduces statistical power. This is fortunate, because establishing the precision of the Boks is easier than establishing its accuracy. The variability in the minimum response latency is a test of *precision*, and is in the order of microseconds (on our reference system), The absolute error in photodiode responses to a white display is a test of *accuracy* (of both the Boks and display presentation), and is in the the order of hundreds of microseconds (on our reference system).
 
-Benchmarks {#benchmarks}
-----------
+## Benchmarks
 
 ### Minimum response latency
 
@@ -67,11 +65,23 @@ As you can see, the minimum response latency is much lower on Kubuntu Linux 12.0
 
 *Results from Kubuntu 12.04*[^system-1]
 
-![](/img/fig/fig19.7.2.png)
+%--
+figure:
+ id: FigResultsKubuntu
+ source: FigResultsKubuntu.png
+ caption: |
+  Minimum response latency obtained under Kubuntu Linux 12.04.
+--%
 
 *Results from Windows XP*[^system-2]
 
-![](/img/fig/fig19.7.3.png)
+%--
+figure:
+ id: FigResultsWindows
+ source: FigResultsWindows.png
+ caption: |
+  Minimum response latency obtained under Windows XP.
+--%
 
 ### Photodiode test
 
@@ -88,7 +98,13 @@ Finally, a keen eye may notice response times are actually slightly lower than t
 |psycho		|548 		|123			|
 |legacy		|3942		|2727			|
 
-![](/img/fig/fig19.7.4.png)
+%--
+figure:
+ id: FigResultsLatency
+ source: FigResultsLatency.png
+ caption: |
+  Response times to a white display, measured with the photodiode integrated in *The Boks*. Lower values are better. Different colors correspond to different back-ends. The horizontal lines correspond to the average response time for a particular back-end.
+--%
 
 ### Noise
 
@@ -103,8 +119,7 @@ The Boks should not have any noise. That is, the Boks should report the actual s
 	Release button 2
 	Match = 10000, Non-match = 0
 
-Test your own system {#test-yourself}
---------------------
+## Test your own system
 
 You can test the Boks your own system using the `unittest` and `testreport` scripts included with the Boks source. For an explanation, see the `readme.md`, which can be viewed online [here][unittest-readme].
 		

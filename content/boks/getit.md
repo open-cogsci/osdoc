@@ -6,10 +6,30 @@ permalink: /getit/
 show: True
 ---
 
-The Boks and documentation below is under development.
-{: .page-notification}
+*The Boks* is developed by [Responseboks.eu]. This a Dutch electronics business that works together with the OpenSesame community to develop the best and most affordable response box on the market.
 
-*The Boks is under development and used by a limited number of bèta testers. Details on prices and availablity will be provided at a later date.*
+Each Boks comes with a photodiode that is integrated in the bottom of the device (not visible in the photos below). This photodiode allows you to test the temporal precision of your own set-up.
 
-Currently, the plan is to offer 2-button and 4-button devices. All Boks devices come with an integrated photodiode to test your own system.
+The standard models are *The Two-Button Boks* and *The Four-Button Boks* ...
 
+%--
+figure:
+ id: Fig4Boks
+ source: Fig4Boks.jpg
+ caption: |
+  The Four-Button Boks.
+--%
+
+... and *The MiniBoks* ...
+
+%--
+figure:
+ id: FigMniBoks
+ source: FigMiniBoks.jpg
+ caption: |
+  The MiniBoks.
+--%
+
+Spare parts and custom-built models are also available. For pricing, spare parts, and more options, please visit [responseboks.eu] or contact <responseboks@gmail.com>.
+
+[responseboks.eu]: http://www.responseboks.eu/

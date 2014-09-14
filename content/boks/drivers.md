@@ -3,23 +3,19 @@ layout: osdoc
 title: Drivers
 group: Boks
 permalink: /drivers/
-show: True
 ---
-
-The Boks and documentation below is under development.
-{: .page-notification}
 
 At the heart of the Boks is an [Arduino][] board. To use the Boks, you therefore need to install Arduino drivers, which are available for all platforms.
 
-Overview
---------
+## Overview
 
-- [Windows](#windows)
-- [Linux](#linux)
-- [Mac OS](#macos)
+%--
+toc:
+ exclude: [Overview]
+ mindepth: 2
+--%
 
-Windows driver installation {#windows}
----------------------------
+## Windows driver installation
 
 First, download the Arduino software for Windows from [here][arduino-download]. Next, install the Arduino UNO drivers as explained [here][windows-instructions]. (The Arduino software includes a lot more than just the drivers. Unless you want to [update the firmware][firmware], you can ignore everything except for the drivers.)
 
@@ -27,8 +23,7 @@ For more information, please refer to the Arduino site:
 
 - <http://arduino.cc/en/Guide/Windows>
 
-Linux driver installation {#linux}
--------------------------
+## Linux driver installation
 
 The Boks works almost straight-away on most modern Linux distributions. The only thing that you may need to do is add your user to the `dialout` group. Under recent distributions of Ubuntu you can do this with the following command (you need to log out/in for the group change to take effect):
 
@@ -42,8 +37,7 @@ For more information, please refer to the Arduino site:
 
 - <http://playground.arduino.cc/Learning/Linux>
 
-Mac OS driver installation {#macos}
----------------------------
+## Mac OS driver installation
 
 The Boks has not been tested on Mac OS, but Arduino drivers are available. 
 
