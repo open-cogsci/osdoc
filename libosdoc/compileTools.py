@@ -280,8 +280,8 @@ def preprocessSite(content, group, branch, status):
 						u'w').write(s.encode(u'utf-8'))
 					# Generate the YAML sitemap, which is read automatically by
 					# OpenSesame to browse the online documentation.
-					if u'menuclass' not in info or \
-						info[u'menuclass'] != u'external':
+					if show and (u'menuclass' not in info or \
+						info[u'menuclass'] != u'external'):
 						title = title.capitalize().encode(u'utf-8')
 						__group = _group.capitalize().encode(u'utf-8')
 						path = u'/%s/%s/' % (branch, path[8:-3])
