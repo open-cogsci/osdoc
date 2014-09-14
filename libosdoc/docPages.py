@@ -64,6 +64,9 @@ def generateDocPages():
 	cls = plugins.load_cls(u'../opensesame/plugins/srbox', u'libsrbox',
 		u'libsrbox')
 	createDoc(cls, u'content/_includes/doc/libsrbox')
+	cls = plugins.load_cls(u'../boks/opensesame/boks',
+		u'libboks', u'libboks')
+	createDoc(cls, u'content/_includes/doc/libboks')
 	for backend in ['canvas', 'keyboard', 'mouse', 'sampler', 'synth']:
 		cls = plugins.load_cls(u'../opensesame/openexp/_%s' % backend, backend,
 			backend)
