@@ -53,6 +53,9 @@ Garaizar, P., & Reips, U.-D. (2014). Visual DMDX: A web-based authoring tool for
 Garaizar, P., Vadillo, M. A., López-de-Ipiña, D., & Matute, H. (2014). Measuring software timing errors in the presentation of visual stimuli in cognitive neuroscience experiments. *PLoS ONE*, *9*(1), e85108. doi:10.1371/journal.pone.0085108
 {: .reference}
 
+Gorgolewski, K. J., Mendes, N., Wilfling, D., Wladimirow, E., Gauthier, C., Bonnen, T., ... Margulies, D. (2014). A high resolution 7-Tesla resting-state fMRI test-retest dataset with cognitive and physiological measures. *bioRxiv*, *008706*. doi:10.1101/008706
+{: .reference}
+
 Grainger, J., Mathôt, S., & Vitu, F. (2014). Tests of a model of multi-word reading: Effects of parafoveal flanking letters on foveal word recognition. *Acta Psychologica*, *146*, 35-40. doi:10.1016/j.actpsy.2013.11.014
 {: .reference}
 
@@ -99,6 +102,9 @@ Sagana, A., Sauerland, M., & Merckelbach, H. (2014). Memory impairment is not su
 {: .reference}
 
 Sall, R. J., Wright, T. J., & Boot, W. R. (2014). Driven to distraction? The effect of simulated red light running camera flashes on attention and oculomotor control. *Visual Cognition*, 1–17. doi:10.1080/13506285.2013.873509
+{: .reference}
+
+Scarpina, F., Castelnuovo, G., & Molinari, E. (2014). Tactile mental body parts representation in obesity. *Psychiatry Research*. doi:10.1016/j.psychres.2014.08.020
 {: .reference}
 
 Silva, F. J., Hope, M. I. ten, & Tucker, A. L. (2014). Adult humans’ understanding of support relations: an up-linkage replication. *Learning & Behavior*. doi:10.3758/s13420-014-0151-0
