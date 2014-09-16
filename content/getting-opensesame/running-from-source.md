@@ -27,13 +27,17 @@ You can also download a development snapshot of the code. To obtain a reasonable
 
 ### Required
 
-The following packages are required to run a minimal version of the OpenSesame GUI, with only support for the [legacy] back-end and no sound support.
+The following packages are required to run a minimal version of the OpenSesame GUI, with only support for the [legacy] back-end, no sound support, and no plug-in support.
 
 - [Python](http://www.python.org) is the programming language in which OpenSesame is created.
+	- Only Python 2.X is currently supported.
 - [PyGame](http://www.pygame.org) is a library that is used for graphics and sound.
 - [PyQt4](http://www.riverbankcomputing.com/software/pyqt/download) is the graphics toolkit that is used to for the user interface.
 - [QScintilla2](http://www.riverbankcomputing.com/software/pyqt/download) is a basic text-editor component. In some cases, it is bundled with `PyQt4`.
 - [QProgEdit](https://github.com/smathot/QProgEdit) is an advanced text-editor component built on top of `QScintilla2`.
+	- OpenSesame >= 2.9.0 requires QProgEdit >= 2.0.0.
+	- OpenSesame <= 2.8.3 requires QProgEdit 1.3.4.
+- [PyYAML](http://pyyaml.org/) is a library used for loading `yaml` files.
 
 ### Optional
 
@@ -45,7 +49,7 @@ The following packages are not required, but some functionality will be missing 
 - [PsychoPy](http://www.psychopy.org/) is required for the [psycho] back-end.
 - [pyflakes](https://pypi.python.org/pypi/pyflakes) is required for automatic validation of your Python scripts.
 - [Pyglet](http://www.pyglet.org/) is required by PsychoPy.
-- [PyOpenGL]() is required by PsychoPy and Expyriment.
+- [PyOpenGL](http://pyopengl.sourceforge.net/) is required by PsychoPy and Expyriment.
 - [pySerial](http://pyserial.sourceforge.net/) is required for serial-port communication.
 - [python-bidi](https://pypi.python.org/pypi/python-bidi) is required for bi-directional-text support.
 - [python-markdown](https://pypi.python.org/pypi/Markdown) is required for viewing in-program help files.
@@ -60,6 +64,7 @@ The following packages are not used directly by OpenSesame, but may come in hand
 - [pyCairo](http://www.lfd.uci.edu/~gohlke/pythonlibs/#pycairo) is a library for vector graphics.
 - [pyParallel](http://pyserial.sourceforge.net/pyparallel.html) allows communication via the parallel port.
 - [OpenCV](http://opencv.org/) (Python bindings) is an extensive computer-vision library.
+- [PyGaze](http://www.pygaze.org/) is a Python library for eye tracking.
 
 ## Reasons to run from source
 
