@@ -1,7 +1,7 @@
 ---
 layout: osdoc
 title: Questionnaire plug-ins
-group: Plug-ins
+group: Plug-ins and extensions
 permalink: /questionnaire-plug-ins/
 ---
 

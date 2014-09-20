@@ -63,11 +63,12 @@ forms
 	Rating_scale functions
 	Text_input functions
 	Form functions
-plug-ins
-	About plug-ins
-	Plug-in installation
-	List of available plug-ins
+plug-ins and extensions
+	About plug-ins and extensions
+	Installing plug-ins and extensions
+	:List of available plug-ins
 	Creating a plug-in
+	Creating an extension
 	:Questionnaire plug-ins
 Back-ends
 	About back-ends

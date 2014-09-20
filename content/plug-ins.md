@@ -1,7 +1,7 @@
 ---
 layout: osdoc
-title: Plug-ins
-group: Plug-ins
+title: Plug-ins and extensions
+group: Plug-ins and extensions
 permalink: /plug-ins/
 ---
 

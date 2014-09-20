@@ -1,8 +1,8 @@
 ---
 layout: osdoc
 title: Creating a plug-in
-group: Plug-ins
-permalink: /create/
+group: Plug-ins and extensions
+permalink: /create-plug-in/
 parser: academicmarkdown
 ---
 
@@ -19,7 +19,7 @@ toc:
 Let's assume that your plug-in is called `my_plugin`. In that case, your plug-in corresponds to a folder called `my_plugin`, containing at least the following 5 files:
 
 	my_plugin/
-		info.json
+		info.yaml
 		my_plugin.md
 		my_plugin.png
 		my_plugin_large.png
@@ -31,13 +31,13 @@ Your plug-in needs two icons. A small 16x16-pixel icon, which is called `my_plug
 
 ## Help file
 
-You can provide a help file in [Markdown] or [HTML] format. To add a Markdown help file, simply create a file called `my_plugin.md` in the plug-in folder. For an HTML help file, create a file called `my_plugin.html`. Markdown format is generally preferred, because it is easier to read. Strictly speaking, the help file is optional, and your plug-in will work without it. However, an informative help file is an essential part of a good plug-in.
+You can provide a help file in [Markdown] or [HTML] format. To add a Markdown help file, simply create a file called `my_plugin.md` in the plug-in folder. For an HTML help file, create a file called `my_plugin.html`. Markdown format is preferred, because it is easier to read. Strictly speaking, the help file is optional, and your plug-in will work without it. However, an informative help file is an essential part of a good plug-in.
 
 ## Defining the GUI
 
-The GUI is defined in a file called `info.json`. [JSON] is an easily readable format, and provides a quick and straight-forward way to define your plug-in controls, and specify various kinds of information. Make sure that your file is syntactically-valid JSON, for example using a validator such as [jsonlint.com].
+The GUI is defined in a file called `info.yaml`[^json]. [YAML] is an easily readable format, and provides a quick and straight-forward way to define your plug-in controls, and specify various kinds of information. Make sure that your file is syntactically valid YAML, for example using a validator such as [yamllint.com].
 
-The top-level fields, such as `author` and `url` are used to specify all kinds of information. You can add anything you like here. An important field is `category`, which specifies in which group the plug-in should appear in the item toolbar (e.g. 'Visual stimuli', etc.).
+The following top-level fields are used to show plug-in information by the plug-in and extension manager: `author`, `url`, `version`. and `description`. Another important field is `category`, which specifies in which group the plug-in should appear in the item toolbar (e.g. 'Visual stimuli', etc.). Finally, the `priority` field determines the order in which plug-ins are loaded, where high priority values are loaded last.
 
 The `control` field contains a list of controls. Each control is itself an object that has various fields. The most important fields are:
 
@@ -56,31 +56,26 @@ The `control` field contains a list of controls. Each control is itself an objec
 - `name` (optional) specifies under which name the widget should be added to the plug-in object, so that it can be referred to as `self.[name]`.
 - `tooltip` (optional) an informative tooltip.
 
-{% highlight javascript %}
-{
-	"author"	: "Your name",
-	"url"		: "http://your.website",
-	"category"	: "Some category",
-	"comment"	: "This is my plug-in",
-	"controls" : [
-		{
-			"type"		: "line_edit",
-			"var"		: "my_var",
-			"label"		: "My line edit control",
-			"name"		: "line_edit_widget",
-			"tooltip"	: "You can type something here"
-		}
-	]
-}
+{% highlight yaml %}
+author: Your name
+category: Some category
+description: This is my plug-in
+url: http://your.website
+controls:
+    label: My line edit control
+    name: line_edit_widget
+    tooltip: You can type something here
+    type: line_edit
+    var: my_var
 {% endhighlight %}
 
 See the `auto_example` [example](#examples) for a full list of all controls and options.
 
 ## Writing the main plug-in code
 
-The main plug-in code is placed in `my_plugin.py`. This file has two classes: The first is `my_plugin`, which contains the runtime part of the plug-in. The second is `qtmy_plugin`, which controls the GUI and is almost empty in most cases, because the controls are defined in `info.json`. In many cases, you will only be concerned with three methods:
+The main plug-in code is placed in `my_plugin.py`. This file has two classes: The first is `my_plugin`, which contains the runtime part of the plug-in. The second is `qtmy_plugin`, which controls the GUI and is almost empty in most cases, because the controls are defined in `info.yaml`. In many cases, you will only be concerned with three methods:
 
-- `my_plugin.__init__()` is where you specify default values for the plug-in variables.
+- `my_plugin.reset()` is where you specify default values for the plug-in variables.
 - `my_plugin.prepare()` is where you implement the run phase of your plug-in. It is good practice to move as much functionality as possible into `prepare()`, so that the time-critical run phase goes as smooth as possible.
 - `my_plugin.run()` is where you implement the prepare phase of your plug-in.
 
@@ -96,12 +91,10 @@ class my_plugin(item):
 
 	description = u'Plug-in description'
 
-	def __init__(self, name, experiment, script=None):
+	def reset(self):
 
 		# Set default values.
 		self.my_var = u'some default'
-		# Call the parent constructor.
-		item.__init__(self, name, experiment, script)
 		# Debugging output is only visible when OpenSesame is started with the
 		# --debug argument.
 		debug.msg(u'My plug-in has been initialized!')
@@ -132,9 +125,11 @@ class qtmy_plugin(my_plugin, qtautoplugin):
 - the [`auto_example`][auto_example] plug-in is a dummy plug-in that contains a lot of information, and a detailed `info.json` that you can use as a basis for your own plug-in.
 - the [`fixation_dot`][fixation_dot] plug-in is a simple, but functional example.
 
+[^json]: In OpenSesame 2.8.3, plug-in information was stored in `info.json`. This still works, but for newer plug-ins it is recommend to use `info.yaml`, because YAML-syntax is simpler than JSON-syntax. (In fact, JSON is a specific case of YAML.)
+
 [auto_example]: https://github.com/smathot/OpenSesame/tree/master/plugins/auto_example
 [fixation_dot]: https://github.com/smathot/OpenSesame/tree/master/plugins/fixation_dot
 [html]: http://en.wikipedia.org/wiki/HTML#Markup
-[json]: http://en.wikipedia.org/wiki/JSON
-[jsonlint.com]: http://jsonlint.com/
+[yaml]: http://en.wikipedia.org/wiki/YAML
+[yamllint.com]: http://yamllint.com/
 [markdown]: http://daringfireball.net/projects/markdown/syntax

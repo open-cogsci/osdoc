@@ -1,7 +1,7 @@
 ---
 layout: osdoc
 title: List of available plug-ins
-group: Plug-ins
+group: Plug-ins and extensions
 permalink: /list-of-available-plug-ins/
 ---
 
