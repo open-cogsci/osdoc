@@ -110,14 +110,14 @@ Donate
 Forum
 Cogsci.nl
 BRM Paper
-Boks
-	Models and prices
-	Drivers
-	OpenSesame plug-in
-	Python library
-	Serial port communication
-	Boks timing
-	Source code and firmware
+:Boks
+	:Models and prices
+	:Drivers
+	:OpenSesame plug-in
+	:Python library
+	:Serial port communication
+	:Boks timing
+	:Source code and firmware
 
 #
 # Pages not shown in menu
