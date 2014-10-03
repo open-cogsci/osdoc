@@ -12,7 +12,7 @@
 {% for node in site.sorted %}
 	{% if node.ext_url == null and node.singleton != true %}
 		{% if node.level == 0 %}
-			{% if node.title == "Plug-ins" %}
+			{% if node.title == "Plug-ins and extensions" %}
 				</td>
 				</tr>
 				<tr>
