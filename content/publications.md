@@ -110,6 +110,9 @@ Scarpina, F., Castelnuovo, G., & Molinari, E. (2014). Tactile mental body parts 
 Silva, F. J., Hope, M. I. ten, & Tucker, A. L. (2014). Adult humans’ understanding of support relations: an up-linkage replication. *Learning & Behavior*. doi:10.3758/s13420-014-0151-0
 {: .reference}
 
+Sternheim, L., van der Burgh, M., Berkhout, L. J., Dekker, M. R., & Ruiter, C. (2014). Poor cognitive flexibility, and the experience thereof, in a subclinical sample of female students with obsessive-compulsive symptoms. *Scandinavian Journal of Psychology*. doi:10.1111/sjop.12163
+{: .reference}
+
 Theeuwes, J., Mathôt, S., & Grainger, J. (2014). Object-centered orienting and IOR, *Attention, Perception, & Psychophysics*. doi:10.3758/s13414-014-0718-z
 {: .reference}
 

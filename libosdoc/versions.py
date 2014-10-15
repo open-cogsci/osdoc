@@ -18,6 +18,7 @@ along with osdoc.  If not, see <http://www.gnu.org/licenses/>.
 """
 
 import yaml
+import warnings
 
 def generateVersionList(branch):
 
@@ -56,4 +57,6 @@ def branchStatus(branch):
 			status = version[u'status']
 			assert(status in [u'old', u'dev', u'current'])
 			return status
-	raise Exception(u'Branch %s not found' % branch)
+	warnings.warn(u'Your current branch is not defined in versions.yml')
+	return 'dev'
+
