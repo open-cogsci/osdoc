@@ -71,6 +71,9 @@ Holliday, J. J. (2014). The perceptual assimilation of Korean obstruents by nati
 Ishii, A., Tanaka, M., & Watanabe, Y. (2014). The neural substrates of self-evaluation of mental fatigue: A magnetoencephalography study. *PLoS ONE*, *9*(4), e95763. doi:10.1371/journal.pone.0095763
 {: .reference}
 
+Ishii, A., Tanaka, M., & Watanabe, Y. (2014). The neural mechanisms underlying the decision to rest in the presence of fatigue: A magnetoencephalography study. *PLoS ONE*, *9*(10), e109740. doi:10.1371/journal.pone.0109740
+{: .reference}
+
 Jiang, Y. (2014). Measuring facial expression and emotional experience under diverse social context in a negative emotional setting. In A. J. Spink, L.W.S. Loijens, M. Woloszynowska-Fraser, & L. P. J. J. Noldus (Eds.), Proceedings of Measuring Behavior. Retrieved from <http://www.measuringbehavior.org/files/2014/Proceedings/Jiang,%20Y.%20-%20MB2014.pdf>
 {: .reference}
 
@@ -111,6 +114,9 @@ Silva, F. J., Hope, M. I. ten, & Tucker, A. L. (2014). Adult humans’ understan
 {: .reference}
 
 Sternheim, L., van der Burgh, M., Berkhout, L. J., Dekker, M. R., & Ruiter, C. (2014). Poor cognitive flexibility, and the experience thereof, in a subclinical sample of female students with obsessive-compulsive symptoms. *Scandinavian Journal of Psychology*. doi:10.1111/sjop.12163
+{: .reference}
+
+Techer, F., Jallais, C., Fort, A., & Corson, Y. (2014). Assessing the Impact of Anger State on the Three Attentional Networks With the ANT-I. *Emotion*. doi:10.1037/emo0000028
 {: .reference}
 
 Theeuwes, J., Mathôt, S., & Grainger, J. (2014). Object-centered orienting and IOR, *Attention, Perception, & Psychophysics*. doi:10.3758/s13414-014-0718-z
