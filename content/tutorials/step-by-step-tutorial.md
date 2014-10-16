@@ -63,14 +63,14 @@ Double-click on 'Default template', to start with a minimal experimental templat
 
 By default there is a main `sequence`, which is simply called *experiment*. Click on *experiment* in the overview area (by default on the left side, see %FigInterface) to open its controls in the tab area. The *experiment* `sequence` consists of two items: a `notepad` called *getting started* and a `sketchpad` called *welcome*.
 
+We don't need these two items. Remove *getting_started* by right-clicking on it in the overview area and selecting 'Move to unused items' (shortcut: `Del`). Remove *welcome* in the same way. The *experiment* `sequence` is now empty.
+
 %--
 figure:
  id: FigInterface
  source: interface.png
  caption: "The default layout of the OpenSesame interface."
 --%
-
-We don't need these two items. Remove *getting_started* by right-clicking on it in the overview area and selecting 'Move to unused items' (shortcut: `Del`). Remove *welcome* in the same way. The *experiment* `sequence` is now empty.
 
 <div class='info-box' markdown='1'>
 
@@ -84,7 +84,7 @@ __Tip__ -- You can click on the Help icons in the top right of an item's tab to 
 
 __Tip__ -- Save (shortcut: `Ctrl+S`) your experiment often! In the unfortunate (and unlikely) event of data loss, you will often be able to recover your work from the back-ups that are created automatically, by default, every 10 minutes (Menu → Tools → Open backup folder).
 
-__Tip__ -- Unless you have used 'Permanently delete' (shortcut: `Shift+Del`), deleted items are still available in the 'Unused items' bin, until you select 'Permanently delete unused items' in the 'Unused items' tab. You can re-add deleted items to a `sequence` by dragging it out of the 'Unused items' bin to somewhere in your experiment branch.
+__Tip__ -- Unless you have used 'Permanently delete' (shortcut: `Shift+Del`), deleted items are still available in the 'Unused items' bin, until you select 'Permanently delete unused items' in the 'Unused items' tab. You can re-add deleted items to a `sequence` by dragging them out of the 'Unused items' bin to somewhere in your experiment.
 
 __Tip__ -- %FigExperimentStructure schematically shows the structure of the experiment that you will create. If you get confused during the tutorial, you can refer to %FigExperimentStructure to see where you are.
 
@@ -101,13 +101,17 @@ figure:
 
 As the name suggests, a `form_text_display` is a form that displays text. We are going to use a `form_text_display` to give instructions to the participant at the beginning of the experiment.
 
-Click on *experiment* in the overview area to open its controls in the tab area. You will see an empty `sequence`. Select `form_text_display` in the item toolbar (under 'Form', see %FigInterface), and drag it onto the *experiment* `sequence` in the tab area. If you see the small '+', you can drop it and the item will be inserted as a child of *experiment*. (We will get back to this in Step 12.)
+Click on *experiment* in the overview area to open its controls in the tab area. You will see an empty `sequence`. Select `form_text_display` in the item toolbar (under 'Form', see %FigInterface), and drag it onto the *experiment* `sequence` in the tab area. When a tooltip appears with the text 'insert into experiment', you can drop it and the item will be inserted into the *experiment* `sequence`. (We will get back to this in Step 12.)
 
 <div class='info-box' markdown='1'>
 
 ### Background box
 
-__Tip__ -- Another way to add items to a `sequence` is by dragging them from the item toolbar onto the overview area.
+__Tip__ -- You can drag items into the overview area and into `sequence` tabs, but the behavior is slight different.
+
+- If you drop an item into a `sequence` tab, the item will always be added to that `sequence`.
+- In the overview area, dropping an item onto a `loop` will change the `loop`'s item to run, and dropping an item onto a `sequence` will insert the item in the `sequence`.
+- A tooltip will tell you what will happen when you drop an item.
 
 __Tip__ -- A `form_text_display` only shows text. If you require images etc., you can use a `sketchpad` item. We will meet the `sketchpad` in Step 5.
 
@@ -119,7 +123,7 @@ We need to append a `loop` item to the *experiment* `sequence`. We will use this
 
 Drag the `loop` item from the item toolbar into the `sequence` just the way you added the `form_text_display`. New items are inserted below the item that they are dropped on, so if you drop the new `loop` on the previously created `form_text_display`, it will appear where you want it: after the `form_text_display`. But don't worry if you drop a new item in the wrong place, because you can always drag it to the correct location later.
 
-A `loop` does not do anything by itself.  A `loop` always needs another item to run. Therefore you have to fill the new `loop` item with another item (You will also see a warning written in red telling you that 'no item to run specified' in the tab area, if you select this `loop` item). Choose a `sequence` item in the item toolbar and drag it onto the `loop` item in the *overview area*. (We will get back to this in Step 2.)
+A `loop` does not do anything by itself.  A `loop` always needs another item to run. Therefore you have to fill the new `loop` item with another item (You will also see a warning written in red telling you that 'no item to run specified' in the tab area, if you select this `loop` item). Choose a `sequence` item in the item toolbar and drag it onto the `loop` item in the *overview area* (not the `sequence` tab). When a tooltip appears with the text 'set as item to run for loop', you can drop it. (We will get back to this in Step 2.)
 
 <div class='info-box' markdown='1'>
 
@@ -143,7 +147,7 @@ After the practice phase, we want to inform the participant that the real experi
 
 <div class='info-box' markdown='1'>
 
-__Tip__ -- Usually, if you drop a new item onto an existing item, the new item will be created below the existing item. However, `sequence`s and `loop`s work differently. If you drop a new item onto a `loop` or `sequence` in the overview area, the new item will become a child of the `loop` or `sequence`.
+__Tip__ -- If you accidentally drop an item onto a `loop` in the overview area, you will change the `loop`'s item to run. But don't worry! You can undo this easily by dragging the `loop`'s original item to run back to the `loop`, or by selecting the correct item to run from the drop-down box in the `loop` tab.
 
 </div>
 
@@ -151,15 +155,15 @@ __Tip__ -- Usually, if you drop a new item onto an existing item, the new item w
 
 We need a `loop` item for the experimental phase, just like for the practice phase. Therefore, select `loop` from the item toolbar menu and drag it into the *experiment* `sequence`.
 
-The newly created `loop` is empty, and should be filled with a `sequence`, just like before. However, because the trials of the practice and experimental phase are identical, they can use the same `sequence`. Therefore, instead of dragging a new `sequence` from the item toolbar, you can re-use the *existing* one (i.e. create a linked copy). To do this, drag the previously created `sequence` onto the newly created `loop` (called *_loop*) while holding the `Ctrl` key pressed.
+The newly created `loop` is empty, and should be filled with a `sequence`, just like before. However, because the trials of the practice and experimental phase are identical, they can use the same `sequence`. Therefore, instead of dragging a new `sequence` from the item toolbar, you can re-use the *existing* one (i.e. create a linked copy). To do this, drag the previously created `sequence` onto the newly created `loop` (called *_loop*) while holding the `Ctrl` key pressed in the overview area (not the `sequence` tab).
 
 <div class='info-box' markdown='1'>
 
 ### Background box
 
-__Tip__ — There is an important distinction between *linked* (or *shallow*) and *unlinked* (or *deep*) copies. (For a detailed description see [Wikipedia](https://en.wikipedia.org/wiki/Object_copy)). If you create a linked copy of an item, you create another occurrence of the same item. Therefore, if you modify the original item, the linked copy will change as well. In contrast, if you create an unlinked copy of an item, the copy will be initially look identical (except for its name), but you can edit the original without affecting the unlinked copy, and vice versa. Both have (dis)advantages, so think carefully about the type of copy that you need.
+__Tip__ — There is an important distinction between *linked* and *unlinked* copies. If you create a linked copy of an item, you create another occurrence of the same item. Therefore, if you modify the original item, the linked copy will change as well. In contrast, if you create an unlinked copy of an item, the copy will be initially look identical (except for its name), but you can edit the original without affecting the unlinked copy, and vice versa. Important: If you create an unlinked copy of a `sequence` or `loop`, you do not automatically create unlinked copies of all child items. In this sense, an unlinked copy in OpenSesame is different from what computer scientists call a *deep* copy.
 
-__Tip__ — The OpenSesame way to handle *linked* and *unlinked* copies, is as follows:
+__Tip__ — You can create *linked* and *unlinked* copies as follows:
 
 - To create a linked copy, hold `Ctrl` while dragging and dropping an item.
 - To create an unlinked copy, hold `Ctrl+Shift` while dragging and dropping an item.
@@ -333,7 +337,7 @@ Click on *trial_sequence* in the overview to open the *trial_sequence* tab. Sele
 
 Again, we will rename the new items, to make sure that the *trial_sequence* is easy to understand. Rename *sketchpad* to *fixation_dot*, *_sketchpad* to *neutral_gaze*, *\_\_sketchpad* to *gaze_cue*, *\_\_\_sketchpad* to *target*, and *sampler* to *incorrect_sound*. (See Step 1 if you don't remember how to do this.)
 
-The *incorrect_sound* item should only be executed if an error was made. To do this, we need to change the conditional statement (in the 'Run if …' field) to `[correct] = 0` in the *trial_sequence* tab. This works, because the *keyboard_response* item automatically creates a `correct` variable, which is set to `1` (correct), `0` (incorrect) or `undefined` (this relies on the `correct_response` variable that was defined in Step 3). The square brackets indicate that `correct` should be interpreted as the name of a variable and not as text. To change a run-if statement for an item in a `sequence`, simply double click on it.
+The *incorrect_sound* item should only be executed if an error was made. To do this, we need to change the conditional statement (in the 'Run if …' field) to `[correct] = 0` in the *trial_sequence* tab. This works, because the *keyboard_response* item automatically creates a `correct` variable, which is set to `1` (correct), `0` (incorrect) or `undefined` (this relies on the `correct_response` variable that was defined in Step 3). The square brackets indicate that `correct` should be interpreted as the name of a variable and not as text. To change a run-if statement for an item in a `sequence`, simply double click on it (shortcut: `F3`).
 
 The *trial_sequence* now looks like %FigStep5. You can download the experiment up to this point here:
 
@@ -640,7 +644,7 @@ __Tip__ -- You can use a subset of HTML tags to format your text. For example, *
 
 ## Step 13: Run the experiment!
 
-You're done! Click on the 'Run in window' or 'Run fullscreen' buttons in the toolbar to run your experiment.
+You're done! Click on the 'Run in window' (shortcut: `Ctrl+W`) or 'Run fullscreen' (shortcut: `Ctrl+R`) buttons in the toolbar to run your experiment.
 
 You can download the finished experiment here:
 
@@ -652,7 +656,7 @@ You can download the finished experiment here:
 
 __Tip__ -- If you want to give your experiment a test run without having to press any keys, you can activate the auto response option (Menu → Run → Enable auto response). In this mode, OpenSesame will simulate the participant's responses.
 
-__Tip__ -- A test run is executed even faster by clicking the orange 'Run in window' button, which doesn't ask you how to save the logfile (and should therefore only be used for testing purposes).
+__Tip__ -- A test run is executed even faster by clicking the orange 'Run in window' button (shortcut: `Ctrl+Shift+W`), which doesn't ask you how to save the logfile (and should therefore only be used for testing purposes).
 
 </div>
 
