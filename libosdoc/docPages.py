@@ -58,6 +58,12 @@ def generateDocPages():
 	build.TOCAnchorHeaders = True
 	build.TOCAppendHeaderRefs = True
 
+	cls = plugins.load_cls(u'../PyGaze/pygaze/_eyetracker',
+		u'BaseEyeTracker', u'baseeyetracker')
+	createDoc(cls, u'content/_includes/doc/pygaze')
+
+	return
+
 	cls = plugins.load_cls(u'../opensesame/plugins/joystick/_libjoystick',
 		u'basejoystick', u'basejoystick')
 	createDoc(cls, u'content/_includes/doc/libjoystick')

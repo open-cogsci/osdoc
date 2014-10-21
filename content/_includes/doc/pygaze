@@ -1,0 +1,571 @@
+<div class="ClassDoc YAMLDoc" id="BaseEyeTracker" markdown="1">
+
+# class __BaseEyeTracker__
+
+A generic Python library for eye tracking.
+
+__Function list:__
+
+
+- [function __BaseEyeTracker.calibrate__()](#function-__baseeyetrackercalibrate__)
+- [function __BaseEyeTracker.close__()](#function-__baseeyetrackerclose__)
+- [function __BaseEyeTracker.connected__()](#function-__baseeyetrackerconnected__)
+- [function __BaseEyeTracker.drift_correction__(pos=None, fix_triggered=False)](#function-__baseeyetrackerdrift_correction__posnone-fix_triggeredfalse)
+- [function __BaseEyeTracker.fix_triggered_drift_correction__(max_dev=60, min_samples=30, pos=None, reset_threshold=10)](#function-__baseeyetrackerfix_triggered_drift_correction__max_dev60-min_samples30-posnone-reset_threshold10)
+- [function __BaseEyeTracker.get_eyetracker_clock_async__()](#function-__baseeyetrackerget_eyetracker_clock_async__)
+- [function __BaseEyeTracker.log__()](#function-__baseeyetrackerlog__)
+- [function __BaseEyeTracker.log_var__(var, val)](#function-__baseeyetrackerlog_var__var-val)
+- [function __BaseEyeTracker.pupil_size__()](#function-__baseeyetrackerpupil_size__)
+- [function __BaseEyeTracker.sample__()](#function-__baseeyetrackersample__)
+- [function __BaseEyeTracker.send_command__(cmd)](#function-__baseeyetrackersend_command__cmd)
+- [function __BaseEyeTracker.set_detection_type__(eventdetection)](#function-__baseeyetrackerset_detection_type__eventdetection)
+- [function __BaseEyeTracker.set_draw_calibration_target_func__(func)](#function-__baseeyetrackerset_draw_calibration_target_func__func)
+- [function __BaseEyeTracker.set_draw_drift_correction_target_func__(func)](#function-__baseeyetrackerset_draw_drift_correction_target_func__func)
+- [function __BaseEyeTracker.set_eye_used__()](#function-__baseeyetrackerset_eye_used__)
+- [function __BaseEyeTracker.start_recording__()](#function-__baseeyetrackerstart_recording__)
+- [function __BaseEyeTracker.status_msg__(msg)](#function-__baseeyetrackerstatus_msg__msg)
+- [function __BaseEyeTracker.stop_recording__()](#function-__baseeyetrackerstop_recording__)
+- [function __BaseEyeTracker.wait_for_blink_end__()](#function-__baseeyetrackerwait_for_blink_end__)
+- [function __BaseEyeTracker.wait_for_blink_start__()](#function-__baseeyetrackerwait_for_blink_start__)
+- [function __BaseEyeTracker.wait_for_event__(event)](#function-__baseeyetrackerwait_for_event__event)
+- [function __BaseEyeTracker.wait_for_fixation_end__()](#function-__baseeyetrackerwait_for_fixation_end__)
+- [function __BaseEyeTracker.wait_for_fixation_start__()](#function-__baseeyetrackerwait_for_fixation_start__)
+- [function __BaseEyeTracker.wait_for_saccade_end__()](#function-__baseeyetrackerwait_for_saccade_end__)
+- [function __BaseEyeTracker.wait_for_saccade_start__()](#function-__baseeyetrackerwait_for_saccade_start__)
+
+
+
+<div class="FunctionDoc YAMLDoc" id="BaseEyeTracker-calibrate" markdown="1">
+
+## [function __BaseEyeTracker.calibrate__()](#function-__baseeyetrackercalibrate__) {#function-__baseeyetrackercalibrate__}
+
+Calibrates the eye tracking system. The actual behavior of this
+function depends on the type of eye tracker and is described below.
+
+__EyeLink:__
+
+This function will activate the camera-setup screen, which allows
+you to adjust the camera, and peform a calibration/ validation
+procedure. Pressing 'q' will exit the setup routine. Pressing
+'escape' will first trigger a confirmation dialog and then, upon
+confirmation, raises an Exception.
+
+__EyeTribe:__
+
+Activates a simple calibration routine.
+
+__Returns:__
+
+Returns True if calibration succeeded, or False if not; in
+addition a calibration log is added to the log file and some
+properties are updated (i.e. the thresholds for detection
+algorithms).
+
+- Type: bool
+
+</div>
+
+[BaseEyeTracker.calibrate]: #BaseEyeTracker-calibrate
+[calibrate]: #BaseEyeTracker-calibrate
+
+<div class="FunctionDoc YAMLDoc" id="BaseEyeTracker-close" markdown="1">
+
+## [function __BaseEyeTracker.close__()](#function-__baseeyetrackerclose__) {#function-__baseeyetrackerclose__}
+
+Neatly closes connection to tracker. Saves data and sets
+`self.connected` to False.
+
+</div>
+
+[BaseEyeTracker.close]: #BaseEyeTracker-close
+[close]: #BaseEyeTracker-close
+
+<div class="FunctionDoc YAMLDoc" id="BaseEyeTracker-connected" markdown="1">
+
+## [function __BaseEyeTracker.connected__()](#function-__baseeyetrackerconnected__) {#function-__baseeyetrackerconnected__}
+
+Checks if the tracker is connected.
+
+__Returns:__
+
+True if connection is established, False if not; sets
+`self.connected` to the same value.
+
+- Type: bool
+
+</div>
+
+[BaseEyeTracker.connected]: #BaseEyeTracker-connected
+[connected]: #BaseEyeTracker-connected
+
+<div class="FunctionDoc YAMLDoc" id="BaseEyeTracker-drift_correction" markdown="1">
+
+## [function __BaseEyeTracker.drift_correction__(pos=None, fix_triggered=False)](#function-__baseeyetrackerdrift_correction__posnone-fix_triggeredfalse) {#function-__baseeyetrackerdrift_correction__posnone-fix_triggeredfalse}
+
+Performs a drift-correction procedure. The exact behavior of this
+function on the type of eye tracker and is described below. Because
+drift correction may fail, you will generally call this function in
+a loop.
+
+__EyeLink:__
+
+Pressing 'q' during drift-correction will activate the camera-setup
+screen. From there, pressing 'q' again will cause drift correction
+to fail immediately. Pressing 'escape' will give the option to abort
+the experiment, in which case an Exception is raised.
+
+__Keywords:__
+
+- `pos` -- (x, y) position of the fixation dot or None for a central fixation.
+	- Default: None
+	- Type: tuple, NoneType
+- `fix_triggered` -- Boolean indicating if drift check should be performed based on gaze position (True) or on spacepress (False).
+	- Default: False
+	- Type: bool
+
+__Returns:__
+
+A boolean indicating if drift check is ok (True) or not (False).
+
+- Type: bool
+
+</div>
+
+[BaseEyeTracker.drift_correction]: #BaseEyeTracker-drift_correction
+[drift_correction]: #BaseEyeTracker-drift_correction
+
+<div class="FunctionDoc YAMLDoc" id="BaseEyeTracker-fix_triggered_drift_correction" markdown="1">
+
+## [function __BaseEyeTracker.fix_triggered_drift_correction__(max_dev=60, min_samples=30, pos=None, reset_threshold=10)](#function-__baseeyetrackerfix_triggered_drift_correction__max_dev60-min_samples30-posnone-reset_threshold10) {#function-__baseeyetrackerfix_triggered_drift_correction__max_dev60-min_samples30-posnone-reset_threshold10}
+
+Performs a fixation triggered drift correction by collecting
+a number of samples and calculating the average distance from the
+fixation position
+
+__Keywords:__
+
+- `max_dev` -- The maximal deviation from fixation in pixels.
+	- Default: 60
+	- Type: int
+- `min_samples` -- The minimal amount of samples after which an average deviation is calculated.
+	- Default: 30
+	- Type: int
+- `pos` -- (x, y) position of the fixation dot or None for a central fixation.
+	- Default: None
+	- Type: tuple, NoneType
+- `reset_threshold` -- If the horizontal or vertical distance in pixels between two consecutive samples is larger than this threshold, the sample collection is reset.
+	- Default: 10
+	- Type: int
+
+__Returns:__
+
+A boolean indicating if drift check is ok (True) or not (False).
+
+- Type: bool
+
+</div>
+
+[BaseEyeTracker.fix_triggered_drift_correction]: #BaseEyeTracker-fix_triggered_drift_correction
+[fix_triggered_drift_correction]: #BaseEyeTracker-fix_triggered_drift_correction
+
+<div class="FunctionDoc YAMLDoc" id="BaseEyeTracker-get_eyetracker_clock_async" markdown="1">
+
+## [function __BaseEyeTracker.get_eyetracker_clock_async__()](#function-__baseeyetrackerget_eyetracker_clock_async__) {#function-__baseeyetrackerget_eyetracker_clock_async__}
+
+Returns the difference between tracker time and PyGaze time, which can be used to synchronize timing
+
+__Returns:__
+
+The difference between eyetracker time and PyGaze time.
+
+- Type: int, float
+
+</div>
+
+[BaseEyeTracker.get_eyetracker_clock_async]: #BaseEyeTracker-get_eyetracker_clock_async
+[get_eyetracker_clock_async]: #BaseEyeTracker-get_eyetracker_clock_async
+
+<div class="FunctionDoc YAMLDoc" id="BaseEyeTracker-log" markdown="1">
+
+## [function __BaseEyeTracker.log__()](#function-__baseeyetrackerlog__) {#function-__baseeyetrackerlog__}
+
+Writes a message to the log file.
+
+</div>
+
+[BaseEyeTracker.log]: #BaseEyeTracker-log
+[log]: #BaseEyeTracker-log
+
+<div class="FunctionDoc YAMLDoc" id="BaseEyeTracker-log_var" markdown="1">
+
+## [function __BaseEyeTracker.log_var__(var, val)](#function-__baseeyetrackerlog_var__var-val) {#function-__baseeyetrackerlog_var__var-val}
+
+Writes a variable's name and value to the log file
+
+__Arguments:__
+
+- `var` -- A variable name.
+	- Type: str, unicode
+- `val` -- A variable value
+
+</div>
+
+[BaseEyeTracker.log_var]: #BaseEyeTracker-log_var
+[log_var]: #BaseEyeTracker-log_var
+
+<div class="FunctionDoc YAMLDoc" id="BaseEyeTracker-pupil_size" markdown="1">
+
+## [function __BaseEyeTracker.pupil_size__()](#function-__baseeyetrackerpupil_size__) {#function-__baseeyetrackerpupil_size__}
+
+Returns the newest pupil size sample; size may be measured as the diameter or the area of the pupil, depending on your setup (note that pupil size mostly is given in an arbitrary units).
+
+__Returns:__
+
+Returns pupil size for the eye that is currently being tracked (as specified by self.eye_used) or -1 when no data is obtainable.
+
+- Type: int, float
+
+</div>
+
+[BaseEyeTracker.pupil_size]: #BaseEyeTracker-pupil_size
+[pupil_size]: #BaseEyeTracker-pupil_size
+
+<div class="FunctionDoc YAMLDoc" id="BaseEyeTracker-sample" markdown="1">
+
+## [function __BaseEyeTracker.sample__()](#function-__baseeyetrackersample__) {#function-__baseeyetrackersample__}
+
+Returns newest available gaze position.
+
+__Returns:__
+
+An (x,y) tuple or a (-1,-1) on an error.
+
+- Type: tuple
+
+</div>
+
+[BaseEyeTracker.sample]: #BaseEyeTracker-sample
+[sample]: #BaseEyeTracker-sample
+
+<div class="FunctionDoc YAMLDoc" id="BaseEyeTracker-send_command" markdown="1">
+
+## [function __BaseEyeTracker.send_command__(cmd)](#function-__baseeyetrackersend_command__cmd) {#function-__baseeyetrackersend_command__cmd}
+
+Directly sends a command to the eye tracker (not supported for all brands; might produce a warning message if your setup does not support direct commands).
+
+__Arguments:__
+
+- `cmd` -- The command to be sent to the eye tracker.
+	- Type: str, unicode
+
+</div>
+
+[BaseEyeTracker.send_command]: #BaseEyeTracker-send_command
+[send_command]: #BaseEyeTracker-send_command
+
+<div class="FunctionDoc YAMLDoc" id="BaseEyeTracker-set_detection_type" markdown="1">
+
+## [function __BaseEyeTracker.set_detection_type__(eventdetection)](#function-__baseeyetrackerset_detection_type__eventdetection) {#function-__baseeyetrackerset_detection_type__eventdetection}
+
+Set the event detection type to either PyGaze algorithms, or
+native algorithms as provided by the manufacturer (only if
+available: detection type will default to PyGaze if no native
+functions are available)
+
+__Arguments:__
+
+- `eventdetection` -- A string indicating which detection type
+should be employed: either 'pygaze' for
+PyGaze event detection algorithms or
+'native' for manufacturers algorithms (only
+if available; will default to 'pygaze' if no
+native event detection is available)
+	- Type: str, unicode
+
+__Returns:__
+
+Detection type for saccades, fixations and blinks in a tuple, e.g. ('pygaze','native','native') when 'native' was passed, but native detection was not available for saccade detection.
+
+- Type: tuple
+
+</div>
+
+[BaseEyeTracker.set_detection_type]: #BaseEyeTracker-set_detection_type
+[set_detection_type]: #BaseEyeTracker-set_detection_type
+
+<div class="FunctionDoc YAMLDoc" id="BaseEyeTracker-set_draw_calibration_target_func" markdown="1">
+
+## [function __BaseEyeTracker.set_draw_calibration_target_func__(func)](#function-__baseeyetrackerset_draw_calibration_target_func__func) {#function-__baseeyetrackerset_draw_calibration_target_func__func}
+
+Specifies a custom function to draw the calibration target.
+
+__Arguments:__
+
+- `func` -- The function to draw a calibration target. This function should accept two parameters, for the x and y coordinate of the target.
+	- Type: function
+
+</div>
+
+[BaseEyeTracker.set_draw_calibration_target_func]: #BaseEyeTracker-set_draw_calibration_target_func
+[set_draw_calibration_target_func]: #BaseEyeTracker-set_draw_calibration_target_func
+
+<div class="FunctionDoc YAMLDoc" id="BaseEyeTracker-set_draw_drift_correction_target_func" markdown="1">
+
+## [function __BaseEyeTracker.set_draw_drift_correction_target_func__(func)](#function-__baseeyetrackerset_draw_drift_correction_target_func__func) {#function-__baseeyetrackerset_draw_drift_correction_target_func__func}
+
+Specifies a custom function to draw the drift-correction target.
+
+__Arguments:__
+
+- `func` -- The function to draw a drift-correction target. This function should accept two parameters, for the x and y coordinate of the target.
+	- Type: function
+
+</div>
+
+[BaseEyeTracker.set_draw_drift_correction_target_func]: #BaseEyeTracker-set_draw_drift_correction_target_func
+[set_draw_drift_correction_target_func]: #BaseEyeTracker-set_draw_drift_correction_target_func
+
+<div class="FunctionDoc YAMLDoc" id="BaseEyeTracker-set_eye_used" markdown="1">
+
+## [function __BaseEyeTracker.set_eye_used__()](#function-__baseeyetrackerset_eye_used__) {#function-__baseeyetrackerset_eye_used__}
+
+Logs the `eye_used` variable, based on which eye was specified (if both eyes are being tracked, the left eye is used). Does not return anything.
+
+</div>
+
+[BaseEyeTracker.set_eye_used]: #BaseEyeTracker-set_eye_used
+[set_eye_used]: #BaseEyeTracker-set_eye_used
+
+<div class="FunctionDoc YAMLDoc" id="BaseEyeTracker-start_recording" markdown="1">
+
+## [function __BaseEyeTracker.start_recording__()](#function-__baseeyetrackerstart_recording__) {#function-__baseeyetrackerstart_recording__}
+
+Starts recording. Sets `self.recording` to `True` when recording is successfully started.
+
+</div>
+
+[BaseEyeTracker.start_recording]: #BaseEyeTracker-start_recording
+[start_recording]: #BaseEyeTracker-start_recording
+
+<div class="FunctionDoc YAMLDoc" id="BaseEyeTracker-status_msg" markdown="1">
+
+## [function __BaseEyeTracker.status_msg__(msg)](#function-__baseeyetrackerstatus_msg__msg) {#function-__baseeyetrackerstatus_msg__msg}
+
+Sends a status message to the eye tracker, which is displayed in the tracker's GUI (only available for EyeLink setups).
+
+__Arguments:__
+
+- `msg` -- A string that is to be displayed on the experimenter PC,
+e.g.: "current trial: %d" % trialnr.
+	- Type: str, unicode
+
+</div>
+
+[BaseEyeTracker.status_msg]: #BaseEyeTracker-status_msg
+[status_msg]: #BaseEyeTracker-status_msg
+
+<div class="FunctionDoc YAMLDoc" id="BaseEyeTracker-stop_recording" markdown="1">
+
+## [function __BaseEyeTracker.stop_recording__()](#function-__baseeyetrackerstop_recording__) {#function-__baseeyetrackerstop_recording__}
+
+Stops recording. Sets `self.recording` to `False` when recording is successfully stopped.
+
+</div>
+
+[BaseEyeTracker.stop_recording]: #BaseEyeTracker-stop_recording
+[stop_recording]: #BaseEyeTracker-stop_recording
+
+<div class="FunctionDoc YAMLDoc" id="BaseEyeTracker-wait_for_blink_end" markdown="1">
+
+## [function __BaseEyeTracker.wait_for_blink_end__()](#function-__baseeyetrackerwait_for_blink_end__) {#function-__baseeyetrackerwait_for_blink_end__}
+
+Waits for a blink end and returns the blink ending time.
+Detection based on Dalmaijer et al. (2013) if EVENTDETECTION is set
+to 'pygaze', or using native detection functions if EVENTDETECTION
+is set to 'native' (NOTE: not every system has native functionality;
+will fall back to ;pygaze' if 'native' is not available!)
+
+__Returns:__
+
+Blink ending time in milliseconds, as measured from experiment begin time.
+
+- Type: int, float
+
+</div>
+
+[BaseEyeTracker.wait_for_blink_end]: #BaseEyeTracker-wait_for_blink_end
+[wait_for_blink_end]: #BaseEyeTracker-wait_for_blink_end
+
+<div class="FunctionDoc YAMLDoc" id="BaseEyeTracker-wait_for_blink_start" markdown="1">
+
+## [function __BaseEyeTracker.wait_for_blink_start__()](#function-__baseeyetrackerwait_for_blink_start__) {#function-__baseeyetrackerwait_for_blink_start__}
+
+Waits for a blink start and returns the blink starting time.
+Detection based on Dalmaijer et al. (2013) if EVENTDETECTION is set
+to 'pygaze', or using native detection functions if EVENTDETECTION
+is set to 'native' (NOTE: not every system has native functionality;
+will fall back to ;pygaze' if 'native' is not available!)
+
+__Returns:__
+
+Blink starting time in milliseconds, as measured from experiment begin time
+
+- Type: int, float
+
+</div>
+
+[BaseEyeTracker.wait_for_blink_start]: #BaseEyeTracker-wait_for_blink_start
+[wait_for_blink_start]: #BaseEyeTracker-wait_for_blink_start
+
+<div class="FunctionDoc YAMLDoc" id="BaseEyeTracker-wait_for_event" markdown="1">
+
+## [function __BaseEyeTracker.wait_for_event__(event)](#function-__baseeyetrackerwait_for_event__event) {#function-__baseeyetrackerwait_for_event__event}
+
+Waits for an event.
+
+__Arguments:__
+
+- `event` -- An integer event code, one of the following:
+
+- 3 = STARTBLINK
+- 4 = ENDBLINK
+- 5 = STARTSACC
+- 6 = ENDSACC
+- 7 = STARTFIX
+- 8 = ENDFIX
+	- Type: int
+
+__Returns:__
+
+A `self.wait_for_*` method is called, depending on the specified event; the return value of corresponding method is returned.
+
+</div>
+
+[BaseEyeTracker.wait_for_event]: #BaseEyeTracker-wait_for_event
+[wait_for_event]: #BaseEyeTracker-wait_for_event
+
+<div class="FunctionDoc YAMLDoc" id="BaseEyeTracker-wait_for_fixation_end" markdown="1">
+
+## [function __BaseEyeTracker.wait_for_fixation_end__()](#function-__baseeyetrackerwait_for_fixation_end__) {#function-__baseeyetrackerwait_for_fixation_end__}
+
+Returns time and gaze position when a fixation has ended;
+function assumes that a 'fixation' has ended when a deviation of
+more than self.pxfixtresh from the initial fixation position has
+been detected (self.pxfixtresh is created in self.calibration,
+based on self.fixtresh, a property defined in self.__init__).
+Detection based on Dalmaijer et al. (2013) if EVENTDETECTION is set
+to 'pygaze', or using native detection functions if EVENTDETECTION
+is set to 'native' (NOTE: not every system has native functionality;
+will fall back to ;pygaze' if 'native' is not available!)
+
+__Returns:__
+
+A `time, gazepos` tuple. Time is the end time in milliseconds (from expstart), gazepos is a (x,y) gaze position tuple of the position from which the fixation was initiated.
+
+- Type: tuple
+
+</div>
+
+[BaseEyeTracker.wait_for_fixation_end]: #BaseEyeTracker-wait_for_fixation_end
+[wait_for_fixation_end]: #BaseEyeTracker-wait_for_fixation_end
+
+<div class="FunctionDoc YAMLDoc" id="BaseEyeTracker-wait_for_fixation_start" markdown="1">
+
+## [function __BaseEyeTracker.wait_for_fixation_start__()](#function-__baseeyetrackerwait_for_fixation_start__) {#function-__baseeyetrackerwait_for_fixation_start__}
+
+Returns starting time and position when a fixation is started;
+function assumes a 'fixation' has started when gaze position
+remains reasonably stable (i.e. when most deviant samples are
+within self.pxfixtresh) for five samples in a row (self.pxfixtresh
+is created in self.calibration, based on self.fixtresh, a property
+defined in self.__init__).
+Detection based on Dalmaijer et al. (2013) if EVENTDETECTION is set
+to 'pygaze', or using native detection functions if EVENTDETECTION
+is set to 'native' (NOTE: not every system has native functionality;
+will fall back to ;pygaze' if 'native' is not available!)
+
+__Returns:__
+
+A `time, gazepos` tuple. Time is the starting time in milliseconds (from expstart), gazepos is a (x,y) gaze position tuple of the position from which the fixation was initiated.
+
+- Type: tuple
+
+</div>
+
+[BaseEyeTracker.wait_for_fixation_start]: #BaseEyeTracker-wait_for_fixation_start
+[wait_for_fixation_start]: #BaseEyeTracker-wait_for_fixation_start
+
+<div class="FunctionDoc YAMLDoc" id="BaseEyeTracker-wait_for_saccade_end" markdown="1">
+
+## [function __BaseEyeTracker.wait_for_saccade_end__()](#function-__baseeyetrackerwait_for_saccade_end__) {#function-__baseeyetrackerwait_for_saccade_end__}
+
+Returns ending time, starting and end position when a saccade is
+ended; based on Dalmaijer et al. (2013) online saccade detection
+algorithm if EVENTDETECTION is set to 'pygaze', or using native
+detection functions if EVENTDETECTION is set to 'native' (NOTE: not
+every system has native functionality; will fall back to ;pygaze'
+if 'native' is not available!)
+
+__Returns:__
+
+An `endtime, startpos, endpos` tuple. Endtime in milliseconds (from expbegintime); startpos and endpos are (x,y) gaze position tuples.
+
+- Type: tuple
+
+</div>
+
+[BaseEyeTracker.wait_for_saccade_end]: #BaseEyeTracker-wait_for_saccade_end
+[wait_for_saccade_end]: #BaseEyeTracker-wait_for_saccade_end
+
+<div class="FunctionDoc YAMLDoc" id="BaseEyeTracker-wait_for_saccade_start" markdown="1">
+
+## [function __BaseEyeTracker.wait_for_saccade_start__()](#function-__baseeyetrackerwait_for_saccade_start__) {#function-__baseeyetrackerwait_for_saccade_start__}
+
+Returns starting time and starting position when a saccade is
+started; based on Dalmaijer et al. (2013) online saccade detection
+algorithm if EVENTDETECTION is set to 'pygaze', or using native
+detection functions if EVENTDETECTION is set to 'native' (NOTE: not
+every system has native functionality; will fall back to ;pygaze'
+if 'native' is not available!)
+
+__Returns:__
+
+An `endtime, startpos` tuple. Endtime in milliseconds (from expbegintime); startpos is an (x,y) gaze position tuple.
+
+- Type: tuple
+
+</div>
+
+[BaseEyeTracker.wait_for_saccade_start]: #BaseEyeTracker-wait_for_saccade_start
+[wait_for_saccade_start]: #BaseEyeTracker-wait_for_saccade_start
+
+</div>
+
+[BaseEyeTracker]: #BaseEyeTracker
+
+
+[function __BaseEyeTracker.calibrate__()]: #function-__baseeyetrackercalibrate__
+[function __BaseEyeTracker.close__()]: #function-__baseeyetrackerclose__
+[function __BaseEyeTracker.connected__()]: #function-__baseeyetrackerconnected__
+[function __BaseEyeTracker.drift_correction__(pos=None, fix_triggered=False)]: #function-__baseeyetrackerdrift_correction__posnone-fix_triggeredfalse
+[function __BaseEyeTracker.fix_triggered_drift_correction__(max_dev=60, min_samples=30, pos=None, reset_threshold=10)]: #function-__baseeyetrackerfix_triggered_drift_correction__max_dev60-min_samples30-posnone-reset_threshold10
+[function __BaseEyeTracker.get_eyetracker_clock_async__()]: #function-__baseeyetrackerget_eyetracker_clock_async__
+[function __BaseEyeTracker.log__()]: #function-__baseeyetrackerlog__
+[function __BaseEyeTracker.log_var__(var, val)]: #function-__baseeyetrackerlog_var__var-val
+[function __BaseEyeTracker.pupil_size__()]: #function-__baseeyetrackerpupil_size__
+[function __BaseEyeTracker.sample__()]: #function-__baseeyetrackersample__
+[function __BaseEyeTracker.send_command__(cmd)]: #function-__baseeyetrackersend_command__cmd
+[function __BaseEyeTracker.set_detection_type__(eventdetection)]: #function-__baseeyetrackerset_detection_type__eventdetection
+[function __BaseEyeTracker.set_draw_calibration_target_func__(func)]: #function-__baseeyetrackerset_draw_calibration_target_func__func
+[function __BaseEyeTracker.set_draw_drift_correction_target_func__(func)]: #function-__baseeyetrackerset_draw_drift_correction_target_func__func
+[function __BaseEyeTracker.set_eye_used__()]: #function-__baseeyetrackerset_eye_used__
+[function __BaseEyeTracker.start_recording__()]: #function-__baseeyetrackerstart_recording__
+[function __BaseEyeTracker.status_msg__(msg)]: #function-__baseeyetrackerstatus_msg__msg
+[function __BaseEyeTracker.stop_recording__()]: #function-__baseeyetrackerstop_recording__
+[function __BaseEyeTracker.wait_for_blink_end__()]: #function-__baseeyetrackerwait_for_blink_end__
+[function __BaseEyeTracker.wait_for_blink_start__()]: #function-__baseeyetrackerwait_for_blink_start__
+[function __BaseEyeTracker.wait_for_event__(event)]: #function-__baseeyetrackerwait_for_event__event
+[function __BaseEyeTracker.wait_for_fixation_end__()]: #function-__baseeyetrackerwait_for_fixation_end__
+[function __BaseEyeTracker.wait_for_fixation_start__()]: #function-__baseeyetrackerwait_for_fixation_start__
+[function __BaseEyeTracker.wait_for_saccade_end__()]: #function-__baseeyetrackerwait_for_saccade_end__
+[function __BaseEyeTracker.wait_for_saccade_start__()]: #function-__baseeyetrackerwait_for_saccade_start__

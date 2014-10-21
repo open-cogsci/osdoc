@@ -20,6 +20,7 @@ along with osdoc.  If not, see <http://www.gnu.org/licenses/>.
 
 from optparse import OptionParser
 from libosdoc import compileTools
+from libosdoc.docPages import generateDocPages
 
 if __name__ == u'__main__':
 
@@ -43,7 +44,11 @@ if __name__ == u'__main__':
 		help=u'Only parse a specific group', default=None)
 	parser.add_option(u'--layout', dest=u'layout', help=u'Layout file',
 		default=u'inpage')
+	parser.add_option(u'-y', u'--yamldoc', dest=u'yamldoc',
+		help=u'Generate YAMLDoc pages', action=u'store_true', default=False)
 	options, args = parser.parse_args()
+	if options.yamldoc:
+		generateDocPages()
 	compileTools.compileSite(jekyll=options.jekyll,
 		checkLinks=options.checkLinks, optimizeHTML=options.optimizeHTML,
 		tarball=options.tarball, group=options.group, htaccess=options.htaccess,
