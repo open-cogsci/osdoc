@@ -76,7 +76,7 @@ For more information, please visit:
 
 - <https://www.sr-support.com/showthread.php?16-Linux-Display-Software-Package>
 
-## Installing PyLink
+### Installing PyLink
 
 Download the correct PyLink for your distribution from here (make sure that you have the correct Python version, usually 2.7, and chipset, x64 for 64 bit and x32 for 32 bit):
 
