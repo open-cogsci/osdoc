@@ -30,7 +30,8 @@ from academicmarkdown import build, HTMLFilter
 from libosdoc.versions import generateVersionList, branchStatus
 from libosdoc.pdf import pdfWalk
 from libosdoc.jekyll import runJekyll
-from libosdoc.html import callOptimizeHTML, adjustRootRelativeURLs
+from libosdoc.html import callOptimizeHTML, adjustRootRelativeURLs, \
+	applyConstants
 from libosdoc.gitinfo import setGitInfo, gitBranch
 
 def getInfo(path):
@@ -422,6 +423,7 @@ def compileSite(layout=u'inpage', group=None, jekyll=True, optimizeHTML=False,
 		siteFolder = u'_site/%s' % branch
 	else:
 		siteFolder = u'_site'
+	applyConstants('_tmp', branch)
 	print(u'Moving site to %s' % siteFolder)
 	if os.path.exists(siteFolder):
 		shutil.rmtree(siteFolder)

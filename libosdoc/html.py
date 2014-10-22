@@ -92,3 +92,28 @@ def adjustRootRelativeURLs(path, branch):
 				css = css.replace(old, new)
 			open(fname, u'w').write(css.encode(u'utf-8'))
 
+def applyConstants(path, branch):
+
+	"""
+	desc:
+		Recursively walks through a folder and replaces all constants by their
+		values.
+
+	arguments:
+		path:		The path to walk through.
+		branch:		The branch to add.
+	"""
+
+	import yaml
+	print(u'Applying constants (%s)' % path)
+	constants = yaml.load(open('constants.yaml'))
+	for fname in os.listdir(path):
+		fname = os.path.join(path, fname)
+		if os.path.isdir(fname):
+			applyConstants(fname, branch)
+			continue
+		if fname.lower().endswith(u'.html'):
+			html = open(fname).read().decode(u'utf-8')
+			for var, val in constants.items():
+				html = html.replace(u'$%s$' % var, unicode(val))
+			open(fname, u'w').write(html.encode(u'utf-8'))
