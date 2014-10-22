@@ -101,17 +101,15 @@ figure:
 
 As the name suggests, a `form_text_display` is a form that displays text. We are going to use a `form_text_display` to give instructions to the participant at the beginning of the experiment.
 
-Click on *experiment* in the overview area to open its controls in the tab area. You will see an empty `sequence`. Select `form_text_display` in the item toolbar (under 'Form', see %FigInterface), and drag it onto the *experiment* `sequence` in the tab area. When a tooltip appears with the text 'insert into experiment', you can drop it and the item will be inserted into the *experiment* `sequence`. (We will get back to this in Step 12.)
+Click on *experiment* in the overview area to open its controls in the tab area. You will see an empty `sequence`. Drag a `form_text_display` from the item toolbar (under 'Form', see %FigInterface) onto the *experiment* `sequence` in the tab area. When you let go, a new `form_text_display` item will be inserted into the `sequence`. (We will get back to this in Step 12.)
 
 <div class='info-box' markdown='1'>
 
 ### Background box
 
-__Tip__ -- You can drag items into the overview area and into `sequence` tabs, but the behavior is slight different.
+__Tip__ -- You can drag items into the overview area and into `sequence` tabs.
 
-- If you drop an item into a `sequence` tab, the item will always be added to that `sequence`.
-- In the overview area, dropping an item onto a `loop` will change the `loop`'s item to run, and dropping an item onto a `sequence` will insert the item in the `sequence`.
-- A tooltip will tell you what will happen when you drop an item.
+__Tip__ -- If a drop action is ambiguous, a pop-up menu will ask you what you want to do.
 
 __Tip__ -- A `form_text_display` only shows text. If you require images etc., you can use a `sketchpad` item. We will meet the `sketchpad` in Step 5.
 
@@ -121,9 +119,9 @@ __Tip__ -- A `form_text_display` only shows text. If you require images etc., yo
 
 We need to append a `loop` item to the *experiment* `sequence`. We will use this `loop` for the practice phase of the experiment. Click on the *experiment* `sequence` to open its controls in the tab area.
 
-Drag the `loop` item from the item toolbar into the `sequence` just the way you added the `form_text_display`. New items are inserted below the item that they are dropped on, so if you drop the new `loop` on the previously created `form_text_display`, it will appear where you want it: after the `form_text_display`. But don't worry if you drop a new item in the wrong place, because you can always drag it to the correct location later.
+Drag the `loop` item from the item toolbar into the `sequence` just the way you added the `form_text_display`. New items are inserted below the item that they are dropped on, so if you drop the new `loop` onto the previously created `form_text_display`, it will appear where you want it: after the `form_text_display`. But don't worry if you drop a new item in the wrong place, because you can always re-order things later.
 
-A `loop` does not do anything by itself.  A `loop` always needs another item to run. Therefore you have to fill the new `loop` item with another item (You will also see a warning written in red telling you that 'no item to run specified' in the tab area, if you select this `loop` item). Choose a `sequence` item in the item toolbar and drag it onto the `loop` item in the *overview area* (not the `sequence` tab). When a tooltip appears with the text 'set as item to run for loop', you can drop it. (We will get back to this in Step 2.)
+A `loop` does not do anything by itself.  A `loop` always needs another item to run. Therefore you have to fill the new `loop` item with another item (You will also see a warning written in red telling you that 'no item to run specified' in the tab area, if you select this `loop` item). Drag a `sequence` item from the item toolbar onto the `loop` item. A pop-up menu will appear, asking you whether you want to insert the `sequence` after the `loop` item, or use the `sequence` as the `loop`'s item to run. Select 'Set as item to run for loop'. (We will get back to this in Step 2.)
 
 <div class='info-box' markdown='1'>
 
@@ -143,19 +141,19 @@ __Tip__ -- For more information about `sequence`s and `loop`s, see:
 
 ### Append a new form_text_display item for the end-of-practice message
 
-After the practice phase, we want to inform the participant that the real experiment will begin. For this we need another `form_text_display`. Go back to the *experiment* `sequence`, select `form_text_display` in the item toolbar and drag/drop it below the `loop` item. If you accidentally placed it above the `loop`, you can easily adjust the order by dragging and dropping all items in the `sequence` until you are happy with it (We will get back to this in Step 12.)
+After the practice phase, we want to inform the participant that the real experiment will begin. For this we need another `form_text_display`. Go back to the *experiment* `sequence`, and drag a `form_text_display` from the item toolbar onto the `loop` item. The same pop-up menu will appear as before. This time, select 'Insert after loop'. (We will get back to this in Step 12.)
 
 <div class='info-box' markdown='1'>
 
-__Tip__ -- If you accidentally drop an item onto a `loop` in the overview area, you will change the `loop`'s item to run. But don't worry! You can undo this easily by dragging the `loop`'s original item to run back to the `loop`, or by selecting the correct item to run from the drop-down box in the `loop` tab.
+__Tip__ -- Don't worry if you have accidentally changed a `loop`'s item to run. You can undo this easily by dragging the `loop`'s original item to run back to the `loop`, or by selecting the correct item to run from the drop-down box in the `loop` tab.
 
 </div>
 
 ### Append a new loop item, containing the previously created sequence, for the experimental phase
 
-We need a `loop` item for the experimental phase, just like for the practice phase. Therefore, select `loop` from the item toolbar menu and drag it into the *experiment* `sequence`.
+We need a `loop` item for the experimental phase, just like for the practice phase. Therefore, drag a `loop` from the item toolbar menu onto *_form_text_display*.
 
-The newly created `loop` is empty, and should be filled with a `sequence`, just like before. However, because the trials of the practice and experimental phase are identical, they can use the same `sequence`. Therefore, instead of dragging a new `sequence` from the item toolbar, you can re-use the *existing* one (i.e. create a linked copy). To do this, drag the previously created `sequence` onto the newly created `loop` (called *_loop*) while holding the `Ctrl` key pressed in the overview area (not the `sequence` tab).
+The newly created `loop` (called *_loop*) is empty, and should be filled with a `sequence`, just like before. However, because the trials of the practice and experimental phase are identical, they can use the same `sequence`. Therefore, instead of dragging a new `sequence` from the item toolbar, you can re-use the *existing* one (i.e. create a linked copy). To do this, drag the previously created `sequence` from the overview area onto *_loop* while holding the `Ctrl` key pressed. In the pop-up menu that appears, select 'Set as item to run for _loop'.
 
 <div class='info-box' markdown='1'>
 
@@ -165,14 +163,14 @@ __Tip__ — There is an important distinction between *linked* and *unlinked* co
 
 __Tip__ — You can create *linked* and *unlinked* copies as follows:
 
-- To create a linked copy, hold `Ctrl` while dragging and dropping an item.
-- To create an unlinked copy, hold `Ctrl+Shift` while dragging and dropping an item.
+- To create a linked copy, hold `Ctrl` while dragging and dropping an item, or right-click on an item and select 'Create linked copy'.
+- To create an unlinked copy, hold `Ctrl+Shift` while dragging and dropping an item, or right-click on an item and select 'Create unlinked copy'.
 
 </div>
 
 ### Append a new form_text_display item, for the goodbye message
 
-When the experiment is finished, we should inform the participant. For this we need another `form_text_display` item. Go back to the *experiment* `sequence`, select `form_text_display` in the item toolbar and drag it below the second `loop` item (called *_loop*). (We will get back to this in Step 12.)
+When the experiment is finished, we should inform the participant. For this we need another `form_text_display` item. Go back to the *experiment* `sequence`, and drag `form_text_display` from the item toolbar onto *_loop*. In the pop-up menu that appears, select 'Insert after _loop'. (We will get back to this in Step 12.)
 
 ### Give the new items sensible names
 
@@ -206,7 +204,7 @@ figure:
 
 __Tip__ — If you don't like having many tabs open, you can close all tabs except the currently opened one by clicking on the 'Close other tabs' button in the main toolbar (shortcut: `Ctrl+T`).
 
-__Tip__ — You can enable 'one tab mode' (Menu → View → One tab mode) to prevent multiple tabs from opening simultaneously.
+__Tip__ — You can enable 'one tab mode' (Menu -> View -> One tab mode) to prevent multiple tabs from opening simultaneously.
 
 </div>
 
@@ -216,15 +214,15 @@ Click on *block_sequence* in the overview. At the moment this `sequence` is empt
 
 ### Append a reset_feedback item to reset the feedback variables
 
-We don't want our feedback to be confounded by key presses that participants have made during the instruction phase (or during previous blocks of trials). Therefore, we start each block of trials by resetting the feedback variables. To do this we need a `reset_feedback` item. Grab `reset_feedback` from the item toolbar (under 'Response collection') and drag it into *block_sequence*.
+We don't want our feedback to be confounded by key presses that participants have made during the instruction phase (or during previous blocks of trials). Therefore, we start each block of trials by resetting the feedback variables. To do this we need a `reset_feedback` item. Grab `reset_feedback` from the item toolbar (under 'Response collection') and drag it onto *block_sequence*.
 
 ### Append a new loop, containing a new sequence, for a block of trials
 
-For a single trial we need a `sequence`. For a block of trials, we need to repeat this `sequence` multiple times. Therefore, for a block of trials we need to wrap a `loop` around a `sequence`. Select `loop` in the item toolbar and drag it into *block_sequence*. Similarly, add a new `sequence` to this newly created `loop`. (We will get back to this in Step 3.)
+For a single trial we need a `sequence`. For a block of trials, we need to repeat this `sequence` multiple times. Therefore, for a block of trials we need to wrap a `loop` around a `sequence`. Drag a `loop` from the item toolbar onto *reset_feedback*. Next, drag a `sequence` from the item toolbar onto the newly created `loop`, and select 'Set as item to run for loop' in the pop-up menu that appears. (We will get back to this in Step 3.)
 
 ### Append a feedback item
 
-After every block of trials we want to give feedback to the participant, so that the participant knows how well he/ she is doing. For this we need a `feedback` item. Select `feedback` in the item toolbar and drag it into *block_sequence*. (We will get back to this in Step 10.)
+After every block of trials we want to give feedback to the participant, so that the participant knows how well he/ she is doing. For this we need a `feedback` item. Drag a `feedback` from the item toolbar onto *loop*, and select 'Insert after loop' in the pop-up menu that appears. (We will get back to this in Step 10.)
 
 ### Give the new items sensible names
 
