@@ -5,44 +5,11 @@ group: Getting OpenSesame
 permalink: /download/
 ---
 
-<div class="recommended" markdown="1">
+{% include recommended-downloads %}
 
-<script type="text/javascript">
+## Other download options
 
-var OSName="unknown OS";
-if (navigator.appVersion.indexOf("Win") != -1) OSName="Windows";
-if (navigator.appVersion.indexOf("Mac") != -1) OSName="MacOS";
-if (navigator.appVersion.indexOf("Linux") != -1) OSName="Linux";
-if (navigator.userAgent.toLowerCase().indexOf("android") != -1) OSName="Android";
-
-var msg = "Unknown"
-
-if (OSName == "Linux") {
-	msg = "<p>You appear to be running Linux. The following download options are available for Linux:</p>"
-		+ "<p class=\"button-debian\"><a href=\"#ubuntu\">Ubuntu/ Debian package</a></p>"
-		+ "<p class=\"button-arch\"><a target=\"_blank\" href=\"https://aur.archlinux.org/packages/opensesame/\" >Arch Linux package</a></p>";
-} else if (OSName == "Windows") {
-	msg = "<p>You appear to be running Windows. The following download option is recommended:</p>"
-		+ "<p class=\"button-winexe\"><a target=\"_blank\" href=\"$url-windows-exe$\" >Windows XP/Vista/7 installer (.exe)</a></p>";
-} else if (OSName == "MacOS") {
-	msg = "<p>You appear to be running Mac OS. Installation instructions can be found here:</p>"
-		+ "<p class=\"button-macos\"><a href=\"#macos\">Mac OS package (.zip)</a></p>";
-} else if (OSName == "Android") {
-	msg = "<p>You appear to be running Android. Installation instructions can be found here:</p>"
-		+ "<p class=\"button-android\"><a href=\"/getting-opensesame/android\">OpenSesame runtime for Android</a></p>";
-} else {
-	msg = "<p>No recommended download is available, because your operating system could not be recognized.</p>";
-}
-
-document.write(msg);
-
-</script>
-
-</div>
-
-The latest $status$ version of OpenSesame is $version$ *$codename$*, released on $release-date$ ([release notes]). Older versions can be found [here][archive].
-
-Installation instructions and more download options can be found below the download buttons.
+The latest $status$ version of OpenSesame is $version$ *$codename$*, released on $release-date$ ([release notes]).
 
 {% include downloads %}
 

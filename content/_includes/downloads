@@ -30,7 +30,7 @@
 	</a>
 </p>
 
-<h3>Other downloads</h3>
+<h3>Advanced downloads</h3>
 
 <p class="button-winzip">
 	<a target="_blank"  href="$url-windows-zip$">
@@ -39,33 +39,25 @@
 </p>
 
 <p class="button-winzip">
-	<a href="/getting-opensesame/running-with-python-portable">
+	<a href="/getting-opensesame/running-with-pythonbutton-android-portable">
 	Windows XP/Vista/7 WinPython-based package
 	</a>
 </p>
 
 <p class="button-src">
 	<a target="_blank" href="$url-source$">
-	Source code (.tar.gz)
-	</a>
-</p>
-
-<h3>Other resources</h3>
-
-<p class="button-forum">
-	<a target="_blank" href="http://forum.cogsci.nl/">
-	Forum
+	Source code (GitHub)
 	</a>
 </p>
 
 <p class="button-dev">
-	<a target="_blank" href="http://github.com/smathot/OpenSesame">
-	Development via GitHub
+	<a href="/getting-opensesame/development-snapshots/">
+	Development snapshots (pre-releases)
 	</a>
 </p>
 
-<p class="button-donate">
-	<a target="_blank" href="http://osdoc.cogsci.nl/donate">
-	Donate
+<p class="button-old">
+	<a target="_blank" href="$url-old$">
+	Older downloads
 	</a>
 </p>
