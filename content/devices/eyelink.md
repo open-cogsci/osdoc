@@ -43,6 +43,12 @@ PyLink is the Python library for EyeLink support. You can download Pylink from h
 
 You should grab `pylink_win32.zip`. In this archive, you will find several folders, each corresponding to a specific Python version. Currently, OpenSesame uses Python 2.7, so you need to get `pylink27`. Copy this folder to the OpenSesame program folder, and rename it to `pylink`.
 
+If you experience crashes with the version of PyLink above, you can also try the version posted in this thread:
+
+- <https://www.sr-support.com/showthread.php?4126-PyLink-seems-to-interfere-with-PsychoPy>
+
+In `NOSDL-PyLink.zip`, you will find two folders. For the 32 bits Python 2.7, which is what OpenSesame uses by default, you need to extract `pylink27-32bit` and install it as described above.
+
 ### Alternative: WinPython
 
 If you have trouble getting PyLink to work in OpenSesame, or if you experience random crashes, you can use the WinPython-based package of OpenSesame. This package comes with EyeLink support out of the box. See:
