@@ -41,6 +41,9 @@ Brennan, A. A. (2014). *When Two Heads Are Better Than One: The Independent Vers
 Cohen, C. (2014). *Contrast-Dependent Pronunciation Variation: A Case Study of Russian*. Retrieved from: <http://www.linguistics.berkeley.edu/~cpccohen/CohenRUProduction.pdf>
 {: .reference}
 
+Chanceaux, M., Mathôt, S., & Grainger, J. (in press). Effects of number, complexity, and familiarity of flankers on crowded letter identification. *Journal of Vision*.
+{: .reference}
+
 Failing, M. F., & Theeuwes, J. (2014). Exogenous visual orienting by reward. *Journal of Vision*, *14*(5), 6. doi:10.1167/14.5.6
 {: .reference}
 
@@ -60,6 +63,12 @@ Grainger, J., Mathôt, S., & Vitu, F. (2014). Tests of a model of multi-word rea
 {: .reference}
 
 Van der Ham, I. J., & van den Hoven, J. (2014). Lateralization of route continuation and route order. In *Spatial Cognition IX* (pp. 137–146). Springer. Retrieved from <http://link.springer.com/chapter/10.1007/978-3-319-11215-2_10>
+{: .reference}
+
+Hatfield, H. (2014). Self-guided reading: Touch-based measures of syntactic processing. *Journal of Psycholinguistic Research*. doi:10.1007/s10936-014-9334-2
+{: .reference}
+
+Hermens, F., & Bell, A. (2014). Speeded classification in simultaneous masking. *Journal of Vision*, *14*(6), 6. doi:10.1167/14.6.6
 {: .reference}
 
 Hermens, F., Kral, D., & Rosenbaum, D. A. (2014). Limits of end-state planning. *Acta Psychologica*, *148*, 148–162. doi:10.1016/j.actpsy.2014.01.009
@@ -89,7 +98,16 @@ Krukar, J. (2014). Walk, look, remember: The influence of the gallery’s spatia
 Lange, F., & Eggert, F. (2014). Sweet delusion: Glucose drinks fail to counteract ego depletion. *Appetite*, *75*, 54-63. doi:10.1016/j.appet.2013.12.020
 {: .reference}
 
+Lange, F., & Eggert, F. (2014). Mapping self-reported to behavioral impulsiveness: The role of task parameters. *Scandinavian Journal of Psychology*. doi:10.1111/sjop.12173
+{: .reference}
+
 Lange, F., Seer, C., Rapior, M., Rose, J., & Eggert, F. (2014). Turn it all you want: Still no effect of sugar consumption on ego depletion. *Journal of European Psychology Students*, *5*(3), 1–8. doi:10.5334/jeps.cc
+{: .reference}
+
+Mathôt, S., Dalmaijer, E., Grainger, J., & Van der Stigchel, S. (in press). The pupillary light response reflects exogenous attention and inhibition of return. *Journal of Vision*. [[pdf]](http://files.cogsci.nl/documents/mathot_et_al_2014b-2.3.3-postprint.pdf)
+{: .reference}
+
+Mathôt, S., van der Linden, L., Grainger, J., & Vitu, F. (in press). The pupillary light response reflects eye-movement preparation. *Journal of Experimental Psychology: Human Perception and Performance*. [[pdf]](http://files.cogsci.nl/documents/mathot_et_al_2014a-3.3.1-postprint.pdf)
 {: .reference}
 
 Van Moorselaar, D., Theeuwes, J., & Olivers, C. N. L. (2014). In competition for the attentional template: Can multiple items within visual working memory guide attention? *Journal of Experimental Psychology: Human Perception and Performance*. doi:10.1037/a0036229
