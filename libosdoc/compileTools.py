@@ -359,7 +359,8 @@ RewriteRule    ^([^0-9]*)/?$    %s/$1   [NC,L]
 	print(u'Created %s' % path)
 
 def compileSite(layout=u'inpage', group=None, jekyll=True, optimizeHTML=False,
-	tarball=False,	checkLinks=False, gitInfo=False, htaccess=False):
+	tarball=False,	checkLinks=False, gitInfo=False, htaccess=False,
+	adjustURLs=True):
 
 	"""
 	desc:
@@ -395,6 +396,11 @@ def compileSite(layout=u'inpage', group=None, jekyll=True, optimizeHTML=False,
 					parent folder, to rewrite branchless URLS to the current
 					branch.
 			type:	bool
+		adjustURLs:
+			desc:	Indicates whether URLs should be adjusted so that the branch
+					name is prefixed. This is only applicable for stable
+					branches.
+			type:	bool
 
 	returns:
 		desc:	The folder where the site has been generated.
@@ -419,7 +425,8 @@ def compileSite(layout=u'inpage', group=None, jekyll=True, optimizeHTML=False,
 	if jekyll:
 		runJekyll(status)
 	if branch != '':
-		adjustRootRelativeURLs('_tmp', branch)
+		if adjustURLs or status != u'current':
+			adjustRootRelativeURLs('_tmp', branch)
 		siteFolder = u'_site/%s' % branch
 	else:
 		siteFolder = u'_site'

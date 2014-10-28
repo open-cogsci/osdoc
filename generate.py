@@ -48,7 +48,8 @@ if __name__ == u'__main__':
 	pdfWalk(siteFolder)
 	# Now compile the site with inpage (=normal) layout, and move all PDFs
 	# into the site.
-	compileSite(optimizeHTML=True, group=options.group, htaccess=True)
+	compileSite(optimizeHTML=True, group=options.group, htaccess=True,
+		adjustURLs=False)
 	pdfRestore(siteFolder)
 	# Create a tarball for the site
 	createTarball(siteFolder)
