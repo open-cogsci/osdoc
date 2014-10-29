@@ -32,7 +32,7 @@ Mathôt, S., Schreij, D., & Theeuwes, J. (2012). OpenSesame: An open-source, gra
 {: .reference}
 
 [forum]: http://forum.cogsci.nl/
-[tutorial]: /tutorials/step-by-step-tutorial
-[release notes]: /notes/$version$
+[tutorial]: /tutorials/step-by-step-tutorial/
+[release notes]: /notes/$version$/
 [download]: /getting-opensesame/download/
 [chris longmore]: http://www.chrislongmore.co.uk/

@@ -45,7 +45,7 @@ def callOptimizeHTML(path):
 			print u'Optimized:\t%s (%d kB -> %d kB, %d%%)' % (fname, s1, s2,
 				(100.*s2/s1))
 
-def adjustRootRelativeURLs(path, branch):
+def adjustRootRelativeURLs(path, branch, skipHTML=False):
 
 	"""
 	desc:
@@ -55,6 +55,9 @@ def adjustRootRelativeURLs(path, branch):
 	arguments:
 		path:		The path to walk through.
 		branch:		The branch to add.
+
+	keywords:
+		skipHTML:	Indicates whether .html URLs should be skipped.
 	"""
 
 	print(u'Adjusting root-relative URLs (%s)' % path)
@@ -73,6 +76,9 @@ def adjustRootRelativeURLs(path, branch):
 					continue
 				if url.startswith(u'/current'):
 					print(u'Ignoring current URL in %s: %s' % (fname, url))
+					continue
+				if skipHTML and url.endswith(u'.html') or url.endswith(u'/'):
+					print(u'Ignoring pagelink URL in %s:%s' % (fname, url))
 					continue
 				old = g.group()
 				new = u'%s="/%s%s"' % (g.group(u'_type'), branch, url)

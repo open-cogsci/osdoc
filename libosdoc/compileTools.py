@@ -426,7 +426,10 @@ def compileSite(layout=u'inpage', group=None, jekyll=True, optimizeHTML=False,
 		runJekyll(status)
 	if branch != '':
 		if adjustURLs or status != u'current':
-			adjustRootRelativeURLs('_tmp', branch)
+			skipHTML = False
+		else:
+			skipHTML = True
+		adjustRootRelativeURLs('_tmp', branch, skipHTML=skipHTML)
 		siteFolder = u'_site/%s' % branch
 	else:
 		siteFolder = u'_site'
