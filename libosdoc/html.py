@@ -77,7 +77,7 @@ def adjustRootRelativeURLs(path, branch, skipHTML=False):
 				if url.startswith(u'/current'):
 					print(u'Ignoring current URL in %s: %s' % (fname, url))
 					continue
-				if skipHTML and url.endswith(u'.html') or url.endswith(u'/'):
+				if skipHTML and (url.endswith(u'.html') or url.endswith(u'/')):
 					print(u'Ignoring pagelink URL in %s:%s' % (fname, url))
 					continue
 				old = g.group()
