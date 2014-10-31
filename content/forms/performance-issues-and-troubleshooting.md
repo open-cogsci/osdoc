@@ -21,6 +21,7 @@ Forms can be a bit slow, which is especially noticeable if you are using text in
 ## Troubleshooting
 
 - If you are using the *legacy* back-end, you may find that the forms do not show: The screen is black, except for an occasional flicker when you click the mouse. This issue can be resolved by setting *Double buffering* to 'no' in the back-end settings.
+- If you are using the *legacy* back-end, you may find that the mouse cursor is not visible. For a workaround, see [/back-ends/legacy/](/back-ends/legacy/).
 
 [legacy]: /back-ends/legacy
 [xpyriment]: /back-ends/xpyriment
