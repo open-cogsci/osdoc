@@ -64,7 +64,7 @@ def adjustRootRelativeURLs(path, branch, skipHTML=False):
 	for fname in os.listdir(path):
 		fname = os.path.join(path, fname)
 		if os.path.isdir(fname):
-			adjustRootRelativeURLs(fname, branch)
+			adjustRootRelativeURLs(fname, branch, skipHTML=skipHTML)
 			continue
 		if fname.lower().endswith(u'.html'):
 			html = open(fname).read().decode(u'utf-8')
