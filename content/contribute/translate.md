@@ -99,4 +99,8 @@ Once you are satisfied with your translations, save the `translations.ts` file u
 
 You can also submit (and update) your translation via GitHub. First, add your translation to your fork of OpenSesame, as `resources/ts/ll_RR.ts`, where `ll` corresponds to the language and `RR` to the region. For example, `en_US` is US english, `fr_FR` is French, and `zh_CN` is Chinese. You can find a list of valid regions and languages [here](http://www.iana.org/assignments/language-subtag-registry). Next, submit a pull request to have your translation included in OpenSesame.
 
+## Updating an existing translation
+
+The process to update an existing translation is similar to that described above for creating a new translation. The crucial difference is that you don't start with `resources/ts/translatables.ts`, but with a non-blank translation file, such as `resources/ts/fr_FR.ts`.
+
 [forum]: http://forum.cogsci.nl/
