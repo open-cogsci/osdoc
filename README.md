@@ -40,7 +40,9 @@ Most dependencies are available from the Ubuntu repositories or from the [Cogsci
 	jekyll
 	python-academicmarkdown
 	python-yaml
-	kramdown
+	ruby-kramdown
+	python-lesscpy
+	python-yamldoc
 	node-less
 	linkchecker         # Optional, for checking for dead links
 	htmlcompressor.jar  # Optional, for compressing HTML
