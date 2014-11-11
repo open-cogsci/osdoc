@@ -41,6 +41,9 @@ Brennan, A. A. (2014). *When Two Heads Are Better Than One: The Independent Vers
 Cohen, C. (2014). *Contrast-Dependent Pronunciation Variation: A Case Study of Russian*. Retrieved from: <http://www.linguistics.berkeley.edu/~cpccohen/CohenRUProduction.pdf>
 {: .reference}
 
+Cohen, C. (2014). Probabilistic reduction and probabilistic enhancement. *Morphology*, 1–33. doi:10.1007/s11525-014-9243-y
+{: .reference}
+
 Chanceaux, M., Mathôt, S., & Grainger, J. (in press). Effects of number, complexity, and familiarity of flankers on crowded letter identification. *Journal of Vision*.
 {: .reference}
 
@@ -51,6 +54,9 @@ Faneros, M. A. (2014). *A Comparison of Contemporary Executive Function Models* 
 {: .reference}
 
 Garaizar, P., & Reips, U.-D. (2014). Visual DMDX: A web-based authoring tool for DMDX, a Windows display program with millisecond accuracy. *Behavior Research Methods*, 1–12. doi:10.3758/s13428-014-0493-8
+{: .reference}
+
+Garaizar, P., & Vadillo, M. A. (2014). Accuracy and precision of visual stimulus timing in PsychoPy: No timing errors in standard usage. *PLoS ONE*, *9*(11), e112033. doi:10.1371/journal.pone.0112033
 {: .reference}
 
 Garaizar, P., Vadillo, M. A., López-de-Ipiña, D., & Matute, H. (2014). Measuring software timing errors in the presentation of visual stimuli in cognitive neuroscience experiments. *PLoS ONE*, *9*(1), e85108. doi:10.1371/journal.pone.0085108
