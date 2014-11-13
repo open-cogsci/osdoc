@@ -23,30 +23,30 @@ my_canvas.show()
 __Function list:__
 
 
-- [function __canvas.\_\_init\_\___(experiment, bgcolor=None, fgcolor=None, auto_prepare=True)](#function-__canvas__init____experiment-bgcolornone-fgcolornone-auto_preparetrue)
-- [function __canvas.arrow__(sx, sy, ex, ey, color=None, arrow_size=5, penwidth=None)](#function-__canvasarrow__sx-sy-ex-ey-colornone-arrow_size5-penwidthnone)
-- [function __canvas.circle__(x, y, r, color=None, penwidth=None, fill=False)](#function-__canvascircle__x-y-r-colornone-penwidthnone-fillfalse)
-- [function __canvas.clear__(color=None)](#function-__canvasclear__colornone)
-- [function __canvas.copy__(canvas)](#function-__canvascopy__canvas)
-- [function __canvas.ellipse__(x, y, w, h, color=None, penwidth=None, fill=False)](#function-__canvasellipse__x-y-w-h-colornone-penwidthnone-fillfalse)
-- [function __canvas.fixdot__(y=None, x=None, style=u'default', color=None)](#function-__canvasfixdot__ynone-xnone-styleudefault-colornone)
-- [function __canvas.gabor__(x, y, orient, freq, bgmode=u'avg', col2=u'black', col1=u'white', env=u'gaussian', stdev=12, phase=0, size=96)](#function-__canvasgabor__x-y-orient-freq-bgmodeuavg-col2ublack-col1uwhite-envugaussian-stdev12-phase0-size96)
-- [function __canvas.image__(fname, y=None, x=None, scale=None, center=True)](#function-__canvasimage__fname-ynone-xnone-scalenone-centertrue)
-- [function __canvas.line__(sx, sy, ex, ey, color=None, penwidth=None)](#function-__canvasline__sx-sy-ex-ey-colornone-penwidthnone)
-- [function __canvas.noise_patch__(x, y, bgmode=u'avg', col2=u'black', col1=u'white', env=u'gaussian', stdev=12, size=96)](#function-__canvasnoise_patch__x-y-bgmodeuavg-col2ublack-col1uwhite-envugaussian-stdev12-size96)
-- [function __canvas.polygon__(vertices, color=None, penwidth=None, fill=False)](#function-__canvaspolygon__vertices-colornone-penwidthnone-fillfalse)
-- [function __canvas.prepare__()](#function-__canvasprepare__)
-- [function __canvas.rect__(x, y, w, h, color=None, penwidth=None, fill=False)](#function-__canvasrect__x-y-w-h-colornone-penwidthnone-fillfalse)
-- [function __canvas.set_bgcolor__(color)](#function-__canvasset_bgcolor__color)
-- [function __canvas.set_bidi__(bidi)](#function-__canvasset_bidi__bidi)
-- [function __canvas.set_fgcolor__(color)](#function-__canvasset_fgcolor__color)
-- [function __canvas.set_font__(style=None, underline=None, bold=None, italic=None, size=None)](#function-__canvasset_font__stylenone-underlinenone-boldnone-italicnone-sizenone)
-- [function __canvas.set_penwidth__(penwidth)](#function-__canvasset_penwidth__penwidth)
-- [function __canvas.show__()](#function-__canvasshow__)
-- [function __canvas.text__(text, center=True, color=None, max_width=None, html=True, bidi=None, y=None, x=None)](#function-__canvastext__text-centertrue-colornone-max_widthnone-htmltrue-bidinone-ynone-xnone)
-- [function __canvas.text_size__(text, html=True, bidi=None, max_width=None)](#function-__canvastext_size__text-htmltrue-bidinone-max_widthnone)
-- [function __canvas.xcenter__()](#function-__canvasxcenter__)
-- [function __canvas.ycenter__()](#function-__canvasycenter__)
+- [function __canvas\.\_\_init\_\___\(experiment, bgcolor=None, fgcolor=None, auto\_prepare=True\)](#function-__canvas__init____experiment-bgcolornone-fgcolornone-auto_preparetrue)
+- [function __canvas\.arrow__\(sx, sy, ex, ey, color=None, arrow\_size=5, penwidth=None\)](#function-__canvasarrow__sx-sy-ex-ey-colornone-arrow_size5-penwidthnone)
+- [function __canvas\.circle__\(x, y, r, color=None, penwidth=None, fill=False\)](#function-__canvascircle__x-y-r-colornone-penwidthnone-fillfalse)
+- [function __canvas\.clear__\(color=None\)](#function-__canvasclear__colornone)
+- [function __canvas\.copy__\(canvas\)](#function-__canvascopy__canvas)
+- [function __canvas\.ellipse__\(x, y, w, h, color=None, penwidth=None, fill=False\)](#function-__canvasellipse__x-y-w-h-colornone-penwidthnone-fillfalse)
+- [function __canvas\.fixdot__\(y=None, x=None, style=u'default', color=None\)](#function-__canvasfixdot__ynone-xnone-styleudefault-colornone)
+- [function __canvas\.gabor__\(x, y, orient, freq, bgmode=u'avg', col2=u'black', col1=u'white', env=u'gaussian', stdev=12, phase=0, size=96\)](#function-__canvasgabor__x-y-orient-freq-bgmodeuavg-col2ublack-col1uwhite-envugaussian-stdev12-phase0-size96)
+- [function __canvas\.image__\(fname, y=None, x=None, scale=None, center=True\)](#function-__canvasimage__fname-ynone-xnone-scalenone-centertrue)
+- [function __canvas\.line__\(sx, sy, ex, ey, color=None, penwidth=None\)](#function-__canvasline__sx-sy-ex-ey-colornone-penwidthnone)
+- [function __canvas\.noise\_patch__\(x, y, bgmode=u'avg', col2=u'black', col1=u'white', env=u'gaussian', stdev=12, size=96\)](#function-__canvasnoise_patch__x-y-bgmodeuavg-col2ublack-col1uwhite-envugaussian-stdev12-size96)
+- [function __canvas\.polygon__\(vertices, color=None, penwidth=None, fill=False\)](#function-__canvaspolygon__vertices-colornone-penwidthnone-fillfalse)
+- [function __canvas\.prepare__\(\)](#function-__canvasprepare__)
+- [function __canvas\.rect__\(x, y, w, h, color=None, penwidth=None, fill=False\)](#function-__canvasrect__x-y-w-h-colornone-penwidthnone-fillfalse)
+- [function __canvas\.set\_bgcolor__\(color\)](#function-__canvasset_bgcolor__color)
+- [function __canvas\.set\_bidi__\(bidi\)](#function-__canvasset_bidi__bidi)
+- [function __canvas\.set\_fgcolor__\(color\)](#function-__canvasset_fgcolor__color)
+- [function __canvas\.set\_font__\(style=None, underline=None, bold=None, italic=None, size=None\)](#function-__canvasset_font__stylenone-underlinenone-boldnone-italicnone-sizenone)
+- [function __canvas\.set\_penwidth__\(penwidth\)](#function-__canvasset_penwidth__penwidth)
+- [function __canvas\.show__\(\)](#function-__canvasshow__)
+- [function __canvas\.text__\(text, center=True, color=None, max\_width=None, html=True, bidi=None, y=None, x=None\)](#function-__canvastext__text-centertrue-colornone-max_widthnone-htmltrue-bidinone-ynone-xnone)
+- [function __canvas\.text\_size__\(text, html=True, bidi=None, max\_width=None\)](#function-__canvastext_size__text-htmltrue-bidinone-max_widthnone)
+- [function __canvas\.xcenter__\(\)](#function-__canvasxcenter__)
+- [function __canvas\.ycenter__\(\)](#function-__canvasycenter__)
 
 
 
@@ -54,7 +54,7 @@ __Function list:__
 
 <div class="FunctionDoc YAMLDoc" id="canvas-__init__" markdown="1">
 
-## [function __canvas.\_\_init\_\___(experiment, bgcolor=None, fgcolor=None, auto_prepare=True)](#function-__canvas__init____experiment-bgcolornone-fgcolornone-auto_preparetrue) {#function-__canvas__init____experiment-bgcolornone-fgcolornone-auto_preparetrue}
+## [function __canvas\.\_\_init\_\___\(experiment, bgcolor=None, fgcolor=None, auto\_prepare=True\)](#function-__canvas__init____experiment-bgcolornone-fgcolornone-auto_preparetrue) {#function-__canvas__init____experiment-bgcolornone-fgcolornone-auto_preparetrue}
 
 Constructor to create a new `canvas` object.
 
@@ -104,7 +104,7 @@ __Keywords:__
 
 <div class="FunctionDoc YAMLDoc" id="canvas-arrow" markdown="1">
 
-## [function __canvas.arrow__(sx, sy, ex, ey, color=None, arrow_size=5, penwidth=None)](#function-__canvasarrow__sx-sy-ex-ey-colornone-arrow_size5-penwidthnone) {#function-__canvasarrow__sx-sy-ex-ey-colornone-arrow_size5-penwidthnone}
+## [function __canvas\.arrow__\(sx, sy, ex, ey, color=None, arrow\_size=5, penwidth=None\)](#function-__canvasarrow__sx-sy-ex-ey-colornone-arrow_size5-penwidthnone) {#function-__canvasarrow__sx-sy-ex-ey-colornone-arrow_size5-penwidthnone}
 
 Draws an arrow. An arrow is a line, with an arrowhead at (ex, ey). The angle between the arrowhead lines and the arrow line is 45 degrees.
 
@@ -143,7 +143,7 @@ argument will not change the canvas default penwidth as set by
 
 <div class="FunctionDoc YAMLDoc" id="canvas-circle" markdown="1">
 
-## [function __canvas.circle__(x, y, r, color=None, penwidth=None, fill=False)](#function-__canvascircle__x-y-r-colornone-penwidthnone-fillfalse) {#function-__canvascircle__x-y-r-colornone-penwidthnone-fillfalse}
+## [function __canvas\.circle__\(x, y, r, color=None, penwidth=None, fill=False\)](#function-__canvascircle__x-y-r-colornone-penwidthnone-fillfalse) {#function-__canvascircle__x-y-r-colornone-penwidthnone-fillfalse}
 
 Draws a circle.
 
@@ -189,7 +189,7 @@ argument will not change the canvas default penwidth as set by
 
 <div class="FunctionDoc YAMLDoc" id="canvas-clear" markdown="1">
 
-## [function __canvas.clear__(color=None)](#function-__canvasclear__colornone) {#function-__canvasclear__colornone}
+## [function __canvas\.clear__\(color=None\)](#function-__canvasclear__colornone) {#function-__canvasclear__colornone}
 
 Clears the canvas with the current background color. Note that it is generally faster to use a different canvas for each experimental display than to use a single canvas and repeatedly clear and redraw it.
 
@@ -222,7 +222,7 @@ background as set by [canvas.set_bgcolor].
 
 <div class="FunctionDoc YAMLDoc" id="canvas-copy" markdown="1">
 
-## [function __canvas.copy__(canvas)](#function-__canvascopy__canvas) {#function-__canvascopy__canvas}
+## [function __canvas\.copy__\(canvas\)](#function-__canvascopy__canvas) {#function-__canvascopy__canvas}
 
 Turns the current `canvas` into a copy of the passed `canvas`.
 
@@ -255,7 +255,7 @@ __Arguments:__
 
 <div class="FunctionDoc YAMLDoc" id="canvas-ellipse" markdown="1">
 
-## [function __canvas.ellipse__(x, y, w, h, color=None, penwidth=None, fill=False)](#function-__canvasellipse__x-y-w-h-colornone-penwidthnone-fillfalse) {#function-__canvasellipse__x-y-w-h-colornone-penwidthnone-fillfalse}
+## [function __canvas\.ellipse__\(x, y, w, h, color=None, penwidth=None, fill=False\)](#function-__canvasellipse__x-y-w-h-colornone-penwidthnone-fillfalse) {#function-__canvasellipse__x-y-w-h-colornone-penwidthnone-fillfalse}
 
 Draws an ellipse.
 
@@ -305,7 +305,7 @@ argument will not change the canvas default penwidth as set by
 
 <div class="FunctionDoc YAMLDoc" id="canvas-fixdot" markdown="1">
 
-## [function __canvas.fixdot__(y=None, x=None, style=u'default', color=None)](#function-__canvasfixdot__ynone-xnone-styleudefault-colornone) {#function-__canvasfixdot__ynone-xnone-styleudefault-colornone}
+## [function __canvas\.fixdot__\(y=None, x=None, style=u'default', color=None\)](#function-__canvasfixdot__ynone-xnone-styleudefault-colornone) {#function-__canvasfixdot__ynone-xnone-styleudefault-colornone}
 
 Draws a fixation dot.
 
@@ -355,7 +355,7 @@ foreground as set by [canvas.set_fgcolor].
 
 <div class="FunctionDoc YAMLDoc" id="canvas-gabor" markdown="1">
 
-## [function __canvas.gabor__(x, y, orient, freq, bgmode=u'avg', col2=u'black', col1=u'white', env=u'gaussian', stdev=12, phase=0, size=96)](#function-__canvasgabor__x-y-orient-freq-bgmodeuavg-col2ublack-col1uwhite-envugaussian-stdev12-phase0-size96) {#function-__canvasgabor__x-y-orient-freq-bgmodeuavg-col2ublack-col1uwhite-envugaussian-stdev12-phase0-size96}
+## [function __canvas\.gabor__\(x, y, orient, freq, bgmode=u'avg', col2=u'black', col1=u'white', env=u'gaussian', stdev=12, phase=0, size=96\)](#function-__canvasgabor__x-y-orient-freq-bgmodeuavg-col2ublack-col1uwhite-envugaussian-stdev12-phase0-size96) {#function-__canvasgabor__x-y-orient-freq-bgmodeuavg-col2ublack-col1uwhite-envugaussian-stdev12-phase0-size96}
 
 Draws a Gabor patch. Note: The exact rendering of the Gabor patch
 depends on the back-end.
@@ -416,7 +416,7 @@ ignores this parameter and always uses the inverse of
 
 <div class="FunctionDoc YAMLDoc" id="canvas-image" markdown="1">
 
-## [function __canvas.image__(fname, y=None, x=None, scale=None, center=True)](#function-__canvasimage__fname-ynone-xnone-scalenone-centertrue) {#function-__canvasimage__fname-ynone-xnone-scalenone-centertrue}
+## [function __canvas\.image__\(fname, y=None, x=None, scale=None, center=True\)](#function-__canvasimage__fname-ynone-xnone-scalenone-centertrue) {#function-__canvasimage__fname-ynone-xnone-scalenone-centertrue}
 
 Draws an image from file. This function does not look in the file pool, but takes an absolute path.
 
@@ -457,7 +457,7 @@ __Keywords:__
 
 <div class="FunctionDoc YAMLDoc" id="canvas-line" markdown="1">
 
-## [function __canvas.line__(sx, sy, ex, ey, color=None, penwidth=None)](#function-__canvasline__sx-sy-ex-ey-colornone-penwidthnone) {#function-__canvasline__sx-sy-ex-ey-colornone-penwidthnone}
+## [function __canvas\.line__\(sx, sy, ex, ey, color=None, penwidth=None\)](#function-__canvasline__sx-sy-ex-ey-colornone-penwidthnone) {#function-__canvasline__sx-sy-ex-ey-colornone-penwidthnone}
 
 Draws a line.
 
@@ -493,7 +493,7 @@ argument will not change the canvas default penwidth as set by
 
 <div class="FunctionDoc YAMLDoc" id="canvas-noise_patch" markdown="1">
 
-## [function __canvas.noise_patch__(x, y, bgmode=u'avg', col2=u'black', col1=u'white', env=u'gaussian', stdev=12, size=96)](#function-__canvasnoise_patch__x-y-bgmodeuavg-col2ublack-col1uwhite-envugaussian-stdev12-size96) {#function-__canvasnoise_patch__x-y-bgmodeuavg-col2ublack-col1uwhite-envugaussian-stdev12-size96}
+## [function __canvas\.noise\_patch__\(x, y, bgmode=u'avg', col2=u'black', col1=u'white', env=u'gaussian', stdev=12, size=96\)](#function-__canvasnoise_patch__x-y-bgmodeuavg-col2ublack-col1uwhite-envugaussian-stdev12-size96) {#function-__canvasnoise_patch__x-y-bgmodeuavg-col2ublack-col1uwhite-envugaussian-stdev12-size96}
 
 Draws a patch of noise, with an envelope. The exact rendering of the noise patch depends on the back-end.
 
@@ -545,7 +545,7 @@ parameter and always uses the inverse of `col1`.
 
 <div class="FunctionDoc YAMLDoc" id="canvas-polygon" markdown="1">
 
-## [function __canvas.polygon__(vertices, color=None, penwidth=None, fill=False)](#function-__canvaspolygon__vertices-colornone-penwidthnone-fillfalse) {#function-__canvaspolygon__vertices-colornone-penwidthnone-fillfalse}
+## [function __canvas\.polygon__\(vertices, color=None, penwidth=None, fill=False\)](#function-__canvaspolygon__vertices-colornone-penwidthnone-fillfalse) {#function-__canvaspolygon__vertices-colornone-penwidthnone-fillfalse}
 
 Draws a polygon that defined by a list of vertices. I.e. a shape of points connected by lines.
 
@@ -590,7 +590,7 @@ argument will not change the canvas default penwidth as set by
 
 <div class="FunctionDoc YAMLDoc" id="canvas-prepare" markdown="1">
 
-## [function __canvas.prepare__()](#function-__canvasprepare__) {#function-__canvasprepare__}
+## [function __canvas\.prepare__\(\)](#function-__canvasprepare__) {#function-__canvasprepare__}
 
 Finishes pending canvas operations (if any), so that a subsequent call to [canvas.show] is extra fast. It's only necessary to call this function if you have disabled `auto_prepare` in [canvas.__init__].
 
@@ -601,7 +601,7 @@ Finishes pending canvas operations (if any), so that a subsequent call to [canva
 
 <div class="FunctionDoc YAMLDoc" id="canvas-rect" markdown="1">
 
-## [function __canvas.rect__(x, y, w, h, color=None, penwidth=None, fill=False)](#function-__canvasrect__x-y-w-h-colornone-penwidthnone-fillfalse) {#function-__canvasrect__x-y-w-h-colornone-penwidthnone-fillfalse}
+## [function __canvas\.rect__\(x, y, w, h, color=None, penwidth=None, fill=False\)](#function-__canvasrect__x-y-w-h-colornone-penwidthnone-fillfalse) {#function-__canvasrect__x-y-w-h-colornone-penwidthnone-fillfalse}
 
 Draws a rectangle.
 
@@ -651,7 +651,7 @@ argument will not change the canvas default penwidth as set by
 
 <div class="FunctionDoc YAMLDoc" id="canvas-set_bgcolor" markdown="1">
 
-## [function __canvas.set_bgcolor__(color)](#function-__canvasset_bgcolor__color) {#function-__canvasset_bgcolor__color}
+## [function __canvas\.set\_bgcolor__\(color\)](#function-__canvasset_bgcolor__color) {#function-__canvasset_bgcolor__color}
 
 Sets the default background color for subsequent drawing operations, notably [canvas.clear].
 
@@ -679,7 +679,7 @@ background as set by [canvas.set_bgcolor].
 
 <div class="FunctionDoc YAMLDoc" id="canvas-set_bidi" markdown="1">
 
-## [function __canvas.set_bidi__(bidi)](#function-__canvasset_bidi__bidi) {#function-__canvasset_bidi__bidi}
+## [function __canvas\.set\_bidi__\(bidi\)](#function-__canvasset_bidi__bidi) {#function-__canvasset_bidi__bidi}
 
 Enables or disables bi-directional text support.
 
@@ -704,7 +704,7 @@ __Arguments:__
 
 <div class="FunctionDoc YAMLDoc" id="canvas-set_fgcolor" markdown="1">
 
-## [function __canvas.set_fgcolor__(color)](#function-__canvasset_fgcolor__color) {#function-__canvasset_fgcolor__color}
+## [function __canvas\.set\_fgcolor__\(color\)](#function-__canvasset_fgcolor__color) {#function-__canvasset_fgcolor__color}
 
 Sets the default foreground color for subsequent drawing operations.
 
@@ -734,7 +734,7 @@ foreground as set by [canvas.set_fgcolor].
 
 <div class="FunctionDoc YAMLDoc" id="canvas-set_font" markdown="1">
 
-## [function __canvas.set_font__(style=None, underline=None, bold=None, italic=None, size=None)](#function-__canvasset_font__stylenone-underlinenone-boldnone-italicnone-sizenone) {#function-__canvasset_font__stylenone-underlinenone-boldnone-italicnone-sizenone}
+## [function __canvas\.set\_font__\(style=None, underline=None, bold=None, italic=None, size=None\)](#function-__canvasset_font__stylenone-underlinenone-boldnone-italicnone-sizenone) {#function-__canvasset_font__stylenone-underlinenone-boldnone-italicnone-sizenone}
 
 Sets the default font for subsequent drawing operations, notably [canvas.text].
 
@@ -772,7 +772,7 @@ __Keywords:__
 
 <div class="FunctionDoc YAMLDoc" id="canvas-set_penwidth" markdown="1">
 
-## [function __canvas.set_penwidth__(penwidth)](#function-__canvasset_penwidth__penwidth) {#function-__canvasset_penwidth__penwidth}
+## [function __canvas\.set\_penwidth__\(penwidth\)](#function-__canvasset_penwidth__penwidth) {#function-__canvasset_penwidth__penwidth}
 
 Sets the default penwidth for subsequent drawing operations.
 
@@ -797,7 +797,7 @@ __Arguments:__
 
 <div class="FunctionDoc YAMLDoc" id="canvas-show" markdown="1">
 
-## [function __canvas.show__()](#function-__canvasshow__) {#function-__canvasshow__}
+## [function __canvas\.show__\(\)](#function-__canvasshow__) {#function-__canvasshow__}
 
 Shows, or 'flips', the canvas on the screen.
 
@@ -824,7 +824,7 @@ A timestamp of the time at which the canvas actually appeared on the screen, or 
 
 <div class="FunctionDoc YAMLDoc" id="canvas-text" markdown="1">
 
-## [function __canvas.text__(text, center=True, color=None, max_width=None, html=True, bidi=None, y=None, x=None)](#function-__canvastext__text-centertrue-colornone-max_widthnone-htmltrue-bidinone-ynone-xnone) {#function-__canvastext__text-centertrue-colornone-max_widthnone-htmltrue-bidinone-ynone-xnone}
+## [function __canvas\.text__\(text, center=True, color=None, max\_width=None, html=True, bidi=None, y=None, x=None\)](#function-__canvastext__text-centertrue-colornone-max_widthnone-htmltrue-bidinone-ynone-xnone) {#function-__canvastext__text-centertrue-colornone-max_widthnone-htmltrue-bidinone-ynone-xnone}
 
 Draws text.
 
@@ -879,7 +879,7 @@ new line, or `None` to wrap at screen edge.
 
 <div class="FunctionDoc YAMLDoc" id="canvas-text_size" markdown="1">
 
-## [function __canvas.text_size__(text, html=True, bidi=None, max_width=None)](#function-__canvastext_size__text-htmltrue-bidinone-max_widthnone) {#function-__canvastext_size__text-htmltrue-bidinone-max_widthnone}
+## [function __canvas\.text\_size__\(text, html=True, bidi=None, max\_width=None\)](#function-__canvastext_size__text-htmltrue-bidinone-max_widthnone) {#function-__canvastext_size__text-htmltrue-bidinone-max_widthnone}
 
 Determines the size of a text string in pixels.
 
@@ -925,7 +925,7 @@ A (width, height) tuple containing the dimensions of the text string.
 
 <div class="FunctionDoc YAMLDoc" id="canvas-xcenter" markdown="1">
 
-## [function __canvas.xcenter__()](#function-__canvasxcenter__) {#function-__canvasxcenter__}
+## [function __canvas\.xcenter__\(\)](#function-__canvasxcenter__) {#function-__canvasxcenter__}
 
 Returns the center X coordinate of the `canvas` in pixels.
 
@@ -955,7 +955,7 @@ The center X coordinate.
 
 <div class="FunctionDoc YAMLDoc" id="canvas-ycenter" markdown="1">
 
-## [function __canvas.ycenter__()](#function-__canvasycenter__) {#function-__canvasycenter__}
+## [function __canvas\.ycenter__\(\)](#function-__canvasycenter__) {#function-__canvasycenter__}
 
 Returns the center Y coordinate of the `canvas` in pixels.
 
@@ -988,27 +988,27 @@ The center Y coordinate.
 [canvas]: #canvas
 
 
-[function __canvas.\_\_init\_\___(experiment, bgcolor=None, fgcolor=None, auto_prepare=True)]: #function-__canvas__init____experiment-bgcolornone-fgcolornone-auto_preparetrue
-[function __canvas.arrow__(sx, sy, ex, ey, color=None, arrow_size=5, penwidth=None)]: #function-__canvasarrow__sx-sy-ex-ey-colornone-arrow_size5-penwidthnone
-[function __canvas.circle__(x, y, r, color=None, penwidth=None, fill=False)]: #function-__canvascircle__x-y-r-colornone-penwidthnone-fillfalse
-[function __canvas.clear__(color=None)]: #function-__canvasclear__colornone
-[function __canvas.copy__(canvas)]: #function-__canvascopy__canvas
-[function __canvas.ellipse__(x, y, w, h, color=None, penwidth=None, fill=False)]: #function-__canvasellipse__x-y-w-h-colornone-penwidthnone-fillfalse
-[function __canvas.fixdot__(y=None, x=None, style=u'default', color=None)]: #function-__canvasfixdot__ynone-xnone-styleudefault-colornone
-[function __canvas.gabor__(x, y, orient, freq, bgmode=u'avg', col2=u'black', col1=u'white', env=u'gaussian', stdev=12, phase=0, size=96)]: #function-__canvasgabor__x-y-orient-freq-bgmodeuavg-col2ublack-col1uwhite-envugaussian-stdev12-phase0-size96
-[function __canvas.image__(fname, y=None, x=None, scale=None, center=True)]: #function-__canvasimage__fname-ynone-xnone-scalenone-centertrue
-[function __canvas.line__(sx, sy, ex, ey, color=None, penwidth=None)]: #function-__canvasline__sx-sy-ex-ey-colornone-penwidthnone
-[function __canvas.noise_patch__(x, y, bgmode=u'avg', col2=u'black', col1=u'white', env=u'gaussian', stdev=12, size=96)]: #function-__canvasnoise_patch__x-y-bgmodeuavg-col2ublack-col1uwhite-envugaussian-stdev12-size96
-[function __canvas.polygon__(vertices, color=None, penwidth=None, fill=False)]: #function-__canvaspolygon__vertices-colornone-penwidthnone-fillfalse
-[function __canvas.prepare__()]: #function-__canvasprepare__
-[function __canvas.rect__(x, y, w, h, color=None, penwidth=None, fill=False)]: #function-__canvasrect__x-y-w-h-colornone-penwidthnone-fillfalse
-[function __canvas.set_bgcolor__(color)]: #function-__canvasset_bgcolor__color
-[function __canvas.set_bidi__(bidi)]: #function-__canvasset_bidi__bidi
-[function __canvas.set_fgcolor__(color)]: #function-__canvasset_fgcolor__color
-[function __canvas.set_font__(style=None, underline=None, bold=None, italic=None, size=None)]: #function-__canvasset_font__stylenone-underlinenone-boldnone-italicnone-sizenone
-[function __canvas.set_penwidth__(penwidth)]: #function-__canvasset_penwidth__penwidth
-[function __canvas.show__()]: #function-__canvasshow__
-[function __canvas.text__(text, center=True, color=None, max_width=None, html=True, bidi=None, y=None, x=None)]: #function-__canvastext__text-centertrue-colornone-max_widthnone-htmltrue-bidinone-ynone-xnone
-[function __canvas.text_size__(text, html=True, bidi=None, max_width=None)]: #function-__canvastext_size__text-htmltrue-bidinone-max_widthnone
-[function __canvas.xcenter__()]: #function-__canvasxcenter__
-[function __canvas.ycenter__()]: #function-__canvasycenter__
+[function __canvas\.\_\_init\_\___\(experiment, bgcolor=None, fgcolor=None, auto\_prepare=True\)]: #function-__canvas__init____experiment-bgcolornone-fgcolornone-auto_preparetrue
+[function __canvas\.arrow__\(sx, sy, ex, ey, color=None, arrow\_size=5, penwidth=None\)]: #function-__canvasarrow__sx-sy-ex-ey-colornone-arrow_size5-penwidthnone
+[function __canvas\.circle__\(x, y, r, color=None, penwidth=None, fill=False\)]: #function-__canvascircle__x-y-r-colornone-penwidthnone-fillfalse
+[function __canvas\.clear__\(color=None\)]: #function-__canvasclear__colornone
+[function __canvas\.copy__\(canvas\)]: #function-__canvascopy__canvas
+[function __canvas\.ellipse__\(x, y, w, h, color=None, penwidth=None, fill=False\)]: #function-__canvasellipse__x-y-w-h-colornone-penwidthnone-fillfalse
+[function __canvas\.fixdot__\(y=None, x=None, style=u'default', color=None\)]: #function-__canvasfixdot__ynone-xnone-styleudefault-colornone
+[function __canvas\.gabor__\(x, y, orient, freq, bgmode=u'avg', col2=u'black', col1=u'white', env=u'gaussian', stdev=12, phase=0, size=96\)]: #function-__canvasgabor__x-y-orient-freq-bgmodeuavg-col2ublack-col1uwhite-envugaussian-stdev12-phase0-size96
+[function __canvas\.image__\(fname, y=None, x=None, scale=None, center=True\)]: #function-__canvasimage__fname-ynone-xnone-scalenone-centertrue
+[function __canvas\.line__\(sx, sy, ex, ey, color=None, penwidth=None\)]: #function-__canvasline__sx-sy-ex-ey-colornone-penwidthnone
+[function __canvas\.noise\_patch__\(x, y, bgmode=u'avg', col2=u'black', col1=u'white', env=u'gaussian', stdev=12, size=96\)]: #function-__canvasnoise_patch__x-y-bgmodeuavg-col2ublack-col1uwhite-envugaussian-stdev12-size96
+[function __canvas\.polygon__\(vertices, color=None, penwidth=None, fill=False\)]: #function-__canvaspolygon__vertices-colornone-penwidthnone-fillfalse
+[function __canvas\.prepare__\(\)]: #function-__canvasprepare__
+[function __canvas\.rect__\(x, y, w, h, color=None, penwidth=None, fill=False\)]: #function-__canvasrect__x-y-w-h-colornone-penwidthnone-fillfalse
+[function __canvas\.set\_bgcolor__\(color\)]: #function-__canvasset_bgcolor__color
+[function __canvas\.set\_bidi__\(bidi\)]: #function-__canvasset_bidi__bidi
+[function __canvas\.set\_fgcolor__\(color\)]: #function-__canvasset_fgcolor__color
+[function __canvas\.set\_font__\(style=None, underline=None, bold=None, italic=None, size=None\)]: #function-__canvasset_font__stylenone-underlinenone-boldnone-italicnone-sizenone
+[function __canvas\.set\_penwidth__\(penwidth\)]: #function-__canvasset_penwidth__penwidth
+[function __canvas\.show__\(\)]: #function-__canvasshow__
+[function __canvas\.text__\(text, center=True, color=None, max\_width=None, html=True, bidi=None, y=None, x=None\)]: #function-__canvastext__text-centertrue-colornone-max_widthnone-htmltrue-bidinone-ynone-xnone
+[function __canvas\.text\_size__\(text, html=True, bidi=None, max\_width=None\)]: #function-__canvastext_size__text-htmltrue-bidinone-max_widthnone
+[function __canvas\.xcenter__\(\)]: #function-__canvasxcenter__
+[function __canvas\.ycenter__\(\)]: #function-__canvasycenter__

@@ -6,10 +6,9 @@ The checkbox widget is a checkable box accompanied by a string of text.
 
 __Example (OpenSesame script):__
 
-~~~
-widget 0 0 1 1 checkbox group="group" text="Option 1"
+{% highlight idget %} 0 0 1 1 checkbox group="group" text="Option 1"
 widget 0 1 1 1 checkbox group="group" text="Option 2"
-~~~
+{% endhighlight %}
 
 __Example (Python):__
 
@@ -25,20 +24,20 @@ form.set_widget(checkbox2, (0,1))
 __Function list:__
 
 
-- [function __checkbox.\_\_init\_\___(form, group=None, text=u'checkbox', frame=False, click_accepts=False, var=None, checked=False)](#function-__checkbox__init____form-groupnone-textucheckbox-framefalse-click_acceptsfalse-varnone-checkedfalse)
-- [function __checkbox.draw_frame__(style=u'normal', rect=None)](#function-__checkboxdraw_frame__styleunormal-rectnone)
-- [function __checkbox.draw_text__(text, html=True)](#function-__checkboxdraw_text__text-htmltrue)
-- [function __checkbox.on_mouse_click__(pos)](#function-__checkboxon_mouse_click__pos)
-- [function __checkbox.render__()](#function-__checkboxrender__)
-- [function __checkbox.set_checked__(checked=True)](#function-__checkboxset_checked__checkedtrue)
-- [function __checkbox.set_rect__(rect)](#function-__checkboxset_rect__rect)
-- [function __checkbox.set_var__(val, var=None)](#function-__checkboxset_var__val-varnone)
+- [function __checkbox\.\_\_init\_\___\(form, group=None, text=u'checkbox', frame=False, click\_accepts=False, var=None, checked=False\)](#function-__checkbox__init____form-groupnone-textucheckbox-framefalse-click_acceptsfalse-varnone-checkedfalse)
+- [function __checkbox\.draw\_frame__\(style=u'normal', rect=None\)](#function-__checkboxdraw_frame__styleunormal-rectnone)
+- [function __checkbox\.draw\_text__\(text, html=True\)](#function-__checkboxdraw_text__text-htmltrue)
+- [function __checkbox\.on\_mouse\_click__\(pos\)](#function-__checkboxon_mouse_click__pos)
+- [function __checkbox\.render__\(\)](#function-__checkboxrender__)
+- [function __checkbox\.set\_checked__\(checked=True\)](#function-__checkboxset_checked__checkedtrue)
+- [function __checkbox\.set\_rect__\(rect\)](#function-__checkboxset_rect__rect)
+- [function __checkbox\.set\_var__\(val, var=None\)](#function-__checkboxset_var__val-varnone)
 
 
 
 <div class="FunctionDoc YAMLDoc" id="checkbox-__init__" markdown="1">
 
-## [function __checkbox.\_\_init\_\___(form, group=None, text=u'checkbox', frame=False, click_accepts=False, var=None, checked=False)](#function-__checkbox__init____form-groupnone-textucheckbox-framefalse-click_acceptsfalse-varnone-checkedfalse) {#function-__checkbox__init____form-groupnone-textucheckbox-framefalse-click_acceptsfalse-varnone-checkedfalse}
+## [function __checkbox\.\_\_init\_\___\(form, group=None, text=u'checkbox', frame=False, click\_accepts=False, var=None, checked=False\)](#function-__checkbox__init____form-groupnone-textucheckbox-framefalse-click_acceptsfalse-varnone-checkedfalse) {#function-__checkbox__init____form-groupnone-textucheckbox-framefalse-click_acceptsfalse-varnone-checkedfalse}
 
 Constructor.
 
@@ -75,7 +74,7 @@ __Keywords:__
 
 <div class="FunctionDoc YAMLDoc" id="checkbox-draw_frame" markdown="1">
 
-## [function __checkbox.draw_frame__(style=u'normal', rect=None)](#function-__checkboxdraw_frame__styleunormal-rectnone) {#function-__checkboxdraw_frame__styleunormal-rectnone}
+## [function __checkbox\.draw\_frame__\(style=u'normal', rect=None\)](#function-__checkboxdraw_frame__styleunormal-rectnone) {#function-__checkboxdraw_frame__styleunormal-rectnone}
 
 Draws a simple frame around the widget.
 
@@ -95,7 +94,7 @@ __Keywords:__
 
 <div class="FunctionDoc YAMLDoc" id="checkbox-draw_text" markdown="1">
 
-## [function __checkbox.draw_text__(text, html=True)](#function-__checkboxdraw_text__text-htmltrue) {#function-__checkboxdraw_text__text-htmltrue}
+## [function __checkbox\.draw\_text__\(text, html=True\)](#function-__checkboxdraw_text__text-htmltrue) {#function-__checkboxdraw_text__text-htmltrue}
 
 Draws text inside the widget.
 
@@ -117,7 +116,7 @@ __Keywords:__
 
 <div class="FunctionDoc YAMLDoc" id="checkbox-on_mouse_click" markdown="1">
 
-## [function __checkbox.on_mouse_click__(pos)](#function-__checkboxon_mouse_click__pos) {#function-__checkboxon_mouse_click__pos}
+## [function __checkbox\.on\_mouse\_click__\(pos\)](#function-__checkboxon_mouse_click__pos) {#function-__checkboxon_mouse_click__pos}
 
 Is called whenever the user clicks on the widget. Toggles the state of the checkbox.
 
@@ -133,7 +132,7 @@ __Arguments:__
 
 <div class="FunctionDoc YAMLDoc" id="checkbox-render" markdown="1">
 
-## [function __checkbox.render__()](#function-__checkboxrender__) {#function-__checkboxrender__}
+## [function __checkbox\.render__\(\)](#function-__checkboxrender__) {#function-__checkboxrender__}
 
 Draws the widget.
 
@@ -144,7 +143,7 @@ Draws the widget.
 
 <div class="FunctionDoc YAMLDoc" id="checkbox-set_checked" markdown="1">
 
-## [function __checkbox.set_checked__(checked=True)](#function-__checkboxset_checked__checkedtrue) {#function-__checkboxset_checked__checkedtrue}
+## [function __checkbox\.set\_checked__\(checked=True\)](#function-__checkboxset_checked__checkedtrue) {#function-__checkboxset_checked__checkedtrue}
 
 Sets the checked status of the checkbox.
 
@@ -161,7 +160,7 @@ __Keywords:__
 
 <div class="FunctionDoc YAMLDoc" id="checkbox-set_rect" markdown="1">
 
-## [function __checkbox.set_rect__(rect)](#function-__checkboxset_rect__rect) {#function-__checkboxset_rect__rect}
+## [function __checkbox\.set\_rect__\(rect\)](#function-__checkboxset_rect__rect) {#function-__checkboxset_rect__rect}
 
 Sets the widget geometry.
 
@@ -177,7 +176,7 @@ __Arguments:__
 
 <div class="FunctionDoc YAMLDoc" id="checkbox-set_var" markdown="1">
 
-## [function __checkbox.set_var__(val, var=None)](#function-__checkboxset_var__val-varnone) {#function-__checkboxset_var__val-varnone}
+## [function __checkbox\.set\_var__\(val, var=None\)](#function-__checkboxset_var__val-varnone) {#function-__checkboxset_var__val-varnone}
 
 Sets an experimental variable.
 
@@ -202,11 +201,11 @@ __Keywords:__
 [checkbox]: #checkbox
 
 
-[function __checkbox.\_\_init\_\___(form, group=None, text=u'checkbox', frame=False, click_accepts=False, var=None, checked=False)]: #function-__checkbox__init____form-groupnone-textucheckbox-framefalse-click_acceptsfalse-varnone-checkedfalse
-[function __checkbox.draw_frame__(style=u'normal', rect=None)]: #function-__checkboxdraw_frame__styleunormal-rectnone
-[function __checkbox.draw_text__(text, html=True)]: #function-__checkboxdraw_text__text-htmltrue
-[function __checkbox.on_mouse_click__(pos)]: #function-__checkboxon_mouse_click__pos
-[function __checkbox.render__()]: #function-__checkboxrender__
-[function __checkbox.set_checked__(checked=True)]: #function-__checkboxset_checked__checkedtrue
-[function __checkbox.set_rect__(rect)]: #function-__checkboxset_rect__rect
-[function __checkbox.set_var__(val, var=None)]: #function-__checkboxset_var__val-varnone
+[function __checkbox\.\_\_init\_\___\(form, group=None, text=u'checkbox', frame=False, click\_accepts=False, var=None, checked=False\)]: #function-__checkbox__init____form-groupnone-textucheckbox-framefalse-click_acceptsfalse-varnone-checkedfalse
+[function __checkbox\.draw\_frame__\(style=u'normal', rect=None\)]: #function-__checkboxdraw_frame__styleunormal-rectnone
+[function __checkbox\.draw\_text__\(text, html=True\)]: #function-__checkboxdraw_text__text-htmltrue
+[function __checkbox\.on\_mouse\_click__\(pos\)]: #function-__checkboxon_mouse_click__pos
+[function __checkbox\.render__\(\)]: #function-__checkboxrender__
+[function __checkbox\.set\_checked__\(checked=True\)]: #function-__checkboxset_checked__checkedtrue
+[function __checkbox\.set\_rect__\(rect\)]: #function-__checkboxset_rect__rect
+[function __checkbox\.set\_var__\(val, var=None\)]: #function-__checkboxset_var__val-varnone

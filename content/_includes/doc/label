@@ -6,9 +6,8 @@ The label widget is a non-interactive string of text.
 
 __Example (OpenSesame script):__
 
-~~~
-widget 0 0 1 1 label text='My text'
-~~~
+{% highlight idget %} 0 0 1 1 label text='My text'
+{% endhighlight %}
 
 __Example (Python):__
 
@@ -23,19 +22,19 @@ form._exec()
 __Function list:__
 
 
-- [function __label.\_\_init\_\___(form, text=u'label', frame=False, center=True)](#function-__label__init____form-textulabel-framefalse-centertrue)
-- [function __label.draw_frame__(style=u'normal', rect=None)](#function-__labeldraw_frame__styleunormal-rectnone)
-- [function __label.draw_text__(text, html=True)](#function-__labeldraw_text__text-htmltrue)
-- [function __label.on_mouse_click__(pos)](#function-__labelon_mouse_click__pos)
-- [function __label.render__()](#function-__labelrender__)
-- [function __label.set_rect__(rect)](#function-__labelset_rect__rect)
-- [function __label.set_var__(val, var=None)](#function-__labelset_var__val-varnone)
+- [function __label\.\_\_init\_\___\(form, text=u'label', frame=False, center=True\)](#function-__label__init____form-textulabel-framefalse-centertrue)
+- [function __label\.draw\_frame__\(style=u'normal', rect=None\)](#function-__labeldraw_frame__styleunormal-rectnone)
+- [function __label\.draw\_text__\(text, html=True\)](#function-__labeldraw_text__text-htmltrue)
+- [function __label\.on\_mouse\_click__\(pos\)](#function-__labelon_mouse_click__pos)
+- [function __label\.render__\(\)](#function-__labelrender__)
+- [function __label\.set\_rect__\(rect\)](#function-__labelset_rect__rect)
+- [function __label\.set\_var__\(val, var=None\)](#function-__labelset_var__val-varnone)
 
 
 
 <div class="FunctionDoc YAMLDoc" id="label-__init__" markdown="1">
 
-## [function __label.\_\_init\_\___(form, text=u'label', frame=False, center=True)](#function-__label__init____form-textulabel-framefalse-centertrue) {#function-__label__init____form-textulabel-framefalse-centertrue}
+## [function __label\.\_\_init\_\___\(form, text=u'label', frame=False, center=True\)](#function-__label__init____form-textulabel-framefalse-centertrue) {#function-__label__init____form-textulabel-framefalse-centertrue}
 
 Constructor.
 
@@ -63,7 +62,7 @@ __Keywords:__
 
 <div class="FunctionDoc YAMLDoc" id="label-draw_frame" markdown="1">
 
-## [function __label.draw_frame__(style=u'normal', rect=None)](#function-__labeldraw_frame__styleunormal-rectnone) {#function-__labeldraw_frame__styleunormal-rectnone}
+## [function __label\.draw\_frame__\(style=u'normal', rect=None\)](#function-__labeldraw_frame__styleunormal-rectnone) {#function-__labeldraw_frame__styleunormal-rectnone}
 
 Draws a simple frame around the widget.
 
@@ -83,7 +82,7 @@ __Keywords:__
 
 <div class="FunctionDoc YAMLDoc" id="label-draw_text" markdown="1">
 
-## [function __label.draw_text__(text, html=True)](#function-__labeldraw_text__text-htmltrue) {#function-__labeldraw_text__text-htmltrue}
+## [function __label\.draw\_text__\(text, html=True\)](#function-__labeldraw_text__text-htmltrue) {#function-__labeldraw_text__text-htmltrue}
 
 Draws text inside the widget.
 
@@ -105,7 +104,7 @@ __Keywords:__
 
 <div class="FunctionDoc YAMLDoc" id="label-on_mouse_click" markdown="1">
 
-## [function __label.on_mouse_click__(pos)](#function-__labelon_mouse_click__pos) {#function-__labelon_mouse_click__pos}
+## [function __label\.on\_mouse\_click__\(pos\)](#function-__labelon_mouse_click__pos) {#function-__labelon_mouse_click__pos}
 
 Is called whenever the user clicks on the widget.
 
@@ -121,7 +120,7 @@ __Arguments:__
 
 <div class="FunctionDoc YAMLDoc" id="label-render" markdown="1">
 
-## [function __label.render__()](#function-__labelrender__) {#function-__labelrender__}
+## [function __label\.render__\(\)](#function-__labelrender__) {#function-__labelrender__}
 
 Draws the widget.
 
@@ -132,7 +131,7 @@ Draws the widget.
 
 <div class="FunctionDoc YAMLDoc" id="label-set_rect" markdown="1">
 
-## [function __label.set_rect__(rect)](#function-__labelset_rect__rect) {#function-__labelset_rect__rect}
+## [function __label\.set\_rect__\(rect\)](#function-__labelset_rect__rect) {#function-__labelset_rect__rect}
 
 Sets the widget geometry.
 
@@ -148,7 +147,7 @@ __Arguments:__
 
 <div class="FunctionDoc YAMLDoc" id="label-set_var" markdown="1">
 
-## [function __label.set_var__(val, var=None)](#function-__labelset_var__val-varnone) {#function-__labelset_var__val-varnone}
+## [function __label\.set\_var__\(val, var=None\)](#function-__labelset_var__val-varnone) {#function-__labelset_var__val-varnone}
 
 Sets an experimental variable.
 
@@ -172,10 +171,10 @@ __Keywords:__
 [label]: #label
 
 
-[function __label.\_\_init\_\___(form, text=u'label', frame=False, center=True)]: #function-__label__init____form-textulabel-framefalse-centertrue
-[function __label.draw_frame__(style=u'normal', rect=None)]: #function-__labeldraw_frame__styleunormal-rectnone
-[function __label.draw_text__(text, html=True)]: #function-__labeldraw_text__text-htmltrue
-[function __label.on_mouse_click__(pos)]: #function-__labelon_mouse_click__pos
-[function __label.render__()]: #function-__labelrender__
-[function __label.set_rect__(rect)]: #function-__labelset_rect__rect
-[function __label.set_var__(val, var=None)]: #function-__labelset_var__val-varnone
+[function __label\.\_\_init\_\___\(form, text=u'label', frame=False, center=True\)]: #function-__label__init____form-textulabel-framefalse-centertrue
+[function __label\.draw\_frame__\(style=u'normal', rect=None\)]: #function-__labeldraw_frame__styleunormal-rectnone
+[function __label\.draw\_text__\(text, html=True\)]: #function-__labeldraw_text__text-htmltrue
+[function __label\.on\_mouse\_click__\(pos\)]: #function-__labelon_mouse_click__pos
+[function __label\.render__\(\)]: #function-__labelrender__
+[function __label\.set\_rect__\(rect\)]: #function-__labelset_rect__rect
+[function __label\.set\_var__\(val, var=None\)]: #function-__labelset_var__val-varnone

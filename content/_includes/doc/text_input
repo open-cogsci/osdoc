@@ -8,9 +8,8 @@ was created before forms where added to OpenSesame.)
 
 __Example (OpenSesame script):__
 
-~~~
-widget 0 0 1 1 text_input var='response' return_accepts='yes'
-~~~
+{% highlight idget %} 0 0 1 1 text_input var='response' return_accepts='yes'
+{% endhighlight %}
 
 __Example (Python):__
 
@@ -25,19 +24,19 @@ form._exec()
 __Function list:__
 
 
-- [function __text_input.\_\_init\_\___(form, center=False, text=u'', frame=True, stub=u'Type here ...', return_accepts=False, var=None)](#function-__text_input__init____form-centerfalse-textu-frametrue-stubutype-here-return_acceptsfalse-varnone)
-- [function __text_input.draw_frame__(style=u'normal', rect=None)](#function-__text_inputdraw_frame__styleunormal-rectnone)
-- [function __text_input.draw_text__(text, html=True)](#function-__text_inputdraw_text__text-htmltrue)
-- [function __text_input.on_mouse_click__(pos)](#function-__text_inputon_mouse_click__pos)
-- [function __text_input.render__()](#function-__text_inputrender__)
-- [function __text_input.set_rect__(rect)](#function-__text_inputset_rect__rect)
-- [function __text_input.set_var__(val, var=None)](#function-__text_inputset_var__val-varnone)
+- [function __text\_input\.\_\_init\_\___\(form, center=False, text=u'', frame=True, stub=u'Type here \.\.\.', return\_accepts=False, var=None\)](#function-__text_input__init____form-centerfalse-textu-frametrue-stubutype-here-return_acceptsfalse-varnone)
+- [function __text\_input\.draw\_frame__\(style=u'normal', rect=None\)](#function-__text_inputdraw_frame__styleunormal-rectnone)
+- [function __text\_input\.draw\_text__\(text, html=True\)](#function-__text_inputdraw_text__text-htmltrue)
+- [function __text\_input\.on\_mouse\_click__\(pos\)](#function-__text_inputon_mouse_click__pos)
+- [function __text\_input\.render__\(\)](#function-__text_inputrender__)
+- [function __text\_input\.set\_rect__\(rect\)](#function-__text_inputset_rect__rect)
+- [function __text\_input\.set\_var__\(val, var=None\)](#function-__text_inputset_var__val-varnone)
 
 
 
 <div class="FunctionDoc YAMLDoc" id="text_input-__init__" markdown="1">
 
-## [function __text_input.\_\_init\_\___(form, center=False, text=u'', frame=True, stub=u'Type here ...', return_accepts=False, var=None)](#function-__text_input__init____form-centerfalse-textu-frametrue-stubutype-here-return_acceptsfalse-varnone) {#function-__text_input__init____form-centerfalse-textu-frametrue-stubutype-here-return_acceptsfalse-varnone}
+## [function __text\_input\.\_\_init\_\___\(form, center=False, text=u'', frame=True, stub=u'Type here \.\.\.', return\_accepts=False, var=None\)](#function-__text_input__init____form-centerfalse-textu-frametrue-stubutype-here-return_acceptsfalse-varnone) {#function-__text_input__init____form-centerfalse-textu-frametrue-stubutype-here-return_acceptsfalse-varnone}
 
 Constructor.
 
@@ -74,7 +73,7 @@ __Keywords:__
 
 <div class="FunctionDoc YAMLDoc" id="text_input-draw_frame" markdown="1">
 
-## [function __text_input.draw_frame__(style=u'normal', rect=None)](#function-__text_inputdraw_frame__styleunormal-rectnone) {#function-__text_inputdraw_frame__styleunormal-rectnone}
+## [function __text\_input\.draw\_frame__\(style=u'normal', rect=None\)](#function-__text_inputdraw_frame__styleunormal-rectnone) {#function-__text_inputdraw_frame__styleunormal-rectnone}
 
 Draws a simple frame around the widget.
 
@@ -94,7 +93,7 @@ __Keywords:__
 
 <div class="FunctionDoc YAMLDoc" id="text_input-draw_text" markdown="1">
 
-## [function __text_input.draw_text__(text, html=True)](#function-__text_inputdraw_text__text-htmltrue) {#function-__text_inputdraw_text__text-htmltrue}
+## [function __text\_input\.draw\_text__\(text, html=True\)](#function-__text_inputdraw_text__text-htmltrue) {#function-__text_inputdraw_text__text-htmltrue}
 
 Draws text inside the widget.
 
@@ -116,7 +115,7 @@ __Keywords:__
 
 <div class="FunctionDoc YAMLDoc" id="text_input-on_mouse_click" markdown="1">
 
-## [function __text_input.on_mouse_click__(pos)](#function-__text_inputon_mouse_click__pos) {#function-__text_inputon_mouse_click__pos}
+## [function __text\_input\.on\_mouse\_click__\(pos\)](#function-__text_inputon_mouse_click__pos) {#function-__text_inputon_mouse_click__pos}
 
 Is called whenever the user clicks on the widget. Activates the text input for typing text.
 
@@ -132,7 +131,7 @@ __Arguments:__
 
 <div class="FunctionDoc YAMLDoc" id="text_input-render" markdown="1">
 
-## [function __text_input.render__()](#function-__text_inputrender__) {#function-__text_inputrender__}
+## [function __text\_input\.render__\(\)](#function-__text_inputrender__) {#function-__text_inputrender__}
 
 Draws the widget.
 
@@ -143,7 +142,7 @@ Draws the widget.
 
 <div class="FunctionDoc YAMLDoc" id="text_input-set_rect" markdown="1">
 
-## [function __text_input.set_rect__(rect)](#function-__text_inputset_rect__rect) {#function-__text_inputset_rect__rect}
+## [function __text\_input\.set\_rect__\(rect\)](#function-__text_inputset_rect__rect) {#function-__text_inputset_rect__rect}
 
 Sets the widget geometry.
 
@@ -159,7 +158,7 @@ __Arguments:__
 
 <div class="FunctionDoc YAMLDoc" id="text_input-set_var" markdown="1">
 
-## [function __text_input.set_var__(val, var=None)](#function-__text_inputset_var__val-varnone) {#function-__text_inputset_var__val-varnone}
+## [function __text\_input\.set\_var__\(val, var=None\)](#function-__text_inputset_var__val-varnone) {#function-__text_inputset_var__val-varnone}
 
 Sets an experimental variable.
 
@@ -183,10 +182,10 @@ __Keywords:__
 [text_input]: #text_input
 
 
-[function __text_input.\_\_init\_\___(form, center=False, text=u'', frame=True, stub=u'Type here ...', return_accepts=False, var=None)]: #function-__text_input__init____form-centerfalse-textu-frametrue-stubutype-here-return_acceptsfalse-varnone
-[function __text_input.draw_frame__(style=u'normal', rect=None)]: #function-__text_inputdraw_frame__styleunormal-rectnone
-[function __text_input.draw_text__(text, html=True)]: #function-__text_inputdraw_text__text-htmltrue
-[function __text_input.on_mouse_click__(pos)]: #function-__text_inputon_mouse_click__pos
-[function __text_input.render__()]: #function-__text_inputrender__
-[function __text_input.set_rect__(rect)]: #function-__text_inputset_rect__rect
-[function __text_input.set_var__(val, var=None)]: #function-__text_inputset_var__val-varnone
+[function __text\_input\.\_\_init\_\___\(form, center=False, text=u'', frame=True, stub=u'Type here \.\.\.', return\_accepts=False, var=None\)]: #function-__text_input__init____form-centerfalse-textu-frametrue-stubutype-here-return_acceptsfalse-varnone
+[function __text\_input\.draw\_frame__\(style=u'normal', rect=None\)]: #function-__text_inputdraw_frame__styleunormal-rectnone
+[function __text\_input\.draw\_text__\(text, html=True\)]: #function-__text_inputdraw_text__text-htmltrue
+[function __text\_input\.on\_mouse\_click__\(pos\)]: #function-__text_inputon_mouse_click__pos
+[function __text\_input\.render__\(\)]: #function-__text_inputrender__
+[function __text\_input\.set\_rect__\(rect\)]: #function-__text_inputset_rect__rect
+[function __text\_input\.set\_var__\(val, var=None\)]: #function-__text_inputset_var__val-varnone

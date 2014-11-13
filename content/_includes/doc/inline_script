@@ -32,33 +32,34 @@ self.sleep(1000)
 __Function list:__
 
 
-- [function __inline_script.auto_type__(val)](#function-__inline_scriptauto_type__val)
-- [function __inline_script.color_check__(col)](#function-__inline_scriptcolor_check__col)
-- [function __inline_script.copy_sketchpad__(sketchpad_name)](#function-__inline_scriptcopy_sketchpad__sketchpad_name)
-- [function __inline_script.eval_text__(text, soft_ignore=False, round_float=False, quote_str=False)](#function-__inline_scripteval_text__text-soft_ignorefalse-round_floatfalse-quote_strfalse)
-- [function __inline_script.flush_log__()](#function-__inline_scriptflush_log__)
-- [function __inline_script.get__(var, _eval=True)](#function-__inline_scriptget__var-_evaltrue)
-- [function __inline_script.get_check__(var, default=None, _eval=True, valid=None)](#function-__inline_scriptget_check__var-defaultnone-_evaltrue-validnone)
-- [function __inline_script.get_refs__(text)](#function-__inline_scriptget_refs__text)
-- [function __inline_script.has__(var)](#function-__inline_scripthas__var)
-- [function __inline_script.log__(msg)](#function-__inline_scriptlog__msg)
-- [function __inline_script.offline_canvas__(auto_prepare=True)](#function-__inline_scriptoffline_canvas__auto_preparetrue)
-- [function __inline_script.prepare__()](#function-__inline_scriptprepare__)
-- [function __inline_script.resolution__()](#function-__inline_scriptresolution__)
-- [function __inline_script.run__()](#function-__inline_scriptrun__)
-- [function __inline_script.sanitize__(s, strict=False, allow_vars=True)](#function-__inline_scriptsanitize__s-strictfalse-allow_varstrue)
-- [function __inline_script.set__(var, val)](#function-__inline_scriptset__var-val)
-- [function __inline_script.set_response__(response=None, response_time=None, correct=None)](#function-__inline_scriptset_response__responsenone-response_timenone-correctnone)
-- [function __inline_script.sleep__(ms)](#function-__inline_scriptsleep__ms)
-- [function __inline_script.time__()](#function-__inline_scripttime__)
-- [function __inline_script.unistr__(val)](#function-__inline_scriptunistr__val)
-- [function __inline_script.unset__(var)](#function-__inline_scriptunset__var)
+- [function __inline\_script\.auto\_type__\(val\)](#function-__inline_scriptauto_type__val)
+- [function __inline\_script\.color\_check__\(col\)](#function-__inline_scriptcolor_check__col)
+- [function __inline\_script\.copy\_sketchpad__\(sketchpad\_name\)](#function-__inline_scriptcopy_sketchpad__sketchpad_name)
+- [function __inline\_script\.eval\_text__\(text, soft\_ignore=False, round\_float=False, quote\_str=False\)](#function-__inline_scripteval_text__text-soft_ignorefalse-round_floatfalse-quote_strfalse)
+- [function __inline\_script\.flush\_log__\(\)](#function-__inline_scriptflush_log__)
+- [function __inline\_script\.get__\(var, \_eval=True\)](#function-__inline_scriptget__var-_evaltrue)
+- [function __inline\_script\.get\_check__\(var, default=None, \_eval=True, valid=None\)](#function-__inline_scriptget_check__var-defaultnone-_evaltrue-validnone)
+- [function __inline\_script\.get\_refs__\(text\)](#function-__inline_scriptget_refs__text)
+- [function __inline\_script\.has__\(var\)](#function-__inline_scripthas__var)
+- [function __inline\_script\.log__\(msg\)](#function-__inline_scriptlog__msg)
+- [function __inline\_script\.offline\_canvas__\(auto\_prepare=True\)](#function-__inline_scriptoffline_canvas__auto_preparetrue)
+- [function __inline\_script\.prepare__\(\)](#function-__inline_scriptprepare__)
+- [function __inline\_script\.resolution__\(\)](#function-__inline_scriptresolution__)
+- [function __inline\_script\.run__\(\)](#function-__inline_scriptrun__)
+- [function __inline\_script\.sanitize__\(s, strict=False, allow\_vars=True\)](#function-__inline_scriptsanitize__s-strictfalse-allow_varstrue)
+- [function __inline\_script\.set__\(var, val\)](#function-__inline_scriptset__var-val)
+- [function __inline\_script\.set\_response__\(response=None, response\_time=None, correct=None\)](#function-__inline_scriptset_response__responsenone-response_timenone-correctnone)
+- [function __inline\_script\.sleep__\(ms\)](#function-__inline_scriptsleep__ms)
+- [function __inline\_script\.time__\(\)](#function-__inline_scripttime__)
+- [function __inline\_script\.unistr__\(val\)](#function-__inline_scriptunistr__val)
+- [function __inline\_script\.unset__\(var\)](#function-__inline_scriptunset__var)
+- [function __inline\_script\.usanitize__\(s, strict=False\)](#function-__inline_scriptusanitize__s-strictfalse)
 
 
 
 <div class="FunctionDoc YAMLDoc" id="inline_script-auto_type" markdown="1">
 
-## [function __inline_script.auto_type__(val)](#function-__inline_scriptauto_type__val) {#function-__inline_scriptauto_type__val}
+## [function __inline\_script\.auto\_type__\(val\)](#function-__inline_scriptauto_type__val) {#function-__inline_scriptauto_type__val}
 
 Converts a value into the 'best fitting' or 'simplest' type that is compatible with the value.
 
@@ -79,7 +80,7 @@ The same value converted to the 'best fitting' type.
 
 <div class="FunctionDoc YAMLDoc" id="inline_script-color_check" markdown="1">
 
-## [function __inline_script.color_check__(col)](#function-__inline_scriptcolor_check__col) {#function-__inline_scriptcolor_check__col}
+## [function __inline\_script\.color\_check__\(col\)](#function-__inline_scriptcolor_check__col) {#function-__inline_scriptcolor_check__col}
 
 Checks whether a string is a valid color name. Raises an exception if `col` is not a valid color.
 
@@ -105,7 +106,7 @@ __Arguments:__
 
 <div class="FunctionDoc YAMLDoc" id="inline_script-copy_sketchpad" markdown="1">
 
-## [function __inline_script.copy_sketchpad__(sketchpad_name)](#function-__inline_scriptcopy_sketchpad__sketchpad_name) {#function-__inline_scriptcopy_sketchpad__sketchpad_name}
+## [function __inline\_script\.copy\_sketchpad__\(sketchpad\_name\)](#function-__inline_scriptcopy_sketchpad__sketchpad_name) {#function-__inline_scriptcopy_sketchpad__sketchpad_name}
 
 Creates a canvas that is a copy from the canvas of a sketchpad item.
 
@@ -133,7 +134,7 @@ A canvas.
 
 <div class="FunctionDoc YAMLDoc" id="inline_script-eval_text" markdown="1">
 
-## [function __inline_script.eval_text__(text, soft_ignore=False, round_float=False, quote_str=False)](#function-__inline_scripteval_text__text-soft_ignorefalse-round_floatfalse-quote_strfalse) {#function-__inline_scripteval_text__text-soft_ignorefalse-round_floatfalse-quote_strfalse}
+## [function __inline\_script\.eval\_text__\(text, soft\_ignore=False, round\_float=False, quote\_str=False\)](#function-__inline_scripteval_text__text-soft_ignorefalse-round_floatfalse-quote_strfalse) {#function-__inline_scripteval_text__text-soft_ignorefalse-round_floatfalse-quote_strfalse}
 
 Evaluates a string of text, so that all variable references (e.g., '[var]') are replaced by values.
 
@@ -174,7 +175,7 @@ The evaluated text.
 
 <div class="FunctionDoc YAMLDoc" id="inline_script-flush_log" markdown="1">
 
-## [function __inline_script.flush_log__()](#function-__inline_scriptflush_log__) {#function-__inline_scriptflush_log__}
+## [function __inline\_script\.flush\_log__\(\)](#function-__inline_scriptflush_log__) {#function-__inline_scriptflush_log__}
 
 Forces any pending write operations to the log file to be written to disk.
 
@@ -192,7 +193,7 @@ self.flush_log()
 
 <div class="FunctionDoc YAMLDoc" id="inline_script-get" markdown="1">
 
-## [function __inline_script.get__(var, _eval=True)](#function-__inline_scriptget__var-_evaltrue) {#function-__inline_scriptget__var-_evaltrue}
+## [function __inline\_script\.get__\(var, \_eval=True\)](#function-__inline_scriptget__var-_evaltrue) {#function-__inline_scriptget__var-_evaltrue}
 
 Returns the value of an OpenSesame variable. Checks first if the
 variable exists 'locally' in the item and, if not, checks if the
@@ -244,7 +245,7 @@ The value.
 
 <div class="FunctionDoc YAMLDoc" id="inline_script-get_check" markdown="1">
 
-## [function __inline_script.get_check__(var, default=None, _eval=True, valid=None)](#function-__inline_scriptget_check__var-defaultnone-_evaltrue-validnone) {#function-__inline_scriptget_check__var-defaultnone-_evaltrue-validnone}
+## [function __inline\_script\.get\_check__\(var, default=None, \_eval=True, valid=None\)](#function-__inline_scriptget_check__var-defaultnone-_evaltrue-validnone) {#function-__inline_scriptget_check__var-defaultnone-_evaltrue-validnone}
 
 Similar to get(), but falls back to a default if the variable has not been set. It also raises an error if the value is not part of the valid list.
 
@@ -285,7 +286,7 @@ The value
 
 <div class="FunctionDoc YAMLDoc" id="inline_script-get_refs" markdown="1">
 
-## [function __inline_script.get_refs__(text)](#function-__inline_scriptget_refs__text) {#function-__inline_scriptget_refs__text}
+## [function __inline\_script\.get\_refs__\(text\)](#function-__inline_scriptget_refs__text) {#function-__inline_scriptget_refs__text}
 
 Returns a list of variables that are referred to by a string of text.
 
@@ -306,7 +307,7 @@ A list of variable names or an empty list if the string contains no references.
 
 <div class="FunctionDoc YAMLDoc" id="inline_script-has" markdown="1">
 
-## [function __inline_script.has__(var)](#function-__inline_scripthas__var) {#function-__inline_scripthas__var}
+## [function __inline\_script\.has__\(var\)](#function-__inline_scripthas__var) {#function-__inline_scripthas__var}
 
 Checks if an OpenSesame variable exists, either in the item or in the experiment.
 
@@ -335,7 +336,7 @@ True if the variable exists, False if not.
 
 <div class="FunctionDoc YAMLDoc" id="inline_script-log" markdown="1">
 
-## [function __inline_script.log__(msg)](#function-__inline_scriptlog__msg) {#function-__inline_scriptlog__msg}
+## [function __inline\_script\.log__\(msg\)](#function-__inline_scriptlog__msg) {#function-__inline_scriptlog__msg}
 
 Writes a message to the log file. Note that using the `log()` function in combination with a logger item may result in messy log files.
 
@@ -356,7 +357,7 @@ __Arguments:__
 
 <div class="FunctionDoc YAMLDoc" id="inline_script-offline_canvas" markdown="1">
 
-## [function __inline_script.offline_canvas__(auto_prepare=True)](#function-__inline_scriptoffline_canvas__auto_preparetrue) {#function-__inline_scriptoffline_canvas__auto_preparetrue}
+## [function __inline\_script\.offline\_canvas__\(auto\_prepare=True\)](#function-__inline_scriptoffline_canvas__auto_preparetrue) {#function-__inline_scriptoffline_canvas__auto_preparetrue}
 
 Creates an empty canvas.
 
@@ -385,7 +386,7 @@ A canvas.
 
 <div class="FunctionDoc YAMLDoc" id="inline_script-prepare" markdown="1">
 
-## [function __inline_script.prepare__()](#function-__inline_scriptprepare__) {#function-__inline_scriptprepare__}
+## [function __inline\_script\.prepare__\(\)](#function-__inline_scriptprepare__) {#function-__inline_scriptprepare__}
 
 Executes the prepare script. The code that you enter in the 'prepare' tab of an inline_script item in the GUI is used as a body for this function.
 
@@ -396,7 +397,7 @@ Executes the prepare script. The code that you enter in the 'prepare' tab of an 
 
 <div class="FunctionDoc YAMLDoc" id="inline_script-resolution" markdown="1">
 
-## [function __inline_script.resolution__()](#function-__inline_scriptresolution__) {#function-__inline_scriptresolution__}
+## [function __inline\_script\.resolution__\(\)](#function-__inline_scriptresolution__) {#function-__inline_scriptresolution__}
 
 Returns the display resolution and checks whether the resolution is
 valid.
@@ -422,7 +423,7 @@ A (width, height) tuple
 
 <div class="FunctionDoc YAMLDoc" id="inline_script-run" markdown="1">
 
-## [function __inline_script.run__()](#function-__inline_scriptrun__) {#function-__inline_scriptrun__}
+## [function __inline\_script\.run__\(\)](#function-__inline_scriptrun__) {#function-__inline_scriptrun__}
 
 Executes the run script. The code that you enter in the 'run' tab of an inline_script item in the GUI is used as a body for this function.
 
@@ -433,7 +434,7 @@ Executes the run script. The code that you enter in the 'run' tab of an inline_s
 
 <div class="FunctionDoc YAMLDoc" id="inline_script-sanitize" markdown="1">
 
-## [function __inline_script.sanitize__(s, strict=False, allow_vars=True)](#function-__inline_scriptsanitize__s-strictfalse-allow_varstrue) {#function-__inline_scriptsanitize__s-strictfalse-allow_varstrue}
+## [function __inline\_script\.sanitize__\(s, strict=False, allow\_vars=True\)](#function-__inline_scriptsanitize__s-strictfalse-allow_varstrue) {#function-__inline_scriptsanitize__s-strictfalse-allow_varstrue}
 
 Removes invalid characters (notably quotes) from the string.
 
@@ -472,7 +473,7 @@ A sanitized string.
 
 <div class="FunctionDoc YAMLDoc" id="inline_script-set" markdown="1">
 
-## [function __inline_script.set__(var, val)](#function-__inline_scriptset__var-val) {#function-__inline_scriptset__var-val}
+## [function __inline\_script\.set__\(var, val\)](#function-__inline_scriptset__var-val) {#function-__inline_scriptset__var-val}
 
 Sets an OpenSesame variable.
 
@@ -507,7 +508,7 @@ __Arguments:__
 
 <div class="FunctionDoc YAMLDoc" id="inline_script-set_response" markdown="1">
 
-## [function __inline_script.set_response__(response=None, response_time=None, correct=None)](#function-__inline_scriptset_response__responsenone-response_timenone-correctnone) {#function-__inline_scriptset_response__responsenone-response_timenone-correctnone}
+## [function __inline\_script\.set\_response__\(response=None, response\_time=None, correct=None\)](#function-__inline_scriptset_response__responsenone-response_timenone-correctnone) {#function-__inline_scriptset_response__responsenone-response_timenone-correctnone}
 
 Processes a response in such a way that feedback variables are updated as well.
 
@@ -545,7 +546,7 @@ __Keywords:__
 
 <div class="FunctionDoc YAMLDoc" id="inline_script-sleep" markdown="1">
 
-## [function __inline_script.sleep__(ms)](#function-__inline_scriptsleep__ms) {#function-__inline_scriptsleep__ms}
+## [function __inline\_script\.sleep__\(ms\)](#function-__inline_scriptsleep__ms) {#function-__inline_scriptsleep__ms}
 
 Sleeps for a specified duration.
 
@@ -567,7 +568,7 @@ __Arguments:__
 
 <div class="FunctionDoc YAMLDoc" id="inline_script-time" markdown="1">
 
-## [function __inline_script.time__()](#function-__inline_scripttime__) {#function-__inline_scripttime__}
+## [function __inline\_script\.time__\(\)](#function-__inline_scripttime__) {#function-__inline_scripttime__}
 
 Returns a timestamp for the current time. This timestamp only has a relative meaning, i.e. you can use it to determine the interval between two moments, but not the actual time. Whether the timestamp is a `float` or `int` depends on the back-end.
 
@@ -590,7 +591,7 @@ A timestamp of the current time.
 
 <div class="FunctionDoc YAMLDoc" id="inline_script-unistr" markdown="1">
 
-## [function __inline_script.unistr__(val)](#function-__inline_scriptunistr__val) {#function-__inline_scriptunistr__val}
+## [function __inline\_script\.unistr__\(val\)](#function-__inline_scriptunistr__val) {#function-__inline_scriptunistr__val}
 
 Converts a value to a unicode string. This function is mostly
 necessary to make sure that normal strings with special characters
@@ -620,7 +621,7 @@ A unicode string.
 
 <div class="FunctionDoc YAMLDoc" id="inline_script-unset" markdown="1">
 
-## [function __inline_script.unset__(var)](#function-__inline_scriptunset__var) {#function-__inline_scriptunset__var}
+## [function __inline\_script\.unset__\(var\)](#function-__inline_scriptunset__var) {#function-__inline_scriptunset__var}
 
 Unsets (forgets) an OpenSesame variable.
 
@@ -643,29 +644,58 @@ __Arguments:__
 [inline_script.unset]: #inline_script-unset
 [unset]: #inline_script-unset
 
+<div class="FunctionDoc YAMLDoc" id="inline_script-usanitize" markdown="1">
+
+## [function __inline\_script\.usanitize__\(s, strict=False\)](#function-__inline_scriptusanitize__s-strictfalse) {#function-__inline_scriptusanitize__s-strictfalse}
+
+Converts all non-ASCII characters to U+XXXX notation, so that the resulting string can be treated as plain ASCII text.
+
+__Arguments:__
+
+- `s` -- A unicode string to be santized
+	- Type: unicode
+
+__Keywords:__
+
+- `strict` -- If True, special characters are ignored rather than recoded.
+	- Default: False
+	- Type: bool
+
+__Returns:__
+
+A regular Python string with all special characters replaced by U+XXXX notation or ignored (if strict).
+
+- Type: str
+
+</div>
+
+[inline_script.usanitize]: #inline_script-usanitize
+[usanitize]: #inline_script-usanitize
+
 </div>
 
 [inline_script]: #inline_script
 
 
-[function __inline_script.auto_type__(val)]: #function-__inline_scriptauto_type__val
-[function __inline_script.color_check__(col)]: #function-__inline_scriptcolor_check__col
-[function __inline_script.copy_sketchpad__(sketchpad_name)]: #function-__inline_scriptcopy_sketchpad__sketchpad_name
-[function __inline_script.eval_text__(text, soft_ignore=False, round_float=False, quote_str=False)]: #function-__inline_scripteval_text__text-soft_ignorefalse-round_floatfalse-quote_strfalse
-[function __inline_script.flush_log__()]: #function-__inline_scriptflush_log__
-[function __inline_script.get__(var, _eval=True)]: #function-__inline_scriptget__var-_evaltrue
-[function __inline_script.get_check__(var, default=None, _eval=True, valid=None)]: #function-__inline_scriptget_check__var-defaultnone-_evaltrue-validnone
-[function __inline_script.get_refs__(text)]: #function-__inline_scriptget_refs__text
-[function __inline_script.has__(var)]: #function-__inline_scripthas__var
-[function __inline_script.log__(msg)]: #function-__inline_scriptlog__msg
-[function __inline_script.offline_canvas__(auto_prepare=True)]: #function-__inline_scriptoffline_canvas__auto_preparetrue
-[function __inline_script.prepare__()]: #function-__inline_scriptprepare__
-[function __inline_script.resolution__()]: #function-__inline_scriptresolution__
-[function __inline_script.run__()]: #function-__inline_scriptrun__
-[function __inline_script.sanitize__(s, strict=False, allow_vars=True)]: #function-__inline_scriptsanitize__s-strictfalse-allow_varstrue
-[function __inline_script.set__(var, val)]: #function-__inline_scriptset__var-val
-[function __inline_script.set_response__(response=None, response_time=None, correct=None)]: #function-__inline_scriptset_response__responsenone-response_timenone-correctnone
-[function __inline_script.sleep__(ms)]: #function-__inline_scriptsleep__ms
-[function __inline_script.time__()]: #function-__inline_scripttime__
-[function __inline_script.unistr__(val)]: #function-__inline_scriptunistr__val
-[function __inline_script.unset__(var)]: #function-__inline_scriptunset__var
+[function __inline\_script\.auto\_type__\(val\)]: #function-__inline_scriptauto_type__val
+[function __inline\_script\.color\_check__\(col\)]: #function-__inline_scriptcolor_check__col
+[function __inline\_script\.copy\_sketchpad__\(sketchpad\_name\)]: #function-__inline_scriptcopy_sketchpad__sketchpad_name
+[function __inline\_script\.eval\_text__\(text, soft\_ignore=False, round\_float=False, quote\_str=False\)]: #function-__inline_scripteval_text__text-soft_ignorefalse-round_floatfalse-quote_strfalse
+[function __inline\_script\.flush\_log__\(\)]: #function-__inline_scriptflush_log__
+[function __inline\_script\.get__\(var, \_eval=True\)]: #function-__inline_scriptget__var-_evaltrue
+[function __inline\_script\.get\_check__\(var, default=None, \_eval=True, valid=None\)]: #function-__inline_scriptget_check__var-defaultnone-_evaltrue-validnone
+[function __inline\_script\.get\_refs__\(text\)]: #function-__inline_scriptget_refs__text
+[function __inline\_script\.has__\(var\)]: #function-__inline_scripthas__var
+[function __inline\_script\.log__\(msg\)]: #function-__inline_scriptlog__msg
+[function __inline\_script\.offline\_canvas__\(auto\_prepare=True\)]: #function-__inline_scriptoffline_canvas__auto_preparetrue
+[function __inline\_script\.prepare__\(\)]: #function-__inline_scriptprepare__
+[function __inline\_script\.resolution__\(\)]: #function-__inline_scriptresolution__
+[function __inline\_script\.run__\(\)]: #function-__inline_scriptrun__
+[function __inline\_script\.sanitize__\(s, strict=False, allow\_vars=True\)]: #function-__inline_scriptsanitize__s-strictfalse-allow_varstrue
+[function __inline\_script\.set__\(var, val\)]: #function-__inline_scriptset__var-val
+[function __inline\_script\.set\_response__\(response=None, response\_time=None, correct=None\)]: #function-__inline_scriptset_response__responsenone-response_timenone-correctnone
+[function __inline\_script\.sleep__\(ms\)]: #function-__inline_scriptsleep__ms
+[function __inline\_script\.time__\(\)]: #function-__inline_scripttime__
+[function __inline\_script\.unistr__\(val\)]: #function-__inline_scriptunistr__val
+[function __inline\_script\.unset__\(var\)]: #function-__inline_scriptunset__var
+[function __inline\_script\.usanitize__\(s, strict=False\)]: #function-__inline_scriptusanitize__s-strictfalse

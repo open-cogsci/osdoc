@@ -7,10 +7,9 @@ boxes (nodes), optionally with a label attached to each node.
 
 __Example (OpenSesame script):__
 
-~~~
-widget 0 0 1 1 label text="I like fluffy kittens"
+{% highlight idget %} 0 0 1 1 label text="I like fluffy kittens"
 widget 0 1 1 1 rating_scale var="response" nodes="Agree;Don't know;Disagree"
-~~~
+{% endhighlight %}
 
 __Example (OpenSesame script):__
 
@@ -28,19 +27,19 @@ form._exec()
 __Function list:__
 
 
-- [function __rating_scale.\_\_init\_\___(form, var=None, default=None, nodes=5, orientation=u'horizontal', click_accepts=False)](#function-__rating_scale__init____form-varnone-defaultnone-nodes5-orientationuhorizontal-click_acceptsfalse)
-- [function __rating_scale.draw_frame__(style=u'normal', rect=None)](#function-__rating_scaledraw_frame__styleunormal-rectnone)
-- [function __rating_scale.on_mouse_click__(pos)](#function-__rating_scaleon_mouse_click__pos)
-- [function __rating_scale.render__()](#function-__rating_scalerender__)
-- [function __rating_scale.set_rect__(rect)](#function-__rating_scaleset_rect__rect)
-- [function __rating_scale.set_value__(val)](#function-__rating_scaleset_value__val)
-- [function __rating_scale.set_var__(val, var=None)](#function-__rating_scaleset_var__val-varnone)
+- [function __rating\_scale\.\_\_init\_\___\(form, var=None, default=None, nodes=5, orientation=u'horizontal', click\_accepts=False\)](#function-__rating_scale__init____form-varnone-defaultnone-nodes5-orientationuhorizontal-click_acceptsfalse)
+- [function __rating\_scale\.draw\_frame__\(style=u'normal', rect=None\)](#function-__rating_scaledraw_frame__styleunormal-rectnone)
+- [function __rating\_scale\.on\_mouse\_click__\(pos\)](#function-__rating_scaleon_mouse_click__pos)
+- [function __rating\_scale\.render__\(\)](#function-__rating_scalerender__)
+- [function __rating\_scale\.set\_rect__\(rect\)](#function-__rating_scaleset_rect__rect)
+- [function __rating\_scale\.set\_value__\(val\)](#function-__rating_scaleset_value__val)
+- [function __rating\_scale\.set\_var__\(val, var=None\)](#function-__rating_scaleset_var__val-varnone)
 
 
 
 <div class="FunctionDoc YAMLDoc" id="rating_scale-__init__" markdown="1">
 
-## [function __rating_scale.\_\_init\_\___(form, var=None, default=None, nodes=5, orientation=u'horizontal', click_accepts=False)](#function-__rating_scale__init____form-varnone-defaultnone-nodes5-orientationuhorizontal-click_acceptsfalse) {#function-__rating_scale__init____form-varnone-defaultnone-nodes5-orientationuhorizontal-click_acceptsfalse}
+## [function __rating\_scale\.\_\_init\_\___\(form, var=None, default=None, nodes=5, orientation=u'horizontal', click\_accepts=False\)](#function-__rating_scale__init____form-varnone-defaultnone-nodes5-orientationuhorizontal-click_acceptsfalse) {#function-__rating_scale__init____form-varnone-defaultnone-nodes5-orientationuhorizontal-click_acceptsfalse}
 
 Constructor.
 
@@ -76,7 +75,7 @@ scale.
 
 <div class="FunctionDoc YAMLDoc" id="rating_scale-draw_frame" markdown="1">
 
-## [function __rating_scale.draw_frame__(style=u'normal', rect=None)](#function-__rating_scaledraw_frame__styleunormal-rectnone) {#function-__rating_scaledraw_frame__styleunormal-rectnone}
+## [function __rating\_scale\.draw\_frame__\(style=u'normal', rect=None\)](#function-__rating_scaledraw_frame__styleunormal-rectnone) {#function-__rating_scaledraw_frame__styleunormal-rectnone}
 
 Draws a simple frame around the widget.
 
@@ -96,7 +95,7 @@ __Keywords:__
 
 <div class="FunctionDoc YAMLDoc" id="rating_scale-on_mouse_click" markdown="1">
 
-## [function __rating_scale.on_mouse_click__(pos)](#function-__rating_scaleon_mouse_click__pos) {#function-__rating_scaleon_mouse_click__pos}
+## [function __rating\_scale\.on\_mouse\_click__\(pos\)](#function-__rating_scaleon_mouse_click__pos) {#function-__rating_scaleon_mouse_click__pos}
 
 Is called whenever the user clicks on the widget. Selects the correct value from the scale and optionally closes the form.
 
@@ -112,7 +111,7 @@ __Arguments:__
 
 <div class="FunctionDoc YAMLDoc" id="rating_scale-render" markdown="1">
 
-## [function __rating_scale.render__()](#function-__rating_scalerender__) {#function-__rating_scalerender__}
+## [function __rating\_scale\.render__\(\)](#function-__rating_scalerender__) {#function-__rating_scalerender__}
 
 Draws the widget.
 
@@ -123,7 +122,7 @@ Draws the widget.
 
 <div class="FunctionDoc YAMLDoc" id="rating_scale-set_rect" markdown="1">
 
-## [function __rating_scale.set_rect__(rect)](#function-__rating_scaleset_rect__rect) {#function-__rating_scaleset_rect__rect}
+## [function __rating\_scale\.set\_rect__\(rect\)](#function-__rating_scaleset_rect__rect) {#function-__rating_scaleset_rect__rect}
 
 Sets the widget geometry.
 
@@ -139,7 +138,7 @@ __Arguments:__
 
 <div class="FunctionDoc YAMLDoc" id="rating_scale-set_value" markdown="1">
 
-## [function __rating_scale.set_value__(val)](#function-__rating_scaleset_value__val) {#function-__rating_scaleset_value__val}
+## [function __rating\_scale\.set\_value__\(val\)](#function-__rating_scaleset_value__val) {#function-__rating_scaleset_value__val}
 
 Sets the rating scale value.
 
@@ -155,7 +154,7 @@ __Arguments:__
 
 <div class="FunctionDoc YAMLDoc" id="rating_scale-set_var" markdown="1">
 
-## [function __rating_scale.set_var__(val, var=None)](#function-__rating_scaleset_var__val-varnone) {#function-__rating_scaleset_var__val-varnone}
+## [function __rating\_scale\.set\_var__\(val, var=None\)](#function-__rating_scaleset_var__val-varnone) {#function-__rating_scaleset_var__val-varnone}
 
 Sets an experimental variable.
 
@@ -179,10 +178,10 @@ __Keywords:__
 [rating_scale]: #rating_scale
 
 
-[function __rating_scale.\_\_init\_\___(form, var=None, default=None, nodes=5, orientation=u'horizontal', click_accepts=False)]: #function-__rating_scale__init____form-varnone-defaultnone-nodes5-orientationuhorizontal-click_acceptsfalse
-[function __rating_scale.draw_frame__(style=u'normal', rect=None)]: #function-__rating_scaledraw_frame__styleunormal-rectnone
-[function __rating_scale.on_mouse_click__(pos)]: #function-__rating_scaleon_mouse_click__pos
-[function __rating_scale.render__()]: #function-__rating_scalerender__
-[function __rating_scale.set_rect__(rect)]: #function-__rating_scaleset_rect__rect
-[function __rating_scale.set_value__(val)]: #function-__rating_scaleset_value__val
-[function __rating_scale.set_var__(val, var=None)]: #function-__rating_scaleset_var__val-varnone
+[function __rating\_scale\.\_\_init\_\___\(form, var=None, default=None, nodes=5, orientation=u'horizontal', click\_accepts=False\)]: #function-__rating_scale__init____form-varnone-defaultnone-nodes5-orientationuhorizontal-click_acceptsfalse
+[function __rating\_scale\.draw\_frame__\(style=u'normal', rect=None\)]: #function-__rating_scaledraw_frame__styleunormal-rectnone
+[function __rating\_scale\.on\_mouse\_click__\(pos\)]: #function-__rating_scaleon_mouse_click__pos
+[function __rating\_scale\.render__\(\)]: #function-__rating_scalerender__
+[function __rating\_scale\.set\_rect__\(rect\)]: #function-__rating_scaleset_rect__rect
+[function __rating\_scale\.set\_value__\(val\)]: #function-__rating_scaleset_value__val
+[function __rating\_scale\.set\_var__\(val, var=None\)]: #function-__rating_scaleset_var__val-varnone

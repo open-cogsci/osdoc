@@ -7,9 +7,8 @@ button-like frame.
 
 __Example (OpenSesame script):__
 
-~~~
-widget 0 0 1 1 button text='Click me!' center='yes' frame='yes' var='response'
-~~~
+{% highlight idget %} 0 0 1 1 button text='Click me!' center='yes' frame='yes' var='response'
+{% endhighlight %}
 
 Defining a button widget with Python inline code:
 
@@ -27,19 +26,19 @@ form._exec()
 __Function list:__
 
 
-- [function __button.\_\_init\_\___(form, var=None, text=u'button', frame=True, center=True)](#function-__button__init____form-varnone-textubutton-frametrue-centertrue)
-- [function __button.draw_frame__(style=u'normal', rect=None)](#function-__buttondraw_frame__styleunormal-rectnone)
-- [function __button.draw_text__(text, html=True)](#function-__buttondraw_text__text-htmltrue)
-- [function __button.on_mouse_click__(pos)](#function-__buttonon_mouse_click__pos)
-- [function __button.render__()](#function-__buttonrender__)
-- [function __button.set_rect__(rect)](#function-__buttonset_rect__rect)
-- [function __button.set_var__(val, var=None)](#function-__buttonset_var__val-varnone)
+- [function __button\.\_\_init\_\___\(form, var=None, text=u'button', frame=True, center=True\)](#function-__button__init____form-varnone-textubutton-frametrue-centertrue)
+- [function __button\.draw\_frame__\(style=u'normal', rect=None\)](#function-__buttondraw_frame__styleunormal-rectnone)
+- [function __button\.draw\_text__\(text, html=True\)](#function-__buttondraw_text__text-htmltrue)
+- [function __button\.on\_mouse\_click__\(pos\)](#function-__buttonon_mouse_click__pos)
+- [function __button\.render__\(\)](#function-__buttonrender__)
+- [function __button\.set\_rect__\(rect\)](#function-__buttonset_rect__rect)
+- [function __button\.set\_var__\(val, var=None\)](#function-__buttonset_var__val-varnone)
 
 
 
 <div class="FunctionDoc YAMLDoc" id="button-__init__" markdown="1">
 
-## [function __button.\_\_init\_\___(form, var=None, text=u'button', frame=True, center=True)](#function-__button__init____form-varnone-textubutton-frametrue-centertrue) {#function-__button__init____form-varnone-textubutton-frametrue-centertrue}
+## [function __button\.\_\_init\_\___\(form, var=None, text=u'button', frame=True, center=True\)](#function-__button__init____form-varnone-textubutton-frametrue-centertrue) {#function-__button__init____form-varnone-textubutton-frametrue-centertrue}
 
 Constructor.
 
@@ -70,7 +69,7 @@ __Keywords:__
 
 <div class="FunctionDoc YAMLDoc" id="button-draw_frame" markdown="1">
 
-## [function __button.draw_frame__(style=u'normal', rect=None)](#function-__buttondraw_frame__styleunormal-rectnone) {#function-__buttondraw_frame__styleunormal-rectnone}
+## [function __button\.draw\_frame__\(style=u'normal', rect=None\)](#function-__buttondraw_frame__styleunormal-rectnone) {#function-__buttondraw_frame__styleunormal-rectnone}
 
 Draws a simple frame around the widget.
 
@@ -90,7 +89,7 @@ __Keywords:__
 
 <div class="FunctionDoc YAMLDoc" id="button-draw_text" markdown="1">
 
-## [function __button.draw_text__(text, html=True)](#function-__buttondraw_text__text-htmltrue) {#function-__buttondraw_text__text-htmltrue}
+## [function __button\.draw\_text__\(text, html=True\)](#function-__buttondraw_text__text-htmltrue) {#function-__buttondraw_text__text-htmltrue}
 
 Draws text inside the widget.
 
@@ -112,7 +111,7 @@ __Keywords:__
 
 <div class="FunctionDoc YAMLDoc" id="button-on_mouse_click" markdown="1">
 
-## [function __button.on_mouse_click__(pos)](#function-__buttonon_mouse_click__pos) {#function-__buttonon_mouse_click__pos}
+## [function __button\.on\_mouse\_click__\(pos\)](#function-__buttonon_mouse_click__pos) {#function-__buttonon_mouse_click__pos}
 
 Is called when the user clicks on the button. Returns the button text.
 
@@ -134,7 +133,7 @@ The button text.
 
 <div class="FunctionDoc YAMLDoc" id="button-render" markdown="1">
 
-## [function __button.render__()](#function-__buttonrender__) {#function-__buttonrender__}
+## [function __button\.render__\(\)](#function-__buttonrender__) {#function-__buttonrender__}
 
 Draws the widget.
 
@@ -145,7 +144,7 @@ Draws the widget.
 
 <div class="FunctionDoc YAMLDoc" id="button-set_rect" markdown="1">
 
-## [function __button.set_rect__(rect)](#function-__buttonset_rect__rect) {#function-__buttonset_rect__rect}
+## [function __button\.set\_rect__\(rect\)](#function-__buttonset_rect__rect) {#function-__buttonset_rect__rect}
 
 Sets the widget geometry.
 
@@ -161,7 +160,7 @@ __Arguments:__
 
 <div class="FunctionDoc YAMLDoc" id="button-set_var" markdown="1">
 
-## [function __button.set_var__(val, var=None)](#function-__buttonset_var__val-varnone) {#function-__buttonset_var__val-varnone}
+## [function __button\.set\_var__\(val, var=None\)](#function-__buttonset_var__val-varnone) {#function-__buttonset_var__val-varnone}
 
 Sets an experimental variable.
 
@@ -185,10 +184,10 @@ __Keywords:__
 [button]: #button
 
 
-[function __button.\_\_init\_\___(form, var=None, text=u'button', frame=True, center=True)]: #function-__button__init____form-varnone-textubutton-frametrue-centertrue
-[function __button.draw_frame__(style=u'normal', rect=None)]: #function-__buttondraw_frame__styleunormal-rectnone
-[function __button.draw_text__(text, html=True)]: #function-__buttondraw_text__text-htmltrue
-[function __button.on_mouse_click__(pos)]: #function-__buttonon_mouse_click__pos
-[function __button.render__()]: #function-__buttonrender__
-[function __button.set_rect__(rect)]: #function-__buttonset_rect__rect
-[function __button.set_var__(val, var=None)]: #function-__buttonset_var__val-varnone
+[function __button\.\_\_init\_\___\(form, var=None, text=u'button', frame=True, center=True\)]: #function-__button__init____form-varnone-textubutton-frametrue-centertrue
+[function __button\.draw\_frame__\(style=u'normal', rect=None\)]: #function-__buttondraw_frame__styleunormal-rectnone
+[function __button\.draw\_text__\(text, html=True\)]: #function-__buttondraw_text__text-htmltrue
+[function __button\.on\_mouse\_click__\(pos\)]: #function-__buttonon_mouse_click__pos
+[function __button\.render__\(\)]: #function-__buttonrender__
+[function __button\.set\_rect__\(rect\)]: #function-__buttonset_rect__rect
+[function __button\.set\_var__\(val, var=None\)]: #function-__buttonset_var__val-varnone

@@ -6,9 +6,8 @@ The image widget is used to display a non-interactive image.
 
 __Example (OpenSesame script):__
 
-~~~
-widget 0 0 1 1 image path='5.png'
-~~~
+{% highlight idget %} 0 0 1 1 image path='5.png'
+{% endhighlight %}
 
 __Example (Python):__
 
@@ -26,18 +25,18 @@ form._exec()
 __Function list:__
 
 
-- [function __image.\_\_init\_\___(form, path=None, frame=False, adjust=True)](#function-__image__init____form-pathnone-framefalse-adjusttrue)
-- [function __image.draw_frame__(style=u'normal', rect=None)](#function-__imagedraw_frame__styleunormal-rectnone)
-- [function __image.on_mouse_click__(pos)](#function-__imageon_mouse_click__pos)
-- [function __image.render__()](#function-__imagerender__)
-- [function __image.set_rect__(rect)](#function-__imageset_rect__rect)
-- [function __image.set_var__(val, var=None)](#function-__imageset_var__val-varnone)
+- [function __image\.\_\_init\_\___\(form, path=None, frame=False, adjust=True\)](#function-__image__init____form-pathnone-framefalse-adjusttrue)
+- [function __image\.draw\_frame__\(style=u'normal', rect=None\)](#function-__imagedraw_frame__styleunormal-rectnone)
+- [function __image\.on\_mouse\_click__\(pos\)](#function-__imageon_mouse_click__pos)
+- [function __image\.render__\(\)](#function-__imagerender__)
+- [function __image\.set\_rect__\(rect\)](#function-__imageset_rect__rect)
+- [function __image\.set\_var__\(val, var=None\)](#function-__imageset_var__val-varnone)
 
 
 
 <div class="FunctionDoc YAMLDoc" id="image-__init__" markdown="1">
 
-## [function __image.\_\_init\_\___(form, path=None, frame=False, adjust=True)](#function-__image__init____form-pathnone-framefalse-adjusttrue) {#function-__image__init____form-pathnone-framefalse-adjusttrue}
+## [function __image\.\_\_init\_\___\(form, path=None, frame=False, adjust=True\)](#function-__image__init____form-pathnone-framefalse-adjusttrue) {#function-__image__init____form-pathnone-framefalse-adjusttrue}
 
 Constructor.
 
@@ -65,7 +64,7 @@ __Keywords:__
 
 <div class="FunctionDoc YAMLDoc" id="image-draw_frame" markdown="1">
 
-## [function __image.draw_frame__(style=u'normal', rect=None)](#function-__imagedraw_frame__styleunormal-rectnone) {#function-__imagedraw_frame__styleunormal-rectnone}
+## [function __image\.draw\_frame__\(style=u'normal', rect=None\)](#function-__imagedraw_frame__styleunormal-rectnone) {#function-__imagedraw_frame__styleunormal-rectnone}
 
 Draws a simple frame around the widget.
 
@@ -85,7 +84,7 @@ __Keywords:__
 
 <div class="FunctionDoc YAMLDoc" id="image-on_mouse_click" markdown="1">
 
-## [function __image.on_mouse_click__(pos)](#function-__imageon_mouse_click__pos) {#function-__imageon_mouse_click__pos}
+## [function __image\.on\_mouse\_click__\(pos\)](#function-__imageon_mouse_click__pos) {#function-__imageon_mouse_click__pos}
 
 Is called whenever the user clicks on the widget.
 
@@ -101,7 +100,7 @@ __Arguments:__
 
 <div class="FunctionDoc YAMLDoc" id="image-render" markdown="1">
 
-## [function __image.render__()](#function-__imagerender__) {#function-__imagerender__}
+## [function __image\.render__\(\)](#function-__imagerender__) {#function-__imagerender__}
 
 Draws the widget.
 
@@ -112,7 +111,7 @@ Draws the widget.
 
 <div class="FunctionDoc YAMLDoc" id="image-set_rect" markdown="1">
 
-## [function __image.set_rect__(rect)](#function-__imageset_rect__rect) {#function-__imageset_rect__rect}
+## [function __image\.set\_rect__\(rect\)](#function-__imageset_rect__rect) {#function-__imageset_rect__rect}
 
 Sets the widget geometry.
 
@@ -128,7 +127,7 @@ __Arguments:__
 
 <div class="FunctionDoc YAMLDoc" id="image-set_var" markdown="1">
 
-## [function __image.set_var__(val, var=None)](#function-__imageset_var__val-varnone) {#function-__imageset_var__val-varnone}
+## [function __image\.set\_var__\(val, var=None\)](#function-__imageset_var__val-varnone) {#function-__imageset_var__val-varnone}
 
 Sets an experimental variable.
 
@@ -152,9 +151,9 @@ __Keywords:__
 [image]: #image
 
 
-[function __image.\_\_init\_\___(form, path=None, frame=False, adjust=True)]: #function-__image__init____form-pathnone-framefalse-adjusttrue
-[function __image.draw_frame__(style=u'normal', rect=None)]: #function-__imagedraw_frame__styleunormal-rectnone
-[function __image.on_mouse_click__(pos)]: #function-__imageon_mouse_click__pos
-[function __image.render__()]: #function-__imagerender__
-[function __image.set_rect__(rect)]: #function-__imageset_rect__rect
-[function __image.set_var__(val, var=None)]: #function-__imageset_var__val-varnone
+[function __image\.\_\_init\_\___\(form, path=None, frame=False, adjust=True\)]: #function-__image__init____form-pathnone-framefalse-adjusttrue
+[function __image\.draw\_frame__\(style=u'normal', rect=None\)]: #function-__imagedraw_frame__styleunormal-rectnone
+[function __image\.on\_mouse\_click__\(pos\)]: #function-__imageon_mouse_click__pos
+[function __image\.render__\(\)]: #function-__imagerender__
+[function __image\.set\_rect__\(rect\)]: #function-__imageset_rect__rect
+[function __image\.set\_var__\(val, var=None\)]: #function-__imageset_var__val-varnone

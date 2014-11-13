@@ -25,34 +25,36 @@ exp.set('canvas_timestamp', timestamp)
 __Function list:__
 
 
-- [function __experiment.\_\_init\_\___(auto_response=False, fullscreen=False, name=u'experiment', pool_folder=None, items=None, workspace=None, experiment_path=None, subject_nr=0, logfile=u'defaultlog.csv', string=None)](#function-__experiment__init____auto_responsefalse-fullscreenfalse-nameuexperiment-pool_foldernone-itemsnone-workspacenone-experiment_pathnone-subject_nr0-logfileudefaultlogcsv-stringnone)
-- [function __experiment.auto_type__(val)](#function-__experimentauto_type__val)
-- [function __experiment.color_check__(col)](#function-__experimentcolor_check__col)
-- [function __experiment.eval_text__(text, soft_ignore=False, round_float=False, quote_str=False)](#function-__experimenteval_text__text-soft_ignorefalse-round_floatfalse-quote_strfalse)
-- [function __experiment.file_in_pool__(path)](#function-__experimentfile_in_pool__path)
-- [function __experiment.flush_log__()](#function-__experimentflush_log__)
-- [function __experiment.get__(var, _eval=True)](#function-__experimentget__var-_evaltrue)
-- [function __experiment.get_check__(var, default=None, _eval=True, valid=None)](#function-__experimentget_check__var-defaultnone-_evaltrue-validnone)
-- [function __experiment.get_file__(path)](#function-__experimentget_file__path)
-- [function __experiment.get_refs__(text)](#function-__experimentget_refs__text)
-- [function __experiment.has__(var)](#function-__experimenthas__var)
-- [function __experiment.log__(msg)](#function-__experimentlog__msg)
-- [function __experiment.reset__()](#function-__experimentreset__)
-- [function __experiment.resolution__()](#function-__experimentresolution__)
-- [function __experiment.sanitize__(s, strict=False, allow_vars=True)](#function-__experimentsanitize__s-strictfalse-allow_varstrue)
-- [function __experiment.set__(var, val)](#function-__experimentset__var-val)
-- [function __experiment.set_response__(response=None, response_time=None, correct=None)](#function-__experimentset_response__responsenone-response_timenone-correctnone)
-- [function __experiment.set_subject__(nr)](#function-__experimentset_subject__nr)
-- [function __experiment.sleep__(ms)](#function-__experimentsleep__ms)
-- [function __experiment.time__()](#function-__experimenttime__)
-- [function __experiment.unistr__(val)](#function-__experimentunistr__val)
-- [function __experiment.unset__(var)](#function-__experimentunset__var)
+- [function __experiment\.\_\_init\_\___\(auto\_response=False, fullscreen=False, name=u'experiment', pool\_folder=None, items=None, workspace=None, experiment\_path=None, subject\_nr=0, logfile=u'defaultlog\.csv', resources=\{\}, string=None\)](#function-__experiment__init____auto_responsefalse-fullscreenfalse-nameuexperiment-pool_foldernone-itemsnone-workspacenone-experiment_pathnone-subject_nr0-logfileudefaultlogcsv-resources-stringnone)
+- [function __experiment\.auto\_type__\(val\)](#function-__experimentauto_type__val)
+- [function __experiment\.color\_check__\(col\)](#function-__experimentcolor_check__col)
+- [function __experiment\.eval\_text__\(text, soft\_ignore=False, round\_float=False, quote\_str=False\)](#function-__experimenteval_text__text-soft_ignorefalse-round_floatfalse-quote_strfalse)
+- [function __experiment\.file\_in\_pool__\(path\)](#function-__experimentfile_in_pool__path)
+- [function __experiment\.flush\_log__\(\)](#function-__experimentflush_log__)
+- [function __experiment\.get__\(var, \_eval=True\)](#function-__experimentget__var-_evaltrue)
+- [function __experiment\.get\_check__\(var, default=None, \_eval=True, valid=None\)](#function-__experimentget_check__var-defaultnone-_evaltrue-validnone)
+- [function __experiment\.get\_file__\(path\)](#function-__experimentget_file__path)
+- [function __experiment\.get\_refs__\(text\)](#function-__experimentget_refs__text)
+- [function __experiment\.has__\(var\)](#function-__experimenthas__var)
+- [function __experiment\.log__\(msg\)](#function-__experimentlog__msg)
+- [function __experiment\.reset__\(\)](#function-__experimentreset__)
+- [function __experiment\.resolution__\(\)](#function-__experimentresolution__)
+- [function __experiment\.sanitize__\(s, strict=False, allow\_vars=True\)](#function-__experimentsanitize__s-strictfalse-allow_varstrue)
+- [function __experiment\.save__\(path, update\_path=True, overwrite=False\)](#function-__experimentsave__path-update_pathtrue-overwritefalse)
+- [function __experiment\.set__\(var, val\)](#function-__experimentset__var-val)
+- [function __experiment\.set\_response__\(response=None, response\_time=None, correct=None\)](#function-__experimentset_response__responsenone-response_timenone-correctnone)
+- [function __experiment\.set\_subject__\(nr\)](#function-__experimentset_subject__nr)
+- [function __experiment\.sleep__\(ms\)](#function-__experimentsleep__ms)
+- [function __experiment\.time__\(\)](#function-__experimenttime__)
+- [function __experiment\.unistr__\(val\)](#function-__experimentunistr__val)
+- [function __experiment\.unset__\(var\)](#function-__experimentunset__var)
+- [function __experiment\.usanitize__\(s, strict=False\)](#function-__experimentusanitize__s-strictfalse)
 
 
 
 <div class="FunctionDoc YAMLDoc" id="experiment-__init__" markdown="1">
 
-## [function __experiment.\_\_init\_\___(auto_response=False, fullscreen=False, name=u'experiment', pool_folder=None, items=None, workspace=None, experiment_path=None, subject_nr=0, logfile=u'defaultlog.csv', string=None)](#function-__experiment__init____auto_responsefalse-fullscreenfalse-nameuexperiment-pool_foldernone-itemsnone-workspacenone-experiment_pathnone-subject_nr0-logfileudefaultlogcsv-stringnone) {#function-__experiment__init____auto_responsefalse-fullscreenfalse-nameuexperiment-pool_foldernone-itemsnone-workspacenone-experiment_pathnone-subject_nr0-logfileudefaultlogcsv-stringnone}
+## [function __experiment\.\_\_init\_\___\(auto\_response=False, fullscreen=False, name=u'experiment', pool\_folder=None, items=None, workspace=None, experiment\_path=None, subject\_nr=0, logfile=u'defaultlog\.csv', resources=\{\}, string=None\)](#function-__experiment__init____auto_responsefalse-fullscreenfalse-nameuexperiment-pool_foldernone-itemsnone-workspacenone-experiment_pathnone-subject_nr0-logfileudefaultlogcsv-resources-stringnone) {#function-__experiment__init____auto_responsefalse-fullscreenfalse-nameuexperiment-pool_foldernone-itemsnone-workspacenone-experiment_pathnone-subject_nr0-logfileudefaultlogcsv-resources-stringnone}
 
 Constructor. The experiment is created automatically be OpenSesame and you will generally not need to create it yourself.
 
@@ -85,6 +87,9 @@ __Keywords:__
 - `logfile` -- The logfile path.
 	- Default: u'defaultlog.csv'
 	- Type: unicode, str
+- `resources` -- A dictionary with names as keys and paths as values. This serves as a look-up table for resources.
+	- Default: {}
+	- Type: dict
 - `string` -- A string containing the experiment definition, the name of an OpenSesame experiment file, or `None` to create a blank experiment.
 	- Default: None
 	- Type: str, unicode, NoneType
@@ -96,7 +101,7 @@ __Keywords:__
 
 <div class="FunctionDoc YAMLDoc" id="experiment-auto_type" markdown="1">
 
-## [function __experiment.auto_type__(val)](#function-__experimentauto_type__val) {#function-__experimentauto_type__val}
+## [function __experiment\.auto\_type__\(val\)](#function-__experimentauto_type__val) {#function-__experimentauto_type__val}
 
 Converts a value into the 'best fitting' or 'simplest' type that is compatible with the value.
 
@@ -117,7 +122,7 @@ The same value converted to the 'best fitting' type.
 
 <div class="FunctionDoc YAMLDoc" id="experiment-color_check" markdown="1">
 
-## [function __experiment.color_check__(col)](#function-__experimentcolor_check__col) {#function-__experimentcolor_check__col}
+## [function __experiment\.color\_check__\(col\)](#function-__experimentcolor_check__col) {#function-__experimentcolor_check__col}
 
 Checks whether a string is a valid color name. Raises an exception if `col` is not a valid color.
 
@@ -143,7 +148,7 @@ __Arguments:__
 
 <div class="FunctionDoc YAMLDoc" id="experiment-eval_text" markdown="1">
 
-## [function __experiment.eval_text__(text, soft_ignore=False, round_float=False, quote_str=False)](#function-__experimenteval_text__text-soft_ignorefalse-round_floatfalse-quote_strfalse) {#function-__experimenteval_text__text-soft_ignorefalse-round_floatfalse-quote_strfalse}
+## [function __experiment\.eval\_text__\(text, soft\_ignore=False, round\_float=False, quote\_str=False\)](#function-__experimenteval_text__text-soft_ignorefalse-round_floatfalse-quote_strfalse) {#function-__experimenteval_text__text-soft_ignorefalse-round_floatfalse-quote_strfalse}
 
 Evaluates a string of text, so that all variable references (e.g., '[var]') are replaced by values.
 
@@ -184,7 +189,7 @@ The evaluated text.
 
 <div class="FunctionDoc YAMLDoc" id="experiment-file_in_pool" markdown="1">
 
-## [function __experiment.file_in_pool__(path)](#function-__experimentfile_in_pool__path) {#function-__experimentfile_in_pool__path}
+## [function __experiment\.file\_in\_pool__\(path\)](#function-__experimentfile_in_pool__path) {#function-__experimentfile_in_pool__path}
 
 Checks if a file is in the file pool.
 
@@ -216,7 +221,7 @@ A bool indicating if the file is in the pool.
 
 <div class="FunctionDoc YAMLDoc" id="experiment-flush_log" markdown="1">
 
-## [function __experiment.flush_log__()](#function-__experimentflush_log__) {#function-__experimentflush_log__}
+## [function __experiment\.flush\_log__\(\)](#function-__experimentflush_log__) {#function-__experimentflush_log__}
 
 Forces any pending write operations to the log file to be written to disk.
 
@@ -234,7 +239,7 @@ self.flush_log()
 
 <div class="FunctionDoc YAMLDoc" id="experiment-get" markdown="1">
 
-## [function __experiment.get__(var, _eval=True)](#function-__experimentget__var-_evaltrue) {#function-__experimentget__var-_evaltrue}
+## [function __experiment\.get__\(var, \_eval=True\)](#function-__experimentget__var-_evaltrue) {#function-__experimentget__var-_evaltrue}
 
 Returns the value of an OpenSesame variable. Checks first if the
 variable exists 'locally' in the item and, if not, checks if the
@@ -286,7 +291,7 @@ The value.
 
 <div class="FunctionDoc YAMLDoc" id="experiment-get_check" markdown="1">
 
-## [function __experiment.get_check__(var, default=None, _eval=True, valid=None)](#function-__experimentget_check__var-defaultnone-_evaltrue-validnone) {#function-__experimentget_check__var-defaultnone-_evaltrue-validnone}
+## [function __experiment\.get\_check__\(var, default=None, \_eval=True, valid=None\)](#function-__experimentget_check__var-defaultnone-_evaltrue-validnone) {#function-__experimentget_check__var-defaultnone-_evaltrue-validnone}
 
 Similar to get(), but falls back to a default if the variable has not been set. It also raises an error if the value is not part of the valid list.
 
@@ -327,7 +332,7 @@ The value
 
 <div class="FunctionDoc YAMLDoc" id="experiment-get_file" markdown="1">
 
-## [function __experiment.get_file__(path)](#function-__experimentget_file__path) {#function-__experimentget_file__path}
+## [function __experiment\.get\_file__\(path\)](#function-__experimentget_file__path) {#function-__experimentget_file__path}
 
 Returns the full path to a file. The logic is as follows:
 
@@ -363,7 +368,7 @@ The full path to the file.
 
 <div class="FunctionDoc YAMLDoc" id="experiment-get_refs" markdown="1">
 
-## [function __experiment.get_refs__(text)](#function-__experimentget_refs__text) {#function-__experimentget_refs__text}
+## [function __experiment\.get\_refs__\(text\)](#function-__experimentget_refs__text) {#function-__experimentget_refs__text}
 
 Returns a list of variables that are referred to by a string of text.
 
@@ -384,7 +389,7 @@ A list of variable names or an empty list if the string contains no references.
 
 <div class="FunctionDoc YAMLDoc" id="experiment-has" markdown="1">
 
-## [function __experiment.has__(var)](#function-__experimenthas__var) {#function-__experimenthas__var}
+## [function __experiment\.has__\(var\)](#function-__experimenthas__var) {#function-__experimenthas__var}
 
 Checks if an OpenSesame variable exists, either in the item or in the experiment.
 
@@ -413,7 +418,7 @@ True if the variable exists, False if not.
 
 <div class="FunctionDoc YAMLDoc" id="experiment-log" markdown="1">
 
-## [function __experiment.log__(msg)](#function-__experimentlog__msg) {#function-__experimentlog__msg}
+## [function __experiment\.log__\(msg\)](#function-__experimentlog__msg) {#function-__experimentlog__msg}
 
 Writes a message to the log file. Note that using the `log()` function in combination with a logger item may result in messy log files.
 
@@ -434,7 +439,7 @@ __Arguments:__
 
 <div class="FunctionDoc YAMLDoc" id="experiment-reset" markdown="1">
 
-## [function __experiment.reset__()](#function-__experimentreset__) {#function-__experimentreset__}
+## [function __experiment\.reset__\(\)](#function-__experimentreset__) {#function-__experimentreset__}
 
 Resets all item variables to their default value.
 
@@ -445,7 +450,7 @@ Resets all item variables to their default value.
 
 <div class="FunctionDoc YAMLDoc" id="experiment-resolution" markdown="1">
 
-## [function __experiment.resolution__()](#function-__experimentresolution__) {#function-__experimentresolution__}
+## [function __experiment\.resolution__\(\)](#function-__experimentresolution__) {#function-__experimentresolution__}
 
 Returns the display resolution and checks whether the resolution is
 valid.
@@ -471,7 +476,7 @@ A (width, height) tuple
 
 <div class="FunctionDoc YAMLDoc" id="experiment-sanitize" markdown="1">
 
-## [function __experiment.sanitize__(s, strict=False, allow_vars=True)](#function-__experimentsanitize__s-strictfalse-allow_varstrue) {#function-__experimentsanitize__s-strictfalse-allow_varstrue}
+## [function __experiment\.sanitize__\(s, strict=False, allow\_vars=True\)](#function-__experimentsanitize__s-strictfalse-allow_varstrue) {#function-__experimentsanitize__s-strictfalse-allow_varstrue}
 
 Removes invalid characters (notably quotes) from the string.
 
@@ -508,9 +513,40 @@ A sanitized string.
 [experiment.sanitize]: #experiment-sanitize
 [sanitize]: #experiment-sanitize
 
+<div class="FunctionDoc YAMLDoc" id="experiment-save" markdown="1">
+
+## [function __experiment\.save__\(path, update\_path=True, overwrite=False\)](#function-__experimentsave__path-update_pathtrue-overwritefalse) {#function-__experimentsave__path-update_pathtrue-overwritefalse}
+
+Saves the experiment to file. If no extension is provided, .opensesame.tar.gz is chosen by default.
+
+__Arguments:__
+
+- `path` -- The target file to save to.
+	- Type: str, unicode
+
+__Keywords:__
+
+- `update_path` -- Indicates if the experiment_path attribute should be updated.
+	- Default: True
+	- Type: bool
+- `overwrite` -- Indicates if existing files should be overwritten.
+	- Default: False
+	- Type: bool
+
+__Returns:__
+
+The path on successful saving or False otherwise.
+
+- Type: unicode, bool
+
+</div>
+
+[experiment.save]: #experiment-save
+[save]: #experiment-save
+
 <div class="FunctionDoc YAMLDoc" id="experiment-set" markdown="1">
 
-## [function __experiment.set__(var, val)](#function-__experimentset__var-val) {#function-__experimentset__var-val}
+## [function __experiment\.set__\(var, val\)](#function-__experimentset__var-val) {#function-__experimentset__var-val}
 
 Sets an OpenSesame variable.
 
@@ -545,7 +581,7 @@ __Arguments:__
 
 <div class="FunctionDoc YAMLDoc" id="experiment-set_response" markdown="1">
 
-## [function __experiment.set_response__(response=None, response_time=None, correct=None)](#function-__experimentset_response__responsenone-response_timenone-correctnone) {#function-__experimentset_response__responsenone-response_timenone-correctnone}
+## [function __experiment\.set\_response__\(response=None, response\_time=None, correct=None\)](#function-__experimentset_response__responsenone-response_timenone-correctnone) {#function-__experimentset_response__responsenone-response_timenone-correctnone}
 
 Processes a response in such a way that feedback variables are updated as well.
 
@@ -583,7 +619,7 @@ __Keywords:__
 
 <div class="FunctionDoc YAMLDoc" id="experiment-set_subject" markdown="1">
 
-## [function __experiment.set_subject__(nr)](#function-__experimentset_subject__nr) {#function-__experimentset_subject__nr}
+## [function __experiment\.set\_subject__\(nr\)](#function-__experimentset_subject__nr) {#function-__experimentset_subject__nr}
 
 Sets the subject number and parity (even/ odd). This function is called automatically when an experiment is started, so you do not generally need to call it yourself.
 
@@ -607,7 +643,7 @@ __Arguments:__
 
 <div class="FunctionDoc YAMLDoc" id="experiment-sleep" markdown="1">
 
-## [function __experiment.sleep__(ms)](#function-__experimentsleep__ms) {#function-__experimentsleep__ms}
+## [function __experiment\.sleep__\(ms\)](#function-__experimentsleep__ms) {#function-__experimentsleep__ms}
 
 Sleeps for a specified duration.
 
@@ -629,7 +665,7 @@ __Arguments:__
 
 <div class="FunctionDoc YAMLDoc" id="experiment-time" markdown="1">
 
-## [function __experiment.time__()](#function-__experimenttime__) {#function-__experimenttime__}
+## [function __experiment\.time__\(\)](#function-__experimenttime__) {#function-__experimenttime__}
 
 Returns a timestamp for the current time. This timestamp only has a relative meaning, i.e. you can use it to determine the interval between two moments, but not the actual time. Whether the timestamp is a `float` or `int` depends on the back-end.
 
@@ -652,7 +688,7 @@ A timestamp of the current time.
 
 <div class="FunctionDoc YAMLDoc" id="experiment-unistr" markdown="1">
 
-## [function __experiment.unistr__(val)](#function-__experimentunistr__val) {#function-__experimentunistr__val}
+## [function __experiment\.unistr__\(val\)](#function-__experimentunistr__val) {#function-__experimentunistr__val}
 
 Converts a value to a unicode string. This function is mostly
 necessary to make sure that normal strings with special characters
@@ -682,7 +718,7 @@ A unicode string.
 
 <div class="FunctionDoc YAMLDoc" id="experiment-unset" markdown="1">
 
-## [function __experiment.unset__(var)](#function-__experimentunset__var) {#function-__experimentunset__var}
+## [function __experiment\.unset__\(var\)](#function-__experimentunset__var) {#function-__experimentunset__var}
 
 Unsets (forgets) an OpenSesame variable.
 
@@ -705,30 +741,60 @@ __Arguments:__
 [experiment.unset]: #experiment-unset
 [unset]: #experiment-unset
 
+<div class="FunctionDoc YAMLDoc" id="experiment-usanitize" markdown="1">
+
+## [function __experiment\.usanitize__\(s, strict=False\)](#function-__experimentusanitize__s-strictfalse) {#function-__experimentusanitize__s-strictfalse}
+
+Converts all non-ASCII characters to U+XXXX notation, so that the resulting string can be treated as plain ASCII text.
+
+__Arguments:__
+
+- `s` -- A unicode string to be santized
+	- Type: unicode
+
+__Keywords:__
+
+- `strict` -- If True, special characters are ignored rather than recoded.
+	- Default: False
+	- Type: bool
+
+__Returns:__
+
+A regular Python string with all special characters replaced by U+XXXX notation or ignored (if strict).
+
+- Type: str
+
+</div>
+
+[experiment.usanitize]: #experiment-usanitize
+[usanitize]: #experiment-usanitize
+
 </div>
 
 [experiment]: #experiment
 
 
-[function __experiment.\_\_init\_\___(auto_response=False, fullscreen=False, name=u'experiment', pool_folder=None, items=None, workspace=None, experiment_path=None, subject_nr=0, logfile=u'defaultlog.csv', string=None)]: #function-__experiment__init____auto_responsefalse-fullscreenfalse-nameuexperiment-pool_foldernone-itemsnone-workspacenone-experiment_pathnone-subject_nr0-logfileudefaultlogcsv-stringnone
-[function __experiment.auto_type__(val)]: #function-__experimentauto_type__val
-[function __experiment.color_check__(col)]: #function-__experimentcolor_check__col
-[function __experiment.eval_text__(text, soft_ignore=False, round_float=False, quote_str=False)]: #function-__experimenteval_text__text-soft_ignorefalse-round_floatfalse-quote_strfalse
-[function __experiment.file_in_pool__(path)]: #function-__experimentfile_in_pool__path
-[function __experiment.flush_log__()]: #function-__experimentflush_log__
-[function __experiment.get__(var, _eval=True)]: #function-__experimentget__var-_evaltrue
-[function __experiment.get_check__(var, default=None, _eval=True, valid=None)]: #function-__experimentget_check__var-defaultnone-_evaltrue-validnone
-[function __experiment.get_file__(path)]: #function-__experimentget_file__path
-[function __experiment.get_refs__(text)]: #function-__experimentget_refs__text
-[function __experiment.has__(var)]: #function-__experimenthas__var
-[function __experiment.log__(msg)]: #function-__experimentlog__msg
-[function __experiment.reset__()]: #function-__experimentreset__
-[function __experiment.resolution__()]: #function-__experimentresolution__
-[function __experiment.sanitize__(s, strict=False, allow_vars=True)]: #function-__experimentsanitize__s-strictfalse-allow_varstrue
-[function __experiment.set__(var, val)]: #function-__experimentset__var-val
-[function __experiment.set_response__(response=None, response_time=None, correct=None)]: #function-__experimentset_response__responsenone-response_timenone-correctnone
-[function __experiment.set_subject__(nr)]: #function-__experimentset_subject__nr
-[function __experiment.sleep__(ms)]: #function-__experimentsleep__ms
-[function __experiment.time__()]: #function-__experimenttime__
-[function __experiment.unistr__(val)]: #function-__experimentunistr__val
-[function __experiment.unset__(var)]: #function-__experimentunset__var
+[function __experiment\.\_\_init\_\___\(auto\_response=False, fullscreen=False, name=u'experiment', pool\_folder=None, items=None, workspace=None, experiment\_path=None, subject\_nr=0, logfile=u'defaultlog\.csv', resources=\{\}, string=None\)]: #function-__experiment__init____auto_responsefalse-fullscreenfalse-nameuexperiment-pool_foldernone-itemsnone-workspacenone-experiment_pathnone-subject_nr0-logfileudefaultlogcsv-resources-stringnone
+[function __experiment\.auto\_type__\(val\)]: #function-__experimentauto_type__val
+[function __experiment\.color\_check__\(col\)]: #function-__experimentcolor_check__col
+[function __experiment\.eval\_text__\(text, soft\_ignore=False, round\_float=False, quote\_str=False\)]: #function-__experimenteval_text__text-soft_ignorefalse-round_floatfalse-quote_strfalse
+[function __experiment\.file\_in\_pool__\(path\)]: #function-__experimentfile_in_pool__path
+[function __experiment\.flush\_log__\(\)]: #function-__experimentflush_log__
+[function __experiment\.get__\(var, \_eval=True\)]: #function-__experimentget__var-_evaltrue
+[function __experiment\.get\_check__\(var, default=None, \_eval=True, valid=None\)]: #function-__experimentget_check__var-defaultnone-_evaltrue-validnone
+[function __experiment\.get\_file__\(path\)]: #function-__experimentget_file__path
+[function __experiment\.get\_refs__\(text\)]: #function-__experimentget_refs__text
+[function __experiment\.has__\(var\)]: #function-__experimenthas__var
+[function __experiment\.log__\(msg\)]: #function-__experimentlog__msg
+[function __experiment\.reset__\(\)]: #function-__experimentreset__
+[function __experiment\.resolution__\(\)]: #function-__experimentresolution__
+[function __experiment\.sanitize__\(s, strict=False, allow\_vars=True\)]: #function-__experimentsanitize__s-strictfalse-allow_varstrue
+[function __experiment\.save__\(path, update\_path=True, overwrite=False\)]: #function-__experimentsave__path-update_pathtrue-overwritefalse
+[function __experiment\.set__\(var, val\)]: #function-__experimentset__var-val
+[function __experiment\.set\_response__\(response=None, response\_time=None, correct=None\)]: #function-__experimentset_response__responsenone-response_timenone-correctnone
+[function __experiment\.set\_subject__\(nr\)]: #function-__experimentset_subject__nr
+[function __experiment\.sleep__\(ms\)]: #function-__experimentsleep__ms
+[function __experiment\.time__\(\)]: #function-__experimenttime__
+[function __experiment\.unistr__\(val\)]: #function-__experimentunistr__val
+[function __experiment\.unset__\(var\)]: #function-__experimentunset__var
+[function __experiment\.usanitize__\(s, strict=False\)]: #function-__experimentusanitize__s-strictfalse

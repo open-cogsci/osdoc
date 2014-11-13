@@ -31,16 +31,16 @@ while True:
 __Function list:__
 
 
-- [function __mouse.\_\_init\_\___(experiment, visible=False, timeout=None, buttonlist=None)](#function-__mouse__init____experiment-visiblefalse-timeoutnone-buttonlistnone)
-- [function __mouse.flush__()](#function-__mouseflush__)
-- [function __mouse.get_click__(visible=None, timeout=None, buttonlist=None)](#function-__mouseget_click__visiblenone-timeoutnone-buttonlistnone)
-- [function __mouse.get_pos__()](#function-__mouseget_pos__)
-- [function __mouse.get_pressed__()](#function-__mouseget_pressed__)
-- [function __mouse.set_buttonlist__(buttonlist=None)](#function-__mouseset_buttonlist__buttonlistnone)
-- [function __mouse.set_pos__(pos=(0, 0))](#function-__mouseset_pos__pos0-0)
-- [function __mouse.set_timeout__(timeout=None)](#function-__mouseset_timeout__timeoutnone)
-- [function __mouse.set_visible__(visible=True)](#function-__mouseset_visible__visibletrue)
-- [function __mouse.synonyms__(button)](#function-__mousesynonyms__button)
+- [function __mouse\.\_\_init\_\___\(experiment, visible=False, timeout=None, buttonlist=None\)](#function-__mouse__init____experiment-visiblefalse-timeoutnone-buttonlistnone)
+- [function __mouse\.flush__\(\)](#function-__mouseflush__)
+- [function __mouse\.get\_click__\(visible=None, timeout=None, buttonlist=None\)](#function-__mouseget_click__visiblenone-timeoutnone-buttonlistnone)
+- [function __mouse\.get\_pos__\(\)](#function-__mouseget_pos__)
+- [function __mouse\.get\_pressed__\(\)](#function-__mouseget_pressed__)
+- [function __mouse\.set\_buttonlist__\(buttonlist=None\)](#function-__mouseset_buttonlist__buttonlistnone)
+- [function __mouse\.set\_pos__\(pos=\(0, 0\)\)](#function-__mouseset_pos__pos0-0)
+- [function __mouse\.set\_timeout__\(timeout=None\)](#function-__mouseset_timeout__timeoutnone)
+- [function __mouse\.set\_visible__\(visible=True\)](#function-__mouseset_visible__visibletrue)
+- [function __mouse\.synonyms__\(button\)](#function-__mousesynonyms__button)
 
 
 
@@ -48,7 +48,7 @@ __Function list:__
 
 <div class="FunctionDoc YAMLDoc" id="mouse-__init__" markdown="1">
 
-## [function __mouse.\_\_init\_\___(experiment, visible=False, timeout=None, buttonlist=None)](#function-__mouse__init____experiment-visiblefalse-timeoutnone-buttonlistnone) {#function-__mouse__init____experiment-visiblefalse-timeoutnone-buttonlistnone}
+## [function __mouse\.\_\_init\_\___\(experiment, visible=False, timeout=None, buttonlist=None\)](#function-__mouse__init____experiment-visiblefalse-timeoutnone-buttonlistnone) {#function-__mouse__init____experiment-visiblefalse-timeoutnone-buttonlistnone}
 
 Intializes the mouse object.
 
@@ -66,7 +66,10 @@ __Arguments:__
 
 __Keywords:__
 
-- `visible` -- True to show the cursor, False to hide.
+- `visible` -- `True` to show the cursor, `False` to hide. (If you are using the
+*legacy* back-end, you may find that the mouse cursor is not
+visible. For a workaround, see
+<http://osdoc.cogsci.nl/back-ends/legacy/>.)
 	- Default: False
 	- Type: bool
 - `buttonlist` -- A list of buttons that are accepted or `None` to accept all buttons.
@@ -83,7 +86,7 @@ __Keywords:__
 
 <div class="FunctionDoc YAMLDoc" id="mouse-flush" markdown="1">
 
-## [function __mouse.flush__()](#function-__mouseflush__) {#function-__mouseflush__}
+## [function __mouse\.flush__\(\)](#function-__mouseflush__) {#function-__mouseflush__}
 
 Clears all pending input, not limited to the mouse.
 
@@ -109,7 +112,7 @@ True if a button had been clicked (i.e., if there was something to flush) and Fa
 
 <div class="FunctionDoc YAMLDoc" id="mouse-get_click" markdown="1">
 
-## [function __mouse.get_click__(visible=None, timeout=None, buttonlist=None)](#function-__mouseget_click__visiblenone-timeoutnone-buttonlistnone) {#function-__mouseget_click__visiblenone-timeoutnone-buttonlistnone}
+## [function __mouse\.get\_click__\(visible=None, timeout=None, buttonlist=None\)](#function-__mouseget_click__visiblenone-timeoutnone-buttonlistnone) {#function-__mouseget_click__visiblenone-timeoutnone-buttonlistnone}
 
 Waits for mouse input.
 
@@ -125,7 +128,10 @@ if button == None:
 
 __Keywords:__
 
-- `visible` -- True to show the cursor, False to hide.
+- `visible` -- `True` to show the cursor, `False` to hide. (If you are using the
+*legacy* back-end, you may find that the mouse cursor is not
+visible. For a workaround, see
+<http://osdoc.cogsci.nl/back-ends/legacy/>.)
 	- Default: None
 	- Type: bool
 - `buttonlist` -- A list of buttons that are accepted or `None` to accept all buttons.
@@ -148,7 +154,7 @@ A (button, position, timestamp) tuple. The button and position are `None` if a t
 
 <div class="FunctionDoc YAMLDoc" id="mouse-get_pos" markdown="1">
 
-## [function __mouse.get_pos__()](#function-__mouseget_pos__) {#function-__mouseget_pos__}
+## [function __mouse\.get\_pos__\(\)](#function-__mouseget_pos__) {#function-__mouseget_pos__}
 
 Returns the current position of the cursor.
 
@@ -175,7 +181,7 @@ A (position, timestamp) tuple.
 
 <div class="FunctionDoc YAMLDoc" id="mouse-get_pressed" markdown="1">
 
-## [function __mouse.get_pressed__()](#function-__mouseget_pressed__) {#function-__mouseget_pressed__}
+## [function __mouse\.get\_pressed__\(\)](#function-__mouseget_pressed__) {#function-__mouseget_pressed__}
 
 Returns the current state of the mouse buttons. A True value means the button is currently being pressed.
 
@@ -202,7 +208,7 @@ A (button1, button2, button3) tuple of boolean values.
 
 <div class="FunctionDoc YAMLDoc" id="mouse-set_buttonlist" markdown="1">
 
-## [function __mouse.set_buttonlist__(buttonlist=None)](#function-__mouseset_buttonlist__buttonlistnone) {#function-__mouseset_buttonlist__buttonlistnone}
+## [function __mouse\.set\_buttonlist__\(buttonlist=None\)](#function-__mouseset_buttonlist__buttonlistnone) {#function-__mouseset_buttonlist__buttonlistnone}
 
 Sets a list of accepted buttons.
 
@@ -227,7 +233,7 @@ __Keywords:__
 
 <div class="FunctionDoc YAMLDoc" id="mouse-set_pos" markdown="1">
 
-## [function __mouse.set_pos__(pos=(0, 0))](#function-__mouseset_pos__pos0-0) {#function-__mouseset_pos__pos0-0}
+## [function __mouse\.set\_pos__\(pos=\(0, 0\)\)](#function-__mouseset_pos__pos0-0) {#function-__mouseset_pos__pos0-0}
 
 Sets the position of the mouse cursor.
 
@@ -252,7 +258,7 @@ __Keywords:__
 
 <div class="FunctionDoc YAMLDoc" id="mouse-set_timeout" markdown="1">
 
-## [function __mouse.set_timeout__(timeout=None)](#function-__mouseset_timeout__timeoutnone) {#function-__mouseset_timeout__timeoutnone}
+## [function __mouse\.set\_timeout__\(timeout=None\)](#function-__mouseset_timeout__timeoutnone) {#function-__mouseset_timeout__timeoutnone}
 
 Sets a timeout.
 
@@ -277,7 +283,7 @@ __Keywords:__
 
 <div class="FunctionDoc YAMLDoc" id="mouse-set_visible" markdown="1">
 
-## [function __mouse.set_visible__(visible=True)](#function-__mouseset_visible__visibletrue) {#function-__mouseset_visible__visibletrue}
+## [function __mouse\.set\_visible__\(visible=True\)](#function-__mouseset_visible__visibletrue) {#function-__mouseset_visible__visibletrue}
 
 Sets the visibility of the cursor.
 
@@ -291,7 +297,10 @@ my_mouse.set_visible()
 
 __Keywords:__
 
-- `visible` -- True to show the cursor, False to hide.
+- `visible` -- `True` to show the cursor, `False` to hide. (If you are using the
+*legacy* back-end, you may find that the mouse cursor is not
+visible. For a workaround, see
+<http://osdoc.cogsci.nl/back-ends/legacy/>.)
 	- Default: True
 	- Type: bool
 
@@ -302,7 +311,7 @@ __Keywords:__
 
 <div class="FunctionDoc YAMLDoc" id="mouse-synonyms" markdown="1">
 
-## [function __mouse.synonyms__(button)](#function-__mousesynonyms__button) {#function-__mousesynonyms__button}
+## [function __mouse\.synonyms__\(button\)](#function-__mousesynonyms__button) {#function-__mousesynonyms__button}
 
 Gives a list of synonyms for a mouse button. For example, 1 and 'left_click' are synonyms.
 
@@ -327,13 +336,13 @@ A list of synonyms.
 [mouse]: #mouse
 
 
-[function __mouse.\_\_init\_\___(experiment, visible=False, timeout=None, buttonlist=None)]: #function-__mouse__init____experiment-visiblefalse-timeoutnone-buttonlistnone
-[function __mouse.flush__()]: #function-__mouseflush__
-[function __mouse.get_click__(visible=None, timeout=None, buttonlist=None)]: #function-__mouseget_click__visiblenone-timeoutnone-buttonlistnone
-[function __mouse.get_pos__()]: #function-__mouseget_pos__
-[function __mouse.get_pressed__()]: #function-__mouseget_pressed__
-[function __mouse.set_buttonlist__(buttonlist=None)]: #function-__mouseset_buttonlist__buttonlistnone
-[function __mouse.set_pos__(pos=(0, 0))]: #function-__mouseset_pos__pos0-0
-[function __mouse.set_timeout__(timeout=None)]: #function-__mouseset_timeout__timeoutnone
-[function __mouse.set_visible__(visible=True)]: #function-__mouseset_visible__visibletrue
-[function __mouse.synonyms__(button)]: #function-__mousesynonyms__button
+[function __mouse\.\_\_init\_\___\(experiment, visible=False, timeout=None, buttonlist=None\)]: #function-__mouse__init____experiment-visiblefalse-timeoutnone-buttonlistnone
+[function __mouse\.flush__\(\)]: #function-__mouseflush__
+[function __mouse\.get\_click__\(visible=None, timeout=None, buttonlist=None\)]: #function-__mouseget_click__visiblenone-timeoutnone-buttonlistnone
+[function __mouse\.get\_pos__\(\)]: #function-__mouseget_pos__
+[function __mouse\.get\_pressed__\(\)]: #function-__mouseget_pressed__
+[function __mouse\.set\_buttonlist__\(buttonlist=None\)]: #function-__mouseset_buttonlist__buttonlistnone
+[function __mouse\.set\_pos__\(pos=\(0, 0\)\)]: #function-__mouseset_pos__pos0-0
+[function __mouse\.set\_timeout__\(timeout=None\)]: #function-__mouseset_timeout__timeoutnone
+[function __mouse\.set\_visible__\(visible=True\)]: #function-__mouseset_visible__visibletrue
+[function __mouse\.synonyms__\(button\)]: #function-__mousesynonyms__button

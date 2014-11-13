@@ -21,12 +21,12 @@ before calling [libsrbox.get_button_press] to collect a button press.
 __Function list:__
 
 
-- [function __libsrbox.\_\_init\_\___(experiment, dev=None)](#function-__libsrbox__init____experiment-devnone)
-- [function __libsrbox.close__()](#function-__libsrboxclose__)
-- [function __libsrbox.get_button_press__(allowed_buttons=None, timeout=None)](#function-__libsrboxget_button_press__allowed_buttonsnone-timeoutnone)
-- [function __libsrbox.send__(ch)](#function-__libsrboxsend__ch)
-- [function __libsrbox.start__()](#function-__libsrboxstart__)
-- [function __libsrbox.stop__()](#function-__libsrboxstop__)
+- [function __libsrbox\.\_\_init\_\___\(experiment, dev=None\)](#function-__libsrbox__init____experiment-devnone)
+- [function __libsrbox\.close__\(\)](#function-__libsrboxclose__)
+- [function __libsrbox\.get\_button\_press__\(allowed\_buttons=None, timeout=None\)](#function-__libsrboxget_button_press__allowed_buttonsnone-timeoutnone)
+- [function __libsrbox\.send__\(ch\)](#function-__libsrboxsend__ch)
+- [function __libsrbox\.start__\(\)](#function-__libsrboxstart__)
+- [function __libsrbox\.stop__\(\)](#function-__libsrboxstop__)
 
 
 
@@ -44,7 +44,7 @@ exp.srbox.stop()
 
 <div class="FunctionDoc YAMLDoc" id="libsrbox-__init__" markdown="1">
 
-## [function __libsrbox.\_\_init\_\___(experiment, dev=None)](#function-__libsrbox__init____experiment-devnone) {#function-__libsrbox__init____experiment-devnone}
+## [function __libsrbox\.\_\_init\_\___\(experiment, dev=None\)](#function-__libsrbox__init____experiment-devnone) {#function-__libsrbox__init____experiment-devnone}
 
 Constructor. An `srbox` object is created automatically by the `srbox` plug-in, and you do not generally need to call the constructor yourself.
 
@@ -65,7 +65,7 @@ __Keywords:__
 
 <div class="FunctionDoc YAMLDoc" id="libsrbox-close" markdown="1">
 
-## [function __libsrbox.close__()](#function-__libsrboxclose__) {#function-__libsrboxclose__}
+## [function __libsrbox\.close__\(\)](#function-__libsrboxclose__) {#function-__libsrboxclose__}
 
 Closes the connection to the srbox.
 
@@ -76,7 +76,7 @@ Closes the connection to the srbox.
 
 <div class="FunctionDoc YAMLDoc" id="libsrbox-get_button_press" markdown="1">
 
-## [function __libsrbox.get_button_press__(allowed_buttons=None, timeout=None)](#function-__libsrboxget_button_press__allowed_buttonsnone-timeoutnone) {#function-__libsrboxget_button_press__allowed_buttonsnone-timeoutnone}
+## [function __libsrbox\.get\_button\_press__\(allowed\_buttons=None, timeout=None\)](#function-__libsrboxget_button_press__allowed_buttonsnone-timeoutnone) {#function-__libsrboxget_button_press__allowed_buttonsnone-timeoutnone}
 
 Collect a button press from the SR box. This function will return right away if a button is already pressed.
 
@@ -102,7 +102,7 @@ A timestamp, buttonlist tuple. The buttonlist consists of a list of button numbe
 
 <div class="FunctionDoc YAMLDoc" id="libsrbox-send" markdown="1">
 
-## [function __libsrbox.send__(ch)](#function-__libsrboxsend__ch) {#function-__libsrboxsend__ch}
+## [function __libsrbox\.send__\(ch\)](#function-__libsrboxsend__ch) {#function-__libsrboxsend__ch}
 
 Sends a single character to the SR Box.
 
@@ -118,7 +118,7 @@ __Arguments:__
 
 <div class="FunctionDoc YAMLDoc" id="libsrbox-start" markdown="1">
 
-## [function __libsrbox.start__()](#function-__libsrboxstart__) {#function-__libsrboxstart__}
+## [function __libsrbox\.start__\(\)](#function-__libsrboxstart__) {#function-__libsrboxstart__}
 
 Turns on sending mode, so that the SR Box starts to send output. The SR Box must be in sending mode when you call [libsrbox.get_button_press].
 
@@ -129,7 +129,7 @@ Turns on sending mode, so that the SR Box starts to send output. The SR Box must
 
 <div class="FunctionDoc YAMLDoc" id="libsrbox-stop" markdown="1">
 
-## [function __libsrbox.stop__()](#function-__libsrboxstop__) {#function-__libsrboxstop__}
+## [function __libsrbox\.stop__\(\)](#function-__libsrboxstop__) {#function-__libsrboxstop__}
 
 Turns off sending mode, so that the SR Box stops giving output.
 
@@ -143,9 +143,9 @@ Turns off sending mode, so that the SR Box stops giving output.
 [libsrbox]: #libsrbox
 
 
-[function __libsrbox.\_\_init\_\___(experiment, dev=None)]: #function-__libsrbox__init____experiment-devnone
-[function __libsrbox.close__()]: #function-__libsrboxclose__
-[function __libsrbox.get_button_press__(allowed_buttons=None, timeout=None)]: #function-__libsrboxget_button_press__allowed_buttonsnone-timeoutnone
-[function __libsrbox.send__(ch)]: #function-__libsrboxsend__ch
-[function __libsrbox.start__()]: #function-__libsrboxstart__
-[function __libsrbox.stop__()]: #function-__libsrboxstop__
+[function __libsrbox\.\_\_init\_\___\(experiment, dev=None\)]: #function-__libsrbox__init____experiment-devnone
+[function __libsrbox\.close__\(\)]: #function-__libsrboxclose__
+[function __libsrbox\.get\_button\_press__\(allowed\_buttons=None, timeout=None\)]: #function-__libsrboxget_button_press__allowed_buttonsnone-timeoutnone
+[function __libsrbox\.send__\(ch\)]: #function-__libsrboxsend__ch
+[function __libsrbox\.start__\(\)]: #function-__libsrboxstart__
+[function __libsrbox\.stop__\(\)]: #function-__libsrboxstop__

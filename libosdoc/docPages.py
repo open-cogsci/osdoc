@@ -35,9 +35,9 @@ def createDoc(cls, target):
 		target:		A target path to save to documentation to.
 	"""
 
-	df = yamldoc.DocFactory(cls)
+	df = yamldoc.DocFactory(cls, container=u'div')
 	md = build.MD(unicode(df))
-	regex = r'^~~~\s+{.(?P<lang>\w+)}(?P<script>.+?)^~~~'
+	regex = r'^~~~\s+{*.(?P<lang>\w+)}*(?P<script>.+?)^~~~'
 	for g in re.finditer(regex, md, re.DOTALL | re.MULTILINE):
 		old = g.group()
 		new = u'{%% highlight %s %%}%s{%% endhighlight %%}' % (g.group('lang'),
@@ -61,8 +61,6 @@ def generateDocPages():
 	cls = plugins.load_cls(u'../PyGaze/pygaze/_eyetracker',
 		u'BaseEyeTracker', u'baseeyetracker')
 	createDoc(cls, u'content/_includes/doc/pygaze')
-
-	return
 
 	cls = plugins.load_cls(u'../opensesame/plugins/joystick/_libjoystick',
 		u'basejoystick', u'basejoystick')

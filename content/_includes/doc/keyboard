@@ -19,13 +19,13 @@ exp.set('response_time', end_time - start_time)
 __Function list:__
 
 
-- [function __keyboard.\_\_init\_\___(experiment, keylist=None, timeout=None)](#function-__keyboard__init____experiment-keylistnone-timeoutnone)
-- [function __keyboard.flush__()](#function-__keyboardflush__)
-- [function __keyboard.get_key__(keylist=None, timeout=None)](#function-__keyboardget_key__keylistnone-timeoutnone)
-- [function __keyboard.get_mods__()](#function-__keyboardget_mods__)
-- [function __keyboard.set_keylist__(keylist=None)](#function-__keyboardset_keylist__keylistnone)
-- [function __keyboard.set_timeout__(timeout=None)](#function-__keyboardset_timeout__timeoutnone)
-- [function __keyboard.show_virtual_keyboard__(visible=True)](#function-__keyboardshow_virtual_keyboard__visibletrue)
+- [function __keyboard\.\_\_init\_\___\(experiment, keylist=None, timeout=None\)](#function-__keyboard__init____experiment-keylistnone-timeoutnone)
+- [function __keyboard\.flush__\(\)](#function-__keyboardflush__)
+- [function __keyboard\.get\_key__\(keylist=None, timeout=None\)](#function-__keyboardget_key__keylistnone-timeoutnone)
+- [function __keyboard\.get\_mods__\(\)](#function-__keyboardget_mods__)
+- [function __keyboard\.set\_keylist__\(keylist=None\)](#function-__keyboardset_keylist__keylistnone)
+- [function __keyboard\.set\_timeout__\(timeout=None\)](#function-__keyboardset_timeout__timeoutnone)
+- [function __keyboard\.show\_virtual\_keyboard__\(visible=True\)](#function-__keyboardshow_virtual_keyboard__visibletrue)
 
 
 
@@ -33,7 +33,7 @@ __Function list:__
 
 <div class="FunctionDoc YAMLDoc" id="keyboard-__init__" markdown="1">
 
-## [function __keyboard.\_\_init\_\___(experiment, keylist=None, timeout=None)](#function-__keyboard__init____experiment-keylistnone-timeoutnone) {#function-__keyboard__init____experiment-keylistnone-timeoutnone}
+## [function __keyboard\.\_\_init\_\___\(experiment, keylist=None, timeout=None\)](#function-__keyboard__init____experiment-keylistnone-timeoutnone) {#function-__keyboard__init____experiment-keylistnone-timeoutnone}
 
 Constructor. Intializes the keyboard object.
 
@@ -80,7 +80,7 @@ __Keywords:__
 
 <div class="FunctionDoc YAMLDoc" id="keyboard-flush" markdown="1">
 
-## [function __keyboard.flush__()](#function-__keyboardflush__) {#function-__keyboardflush__}
+## [function __keyboard\.flush__\(\)](#function-__keyboardflush__) {#function-__keyboardflush__}
 
 Clears all pending keyboard input, not limited to the keyboard.
 
@@ -97,7 +97,7 @@ True if a key had been pressed (i.e., if there was something to flush) and False
 
 <div class="FunctionDoc YAMLDoc" id="keyboard-get_key" markdown="1">
 
-## [function __keyboard.get_key__(keylist=None, timeout=None)](#function-__keyboardget_key__keylistnone-timeoutnone) {#function-__keyboardget_key__keylistnone-timeoutnone}
+## [function __keyboard\.get\_key__\(keylist=None, timeout=None\)](#function-__keyboardget_key__keylistnone-timeoutnone) {#function-__keyboardget_key__keylistnone-timeoutnone}
 
 Collects a single key press.
 
@@ -133,7 +133,7 @@ A `(key, timestamp)` tuple. `key` is None if a timeout occurs.
 
 <div class="FunctionDoc YAMLDoc" id="keyboard-get_mods" markdown="1">
 
-## [function __keyboard.get_mods__()](#function-__keyboardget_mods__) {#function-__keyboardget_mods__}
+## [function __keyboard\.get\_mods__\(\)](#function-__keyboardget_mods__) {#function-__keyboardget_mods__}
 
 Returns a list of keyboard moderators (e.g., shift, alt, etc.) that are currently pressed.
 
@@ -160,7 +160,7 @@ A list of keyboard moderators. An empty list is returned if no moderators are pr
 
 <div class="FunctionDoc YAMLDoc" id="keyboard-set_keylist" markdown="1">
 
-## [function __keyboard.set_keylist__(keylist=None)](#function-__keyboardset_keylist__keylistnone) {#function-__keyboardset_keylist__keylistnone}
+## [function __keyboard\.set\_keylist__\(keylist=None\)](#function-__keyboardset_keylist__keylistnone) {#function-__keyboardset_keylist__keylistnone}
 
 Sets the list of accepted keys.
 
@@ -185,7 +185,7 @@ __Keywords:__
 
 <div class="FunctionDoc YAMLDoc" id="keyboard-set_timeout" markdown="1">
 
-## [function __keyboard.set_timeout__(timeout=None)](#function-__keyboardset_timeout__timeoutnone) {#function-__keyboardset_timeout__timeoutnone}
+## [function __keyboard\.set\_timeout__\(timeout=None\)](#function-__keyboardset_timeout__timeoutnone) {#function-__keyboardset_timeout__timeoutnone}
 
 Sets a timeout.
 
@@ -210,7 +210,7 @@ __Keywords:__
 
 <div class="FunctionDoc YAMLDoc" id="keyboard-show_virtual_keyboard" markdown="1">
 
-## [function __keyboard.show_virtual_keyboard__(visible=True)](#function-__keyboardshow_virtual_keyboard__visibletrue) {#function-__keyboardshow_virtual_keyboard__visibletrue}
+## [function __keyboard\.show\_virtual\_keyboard__\(visible=True\)](#function-__keyboardshow_virtual_keyboard__visibletrue) {#function-__keyboardshow_virtual_keyboard__visibletrue}
 
 Shows or hides a virtual keyboard if this is supported by the
 back-end. This function is only necessary if you want the virtual
@@ -248,10 +248,10 @@ __Keywords:__
 [keyboard]: #keyboard
 
 
-[function __keyboard.\_\_init\_\___(experiment, keylist=None, timeout=None)]: #function-__keyboard__init____experiment-keylistnone-timeoutnone
-[function __keyboard.flush__()]: #function-__keyboardflush__
-[function __keyboard.get_key__(keylist=None, timeout=None)]: #function-__keyboardget_key__keylistnone-timeoutnone
-[function __keyboard.get_mods__()]: #function-__keyboardget_mods__
-[function __keyboard.set_keylist__(keylist=None)]: #function-__keyboardset_keylist__keylistnone
-[function __keyboard.set_timeout__(timeout=None)]: #function-__keyboardset_timeout__timeoutnone
-[function __keyboard.show_virtual_keyboard__(visible=True)]: #function-__keyboardshow_virtual_keyboard__visibletrue
+[function __keyboard\.\_\_init\_\___\(experiment, keylist=None, timeout=None\)]: #function-__keyboard__init____experiment-keylistnone-timeoutnone
+[function __keyboard\.flush__\(\)]: #function-__keyboardflush__
+[function __keyboard\.get\_key__\(keylist=None, timeout=None\)]: #function-__keyboardget_key__keylistnone-timeoutnone
+[function __keyboard\.get\_mods__\(\)]: #function-__keyboardget_mods__
+[function __keyboard\.set\_keylist__\(keylist=None\)]: #function-__keyboardset_keylist__keylistnone
+[function __keyboard\.set\_timeout__\(timeout=None\)]: #function-__keyboardset_timeout__timeoutnone
+[function __keyboard\.show\_virtual\_keyboard__\(visible=True\)]: #function-__keyboardshow_virtual_keyboard__visibletrue

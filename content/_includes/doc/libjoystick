@@ -9,16 +9,16 @@ and can be accessed from within an inline_script item as `exp.joystick`.
 __Function list:__
 
 
-- [function __basejoystick.\_\_init\_\___(experiment, device=0, joybuttonlist=None, timeout=None)](#function-__basejoystick__init____experiment-device0-joybuttonlistnone-timeoutnone)
-- [function __basejoystick.flush__()](#function-__basejoystickflush__)
-- [function __basejoystick.get_joyaxes__(timeout=None)](#function-__basejoystickget_joyaxes__timeoutnone)
-- [function __basejoystick.get_joyballs__(timeout=None)](#function-__basejoystickget_joyballs__timeoutnone)
-- [function __basejoystick.get_joybutton__(joybuttonlist=None, timeout=None)](#function-__basejoystickget_joybutton__joybuttonlistnone-timeoutnone)
-- [function __basejoystick.get_joyhats__(timeout=None)](#function-__basejoystickget_joyhats__timeoutnone)
-- [function __basejoystick.get_joyinput__(joybuttonlist=None, timeout=None)](#function-__basejoystickget_joyinput__joybuttonlistnone-timeoutnone)
-- [function __basejoystick.input_options__()](#function-__basejoystickinput_options__)
-- [function __basejoystick.set_joybuttonlist__(joybuttonlist=None)](#function-__basejoystickset_joybuttonlist__joybuttonlistnone)
-- [function __basejoystick.set_timeout__(timeout=None)](#function-__basejoystickset_timeout__timeoutnone)
+- [function __basejoystick\.\_\_init\_\___\(experiment, device=0, joybuttonlist=None, timeout=None\)](#function-__basejoystick__init____experiment-device0-joybuttonlistnone-timeoutnone)
+- [function __basejoystick\.flush__\(\)](#function-__basejoystickflush__)
+- [function __basejoystick\.get\_joyaxes__\(timeout=None\)](#function-__basejoystickget_joyaxes__timeoutnone)
+- [function __basejoystick\.get\_joyballs__\(timeout=None\)](#function-__basejoystickget_joyballs__timeoutnone)
+- [function __basejoystick\.get\_joybutton__\(joybuttonlist=None, timeout=None\)](#function-__basejoystickget_joybutton__joybuttonlistnone-timeoutnone)
+- [function __basejoystick\.get\_joyhats__\(timeout=None\)](#function-__basejoystickget_joyhats__timeoutnone)
+- [function __basejoystick\.get\_joyinput__\(joybuttonlist=None, timeout=None\)](#function-__basejoystickget_joyinput__joybuttonlistnone-timeoutnone)
+- [function __basejoystick\.input\_options__\(\)](#function-__basejoystickinput_options__)
+- [function __basejoystick\.set\_joybuttonlist__\(joybuttonlist=None\)](#function-__basejoystickset_joybuttonlist__joybuttonlistnone)
+- [function __basejoystick\.set\_timeout__\(timeout=None\)](#function-__basejoystickset_timeout__timeoutnone)
 
 
 
@@ -26,7 +26,7 @@ __Function list:__
 
 <div class="FunctionDoc YAMLDoc" id="basejoystick-__init__" markdown="1">
 
-## [function __basejoystick.\_\_init\_\___(experiment, device=0, joybuttonlist=None, timeout=None)](#function-__basejoystick__init____experiment-device0-joybuttonlistnone-timeoutnone) {#function-__basejoystick__init____experiment-device0-joybuttonlistnone-timeoutnone}
+## [function __basejoystick\.\_\_init\_\___\(experiment, device=0, joybuttonlist=None, timeout=None\)](#function-__basejoystick__init____experiment-device0-joybuttonlistnone-timeoutnone) {#function-__basejoystick__init____experiment-device0-joybuttonlistnone-timeoutnone}
 
 Intializes the joystick object.
 
@@ -55,7 +55,7 @@ buttons.
 
 <div class="FunctionDoc YAMLDoc" id="basejoystick-flush" markdown="1">
 
-## [function __basejoystick.flush__()](#function-__basejoystickflush__) {#function-__basejoystickflush__}
+## [function __basejoystick\.flush__\(\)](#function-__basejoystickflush__) {#function-__basejoystickflush__}
 
 Clears all pending input, not limited to the joystick.
 
@@ -72,7 +72,7 @@ True if joyinput was pending (i.e., if there was something to flush) and False o
 
 <div class="FunctionDoc YAMLDoc" id="basejoystick-get_joyaxes" markdown="1">
 
-## [function __basejoystick.get_joyaxes__(timeout=None)](#function-__basejoystickget_joyaxes__timeoutnone) {#function-__basejoystickget_joyaxes__timeoutnone}
+## [function __basejoystick\.get\_joyaxes__\(timeout=None\)](#function-__basejoystickget_joyaxes__timeoutnone) {#function-__basejoystickget_joyaxes__timeoutnone}
 
 Waits for joystick axes movement.
 
@@ -95,7 +95,7 @@ A (position, timestamp) tuple. The position is None if a timeout occurs.
 
 <div class="FunctionDoc YAMLDoc" id="basejoystick-get_joyballs" markdown="1">
 
-## [function __basejoystick.get_joyballs__(timeout=None)](#function-__basejoystickget_joyballs__timeoutnone) {#function-__basejoystickget_joyballs__timeoutnone}
+## [function __basejoystick\.get\_joyballs__\(timeout=None\)](#function-__basejoystickget_joyballs__timeoutnone) {#function-__basejoystickget_joyballs__timeoutnone}
 
 Waits for joystick trackball movement.
 
@@ -118,7 +118,7 @@ A (position, timestamp) tuple. The position is `None` if a timeout occurs.
 
 <div class="FunctionDoc YAMLDoc" id="basejoystick-get_joybutton" markdown="1">
 
-## [function __basejoystick.get_joybutton__(joybuttonlist=None, timeout=None)](#function-__basejoystickget_joybutton__joybuttonlistnone-timeoutnone) {#function-__basejoystickget_joybutton__joybuttonlistnone-timeoutnone}
+## [function __basejoystick\.get\_joybutton__\(joybuttonlist=None, timeout=None\)](#function-__basejoystickget_joybutton__joybuttonlistnone-timeoutnone) {#function-__basejoystickget_joybutton__joybuttonlistnone-timeoutnone}
 
 Collects joystick button input.
 
@@ -144,7 +144,7 @@ A (joybutton, timestamp) tuple. The joybutton is `None` if a timeout occurs.
 
 <div class="FunctionDoc YAMLDoc" id="basejoystick-get_joyhats" markdown="1">
 
-## [function __basejoystick.get_joyhats__(timeout=None)](#function-__basejoystickget_joyhats__timeoutnone) {#function-__basejoystickget_joyhats__timeoutnone}
+## [function __basejoystick\.get\_joyhats__\(timeout=None\)](#function-__basejoystickget_joyhats__timeoutnone) {#function-__basejoystickget_joyhats__timeoutnone}
 
 Waits for joystick hat movement.
 
@@ -167,7 +167,7 @@ A (position, timestamp) tuple. The position is `None` if a timeout occurs.
 
 <div class="FunctionDoc YAMLDoc" id="basejoystick-get_joyinput" markdown="1">
 
-## [function __basejoystick.get_joyinput__(joybuttonlist=None, timeout=None)](#function-__basejoystickget_joyinput__joybuttonlistnone-timeoutnone) {#function-__basejoystickget_joyinput__joybuttonlistnone-timeoutnone}
+## [function __basejoystick\.get\_joyinput__\(joybuttonlist=None, timeout=None\)](#function-__basejoystickget_joyinput__joybuttonlistnone-timeoutnone) {#function-__basejoystickget_joyinput__joybuttonlistnone-timeoutnone}
 
 Waits for any joystick input (buttons, axes, hats or balls).
 
@@ -193,7 +193,7 @@ A (event, value, timestamp) tuple. The value is `None` if a timeout occurs.
 
 <div class="FunctionDoc YAMLDoc" id="basejoystick-input_options" markdown="1">
 
-## [function __basejoystick.input_options__()](#function-__basejoystickinput_options__) {#function-__basejoystickinput_options__}
+## [function __basejoystick\.input\_options__\(\)](#function-__basejoystickinput_options__) {#function-__basejoystickinput_options__}
 
 Generates a list with the number of available buttons, axes, balls and hats.
 
@@ -211,7 +211,7 @@ hats].
 
 <div class="FunctionDoc YAMLDoc" id="basejoystick-set_joybuttonlist" markdown="1">
 
-## [function __basejoystick.set_joybuttonlist__(joybuttonlist=None)](#function-__basejoystickset_joybuttonlist__joybuttonlistnone) {#function-__basejoystickset_joybuttonlist__joybuttonlistnone}
+## [function __basejoystick\.set\_joybuttonlist__\(joybuttonlist=None\)](#function-__basejoystickset_joybuttonlist__joybuttonlistnone) {#function-__basejoystickset_joybuttonlist__joybuttonlistnone}
 
 Sets a list of accepted buttons.
 
@@ -229,7 +229,7 @@ buttons.
 
 <div class="FunctionDoc YAMLDoc" id="basejoystick-set_timeout" markdown="1">
 
-## [function __basejoystick.set_timeout__(timeout=None)](#function-__basejoystickset_timeout__timeoutnone) {#function-__basejoystickset_timeout__timeoutnone}
+## [function __basejoystick\.set\_timeout__\(timeout=None\)](#function-__basejoystickset_timeout__timeoutnone) {#function-__basejoystickset_timeout__timeoutnone}
 
 Sets a timeout.
 
@@ -249,13 +249,13 @@ __Keywords:__
 [basejoystick]: #basejoystick
 
 
-[function __basejoystick.\_\_init\_\___(experiment, device=0, joybuttonlist=None, timeout=None)]: #function-__basejoystick__init____experiment-device0-joybuttonlistnone-timeoutnone
-[function __basejoystick.flush__()]: #function-__basejoystickflush__
-[function __basejoystick.get_joyaxes__(timeout=None)]: #function-__basejoystickget_joyaxes__timeoutnone
-[function __basejoystick.get_joyballs__(timeout=None)]: #function-__basejoystickget_joyballs__timeoutnone
-[function __basejoystick.get_joybutton__(joybuttonlist=None, timeout=None)]: #function-__basejoystickget_joybutton__joybuttonlistnone-timeoutnone
-[function __basejoystick.get_joyhats__(timeout=None)]: #function-__basejoystickget_joyhats__timeoutnone
-[function __basejoystick.get_joyinput__(joybuttonlist=None, timeout=None)]: #function-__basejoystickget_joyinput__joybuttonlistnone-timeoutnone
-[function __basejoystick.input_options__()]: #function-__basejoystickinput_options__
-[function __basejoystick.set_joybuttonlist__(joybuttonlist=None)]: #function-__basejoystickset_joybuttonlist__joybuttonlistnone
-[function __basejoystick.set_timeout__(timeout=None)]: #function-__basejoystickset_timeout__timeoutnone
+[function __basejoystick\.\_\_init\_\___\(experiment, device=0, joybuttonlist=None, timeout=None\)]: #function-__basejoystick__init____experiment-device0-joybuttonlistnone-timeoutnone
+[function __basejoystick\.flush__\(\)]: #function-__basejoystickflush__
+[function __basejoystick\.get\_joyaxes__\(timeout=None\)]: #function-__basejoystickget_joyaxes__timeoutnone
+[function __basejoystick\.get\_joyballs__\(timeout=None\)]: #function-__basejoystickget_joyballs__timeoutnone
+[function __basejoystick\.get\_joybutton__\(joybuttonlist=None, timeout=None\)]: #function-__basejoystickget_joybutton__joybuttonlistnone-timeoutnone
+[function __basejoystick\.get\_joyhats__\(timeout=None\)]: #function-__basejoystickget_joyhats__timeoutnone
+[function __basejoystick\.get\_joyinput__\(joybuttonlist=None, timeout=None\)]: #function-__basejoystickget_joyinput__joybuttonlistnone-timeoutnone
+[function __basejoystick\.input\_options__\(\)]: #function-__basejoystickinput_options__
+[function __basejoystick\.set\_joybuttonlist__\(joybuttonlist=None\)]: #function-__basejoystickset_joybuttonlist__joybuttonlistnone
+[function __basejoystick\.set\_timeout__\(timeout=None\)]: #function-__basejoystickset_timeout__timeoutnone

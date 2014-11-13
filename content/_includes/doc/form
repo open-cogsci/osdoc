@@ -20,18 +20,18 @@ form._exec()
 __Function list:__
 
 
-- [function __form.\_\_init\_\___(experiment, rows=2, spacing=10, cols=2, item=None, theme=u'gray', margins=(100, 100, 100, 100))](#function-__form__init____experiment-rows2-spacing10-cols2-itemnone-themeugray-margins100-100-100-100)
-- [function __form._exec__(focus_widget=None)](#function-__form_exec__focus_widgetnone)
-- [function __form.cell_index__(pos)](#function-__formcell_index__pos)
-- [function __form.render__()](#function-__formrender__)
-- [function __form.set_widget__(widget, pos, colspan=1, rowspan=1)](#function-__formset_widget__widget-pos-colspan1-rowspan1)
-- [function __form.xy_to_index__(xy)](#function-__formxy_to_index__xy)
+- [function __form\.\_\_init\_\___\(experiment, rows=2, spacing=10, cols=2, item=None, theme=u'gray', margins=\(100, 100, 100, 100\)\)](#function-__form__init____experiment-rows2-spacing10-cols2-itemnone-themeugray-margins100-100-100-100)
+- [function __form\.\_exec__\(focus\_widget=None\)](#function-__form_exec__focus_widgetnone)
+- [function __form\.cell\_index__\(pos\)](#function-__formcell_index__pos)
+- [function __form\.render__\(\)](#function-__formrender__)
+- [function __form\.set\_widget__\(widget, pos, colspan=1, rowspan=1\)](#function-__formset_widget__widget-pos-colspan1-rowspan1)
+- [function __form\.xy\_to\_index__\(xy\)](#function-__formxy_to_index__xy)
 
 
 
 <div class="FunctionDoc YAMLDoc" id="form-__init__" markdown="1">
 
-## [function __form.\_\_init\_\___(experiment, rows=2, spacing=10, cols=2, item=None, theme=u'gray', margins=(100, 100, 100, 100))](#function-__form__init____experiment-rows2-spacing10-cols2-itemnone-themeugray-margins100-100-100-100) {#function-__form__init____experiment-rows2-spacing10-cols2-itemnone-themeugray-margins100-100-100-100}
+## [function __form\.\_\_init\_\___\(experiment, rows=2, spacing=10, cols=2, item=None, theme=u'gray', margins=\(100, 100, 100, 100\)\)](#function-__form__init____experiment-rows2-spacing10-cols2-itemnone-themeugray-margins100-100-100-100) {#function-__form__init____experiment-rows2-spacing10-cols2-itemnone-themeugray-margins100-100-100-100}
 
 Constructor.
 
@@ -68,7 +68,7 @@ __Keywords:__
 
 <div class="FunctionDoc YAMLDoc" id="form-_exec" markdown="1">
 
-## [function __form._exec__(focus_widget=None)](#function-__form_exec__focus_widgetnone) {#function-__form_exec__focus_widgetnone}
+## [function __form\.\_exec__\(focus\_widget=None\)](#function-__form_exec__focus_widgetnone) {#function-__form_exec__focus_widgetnone}
 
 Executes the form.
 
@@ -89,7 +89,7 @@ Gives the return value of the form, which depends on how the user interacted wit
 
 <div class="FunctionDoc YAMLDoc" id="form-cell_index" markdown="1">
 
-## [function __form.cell_index__(pos)](#function-__formcell_index__pos) {#function-__formcell_index__pos}
+## [function __form\.cell\_index__\(pos\)](#function-__formcell_index__pos) {#function-__formcell_index__pos}
 
 Converts a position to a cell index. A cell index corresponds to the number of the cell in the form, from left-to-right, top-to-bottom.
 
@@ -111,7 +111,7 @@ A cell index.
 
 <div class="FunctionDoc YAMLDoc" id="form-render" markdown="1">
 
-## [function __form.render__()](#function-__formrender__) {#function-__formrender__}
+## [function __form\.render__\(\)](#function-__formrender__) {#function-__formrender__}
 
 Draws the form and all the widgets in it.
 
@@ -122,7 +122,7 @@ Draws the form and all the widgets in it.
 
 <div class="FunctionDoc YAMLDoc" id="form-set_widget" markdown="1">
 
-## [function __form.set_widget__(widget, pos, colspan=1, rowspan=1)](#function-__formset_widget__widget-pos-colspan1-rowspan1) {#function-__formset_widget__widget-pos-colspan1-rowspan1}
+## [function __form\.set\_widget__\(widget, pos, colspan=1, rowspan=1\)](#function-__formset_widget__widget-pos-colspan1-rowspan1) {#function-__formset_widget__widget-pos-colspan1-rowspan1}
 
 Adds a widget to the form.
 
@@ -149,7 +149,7 @@ __Keywords:__
 
 <div class="FunctionDoc YAMLDoc" id="form-xy_to_index" markdown="1">
 
-## [function __form.xy_to_index__(xy)](#function-__formxy_to_index__xy) {#function-__formxy_to_index__xy}
+## [function __form\.xy\_to\_index__\(xy\)](#function-__formxy_to_index__xy) {#function-__formxy_to_index__xy}
 
 Converts a coordinate in pixels to a cell index. This allows you to determine on which widget a user has clicked.
 
@@ -174,9 +174,9 @@ A cell index.
 [form]: #form
 
 
-[function __form.\_\_init\_\___(experiment, rows=2, spacing=10, cols=2, item=None, theme=u'gray', margins=(100, 100, 100, 100))]: #function-__form__init____experiment-rows2-spacing10-cols2-itemnone-themeugray-margins100-100-100-100
-[function __form._exec__(focus_widget=None)]: #function-__form_exec__focus_widgetnone
-[function __form.cell_index__(pos)]: #function-__formcell_index__pos
-[function __form.render__()]: #function-__formrender__
-[function __form.set_widget__(widget, pos, colspan=1, rowspan=1)]: #function-__formset_widget__widget-pos-colspan1-rowspan1
-[function __form.xy_to_index__(xy)]: #function-__formxy_to_index__xy
+[function __form\.\_\_init\_\___\(experiment, rows=2, spacing=10, cols=2, item=None, theme=u'gray', margins=\(100, 100, 100, 100\)\)]: #function-__form__init____experiment-rows2-spacing10-cols2-itemnone-themeugray-margins100-100-100-100
+[function __form\.\_exec__\(focus\_widget=None\)]: #function-__form_exec__focus_widgetnone
+[function __form\.cell\_index__\(pos\)]: #function-__formcell_index__pos
+[function __form\.render__\(\)]: #function-__formrender__
+[function __form\.set\_widget__\(widget, pos, colspan=1, rowspan=1\)]: #function-__formset_widget__widget-pos-colspan1-rowspan1
+[function __form\.xy\_to\_index__\(xy\)]: #function-__formxy_to_index__xy

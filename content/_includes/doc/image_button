@@ -6,9 +6,8 @@ The image_button widget is a clickable image.
 
 __Example (OpenSesame script):__
 
-~~~
-widget 0 0 1 1 image_button path='5.png' var='response'
-~~~
+{% highlight idget %} 0 0 1 1 image_button path='5.png' var='response'
+{% endhighlight %}
 
 __Example (Python):__
 
@@ -27,18 +26,18 @@ form._exec()
 __Function list:__
 
 
-- [function __image_button.\_\_init\_\___(form, var=None, path=None, frame=False, adjust=True, image_id=None)](#function-__image_button__init____form-varnone-pathnone-framefalse-adjusttrue-image_idnone)
-- [function __image_button.draw_frame__(style=u'normal', rect=None)](#function-__image_buttondraw_frame__styleunormal-rectnone)
-- [function __image_button.on_mouse_click__(pos)](#function-__image_buttonon_mouse_click__pos)
-- [function __image_button.render__()](#function-__image_buttonrender__)
-- [function __image_button.set_rect__(rect)](#function-__image_buttonset_rect__rect)
-- [function __image_button.set_var__(val, var=None)](#function-__image_buttonset_var__val-varnone)
+- [function __image\_button\.\_\_init\_\___\(form, var=None, path=None, frame=False, adjust=True, image\_id=None\)](#function-__image_button__init____form-varnone-pathnone-framefalse-adjusttrue-image_idnone)
+- [function __image\_button\.draw\_frame__\(style=u'normal', rect=None\)](#function-__image_buttondraw_frame__styleunormal-rectnone)
+- [function __image\_button\.on\_mouse\_click__\(pos\)](#function-__image_buttonon_mouse_click__pos)
+- [function __image\_button\.render__\(\)](#function-__image_buttonrender__)
+- [function __image\_button\.set\_rect__\(rect\)](#function-__image_buttonset_rect__rect)
+- [function __image\_button\.set\_var__\(val, var=None\)](#function-__image_buttonset_var__val-varnone)
 
 
 
 <div class="FunctionDoc YAMLDoc" id="image_button-__init__" markdown="1">
 
-## [function __image_button.\_\_init\_\___(form, var=None, path=None, frame=False, adjust=True, image_id=None)](#function-__image_button__init____form-varnone-pathnone-framefalse-adjusttrue-image_idnone) {#function-__image_button__init____form-varnone-pathnone-framefalse-adjusttrue-image_idnone}
+## [function __image\_button\.\_\_init\_\___\(form, var=None, path=None, frame=False, adjust=True, image\_id=None\)](#function-__image_button__init____form-varnone-pathnone-framefalse-adjusttrue-image_idnone) {#function-__image_button__init____form-varnone-pathnone-framefalse-adjusttrue-image_idnone}
 
 Constructor.
 
@@ -72,7 +71,7 @@ __Keywords:__
 
 <div class="FunctionDoc YAMLDoc" id="image_button-draw_frame" markdown="1">
 
-## [function __image_button.draw_frame__(style=u'normal', rect=None)](#function-__image_buttondraw_frame__styleunormal-rectnone) {#function-__image_buttondraw_frame__styleunormal-rectnone}
+## [function __image\_button\.draw\_frame__\(style=u'normal', rect=None\)](#function-__image_buttondraw_frame__styleunormal-rectnone) {#function-__image_buttondraw_frame__styleunormal-rectnone}
 
 Draws a simple frame around the widget.
 
@@ -92,7 +91,7 @@ __Keywords:__
 
 <div class="FunctionDoc YAMLDoc" id="image_button-on_mouse_click" markdown="1">
 
-## [function __image_button.on_mouse_click__(pos)](#function-__image_buttonon_mouse_click__pos) {#function-__image_buttonon_mouse_click__pos}
+## [function __image\_button\.on\_mouse\_click__\(pos\)](#function-__image_buttonon_mouse_click__pos) {#function-__image_buttonon_mouse_click__pos}
 
 Is called whenever the user clicks on the widget. Returns the image_id or the path to the image if no image_id has been specified.
 
@@ -108,7 +107,7 @@ __Arguments:__
 
 <div class="FunctionDoc YAMLDoc" id="image_button-render" markdown="1">
 
-## [function __image_button.render__()](#function-__image_buttonrender__) {#function-__image_buttonrender__}
+## [function __image\_button\.render__\(\)](#function-__image_buttonrender__) {#function-__image_buttonrender__}
 
 Draws the widget.
 
@@ -119,7 +118,7 @@ Draws the widget.
 
 <div class="FunctionDoc YAMLDoc" id="image_button-set_rect" markdown="1">
 
-## [function __image_button.set_rect__(rect)](#function-__image_buttonset_rect__rect) {#function-__image_buttonset_rect__rect}
+## [function __image\_button\.set\_rect__\(rect\)](#function-__image_buttonset_rect__rect) {#function-__image_buttonset_rect__rect}
 
 Sets the widget geometry.
 
@@ -135,7 +134,7 @@ __Arguments:__
 
 <div class="FunctionDoc YAMLDoc" id="image_button-set_var" markdown="1">
 
-## [function __image_button.set_var__(val, var=None)](#function-__image_buttonset_var__val-varnone) {#function-__image_buttonset_var__val-varnone}
+## [function __image\_button\.set\_var__\(val, var=None\)](#function-__image_buttonset_var__val-varnone) {#function-__image_buttonset_var__val-varnone}
 
 Sets an experimental variable.
 
@@ -159,9 +158,9 @@ __Keywords:__
 [image_button]: #image_button
 
 
-[function __image_button.\_\_init\_\___(form, var=None, path=None, frame=False, adjust=True, image_id=None)]: #function-__image_button__init____form-varnone-pathnone-framefalse-adjusttrue-image_idnone
-[function __image_button.draw_frame__(style=u'normal', rect=None)]: #function-__image_buttondraw_frame__styleunormal-rectnone
-[function __image_button.on_mouse_click__(pos)]: #function-__image_buttonon_mouse_click__pos
-[function __image_button.render__()]: #function-__image_buttonrender__
-[function __image_button.set_rect__(rect)]: #function-__image_buttonset_rect__rect
-[function __image_button.set_var__(val, var=None)]: #function-__image_buttonset_var__val-varnone
+[function __image\_button\.\_\_init\_\___\(form, var=None, path=None, frame=False, adjust=True, image\_id=None\)]: #function-__image_button__init____form-varnone-pathnone-framefalse-adjusttrue-image_idnone
+[function __image\_button\.draw\_frame__\(style=u'normal', rect=None\)]: #function-__image_buttondraw_frame__styleunormal-rectnone
+[function __image\_button\.on\_mouse\_click__\(pos\)]: #function-__image_buttonon_mouse_click__pos
+[function __image\_button\.render__\(\)]: #function-__image_buttonrender__
+[function __image\_button\.set\_rect__\(rect\)]: #function-__image_buttonset_rect__rect
+[function __image\_button\.set\_var__\(val, var=None\)]: #function-__image_buttonset_var__val-varnone

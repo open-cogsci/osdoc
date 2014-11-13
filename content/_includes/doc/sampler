@@ -24,24 +24,24 @@ my_sampler.play()
 __Function list:__
 
 
-- [function __sampler.\_\_init\_\___(experiment, src)](#function-__sampler__init____experiment-src)
-- [function __sampler.fade_in__(ms)](#function-__samplerfade_in__ms)
-- [function __sampler.is_playing__()](#function-__sampleris_playing__)
-- [function __sampler.pan__(p)](#function-__samplerpan__p)
-- [function __sampler.pause__()](#function-__samplerpause__)
-- [function __sampler.pitch__(p)](#function-__samplerpitch__p)
-- [function __sampler.play__(block=False)](#function-__samplerplay__blockfalse)
-- [function __sampler.resume__()](#function-__samplerresume__)
-- [function __sampler.stop__()](#function-__samplerstop__)
-- [function __sampler.stop_after__(ms)](#function-__samplerstop_after__ms)
-- [function __sampler.volume__(vol)](#function-__samplervolume__vol)
-- [function __sampler.wait__()](#function-__samplerwait__)
+- [function __sampler\.\_\_init\_\___\(experiment, src\)](#function-__sampler__init____experiment-src)
+- [function __sampler\.fade\_in__\(ms\)](#function-__samplerfade_in__ms)
+- [function __sampler\.is\_playing__\(\)](#function-__sampleris_playing__)
+- [function __sampler\.pan__\(p\)](#function-__samplerpan__p)
+- [function __sampler\.pause__\(\)](#function-__samplerpause__)
+- [function __sampler\.pitch__\(p\)](#function-__samplerpitch__p)
+- [function __sampler\.play__\(block=False\)](#function-__samplerplay__blockfalse)
+- [function __sampler\.resume__\(\)](#function-__samplerresume__)
+- [function __sampler\.stop__\(\)](#function-__samplerstop__)
+- [function __sampler\.stop\_after__\(ms\)](#function-__samplerstop_after__ms)
+- [function __sampler\.volume__\(vol\)](#function-__samplervolume__vol)
+- [function __sampler\.wait__\(\)](#function-__samplerwait__)
 
 
 
 <div class="FunctionDoc YAMLDoc" id="sampler-__init__" markdown="1">
 
-## [function __sampler.\_\_init\_\___(experiment, src)](#function-__sampler__init____experiment-src) {#function-__sampler__init____experiment-src}
+## [function __sampler\.\_\_init\_\___\(experiment, src\)](#function-__sampler__init____experiment-src) {#function-__sampler__init____experiment-src}
 
 Initializes the sampler with a specified file.
 
@@ -67,7 +67,7 @@ __Arguments:__
 
 <div class="FunctionDoc YAMLDoc" id="sampler-fade_in" markdown="1">
 
-## [function __sampler.fade_in__(ms)](#function-__samplerfade_in__ms) {#function-__samplerfade_in__ms}
+## [function __sampler\.fade\_in__\(ms\)](#function-__samplerfade_in__ms) {#function-__samplerfade_in__ms}
 
 Sets a fade-in time in milliseconds.
 
@@ -92,7 +92,7 @@ __Arguments:__
 
 <div class="FunctionDoc YAMLDoc" id="sampler-is_playing" markdown="1">
 
-## [function __sampler.is_playing__()](#function-__sampleris_playing__) {#function-__sampleris_playing__}
+## [function __sampler\.is\_playing__\(\)](#function-__sampleris_playing__) {#function-__sampleris_playing__}
 
 Checks if a sound is currently playing.
 
@@ -109,7 +109,7 @@ True if a sound is playing, False if not.
 
 <div class="FunctionDoc YAMLDoc" id="sampler-pan" markdown="1">
 
-## [function __sampler.pan__(p)](#function-__samplerpan__p) {#function-__samplerpan__p}
+## [function __sampler\.pan__\(p\)](#function-__samplerpan__p) {#function-__samplerpan__p}
 
 Sets the panning of the sample. The volume of the "unpanned" channel decreases, the volume of the other channel remains the same. To fully mute one channel specify "left" (mutes right, pans to left) or "right" (mutes left, pans to right").
 
@@ -134,7 +134,7 @@ __Arguments:__
 
 <div class="FunctionDoc YAMLDoc" id="sampler-pause" markdown="1">
 
-## [function __sampler.pause__()](#function-__samplerpause__) {#function-__samplerpause__}
+## [function __sampler\.pause__\(\)](#function-__samplerpause__) {#function-__samplerpause__}
 
 Pauses playback (if any).
 
@@ -158,7 +158,7 @@ my_sampler.resume()
 
 <div class="FunctionDoc YAMLDoc" id="sampler-pitch" markdown="1">
 
-## [function __sampler.pitch__(p)](#function-__samplerpitch__p) {#function-__samplerpitch__p}
+## [function __sampler\.pitch__\(p\)](#function-__samplerpitch__p) {#function-__samplerpitch__p}
 
 Sets the relative pitch of the sample.
 
@@ -183,7 +183,7 @@ __Arguments:__
 
 <div class="FunctionDoc YAMLDoc" id="sampler-play" markdown="1">
 
-## [function __sampler.play__(block=False)](#function-__samplerplay__blockfalse) {#function-__samplerplay__blockfalse}
+## [function __sampler\.play__\(block=False\)](#function-__samplerplay__blockfalse) {#function-__samplerplay__blockfalse}
 
 Plays the sound.
 
@@ -209,7 +209,7 @@ __Keywords:__
 
 <div class="FunctionDoc YAMLDoc" id="sampler-resume" markdown="1">
 
-## [function __sampler.resume__()](#function-__samplerresume__) {#function-__samplerresume__}
+## [function __sampler\.resume__\(\)](#function-__samplerresume__) {#function-__samplerresume__}
 
 Resumes playback (if any).
 
@@ -233,7 +233,7 @@ my_sampler.resume()
 
 <div class="FunctionDoc YAMLDoc" id="sampler-stop" markdown="1">
 
-## [function __sampler.stop__()](#function-__samplerstop__) {#function-__samplerstop__}
+## [function __sampler\.stop__\(\)](#function-__samplerstop__) {#function-__samplerstop__}
 
 Stops the currently playing sound (if any).
 
@@ -255,7 +255,7 @@ my_sampler.stop()
 
 <div class="FunctionDoc YAMLDoc" id="sampler-stop_after" markdown="1">
 
-## [function __sampler.stop_after__(ms)](#function-__samplerstop_after__ms) {#function-__samplerstop_after__ms}
+## [function __sampler\.stop\_after__\(ms\)](#function-__samplerstop_after__ms) {#function-__samplerstop_after__ms}
 
 Specifies a duration after which the sampler stops playing.
 
@@ -280,7 +280,7 @@ __Arguments:__
 
 <div class="FunctionDoc YAMLDoc" id="sampler-volume" markdown="1">
 
-## [function __sampler.volume__(vol)](#function-__samplervolume__vol) {#function-__samplervolume__vol}
+## [function __sampler\.volume__\(vol\)](#function-__samplervolume__vol) {#function-__samplervolume__vol}
 
 Sets the volume.
 
@@ -305,7 +305,7 @@ __Arguments:__
 
 <div class="FunctionDoc YAMLDoc" id="sampler-wait" markdown="1">
 
-## [function __sampler.wait__()](#function-__samplerwait__) {#function-__samplerwait__}
+## [function __sampler\.wait__\(\)](#function-__samplerwait__) {#function-__samplerwait__}
 
 Blocks until the sound has finished playing or returns right away if no sound is playing.
 
@@ -330,15 +330,15 @@ print('The sampler is finished!')
 [sampler]: #sampler
 
 
-[function __sampler.\_\_init\_\___(experiment, src)]: #function-__sampler__init____experiment-src
-[function __sampler.fade_in__(ms)]: #function-__samplerfade_in__ms
-[function __sampler.is_playing__()]: #function-__sampleris_playing__
-[function __sampler.pan__(p)]: #function-__samplerpan__p
-[function __sampler.pause__()]: #function-__samplerpause__
-[function __sampler.pitch__(p)]: #function-__samplerpitch__p
-[function __sampler.play__(block=False)]: #function-__samplerplay__blockfalse
-[function __sampler.resume__()]: #function-__samplerresume__
-[function __sampler.stop__()]: #function-__samplerstop__
-[function __sampler.stop_after__(ms)]: #function-__samplerstop_after__ms
-[function __sampler.volume__(vol)]: #function-__samplervolume__vol
-[function __sampler.wait__()]: #function-__samplerwait__
+[function __sampler\.\_\_init\_\___\(experiment, src\)]: #function-__sampler__init____experiment-src
+[function __sampler\.fade\_in__\(ms\)]: #function-__samplerfade_in__ms
+[function __sampler\.is\_playing__\(\)]: #function-__sampleris_playing__
+[function __sampler\.pan__\(p\)]: #function-__samplerpan__p
+[function __sampler\.pause__\(\)]: #function-__samplerpause__
+[function __sampler\.pitch__\(p\)]: #function-__samplerpitch__p
+[function __sampler\.play__\(block=False\)]: #function-__samplerplay__blockfalse
+[function __sampler\.resume__\(\)]: #function-__samplerresume__
+[function __sampler\.stop__\(\)]: #function-__samplerstop__
+[function __sampler\.stop\_after__\(ms\)]: #function-__samplerstop_after__ms
+[function __sampler\.volume__\(vol\)]: #function-__samplervolume__vol
+[function __sampler\.wait__\(\)]: #function-__samplerwait__
