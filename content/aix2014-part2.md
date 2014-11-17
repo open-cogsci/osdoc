@@ -27,16 +27,22 @@ Les diapositives de cette formation peut être téléchargé d'[ici][slides]
 
 ### La question de recherche
 
-On va créer une expérience 'gaze cuieing'. Un visage est présenté au centre de l'écran. Les yeux du visage régardent soit à droite, soit à gauche. La cible (la lettre "F" ou "H") est présenté soit à gauche, soit à droite. Un distracteur (toujours la lettre "X") est présenté sur l'autre coté.
+On va créer une expérience 'gaze cuieing'. Un visage est présenté au centre de l'écran. Les yeux du visage régardent soit à droite, soit à gauche. La cible (la lettre "F" ou "H") est présenté soit à gauche, soit à droite. Un distractor (toujours la lettre "X") est présenté sur l'autre coté. La tâche du sujet est d'indiquer dés que possible, si la cible est la lettre "F" ou "H". 
 
-La tâche du sujet est d'indiquer dés que possible, si la cible est la lettre "F" ou "H". 
-
-Les variables indépendantes sont: 
+Les variables indépendantes principales sont: 
 	
-- La direction du regard (droit ou gauche)
-- La position de la cible (droit ou gauche)
+- La direction du regard (droite ou gauche)
+- La position de la cible (droite ou gauche)
 
-Ces deux facteurs sont croisées avec un plan factoriel. Ça donne une autre variable: Congruence. La variable Congruent a deux niveaux: la condition congruente (ou le regard est dirigé vers la cible) vs la condition non-congruente (le regard est dirigé vers le distracteur).
+Ces deux facteurs sont croisés par un plan factoriel. Ce plan factoriel donne lieu à une nouvelle variable, *Congruence*, qui obtient la valeur 'congruent' si le smiley regarde à la direction de la cible, et la valeur 'non-congruente' si le smiley regarde à la direction du distractor.
+
+%--
+figure:
+ id: crossed
+ source: crossed.png
+ caption: |
+  Le plan factoriel 
+--%
 
 Notre dernières 2 variables indépendante sont:
 	
@@ -45,28 +51,48 @@ Notre dernières 2 variables indépendante sont:
 
 L'hypothèse est que le sujet va identifier la cible plus rapidement dans la condition congruente par rapport au condition incongruente. Cela montrera que notre attention visuelle est automatiquement guidé par le regard des autres, même dans les situations où cela ne sert pas un but (parce que le regard du smiley ne prédit pas la position de la cible).
 
+%--
+figure:
+ id: hypothesis
+ source: hypothesis.png
+ caption: |
+  L'hypothèse
+--%
+
+
 ### La séquence d'essai
 
 Pour tester notre hypothèse, on va créer une expérience avec la séquence d'essai suivante: 
 
-- Point de fixation (750 ms)
-- Neutral gaze (750)
-- Gaze cue (500 ms)
-- Target (0 ms)
-- Response collection
-- Feedback
-- Log
-	
-- Si la cible est une H:
-- Si la cible est une F:
+- Une point de fixation (750 ms)
+- Un smiley 'neutre' (750 ms)
+- L'indice (500 ms)
+- La cible
+- Collection du réponse
+- Enregistrement des valeurs
 
+%--
+figure:
+ id: trialSeq
+ source: trialSeq.png
+ caption: |
+  La séquence d'essai
+--%
+	
 ### Hiérarchie de l'expérience
 
 La structure de la séance experimentale est comme suit:
 	
-- Un bloc d'entrainement (seulement 10 essais)
-- Un block expérimentale
+- Une phase d'entrainement (2 blocs de 8 essais)
+- Une phase expérimentale (8 blocs de 8 essais)
 
+%--
+figure:
+ id: hierarchy
+ source: hierarchy.png
+ caption: |
+  La structure hierarchique
+--%
 
 ## Création d'une expérience simple
 
@@ -82,7 +108,24 @@ Lorsque vous démarrez OpenSesame, vous recevrez un menu qui vous permet de choi
 
 Pour économiser du temps, on va utiliser le modèle étendu. Double-cliquez sur l'Extended template dans l'onglet 'Lancez-vous!'.
 
+%--
+figure:
+ id: startup
+ source: startup.png
+ caption: |
+  La fenêtre OpenSesame au démarrage.
+--%
+
 La vue d'ensemble montre la structure hiérarchique de l'Extended template.  
+
+%--
+figure:
+ id: vue
+ source: vue.png
+ caption: |
+  La vue d'ensemble.
+--%
+
 La structure hiérarchique de la vue d'ensemble ressemble déjà beaucoup la structure schématique qui est représentée par %hierarchy. Cette ressemblance montre que c'est souvent utile de commencer par l'Extended template.
 
 Ensuite, on enregistre notre nouvelle expérience 
@@ -91,16 +134,20 @@ Ensuite, on enregistre notre nouvelle expérience
 
 ### Étape 2 : Definir les variables indépendantes
 
-Comme dit, nous avons deux variables indépendantes:
+#### La position en pixels
 
-- Lettre: H ou F
-- Direction du regard: droit et gauche
-- Position de la cible: droit et gauche
+On commence par 'traduire' les valeurs de la variable Position Cible, vers un coordinate x, par rapport au centre de l'écran, en pixels:
+	
+- Si la position de la cible apparait à gauche, sa coordinate X est 300 px
+- Si la position de la cible apparait à droit, sa coordinate X est -300 px
+	
+#### Le plan factoriel
 
-On commence par 'traduire' les valeurs de la deuxième variable, Position de la cible, vers un coordinate x, par rapport au centre de l'écran, en pixels:
+On a trois variables indépendantes qui doivent être croisées:
 
-- Si la position de la cible apparait à gauche, sa coordinate X est 300 px par rapport au centre de l'écran
-- Si la position de la cible apparait à droit, sa coordinate X est -300 px par rapport au centre de l'écran
+- La direction du regard: droite ou gauche
+- La position de la cible: 300 px ou -300 px
+- La lettre de la cible: H ou F
 
 En total, ça donne 2 * 2 * 2 = 8 combinaisons différentes. Ces 8 conditions constituent la liste d'essais d'un bloc (voyez %hierarchy). Cette liste doit être rempli dans l'élément *block_loop*.  
 On n'a pas besoin de taper toutes ces 8 combinaisons manuellement. Au lieu de cela, nous utilisons l'*Assistant de variables*, qui va nous générer un *plan factoriel*.
@@ -115,6 +162,8 @@ Pour exécuter cette opération:
 
 Vous voyez que OpenSesame a généré notre entière liste d'essais.
 
+#### La bonne réponse
+
 Il est souvent pratique de dire OpenSesame quelle est la bonne réponse par essai en définissant la variable 'correct_response'. Ça permet OpenSesame de suivre les variables de la performance, comme 'acc' ('accuracy' ou pourcentage correct).  
 Pour dire OpenSesame quelle est la bonne réponse sur chaque essai:
 	
@@ -124,7 +173,9 @@ Pour dire OpenSesame quelle est la bonne réponse sur chaque essai:
 	- Pour chaque ligne contenant un vrai mot, mettez 'm' comme bonne réponse. 
 	- Pour chaque ligne contenant un non-mot, mettez 'q'.
 	
-Il nous reste une variable a ajouter: la position du distractor. Comme on a dit, le distracteur apparait toujours à la position opposé de la cible. Donc, sa coordinate x, en pixels, et l'inverse de la coordinate x de la cible. Pour ajouter cette information vers le *block_loop*:
+#### La position du distractor
+
+Il nous reste une variable a ajouter: la position du distractor. Comme dit, le distractor apparait toujours à la position opposé de la cible. Donc, sa coordinate x, en pixels, et l'inverse de la coordinate x de la cible. Pour ajouter cette information vers le *block_loop*:
 	
 - Cliquez sur le bouton 'Ajouter une variable'
 - Ecrivez 'x_distractor' et appuyez sur 'Enter'
@@ -132,17 +183,24 @@ Il nous reste une variable a ajouter: la position du distractor. Comme on a dit,
 	- Pour chaque ligne ou la position de la cible est 300 -> mettez 'x_distractor' vers -300
 	- Pour chaque ligne ou la position de la cible est -300 -> mettez 'x_distractor' vers 300
 
+%--
+figure:
+ id: blockloop
+ source: blockloop.png
+ caption: |
+  Préparer la liste des essais dans l'élément *block_loop*.
+--%
+
 ### Étape 3 : Ajouter des éléments à la séquence d'essai
 
-Comme montre la %trialSeq1, l'objectif est de construire une séquence d'essai comme suit:
+Comme montre la %trialSeq, l'objectif est de construire une séquence d'essai comme suit:
 	
-1. Présenter le point de fixation
-2. Présenter Neutral gaze
-3. Présenter Gaze cue
-4. Présenter la Cible
+1. Présenter une point de fixation (750 ms)
+2. Présenter un visage neutre (750)
+3. Présenter l'indice (500 ms)
+4. Présenter la cible et le distractor
 5. Collecter une réponse sur le clavier
-6. Feedback
-7. Enregistrer toutes les valeurs dans un fichier de sortie
+6. Enregistrer toutes les valeurs dans un fichier de sortie
 
 On s'appelle ces 6 étapes *des événements*. On va réaliser ces 6 événements en ajoutant des *éléments* vers le *trial_sequence* de notre expérience.  
 
@@ -156,6 +214,14 @@ Pour ajouter ces 3 éléments `sketchpad`:
 - *Attention:* Pour faire apparaitre un élément *au dessous* d'un autre élément, déposez-le *sur* cet autre élément.
 - Répétez la procédure glisser-déposer jusqu'à ce que vous avez 4 éléments `sketchad` dans votre *trial_sequence*. 
 
+%--
+figure:
+ id: dragdrop
+ source: dragdrop.png
+ caption: |
+ Glisser-déposer des éléments (ici: des `sketchpads`) de la barre d'outils vers la vue d'ensemble.
+--%
+
 Par défaut, OpenSesame attribue des noms tels que "__sketchpad" aux éléments nouvellement crées. Ces noms ne sont pas très informative. Il est donc forcement recommandé de les changer. 
 
 Pour réaliser ça:
@@ -163,53 +229,137 @@ Pour réaliser ça:
 - Clic droit sur un élément dans la vue d'ensemble
 - Choisissez 'Renommer'
 - Changez le nom
-- Appelez les éléments `sketchpad` *fixation*, *amorce*, *intervalle* et *cible*, respectivement.
+- Appelez les éléments `sketchpad` *fixation*, *regard_neutre*, *regard_direction* et *cible*, respectivement.
 
 Les derniers deux événements de la séquence d'essai, (collecter la réponse et enregistrer les données) sont sont déjà répresentés par les éléments `keyboard_response` et `logger`, respectivement.
 
-
 SAY THAT IT ALSO CHANGES IN PRACTICE LOOP!
 
-### Étape 4 : Créer les éléments *fixation*, *amorce*, *intervalle* et *cible*
+### Étappe 4: Préparer le groupe de fichiers:
+
+Pour notre expérience, on aura besoin de trois images: un smiley neutre, un smiley qui regarde à droite et un smiley qui regarde à gauche. 
+Vous pouvez télécharger ces trois images d'ici. TODO.
+
+Pour ajouter ces images vers le groupe de fichiers de votre expérience: 
+	
+- Cliquez sur le bouton 'Montrer le groupe de fichiers'
+- Dans la fenêtre 'Groupe de fichiers', cliquez sur le signe '+'
+- Choisissez les fichiers que vous voulez ajouter
+
+%--
+figure:
+ id: filepool
+ source: filepool.png
+ caption: |
+  Le groupe de fichiers après avoir ajouté des images.
+--%
+
+### Étape 5: Créer les éléments *fixation*, *regard_neutre*, *regard_direction* et *cible*
+
+On va créer le content des éléments `sketchpad` grâce aux 'drawing tools' (des outils de dessin) de ces éléments. 
 
 #### fixation
 
-Maintenant, on va créer le content des éléments `sketchpad` grâce aux 'drawing tools' (des outils de dessin) de ces éléments. On commence avec le `sketchpad` *fixation*.
+Le `sketchpad` fixation est un `sketchpad` *invariable*. Ça veut dire que cette partie de la séquence d'essai et pareil pour chaque essai.
+
+On commence avec le `sketchpad` *fixation*.
 
 - Ouvrez l'onglet *fixation* en cliquant sur cet élément dans la vue d'ensemble.
 - Comme vous voyez, grâce à l'Extended template, le point de fixation est déjà dessiné. 
 
 Cependant, il faut qu'on fasse un petit changement sur cet élément. Actuellement, la durée de ce `sketchpad` est mis sur '0'. Ça veut dire que le point de fixation sera présenté pendant 0 millisecondes. Bien sur, ce n'est pas ce qu'on veut. On veut que le point de fixation sera présenté par 750 ms (voyez %trialSeq1), et que, aprés, l'expérience avance automatiquement.  
-Pour réaliser ça, il faut changer la durée vers '7'.
+Pour réaliser ça:
+	
+- Changez la durée vers '750'.
 
-#### neutral
+%--
+figure:
+ id: fixation
+ source: fixation.png
+ caption: |
+  Le sketchpad `fixation`
+--%
 
+#### regard_neutre
 
+- Ouvrez l'onglet *fixation* en cliquant sur cet élément dans la vue d'ensemble.
+- Sélectionnez l'outil Image (%neutral)
+- Cliquez sur le centre du `sketchpad`
+- Choisissez l'image 'regard_neutre.png' pour insérer
+- Mettez la durée vers 750
 
-#### gaze cue
+%--
+figure:
+ id: neutral
+ source: neutral.png
+ caption: |
+  Le sketchpad `fixation`
+--%
 
-Pour le point de fixation, on a créé un `sketchpad` *invariable*. Un `sketchpad` invariable montre la même chose (ici: un point de fixation pendant 750 ms) sur chaque essai.
+#### regard_direction
 
-On peut également créer des `sketchpad`s *variables*. Ça veut dire que le contient du `sketchpad` est défini par une variable indépendente. Grâce aux `sketchpad`s variables, on ne doit pas créer beaucoup des `sketchpad`s différents pour chaque essai. Au lieu de ça, on en crée qu'un, et on laisse décider OpenSesame quel condition (ex. regard droit ou regard gauche) sera présenté sur chaque essai, au base des valeurs dans la liste *block_loop*.
+Contrairement aux dernières deux `sketchpad`s, le `sketchpad` *regard_direction* est *variable*. Ça veut dire que ses propriétés sont *variés* entre essais, et qu'elles *dépendent* des valeurs dans la liste de bloc (*block_loop*). Pour indiquer à OpenSesame qu'il s'agit d'un `sketchpad` variable, on utilise la méthode *entre-crochets*. Après, on laisse décider OpenSesame quelle condition (ex. regard droit ou regard gauche) sera présenté sur chaque essai, au base des valeurs dans la liste *block_loop*.
 
 Pour indiquer à OpenSesame qu'il s'agit d'un `sketchpad` variable, on utilise la méthode *entre-crochets*. La méthode entre-crochets fonctionne comme suit:
 	
-- Ouvrez l'onglet *TODO* en cliquant sur cet élément dans la vue d'ensemble
+- Ouvrez l'onglet *regard_direction* en cliquant sur cet élément dans la vue d'ensemble
+- Sélectionnez l'outil Image (%cue)
+- Cliquez sur le centre du `sketchpad`
+- Choisissez l'image '
+- Affichez le code du `sketchpad` en cliquant l'icone 'Select view'. Le code a besoin d'un petit modification:
+	- La seule chose que nous avons à faire, est de remplacer '_gauche' vers '[direction_regard]'. Cela signifie que OpenSesame utilise la variable 'direction_regard' (qui a les valeurs 'droite' et 'gauche') pour déterminer quelle image doit être montrée.
+- Cliquez sur 'Appliquer et fermer' pour appliquer les modifications
 
-TODO
+Parce que les propriétés du `sketchpad` *regard_direction* changent pour chaque essai, le `sketchpad` ne montre plus l'image qu'on avait initialement insérée. Mais n'inquietez-vous pas. Elle sera montrée pendant l'exécution de l'expérience.
 
-- Enfin, mettez la durée du `sketchpad` sur 500 ms
+Finalement:
 
-Les crochets indique que nous avons affaire à une texte variable. Donc, au lieu de présenter '[amorce]' sur l'écran, OpenSesame présentera la valeur de la variable (i.e. 'XXXXXX' ou 'ANIMAL') comme tirée de la liste *block_loop*.
-
+- Mettez la durée vers 750
 
 #### cible
 
-Le `sketchpad` *cible* est également un sketchpad *variable*. Donc, on utilise encore une fois la méthode entre-crochets. La seule différence est que, cette fois, on va mettre la coordinate x entre crochets, dans le script!!
+Le `sketchpad` *cible* est également un sketchpad *variable*. Donc, on utilise encore une fois la méthode entre-crochets. Dans ce `sketchpad`, on a même 3 variables qui sont variées:
+	
+1. La lettre de la cible (F ou H)
+2. La coordonnée x de la cible (-300 ou 300)
+3. La coordonnée x du distractor (-300 ou 300)
 
-Ensuite, on met la durée du `sketchpad` *cible* sur 0 ms. Ça peut vous sembler contre-intuitif, mais ça veut juste dire que OpenSesame va initialiser la prochaine élément (ici, *keyboard_response*) tout de suite. L'élément *keyboard_response* lui même ne change pas ce qui est actuellement montrer au sujet sur l'écran.
+Pour commencer, il faut repétez toutes les étappes du sketchpad *regard_direction* pour assurer que le smiley indice reste sur l'écran.
 
-Donc, en somme, le stimulus reste sur l'écran jusqu'à le sujet a appuyé sur une touche.
+Ensuite, il faut montrer la cible et le distractor:
+	
+- Sélectionnez l'outit Texte
+- Cliquez quelquepart à gauche du centre et taper 'F'
+- Cliquez quelquepart à gauche du centre et taper 'X'
+- Affichez le code en cliquant 'select view'
+
+On va encore une fois faire quelques modifications du code. Au début, votre code devait ressemble à:
+
+{% highlight python %}
+set duration "keypress"
+draw image 0 0 "regard_[direction_regard].png" scale=1 center=1 z_index=0 show_if="always"
+draw textline -256 0 "F" center=1 color="white" font_family="mono" font_size=18 font_bold="no" font_italic="no" html="yes" z_index=0 show_if="always"
+draw textline 288 0 "X" center=1 color="white" font_family="mono" font_size=18 font_bold="no" font_italic="no" html="yes" z_index=0 show_if="always"
+{% endhighlight %}
+
+Pour varier la lettre de la cible, et les coordonnées x de la cible et du distractor sur la base de la liste d'essai:
+	
+- changez la lettre "F" vers [lettre_cible]
+- changez la coordonnée x de la cible vers [x_cible]
+- changez la coordonnée x du distractor vers [x_distractor]
+
+Par conséquence, votre code devrait ressemble à:
+	
+{% highlight python %}
+set duration "keypress"
+draw image 0 0 "regard_[direction_regard].png" scale=1 center=1 z_index=0 show_if="always"
+draw textline "[x_cible]" 0 "[lettre_cible]" center=1 color="white" font_family="mono" font_size=18 font_bold="no" font_italic="no" html="yes" z_index=0 show_if="always"
+draw textline "[x_distractor]" 0 "X" center=1 color="white" font_family="mono" font_size=18 font_bold="no" font_italic="no" html="yes" z_index=0 show_if="always"
+{% endhighlight %}
+	
+Finalement, on met la durée du `sketchpad` *cible* sur 0 ms. Ça peut vous sembler contre-intuitif, mais ça veut juste dire que OpenSesame va initialiser la prochaine élément (ici, *keyboard_response*) tout de suite. L'élément *keyboard_response* lui même ne change pas ce qui est actuellement montrer au sujet sur l'écran.
+
+Donc, en somme, le dernier `sketchpad` reste sur l'écran jusqu'à le sujet a appuyé sur une touche.
 
 #### keyboard_response
 
@@ -250,7 +400,7 @@ Cependant, maintenant, practice_loop et experimental_loop déroulent la séquenc
 - Cliquez sur 'experimental_loop' pour ouvrir son onglet
 - Mettez 'Répéter' vers 8. Cela signifie que la phase d'entrainement se compose de huit blocs
 
-### Les consignes
+#### Les consignes
 
 Change the instructions.
 
