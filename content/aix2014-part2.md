@@ -504,12 +504,22 @@ L'élément `incorrect_sound` ne doit être executée que si la réponse du suje
 	
 Par conséquence, le sujet entendra le bip seulement si il a fait un erreur.
 
+%--
+figure:
+ id: runif
+ source: runif.png
+ caption: |
+  On utilise des déclarations 'Run-if' pour réaliser qu'une partie de la séquence d'essai dépend des variables collectées en ligne.
+--%
+
 ### Étape 9 : Add a questionnaire
 
 
 ### Étape 10 : Fini !
 
 Votre expérience est maintenant terminée. Exécutez-la, pour la tester.
+
+## Extra
 
 ## Références
 
