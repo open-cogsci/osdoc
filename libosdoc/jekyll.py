@@ -20,7 +20,7 @@ along with osdoc.  If not, see <http://www.gnu.org/licenses/>.
 import yaml
 import subprocess
 
-def runJekyll(status):
+def runJekyll(status, branch):
 
 	"""
 	desc:
@@ -38,6 +38,8 @@ def runJekyll(status):
 		'markdown'			: 'kramdown',
 		'source'			: '_content',
 		'destination'		: '_tmp',
+		'branch'			: branch,
+		'langs'				: ['en', 'fr'],
 		}
 	yaml.dump(cfg, open('_config.yml', 'w'))
 	print u'\nLaunching jekyll'

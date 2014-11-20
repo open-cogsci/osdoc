@@ -14,4 +14,12 @@ Your version of OpenSesame:
 <select id="versionSelect" onchange="selectVersion()">
 {% include version-select %}
 </select>
+
+Language:
+<select id="langSelect" onchange="selectLang()">
+<option value="all">All</option>
+<option value="en">English</option>
+<option value="fr">Français</option>
+</select>
+
 </span>

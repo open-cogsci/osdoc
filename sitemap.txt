@@ -139,6 +139,7 @@ BRM Paper
 	:release notes for 2.9.1
 :APS Workshop
 :Page not found
+:languages
 Formation AMU
 Formation AMU Part 2
 #Experiments

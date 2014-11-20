@@ -4,13 +4,13 @@
 <td>
 
 {% for node in site.sorted %}
-	{% if node.ext_url == null and node.singleton == true %}	
-		<div class="{{node.menuclass}} level-{{ node.level}}"><a href="{{ site.host }}{{node.url}}">{{node.title}}</a></div>
+	{% if node.ext_url == null and node.singleton == true % and (lang == null or node.lang == lang) %}
+		<div class="{{ node.menuclass }} lang-{{ node.lang }} level-{{ node.level}}"><a href="{{ site.host }}{{ node.url }}">{{ node.title }}</a></div>
 	{% endif %}
 {% endfor %}
 
 {% for node in site.sorted %}
-	{% if node.ext_url == null and node.singleton != true %}
+	{% if node.ext_url == null and node.singleton != true and (lang == null or node.lang == lang) %}
 		{% if node.level == 0 %}
 			{% if node.title == "Plug-ins and extensions" %}
 				</td>
@@ -22,7 +22,7 @@
 				<td>
 			{% endif %}
 		{% endif %}
-		<div class="{{node.menuclass}} level-{{ node.level}}"><a href="{{ site.host }}{{node.url}}">{{node.title}}</a></div>
+		<div class="{{ node.menuclass }} lang-{{ node.lang }} level-{{ node.level}}"><a href="{{ site.host }}{{ node.url }}">{{ node.title }}</a></div>
 	{% endif %}
 {% endfor %}
 

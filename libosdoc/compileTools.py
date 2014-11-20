@@ -53,6 +53,8 @@ def getInfo(path):
 		print u'getInfo(): Failed to parse %s' % path
 		return None
 	y = yaml.load(l[1])
+	if u'lang' not in y:
+		y[u'lang'] = u'en'
 	return y
 
 def setInfo(path, i):
@@ -424,7 +426,7 @@ def compileSite(layout=u'inpage', group=None, jekyll=True, optimizeHTML=False,
 	content = listContent(l=[])
 	preprocessSite(content=content, group=group, status=status, branch=branch)
 	if jekyll:
-		runJekyll(status)
+		runJekyll(status, branch)
 	if branch != '':
 		if adjustURLs or status != u'current':
 			skipHTML = False
