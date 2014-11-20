@@ -267,8 +267,8 @@ def preprocessSite(content, group, branch, status):
 				info[u'listings'] = 0
 				info[u'tables'] = 0
 				info[u'gitlink'] = \
-					u'https://github.com/smathot/osdoc/blob/master/%s' \
-					% path
+					u'https://github.com/smathot/osdoc/blob/%s/%s' \
+						% (branch, path)
 				if group == None or group.lower() == \
 					_group.lower() or title.lower() == u'home':
 					s = setInfo(path, info)
