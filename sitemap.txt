@@ -26,6 +26,8 @@ tutorials
 	video tutorials
 	mouse-tracking tutorial
 	cats, dogs, and capybaras
+	amorçage catégorique (en français)
+	direction du regard (en français)
 usage
 	sequences and loops
 	variables and conditional ("if") statements
@@ -139,7 +141,7 @@ BRM Paper
 	:release notes for 2.9.1
 :APS Workshop
 :Page not found
-Formation AMU
-Formation AMU Part 2
+# Formation AMU
+# Formation AMU Part 2
 #Experiments
 #Expériences
