@@ -1,10 +1,10 @@
 ---
 layout: osdoc
-title: Formation AMU
+title: amorçage catégorique (en français)
 group: General
-permalink: /aix2014/
+permalink: /aix2014-part1/
 menuclass: external
-ext_url: /aix2014
+ext_url: /aix2014-part1
 show: True
 author: Lotje van der Linden
 language: français

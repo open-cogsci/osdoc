@@ -1,6 +1,6 @@
 ---
 layout: osdoc
-title: Formation AMU Part 2
+title: direction du regard (en français)
 group: General
 permalink: /aix2014-part2/
 menuclass: external
