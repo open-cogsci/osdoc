@@ -1,13 +1,10 @@
 ---
 layout: osdoc
-title: direction du regard (en français)
-group: General
-permalink: /aix2014-part2/
-menuclass: external
-ext_url: /aix2014-part2
-show: True
+title: Direction du regard
+group: Tutorials
+permalink: /direction-du-regard/
 author: Lotje van der Linden
-language: français
+lang: fr
 ---
 
 ## Vue d'ensemble

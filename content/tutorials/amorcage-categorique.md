@@ -1,13 +1,10 @@
 ---
 layout: osdoc
-title: amorçage catégorique (en français)
-group: General
-permalink: /aix2014-part1/
-menuclass: external
-ext_url: /aix2014-part1
-show: True
+title: Amorçage catégorique
+group: Tutorials
+permalink: /amorcage-categorique/
 author: Lotje van der Linden
-language: français
+lang: fr
 ---
 
 ## Vue d'ensemble

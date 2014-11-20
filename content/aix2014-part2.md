@@ -7,7 +7,7 @@ menuclass: external
 ext_url: /aix2014-part2
 show: True
 author: Lotje van der Linden
-language: français
+lang: fr
 ---
 
 ## Vue d'ensemble
