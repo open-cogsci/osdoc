@@ -574,7 +574,7 @@ Math&ocirc;t, S., Schreij, D., & Theeuwes, J. (2012). OpenSesame: An open-source
 [forms-opensesame]: /forms/custom-forms/#opensesame-script
 [forms-performance]: /forms/performance-issues-and-troubleshooting/
 [forms-python]: /forms/custom-forms/#python
-[slides]: /attachments/Formation_OpenSesame_Aix_2014.pdf
+[slides]: /attachments/induite-de-direction-du-regard/Workshop_OpenSesame_Part2.pdf
 [variables]: /usage/variables-and-conditional-statements/#using-variables
 [responses]: /usage/collecting-responses/
 [tutorial]: /usage/step-by-step-tutorial/
