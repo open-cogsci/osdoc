@@ -531,7 +531,7 @@ figure:
 
 ### Astuces:
 	
-Vous pouvez télécharger les stimuli pour cette expérience ici (Rossion & Pourtois, 2014):
+Vous pouvez télécharger les stimuli pour cette expérience ici [(Rossion & Pourtois, 2004)](#references)
 	
 - [accordeon.png](/attachments/amorcage-categorique/accordeon.png)
 - [chat.png](/attachments/amorcage-categorique/chat.png)
@@ -540,8 +540,8 @@ Vous pouvez télécharger les stimuli pour cette expérience ici (Rossion & Pour
 
 Ensuite:
 
-- Ajoutez ces stimuli vers le *groupe de fichiers* (voyez aussi TODO LINK TO WORKSHOP 2)
-- Utilisez la méthode *entre-crochets* dans le code d'un sketchpad, pour laisser OpenSesame décider quel image a montrer pendant chaque essai (voyez aussi ....)
+- Ajoutez ces stimuli vers le *groupe de fichiers* [voyez aussi][workshop-part2]
+- Utilisez la méthode *entre-crochets* dans le code d'un sketchpad, pour laisser OpenSesame décider quel image a montrer pendant chaque essai [voyez aussi][workshop-part2]
 	
 ## Références
 
@@ -557,7 +557,7 @@ Rossion, B., & Pourtois, G. (2004). Revisiting Snodgrass and Vanderwart’s obje
 [forms-opensesame]: /forms/custom-forms/#opensesame-script
 [forms-performance]: /forms/performance-issues-and-troubleshooting/
 [forms-python]: /forms/custom-forms/#python
-[slides]: /attachments/amorcage-categorique/amorcage-categorique.pdf
+[slides]: /attachments/amorcage-categorique/Workshop_OpenSesame_Part1.pdf
 [variables]: /usage/variables-and-conditional-statements/#using-variables
 [responses]: /usage/collecting-responses/
 [tutorial]: /usage/step-by-step-tutorial/
@@ -566,3 +566,4 @@ Rossion, B., & Pourtois, G. (2004). Revisiting Snodgrass and Vanderwart’s obje
 [smep]: http://www.smep.org/
 [pdf]: /aps2013/index.pdf
 [prepare-run]: /usage/prepare-run/#sketchpad-feedback
+[workshop-part2]: http://osdoc.cogsci.nl/tutorials/direction-du-regard/
