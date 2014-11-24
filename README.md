@@ -37,7 +37,7 @@ The site is generated in two stages. First, the site is pre-compiled and stored 
 
 Most dependencies are available from the Ubuntu repositories or from the [Cogsci.nl PPA][]. Only [htmlcompressor.jar][] and [yui-compressor.jar][] must be downloaded from their respective websites and manually placed in the osdoc source folder.
 
-	jekyll
+	jekyll (0.11.2)
 	python-academicmarkdown
 	python-yaml
 	ruby-kramdown
