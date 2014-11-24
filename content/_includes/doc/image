@@ -6,8 +6,9 @@ The image widget is used to display a non-interactive image.
 
 __Example (OpenSesame script):__
 
-{% highlight idget %} 0 0 1 1 image path='5.png'
-{% endhighlight %}
+~~~
+widget 0 0 1 1 image path='5.png'
+~~~
 
 __Example (Python):__
 

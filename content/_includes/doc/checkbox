@@ -6,9 +6,10 @@ The checkbox widget is a checkable box accompanied by a string of text.
 
 __Example (OpenSesame script):__
 
-{% highlight idget %} 0 0 1 1 checkbox group="group" text="Option 1"
+~~~
+widget 0 0 1 1 checkbox group="group" text="Option 1"
 widget 0 1 1 1 checkbox group="group" text="Option 2"
-{% endhighlight %}
+~~~
 
 __Example (Python):__
 

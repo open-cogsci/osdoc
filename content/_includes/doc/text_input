@@ -8,8 +8,9 @@ was created before forms where added to OpenSesame.)
 
 __Example (OpenSesame script):__
 
-{% highlight idget %} 0 0 1 1 text_input var='response' return_accepts='yes'
-{% endhighlight %}
+~~~
+widget 0 0 1 1 text_input var='response' return_accepts='yes'
+~~~
 
 __Example (Python):__
 

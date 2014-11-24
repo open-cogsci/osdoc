@@ -6,8 +6,9 @@ The image_button widget is a clickable image.
 
 __Example (OpenSesame script):__
 
-{% highlight idget %} 0 0 1 1 image_button path='5.png' var='response'
-{% endhighlight %}
+~~~
+widget 0 0 1 1 image_button path='5.png' var='response'
+~~~
 
 __Example (Python):__
 

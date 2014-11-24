@@ -37,7 +37,7 @@ def createDoc(cls, target):
 
 	df = yamldoc.DocFactory(cls, container=u'div')
 	md = build.MD(unicode(df))
-	regex = r'^~~~\s+{*.(?P<lang>\w+)}*(?P<script>.+?)^~~~'
+	regex = r'^~~~\s+{*\.(?P<lang>\w+)}*(?P<script>.+?)^~~~'
 	for g in re.finditer(regex, md, re.DOTALL | re.MULTILINE):
 		old = g.group()
 		new = u'{%% highlight %s %%}%s{%% endhighlight %%}' % (g.group('lang'),

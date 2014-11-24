@@ -7,9 +7,10 @@ boxes (nodes), optionally with a label attached to each node.
 
 __Example (OpenSesame script):__
 
-{% highlight idget %} 0 0 1 1 label text="I like fluffy kittens"
+~~~
+widget 0 0 1 1 label text="I like fluffy kittens"
 widget 0 1 1 1 rating_scale var="response" nodes="Agree;Don't know;Disagree"
-{% endhighlight %}
+~~~
 
 __Example (OpenSesame script):__
 

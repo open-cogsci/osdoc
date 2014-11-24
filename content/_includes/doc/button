@@ -7,8 +7,9 @@ button-like frame.
 
 __Example (OpenSesame script):__
 
-{% highlight idget %} 0 0 1 1 button text='Click me!' center='yes' frame='yes' var='response'
-{% endhighlight %}
+~~~
+widget 0 0 1 1 button text='Click me!' center='yes' frame='yes' var='response'
+~~~
 
 Defining a button widget with Python inline code:
 
