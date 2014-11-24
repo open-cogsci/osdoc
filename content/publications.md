@@ -32,6 +32,9 @@ OpenSesame is used for, discussed in, or mentioned in:
 
 ### 2014 / in press / online first
 
+Barnhoorn, J. S., Haasnoot, E., Bocanegra, B. R., & van Steenbergen, H. (2014). QRTEngine: An easy solution for running online reaction time experiments using Qualtrics. *Behavior Research Methods*. doi:10.3758/s13428-014-0530-7
+{: .reference}
+
 Bucker, B., & Theeuwes, J. (2014). The effect of reward on orienting and reorienting in exogenous cuing. *Cognitive, Affective, & Behavioral Neuroscience*, 1–12. doi:10.3758/s13415-014-0278-7
 {: .reference}
 
