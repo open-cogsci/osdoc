@@ -3,10 +3,9 @@ layout: osdoc
 title: About Python inline code
 group: Python inline code
 permalink: /about/
-parser: academicmarkdown
 ---
 
-In OpenSesame you can create fairly complex experiments using only the graphical user interface (GUI), but you will inevitably encounter situations in which the functionality provided by the GUI is insufficient. In these cases you can use the `inline_script` item to add Python code to your experiment.
+In OpenSesame you can create complex experiments using only the graphical user interface (GUI), but you will inevitably encounter situations in which the functionality provided by the GUI is insufficient. In these cases you can use the `inline_script` item to add Python code to your experiment.
 
 ## Overview
 
@@ -69,7 +68,9 @@ This is important to know, because it explains why you can use commands such as:
 self.sleep(1000)
 {% endhighlight %}
 
-This works, because `sleep()` is a function of the `inline_script` object.
+This works, because `sleep()` is a function of the `inline_script` object. For a full list of available functions, see:
+
+- [/python/inline-script/](/python/inline-script/)
 
 ### Loop tables and conditional ("if") statements
 
@@ -116,15 +117,6 @@ figure:
  id: FigDebugNormal
  source: debug-window.png
  caption: The debug window.
---%
-
-By default, OpenSesame uses a simple, custom Python console in the debug window. However, you can also use [IPython], which is a powerful interactive Python console (%FigDebugIPython). In order to do this, you need to run OpenSesame in a Python environment with IPython installed, and start OpenSesame with the command line argument `--ipython`.
-
-%--
-figure:
- id: FigDebugIPython
- source: debug-window-ipython.png
- caption: The IPython debug window.
 --%
 
 ## Things to know
@@ -186,99 +178,6 @@ If you are using the *xpyriment* back-end, you can directly use the various [Exp
 If you are using the *legacy*, *droid*, or *xpyriment* (only with "Use OpenGL" set to "no") back-end, you can directly use the various [PyGame] modules. For more information, see:
 
 - [/back-ends/legacy/](/back-ends/legacy)
-
-## Experimental features
-
-### Transparent variables
-
-In the general tab, you can enable the option 'Transparent variable management'. If enabled, experimental variables will be directly accessible in inline_script items. For example, if you have defined a variable called `my_var` in a loop item, you will be able to use that variable directly in an inline_script:
-
-{% highlight python %}
-print my_var
-my_var = 'some value'
-{% endhighlight %}
-
-In contrast, if transparent variable management is disabled, you would need to use `self.get()` and `exp.set()`:
-
-{% highlight python %}
-print self.get('my_var')
-exp.set('my_var', 'some value')
-{% endhighlight %}
-
-## Older versions (0.27.1 and earlier)
-
-### Carry-over effects between runs
-
-By default, OpenSesame executes the user interface and experimental runs in the same process. In some cases, this can give unexpected results. Let's consider Experiment A that consists (only) of the following script ...
-
-{% highlight python %}
-global my_var
-my_var = 'Test!'
-{% endhighlight %}
-
-... and Experiment B that consists (only) of the following script ...
-
-{% highlight python %}
-print my_var
-{% endhighlight %}
-
-If you first run Experiments A and next run Experiment B (without closing OpenSesame), you will find that Experiment B prints out 'Test!'. This is a carry-over effect: `my_var` is set in Experiment A, but because it is declared `global` it will stay alive and also be accessible to Experiment B.
-
-In general, such carry-over effects are harmless, but they are known to (on some systems) cause crashes when `canvas` objects are declared `global`. In general, it is therefore not advisable to declare `canvas` objects `global`. Instead, to share a `canvas` between inline_script items, you can store it as a property of `exp`:
-
-{% highlight python %}
-from openexp.canvas import canvas
-exp.my_canvas = canvas(exp)
-{% endhighlight %}
-
-*Tip:* If you consistently encounter trouble when running your experiment for the second time (without closing OpenSesame), you can enable the *Run experiments in a separate process* option under *Preferences*. If you enable this option, OpenSesame will run your experiments as a separate program, using [opensesamerun][].
-
-### Importing modules
-
-Because the code in an inline_script item is essentially the body of a function (see above), functions and modules may not work as you expect them to. For example, the following seemingly valid (although silly) piece of script ...
-
-{% highlight python %}
-from random import randint
-def my_function():
-	print 'A random integer: %d' % randint(0,10)
-my_function()
-{% endhighlight %}
-
-... gives the following error:
-
-{% highlight python %}
-NameError: global name 'randint' is not defined
-{% endhighlight %}
-
-The reason that this doesn't work as you might expect is that `randint` is imported locally, in the function of which your code forms the body (see above). Therefore, you need to make `randint` global, so that it is also accessible from within other functions:
-
-{% highlight python %}
-from random import randint
-global randint
-def my_function():
-	print 'A random integer: %d' % randint(0,10)
-my_function()
-{% endhighlight %}
-
-This may be a bit confusing, but the take home message is: If you get a `NameError` for a module/ package/ function that you have imported, try declaring that module/ package/ function global, as illustrated above.
-
-### Defining globally accessible functions
-
-Another neat trick is that you can declare functions global. Normally, you would not be able to define a function in one inline_script, and use it in another inline_script. By declaring a function global, you can circumvent this problem. So if you create the following inline_script ...
-
-{% highlight python %}
-# Inline_script 1
-global my_global_function
-def my_global_function():
-	print 'You can call me anywhere!'
-{% endhighlight %}
-
-... you will be able to call `my_global_function()` in another inline_script:
-
-{% highlight python %}
-# Inline_script 2
-my_global_function()
-{% endhighlight %}
 
 [python]: http://www.python.org/
 [inline-script]: /python/inline-script
