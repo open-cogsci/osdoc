@@ -28,6 +28,7 @@ tutorials
 	cats, dogs, and capybaras
 	amorçage catégorique
 	direction du regard
+	Guía paso a paso
 usage
 	sequences and loops
 	variables and conditional ("if") statements
