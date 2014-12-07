@@ -8,8 +8,9 @@ singleton: true
 
 ## Available languages
 
-- [English (en)](#lang-en)
 - [Français (fr)](#lang-fr)
+- [English (en)](#lang-en)
+- [Español (es)](#lang-es)
 
 {% for lang in site.langs %}
 

@@ -39,7 +39,7 @@ def runJekyll(status, branch):
 		'source'			: '_content',
 		'destination'		: '_tmp',
 		'branch'			: branch,
-		'langs'				: ['en', 'fr'],
+		'langs'				: ['fr', 'en', 'es'],
 		}
 	yaml.dump(cfg, open('_config.yml', 'w'))
 	print u'\nLaunching jekyll'

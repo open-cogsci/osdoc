@@ -18,8 +18,9 @@ Your version of OpenSesame:
 Language:
 <select id="langSelect" onchange="selectLang()">
 <option value="all">All</option>
-<option value="en">English</option>
 <option value="fr">Français</option>
+<option value="en">English</option>
+<option value="es">Español</option>
 </select>
 
 </span>
