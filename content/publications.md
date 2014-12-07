@@ -101,6 +101,9 @@ Kapoor, H. (2014). The creative side of the Dark Triad. *Creativity Research Jou
 Katz, C., & Knops, A. (2014). Operational momentum in multiplication and division? *PLoS ONE*, *9*(8), e104777. doi:10.1371/journal.pone.0104777
 {: .reference}
 
+Kieslich, P. J., & Hilbich, B. E. (2014). Cognitive conflict in social dilemmas: An analysis of response dynamics. *Judgment and Decision Making*, *9*(6), 510-522.  Retrieved from <http://journal.sjdm.org/14/14808/jdm14808.html>
+{: .reference}
+
 Krukar, J. (2014). Walk, look, remember: The influence of the gallery’s spatial layout on human memory for an art exhibition. Behavioral Sciences, 4(3), 181–201. doi:10.3390/bs4030181
 {: .reference}
 
@@ -120,6 +123,9 @@ Mathôt, S., van der Linden, L., Grainger, J., & Vitu, F. (in press). The pupill
 {: .reference}
 
 Van Moorselaar, D., Theeuwes, J., & Olivers, C. N. L. (2014). In competition for the attentional template: Can multiple items within visual working memory guide attention? *Journal of Experimental Psychology: Human Perception and Performance*. doi:10.1037/a0036229
+{: .reference}
+
+Van Moorselaar, D., Battistoni, E., Theeuwes, J., & Olivers, C. N. L. (2014). Rapid influences of cued visual memories on attentional guidance. *Annals of the New York Academy of Sciences*, doi:10.1111/nyas.12574
 {: .reference}
 
 Mueller, S. T., & Piper, B. J. (2014). The Psychology Experiment Building Language (PEBL) and PEBL test battery. *Journal of Neuroscience Methods*, *222*, 250–259. doi:10.1016/j.jneumeth.2013.10.024
