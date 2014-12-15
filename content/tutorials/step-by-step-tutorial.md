@@ -260,7 +260,13 @@ figure:
 However, we are not done yet. There are two more variables that we need to add: the location of the distractor and the correct response.
 
 - __dist_pos__ -- Click on 'Add variable' and type 'dist_pos 300' in the dialog that appears. This will create a variable called 'dist_pos', with the value '300'. Change the value of 'dist_pos' to '-300' in every row where 'target_pos' is '300'. By doing this, we make sure that the distractor is always presented opposite from the target.
-- __correct_response__ -- Click on 'Add variable' and type 'correct_response z' in the dialog that appears. Change 'correct_response' to 'm'  where 'target_letter' is 'H'. This means that the participant should press the 'z' key if he/ she sees an 'F' and the 'm' key if he/ she sees an 'H'.
+- __correct_response__ -- Click on 'Add variable' and type 'correct_response' in the dialog that appears. Change 'correct_response' to 'm'  where 'target_letter' is 'H'. This means that the participant should press the 'z' key if he/ she sees an 'F' and the 'm' key if he/ she sees an 'H'.
+
+Add one more variable which indicates if the face was looking at the target letter or at the distractor.
+
+- __congruency__ -- Click on 'Add variable' and type 'congruency' in the dialog that appears. Change 'congruency' to 'congruent' where 'target_pos' is '-300' and 'gaze_cue' is 'left', and where 'target_pos' is '300' and 'gaze_cue' is 'right' (these are the values with which the face will look at the targer letter). Change the value of 'congruency' to 'incronguent' of the rows in which the face will look at the distractor. Thus, where 'target_pos' is '-300' and 'gaze_cue' is 'right', and where 'target_pos' is '300' and 'gaze_cue' is 'left'.
+
+This variable is useful if you want to analyze your data later on. If you don't add this variable here, you will have still have to manually specify later whether the cue was valid or not.
 
 There is one last thing to be done. 'Repeat' is currently set to '1.00'. This means that each cycle will be executed once. So the block now consists of 8 trials, which is a bit short. A reasonable length for a block of trials is 24, so set 'Repeat' to 3.00 (3 repeats x 8 cycles = 24 trials). You don't need to change 'Order', because 'random' is exactly what we want.
 
