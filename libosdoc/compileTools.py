@@ -353,10 +353,11 @@ def createHtaccess(siteFolder, branch):
 	"""
 
 	s = u"""RewriteEngine On
+RewriteRule    ^$    %s/$1   [NC,L]
 RewriteRule    ^current?$    %s/$1   [NC,L]
 RewriteRule    ^notes/(.*)?$    %s/notes/$1/   [NC,L]
-RewriteRule    ^([^0-9].*)/?$    %s/$1   [NC,L]
-""" % (branch, branch, branch)
+RewriteRule    ^([^0-9]+.*)/?$    %s/$1   [NC,L]
+""" % (branch, branch, branch, branch)
 	path = os.path.join(os.path.dirname(siteFolder), u'.htaccess')
 	open(path, u'w').write(s)
 	print(u'Created %s' % path)
