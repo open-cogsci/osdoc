@@ -8,7 +8,7 @@ parser: academicmarkdown
 
 In order to improve usability for non-English speaking users, the goal is to have OpenSesame adapt to the default language of the operating system. As of v0.27, the OpenSesame user interface is largely translatable. Very little technical skill is needed to contribute a translation.
 
-If you want to provide a translation, it's recommended to first send an inquiry to <lvanderlinden@cogsci.nl> or post a message on the [forum][], to make sure that your language is not already being worked on.
+If you want to provide a translation, it's recommended to first send an inquiry to <l.vanderlinden@cogsci.nl> or post a message on the [forum][], to make sure that your language is not already being worked on.
 
 ## Overview
 
@@ -28,6 +28,7 @@ toc:
 |`nl_NL`	|Dutch				|In progress		|[Lotje van der Linden](https://github.com/lvanderlinden)			|
 |`de_DE`	|German				|Complete			|Timo Lüke				|
 |`ru_RU`	|Russian 			|Complete			|Vladimir Kosonogov		|
+|`es_ES`	|Spanish 			|Complete			|Alberto Hernández Sande		|
 
 ## Starting OpenSesame with a specific language
 

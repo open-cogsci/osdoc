@@ -9,4 +9,4 @@ lang: es
 
 <iframe src="http://wl.figshare.com/articles/1261344/embed?show_title=0" width="640" height="861" frameborder="0"></iframe>
 
-Hernández Sande, A., Bujedo, J. G., & Marín, J. A. L. (2014). OpenSesame: Software libre para diseños de experimentos y tareas de evaluación. *Figshare*. doi:10.6084/m9.figshare.1261344
+Hernández-Sande, A., Gómez, J., & Lorca, J. A. (2014). OpenSesame: Software libre para diseños de experimentos y tareas de evaluación. *Figshare*. doi:10.6084/m9.figshare.1261344
