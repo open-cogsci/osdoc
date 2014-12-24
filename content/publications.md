@@ -50,6 +50,9 @@ Cohen, C. (2014). Probabilistic reduction and probabilistic enhancement. *Morpho
 Chanceaux, M., Mathôt, S., & Grainger, J. (in press). Effects of number, complexity, and familiarity of flankers on crowded letter identification. *Journal of Vision*.
 {: .reference}
 
+Diwiny, M. E., Sayed, A. H. E., Hassanen, E. S., & Magd, G. A. E. (2014). PTSD monitoring by using brain computer interface for unmanned aerial vehicle operator safety. *Digital Avionics Systems Conference (DASC)*. doi:10.1109/DASC.2014.6979507
+{: .refence}
+
 Failing, M. F., & Theeuwes, J. (2014). Exogenous visual orienting by reward. *Journal of Vision*, *14*(5), 6. doi:10.1167/14.5.6
 {: .reference}
 
@@ -116,10 +119,13 @@ Lange, F., & Eggert, F. (2014). Mapping self-reported to behavioral impulsivenes
 Lange, F., Seer, C., Rapior, M., Rose, J., & Eggert, F. (2014). Turn it all you want: Still no effect of sugar consumption on ego depletion. *Journal of European Psychology Students*, *5*(3), 1–8. doi:10.5334/jeps.cc
 {: .reference}
 
-Mathôt, S., Dalmaijer, E., Grainger, J., & Van der Stigchel, S. (in press). The pupillary light response reflects exogenous attention and inhibition of return. *Journal of Vision*. [[pdf]](http://files.cogsci.nl/documents/mathot_et_al_2014b-2.3.3-postprint.pdf)
+Mathôt, S., Dalmaijer, E., Grainger, J., & Stigchel, S. V. der. (2014). The pupillary light response reflects exogenous attention and inhibition of return. *Journal of Vision*, *14*(14), 7. doi:10.1167/14.14.7
 {: .reference}
 
 Mathôt, S., van der Linden, L., Grainger, J., & Vitu, F. (in press). The pupillary light response reflects eye-movement preparation. *Journal of Experimental Psychology: Human Perception and Performance*. [[pdf]](http://files.cogsci.nl/documents/mathot_et_al_2014a-3.3.1-postprint.pdf)
+{: .reference}
+
+Van Moorselaar, D., Gunseli, E., Theeuwes, J., & Olivers, C. N. L. (2014). The time course of protecting a visual memory representation from perceptual interference. *Frontiers in Human Neuroscience*, *8*, 1053. doi:10.3389/fnhum.2014.01053
 {: .reference}
 
 Van Moorselaar, D., Theeuwes, J., & Olivers, C. N. L. (2014). In competition for the attentional template: Can multiple items within visual working memory guide attention? *Journal of Experimental Psychology: Human Perception and Performance*. doi:10.1037/a0036229
