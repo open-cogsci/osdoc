@@ -37,6 +37,15 @@ Conjunctive Continuous Performance Task (CCPT) is a sustained attention test dev
 - __License:__ ?
 - __Citation:__ Gorgolewski., K. J. (2014). *Conjunctive Continuous Performance Task (CCPT)*. Retrieved from <https://github.com/NeuroanatomyAndConnectivity/ConjunctiveContinuousPerformanceTask>
 
+### Implicit association test (IAT)
+
+This is a standard Implicit Association Test created using OpenSesame. It has been adapted to suit creativity research, but you can modify the template for your purposes easily
+
+- __Developer:__ Hansika Kapoor
+- __URL:__ <http://figshare.com/articles/Implicit_Association_Test_Template_OpenSesame_/1138676>
+- __License:__ [CC-by]
+- __Citation:__ Kapoor, H. (in press). The creative side of the Dark Triad. *Creativity Research Journal*.
+
 ### Mini version of the New York Cognition Questionnaire
 
 New York Cognition Questionnaire (NYC-Q) is a questionnaire probing the content and form of self generated thoughts (mindwandering). This is a minimal version of the NYC-Q suitable for using after behavioural tests or resting state fMRI scans. Available in English and German.
@@ -80,3 +89,4 @@ For tips on how to develop a Git-friendly experiment, see:
 
 [gpl-2]: http://www.gnu.org/licenses/gpl-2.0.html
 [gpl-3]: https://www.gnu.org/copyleft/gpl.html
+[cc-by]: https://creativecommons.org/licenses/by/3.0/
