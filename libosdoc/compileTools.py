@@ -147,19 +147,6 @@ def preprocessPage(path, info, s, status):
 	"""
 
 	print u'Parsing %s (%s) with academicmarkdown' % (info[u'title'], path)
-	# We need to find all images, and copy these to the _content folder
-	for r in re.finditer(u'%--(.*?)--%', s, re.M|re.S):
-		try:
-			d = yaml.load(r.groups()[0])
-		except:
-			print u'Invalid YAML block: %s' % r.groups()[0]
-			continue
-		if not u'figure' in d:
-			continue
-		src = os.path.join(path, u'img', info['permalink'][1:], \
-			d[u'figure'][u'source'])
-		print u'Copying %s' % src
-		copyFile(src, u'_'+src)
 	# Add all source paths to the build path, so that we can reference to
 	# figures etc without considering paths
 	build.path += [os.path.join(path, u'img', info['permalink'][1:]), \
@@ -175,6 +162,13 @@ def preprocessPage(path, info, s, status):
 	# Enable clickable anchor headers
 	build.TOCAnchorHeaders = True
 	build.TOCAppendHeaderRefs = True
+	# Convert script tags to jekyll style
+	regex = r'^~~~\s+{*\.(?P<lang>\w+)}*(?P<script>.+?)^~~~'
+	for g in re.finditer(regex, s, re.DOTALL | re.MULTILINE):
+		old = g.group()
+		new = u'{%% highlight %s %%}%s{%% endhighlight %%}' % (g.group('lang'),
+			g.group('script'))
+		s = s.replace(old, new)
 	if status == u'current' or u'current-only' not in info or \
 		not info[u'current-only']:
 		s = build.MD(s)
@@ -186,6 +180,21 @@ def preprocessPage(path, info, s, status):
 	# the generated site.
 	s = s.replace(u'![content/', u'![/')
 	s = s.replace(u'(content/', u'(/')
+	# We need to find all images, and copy these to the _content folder
+	for r in re.finditer(u'%--(.*?)--%', s, re.M|re.S):
+		try:
+			d = yaml.load(r.groups()[0])
+		except:
+			print u'Invalid YAML block: %s' % r.groups()[0]
+			continue
+		if not u'figure' in d:
+			continue
+		src = os.path.join(path, u'img', info['permalink'][1:], \
+			d[u'figure'][u'source'])
+		if src.endswith(u'.svg'):
+			src += u'.png'
+		print u'Copying %s' % src
+		copyFile(src, u'_'+src)	
 	# Remove the three newly added entries from the build path.
 	build.path = build.path[:-3]
 	return s
