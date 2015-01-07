@@ -6,9 +6,10 @@ parser: academicmarkdown
 menuclass: external
 permalink: /neurospin2015/
 ext_url: /neurospin2015
+author: Sebastiaan Mathôt
 ---
 
-This tutorial is part of an OpenSesame workshop that will take place at the Cognitive Neuroimaging Unit in the NeuroSpin center on 13 Jan 2015, 9:30.
+This tutorial is part of an OpenSesame workshop that will take place at the Cognitive Neuroimaging Unit in the NeuroSpin center on January 13 2015, 9:30.
 
 %--
 figure:
@@ -31,9 +32,7 @@ toc:
 
 ### Expertise
 
-- A basic knowledge of OpenSesame is assumed. If you are not familiar with OpenSesame, it is recommended to follow the [step-by-step tutorial].
-- A basic knowledge of experimental design is assumed.
-- A basic knowledge of programming (not necessarily in Python) is assumed.
+This is a medium-level tutorial that assumes a basic knowledge of experimental design, programming, and OpenSesame. If you're not familiar with OpenSesame, it will be helpful (but not strictly required) to follow the introductory [step-by-step tutorial] first.
 
 ### Software and equipment
 
@@ -51,18 +50,16 @@ You can download the introduction slides from [here][slides].
 
 ## About
 
-In this tutorial, we will implement an attentional-blink paradigm, as introduced by Raymond, Shapiro, and Arnell (1992). We will re-create experiment 2 from Raymond et al. almost exactly, with only a few minor modifications. In this experiment, the participant sees a stream of letters, which is typically called an RSVP stream (for Rapid Serial Visual Presentation).
-
-There were two conditions. In the *experimental* condition, the participant's task was twofold:
+In this tutorial, we will implement an attentional-blink paradigm, as introduced by [Raymond, Shapiro, and Arnell (1992)](#references). We will re-create experiment 2 from Raymond et al. almost exactly, with only a few minor modifications. In this experiment, the participant sees a stream of letters, typically called an RSVP stream (for Rapid Serial Visual Presentation). There are two conditions. In the *experimental* condition, the participant's task is twofold:
 
 - Report the identity of the white letter (all other letters were black).
-- Indicate whether they saw an 'X'.
+- Indicate whether an 'X' was present.
 
-In the control condition, the participant's task was only to ...
+In the control condition, the participant's task is only to ...
 
-- Indicate whether they saw an 'X'.
+- Indicate whether an 'X' was present.
 
-The white letter is called the *T1* (or 'target' in Raymond et al., 1992). The 'X' is called the *T2* (or 'probe' in Raymond et al., 1992). The typical finding is that the T2 is often missed when it is presented 200 - 500 ms after T1, but only when T1 needs to be reported. This phenomenon is called the *attentional blink*, because it is as though your mind's eye briefly blinks after seeing T1. Surprisingly, however, T2 is usually not missed when it follows T1 immediately, a phenomenon called *lag-1 sparing*. In Raymond et al., the results looked like this:
+The white letter is called the *T1* (or 'target'). The 'X' is called the *T2* (or 'probe'). The typical finding is that the T2 is often missed when it is presented 200 - 500 ms after T1, but only when T1 needs to be reported. This phenomenon is called the *attentional blink*, because it is as though your mind's eye briefly blinks after seeing T1. But surprisingly, T2 is usually not missed when it follows T1 immediately. This is called *lag-1 sparing*. The results of Raymond et al. (1992) looked like this:
 
 %--
 figure:
@@ -78,7 +75,7 @@ OpenSesame is available for Windows, Linux, Mac OS (experimental), and Android (
 
 - <http://osdoc.cogsci.nl/>
 
-When you start OpenSesame, you will be given a choice of template experiments, and a list of recently opened experiments (if any, see %FigStartup).
+When you start OpenSesame, you will be given a choice of template experiments, and a list of recently opened experiments (%FigStartup).
 
 %--
 figure:
@@ -90,9 +87,9 @@ figure:
 
 ## Step 2: Choose template, font, and colors
 
-The 'Extended template' already provides the basic structure of a typical trial-based experiment with a practice and an experimental phase. Because our experiment fits this template very well, we're going to use it. Therefore, double-click on 'Extended template' to open it.
+The 'Extended template' provides the basic structure of a typical trial-based experiment with a practice and experimental phase. Because our experiment fits this template very well, we're going to use it. Therefore, double-click on 'Extended template' to open it.
 
-In the 'General tab' that now appears, you can specify the general properties of your experiment. For this experiment, we want to use black letters on a gray background. Also, the default font size of 18 is a bit small, so change that to 32. Finally, it's good practice to give your experiment an informative name and description. Your 'General tab' now looks as %FigGeneralTab.
+In the 'General tab' that now appears, you can specify the general properties of your experiment. For this experiment, we want to use black letters on a gray background. Also, the default font size of 18 is a bit small, so change that to 32. Finally, it's good practice to give your experiment an informative name and description. Your 'General tab' now looks as in %FigGeneralTab.
 
 %--
 figure:
@@ -104,7 +101,7 @@ figure:
 
 ## Step 3: Implement counterbalancing
 
-In Raymond et al., the experimental and control conditions were mixed between blocks: Participants first did a full block in one condition, and then a full block in the other condition. Condition order was counterbalanced, so that half the participants started with the experimental condition, and the other half started with the control condition.
+In Raymond et al. (1992), the experimental and control conditions were mixed between blocks: Participants first did a full block in one condition, and then a full block in the other condition. Condition order was counterbalanced, so that half the participants started with the experimental condition, and the other half started with the control condition.
 
 Let's start with the counterbalancing part, and use the participant number to decide which condition is tested first. We need to do this as the very first thing of the experiment, and we need to use some Python scripting to do it.
 
@@ -121,22 +118,24 @@ else:
 
 Ok, let's take a moment to understand what's going on here.
 
-The first thing to know is that `self.get()` retrieves experimental variables. These include variables that you have defined yourself, for example in a `loop` item, as well as built-in variables, which are available. One such built-in experimental is `subject_parity`, which is automatically set to 'even' when the experiment is launched with an even subject number, and to 'odd' when the subject number is odd.
+The first thing to know is that `self.get()` retrieves experimental variables. These include variables that you have defined yourself, for example in a `loop` item, as well as built-in variables. One such built-in experimental variable is `subject_parity`, which is automatically set to 'even' when the experiment is launched with an even subject number (0, 2, 4, etc.), and to 'odd' when the subject number is odd (1, 3, 5, etc.).
 
-The second thing to know is that `exp.set()` sets experimental variables. That is, it makes variables available elsewhere in OpenSesame, outside of `inline_script` items. So the line ...
+The second thing to know is that `exp.set()` sets experimental variables. That is, it makes variables available elsewhere in OpenSesame, outside of `inline_script` items. So this line:
 
 ~~~ .python
 exp.set('condition1', 'experimental')
 ~~~
 
-... creates an experimental variable with the name `condition1`, and gives it the value 'experimental'. Later on, in Step 3, we will use `condition1` to determine which condition is tested first. In other words, this script says the following:
+... creates an experimental variable with the name `condition1`, and gives it the value 'experimental'. In step 4, we will use this variable to determine which condition is tested first.
+
+In other words, this script says the following:
 
 - All even-numbered subjects start with the experimental condition.
 - All odd-subjects start with the control condition.
 
 <div class='info-box' markdown='1'>
 
-## Links
+### Links
 
 - [/usage/variables-and-conditional-statements/](/usage/variables-and-conditional-statements/)
 - [/miscellaneous/counterbalancing/](/miscellaneous/counterbalancing/)
@@ -148,11 +147,11 @@ exp.set('condition1', 'experimental')
 As mentioned above, conditions are varied between blocks. To understand how this works in OpenSesame, it's best to start at the bottom (see %FigStructure), with ...
 
 - the *trial_sequence*, which corresponds (as you might expect) to a single trial. One level above ...
-- the *block_loop* corresponds to a single block of trials. Therefore, this is where you would define experimental variables that are varied within a block, which we'll get to later. One level above ...
-- the *block_sequence* corresponds to a single block of trials plus the events that happen before and after every block, such as per-block feedback on accuracy, and pre-block instructions. One level above ...
+- the *block_loop* corresponds to a single block of trials. Therefore, this is where you would define experimental variables that are varied within a block. One level above ...
+- the *block_sequence* corresponds to a single block of trials plus the events that happen before and after every block, such as post-block feedback on accuracy, and pre-block instructions. One level above ...
 - the *practice_loop* and *experimental_loop* correspond to multiple blocks of trials during respectively the practice and non-practice (experimental) phase. Therefore, this is where you would define experimental variables that are varied between blocks.
 
-So we need to define our between-block manipulations near the top of the experimental hierarchy, in the *practice_loop* and *experimental_loop*.
+In other words, we need to define our between-block manipulations near the top of the experimental hierarchy, in the *practice_loop* and *experimental_loop*.
 
 %--
 figure:
@@ -162,7 +161,7 @@ figure:
   A fragment of the experimental structure as shown in the overview area.
 --%
 
-Click on *practice_loop* to open the item. Right now, there is only one variable, `practice`, which has the value 'yes' during one cycle, which corresponds to one block here.
+Click on *practice_loop* to open the item. Right now, there is only one variable, `practice`, which has the value 'yes' during one cycle (i.e. one block).
 
 Let's get to work! Add a variable called `condition`, change the number of cycles to 2, and change the order to 'sequential'.
 Now use the previously created variables `condition1` and `condition2` to determine which condition is executed first, and which second (see %FigPracticeLoop). To indicate that something is the name of a variable, and not a literal value, put square brackets around the variable name: '[my_variable]'
@@ -175,11 +174,11 @@ figure:
   The *practice_loop* item after Step 4.
 --%
 
-Do the same thing for *experimental_loop*, except that the variable `practice` has the value 'no'. (The only function of the `practice` variable is so that you can easily filter out all practice trials during data analysis.)
+Do the same thing for *experimental_loop*, except that the variable `practice` has the value 'no'. (The `practice` variable doesn't have a real function. It only allows you to easily filter out all practice trials during data analysis.)
 
 <div class='info-box' markdown='1'>
 
-## Links
+### Links
 
 - [/usage/variables-and-conditional-statements/](/usage/variables-and-conditional-statements/)
 - [/miscellaneous/counterbalancing/](/miscellaneous/counterbalancing/)
@@ -190,7 +189,7 @@ Do the same thing for *experimental_loop*, except that the variable `practice` h
 
 Because the task differs between blocks, we need to show an instruction screen before each block. The *block_sequence* is the place to do this, because, as explained above, it corresponds to a single block of trials plus the events that occur before and after every block.
 
-There are various items that we could use for an instruction screen, but we will use the good old `sketchpad`. Insert two new `sketchpad`s at the top of *block_sequence* by dragging them from the item toolbar. Rename the `sketchpad`s to *instructions_experimental* and *instructions_control*. Click on both items to add some instructional text, such as shown in %FigInstructions.
+There are various items that we could use for an instruction screen, but we will use the `sketchpad`. Insert two new `sketchpad`s at the top of *block_sequence* by dragging them from the item toolbar. Rename the `sketchpad`s to *instructions_experimental* and *instructions_control*. Click on both items to add some instructional text, such as shown in %FigInstructions.
 
 %--
 figure:
@@ -226,7 +225,7 @@ figure:
 
 <div class='info-box' markdown='1'>
 
-## Links
+### Links
 
 - [/usage/sequences-and-loops/](/usage/sequences-and-loops/)
 - [/usage/variables-and-conditional-statements/](/usage/variables-and-conditional-statements/)
@@ -248,7 +247,7 @@ figure:
 
 <div class='info-box' markdown='1'>
 
-## Links
+### Links
 
 - [/usage/feedback/](/usage/feedback/)
 - [/usage/text/](/usage/text/)
@@ -257,10 +256,10 @@ figure:
 
 ## Step 7: Define experimental variables that are varied within a block
 
-Raymond et al. manipulate the position of T2 relative to T1 from 0 to 8, where 0 means that one letter is both T1 and T2 (i.e. a white 'X'). They also have trials in which there is no T2. This is all varied within a block. There are various ways to code this, but the easiest way is to use two variables:
+Raymond et al. (1992) the position of T2 relative to T1 from 0 to 8, where 0 means that one letter is both T1 and T2 (i.e. a white 'X'). They also have trials in which there is no T2. This is all varied within a block. There are various ways to code this, but the easiest way is to use two variables:
 
-- `lag` indicates the position of T2 relative to T1 and has a value of 0 - 8, or no value if there is no T2.
-- `T2_present` is 'y' for trials on which there is a T2 and 'n' for trials on which there is no T2. Of course, this is redundant, because `T2_present` is 'y' on all trials on which `lag` has a value. But it's convenient to define `T2_present`, because we can use it later on to define the correct T2 response.
+- `lag` indicates the position of T2 relative to T1. It has a value of 0 - 8, or no value if there is no T2.
+- `T2_present` is 'y' for trials on which there is a T2 and 'n' for trials on which there is no T2. Of course, this is redundant, because `T2_present` is 'y' on all trials on which `lag` has a value. But it's convenient to define `T2_present`, because we can use it later on to specify the correct T2 response.
 
 Click on *block_loop* and create a variable table as shown in %FigBlockLoop.
 
@@ -274,7 +273,7 @@ figure:
 
 <div class='info-box' markdown='1'>
 
-## Links
+### Links
 
 - [/usage/sequences-and-loops/](/usage/sequences-and-loops/)
 - [/usage/variables-and-conditional-statements/](/usage/variables-and-conditional-statements/)
@@ -305,7 +304,7 @@ figure:
 
 <div class='info-box' markdown='1'>
 
-## Links
+### Links
 
 - [/usage/sequences-and-loops/](/usage/sequences-and-loops/)
 - [/usage/variables-and-conditional-statements/](/usage/variables-and-conditional-statements/)
@@ -326,7 +325,7 @@ from openexp.canvas import canvas
 
 Here, `random` and `string` are part of the Python standard library. `openexp.canvas.canvas` is part of OpenSesame: It's a class for presenting visual stimuli.
 
-Next, we need to define a number of variables that determine the details of the RSVP stream: (Note that, like before, we use `self.get()` to retrieve experimental variables that have been defined in a `loop`.)
+Next, we need to define several variables that determine the details of the RSVP stream: (Note that, like before, we use `self.get()` to retrieve experimental variables that have been defined in a `loop`.)
 
 ~~~ .python
 # Is T2 present?
@@ -347,30 +346,30 @@ Next, we are going to create the letter stream. Raymond et al. have a few rules:
 
 - The number of letters that precede T1 is randomly selected between 7 and 15.
 - The number of letters that follow T1 is always 8.
-- Letters are randomly sampled without replacement from all uppercase letters, except for the 'X' (which is used for the T2).
+- Letters are randomly sampled without replacement from all uppercase letters except 'X' (which is used for T2).
 
-So, let's translate these rules to Python:
+Let's translate these rules to Python:
 
 ~~~ .python
-# The position of T1 is random between 7 and 15.
-# Note that the first position is 0.
+# The position of T1 is random between 7 and 15. Note that the first position is
+# 0, so the position indicates the number of preceding stimuli.
 T1_pos = random.randint(7, 15)
 # The maximum lag, i.e. the number of letters that follow T1.
 max_lag = 8
 # The length of the stream is the position of T1 + the maximum lag + 1. We need
-# to add one, because we count starting at 0, so the length of a list is always
+# to add 1, because we count starting at 0, so the length of a list is always
 # 1 larger than its maximum index.
 stream_len = T1_pos + max_lag + 1
 # We take all uppercase letters, which have been predefined in the `string`
-# module. Converting to a `list` creates a list of separate characters.
+# module. Converting to a `list` creates a list of characters.
 letters = list(string.ascii_uppercase)
-# We remove the 'X' from this list.
+# We remove 'X' from this list.
 letters.remove('X')
-# Randomly sample `stream_len` items from `letters`!
+# Randomly sample a `stream_len` number of letters
 stim_list = random.sample(letters, stream_len)
 ~~~
 
-`stim_list` now contains all letters that make up our RSVP stream on a given trial, except for the T2. We still need to add an 'X' somewhere, but only on T2-present trials:
+Ok, `stim_list` now contains all letters that make up our RSVP stream on a given trial, except for the T2 (if present). Therefore, on T2-present trials, we need to replace the letter at the T2 position by an 'X'.
 
 ~~~ .python
 if T2_present == 'y':
@@ -378,22 +377,23 @@ if T2_present == 'y':
     stim_list[T2_pos] = 'X'
 ~~~
 
-Ok! We now have a variable called `stim_list` that specifies the letters in our RSVP stream. This is a `list` that might contain something like: `['M', 'F', 'O', 'P', 'S', 'R', 'Y', 'C', 'U', 'Z', 'G', 'A', 'T', 'E', 'H', 'J', 'V', 'N', 'B', 'K', 'X', 'Q']`
+We now have a variable called `stim_list` that specifies the letters in our RSVP stream. This is a `list` that might contain something like: `['M', 'F', 'O', 'P', 'S', 'R', 'Y', 'C', 'U', 'Z', 'G', 'A', 'T', 'E', 'H', 'J', 'V', 'N', 'B', 'K', 'X', 'Q']`
 
-The next step is to create a `list` of `canvas` objects, each of which contains a single letter from `stim_list`:
+The next step is to create a `list` of `canvas` objects, each of which contains a single letter from `stim_list`. A `canvas` object corresponds to a static visual stimulus display, i.e. to one frame in our RSVP stream.
 
 ~~~ .python
 # Create an empty list for the canvas objects.
 letter_canvas_list = []
 # Loop through all letters in `stim_list`. `enumerate()` is a convenient
 # function that automatically returns (index, item) tuples. In our case, the
-# index (`i`) reflects the position in the RSVP stream. The Python trick in
-# which you assign a single value to two variables is called 'tuple unpacking'.
+# index (`i`) reflects the position in the RSVP stream. This Python trick, in
+# which you assign a single value to two variables, is called tuple unpacking.
 for i, stim in enumerate(stim_list):
     # Create a `canvas` object.
     letter_canvas = canvas(exp)
     # If we are at the position of T1, we change the foreground color, because
-    # T1 is white, and the default color is black.
+    # T1 is white, while the default color (specified in the General tab) is
+    # black.
     if i == T1_pos:
         letter_canvas.set_fgcolor(T1_color)
     # Draw the letter!
@@ -408,7 +408,7 @@ We also need to create a blank `canvas` to show during the inter-stimulus interv
 blank_canvas = canvas(exp)
 ~~~
 
-Finally, we use `exp.set()` to set the position and identity of T1 as experimental variables. That way we can use them elsewhere in OpenSesame, such as for logging and to specify the correct T1 response.
+Finally, we use `exp.set()` to set the position and identity of T1 as experimental variables, because they have been randomly determined in the scriipt. By setting these variables we can use them elsewhere in OpenSesame, such as for logging or to specify the correct T1 response.
 
 ~~~ .python
 exp.set('T1_pos', T1_pos)
@@ -421,7 +421,7 @@ Preparation done!
 
 <div class='info-box' markdown='1'>
 
-## Links
+### Links
 
 - [/python/about/](/python/about/)
 - [/python/canvas/](/python/canvas/)
@@ -437,9 +437,9 @@ Now, let's switch to the *Run* tab of the `RSVP` item. Here we add the code that
 
 - For each letter canvas in the letter-canvas list
     - Show the letter canvas
-    - Wait for a time specified as `letter_dur`
+    - Wait for `letter_dur` milliseconds
     - Show the blank canvas
-    - Wait for a time specified as `isi`
+    - Wait for `isi` milliseconds
 
 This translates almost directly into Python:
 
@@ -455,7 +455,7 @@ Done!
 
 <div class='info-box' markdown='1'>
 
-## Links
+### Links
 
 - [/python/about/](/python/about/)
 - [/python/canvas/](/python/canvas/)
@@ -481,7 +481,7 @@ We will collect responses as follows:
 - Ask for T1
 - Collect a response, which is a single key press that corresponds to T1. So if T1 was 'A', the participant should press the 'a' key.
 - Ask for T2
-- Collect a response, which is 'y' when T2 was present as 'n' when T1 was absent.
+- Collect a response, which is 'y' when T2 was present and 'n' when T1 was absent.
 
 We will use the *ask_T1* `sketchpad` to ask the participant for T1. Click on *ask_T1* to open the item, and add a line of text, such as 'Please type the white letter'. Change the duration to 0. This 0 ms duration does not mean that the text is only shown for 0 ms, but that the experiment moves immediately to the next item, which is *response_T1*.
 
@@ -491,9 +491,11 @@ Open *ask_T2*, and add a line of text, such as 'Did you see an X? (y/n)'. Again,
 
 Open *response_T2*. Again, we need to define the correct response, this time using the variable `T2_present`, which we had defined in the *block_loop*. Therefore, add '[T2_present]' to the 'Correct response' field. It's also useful to restrict the allowed responses to 'y' and 'n', so that participants don't accidentally press the wrong key. You can do this by entering a semicolon-separated list of keys in the 'Allowed responses' field (i.e. 'y;n').
 
+So how will the responses be logged? Each response item sets `response`, `correct`, and `response_time` variables. In addition, to distinguish responses set by different items, each response item sets these same variables followed by `_[item name]`. In other words, in this experiment the response variables of interests would be `correct_T1_response` and `correct_T2_response`.
+
 <div class='info-box' markdown='1'>
 
-## Links
+### Links
 
 - [/usage/collecting-responses/](/usage/collecting-responses/)
 - [/usage/text/](/usage/text/)
@@ -502,12 +504,12 @@ Open *response_T2*. Again, we need to define the correct response, this time usi
 
 ## Step 13: Specify number and length of blocks
 
-You now have a fully working experiment, but one thing still needs to be done: Setting the length of and number of blocks. We will use the following structure:
+You now have a fully working experiment, but one thing still needs to be done: Setting the length and number of blocks. We will use the following structure:
 
 - 1 practice block of 9 trials in each conditon.
 - 5 experimental blocks of 36 trials in each condition.
 
-First, open *block_loop*. The 'Repeat' value if currently set to 1, which means that each trial is executed once, giving a block length of 18 trials. We want to make the Repeat-value variable, so that we can have a different value for the practice and experimental blocks. To do this, we need to make a small modification to the script of *block_loop*. Click on the 'View' button in top-right of the tab (the middle of the three buttons), and select 'View script'. Now change this line ...
+First, open *block_loop*. The 'Repeat' value is currently set to 1, which means that each trial is executed once, giving a block length of 18 trials. We want to specify the 'Repeat' value with a variable, so that we can have a different value for the practice and experimental blocks. To do this, we need to make a small modification to the script of *block_loop*. Click on the 'View' button in top-right of the tab (the middle of the three buttons), and select 'View script'. This will hide the graphical controls, and show the underlying OpenSesame script. Now change this line ...
 
 ~~~
 set repeat "1"
@@ -531,7 +533,7 @@ figure:
 
 Now open *practice_loop*. Add a variable `block_repeat` and give it the value 0.5. This means that 0.5 x 18 = 9 cycles of *block_loop* will be executed, just as we want.
 
-Now open *experimental_loop*. Again, add a variable `block_repeat` and give it the value 2. This means that each block has a length of 2 x 18 = 36 trials. Also, change the number of cycles to 10, and arrange the loop table so that you first have five blocks of `condition1`, followed by five blocks of `condition 2` (see %FigExperimentalLoop).
+Now open *experimental_loop*. Again, add a variable `block_repeat` and give it the value 2. This means that each block has a length of 2 x 18 = 36 trials. Also, change the number of cycles to 10, and arrange the loop table so that you first have five blocks of `condition1`, followed by five blocks of `condition2` (see %FigExperimentalLoop).
 
 %--
 figure:
@@ -541,6 +543,14 @@ figure:
   If the length of a `loop` is variably defined, OpenSesame notifies you of this.
 --%
 
+<div class='info-box' markdown='1'>
+
+### Links
+
+- [/usage/opensesame-script/](/usage/opensesame-script/)
+
+</div>
+
 ## Step 14: Run experiment!
 
 That's it. You can now run the experiment!
@@ -549,23 +559,201 @@ That's it. You can now run the experiment!
 figure:
  id: FigDone
  source: FigDone.svg
+ caption: Yes, you did!
 --%
 
-## Extra (easy): Check timing
+## Extra 1: Check timing (and learn some NumPy)
 
-TODO
+In time-critical experiments, you should always verify whether the timing is as intended. When using `canvas` objects, you can make use of the fact that the `canvas.show()` method returns the timestamp of the display onset. Therefore, as a first step, we maintain two lists: one to keep track of the letter-canvas onsets, and one to keep track of the blank-canvas onsets.
 
-## Extra (medium): Validate your experiment
+To do this, we need a small modification to the script in the *Run* tab of the *RSVP* item:
 
-TODO
+~~~ .python
+l_letter_time = []
+l_blank_time = []
+for letter_canvas in letter_canvas_list:
+    t1 = letter_canvas.show()
+    l_letter_time.append(t1)
+    self.sleep(letter_dur)
+    t2 = blank_canvas.show()
+    l_blank_time.append(t2)
+    self.sleep(isi)
+~~~
 
-## Extra (difficult): Use PsychoPy directly
+We now have two `list`s with timestamps: `l_letter_time` and `l_blank_time` From these, we want to determine the average presentation duration of a letter, the average duration of a blank, and the standard deviation for both averages. But because `list`s are not great for these kinds of numerical computations, we are going to convert them to another kind of object: a `numpy.array`.
 
-TODO
+~~~ .python
+import numpy
+a_letter_time = numpy.array(l_letter_time)
+a_blank_time = numpy.array(l_blank_time)
+~~~
+
+Now we can easily create an array that contains the presentation duration for each letter:
+
+~~~ .python
+a_letter_dur = a_blank_time - a_letter_time
+~~~
+
+This creates a new array, `a_letter_dur`, in which each item is the result of subtracting the corresponding item in `a_letter_time` from the corresponding item in `a_blank_time`. Schematically:
+
+    a_letter_dur    ->  [  1,  1,  1 ]
+    =
+    a_blank_time    ->  [ 11, 21, 31 ]
+    -
+    a_letter_time   ->  [ 10, 20, 30 ]
+
+Similarly, but slightly more complicated, we can create a new array, `a_blank_dur`, in which each item is the result of subtracting item *i* in `a_blank_time` from item *i+1* in `a_letter_time`.
+
+~~~ .python
+a_blank_dur = a_letter_time[1:] - a_blank_time[:-1]
+~~~
+
+Schematically:
+
+    a_blank_dur         ->  [  9,  9 ]
+    =
+    a_letter_time[1:]   ->  [ 20, 30 ] # The leading 10 is stripped off
+    -
+    a_blank_time[:-1]   ->  [ 11, 21 ] # The trailing 31 is stripped off
+
+The next step is to use the `array.mean()` and `array.std()` methods to get the averages and standard deviations of the durations in one go:
+
+~~~ .python
+mean_letter_dur = a_letter_dur.mean()
+std_letter_dur = a_letter_dur.std()
+mean_blank_dur = a_blank_dur.mean()
+std_blank_dur = a_blank_dur.std()
+~~~
+
+And finally set them as experimental variables, so that they are logged an available for offline inspection:
+
+~~~ .python
+exp.set('mean_letter_dur', mean_letter_dur)
+exp.set('std_letter_dur', std_letter_dur)
+exp.set('mean_blank_dur', mean_blank_dur)
+exp.set('std_blank_dur', std_blank_dur)
+~~~
+
+Done!
+
+<div class='info-box' markdown='1'>
+
+### Links
+
+- [/miscellaneous/timing/](/miscellaneous/timing/)
+- <http://wiki.scipy.org/Tentative_NumPy_Tutorial>
+
+</div>
+
+## Extra 2: Add assertions to check your experiment
+
+A Dutch proverb states that a mistake is in a small corner. (I suspect that according to the original proverb the mistake, rather than the corner, was small, but no matter.) Developing experiments, or any kind of software, without bugs is almost impossible. However, you can protect yourself from many bugs by building safeguards into your experiment.
+
+For example, our experiment has two conditions, defined as 'experimental' and 'control'. But what if I accidentally misspelled 'experimental' as 'experimentel' in the *experimental_loop*? The experiment would still run, but it would no longer work as expected. Therefore, we want to make sure that `condition` is either 'experimental' or 'control', but nothing else. In computer-speak, we want to *assert* that this is the case. Let's take a look at how we can do this.
+
+First, drag a new `inline_script` item to the start of the *trial_sequence* and rename it to *assertions*. Add the following line to the *Run* tab:
+
+~~~ .python
+assert(self.get('condition') in ['experimental', 'control'])
+~~~
+
+Let's dissect this line:
+
+- `self.get('condition')` retrieves the `condition` variable.
+- `in ['experimental', 'control']` checks whether this variable matches any of the items in the list, i.e. whether it is 'experimental' or 'control'.
+- `assert()` states that there *has* to be a match. If not, the experiment will crash (an `AssertionError` will be raised).
+
+In other words, whatever you pass to `assert()` has to be `True`, otherwise your experiment will crash. This useful for sanity checks.
+
+Some more assertions:
+
+~~~ .python
+assert(self.get('T2_present') in ['y', 'n'])
+assert(self.get('lag') in ['']+range(0,9))
+~~~
+
+And a final one that is a bit more complicated. Can you figure out what it does?
+
+~~~ .python
+assert((self.get('lag') == '') != (self.get('T2_present') == 'y'))
+~~~
+
+<div class='info-box' markdown='1'>
+
+### Links
+
+- <https://wiki.python.org/moin/UsingAssertionsEffectively>
+- Advice on protective programming in Axelrod (2014, doi:10.3389/fpsyg.2014.01435)
+
+</div>
+
+## Extra 3: Use PsychoPy directly
+
+OpenSesame is back-end independent. This means that different libraries can be used for controlling the display, sound, response collection, etc. You can select the back-end in the General tab (see %FigBackend).
+
+%--
+figure:
+ id: FigBackend
+ source: FigBackend.png
+ caption: |
+  You can select a back-end in the General tab of your experiment.
+--%
+
+So far, we have used OpenSesame's own `openexp` modules, wich automatically map all commands to the correct functions of the selected back-end. Therefore, you don't have to bother with or know about the details of each back-end. However, you can also directly use the functions offered by a specific back-end, such as PsychoPy. This is especially useful if you want to use functionality that is not available in the `openexp` modules.
+
+First, to use PsychoPy, you need to switch to the *psycho* back-end (see %FigBackend). Now, when you start the experiment, OpenSesame will automatically initialize PsychoPy, and the `psychopy.visual.Window` object will be available as `win` in `inline_script`s.
+
+Now let's see how we can implement our RSVP stream in PsychoPy. (The script below replaces the part in the *Prepare* phase of *RSVP* in which we created `letter_canvas_list`.)
+
+~~~ .python
+from psychopy import visual
+textstim_list = []
+for i, stim in enumerate(stim_list):
+    if i == T1_pos:
+        color = 'white'
+    else:
+        color = 'black'
+    # All stimuli require an psychopy.visual.Window object to be passed as first
+    # argument. In OpenSesame, this object is available as `win`.
+    textstim = visual.TextStim(win, text=stim, color=color)
+    textstim_list.append(textstim)
+~~~
+
+The main difference with our previous script is that we don't draw text on a `canvas` object. Instead, the text is an object by itself (a `TextStim`), and it has its own `draw()` method to draw it to the screen.
+
+Of course, we also need to update the *Run* phase of the *RSVP* stream, which now looks like this:
+
+~~~ .python
+for textstim in textstim_list:
+    textstim.draw()
+    win.flip()
+    self.sleep(letter_dur)
+    win.flip()
+    self.sleep(isi)
+~~~
+
+The main difference here is that we need to call several methods to show our stimuli, instead of only `canvas.show()`. First, we need to call the `draw()` method on all stimuli that we want to show: `textstim.draw()` Next, we need to call `win.flip()` to refresh the display so that the stimuli actually become visible. If we call `win.flip()` without any preceding calls to `draw()`, as we do before the inter-stimulus-interval, it has the effect of clearing the display.
+
+That's it!
+
+<div class='info-box' markdown='1'>
+
+### Links
+
+- [/back-ends/psycho/](/back-ends/psycho/)
+- <http://www.psychopy.org/api/visual.html>
+
+</div>
 
 ## References
 
+Axelrod, V. (2014). Minimizing bugs in cognitive neuroscience programming. *Frontiers in Psychology: Perception Science*, *5*, 1435. doi:10.3389/fpsyg.2014.01435
+{: .reference}
+
 Mathôt, S., Schreij, D., & Theeuwes, J. (2012). OpenSesame: An open-source, graphical experiment builder for the social sciences. *Behavior Research Methods*, *44*(2), 314–324. doi:10.3758/s13428-011-0168-7
+{: .reference}
+
+Peirce, J. W. (2007). PsychoPy: Psychophysics software in Python. Journal of Neuroscience Methods, 162(1-2), 8–13. doi:10.1016/j.jneumeth.2006.11.017
 {: .reference}
 
 Raymond, J. E., Shapiro, K. L., & Arnell, K. M. (1992). Temporary suppression of visual processing in an RSVP task: An attentional blink? *Journal of Experimental Psychology: Human Perception and Performance*, *18*(3), 849–860. doi:10.1037/0096-1523.18.3.849
