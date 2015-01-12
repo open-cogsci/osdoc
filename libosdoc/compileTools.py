@@ -162,6 +162,8 @@ def preprocessPage(path, info, s, status):
 	# Enable clickable anchor headers
 	build.TOCAnchorHeaders = True
 	build.TOCAppendHeaderRefs = True
+	# Original s
+	_s = s
 	# Convert script tags to jekyll style
 	regex = r'^~~~\s+{*\.(?P<lang>\w+)}*(?P<script>.+?)^~~~'
 	for g in re.finditer(regex, s, re.DOTALL | re.MULTILINE):
@@ -181,7 +183,7 @@ def preprocessPage(path, info, s, status):
 	s = s.replace(u'![content/', u'![/')
 	s = s.replace(u'(content/', u'(/')
 	# We need to find all images, and copy these to the _content folder
-	for r in re.finditer(u'%--(.*?)--%', s, re.M|re.S):
+	for r in re.finditer(u'%--(.*?)--%', _s, re.M|re.S):
 		try:
 			d = yaml.load(r.groups()[0])
 		except:
