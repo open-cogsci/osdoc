@@ -146,6 +146,6 @@ BRM Paper
 :languages
 :Formation AMU
 :Formation AMU Part 2
-:NeuroSpin 2015
+NeuroSpin 2015
 #Experiments
 #Expériences
