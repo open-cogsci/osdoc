@@ -256,7 +256,7 @@ figure:
 
 ## Step 7: Define experimental variables that are varied within a block
 
-Raymond et al. (1992) the position of T2 relative to T1 from 0 to 8, where 0 means that one letter is both T1 and T2 (i.e. a white 'X'). They also have trials in which there is no T2. This is all varied within a block. There are various ways to code this, but the easiest way is to use two variables:
+Raymond et al. (1992) vary the position of T2 relative to T1 from 0 to 8, where 0 means that one letter is both T1 and T2 (i.e. a white 'X'). They also have trials in which there is no T2. This is all varied within a block. There are various ways to code this, but the easiest way is to use two variables:
 
 - `lag` indicates the position of T2 relative to T1. It has a value of 0 - 8, or no value if there is no T2.
 - `T2_present` is 'y' for trials on which there is a T2 and 'n' for trials on which there is no T2. Of course, this is redundant, because `T2_present` is 'y' on all trials on which `lag` has a value. But it's convenient to define `T2_present`, because we can use it later on to specify the correct T2 response.
@@ -299,7 +299,7 @@ figure:
  id: FigTrialSequence
  source: FigTrialSequence.png
  caption: |
-  The *trial_sequence* item after Step 6.
+  The *trial_sequence* item after Step 8.
 --%
 
 <div class='info-box' markdown='1'>
