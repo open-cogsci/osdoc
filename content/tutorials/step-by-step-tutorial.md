@@ -1,6 +1,6 @@
 ---
 layout: osdoc
-title: Step-by-step tutorial
+title: Step-by-step tutorial (beginner)
 group: Tutorials
 permalink: /step-by-step-tutorial/
 parser: academicmarkdown
@@ -463,7 +463,7 @@ figure:
 
 We want three objects to be part of the target display: the target letter, the distractor letter, and the gaze cue (see %FigGazeCuing). Like before, we will start by creating a static display using the `sketchpad` editor. After this, we will only need to make minor changes to the script so that the exact display depends on the variables.
 
-Click on *target* in the overview to open the target tab and like before, draw the `gaze_left.png` image at the center of the screen. Now select the draw text tool by clicking on the button with the 'A' icon. The default font size is 18pt, which is a bit small for our purpose, so change the font size to 32pt. Now click on (-320, 0) in the `sketchpad` (the X-coordinate does not need to be exactly 320, since we will change this to a variable anyway). Enter "[target_letter]" in the dialog that appears, to draw the target letter (when drawing text, you can use variables directly). Similarly, click on (320, 0) and draw an 'X' (the distractor is always an 'X'). 
+Click on *target* in the overview to open the target tab and like before, draw the `gaze_left.png` image at the center of the screen. Now select the draw text tool by clicking on the button with the 'A' icon. The default font size is 18pt, which is a bit small for our purpose, so change the font size to 32pt. Now click on (-320, 0) in the `sketchpad` (the X-coordinate does not need to be exactly 320, since we will change this to a variable anyway). Enter "[target_letter]" in the dialog that appears, to draw the target letter (when drawing text, you can use variables directly). Similarly, click on (320, 0) and draw an 'X' (the distractor is always an 'X').
 
 Now open the script editor by clicking on the 'Select view' button at the top-right of the tab and selecting 'View script'. The script looks like this:
 

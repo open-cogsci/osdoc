@@ -19,7 +19,8 @@ getting opensesame
 	running on a raspberry pi
 	development snapshots
 tutorials
-	step-by-step tutorial
+	step-by-step tutorial (beginner)
+	attentional-blink tutorial (advanced)
 	aps tutorial
 	cambridge tutorial 2014
 #	python inline scripting tutorial
@@ -146,6 +147,6 @@ BRM Paper
 :languages
 :Formation AMU
 :Formation AMU Part 2
-NeuroSpin 2015
+:NeuroSpin 2015
 #Experiments
 #Expériences

@@ -12,7 +12,11 @@ singleton: true
 Welcome to the OpenSesame documentation area! Here you can find everything you always wanted to know about your favorite free and cross-platform experiment builder. The latest $status$ version of OpenSesame is $version$ *$codename$*, released on $release-date$ ([release notes]).
 
 [Download][]{:.button}
-[Tutorial][]{:.button}
+
+[Tutorial (Beginner)][]{:.button}
+
+[Tutorial (Advanced)][]{:.button}
+
 [Forum][]{:.button}
 
 %--
@@ -32,7 +36,8 @@ Mathôt, S., Schreij, D., & Theeuwes, J. (2012). OpenSesame: An open-source, gra
 {: .reference}
 
 [forum]: http://forum.cogsci.nl/
-[tutorial]: /tutorials/step-by-step-tutorial/
+[tutorial (beginner)]: /tutorials/step-by-step-tutorial/
+[tutorial (advanced)]: /tutorials/attention-blink-tutorial/
 [release notes]: /notes/$version$/
 [download]: /getting-opensesame/download/
 [chris longmore]: http://www.chrislongmore.co.uk/
