@@ -30,7 +30,15 @@ Despite the project's young age, references to OpenSesame are starting to appear
 
 OpenSesame is used for, discussed in, or mentioned in:
 
-### 2014 / in press / online first
+### 2015 / in press / online first
+
+Mathôt, S., van der Linden, L., Grainger, J., & Vitu, F. (in press). The pupillary light response reflects eye-movement preparation. *Journal of Experimental Psychology: Human Perception and Performance*. [[pdf]](http://files.cogsci.nl/documents/mathot_et_al_2014a-3.3.1-postprint.pdf)
+{: .reference}
+
+Silvis, J. D., Olmos Solis, K., & Donk, M. (2015). The nature of the global effect beyond the first eye movement. *Vision Research*. doi:10.1016/j.visres.2014.12.020
+{: .reference}
+
+### 2014
 
 Barnhoorn, J. S., Haasnoot, E., Bocanegra, B. R., & van Steenbergen, H. (2014). QRTEngine: An easy solution for running online reaction time experiments using Qualtrics. *Behavior Research Methods*. doi:10.3758/s13428-014-0530-7
 {: .reference}
@@ -120,9 +128,6 @@ Lange, F., Seer, C., Rapior, M., Rose, J., & Eggert, F. (2014). Turn it all you 
 {: .reference}
 
 Mathôt, S., Dalmaijer, E., Grainger, J., & Stigchel, S. V. der. (2014). The pupillary light response reflects exogenous attention and inhibition of return. *Journal of Vision*, *14*(14), 7. doi:10.1167/14.14.7
-{: .reference}
-
-Mathôt, S., van der Linden, L., Grainger, J., & Vitu, F. (in press). The pupillary light response reflects eye-movement preparation. *Journal of Experimental Psychology: Human Perception and Performance*. [[pdf]](http://files.cogsci.nl/documents/mathot_et_al_2014a-3.3.1-postprint.pdf)
 {: .reference}
 
 Van Moorselaar, D., Gunseli, E., Theeuwes, J., & Olivers, C. N. L. (2014). The time course of protecting a visual memory representation from perceptual interference. *Frontiers in Human Neuroscience*, *8*, 1053. doi:10.3389/fnhum.2014.01053
