@@ -37,7 +37,7 @@ Mathôt, S., Schreij, D., & Theeuwes, J. (2012). OpenSesame: An open-source, gra
 
 [forum]: http://forum.cogsci.nl/
 [tutorial (beginner)]: /tutorials/step-by-step-tutorial/
-[tutorial (advanced)]: /tutorials/attention-blink-tutorial/
+[tutorial (advanced)]: /tutorials/attentional-blink/
 [release notes]: /notes/$version$/
 [download]: /getting-opensesame/download/
 [chris longmore]: http://www.chrislongmore.co.uk/
