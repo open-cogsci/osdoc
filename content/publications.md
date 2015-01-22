@@ -32,7 +32,19 @@ OpenSesame is used for, discussed in, or mentioned in:
 
 ### 2015 / in press / online first
 
+Alday, P. M., Schlesewsky, M., & Bornkessel-Schlesewsky, I. (2015). Discovering prominence and its role in language processing: An individual (differences) approach. *Linguistic Vanguard*. doi:10.1515/lingvan-2014-1013
+{: .reference}
+
+Duenser, A., Lochner, M., Engelke, U., & Rozado, D. (2015). Visual and manual control for human-robot tele-operation. *IEEE Computer Graphics and Applications*. doi:10.1109/MCG.2015.4
+{: .reference}
+
+Failing, M. F., & Theeuwes, J. (2015). Nonspatial attentional capture by previously rewarded scene semantics. *Visual Cognition*. doi:10.1080/13506285.2014.990546
+{: .reference}
+
 Mathôt, S., van der Linden, L., Grainger, J., & Vitu, F. (in press). The pupillary light response reflects eye-movement preparation. *Journal of Experimental Psychology: Human Perception and Performance*. [[pdf]](http://files.cogsci.nl/documents/mathot_et_al_2014a-3.3.1-postprint.pdf)
+{: .reference}
+
+Nesari, S. J., & Kamari, E. (2015). Phonological errors among dyslexic and non-dyslexic children learning Persian. *International Journal of Applied Linguistics and English Literature*, *4*(3), 167–173. doi:10.7575/aiac.ijalel.v.4n.3p.167
 {: .reference}
 
 Silvis, J. D., Olmos Solis, K., & Donk, M. (2015). The nature of the global effect beyond the first eye movement. *Vision Research*. doi:10.1016/j.visres.2014.12.020
@@ -59,7 +71,7 @@ Chanceaux, M., Mathôt, S., & Grainger, J. (in press). Effects of number, comple
 {: .reference}
 
 Diwiny, M. E., Sayed, A. H. E., Hassanen, E. S., & Magd, G. A. E. (2014). PTSD monitoring by using brain computer interface for unmanned aerial vehicle operator safety. *Digital Avionics Systems Conference (DASC)*. doi:10.1109/DASC.2014.6979507
-{: .refence}
+{: .reference}
 
 Failing, M. F., & Theeuwes, J. (2014). Exogenous visual orienting by reward. *Journal of Vision*, *14*(5), 6. doi:10.1167/14.5.6
 {: .reference}
