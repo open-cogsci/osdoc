@@ -15,13 +15,13 @@ toc:
 ## The difference between `feedback` and `sketchpad` items
 
 To give provide you will generally use the `feedback` item, instead of the `sketchpad` item. These two items are quite similar, but are different in *when* stimulus preparation occurs. See also:
-	
+
 - [usage/prepare-run]
 
 ## Relevant variables
 
 OpenSesame automatically keeps track of a number of feedback variables, which are described here:
-	
+
 - [usage/variables-and-conditional-statements#feedback-variables]
 
 ## Feedback after a block of trials
@@ -31,7 +31,7 @@ It is common to provide feedback after every block of trials. This way you don't
 %--
 figure:
  id: FigFeedback
- source: 1.png
+ source: FigFeedback.png
  caption: |
   Providing feedback after a block of trials using a `feedback` item.
 --%
@@ -41,7 +41,7 @@ In the `feedback` item, you can add some text. You can use the variables describ
 %--
 figure:
  id: FigFeedbackVariables
- source: 2.png
+ source: FigFeedbackVariables.png
  caption: |
   You can use a number of standard feedback variables, such as `avg_rt` and `acc`.
 --%
@@ -64,7 +64,7 @@ Sometimes you want to give the participant feedback after every trial. It's prob
 %--
 figure:
  id: FigRunIf
- source: 3.png
+ source: FigRunIf.png
  caption: |
   Providing feedback after each trial using `Run if` statements.
 --%
