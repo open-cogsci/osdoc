@@ -147,7 +147,8 @@ If you open a `sequence` item, you will see that every item from the sequence ha
 figure:
  id: FigRunIf
  source: run-if.png
- caption: \'Run if\' statements can be used to indicate that certain items from a `sequence` should only be executed under specific circumstances.
+ caption: |
+  'Run if' statements can be used to indicate that certain items from a `sequence` should only be executed under specific circumstances.
 --%
 
 You can use more complex conditions as well. Let's take a look at a few examples:
