@@ -3,7 +3,7 @@ layout: osdoc
 title: Runtime for Android
 group: Getting OpenSesame
 permalink: /android/
---- 
+---
 
 %--
 toc:
@@ -35,20 +35,7 @@ The `Back` button serves the same purpose as the `Escape` key on regular systems
 
 ### Supported devices
 
-If you have tested the OpenSesame runtime for Android on a device, please [share your experiences][forum]. Below is a list of devices that have been reported to work. In general, any device that runs Android 2.2. 'Froyo' or later appears to work.
-
-|**Device**				|**Android**				|**Status**		|
-|Asus Transformer TF101	|4.0.3						|Works			|
-|EEE PC 701 			|Android x86 4.0-r1			|Works			|
-|Eken M009S				|2.2						|Works			|
-|Samsung Galaxy S3 Mini	|4.1.2						|Works			|
-|Samsung Galaxy S3		|4.0.4						|Works			|
-|Micromax A110			|4.0.4						|Works			|
-|Mpman MP434			|2.2.1						|Works			|
-|Nexus 4				|4.2.2						|Works			|
-|Nexus 7				|4.2.1						|Works			|
-|Sony Xperia SP			|4.1.2						|Works			|
-|ZTE V970				|4.1.1						|Works			|
+If you have tested the OpenSesame runtime for Android on a device, please [share your experiences][forum]. OpenSesame is developed with the Nexus 4 and 9 as reference devices. In general, any device that runs Android 2.2. 'Froyo' or later appears to work.
 
 ### Disabling automatic updates
 
@@ -82,14 +69,18 @@ Debug output is written to `/sdcard/opensesame-debug.txt`.
 - The *sampler* item and `openexp.sampler` module will ignore panning and pitching.
 - Participants may be eaten by dragons.
 
+## Know issue: Frozen virtual keyboard
+
+If you find that the default virtual keyboard is unresponsive (i.e. it shows but doesn't respond to taps), you can install a third-party keyboard, such as [SwiftKey](https://play.google.com/store/apps/details?id=com.touchtype.swiftkey).
+
 ## Forum topics
 
 A general forum topic on the OpenSesame runtime for Android:
-	
+
 - <http://forum.cogsci.nl/index.php?p=/discussion/333/opensesame-runtime-for-android>
 
 Eoin Traver's project to test the OpenSesame runtime for Android (call for testers):
-	
+
 - <http://forum.cogsci.nl/index.php?p=/discussion/439/opensesame-mobile-call-for-testers>
 
 [google-play]: https://play.google.com/store/apps/details?id=nl.cogsci.opensesame
