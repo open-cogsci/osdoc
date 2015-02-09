@@ -5,8 +5,9 @@ group: Miscellaneous
 permalink: /history/
 ---
 
-|Dec 8, 2014	| [2.9.2][] *Hesitant Heisenberg (maintenance)* 		|
-|Nov 13, 2014	| [2.9.1][] *Hesitant Heisenberg (maintenance)* 		|
+|Feb 9, 2015	| [2.9.3][] *Hesitant Heisenberg* (maintenance) 		|
+|Dec 8, 2014	| [2.9.2][] *Hesitant Heisenberg* (maintenance) 		|
+|Nov 13, 2014	| [2.9.1][] *Hesitant Heisenberg* (maintenance) 		|
 |Oct 24, 2014	| [2.9.0][] *Hesitant Heisenberg* 		|
 |July 10, 2014	| [2.8.3][] *Gutsy Gibson* (maintenance)	|
 |June 11, 2014	| [2.8.2][] *Gutsy Gibson* (maintenance)	|
@@ -59,3 +60,4 @@ permalink: /history/
 [2.9.0]: /notes/2.9.0/
 [2.9.1]: /notes/2.9.1/
 [2.9.2]: /notes/2.9.2/
+[2.9.3]: /notes/2.9.3/

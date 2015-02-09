@@ -142,6 +142,7 @@ BRM Paper
 	:release notes for 2.9.0
 	:release notes for 2.9.1
 	:release notes for 2.9.2
+	:release notes for 2.9.3
 :APS Workshop
 :Page not found
 :languages
