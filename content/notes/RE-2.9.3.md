@@ -5,7 +5,7 @@ group: notes
 permalink: /2.9.3/
 ---
 
-OpenSesame 2.9.3 is the fourth maintenance release in the 2.9 series. If you are upgrading from 2.8.3 or earlier, please also read the [2.9.0 release notes].
+OpenSesame 2.9.3 is the third maintenance release in the 2.9 series. If you are upgrading from 2.8.3 or earlier, please also read the [2.9.0 release notes].
 
 ## Changelog
 

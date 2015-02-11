@@ -5,6 +5,7 @@ group: Miscellaneous
 permalink: /history/
 ---
 
+|Feb 11, 2015	| [2.9.4][] *Hesitant Heisenberg* (maintenance) 		|
 |Feb 9, 2015	| [2.9.3][] *Hesitant Heisenberg* (maintenance) 		|
 |Dec 8, 2014	| [2.9.2][] *Hesitant Heisenberg* (maintenance) 		|
 |Nov 13, 2014	| [2.9.1][] *Hesitant Heisenberg* (maintenance) 		|
@@ -61,3 +62,4 @@ permalink: /history/
 [2.9.1]: /notes/2.9.1/
 [2.9.2]: /notes/2.9.2/
 [2.9.3]: /notes/2.9.3/
+[2.9.4]: /notes/2.9.4/

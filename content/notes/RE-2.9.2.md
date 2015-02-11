@@ -5,7 +5,7 @@ group: notes
 permalink: /2.9.2/
 ---
 
-OpenSesame 2.9.2 is the third maintenance release in the 2.9 series. If you are upgrading from 2.8.3 or earlier, please also read the [2.9.0 release notes].
+OpenSesame 2.9.2 is the second maintenance release in the 2.9 series. If you are upgrading from 2.8.3 or earlier, please also read the [2.9.0 release notes].
 
 ## Credits
 
