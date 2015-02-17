@@ -1,6 +1,6 @@
 # OpenSesame documentation area
 
-Copyright 2010-2014
+Copyright 2010-2015
 Sebastiaan Mathôt <s.mathot@cogsci.nl>
 
 ## About
@@ -9,7 +9,7 @@ This repository contains the source for <http://osdoc.cogsci.nl/>.
 
 ## Where is the content?
 
-The `master` branch does not contain any content. The content is stored in git branches, each of which corresponds to one particular version of the documentation site. For example, to view the documentation for version 2.8.3 (i.e. the documentation for OpenSesame version 2.8.3), switch to the `2.8.3` branch.
+The `master` branch does not contain any content. The content is stored in git branches, each of which corresponds to one particular version of the documentation site. For example, to view the documentation for version 2.9.X (i.e. the documentation for the OpenSesame 2.9 series.), switch to the `2.9` branch.
 
 ## License information
 
