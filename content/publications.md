@@ -47,6 +47,9 @@ Mathôt, S., van der Linden, L., Grainger, J., & Vitu, F. (in press). The pupill
 Nesari, S. J., & Kamari, E. (2015). Phonological errors among dyslexic and non-dyslexic children learning Persian. *International Journal of Applied Linguistics and English Literature*, *4*(3), 167–173. doi:10.7575/aiac.ijalel.v.4n.3p.167
 {: .reference}
 
+Sassenhagen, J., & Bornkessel-Schlesewsky, I. (2015). The P600 as a correlate of ventral attention network reorientation. *Cortex*. doi:10.1016/j.cortex.2014.12.019
+{: .reference}
+
 Silvis, J. D., Olmos Solis, K., & Donk, M. (2015). The nature of the global effect beyond the first eye movement. *Vision Research*. doi:10.1016/j.visres.2014.12.020
 {: .reference}
 
