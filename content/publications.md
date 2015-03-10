@@ -41,6 +41,9 @@ Duenser, A., Lochner, M., Engelke, U., & Rozado, D. (2015). Visual and manual co
 Failing, M. F., & Theeuwes, J. (2015). Nonspatial attentional capture by previously rewarded scene semantics. *Visual Cognition*. doi:10.1080/13506285.2014.990546
 {: .reference}
 
+Kapoor, H. (2015). The creative side of the dark triad. *Creativity Research Journal*, *27*(1), 58–67. doi:10.1080/10400419.2014.961775
+{: .reference}
+
 Mathôt, S., van der Linden, L., Grainger, J., & Vitu, F. (in press). The pupillary light response reflects eye-movement preparation. *Journal of Experimental Psychology: Human Perception and Performance*. [[pdf]](http://files.cogsci.nl/documents/mathot_et_al_2014a-3.3.1-postprint.pdf)
 {: .reference}
 
@@ -119,9 +122,6 @@ Ishii, A., Tanaka, M., & Watanabe, Y. (2014). The neural mechanisms underlying t
 {: .reference}
 
 Jiang, Y. (2014). Measuring facial expression and emotional experience under diverse social context in a negative emotional setting. In A. J. Spink, L.W.S. Loijens, M. Woloszynowska-Fraser, & L. P. J. J. Noldus (Eds.), Proceedings of Measuring Behavior. Retrieved from <http://www.measuringbehavior.org/files/2014/Proceedings/Jiang,%20Y.%20-%20MB2014.pdf>
-{: .reference}
-
-Kapoor, H. (2014). The creative side of the Dark Triad. *Creativity Research Journal*.
 {: .reference}
 
 Katz, C., & Knops, A. (2014). Operational momentum in multiplication and division? *PLoS ONE*, *9*(8), e104777. doi:10.1371/journal.pone.0104777
