@@ -28,7 +28,7 @@ video:
  width: 640
  height: 360
  caption: |
-  Video by [Chris Longmore](http://www.chrislongmore.co.uk/)
+  Video by <a href="http://www.chrislongmore.co.uk/">Chris Longmore</a>.
 --%
 
 ## Counterbalancing example
