@@ -37,7 +37,7 @@ The two main branches of OpenSesame are:
 ## Developing a plug-in
 
 For plug-in development, see:
-	
+
 - [/plug-ins/create](/plug-ins/create)
 
 ## Source-code architecture
@@ -49,7 +49,7 @@ For a description of the OpenSesame source-code architecture, see:
 ## Coding-style guidelines
 
 The goal is to maintain a readable and consistent code base. Therefore, please consider the following style guidelines when contributing code:
-	
+
 ### Exception handling
 
 Exceptions should be handled via the `libopensesame.exceptions.osexception` class. For example:
@@ -62,7 +62,7 @@ raise osexception(u'An error occurred')
 ### Printing debug output
 
 Debug output should be handled via `libopensesame.debug.msg()`, and is shown only when OpenSesame is started with the `--debug` command-line argument. For example:
-	
+
 {% highlight python %}
 from libopensesame import debug
 debug.msg(u'This will be shown only in debug mode')
@@ -82,26 +82,28 @@ Indentation should be tab based. *This is the most important style guideline of 
 def a_function(argument, keyword=None):
 
 	"""
-	Does something.
-	
-	Arguments:
-	argument	--	This is an argument.
-	
-	Keyword arguments:
-	keyword		--	This is a keyword (default=None)
-	
-	Returns:
-	This function returns some values.
+	desc:
+		This is a YAMLDoc-style docstring, which allows for a full specification
+		of arguments. See also <https://github.com/smathot/python-yamldoc>.
+
+	arguments:
+		argument:   This is an argument.
+
+	keywords:
+		keyword:    This is a keyword.
+
+	returns:
+		This function returns some values.
 	"""
-	
+
 	pass
-	
+
 def a_simple_function():
 
 	"""This is a simple doc-string"""
-	
+
 	pass
-	
+
 {% endhighlight %}
 
 ### Unicode and strings
@@ -114,7 +116,7 @@ my_value = u'a string' # preferred
 {% endhighlight %}
 
 For more information, see:
-	
+
 - <http://docs.python.org/2/howto/unicode.html>
 
 ### Other
