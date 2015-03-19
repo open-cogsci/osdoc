@@ -44,10 +44,19 @@ Failing, M. F., & Theeuwes, J. (2015). Nonspatial attentional capture by previou
 Kapoor, H. (2015). The creative side of the dark triad. *Creativity Research Journal*, *27*(1), 58–67. doi:10.1080/10400419.2014.961775
 {: .reference}
 
-Mathôt, S., van der Linden, L., Grainger, J., & Vitu, F. (in press). The pupillary light response reflects eye-movement preparation. *Journal of Experimental Psychology: Human Perception and Performance*. [[pdf]](http://files.cogsci.nl/documents/mathot_et_al_2014a-3.3.1-postprint.pdf)
+van der Linden, L., Mathôt, S., Vitu, F. (in press). The role of object affordances and center of gravity in eye movements towards isolated daily-life objects. *Journal of Vision*.
+{: .reference}
+
+Mathôt, S., van der Linden, L., Grainger, J., & Vitu, F. (2015). The pupillary light response reflects eye-movement preparation. *Journal of Experimental Psychology: Human Perception and Performance*, *41*(1), 28–35. doi:10.1037/a0038653
+{: .reference}
+
+Mathôt, S., Siebold, A., Donk, M., & Vitu, F. (in press). Large pupils predict goal-driven eye movements. *Journal of Experimental Psychology: General*.
 {: .reference}
 
 Nesari, S. J., & Kamari, E. (2015). Phonological errors among dyslexic and non-dyslexic children learning Persian. *International Journal of Applied Linguistics and English Literature*, *4*(3), 167–173. doi:10.7575/aiac.ijalel.v.4n.3p.167
+{: .reference}
+
+Robinaugh, D. J., Crane, M. E., Enock, P. M., & McNally, R. J. (2015). Training the removal of negative information from working memory: A preliminary investigation of a working memory bias modification task. *Cognition and Emotion*. doi:10.1080/02699931.2015.1014312
 {: .reference}
 
 Sassenhagen, J., & Bornkessel-Schlesewsky, I. (2015). The P600 as a correlate of ventral attention network reorientation. *Cortex*. doi:10.1016/j.cortex.2014.12.019
