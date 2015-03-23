@@ -56,6 +56,9 @@ Mathôt, S., Siebold, A., Donk, M., & Vitu, F. (in press). Large pupils predict 
 Nesari, S. J., & Kamari, E. (2015). Phonological errors among dyslexic and non-dyslexic children learning Persian. *International Journal of Applied Linguistics and English Literature*, *4*(3), 167–173. doi:10.7575/aiac.ijalel.v.4n.3p.167
 {: .reference}
 
+Rieger, D., Frischlich, L., Högden, F., Kauf, R., Schramm, K., & Tappe, E. (2015). Appreciation in the face of death: Meaningful films buffer against death-related anxiety. *Journal of Communication*. doi:10.1111/jcom.12152
+{: .reference}
+
 Robinaugh, D. J., Crane, M. E., Enock, P. M., & McNally, R. J. (2015). Training the removal of negative information from working memory: A preliminary investigation of a working memory bias modification task. *Cognition and Emotion*. doi:10.1080/02699931.2015.1014312
 {: .reference}
 
