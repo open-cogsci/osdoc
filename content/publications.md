@@ -44,6 +44,9 @@ Failing, M. F., & Theeuwes, J. (2015). Nonspatial attentional capture by previou
 Kapoor, H. (2015). The creative side of the dark triad. *Creativity Research Journal*, *27*(1), 58–67. doi:10.1080/10400419.2014.961775
 {: .reference}
 
+Kruijne, W., Brascamp, J. W., Kristjánsson, Á., & Meeter, M. (2015). Can a single short-term mechanism account for priming of pop-out? *Vision Research*. doi:10.1016/j.visres.2015.03.011
+{: .reference}
+
 van der Linden, L., Mathôt, S., Vitu, F. (in press). The role of object affordances and center of gravity in eye movements towards isolated daily-life objects. *Journal of Vision*.
 {: .reference}
 
