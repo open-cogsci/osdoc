@@ -41,6 +41,16 @@ If you have tested the OpenSesame runtime for Android on a device, please [share
 
 If you are using the OpenSesame runtime for Android in a production environment (e.g., while you are running an experiment), it is recommended to disable the Auto-update feature of the Google Play Store, at least for OpenSesame. This will prevent the app from being updated and potentially changing its behavior.
 
+### Automatically start an experiment
+
+If you want to directly launch a specific experiment when the OpenSesame runtime for Android is started, you can create a file called `opensesame-autorun.yml` in the `/sdcard/` folder of your device. This is a YAML file with the following structure:
+
+~~~
+experiment: /sdcard/experiments/my_experiment.opensesame
+subject_nr: 3
+logfile: /sdcard/data/subject03.csv
+~~~
+
 ## Developing experiments for Android
 
 ### Back-end
