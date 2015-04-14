@@ -1,7 +1,7 @@
 version: 2.9.5
-status: unstable
+status: stable
 codename: Hesitant Heisenberg
-release-date: Unknown
+release-date: April 15, 2015
 url-windows-exe: http://files.cogsci.nl/software/opensesame/opensesame_2.9.5-win32-1.exe
 url-windows-zip: http://files.cogsci.nl/software/opensesame/opensesame_2.9.5-win32-1.zip
 url-source: https://github.com/smathot/OpenSesame
