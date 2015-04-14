@@ -41,6 +41,9 @@ Duenser, A., Lochner, M., Engelke, U., & Rozado, D. (2015). Visual and manual co
 Failing, M. F., & Theeuwes, J. (2015). Nonspatial attentional capture by previously rewarded scene semantics. *Visual Cognition*. doi:10.1080/13506285.2014.990546
 {: .reference}
 
+Ishii, A., Karasuyama, T., Kikuchi, T., Tanaka, M., Yamano, E., & Watanabe, Y. (2015). The neural mechanisms of re-experiencing mental fatigue sensation: A magnetoencephalography study. *PLoS ONE*, *10*(3). doi:10.1371/journal.pone.0122455
+{: .reference}
+
 Kapoor, H. (2015). The creative side of the dark triad. *Creativity Research Journal*, *27*(1), 58–67. doi:10.1080/10400419.2014.961775
 {: .reference}
 
@@ -69,6 +72,9 @@ Sassenhagen, J., & Bornkessel-Schlesewsky, I. (2015). The P600 as a correlate of
 {: .reference}
 
 Silvis, J. D., Olmos Solis, K., & Donk, M. (2015). The nature of the global effect beyond the first eye movement. *Vision Research*. doi:10.1016/j.visres.2014.12.020
+{: .reference}
+
+Van Veen, S. C., van Schie, K., Wijngaards-de Meij, L. D. N. V., Littel, M., Engelhard, I. M., & van den Hout, M. A. (2015). Speed matters: relationship between speed of eye movements and modification of aversive autobiographical memories. *Frontiers in Psychiatry: Affective Disorders and Psychosomatic Research*, 45. doi:10.3389/fpsyt.2015.00045
 {: .reference}
 
 ### 2014
