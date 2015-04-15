@@ -26,7 +26,7 @@ Please note that OpenSesame relies on many modules for which we can take no cred
 
 ## OpenSesame in publications, theses, conference proceedings, etc.
 
-Despite the project's young age, references to OpenSesame are starting to appear. Below is a (presumably incomplete) list. If you have used OpenSesame for your work, or discuss the software in your work, please send a message or leave a post on the forum and your reference will be added to the list. All scholarly works are welcome, including theses.
+If you have used OpenSesame for your work, or discuss the software in your work, please send a message or leave a post on the forum and your reference will be added to the list. All scholarly works are welcome, including theses.
 
 OpenSesame is used for, discussed in, or mentioned in:
 
