@@ -149,8 +149,8 @@ def preprocessPage(path, info, s, status):
 	print u'Parsing %s (%s) with academicmarkdown' % (info[u'title'], path)
 	# Add all source paths to the build path, so that we can reference to
 	# figures etc without considering paths
-	build.path += [os.path.join(path, u'img', info['permalink'][1:]), \
-		os.path.join(path, u'lst', info['permalink'][1:]), \
+	build.path += [os.path.join(path, u'img', info['permalink'][1:]),
+		os.path.join(path, u'lst', info['permalink'][1:]),
 		os.path.join(path, u'tbl', info['permalink'][1:])]
 	# Set the correct templates
 	build.codeTemplate = u'jekyll'
@@ -424,6 +424,7 @@ def compileSite(layout=u'inpage', group=None, jekyll=True, optimizeHTML=False,
 		type:	unicode
 	"""
 
+	build.path.append('content/_includes')
 	assert(layout in [u'fullpage', u'inpage'])
 	branch = gitBranch()
 	status = branchStatus(branch)

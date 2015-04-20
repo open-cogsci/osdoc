@@ -13,7 +13,7 @@ deviation of a mouse click relative to the display center.
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 from openexp.mouse import mouse
 from openexp.canvas import canvas
 my_mouse = mouse(exp)
@@ -26,7 +26,7 @@ while True:
         my_canvas.clear()
         my_canvas.fixdot(pos[0], pos[1])
         my_canvas.show()
-{% endhighlight %}
+~~~
 
 __Function list:__
 
@@ -54,10 +54,10 @@ Intializes the mouse object.
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 from openexp.mouse import mouse
 my_mouse = mouse(exp)
-{% endhighlight %}
+~~~
 
 __Arguments:__
 
@@ -92,12 +92,12 @@ Clears all pending input, not limited to the mouse.
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 from openexp.mouse import mouse
 my_mouse = mouse(exp)
 my_mouse.flush()
 button, position, timestamp = my_mouse.get_click()
-{% endhighlight %}
+~~~
 
 __Returns:__
 
@@ -118,13 +118,13 @@ Waits for mouse input.
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 from openexp.mouse import mouse
 my_mouse = mouse(exp)
 button, position, timestamp = my_mouse.get_click()
 if button == None:
         print('A timeout occurred!')
-{% endhighlight %}
+~~~
 
 __Keywords:__
 
@@ -160,13 +160,13 @@ Returns the current position of the cursor.
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 from openexp.mouse import mouse
 my_mouse = mouse(exp)
 position, timestamp = my_mouse.get_pos()
 x, y = position
 print('The cursor was at (%d, %d)' % (x, y))
-{% endhighlight %}
+~~~
 
 __Returns:__
 
@@ -187,13 +187,13 @@ Returns the current state of the mouse buttons. A True value means the button is
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 from openexp.mouse import mouse
 my_mouse = mouse(exp)
 buttons = my_mouse.get_pressed()
 b1, b2, b3 = buttons
 print('Currently pressed mouse buttons: (%d,%d,%d)' % (b1,b2,b3))
-{% endhighlight %}
+~~~
 
 __Returns:__
 
@@ -214,11 +214,11 @@ Sets a list of accepted buttons.
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 from openexp.mouse import mouse
 my_mouse = mouse(exp)
 my_mouse.set_buttonlist( [1,2] )
-{% endhighlight %}
+~~~
 
 __Keywords:__
 
@@ -239,11 +239,11 @@ Sets the position of the mouse cursor.
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 from openexp.mouse import mouse
 my_mouse = mouse(exp)
 my_mouse.set_pos(pos=(0,0))
-{% endhighlight %}
+~~~
 
 __Keywords:__
 
@@ -264,11 +264,11 @@ Sets a timeout.
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 from openexp.mouse import mouse
 my_mouse = mouse(exp)
 my_mouse.set_timeout(2000)
-{% endhighlight %}
+~~~
 
 __Keywords:__
 
@@ -289,11 +289,11 @@ Sets the visibility of the cursor.
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 from openexp.mouse import mouse
 my_mouse = mouse(exp)
 my_mouse.set_visible()
-{% endhighlight %}
+~~~
 
 __Keywords:__
 

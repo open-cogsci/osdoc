@@ -15,14 +15,14 @@ Defining a button widget with Python inline code:
 
 __Example (Python):__
 
-{% highlight python %}
+~~~ .python
 from libopensesame import widgets
 form = widgets.form(self.experiment)
 button = widgets.button(form, text='Click me!', frame=True, center=True,
         var='response')
 form.set_widget(button, (0,0))
 form._exec()
-{% endhighlight %}
+~~~
 
 __Function list:__
 

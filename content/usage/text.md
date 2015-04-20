@@ -36,7 +36,7 @@ In addition, you can pass 'color', 'size', and 'style' as keywords to a 'span' t
 
 Finally, you can force newlines with the 'br' tag:
 Line 1<br>Line 2
-{% endhighlight %}
+~~~
 
 The text above will be rendered as shown in %FigHTML. (The exact appearance depends on your default colors, font, etc.)
 

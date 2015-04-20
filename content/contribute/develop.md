@@ -54,19 +54,19 @@ The goal is to maintain a readable and consistent code base. Therefore, please c
 
 Exceptions should be handled via the `libopensesame.exceptions.osexception` class. For example:
 
-{% highlight python %}
+~~~ .python
 from libopensesame.exceptions import osexception
 raise osexception(u'An error occurred')
-{% endhighlight %}
+~~~
 
 ### Printing debug output
 
 Debug output should be handled via `libopensesame.debug.msg()`, and is shown only when OpenSesame is started with the `--debug` command-line argument. For example:
 
-{% highlight python %}
+~~~ .python
 from libopensesame import debug
 debug.msg(u'This will be shown only in debug mode')
-{% endhighlight %}
+~~~
 
 ### Indentation
 
@@ -78,7 +78,7 @@ Indentation should be tab based. *This is the most important style guideline of 
 - Each function should be accompanied by an informative doc string, of the format shown below. If a doc-string is redundant, for example, because a function overrides another function that has a doc-string, please indicate where the full doc-string can be found.
 - Please do not have lines of code extend beyond 79 characters (where a tab counts as 4 characters), with the exception of long strings that are awkward to break up.
 
-{% highlight python %}
+~~~ .python
 def a_function(argument, keyword=None):
 
 	"""
@@ -104,16 +104,16 @@ def a_simple_function():
 
 	pass
 
-{% endhighlight %}
+~~~
 
 ### Unicode and strings
 
 Assure that all functionality is Unicode safe. For new code, use *only* Unicode strings internally.
 
-{% highlight python %}
+~~~ .python
 my_value = 'a string' # not preferred
 my_value = u'a string' # preferred
-{% endhighlight %}
+~~~
 
 For more information, see:
 

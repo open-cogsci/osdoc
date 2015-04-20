@@ -57,7 +57,7 @@ For an example of how to use the PyGaze plug-ins, see the PyGaze template that i
 
 Below is an example of how to use PyGaze in a Python `inline_script`. For a list of available functions, see [Function overview].
 
-{% highlight python %}
+~~~ .python
 from openexp.canvas import canvas
 from openexp.keyboard import keyboard
 # Create a keyboard and a canvas object
@@ -75,7 +75,7 @@ while True:
 	my_canvas.clear()
 	my_canvas.fixdot(x, y)
 	my_canvas.show()
-{% endhighlight %}
+~~~
 
 ## Function overview
 

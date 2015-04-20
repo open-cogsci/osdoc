@@ -12,7 +12,7 @@ widget 0 0 1 1 image path='5.png'
 
 __Example (Python):__
 
-{% highlight python %}
+~~~ .python
 from libopensesame import widgets
 form = widgets.form(self.experiment)
 # The full path to the image needs to be provided.
@@ -21,7 +21,7 @@ form = widgets.form(self.experiment)
 image = widgets.image(form, path=self.experiment.get_file('5.png'))
 form.set_widget(image, (0,0))
 form._exec()
-{% endhighlight %}
+~~~
 
 __Function list:__
 

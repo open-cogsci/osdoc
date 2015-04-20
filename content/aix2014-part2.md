@@ -318,17 +318,17 @@ Le code a besoin d'un petit modification, en utilisant la méthode *entre-croche
 
 Au début, le code du `sketchpad` *regard_direction* ressemble à:
 	
-{% highlight python %}
+~~~ .python
 set duration "keypress"
 draw image 0 0 "regard_gauche.png" scale=1 center=1 z_index=0 show_if="always"
-{% endhighlight %}
+~~~
 
 La seule chose que nous avons à faire, est de remplacer 'gauche' vers '[direction_regard]'. Cela signifie que OpenSesame utilise la variable 'direction_regard' (qui a les valeurs 'droite' et 'gauche') pour déterminer quelle image doit être montrée:
 
-{% highlight python %}
+~~~ .python
 set duration "keypress"
 draw image 0 0 "regard_[direction_regard].png" scale=1 center=1 z_index=0 show_if="always"
-{% endhighlight %}
+~~~
 
 - Faites ce changement au code du `sketchad`
 - Cliquez sur 'Appliquer et fermer' pour appliquer les modifications
@@ -363,12 +363,12 @@ figure:
 
 On va encore une fois faire quelques modifications du code. Au début, votre code devrait ressembler à :
 
-{% highlight python %}
+~~~ .python
 set duration "keypress"
 draw image 0 0 "regard_[direction_regard].png" scale=1 center=1 z_index=0 show_if="always"
 draw textline -300 0 "F" center=1 color="white" font_family="mono" font_size=18 font_bold="no" font_italic="no" html="yes" z_index=0 show_if="always"
 draw textline 300 0 "X" center=1 color="white" font_family="mono" font_size=18 font_bold="no" font_italic="no" html="yes" z_index=0 show_if="always"
-{% endhighlight %}
+~~~
 
 Pour varier la lettre de la cible, et les coordonnées *X* de la cible et du distractor sur la base de la liste d'essai:
 	
@@ -378,12 +378,12 @@ Pour varier la lettre de la cible, et les coordonnées *X* de la cible et du dis
 
 Par conséquence, votre code devrait ressemble à:
 	
-{% highlight python %}
+~~~ .python
 set duration "keypress"
 draw image 0 0 "regard_[direction_regard].png" scale=1 center=1 z_index=0 show_if="always"
 draw textline "[x_cible]" 0 "[lettre_cible]" center=1 color="white" font_family="mono" font_size=18 font_bold="no" font_italic="no" html="yes" z_index=0 show_if="always"
 draw textline "[x_distractor]" 0 "X" center=1 color="white" font_family="mono" font_size=18 font_bold="no" font_italic="no" html="yes" z_index=0 show_if="always"
-{% endhighlight %}
+~~~
 	
 Finalement:
 	

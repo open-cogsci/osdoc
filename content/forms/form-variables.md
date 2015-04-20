@@ -31,9 +31,9 @@ widget 0 0 1 1 text_input var="my_response_var"
 
 The equivalent Python code is:
 	
-{% highlight python %}
+~~~ .python
 my_widget = widgets.text_input(form, var='my_response_var')
-{% endhighlight %}
+~~~
 
 ## Widget-specific notes
 

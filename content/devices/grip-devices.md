@@ -16,12 +16,12 @@ toc:
 
 The easiest way to use the grip devices in OpenSesame is through the port_reader plug-in. This plug-in is also used in some of the examples (see below). The port_reader is Windows only, because it relies on `inpout32.dll`. The port_reader is a generic input plug-in and requires specific settings in order to work with the grip devices. The default settings appear to be as follows:
 
-{% highlight python %}
+~~~ .python
 port number = 889
 resting state value = 127
 power response value = 63
 precision response value = 11
-{% endhighlight %}
+~~~
 
 However, these values depend on how the grip devices are connected. In order to find out the proper values, you can use the grip_test experiment (see below).
 

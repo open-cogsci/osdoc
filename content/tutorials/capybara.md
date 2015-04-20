@@ -408,14 +408,14 @@ __Tip__ -- A test run is executed even faster by clicking the orange 'Run in win
 
 In Step 11, we have defined `correct_response` variable manually. This works, but it takes time and is prone to mistakes. A smarter way is to use an `inline_script` and a bit of deductive logic to determine the correct response for a given trial. First, open *block_loop* and remove the `correct_response` column, because we don't need it anymore. Next, drag an `inline_script` item from the item toolbar to the start of the *trial_sequence*. Open the *prepare* tab of the `inline_script` and add the following script:
 
-{% highlight python %}
+~~~ .python
 if self.get('animal') == 'dog':
 	exp.set('correct_response', 1)
 elif self.get('animal') == 'cat':
 	exp.set('correct_response', 2)
 else:
 	exp.set('correct_response', None)
-{% endhighlight %}
+~~~
 
 So what's going on here? First things first: The reason for putting this code in the *prepare* tab is that every item in a `sequence` is called twice. The first phase is called the *prepare* phase, and is used to perform time consuming tasks before the time-critical run phase of the `sequence`. Determining the correct response is exactly the type of preparatory stuff that you would put in the *prepare* phase. During the *run* phase, the actual events happen. To give a concrete example, the contents of a `sketchpad` are created during the *prepare* phase, and during the *run* phase they are merely 'flipped' to the display. For more information about the prepare-run strategy, see:
 
@@ -429,7 +429,7 @@ We can summarize the script as follows: If the picture is a dog, the correct res
 
 Finally, let's consider the following variation of the script above:
 
-{% highlight python %}
+~~~ .python
 if self.get('animal') == 'dog':
 	exp.set('correct_response', 1)
 elif self.get('animal') == 'cat':
@@ -438,7 +438,7 @@ elif self.get('animal') == 'capybara':
 	exp.set('correct_response', None)
 else:
 	raise Exception('%s is not a valid animal!' % self.get('animal'))
-{% endhighlight %}
+~~~
 
 Here we allow for the possibility that an animal is neither a dog, nor a cat, nor a capybara. And if we encounter such an exotic creature, we abort the experiment with an error message, by raising an `Exception`. This may feel like a silly thing to do, because we have programmed the experiment ourselves, and we (think we) know with 100% certainty that it includes only cats, dogs, and capybaras. But it is nevertheless good practice to add these kinds of sanity checks to your experiment, to protect yourself from typos, logical errors, etc. The more complex your experiment becomes, the more important these kinds of checks are. Never assume that your code is bug-free!
 
@@ -450,9 +450,9 @@ However, this approach doesn't work here, because we have a lot of unique trials
 
 First add a `feedback` item to the end of the *trial_sequence*. Next, assign the following run-if statement to it:
 
-{% highlight python %}
+~~~ .python
 =self.get('count_trial_sequence') % 50 == 49
-{% endhighlight %}
+~~~
 
 Note that this run-if statement starts with an `=` sign. This means that it is Python syntax, instead of the simplified OpenSesame script that you used before (e.g. `[correct] = 0` is OpenSesame script). The use of Python gives us a lot of extra flexibility. Next, we retrieve the value of the experimental variable `count_trial_sequence`. The `count_[item name]` variables are built-in variables that keep track of how often an item has been called, starting from 0. In other words, `count_trial_sequence` corresponds to the trial number. Finally, we take the modulo 50 of the trial number and check whether it equals 49. [Modulo] is a mathematical operator that returns the remainder of an integer division. For example, 13 % 5 equals 3, because 5 goes twice into 12 and leaves 3.
 
@@ -478,7 +478,7 @@ Right now, the animal picture stays on the screen until the participant gives a 
 
 First, remove *animal_picture* and *touch_response* from the *trial_sequence*, and add a single `inline_script` in their place. Now add the following code to the *prepare* phase of the `inline_script` (see the code comments for an explanation):
 
-{% highlight python %}
+~~~ .python
 # Import the canvas and mouse classes
 from openexp.canvas import canvas
 from openexp.mouse import mouse
@@ -497,11 +497,11 @@ my_animal_canvas.image(picture_path)
 my_blank_canvas = canvas(exp)
 # Create a mouse object
 my_mouse = mouse(exp)
-{% endhighlight %}
+~~~
 
 The script above creates a `canvas` with the animal picture, an empty `canvas`, and a `mouse` object. But so far it's all preparation--The script doesn't *do* anything visible. Which brings us to the *run* phase of the `inline_script`:
 
-{% highlight python %}
+~~~ .python
 # The time that we want to show the animal picture
 animal_duration = 1000
 # The response timeout, relative to the onset of the animal picture
@@ -550,7 +550,7 @@ print('response = %s' % response)
 print('response_time = %s' % response_time)
 # And process the response using the semi-automatic `set_response()` function.
 exp.set_response(response, response_time, correct)
-{% endhighlight %}
+~~~
 
 If you aren't very familiar with Python and OpenSesame, the script above may look overwhelmingly difficult. But the logic is actually quite simple:
 

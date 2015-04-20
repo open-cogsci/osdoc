@@ -12,11 +12,11 @@ Using Expyriment directly
 
 You can find extensive documentation on Expyriment at <http://www.expyriment.org/doc>. The following code snippet shows a line of text:
 
-{% highlight python %}
+~~~ .python
 from expyriment import stimuli
 text = stimuli.TextLine('This is expyriment!')
 text.present()
-{% endhighlight %}
+~~~
 
 Installing Expyriment on Ubuntu
 -------------------------------

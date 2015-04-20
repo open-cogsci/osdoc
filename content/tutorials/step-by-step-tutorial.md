@@ -428,19 +428,19 @@ Open the *gaze_cue* `sketchpad`, and select again the image tool. Click on the c
 
 Obviously, we are not done yet, because the gaze cue should not always be 'left', but should depend on the variable `gaze_cue`, which we have defined in Step 3. However, by drawing the `gaze_left.png` image to the `sketchpad`, we have generated a script that needs only a tiny modification to make sure that the proper image is shown. Click on the 'Select view' button at the top-right of the *gaze_cue* tab and select 'View script'. You will now see the script that corresponds to the sketchpad that we have just created:
 
-{% highlight python %}
+~~~ .python
 set duration "keypress"
 draw image 0 0 "gaze_left.png" scale=1 center=1 z_index=0 show_if="always"
-{% endhighlight %}
+~~~
 
 The only thing that we have to do is replace `gaze_left.png` with `gaze_[gaze_cue].png`. This means that OpenSesame uses the variable `gaze_cue` (which has the values `left` and `right`) to determine which image should be shown.
 
 While we are at it, we might as well change the duration to '495' (rounded up to 500!). The script now looks like this:
 
-{% highlight python %}
+~~~ .python
 set duration "495"
 draw image 0 0 "gaze_[gaze_cue].png" scale=1 center=1 z_index=0 show_if="always"
-{% endhighlight %}
+~~~
 
 Click the 'Apply and close' button at the top right to apply your changes to the script and return to the regular item controls. You will see a message saying that the image is unknown or variably defined, and is therefore not shown. Don't worry, it will be shown during the experiment!
 
@@ -467,21 +467,21 @@ Click on *target* in the overview to open the target tab and like before, draw t
 
 Now open the script editor by clicking on the 'Select view' button at the top-right of the tab and selecting 'View script'. The script looks like this:
 
-{% highlight python %}
+~~~ .python
 set duration "keypress"
 draw image 0 0 "gaze_left.png" scale=1 center=1 z_index=0 show_if="always"
 draw textline -320 0 "[target_letter]" center=1 color="black" font_family="mono" font_size=32 font_bold="no" font_italic="no" html="yes" z_index=0 show_if="always"
 draw textline 320 0 "X" center=1 color="black" font_family="mono" font_size=32 font_bold="no" font_italic="no" html="yes" z_index=0 show_if="always"
-{% endhighlight %}
+~~~
 
 Like before, change `gaze_left.png` to `gaze_[gaze_cue].png`. We also need to make the position of the target and the distractor depend on the variables `target_pos` and `dist_pos` respectively. To do this, simply change `-320` to `[target_pos]` and `320` to `[dist_pos]`. Make sure that you leave the `0`, which is the Y-coordinate. The script now looks like this:
 
-{% highlight python %}
+~~~ .python
 set duration "keypress"
 draw image 0 0 "gaze_[gaze_cue].png" scale=1 center=1 z_index=0 show_if="always"
 draw textline "[target_pos]" 0 "[target_letter]" center=1 color="black" font_family="mono" font_size=32 font_bold="no" font_italic="no" html="yes" z_index=0 show_if="always"
 draw textline "[dist_pos]" 0 "X" center=1 color="black" font_family="mono" font_size=32 font_bold="no" font_italic="no" html="yes" z_index=0 show_if="always"
-{% endhighlight %}
+~~~
 
 Click on the “Apply” button to apply the script and go back to the regular item controls.
 

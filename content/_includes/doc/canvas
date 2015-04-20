@@ -12,13 +12,13 @@ relative to the display center.
 
 __Example__:
 
-{% highlight python %}
+~~~ .python
 # Create a canvas with a central fixation dot and show it.
 from openexp.canvas import canvas
 my_canvas = canvas(exp)
 my_canvas.fixdot()
 my_canvas.show()
-{% endhighlight %}
+~~~
 
 __Function list:__
 
@@ -60,7 +60,7 @@ Constructor to create a new `canvas` object.
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 # Example 1: Show a central fixation dot.
 from openexp.canvas import canvas
 my_canvas = canvas(exp)
@@ -78,7 +78,7 @@ for i in range(1000):
         my_canvas.fixdot(x, y)
 my_canvas.prepare()
 my_canvas.show()
-{% endhighlight %}
+~~~
 
 __Arguments:__
 
@@ -149,11 +149,11 @@ Draws a circle.
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 from openexp.canvas import canvas
 my_canvas = canvas(exp)
 my_canvas.circle(100, 100, 50, fill=True, color='red')
-{% endhighlight %}
+~~~
 
 __Arguments:__
 
@@ -195,7 +195,7 @@ Clears the canvas with the current background color. Note that it is generally f
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 from openexp.canvas import canvas
 my_canvas = canvas(exp)
 my_canvas.fixdot(color='green')
@@ -204,7 +204,7 @@ self.sleep(1000)
 my_canvas.clear()
 my_canvas.fixdot(color='red')
 my_canvas.show()
-{% endhighlight %}
+~~~
 
 __Keywords:__
 
@@ -233,7 +233,7 @@ use the `inline_script.copy_sketchpad` function.
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 from openexp.canvas import canvas
 my_canvas = canvas(exp)
 my_canvas.fixdot(x=100, color='green')
@@ -241,7 +241,7 @@ my_copied_canvas = canvas(exp)
 my_copied_canvas.copy(my_canvas)
 my_copied_canvas.fixdot(x=200, color="blue")
 my_copied_canvas.show()
-{% endhighlight %}
+~~~
 
 __Arguments:__
 
@@ -261,13 +261,13 @@ Draws an ellipse.
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 from openexp.canvas import canvas
 my_canvas = canvas(exp)
 w = self.get('width')-10
 h = self.get('height')-10
 my_canvas.ellipse(10, 10, w, h, fill=True)
-{% endhighlight %}
+~~~
 
 __Arguments:__
 
@@ -321,11 +321,11 @@ Draws a fixation dot.
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 from openexp.canvas import canvas
 my_canvas = canvas(exp)
 my_canvas.fixdot()
-{% endhighlight %}
+~~~
 
 __Keywords:__
 
@@ -362,11 +362,11 @@ depends on the back-end.
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 from openexp.canvas import canvas
 my_canvas = canvas(exp)
 my_canvas.gabor(100, 100, 45, .05)
-{% endhighlight %}
+~~~
 
 __Arguments:__
 
@@ -422,13 +422,13 @@ Draws an image from file. This function does not look in the file pool, but take
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 from openexp.canvas import canvas
 my_canvas = canvas(exp)
 # Determine the absolute path:
 path = exp.get_file(u'image_in_pool.png')
 my_canvas.image(path)
-{% endhighlight %}
+~~~
 
 __Arguments:__
 
@@ -499,11 +499,11 @@ Draws a patch of noise, with an envelope. The exact rendering of the noise patch
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 from openexp.canvas import canvas
 my_canvas = canvas(exp)
 my_canvas.noise_patch(100, 100, env='circular')
-{% endhighlight %}
+~~~
 
 __Arguments:__
 
@@ -551,14 +551,14 @@ Draws a polygon that defined by a list of vertices. I.e. a shape of points conne
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 from openexp.canvas import canvas
 my_canvas = canvas(exp)
 n1 = 0,0
 n2 = 100, 100
 n3 = 0, 100
 my_canvas.polygon([n1, n2, n3])
-{% endhighlight %}
+~~~
 
 __Arguments:__
 
@@ -607,13 +607,13 @@ Draws a rectangle.
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 from openexp.canvas import canvas
 my_canvas = canvas(exp)
 w = self.get('width')-10
 h = self.get('height')-10
 my_canvas.rect(10, 10, w, h, fill=True)
-{% endhighlight %}
+~~~
 
 __Arguments:__
 
@@ -657,12 +657,12 @@ Sets the default background color for subsequent drawing operations, notably [ca
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 from openexp.canvas import canvas
 my_canvas = canvas(exp)
 my_canvas.set_bgcolor('gray')
 my_canvas.clear()
-{% endhighlight %}
+~~~
 
 __Arguments:__
 
@@ -685,12 +685,12 @@ Enables or disables bi-directional text support.
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 from openexp.canvas import canvas
 my_canvas = canvas(exp)
 my_canvas.set_bidi(True)
 my_canvas.text(u'חלק מטקסט')
-{% endhighlight %}
+~~~
 
 __Arguments:__
 
@@ -710,14 +710,14 @@ Sets the default foreground color for subsequent drawing operations.
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 from openexp.canvas import canvas
 my_canvas = canvas(exp)
 my_canvas.set_fgcolor('green')
 my_canvas.text('Green text', y=200)
 my_canvas.set_fgcolor('red')
 my_canvas.text('Red text', y=400)
-{% endhighlight %}
+~~~
 
 __Arguments:__
 
@@ -740,12 +740,12 @@ Sets the default font for subsequent drawing operations, notably [canvas.text].
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 from openexp.canvas import canvas
 my_canvas = canvas(exp)
 my_canvas.set_font(style='serif', italic=True)
 my_canvas.text('Text in italic serif')
-{% endhighlight %}
+~~~
 
 __Keywords:__
 
@@ -778,12 +778,12 @@ Sets the default penwidth for subsequent drawing operations.
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 from openexp.canvas import canvas
 my_canvas = canvas(exp)
 my_canvas.set_penwidth(10)
 my_canvas.line(100, 100, 200, 200)
-{% endhighlight %}
+~~~
 
 __Arguments:__
 
@@ -803,13 +803,13 @@ Shows, or 'flips', the canvas on the screen.
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 from openexp.canvas import canvas
 my_canvas = canvas(exp)
 my_canvas.fixdot()
 t = my_canvas.show()
 exp.set('time_fixdot', t)
-{% endhighlight %}
+~~~
 
 __Returns:__
 
@@ -830,11 +830,11 @@ Draws text.
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 from openexp.canvas import canvas
 my_canvas = canvas(exp)
 my_canvas.text('Some text with <b>boldface</b> and <i>italics</i>')
-{% endhighlight %}
+~~~
 
 __Arguments:__
 
@@ -885,11 +885,11 @@ Determines the size of a text string in pixels.
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 from openexp.canvas import canvas
 my_canvas = canvas(exp)
 w, h = my_canvas.text_size('Some text')
-{% endhighlight %}
+~~~
 
 __Arguments:__
 
@@ -931,7 +931,7 @@ Returns the center X coordinate of the `canvas` in pixels.
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 # Draw a diagonal line through the center of the canvas
 from openexp.canvas import canvas
 my_canvas = canvas(exp)
@@ -940,7 +940,7 @@ y1 = my_canvas.ycenter() - 100
 x2 = my_canvas.xcenter() + 100
 y2 = my_canvas.ycenter() + 100
 my_canvas.line(x1, y1, x2, y2)
-{% endhighlight %}
+~~~
 
 __Returns:__
 
@@ -961,7 +961,7 @@ Returns the center Y coordinate of the `canvas` in pixels.
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 # Draw a diagonal line through the center of the canvas
 from openexp.canvas import canvas
 my_canvas = canvas(exp)
@@ -970,7 +970,7 @@ y1 = my_canvas.ycenter() - 100
 x2 = my_canvas.xcenter() + 100
 y2 = my_canvas.ycenter() + 100
 my_canvas.line(x1, y1, x2, y2)
-{% endhighlight %}
+~~~
 
 __Returns:__
 

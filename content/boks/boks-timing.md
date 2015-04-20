@@ -34,20 +34,20 @@ In the figure above, you can see a schematic of the communication that occurs be
 
 The upshot of this approach is that the temporal error of the response time measurements is far smaller than the overall communication time. It also means that one should use the response timestamp as reported by the Boks. That is, this is good ...
 
-{% highlight python %}
+~~~ .python
 t1 = exp.time()
 button, t2 = boks.get_button_press()
 response_time = t2-t1
-{% endhighlight %}
+~~~
 
 ... but this is not ...
 
-{% highlight python %}
+~~~ .python
 t1 = exp.time()
 button = boks.get_button_press()[0]
 t2 = exp.time()
 response_time = t2-t1
-{% endhighlight %}
+~~~
 
 ## Precision vs accuracy
 

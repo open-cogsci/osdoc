@@ -13,14 +13,14 @@ widget 0 1 1 1 checkbox group="group" text="Option 2"
 
 __Example (Python):__
 
-{% highlight python %}
+~~~ .python
 from libopensesame import widgets
 form = widgets.form(self.experiment)
 checkbox1 = widgets.checkbox(form, text='Option 1', group='group')
 checkbox2 = widgets.checkbox(form, text='Option 2', group='group')
 form.set_widget(checkbox1, (0,0))
 form.set_widget(checkbox2, (0,1))
-{% endhighlight %}
+~~~
 
 __Function list:__
 

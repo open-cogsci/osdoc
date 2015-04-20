@@ -50,7 +50,7 @@ To start OpenSesame, navigate to the folder where OpenSesame has been installed 
 {% highlight bash %}
 cd OpenSesame-release-0.27.4
 ./opensesame
-{% endhighlight %}
+~~~
 
 ## Limitations
 

@@ -37,16 +37,16 @@ In general, you should create only one logger item, and reuse that item at diffe
 
 You can write to the log file using the [`self.log()`][log-func], like so:
 
-{% highlight python %}
+~~~ .python
 self.log('This will be written to the log file!')
-{% endhighlight %}
+~~~
 
 If you need more fine-grained control, you can use `exp.logfile`, which contains the name of the log file, and `exp._log`, which is a Python file object (`UTF-8` encoding through [`codecs.open()`][codecs]):
 
-{% highlight python %}
+~~~ .python
 print 'The location of the log file is %s' % exp.logfile
 exp._log.write('This will be written to the log!')
-{% endhighlight %}
+~~~
 
 Note that you will generally not want to write to the log file directly and use a logger item at the same time: This will result in very messy log files.
 

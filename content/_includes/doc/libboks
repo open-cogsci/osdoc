@@ -10,14 +10,14 @@ object can be accessed as `exp.boks` or `self.experiment.boks`.
 
 __Example__:
 
-{% highlight python %}
+~~~ .python
 # Collect a response time with a 2000ms timeout
 exp.boks.set_timeout(2000)
 t1 = self.time()
 button, t2 = exp.boks.get_button_press()
 exp.set('response', button)
 exp.set('response_time', t2-t1)
-{% endhighlight %}
+~~~
 
 __Function list:__
 
@@ -49,14 +49,14 @@ Constructor. A Boks object is created automatically the first time that a Boks p
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 # Collect a response with a 2000ms timeout
 exp.boks.set_timeout(2000)
 t1 = self.time()
 button, t2 = exp.boks.get_button_press()
 exp.set('response', button)
 exp.set('response_time', t2-t1)
-{% endhighlight %}
+~~~
 
 __Keywords:__
 
@@ -92,10 +92,10 @@ Gets the number of buttons that are physically present on the device. This numbe
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 i = exp.boks.button_count()
 print('Your Boks has %d buttons' % i)
-{% endhighlight %}
+~~~
 
 __Returns:__
 
@@ -116,9 +116,9 @@ Neatly close the device. This will deactivate the boks and close the serial port
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 exp.boks.close()
-{% endhighlight %}
+~~~
 
 </div>
 
@@ -133,14 +133,14 @@ Collects a button press.
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 # Collect a response with a 2000ms timeout
 exp.boks.set_timeout(2000)
 t1 = self.time()
 button, t2 = exp.boks.get_button_press()
 exp.set('response', button)
 exp.set('response_time', t2-t1)
-{% endhighlight %}
+~~~
 
 __Returns:__
 
@@ -163,14 +163,14 @@ Collects a button release.
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 # Collect a button release with a 2000ms timeout
 exp.boks.set_timeout(2000)
 t1 = self.time()
 button, t2 = exp.boks.get_button_release()
 exp.set('response', button)
 exp.set('response_time', t2-t1)
-{% endhighlight %}
+~~~
 
 __Returns:__
 
@@ -193,11 +193,11 @@ Checks which buttons are currently pressed.
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 l = exp.boks.get_button_state()
 if 1 in l:
         print('Button 1 is pressed')
-{% endhighlight %}
+~~~
 
 __Returns:__
 
@@ -218,11 +218,11 @@ Retrieves the list of buttons that are 'active', i.e. that are used by [get_butt
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 l = exp.boks.get_buttons()
 if 1 in l:
         print('Button 1 is currently being monitored')
-{% endhighlight %}
+~~~
 
 __Returns:__
 
@@ -243,10 +243,10 @@ Retrieves the Arduino serial ID.
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 sid = exp.boks.get_sid()
 print('The Arduino serial ID of the Boks is %s' % sid)
-{% endhighlight %}
+~~~
 
 __Returns:__
 
@@ -267,11 +267,11 @@ Gets the timeout used by [get_button_press] and [get_button_release].
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 exp.boks.set_timeout(2000)
 t = exp.boks.get_timeout()
 print('The Boks timeout is currently set to %d ms' % t)
-{% endhighlight %}
+~~~
 
 __Returns:__
 
@@ -292,11 +292,11 @@ Gets boks device info.
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 firmware, model = exp.boks.info()
 print('Boks model: %s' % model)
 print('Boks firmware: %s' % firmware)
-{% endhighlight %}
+~~~
 
 __Returns:__
 
@@ -317,14 +317,14 @@ Sets which buttons should be used for [get_button_press], [get_button_release], 
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 # Only use buttons 1 and 2
 exp.boks.set_buttons([1,2])
 # Use all buttons except for the photodiode
 exp.boks.set_buttons(None)
 # Only use the photodiode (button 8)
 exp.boks.set_buttons([8])
-{% endhighlight %}
+~~~
 
 __Arguments:__
 
@@ -344,14 +344,14 @@ Determines whether [get_button_press] and [get_button_release] are triggered onl
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 exp.boks.set_continuous(True)
 t1 = exp.time()
 # If some button is not pressed, this will return right away
 button, t2 = exp.boks.get_button_release()
 exp.set('response', button)
 exp.set('response_time', t2-t1)
-{% endhighlight %}
+~~~
 
 __Keywords:__
 
@@ -372,14 +372,14 @@ Turns the LED on or off.
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 # Blink LED five time
 for i in range(5):
         exp.boks.set_led(True)
         self.sleep(500)
         exp.boks.set_led(False)
         self.sleep(500)
-{% endhighlight %}
+~~~
 
 __Keywords:__
 
@@ -400,11 +400,11 @@ Sets the timeout used by [get_button_press] and [get_button_release].
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 exp.boks.set_timeout(2000)
 t = exp.boks.get_timeout()
 print('The Boks timeout is currently set to %d ms' % t)
-{% endhighlight %}
+~~~
 
 __Arguments:__
 

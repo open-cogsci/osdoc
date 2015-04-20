@@ -41,14 +41,14 @@ Insert a sound_start_recording item in your experiment at the point at which you
 In a limited way, you can also use the sound recorder object with inline_script. When a sound_start_recording item starts the actual recording, it makes a `self.experiment.soundrecorder` (or `exp.soundrecorder`) object available.
 This object has two functions which you can call:
 
-{% highlight python %}
+~~~ .python
 soundrecorder.is_recording(): 
-{% endhighlight %}
+~~~
 Returns True if it is currently recording and False if it has finished recording
 
-{% highlight python %}
+~~~ .python
 soundrecorder.stop(): 
-{% endhighlight %}
+~~~
 Stops recording. This does the same as the sound_stop_recording item (which basically only calls the stop() function from the exp.soundrecorder item)
 
 [pymedia-url]: http://www.lfd.uci.edu/~gohlke/pythonlibs/#pymedia

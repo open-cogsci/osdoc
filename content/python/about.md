@@ -1,6 +1,6 @@
 ---
 layout: osdoc
-title: About Python inline code
+title: About Python
 group: Python inline code
 permalink: /about/
 ---
@@ -17,23 +17,12 @@ toc:
 
 ## Learning Python
 
-### Code Academy
-
-The Python track at Code Academy is an excellent way to get started with Python:
-
-- <http://www.codecademy.com/tracks/python>
-
-### A Byte of Python
-
-A good free E-book to learn Python for non-programmers is "A Byte of Python", by Swaroop. Make sure to get the version for Python 2, which is what OpenSesame uses.
-
-- ["A Byte of Python"][swaroop] by Swaroop [[Download PDF for Python 2.X]][swaroop-direct]
-
-### Think Python
-
-Another good free E-Book is "Think Python", by Allen B. Downey. This book should work for Python 2 as well as Python 3.
-
-- ["Think Python"][downey] by Allen B. Downey [[Download PDF]][downey-direct]
+- __Code Academy__ -- The Python track at Code Academy is an excellent way to get started with Python:
+    - <http://www.codecademy.com/tracks/python>
+- __A Byte of Python__ -- A good free E-book to learn Python for non-programmers is "A Byte of Python", by Swaroop. Make sure to get the version for Python 2, which is what OpenSesame uses.
+    - ["A Byte of Python"][swaroop] by Swaroop [[Download PDF for Python 2.X]][swaroop-direct]
+- __Think Python__ -- Another good free E-Book is "Think Python", by Allen B. Downey. This book should work for Python 2 as well as Python 3.
+    - ["Think Python"][downey] by Allen B. Downey [[Download PDF]][downey-direct]
 
 ## Python in the OpenSesame GUI
 
@@ -52,33 +41,13 @@ As you can see, the `inline_script` item consists of two tabs: one for the prepa
 
 - [/usage/prepare-run/](/usage/prepare-run/)
 
-The scripts that you enter are used as the body of two functions of the inline_script class:
-
-{% highlight python %}
-class inline_script:
-   def prepare(self):
-      # Your prepare script goes here
-   def run(self):
-      # Your run script goes here
-{% endhighlight %}
-
-This is important to know, because it explains why you can use commands such as:
-
-{% highlight python %}
-self.sleep(1000)
-{% endhighlight %}
-
-This works, because `sleep()` is a function of the `inline_script` object. For a full list of available functions, see:
-
-- [/python/inline-script/](/python/inline-script/)
-
 ### Loop tables and conditional ("if") statements
 
-You can use single-line Python statements also where you would normally type static values or use the OpenSesame square-brackets notation to indicate values (i.e. `[my_var]`). To do so, you need to add an `=` prefix. For example, you can use the following Python script as a run-if statement (see also %FigRunIf):
+You can use single-line Python statements also where you would normally type static values, or would use the OpenSesame square-brackets notation to indicate values (i.e. `[my_var]`). To do so, you need to add an `=` prefix. For example, you can use the following Python script as a run-if statement (see also %FigRunIf):
 
-{% highlight python %}
+~~~ .python
 =self.get('correct') == 1 and self.get('response_time') < 1000
-{% endhighlight %}
+~~~
 
 %--
 figure:
@@ -93,9 +62,9 @@ For more information about conditional ("if") statements, see:
 
 Similarly, you can use single-line Python statements to define variables in `loop` tables. For example, if you want the variable `duration` to have a random value between 0 and 1000, you can use the following statement (all functions from the `math` and `random` modules are available; see also %FigLoopTable):
 
-{% highlight python %}
+~~~ .python
 =randint(0, 1000)
-{% endhighlight %}
+~~~
 
 %--
 figure:
@@ -106,11 +75,11 @@ figure:
 
 ### The debug window
 
-OpenSesame reroutes the standard output to the debug window, which you can activate using Control + D or through the menu (Menu -> View -> Show debug window; see %FigDebugNormal). You can print to the debug window using the Python print statement:
+OpenSesame reroutes the standard output to the debug window, which you can activate using Control + D or through the menu (Menu -> View -> Show debug window; see %FigDebugNormal). You can print to the debug window using the Python `print()` statement:
 
-{% highlight python %}
-print "This will appear in the debug window!"
-{% endhighlight %}
+~~~ .python
+print(u'This will appear in the debug window!')
+~~~
 
 %--
 figure:
@@ -121,33 +90,78 @@ figure:
 
 ## Things to know
 
-### The `exp` and `win` variables
+### Common functions
 
-There are two special variables in an `inline_script`: `exp` and `win`. Actually, there is nothing too special about these variables. They are simply synonyms for `self.experiment` and `self.experiment.window`, respectively. `exp` is the `experiment` object, which is described [here][experiment], and you will use it often to access variables and functions. `win` is the window handle, which is dependent on the back-end that is used, and you will generally use only in special cases.
+Many common functions are directly available in an `inline_script` item, without the need to import anything. For example:
 
-### Getting and setting experimental variables
+~~~ .python
+# `canvas()` is a common function that returns a `canvas` object
+target = canvas()
+target.text(u'some text')
+mask = canvas()
+mask.text(u'#### ####')
 
-For information about getting and setting experimental variables in an `inline_script`, see here:
+target.show()
+# `sleep()` is another common function
+sleep(95)
+mask.show()
+~~~
 
-- [/usage/variables-and-conditional-statements/#getting-and-setting-variables-in-inline_script-items](/usage/variables-and-conditional-statements/#getting-and-setting-variables-in-inline_script-items)
+For a list of common functions, see:
+
+- [/python/common/]()
+
+### The `var` object: Access to experimental variables
+
+You can access experimental variables through the `var` object:
+
+~~~ .python
+# Get an experimental variable
+print(u'my_variable is: %s' % var.my_variable)
+# Set an experimental variable
+var.my_variable = u'my_value'
+~~~
+
+A full overview of the `var` object can be found here:
+
+- [/python/var/]()
+
+### The `pool` object: Access to the file pool
+
+You get the full path to a file in the file pool through the `pool` object:
+
+~~~ .python
+# Show an image from the file pool
+path = pool['img.png']
+my_canvas = canvas()
+my_canvas.image(path)
+my_canvas.show()
+~~~
+
+A full overview of the `pool` object can be found here:
+
+- [/python/pool/]()
+
+### The `win` object: The window handle
+
+The `win` object is the window handle, and depends on the back-end. You will generally use the `win` object only in special cases, such as when creating PsychoPy stimuli..
 
 ### Sharing variables and modules between `inline_script`s
 
-Variables defined in one `inline_scrip`t are accessible in all other `inline_script`s. Therefore, if, for example, you want to prepare a `canvas` object in the prepare phase of an `inline_script` and show it in the run phase, there is no need to declare the object `global` or to store it as a property of the `exp` object. You can simply construct the `canvas` in one `inline_script` ...
+Variables defined in one `inline_script` are accessible in all other `inline_script`s. Therefore, you can simply construct the `canvas` in one `inline_script` ...
 
-{% highlight python %}
-from openexp.canvas import canvas
-my_canvas = canvas(exp)
+~~~ .python
+my_canvas = canvas()
 my_canvas.fixdot()
-{% endhighlight %}
+~~~
 
 ... and show it in another `inline_script` ...
 
-{% highlight python %}
+~~~ .python
 my_canvas.show()
-{% endhighlight %}
+~~~
 
-The same principle applies to functions and modules: Once you have defined a function or imported a module in one `inline_script`, it will be accessible in other `inline_scripts` as well. In other words, variables, functions, and modules are shared between `inline_script`s.
+The same principle applies to functions and modules: Once you have defined a function or imported a module in one `inline_script`, it will be accessible in other `inline_scripts` as well. In other words, all `inline_script`s share the same global workspace.
 
 ## Modules for display presentation, response collection, etc.
 
@@ -155,17 +169,17 @@ The same principle applies to functions and modules: Once you have defined a fun
 
 OpenSesame comes with a set of Python modules for presenting stimuli, handling input, etc. These modules work with all back-ends. The full API (i.e., a list of functions) can be found here:
 
-- [/python/canvas](/python/canvas) for display presentation
-- [/python/keyboard](/python/keyboard) for response collection using the keyboard
-- [/python/mouse](/python/mouse) for response collection using the mouse
-- [/python/sampler](/python/sampler) for sound sample playback
-- [/python/synth](/python/synth) for sound synthesis and playback
+- [/python/canvas]() for display presentation
+- [/python/keyboard]() for response collection using the keyboard
+- [/python/mouse]() for response collection using the mouse
+- [/python/sampler]() for sound sample playback
+- [/python/synth]() for sound synthesis and playback
 
 ### `psychopy`
 
 If you are using the *psycho* back-end, you can directly use the various [PsychoPy] modules. For more information, see:
 
-- [/back-ends/psycho](/back-ends/psycho)
+- [/back-ends/psycho]()
 
 ### `expyriment`
 
@@ -180,8 +194,6 @@ If you are using the *legacy*, *droid*, or *xpyriment* (only with "Use OpenGL" s
 - [/back-ends/legacy/](/back-ends/legacy)
 
 [python]: http://www.python.org/
-[inline-script]: /python/inline-script
-[experiment]: /python/experiment
 [canvas]: /python/canvas
 [keyboard]: /python/keyboard
 [mouse]: /python/mouse

@@ -6,7 +6,7 @@ The `keyboard` class is used to collect keyboard responses.
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 # Wait for a 'z' or 'x' key with a timeout of 3000 ms
 from openexp.keyboard import keyboard
 my_keyboard = keyboard(exp, keylist=['z', 'x'], timeout=3000)
@@ -14,7 +14,7 @@ start_time = self.time()
 key, end_time = my_keyboard.get_key()
 exp.set('response', key)
 exp.set('response_time', end_time - start_time)
-{% endhighlight %}
+~~~
 
 __Function list:__
 
@@ -54,10 +54,10 @@ OpenSesame.
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 from openexp.keyboard import keyboard
 my_keyboard = keyboard(exp, keylist=['z', 'm'], timeout=2000)
-{% endhighlight %}
+~~~
 
 __Arguments:__
 
@@ -103,13 +103,13 @@ Collects a single key press.
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 from openexp.keyboard import keyboard
 my_keyboard = keyboard(exp, timeout=2000)
 response, timestamp = my_keyboard.get_key()
 if response == None:
         print('A timeout occurred!')
-{% endhighlight %}
+~~~
 
 __Keywords:__
 
@@ -139,13 +139,13 @@ Returns a list of keyboard moderators (e.g., shift, alt, etc.) that are currentl
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 from openexp.keyboard import keyboard
 my_keyboard = keyboard(exp)
 moderators = my_keyboard.get_mods()
 if 'shift' in moderators:
         print('The shift-key is down!')
-{% endhighlight %}
+~~~
 
 __Returns:__
 
@@ -166,11 +166,11 @@ Sets the list of accepted keys.
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 from openexp.keyboard import keyboard
 my_keyboard = keyboard(exp)
 my_keyboard.set_keylist( ['z', 'm'] )
-{% endhighlight %}
+~~~
 
 __Keywords:__
 
@@ -191,11 +191,11 @@ Sets a timeout.
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 from openexp.keyboard import keyboard
 my_keyboard = keyboard(exp)
 my_keyboard.set_timeout(2000)
-{% endhighlight %}
+~~~
 
 __Keywords:__
 
@@ -223,14 +223,14 @@ keyboards.
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 from openexp.keyboard import keyboard
 my_keyboard = keyboard(exp)
 my_keyboard.show_virtual_keyboard(True)
 response1, timestamp2 = my_keyboard.get_key()
 response2, timestamp2 = my_keyboard.get_key()
 my_keyboard.show_virtual_keyboard(False)
-{% endhighlight %}
+~~~
 
 __Keywords:__
 

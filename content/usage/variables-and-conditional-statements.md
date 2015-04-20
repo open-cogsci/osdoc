@@ -122,16 +122,16 @@ Sometimes, the GUI doesn't let you type in arbitrary text. For example, the leng
 
 `Inline_script` items allow you to use Python inline code in OpenSesame. This is useful for complex tasks, which are difficult or impossible to do through the GUI. In an `inline_script`, you can retrieve a variable as follows (this will print the value of the variable 'example_variable' to the debug window):
 
-{% highlight python %}
+~~~ .python
 print self.get('example_variable')
-{% endhighlight %}
+~~~
 
 You can set a variable as follows:
 
-{% highlight python %}
+~~~ .python
 self.experiment.set('example_variable', 'some_value')
 exp.set('example_variable', 'some_value')
-{% endhighlight %}
+~~~
 
 `exp.set()` works, because `exp` is simply a shortcut to `self.experiment`. Variables that are set in an `inline_script` item can be used in other items in the regular way.
 
@@ -160,9 +160,9 @@ You can concatenate as many `and`s and `or`s as you want. `and` takes precedence
 
 Alternatively, you can use Python code in your conditional statements. To indicate that you are using Python code instead of the OpenSesame syntax (as above), simply prepend an `=` character to your conditional statement, like so:
 
-{% highlight python %}
+~~~ .python
 =self.get('correct') == 0
-{% endhighlight %}
+~~~
 
 Note that you cannot use the square-bracket syntax when using Python code. Instead, you use `self.get()` to retrieve a variable, like you would in an `inline_script`.
 
@@ -191,14 +191,14 @@ In general, this is convenient, because it allows you to compare numeric variabl
 
 Let's take a look at various things that can go 'wrong', at least in the sense that the outcome is different from what you might expect. (Warning: Some knowledge of computer science will come in handy!)
 
-{% highlight python %}
+~~~ .python
 test_values = 10, 010, 0x10, 0b10, '10', '010', '0x10', '0b10', ' 10'
 for input_value in test_values:
 	exp.set('my_var', input_value)
 	output_value = self.get('my_var')
 	print 'Input = "%s" %s' % (input_value, type(input_value))
 	print '-> Output = "%s" %s\n' % (output_value, type(output_value))
-{% endhighlight %}
+~~~
 
 Let's walk through the output of this script one by one. (Here we focus on the things that go wrong, but don't be too concerned: In the overwhelming majority of cases smart variable works exactly how you would expect it to.)
 

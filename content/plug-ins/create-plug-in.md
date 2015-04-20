@@ -67,7 +67,7 @@ controls:
     tooltip: You can type something here
     type: line_edit
     var: my_var
-{% endhighlight %}
+~~~
 
 See the `auto_example` [example](#examples) for a full list of all controls and options.
 
@@ -81,7 +81,7 @@ The main plug-in code is placed in `my_plugin.py`. This file has two classes: Th
 
 A very simple example looks like this (see the [examples](#examples) for more realistic examples):
 
-{% highlight python %}
+~~~ .python
 # Import the required modules.
 from libopensesame import debug
 from libopensesame.item import item
@@ -118,7 +118,7 @@ class qtmy_plugin(my_plugin, qtautoplugin):
 		# Call parent constructors.
 		fixation_dot.__init__(self, name, experiment, script)
 		qtautoplugin.__init__(self, __file__)
-{% endhighlight %}
+~~~
 
 ## Examples
 

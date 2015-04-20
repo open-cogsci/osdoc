@@ -12,13 +12,13 @@ widget 0 0 1 1 label text='My text'
 
 __Example (Python):__
 
-{% highlight python %}
+~~~ .python
 from libopensesame import widgets
 form = widgets.form(self.experiment)
 label = widgets.label(form, text='My text')
 form.set_widget(label, (0,0))
 form._exec()
-{% endhighlight %}
+~~~
 
 __Function list:__
 

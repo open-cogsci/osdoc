@@ -20,12 +20,12 @@ toc:
 
 You can find extensive documentation on PsychoPy at <http://www.psychopy.org/>. When using PsychoPy in OpenSesame, it is important to know that the main window can be accessed as `self.experiment.window` or simply `win`. So the following code snippet draws a Gabor patch:
 
-{% highlight python %}
+~~~ .python
 from psychopy import visual
 gabor = visual.PatchStim(win, tex="sin", size=256, mask="gauss", sf=0.05, ori=45)
 gabor.draw()
 win.flip()
-{% endhighlight %}
+~~~
 
 An example experiment that uses PsychoPy can be found here: [tilt_adaptation_psychopy.opensesame][example]
 

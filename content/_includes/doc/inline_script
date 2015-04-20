@@ -19,15 +19,15 @@ inline_script are available in all other inline_scripts.
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 subject_nr = self.get("subject_nr")
-{% endhighlight %}
+~~~
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 self.sleep(1000)
-{% endhighlight %}
+~~~
 
 __Function list:__
 
@@ -86,14 +86,14 @@ Checks whether a string is a valid color name. Raises an exception if `col` is n
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 # Ok
 print(self.color_check('red'))
 # Ok
 print(self.color_check('#FFFFFF'))
 # Raises osexception
 print(self.color_check('this is not a color'))
-{% endhighlight %}
+~~~
 
 __Arguments:__
 
@@ -112,9 +112,9 @@ Creates a canvas that is a copy from the canvas of a sketchpad item.
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 my_canvas = self.copy_sketchpad('my_sketchpad')
-{% endhighlight %}
+~~~
 
 __Arguments:__
 
@@ -140,11 +140,11 @@ Evaluates a string of text, so that all variable references (e.g., '[var]') are 
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 exp.set('var', 'evaluated')
 print(self.eval_text('This string has been [var]'))
 # Prints 'This string has been evaluated
-{% endhighlight %}
+~~~
 
 __Arguments:__
 
@@ -181,10 +181,10 @@ Forces any pending write operations to the log file to be written to disk.
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 self.log('TRIAL FINISHED')
 self.flush_log()
-{% endhighlight %}
+~~~
 
 </div>
 
@@ -209,7 +209,7 @@ other variables. This is best illustrated by example 2 below.
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 # Example 1
 if self.get('cue') == 'valid':
         print('This is a validly cued trial')
@@ -219,7 +219,7 @@ exp.set('var1', 'I like [var2]')
 exp.set('var2', 'OpenSesame')
 print(self.get('var1')) # prints 'I like OpenSesame'
 print(self.get('var1', _eval=False)) # prints 'I like [var2]'
-{% endhighlight %}
+~~~
 
 __Arguments:__
 
@@ -251,10 +251,10 @@ Similar to get(), but falls back to a default if the variable has not been set. 
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 if self.get_check('cue', default='invalid') == 'valid':
         print('This is a validly-cued trial')
-{% endhighlight %}
+~~~
 
 __Arguments:__
 
@@ -313,10 +313,10 @@ Checks if an OpenSesame variable exists, either in the item or in the experiment
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 if not self.has('response'):
         print('No response has been collected yet')
-{% endhighlight %}
+~~~
 
 __Arguments:__
 
@@ -342,9 +342,9 @@ Writes a message to the log file. Note that using the `log()` function in combin
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 self.log('TIMESTAMP = %s' % self.time())
-{% endhighlight %}
+~~~
 
 __Arguments:__
 
@@ -363,9 +363,9 @@ Creates an empty canvas.
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 my_canvas = self.offline_canvas()
-{% endhighlight %}
+~~~
 
 __Keywords:__
 
@@ -440,12 +440,12 @@ Removes invalid characters (notably quotes) from the string.
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 # Prints 'Universit Aix-Marseille'
 print(self.sanitize('"Université Aix-Marseille"'))
 # Prints 'UniversitAixMarseille'
 print(self.sanitize('"Université Aix-Marseille""', strict=True))
-{% endhighlight %}
+~~~
 
 __Arguments:__
 
@@ -491,9 +491,9 @@ will be converted to a unicode representation.
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 exp.set('my_timestamp', self.time())
-{% endhighlight %}
+~~~
 
 __Arguments:__
 
@@ -514,7 +514,7 @@ Processes a response in such a way that feedback variables are updated as well.
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 from openexp.keyboard import keyboard
 my_keyboard = keyboard(exp)
 t1 = self.time()
@@ -526,7 +526,7 @@ else:
 rt = timestamp - t1
 self.set_response(response=button, response_time=rt,
         correct=correct)
-{% endhighlight %}
+~~~
 
 __Keywords:__
 
@@ -552,9 +552,9 @@ Sleeps for a specified duration.
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 self.sleep(1000) # Sleeps one second
-{% endhighlight %}
+~~~
 
 __Arguments:__
 
@@ -574,9 +574,9 @@ Returns a timestamp for the current time. This timestamp only has a relative mea
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 print('The time is %s' % self.time())
-{% endhighlight %}
+~~~
 
 __Returns:__
 
@@ -627,12 +627,12 @@ Unsets (forgets) an OpenSesame variable.
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 self.set('var', 'Hello world!')
 print(self.get('var')) # Prints 'Hello world!'
 self.unset('variable_to_forget')
 print(self.get('var')) # Gives error!
-{% endhighlight %}
+~~~
 
 __Arguments:__
 

@@ -15,11 +15,11 @@ settings.
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 from openexp.sampler import sampler
 my_sampler = sampler(exp, exp.get_file('bark.ogg'))
 my_sampler.play()
-{% endhighlight %}
+~~~
 
 __Function list:__
 
@@ -47,11 +47,11 @@ Initializes the sampler with a specified file.
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 from openexp.sampler import sampler
 src = exp.get_file('my_sound.ogg')
 my_sampler = sampler(exp, src)
-{% endhighlight %}
+~~~
 
 __Arguments:__
 
@@ -73,12 +73,12 @@ Sets a fade-in time in milliseconds.
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 from openexp.sampler import sampler
 src = exp.get_file('my_sound.ogg')
 my_sampler = sampler(exp, src)
 my_sampler.fade_in(100)
-{% endhighlight %}
+~~~
 
 __Arguments:__
 
@@ -115,12 +115,12 @@ Sets the panning of the sample. The volume of the "unpanned" channel decreases, 
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 from openexp.sampler import sampler
 src = exp.get_file('my_sound.ogg')
 my_sampler = sampler(exp, src)
 my_sampler.pan('left')
-{% endhighlight %}
+~~~
 
 __Arguments:__
 
@@ -140,7 +140,7 @@ Pauses playback (if any).
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 from openexp.sampler import sampler
 src = exp.get_file('my_sound.ogg')
 my_sampler = sampler(exp, src)
@@ -149,7 +149,7 @@ self.sleep(100)
 my_sampler.pause()
 self.sleep(100)
 my_sampler.resume()
-{% endhighlight %}
+~~~
 
 </div>
 
@@ -164,12 +164,12 @@ Sets the relative pitch of the sample.
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 from openexp.sampler import sampler
 src = exp.get_file('my_sound.ogg')
 my_sampler = sampler(exp, src)
 my_sampler.pitch(2.0)
-{% endhighlight %}
+~~~
 
 __Arguments:__
 
@@ -189,12 +189,12 @@ Plays the sound.
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 from openexp.sampler import sampler
 src = exp.get_file('my_sound.ogg')
 my_sampler = sampler(exp, src)
 my_sampler.play()
-{% endhighlight %}
+~~~
 
 __Keywords:__
 
@@ -215,7 +215,7 @@ Resumes playback (if any).
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 from openexp.sampler import sampler
 src = exp.get_file('my_sound.ogg')
 my_sampler = sampler(exp, src)
@@ -224,7 +224,7 @@ self.sleep(100)
 my_sampler.pause()
 self.sleep(100)
 my_sampler.resume()
-{% endhighlight %}
+~~~
 
 </div>
 
@@ -239,14 +239,14 @@ Stops the currently playing sound (if any).
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 from openexp.sampler import sampler
 src = exp.get_file('my_sound.ogg')
 my_sampler = sampler(exp, src)
 my_sampler.play()
 self.sleep(100)
 my_sampler.stop()
-{% endhighlight %}
+~~~
 
 </div>
 
@@ -261,12 +261,12 @@ Specifies a duration after which the sampler stops playing.
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 from openexp.sampler import sampler
 src = exp.get_file('my_sound.ogg')
 my_sampler = sampler(exp, src)
 my_sampler.stop_after(100)
-{% endhighlight %}
+~~~
 
 __Arguments:__
 
@@ -286,12 +286,12 @@ Sets the volume.
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 from openexp.sampler import sampler
 src = exp.get_file('my_sound.ogg')
 my_sampler = sampler(exp, src)
 my_sampler.volume(0.5)
-{% endhighlight %}
+~~~
 
 __Arguments:__
 
@@ -311,14 +311,14 @@ Blocks until the sound has finished playing or returns right away if no sound is
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 from openexp.sampler import sampler
 src = exp.get_file('my_sound.ogg')
 my_sampler = sampler(exp, src)
 my_sampler.play()
 my_sampler.wait()
 print('The sampler is finished!')
-{% endhighlight %}
+~~~
 
 </div>
 

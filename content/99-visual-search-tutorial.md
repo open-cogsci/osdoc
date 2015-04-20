@@ -98,7 +98,7 @@ ALSO: comments useful to test code....
 	
 So let's declare some 'constant' variables (see comments for more information):
 
-{% highlight python %}
+~~~ .python
 # Declare the target properties:
 target_col = "red"
 target_shape = "rect"
@@ -108,7 +108,7 @@ target_shape = "rect"
 # different variables:
 width = height = 40
 radius = 20
-{% endhighlight %}
+~~~
 
 	
 We want to present our four objects such that all have an equal distance to the center and the boundaries of the display (see Fig). If we know the resolution of our computer screen, we can calculate four object positions meeting those criteria ourselves. However, it's a much better idea to let OpenSesame determine the screen resolution and let Python do the calculation. This is because this is much faster, less error prone, and has the advantage that we don't have to redo all the caclulations as soon as we switch to a different monitor.
@@ -118,7 +118,7 @@ We want to present our four objects such that all have an equal distance to the 
 
 Use the Python script below to determine the central coordinates as well as the coordinates of the four quadrants:
 
-{% highlight python %}
+~~~ .python
 # Use the built-in OpenSesame variables 'width' and 'height' 
 # to determine the central coordinates. 
 # More info about the self.get() function will follow!
@@ -130,7 +130,7 @@ x_left = x_cen - self.get("width")/4
 x_right = x_cen + self.get("width")/4
 y_up = y_cen - self.get("height")/4
 y_low = y_cen + self.get("height")/4
-{% endhighlight %}
+~~~
 
 We want to combine the x and y coordinates such that together they reflect a position in one of the four quadrants. We can do this by putting the appropriate x and y coordinates togeter in small lists. The sequential items in a list are put in between square brackets, and are separated by a comma. So (by convention we always start with the x coordinate): 
 
@@ -138,17 +138,17 @@ We want to combine the x and y coordinates such that together they reflect a pos
 For more info about lists, see e.g.:
 	http://docs.python.org/2/tutorial/datastructures.html#more-on-lists
 
-{% highlight python %}
+~~~ .python
 
 # Declare position list
-{% endhighlight %}
+~~~
 Finally, we'll have to make all our variables global, such that they will remain available throughout our whole experiment. We'll do this with the following syntax.
 MEER UITLEG!
 
-{% highlight python %}
+~~~ .python
 # Make all variables global:
 global target_col, target_shape, width, height, radius, x_cen, y_cen, x_left, x_right, y_up, y_low, upleft, upright, lowleft, lowright
-{% endhighlight %}
+~~~
 
 You can download the experiment up to this point here:
 
@@ -161,15 +161,15 @@ But let's do it slightly differently here, just to familiarise ourselves with Py
 ##### Setting and getting variables:
 In an inline_script, we can retrieve (called *get*, from now on) an in-the-GUI-defined variable as follows:
 
-{% highlight python %}
+~~~ .python
 self.get("target_presence")
-{% endhighlight %}
+~~~
 
 Inversely, we can *set* an in-an-inline-script-defined variable as follows:
 
-{% highlight python %}
+~~~ .python
 exp.set("correct_response", "z")
-{% endhighlight %}
+~~~
 
 After setting a variable, it becomes available in the GUI and works in the regular way (and, notably, it will be logged by the logger item).
 
@@ -184,7 +184,7 @@ For more info on if statements:
 
 Translated to our current situation, we get the following script:
 	
-{% highlight python %}
+~~~ .python
 # Determine correct response depending
 # on presence of the target:
 
@@ -207,15 +207,15 @@ else:
 # to determine the correctness of a given response, 
 # the accuracy score across a number of trials, etc.:
 exp.set("correct_response", correct_resp)
-{% endhighlight %}
+~~~
 
 ##### Debugging:
 Printing stuff to the debug window (which can be opened by clicking the ladybird icon) can be very covenient. For example,
 
-{% highlight python %}
+~~~ .python
 print target_pres
 print correct_resp
-{% endhighlight %}
+~~~
 
 will immediately inform us about whether our if statements worked properly (INSERT FIG). Add the print statements to your code, run the experiment (abort it after a few trials) and check the output in your debug window. 
 
@@ -236,50 +236,50 @@ For canvases, this means that we can draw all kinds of objects on a canvas witho
 ###### Preparing our canvas:
 Let's first initialise an empty canvas object by typing the following code in our Prepare phase tab:
 	
-{% highlight python %}
+~~~ .python
 # We start by initialising a canvas:
 from openexp.canvas import canvas
 my_canvas = canvas(exp)
-{% endhighlight %}
+~~~
 
 Let's first make a list containing all four possible object positions. We do this by storing the four (x,y) combintations we determined in our 'general_variables' script into an 'umbrella' list (which will actually be a list of lists, since the (x,y) combinations are small lists in itself):
 	
-{% highlight python %}
+~~~ .python
 # Make a list containing the four possible (x,y) combinations:
 pos_list = [upleft, upright, lowleft, lowright]
-{% endhighlight %}
+~~~
 
 
 Now we want to randomise the order of the items in this list. We can do this by using `shuffle()` from the Python library 'random`. Before we can use this function, we'll have to import the module. So:
 	
-{% highlight python %}
+~~~ .python
 # Import the module random.shuffle
 from random import shuffle
 # And shuffle the copied list:
 shuffle(pos_list)
-{% endhighlight %}
+~~~
 
 
 Remember that we should only show a target on the target-present trials. Therefore, the statements that draw a red circle to a given position on the canvas, should occur as an if-block, following an if statement evaluating whether the target is present. So:
 
-{% highlight python %}
+~~~ .python
 if self.get("target_presence") == "present":
 	# something
-{% endhighlight %} 
+~~~ 
 
 So let's create the if block. Note that, just as in our 'determine_correct_response' script, all lines being part of the if block should be indented!
 
 We determine the (random) target location by 'popping' one item from our position list. This means that we draw an item without replacing it afterwards. This is good, because we don't want to draw any objects on top of each other (so, a given location should not be used more than once within a given trial):
 	
-{% highlight python %}
+~~~ .python
 target_pos = pos_list.pop()
-{% endhighlight %}
+~~~
 
 Remember that target_pos is a small list containing only two items: the x coordinate and the y coordinate. To 'unpack' those values:
 	
-{% highlight python %}
+~~~ .python
 x_target, y_target = target_pos
-{% endhighlight %}
+~~~
 
 Now we have all the information we need to draw the target: We know its shape (a circle), its color (red), its radius (radius, as defined in our 'general variables' script) and its location (x_target, y_target).
 
@@ -293,13 +293,13 @@ Two other parameters are optional (meaning that if you don't provide them, their
 
 So:
 	
-{% highlight python %}
+~~~ .python
 my_canvas.circle(x_target, y_target, radius, fill = True, color = "red")
-{% endhighlight %}
+~~~
 
 Up to this point, the content of the Prepare phase tab of the 'display' item should look like this:
 	
-{% highlight python %}
+~~~ .python
 # We start by initialising a canvas:
 from openexp.canvas import canvas
 my_canvas = canvas(exp)
@@ -327,17 +327,17 @@ if self.get('target_presence') == 'present':
 	
 	# Draw the circle:
 	my_canvas.circle(x_target, y_target, radius, fill = True, color = "red")
-{% endhighlight %}
+~~~
 
 ###### Debugging:
 It's good practice to display your stimuli from time to time, even though your canvas is not entirely prepared yet. A quick-and-dirty way to do this is by TEMPORARILY put the following to lines at the end of your code (don't forget to remove them afterwards!)
 
-{% highlight python %}
+~~~ .python
 # Show the canvas to the display:
 my_canvas.show()
 # And pause the experiment for 1 sec:
 self.sleep(1000)
-{% endhighlight %}
+~~~
 
 Do you see your target? Don't forget that it's normal that nothing is presented (yet) on half of the trials; the target-absent trials.
 
@@ -351,9 +351,9 @@ To do so, let's first make a list of the two types of possible distractors: dist
 Because we're not in the if-block anymore (meaning that the following script should always be executed, regardless of whether the target is present or not), we restart at indentation level zero (i.e. no indentation)
 
 
-{% highlight python %}
+~~~ .python
 dist_change = ["shape", "color"]
-{% endhighlight %}
+~~~
 
 Next, we randomly choose one of the possible distractors by using the random.choice() function. (Note that because we already imported the module `random` in the current inline_script, we don't have to do this again.)
 
@@ -363,25 +363,25 @@ We know where to present the distractors: on the remaining (3 or 4) positions in
 For more info on for ... in statements, see:
 	http://docs.python.org/2/tutorial/controlflow.html#for-statements
 
-{% highlight python %}
+~~~ .python
 for dist_pos in pos_list:
 	# Do something...
-{% endhighlight %}
+~~~
 
 So what does this 'Do something...' constist of? Firstly, we determine the (x,y) coordinates of the current position (note that the following code is indented by one tab):
-{% highlight python %}
+~~~ .python
 	# Again, we can 'unpack' the coordinates as follows:
 	x_dist, y_dist = dist_pos
-{% endhighlight %}
+~~~
 
 Next, depending on the distractor type we're going to draw either a red rectangle or a green circle. As you may have guessed, we're going to this with another pair of if ... else statements:
 
-{% highlight python %}
+~~~ .python
 	if dist_type == "shape":
 		# Draw red rectangles...
 	else:
 		# Draw green circles...
-{% endhighlight %}
+~~~
 
 Let's first consider the "Draw red rectangles..." part, because we haven't practiced with drawing a rectangle yet. We'll do this by using the built-in canvas.rect() function, which takes at least four arguments: 
 	x → The left X coordinate. 
@@ -391,14 +391,14 @@ Let's first consider the "Draw red rectangles..." part, because we haven't pract
 The optional arguments (fill and color) work the same as in canvas.circle().
 
 So if the distractor differs from the target in shape:
-{% highlight python %}	
+~~~ .python	
 	
 	if dist_type == "shape":
 	
 	# The distractor has a different shape, but the same color:
 		dist_col = target_col
 		my_canvas.rect(x_dist, y_dist, width, height, fill = True, color = dist_col)
-{% endhighlight %}
+~~~
 
 Are you still using the correct indentation? The if statement is already indented itself (because it's part of our for ... in statement), so the subsequent if block should be indented with *two* tabs.
 
@@ -406,7 +406,7 @@ The "Draw green circles..." part is really similar to what we did before to draw
 
 Eventually, your script should look something like this:
 	
-{% highlight python %}
+~~~ .python
 # We start by initialising a canvas:
 from openexp.canvas import canvas
 my_canvas = canvas(exp)
@@ -450,7 +450,7 @@ for dist_pos in pos_list:
 		# The distractor has a different color, but the same shape:
 		dist_col = "green"
 		my_canvas.circle(x_dist, y_dist, radius, fill = True, color = dist_col)
-{% endhighlight %}
+~~~
 
 ##### What about the conjunction-search condition?
 So far we applied the same value of our 'dist_type' variable to *all* distractors in a given trial. However, in the conjunction-search condition we need to redefine 'dist_type' for all distractors separately, even *within* a given trial. Implementing this is easier than it sounds. We can simply add a final if statement at the end of our 'for dist_pos' block to verify whether the search condition of the current trial is 'conjunction'. If this is the case, we redefine the dist_type for the subsequent iteration (i.e., we overwrite the previous randomly-chosen dist_type and randomly pick a new one). If the search condition is *not* conjunction, nothing happens (the dist_type will not be overwritten and therefore remains constant across distractors within a given trial).

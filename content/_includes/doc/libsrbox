@@ -32,7 +32,7 @@ __Function list:__
 
 __Example:__
 
-{% highlight python %}
+~~~ .python
 t0 = self.time()
 exp.srbox.start()
 t1, buttonlist = exp.srbox.get_button_press(allowed_buttons=[1,2])
@@ -40,7 +40,7 @@ if 1 in buttonlist:
         response_time = t1 - t0
         print('Button 1 was pressed in %d ms!' % response_time)
 exp.srbox.stop()
-{% endhighlight %}
+~~~
 
 <div class="FunctionDoc YAMLDoc" id="libsrbox-__init__" markdown="1">
 

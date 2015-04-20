@@ -78,7 +78,7 @@ The exact same form can be created using an inline_script item and a bit of Pyth
 
 First, drag an inline_script into your experiment. Select the newly created item to open its tab, and add the following script into the Run phase of the inline_script item (see the comments for explanations).
 
-{% highlight python %}
+~~~ .python
 # Import the widgets library
 from libopensesame import widgets
 
@@ -105,7 +105,7 @@ form.set_widget(button10cts, (1,2))
 # was clicked. This is one way to get a return value out of the form. Another way
 # is to use the 'var' keyword, supported some of the widgets.
 button_clicked = form._exec()
-{% endhighlight %}
+~~~
 
 ### Non-interactive forms
 
@@ -123,9 +123,9 @@ Forms support theming. Currently, there are two themes available: 'gray' and 'pl
 	
 ... and by using the `theme` keyword in Python inline script:
 
-{% highlight python %}
+~~~ .python
 form = widgets.form(self.experiment, theme='plain')
-{% endhighlight %}
+~~~
 
 ### Available widgets and keywords
 
@@ -135,10 +135,10 @@ The following widgets are available:
 
 You can define a widget using keywords. In Python inline code, you pass these keywords to the constructor of the widget class, like so:
 
-{% highlight python %}
+~~~ .python
 # text, frame, and var are keywords
 button = widgets.button(form, text='Click me!', frame=True, var='response_variable')
-{% endhighlight %}
+~~~
 
 In OpenSesame script, you list the keyword options after the widget type, like so:
 
@@ -178,7 +178,7 @@ The following OpenSesame script (in a form_base plug-in) will produce a question
 
 The following Python inline_script will produce the same questionnaire.
 
-{% highlight python %}
+~~~ .python
 from libopensesame import widgets
 form = widgets.form(self.experiment, cols=[1,1], rows=[1,1,1,1,1])
 title = widgets.label(form,
@@ -202,7 +202,7 @@ form.set_widget(ratingScale2, (1,2))
 form.set_widget(ratingScale3, (1,3))
 form.set_widget(nextButton, (0,4), colspan=2)
 form._exec()
-{% endhighlight %}
+~~~
 
 The resulting form looks something like this. (The exact appearance depends on your font, colors, etc.)
 

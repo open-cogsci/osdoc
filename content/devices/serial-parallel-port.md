@@ -24,13 +24,13 @@ If you are using a different type of input device, you can try using the port_re
 
 In inline_script items, you can interface with `inpout32.dll` as well. This does not appear to be very well documented (please refer to Google), but here's an example script:
 
-{% highlight python %}
+~~~ .python
 from ctypes import windll
 port = 889 # Port nr to read from. Names like COM1 etc do not appear to work
 dev = windll.inpout32 # Init the device
 val = dev.Inp32(port) # Read a value
 print "Read %d from port %d" % (val, port)
-{% endhighlight %}
+~~~
 
 ## python-serial / python-parallel
 
