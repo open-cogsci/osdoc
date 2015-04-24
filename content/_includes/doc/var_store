@@ -31,7 +31,7 @@ for var_name in var:
 __Function list:__
 
 
-- [function __var\.get__\(var, default=u'None', \_eval=u'True', valid=u'None'\)](#function-__varget__var-defaultunone-_evalutrue-validunone)
+- [function __var\.get__\(var, default=None, \_eval=True, valid=None\)](#function-__varget__var-defaultnone-_evaltrue-validnone)
 - [function __var\.has__\(var\)](#function-__varhas__var)
 - [function __var\.items__\(\)](#function-__varitems__)
 - [function __var\.set__\(var, val\)](#function-__varset__var-val)
@@ -42,7 +42,7 @@ __Function list:__
 
 <div class="FunctionDoc YAMLDoc" id="var-get" markdown="1">
 
-## [function __var\.get__\(var, default=u'None', \_eval=u'True', valid=u'None'\)](#function-__varget__var-defaultunone-_evalutrue-validunone) {#function-__varget__var-defaultunone-_evalutrue-validunone}
+## [function __var\.get__\(var, default=None, \_eval=True, valid=None\)](#function-__varget__var-defaultnone-_evaltrue-validnone) {#function-__varget__var-defaultnone-_evaltrue-validnone}
 
 Gets an experimental variable.
 
@@ -193,7 +193,7 @@ A list of variable names.
 [var]: #var
 
 
-[function __var\.get__\(var, default=u'None', \_eval=u'True', valid=u'None'\)]: #function-__varget__var-defaultunone-_evalutrue-validunone
+[function __var\.get__\(var, default=None, \_eval=True, valid=None\)]: #function-__varget__var-defaultnone-_evaltrue-validnone
 [function __var\.has__\(var\)]: #function-__varhas__var
 [function __var\.items__\(\)]: #function-__varitems__
 [function __var\.set__\(var, val\)]: #function-__varset__var-val

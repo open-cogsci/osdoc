@@ -56,12 +56,13 @@ The `control` field contains a list of controls. Each control is itself an objec
 - `name` (optional) specifies under which name the widget should be added to the plug-in object, so that it can be referred to as `self.[name]`.
 - `tooltip` (optional) an informative tooltip.
 
-{% highlight yaml %}
+~~~ .yaml
 author: Your name
 category: Some category
 description: This is my plug-in
 url: http://your.website
 controls:
+-
     label: My line edit control
     name: line_edit_widget
     tooltip: You can type something here
@@ -82,6 +83,8 @@ The main plug-in code is placed in `my_plugin.py`. This file has two classes: Th
 A very simple example looks like this (see the [examples](#examples) for more realistic examples):
 
 ~~~ .python
+# Import Python 3 compatibility functions
+from libopensesame.py3compat import *
 # Import the required modules.
 from libopensesame import debug
 from libopensesame.item import item

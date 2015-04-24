@@ -2,88 +2,182 @@
 
 # class __sampler__
 
-The `sampler` module provides functionality to play sound samples in
-`.ogg` and `.wav` format (Audacity is an excellent free tool to convert
-samples from other formats).
+The `sampler` module provides functionality to play sound samples.
 
-__Important note:__
+__Example:__
+
+{% highlight python %}
+src = exp.pool['bark.ogg']
+my_sampler = sampler(src, volume=.5)
+my_sampler.play()
+{% endhighlight %}
+
+__Overview:__
+
+
+- [Things to know](#things-to-know)
+	- [Sampling rate](#sampling-rate)
+	- [Supported file formats](#supported-file-formats)
+	- [Backwards incompatible changes from 2.9 to 3.0](#backwards-incompatible-changes-from-29-to-30)
+	- [Playback keywords](#playback-keywords)
+- [function __sampler\.\_\_init\_\___\(experiment, src, \*\*playback\_args\)](#function-__sampler__init____experiment-src-playback_args)
+- [property __sampler.block__](#property-__samplerblock__)
+- [property __sampler.duration__](#property-__samplerduration__)
+- [property __sampler.fade_in__](#property-__samplerfade_in__)
+- [function __sampler\.is\_playing__\(\)](#function-__sampleris_playing__)
+- [property __sampler.pan__](#property-__samplerpan__)
+- [function __sampler\.pause__\(\)](#function-__samplerpause__)
+- [property __sampler.pitch__](#property-__samplerpitch__)
+- [function __sampler\.play__\(\*\*playback\_args\)](#function-__samplerplay__playback_args)
+- [function __sampler\.resume__\(\)](#function-__samplerresume__)
+- [function __sampler\.stop__\(\)](#function-__samplerstop__)
+- [property __sampler.volume__](#property-__samplervolume__)
+- [function __sampler\.wait__\(\)](#function-__samplerwait__)
+
+
+
+## [Things to know](#things-to-know) {#things-to-know}
+
+### [Sampling rate](#sampling-rate) {#sampling-rate}
 
 If you find that your sample plays to slowly (low pitch) or too quickly
 (high pitch), make sure that the sampling rate of your sample matches
 the sampling rate of the sampler back-end as specified under back-end
 settings.
 
-__Example:__
+### [Supported file formats](#supported-file-formats) {#supported-file-formats}
 
-~~~ .python
-from openexp.sampler import sampler
-my_sampler = sampler(exp, exp.get_file('bark.ogg'))
+Sound files in `.wav` and `.ogg` format are supported. If you need to
+convert samples from a different format, you can use
+[Audacity](http://sourceforge.net/projects/audacity/).
+
+### [Backwards incompatible changes from 2.9 to 3.0](#backwards-incompatible-changes-from-29-to-30) {#backwards-incompatible-changes-from-29-to-30}
+
+The following are now properties, as described under
+[playback keywords]:
+
+- [sampler.volume]
+- [sampler.fade_in]
+- [sampler.pitch]
+- [sampler.pan]
+
+Therefore, the following will no longer work:
+
+{% highlight python %}
+sampler.volume(.5)
+{% endhighlight %}
+
+And has to be changed to:
+
+{% highlight python %}
+sampler.volume = .5
+{% endhighlight %}
+
+### [Playback keywords](#playback-keywords) {#playback-keywords}
+
+Functions that accept `**playback_args` take the following keyword
+arguments:
+
+- `volume` specifies a volume between `0.0` (silent) and `1.0`
+  (maximum).
+- `pitch` specifies a pitch (or playback speed), where values > 1
+  indicate a higher pitch, and values < 1 indicate a lower pitch.
+- `pan` specifies a panning, where values < 0 indicate panning to the
+  left, and values > 0 indicate panning to the right. Alternatively, you
+  can set pan to 'left' or 'right' to play only a single channel.
+- `duration` specifies the duration of the the sound in milliseconds, or
+  is set to `0` or `None` to play the full sound.
+- `fade_in` specifies the fade-in time (or attack) of the sound, or is
+  set to `0` or `None` to disable fade-in.
+- `block` indicates whether the experiment should block (`True`) during
+  playback or not (`False`).
+
+{% highlight python %}
+src = exp.pool['bark.ogg']
+my_sampler = sampler(src)
+my_sampler.play(volume=.5, pan='left')
+{% endhighlight %}
+
+Playback keywords only affect the current operation (except when passed
+to [sampler.\_\_init\_\_][__init__]). To change the behavior for all
+subsequent operations, set the playback properties directly:
+
+{% highlight python %}
+src = exp.pool['bark.ogg']
+my_sampler = sampler(src)
+my_sampler.volume = .5
+my_sampler.pan = 'left'
 my_sampler.play()
-~~~
+my_sampler.play()
+{% endhighlight %}
 
-__Function list:__
+Or pass the playback keywords to [sampler.\_\_init\_\_][__init__]:
 
-
-- [function __sampler\.\_\_init\_\___\(experiment, src\)](#function-__sampler__init____experiment-src)
-- [function __sampler\.fade\_in__\(ms\)](#function-__samplerfade_in__ms)
-- [function __sampler\.is\_playing__\(\)](#function-__sampleris_playing__)
-- [function __sampler\.pan__\(p\)](#function-__samplerpan__p)
-- [function __sampler\.pause__\(\)](#function-__samplerpause__)
-- [function __sampler\.pitch__\(p\)](#function-__samplerpitch__p)
-- [function __sampler\.play__\(block=False\)](#function-__samplerplay__blockfalse)
-- [function __sampler\.resume__\(\)](#function-__samplerresume__)
-- [function __sampler\.stop__\(\)](#function-__samplerstop__)
-- [function __sampler\.stop\_after__\(ms\)](#function-__samplerstop_after__ms)
-- [function __sampler\.volume__\(vol\)](#function-__samplervolume__vol)
-- [function __sampler\.wait__\(\)](#function-__samplerwait__)
-
-
+{% highlight python %}
+src = exp.pool['bark.ogg']
+my_sampler = sampler(src, volume=.5, pan='left')
+my_sampler.play()
+my_sampler.play()
+{% endhighlight %}
 
 <div class="FunctionDoc YAMLDoc" id="sampler-__init__" markdown="1">
 
-## [function __sampler\.\_\_init\_\___\(experiment, src\)](#function-__sampler__init____experiment-src) {#function-__sampler__init____experiment-src}
+## [function __sampler\.\_\_init\_\___\(experiment, src, \*\*playback\_args\)](#function-__sampler__init____experiment-src-playback_args) {#function-__sampler__init____experiment-src-playback_args}
 
-Initializes the sampler with a specified file.
+Constructor to create a new `sampler` object. You do not generally
+call this constructor directly, but use the `sampler()` function,
+which is described here: [/python/sampler/]().
 
 __Example:__
 
-~~~ .python
-from openexp.sampler import sampler
-src = exp.get_file('my_sound.ogg')
-my_sampler = sampler(exp, src)
-~~~
+{% highlight python %}
+src = exp.pool[u'my_sound.ogg']
+my_sampler = sampler(src, volume=.5)
+{% endhighlight %}
 
 __Arguments:__
 
-- `src` -- The full path to a `.wav` or `.ogg` file.
-	- Type: unicode, str
 - `experiment` -- The experiment object.
 	- Type: experiment
+- `src` -- The full path to a `.wav` or `.ogg` file.
+	- Type: unicode, str
+
+__Keyword dict:__
+
+- `**playback_args`: Optional [playback keywords] that will be used as the default for this `sampler` object.
 
 </div>
 
 [sampler.__init__]: #sampler-__init__
 [__init__]: #sampler-__init__
 
-<div class="FunctionDoc YAMLDoc" id="sampler-fade_in" markdown="1">
+<div class="PropertyDoc YAMLDoc" id="sampler-block" markdown="1">
 
-## [function __sampler\.fade\_in__\(ms\)](#function-__samplerfade_in__ms) {#function-__samplerfade_in__ms}
+## [property __sampler.block__](#property-__samplerblock__) {#property-__samplerblock__}
 
-Sets a fade-in time in milliseconds.
+This is a read-and-write property. Changing the `block` property will affect subsequent operations.
 
-__Example:__
+</div>
 
-~~~ .python
-from openexp.sampler import sampler
-src = exp.get_file('my_sound.ogg')
-my_sampler = sampler(exp, src)
-my_sampler.fade_in(100)
-~~~
+[sampler.block]: #sampler-block
+[block]: #sampler-block
 
-__Arguments:__
+<div class="PropertyDoc YAMLDoc" id="sampler-duration" markdown="1">
 
-- `ms` -- An integer value specifying the duration in milliseconds.
-	- Type: int
+## [property __sampler.duration__](#property-__samplerduration__) {#property-__samplerduration__}
+
+This is a read-and-write property. Changing the `duration` property will affect subsequent operations.
+
+</div>
+
+[sampler.duration]: #sampler-duration
+[duration]: #sampler-duration
+
+<div class="PropertyDoc YAMLDoc" id="sampler-fade_in" markdown="1">
+
+## [property __sampler.fade_in__](#property-__samplerfade_in__) {#property-__samplerfade_in__}
+
+This is a read-and-write property. Changing the `fade_in` property will affect subsequent operations.
 
 </div>
 
@@ -107,25 +201,11 @@ True if a sound is playing, False if not.
 [sampler.is_playing]: #sampler-is_playing
 [is_playing]: #sampler-is_playing
 
-<div class="FunctionDoc YAMLDoc" id="sampler-pan" markdown="1">
+<div class="PropertyDoc YAMLDoc" id="sampler-pan" markdown="1">
 
-## [function __sampler\.pan__\(p\)](#function-__samplerpan__p) {#function-__samplerpan__p}
+## [property __sampler.pan__](#property-__samplerpan__) {#property-__samplerpan__}
 
-Sets the panning of the sample. The volume of the "unpanned" channel decreases, the volume of the other channel remains the same. To fully mute one channel specify "left" (mutes right, pans to left) or "right" (mutes left, pans to right").
-
-__Example:__
-
-~~~ .python
-from openexp.sampler import sampler
-src = exp.get_file('my_sound.ogg')
-my_sampler = sampler(exp, src)
-my_sampler.pan('left')
-~~~
-
-__Arguments:__
-
-- `p` -- Panning. A float (p < 0 = to left, p > 0 = to right) or string ("left" or "right").
-	- Type: int, float, str, unicode
+This is a read-and-write property. Changing the `pan` property will affect subsequent operations.
 
 </div>
 
@@ -140,41 +220,26 @@ Pauses playback (if any).
 
 __Example:__
 
-~~~ .python
-from openexp.sampler import sampler
-src = exp.get_file('my_sound.ogg')
-my_sampler = sampler(exp, src)
+{% highlight python %}
+src = exp.pool[u'my_sound.ogg']
+my_sampler = sampler(src)
 my_sampler.play()
-self.sleep(100)
+sleep(100)
 my_sampler.pause()
-self.sleep(100)
+sleep(100)
 my_sampler.resume()
-~~~
+{% endhighlight %}
 
 </div>
 
 [sampler.pause]: #sampler-pause
 [pause]: #sampler-pause
 
-<div class="FunctionDoc YAMLDoc" id="sampler-pitch" markdown="1">
+<div class="PropertyDoc YAMLDoc" id="sampler-pitch" markdown="1">
 
-## [function __sampler\.pitch__\(p\)](#function-__samplerpitch__p) {#function-__samplerpitch__p}
+## [property __sampler.pitch__](#property-__samplerpitch__) {#property-__samplerpitch__}
 
-Sets the relative pitch of the sample.
-
-__Example:__
-
-~~~ .python
-from openexp.sampler import sampler
-src = exp.get_file('my_sound.ogg')
-my_sampler = sampler(exp, src)
-my_sampler.pitch(2.0)
-~~~
-
-__Arguments:__
-
-- `p` -- The pitch. p > 1.0 slows the sample down, p < 1.0 speeds the sample up.
-	- Type: int, float
+This is a read-and-write property. Changing the `pitch` property will affect subsequent operations.
 
 </div>
 
@@ -183,24 +248,21 @@ __Arguments:__
 
 <div class="FunctionDoc YAMLDoc" id="sampler-play" markdown="1">
 
-## [function __sampler\.play__\(block=False\)](#function-__samplerplay__blockfalse) {#function-__samplerplay__blockfalse}
+## [function __sampler\.play__\(\*\*playback\_args\)](#function-__samplerplay__playback_args) {#function-__samplerplay__playback_args}
 
 Plays the sound.
 
 __Example:__
 
-~~~ .python
-from openexp.sampler import sampler
-src = exp.get_file('my_sound.ogg')
-my_sampler = sampler(exp, src)
-my_sampler.play()
-~~~
+{% highlight python %}
+src = exp.pool[u'my_sound.ogg']
+my_sampler = sampler(src)
+my_sampler.play(pitch=.5, block=True)
+{% endhighlight %}
 
-__Keywords:__
+__Keyword dict:__
 
-- `block` -- If True, the function blocks until the sound is finished. If False, the function returns right away and the sound is played in the background.
-	- Default: False
-	- Type: bool
+- `**playback_args`: Optional [playback keywords] that will be used for this call to [sampler.play]. This does not affect subsequent operations.
 
 </div>
 
@@ -215,16 +277,15 @@ Resumes playback (if any).
 
 __Example:__
 
-~~~ .python
-from openexp.sampler import sampler
-src = exp.get_file('my_sound.ogg')
-my_sampler = sampler(exp, src)
+{% highlight python %}
+src = exp.pool[u'my_sound.ogg']
+my_sampler = sampler(src)
 my_sampler.play()
-self.sleep(100)
+sleep(100)
 my_sampler.pause()
-self.sleep(100)
+sleep(100)
 my_sampler.resume()
-~~~
+{% endhighlight %}
 
 </div>
 
@@ -239,64 +300,24 @@ Stops the currently playing sound (if any).
 
 __Example:__
 
-~~~ .python
-from openexp.sampler import sampler
-src = exp.get_file('my_sound.ogg')
-my_sampler = sampler(exp, src)
+{% highlight python %}
+src = exp.pool[u'my_sound.ogg']
+my_sampler = sampler(src)
 my_sampler.play()
-self.sleep(100)
+sleep(100)
 my_sampler.stop()
-~~~
+{% endhighlight %}
 
 </div>
 
 [sampler.stop]: #sampler-stop
 [stop]: #sampler-stop
 
-<div class="FunctionDoc YAMLDoc" id="sampler-stop_after" markdown="1">
+<div class="PropertyDoc YAMLDoc" id="sampler-volume" markdown="1">
 
-## [function __sampler\.stop\_after__\(ms\)](#function-__samplerstop_after__ms) {#function-__samplerstop_after__ms}
+## [property __sampler.volume__](#property-__samplervolume__) {#property-__samplervolume__}
 
-Specifies a duration after which the sampler stops playing.
-
-__Example:__
-
-~~~ .python
-from openexp.sampler import sampler
-src = exp.get_file('my_sound.ogg')
-my_sampler = sampler(exp, src)
-my_sampler.stop_after(100)
-~~~
-
-__Arguments:__
-
-- `ms` -- An integer value specifying the duration in milliseconds.
-	- Type: int
-
-</div>
-
-[sampler.stop_after]: #sampler-stop_after
-[stop_after]: #sampler-stop_after
-
-<div class="FunctionDoc YAMLDoc" id="sampler-volume" markdown="1">
-
-## [function __sampler\.volume__\(vol\)](#function-__samplervolume__vol) {#function-__samplervolume__vol}
-
-Sets the volume.
-
-__Example:__
-
-~~~ .python
-from openexp.sampler import sampler
-src = exp.get_file('my_sound.ogg')
-my_sampler = sampler(exp, src)
-my_sampler.volume(0.5)
-~~~
-
-__Arguments:__
-
-- `vol` -- A volume level between 0.0 (silent) and 1.0 (full).
-	- Type: int, float
+This is a read-and-write property. Changing the `volume` property will affect subsequent operations.
 
 </div>
 
@@ -311,14 +332,13 @@ Blocks until the sound has finished playing or returns right away if no sound is
 
 __Example:__
 
-~~~ .python
-from openexp.sampler import sampler
-src = exp.get_file('my_sound.ogg')
-my_sampler = sampler(exp, src)
+{% highlight python %}
+src = exp.pool[u'my_sound.ogg']
+my_sampler = sampler(src)
 my_sampler.play()
 my_sampler.wait()
 print('The sampler is finished!')
-~~~
+{% endhighlight %}
 
 </div>
 
@@ -330,15 +350,21 @@ print('The sampler is finished!')
 [sampler]: #sampler
 
 
-[function __sampler\.\_\_init\_\___\(experiment, src\)]: #function-__sampler__init____experiment-src
-[function __sampler\.fade\_in__\(ms\)]: #function-__samplerfade_in__ms
+[Things to know]: #things-to-know
+[Sampling rate]: #sampling-rate
+[Supported file formats]: #supported-file-formats
+[Backwards incompatible changes from 2.9 to 3.0]: #backwards-incompatible-changes-from-29-to-30
+[Playback keywords]: #playback-keywords
+[function __sampler\.\_\_init\_\___\(experiment, src, \*\*playback\_args\)]: #function-__sampler__init____experiment-src-playback_args
+[property __sampler.block__]: #property-__samplerblock__
+[property __sampler.duration__]: #property-__samplerduration__
+[property __sampler.fade_in__]: #property-__samplerfade_in__
 [function __sampler\.is\_playing__\(\)]: #function-__sampleris_playing__
-[function __sampler\.pan__\(p\)]: #function-__samplerpan__p
+[property __sampler.pan__]: #property-__samplerpan__
 [function __sampler\.pause__\(\)]: #function-__samplerpause__
-[function __sampler\.pitch__\(p\)]: #function-__samplerpitch__p
-[function __sampler\.play__\(block=False\)]: #function-__samplerplay__blockfalse
+[property __sampler.pitch__]: #property-__samplerpitch__
+[function __sampler\.play__\(\*\*playback\_args\)]: #function-__samplerplay__playback_args
 [function __sampler\.resume__\(\)]: #function-__samplerresume__
 [function __sampler\.stop__\(\)]: #function-__samplerstop__
-[function __sampler\.stop\_after__\(ms\)]: #function-__samplerstop_after__ms
-[function __sampler\.volume__\(vol\)]: #function-__samplervolume__vol
+[property __sampler.volume__]: #property-__samplervolume__
 [function __sampler\.wait__\(\)]: #function-__samplerwait__

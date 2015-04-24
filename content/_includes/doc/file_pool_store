@@ -47,7 +47,7 @@ __Function list:__
 - [function __pool\.fallback\_folder__\(\)](#function-__poolfallback_folder__)
 - [function __pool\.files__\(\)](#function-__poolfiles__)
 - [function __pool\.folder__\(\)](#function-__poolfolder__)
-- [function __pool\.folders__\(include\_fallback\_folder=u'True', include\_experiment\_path=u'False'\)](#function-__poolfolders__include_fallback_folderutrue-include_experiment_pathufalse)
+- [function __pool\.folders__\(include\_fallback\_folder=True, include\_experiment\_path=False\)](#function-__poolfolders__include_fallback_foldertrue-include_experiment_pathfalse)
 - [function __pool\.rename__\(old\_path, new\_path\)](#function-__poolrename__old_path-new_path)
 - [function __pool\.size__\(\)](#function-__poolsize__)
 
@@ -151,7 +151,7 @@ The full path to the (main) pool folder. This is typically a temporary folder th
 
 <div class="FunctionDoc YAMLDoc" id="pool-folders" markdown="1">
 
-## [function __pool\.folders__\(include\_fallback\_folder=u'True', include\_experiment\_path=u'False'\)](#function-__poolfolders__include_fallback_folderutrue-include_experiment_pathufalse) {#function-__poolfolders__include_fallback_folderutrue-include_experiment_pathufalse}
+## [function __pool\.folders__\(include\_fallback\_folder=True, include\_experiment\_path=False\)](#function-__poolfolders__include_fallback_foldertrue-include_experiment_pathfalse) {#function-__poolfolders__include_fallback_foldertrue-include_experiment_pathfalse}
 
 Gives a list of all folders that are searched when retrieving the
 full path to a file. These are (in order):
@@ -245,6 +245,6 @@ The combined size in bytes of all files in the file pool.
 [function __pool\.fallback\_folder__\(\)]: #function-__poolfallback_folder__
 [function __pool\.files__\(\)]: #function-__poolfiles__
 [function __pool\.folder__\(\)]: #function-__poolfolder__
-[function __pool\.folders__\(include\_fallback\_folder=u'True', include\_experiment\_path=u'False'\)]: #function-__poolfolders__include_fallback_folderutrue-include_experiment_pathufalse
+[function __pool\.folders__\(include\_fallback\_folder=True, include\_experiment\_path=False\)]: #function-__poolfolders__include_fallback_foldertrue-include_experiment_pathfalse
 [function __pool\.rename__\(old\_path, new\_path\)]: #function-__poolrename__old_path-new_path
 [function __pool\.size__\(\)]: #function-__poolsize__

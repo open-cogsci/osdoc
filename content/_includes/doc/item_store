@@ -29,8 +29,8 @@ __Function list:__
 
 - [property __items.items__](#property-__itemsitems__)
 - [property __items.keys__](#property-__itemskeys__)
-- [function __items\.new__\(\_type, name=u'None', script=u'None'\)](#function-__itemsnew___type-nameunone-scriptunone)
-- [function __items\.valid\_name__\(item\_type, suggestion=u'None'\)](#function-__itemsvalid_name__item_type-suggestionunone)
+- [function __items\.new__\(\_type, name=None, script=None\)](#function-__itemsnew___type-namenone-scriptnone)
+- [function __items\.valid\_name__\(item\_type, suggestion=None\)](#function-__itemsvalid_name__item_type-suggestionnone)
 - [property __items.values__](#property-__itemsvalues__)
 
 
@@ -59,7 +59,7 @@ Returns a list of item names.
 
 <div class="FunctionDoc YAMLDoc" id="items-new" markdown="1">
 
-## [function __items\.new__\(\_type, name=u'None', script=u'None'\)](#function-__itemsnew___type-nameunone-scriptunone) {#function-__itemsnew___type-nameunone-scriptunone}
+## [function __items\.new__\(\_type, name=None, script=None\)](#function-__itemsnew___type-namenone-scriptnone) {#function-__itemsnew___type-namenone-scriptnone}
 
 Creates a new item.
 
@@ -90,7 +90,7 @@ The newly generated item.
 
 <div class="FunctionDoc YAMLDoc" id="items-valid_name" markdown="1">
 
-## [function __items\.valid\_name__\(item\_type, suggestion=u'None'\)](#function-__itemsvalid_name__item_type-suggestionunone) {#function-__itemsvalid_name__item_type-suggestionunone}
+## [function __items\.valid\_name__\(item\_type, suggestion=None\)](#function-__itemsvalid_name__item_type-suggestionnone) {#function-__itemsvalid_name__item_type-suggestionnone}
 
 Generates a unique name that is valid and resembles the desired name.
 
@@ -134,6 +134,6 @@ Returns a list of `item` objects.
 
 [property __items.items__]: #property-__itemsitems__
 [property __items.keys__]: #property-__itemskeys__
-[function __items\.new__\(\_type, name=u'None', script=u'None'\)]: #function-__itemsnew___type-nameunone-scriptunone
-[function __items\.valid\_name__\(item\_type, suggestion=u'None'\)]: #function-__itemsvalid_name__item_type-suggestionunone
+[function __items\.new__\(\_type, name=None, script=None\)]: #function-__itemsnew___type-namenone-scriptnone
+[function __items\.valid\_name__\(item\_type, suggestion=None\)]: #function-__itemsvalid_name__item_type-suggestionnone
 [property __items.values__]: #property-__itemsvalues__

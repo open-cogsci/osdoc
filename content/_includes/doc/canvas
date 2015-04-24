@@ -2,83 +2,177 @@
 
 # class __canvas__
 
-The `canvas` class is used for display presentation.
-
-__Important note:__
-
-When using a `canvas` all coordinates are specified
-relative to the top-left of the display, and not, as in `sketchpad`s,
-relative to the display center.
+The `canvas` class is used to present visual stimuli.
 
 __Example__:
 
-~~~ .python
-# Create a canvas with a central fixation dot and show it.
-from openexp.canvas import canvas
-my_canvas = canvas(exp)
+{% highlight python %}
+# Create and show a canvas with a central fixation dot
+my_canvas = canvas()
 my_canvas.fixdot()
 my_canvas.show()
-~~~
+{% endhighlight %}
 
-__Function list:__
+__Overview:__
 
 
-- [function __canvas\.\_\_init\_\___\(experiment, bgcolor=None, fgcolor=None, auto\_prepare=True\)](#function-__canvas__init____experiment-bgcolornone-fgcolornone-auto_preparetrue)
-- [function __canvas\.arrow__\(sx, sy, ex, ey, color=None, arrow\_size=5, penwidth=None\)](#function-__canvasarrow__sx-sy-ex-ey-colornone-arrow_size5-penwidthnone)
-- [function __canvas\.circle__\(x, y, r, color=None, penwidth=None, fill=False\)](#function-__canvascircle__x-y-r-colornone-penwidthnone-fillfalse)
-- [function __canvas\.clear__\(color=None\)](#function-__canvasclear__colornone)
+- [Things to know](#things-to-know)
+	- [Coordinates](#coordinates)
+	- [Style keywords](#style-keywords)
+	- [Colors](#colors)
+- [function __canvas\.\_\_init\_\___\(experiment, auto\_prepare=True, \*\*style\_args\)](#function-__canvas__init____experiment-auto_preparetrue-style_args)
+- [function __canvas\.arrow__\(sx, sy, ex, ey, arrow\_size=5, \*\*style\_args\)](#function-__canvasarrow__sx-sy-ex-ey-arrow_size5-style_args)
+- [function __canvas\.circle__\(x, y, r, \*\*style\_args\)](#function-__canvascircle__x-y-r-style_args)
+- [function __canvas\.clear__\(color=None, \*\*style\_args\)](#function-__canvasclear__colornone-style_args)
 - [function __canvas\.copy__\(canvas\)](#function-__canvascopy__canvas)
-- [function __canvas\.ellipse__\(x, y, w, h, color=None, penwidth=None, fill=False\)](#function-__canvasellipse__x-y-w-h-colornone-penwidthnone-fillfalse)
-- [function __canvas\.fixdot__\(y=None, x=None, style=u'default', color=None\)](#function-__canvasfixdot__ynone-xnone-styleudefault-colornone)
+- [function __canvas\.ellipse__\(x, y, w, h, \*\*style\_args\)](#function-__canvasellipse__x-y-w-h-style_args)
+- [function __canvas\.fixdot__\(y=None, x=None, style=u'default', \*\*style\_args\)](#function-__canvasfixdot__ynone-xnone-styleudefault-style_args)
 - [function __canvas\.gabor__\(x, y, orient, freq, bgmode=u'avg', col2=u'black', col1=u'white', env=u'gaussian', stdev=12, phase=0, size=96\)](#function-__canvasgabor__x-y-orient-freq-bgmodeuavg-col2ublack-col1uwhite-envugaussian-stdev12-phase0-size96)
+- [property __canvas.height__](#property-__canvasheight__)
 - [function __canvas\.image__\(fname, y=None, x=None, scale=None, center=True\)](#function-__canvasimage__fname-ynone-xnone-scalenone-centertrue)
-- [function __canvas\.line__\(sx, sy, ex, ey, color=None, penwidth=None\)](#function-__canvasline__sx-sy-ex-ey-colornone-penwidthnone)
+- [function __canvas\.line__\(sx, sy, ex, ey, \*\*style\_args\)](#function-__canvasline__sx-sy-ex-ey-style_args)
 - [function __canvas\.noise\_patch__\(x, y, bgmode=u'avg', col2=u'black', col1=u'white', env=u'gaussian', stdev=12, size=96\)](#function-__canvasnoise_patch__x-y-bgmodeuavg-col2ublack-col1uwhite-envugaussian-stdev12-size96)
-- [function __canvas\.polygon__\(vertices, color=None, penwidth=None, fill=False\)](#function-__canvaspolygon__vertices-colornone-penwidthnone-fillfalse)
+- [function __canvas\.polygon__\(vertices, \*\*style\_args\)](#function-__canvaspolygon__vertices-style_args)
 - [function __canvas\.prepare__\(\)](#function-__canvasprepare__)
-- [function __canvas\.rect__\(x, y, w, h, color=None, penwidth=None, fill=False\)](#function-__canvasrect__x-y-w-h-colornone-penwidthnone-fillfalse)
-- [function __canvas\.set\_bgcolor__\(color\)](#function-__canvasset_bgcolor__color)
-- [function __canvas\.set\_bidi__\(bidi\)](#function-__canvasset_bidi__bidi)
-- [function __canvas\.set\_fgcolor__\(color\)](#function-__canvasset_fgcolor__color)
-- [function __canvas\.set\_font__\(style=None, underline=None, bold=None, italic=None, size=None\)](#function-__canvasset_font__stylenone-underlinenone-boldnone-italicnone-sizenone)
-- [function __canvas\.set\_penwidth__\(penwidth\)](#function-__canvasset_penwidth__penwidth)
+- [function __canvas\.rect__\(x, y, w, h, \*\*style\_args\)](#function-__canvasrect__x-y-w-h-style_args)
 - [function __canvas\.show__\(\)](#function-__canvasshow__)
-- [function __canvas\.text__\(text, center=True, color=None, max\_width=None, html=True, bidi=None, y=None, x=None\)](#function-__canvastext__text-centertrue-colornone-max_widthnone-htmltrue-bidinone-ynone-xnone)
-- [function __canvas\.text\_size__\(text, html=True, bidi=None, max\_width=None\)](#function-__canvastext_size__text-htmltrue-bidinone-max_widthnone)
-- [function __canvas\.xcenter__\(\)](#function-__canvasxcenter__)
-- [function __canvas\.ycenter__\(\)](#function-__canvasycenter__)
+- [property __canvas.size__](#property-__canvassize__)
+- [function __canvas\.text__\(text, y=None, x=None, center=True, max\_width=None, \*\*style\_args\)](#function-__canvastext__text-ynone-xnone-centertrue-max_widthnone-style_args)
+- [function __canvas\.text\_size__\(text, max\_width=None, \*\*style\_args\)](#function-__canvastext_size__text-max_widthnone-style_args)
+- [property __canvas.width__](#property-__canvaswidth__)
 
 
+
+## [Things to know](#things-to-know) {#things-to-know}
+
+### [Coordinates](#coordinates) {#coordinates}
+
+- When *Uniform coordinates* is set to 'yes', coordinates are
+  relative to the center of the display. That is, (0,0) is the center.
+  This is the default as of OpenSesame 3.0.0.
+- When *Uniform coordinates* is set to 'no', coordinates are relative to
+  the top-left of the display. That is, (0,0) is the top-left. This was
+  the default in OpenSesame 2.9.X and earlier.
+
+### [Style keywords](#style-keywords) {#style-keywords}
+
+All functions that accept `**style_args` take the following keyword
+arguments:
+
+- `color` specifies the foreground color. For valid color
+  specifications, see [colors].
+- `background_color` specifies the background color. For valid color
+  specifications, see [colors].
+- `fill` indicates whether rectangles, circles, polygons, and ellipses
+  are filled (`True`), or drawn as an outline (`False`).
+- `penwidth` indicates a penwidth in pixels and should be `int` or
+  `float`.
+- `bidi` indicates whether bidirectional-text support is enabled, and
+  should be `True` or `False`.
+- `html` indicates whether HTML-tags are interpreted, and should be
+  `True` or `False`. For supported tags, see [/usage/text/]().
+- `font_family` is the name of a font family, such as 'sans'.
+- `font_italic` indicates whether text should italics, and should be
+  `True` or `False`.
+- `font_bold` indicates whether text should bold, and should be
+  `True` or `False`.
+- `font_underline` indicates whether text should underlined, and should
+  be `True` or `False`.
+
+{% highlight python %}
+# Draw a green fixation dot
+my_canvas = canvas()
+my_canvas.fixdot(color='green')
+my_canvas.show()
+{% endhighlight %}
+
+Style keywords only affect the current drawing operation (except when
+passed to [canvas.\_\_init\_\_][__init__]). To change the style for all
+subsequent drawing operations, set style properties, such as
+[canvas.color], directly:
+
+{% highlight python %}
+# Draw a red cross with a 2px penwidth
+my_canvas = canvas()
+my_canvas.color = u'red'
+my_canvas.penwidth = 2
+my_canvas.line(-10, -10, 10, 10)
+my_canvas.line(-10, 10, 10, -10)
+my_canvas.show()
+{% endhighlight %}
+
+Or pass the style properties to [canvas.\_\_init\_\_][__init__]:
+
+{% highlight python %}
+# Draw a red cross with a 2px penwidth
+my_canvas = canvas(color=u'red', penwidth=2)
+my_canvas.line(-10, -10, 10, 10)
+my_canvas.line(-10, 10, 10, -10)
+my_canvas.show()
+{% endhighlight %}
+
+### [Colors](#colors) {#colors}
+
+You can specify colors in the following CSS3-compatible ways:
+
+- __Color names:__ 'red', 'black', etc. A full list of valid color names
+  can be found
+  [here](http://www.w3.org/TR/SVG11/types.html#ColorKeywords).
+- __Seven-character hexadecimal strings:__ '#FF0000', '#000000', etc.
+  Here, values range from '00' to 'FF', so that '#FF0000' is bright red.
+- __Four-character hexadecimal strings:__ '#F00', '#000', etc. Here,
+  values range from '0' to 'F' so that '#F00' is bright red.
+- __RGB strings:__ 'rgb(255,0,0)', 'rgb(0,0,0)', etc. Here, values
+  range from '0' to '255' so that 'rgb(255,0,0)' is bright red.
+- __RGB percentage strings:__ 'rgb(100%,0%,0%)', 'rgb(0%,0%,0%)', etc.
+  Here, values range from '0%' to '100%' so that 'rgb(100%,0%,0%)' is
+  bright red.
+- __RGB tuples:__ `(255, 0, 0)`, `(0, 0 ,0)`, etc. Here, values range
+  from `0` to `255` so that `(255,0,0)' is bright red.
+- __Luminance values:__  `255`, `0`, etc. Here, values range from `0` to
+  `255` so that `255` is white.
+
+{% highlight python %}
+# Various ways to specify green
+my_canvas.fixdot(color=u'green')
+my_canvas.fixdot(color=u'#00ff00')
+my_canvas.fixdot(color=u'#0f0')
+my_canvas.fixdot(color=u'rgb(0,255,0)')
+my_canvas.fixdot(color=u'rgb(0%,100%,0%)')
+my_canvas.fixdot(color=(0,255,0))
+# Specify a luminance value (white)
+my_canvas.fixdot(color=255)
+{% endhighlight %}
 
 
 
 <div class="FunctionDoc YAMLDoc" id="canvas-__init__" markdown="1">
 
-## [function __canvas\.\_\_init\_\___\(experiment, bgcolor=None, fgcolor=None, auto\_prepare=True\)](#function-__canvas__init____experiment-bgcolornone-fgcolornone-auto_preparetrue) {#function-__canvas__init____experiment-bgcolornone-fgcolornone-auto_preparetrue}
+## [function __canvas\.\_\_init\_\___\(experiment, auto\_prepare=True, \*\*style\_args\)](#function-__canvas__init____experiment-auto_preparetrue-style_args) {#function-__canvas__init____experiment-auto_preparetrue-style_args}
 
-Constructor to create a new `canvas` object.
+Constructor to create a new `canvas` object. You do not generally
+call this constructor directly, but use the `canvas()` function,
+which is described here: [/python/common/]().
 
 __Example:__
 
-~~~ .python
+{% highlight python %}
 # Example 1: Show a central fixation dot.
-from openexp.canvas import canvas
-my_canvas = canvas(exp)
+my_canvas = canvas()
 my_canvas.fixdot()
 my_canvas.show()
 
 # Example 2: Show many randomly positioned fixation dot. Here we
 # disable `auto_prepare`, so that drawing goes more quickly.
-from openexp.canvas import canvas
 from random import randint
-my_canvas = canvas(exp, auto_prepare=False)
+my_canvas = canvas(auto_prepare=False)
 for i in range(1000):
-        x = randint(0, self.get('width'))
-        y = randint(0, self.get('height'))
+        x = randint(0, my_canvas.width)
+        y = randint(0, my_canvas.height)
         my_canvas.fixdot(x, y)
 my_canvas.prepare()
 my_canvas.show()
-~~~
+{% endhighlight %}
 
 __Arguments:__
 
@@ -87,15 +181,13 @@ __Arguments:__
 
 __Keywords:__
 
-- `bgcolor` -- A human-readable background color or None to use experiment default.
-	- Default: None
-	- Type: str, unicode, NoneType
-- `fgcolor` -- A human-readable foreground color or None to use experiment default.
-	- Default: None
-	- Type: str, unicode, NoneType
 - `auto_prepare` -- Indicates whether the canvas should be automatically prepared after each drawing operation, so that [canvas.show] will be maximally efficient. If auto_prepare is turned off, drawing operations may be faster, but [canvas.show] will take longer, unless [canvas.prepare] is explicitly called in advance. Generally, it only makes sense to disable auto_prepare when you want to draw a large number of stimuli, as in the second example below. Currently, the auto_prepare parameter only applies to the xpyriment backend, and is ignored by the other backends.
-	- Default: True
 	- Type: bool
+	- Default: True
+
+__Keyword dict:__
+
+- `**style_args`: Optional [style keywords], which will be used as the default for all drawing operations on this `canvas`.
 
 </div>
 
@@ -104,37 +196,32 @@ __Keywords:__
 
 <div class="FunctionDoc YAMLDoc" id="canvas-arrow" markdown="1">
 
-## [function __canvas\.arrow__\(sx, sy, ex, ey, color=None, arrow\_size=5, penwidth=None\)](#function-__canvasarrow__sx-sy-ex-ey-colornone-arrow_size5-penwidthnone) {#function-__canvasarrow__sx-sy-ex-ey-colornone-arrow_size5-penwidthnone}
+## [function __canvas\.arrow__\(sx, sy, ex, ey, arrow\_size=5, \*\*style\_args\)](#function-__canvasarrow__sx-sy-ex-ey-arrow_size5-style_args) {#function-__canvasarrow__sx-sy-ex-ey-arrow_size5-style_args}
 
 Draws an arrow. An arrow is a line, with an arrowhead at (ex, ey). The angle between the arrowhead lines and the arrow line is 45 degrees.
 
 __Arguments:__
 
-- `sy` -- The top Y coordinate.
-	- Type: int
 - `sx` -- The left X coordinate.
 	- Type: int
-- `ey` -- The bottom Y coordinate.
+- `sy` -- The top Y coordinate.
 	- Type: int
 - `ex` -- The right X coordinate.
+	- Type: int
+- `ey` -- The bottom Y coordinate.
 	- Type: int
 
 __Keywords:__
 
-- `color` -- A human-readable foreground color, such as 'red', an
-HTML-style color value, such as '#FF0000', or `None` to use the
-canvas default. This argument will not change the canvas default
-foreground as set by [canvas.set_fgcolor].
-	- Default: None
-	- Type: str, unicode, NoneType
 - `arrow_size` -- The length of the arrow-head lines in pixels.
+	- Type: int
 	- Default: 5
-	- Type: int
-- `penwidth` -- A penwidth in pixels, or `None` to use the canvas default. This
-argument will not change the canvas default penwidth as set by
-[canvas.set_penwidth].
-	- Default: None
-	- Type: int
+
+__Keyword dict:__
+
+- `**style_args`: Optional [style keywords] that specify the style of the current
+drawing operation. This does not affect subsequent drawing
+operations.
 
 </div>
 
@@ -143,44 +230,31 @@ argument will not change the canvas default penwidth as set by
 
 <div class="FunctionDoc YAMLDoc" id="canvas-circle" markdown="1">
 
-## [function __canvas\.circle__\(x, y, r, color=None, penwidth=None, fill=False\)](#function-__canvascircle__x-y-r-colornone-penwidthnone-fillfalse) {#function-__canvascircle__x-y-r-colornone-penwidthnone-fillfalse}
+## [function __canvas\.circle__\(x, y, r, \*\*style\_args\)](#function-__canvascircle__x-y-r-style_args) {#function-__canvascircle__x-y-r-style_args}
 
 Draws a circle.
 
 __Example:__
 
-~~~ .python
-from openexp.canvas import canvas
-my_canvas = canvas(exp)
+{% highlight python %}
+my_canvas = canvas()
 my_canvas.circle(100, 100, 50, fill=True, color='red')
-~~~
+{% endhighlight %}
 
 __Arguments:__
 
-- `y` -- The center Y coordinate of the circle.
-	- Type: int
 - `x` -- The center X coordinate of the circle.
+	- Type: int
+- `y` -- The center Y coordinate of the circle.
 	- Type: int
 - `r` -- The radius of the circle.
 	- Type: int
 
-__Keywords:__
+__Keyword dict:__
 
-- `color` -- A human-readable foreground color, such as 'red', an
-HTML-style color value, such as '#FF0000', or `None` to use the
-canvas default. This argument will not change the canvas default
-foreground as set by [canvas.set_fgcolor].
-	- Default: None
-	- Type: str, unicode, NoneType
-- `fill` -- Specifies whether the shape should be filled (True) or consist
-of an outline (False).
-	- Default: False
-	- Type: bool
-- `penwidth` -- A penwidth in pixels, or `None` to use the canvas default. This
-argument will not change the canvas default penwidth as set by
-[canvas.set_penwidth].
-	- Default: None
-	- Type: int
+- `**style_args`: Optional [style keywords] that specify the style of the current
+drawing operation. This does not affect subsequent drawing
+operations.
 
 </div>
 
@@ -189,31 +263,32 @@ argument will not change the canvas default penwidth as set by
 
 <div class="FunctionDoc YAMLDoc" id="canvas-clear" markdown="1">
 
-## [function __canvas\.clear__\(color=None\)](#function-__canvasclear__colornone) {#function-__canvasclear__colornone}
+## [function __canvas\.clear__\(color=None, \*\*style\_args\)](#function-__canvasclear__colornone-style_args) {#function-__canvasclear__colornone-style_args}
 
 Clears the canvas with the current background color. Note that it is generally faster to use a different canvas for each experimental display than to use a single canvas and repeatedly clear and redraw it.
 
 __Example:__
 
-~~~ .python
-from openexp.canvas import canvas
-my_canvas = canvas(exp)
+{% highlight python %}
+my_canvas = canvas()
 my_canvas.fixdot(color='green')
 my_canvas.show()
-self.sleep(1000)
+sleep(1000)
 my_canvas.clear()
 my_canvas.fixdot(color='red')
 my_canvas.show()
-~~~
+{% endhighlight %}
 
 __Keywords:__
 
-- `color` -- A human-readable background color, such as 'red', an
-HTML-style color value, such as '#FF0000', or `None` to use the
-canvas default. This argument will not change the canvas default
-background as set by [canvas.set_bgcolor].
+- `color` -- Deprecated. Specify `background_color` as part of `style_args` instead.
 	- Default: None
-	- Type: str, unicode, NoneType
+
+__Keyword dict:__
+
+- `**style_args`: Optional [style keywords] that specify the style of the current
+drawing operation. This does not affect subsequent drawing
+operations.
 
 </div>
 
@@ -233,15 +308,14 @@ use the `inline_script.copy_sketchpad` function.
 
 __Example:__
 
-~~~ .python
-from openexp.canvas import canvas
-my_canvas = canvas(exp)
+{% highlight python %}
+my_canvas = canvas()
 my_canvas.fixdot(x=100, color='green')
-my_copied_canvas = canvas(exp)
+my_copied_canvas = canvas()
 my_copied_canvas.copy(my_canvas)
 my_copied_canvas.fixdot(x=200, color="blue")
 my_copied_canvas.show()
-~~~
+{% endhighlight %}
 
 __Arguments:__
 
@@ -255,48 +329,33 @@ __Arguments:__
 
 <div class="FunctionDoc YAMLDoc" id="canvas-ellipse" markdown="1">
 
-## [function __canvas\.ellipse__\(x, y, w, h, color=None, penwidth=None, fill=False\)](#function-__canvasellipse__x-y-w-h-colornone-penwidthnone-fillfalse) {#function-__canvasellipse__x-y-w-h-colornone-penwidthnone-fillfalse}
+## [function __canvas\.ellipse__\(x, y, w, h, \*\*style\_args\)](#function-__canvasellipse__x-y-w-h-style_args) {#function-__canvasellipse__x-y-w-h-style_args}
 
 Draws an ellipse.
 
 __Example:__
 
-~~~ .python
-from openexp.canvas import canvas
-my_canvas = canvas(exp)
-w = self.get('width')-10
-h = self.get('height')-10
-my_canvas.ellipse(10, 10, w, h, fill=True)
-~~~
+{% highlight python %}
+my_canvas = canvas()
+my_canvas.ellipse(-10, -10, 20, 20, fill=True)
+{% endhighlight %}
 
 __Arguments:__
 
-- `y` -- The top Y coordinate.
-	- Type: int
 - `x` -- The left X coordinate.
+	- Type: int
+- `y` -- The top Y coordinate.
 	- Type: int
 - `w` -- The width.
 	- Type: int
 - `h` -- The height.
 	- Type: int
 
-__Keywords:__
+__Keyword dict:__
 
-- `color` -- A human-readable foreground color, such as 'red', an
-HTML-style color value, such as '#FF0000', or `None` to use the
-canvas default. This argument will not change the canvas default
-foreground as set by [canvas.set_fgcolor].
-	- Default: None
-	- Type: str, unicode, NoneType
-- `fill` -- Specifies whether the shape should be filled (True) or consist
-of an outline (False).
-	- Default: False
-	- Type: bool
-- `penwidth` -- A penwidth in pixels, or `None` to use the canvas default. This
-argument will not change the canvas default penwidth as set by
-[canvas.set_penwidth].
-	- Default: None
-	- Type: int
+- `**style_args`: Optional [style keywords] that specify the style of the current
+drawing operation. This does not affect subsequent drawing
+operations.
 
 </div>
 
@@ -305,9 +364,9 @@ argument will not change the canvas default penwidth as set by
 
 <div class="FunctionDoc YAMLDoc" id="canvas-fixdot" markdown="1">
 
-## [function __canvas\.fixdot__\(y=None, x=None, style=u'default', color=None\)](#function-__canvasfixdot__ynone-xnone-styleudefault-colornone) {#function-__canvasfixdot__ynone-xnone-styleudefault-colornone}
+## [function __canvas\.fixdot__\(y=None, x=None, style=u'default', \*\*style\_args\)](#function-__canvasfixdot__ynone-xnone-styleudefault-style_args) {#function-__canvasfixdot__ynone-xnone-styleudefault-style_args}
 
-Draws a fixation dot.
+Draws a fixation dot. The default style is medium-open.
 
 - 'large-filled' is a filled circle with a 16px radius.
 - 'medium-filled' is a filled circle with an 8px radius.
@@ -321,32 +380,31 @@ Draws a fixation dot.
 
 __Example:__
 
-~~~ .python
-from openexp.canvas import canvas
-my_canvas = canvas(exp)
+{% highlight python %}
+my_canvas = canvas()
 my_canvas.fixdot()
-~~~
+{% endhighlight %}
 
 __Keywords:__
 
-- `y` -- The Y coordinate of the dot center, or None to draw a vertically centered dot.
-	- Default: None
-	- Type: int, NoneType
 - `x` -- The X coordinate of the dot center, or None to draw a horizontally centered dot.
-	- Default: None
 	- Type: int, NoneType
+	- Default: None
+- `y` -- The Y coordinate of the dot center, or None to draw a vertically centered dot.
+	- Type: int, NoneType
+	- Default: None
 - `style` -- The fixation-dot style. One of: default, large-filled,
 medium-filled, small-filled, large-open, medium-open,
 small-open, large-cross, medium-cross, or small-cross.
 default equals medium-open.
-	- Default: u'default'
 	- Type: str, unicode
-- `color` -- A human-readable foreground color, such as 'red', an
-HTML-style color value, such as '#FF0000', or `None` to use the
-canvas default. This argument will not change the canvas default
-foreground as set by [canvas.set_fgcolor].
-	- Default: None
-	- Type: str, unicode, NoneType
+	- Default: u'default'
+
+__Keyword dict:__
+
+- `**style_args`: Optional [style keywords] that specify the style of the current
+drawing operation. This does not affect subsequent drawing
+operations.
 
 </div>
 
@@ -362,57 +420,67 @@ depends on the back-end.
 
 __Example:__
 
-~~~ .python
-from openexp.canvas import canvas
-my_canvas = canvas(exp)
+{% highlight python %}
+my_canvas = canvas()
 my_canvas.gabor(100, 100, 45, .05)
-~~~
+{% endhighlight %}
 
 __Arguments:__
 
-- `y` -- The center Y coordinate.
-	- Type: int
 - `x` -- The center X coordinate.
 	- Type: int
-- `freq` -- Frequency in cycles/px of the sinusoid.
-	- Type: float, int
+- `y` -- The center Y coordinate.
+	- Type: int
 - `orient` -- Orientation in degrees [0 .. 360].
+	- Type: float, int
+- `freq` -- Frequency in cycles/px of the sinusoid.
 	- Type: float, int
 
 __Keywords:__
 
+- `env` -- The envelope that determines the shape of the patch. Can be "gaussian", "linear", "circular", or "rectangular".
+	- Type: str, unicode
+	- Default: u'gaussian'
+- `size` -- A size in pixels.
+	- Type: float, int
+	- Default: 96
+- `stdev` -- Standard deviation in pixels of the gaussian. Only applicable to gaussian envelopes.
+	- Type: float, int
+	- Default: 12
+- `phase` -- Phase of the sinusoid [0.0 .. 1.0].
+	- Type: float, int
+	- Default: 0
+- `col1` -- A color for the peaks.
+	- Type: str, unicode
+	- Default: u'white'
+- `col2` -- A color for the troughs. Note: The psycho back-end
+ignores this parameter and always uses the inverse of
+`col1` for the throughs.
+	- Type: str, unicode
+	- Default: u'black'
 - `bgmode` -- Specifies whether the background is the average of col1 col2
 ('avg', corresponding to a typical Gabor patch), or equal to
 col2 ('col2'), useful for blending into the     background. Note:
 this parameter is ignored by the psycho backend, which uses
 increasing transparency for the background.
+	- Type: str, unicode
 	- Default: u'avg'
-	- Type: str, unicode
-- `env` -- The envelope that determines the shape of the patch. Can be "gaussian", "linear", "circular", or "rectangular".
-	- Default: u'gaussian'
-	- Type: str, unicode
-- `stdev` -- Standard deviation in pixels of the gaussian. Only applicable to gaussian envelopes.
-	- Default: 12
-	- Type: float, int
-- `phase` -- Phase of the sinusoid [0.0 .. 1.0].
-	- Default: 0
-	- Type: float, int
-- `size` -- A size in pixels.
-	- Default: 96
-	- Type: float, int
-- `col2` -- A color for the troughs. Note: The psycho back-end
-ignores this parameter and always uses the inverse of
-`col1` for the throughs.
-	- Default: u'black'
-	- Type: str, unicode
-- `col1` -- A color for the peaks.
-	- Default: u'white'
-	- Type: str, unicode
 
 </div>
 
 [canvas.gabor]: #canvas-gabor
 [gabor]: #canvas-gabor
+
+<div class="PropertyDoc YAMLDoc" id="canvas-height" markdown="1">
+
+## [property __canvas.height__](#property-__canvasheight__) {#property-__canvasheight__}
+
+The height of the canvas. This is a read-only property.
+
+</div>
+
+[canvas.height]: #canvas-height
+[height]: #canvas-height
 
 <div class="FunctionDoc YAMLDoc" id="canvas-image" markdown="1">
 
@@ -422,13 +490,12 @@ Draws an image from file. This function does not look in the file pool, but take
 
 __Example:__
 
-~~~ .python
-from openexp.canvas import canvas
-my_canvas = canvas(exp)
+{% highlight python %}
+my_canvas = canvas()
 # Determine the absolute path:
-path = exp.get_file(u'image_in_pool.png')
+path = exp.pool[u'image_in_pool.png']
 my_canvas.image(path)
-~~~
+{% endhighlight %}
 
 __Arguments:__
 
@@ -437,18 +504,18 @@ __Arguments:__
 
 __Keywords:__
 
-- `y` -- The Y coordinate, or `None` to draw a vertically centered image.
-	- Default: None
-	- Type: int, NoneType
-- `x` -- The X coordinate, or `None` to draw a horizontally centered image.
-	- Default: None
-	- Type: int, NoneType
-- `scale` -- The scaling factor of the image. `None` or 1 indicate the original size. 2.0 indicates a 200% zoom, etc.
-	- Default: None
-	- Type: float, int, NoneType
 - `center` -- A bool indicating whether coordinates indicate the center (True) or top-left (False).
-	- Default: True
 	- Type: bool
+	- Default: True
+- `x` -- The X coordinate, or `None` to draw a horizontally centered image.
+	- Type: int, NoneType
+	- Default: None
+- `y` -- The Y coordinate, or `None` to draw a vertically centered image.
+	- Type: int, NoneType
+	- Default: None
+- `scale` -- The scaling factor of the image. `None` or 1 indicate the original size. 2.0 indicates a 200% zoom, etc.
+	- Type: float, int, NoneType
+	- Default: None
 
 </div>
 
@@ -457,34 +524,26 @@ __Keywords:__
 
 <div class="FunctionDoc YAMLDoc" id="canvas-line" markdown="1">
 
-## [function __canvas\.line__\(sx, sy, ex, ey, color=None, penwidth=None\)](#function-__canvasline__sx-sy-ex-ey-colornone-penwidthnone) {#function-__canvasline__sx-sy-ex-ey-colornone-penwidthnone}
+## [function __canvas\.line__\(sx, sy, ex, ey, \*\*style\_args\)](#function-__canvasline__sx-sy-ex-ey-style_args) {#function-__canvasline__sx-sy-ex-ey-style_args}
 
 Draws a line.
 
 __Arguments:__
 
-- `sy` -- The top Y coordinate.
-	- Type: int
 - `sx` -- The left X coordinate.
 	- Type: int
-- `ey` -- The bottom Y coordinate.
+- `sy` -- The top Y coordinate.
 	- Type: int
 - `ex` -- The right X coordinate.
 	- Type: int
-
-__Keywords:__
-
-- `color` -- A human-readable foreground color, such as 'red', an
-HTML-style color value, such as '#FF0000', or `None` to use the
-canvas default. This argument will not change the canvas default
-foreground as set by [canvas.set_fgcolor].
-	- Default: None
-	- Type: str, unicode, NoneType
-- `penwidth` -- A penwidth in pixels, or `None` to use the canvas default. This
-argument will not change the canvas default penwidth as set by
-[canvas.set_penwidth].
-	- Default: None
+- `ey` -- The bottom Y coordinate.
 	- Type: int
+
+__Keyword dict:__
+
+- `**style_args`: Optional [style keywords] that specify the style of the current
+drawing operation. This does not affect subsequent drawing
+operations.
 
 </div>
 
@@ -499,44 +558,43 @@ Draws a patch of noise, with an envelope. The exact rendering of the noise patch
 
 __Example:__
 
-~~~ .python
-from openexp.canvas import canvas
-my_canvas = canvas(exp)
+{% highlight python %}
+my_canvas = canvas()
 my_canvas.noise_patch(100, 100, env='circular')
-~~~
+{% endhighlight %}
 
 __Arguments:__
 
-- `y` -- The center Y coordinate.
-	- Type: int
 - `x` -- The center X coordinate.
+	- Type: int
+- `y` -- The center Y coordinate.
 	- Type: int
 
 __Keywords:__
 
+- `env` -- The envelope that determines the shape of the patch. Can be "gaussian", "linear", "circular", or "rectangular".
+	- Type: str, unicode
+	- Default: u'gaussian'
+- `size` -- A size in pixels.
+	- Type: float, int
+	- Default: 96
+- `stdev` -- Standard deviation in pixels of the gaussian. Only applicable to gaussian envelopes.
+	- Type: float, int
+	- Default: 12
+- `col1` -- The first color.
+	- Type: str, unicode
+	- Default: u'white'
+- `col2` -- The second color. Note: The psycho back-end ignores this
+parameter and always uses the inverse of `col1`.
+	- Type: str, unicode
+	- Default: u'black'
 - `bgmode` -- Specifies whether the background is the average of col1 col2
 ('avg', corresponding to a typical Gabor patch), or equal to
 col2 ('col2'), useful for blending into the     background. Note:
 this parameter is ignored by the psycho backend, which uses
 increasing transparency for the background.
+	- Type: str, unicode
 	- Default: u'avg'
-	- Type: str, unicode
-- `env` -- The envelope that determines the shape of the patch. Can be "gaussian", "linear", "circular", or "rectangular".
-	- Default: u'gaussian'
-	- Type: str, unicode
-- `stdev` -- Standard deviation in pixels of the gaussian. Only applicable to gaussian envelopes.
-	- Default: 12
-	- Type: float, int
-- `size` -- A size in pixels.
-	- Default: 96
-	- Type: float, int
-- `col2` -- The second color. Note: The psycho back-end ignores this
-parameter and always uses the inverse of `col1`.
-	- Default: u'black'
-	- Type: str, unicode
-- `col1` -- The first color.
-	- Default: u'white'
-	- Type: str, unicode
 
 </div>
 
@@ -545,43 +603,30 @@ parameter and always uses the inverse of `col1`.
 
 <div class="FunctionDoc YAMLDoc" id="canvas-polygon" markdown="1">
 
-## [function __canvas\.polygon__\(vertices, color=None, penwidth=None, fill=False\)](#function-__canvaspolygon__vertices-colornone-penwidthnone-fillfalse) {#function-__canvaspolygon__vertices-colornone-penwidthnone-fillfalse}
+## [function __canvas\.polygon__\(vertices, \*\*style\_args\)](#function-__canvaspolygon__vertices-style_args) {#function-__canvaspolygon__vertices-style_args}
 
 Draws a polygon that defined by a list of vertices. I.e. a shape of points connected by lines.
 
 __Example:__
 
-~~~ .python
-from openexp.canvas import canvas
-my_canvas = canvas(exp)
+{% highlight python %}
+my_canvas = canvas()
 n1 = 0,0
 n2 = 100, 100
 n3 = 0, 100
 my_canvas.polygon([n1, n2, n3])
-~~~
+{% endhighlight %}
 
 __Arguments:__
 
 - `vertices` -- A list of tuples, where each tuple corresponds to a vertex. For example, [(100,100), (200,100), (100,200)] will draw a triangle.
 	- Type: list
 
-__Keywords:__
+__Keyword dict:__
 
-- `color` -- A human-readable foreground color, such as 'red', an
-HTML-style color value, such as '#FF0000', or `None` to use the
-canvas default. This argument will not change the canvas default
-foreground as set by [canvas.set_fgcolor].
-	- Default: None
-	- Type: str, unicode, NoneType
-- `fill` -- Specifies whether the shape should be filled (True) or consist
-of an outline (False).
-	- Default: False
-	- Type: bool
-- `penwidth` -- A penwidth in pixels, or `None` to use the canvas default. This
-argument will not change the canvas default penwidth as set by
-[canvas.set_penwidth].
-	- Default: None
-	- Type: int
+- `**style_args`: Optional [style keywords] that specify the style of the current
+drawing operation. This does not affect subsequent drawing
+operations.
 
 </div>
 
@@ -601,199 +646,38 @@ Finishes pending canvas operations (if any), so that a subsequent call to [canva
 
 <div class="FunctionDoc YAMLDoc" id="canvas-rect" markdown="1">
 
-## [function __canvas\.rect__\(x, y, w, h, color=None, penwidth=None, fill=False\)](#function-__canvasrect__x-y-w-h-colornone-penwidthnone-fillfalse) {#function-__canvasrect__x-y-w-h-colornone-penwidthnone-fillfalse}
+## [function __canvas\.rect__\(x, y, w, h, \*\*style\_args\)](#function-__canvasrect__x-y-w-h-style_args) {#function-__canvasrect__x-y-w-h-style_args}
 
 Draws a rectangle.
 
 __Example:__
 
-~~~ .python
-from openexp.canvas import canvas
-my_canvas = canvas(exp)
-w = self.get('width')-10
-h = self.get('height')-10
-my_canvas.rect(10, 10, w, h, fill=True)
-~~~
+{% highlight python %}
+my_canvas = canvas()
+my_canvas.rect(-10, -10, 20, 20, fill=True)
+{% endhighlight %}
 
 __Arguments:__
 
-- `y` -- The top Y coordinate.
-	- Type: int
 - `x` -- The left X coordinate.
+	- Type: int
+- `y` -- The top Y coordinate.
 	- Type: int
 - `w` -- The width.
 	- Type: int
 - `h` -- The height.
 	- Type: int
 
-__Keywords:__
+__Keyword dict:__
 
-- `color` -- A human-readable foreground color, such as 'red', an
-HTML-style color value, such as '#FF0000', or `None` to use the
-canvas default. This argument will not change the canvas default
-foreground as set by [canvas.set_fgcolor].
-	- Default: None
-	- Type: str, unicode, NoneType
-- `fill` -- Specifies whether the shape should be filled (True) or consist
-of an outline (False).
-	- Default: False
-	- Type: bool
-- `penwidth` -- A penwidth in pixels, or `None` to use the canvas default. This
-argument will not change the canvas default penwidth as set by
-[canvas.set_penwidth].
-	- Default: None
-	- Type: int
+- `**style_args`: Optional [style keywords] that specify the style of the current
+drawing operation. This does not affect subsequent drawing
+operations.
 
 </div>
 
 [canvas.rect]: #canvas-rect
 [rect]: #canvas-rect
-
-<div class="FunctionDoc YAMLDoc" id="canvas-set_bgcolor" markdown="1">
-
-## [function __canvas\.set\_bgcolor__\(color\)](#function-__canvasset_bgcolor__color) {#function-__canvasset_bgcolor__color}
-
-Sets the default background color for subsequent drawing operations, notably [canvas.clear].
-
-__Example:__
-
-~~~ .python
-from openexp.canvas import canvas
-my_canvas = canvas(exp)
-my_canvas.set_bgcolor('gray')
-my_canvas.clear()
-~~~
-
-__Arguments:__
-
-- `color` -- A human-readable background color, such as 'red', an
-HTML-style color value, such as '#FF0000', or `None` to use the
-canvas default. This argument will not change the canvas default
-background as set by [canvas.set_bgcolor].
-	- Type: str, unicode
-
-</div>
-
-[canvas.set_bgcolor]: #canvas-set_bgcolor
-[set_bgcolor]: #canvas-set_bgcolor
-
-<div class="FunctionDoc YAMLDoc" id="canvas-set_bidi" markdown="1">
-
-## [function __canvas\.set\_bidi__\(bidi\)](#function-__canvasset_bidi__bidi) {#function-__canvasset_bidi__bidi}
-
-Enables or disables bi-directional text support.
-
-__Example:__
-
-~~~ .python
-from openexp.canvas import canvas
-my_canvas = canvas(exp)
-my_canvas.set_bidi(True)
-my_canvas.text(u'חלק מטקסט')
-~~~
-
-__Arguments:__
-
-- `bidi` -- True to enable bi-directional text support, False to disable.
-	- Type: bool
-
-</div>
-
-[canvas.set_bidi]: #canvas-set_bidi
-[set_bidi]: #canvas-set_bidi
-
-<div class="FunctionDoc YAMLDoc" id="canvas-set_fgcolor" markdown="1">
-
-## [function __canvas\.set\_fgcolor__\(color\)](#function-__canvasset_fgcolor__color) {#function-__canvasset_fgcolor__color}
-
-Sets the default foreground color for subsequent drawing operations.
-
-__Example:__
-
-~~~ .python
-from openexp.canvas import canvas
-my_canvas = canvas(exp)
-my_canvas.set_fgcolor('green')
-my_canvas.text('Green text', y=200)
-my_canvas.set_fgcolor('red')
-my_canvas.text('Red text', y=400)
-~~~
-
-__Arguments:__
-
-- `color` -- A human-readable foreground color, such as 'red', an
-HTML-style color value, such as '#FF0000', or `None` to use the
-canvas default. This argument will not change the canvas default
-foreground as set by [canvas.set_fgcolor].
-	- Type: str, unicode
-
-</div>
-
-[canvas.set_fgcolor]: #canvas-set_fgcolor
-[set_fgcolor]: #canvas-set_fgcolor
-
-<div class="FunctionDoc YAMLDoc" id="canvas-set_font" markdown="1">
-
-## [function __canvas\.set\_font__\(style=None, underline=None, bold=None, italic=None, size=None\)](#function-__canvasset_font__stylenone-underlinenone-boldnone-italicnone-sizenone) {#function-__canvasset_font__stylenone-underlinenone-boldnone-italicnone-sizenone}
-
-Sets the default font for subsequent drawing operations, notably [canvas.text].
-
-__Example:__
-
-~~~ .python
-from openexp.canvas import canvas
-my_canvas = canvas(exp)
-my_canvas.set_font(style='serif', italic=True)
-my_canvas.text('Text in italic serif')
-~~~
-
-__Keywords:__
-
-- `style` -- A font family. This can be one of the default fonts (e.g., 'mono'), a system font (e.g., 'arial'), the name of a `.ttf` font file in the file pool (without the `.ttf` extension), or `None` to use the experiment default.
-	- Default: None
-	- Type: str, unicode
-- `size` -- A font size in pixels, or `None` to use the experiment default.
-	- Default: None
-	- Type: int
-- `underline` -- A bool indicating whether the font should be underlined, or `None` to use the experiment default.
-	- Default: None
-	- Type: bool, NoneType
-- `italic` -- A bool indicating whether the font should be italic, or `None` to use the experiment default.
-	- Default: None
-	- Type: bool, NoneType
-- `bold` -- A bool indicating whether the font should be bold, or `None` to use the experiment default.
-	- Default: None
-	- Type: bool, NoneType
-
-</div>
-
-[canvas.set_font]: #canvas-set_font
-[set_font]: #canvas-set_font
-
-<div class="FunctionDoc YAMLDoc" id="canvas-set_penwidth" markdown="1">
-
-## [function __canvas\.set\_penwidth__\(penwidth\)](#function-__canvasset_penwidth__penwidth) {#function-__canvasset_penwidth__penwidth}
-
-Sets the default penwidth for subsequent drawing operations.
-
-__Example:__
-
-~~~ .python
-from openexp.canvas import canvas
-my_canvas = canvas(exp)
-my_canvas.set_penwidth(10)
-my_canvas.line(100, 100, 200, 200)
-~~~
-
-__Arguments:__
-
-- `penwidth` -- A penwidth in pixels.
-	- Type: int
-
-</div>
-
-[canvas.set_penwidth]: #canvas-set_penwidth
-[set_penwidth]: #canvas-set_penwidth
 
 <div class="FunctionDoc YAMLDoc" id="canvas-show" markdown="1">
 
@@ -803,13 +687,12 @@ Shows, or 'flips', the canvas on the screen.
 
 __Example:__
 
-~~~ .python
-from openexp.canvas import canvas
-my_canvas = canvas(exp)
+{% highlight python %}
+my_canvas = canvas()
 my_canvas.fixdot()
 t = my_canvas.show()
 exp.set('time_fixdot', t)
-~~~
+{% endhighlight %}
 
 __Returns:__
 
@@ -822,19 +705,29 @@ A timestamp of the time at which the canvas actually appeared on the screen, or 
 [canvas.show]: #canvas-show
 [show]: #canvas-show
 
+<div class="PropertyDoc YAMLDoc" id="canvas-size" markdown="1">
+
+## [property __canvas.size__](#property-__canvassize__) {#property-__canvassize__}
+
+The size of the canvas as a `(width, height)` tuple. This is a read-only property.
+
+</div>
+
+[canvas.size]: #canvas-size
+[size]: #canvas-size
+
 <div class="FunctionDoc YAMLDoc" id="canvas-text" markdown="1">
 
-## [function __canvas\.text__\(text, center=True, color=None, max\_width=None, html=True, bidi=None, y=None, x=None\)](#function-__canvastext__text-centertrue-colornone-max_widthnone-htmltrue-bidinone-ynone-xnone) {#function-__canvastext__text-centertrue-colornone-max_widthnone-htmltrue-bidinone-ynone-xnone}
+## [function __canvas\.text__\(text, y=None, x=None, center=True, max\_width=None, \*\*style\_args\)](#function-__canvastext__text-ynone-xnone-centertrue-max_widthnone-style_args) {#function-__canvastext__text-ynone-xnone-centertrue-max_widthnone-style_args}
 
 Draws text.
 
 __Example:__
 
-~~~ .python
-from openexp.canvas import canvas
-my_canvas = canvas(exp)
+{% highlight python %}
+my_canvas = canvas()
 my_canvas.text('Some text with <b>boldface</b> and <i>italics</i>')
-~~~
+{% endhighlight %}
 
 __Arguments:__
 
@@ -843,34 +736,25 @@ __Arguments:__
 
 __Keywords:__
 
-- `y` -- The Y coordinate, or None to draw vertically centered text.
-	- Default: None
-	- Type: int, NoneType
-- `html` -- A bool indicating whether a subset of HTML tags should be
-interpreted. For more information, see </usage/text/>.
-	- Default: True
-	- Type: bool
 - `center` -- A bool indicating whether the coordinates reflect the center (True) or top-left (False) of the text.
-	- Default: True
 	- Type: bool
-- `bidi` -- A bool indicating bi-directional text support should be enabled,
-or `None` to use the experiment default. This does not affect
-the canvas default bidi setting as set by [canvas.set_bidi].
-	- Default: None
-	- Type: bool, NoneType
-- `color` -- A human-readable foreground color, such as 'red', an
-HTML-style color value, such as '#FF0000', or `None` to use the
-canvas default. This argument will not change the canvas default
-foreground as set by [canvas.set_fgcolor].
-	- Default: None
-	- Type: str, unicode, NoneType
+	- Default: True
 - `x` -- The X coordinate, or None to draw horizontally centered text.
-	- Default: None
 	- Type: int, NoneType
+	- Default: None
+- `y` -- The Y coordinate, or None to draw vertically centered text.
+	- Type: int, NoneType
+	- Default: None
 - `max_width` -- The maximum width of the text in pixels, before wrapping to a
 new line, or `None` to wrap at screen edge.
-	- Default: None
 	- Type: int, NoneType
+	- Default: None
+
+__Keyword dict:__
+
+- `**style_args`: Optional [style keywords] that specify the style of the current
+drawing operation. This does not affect subsequent drawing
+operations.
 
 </div>
 
@@ -879,17 +763,16 @@ new line, or `None` to wrap at screen edge.
 
 <div class="FunctionDoc YAMLDoc" id="canvas-text_size" markdown="1">
 
-## [function __canvas\.text\_size__\(text, html=True, bidi=None, max\_width=None\)](#function-__canvastext_size__text-htmltrue-bidinone-max_widthnone) {#function-__canvastext_size__text-htmltrue-bidinone-max_widthnone}
+## [function __canvas\.text\_size__\(text, max\_width=None, \*\*style\_args\)](#function-__canvastext_size__text-max_widthnone-style_args) {#function-__canvastext_size__text-max_widthnone-style_args}
 
 Determines the size of a text string in pixels.
 
 __Example:__
 
-~~~ .python
-from openexp.canvas import canvas
-my_canvas = canvas(exp)
+{% highlight python %}
+my_canvas = canvas()
 w, h = my_canvas.text_size('Some text')
-~~~
+{% endhighlight %}
 
 __Arguments:__
 
@@ -898,19 +781,16 @@ __Arguments:__
 
 __Keywords:__
 
-- `html` -- A bool indicating whether a subset of HTML tags should be
-interpreted. For more information, see </usage/text/>.
-	- Default: True
-	- Type: bool
 - `max_width` -- The maximum width of the text in pixels, before wrapping to a
 new line, or `None` to wrap at screen edge.
-	- Default: None
 	- Type: int, NoneType
-- `bidi` -- A bool indicating bi-directional text support should be enabled,
-or `None` to use the experiment default. This does not affect
-the canvas default bidi setting as set by [canvas.set_bidi].
 	- Default: None
-	- Type: bool, NoneType
+
+__Keyword dict:__
+
+- `**style_args`: Optional [style keywords] that specify the style of the current
+drawing operation. This does not affect subsequent drawing
+operations.
 
 __Returns:__
 
@@ -923,92 +803,43 @@ A (width, height) tuple containing the dimensions of the text string.
 [canvas.text_size]: #canvas-text_size
 [text_size]: #canvas-text_size
 
-<div class="FunctionDoc YAMLDoc" id="canvas-xcenter" markdown="1">
+<div class="PropertyDoc YAMLDoc" id="canvas-width" markdown="1">
 
-## [function __canvas\.xcenter__\(\)](#function-__canvasxcenter__) {#function-__canvasxcenter__}
+## [property __canvas.width__](#property-__canvaswidth__) {#property-__canvaswidth__}
 
-Returns the center X coordinate of the `canvas` in pixels.
-
-__Example:__
-
-~~~ .python
-# Draw a diagonal line through the center of the canvas
-from openexp.canvas import canvas
-my_canvas = canvas(exp)
-x1 = my_canvas.xcenter() - 100
-y1 = my_canvas.ycenter() - 100
-x2 = my_canvas.xcenter() + 100
-y2 = my_canvas.ycenter() + 100
-my_canvas.line(x1, y1, x2, y2)
-~~~
-
-__Returns:__
-
-The center X coordinate.
-
-- Type: int
+The width of the canvas. This is a read-only property.
 
 </div>
 
-[canvas.xcenter]: #canvas-xcenter
-[xcenter]: #canvas-xcenter
-
-<div class="FunctionDoc YAMLDoc" id="canvas-ycenter" markdown="1">
-
-## [function __canvas\.ycenter__\(\)](#function-__canvasycenter__) {#function-__canvasycenter__}
-
-Returns the center Y coordinate of the `canvas` in pixels.
-
-__Example:__
-
-~~~ .python
-# Draw a diagonal line through the center of the canvas
-from openexp.canvas import canvas
-my_canvas = canvas(exp)
-x1 = my_canvas.xcenter() - 100
-y1 = my_canvas.ycenter() - 100
-x2 = my_canvas.xcenter() + 100
-y2 = my_canvas.ycenter() + 100
-my_canvas.line(x1, y1, x2, y2)
-~~~
-
-__Returns:__
-
-The center Y coordinate.
-
-- Type: int
-
-</div>
-
-[canvas.ycenter]: #canvas-ycenter
-[ycenter]: #canvas-ycenter
+[canvas.width]: #canvas-width
+[width]: #canvas-width
 
 </div>
 
 [canvas]: #canvas
 
 
-[function __canvas\.\_\_init\_\___\(experiment, bgcolor=None, fgcolor=None, auto\_prepare=True\)]: #function-__canvas__init____experiment-bgcolornone-fgcolornone-auto_preparetrue
-[function __canvas\.arrow__\(sx, sy, ex, ey, color=None, arrow\_size=5, penwidth=None\)]: #function-__canvasarrow__sx-sy-ex-ey-colornone-arrow_size5-penwidthnone
-[function __canvas\.circle__\(x, y, r, color=None, penwidth=None, fill=False\)]: #function-__canvascircle__x-y-r-colornone-penwidthnone-fillfalse
-[function __canvas\.clear__\(color=None\)]: #function-__canvasclear__colornone
+[Things to know]: #things-to-know
+[Coordinates]: #coordinates
+[Style keywords]: #style-keywords
+[Colors]: #colors
+[function __canvas\.\_\_init\_\___\(experiment, auto\_prepare=True, \*\*style\_args\)]: #function-__canvas__init____experiment-auto_preparetrue-style_args
+[function __canvas\.arrow__\(sx, sy, ex, ey, arrow\_size=5, \*\*style\_args\)]: #function-__canvasarrow__sx-sy-ex-ey-arrow_size5-style_args
+[function __canvas\.circle__\(x, y, r, \*\*style\_args\)]: #function-__canvascircle__x-y-r-style_args
+[function __canvas\.clear__\(color=None, \*\*style\_args\)]: #function-__canvasclear__colornone-style_args
 [function __canvas\.copy__\(canvas\)]: #function-__canvascopy__canvas
-[function __canvas\.ellipse__\(x, y, w, h, color=None, penwidth=None, fill=False\)]: #function-__canvasellipse__x-y-w-h-colornone-penwidthnone-fillfalse
-[function __canvas\.fixdot__\(y=None, x=None, style=u'default', color=None\)]: #function-__canvasfixdot__ynone-xnone-styleudefault-colornone
+[function __canvas\.ellipse__\(x, y, w, h, \*\*style\_args\)]: #function-__canvasellipse__x-y-w-h-style_args
+[function __canvas\.fixdot__\(y=None, x=None, style=u'default', \*\*style\_args\)]: #function-__canvasfixdot__ynone-xnone-styleudefault-style_args
 [function __canvas\.gabor__\(x, y, orient, freq, bgmode=u'avg', col2=u'black', col1=u'white', env=u'gaussian', stdev=12, phase=0, size=96\)]: #function-__canvasgabor__x-y-orient-freq-bgmodeuavg-col2ublack-col1uwhite-envugaussian-stdev12-phase0-size96
+[property __canvas.height__]: #property-__canvasheight__
 [function __canvas\.image__\(fname, y=None, x=None, scale=None, center=True\)]: #function-__canvasimage__fname-ynone-xnone-scalenone-centertrue
-[function __canvas\.line__\(sx, sy, ex, ey, color=None, penwidth=None\)]: #function-__canvasline__sx-sy-ex-ey-colornone-penwidthnone
+[function __canvas\.line__\(sx, sy, ex, ey, \*\*style\_args\)]: #function-__canvasline__sx-sy-ex-ey-style_args
 [function __canvas\.noise\_patch__\(x, y, bgmode=u'avg', col2=u'black', col1=u'white', env=u'gaussian', stdev=12, size=96\)]: #function-__canvasnoise_patch__x-y-bgmodeuavg-col2ublack-col1uwhite-envugaussian-stdev12-size96
-[function __canvas\.polygon__\(vertices, color=None, penwidth=None, fill=False\)]: #function-__canvaspolygon__vertices-colornone-penwidthnone-fillfalse
+[function __canvas\.polygon__\(vertices, \*\*style\_args\)]: #function-__canvaspolygon__vertices-style_args
 [function __canvas\.prepare__\(\)]: #function-__canvasprepare__
-[function __canvas\.rect__\(x, y, w, h, color=None, penwidth=None, fill=False\)]: #function-__canvasrect__x-y-w-h-colornone-penwidthnone-fillfalse
-[function __canvas\.set\_bgcolor__\(color\)]: #function-__canvasset_bgcolor__color
-[function __canvas\.set\_bidi__\(bidi\)]: #function-__canvasset_bidi__bidi
-[function __canvas\.set\_fgcolor__\(color\)]: #function-__canvasset_fgcolor__color
-[function __canvas\.set\_font__\(style=None, underline=None, bold=None, italic=None, size=None\)]: #function-__canvasset_font__stylenone-underlinenone-boldnone-italicnone-sizenone
-[function __canvas\.set\_penwidth__\(penwidth\)]: #function-__canvasset_penwidth__penwidth
+[function __canvas\.rect__\(x, y, w, h, \*\*style\_args\)]: #function-__canvasrect__x-y-w-h-style_args
 [function __canvas\.show__\(\)]: #function-__canvasshow__
-[function __canvas\.text__\(text, center=True, color=None, max\_width=None, html=True, bidi=None, y=None, x=None\)]: #function-__canvastext__text-centertrue-colornone-max_widthnone-htmltrue-bidinone-ynone-xnone
-[function __canvas\.text\_size__\(text, html=True, bidi=None, max\_width=None\)]: #function-__canvastext_size__text-htmltrue-bidinone-max_widthnone
-[function __canvas\.xcenter__\(\)]: #function-__canvasxcenter__
-[function __canvas\.ycenter__\(\)]: #function-__canvasycenter__
+[property __canvas.size__]: #property-__canvassize__
+[function __canvas\.text__\(text, y=None, x=None, center=True, max\_width=None, \*\*style\_args\)]: #function-__canvastext__text-ynone-xnone-centertrue-max_widthnone-style_args
+[function __canvas\.text\_size__\(text, max\_width=None, \*\*style\_args\)]: #function-__canvastext_size__text-max_widthnone-style_args
+[property __canvas.width__]: #property-__canvaswidth__

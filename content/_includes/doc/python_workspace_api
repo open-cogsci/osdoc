@@ -4,9 +4,12 @@
 
 <div class="FunctionDoc YAMLDoc" id="canvas" markdown="1">
 
-## function __canvas__\(\*arglist, \*\*kwdict\)
+## function __canvas__\(auto\_prepare=True, \*\*style\_args\)
 
-Creates a new `canvas` object. For a list of arguments and keywords, see the `canvas` documention.
+Creates a new `canvas` object. For a list of arguments and keywords,
+see:
+
+- [/python/canvas/](/python/canvas/)
 
 __Example:__
 
@@ -14,13 +17,14 @@ __Example:__
 my_canvas = canvas()
 {% endhighlight %}
 
-__Argument list:__
+__Keywords:__
 
-- `*arglist`: No description.
+- `auto_prepare` -- No description
+	- Default: True
 
 __Keyword dict:__
 
-- `**kwdict`: No description.
+- `**style_args`: No description.
 
 __Returns:__
 
@@ -31,6 +35,27 @@ A `canvas` object.
 </div>
 
 [canvas]: #canvas
+
+<div class="FunctionDoc YAMLDoc" id="copy_sketchpad" markdown="1">
+
+## function __copy\_sketchpad__\(name\)
+
+Returns a copy of a `sketchpad`'s canvas.
+
+__Arguments:__
+
+- `name` -- The name of the `sketchpad`.
+	- Type: str, unicode
+
+__Returns:__
+
+A copy of the `sketchpad`'s canvas.
+
+- Type: canvas
+
+</div>
+
+[copy_sketchpad]: #copy_sketchpad
 
 <div class="FunctionDoc YAMLDoc" id="flush_log" markdown="1">
 
@@ -51,9 +76,12 @@ flush_log()
 
 <div class="FunctionDoc YAMLDoc" id="keyboard" markdown="1">
 
-## function __keyboard__\(\*arglist, \*\*kwdict\)
+## function __keyboard__\(\*\*resp\_args\)
 
-Creates a new `keyboard` object. For a list of arguments and keywords, see the `keyboard` documention.
+Creates a new `keyboard` object. For a list of arguments and keywords,
+see:
+
+- [/python/keyboard/](/python/keyboard/)
 
 __Example:__
 
@@ -61,13 +89,9 @@ __Example:__
 my_keyboard = keyboard()
 {% endhighlight %}
 
-__Argument list:__
-
-- `*arglist`: No description.
-
 __Keyword dict:__
 
-- `**kwdict`: No description.
+- `**resp_args`: No description.
 
 __Returns:__
 
@@ -101,9 +125,12 @@ __Arguments:__
 
 <div class="FunctionDoc YAMLDoc" id="mouse" markdown="1">
 
-## function __mouse__\(\*arglist, \*\*kwdict\)
+## function __mouse__\(\*\*resp\_args\)
 
-Creates a new `mouse` object. For a list of arguments and keywords, see the `mouse` documention.
+Creates a new `mouse` object. For a list of arguments and keywords,
+see:
+
+- [/python/mouse/](/python/mouse/)
 
 __Example:__
 
@@ -111,13 +138,9 @@ __Example:__
 my_mouse = mouse()
 {% endhighlight %}
 
-__Argument list:__
-
-- `*arglist`: No description.
-
 __Keyword dict:__
 
-- `**kwdict`: No description.
+- `**resp_args`: No description.
 
 __Returns:__
 
@@ -131,9 +154,12 @@ A `mouse` object.
 
 <div class="FunctionDoc YAMLDoc" id="sampler" markdown="1">
 
-## function __sampler__\(\*arglist, \*\*kwdict\)
+## function __sampler__\(src, \*\*playback\_args\)
 
-Creates a new `sampler` object. For a list of arguments and keywords, see the `sampler` documention.
+Creates a new `sampler` object. For a list of arguments and keywords,
+see:
+
+- [/python/sampler/](/python/sampler/)
 
 __Example:__
 
@@ -141,13 +167,13 @@ __Example:__
 my_sampler = sampler()
 {% endhighlight %}
 
-__Argument list:__
+__Arguments:__
 
-- `*arglist`: No description.
+- `src` -- No description
 
 __Keyword dict:__
 
-- `**kwdict`: No description.
+- `**playback_args`: No description.
 
 __Returns:__
 
@@ -161,7 +187,7 @@ A `sampler` object.
 
 <div class="FunctionDoc YAMLDoc" id="set_response" markdown="1">
 
-## function __set\_response__\(response=u'None', response\_time=u'None', correct=u'None'\)
+## function __set\_response__\(response=None, response\_time=None, correct=None\)
 
 Processes a response in such a way that feedback variables are updated as well.
 
@@ -240,29 +266,39 @@ __Arguments:__
 
 <div class="FunctionDoc YAMLDoc" id="synth" markdown="1">
 
-## function __synth__\(\*arglist, \*\*kwdict\)
+## function __synth__\(length=100, osc=u'sine', attack=0, freq=440, decay=5\)
 
-Creates a new `synth` object. For a list of arguments and keywords, see the `synth` documention.
+Synthesizes a sound and returns it as a `sampler` object.
 
 __Example:__
 
 {% highlight python %}
-my_synth = synth()
+my_sampler = synth(freq=u'b2', length=500)
 {% endhighlight %}
 
-__Argument list:__
+__Keywords:__
 
-- `*arglist`: No description.
-
-__Keyword dict:__
-
-- `**kwdict`: No description.
+- `osc` -- Oscillator, can be "sine", "saw", "square" or "white_noise".
+	- Type: str, unicode
+	- Default: 'sine'
+- `freq` -- Frequency, either an integer value (value in hertz) or a string ("A1", "eb2", etc.).
+	- Type: str, unicode, int, float
+	- Default: 440
+- `length` -- The length of the sound in milliseconds.
+	- Type: int, float
+	- Default: 100
+- `attack` -- The attack (fade-in) time in milliseconds.
+	- Type: int, float
+	- Default: 0
+- `decay` -- The decay (fade-out) time in milliseconds.
+	- Type: int, float
+	- Default: 5
 
 __Returns:__
 
-A `synth` object.
+A `sampler` object.
 
-- Type: synth
+- Type: sampler
 
 </div>
 

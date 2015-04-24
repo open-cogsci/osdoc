@@ -22,8 +22,6 @@ import yamldoc
 from academicmarkdown import build
 import sys
 sys.path.insert(0, '/home/sebastiaan/git/opensesame')
-from libopensesame.experiment import experiment
-from libopensesame.inline_script import inline_script
 from libopensesame import plugins
 
 def createDoc(cls, target, **kwdict):
@@ -71,30 +69,35 @@ def generateDocPages():
 		customName=u'pool')
 	createDoc(item_store, u'content/_includes/doc/item_store',
 		customName=u'items')
-
-	return
-
-	cls = plugins.load_cls(u'../PyGaze/pygaze/_eyetracker',
-		u'BaseEyeTracker', u'baseeyetracker')
-	createDoc(cls, u'content/_includes/doc/pygaze')
-
-	cls = plugins.load_cls(u'../opensesame/plugins/joystick/_libjoystick',
-		u'basejoystick', u'basejoystick')
-	createDoc(cls, u'content/_includes/doc/libjoystick')
-	cls = plugins.load_cls(u'../opensesame/plugins/srbox', u'libsrbox',
-		u'libsrbox')
-	createDoc(cls, u'content/_includes/doc/libsrbox')
-	cls = plugins.load_cls(u'../boks/opensesame/boks',
-		u'libboks', u'libboks')
-	createDoc(cls, u'content/_includes/doc/libboks')
-	for backend in ['canvas', 'keyboard', 'mouse', 'sampler', 'synth']:
+	from libopensesame.experiment import experiment
+	exp = experiment('Dummy', '')
+	for backend in ['sampler', 'canvas', 'keyboard', 'mouse']:
 		cls = plugins.load_cls(u'../opensesame/openexp/_%s' % backend, backend,
 			backend)
+		try:
+			if backend == 'sampler':
+				cls(exp, None)
+		except:
+			pass
 		createDoc(cls, u'content/_includes/doc/%s' % backend)
-	for widget in ['button', 'checkbox', 'image', 'image_button', 'label',
-		'rating_scale', 'text_input', 'form']:
-		cls = plugins.load_cls(u'../opensesame/libopensesame/widgets',
-			widget, '_%s' % widget)
-		createDoc(cls, u'content/_includes/doc/%s' % widget)
-	createDoc(experiment, u'content/_includes/doc/experiment')
-	createDoc(inline_script, u'content/_includes/doc/inline_script')
+	#
+	# cls = plugins.load_cls(u'../PyGaze/pygaze/_eyetracker',
+	# 	u'BaseEyeTracker', u'baseeyetracker')
+	# createDoc(cls, u'content/_includes/doc/pygaze')
+	#
+	# cls = plugins.load_cls(u'../opensesame/plugins/joystick/_libjoystick',
+	# 	u'basejoystick', u'basejoystick')
+	# createDoc(cls, u'content/_includes/doc/libjoystick')
+	# cls = plugins.load_cls(u'../opensesame/plugins/srbox', u'libsrbox',
+	# 	u'libsrbox')
+	# createDoc(cls, u'content/_includes/doc/libsrbox')
+	# cls = plugins.load_cls(u'../boks/opensesame/boks',
+	# 	u'libboks', u'libboks')
+	# createDoc(cls, u'content/_includes/doc/libboks')
+	# for widget in ['button', 'checkbox', 'image', 'image_button', 'label',
+	# 	'rating_scale', 'text_input', 'form']:
+	# 	cls = plugins.load_cls(u'../opensesame/libopensesame/widgets',
+	# 		widget, '_%s' % widget)
+	# 	createDoc(cls, u'content/_includes/doc/%s' % widget)
+	# createDoc(experiment, u'content/_includes/doc/experiment')
+	# createDoc(inline_script, u'content/_includes/doc/inline_script')

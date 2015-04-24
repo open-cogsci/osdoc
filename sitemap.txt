@@ -54,7 +54,6 @@ python inline code
 	Keyboard functions
 	Mouse functions
 	Sampler functions
-	Synth functions
 forms
 	About forms
 	Using the form plug-ins
