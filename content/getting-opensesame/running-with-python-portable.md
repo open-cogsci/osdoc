@@ -28,7 +28,8 @@ A note of thanks goes out to Bob Rosbag (Utrecht University), who pointed us tow
 If you have any questions, please post them on the forum.
 
 - Forum topic about OpenSesame portable: <http://forum.cogsci.nl/index.php?p=/discussion/69/opensesame-0-25-portable>
-- Download (select the latest release): <http://www.cogsci.nl/esdalmaijer/>
+- Download (select the latest release): <http://www.cogsci.nl/esdalmaijer/>.
+- Alternate download location: <http://ems.psy.vu.nl/opensesame/>.
 
 Once the download is complete, extract the .zip file to a location of your choice and double-click on 'opensesame.bat' to start OpenSesame.
 
