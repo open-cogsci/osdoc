@@ -50,6 +50,7 @@ python inline code
 	Experimental variables
 	File pool
 	Items
+	Clock functions
 	Canvas functions
 	Keyboard functions
 	Mouse functions
