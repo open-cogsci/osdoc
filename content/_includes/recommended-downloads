@@ -19,7 +19,7 @@ if (OSName == "Linux") {
 		+ "<p class=\"button-winexe\"><a target=\"_blank\" href=\"$url-windows-exe$\" >Windows XP/Vista/7 installer (.exe)</a></p>";
 } else if (OSName == "MacOS") {
 	msg = "<p>You appear to be running Mac OS. Installation instructions can be found here:</p>"
-		+ "<p class=\"button-macos\"><a href=\"#macos\">Mac OS package (.zip)</a></p>";
+		+ "<p class=\"button-macos\"><a href=\"#macos\">Mac OS package (.dmg)</a></p>";
 } else if (OSName == "Android") {
 	msg = "<p>You appear to be running Android. Installation instructions can be found here:</p>"
 		+ "<p class=\"button-android\"><a href=\"/getting-opensesame/android\">OpenSesame runtime for Android</a></p>";

@@ -35,6 +35,15 @@ OpenSesame is used for, discussed in, or mentioned in:
 Alday, P. M., Schlesewsky, M., & Bornkessel-Schlesewsky, I. (2015). Discovering prominence and its role in language processing: An individual (differences) approach. *Linguistic Vanguard*. doi:10.1515/lingvan-2014-1013
 {: .reference}
 
+Anderson, N. C., Ort, E., Kruijne, W., Meeter, M., & Donk, M. (2015). It depends on when you look at it: Salience influences eye movements in natural scene viewing and search early in time. *Journal of Vision*, *15*(5), e9. doi:10.1167/15.5.9
+{: .reference}
+
+Cavdaroglu, S., Katz, C., & Knops, A. (2015). Dissociating estimation from comparison and response eliminates parietal involvement in sequential numerosity perception. *NeuroImage*. doi:10.1016/j.neuroimage.2015.04.019
+{: .reference}
+
+Christoforou, C., Christou-Champi, S., Constantinidou, F., & Theodorou, M. (2015). From the eyes and the heart: a novel eye-gaze metric that predicts video preferences of a large audience. *Frontiers in Psychology*, doi:10.3389/fpsyg.2015.00579
+{: .reference}
+
 Duenser, A., Lochner, M., Engelke, U., & Rozado, D. (2015). Visual and manual control for human-robot tele-operation. *IEEE Computer Graphics and Applications*. doi:10.1109/MCG.2015.4
 {: .reference}
 
@@ -50,13 +59,13 @@ Kapoor, H. (2015). The creative side of the dark triad. *Creativity Research Jou
 Kruijne, W., Brascamp, J. W., Kristjánsson, Á., & Meeter, M. (2015). Can a single short-term mechanism account for priming of pop-out? *Vision Research*. doi:10.1016/j.visres.2015.03.011
 {: .reference}
 
-van der Linden, L., Mathôt, S., Vitu, F. (in press). The role of object affordances and center of gravity in eye movements towards isolated daily-life objects. *Journal of Vision*.
+an der Linden, L., Mathôt, S., Vitu, F. (2015). The role of object affordances and center of gravity in eye movements towards isolated daily-life objects. *Journal of Vision*, *15*(5), e8. doi:10.1167/15.5.8
 {: .reference}
 
 Mathôt, S., van der Linden, L., Grainger, J., & Vitu, F. (2015). The pupillary light response reflects eye-movement preparation. *Journal of Experimental Psychology: Human Perception and Performance*, *41*(1), 28–35. doi:10.1037/a0038653
 {: .reference}
 
-Mathôt, S., Siebold, A., Donk, M., & Vitu, F. (in press). Large pupils predict goal-driven eye movements. *Journal of Experimental Psychology: General*.
+Mathôt, S., Siebold, A., Donk, M., & Vitu, F. (2015). Large pupils predict goal-driven eye movements. *Journal of Experimental Psychology: General*. doi:10.1037/a0039168
 {: .reference}
 
 Nesari, S. J., & Kamari, E. (2015). Phonological errors among dyslexic and non-dyslexic children learning Persian. *International Journal of Applied Linguistics and English Literature*, *4*(3), 167–173. doi:10.7575/aiac.ijalel.v.4n.3p.167
@@ -75,6 +84,9 @@ Silvis, J. D., Olmos Solis, K., & Donk, M. (2015). The nature of the global effe
 {: .reference}
 
 Van Veen, S. C., van Schie, K., Wijngaards-de Meij, L. D. N. V., Littel, M., Engelhard, I. M., & van den Hout, M. A. (2015). Speed matters: relationship between speed of eye movements and modification of aversive autobiographical memories. *Frontiers in Psychiatry: Affective Disorders and Psychosomatic Research*, 45. doi:10.3389/fpsyt.2015.00045
+{: .reference}
+
+Wiener, S., & Turnbull, R. (2015). Constraints of tones, vowels and consonants on lexical selection in mandarin chinese. *Language and Speech*. doi:10.1177/0023830915578000
 {: .reference}
 
 ### 2014

@@ -55,15 +55,6 @@ OpenSesame is developed by a loose collection of individuals. Anyone is welcome 
 	</tr>
 	<tr>
 		<td>
-			<img src="/img/team/sakis.png" />
-		</td>
-		<td>
-			{% capture sakis %}{% include team/sakis.md %}{% endcapture %}
-			{{ sakis | markdownify }}
-		</td>
-	</tr>
-	<tr>
-		<td>
 			<img src="/img/team/eduard.png" />
 		</td>
 		<td>
