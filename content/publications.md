@@ -41,6 +41,9 @@ Anderson, N. C., Ort, E., Kruijne, W., Meeter, M., & Donk, M. (2015). It depends
 Cavdaroglu, S., Katz, C., & Knops, A. (2015). Dissociating estimation from comparison and response eliminates parietal involvement in sequential numerosity perception. *NeuroImage*. doi:10.1016/j.neuroimage.2015.04.019
 {: .reference}
 
+Christoforou, C., Christou-Champi, S., Constantinidou, F., & Theodorou, M. (2015). From the eyes and the heart: a novel eye-gaze metric that predicts video preferences of a large audience. *Frontiers in Psychology*, doi:10.3389/fpsyg.2015.00579
+{: .reference}
+
 Duenser, A., Lochner, M., Engelke, U., & Rozado, D. (2015). Visual and manual control for human-robot tele-operation. *IEEE Computer Graphics and Applications*. doi:10.1109/MCG.2015.4
 {: .reference}
 
