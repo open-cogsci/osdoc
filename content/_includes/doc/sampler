@@ -22,8 +22,10 @@ __Overview:__
 	- [Playback keywords](#playback-keywords)
 - [function __sampler\.\_\_init\_\___\(experiment, src, \*\*playback\_args\)](#function-__sampler__init____experiment-src-playback_args)
 - [property __sampler.block__](#property-__samplerblock__)
+- [function __sampler\.close\_sound__\(experiment\)](#function-__samplerclose_sound__experiment)
 - [property __sampler.duration__](#property-__samplerduration__)
 - [property __sampler.fade_in__](#property-__samplerfade_in__)
+- [function __sampler\.init\_sound__\(experiment\)](#function-__samplerinit_sound__experiment)
 - [function __sampler\.is\_playing__\(\)](#function-__sampleris_playing__)
 - [property __sampler.pan__](#property-__samplerpan__)
 - [function __sampler\.pause__\(\)](#function-__samplerpause__)
@@ -162,6 +164,22 @@ This is a read-and-write property. Changing the `block` property will affect sub
 [sampler.block]: #sampler-block
 [block]: #sampler-block
 
+<div class="FunctionDoc YAMLDoc" id="sampler-close_sound" markdown="1">
+
+## [function __sampler\.close\_sound__\(experiment\)](#function-__samplerclose_sound__experiment) {#function-__samplerclose_sound__experiment}
+
+Closes the mixer after the experiment is finished.
+
+__Arguments:__
+
+- `experiment` -- The experiment object.
+	- Type: experiment
+
+</div>
+
+[sampler.close_sound]: #sampler-close_sound
+[close_sound]: #sampler-close_sound
+
 <div class="PropertyDoc YAMLDoc" id="sampler-duration" markdown="1">
 
 ## [property __sampler.duration__](#property-__samplerduration__) {#property-__samplerduration__}
@@ -183,6 +201,22 @@ This is a read-and-write property. Changing the `fade_in` property will affect s
 
 [sampler.fade_in]: #sampler-fade_in
 [fade_in]: #sampler-fade_in
+
+<div class="FunctionDoc YAMLDoc" id="sampler-init_sound" markdown="1">
+
+## [function __sampler\.init\_sound__\(experiment\)](#function-__samplerinit_sound__experiment) {#function-__samplerinit_sound__experiment}
+
+Initializes the pygame mixer before the experiment begins.
+
+__Arguments:__
+
+- `experiment` -- The experiment object.
+	- Type: experiment
+
+</div>
+
+[sampler.init_sound]: #sampler-init_sound
+[init_sound]: #sampler-init_sound
 
 <div class="FunctionDoc YAMLDoc" id="sampler-is_playing" markdown="1">
 
@@ -357,8 +391,10 @@ print('The sampler is finished!')
 [Playback keywords]: #playback-keywords
 [function __sampler\.\_\_init\_\___\(experiment, src, \*\*playback\_args\)]: #function-__sampler__init____experiment-src-playback_args
 [property __sampler.block__]: #property-__samplerblock__
+[function __sampler\.close\_sound__\(experiment\)]: #function-__samplerclose_sound__experiment
 [property __sampler.duration__]: #property-__samplerduration__
 [property __sampler.fade_in__]: #property-__samplerfade_in__
+[function __sampler\.init\_sound__\(experiment\)]: #function-__samplerinit_sound__experiment
 [function __sampler\.is\_playing__\(\)]: #function-__sampleris_playing__
 [property __sampler.pan__]: #property-__samplerpan__
 [function __sampler\.pause__\(\)]: #function-__samplerpause__

@@ -96,20 +96,14 @@ Many common functions are directly available in an `inline_script` item, without
 
 ~~~ .python
 # `canvas()` is a common function that returns a `canvas` object
-target = canvas()
-target.text(u'some text')
-mask = canvas()
-mask.text(u'#### ####')
-
-target.show()
-# `sleep()` is another common function
-sleep(95)
-mask.show()
+fixdot_canvas = canvas()
+fixdot_canvas.fixdot()
+fixdot_canvas.show()
 ~~~
 
 For a list of common functions, see:
 
-- [/python/common/]()
+- [/python/common/](/python/common/)
 
 ### The `var` object: Access to experimental variables
 
@@ -124,7 +118,22 @@ var.my_variable = u'my_value'
 
 A full overview of the `var` object can be found here:
 
-- [/python/var/]()
+- [/python/var/](/python/var/)
+
+### The `clock` object: Time functions
+
+Basic time functions are available through the `clock` object:
+
+~~~ .python
+# Get the current timestamp
+t = clock.time()
+# Wait for 1 s
+clock.sleep(1000)
+~~~
+
+A full overview of the `clock` object can be found here:
+
+- [/python/clock/](/python/clock/)
 
 ### The `pool` object: Access to the file pool
 
@@ -140,7 +149,7 @@ my_canvas.show()
 
 A full overview of the `pool` object can be found here:
 
-- [/python/pool/]()
+- [/python/pool/](/python/pool/)
 
 ### The `win` object: The window handle
 
@@ -169,11 +178,10 @@ The same principle applies to functions and modules: Once you have defined a fun
 
 OpenSesame comes with a set of Python modules for presenting stimuli, handling input, etc. These modules work with all back-ends. The full API (i.e., a list of functions) can be found here:
 
-- [/python/canvas]() for display presentation
-- [/python/keyboard]() for response collection using the keyboard
-- [/python/mouse]() for response collection using the mouse
-- [/python/sampler]() for sound sample playback
-- [/python/synth]() for sound synthesis and playback
+- [/python/canvas](/python/canvas/) for display presentation
+- [/python/keyboard](/python/keyboard/) for response collection using the keyboard
+- [/python/mouse](/python/mouse/) for response collection using the mouse
+- [/python/sampler](/python/sampler/) for sound playback
 
 ### `psychopy`
 

@@ -24,12 +24,14 @@ __Overview:__
 - [function __canvas\.arrow__\(sx, sy, ex, ey, arrow\_size=5, \*\*style\_args\)](#function-__canvasarrow__sx-sy-ex-ey-arrow_size5-style_args)
 - [function __canvas\.circle__\(x, y, r, \*\*style\_args\)](#function-__canvascircle__x-y-r-style_args)
 - [function __canvas\.clear__\(color=None, \*\*style\_args\)](#function-__canvasclear__colornone-style_args)
+- [function __canvas\.close\_display__\(experiment\)](#function-__canvasclose_display__experiment)
 - [function __canvas\.copy__\(canvas\)](#function-__canvascopy__canvas)
 - [function __canvas\.ellipse__\(x, y, w, h, \*\*style\_args\)](#function-__canvasellipse__x-y-w-h-style_args)
 - [function __canvas\.fixdot__\(y=None, x=None, style=u'default', \*\*style\_args\)](#function-__canvasfixdot__ynone-xnone-styleudefault-style_args)
 - [function __canvas\.gabor__\(x, y, orient, freq, bgmode=u'avg', col2=u'black', col1=u'white', env=u'gaussian', stdev=12, phase=0, size=96\)](#function-__canvasgabor__x-y-orient-freq-bgmodeuavg-col2ublack-col1uwhite-envugaussian-stdev12-phase0-size96)
 - [property __canvas.height__](#property-__canvasheight__)
 - [function __canvas\.image__\(fname, y=None, x=None, scale=None, center=True\)](#function-__canvasimage__fname-ynone-xnone-scalenone-centertrue)
+- [function __canvas\.init\_display__\(experiment\)](#function-__canvasinit_display__experiment)
 - [function __canvas\.line__\(sx, sy, ex, ey, \*\*style\_args\)](#function-__canvasline__sx-sy-ex-ey-style_args)
 - [function __canvas\.noise\_patch__\(x, y, bgmode=u'avg', col2=u'black', col1=u'white', env=u'gaussian', stdev=12, size=96\)](#function-__canvasnoise_patch__x-y-bgmodeuavg-col2ublack-col1uwhite-envugaussian-stdev12-size96)
 - [function __canvas\.polygon__\(vertices, \*\*style\_args\)](#function-__canvaspolygon__vertices-style_args)
@@ -295,6 +297,22 @@ operations.
 [canvas.clear]: #canvas-clear
 [clear]: #canvas-clear
 
+<div class="FunctionDoc YAMLDoc" id="canvas-close_display" markdown="1">
+
+## [function __canvas\.close\_display__\(experiment\)](#function-__canvasclose_display__experiment) {#function-__canvasclose_display__experiment}
+
+Closes the display after the experiment is finished.
+
+__Arguments:__
+
+- `experiment` -- An experiment object.
+	- Type: experiment
+
+</div>
+
+[canvas.close_display]: #canvas-close_display
+[close_display]: #canvas-close_display
+
 <div class="FunctionDoc YAMLDoc" id="canvas-copy" markdown="1">
 
 ## [function __canvas\.copy__\(canvas\)](#function-__canvascopy__canvas) {#function-__canvascopy__canvas}
@@ -521,6 +539,22 @@ __Keywords:__
 
 [canvas.image]: #canvas-image
 [image]: #canvas-image
+
+<div class="FunctionDoc YAMLDoc" id="canvas-init_display" markdown="1">
+
+## [function __canvas\.init\_display__\(experiment\)](#function-__canvasinit_display__experiment) {#function-__canvasinit_display__experiment}
+
+Initializes the display before the experiment begins.
+
+__Arguments:__
+
+- `experiment` -- An experiment object.
+	- Type: experiment
+
+</div>
+
+[canvas.init_display]: #canvas-init_display
+[init_display]: #canvas-init_display
 
 <div class="FunctionDoc YAMLDoc" id="canvas-line" markdown="1">
 
@@ -827,12 +861,14 @@ The width of the canvas. This is a read-only property.
 [function __canvas\.arrow__\(sx, sy, ex, ey, arrow\_size=5, \*\*style\_args\)]: #function-__canvasarrow__sx-sy-ex-ey-arrow_size5-style_args
 [function __canvas\.circle__\(x, y, r, \*\*style\_args\)]: #function-__canvascircle__x-y-r-style_args
 [function __canvas\.clear__\(color=None, \*\*style\_args\)]: #function-__canvasclear__colornone-style_args
+[function __canvas\.close\_display__\(experiment\)]: #function-__canvasclose_display__experiment
 [function __canvas\.copy__\(canvas\)]: #function-__canvascopy__canvas
 [function __canvas\.ellipse__\(x, y, w, h, \*\*style\_args\)]: #function-__canvasellipse__x-y-w-h-style_args
 [function __canvas\.fixdot__\(y=None, x=None, style=u'default', \*\*style\_args\)]: #function-__canvasfixdot__ynone-xnone-styleudefault-style_args
 [function __canvas\.gabor__\(x, y, orient, freq, bgmode=u'avg', col2=u'black', col1=u'white', env=u'gaussian', stdev=12, phase=0, size=96\)]: #function-__canvasgabor__x-y-orient-freq-bgmodeuavg-col2ublack-col1uwhite-envugaussian-stdev12-phase0-size96
 [property __canvas.height__]: #property-__canvasheight__
 [function __canvas\.image__\(fname, y=None, x=None, scale=None, center=True\)]: #function-__canvasimage__fname-ynone-xnone-scalenone-centertrue
+[function __canvas\.init\_display__\(experiment\)]: #function-__canvasinit_display__experiment
 [function __canvas\.line__\(sx, sy, ex, ey, \*\*style\_args\)]: #function-__canvasline__sx-sy-ex-ey-style_args
 [function __canvas\.noise\_patch__\(x, y, bgmode=u'avg', col2=u'black', col1=u'white', env=u'gaussian', stdev=12, size=96\)]: #function-__canvasnoise_patch__x-y-bgmodeuavg-col2ublack-col1uwhite-envugaussian-stdev12-size96
 [function __canvas\.polygon__\(vertices, \*\*style\_args\)]: #function-__canvaspolygon__vertices-style_args

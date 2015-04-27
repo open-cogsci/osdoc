@@ -243,27 +243,6 @@ __Arguments:__
 
 [set_subject_nr]: #set_subject_nr
 
-<div class="FunctionDoc YAMLDoc" id="sleep" markdown="1">
-
-## function __sleep__\(ms\)
-
-Waits (sleeps) for a specified duration.
-
-__Example:__
-
-{% highlight python %}
-sleep(1000) # Sleep one second
-{% endhighlight %}
-
-__Arguments:__
-
-- `ms` -- An value specifying the duration in milliseconds.
-	- Type: int, float
-
-</div>
-
-[sleep]: #sleep
-
 <div class="FunctionDoc YAMLDoc" id="synth" markdown="1">
 
 ## function __synth__\(length=100, osc=u'sine', attack=0, freq=440, decay=5\)
@@ -303,28 +282,6 @@ A `sampler` object.
 </div>
 
 [synth]: #synth
-
-<div class="FunctionDoc YAMLDoc" id="time" markdown="1">
-
-## function __time__\(\)
-
-Returns a timestamp for the current time. This timestamp only has a relative meaning, i.e. you can use it to determine the interval between two moments, but not the actual time.
-
-__Example:__
-
-{% highlight python %}
-print('The time is %s' % time())
-{% endhighlight %}
-
-__Returns:__
-
-A timestamp of the current time.
-
-- Type: float
-
-</div>
-
-[time]: #time
 
 </div>
 
