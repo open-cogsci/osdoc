@@ -59,7 +59,7 @@ Kapoor, H. (2015). The creative side of the dark triad. *Creativity Research Jou
 Kruijne, W., Brascamp, J. W., Kristjánsson, Á., & Meeter, M. (2015). Can a single short-term mechanism account for priming of pop-out? *Vision Research*. doi:10.1016/j.visres.2015.03.011
 {: .reference}
 
-an der Linden, L., Mathôt, S., Vitu, F. (2015). The role of object affordances and center of gravity in eye movements towards isolated daily-life objects. *Journal of Vision*, *15*(5), e8. doi:10.1167/15.5.8
+Van der Linden, L., Mathôt, S., Vitu, F. (2015). The role of object affordances and center of gravity in eye movements towards isolated daily-life objects. *Journal of Vision*, *15*(5), e8. doi:10.1167/15.5.8
 {: .reference}
 
 Mathôt, S., van der Linden, L., Grainger, J., & Vitu, F. (2015). The pupillary light response reflects eye-movement preparation. *Journal of Experimental Psychology: Human Perception and Performance*, *41*(1), 28–35. doi:10.1037/a0038653
