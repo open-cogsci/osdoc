@@ -44,6 +44,9 @@ Cavdaroglu, S., Katz, C., & Knops, A. (2015). Dissociating estimation from compa
 Christoforou, C., Christou-Champi, S., Constantinidou, F., & Theodorou, M. (2015). From the eyes and the heart: a novel eye-gaze metric that predicts video preferences of a large audience. *Frontiers in Psychology*, doi:10.3389/fpsyg.2015.00579
 {: .reference}
 
+Douglas, Z. H., Maniscalco, B., Hallett, M., Wassermann, E. M., & He, B. J. (2015). Modulating conscious movement intention by noninvasive brain stimulation and the underlying neural mechanisms. *The Journal of Neuroscience*, *35*(18), 7239–7255. doi:10.1523/JNEUROSCI.4894-14.2015
+{: .reference}
+
 Duenser, A., Lochner, M., Engelke, U., & Rozado, D. (2015). Visual and manual control for human-robot tele-operation. *IEEE Computer Graphics and Applications*. doi:10.1109/MCG.2015.4
 {: .reference}
 
@@ -69,6 +72,9 @@ Mathôt, S., Siebold, A., Donk, M., & Vitu, F. (2015). Large pupils predict goal
 {: .reference}
 
 Nesari, S. J., & Kamari, E. (2015). Phonological errors among dyslexic and non-dyslexic children learning Persian. *International Journal of Applied Linguistics and English Literature*, *4*(3), 167–173. doi:10.7575/aiac.ijalel.v.4n.3p.167
+{: .reference}
+
+Nuutinen, M., Virtanen, T., Rummukainen, O., & Häkkinen, J. (2015). VQone MATLAB toolbox: A graphical experiment builder for image and video quality evaluations. *Behavior Research Methods*, 1–13.
 {: .reference}
 
 Rieger, D., Frischlich, L., Högden, F., Kauf, R., Schramm, K., & Tappe, E. (2015). Appreciation in the face of death: Meaningful films buffer against death-related anxiety. *Journal of Communication*. doi:10.1111/jcom.12152
