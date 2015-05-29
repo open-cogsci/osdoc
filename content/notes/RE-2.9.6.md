@@ -1,0 +1,57 @@
+---
+layout: osdoc
+title: Release notes for 2.9.6
+group: notes
+permalink: /2.9.6/
+---
+
+OpenSesame 2.9.6 is the sixth maintenance release in the 2.9 series. If you are upgrading from 2.8.3 or earlier, please also read the [2.9.0 release notes].
+
+## Credits
+
+Thanks to Joshua Snell ([@Klemtonius](https://github.com/Klemtonius)) and Jarik den Hartog ([@JdenHartog](https://github.com/JdenHartog)) for their code contributions.
+
+## Changes
+
+### Improvements
+
+- Use the same default logfile in opensesamerun and opensesame
+- srbox plug-in: turn off all lights on init
+- srbox plug-in: don't search (non-existent) COM0 on Windows
+- Add visual drop indicator
+
+### Bugs fixed
+
+- Refresh file pool when opening experiment from command line ([#320](https://github.com/smathot/OpenSesame/issues/320))
+- Fix unicode bugs when launching opensesame and opensesamerun from command line ([#323](https://github.com/smathot/OpenSesame/issues/323))
+- Inform experiment of response variables in form_base plugin ([#325](https://github.com/smathot/OpenSesame/issues/325))
+- Refresh variable inspector on program start
+- Clear variables and comments before parsing item-definition strings ([#324](https://github.com/smathot/OpenSesame/issues/324))
+- Fix timeout issue in (deprecated) text_input plugin
+- Fix libsrbox example docstring
+
+### Windows packaging
+
+~~~
+OpenSesame 2.9.6
+Python 2.7.8 (default, Jun 30 2014, 16:03:49) [MSC v.1500 32 bit (Intel)]
+OpenCV is not available
+OpenCV2 2.4.10
+QProgedit 2.1.0
+Expyriment  (Revision ; Python 2.7.8)
+NumPy 1.9.1
+PIL is available (version is unknown)
+PsychoPy 1.80.05-opensesame-1
+PyAudio 0.2.8
+PyGame 1.9.1release
+PyGaze 0.5.0~opensesame3
+Pyglet 1.1.4
+PyOpenGL 3.1.0
+PyQt 4.11.3
+PySerial 2.7
+python-bidi 0.3.4
+python-markdown 2.5.2
+SciPy 0.14.0
+~~~
+
+[2.9.0 release notes]: /notes/2.9.0/
