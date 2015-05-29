@@ -76,8 +76,8 @@ See the `auto_example` [example](#examples) for a full list of all controls and 
 The main plug-in code is placed in `my_plugin.py`. This file has two classes: The first is `my_plugin`, which contains the runtime part of the plug-in. The second is `qtmy_plugin`, which controls the GUI and is almost empty in most cases, because the controls are defined in `info.yaml`. In many cases, you will only be concerned with three methods:
 
 - `my_plugin.reset()` is where you specify default values for the plug-in variables.
-- `my_plugin.prepare()` is where you implement the run phase of your plug-in. It is good practice to move as much functionality as possible into `prepare()`, so that the time-critical run phase goes as smooth as possible.
-- `my_plugin.run()` is where you implement the prepare phase of your plug-in.
+- `my_plugin.prepare()` is where you implement the prepare phase of your plug-in. It is good practice to move as much functionality as possible into `prepare()`, so that the time-critical run phase goes as smooth as possible.
+- `my_plugin.run()` is where you implement the run phase of your plug-in.
 
 A very simple example looks like this (see the [examples](#examples) for more realistic examples):
 
