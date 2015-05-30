@@ -424,7 +424,7 @@ def compileSite(layout=u'inpage', group=None, jekyll=True, optimizeHTML=False,
 		type:	unicode
 	"""
 
-	assert(layout in [u'fullpage', u'inpage'])
+	assert(layout in [u'fullpage', u'inpage', u'mobile'])
 	branch = gitBranch()
 	status = branchStatus(branch)
 	print(u'Branch:\t%s\nStatus:\t%s\n' % (branch, status))

@@ -1,0 +1,10 @@
+<div id='sitemap-mobile'>
+
+<h2>Sitemap</h2>
+
+{% for node in site.sorted %}
+	{% if node.level == 0 %}
+		<div class="{{ node.menuclass }} lang-{{ node.lang }} level-{{ node.level}}"><a href="{{ site.host }}{{ node.url }}">{{ node.title }}</a></div>
+	{% endif %}
+{% endfor %}
+</div>
