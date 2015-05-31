@@ -3,11 +3,35 @@
 	max-width: 95%;
 }
 
-#mobile #site-map {
-	border-top: solid 1px @blue1;
+#sitemap-mobile {
+	background: @gray1;
+	border-radius: 4px;
 }
 
-#mobile #header-mobile {
+#menu-mobile {
+	display: none;
+}
+
+#sitemap-mobile #show-menu a,
+#sitemap-mobile #menu-mobile a {
+	border-bottom: none!important;
+}
+
+#sitemap-mobile #show-menu,
+#sitemap-mobile #menu-mobile .level-0 {
+	font-weight: bold;
+	padding: 4px;
+}
+
+#sitemap-mobile #menu-mobile .level-0 {
+	border-top: dotted 1px @blue1;
+}
+
+#sitemap-mobile #menu-mobile .level-1 {
+	border-top: dotted 1px @blue1;
+	padding: 4px 4px 4px 16px;
+}
+
+#header-mobile {
 	text-align: center;
-	border-bottom: solid 1px @blue1;
 }

@@ -53,3 +53,6 @@ if __name__ == u'__main__':
 	pdfRestore(siteFolder)
 	# Create a tarball for the site
 	createTarball(siteFolder)
+	# Finally compile the mobile site
+	compileSite(layout=u'mobile', optimizeHTML=True, group=options.group,
+		htaccess=True, adjustURLs=False)
