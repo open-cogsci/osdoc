@@ -53,6 +53,7 @@ python inline code
 	Clock functions
 	Canvas functions
 	Keyboard functions
+	Log functions
 	Mouse functions
 	Sampler functions
 forms
@@ -90,6 +91,7 @@ External devices
 	Joystick
 	Eyelink
 	EyeTribe
+	Oculus rift (virtual reality)
 	PyGaze (eye tracking)
 	Serial and parallel port
 	SMI eye tracker
@@ -147,6 +149,7 @@ BRM Paper
 	:release notes for 2.9.3
 	:release notes for 2.9.4
 	:release notes for 2.9.5
+	:release notes for 2.9.6
 :APS Workshop
 :Page not found
 :languages

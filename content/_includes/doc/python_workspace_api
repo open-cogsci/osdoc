@@ -152,6 +152,16 @@ A `mouse` object.
 
 [mouse]: #mouse
 
+<div class="FunctionDoc YAMLDoc" id="pause" markdown="1">
+
+## function __pause__\(\)
+
+Pauses the experiment.
+
+</div>
+
+[pause]: #pause
+
 <div class="FunctionDoc YAMLDoc" id="sampler" markdown="1">
 
 ## function __sampler__\(src, \*\*playback\_args\)

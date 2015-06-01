@@ -1,0 +1,19 @@
+<script type="text/javascript">
+function showMenu() {
+	var e = document.getElementById("menu-mobile");
+	if(e.style.display == 'block')
+		e.style.display = 'none';
+	else
+		e.style.display = 'block';
+}
+</script>
+
+<div id='show-menu'>
+	<a href='#' onclick="showMenu();">Menu</a>
+</div>
+
+<div id="menu-mobile">
+{% for node in site.sorted %}
+	<div class="{{ node.menuclass }} lang-{{ node.lang }} level-{{ node.level}}"><a href="{{ site.host }}{{ node.url }}">{{ node.title }}</a></div>
+{% endfor %}
+</div>

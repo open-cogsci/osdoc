@@ -135,6 +135,21 @@ A full overview of the `clock` object can be found here:
 
 - [/python/clock/](/python/clock/)
 
+### The `log` object: Data logging
+
+Data logging is available through the `log` object:
+
+~~~ .python
+# Write one line of text
+log.write(u'My custom log message')
+# Write all variables
+log.write_vars()
+~~~
+
+A full overview of the `log` object can be found here:
+
+- [/python/log/](/python/log/)
+
 ### The `pool` object: Access to the file pool
 
 You get the full path to a file in the file pool through the `pool` object:

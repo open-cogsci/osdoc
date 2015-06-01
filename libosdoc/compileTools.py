@@ -363,7 +363,35 @@ def createHtaccess(siteFolder, branch):
 		Creates an .htaccess file in the parent folder.
 	"""
 
-	s = u"""RewriteEngine On
+	if siteFolder.startswith(u'_site-mobile'):
+		s = u"""RewriteEngine On
+RewriteRule    ^$    %s/$1   [NC,L]
+RewriteRule    ^current?$    %s/$1   [NC,L]
+RewriteRule    ^notes/(.*)?$    %s/notes/$1/   [NC,L]
+RewriteRule    ^([^0-9]+.*)/?$    %s/$1   [NC,L]
+RewriteRule    ^([0-9]+).([0-9]+).([0-9])+$    $1.$2   [NC,L]
+RewriteRule    ^([0-9]+).([0-9]+).([0-9])+/(.*)$    $1.$2/$4   [NC,L]
+""" % (branch, branch, branch, branch)
+	else:
+		s = u"""RewriteEngine On
+# Check if this looks like a mobile device
+# (You could add another [OR] to the second one and add in what you
+#  had to check, but I believe most mobile devices should send at
+#  least one of these headers)
+RewriteCond %%{HTTP:x-wap-profile} !^$ [OR]
+RewriteCond %%{HTTP:Profile}       !^$ [OR]
+RewriteCond %%{HTTP_USER_AGENT} "acs|alav|alca|amoi|audi|aste|avan|benq|bird|blac|blaz|brew|cell|cldc|cmd-" [NC,OR]
+RewriteCond %%{HTTP_USER_AGENT} "dang|doco|eric|hipt|inno|ipaq|java|jigs|kddi|keji|leno|lg-c|lg-d|lg-g|lge-" [NC,OR]
+RewriteCond %%{HTTP_USER_AGENT}  "maui|maxo|midp|mits|mmef|mobi|mot-|moto|mwbp|nec-|newt|noki|opwv" [NC,OR]
+RewriteCond %%{HTTP_USER_AGENT} "palm|pana|pant|pdxg|phil|play|pluc|port|prox|qtek|qwap|sage|sams|sany" [NC,OR]
+RewriteCond %%{HTTP_USER_AGENT} "sch-|sec-|send|seri|sgh-|shar|sie-|siem|smal|smar|sony|sph-|symb|t-mo" [NC,OR]
+RewriteCond %%{HTTP_USER_AGENT} "teli|tim-|tosh|tsm-|upg1|upsi|vk-v|voda|w3cs|wap-|wapa|wapi" [NC,OR]
+RewriteCond %%{HTTP_USER_AGENT} "wapp|wapr|webc|winw|winw|xda|xda-" [NC,OR]
+RewriteCond %%{HTTP_USER_AGENT} "up.browser|up.link|windowssce|iemobile|mini|mmp" [NC,OR]
+RewriteCond %%{HTTP_USER_AGENT} "symbian|midp|wap|phone|pocket|mobile|pda|psp" [NC]
+RewriteCond %%{HTTP_USER_AGENT} !macintosh [NC]
+# Now redirect to the mobile site
+RewriteRule ^ http://osdoc-mobile.cogsci.nl%%{REQUEST_URI} [R,L]
 RewriteRule    ^$    %s/$1   [NC,L]
 RewriteRule    ^current?$    %s/$1   [NC,L]
 RewriteRule    ^notes/(.*)?$    %s/notes/$1/   [NC,L]
@@ -425,7 +453,7 @@ def compileSite(layout=u'inpage', group=None, jekyll=True, optimizeHTML=False,
 	"""
 
 	build.path.append('content/_includes')
-	assert(layout in [u'fullpage', u'inpage'])
+	assert(layout in [u'fullpage', u'inpage', u'mobile'])
 	branch = gitBranch()
 	status = branchStatus(branch)
 	print(u'Branch:\t%s\nStatus:\t%s\n' % (branch, status))
@@ -448,9 +476,17 @@ def compileSite(layout=u'inpage', group=None, jekyll=True, optimizeHTML=False,
 		else:
 			skipHTML = True
 		adjustRootRelativeURLs('_tmp', branch, skipHTML=skipHTML)
-		siteFolder = u'_site/%s' % branch
+		if layout == u'mobile':
+			siteFolder = u'_site-mobile/%s'	% branch
+		else:
+			siteFolder = u'_site/%s' % branch
 	else:
-		siteFolder = u'_site'
+
+		if layout == u'mobile':
+			siteFolder = u'_site-mobile'
+		else:
+			siteFolder = u'_site'
+
 	applyConstants('_tmp', branch)
 	print(u'Moving site to %s' % siteFolder)
 	if os.path.exists(siteFolder):

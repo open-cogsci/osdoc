@@ -71,7 +71,7 @@ def generateDocPages():
 		customName=u'items')
 	from libopensesame.experiment import experiment
 	exp = experiment('Dummy', '')
-	for backend in ['sampler', 'canvas', 'keyboard', 'mouse', 'clock']:
+	for backend in ['sampler', 'canvas', 'keyboard', 'mouse', 'clock', 'log']:
 		cls = plugins.load_cls(u'../opensesame/openexp/_%s' % backend, backend,
 			backend)
 		try:
