@@ -55,7 +55,7 @@ The latest version of the OpenSesame app has been composed on OS X Yosemite (10.
 
 A caveat of the OpenSesame app is that the multiprocess implementation is not yet working (this does work well if you run OpenSesame from source). We hope to have this fixed in one of the next releases, but for now you will have to stick to the inprocess runner (go to <http://osdoc.cogsci.nl/miscellaneous/runners/> to see what this means).
 
-- [OpenSesame 2.9.5 (.dmg)][macos-package-2.9.5]
+- [OpenSesame 2.9.6 (.dmg)][macos-package-2.9.6]
 
 Older versions can be found here:
 
@@ -73,7 +73,7 @@ If there are no packages provided for your platform, you will need to run OpenSe
 [macos-package-0.26]: http://files.cogsci.nl/software/opensesame/opensesame_0.26-macos-2.zip
 [macos-package-0.27.4-64bit]: http://www.cogsci.nl/dschreij/opensesame-mac/opensesame-0.27.4-macos-x86_64-1.dmg
 [macos-package-0.27.4-32bit]: http://www.cogsci.nl/dschreij/opensesame-mac/opensesame-0.27.4-macos-i386-1.dmg
-[macos-package-2.9.5]: http://ems.psy.vu.nl/opensesame/OpenSesame-2.9.5-osx.dmg
+[macos-package-2.9.6]: http://ems.psy.vu.nl/opensesame/OpenSesame-2.9.6-osx.dmg
 [macos-running-from-source]: /getting-opensesame/running-from-source#macos
 [ppa-cogscinl]: https://launchpad.net/~smathot/+archive/cogscinl
 [running-from-source]: /getting-opensesame/running-from-source
