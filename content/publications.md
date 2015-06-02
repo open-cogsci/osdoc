@@ -53,6 +53,9 @@ Duenser, A., Lochner, M., Engelke, U., & Rozado, D. (2015). Visual and manual co
 Failing, M. F., & Theeuwes, J. (2015). Nonspatial attentional capture by previously rewarded scene semantics. *Visual Cognition*. doi:10.1080/13506285.2014.990546
 {: .reference}
 
+Ibrahim, H., Ewais, S., & Chatterjee, S. (2015). A novel, low-cost NeuroIS prototype for supporting bio signals experimentation based on BITalino. In F. D. Davis, R. Riedl, J. vom Brocke, P.-M. Léger, & A. B. Randolph (Eds.), *Information Systems and Neuroscience* (pp. 77–83). Springer International Publishing.
+{: .reference}
+
 Ishii, A., Karasuyama, T., Kikuchi, T., Tanaka, M., Yamano, E., & Watanabe, Y. (2015). The neural mechanisms of re-experiencing mental fatigue sensation: A magnetoencephalography study. *PLoS ONE*, *10*(3). doi:10.1371/journal.pone.0122455
 {: .reference}
 
