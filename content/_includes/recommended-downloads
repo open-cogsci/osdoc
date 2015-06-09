@@ -12,17 +12,17 @@ var msg = "Unknown"
 
 if (OSName == "Linux") {
 	msg = "<p>You appear to be running Linux. The following download options are available for Linux:</p>"
-		+ "<p class=\"button-debian\"><a href=\"#ubuntu\">Ubuntu/ Debian package</a></p>"
-		+ "<p class=\"button-arch\"><a target=\"_blank\" href=\"https://aur.archlinux.org/packages/opensesame/\" >Arch Linux package</a></p>";
+		+ "<p><a class=\"button\" href=\"/getting-opensesame/download#ubuntu\">Ubuntu/ Debian package</a></p>"
+		+ "<p><a class=\"button\" target=\"_blank\" href=\"https://aur.archlinux.org/packages/opensesame/\" >Arch Linux package</a></p>";
 } else if (OSName == "Windows") {
 	msg = "<p>You appear to be running Windows. The following download option is recommended:</p>"
-		+ "<p class=\"button-winexe\"><a target=\"_blank\" href=\"$url-windows-exe$\" >Windows XP/Vista/7 installer (.exe)</a></p>";
+		+ "<p><a class=\"button\" target=\"_blank\" href=\"$url-windows-exe$\" >Windows XP/Vista/7 installer (.exe)</a></p>";
 } else if (OSName == "MacOS") {
 	msg = "<p>You appear to be running Mac OS. Installation instructions can be found here:</p>"
-		+ "<p class=\"button-macos\"><a href=\"#macos\">Mac OS package (.dmg)</a></p>";
+		+ "<p><a class=\"button\" href=\"/getting-opensesame/download#macos\">Mac OS package (.dmg)</a></p>";
 } else if (OSName == "Android") {
 	msg = "<p>You appear to be running Android. Installation instructions can be found here:</p>"
-		+ "<p class=\"button-android\"><a href=\"/getting-opensesame/android\">OpenSesame runtime for Android</a></p>";
+		+ "<p><a class=\"button\" href=\"/getting-opensesame/android\">OpenSesame runtime for Android</a></p>";
 } else {
 	msg = "<p>No recommended download is available, because your operating system could not be recognized.</p>";
 }

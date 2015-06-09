@@ -5,6 +5,8 @@ group: Getting OpenSesame
 permalink: /download/
 ---
 
+## Recommended downloads
+
 {% include recommended-downloads %}
 
 ## Other download options
