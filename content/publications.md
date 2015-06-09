@@ -44,6 +44,9 @@ Cavdaroglu, S., Katz, C., & Knops, A. (2015). Dissociating estimation from compa
 Christoforou, C., Christou-Champi, S., Constantinidou, F., & Theodorou, M. (2015). From the eyes and the heart: a novel eye-gaze metric that predicts video preferences of a large audience. *Frontiers in Psychology*, doi:10.3389/fpsyg.2015.00579
 {: .reference}
 
+Dejanović, M., & Dejanović, I. (2015). Software for reaction-time measurement and its application for the evaluation of patient’s recovery after the stroke. *The 7th International Conference on Information Technology*, 182–185. doi:10.15849/icit.2015.0027
+{: .reference}
+
 Douglas, Z. H., Maniscalco, B., Hallett, M., Wassermann, E. M., & He, B. J. (2015). Modulating conscious movement intention by noninvasive brain stimulation and the underlying neural mechanisms. *The Journal of Neuroscience*, *35*(18), 7239–7255. doi:10.1523/JNEUROSCI.4894-14.2015
 {: .reference}
 
