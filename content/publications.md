@@ -38,10 +38,16 @@ Alday, P. M., Schlesewsky, M., & Bornkessel-Schlesewsky, I. (2015). Discovering 
 Anderson, N. C., Ort, E., Kruijne, W., Meeter, M., & Donk, M. (2015). It depends on when you look at it: Salience influences eye movements in natural scene viewing and search early in time. *Journal of Vision*, *15*(5), e9. doi:10.1167/15.5.9
 {: .reference}
 
+Cameron, G., Schlund, M. W., & Dymond, S. (2015). Generalization of socially transmitted and instructed avoidance. *Frontiers in Behavioral Neuroscience*, *159*. doi:10.3389/fnbeh.2015.00159
+{: .reference}
+
 Cavdaroglu, S., Katz, C., & Knops, A. (2015). Dissociating estimation from comparison and response eliminates parietal involvement in sequential numerosity perception. *NeuroImage*. doi:10.1016/j.neuroimage.2015.04.019
 {: .reference}
 
 Christoforou, C., Christou-Champi, S., Constantinidou, F., & Theodorou, M. (2015). From the eyes and the heart: a novel eye-gaze metric that predicts video preferences of a large audience. *Frontiers in Psychology*, doi:10.3389/fpsyg.2015.00579
+{: .reference}
+
+De Groot, F., Huettig, F., & Olivers, C. N. (2015). When meaning matters: The temporal dynamics of semantic influences on visual attention. *Journal of Experimental Psychology: Human Perception and Performance.*
 {: .reference}
 
 Dejanović, M., & Dejanović, I. (2015). Software for reaction-time measurement and its application for the evaluation of patient’s recovery after the stroke. *The 7th International Conference on Information Technology*, 182–185. doi:10.15849/icit.2015.0027
@@ -54,6 +60,9 @@ Duenser, A., Lochner, M., Engelke, U., & Rozado, D. (2015). Visual and manual co
 {: .reference}
 
 Failing, M. F., & Theeuwes, J. (2015). Nonspatial attentional capture by previously rewarded scene semantics. *Visual Cognition*. doi:10.1080/13506285.2014.990546
+{: .reference}
+
+Hoppenbrouwers, S. S., Van der Stigchel, S., Slotboom, J., Dalmaijer, E. S., & Theeuwes, J. (2015). Disentangling attentional deficits in psychopathy using visual search: Failures in the use of contextual information. *Personality and Individual Differences*, *86*, 132–138. doi:10.1016/j.paid.2015.06.009
 {: .reference}
 
 Ibrahim, H., Ewais, S., & Chatterjee, S. (2015). A novel, low-cost NeuroIS prototype for supporting bio signals experimentation based on BITalino. In F. D. Davis, R. Riedl, J. vom Brocke, P.-M. Léger, & A. B. Randolph (Eds.), *Information Systems and Neuroscience* (pp. 77–83). Springer International Publishing.
