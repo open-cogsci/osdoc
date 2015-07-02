@@ -40,6 +40,17 @@ PyGaze also includes two dummy eye trackers for testing purposes:
 - __Simple dummy__ -- Does nothing.
 - __Advanced dummy__ -- Mouse simulation of eye movements.
 
+## Installing PyGaze
+
+If you use the official Windows package of OpenSesame, PyGaze is already installed. If not, you can install PyGaze as follows:
+
+1. Download the PyGaze source code (`.zip`) from <https://github.com/esdalmaijer/PyGaze>. (Do *not* download the standalone Windows packages provided on the PyGaze website.)
+2. Extract the `.zip` archive somewhere.
+3. Inside, you will find these folders:
+    - `opensesame_plugins`: As the name suggests, this folder contains the OpenSesame plug-ins, and need to be copied to (one of) the plugin folders, as described here: [/plug-ins/installation/]()
+    - `pygaze`: This is the PyGaze Python library. You need to copy this to a folder in the Python path. On Windows, you can copy this folder to the OpenSesame program folder.
+4. Done!
+
 ## PyGaze OpenSesame plug-ins
 
 The following PyGaze plug-ins are available:
