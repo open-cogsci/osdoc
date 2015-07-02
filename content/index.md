@@ -26,7 +26,7 @@ Welcome to the OpenSesame documentation area! Here you can find everything you a
 
 [Forum][]{:.button}
 
-## Cite
+## Cite us
 
 To cite OpenSesame in your work, please use the following reference:
 

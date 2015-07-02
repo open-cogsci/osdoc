@@ -24,7 +24,8 @@ if (OSName == "Linux") {
 	msg = "<p>You appear to be running Android. Installation instructions can be found here:</p>"
 		+ "<p><a class=\"button\" href=\"/getting-opensesame/android\">OpenSesame runtime for Android</a></p>";
 } else {
-	msg = "<p>No recommended download is available, because your operating system could not be recognized.</p>";
+	msg = "<p>We couldn't recommend a download, because we couldn't detect your operating system.</p>"
+		+ "<p>But don't worry, you can select a download yourself!";
 }
 
 document.write(msg);
