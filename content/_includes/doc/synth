@@ -50,21 +50,21 @@ __Arguments:__
 
 __Keywords:__
 
-- `freq` -- Frequency, either an integer value (value in hertz) or a string ("A1", "eb2", etc.).
-	- Default: 440
-	- Type: str, unicode, int, float
-- `length` -- The length of the sound in milliseconds.
-	- Default: 100
-	- Type: int, float
-- `attack` -- The attack (fade-in) time in milliseconds.
-	- Default: 0
-	- Type: int, float
 - `osc` -- Oscillator, can be "sine", "saw", "square" or "white_noise".
-	- Default: 'sine'
 	- Type: str, unicode
-- `decay` -- The decay (fade-out) time in milliseconds.
-	- Default: 5
+	- Default: 'sine'
+- `freq` -- Frequency, either an integer value (value in hertz) or a string ("A1", "eb2", etc.).
+	- Type: str, unicode, int, float
+	- Default: 440
+- `length` -- The length of the sound in milliseconds.
 	- Type: int, float
+	- Default: 100
+- `attack` -- The attack (fade-in) time in milliseconds.
+	- Type: int, float
+	- Default: 0
+- `decay` -- The decay (fade-out) time in milliseconds.
+	- Type: int, float
+	- Default: 5
 
 </div>
 

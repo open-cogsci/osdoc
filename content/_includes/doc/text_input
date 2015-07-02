@@ -48,24 +48,24 @@ __Arguments:__
 
 __Keywords:__
 
-- `stub` -- A text string that should be shown whenever the user has not entered any text.
-	- Default: u'Type here ...'
-	- Type: str, unicode
-- `return_accepts` -- Indicates whether a return press should accept and close the form.
-	- Default: False
-	- Type: bool
-- `center` -- Indicates whether the text should be centered.
-	- Default: False
-	- Type: bool
-- `var` -- The name of the experimental variable that should be used to log the widget status.
-	- Default: None
-	- Type: str, unicode, NoneType
 - `text` -- The text to start with.
-	- Default: u''
 	- Type: str, unicode
+	- Default: u''
 - `frame` -- Indicates whether a frame should be drawn around the widget.
-	- Default: True
 	- Type: bool
+	- Default: True
+- `center` -- Indicates whether the text should be centered.
+	- Type: bool
+	- Default: False
+- `stub` -- A text string that should be shown whenever the user has not entered any text.
+	- Type: str, unicode
+	- Default: u'Type here ...'
+- `return_accepts` -- Indicates whether a return press should accept and close the form.
+	- Type: bool
+	- Default: False
+- `var` -- The name of the experimental variable that should be used to log the widget status.
+	- Type: str, unicode, NoneType
+	- Default: None
 
 </div>
 
@@ -80,12 +80,12 @@ Draws a simple frame around the widget.
 
 __Keywords:__
 
-- `style` -- A visual style. Should be 'normal', 'active', or 'light'.
-	- Default: u'normal'
-	- Type: str, unicode
 - `rect` -- A (left, top, width, height) tuple for the frame geometry or `None` to use the widget geometry.
-	- Default: None
 	- Type: tuple, NoneType
+	- Default: None
+- `style` -- A visual style. Should be 'normal', 'active', or 'light'.
+	- Type: str, unicode
+	- Default: u'normal'
 
 </div>
 
@@ -106,8 +106,8 @@ __Arguments:__
 __Keywords:__
 
 - `html` -- Indicates whether HTML should be parsed.
-	- Default: True
 	- Type: bool
+	- Default: True
 
 </div>
 
@@ -170,8 +170,8 @@ __Arguments:__
 __Keywords:__
 
 - `var` -- A variable name, or None to use widget default.
-	- Default: None
 	- Type: str, unicode, NoneType
+	- Default: None
 
 </div>
 

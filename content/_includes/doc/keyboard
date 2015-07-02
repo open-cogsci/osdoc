@@ -67,11 +67,11 @@ __Arguments:__
 __Keywords:__
 
 - `keylist` -- A list of human-readable keys that are accepted or `None` to accept all keys.
-	- Default: None
 	- Type: list, NoneType
-- `timeout` -- A numeric value specifying a timeout in milliseconds or `None` for no (i.e. infinite) timeout.
 	- Default: None
+- `timeout` -- A numeric value specifying a timeout in milliseconds or `None` for no (i.e. infinite) timeout.
 	- Type: int, float, NoneType
+	- Default: None
 
 </div>
 
@@ -114,11 +114,11 @@ if response == None:
 __Keywords:__
 
 - `keylist` -- A list of human-readable keys that are accepted or `None` to accept all keys.
-	- Default: None
 	- Type: list, NoneType
-- `timeout` -- A numeric value specifying a timeout in milliseconds or `None` for no (i.e. infinite) timeout.
 	- Default: None
+- `timeout` -- A numeric value specifying a timeout in milliseconds or `None` for no (i.e. infinite) timeout.
 	- Type: int, float, NoneType
+	- Default: None
 
 __Returns:__
 
@@ -175,8 +175,8 @@ my_keyboard.set_keylist( ['z', 'm'] )
 __Keywords:__
 
 - `keylist` -- A list of human-readable keys that are accepted or `None` to accept all keys.
-	- Default: None
 	- Type: list, NoneType
+	- Default: None
 
 </div>
 
@@ -200,8 +200,8 @@ my_keyboard.set_timeout(2000)
 __Keywords:__
 
 - `timeout` -- A numeric value specifying a timeout in milliseconds or `None` for no (i.e. infinite) timeout.
-	- Default: None
 	- Type: int, float, NoneType
+	- Default: None
 
 </div>
 
@@ -235,8 +235,8 @@ my_keyboard.show_virtual_keyboard(False)
 __Keywords:__
 
 - `visible` -- True if the keyboard should be shown, False otherwise.
-	- Default: True
 	- Type: bool
+	- Default: True
 
 </div>
 

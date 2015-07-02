@@ -51,23 +51,23 @@ __Arguments:__
 
 __Keywords:__
 
-- `var` -- The name of the experimental variable that should be used to log the widget status. The value that is logged is the number of the node that was selected, with the first node being 0. If no nodes were selected, the value is 'None'. For more information about the use of response variables in forms, see the form documentation page.
-	- Default: None
-	- Type: str, unicode, NoneType
-- `default` -- The node that is selected by default, or `None` to select no node. The value corresponds to the node number, where 0 is the first node.
-	- Default: None
-	- Type: int, NoneType
 - `nodes` -- The number of nodes or a list of node identifiers (e.g., ['yes', 'no', 'maybe']. If a list is passed the rating scale will have labels, otherwise it will just have boxes.
-	- Default: 5
 	- Type: int, list
+	- Default: 5
+- `click_accepts` -- Indicates whether the form should close when a value is selected.
+	- Type: bool
+	- Default: False
 - `orientation` -- 'horizontal' indicates a horizontally oriented rating
 scale, 'vertical' indicates a vertically oriented rating
 scale.
-	- Default: u'horizontal'
 	- Type: str, unicode
-- `click_accepts` -- Indicates whether the form should close when a value is selected.
-	- Default: False
-	- Type: bool
+	- Default: u'horizontal'
+- `var` -- The name of the experimental variable that should be used to log the widget status. The value that is logged is the number of the node that was selected, with the first node being 0. If no nodes were selected, the value is 'None'. For more information about the use of response variables in forms, see the form documentation page.
+	- Type: str, unicode, NoneType
+	- Default: None
+- `default` -- The node that is selected by default, or `None` to select no node. The value corresponds to the node number, where 0 is the first node.
+	- Type: int, NoneType
+	- Default: None
 
 </div>
 
@@ -82,12 +82,12 @@ Draws a simple frame around the widget.
 
 __Keywords:__
 
-- `style` -- A visual style. Should be 'normal', 'active', or 'light'.
-	- Default: u'normal'
-	- Type: str, unicode
 - `rect` -- A (left, top, width, height) tuple for the frame geometry or `None` to use the widget geometry.
-	- Default: None
 	- Type: tuple, NoneType
+	- Default: None
+- `style` -- A visual style. Should be 'normal', 'active', or 'light'.
+	- Type: str, unicode
+	- Default: u'normal'
 
 </div>
 
@@ -166,8 +166,8 @@ __Arguments:__
 __Keywords:__
 
 - `var` -- A variable name, or None to use widget default.
-	- Default: None
 	- Type: str, unicode, NoneType
+	- Default: None
 
 </div>
 

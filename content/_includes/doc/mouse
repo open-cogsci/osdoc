@@ -66,18 +66,18 @@ __Arguments:__
 
 __Keywords:__
 
+- `buttonlist` -- A list of buttons that are accepted or `None` to accept all buttons.
+	- Type: list, NoneType
+	- Default: None
+- `timeout` -- A numeric value specifying a timeout in milliseconds or `None` for no (i.e. infinite) timeout.
+	- Type: int, float, NoneType
+	- Default: None
 - `visible` -- `True` to show the cursor, `False` to hide. (If you are using the
 *legacy* back-end, you may find that the mouse cursor is not
 visible. For a workaround, see
 <http://osdoc.cogsci.nl/back-ends/legacy/>.)
-	- Default: False
 	- Type: bool
-- `buttonlist` -- A list of buttons that are accepted or `None` to accept all buttons.
-	- Default: None
-	- Type: list, NoneType
-- `timeout` -- A numeric value specifying a timeout in milliseconds or `None` for no (i.e. infinite) timeout.
-	- Default: None
-	- Type: int, float, NoneType
+	- Default: False
 
 </div>
 
@@ -128,18 +128,18 @@ if button == None:
 
 __Keywords:__
 
+- `buttonlist` -- A list of buttons that are accepted or `None` to accept all buttons.
+	- Type: list, NoneType
+	- Default: None
+- `timeout` -- A numeric value specifying a timeout in milliseconds or `None` for no (i.e. infinite) timeout.
+	- Type: int, float, NoneType
+	- Default: None
 - `visible` -- `True` to show the cursor, `False` to hide. (If you are using the
 *legacy* back-end, you may find that the mouse cursor is not
 visible. For a workaround, see
 <http://osdoc.cogsci.nl/back-ends/legacy/>.)
-	- Default: None
 	- Type: bool
-- `buttonlist` -- A list of buttons that are accepted or `None` to accept all buttons.
 	- Default: None
-	- Type: list, NoneType
-- `timeout` -- A numeric value specifying a timeout in milliseconds or `None` for no (i.e. infinite) timeout.
-	- Default: None
-	- Type: int, float, NoneType
 
 __Returns:__
 
@@ -223,8 +223,8 @@ my_mouse.set_buttonlist( [1,2] )
 __Keywords:__
 
 - `buttonlist` -- A list of buttons that are accepted or `None` to accept all buttons.
-	- Default: None
 	- Type: list, NoneType
+	- Default: None
 
 </div>
 
@@ -248,8 +248,8 @@ my_mouse.set_pos(pos=(0,0))
 __Keywords:__
 
 - `pos` -- An (x,y) tuple for the new mouse coordinates.
-	- Default: (0, 0)
 	- Type: tuple
+	- Default: (0, 0)
 
 </div>
 
@@ -273,8 +273,8 @@ my_mouse.set_timeout(2000)
 __Keywords:__
 
 - `timeout` -- A numeric value specifying a timeout in milliseconds or `None` for no (i.e. infinite) timeout.
-	- Default: None
 	- Type: int, float, NoneType
+	- Default: None
 
 </div>
 
@@ -301,8 +301,8 @@ __Keywords:__
 *legacy* back-end, you may find that the mouse cursor is not
 visible. For a workaround, see
 <http://osdoc.cogsci.nl/back-ends/legacy/>.)
-	- Default: True
 	- Type: bool
+	- Default: True
 
 </div>
 

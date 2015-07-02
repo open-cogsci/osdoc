@@ -42,24 +42,24 @@ __Arguments:__
 
 __Keywords:__
 
-- `item` -- The item of which the form is part.
-	- Default: None
-	- Type: item, NoneType
-- `theme` -- The theme for the widgets.
-	- Default: u'gray'
-	- Type: str, unicode
-- `rows` -- Analogous to `cols`, but for the rows.
-	- Default: 2
-	- Type: int, list
-- `margins` -- The amount of empty space around the form. This is specified as a list, like so [top-margin, right-margin, bottom-margin, left-margin].
-	- Default: (100, 100, 100, 100)
-	- Type: list
-- `spacing` -- The amount of empty space between widgets (in pixels).
-	- Default: 10
-	- Type: int
 - `cols` -- The number of columns (as int) or a list that specifies the number and relative size of the columns. For example, `[1,2,1]` will create 3 columns where the middle one is twice as large as the outer ones.
-	- Default: 2
 	- Type: int, list
+	- Default: 2
+- `rows` -- Analogous to `cols`, but for the rows.
+	- Type: int, list
+	- Default: 2
+- `spacing` -- The amount of empty space between widgets (in pixels).
+	- Type: int
+	- Default: 10
+- `margins` -- The amount of empty space around the form. This is specified as a list, like so [top-margin, right-margin, bottom-margin, left-margin].
+	- Type: list
+	- Default: (100, 100, 100, 100)
+- `theme` -- The theme for the widgets.
+	- Type: str, unicode
+	- Default: u'gray'
+- `item` -- The item of which the form is part.
+	- Type: item, NoneType
+	- Default: None
 
 </div>
 
@@ -75,8 +75,8 @@ Executes the form.
 __Keywords:__
 
 - `focus_widget` -- A widget that is in the form and should receive a virtual mouse click when the form is opened. This allows you to activate a text_input right away, for example, so that the user doesn't have to click on it anymore.
-	- Default: None
 	- Type: widget, NoneType
+	- Default: None
 
 __Returns:__
 
@@ -136,11 +136,11 @@ __Arguments:__
 __Keywords:__
 
 - `colspan` -- The number of columns that the widget should span.
-	- Default: 1
 	- Type: int
+	- Default: 1
 - `rowspan` -- The number of rows that the widget should span.
-	- Default: 1
 	- Type: int
+	- Default: 1
 
 </div>
 

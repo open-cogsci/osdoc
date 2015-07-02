@@ -49,14 +49,14 @@ __Arguments:__
 __Keywords:__
 
 - `path` -- The full path to the image. To show an image from the file pool, you need to first use `experiment.get_file` to determine the full path to the image.
-	- Default: None
 	- Type: str, unicode, NoneType
-- `frame` -- Indicates whether a frame should be drawn around the widget.
-	- Default: False
-	- Type: bool
+	- Default: None
 - `adjust` -- Indicates whether the image should be scaled according to the size of the widget.
-	- Default: True
 	- Type: bool
+	- Default: True
+- `frame` -- Indicates whether a frame should be drawn around the widget.
+	- Type: bool
+	- Default: False
 
 </div>
 
@@ -71,12 +71,12 @@ Draws a simple frame around the widget.
 
 __Keywords:__
 
-- `style` -- A visual style. Should be 'normal', 'active', or 'light'.
-	- Default: u'normal'
-	- Type: str, unicode
 - `rect` -- A (left, top, width, height) tuple for the frame geometry or `None` to use the widget geometry.
-	- Default: None
 	- Type: tuple, NoneType
+	- Default: None
+- `style` -- A visual style. Should be 'normal', 'active', or 'light'.
+	- Type: str, unicode
+	- Default: u'normal'
 
 </div>
 
@@ -139,8 +139,8 @@ __Arguments:__
 __Keywords:__
 
 - `var` -- A variable name, or None to use widget default.
-	- Default: None
 	- Type: str, unicode, NoneType
+	- Default: None
 
 </div>
 

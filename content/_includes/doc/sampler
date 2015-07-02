@@ -55,10 +55,10 @@ my_sampler = sampler(exp, src)
 
 __Arguments:__
 
-- `src` -- The full path to a `.wav` or `.ogg` file.
-	- Type: unicode, str
 - `experiment` -- The experiment object.
 	- Type: experiment
+- `src` -- The full path to a `.wav` or `.ogg` file.
+	- Type: unicode, str
 
 </div>
 
@@ -199,8 +199,8 @@ my_sampler.play()
 __Keywords:__
 
 - `block` -- If True, the function blocks until the sound is finished. If False, the function returns right away and the sound is played in the background.
-	- Default: False
 	- Type: bool
+	- Default: False
 
 </div>
 
