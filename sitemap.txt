@@ -99,10 +99,10 @@ External devices
 	StimSync
 	Triggers for EEG/ ERP
 Miscellaneous
+	Important changes in 3.0
 	Timing
 	Counterbalancing
 	Git and versioning
-	:Non-western alphabets
 	Visual angle
 	Runners
 	Teaching resources
