@@ -23,7 +23,7 @@ You can use a subset of HTML tags, which you can simply insert into your text. Y
 
 Example:
 
-{% highlight html %}
+~~~ .html
 OpenSesame supports a sub-set of HTML tags:
 - <b>Bold face</b>
 - <i>Italic</i>
@@ -70,7 +70,7 @@ The fonts have been renamed for clarity, but correspond to the following open-so
 |`arabic`					|Droid Arabic Naskh		|
 |`hebrew`					|Droid Sans Hebrew		|
 |`hindi`					|Lohit Hindi			|
- 
+
 ### Selecting a custom font through the font-selection dialog
 
 If you select 'other ...' in the font selection dialog, you can select any font that is available on your operating system. If you do this, your experiment is no longer fully portable, and will require that the selected font is installed on the system that you run your experiment on.
@@ -80,7 +80,7 @@ If you select 'other ...' in the font selection dialog, you can select any font 
 Another way to use a custom font is to put a font file in the file pool. For example, if you place the font file `inconsolata.ttf` in the file pool, you can use this font in a `sketchpad` item, like so:
 
 	draw textline 0.0 0.0 "This will be inconsolata" font_family="inconsolata"
-	
+
 Note that the font file must be a truetype `.ttf` file.
 
 ## Bi-directional text support

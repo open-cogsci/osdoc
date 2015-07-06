@@ -44,7 +44,7 @@ class my_extension(base_extension):
 
 An extension can appear in the menu or main toolbar of OpenSesame. This requires that you define several fields in `info.yaml`:
 
-{% highlight yaml %}
+~~~ .yaml
 label: Example extension
 icon: go-next
 tooltip: Some tooltip
