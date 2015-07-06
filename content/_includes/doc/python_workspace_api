@@ -103,26 +103,6 @@ A `keyboard` object.
 
 [keyboard]: #keyboard
 
-<div class="FunctionDoc YAMLDoc" id="log" markdown="1">
-
-## function __log__\(msg\)
-
-Writes a message to the log file. Note that using the `log()` function in combination with a `logger` item is usually a bad idea, because it results in messy log files.
-
-__Example:__
-
-{% highlight python %}
-log('timestamp = %s' % time())
-{% endhighlight %}
-
-__Arguments:__
-
-- `msg` -- A message. This can be any type and will we be converted to a (unicode) string.
-
-</div>
-
-[log]: #log
-
 <div class="FunctionDoc YAMLDoc" id="mouse" markdown="1">
 
 ## function __mouse__\(\*\*resp\_args\)

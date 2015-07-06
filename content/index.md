@@ -9,26 +9,24 @@ singleton: true
 ![Affiliations](/img/affiliations.png "Affiliations")
 {: .float-right}
 
+
 Welcome to the OpenSesame documentation area! Here you can find everything you always wanted to know about your favorite free and cross-platform experiment builder. The latest $status$ version of OpenSesame is $version$ *$codename$*, released on $release-date$ ([release notes]).
 
-[Download][]{:.button}
+## Recommended downloads
 
-[Tutorial (Beginner)][]{:.button}
+{% include recommended-downloads %}
 
-[Tutorial (Advanced)][]{:.button}
+## More downloads, tutorials, and forum
+
+[More downloads][]{:.button}
+
+[Beginner tutorial][]{:.button}
+
+[Advanced tutorial][]{:.button}
 
 [Forum][]{:.button}
 
-%--
-video:
- source: youtube
- id: VidScreencast
- videoid: -zMH65re1m0
- width: 640
- height: 360
- caption: |
-  Video tutorial by <a href="http://chrislongmore.co.uk/">Chris Longmore</a>.
---%
+## Cite us
 
 To cite OpenSesame in your work, please use the following reference:
 
@@ -36,8 +34,8 @@ Mathôt, S., Schreij, D., & Theeuwes, J. (2012). OpenSesame: An open-source, gra
 {: .reference}
 
 [forum]: http://forum.cogsci.nl/
-[tutorial (beginner)]: /tutorials/step-by-step-tutorial/
-[tutorial (advanced)]: /tutorials/attentional-blink/
+[Beginner tutorial]: /tutorials/step-by-step-tutorial/
+[Advanced tutorial]: /tutorials/attentional-blink/
 [release notes]: /notes/$version$/
-[download]: /getting-opensesame/download/
+[More downloads]: /getting-opensesame/download/
 [chris longmore]: http://www.chrislongmore.co.uk/

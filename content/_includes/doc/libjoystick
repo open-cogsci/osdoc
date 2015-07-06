@@ -38,15 +38,15 @@ __Arguments:__
 __Keywords:__
 
 - `device` -- The joystick device number.
-	- Default: 0
 	- Type: int
+	- Default: 0
 - `joybuttonlist` -- A list of buttons that are accepted or `None` to accept all
 buttons.
-	- Default: None
 	- Type: list, NoneType
-- `timeout` -- An timeout value in milliseconds or `None` for no timeout.
 	- Default: None
+- `timeout` -- An timeout value in milliseconds or `None` for no timeout.
 	- Type: int, float, NoneType
+	- Default: None
 
 </div>
 
@@ -79,8 +79,8 @@ Waits for joystick axes movement.
 __Keywords:__
 
 - `timeout` -- A timeout value in milliseconds or `None` to use default timeout.
-	- Default: None
 	- Type: int, float, NoneType
+	- Default: None
 
 __Returns:__
 
@@ -102,8 +102,8 @@ Waits for joystick trackball movement.
 __Keywords:__
 
 - `timeout` -- A timeout value in milliseconds or `None` to use default timeout.
-	- Default: None
 	- Type: int, float, NoneType
+	- Default: None
 
 __Returns:__
 
@@ -125,11 +125,11 @@ Collects joystick button input.
 __Keywords:__
 
 - `joybuttonlist` -- A list of buttons that are accepted or `None` to default joybuttonlist.
-	- Default: None
 	- Type: list, NoneType
-- `timeout` -- A timeout value in milliseconds or `None` to use default timeout.
 	- Default: None
+- `timeout` -- A timeout value in milliseconds or `None` to use default timeout.
 	- Type: int, float, NoneType
+	- Default: None
 
 __Returns:__
 
@@ -151,8 +151,8 @@ Waits for joystick hat movement.
 __Keywords:__
 
 - `timeout` -- A timeout value in milliseconds or `None` to use default timeout.
-	- Default: None
 	- Type: int, float, NoneType
+	- Default: None
 
 __Returns:__
 
@@ -174,11 +174,11 @@ Waits for any joystick input (buttons, axes, hats or balls).
 __Keywords:__
 
 - `joybuttonlist` -- A list of buttons that are accepted or `None` to default joybuttonlist.
-	- Default: None
 	- Type: list, NoneType
-- `timeout` -- A timeout value in milliseconds or `None` to use default timeout.
 	- Default: None
+- `timeout` -- A timeout value in milliseconds or `None` to use default timeout.
 	- Type: int, float, NoneType
+	- Default: None
 
 __Returns:__
 
@@ -219,8 +219,8 @@ __Keywords:__
 
 - `joybuttonlist` -- A list of buttons that are accepted or `None` to accept all
 buttons.
-	- Default: None
 	- Type: list, NoneType
+	- Default: None
 
 </div>
 
@@ -236,8 +236,8 @@ Sets a timeout.
 __Keywords:__
 
 - `timeout` -- An timeout value in milliseconds or `None` for no timeout.
-	- Default: None
 	- Type: int, float, NoneType
+	- Default: None
 
 </div>
 

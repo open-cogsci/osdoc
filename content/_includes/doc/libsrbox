@@ -35,7 +35,7 @@ __Example:__
 ~~~ .python
 t0 = self.time()
 exp.srbox.start()
-t1, buttonlist = exp.srbox.get_button_press(allowed_buttons=[1,2])
+buttonlist, t1 = exp.srbox.get_button_press(allowed_buttons=[1,2])
 if 1 in buttonlist:
         response_time = t1 - t0
         print('Button 1 was pressed in %d ms!' % response_time)
@@ -83,11 +83,11 @@ Collect a button press from the SR box. This function will return right away if 
 __Keywords:__
 
 - `allowed_buttons` -- A list of buttons that are accepted or `None` to accept all buttons. Valid buttons are integers 1 through 8.
-	- Default: None
 	- Type: list, NoneType
-- `timeout` -- A timeout value in milliseconds or `None` for no timeout.
 	- Default: None
+- `timeout` -- A timeout value in milliseconds or `None` for no timeout.
 	- Type: int, float, NoneType
+	- Default: None
 
 __Returns:__
 

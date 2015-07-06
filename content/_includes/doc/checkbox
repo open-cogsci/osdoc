@@ -49,24 +49,24 @@ __Arguments:__
 
 __Keywords:__
 
-- `group` -- If a group is specified, checking one checkbox from the group will uncheck all other checkboxes in that group. Checkboxes that are part of a group cannot be unchecked, except by clicking on another checkbox in the group. The `group` keyword also affects how variables are stored (see the `var` keyword).
-	- Default: None
-	- Type: str, unicode, NoneType
-- `click_accepts` -- Indicates whether a click press should accept and close the form.
-	- Default: False
-	- Type: bool
-- `var` -- The name of the experimental variable that should be used to log the widget status. This variable will contain a semi-colon separated list of the text of all checked checkboxes in the same group, or 'no' if no checkbox in the group is checked. For the purpose of the variable, all checkboxes that are not part of a group are placed in the same group. For more information about the use of response variables in forms, see the form documentation page.
-	- Default: None
-	- Type: str, unicode, NoneType
 - `text` -- Checkbox text.
-	- Default: u'checkbox'
 	- Type: str, unicode
+	- Default: u'checkbox'
 - `frame` -- Indicates whether a frame should be drawn around the widget.
-	- Default: False
 	- Type: bool
+	- Default: False
+- `group` -- If a group is specified, checking one checkbox from the group will uncheck all other checkboxes in that group. Checkboxes that are part of a group cannot be unchecked, except by clicking on another checkbox in the group. The `group` keyword also affects how variables are stored (see the `var` keyword).
+	- Type: str, unicode, NoneType
+	- Default: None
 - `checked` -- The initial checked state of the checkbox.
-	- Default: False
 	- Type: bool
+	- Default: False
+- `click_accepts` -- Indicates whether a click press should accept and close the form.
+	- Type: bool
+	- Default: False
+- `var` -- The name of the experimental variable that should be used to log the widget status. This variable will contain a semi-colon separated list of the text of all checked checkboxes in the same group, or 'no' if no checkbox in the group is checked. For the purpose of the variable, all checkboxes that are not part of a group are placed in the same group. For more information about the use of response variables in forms, see the form documentation page.
+	- Type: str, unicode, NoneType
+	- Default: None
 
 </div>
 
@@ -81,12 +81,12 @@ Draws a simple frame around the widget.
 
 __Keywords:__
 
-- `style` -- A visual style. Should be 'normal', 'active', or 'light'.
-	- Default: u'normal'
-	- Type: str, unicode
 - `rect` -- A (left, top, width, height) tuple for the frame geometry or `None` to use the widget geometry.
-	- Default: None
 	- Type: tuple, NoneType
+	- Default: None
+- `style` -- A visual style. Should be 'normal', 'active', or 'light'.
+	- Type: str, unicode
+	- Default: u'normal'
 
 </div>
 
@@ -107,8 +107,8 @@ __Arguments:__
 __Keywords:__
 
 - `html` -- Indicates whether HTML should be parsed.
-	- Default: True
 	- Type: bool
+	- Default: True
 
 </div>
 
@@ -151,8 +151,8 @@ Sets the checked status of the checkbox.
 __Keywords:__
 
 - `checked` -- The checked status.
-	- Default: True
 	- Type: bool
+	- Default: True
 
 </div>
 
@@ -189,8 +189,8 @@ __Arguments:__
 __Keywords:__
 
 - `var` -- A variable name, or `None` to use widget default.
-	- Default: None
 	- Type: str, unicode, NoneType
+	- Default: None
 
 </div>
 

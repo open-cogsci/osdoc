@@ -47,14 +47,14 @@ __Arguments:__
 __Keywords:__
 
 - `text` -- The label text.
-	- Default: u'label'
 	- Type: str, unicode
+	- Default: u'label'
 - `frame` -- Indicates whether a frame should be drawn around the widget.
+	- Type: bool
 	- Default: False
-	- Type: bool
 - `center` -- Indicates whether the text should be centerd.
-	- Default: True
 	- Type: bool
+	- Default: True
 
 </div>
 
@@ -69,12 +69,12 @@ Draws a simple frame around the widget.
 
 __Keywords:__
 
-- `style` -- A visual style. Should be 'normal', 'active', or 'light'.
-	- Default: u'normal'
-	- Type: str, unicode
 - `rect` -- A (left, top, width, height) tuple for the frame geometry or `None` to use the widget geometry.
-	- Default: None
 	- Type: tuple, NoneType
+	- Default: None
+- `style` -- A visual style. Should be 'normal', 'active', or 'light'.
+	- Type: str, unicode
+	- Default: u'normal'
 
 </div>
 
@@ -95,8 +95,8 @@ __Arguments:__
 __Keywords:__
 
 - `html` -- Indicates whether HTML should be parsed.
-	- Default: True
 	- Type: bool
+	- Default: True
 
 </div>
 
@@ -159,8 +159,8 @@ __Arguments:__
 __Keywords:__
 
 - `var` -- A variable name, or None to use widget default.
-	- Default: None
 	- Type: str, unicode, NoneType
+	- Default: None
 
 </div>
 

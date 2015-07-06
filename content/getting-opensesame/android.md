@@ -79,9 +79,12 @@ Debug output is written to `/sdcard/opensesame-debug.txt`.
 - The *sampler* item and `openexp.sampler` module will ignore panning and pitching.
 - Participants may be eaten by dragons.
 
-## Know issue: Frozen virtual keyboard
+## Know issue: Frozen or misbehaving virtual keyboard
 
-If you find that the default virtual keyboard is unresponsive (i.e. it shows but doesn't respond to taps), you can install a third-party keyboard, such as [SwiftKey](https://play.google.com/store/apps/details?id=com.touchtype.swiftkey).
+On some devices, the default virtual keyboard is unresponsive (i.e. it shows but doesn't respond to taps) or doesn't respond normally. This appears to happen on phones with recent versions of Android. To work around this issue, you can install a third-party keyboard. Keyboards that have been reported to work are:
+
+- [GO Keyboard](https://play.google.com/store/apps/details?id=com.jb.emoji.gokeyboard&hl=en)
+- [Smart Keyboard Trial](https://play.google.com/store/apps/details?id=net.cdeguet.smartkeyboardtrial&hl=en)
 
 ## Forum topics
 

@@ -60,24 +60,24 @@ exp.set('response_time', t2-t1)
 
 __Keywords:__
 
-- `buttons` -- A list of buttons that are used, or None to use all buttons.
-	- Default: None
-	- Type: list, NoneType
-- `baudrate` -- The baudrate of the boks, or `None` to use default.
-	- Default: 115200
-	- Type: int, NoneType
-- `experiment` -- An OpenSesame experiment, or `None` to run in plain Python mode.
-	- Default: None
-	- Type: experiment, NoneType
-- `led` -- Indicates whether the LED should be switched on.
-	- Default: False
-	- Type: bool
-- `timeout` -- A timeout in milliseconds when collecting responses or `None` for no timeout.
-	- Default: None
-	- Type: float, int, NoneType
 - `port` -- The port to which the device is connected, `None` for autodetect, or 'dummy' to use the keyboard as dummy-boks.
-	- Default: None
 	- Type: str, unicode, NoneType
+	- Default: None
+- `experiment` -- An OpenSesame experiment, or `None` to run in plain Python mode.
+	- Type: experiment, NoneType
+	- Default: None
+- `baudrate` -- The baudrate of the boks, or `None` to use default.
+	- Type: int, NoneType
+	- Default: 115200
+- `buttons` -- A list of buttons that are used, or None to use all buttons.
+	- Type: list, NoneType
+	- Default: None
+- `timeout` -- A timeout in milliseconds when collecting responses or `None` for no timeout.
+	- Type: float, int, NoneType
+	- Default: None
+- `led` -- Indicates whether the LED should be switched on.
+	- Type: bool
+	- Default: False
 
 </div>
 
@@ -356,8 +356,8 @@ exp.set('response_time', t2-t1)
 __Keywords:__
 
 - `continuous` -- True for continuous, False for discontinuous.
-	- Default: True
 	- Type: bool
+	- Default: True
 
 </div>
 
@@ -384,8 +384,8 @@ for i in range(5):
 __Keywords:__
 
 - `on` -- Indicates whether the LED should be on or off.
-	- Default: True
 	- Type: bool
+	- Default: True
 
 </div>
 

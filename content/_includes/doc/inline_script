@@ -37,6 +37,7 @@ __Function list:__
 - [function __inline\_script\.copy\_sketchpad__\(sketchpad\_name\)](#function-__inline_scriptcopy_sketchpad__sketchpad_name)
 - [function __inline\_script\.eval\_text__\(text, soft\_ignore=False, round\_float=False, quote\_str=False\)](#function-__inline_scripteval_text__text-soft_ignorefalse-round_floatfalse-quote_strfalse)
 - [function __inline\_script\.flush\_log__\(\)](#function-__inline_scriptflush_log__)
+- [function __inline\_script\.from\_string__\(string\)](#function-__inline_scriptfrom_string__string)
 - [function __inline\_script\.get__\(var, \_eval=True\)](#function-__inline_scriptget__var-_evaltrue)
 - [function __inline\_script\.get\_check__\(var, default=None, \_eval=True, valid=None\)](#function-__inline_scriptget_check__var-defaultnone-_evaltrue-validnone)
 - [function __inline\_script\.get\_refs__\(text\)](#function-__inline_scriptget_refs__text)
@@ -152,15 +153,15 @@ __Arguments:__
 
 __Keywords:__
 
-- `soft_ignore` -- A Boolean indicating whether missing variables should be ignored, rather than cause an exception.
-	- Default: False
-	- Type: bool
 - `round_float` -- A Boolean indicating whether float values should be rounded to a precision of [round_decimals]. round_decimals is an OpenSesame variable that has a default value of 2.
-	- Default: False
 	- Type: bool
+	- Default: False
+- `soft_ignore` -- A Boolean indicating whether missing variables should be ignored, rather than cause an exception.
+	- Type: bool
+	- Default: False
 - `quote_str` -- A Boolean indicating whether string variables should be surrounded by single quotes (default=False).
-	- Default: False
 	- Type: bool
+	- Default: False
 
 __Returns:__
 
@@ -190,6 +191,22 @@ self.flush_log()
 
 [inline_script.flush_log]: #inline_script-flush_log
 [flush_log]: #inline_script-flush_log
+
+<div class="FunctionDoc YAMLDoc" id="inline_script-from_string" markdown="1">
+
+## [function __inline\_script\.from\_string__\(string\)](#function-__inline_scriptfrom_string__string) {#function-__inline_scriptfrom_string__string}
+
+Parses the item from a definition string.
+
+__Arguments:__
+
+- `string` -- A definition string, or None to reset the item.
+	- Type: str, NoneType
+
+</div>
+
+[inline_script.from_string]: #inline_script-from_string
+[from_string]: #inline_script-from_string
 
 <div class="FunctionDoc YAMLDoc" id="inline_script-get" markdown="1">
 
@@ -229,8 +246,8 @@ __Arguments:__
 __Keywords:__
 
 - `_eval` -- Indicates whether the variable should be evaluated, i.e. whether containing variables should be processed.
-	- Default: True
 	- Type: bool
+	- Default: True
 
 __Returns:__
 
@@ -264,14 +281,14 @@ __Arguments:__
 __Keywords:__
 
 - `default` -- A default 'fallback' value or None for no fallback, in which case an exception is rased if the variable does not exist.
-	- Default: None
 	- Type: unicode, float, int
-- `_eval` -- Indicates whether the variable should be evaluated, i.e. whether containing variables should be processed.
-	- Default: True
-	- Type: bool
-- `valid` -- A list of allowed values (or None for no restrictions). An exception is raised if the value is not an allowed value.
 	- Default: None
+- `valid` -- A list of allowed values (or None for no restrictions). An exception is raised if the value is not an allowed value.
 	- Type: list, NoneType
+	- Default: None
+- `_eval` -- Indicates whether the variable should be evaluated, i.e. whether containing variables should be processed.
+	- Type: bool
+	- Default: True
 
 __Returns:__
 
@@ -370,8 +387,8 @@ my_canvas = self.offline_canvas()
 __Keywords:__
 
 - `auto_prepare` -- See `openexp.canvas.__init__`.
-	- Default: True
 	- Type: bool
+	- Default: True
 
 __Returns:__
 
@@ -454,11 +471,11 @@ __Arguments:__
 __Keywords:__
 
 - `strict` -- If True, all except underscores and alphanumeric characters are stripped.
+	- Type: bool
 	- Default: False
-	- Type: bool
 - `allow_vars` -- If True, square brackets are not sanitized, so you can use variables.
-	- Default: True
 	- Type: bool
+	- Default: True
 
 __Returns:__
 
@@ -533,11 +550,11 @@ __Keywords:__
 - `response` -- The response value.
 	- Default: None
 - `response_time` -- The response time, or None.
-	- Default: None
 	- Type: int, float, NoneType
-- `correct` -- The correctness value, which should be 0, 1, True, False, or None.
 	- Default: None
+- `correct` -- The correctness value, which should be 0, 1, True, False, or None.
 	- Type: int, bool, NoneType
+	- Default: None
 
 </div>
 
@@ -658,8 +675,8 @@ __Arguments:__
 __Keywords:__
 
 - `strict` -- If True, special characters are ignored rather than recoded.
-	- Default: False
 	- Type: bool
+	- Default: False
 
 __Returns:__
 
@@ -682,6 +699,7 @@ A regular Python string with all special characters replaced by U+XXXX notation 
 [function __inline\_script\.copy\_sketchpad__\(sketchpad\_name\)]: #function-__inline_scriptcopy_sketchpad__sketchpad_name
 [function __inline\_script\.eval\_text__\(text, soft\_ignore=False, round\_float=False, quote\_str=False\)]: #function-__inline_scripteval_text__text-soft_ignorefalse-round_floatfalse-quote_strfalse
 [function __inline\_script\.flush\_log__\(\)]: #function-__inline_scriptflush_log__
+[function __inline\_script\.from\_string__\(string\)]: #function-__inline_scriptfrom_string__string
 [function __inline\_script\.get__\(var, \_eval=True\)]: #function-__inline_scriptget__var-_evaltrue
 [function __inline\_script\.get\_check__\(var, default=None, \_eval=True, valid=None\)]: #function-__inline_scriptget_check__var-defaultnone-_evaltrue-validnone
 [function __inline\_script\.get\_refs__\(text\)]: #function-__inline_scriptget_refs__text
