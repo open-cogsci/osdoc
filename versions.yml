@@ -1,3 +1,6 @@
+- branch: "3.0"
+  desc: "3.0.X (unstable)"
+  status: "dev"
 - branch: "2.9"
   desc: "2.9.X (current)"
   status: "current"
