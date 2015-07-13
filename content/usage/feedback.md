@@ -73,30 +73,25 @@ In this case, you can use a `sketchpad` item, because you don't change the conte
 
 You can also present full feedback after every trial, using a `feedback` item inserted after the response item (such as a `keyboard_response`), as shown in [Figure 1].
 
-## Resetting and manipulating feedback variables
+## Manipulating feedback variables in inline_script items
 
 Feedback variables, such as `average_response_time` and `accuracy` are reset when a `feedback` item is called (assuming that the *Reset feedback variables* box is checked) and wherever you insert a `reset_feedback` plug-in. However, you can also manipulate the feedback variables using an `inline_script`.
 
-For example, the following script resets the feedback variables:
+To reset all feedback variables:
 
-%--
-code:
- id: LstReset
- source: reset-feedback.py
- syntax: python
- caption: |
-  Resetting feedback with an `inline_script` item.
---%
+~~~ .python
+reset_feedback()
+~~~
 
-And the following script updates the feedback variables based on a response:
+And to update feedback variables based on a response:
 
-%--
-code:
- id: LstUpdate
- source: update-feedback.py
- syntax: python
- caption: Updating feedback with an `inline_script` item.
---%
+~~~ .python
+set_response(response='z', correct=1, response_time=600)
+~~~
+
+See also:
+
+- [/python/common/](/python/common/)
 
 [usage/prepare-run]: /usage/prepare-run
 [usage/variables-and-conditional-statements#feedback-variables]: /usage/variables-and-conditional-statements#feedback-variables

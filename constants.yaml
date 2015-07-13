@@ -1,7 +1,7 @@
 version: 3.0.0
 status: unstable
 codename: Interactive Ising
-release-date: Unknown
+release-date: unreleased
 url-windows-exe: http://to.do
 url-windows-zip: http://to.do
 url-source: https://github.com/smathot/OpenSesame

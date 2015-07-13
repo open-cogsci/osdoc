@@ -120,22 +120,19 @@ Sometimes, the GUI doesn't let you type in arbitrary text. For example, the leng
 
 ## Getting and setting variables in inline_script items
 
-`Inline_script` items allow you to use Python inline code in OpenSesame. This is useful for complex tasks, which are difficult or impossible to do through the GUI. In an `inline_script`, you can retrieve a variable as follows (this will print the value of the variable 'example_variable' to the debug window):
+`Inline_script` items allow you to use Python inline code in OpenSesame. This is useful for complex tasks, which are difficult or impossible to do through the GUI. In an `inline_script`, you can get experimental variables using the `var` object. The following, will print the value of the variable 'example_variable' to the debug window:
 
 ~~~ .python
-print self.get('example_variable')
+print(var.example_variable)
 ~~~
 
-You can set a variable as follows:
+You can set the experimental variable `example_variable` to the value 'some value' as follows:
 
 ~~~ .python
-self.experiment.set('example_variable', 'some_value')
-exp.set('example_variable', 'some_value')
+var.example_variable = 'some value'
 ~~~
 
-`exp.set()` works, because `exp` is simply a shortcut to `self.experiment`. Variables that are set in an `inline_script` item can be used in other items in the regular way.
-
-Note the asymmetry: You use `exp.set()`, rather than `self.set()`, even though you do use `self.get()`. This is because variables can exist on two levels. In the item (local) or in the experiment (global). `self.get()` looks first at the item level and then at the experiment level, which is fine. However, `self.set()` sets an item at the item level, which is usually not what you want, because this means that you can only access the variable from within the current `inline_script` item. Therefore, you should use `exp.set()`, which sets a variable at the experiment level.
+The `self.get()` and `exp.set()` way of accessing experimental variables still works, but has been deprecated. The `var` syntax is far simpler.
 
 ## Using conditional ("if") statements
 
@@ -194,10 +191,10 @@ Let's take a look at various things that can go 'wrong', at least in the sense t
 ~~~ .python
 test_values = 10, 010, 0x10, 0b10, '10', '010', '0x10', '0b10', ' 10'
 for input_value in test_values:
-	exp.set('my_var', input_value)
-	output_value = self.get('my_var')
-	print 'Input = "%s" %s' % (input_value, type(input_value))
-	print '-> Output = "%s" %s\n' % (output_value, type(output_value))
+	var.my_var = input_value
+	output_value = var.my_var
+	print('Input = "%s" %s' % (input_value, type(input_value)))
+	print('-> Output = "%s" %s\n' % (output_value, type(output_value)))
 ~~~
 
 Let's walk through the output of this script one by one. (Here we focus on the things that go wrong, but don't be too concerned: In the overwhelming majority of cases smart variable works exactly how you would expect it to.)

@@ -6,9 +6,6 @@ permalink: /text/
 parser: academicmarkdown
 ---
 
-Bi-directional-text support and non-Latin default fonts are available as of OpenSesame 2.8.0.
-{: .page-notification}
-
 ## Overview
 
 %--
@@ -46,6 +43,32 @@ figure:
  source: form-example.png
  caption: "Using (a subset of) HTML, you can define the appearance of your text."
 --%
+
+## Variables and inline Python
+
+You can embed variables in text using the `[...]` syntax. For example, the following:
+
+~~~ .python
+The subject number is [subject_nr]
+~~~
+
+... might evaluate to (for subject 1):
+
+~~~ .python
+The subject number is 1
+~~~
+
+You can embed Python code using the `[=...]` syntax. For example, the following:
+
+~~~ .python
+The subject number modulo five is [=var.subject_nr % 5]
+~~~
+
+... might evaluate to (for subject 7)
+
+~~~ .python
+The subject number modulo five is 2
+~~~
 
 ## Fonts
 

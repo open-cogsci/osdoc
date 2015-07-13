@@ -19,7 +19,7 @@ Download the source code of the latest stable release from GitHub:
 
 - <https://github.com/smathot/OpenSesame/releases>
 
-You can also download a development snapshot of the code. To obtain a reasonable stable snapshot, download from the `master` branch. To get the latest, greatest, and potentially very unstable snapshot, download from the `playground` branch.
+You can also download a development snapshot of the code. To obtain a reasonable stable snapshot, download from the `master` branch. To get the latest, greatest, and potentially very unstable snapshot, download from the the branch that corresponds to the major version of OpenSesane (e.g., `heisenberg` for 2.9, `ising` for 3.0).
 
 - <https://github.com/smathot/OpenSesame/>
 
@@ -29,15 +29,18 @@ You can also download a development snapshot of the code. To obtain a reasonable
 
 The following packages are required to run a minimal version of the OpenSesame GUI, with only support for the [legacy] back-end, no sound support, and no plug-in support.
 
-- [Python](http://www.python.org) is the programming language in which OpenSesame is created.
-	- Only Python 2.X is currently supported.
+- [Python](http://www.python.org) is the programming language in which OpenSesame is created. The following versions of Python are supported:
+	- Python 2.7 (default)
+    - Python 3.4
 - [PyGame](http://www.pygame.org) is a library that is used for graphics and sound.
 - [PyQt4](http://www.riverbankcomputing.com/software/pyqt/download) is the graphics toolkit that is used to for the user interface.
 - [QScintilla2](http://www.riverbankcomputing.com/software/pyqt/download) is a basic text-editor component. In some cases, it is bundled with `PyQt4`.
 - [QProgEdit](https://github.com/smathot/QProgEdit) is an advanced text-editor component built on top of `QScintilla2`.
+	- OpenSesame >= 3.0.0 requires QProgEdit >= 3.0.0.
 	- OpenSesame >= 2.9.0 requires QProgEdit >= 2.0.0.
 	- OpenSesame <= 2.8.3 requires QProgEdit 1.3.4.
 - [PyYAML](http://pyyaml.org/) is a library used for loading `yaml` files.
+- [WebColors](https://pypi.python.org/pypi/webcolors) is a library used for interpreting color descriptions.
 
 ### Optional
 
@@ -46,6 +49,7 @@ The following packages are not required, but some functionality will be missing 
 - [Expyriment](http://www.expyriment.org/) is required for the [xpyriment] back-end.
 - [NumPy](http://www.numpy.org/) is an advanced mathematical library that is used for various things, such as sound support.
 - [PIL](http://www.pythonware.com/products/pil/) is an imaging library that is used for various things.
+    - You can also use `pillow`, an actively maintained fork of the original, and no longer maintained `PIL`.
 - [PsychoPy](http://www.psychopy.org/) is required for the [psycho] back-end.
 - [pyflakes](https://pypi.python.org/pypi/pyflakes) is required for automatic validation of your Python scripts.
 - [Pyglet](http://www.pyglet.org/) is required by PsychoPy.
@@ -53,6 +57,7 @@ The following packages are not required, but some functionality will be missing 
 - [pySerial](http://pyserial.sourceforge.net/) is required for serial-port communication.
 - [python-bidi](https://pypi.python.org/pypi/python-bidi) is required for bi-directional-text support.
 - [python-markdown](https://pypi.python.org/pypi/Markdown) is required for viewing in-program help files.
+- [IPython](http://ipython.org/), when available, is used for the debug window.
 
 ### Extra
 
@@ -68,7 +73,10 @@ The following packages are not used directly by OpenSesame, but may come in hand
 
 ## Reasons to run from source
 
-The most obvious reason to run from source is that there may not be a package available for your platform (if you run, say, Solaris). Another reason, which applies only to the Windows and Mac packages, is that these packages come with their own Python environment, which doesn't allow you to install additional modules. If you want to use specific modules, which are not included with the packages, you will have to run from source.
+The main reasons to run from source are:
+
+- You want to hack on the OpenSesame source code.
+- There may not be a package available for your platform.
 
 ## Instructions for Linux
 
@@ -89,7 +97,7 @@ To start OpenSesame, open a terminal in the folder where OpenSesame has been ext
 
 ## Instructions for Windows
 
-There are multiple versions of Python available. OpenSesame has been tested extensively with Python 2.6 and 2.7. As of OpenSesame 0.27, Python 2.7 is the default version. Because 64-bit versions are not available for some of the required packages, it is recommended to stick to 32-bit versions of everything. Python 3.X will not work at all.
+There are multiple versions of Python available. OpenSesame has been tested extensively with 2.7. Because 64-bit versions are not available for some of the required packages, it is recommended to stick to 32-bit versions of everything. Python 3.4 is supported, but not all (optional and extra) dependencies are available for Python 3.4.
 
 To start OpenSesame, open a command prompt in the folder where OpenSesame has been extracted and run OpenSesame using one of the following commands (this example assumes that you have installed Python in `c:\Python27`):
 
@@ -128,8 +136,8 @@ Next, add some other required repositories by using homebrew's "tap" command:
 
 Now it's time to start installing homebrew's own python environment. It's not really necessary to install another Python environment next to your system's python, but the Homebrew version is generally newer and better maintained, so it is definitely recommendable to do this.
 
-    brew install python 
-	
+    brew install python
+
 After python has been installed, you have to make it the 'default' python used by OS X. This means that the home-brewed python interpreter will be used whenever you issue the command 'python' in a terminal instead of the default system python. To do this type the command
 
     echo export PATH="/usr/local/bin:$PATH" >> ~/.bash_profile
@@ -137,13 +145,13 @@ After python has been installed, you have to make it the 'default' python used b
 This will position the reference to the folder in which all your homebrew stuff is located (/usr/local/bin) in front of the rest of the PATH variable. From now on, whenever you issue a command in your terminal, OS X will look in this folder first for the script or program to execute and if it doesn't find it there, it will continue to look in the other folders in the PATH variable. Close and reopen your terminal or enter the command
 
 	source ~/.bash_profile
-	
+
 to rerun the commands written in your .bash_profile. If you then run the command
 
     which python
-	
+
 it should output something like '/usr/local/bin/python'. If it still outputs '/usr/bin/python', OSX is still using the default system python, which is not what you want. You can now continue with installing the rest of the required packages by executing
-	
+
 	brew install qt pyqt qscintilla2 freetype portaudio numpy scipy portmidi hg pillow
 
 For pygame, it is preferable to first install the SDL libraries and smpeg (these are all better than the version that came with OS X, which seem to miss some important functionality):
@@ -182,7 +190,7 @@ First install pyglet:
 	rm -R pyglet
 
 Then psychopy. Install it and do some cleanup with:
-	
+
 	git clone https://github.com/psychopy/psychopy.git
 	cd psychopy
 	python setup.py install

@@ -142,6 +142,22 @@ Pauses the experiment.
 
 [pause]: #pause
 
+<div class="FunctionDoc YAMLDoc" id="reset_feedback" markdown="1">
+
+## function __reset\_feedback__\(\)
+
+Resets all feedback variables to their initial state.
+
+__Example:__
+
+{% highlight python %}
+reset_feedback()
+{% endhighlight %}
+
+</div>
+
+[reset_feedback]: #reset_feedback
+
 <div class="FunctionDoc YAMLDoc" id="sampler" markdown="1">
 
 ## function __sampler__\(src, \*\*playback\_args\)

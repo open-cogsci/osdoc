@@ -5,10 +5,13 @@ group: Miscellaneous
 permalink: /important-changes-3/
 ---
 
-OpenSesame 3.0.X brings many improvements that make it even easier to develop experiments. But these changes may take some getting used to. Almost all changes are backwards compatible, that is, you can still use old way. However, a handful of changes are backwards incompatible, and it's especially important to be aware of those.
+OpenSesame 3.0.X brings many improvements that make it even easier to develop experiments. Most changes are backwards compatible. That is, you can still do things the old way. However, a handful of changes are backwards incompatible, and it's important to be aware of those.
+
+## Overview
 
 %--
 toc:
+ exclude: [Overview]
  mindepth: 2
 --%
 
@@ -20,29 +23,38 @@ The `sampler` object has a number of properties that were previously functions. 
 
 - [/python/sampler/#backwards-incompatible-changes-from-29-to-30](/python/sampler/#backwards-incompatible-changes-from-29-to-30)
 
+### CSS3-compatible colors
+
+You can now use CSS3-compatible color specifications, as described here:
+
+- [/python/canvas/#colors](/python/canvas/#colors)
+
+If you use color names (e.g. 'red', 'green', etc.), this may result in slightly different colors. For example, according to CSS3, 'green' is `#008000` instead (as was the case previously) of `#00FF00`.
+
+
 ## Simplified Python API
 
 ### No more self and exp
 
-It is no longer necessary to prefix `self.` or `exp.` when calling commonly used functions. For example, to pause for a second, you now simply run:
+It is no longer necessary to prefix `self.` or `exp.` when calling commonly used functions. For example, this will programmatically set the subject number to 2:
 
 ~~~ .python
-sleep(1000)
+set_subject_nr(2)
 ~~~
 
 For a list of common functions, see:
 
 - [/python/common/](/python/common/)
 
-### Easy getting and setting of experimental variables
+### The `var` object: Easy getting and setting of experimental variables
 
-The old way of using `self.get()` to get, and `exp.set()` to set experimental variables has been replaced by a far simpler syntax. For example, to set the variable `condition`, so that you can refer to it as `[condition]` in `sketchpad`s, etc.:
+The old way of using `self.get()` to get, and `exp.set()` to set experimental variables has been replaced by a simpler syntax. For example, to set the variable `condition`, so that you can refer to it as `[condition]` in `sketchpad`s, etc.:
 
 ~~~ .python
 var.condition = 'easy`'
 ~~~
 
-And to get an experimental variable that was, for example, defined in a `loop`:
+And to get an experimental variable `condition` that was, for example, defined in a `loop`:
 
 ~~~ .python
 print('Condition is %s' % var.condition)
@@ -51,6 +63,32 @@ print('Condition is %s' % var.condition)
 For more information, see:
 
 - [/python/var/](/python/var/)
+
+### The `clock` object: Time functions
+
+Time functions are now available through the `clock` object:
+
+~~~ .python
+print('Current timestamp: %s' % clock.time())
+clock.sleep(1000) # Sleep for 1 s
+~~~
+
+For more information, see:
+
+- [/python/pool/](/python/clock/)
+
+### The `pool` object: Accessing the file pool
+
+The file pool is now accessible through the `pool` object, which supports a `dict`-like interface (but is not really a Python `dict`):
+
+~~~ .python
+path = pool['image.png']
+print('The full path to image.png is: %s' % path)
+~~~
+
+For more information, see:
+
+- [/python/pool/](/python/pool/)
 
 ### No more from openexp.* import *
 
@@ -72,4 +110,28 @@ The `synth` is no longer a class of its own. Instead, it's a function that retur
 
 ## Consistent coordinates
 
-Previously, OpenSesame used mixed, and inconsistent screen coordinates: `0,0` was the display top-left when using Python code, and the display center when working in `sketchpad` items etc. As of 3.0, the display center is always `0,0`, also in Python code. If you want to switch back to the old behavior, you can disable the 'Uniform coordinates' option in the general tab. (This will be disabled when you open an old experiment.)
+Previously, OpenSesame used mixed, inconsistent screen coordinates: `0,0` was the display top-left when using Python code, and the display center when working in `sketchpad` items etc. As of 3.0, the display center is always `0,0`, also in Python code.
+
+If you want to switch back to the old behavior, you can disable the 'Uniform coordinates' option in the general tab. For backwards compatibility, 'Uniform coordinates' are automatically disabled when you open an old experiment.
+
+## Using Python in text strings
+
+You can now embed Python in text strings using the `[=...]` syntax. For example, the following text string in a `sketchpad`:
+
+~~~
+Two times two equals [=2*2]
+~~~
+
+... will show:
+
+~~~
+Two times two equals 4
+~~~
+
+For more information, see:
+
+- [/usage/text](/usage/text)
+
+## Support for Python 3
+
+OpenSesame now supports Python 3.4. However, many of OpenSesame's dependencies, notably PsychoPy and Expyriment, are Python 2-only. Therefore, Python 2.7 remains the default version of Python.
