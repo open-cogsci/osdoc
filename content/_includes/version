@@ -9,7 +9,7 @@ You are viewing unmaintained documentation for an older version of OpenSesame. C
 </span>
 {% endif %}
 
-<span id="select-box">
+<div id="select-box">
 Your version of OpenSesame:
 <select id="versionSelect" onchange="selectVersion()">
 {% include version-select %}
@@ -23,4 +23,4 @@ Language:
 <option value="es">Español</option>
 </select>
 
-</span>
+</div>
