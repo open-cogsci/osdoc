@@ -132,7 +132,9 @@ You can set the experimental variable `example_variable` to the value 'some valu
 var.example_variable = 'some value'
 ~~~
 
-The `self.get()` and `exp.set()` way of accessing experimental variables still works, but has been deprecated. The `var` syntax is far simpler.
+For more information, see:
+
+- [/python/var](/python/var)
 
 ## Using conditional ("if") statements
 
@@ -158,10 +160,10 @@ You can concatenate as many `and`s and `or`s as you want. `and` takes precedence
 Alternatively, you can use Python code in your conditional statements. To indicate that you are using Python code instead of the OpenSesame syntax (as above), simply prepend an `=` character to your conditional statement, like so:
 
 ~~~ .python
-=self.get('correct') == 0
+=var.correct == 0
 ~~~
 
-Note that you cannot use the square-bracket syntax when using Python code. Instead, you use `self.get()` to retrieve a variable, like you would in an `inline_script`.
+Note that you cannot use the square-bracket syntax when using Python code. Instead, you use the `var` object to retrieve a variable, like you would in an `inline_script`.
 
 The same principle applies to 'Show if' fields in `sketchpad` items. For example, if you want to draw a leftwards arrow only if the variable `cue` has been set to 'right', simply type the proper condition in the 'Show if ...' field and draw the arrow, as in %FigShowIf. Make sure that you draw the arrow after you have set the condition.
 

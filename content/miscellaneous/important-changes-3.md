@@ -75,7 +75,7 @@ clock.sleep(1000) # Sleep for 1 s
 
 For more information, see:
 
-- [/python/pool/](/python/clock/)
+- [/python/clock/](/python/clock/)
 
 ### The `pool` object: Accessing the file pool
 
