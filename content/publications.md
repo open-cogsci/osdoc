@@ -104,6 +104,9 @@ Sassenhagen, J., & Bornkessel-Schlesewsky, I. (2015). The P600 as a correlate of
 Silvis, J. D., Olmos Solis, K., & Donk, M. (2015). The nature of the global effect beyond the first eye movement. *Vision Research*. doi:10.1016/j.visres.2014.12.020
 {: .reference}
 
+Theeuwkens, L. (2015). *Angstherkenning bij kinderen met psychopathische trekken* (Master thesis). Utrecht University, Utrecht, Netherlands.
+{: .reference}
+
 Van Veen, S. C., van Schie, K., Wijngaards-de Meij, L. D. N. V., Littel, M., Engelhard, I. M., & van den Hout, M. A. (2015). Speed matters: relationship between speed of eye movements and modification of aversive autobiographical memories. *Frontiers in Psychiatry: Affective Disorders and Psychosomatic Research*, 45. doi:10.3389/fpsyt.2015.00045
 {: .reference}
 
