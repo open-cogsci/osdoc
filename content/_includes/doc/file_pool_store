@@ -172,11 +172,11 @@ for folder in pool.folders():
 __Keywords:__
 
 - `include_fallback_folder` -- Indicates whether the fallback pool folder should be included if it exists.
-	- Type: bool
 	- Default: True
-- `include_experiment_path` -- Indicates whether the experiment folder should be included if it exists.
 	- Type: bool
+- `include_experiment_path` -- Indicates whether the experiment folder should be included if it exists.
 	- Default: False
+	- Type: bool
 
 __Returns:__
 
@@ -203,9 +203,9 @@ pool.rename(u'my_old_img.png', u'my_new_img.png')
 
 __Arguments:__
 
-- `old_path` -- The old file name.
-	- Type: str, unicode
 - `new_path` -- The new file name.
+	- Type: str, unicode
+- `old_path` -- The old file name.
 	- Type: str, unicode
 
 </div>

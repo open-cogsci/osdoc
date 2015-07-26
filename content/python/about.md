@@ -5,7 +5,7 @@ group: Python inline code
 permalink: /about/
 ---
 
-In OpenSesame you can create complex experiments using only the graphical user interface (GUI), but you will inevitably encounter situations in which the functionality provided by the GUI is insufficient. In these cases you can use the `inline_script` item to add Python code to your experiment.
+In OpenSesame you can create complex experiments using only the graphical user interface (GUI). But you will sometimes encounter situations in which the functionality provided by the GUI is insufficient. In these cases you can add Python code to your experiment.
 
 ## Overview
 
@@ -26,7 +26,24 @@ toc:
 
 ## Python in the OpenSesame GUI
 
-### The `inline_script` item
+### A single Python workspace
+
+All Python code is executed in a single Python workspace. This means that variables that have been defined in one `inline_script` are accessible in all other `inline_script`s, as well as in Python statements that are embedded in run-if statements and text strings. The same principle applies to modules: once `import`ed, they are available everywhere.
+
+For example, you can simply construct the `canvas` in one `inline_script` ...
+
+~~~ .python
+my_canvas = canvas()
+my_canvas.fixdot()
+~~~
+
+... and show it in another `inline_script` ...
+
+~~~ .python
+my_canvas.show()
+~~~
+
+### Inline_script items
 
 In order to use Python code you need to add an `inline_script` item to your experiment. You can do this by dragging the Python icon (the blue/yellow icon) from the item toolbar into the experiment sequence. After you have done this you will see something like %FigInlineScript.
 
@@ -37,7 +54,9 @@ figure:
  caption: The `inline_script` item.
 --%
 
-As you can see, the `inline_script` item consists of two tabs: one for the prepare phase and one for the run phase. The prepare phase is executed first, to allow items to prepare for the time critical run phase. It is good practice to construct `canvas` objects, `sampler` objects, etc. during the prepare phase, so that they can be presented without delay during the run phase. But this is only convention, you can execute arbitrary Python code during both phases. For more information about the prepare-run strategy, see:
+As you can see, the `inline_script` item consists of two tabs: one for the prepare phase and one for the run phase. The prepare phase is executed first, to allow items to prepare for the time critical run phase. It is good practice to construct `canvas` objects, `sampler` objects, etc. during the prepare phase, so that they can be presented without delay during the run phase. But this is only convention; you can execute arbitrary Python code during both phases.
+
+For more information about the prepare-run strategy, see:
 
 - [/usage/prepare-run/](/usage/prepare-run/)
 
@@ -46,7 +65,7 @@ As you can see, the `inline_script` item consists of two tabs: one for the prepa
 You can use single-line Python statements also where you would normally type static values, or would use the OpenSesame square-brackets notation to indicate values (i.e. `[my_var]`). To do so, you need to add an `=` prefix. For example, you can use the following Python script as a run-if statement (see also %FigRunIf):
 
 ~~~ .python
-=self.get('correct') == 1 and self.get('response_time') < 1000
+=var.correct == 1 and var.response_time < 1000
 ~~~
 
 %--
@@ -60,10 +79,10 @@ For more information about conditional ("if") statements, see:
 
 - [/usage/variables-and-conditional-statements/#using-conditional-if-statements](/usage/variables-and-conditional-statements/#using-conditional-if-statements)
 
-Similarly, you can use single-line Python statements to define variables in `loop` tables. For example, if you want the variable `duration` to have a random value between 0 and 1000, you can use the following statement (all functions from the `math` and `random` modules are available; see also %FigLoopTable):
+Similarly, you can use single-line Python statements to define variables in `loop` tables. Let's say that you want to assign a random value between 0 and 1000 to a variable. You could this by first `import`ing the `random` in an `inline_script`. Once the `random` module is available, you could use `random.randint()` to obtain a random variable in a `loop` item:
 
 ~~~ .python
-=randint(0, 1000)
+=random.randint(0, 1000)
 ~~~
 
 %--
@@ -73,13 +92,25 @@ figure:
  caption: Using Python script to define variables in a `loop` table.
 --%
 
-### The debug window
+### Python in text strings
+
+You can embed Python statements in text strings using the `[=...]` syntax. For example, you could the following text to a `sketchpad`:
+
+    The resolution is [=var.width] x [=var.height] px
+
+Depending on your experiment's resolution, this might evaluate to:
+
+    The resolution is 1024 x 768 px
+
+### The IPython debug window
 
 OpenSesame reroutes the standard output to the debug window, which you can activate using Control + D or through the menu (Menu -> View -> Show debug window; see %FigDebugNormal). You can print to the debug window using the Python `print()` statement:
 
 ~~~ .python
-print(u'This will appear in the debug window!')
+print('This will appear in the debug window!')
 ~~~
+
+If available, the debug window is an [IPython] terminal. IPython is a powerful interactive Python terminal. If IPython is not available, a simple fallback terminal will be used.
 
 %--
 figure:
@@ -97,7 +128,10 @@ Many common functions are directly available in an `inline_script` item, without
 ~~~ .python
 # `canvas()` is a common function that returns a `canvas` object
 fixdot_canvas = canvas()
-fixdot_canvas.fixdot()
+if sometimes(): # Sometimes the fixdot is green
+    fixdot_canvas.fixdot(color='green')
+else: # Sometimes it is red
+    fixdot_canvas.fixdot(color='red')
 fixdot_canvas.show()
 ~~~
 
@@ -169,23 +203,6 @@ A full overview of the `pool` object can be found here:
 ### The `win` object: The window handle
 
 The `win` object is the window handle, and depends on the back-end. You will generally use the `win` object only in special cases, such as when creating PsychoPy stimuli..
-
-### Sharing variables and modules between `inline_script`s
-
-Variables defined in one `inline_script` are accessible in all other `inline_script`s. Therefore, you can simply construct the `canvas` in one `inline_script` ...
-
-~~~ .python
-my_canvas = canvas()
-my_canvas.fixdot()
-~~~
-
-... and show it in another `inline_script` ...
-
-~~~ .python
-my_canvas.show()
-~~~
-
-The same principle applies to functions and modules: Once you have defined a function or imported a module in one `inline_script`, it will be accessible in other `inline_scripts` as well. In other words, all `inline_script`s share the same global workspace.
 
 ## Modules for display presentation, response collection, etc.
 

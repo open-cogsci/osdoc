@@ -257,8 +257,8 @@ my_mouse.set_pos(pos=(0,0))
 __Keywords:__
 
 - `pos` -- An (x,y) tuple for the new mouse coordinates.
-	- Type: tuple
 	- Default: (0, 0)
+	- Type: tuple
 
 </div>
 

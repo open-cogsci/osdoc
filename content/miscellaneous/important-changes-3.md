@@ -31,6 +31,11 @@ You can now use CSS3-compatible color specifications, as described here:
 
 If you use color names (e.g. 'red', 'green', etc.), this may result in slightly different colors. For example, according to CSS3, 'green' is `#008000` instead (as was the case previously) of `#00FF00`.
 
+## New file format (.osexp)
+
+OpenSesame now saves experiments in `.osexp` format. Of course, you can still open the old formats (`.opensesame` and `.opensesame.tar.gz`). For more information, see:
+
+- [/miscellaneous/file-format/](/miscellaneous/file-format/)
 
 ## Simplified Python API
 

@@ -58,10 +58,12 @@ convert samples from a different format, you can use
 The following are now properties, as described under
 [playback keywords]:
 
-- [sampler.volume]
+- [sampler.block]
+- [sampler.duration]
 - [sampler.fade_in]
-- [sampler.pitch]
 - [sampler.pan]
+- [sampler.pitch]
+- [sampler.volume]
 
 Therefore, the following will no longer work:
 
@@ -139,10 +141,10 @@ my_sampler = sampler(src, volume=.5)
 
 __Arguments:__
 
-- `experiment` -- The experiment object.
-	- Type: experiment
 - `src` -- The full path to a `.wav` or `.ogg` file.
 	- Type: unicode, str
+- `experiment` -- The experiment object.
+	- Type: experiment
 
 __Keyword dict:__
 

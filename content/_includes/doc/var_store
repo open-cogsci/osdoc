@@ -64,14 +64,14 @@ __Arguments:__
 __Keywords:__
 
 - `default` -- A default value in case the variable doesn't exist, or `None` for no default value.
+	- Default: None
 	- Type: any
-	- Default: None
 - `_eval` -- Determines whether the returned should be evaluated for variable references.
-	- Type: bool
 	- Default: True
+	- Type: bool
 - `valid` -- A list of valid values, or `None` to allow all values.
-	- Type: NoneType, list
 	- Default: None
+	- Type: NoneType, list
 
 </div>
 

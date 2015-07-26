@@ -99,14 +99,15 @@ External devices
 	StimSync
 	Triggers for EEG/ ERP
 Miscellaneous
+	File format (.osexp)
 	Important changes in 3.0
-	Timing
 	Counterbalancing
 	Git and versioning
-	Visual angle
-	Runners
-	Teaching resources
 	Release history
+	Runners
+	:Teaching resources
+	Timing
+	Visual angle
 Examples
 Standard tasks
 Publications

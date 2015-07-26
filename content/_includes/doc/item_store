@@ -71,11 +71,11 @@ __Arguments:__
 __Keywords:__
 
 - `name` -- The item name, or None to choose a unique name based on the item type.
-	- Type: unicode, NoneType
 	- Default: None
+	- Type: unicode, NoneType
 - `script` -- A definition script, or None to start with a blank item.
-	- Type: unicode, NoneType
 	- Default: None
+	- Type: unicode, NoneType
 
 __Returns:__
 
@@ -102,8 +102,8 @@ __Arguments:__
 __Keywords:__
 
 - `suggestion` -- The desired name, or None to choose a name based on the item's type.
-	- Type: unicode, NoneType
 	- Default: None
+	- Type: unicode, NoneType
 
 __Returns:__
 

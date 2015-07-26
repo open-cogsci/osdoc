@@ -184,8 +184,8 @@ __Arguments:__
 __Keywords:__
 
 - `auto_prepare` -- Indicates whether the canvas should be automatically prepared after each drawing operation, so that [canvas.show] will be maximally efficient. If auto_prepare is turned off, drawing operations may be faster, but [canvas.show] will take longer, unless [canvas.prepare] is explicitly called in advance. Generally, it only makes sense to disable auto_prepare when you want to draw a large number of stimuli, as in the second example below. Currently, the auto_prepare parameter only applies to the xpyriment backend, and is ignored by the other backends.
-	- Type: bool
 	- Default: True
+	- Type: bool
 
 __Keyword dict:__
 
@@ -204,20 +204,20 @@ Draws an arrow. An arrow is a line, with an arrowhead at (ex, ey). The angle bet
 
 __Arguments:__
 
-- `sx` -- The left X coordinate.
-	- Type: int
 - `sy` -- The top Y coordinate.
 	- Type: int
-- `ex` -- The right X coordinate.
+- `sx` -- The left X coordinate.
 	- Type: int
 - `ey` -- The bottom Y coordinate.
+	- Type: int
+- `ex` -- The right X coordinate.
 	- Type: int
 
 __Keywords:__
 
 - `arrow_size` -- The length of the arrow-head lines in pixels.
-	- Type: int
 	- Default: 5
+	- Type: int
 
 __Keyword dict:__
 
@@ -245,9 +245,9 @@ my_canvas.circle(100, 100, 50, fill=True, color='red')
 
 __Arguments:__
 
-- `x` -- The center X coordinate of the circle.
-	- Type: int
 - `y` -- The center Y coordinate of the circle.
+	- Type: int
+- `x` -- The center X coordinate of the circle.
 	- Type: int
 - `r` -- The radius of the circle.
 	- Type: int
@@ -360,9 +360,9 @@ my_canvas.ellipse(-10, -10, 20, 20, fill=True)
 
 __Arguments:__
 
-- `x` -- The left X coordinate.
-	- Type: int
 - `y` -- The top Y coordinate.
+	- Type: int
+- `x` -- The left X coordinate.
 	- Type: int
 - `w` -- The width.
 	- Type: int
@@ -405,18 +405,18 @@ my_canvas.fixdot()
 
 __Keywords:__
 
-- `x` -- The X coordinate of the dot center, or None to draw a horizontally centered dot.
-	- Type: int, NoneType
-	- Default: None
 - `y` -- The Y coordinate of the dot center, or None to draw a vertically centered dot.
-	- Type: int, NoneType
 	- Default: None
+	- Type: int, NoneType
+- `x` -- The X coordinate of the dot center, or None to draw a horizontally centered dot.
+	- Default: None
+	- Type: int, NoneType
 - `style` -- The fixation-dot style. One of: default, large-filled,
 medium-filled, small-filled, large-open, medium-open,
 small-open, large-cross, medium-cross, or small-cross.
 default equals medium-open.
-	- Type: str, unicode
 	- Default: u'default'
+	- Type: str, unicode
 
 __Keyword dict:__
 
@@ -445,44 +445,44 @@ my_canvas.gabor(100, 100, 45, .05)
 
 __Arguments:__
 
-- `x` -- The center X coordinate.
-	- Type: int
 - `y` -- The center Y coordinate.
 	- Type: int
-- `orient` -- Orientation in degrees [0 .. 360].
-	- Type: float, int
+- `x` -- The center X coordinate.
+	- Type: int
 - `freq` -- Frequency in cycles/px of the sinusoid.
+	- Type: float, int
+- `orient` -- Orientation in degrees [0 .. 360].
 	- Type: float, int
 
 __Keywords:__
 
-- `env` -- The envelope that determines the shape of the patch. Can be "gaussian", "linear", "circular", or "rectangular".
-	- Type: str, unicode
-	- Default: u'gaussian'
-- `size` -- A size in pixels.
-	- Type: float, int
-	- Default: 96
-- `stdev` -- Standard deviation in pixels of the gaussian. Only applicable to gaussian envelopes.
-	- Type: float, int
-	- Default: 12
-- `phase` -- Phase of the sinusoid [0.0 .. 1.0].
-	- Type: float, int
-	- Default: 0
-- `col1` -- A color for the peaks.
-	- Type: str, unicode
-	- Default: u'white'
-- `col2` -- A color for the troughs. Note: The psycho back-end
-ignores this parameter and always uses the inverse of
-`col1` for the throughs.
-	- Type: str, unicode
-	- Default: u'black'
 - `bgmode` -- Specifies whether the background is the average of col1 col2
 ('avg', corresponding to a typical Gabor patch), or equal to
 col2 ('col2'), useful for blending into the     background. Note:
 this parameter is ignored by the psycho backend, which uses
 increasing transparency for the background.
-	- Type: str, unicode
 	- Default: u'avg'
+	- Type: str, unicode
+- `env` -- The envelope that determines the shape of the patch. Can be "gaussian", "linear", "circular", or "rectangular".
+	- Default: u'gaussian'
+	- Type: str, unicode
+- `stdev` -- Standard deviation in pixels of the gaussian. Only applicable to gaussian envelopes.
+	- Default: 12
+	- Type: float, int
+- `phase` -- Phase of the sinusoid [0.0 .. 1.0].
+	- Default: 0
+	- Type: float, int
+- `size` -- A size in pixels.
+	- Default: 96
+	- Type: float, int
+- `col2` -- A color for the troughs. Note: The psycho back-end
+ignores this parameter and always uses the inverse of
+`col1` for the throughs.
+	- Default: u'black'
+	- Type: str, unicode
+- `col1` -- A color for the peaks.
+	- Default: u'white'
+	- Type: str, unicode
 
 </div>
 
@@ -522,18 +522,18 @@ __Arguments:__
 
 __Keywords:__
 
-- `center` -- A bool indicating whether coordinates indicate the center (True) or top-left (False).
-	- Type: bool
-	- Default: True
-- `x` -- The X coordinate, or `None` to draw a horizontally centered image.
-	- Type: int, NoneType
-	- Default: None
 - `y` -- The Y coordinate, or `None` to draw a vertically centered image.
+	- Default: None
 	- Type: int, NoneType
+- `x` -- The X coordinate, or `None` to draw a horizontally centered image.
 	- Default: None
+	- Type: int, NoneType
 - `scale` -- The scaling factor of the image. `None` or 1 indicate the original size. 2.0 indicates a 200% zoom, etc.
-	- Type: float, int, NoneType
 	- Default: None
+	- Type: float, int, NoneType
+- `center` -- A bool indicating whether coordinates indicate the center (True) or top-left (False).
+	- Default: True
+	- Type: bool
 
 </div>
 
@@ -564,13 +564,13 @@ Draws a line.
 
 __Arguments:__
 
-- `sx` -- The left X coordinate.
-	- Type: int
 - `sy` -- The top Y coordinate.
 	- Type: int
-- `ex` -- The right X coordinate.
+- `sx` -- The left X coordinate.
 	- Type: int
 - `ey` -- The bottom Y coordinate.
+	- Type: int
+- `ex` -- The right X coordinate.
 	- Type: int
 
 __Keyword dict:__
@@ -599,36 +599,36 @@ my_canvas.noise_patch(100, 100, env='circular')
 
 __Arguments:__
 
-- `x` -- The center X coordinate.
-	- Type: int
 - `y` -- The center Y coordinate.
+	- Type: int
+- `x` -- The center X coordinate.
 	- Type: int
 
 __Keywords:__
 
-- `env` -- The envelope that determines the shape of the patch. Can be "gaussian", "linear", "circular", or "rectangular".
-	- Type: str, unicode
-	- Default: u'gaussian'
-- `size` -- A size in pixels.
-	- Type: float, int
-	- Default: 96
-- `stdev` -- Standard deviation in pixels of the gaussian. Only applicable to gaussian envelopes.
-	- Type: float, int
-	- Default: 12
-- `col1` -- The first color.
-	- Type: str, unicode
-	- Default: u'white'
-- `col2` -- The second color. Note: The psycho back-end ignores this
-parameter and always uses the inverse of `col1`.
-	- Type: str, unicode
-	- Default: u'black'
 - `bgmode` -- Specifies whether the background is the average of col1 col2
 ('avg', corresponding to a typical Gabor patch), or equal to
 col2 ('col2'), useful for blending into the     background. Note:
 this parameter is ignored by the psycho backend, which uses
 increasing transparency for the background.
-	- Type: str, unicode
 	- Default: u'avg'
+	- Type: str, unicode
+- `env` -- The envelope that determines the shape of the patch. Can be "gaussian", "linear", "circular", or "rectangular".
+	- Default: u'gaussian'
+	- Type: str, unicode
+- `stdev` -- Standard deviation in pixels of the gaussian. Only applicable to gaussian envelopes.
+	- Default: 12
+	- Type: float, int
+- `size` -- A size in pixels.
+	- Default: 96
+	- Type: float, int
+- `col2` -- The second color. Note: The psycho back-end ignores this
+parameter and always uses the inverse of `col1`.
+	- Default: u'black'
+	- Type: str, unicode
+- `col1` -- The first color.
+	- Default: u'white'
+	- Type: str, unicode
 
 </div>
 
@@ -693,9 +693,9 @@ my_canvas.rect(-10, -10, 20, 20, fill=True)
 
 __Arguments:__
 
-- `x` -- The left X coordinate.
-	- Type: int
 - `y` -- The top Y coordinate.
+	- Type: int
+- `x` -- The left X coordinate.
 	- Type: int
 - `w` -- The width.
 	- Type: int
@@ -770,19 +770,19 @@ __Arguments:__
 
 __Keywords:__
 
-- `center` -- A bool indicating whether the coordinates reflect the center (True) or top-left (False) of the text.
-	- Type: bool
-	- Default: True
-- `x` -- The X coordinate, or None to draw horizontally centered text.
-	- Type: int, NoneType
-	- Default: None
 - `y` -- The Y coordinate, or None to draw vertically centered text.
-	- Type: int, NoneType
 	- Default: None
+	- Type: int, NoneType
+- `x` -- The X coordinate, or None to draw horizontally centered text.
+	- Default: None
+	- Type: int, NoneType
+- `center` -- A bool indicating whether the coordinates reflect the center (True) or top-left (False) of the text.
+	- Default: True
+	- Type: bool
 - `max_width` -- The maximum width of the text in pixels, before wrapping to a
 new line, or `None` to wrap at screen edge.
-	- Type: int, NoneType
 	- Default: None
+	- Type: int, NoneType
 
 __Keyword dict:__
 
@@ -817,8 +817,8 @@ __Keywords:__
 
 - `max_width` -- The maximum width of the text in pixels, before wrapping to a
 new line, or `None` to wrap at screen edge.
-	- Type: int, NoneType
 	- Default: None
+	- Type: int, NoneType
 
 __Keyword dict:__
 

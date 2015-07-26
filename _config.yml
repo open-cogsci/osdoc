@@ -1,0 +1,8 @@
+branch: '3.0'
+destination: _tmp
+langs: [fr, en, es]
+markdown: kramdown
+notifications: true
+pygments: true
+source: _content
+status: dev

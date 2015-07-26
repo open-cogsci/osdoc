@@ -6,6 +6,6 @@ permalink: /examples/
 singleton: true
 ---
 
-<!-- Examples are auto-generated from the GitHub api -->
+Example experiments are included with OpenSesame. A list of examples is available through Menu -> Tools -> Example experiments. Alternatively, you can download the examples from GitHub:
 
-{% include doc/examples %}
+- <https://github.com/smathot/OpenSesame/tree/ising/extensions/example_experiments/examples>
