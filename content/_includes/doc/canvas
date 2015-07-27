@@ -27,19 +27,19 @@ __Overview:__
 - [function __canvas\.close\_display__\(experiment\)](#function-__canvasclose_display__experiment)
 - [function __canvas\.copy__\(canvas\)](#function-__canvascopy__canvas)
 - [function __canvas\.ellipse__\(x, y, w, h, \*\*style\_args\)](#function-__canvasellipse__x-y-w-h-style_args)
-- [function __canvas\.fixdot__\(y=None, x=None, style=u'default', \*\*style\_args\)](#function-__canvasfixdot__ynone-xnone-styleudefault-style_args)
-- [function __canvas\.gabor__\(x, y, orient, freq, bgmode=u'avg', col2=u'black', col1=u'white', env=u'gaussian', stdev=12, phase=0, size=96\)](#function-__canvasgabor__x-y-orient-freq-bgmodeuavg-col2ublack-col1uwhite-envugaussian-stdev12-phase0-size96)
+- [function __canvas\.fixdot__\(x=None, y=None, style=u'default', \*\*style\_args\)](#function-__canvasfixdot__xnone-ynone-styleudefault-style_args)
+- [function __canvas\.gabor__\(x, y, orient, freq, env=u'gaussian', size=96, stdev=12, phase=0, col1=u'white', col2=u'black', bgmode=u'avg'\)](#function-__canvasgabor__x-y-orient-freq-envugaussian-size96-stdev12-phase0-col1uwhite-col2ublack-bgmodeuavg)
 - [property __canvas.height__](#property-__canvasheight__)
-- [function __canvas\.image__\(fname, y=None, x=None, scale=None, center=True\)](#function-__canvasimage__fname-ynone-xnone-scalenone-centertrue)
+- [function __canvas\.image__\(fname, center=True, x=None, y=None, scale=None\)](#function-__canvasimage__fname-centertrue-xnone-ynone-scalenone)
 - [function __canvas\.init\_display__\(experiment\)](#function-__canvasinit_display__experiment)
 - [function __canvas\.line__\(sx, sy, ex, ey, \*\*style\_args\)](#function-__canvasline__sx-sy-ex-ey-style_args)
-- [function __canvas\.noise\_patch__\(x, y, bgmode=u'avg', col2=u'black', col1=u'white', env=u'gaussian', stdev=12, size=96\)](#function-__canvasnoise_patch__x-y-bgmodeuavg-col2ublack-col1uwhite-envugaussian-stdev12-size96)
+- [function __canvas\.noise\_patch__\(x, y, env=u'gaussian', size=96, stdev=12, col1=u'white', col2=u'black', bgmode=u'avg'\)](#function-__canvasnoise_patch__x-y-envugaussian-size96-stdev12-col1uwhite-col2ublack-bgmodeuavg)
 - [function __canvas\.polygon__\(vertices, \*\*style\_args\)](#function-__canvaspolygon__vertices-style_args)
 - [function __canvas\.prepare__\(\)](#function-__canvasprepare__)
 - [function __canvas\.rect__\(x, y, w, h, \*\*style\_args\)](#function-__canvasrect__x-y-w-h-style_args)
 - [function __canvas\.show__\(\)](#function-__canvasshow__)
 - [property __canvas.size__](#property-__canvassize__)
-- [function __canvas\.text__\(text, y=None, x=None, center=True, max\_width=None, \*\*style\_args\)](#function-__canvastext__text-ynone-xnone-centertrue-max_widthnone-style_args)
+- [function __canvas\.text__\(text, center=True, x=None, y=None, max\_width=None, \*\*style\_args\)](#function-__canvastext__text-centertrue-xnone-ynone-max_widthnone-style_args)
 - [function __canvas\.text\_size__\(text, max\_width=None, \*\*style\_args\)](#function-__canvastext_size__text-max_widthnone-style_args)
 - [property __canvas.width__](#property-__canvaswidth__)
 
@@ -184,8 +184,8 @@ __Arguments:__
 __Keywords:__
 
 - `auto_prepare` -- Indicates whether the canvas should be automatically prepared after each drawing operation, so that [canvas.show] will be maximally efficient. If auto_prepare is turned off, drawing operations may be faster, but [canvas.show] will take longer, unless [canvas.prepare] is explicitly called in advance. Generally, it only makes sense to disable auto_prepare when you want to draw a large number of stimuli, as in the second example below. Currently, the auto_prepare parameter only applies to the xpyriment backend, and is ignored by the other backends.
-	- Default: True
 	- Type: bool
+	- Default: True
 
 __Keyword dict:__
 
@@ -204,20 +204,20 @@ Draws an arrow. An arrow is a line, with an arrowhead at (ex, ey). The angle bet
 
 __Arguments:__
 
-- `sy` -- The top Y coordinate.
-	- Type: int
 - `sx` -- The left X coordinate.
 	- Type: int
-- `ey` -- The bottom Y coordinate.
+- `sy` -- The top Y coordinate.
 	- Type: int
 - `ex` -- The right X coordinate.
+	- Type: int
+- `ey` -- The bottom Y coordinate.
 	- Type: int
 
 __Keywords:__
 
 - `arrow_size` -- The length of the arrow-head lines in pixels.
-	- Default: 5
 	- Type: int
+	- Default: 5
 
 __Keyword dict:__
 
@@ -245,9 +245,9 @@ my_canvas.circle(100, 100, 50, fill=True, color='red')
 
 __Arguments:__
 
-- `y` -- The center Y coordinate of the circle.
-	- Type: int
 - `x` -- The center X coordinate of the circle.
+	- Type: int
+- `y` -- The center Y coordinate of the circle.
 	- Type: int
 - `r` -- The radius of the circle.
 	- Type: int
@@ -360,9 +360,9 @@ my_canvas.ellipse(-10, -10, 20, 20, fill=True)
 
 __Arguments:__
 
-- `y` -- The top Y coordinate.
-	- Type: int
 - `x` -- The left X coordinate.
+	- Type: int
+- `y` -- The top Y coordinate.
 	- Type: int
 - `w` -- The width.
 	- Type: int
@@ -382,7 +382,7 @@ operations.
 
 <div class="FunctionDoc YAMLDoc" id="canvas-fixdot" markdown="1">
 
-## [function __canvas\.fixdot__\(y=None, x=None, style=u'default', \*\*style\_args\)](#function-__canvasfixdot__ynone-xnone-styleudefault-style_args) {#function-__canvasfixdot__ynone-xnone-styleudefault-style_args}
+## [function __canvas\.fixdot__\(x=None, y=None, style=u'default', \*\*style\_args\)](#function-__canvasfixdot__xnone-ynone-styleudefault-style_args) {#function-__canvasfixdot__xnone-ynone-styleudefault-style_args}
 
 Draws a fixation dot. The default style is medium-open.
 
@@ -405,18 +405,18 @@ my_canvas.fixdot()
 
 __Keywords:__
 
-- `y` -- The Y coordinate of the dot center, or None to draw a vertically centered dot.
-	- Default: None
-	- Type: int, NoneType
 - `x` -- The X coordinate of the dot center, or None to draw a horizontally centered dot.
-	- Default: None
 	- Type: int, NoneType
+	- Default: None
+- `y` -- The Y coordinate of the dot center, or None to draw a vertically centered dot.
+	- Type: int, NoneType
+	- Default: None
 - `style` -- The fixation-dot style. One of: default, large-filled,
 medium-filled, small-filled, large-open, medium-open,
 small-open, large-cross, medium-cross, or small-cross.
 default equals medium-open.
-	- Default: u'default'
 	- Type: str, unicode
+	- Default: u'default'
 
 __Keyword dict:__
 
@@ -431,7 +431,7 @@ operations.
 
 <div class="FunctionDoc YAMLDoc" id="canvas-gabor" markdown="1">
 
-## [function __canvas\.gabor__\(x, y, orient, freq, bgmode=u'avg', col2=u'black', col1=u'white', env=u'gaussian', stdev=12, phase=0, size=96\)](#function-__canvasgabor__x-y-orient-freq-bgmodeuavg-col2ublack-col1uwhite-envugaussian-stdev12-phase0-size96) {#function-__canvasgabor__x-y-orient-freq-bgmodeuavg-col2ublack-col1uwhite-envugaussian-stdev12-phase0-size96}
+## [function __canvas\.gabor__\(x, y, orient, freq, env=u'gaussian', size=96, stdev=12, phase=0, col1=u'white', col2=u'black', bgmode=u'avg'\)](#function-__canvasgabor__x-y-orient-freq-envugaussian-size96-stdev12-phase0-col1uwhite-col2ublack-bgmodeuavg) {#function-__canvasgabor__x-y-orient-freq-envugaussian-size96-stdev12-phase0-col1uwhite-col2ublack-bgmodeuavg}
 
 Draws a Gabor patch. Note: The exact rendering of the Gabor patch
 depends on the back-end.
@@ -445,44 +445,44 @@ my_canvas.gabor(100, 100, 45, .05)
 
 __Arguments:__
 
-- `y` -- The center Y coordinate.
-	- Type: int
 - `x` -- The center X coordinate.
 	- Type: int
-- `freq` -- Frequency in cycles/px of the sinusoid.
-	- Type: float, int
+- `y` -- The center Y coordinate.
+	- Type: int
 - `orient` -- Orientation in degrees [0 .. 360].
+	- Type: float, int
+- `freq` -- Frequency in cycles/px of the sinusoid.
 	- Type: float, int
 
 __Keywords:__
 
+- `env` -- The envelope that determines the shape of the patch. Can be "gaussian", "linear", "circular", or "rectangular".
+	- Type: str, unicode
+	- Default: u'gaussian'
+- `size` -- A size in pixels.
+	- Type: float, int
+	- Default: 96
+- `stdev` -- Standard deviation in pixels of the gaussian. Only applicable to gaussian envelopes.
+	- Type: float, int
+	- Default: 12
+- `phase` -- Phase of the sinusoid [0.0 .. 1.0].
+	- Type: float, int
+	- Default: 0
+- `col1` -- A color for the peaks.
+	- Type: str, unicode
+	- Default: u'white'
+- `col2` -- A color for the troughs. Note: The psycho back-end
+ignores this parameter and always uses the inverse of
+`col1` for the throughs.
+	- Type: str, unicode
+	- Default: u'black'
 - `bgmode` -- Specifies whether the background is the average of col1 col2
 ('avg', corresponding to a typical Gabor patch), or equal to
 col2 ('col2'), useful for blending into the     background. Note:
 this parameter is ignored by the psycho backend, which uses
 increasing transparency for the background.
+	- Type: str, unicode
 	- Default: u'avg'
-	- Type: str, unicode
-- `env` -- The envelope that determines the shape of the patch. Can be "gaussian", "linear", "circular", or "rectangular".
-	- Default: u'gaussian'
-	- Type: str, unicode
-- `stdev` -- Standard deviation in pixels of the gaussian. Only applicable to gaussian envelopes.
-	- Default: 12
-	- Type: float, int
-- `phase` -- Phase of the sinusoid [0.0 .. 1.0].
-	- Default: 0
-	- Type: float, int
-- `size` -- A size in pixels.
-	- Default: 96
-	- Type: float, int
-- `col2` -- A color for the troughs. Note: The psycho back-end
-ignores this parameter and always uses the inverse of
-`col1` for the throughs.
-	- Default: u'black'
-	- Type: str, unicode
-- `col1` -- A color for the peaks.
-	- Default: u'white'
-	- Type: str, unicode
 
 </div>
 
@@ -502,7 +502,7 @@ The height of the canvas. This is a read-only property.
 
 <div class="FunctionDoc YAMLDoc" id="canvas-image" markdown="1">
 
-## [function __canvas\.image__\(fname, y=None, x=None, scale=None, center=True\)](#function-__canvasimage__fname-ynone-xnone-scalenone-centertrue) {#function-__canvasimage__fname-ynone-xnone-scalenone-centertrue}
+## [function __canvas\.image__\(fname, center=True, x=None, y=None, scale=None\)](#function-__canvasimage__fname-centertrue-xnone-ynone-scalenone) {#function-__canvasimage__fname-centertrue-xnone-ynone-scalenone}
 
 Draws an image from file. This function does not look in the file pool, but takes an absolute path.
 
@@ -522,18 +522,18 @@ __Arguments:__
 
 __Keywords:__
 
-- `y` -- The Y coordinate, or `None` to draw a vertically centered image.
-	- Default: None
-	- Type: int, NoneType
-- `x` -- The X coordinate, or `None` to draw a horizontally centered image.
-	- Default: None
-	- Type: int, NoneType
-- `scale` -- The scaling factor of the image. `None` or 1 indicate the original size. 2.0 indicates a 200% zoom, etc.
-	- Default: None
-	- Type: float, int, NoneType
 - `center` -- A bool indicating whether coordinates indicate the center (True) or top-left (False).
-	- Default: True
 	- Type: bool
+	- Default: True
+- `x` -- The X coordinate, or `None` to draw a horizontally centered image.
+	- Type: int, NoneType
+	- Default: None
+- `y` -- The Y coordinate, or `None` to draw a vertically centered image.
+	- Type: int, NoneType
+	- Default: None
+- `scale` -- The scaling factor of the image. `None` or 1 indicate the original size. 2.0 indicates a 200% zoom, etc.
+	- Type: float, int, NoneType
+	- Default: None
 
 </div>
 
@@ -564,13 +564,13 @@ Draws a line.
 
 __Arguments:__
 
-- `sy` -- The top Y coordinate.
-	- Type: int
 - `sx` -- The left X coordinate.
 	- Type: int
-- `ey` -- The bottom Y coordinate.
+- `sy` -- The top Y coordinate.
 	- Type: int
 - `ex` -- The right X coordinate.
+	- Type: int
+- `ey` -- The bottom Y coordinate.
 	- Type: int
 
 __Keyword dict:__
@@ -586,7 +586,7 @@ operations.
 
 <div class="FunctionDoc YAMLDoc" id="canvas-noise_patch" markdown="1">
 
-## [function __canvas\.noise\_patch__\(x, y, bgmode=u'avg', col2=u'black', col1=u'white', env=u'gaussian', stdev=12, size=96\)](#function-__canvasnoise_patch__x-y-bgmodeuavg-col2ublack-col1uwhite-envugaussian-stdev12-size96) {#function-__canvasnoise_patch__x-y-bgmodeuavg-col2ublack-col1uwhite-envugaussian-stdev12-size96}
+## [function __canvas\.noise\_patch__\(x, y, env=u'gaussian', size=96, stdev=12, col1=u'white', col2=u'black', bgmode=u'avg'\)](#function-__canvasnoise_patch__x-y-envugaussian-size96-stdev12-col1uwhite-col2ublack-bgmodeuavg) {#function-__canvasnoise_patch__x-y-envugaussian-size96-stdev12-col1uwhite-col2ublack-bgmodeuavg}
 
 Draws a patch of noise, with an envelope. The exact rendering of the noise patch depends on the back-end.
 
@@ -599,36 +599,36 @@ my_canvas.noise_patch(100, 100, env='circular')
 
 __Arguments:__
 
-- `y` -- The center Y coordinate.
-	- Type: int
 - `x` -- The center X coordinate.
+	- Type: int
+- `y` -- The center Y coordinate.
 	- Type: int
 
 __Keywords:__
 
+- `env` -- The envelope that determines the shape of the patch. Can be "gaussian", "linear", "circular", or "rectangular".
+	- Type: str, unicode
+	- Default: u'gaussian'
+- `size` -- A size in pixels.
+	- Type: float, int
+	- Default: 96
+- `stdev` -- Standard deviation in pixels of the gaussian. Only applicable to gaussian envelopes.
+	- Type: float, int
+	- Default: 12
+- `col1` -- The first color.
+	- Type: str, unicode
+	- Default: u'white'
+- `col2` -- The second color. Note: The psycho back-end ignores this
+parameter and always uses the inverse of `col1`.
+	- Type: str, unicode
+	- Default: u'black'
 - `bgmode` -- Specifies whether the background is the average of col1 col2
 ('avg', corresponding to a typical Gabor patch), or equal to
 col2 ('col2'), useful for blending into the     background. Note:
 this parameter is ignored by the psycho backend, which uses
 increasing transparency for the background.
+	- Type: str, unicode
 	- Default: u'avg'
-	- Type: str, unicode
-- `env` -- The envelope that determines the shape of the patch. Can be "gaussian", "linear", "circular", or "rectangular".
-	- Default: u'gaussian'
-	- Type: str, unicode
-- `stdev` -- Standard deviation in pixels of the gaussian. Only applicable to gaussian envelopes.
-	- Default: 12
-	- Type: float, int
-- `size` -- A size in pixels.
-	- Default: 96
-	- Type: float, int
-- `col2` -- The second color. Note: The psycho back-end ignores this
-parameter and always uses the inverse of `col1`.
-	- Default: u'black'
-	- Type: str, unicode
-- `col1` -- The first color.
-	- Default: u'white'
-	- Type: str, unicode
 
 </div>
 
@@ -693,9 +693,9 @@ my_canvas.rect(-10, -10, 20, 20, fill=True)
 
 __Arguments:__
 
-- `y` -- The top Y coordinate.
-	- Type: int
 - `x` -- The left X coordinate.
+	- Type: int
+- `y` -- The top Y coordinate.
 	- Type: int
 - `w` -- The width.
 	- Type: int
@@ -752,7 +752,7 @@ The size of the canvas as a `(width, height)` tuple. This is a read-only propert
 
 <div class="FunctionDoc YAMLDoc" id="canvas-text" markdown="1">
 
-## [function __canvas\.text__\(text, y=None, x=None, center=True, max\_width=None, \*\*style\_args\)](#function-__canvastext__text-ynone-xnone-centertrue-max_widthnone-style_args) {#function-__canvastext__text-ynone-xnone-centertrue-max_widthnone-style_args}
+## [function __canvas\.text__\(text, center=True, x=None, y=None, max\_width=None, \*\*style\_args\)](#function-__canvastext__text-centertrue-xnone-ynone-max_widthnone-style_args) {#function-__canvastext__text-centertrue-xnone-ynone-max_widthnone-style_args}
 
 Draws text.
 
@@ -770,19 +770,19 @@ __Arguments:__
 
 __Keywords:__
 
-- `y` -- The Y coordinate, or None to draw vertically centered text.
-	- Default: None
-	- Type: int, NoneType
-- `x` -- The X coordinate, or None to draw horizontally centered text.
-	- Default: None
-	- Type: int, NoneType
 - `center` -- A bool indicating whether the coordinates reflect the center (True) or top-left (False) of the text.
-	- Default: True
 	- Type: bool
+	- Default: True
+- `x` -- The X coordinate, or None to draw horizontally centered text.
+	- Type: int, NoneType
+	- Default: None
+- `y` -- The Y coordinate, or None to draw vertically centered text.
+	- Type: int, NoneType
+	- Default: None
 - `max_width` -- The maximum width of the text in pixels, before wrapping to a
 new line, or `None` to wrap at screen edge.
-	- Default: None
 	- Type: int, NoneType
+	- Default: None
 
 __Keyword dict:__
 
@@ -817,8 +817,8 @@ __Keywords:__
 
 - `max_width` -- The maximum width of the text in pixels, before wrapping to a
 new line, or `None` to wrap at screen edge.
-	- Default: None
 	- Type: int, NoneType
+	- Default: None
 
 __Keyword dict:__
 
@@ -864,18 +864,18 @@ The width of the canvas. This is a read-only property.
 [function __canvas\.close\_display__\(experiment\)]: #function-__canvasclose_display__experiment
 [function __canvas\.copy__\(canvas\)]: #function-__canvascopy__canvas
 [function __canvas\.ellipse__\(x, y, w, h, \*\*style\_args\)]: #function-__canvasellipse__x-y-w-h-style_args
-[function __canvas\.fixdot__\(y=None, x=None, style=u'default', \*\*style\_args\)]: #function-__canvasfixdot__ynone-xnone-styleudefault-style_args
-[function __canvas\.gabor__\(x, y, orient, freq, bgmode=u'avg', col2=u'black', col1=u'white', env=u'gaussian', stdev=12, phase=0, size=96\)]: #function-__canvasgabor__x-y-orient-freq-bgmodeuavg-col2ublack-col1uwhite-envugaussian-stdev12-phase0-size96
+[function __canvas\.fixdot__\(x=None, y=None, style=u'default', \*\*style\_args\)]: #function-__canvasfixdot__xnone-ynone-styleudefault-style_args
+[function __canvas\.gabor__\(x, y, orient, freq, env=u'gaussian', size=96, stdev=12, phase=0, col1=u'white', col2=u'black', bgmode=u'avg'\)]: #function-__canvasgabor__x-y-orient-freq-envugaussian-size96-stdev12-phase0-col1uwhite-col2ublack-bgmodeuavg
 [property __canvas.height__]: #property-__canvasheight__
-[function __canvas\.image__\(fname, y=None, x=None, scale=None, center=True\)]: #function-__canvasimage__fname-ynone-xnone-scalenone-centertrue
+[function __canvas\.image__\(fname, center=True, x=None, y=None, scale=None\)]: #function-__canvasimage__fname-centertrue-xnone-ynone-scalenone
 [function __canvas\.init\_display__\(experiment\)]: #function-__canvasinit_display__experiment
 [function __canvas\.line__\(sx, sy, ex, ey, \*\*style\_args\)]: #function-__canvasline__sx-sy-ex-ey-style_args
-[function __canvas\.noise\_patch__\(x, y, bgmode=u'avg', col2=u'black', col1=u'white', env=u'gaussian', stdev=12, size=96\)]: #function-__canvasnoise_patch__x-y-bgmodeuavg-col2ublack-col1uwhite-envugaussian-stdev12-size96
+[function __canvas\.noise\_patch__\(x, y, env=u'gaussian', size=96, stdev=12, col1=u'white', col2=u'black', bgmode=u'avg'\)]: #function-__canvasnoise_patch__x-y-envugaussian-size96-stdev12-col1uwhite-col2ublack-bgmodeuavg
 [function __canvas\.polygon__\(vertices, \*\*style\_args\)]: #function-__canvaspolygon__vertices-style_args
 [function __canvas\.prepare__\(\)]: #function-__canvasprepare__
 [function __canvas\.rect__\(x, y, w, h, \*\*style\_args\)]: #function-__canvasrect__x-y-w-h-style_args
 [function __canvas\.show__\(\)]: #function-__canvasshow__
 [property __canvas.size__]: #property-__canvassize__
-[function __canvas\.text__\(text, y=None, x=None, center=True, max\_width=None, \*\*style\_args\)]: #function-__canvastext__text-ynone-xnone-centertrue-max_widthnone-style_args
+[function __canvas\.text__\(text, center=True, x=None, y=None, max\_width=None, \*\*style\_args\)]: #function-__canvastext__text-centertrue-xnone-ynone-max_widthnone-style_args
 [function __canvas\.text\_size__\(text, max\_width=None, \*\*style\_args\)]: #function-__canvastext_size__text-max_widthnone-style_args
 [property __canvas.width__]: #property-__canvaswidth__

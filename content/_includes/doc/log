@@ -32,9 +32,9 @@ Constructor to create a new `log` object. You do not generally call this constru
 
 __Arguments:__
 
-- `path` -- No description
 - `experiment` -- The experiment object.
 	- Type: experiment
+- `path` -- No description
 
 </div>
 
@@ -102,8 +102,8 @@ __Arguments:__
 __Keywords:__
 
 - `newline` -- Indicates whether a newline should be written after the message.
-	- Default: True
 	- Type: bool
+	- Default: True
 
 </div>
 
@@ -126,8 +126,8 @@ log.write_vars()
 __Keywords:__
 
 - `var_list` -- A list of variable names to write, or None to write all variables that exist in the experiment.
-	- Default: None
 	- Type: list, NoneType
+	- Default: None
 
 </div>
 

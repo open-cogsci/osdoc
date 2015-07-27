@@ -213,8 +213,8 @@ my_keyboard.show_virtual_keyboard(False)
 __Keywords:__
 
 - `visible` -- True if the keyboard should be shown, False otherwise.
-	- Default: True
 	- Type: bool
+	- Default: True
 
 </div>
 

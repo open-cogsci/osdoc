@@ -141,10 +141,10 @@ my_sampler = sampler(src, volume=.5)
 
 __Arguments:__
 
-- `src` -- The full path to a `.wav` or `.ogg` file.
-	- Type: unicode, str
 - `experiment` -- The experiment object.
 	- Type: experiment
+- `src` -- The full path to a `.wav` or `.ogg` file.
+	- Type: unicode, str
 
 __Keyword dict:__
 
