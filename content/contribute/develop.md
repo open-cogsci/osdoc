@@ -38,7 +38,7 @@ The two main branches of OpenSesame are:
 
 For plug-in development, see:
 
-- [/plug-ins/create](/plug-ins/create)
+- [/plug-ins/create-plug-in](/plug-ins/create-plug-in)
 
 ## Source-code architecture
 

@@ -2,7 +2,7 @@ version: 3.0.0
 status: unstable
 codename: Interactive Ising
 release-date: unreleased
-url-windows-exe: http://to.do
-url-windows-zip: http://to.do
+url-windows-exe: http://files.cogsci.nl/software/opensesame/pre-releases
+url-windows-zip: http://files.cogsci.nl/software/opensesame/pre-releases
 url-source: https://github.com/smathot/OpenSesame
 url-old: http://files.cogsci.nl/software/opensesame/
