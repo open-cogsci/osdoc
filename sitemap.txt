@@ -34,16 +34,15 @@ usage
 	sequences and loops
 	variables and conditional ("if") statements
 	Text
-	:Text formatting (HTML subset)
 	Collecting responses
 	Giving feedback to participants
 	Sound playback and timing
+	keyboard shortcuts
 	Running experiment without the GUI (opensesamerun)
 	OpenSesame script syntax
 	Logging and reading data files
 	Video playback
 	The prepare-run strategy
-#	items
 python inline code
 	About Python
 	Common functions

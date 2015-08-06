@@ -113,6 +113,24 @@ For more information, see:
 
 The `synth` is no longer a class of its own. Instead, it's a function that returns a `sampler` object that has been filled with a synthesized sample.
 
+## User-interface improvements
+
+### An IPython debug window
+
+IPython, an interactive Python terminal for scientific computing, is now used for the debug window.
+
+### A live variable inspector
+
+The variable inspector now shows the actual values of your variables while your experiment is running, and after your experiment has finished.
+
+### Undo
+
+You can finally undo actions!
+
+### A new color scheme
+
+The default color scheme is now *Monokai*. Again a dark color scheme, but with a higher contrast then the previous default, *Solarized*. This increased should increase legibility. And it looks good!
+
 ## Consistent coordinates
 
 Previously, OpenSesame used mixed, inconsistent screen coordinates: `0,0` was the display top-left when using Python code, and the display center when working in `sketchpad` items etc. As of 3.0, the display center is always `0,0`, also in Python code.

@@ -63,7 +63,8 @@ def generateDocPages():
 	from libopensesame.var_store import var_store
 	from libopensesame.item_store import item_store
 	createDoc(python_workspace_api,
-		u'content/_includes/doc/python_workspace_api', onlyContents=True)
+		u'content/_includes/doc/python_workspace_api', onlyContents=True,
+		types=[u'function', u'module'], exclude=['osexception'])
 	createDoc(var_store, u'content/_includes/doc/var_store', customName=u'var')
 	createDoc(file_pool_store, u'content/_includes/doc/file_pool_store',
 		customName=u'pool')
