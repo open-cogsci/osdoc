@@ -38,6 +38,12 @@ Alday, P. M., Schlesewsky, M., & Bornkessel-Schlesewsky, I. (2015). Discovering 
 Anderson, N. C., Ort, E., Kruijne, W., Meeter, M., & Donk, M. (2015). It depends on when you look at it: Salience influences eye movements in natural scene viewing and search early in time. *Journal of Vision*, *15*(5), e9. doi:10.1167/15.5.9
 {: .reference}
 
+Boero, R. (2015). *Behavioral Computational Social Science*. Wiley.
+{: .reference}
+
+Bosse, T., & Schnitfink, K. (2015). The effect of simulated threat on task performance during emotion recognition. In D. Harris (Ed.), *Proceedings of the 12th International Conference on Engineering Psychology and Cognitive Ergonomics*. Los Angeles, CA, USA: Springer.
+{: .reference}
+
 Cameron, G., Schlund, M. W., & Dymond, S. (2015). Generalization of socially transmitted and instructed avoidance. *Frontiers in Behavioral Neuroscience*, *159*. doi:10.3389/fnbeh.2015.00159
 {: .reference}
 
@@ -89,7 +95,10 @@ Mathôt, S., Siebold, A., Donk, M., & Vitu, F. (2015). Large pupils predict goal
 Nesari, S. J., & Kamari, E. (2015). Phonological errors among dyslexic and non-dyslexic children learning Persian. *International Journal of Applied Linguistics and English Literature*, *4*(3), 167–173. doi:10.7575/aiac.ijalel.v.4n.3p.167
 {: .reference}
 
-Nuutinen, M., Virtanen, T., Rummukainen, O., & Häkkinen, J. (2015). VQone MATLAB toolbox: A graphical experiment builder for image and video quality evaluations. *Behavior Research Methods*, 1–13.
+Nuutinen, M., Virtanen, T., Rummukainen, O., & Häkkinen, J. (2015). VQone MATLAB toolbox: A graphical experiment builder for image and video quality evaluations. *Behavior Research Methods*, 1–13. doi:10.3758/s13428-014-0555-y
+{: .reference}
+
+Rey, A. E., Roche, K., Versace, R., & Chainay, H. (2015). Manipulation gesture effect in visual and auditory presentations: the link between tools in perceptual and motor tasks. *Frontiers in Psychology*, *6*(1031). doi:10.3389/fpsyg.2015.01031
 {: .reference}
 
 Rieger, D., Frischlich, L., Högden, F., Kauf, R., Schramm, K., & Tappe, E. (2015). Appreciation in the face of death: Meaningful films buffer against death-related anxiety. *Journal of Communication*. doi:10.1111/jcom.12152
