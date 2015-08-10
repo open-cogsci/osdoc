@@ -29,13 +29,13 @@ toc:
 
 ## About OpenSesame
 
-OpenSesame is a cross-platform graphical experiment builder. It provides a very simple way to create psychological experiments using a point-and-click interface. For complex experiments, you can use [Python inline scripting] (not covered in this tutorial).
+OpenSesame is a cross-platform graphical experiment builder. It allows you to create psychological experiments using a point-and-click interface. For complex experiments, you can use [Python inline scripting] (not covered in this tutorial).
 
 OpenSesame is freely available under the [General Public License v3][gpl].
 
 ## Resources
 
-- __Download__ -- This tutorial assumes that you are running OpenSesame version 2.9.0 or later. To check which version you are running, see the bottom right of the 'Get started' tab (see %FigGetStarted). You can download the most recent version of OpenSesame from:
+- __Download__ -- This tutorial assumes that you are running OpenSesame version 3.0.0 or later. To check which version you are running, see the bottom right of the 'Get started' tab (see %FigGetStarted). You can download the most recent version of OpenSesame from:
 	- [/getting-opensesame/download](/getting-opensesame/download)
 - __Documentation__ -- A dedicated documentation website can be found at:
 	- <http://osdoc.cogsci.nl/>
@@ -50,7 +50,7 @@ The experiment will consist of a practice and an experimental phase. We will pre
 
 ## Step 1: Create the main sequence
 
-The 'Get started' tab is the first thing that you see when you start OpenSesame (%FigGetStarted). The box labeled 'New' contains a list of available templates, which provide convenient starting points for new experiments. After you saved your experiment the first time, you will see another box labeled 'Recent' that shows a list of recently opened experiments.
+The 'Get started' tab is the first thing that you see when you start OpenSesame (%FigGetStarted). (If this is the very first time that you have started OpenSesame, you will see a tab that points you towards this tutorial. If so, you can close this tab.) The box labeled 'New' contains a list of available templates, which provide convenient starting points for new experiments. After you saved your experiment the first time, you will see another box labeled 'Recent' that shows a list of recently opened experiments.
 
 %--
 figure:
@@ -59,11 +59,11 @@ figure:
  caption: "The 'Get started' dialog on OpenSesame start-up. The box labeled 'Recent' is empty if you start OpenSesame for the first time."
 --%
 
-Double-click on 'Default template', to start with a minimal experimental template. Save the experiment right away as `gaze_cuing.opensesame`.
+Double-click on 'Default template', to start with a minimal experimental template.
 
 By default there is a main `sequence`, which is simply called *experiment*. Click on *experiment* in the overview area (by default on the left side, see %FigInterface) to open its controls in the tab area. The *experiment* `sequence` consists of two items: a `notepad` called *getting started* and a `sketchpad` called *welcome*.
 
-We don't need these two items. Remove *getting_started* by right-clicking on it in the overview area and selecting 'Move to unused items' (shortcut: `Del`). Remove *welcome* in the same way. The *experiment* `sequence` is now empty.
+We don't need these two items. Remove *getting_started* by right-clicking on it in the overview area and selecting 'Delete' (shortcut: `Del`). Remove *welcome* in the same way. The *experiment* `sequence` is now empty.
 
 %--
 figure:
@@ -145,7 +145,7 @@ After the practice phase, we want to inform the participant that the real experi
 
 <div class='info-box' markdown='1'>
 
-__Tip__ -- Don't worry if you have accidentally changed a `loop`'s item to run. You can undo this easily by dragging the `loop`'s original item to run back to the `loop`, or by selecting the correct item to run from the drop-down box in the `loop` tab.
+__Tip__ -- Don't worry if you have accidentally changed a `loop`'s item to run. You can undo this easily by clicking the 'Undo' button in the toolbar (`Ctrl+Shift+Z`).
 
 </div>
 
@@ -189,7 +189,7 @@ The experiment in its entirety also has a name (a title, in this context) and a 
 
 The overview area of your experiment now looks like %FigStep1. This would be a good time to save your experiment (shortcut: `Ctrl+S`). You can download the experiment up to this point here:
 
-- [tutorial_step1.opensesame][step1]
+- [tutorial_step1.osexp][step1]
 
 %--
 figure:
@@ -230,7 +230,7 @@ Rename *loop* to *block_loop* and *sequence* to *trial_sequence*. (See Step 1 if
 
 The overview of your experiment now looks like %FigStep2. Remember to save your experiment regularly. You can download the experiment up to this point here:
 
-- [tutorial_step2.opensesame][step2]
+- [tutorial_step2.osexp][step2]
 
 %--
 figure:
@@ -272,7 +272,7 @@ There is one last thing to be done. 'Repeat' is currently set to '1.00'. This me
 
 The *block_loop* now looks like %FigStep3. Remember to save your experiment regularly. You can download the experiment up to this point here:
 
-- [tutorial_step3.opensesame][step3]
+- [tutorial_step3.osexp][step3]
 
 %--
 figure:
@@ -304,11 +304,11 @@ You can download the required files here (in most webbrowsers you can right-clic
 - [gaze_right.png](/attachments/gaze-cuing/gaze_right.png)
 - [incorrect.ogg](/attachments/gaze-cuing/incorrect.ogg)
 
-After you have downloaded these files (to your desktop, for example), you can add them to the file pool. If the file pool is not already visible (by default on the right side of the window),  click on the 'Show file pool' button in the main toolbar (shortcut: `Ctrl+P`). The easiest way to add the four files to the file pool is to drag them from the desktop (or wherever you have downloaded the files to) into the file pool. Alternatively, you can click on the '+' button in the file pool and add files using the file select dialog that appears. The file pool will be automatically saved with your experiment if you save your experiment in the `.opensesame.tar.gz` format (which is the default format).
+After you have downloaded these files (to your desktop, for example), you can add them to the file pool. If the file pool is not already visible (by default on the right side of the window),  click on the 'Show file pool' button in the main toolbar (shortcut: `Ctrl+P`). The easiest way to add the four files to the file pool is to drag them from the desktop (or wherever you have downloaded the files to) into the file pool. Alternatively, you can click on the '+' button in the file pool and add files using the file select dialog that appears. The file pool will be automatically saved with your experiment.
 
 Your file pool now looks like %FigStep4. Remember to save your experiment regularly. You can download the experiment up to this point here:
 
-- [tutorial_step4.opensesame.tar.gz][step4]
+- [tutorial_step4.osexp][step4]
 
 %--
 figure:
@@ -316,14 +316,6 @@ figure:
  source: step4.png
  caption: "The file pool at the end of Step 4."
 --%
-
-<div class='info-box' markdown='1'>
-
-### Background box
-
-__Tip__ — So far you may have saved your experiment in `.opensesame` format. If so, from now you should save your experiment in `.opensesame.tar.gz` format. Otherwise the files in the file pool will not be saved along with your experiment.
-
-</div>
 
 ## Step 5: Fill the trial sequence with items
 
@@ -345,7 +337,7 @@ The *incorrect_sound* item should only be executed if an error was made. To do t
 
 The *trial_sequence* now looks like %FigStep5. You can download the experiment up to this point here:
 
-- [tutorial_step5.opensesame.tar.gz][step5]
+- [tutorial_step5.osexp][step5]
 
 %--
 figure:
@@ -390,7 +382,7 @@ __Tip__ -- For more fine-grained control over colors, you can also use the hexad
 
 ### Draw the fixation dot
 
-Go back to the *fixation_dot* by clicking on *fixation_dot* in the overview. You can draw on the `sketchpad` right away, but (unless your screen is really large) it looks a bit cramped. Therefore, click on 'Toggle pop-out' in the top right corner to open the `sketchpad` editor in a separate window. Now select the fixation-dot tool by clicking on the button with the small black dot. If you move your cursor over the sketchpad, you can see the screen coordinates in the top-right. Set the (foreground) color to 'black'. Click on the center of the screen (0, 0) to draw a central fixation dot. Click again on 'toggle pop-out' to get back to the default OpenSesame interface.
+Go back to the *fixation_dot* by clicking on *fixation_dot* in the overview. Now select the fixation-dot tool by clicking on the button with the small black dot. If you move your cursor over the sketchpad, you can see the screen coordinates in the top-right. Set the (foreground) color to 'black'. Click on the center of the screen (0, 0) to draw a central fixation dot.
 
 Finally, change the 'Duration' field from 'keypress' to '745', because we want the fixation dot to be presented for 750 ms. Wait ... *why didn't we just specify a duration of 750 ms?* The reason for this is that the actual display-presentation duration is always rounded up to a value that is compatible with your monitor's refresh rate. This may sound complicated, but for most purposes the following rules of thumb are sufficient:
 
@@ -430,7 +422,8 @@ Obviously, we are not done yet, because the gaze cue should not always be 'left'
 
 ~~~ .python
 set duration "keypress"
-draw image 0 0 "gaze_left.png" scale=1 center=1 z_index=0 show_if="always"
+set description "Displays stimuli"
+draw image center=1 file="gaze_left.png" scale=1 show_if=always x=0 y=0 z_index=0
 ~~~
 
 The only thing that we have to do is replace `gaze_left.png` with `gaze_[gaze_cue].png`. This means that OpenSesame uses the variable `gaze_cue` (which has the values `left` and `right`) to determine which image should be shown.
@@ -438,8 +431,9 @@ The only thing that we have to do is replace `gaze_left.png` with `gaze_[gaze_cu
 While we are at it, we might as well change the duration to '495' (rounded up to 500!). The script now looks like this:
 
 ~~~ .python
-set duration "495"
-draw image 0 0 "gaze_[gaze_cue].png" scale=1 center=1 z_index=0 show_if="always"
+set duration 495
+set description "Displays stimuli"
+draw image center=1 file="gaze_[gaze_cue].png" scale=1 show_if=always x=0 y=0 z_index=0
 ~~~
 
 Click the 'Apply and close' button at the top right to apply your changes to the script and return to the regular item controls. You will see a message saying that the image is unknown or variably defined, and is therefore not shown. Don't worry, it will be shown during the experiment!
@@ -448,7 +442,7 @@ Click the 'Apply and close' button at the top right to apply your changes to the
 
 ### Background box
 
-__Tip__ -- If you use a variable in OpenSesame script, you need to know the exact name of the variable. If you don't remember the exact name of a certain variable (e.g. if you don't remember whether you used a capital or not), you can click the 'Variable inspector' button in the main toolbar (shortcut: `Ctrl+I`). The Variable inspector provides a list of all variables used in your experiment (see %FigVariableInspector).
+__Tip__ -- The variable inspector (shortcut: `Ctrl+I`) is a powerful way to find out which variables have been defined in your experiment, and what values they have (see %FigVariableInspector). When your experiment is not running, most variables don't have a value yet. But when you run your experiment in a window, while having the variable inspector visible, you can see variables changing in real time. This is very useful for debugging your experiment.
 
 %--
 figure:
@@ -463,24 +457,26 @@ figure:
 
 We want three objects to be part of the target display: the target letter, the distractor letter, and the gaze cue (see %FigGazeCuing). Like before, we will start by creating a static display using the `sketchpad` editor. After this, we will only need to make minor changes to the script so that the exact display depends on the variables.
 
-Click on *target* in the overview to open the target tab and like before, draw the `gaze_left.png` image at the center of the screen. Now select the draw text tool by clicking on the button with the 'A' icon. The default font size is 18pt, which is a bit small for our purpose, so change the font size to 32pt. Now click on (-320, 0) in the `sketchpad` (the X-coordinate does not need to be exactly 320, since we will change this to a variable anyway). Enter "[target_letter]" in the dialog that appears, to draw the target letter (when drawing text, you can use variables directly). Similarly, click on (320, 0) and draw an 'X' (the distractor is always an 'X').
+Click on *target* in the overview to open the target tab and like before, draw the `gaze_left.png` image at the center of the screen. Now select the draw text tool by clicking on the button with the 'A' icon. Change the foreground color to 'black'. The default font size is 18 px, which is a bit small for our purpose, so change the font size to 32 px. Now click on (-320, 0) in the `sketchpad` (the X-coordinate does not need to be exactly 320, since we will change this to a variable anyway). Enter "[target_letter]" in the dialog that appears, to draw the target letter (when drawing text, you can use variables directly). Similarly, click on (320, 0) and draw an 'X' (the distractor is always an 'X').
 
 Now open the script editor by clicking on the 'Select view' button at the top-right of the tab and selecting 'View script'. The script looks like this:
 
 ~~~ .python
 set duration "keypress"
-draw image 0 0 "gaze_left.png" scale=1 center=1 z_index=0 show_if="always"
-draw textline -320 0 "[target_letter]" center=1 color="black" font_family="mono" font_size=32 font_bold="no" font_italic="no" html="yes" z_index=0 show_if="always"
-draw textline 320 0 "X" center=1 color="black" font_family="mono" font_size=32 font_bold="no" font_italic="no" html="yes" z_index=0 show_if="always"
+set description "Displays stimuli"
+draw image center=1 file="gaze_left.png" scale=1 show_if=always x=0 y=0 z_index=0
+draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=32 html=yes show_if=always text="[target_letter]" x=-320 y=0 z_index=0
+draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=32 html=yes show_if=always text=X x=320 y=0 z_index=0
 ~~~
 
 Like before, change `gaze_left.png` to `gaze_[gaze_cue].png`. We also need to make the position of the target and the distractor depend on the variables `target_pos` and `dist_pos` respectively. To do this, simply change `-320` to `[target_pos]` and `320` to `[dist_pos]`. Make sure that you leave the `0`, which is the Y-coordinate. The script now looks like this:
 
 ~~~ .python
 set duration "keypress"
-draw image 0 0 "gaze_[gaze_cue].png" scale=1 center=1 z_index=0 show_if="always"
-draw textline "[target_pos]" 0 "[target_letter]" center=1 color="black" font_family="mono" font_size=32 font_bold="no" font_italic="no" html="yes" z_index=0 show_if="always"
-draw textline "[dist_pos]" 0 "X" center=1 color="black" font_family="mono" font_size=32 font_bold="no" font_italic="no" html="yes" z_index=0 show_if="always"
+set description "Displays stimuli"
+draw image center=1 file="gaze_[gaze_cue].png" scale=1 show_if=always x=0 y=0 z_index=0
+draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=32 html=yes show_if=always text="[target_letter]" x=[target_pos] y=0 z_index=0
+draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=32 html=yes show_if=always text=X x=[dist_pos] y=0 z_index=0
 ~~~
 
 Click on the “Apply” button to apply the script and go back to the regular item controls.
@@ -489,7 +485,7 @@ Finally, set the 'Duration' field to '0'. This does not mean that the target is 
 
 Remember to save your experiment regularly. You can download the experiment up to this point here:
 
-- [tutorial_step6.opensesame.tar.gz][step6]
+- [tutorial_step6.osexp][step6]
 
 <div class='info-box' markdown='1'>
 
@@ -507,13 +503,13 @@ Click on *keyboard_response* in the overview to open its tab. You will see three
 
 We have already set the `correct_response` variable in Step 3, so we don't need to set it here. If we do, we will simply override the previously set correct response, which is definitely not what we want.
 
-We do need to set the allowed responses. Enter 'z;m' in the allowed-responses field. The semicolon is used to separate responses. The `keyboard_response` now only accepts 'z' and 'm' keys. All other key presses are ignored, with the exception of 'escape', which aborts the experiment.
+We do need to set the allowed responses. Enter 'z;m' in the allowed-responses field. The semicolon is used to separate responses. The `keyboard_response` now only accepts 'z' and 'm' keys. All other key presses are ignored, with the exception of 'escape', which pauses/ aborts the experiment.
 
 We also want to set a timeout, which is the maximum interval that the `keyboard_response` waits before deciding that the response was incorrect and setting the 'response' variable to 'timeout'. '2000' (ms) is a good value.
 
 The `keyboard_response` now looks like %FigStep7. You can download the experiment up to this point here:
 
-- [tutorial_step7.opensesame.tar.gz][step7]
+- [tutorial_step7.osexp][step7]
 
 %--
 figure:
@@ -536,11 +532,11 @@ __Tip__ -- To use special keys, such as '/' or the up-arrow key, you can use key
 
 ## Step 8: Configure the incorrect (sampler) item
 
-The *incorrect_sound* item doesn't need much work. Essentially we only need to select the sound that should be played. Click on *incorrect_sound* in the overview to open its tab. Click on the 'Browse' button and select `incorrect.ogg` from the file pool.
+The *incorrect_sound* item doesn't need much work: We only need to select the sound that should be played. Click on *incorrect_sound* in the overview to open its tab. Click on the 'Browse' button and select `incorrect.ogg` from the file pool.
 
 The sampler now looks like %FigStep8. You can download the experiment up to this point here:
 
-- [tutorial_step8.opensesame.tar.gz][step8]
+- [tutorial_step8.osexp][step8]
 
 %--
 figure:
@@ -561,13 +557,13 @@ __Tip__ -- The `sampler` handles files in `.ogg` and `.wav` format. If you have 
 
 ## Step 9: Configure the variable logger
 
-Actually, we don't need to configure the variable `logger`, but let's take a look at it anyway. Click on *logger* in the overview to open its tab. You will see that the option 'Automatically detect and log all variables' is selected. This means that OpenSesame logs everything, which is fine.
+Actually, we don't need to configure the variable `logger`, but let's take a look at it anyway. Click on *logger* in the overview to open its tab. You will see that the option 'Log all variables (recommended)' is selected. This means that OpenSesame logs everything, which is fine.
 
 <div class='info-box' markdown='1'>
 
 ### Background box
 
-__Tip__ -- If you like your log-files clean, you can disable the auto-detect option and manually select variables to log or use the 'Smart select' button. 'Smart select' will select 1) all variables that are defined in the `loop`s, 2) all variables offered by the response items, and  3) the `count_[item name]` variables of all `sequence` items, which keep track of how often a particular `sequence` has been executed (essentially these are trial and block counters).
+__Tip__ -- If you like your log-files clean, you can disable the 'Log all variables' option and manually select variables, either by entering variable names manually ('Add custom variable'), or by dragging variables from the variable inspector into the `logger` table.
 
 __The one tip to rule them all__ -- Always triple-check whether all the necessary variables are logged in your experiment! The best way to check this is to run the experiment and investigate the resulting log files.
 
@@ -577,11 +573,20 @@ __The one tip to rule them all__ -- Always triple-check whether all the necessar
 
 After every block of trials, we want to present feedback to the participant to let him/ her know how well he/ she is doing. Therefore, in Step 2, we added a `feedback` item, simply named *feedback* to the end of *block_sequence*.
 
-Click on *feedback* in the overview to open its tab and select the draw text tool and click at (0, -128). Enter "Your average response time was [avg_rt]ms". Similarly, draw "Your accuracy was [acc]%" at (0, -64) and "Press any key to continue ..." at (0, 64). Because we want the feedback item to remain visible as long as the participant wants (i.e. until he/ she presses a key), we leave 'Duration' field set to 'keypress'.
+Click on *feedback* in the overview to open its tab, select the draw text tool, change the foreground color to 'black', and click at (0, 0). Now enter the following text:
+
+    End of block
+
+    Your average response time was [avg_rt] ms
+    Your accuracy was [acc] %
+
+    Press any key to continue
+
+Because we want the feedback item to remain visible as long as the participant wants (i.e. until he/ she presses a key), we leave 'Duration' field set to 'keypress'.
 
 The feedback item now looks like %FigStep_10 You can download the experiment up to this point here:
 
-- [tutorial_step10.opensesame.tar.gz][step10]
+- [tutorial_step10.osexp][step10]
 
 %--
 figure:
@@ -618,7 +623,7 @@ Click on *experimental_loop* to open its tab and set 'Repeat' to '8.00'. This me
 
 You can download the experiment up to this point here:
 
-- [tutorial_step11.opensesame.tar.gz][step11]
+- [tutorial_step11.osexp][step11]
 
 <div class='info-box' markdown='1'>
 
@@ -631,10 +636,6 @@ __Tip__ -- You can create a variable `practice` in both *practice_loop* and *exp
 ## Step 12: Write the instruction, end_of_practice and end_of_experiment forms
 
 I think you can handle this step your own! Simply open the appropriate tabs and add some text to present instructions, an end-of-practice message and an end-of-experiment message.
-
-You can download the experiment up to this point here:
-
-- [tutorial_step12.opensesame.tar.gz][step12]
 
 <div class='info-box' markdown='1'>
 
@@ -652,13 +653,11 @@ You're done! Click on the 'Run in window' (shortcut: `Ctrl+W`) or 'Run fullscree
 
 You can download the finished experiment here:
 
-- [tutorial.opensesame.tar.gz][finished-experiment]
+- [tutorial.osexp][finished-experiment]
 
 <div class='info-box' markdown='1'>
 
 ### Background box
-
-__Tip__ -- If you want to give your experiment a test run without having to press any keys, you can activate the auto response option (Menu → Run → Enable auto response). In this mode, OpenSesame will simulate the participant's responses.
 
 __Tip__ -- A test run is executed even faster by clicking the orange 'Run in window' button (shortcut: `Ctrl+Shift+W`), which doesn't ask you how to save the logfile (and should therefore only be used for testing purposes).
 
@@ -666,7 +665,7 @@ __Tip__ -- A test run is executed even faster by clicking the orange 'Run in win
 
 ## Finally: Some general considerations regarding timing and back-end selection
 
-In the 'General properties' tab of the experiment, you can select a back-end. The back-end is the layer of software that controls the display, input devices, sound, etc. Most experiments will work with all back-ends, but there are reasons to prefer one back-end over the other, mostly related to timing. Currently there are three back-ends (depending on your system, not all three may be available):
+In the 'General properties' tab of the experiment, you can select a back-end. The back-end is the layer of software that controls the display, input devices, sound, etc. Most experiments will work with all back-ends, but there are reasons to prefer one back-end over the other, mostly related to timing. Currently there are four back-ends (depending on your system, not all three may be available):
 
 - __legacy__ -- a 'safe' back-end, based on PyGame. It provides reliable performance on most platforms, but, due to a lack of hardware acceleration, its timing properties are not as good as those of the other back-ends.
 - __psycho__ -- a hardware accelerated back-end, based on PsychoPy [(Peirce, 2007)][references].
@@ -712,16 +711,15 @@ Ulrich, R., & Giray, M. (1989). Time resolution of clocks: Effects on reaction t
 [gpl]: http://dummy.com
 [gimp]: http://www.gimp.org/
 [audacity]: http://audacity.sourceforge.net/
-[step1]: /attachments/gaze-cuing/tutorial_step1.opensesame
-[step2]: /attachments/gaze-cuing/tutorial_step2.opensesame
-[step3]: /attachments/gaze-cuing/tutorial_step3.opensesame
-[step4]: /attachments/gaze-cuing/tutorial_step4.opensesame.tar.gz
-[step5]: /attachments/gaze-cuing/tutorial_step5.opensesame.tar.gz
-[step6]: /attachments/gaze-cuing/tutorial_step6.opensesame.tar.gz
-[step7]: /attachments/gaze-cuing/tutorial_step7.opensesame.tar.gz
-[step8]: /attachments/gaze-cuing/tutorial_step8.opensesame.tar.gz
-[step10]: /attachments/gaze-cuing/tutorial_step10.opensesame.tar.gz
-[step11]: /attachments/gaze-cuing/tutorial_step11.opensesame.tar.gz
-[step12]: /attachments/gaze-cuing/tutorial_step12.opensesame.tar.gz
-[finished-experiment]: /attachments/gaze-cuing/gaze-cuing.opensesame.tar.gz
+[step1]: /attachments/gaze-cuing/tutorial_step1.osexp
+[step2]: /attachments/gaze-cuing/tutorial_step2.osexp
+[step3]: /attachments/gaze-cuing/tutorial_step3.osexp
+[step4]: /attachments/gaze-cuing/tutorial_step4.osexp
+[step5]: /attachments/gaze-cuing/tutorial_step5.osexp
+[step6]: /attachments/gaze-cuing/tutorial_step6.osexp
+[step7]: /attachments/gaze-cuing/tutorial_step7.osexp
+[step8]: /attachments/gaze-cuing/tutorial_step8.osexp
+[step10]: /attachments/gaze-cuing/tutorial_step10.osexp
+[step11]: /attachments/gaze-cuing/tutorial_step11.osexp
+[finished-experiment]: /attachments/gaze-cuing/gaze-cuing.osexp
 [python inline scripting]: /python/about

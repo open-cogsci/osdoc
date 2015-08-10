@@ -1,0 +1,170 @@
+---
+API: 2
+OpenSesame: 3.0.0a10
+Platform: posix
+---
+set width 1024
+set uniform_coordinates "yes"
+set title "Tutorial: Gaze cuing"
+set synth_backend "legacy"
+set subject_parity "even"
+set subject_nr 0
+set start "experiment"
+set sampler_backend "legacy"
+set mouse_backend "legacy"
+set keyboard_backend "legacy"
+set height 768
+set foreground "white"
+set font_size 18
+set font_italic "no"
+set font_family "mono"
+set font_bold "no"
+set description "Default description"
+set coordinates "relative"
+set compensation 0
+set color_backend "legacy"
+set clock_backend "legacy"
+set canvas_backend "legacy"
+set bidi "no"
+set background "black"
+
+define loop block_loop
+	set skip 0
+	set repeat 1
+	set order "random"
+	set offset "no"
+	set item "trial_sequence"
+	set description "Repeatedly runs another item"
+	set cycles 1
+	set column_order ""
+	set break_if "never"
+	run trial_sequence
+
+define sequence block_sequence
+	set flush_keyboard "yes"
+	set description "Runs a number of items in sequence"
+	run reset_feedback "always"
+	run block_loop "always"
+	run feedback "always"
+
+define form_text_display end_of_experiment
+	set timeout "infinite"
+	set spacing 10
+	set rows "1;4;1"
+	set only_render "no"
+	set ok_text "Ok"
+	set margins "50;50;50;50"
+	set form_title "<span size=24>Title</span>"
+	set form_text "Your message"
+	set description "A simple text display form"
+	set cols "1;1;1"
+	set _theme "gray"
+	widget 0 0 3 1 label text="[form_title]"
+	widget 0 1 3 1 label center=no text="[form_text]"
+	widget 1 2 1 1 button text="[ok_text]"
+
+
+define form_text_display end_of_practice
+	set timeout "infinite"
+	set spacing 10
+	set rows "1;4;1"
+	set only_render "no"
+	set ok_text "Ok"
+	set margins "50;50;50;50"
+	set form_title "<span size=24>Title</span>"
+	set form_text "Your message"
+	set description "A simple text display form"
+	set cols "1;1;1"
+	set _theme "gray"
+	widget 0 0 3 1 label text="[form_title]"
+	widget 0 1 3 1 label center=no text="[form_text]"
+	widget 1 2 1 1 button text="[ok_text]"
+
+
+define sequence experiment
+	set flush_keyboard "yes"
+	set description "Runs a number of items in sequence"
+	run instructions "always"
+	run practice_loop "always"
+	run end_of_practice "always"
+	run experimental_loop "always"
+	run end_of_experiment "always"
+
+define loop experimental_loop
+	set skip 0
+	set repeat 1
+	set order "random"
+	set offset "no"
+	set item "block_sequence"
+	set description "Repeatedly runs another item"
+	set cycles 1
+	set column_order ""
+	set break_if "never"
+	run block_sequence
+
+define feedback feedback
+	set reset_variables "yes"
+	set duration "keypress"
+	set description "Provides feedback to the participant"
+
+define notepad getting_started
+	__note__
+	Hi,
+	Welcome to OpenSesame 3.0.0 "Interactive Ising"!
+	If you are new to OpenSesame, you may wish to follow one of the tutorials,
+	which can be found online. There are also many example experiments, which will
+	help you to get started with creating your own. These can be found in the
+	"examples" folder provided with OpenSesame or, again, online.
+	For more information, please refer to OpenSesame documentation area:
+	- <http://osdoc.cogsci.nl/>
+	And feel free to ask for help on the forum:
+	- <http://forum.cogsci.nl/>
+	Have fun with OpenSesame!
+	--
+	Sebastiaan
+	__end__
+	set description "Some pointers to help you get started!"
+
+define form_text_display instructions
+	set timeout "infinite"
+	set spacing 10
+	set rows "1;4;1"
+	set only_render "no"
+	set ok_text "Ok"
+	set margins "50;50;50;50"
+	set form_title "<span size=24>Title</span>"
+	set form_text "Your message"
+	set description "A simple text display form"
+	set cols "1;1;1"
+	set _theme "gray"
+	widget 0 0 3 1 label text="[form_title]"
+	widget 0 1 3 1 label center=no text="[form_text]"
+	widget 1 2 1 1 button text="[ok_text]"
+
+
+define loop practice_loop
+	set skip 0
+	set repeat 1
+	set order "random"
+	set offset "no"
+	set item "block_sequence"
+	set description "Repeatedly runs another item"
+	set cycles 1
+	set column_order ""
+	set break_if "never"
+	run block_sequence
+
+define reset_feedback reset_feedback
+	set description "Resets the feedback variables, such as 'avg_rt' and 'acc'"
+
+define sequence trial_sequence
+	set flush_keyboard "yes"
+	set description "Runs a number of items in sequence"
+
+define sketchpad welcome
+	set start_response_interval "no"
+	set reset_variables "no"
+	set duration "keypress"
+	set description "Displays stimuli"
+	draw textline center=1 color=white font_bold=no font_family=serif font_italic=no font_size=32 html=yes show_if=always text="OpenSesame 3.0.0 <i>Interactive Ising</i>" x=0 y=0 z_index=0
+
