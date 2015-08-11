@@ -12,7 +12,7 @@ Always triple check whether your data has been correctly logged before running y
 toc:
  mindepth: 2
 --%
-	
+
 ## Using the logger item
 
 OpenSesame will not log your data automatically. Instead, you need to insert a *logger* item, typically at the end of your trial sequence.
@@ -25,34 +25,31 @@ figure:
   The `logger` item.
 --%
 
-The logger has a number of options:
+The simplest way to use the `logger` is by leaving the 'Log all variables (recommended)' enabled. That way, all variables that OpenSesame knows about are written the log file.
 
-- **Include variables with missing values** indicates that all variables that OpenSesame knows of should be logged, even if they are not yet defined when the logger is called for the first time. If a variable is missing, it will simply be logged as 'NA'. If you disable this option, OpenSesame will only log those variables that have a value when the logger is called for the first time. This can wreak havoc, for example, when your experiment consists of two parts, so that some variables are only defined later on in the experiment. So it's typically safer to leave this option enabled!
-- **Automatically detect and log all variables** means that OpenSesame will log all variables that it can detect. This is a safe choice, but it results in data files with a lot of variables that you do probably not want. You can disable this option, in which case you can manually select which variables you want to log.
-- **Put quotes around values** means that OpenSesame will surround each value in the data file with double-quotes. If you do not have any specific reason to disable this option, it's best to leave it enabled.
+If you find that some variables are missing, you can explicitly add the name of a custom variable, or drag a variable from the variable inspector into the `logger` table.
+
+If you prefer to log only certain variables, you can disable the 'Log all variables' option, and indicate explicitly which variables you want to log.
 
 In general, you should create only one logger item, and reuse that item at different locations in your experiment if necessary. If you create multiple logger items (rather than using a single logger multiple times), they will all write to the same log file, and the result will be a mess!
 
 ## Using Python inline script
 
-You can write to the log file using the [`self.log()`][log-func], like so:
+You can write to the log file using the `log` object:
 
 ~~~ .python
-self.log('This will be written to the log file!')
+log.write('This will be written to the log file!')
 ~~~
 
-If you need more fine-grained control, you can use `exp.logfile`, which contains the name of the log file, and `exp._log`, which is a Python file object (`UTF-8` encoding through [`codecs.open()`][codecs]):
+For more information, see:
 
-~~~ .python
-print 'The location of the log file is %s' % exp.logfile
-exp._log.write('This will be written to the log!')
-~~~
+- [/python/log/](/python/log/)
 
-Note that you will generally not want to write to the log file directly and use a logger item at the same time: This will result in very messy log files.
+You should generally not write to the log file directly and use a `logger` item at the same time; doing so will result in messy log files.
 
 ## Format of the data files
 
-If you have used the standard logger item, data files are in plain text, comma-separated format, which can be opened in all popular spreadsheets. If you are looking for high quality, free spreadsheet software, take a look at [Libre Office][libreoffice], [OpenOffice.org][openoffice] or [Gnumeric][]. If you use Microsoft Excel, you may need to use the 'import' function to open the data files, because Excel may not properly separate the columns otherwise.
+If you have used the standard logger item, data files are in plain-text, comma-separated format, which can be opened in all popular spreadsheets. If you are looking for high quality, free spreadsheet software, take a look at [Libre Office][libreoffice], [OpenOffice.org][openoffice] or [Gnumeric][]. If you use Microsoft Excel, you may need to use the 'import' function to open the data files, because Excel may not properly separate the columns otherwise.
 
 ## Merging multiple data files into one large file
 
