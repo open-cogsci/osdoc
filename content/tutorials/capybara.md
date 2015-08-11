@@ -6,6 +6,9 @@ parser: academicmarkdown
 permalink: /capybara/
 ---
 
+This tutorial has been written for an older version of OpenSesame.
+{: .page-notification}
+
 This OpenSesame workshop was presented at the Center for Mind/ Brain Sciences at the University of Trento on May 7th. This page is a slightly modified version of the original workshop page, which can be found [here](/rovereto2014).
 
 ## Overview

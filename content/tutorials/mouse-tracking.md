@@ -8,6 +8,7 @@ author: Eoin Travers
 ---
 
 Reproduced from <http://eointravers.github.io/blog/2014/03/os-mousetracking/>.
+This tutorial has been written for an older version of OpenSesame.
 {: .page-notification}
 
 In my PhD, I'm looking at what process-tracing measures like mouse tracking can tell us about what goes on during high-level reasoning and decision making.  In particular, I'm interested in what this technique can tell us about category-based induction, and reasoning under uncertainty.
@@ -440,4 +441,3 @@ If you're interested, give this a go, and let us know how you got on in the comm
 
 Finally, [click here to download the finished experiment](/attachments/mousetracking.zip).
 You'll need to keep the folder 'Materials' in the same directory as the experiment for it to work.
-

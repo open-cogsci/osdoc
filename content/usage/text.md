@@ -14,6 +14,12 @@ toc:
  exclude: [Overview]
 --%
 
+## How can I present text?
+
+The most common way to show text is using a `sketchpad` or `feedback` item. These allow you to enter text and other visual stimuli. For a questionnaire-like way to show text, you can use [forms](/forms/about).
+
+Previously, OpenSesame included a `text_display` plug-in. This plug-in has been removed as of OpenSesame 3.0.0, because it was outdated and did not provide any functionality that is not offered by forms and `sketchpad` items.
+
 ## Formatting (HTML subset)
 
 You can use a subset of HTML tags, which you can simply insert into your text. You can use these tags everywhere: In `sketchpad` items, in `inline_script`s (provided you use the `openexp.canvas` class), in forms, etc.

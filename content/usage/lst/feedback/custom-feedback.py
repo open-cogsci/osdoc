@@ -1,7 +1,6 @@
-if self.get('acc') > 90:
-	exp.set('feedback_msg', 'Excellent, well done!')
-elif self.get('acc') > 75:
-	exp.set('feedback_msg', 'Pretty good')
+if var.acc > 90:
+	var.feedback_msg = 'Excellent, well done!'
+elif var.acc > 75:
+	var.feedback_msg = 'Pretty good'
 else:
-	exp.set('feedback_msg', 'Come on, you can do better!')
-
+	var.feedback_msg = 'Come on, you can do better!'

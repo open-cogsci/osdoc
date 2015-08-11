@@ -14,7 +14,9 @@ toc:
 
 ## The difference between `feedback` and `sketchpad` items
 
-To give provide you will generally use the `feedback` item, instead of the `sketchpad` item. These two items are quite similar, but are different in *when* stimulus preparation occurs. See also:
+To provide feedback you generally use the `feedback` item, instead of the `sketchpad` item. These two items are quite similar, but are different in *when* stimulus preparation occurs. In a nutshell, `feedback` items are prepared just before they are shown, which makes it possible to include feedback about things that have just happened.
+
+See also:
 
 - [usage/prepare-run]
 
@@ -46,16 +48,16 @@ figure:
   You can use a number of standard feedback variables, such as `avg_rt` and `acc`.
 --%
 
-You can also use an `inline_script` item, inserted immediately before the `feedback` item, to provide custom types of feedback. For example, if you want to provide a warning when accuracy drops below 75% you could insert the following inline_script before the feedback item.
+You can also use an `inline_script` item, inserted immediately before the `feedback` item, to provide custom types of feedback. For example, if you want to provide a warning when accuracy drops below 75% you could insert the following inline_script before the feedback item:
 
-%--
-code:
- id: LstFeedback
- source: custom-feedback.py
- syntax: python
- caption: |
-  Using an `inline_script` item to provide custom feedback.
---%
+~~~ .python
+if var.acc > 90:
+	var.feedback_msg = 'Excellent, well done!'
+elif var.acc > 75:
+	var.feedback_msg = 'Pretty good'
+else:
+	var.feedback_msg = 'Come on, you can do better!'
+~~~
 
 ## Feedback after a single trial
 
@@ -71,7 +73,7 @@ figure:
 
 In this case, you can use a `sketchpad` item, because you don't change the contents of the canvas depending on the participant's response. You only change which of the two `sketchpad`s, both of which have been constructed in advance, will be shown: *green_fixation* or *red_fixation*.
 
-You can also present full feedback after every trial, using a `feedback` item inserted after the response item (such as a `keyboard_response`), as shown in [Figure 1].
+You can also present full feedback after every trial, using a `feedback` item inserted after the response item (such as a `keyboard_response`), as shown in %FigFeedback.
 
 ## Manipulating feedback variables in inline_script items
 

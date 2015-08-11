@@ -49,7 +49,7 @@ figure:
 
 ## Step 1: Download and start OpenSesame
 
-OpenSesame is available for Windows, Linux, Mac OS (experimental), and Android (runtime only). This tutorial is written for OpenSesame 2.9.0 or later. You can download OpenSesame from here:
+OpenSesame is available for Windows, Linux, Mac OS (experimental), and Android (runtime only). This tutorial is written for OpenSesame 3.0.X. You can download OpenSesame from here:
 
 - <http://osdoc.cogsci.nl/>
 
@@ -86,22 +86,22 @@ Let's start with the counterbalancing part, and use the participant number to de
 Therefore, drag an `inline_script` from the item toolbar onto the very top of the experiment. Change the name of the new item to *counterbalance*. In the *Prepare* phase of the *counterbalance* item, enter the following script:
 
 ~~~ .python
-if self.get('subject_parity') == 'even':
-    exp.set('condition1', 'experimental')
-    exp.set('condition2', 'control')
+if var.subject_parity == 'even':
+	var.condition1 = 'experimental'
+	var.condition2 = 'control'
 else:
-    exp.set('condition1', 'control')
-    exp.set('condition2', 'experimental')
+	var.condition1 = 'control'
+	var.condition2 = 'experimental'
 ~~~
 
 Ok, let's take a moment to understand what's going on here.
 
-The first thing to know is that `self.get()` retrieves experimental variables. These include variables that you have defined yourself, for example in a `loop` item, as well as built-in variables. One such built-in experimental variable is `subject_parity`, which is automatically set to 'even' when the experiment is launched with an even subject number (0, 2, 4, etc.), and to 'odd' when the subject number is odd (1, 3, 5, etc.).
+The first thing to know is that experimental variables are properties of the `var` object. Experimental variables are variables that you have defined yourself, for example in a `loop` item, as well as built-in variables. One such built-in experimental variable is `subject_parity`, which is automatically set to 'even' when the experiment is launched with an even subject number (0, 2, 4, etc.), and to 'odd' when the subject number is odd (1, 3, 5, etc.).
 
-The second thing to know is that `exp.set()` sets experimental variables. That is, it makes variables available elsewhere in OpenSesame, outside of `inline_script` items. So this line:
+We further create two new experimental variables `condition1` and `condition2`. By setting these as properties of `var`, we make them available elsewhere in OpenSesame, outside of `inline_script` items. So this line:
 
 ~~~ .python
-exp.set('condition1', 'experimental')
+var.condition1 = 'experimental'
 ~~~
 
 ... creates an experimental variable with the name `condition1`, and gives it the value 'experimental'. In step 4, we will use this variable to determine which condition is tested first.
@@ -115,6 +115,7 @@ In other words, this script says the following:
 
 ### Links
 
+- [/python/var/](/python/var/)
 - [/usage/variables-and-conditional-statements/](/usage/variables-and-conditional-statements/)
 - [/miscellaneous/counterbalancing/](/miscellaneous/counterbalancing/)
 
@@ -293,31 +294,24 @@ figure:
 
 Now we're getting to the fun-but-tricky part: implementing the RSVP stream. Click on *RSVP* to open the item. You see two tabs: *Prepare* and *Run*. The golden rule is to add all code related to stimulus preparation to the *Prepare* tab, and all code related to stimulus presentation to the *Run* tab. Let's start with the preparatory stuff, so switch to the *Prepare* tab.
 
-First, we need to import all Python modules that we plan to use:
+First, we need to import the Python modules that we plan to use:
 
 ~~~ .python
 import random
 import string
-from openexp.canvas import canvas
 ~~~
 
-Here, `random` and `string` are part of the Python standard library. `openexp.canvas.canvas` is part of OpenSesame: It's a class for presenting visual stimuli.
-
-Next, we need to define several variables that determine the details of the RSVP stream: (Note that, like before, we use `self.get()` to retrieve experimental variables that have been defined in a `loop`.)
+Next, we need to define several variables that determine the details of the RSVP stream. We will make them properties of the `var` object, that is, turn them into experimental variables. This not necessary, but has the advantage that they will be automatically logged.
 
 ~~~ .python
-# Is T2 present?
-T2_present = self.get('T2_present')
-# The position of T2 relative to T1
-lag = self.get('lag')
 # The color of T1
-T1_color = 'white'
+var.T1_color = 'white'
 # The presentation time of each stimulus
 # (rounded up to nearest value compatible with refresh rate)
-letter_dur = 10
+var.letter_dur = 10
 # The inter-stimulus interval
 # (rounded up to nearest value compatible with refresh rate)
-isi = 70
+var.isi = 70
 ~~~
 
 Next, we are going to create the letter stream. Raymond et al. have a few rules:
@@ -331,33 +325,34 @@ Let's translate these rules to Python:
 ~~~ .python
 # The position of T1 is random between 7 and 15. Note that the first position is
 # 0, so the position indicates the number of preceding stimuli.
-T1_pos = random.randint(7, 15)
+var.T1_pos = random.randint(7, 15)
 # The maximum lag, i.e. the number of letters that follow T1.
-max_lag = 8
+var.max_lag = 8
 # The length of the stream is the position of T1 + the maximum lag + 1. We need
 # to add 1, because we count starting at 0, so the length of a list is always
 # 1 larger than its maximum index.
-stream_len = T1_pos + max_lag + 1
+var.stream_len = var.T1_pos + var.max_lag + 1
 # We take all uppercase letters, which have been predefined in the `string`
 # module. Converting to a `list` creates a list of characters.
 letters = list(string.ascii_uppercase)
 # We remove 'X' from this list.
 letters.remove('X')
 # Randomly sample a `stream_len` number of letters
-stim_list = random.sample(letters, stream_len)
+stim_list = random.sample(letters, var.stream_len)
 ~~~
 
 Ok, `stim_list` now contains all letters that make up our RSVP stream on a given trial, except for the T2 (if present). Therefore, on T2-present trials, we need to replace the letter at the T2 position by an 'X'.
 
 ~~~ .python
-if T2_present == 'y':
-    T2_pos = T1_pos + lag
+if var.T2_present == 'y':
+    var.T2_pos = var.T1_pos + var.lag
     stim_list[T2_pos] = 'X'
 ~~~
 
-We now have a variable called `stim_list` that specifies the letters in our RSVP stream. This is a `list` that might contain something like: `['M', 'F', 'O', 'P', 'S', 'R', 'Y', 'C', 'U', 'Z', 'G', 'A', 'T', 'E', 'H', 'J', 'V', 'N', 'B', 'K', 'X', 'Q']`
+We now have a variable called `stim_list` that specifies the letters in our RSVP stream. This is a `list` that might contain something like: `['M', 'F', 'O', 'P', 'S', 'R', 'Y', 'C', 'U', 'Z', 'G', 'A', 'T', 'E', 'H', 'J', 'V', 'N', 'B', 'K', 'X', 'Q']`. Note that `stim_list` is not an experimental variable, i.e. it is not a property of the `var` object. This is because experimental variables cannot be lists: The `var` object would turn the list into a character string, and that's not what we want!
 
-The next step is to create a `list` of `canvas` objects, each of which contains a single letter from `stim_list`. A `canvas` object corresponds to a static visual stimulus display, i.e. to one frame in our RSVP stream.
+The next step is to create a `list` of `canvas` objects, each of which contains a single letter from `stim_list`. A `canvas` object corresponds to a static visual stimulus display, i.e. to one frame in our RSVP stream. You can create a canvas object using the `canvas()` function, which is one of OpenSesame's common
+functions that you can call without needing to import anything.
 
 ~~~ .python
 # Create an empty list for the canvas objects.
@@ -368,12 +363,12 @@ letter_canvas_list = []
 # which you assign a single value to two variables, is called tuple unpacking.
 for i, stim in enumerate(stim_list):
     # Create a `canvas` object.
-    letter_canvas = canvas(exp)
+    letter_canvas = canvas()
     # If we are at the position of T1, we change the foreground color, because
     # T1 is white, while the default color (specified in the General tab) is
     # black.
-    if i == T1_pos:
-        letter_canvas.set_fgcolor(T1_color)
+    if i == var.T1_pos:
+        letter_canvas.set_fgcolor(var.T1_color)
     # Draw the letter!
     letter_canvas.text(stim)
     # And add the canvas to the list.
@@ -383,16 +378,14 @@ for i, stim in enumerate(stim_list):
 We also need to create a blank `canvas` to show during the inter-stimulus interval:
 
 ~~~ .python
-blank_canvas = canvas(exp)
+blank_canvas = canvas()
 ~~~
 
-Finally, we use `exp.set()` to set the position and identity of T1 as experimental variables, because they have been randomly determined in the scriipt. By setting these variables we can use them elsewhere in OpenSesame, such as for logging or to specify the correct T1 response.
+Finally, we set the identity of T1 as an experimental variable, because it has been randomly determined in the script:
 
 ~~~ .python
-exp.set('T1_pos', T1_pos)
 # Extract T1 from the list
-T1 = stim_list[T1_pos]
-exp.set('T1', T1)
+var.T1 = stim_list[var.T1_pos]
 ~~~
 
 Preparation done!
@@ -424,9 +417,9 @@ This translates almost directly into Python:
 ~~~ .python
 for letter_canvas in letter_canvas_list:
     letter_canvas.show()
-    self.sleep(letter_dur)
+    clock.sleep(var.letter_dur)
     blank_canvas.show()
-    self.sleep(isi)
+    clock.sleep(var.isi)
 ~~~
 
 Done!
@@ -437,6 +430,7 @@ Done!
 
 - [/python/about/](/python/about/)
 - [/python/canvas/](/python/canvas/)
+- [/python/clock/](/python/clock/)
 
 </div>
 
@@ -552,10 +546,10 @@ l_blank_time = []
 for letter_canvas in letter_canvas_list:
     t1 = letter_canvas.show()
     l_letter_time.append(t1)
-    self.sleep(letter_dur)
+    clock.sleep(var.letter_dur)
     t2 = blank_canvas.show()
     l_blank_time.append(t2)
-    self.sleep(isi)
+    clock.sleep(var.isi)
 ~~~
 
 We now have two `list`s with timestamps: `l_letter_time` and `l_blank_time` From these, we want to determine the average presentation duration of a letter, the average duration of a blank, and the standard deviation for both averages. But because `list`s are not great for these kinds of numerical computations, we are going to convert them to another kind of object: a `numpy.array`.
@@ -594,22 +588,14 @@ Schematically:
     -
     a_blank_time[:-1]   ->  [ 11, 21 ] # The trailing 31 is stripped off
 
-The next step is to use the `array.mean()` and `array.std()` methods to get the averages and standard deviations of the durations in one go:
+The next step is to use the `array.mean()` and `array.std()` methods to get the averages and standard deviations of the durations in one go. To inspect these
+values, we set them as experimental variables (i.e. as properties of the `var` object). That way they will be logged and visible in the variable inspector.
 
 ~~~ .python
-mean_letter_dur = a_letter_dur.mean()
-std_letter_dur = a_letter_dur.std()
-mean_blank_dur = a_blank_dur.mean()
-std_blank_dur = a_blank_dur.std()
-~~~
-
-And finally set them as experimental variables, so that they are logged an available for offline inspection:
-
-~~~ .python
-exp.set('mean_letter_dur', mean_letter_dur)
-exp.set('std_letter_dur', std_letter_dur)
-exp.set('mean_blank_dur', mean_blank_dur)
-exp.set('std_blank_dur', std_blank_dur)
+var.mean_letter_dur = a_letter_dur.mean()
+var.std_letter_dur = a_letter_dur.std()
+var.mean_blank_dur = a_blank_dur.mean()
+var.std_blank_dur = a_blank_dur.std()
 ~~~
 
 Done!
@@ -632,12 +618,12 @@ For example, our experiment has two conditions, defined as 'experimental' and 'c
 First, drag a new `inline_script` item to the start of the *trial_sequence* and rename it to *assertions*. Add the following line to the *Run* tab:
 
 ~~~ .python
-assert(self.get('condition') in ['experimental', 'control'])
+assert(var.condition in ['experimental', 'control'])
 ~~~
 
 Let's dissect this line:
 
-- `self.get('condition')` retrieves the `condition` variable.
+- `var.condition` refers to the experimental `condition` variable.
 - `in ['experimental', 'control']` checks whether this variable matches any of the items in the list, i.e. whether it is 'experimental' or 'control'.
 - `assert()` states that there *has* to be a match. If not, the experiment will crash (an `AssertionError` will be raised).
 
@@ -646,14 +632,14 @@ In other words, whatever you pass to `assert()` has to be `True`, otherwise your
 Some more assertions:
 
 ~~~ .python
-assert(self.get('T2_present') in ['y', 'n'])
-assert(self.get('lag') in ['']+range(0,9))
+assert(var.T2_present in ['y', 'n'])
+assert(var.lag in ['']+range(0,9))
 ~~~
 
 And a final one that is a bit more complicated. Can you figure out what it does?
 
 ~~~ .python
-assert((self.get('lag') == '') != (self.get('T2_present') == 'y'))
+assert((var.lag == '') != (var.T2_present == 'y'))
 ~~~
 
 <div class='info-box' markdown='1'>
@@ -667,19 +653,11 @@ assert((self.get('lag') == '') != (self.get('T2_present') == 'y'))
 
 ## Extra 3: Use PsychoPy directly
 
-OpenSesame is back-end independent. This means that different libraries can be used for controlling the display, sound, response collection, etc. You can select the back-end in the General tab (see %FigBackend).
+OpenSesame is back-end independent. This means that different libraries can be used for controlling the display, sound, response collection, etc. You can select the back-end in the General tab.
 
-%--
-figure:
- id: FigBackend
- source: FigBackend.png
- caption: |
-  You can select a back-end in the General tab of your experiment.
---%
+So far, we have used OpenSesame's own `canvas` object, which automatically maps onto the correct functions of the selected back-end. Therefore, you don't have to bother with or know about the details of each back-end. However, you can also directly use the functions offered by a specific back-end, such as PsychoPy. This is especially useful if you want to use functionality that is not available in OpenSesame's own modules.
 
-So far, we have used OpenSesame's own `openexp` modules, wich automatically map all commands to the correct functions of the selected back-end. Therefore, you don't have to bother with or know about the details of each back-end. However, you can also directly use the functions offered by a specific back-end, such as PsychoPy. This is especially useful if you want to use functionality that is not available in the `openexp` modules.
-
-First, to use PsychoPy, you need to switch to the *psycho* back-end (see %FigBackend). Now, when you start the experiment, OpenSesame will automatically initialize PsychoPy, and the `psychopy.visual.Window` object will be available as `win` in `inline_script`s.
+First, to use PsychoPy, you need to switch to the *psycho* back-end, which you can do in the 'General properties' tab of your experiment . Now, when you start the experiment, OpenSesame will automatically initialize PsychoPy, and the `psychopy.visual.Window` object will be available as `win` in `inline_script`s.
 
 Now let's see how we can implement our RSVP stream in PsychoPy. (The script below replaces the part in the *Prepare* phase of *RSVP* in which we created `letter_canvas_list`.)
 
@@ -687,7 +665,7 @@ Now let's see how we can implement our RSVP stream in PsychoPy. (The script belo
 from psychopy import visual
 textstim_list = []
 for i, stim in enumerate(stim_list):
-    if i == T1_pos:
+    if i == var.T1_pos:
         color = 'white'
     else:
         color = 'black'
@@ -705,9 +683,9 @@ Of course, we also need to update the *Run* phase of the *RSVP* stream, which no
 for textstim in textstim_list:
     textstim.draw()
     win.flip()
-    self.sleep(letter_dur)
+    clock.sleep(var.letter_dur)
     win.flip()
-    self.sleep(isi)
+    clock.sleep(var.isi)
 ~~~
 
 The main difference here is that we need to call several methods to show our stimuli, instead of only `canvas.show()`. First, we need to call the `draw()` method on all stimuli that we want to show: `textstim.draw()` Next, we need to call `win.flip()` to refresh the display so that the stimuli actually become visible. If we call `win.flip()` without any preceding calls to `draw()`, as we do before the inter-stimulus-interval, it has the effect of clearing the display.

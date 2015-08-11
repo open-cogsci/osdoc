@@ -24,9 +24,9 @@ Finally, certain plug-ins, such as the `srbox`, can also be used to collect resp
 ## Response variables
 
 All response items store responses in more-or-less the same way. A description of response-related variables can be found here:
-	
+
 - [usage/variables-and-conditional-statements]
-	
+
 ## Finding out key names
 
 Many keys have obvious names. For example, the 'a' key is called 'a'. But sometimes the name is ambiguous, such as in the case of the Control key, which may be called `control` or `ctrl`. There are a few ways to find out what a key is called. First, for `keyboard_response` items, you can click on the 'List available keys' button to find out which key names are available. This is a best guess of OpenSesame, which is usually accurate, but not guaranteed to be perfect. A foolproof way to find out what a key is called is to append a `feedback` item after your `keyboard_response` item, and print out the response (i.e. the key name) by adding something like the text: "You just pressed [response]"
@@ -35,7 +35,7 @@ Finally, key names may differ slightly between  back-ends. For example, the [xpy
 
 ## Collecting responses using Python inline code
 
-Responses can also be collected using Python inline code in `inline_script` items. This (usually) handled by the `openexp.keyboard` and `openexp.mouse` modules. For documentation and examples, see the respective documentation pages:
+Responses can also be collected using Python inline code in `inline_script` items. This is (usually) handled by `keyboard` and `mouse` objects. For documentation and examples, see the respective documentation pages:
 
 - [python/keyboard]
 - [python/mouse]

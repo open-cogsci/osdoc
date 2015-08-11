@@ -20,7 +20,7 @@ toc:
 
 ## The variable inspector
 
-The variable inspector provides a convenient overview of the available variables (%FigVariableInspector). You can activate the variable inspector by pressing Control + I or through the menu (Menu → View → Show variable inspector).
+The variable inspector provides an of available variables (%FigVariableInspector). You can activate the variable inspector by pressing Control + I or through the menu (Menu → View → Show variable inspector). When the experiment is not running, this overview is based on a best guess of which variables will become available during the experiment. However, when the experiment is running, the variable inspector shows how a live overview of variables and their values. This is very useful for debugging your experiment.
 
 %--
 figure:
@@ -155,7 +155,7 @@ You can use more complex conditions as well. Let's take a look at a few examples
 	[correct] = 1 and [response_time] > 2000
 	[correct] != 1 or [response_time] > [max_response_time] or [response_time] < [min_response_time]
 
-You can concatenate as many `and`s and `or`s as you want. `and` takes precedence over `or`. Brackets are not supported. Note that variables are not typed and putting quotes around a value is only necessary if a value contains spaces (but always permitted).
+Variables are not typed and putting quotes around a value is only necessary if a value contains spaces (but always permitted).
 
 Alternatively, you can use Python code in your conditional statements. To indicate that you are using Python code instead of the OpenSesame syntax (as above), simply prepend an `=` character to your conditional statement, like so:
 
@@ -163,7 +163,7 @@ Alternatively, you can use Python code in your conditional statements. To indica
 =var.correct == 0
 ~~~
 
-Note that you cannot use the square-bracket syntax when using Python code. Instead, you use the `var` object to retrieve a variable, like you would in an `inline_script`.
+You cannot use the square-bracket syntax when using Python code. Instead, you use the `var` object to retrieve a variable, like you would in an `inline_script`.
 
 The same principle applies to 'Show if' fields in `sketchpad` items. For example, if you want to draw a leftwards arrow only if the variable `cue` has been set to 'right', simply type the proper condition in the 'Show if ...' field and draw the arrow, as in %FigShowIf. Make sure that you draw the arrow after you have set the condition.
 
