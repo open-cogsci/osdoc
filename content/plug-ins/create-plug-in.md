@@ -67,7 +67,13 @@ controls:
     name: line_edit_widget
     tooltip: You can type something here
     type: line_edit
-    var: my_var
+    var: my_line_edit_var
+-
+    label: My line checkbox control
+    name: checkbox_widget
+    tooltip: You can type something here
+    type: checkbox
+    var: my_checkbox_var
 ~~~
 
 See the `auto_example` [example](#examples) for a full list of all controls and options.
@@ -96,8 +102,9 @@ class my_plugin(item):
 
 	def reset(self):
 
-		# Set default values.
-		self.my_var = u'some default'
+		# Set default experimental variables and values
+		self.var.my_line_edit_var = u'some default'
+		self.var.my_checkbox_var = u'some default'
 		# Debugging output is only visible when OpenSesame is started with the
 		# --debug argument.
 		debug.msg(u'My plug-in has been initialized!')
@@ -122,6 +129,10 @@ class qtmy_plugin(my_plugin, qtautoplugin):
 		fixation_dot.__init__(self, name, experiment, script)
 		qtautoplugin.__init__(self, __file__)
 ~~~
+
+## Experimental variables
+
+Experimental variables are properties of the `var` object. An example is `self.var.my_line_edit_var` from the example above. These variables that define the plug-in, and are parsed to and from the OpenSesame script.
 
 ## Examples
 
