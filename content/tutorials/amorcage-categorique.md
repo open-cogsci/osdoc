@@ -7,6 +7,9 @@ author: Lotje van der Linden
 lang: fr
 ---
 
+Ce tutoriel a été écrit pour une ancienne version d'OpenSesame.
+{: .page-notification}
+
 ## Vue d'ensemble
 
 Cette formation sera composé en trois parties. D'abord, il y aura une brève présentation générale sur la constructions des expériences. Ensuite, nous allons créer une expérience qui est à la fois simple et réaliste. Pour finir, on va affiner notre expérience en utilisant quelques astuces des programmeurs avancées.
@@ -16,7 +19,7 @@ toc:
  mindepth: 2
  maxdepth: 3
  exclude: ["Vue d'ensemble"]
---%	
+--%
 
 ## Introduction
 
@@ -38,7 +41,7 @@ figure:
 
 ### La séquence d'essai
 
-Pour tester notre hypothèse, on va créer une expérience avec la séquence d'essai suivante: Chaque essai commencera avec un point de fixation (500 ms). Après, l'Amorce sera présenté brièvement (100 ms), suivi par un intervalle vide (1000 ms). Ensuite, la cible apparaît. La tâche du participant est d'indiquer aussi rapidement et précise que possible si la cible est un mot ou un non-mot. 
+Pour tester notre hypothèse, on va créer une expérience avec la séquence d'essai suivante: Chaque essai commencera avec un point de fixation (500 ms). Après, l'Amorce sera présenté brièvement (100 ms), suivi par un intervalle vide (1000 ms). Ensuite, la cible apparaît. La tâche du participant est d'indiquer aussi rapidement et précise que possible si la cible est un mot ou un non-mot.
 
 - Si la cible est un vrai mot: il faut appuyer la touche 'm'
 - Si la cible est un non-mot: il faut appuyer la touche 'q'
@@ -56,7 +59,7 @@ figure:
 ### Hiérarchie de l'expérience
 
 Pour commencer, on va construire une expérience très simple, qui contient seulement 2 blocs de 12 essais. La structure hiérarchique de notre expérience peut donc être représentée comme suit:
-	
+
 %--
 figure:
  id: hierarchy
@@ -70,7 +73,7 @@ figure:
 ### Étape 1 : Démarrer OpenSesame
 
 Lorsque vous démarrez OpenSesame, vous recevrez un menu qui vous permet de choisir entre:
-	
+
 - Ouvrir une expérience qui était récemment ouverte
 - Ouvrir une autre expérience déjà existante
 - Créer une nouvelle expérience ...
@@ -104,7 +107,7 @@ figure:
   L'Extended template comme on le voit dans la vue d'ensemble avant et après avoir supprimé le *practice_loop*.
 --%
 
-Ensuite, on enregistre notre nouvelle expérience 
+Ensuite, on enregistre notre nouvelle expérience
 
 - En cliquant l'icône 'Enregistrer' de la barre d'outils principale.
 
@@ -119,7 +122,7 @@ figure:
 ### Étape 2 : Definir les variables indépendantes
 
 Pour commencer, nous nous limitons à deux variables indépendantes: *Cible* et *Amorce*. La variable *Cible* contient les mots d'une certaine catégorie qui le participant doit identifier.  
-	
+
 - Des vrais mots: 'chien', 'chat', 'lapin'
 - Des non-mots: 'chiun', 'chot', 'lapon'
 
@@ -136,18 +139,18 @@ Pour exécuter cette opération:
 - Sélectionnez l'élément *block_loop* de la vue d'ensemble
 - Cliquez sur le bouton *Assistant de variables* dans l'onglet du *block_loop*
 - Tapez les noms de variables sur la première ligne de l'Assistant de variables
-- Remplissez les deux colonnes en tapant chaque niveau de la variable. 
+- Remplissez les deux colonnes en tapant chaque niveau de la variable.
 - Cliquez 'Ok'
 
 Vous voyez que OpenSesame a généré notre entière liste d'essais.
 
 Il est souvent pratique de dire OpenSesame quelle est la bonne réponse par essai en définissant la variable 'correct_response'. Ça permet OpenSesame de suivre les variables de la performance, comme 'acc' ('accuracy' ou pourcentage correct).  
 Pour dire OpenSesame quelle est la bonne réponse sur chaque essai:
-	
+
 - Cliquez sur le bouton 'Ajouter une variable'
 - Ecrivez 'correct_response' (avec une 's'!) et appuyez sur 'Enter'
-- Maintenant, on a créé un colonne vide pour la nouvelle variable. Il faut donc le remplir. 
-	- Pour chaque ligne contenant un vrai mot, mettez 'm' comme bonne réponse. 
+- Maintenant, on a créé un colonne vide pour la nouvelle variable. Il faut donc le remplir.
+	- Pour chaque ligne contenant un vrai mot, mettez 'm' comme bonne réponse.
 	- Pour chaque ligne contenant un non-mot, mettez 'q'.
 
 %--
@@ -161,7 +164,7 @@ figure:
 ### Étape 3 : Ajouter des éléments à la séquence d'essai
 
 Comme montre la %trialSeq1, l'objectif est de construire une séquence d'essai comme suit:
-	
+
 1. Présenter le point de fixation
 2. Présenter l'Amorce
 3. Présenter un écran vide (intervalle entre Amorce et Cible)
@@ -179,7 +182,7 @@ Pour ajouter ces 3 éléments `sketchpad`:
 - Choisissez l'élément `sketchpad`
 - Faites glisser l'élément vers la *trial_sequence* dans la vue d'ensemble.
 - *Attention:* Pour faire apparaitre un élément *au dessous* d'un autre élément, déposez-le *sur* cet autre élément.
-- Répétez la procédure glisser-déposer jusqu'à ce que vous avez 4 éléments `sketchad` dans votre *trial_sequence*. 
+- Répétez la procédure glisser-déposer jusqu'à ce que vous avez 4 éléments `sketchad` dans votre *trial_sequence*.
 
 %--
 figure:
@@ -189,10 +192,10 @@ figure:
   Glisser-déposer des éléments (ici: des `sketchpad`s) de la barre d'outils vers la vue d'ensemble.
 --%
 
-Par défaut, OpenSesame attribue des noms tels que "__sketchpad" aux éléments nouvellement crées. Ces noms ne sont pas très informative. Il est donc forcement recommandé de les changer. 
+Par défaut, OpenSesame attribue des noms tels que "__sketchpad" aux éléments nouvellement crées. Ces noms ne sont pas très informative. Il est donc forcement recommandé de les changer.
 
 Pour réaliser ça:
-	
+
 - Clic droit sur un élément dans la vue d'ensemble
 - Choisissez 'Renommer'
 - Changez le nom
@@ -215,7 +218,7 @@ Les derniers deux événements de la séquence d'essai, (collecter la réponse e
 Maintenant, on va créer le content des éléments `sketchpad` grâce aux 'drawing tools' (des outils de dessin) de ces éléments. On commence avec le `sketchpad` *fixation*.
 
 - Ouvrez l'onglet *fixation* en cliquant sur cet élément dans la vue d'ensemble.
-- Comme vous voyez, grâce à l'Extended template, le point de fixation est déjà dessiné. 
+- Comme vous voyez, grâce à l'Extended template, le point de fixation est déjà dessiné.
 
 Cependant, il faut qu'on fasse un petit changement sur cet élément. Actuellement, la durée de ce `sketchpad` est mis sur '0'. Ça veut dire que le point de fixation sera présenté pendant 0 millisecondes. Bien sur, ce n'est pas ce qu'on veut. On veut que le point de fixation sera présenté par 500 ms (voyez %trialSeq1), et que, aprés, l'expérience avance automatiquement.  
 Pour réaliser ça, il faut changer la durée vers '500'.
@@ -235,7 +238,7 @@ Pour le point de fixation, on a créé un `sketchpad` *invariable*. Un `sketchpa
 On peut également créer des `sketchpad`s *variables*. Ça veut dire que le contient du `sketchpad` est défini par une variable indépendente. Grâce aux `sketchpad`s variables, on ne doit pas créer deux `sketchpad`s différents pour chaque niveau de la variable Amorce ('ANIMAL et 'XXXXX'). Au lieu de ça, on en crée qu'un, et on laisse décider OpenSesame quel Amorce sera présenté sur chaque essai, au base des valeurs dans la liste *block_loop*.
 
 Pour indiquer à OpenSesame qu'il s'agit d'un `sketchpad` variable, on utilise la méthode *entre-crochets*. La méthode entre-crochets fonctionne comme suit:
-	
+
 - Ouvrez l'onglet *amorce* en cliquant sur cet élément dans la vue d'ensemble
 - Cliquez sur l'icone "A" pour sélectionner l'outil texte
 - Cliquez sur le centre de l'écran
@@ -298,12 +301,12 @@ figure:
 --%
 
 On voit que, actuellement, la bloc de séquence se compose de trois éléments:
-	
+
 1. reset_feedback
 2. block_loop
 3. feedback
 
-Cette séquence de bloc est déjà parfait pour notre expérience. 
+Cette séquence de bloc est déjà parfait pour notre expérience.
 
 - Avec l'élément *feedback*, on peut montrer au sujet, après chaque bloc, son pourcentage de réponses correctes, et son temps de réaction moyen
 - L'élément *reset_feedback* assure que ces moyens sont réinitialisés au début de chaque bloc
@@ -311,7 +314,7 @@ Cette séquence de bloc est déjà parfait pour notre expérience.
 
 ### Étape 6 : La séquence de session
 
-Le niveau le plus haut de notre structure hierarchique répresente la sequence de la session experimentale entière. Pour voir mieux cette séquence, on cache temporairement la séquence de bloc. 
+Le niveau le plus haut de notre structure hierarchique répresente la sequence de la session experimentale entière. Pour voir mieux cette séquence, on cache temporairement la séquence de bloc.
 
 %--
 figure:
@@ -331,7 +334,7 @@ Même si cette séquence de session est déjà presque parfait, on va régler de
 
 #### instructions
 
-Le `sketchpad` *instructions* donne une explication de la tâche pour le participant. Pour l'instant, les instructions ne sont pas suffisamment précises. 
+Le `sketchpad` *instructions* donne une explication de la tâche pour le participant. Pour l'instant, les instructions ne sont pas suffisamment précises.
 
 Changez les comme suit:
 
@@ -347,10 +350,10 @@ Changez les comme suit:
 #### experimental_loop
 
 Actuellement, notre expérience consiste juste d'un seul bloc expérimental. Chaque bloc, à son tour, est constitué d'un petit nombre d'essai (les 12 conditions sont montrés au sujet qu'une fois). Normalement, un tel nombre d'observations ne suffit pas pour faire des bonnes analyses statistiques. Pour augmenter le nombre de répétitions, on va changer le nombre de blocs expérimentaux comme suit:
-	
+
 - Ouvrez l'onglet *experimental_loop* en cliquant sur cet élément dans la vue d'ensemble
 - Changer le nombre de répétitions dans la boite *Répéter*. Mettez-le vers '2'. Par conséquence, le bloc expérimental entier va être répété 2 fois.
-	
+
 %--
 figure:
  id: increaseRep
@@ -361,7 +364,7 @@ figure:
 
 #### end_of_experiment
 
-Cet élément `sketchpad` informe le participant que l'expérience est terminé. 
+Cet élément `sketchpad` informe le participant que l'expérience est terminé.
 
 - Mettez ce message en français en utilisant l'outil texte.
 
@@ -369,7 +372,7 @@ Cet élément `sketchpad` informe le participant que l'expérience est terminé.
 
 Félicitations!! Vous avez construit une expérience entièrement fonctionnel !
 Donc, c'est le temps pour la tester. Pour exécuter votre expérience :
-	
+
 - Cliquez une des flèches vertes
 - Entrez un numéro de sujet (par ex. '1')
 - Une fênetre s'ouvre qui indique le nom de défaut du fichier de sortie. Si vous n'aimez pas ce nom, vous pouvez le changer
@@ -378,33 +381,33 @@ Donc, c'est le temps pour la tester. Pour exécuter votre expérience :
 
 Si vous n'avez pas envie de dérouler l'expérience entière (2 fois 12 essais) vous pouvez aborter l'expérience en appuyant la touche 'Esc' sur le clavier. Ça interrompt immédiatement l'exécution de l'expérience, de sorte que vous pouvez continuer de la programmer.
 
-Après d'avoir exécuté (un part de) votre expérience, vous pouvez voir si vos variables sont enrégistrées correctement dans le fichier de sortie. 
+Après d'avoir exécuté (un part de) votre expérience, vous pouvez voir si vos variables sont enrégistrées correctement dans le fichier de sortie.
 
 ## Perfectionner l'expérience
 
 ### Étape 8 : Donner du feedback après chaque essai
 
 On va étendre la séquence d'essai avec un événement en plus : un élément `sketchpad` qui informe le participant, après chaque réponse, si sa réponse était juste ou faux. En réalisant ça, on va apprendre deux astuces un peu plus avancés :
-	
+
 - Utiliser des *variables dépendantes* en ligne
 - Utiliser des déclarations *exécuter-si* (run-if statements)
 
 Pendant chaque essai, la précision du réponse du participant est enregistrée comme la variable *correct*:
-	
+
 - Si le participant répond correctement, la variable 'correct' obtient la valeur 1
 - Si le participant répond mal, la variable 'correct' obtient la valeur 0
 
-On va utiliser cette variable *en ligne*, pour déterminer si le participant doit être informé que sa réponse était juste (en lui montant un point de fixation vert) ou faux (en lui montant un point de fixation rouge). 
+On va utiliser cette variable *en ligne*, pour déterminer si le participant doit être informé que sa réponse était juste (en lui montant un point de fixation vert) ou faux (en lui montant un point de fixation rouge).
 
 #### Créer les éléments `sketchpad`
 
-- Ajoutez deux éléments `sketchpad` à la séquence d'essai. 
-- Placez-les après l'élément *keyboard_response*. 
+- Ajoutez deux éléments `sketchpad` à la séquence d'essai.
+- Placez-les après l'élément *keyboard_response*.
 - Donnez-les des noms informatives, par ex. *juste* et *faux*.
 - Mettez leurs durées vers 500 ms
 - Ouvrez le sketchpad *juste* et dessinez un croix de fixation vert sur le centre du `sketchpad`. Pour effectuer cette opération :
-	- Cliquez sur l'icône du point de fixation pour sélectionner cet outil. 
-	- Changez son couleur du blanc vers vert, en tapant "green" dans la boite couleur. 
+	- Cliquez sur l'icône du point de fixation pour sélectionner cet outil.
+	- Changez son couleur du blanc vers vert, en tapant "green" dans la boite couleur.
 	- Cliquez sur le centre du sketchpad.
 - Ouvrez le sketchpad 'feedback_incorrect' et répétez cette procédure. Assurez-vous que, pour l'*évaluation_incorrect*, le couleur du point de fixation soit rouge ('red').
 
@@ -422,7 +425,7 @@ Cliquez sur l'élément *trial_sequence* dans la vue d'ensemble'. Un onglet s'ou
 
 - [correct] = 1
 - [correct] = 0  
-	
+
 pour les éléments *juste* et *faux*, respectivement
 
 Par conséquence, le sujet verra le point de fixation vert si sa réponse était juste, et le point de fixation rouge si sa réponse était faux.
@@ -438,7 +441,7 @@ figure:
 ### Étape 9 : Varier un variable indépendante entre *blocs*
 
 Imaginez que nous ne soyons pas seulement intéressés sur l'effet de l'Amorce, mais qu'on veule examiner si l'effet de l'Amorce interagit avec l'effet de la durée de l'intervalle entre Amorce et Cible. Par exemple, on peut élargir la question de recherche vers:
-	
+
 *La reconnaissance d'un mot, est-elle plus vite quand la catégorie du mot est amorcée très récemment, mais non quand l'intervalle entre Amorce et Cible est assez longue ?*
 
 %--
@@ -452,10 +455,10 @@ figure:
 Pour répondre à cette question, il faut un deuxième variable indépendente: durée de l'intervalle. On va le donner deux valeurs différentes: 1000 ms vs. 3000 ms.
 
 Pour ajouter cette variable à notre expérience, on a deux possibilités :
-	
-- On peut ajouter une variable supplémentaire dans notre liste du *block_loop*. 
+
+- On peut ajouter une variable supplémentaire dans notre liste du *block_loop*.
 	- Par conséquence, l'intervalle sera varié entre chaque essai
-- On peut ajouter une variable dans notre liste de l'*experimental_loop*. 
+- On peut ajouter une variable dans notre liste de l'*experimental_loop*.
 	- Par conséquence, l'intervalle sera varié seulement entre blocs : on aura un bloc entier avec un intervalle de 1000 ms, et un autre avec un intervalle de 4000 ms.
 
 Pour ce tutoriel, on choisit option 2. Pour réaliser cette opération :
@@ -489,20 +492,20 @@ figure:
 Votre expérience est maintenant terminée. Exécutez-la, pour la tester.
 
 ## Extra:
-	
+
 S'il vous reste encore du temps, vous pouvez essayer de faire une expérience extra. L'expérience extra est une variation sur l'expérience 'amorcage catégorique' que vous venez de construire. Sauvegardez donc cette expérience sous un autre nom. Ensuite, vous pouvez modifier le copie de l'expérience originale.
 
 *Attention:* Assurez-vous que vous avez fait un copie (sauvegarder-sous) de l'expérience originale. Sinon, vous allez l'écraser.
-	
+
 Pour l'expérience originale, tous les stimuli (l'amorce et la cible) était des textes. Pour l'expérience extra, on va changer le protocole de telle sorte que l'amorce et la cible sont des images. Pour réaliser ça, il faut d'abord changer les niveaux des deux variables indépendantes; Amorce et Cible:
-	
+
 ### Amorce:
 
 L'amorce va être soit un animal (e.g. un oiseau), soit non un animal (e.g. un accordéon). L'idée est que l'image de l'oiseau va amorcer la catégorie sémantique "animal", lorsque l'image de l'accordéon ne le fera pas. L'amorce non-animal fonctions donc comme notre condition contrôle.
 
 ### Cible:
 
-Ensuite, la cible va être soit un chien, soit un chat. Si la cible est un chien, le sujet doit appuyer sur la touche 'm'. Si la cible est un chat, le sujet doit appuyer sur la touche 'q'. Les cibles sont donc toutes des animals (au lieu des mots et des non-mots dans notre protocole original). 
+Ensuite, la cible va être soit un chien, soit un chat. Si la cible est un chien, le sujet doit appuyer sur la touche 'm'. Si la cible est un chat, le sujet doit appuyer sur la touche 'q'. Les cibles sont donc toutes des animals (au lieu des mots et des non-mots dans notre protocole original).
 
 %--
 figure:
@@ -527,9 +530,9 @@ figure:
 --%
 
 ### Astuces:
-	
+
 Vous pouvez télécharger les stimuli pour cette expérience ici [(Rossion & Pourtois, 2004)](#references)
-	
+
 - [accordeon.png](/attachments/amorcage-categorique/accordeon.png)
 - [chat.png](/attachments/amorcage-categorique/chat.png)
 - [chien.png](/attachments/amorcage-categorique/chien.png)
@@ -539,7 +542,7 @@ Ensuite:
 
 - Ajoutez ces stimuli vers le *groupe de fichiers* [voyez aussi][workshop-part2]
 - Utilisez la méthode *entre-crochets* dans le code d'un sketchpad, pour laisser OpenSesame décider quel image a montrer pendant chaque essai [voyez aussi][workshop-part2]
-	
+
 ## Références
 
 Math&ocirc;t, S., Schreij, D., & Theeuwes, J. (2012). OpenSesame: An open-source, graphical experiment builder for the social science. *Behavior Research Methods*, *44*(2), 313-324. doi:10.3758/s13428-011-0168-7

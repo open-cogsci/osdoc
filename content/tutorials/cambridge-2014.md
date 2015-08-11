@@ -7,6 +7,9 @@ level: 1
 author: Edwin Dalmaijer
 ---
 
+This tutorial has been written for an older version of OpenSesame.
+{: .page-notification}
+
 About
 -----
 
