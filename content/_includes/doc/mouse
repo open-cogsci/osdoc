@@ -34,6 +34,7 @@ __Overview:__
 - [function __mouse\.get\_pos__\(\)](#function-__mouseget_pos__)
 - [function __mouse\.get\_pressed__\(\)](#function-__mouseget_pressed__)
 - [function __mouse\.set\_pos__\(pos=\(0, 0\)\)](#function-__mouseset_pos__pos0-0)
+- [function __mouse\.show\_cursor__\(show=True\)](#function-__mouseshow_cursor__showtrue)
 - [function __mouse\.synonyms__\(button\)](#function-__mousesynonyms__button)
 
 
@@ -265,6 +266,27 @@ __Keywords:__
 [mouse.set_pos]: #mouse-set_pos
 [set_pos]: #mouse-set_pos
 
+<div class="FunctionDoc YAMLDoc" id="mouse-show_cursor" markdown="1">
+
+## [function __mouse\.show\_cursor__\(show=True\)](#function-__mouseshow_cursor__showtrue) {#function-__mouseshow_cursor__showtrue}
+
+Immediately changes the visibility of the mouse cursor.
+
+__Note:__ In most cases, you will want to use the `visible`
+[keyword][Response keywords], which changes the visibility during
+response collection, that is, while `mouse.get_click()` is called.
+
+__Keywords:__
+
+- `show` -- Indicates whether the cursor is shown (True) or hidden (False).
+	- Type: bool
+	- Default: True
+
+</div>
+
+[mouse.show_cursor]: #mouse-show_cursor
+[show_cursor]: #mouse-show_cursor
+
 <div class="FunctionDoc YAMLDoc" id="mouse-synonyms" markdown="1">
 
 ## [function __mouse\.synonyms__\(button\)](#function-__mousesynonyms__button) {#function-__mousesynonyms__button}
@@ -303,4 +325,5 @@ A list of synonyms.
 [function __mouse\.get\_pos__\(\)]: #function-__mouseget_pos__
 [function __mouse\.get\_pressed__\(\)]: #function-__mouseget_pressed__
 [function __mouse\.set\_pos__\(pos=\(0, 0\)\)]: #function-__mouseset_pos__pos0-0
+[function __mouse\.show\_cursor__\(show=True\)]: #function-__mouseshow_cursor__showtrue
 [function __mouse\.synonyms__\(button\)]: #function-__mousesynonyms__button
