@@ -27,13 +27,32 @@ for item_name in items:
 __Function list:__
 
 
+- [function __items\.execute__\(name\)](#function-__itemsexecute__name)
 - [property __items.items__](#property-__itemsitems__)
 - [property __items.keys__](#property-__itemskeys__)
 - [function __items\.new__\(\_type, name=None, script=None\)](#function-__itemsnew___type-namenone-scriptnone)
+- [function __items\.prepare__\(name\)](#function-__itemsprepare__name)
+- [function __items\.run__\(name\)](#function-__itemsrun__name)
 - [function __items\.valid\_name__\(item\_type, suggestion=None\)](#function-__itemsvalid_name__item_type-suggestionnone)
 - [property __items.values__](#property-__itemsvalues__)
 
 
+
+<div class="FunctionDoc YAMLDoc" id="items-execute" markdown="1">
+
+## [function __items\.execute__\(name\)](#function-__itemsexecute__name) {#function-__itemsexecute__name}
+
+Executes the run and prepare phases of an item, and updates the item stack.
+
+__Arguments:__
+
+- `name` -- An item name.
+	- Type: str
+
+</div>
+
+[items.execute]: #items-execute
+[execute]: #items-execute
 
 <div class="PropertyDoc YAMLDoc" id="items-items" markdown="1">
 
@@ -88,6 +107,38 @@ The newly generated item.
 [items.new]: #items-new
 [new]: #items-new
 
+<div class="FunctionDoc YAMLDoc" id="items-prepare" markdown="1">
+
+## [function __items\.prepare__\(name\)](#function-__itemsprepare__name) {#function-__itemsprepare__name}
+
+Executes the prepare phase of an item, and updates the item stack.
+
+__Arguments:__
+
+- `name` -- An item name.
+	- Type: str
+
+</div>
+
+[items.prepare]: #items-prepare
+[prepare]: #items-prepare
+
+<div class="FunctionDoc YAMLDoc" id="items-run" markdown="1">
+
+## [function __items\.run__\(name\)](#function-__itemsrun__name) {#function-__itemsrun__name}
+
+Executes the run phase of an item, and updates the item stack.
+
+__Arguments:__
+
+- `name` -- An item name.
+	- Type: str
+
+</div>
+
+[items.run]: #items-run
+[run]: #items-run
+
 <div class="FunctionDoc YAMLDoc" id="items-valid_name" markdown="1">
 
 ## [function __items\.valid\_name__\(item\_type, suggestion=None\)](#function-__itemsvalid_name__item_type-suggestionnone) {#function-__itemsvalid_name__item_type-suggestionnone}
@@ -132,8 +183,11 @@ Returns a list of `item` objects.
 [items]: #items
 
 
+[function __items\.execute__\(name\)]: #function-__itemsexecute__name
 [property __items.items__]: #property-__itemsitems__
 [property __items.keys__]: #property-__itemskeys__
 [function __items\.new__\(\_type, name=None, script=None\)]: #function-__itemsnew___type-namenone-scriptnone
+[function __items\.prepare__\(name\)]: #function-__itemsprepare__name
+[function __items\.run__\(name\)]: #function-__itemsrun__name
 [function __items\.valid\_name__\(item\_type, suggestion=None\)]: #function-__itemsvalid_name__item_type-suggestionnone
 [property __items.values__]: #property-__itemsvalues__

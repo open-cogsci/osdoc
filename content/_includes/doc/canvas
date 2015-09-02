@@ -21,7 +21,7 @@ __Overview:__
 	- [Style keywords](#style-keywords)
 	- [Colors](#colors)
 - [function __canvas\.\_\_init\_\___\(experiment, auto\_prepare=True, \*\*style\_args\)](#function-__canvas__init____experiment-auto_preparetrue-style_args)
-- [function __canvas\.arrow__\(sx, sy, ex, ey, arrow\_size=5, \*\*style\_args\)](#function-__canvasarrow__sx-sy-ex-ey-arrow_size5-style_args)
+- [function __canvas\.arrow__\(sx, sy, ex, ey, body\_length=0\.8, body\_width=0\.5, head\_width=30, \*\*style\_args\)](#function-__canvasarrow__sx-sy-ex-ey-body_length08-body_width05-head_width30-style_args)
 - [function __canvas\.circle__\(x, y, r, \*\*style\_args\)](#function-__canvascircle__x-y-r-style_args)
 - [function __canvas\.clear__\(color=None, \*\*style\_args\)](#function-__canvasclear__colornone-style_args)
 - [function __canvas\.close\_display__\(experiment\)](#function-__canvasclose_display__experiment)
@@ -198,32 +198,36 @@ __Keyword dict:__
 
 <div class="FunctionDoc YAMLDoc" id="canvas-arrow" markdown="1">
 
-## [function __canvas\.arrow__\(sx, sy, ex, ey, arrow\_size=5, \*\*style\_args\)](#function-__canvasarrow__sx-sy-ex-ey-arrow_size5-style_args) {#function-__canvasarrow__sx-sy-ex-ey-arrow_size5-style_args}
+## [function __canvas\.arrow__\(sx, sy, ex, ey, body\_length=0\.8, body\_width=0\.5, head\_width=30, \*\*style\_args\)](#function-__canvasarrow__sx-sy-ex-ey-body_length08-body_width05-head_width30-style_args) {#function-__canvasarrow__sx-sy-ex-ey-body_length08-body_width05-head_width30-style_args}
 
-Draws an arrow. An arrow is a line, with an arrowhead at (ex, ey). The angle between the arrowhead lines and the arrow line is 45 degrees.
+Draws an arrow. An arrow is a polygon consisting of 7 vertices, with an arrowhead pointing at (ex, ey).
 
 __Arguments:__
 
-- `sx` -- The left X coordinate.
+- `sx` -- The X coordinate of the arrow's base.
 	- Type: int
-- `sy` -- The top Y coordinate.
+- `sy` -- The Y coordinate of the arrow's base.
 	- Type: int
-- `ex` -- The right X coordinate.
+- `ex` -- The X coordinate of the arrow's tip.
 	- Type: int
-- `ey` -- The bottom Y coordinate.
+- `ey` -- The Y coordinate of the arrow's tip..
 	- Type: int
 
 __Keywords:__
 
-- `arrow_size` -- The length of the arrow-head lines in pixels.
-	- Type: int
-	- Default: 5
+- `body_length` -- Proportional length of the arrow body relative to the full arrow [0-1].
+	- Type: float
+	- Default: 0.8
+- `body_width` -- Proportional width (thickness) of the arrow body relative to the full arrow [0-1].
+	- Type: float
+	- Default: 0.5
+- `head_width` -- Width (thickness) of the arrow head in pixels.
+	- Type: float
+	- Default: 30
 
 __Keyword dict:__
 
-- `**style_args`: Optional [style keywords] that specify the style of the current
-drawing operation. This does not affect subsequent drawing
-operations.
+- `**style_args`: No description.
 
 </div>
 
@@ -858,7 +862,7 @@ The width of the canvas. This is a read-only property.
 [Style keywords]: #style-keywords
 [Colors]: #colors
 [function __canvas\.\_\_init\_\___\(experiment, auto\_prepare=True, \*\*style\_args\)]: #function-__canvas__init____experiment-auto_preparetrue-style_args
-[function __canvas\.arrow__\(sx, sy, ex, ey, arrow\_size=5, \*\*style\_args\)]: #function-__canvasarrow__sx-sy-ex-ey-arrow_size5-style_args
+[function __canvas\.arrow__\(sx, sy, ex, ey, body\_length=0\.8, body\_width=0\.5, head\_width=30, \*\*style\_args\)]: #function-__canvasarrow__sx-sy-ex-ey-body_length08-body_width05-head_width30-style_args
 [function __canvas\.circle__\(x, y, r, \*\*style\_args\)]: #function-__canvascircle__x-y-r-style_args
 [function __canvas\.clear__\(color=None, \*\*style\_args\)]: #function-__canvasclear__colornone-style_args
 [function __canvas\.close\_display__\(experiment\)]: #function-__canvasclose_display__experiment

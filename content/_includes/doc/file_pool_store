@@ -43,11 +43,12 @@ else:
 __Function list:__
 
 
-- [function __pool\.add__\(path\)](#function-__pooladd__path)
+- [function __pool\.add__\(path, new\_name=None\)](#function-__pooladd__path-new_namenone)
 - [function __pool\.fallback\_folder__\(\)](#function-__poolfallback_folder__)
 - [function __pool\.files__\(\)](#function-__poolfiles__)
 - [function __pool\.folder__\(\)](#function-__poolfolder__)
 - [function __pool\.folders__\(include\_fallback\_folder=True, include\_experiment\_path=False\)](#function-__poolfolders__include_fallback_foldertrue-include_experiment_pathfalse)
+- [function __pool\.in\_folder__\(path\)](#function-__poolin_folder__path)
 - [function __pool\.rename__\(old\_path, new\_path\)](#function-__poolrename__old_path-new_path)
 - [function __pool\.size__\(\)](#function-__poolsize__)
 
@@ -55,7 +56,7 @@ __Function list:__
 
 <div class="FunctionDoc YAMLDoc" id="pool-add" markdown="1">
 
-## [function __pool\.add__\(path\)](#function-__pooladd__path) {#function-__pooladd__path}
+## [function __pool\.add__\(path, new\_name=None\)](#function-__pooladd__path-new_namenone) {#function-__pooladd__path-new_namenone}
 
 Copies a file to the file pool.
 
@@ -69,6 +70,12 @@ __Arguments:__
 
 - `path` -- The full path to the file on disk.
 	- Type: str, unicode
+
+__Keywords:__
+
+- `new_name` -- A new name for the file in the pool, or None to use the file's original name.
+	- Type: str, NoneType
+	- Default: None
 
 </div>
 
@@ -189,6 +196,28 @@ A list of all folders.
 [pool.folders]: #pool-folders
 [folders]: #pool-folders
 
+<div class="FunctionDoc YAMLDoc" id="pool-in_folder" markdown="1">
+
+## [function __pool\.in\_folder__\(path\)](#function-__poolin_folder__path) {#function-__poolin_folder__path}
+
+Checks whether path is in the pool folder. This is different from the `path in pool` syntax in that it only checks the main pool folder, and not the fallback pool folder and experiment folder.
+
+__Arguments:__
+
+- `path` -- A file basename to check.
+	- Type: str
+
+__Returns:__
+
+No description
+
+- Type: bool
+
+</div>
+
+[pool.in_folder]: #pool-in_folder
+[in_folder]: #pool-in_folder
+
 <div class="FunctionDoc YAMLDoc" id="pool-rename" markdown="1">
 
 ## [function __pool\.rename__\(old\_path, new\_path\)](#function-__poolrename__old_path-new_path) {#function-__poolrename__old_path-new_path}
@@ -241,10 +270,11 @@ The combined size in bytes of all files in the file pool.
 [pool]: #pool
 
 
-[function __pool\.add__\(path\)]: #function-__pooladd__path
+[function __pool\.add__\(path, new\_name=None\)]: #function-__pooladd__path-new_namenone
 [function __pool\.fallback\_folder__\(\)]: #function-__poolfallback_folder__
 [function __pool\.files__\(\)]: #function-__poolfiles__
 [function __pool\.folder__\(\)]: #function-__poolfolder__
 [function __pool\.folders__\(include\_fallback\_folder=True, include\_experiment\_path=False\)]: #function-__poolfolders__include_fallback_foldertrue-include_experiment_pathfalse
+[function __pool\.in\_folder__\(path\)]: #function-__poolin_folder__path
 [function __pool\.rename__\(old\_path, new\_path\)]: #function-__poolrename__old_path-new_path
 [function __pool\.size__\(\)]: #function-__poolsize__
