@@ -53,6 +53,9 @@ Cavdaroglu, S., Katz, C., & Knops, A. (2015). Dissociating estimation from compa
 Christoforou, C., Christou-Champi, S., Constantinidou, F., & Theodorou, M. (2015). From the eyes and the heart: a novel eye-gaze metric that predicts video preferences of a large audience. *Frontiers in Psychology*, doi:10.3389/fpsyg.2015.00579
 {: .reference}
 
+Contemori, C., Dal Pozzo, L., & Matteini, S. (2015). Resolving pronominal anaphora in real-time. In *Structures, Strategies and Beyond: Studies in honour of Adriana Belletti* (Vol. 223, p. 257).
+{: .reference}
+
 De Groot, F., Huettig, F., & Olivers, C. N. (2015). When meaning matters: The temporal dynamics of semantic influences on visual attention. *Journal of Experimental Psychology: Human Perception and Performance.*
 {: .reference}
 
@@ -68,6 +71,9 @@ Duenser, A., Lochner, M., Engelke, U., & Rozado, D. (2015). Visual and manual co
 Failing, M. F., & Theeuwes, J. (2015). Nonspatial attentional capture by previously rewarded scene semantics. *Visual Cognition*. doi:10.1080/13506285.2014.990546
 {: .reference}
 
+Failing, M., Nissens, T., Pearson, D., Pelley, M. L., & Theeuwes, J. (2015). Oculomotor capture by stimuli that signal the availability of reward. *Journal of Neurophysiology*. doi:10.1152/jn.00441.2015
+{: .reference}
+
 Hoppenbrouwers, S. S., Van der Stigchel, S., Slotboom, J., Dalmaijer, E. S., & Theeuwes, J. (2015). Disentangling attentional deficits in psychopathy using visual search: Failures in the use of contextual information. *Personality and Individual Differences*, *86*, 132–138. doi:10.1016/j.paid.2015.06.009
 {: .reference}
 
@@ -75,6 +81,9 @@ Ibrahim, H., Ewais, S., & Chatterjee, S. (2015). A novel, low-cost NeuroIS proto
 {: .reference}
 
 Ishii, A., Karasuyama, T., Kikuchi, T., Tanaka, M., Yamano, E., & Watanabe, Y. (2015). The neural mechanisms of re-experiencing mental fatigue sensation: A magnetoencephalography study. *PLoS ONE*, *10*(3). doi:10.1371/journal.pone.0122455
+{: .reference}
+
+Juanes, J. A., & Ruisoto, P. (2015). Computer Applications in Health Science Education. *Journal of Medical Systems*, *39*(9), 1–5. doi:10.1007/s10916-015-0283-6
 {: .reference}
 
 Kapoor, H. (2015). The creative side of the dark triad. *Creativity Research Journal*, *27*(1), 58–67. doi:10.1080/10400419.2014.961775
@@ -110,6 +119,9 @@ Robinaugh, D. J., Crane, M. E., Enock, P. M., & McNally, R. J. (2015). Training 
 Sassenhagen, J., & Bornkessel-Schlesewsky, I. (2015). The P600 as a correlate of ventral attention network reorientation. *Cortex*. doi:10.1016/j.cortex.2014.12.019
 {: .reference}
 
+Sharma, B., Liu, C., & Yao, Y. (2015). Perceptual confusability of Mandarin sounds, tones, and syllables. *Proceedings of the 18th International Congress of Phonetic Sciences*. Retrieved from <https://www.internationalphoneticassociation.org/icphs-proceedings/ICPhS2015/Papers/ICPHS0890.pdf>
+{: .reference}
+
 Silvis, J. D., Olmos Solis, K., & Donk, M. (2015). The nature of the global effect beyond the first eye movement. *Vision Research*. doi:10.1016/j.visres.2014.12.020
 {: .reference}
 
@@ -117,6 +129,9 @@ Simpson, H. E., & del Prado Martın, F. M. (2015). Memory capacity limits in pro
 {: .reference}
 
 Theeuwkens, L. (2015). *Angstherkenning bij kinderen met psychopathische trekken* (Master thesis). Utrecht University, Utrecht, Netherlands.
+{: .reference}
+
+Travers, E., Rolison, J., Bright, A. K., & Feeney, A. (2015). Relations between associative and structured knowledge in category-based induction. In *Proceedings of the EuroAsianPacific Joint Conference on Cognitive Science*. Torino, Italy. Retrieved from <http://ceur-ws.org/Vol-1419/paper0006.pdf>
 {: .reference}
 
 Van Veen, S. C., van Schie, K., Wijngaards-de Meij, L. D. N. V., Littel, M., Engelhard, I. M., & van den Hout, M. A. (2015). Speed matters: relationship between speed of eye movements and modification of aversive autobiographical memories. *Frontiers in Psychiatry: Affective Disorders and Psychosomatic Research*, 45. doi:10.3389/fpsyt.2015.00045
