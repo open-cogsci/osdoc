@@ -158,7 +158,7 @@ def preprocessPage(path, info, s, status):
 	build.tableTemplate = u'kramdown'
 	# Disable markdown filters
 	build.preMarkdownFilters = []
-	build.postMarkdownFilters = []
+	build.postMarkdownFilters = [u'arrows']
 	# Enable clickable anchor headers
 	build.TOCAnchorHeaders = True
 	build.TOCAppendHeaderRefs = True
