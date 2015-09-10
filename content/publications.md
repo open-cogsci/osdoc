@@ -74,6 +74,9 @@ Failing, M. F., & Theeuwes, J. (2015). Nonspatial attentional capture by previou
 Failing, M., Nissens, T., Pearson, D., Pelley, M. L., & Theeuwes, J. (2015). Oculomotor capture by stimuli that signal the availability of reward. *Journal of Neurophysiology*. doi:10.1152/jn.00441.2015
 {: .reference}
 
+Фейрчалд, С. (2015). Культурна ідентифікація та використання мови моно-, бі- та трилінгвами. *Психологія і особистість*, 2(8), 176-193. Retrieved from <http://psychpersonality.inf.ua/%D0%9F%D0%9E_%E2%84%962_2015_2-14.pdf>
+{: .reference}
+
 Hoppenbrouwers, S. S., Van der Stigchel, S., Slotboom, J., Dalmaijer, E. S., & Theeuwes, J. (2015). Disentangling attentional deficits in psychopathy using visual search: Failures in the use of contextual information. *Personality and Individual Differences*, *86*, 132–138. doi:10.1016/j.paid.2015.06.009
 {: .reference}
 
@@ -135,6 +138,9 @@ Travers, E., Rolison, J., Bright, A. K., & Feeney, A. (2015). Relations between 
 {: .reference}
 
 Van Veen, S. C., van Schie, K., Wijngaards-de Meij, L. D. N. V., Littel, M., Engelhard, I. M., & van den Hout, M. A. (2015). Speed matters: relationship between speed of eye movements and modification of aversive autobiographical memories. *Frontiers in Psychiatry: Affective Disorders and Psychosomatic Research*, 45. doi:10.3389/fpsyt.2015.00045
+{: .reference}
+
+Wester, M., Corley, M., & Dall, R. (2015). The temporal delay hypothesis: Natural, vocoded and synthetic speech. In *Proceedings of DiSS, The 7th Workshop on Disfluencies in Spontaneous Speech*. Retrieved from <http://www.research.ed.ac.uk/portal/en/publications/the-temporal-delay-hypothesis-natural-vocoded-and-synthetic-speech(60a39548-b1a7-45ad-810d-7d66026a2eae).html>
 {: .reference}
 
 Wiener, S., & Turnbull, R. (2015). Constraints of tones, vowels and consonants on lexical selection in mandarin chinese. *Language and Speech*. doi:10.1177/0023830915578000
