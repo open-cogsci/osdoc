@@ -48,6 +48,26 @@ The experiment that you will create is a gaze-cuing paradigm, as introduced by [
 
 The experiment will consist of a practice and an experimental phase. We will present visual feedback after every block of trials and play a sound after every incorrect response.
 
+## Experimental design
+
+This design:
+
+- is *within-subject*, because all participants do all conditions
+- is *fully-crossed* (or full factorial), because all combinations of conditions occur
+- has three conditions (or factors):
+    - *gaze side* with three levels (left, right, neutral), or G<sub>3</sub>
+    - *target side* with two levels (left, right), or T<sub>2</sub>
+    - *target letter* with two levels (F, H), or L<sub>2</sub>
+- has N subjects, or <u>S</u><sub>N</sub>
+
+You can write this design as:
+
+- <u>S</u><sub>N</sub>×G<sub>3</sub>×T<sub>2</sub>×L<sub>2</sub>
+
+For more information about this notation for experimental design, see:
+
+- [/misc/design-notation](/misc/design-notation)
+
 ## Step 1: Create the main sequence
 
 The 'Get started' tab is the first thing that you see when you start OpenSesame (%FigGetStarted). (If this is the very first time that you have started OpenSesame, you will see a tab that points you towards this tutorial. If so, you can close this tab.) The box labeled 'New' contains a list of available templates, which provide convenient starting points for new experiments. After you saved your experiment the first time, you will see another box labeled 'Recent' that shows a list of recently opened experiments.
@@ -174,7 +194,7 @@ When the experiment is finished, we should inform the participant. For this we n
 
 ### Give the new items sensible names
 
-By default, new items have names like *sequence* and *_form_text_display*. It is good practice to give items sensible names. This makes it much easier to understand the structure of the experiment. If you want, you can also add a description to each item. Renaming items is very easy. Item names must consist of alphanumeric characters and/or underscores.
+By default, new items have names like *new_sequence* and *new_form_text_display_2*. It is good practice to give items sensible names. This makes it much easier to understand the structure of the experiment. If you want, you can also add a description to each item. Item names must consist of alphanumeric characters and/or underscores.
 
 - Select *form_text_display* in the overview area, click on its label in the top of the tab area and rename the item to *instructions*. (Overview-area shortcut: `F2`)
 - Select *loop* in the overview area and rename it to *practice_loop*.
