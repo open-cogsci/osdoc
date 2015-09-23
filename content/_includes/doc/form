@@ -9,18 +9,18 @@ do.
 
 __Example__:
 
-~~~ .python
+{% highlight python %}
 from libopensesame import widgets
 form = widgets.form(self.experiment)
 label = widgets.label(form, text='label)
 form.set_widget(label, (0,0))
 form._exec()
-~~~
+{% endhighlight %}
 
 __Function list:__
 
 
-- [function __form\.\_\_init\_\___\(experiment, rows=2, spacing=10, cols=2, item=None, theme=u'gray', margins=\(100, 100, 100, 100\)\)](#function-__form__init____experiment-rows2-spacing10-cols2-itemnone-themeugray-margins100-100-100-100)
+- [function __form\.\_\_init\_\___\(experiment, cols=2, rows=2, spacing=10, margins=\(100, 100, 100, 100\), theme=u'gray', item=None, timeout=None\)](#function-__form__init____experiment-cols2-rows2-spacing10-margins100-100-100-100-themeugray-itemnone-timeoutnone)
 - [function __form\.\_exec__\(focus\_widget=None\)](#function-__form_exec__focus_widgetnone)
 - [function __form\.cell\_index__\(pos\)](#function-__formcell_index__pos)
 - [function __form\.render__\(\)](#function-__formrender__)
@@ -31,7 +31,7 @@ __Function list:__
 
 <div class="FunctionDoc YAMLDoc" id="form-__init__" markdown="1">
 
-## [function __form\.\_\_init\_\___\(experiment, rows=2, spacing=10, cols=2, item=None, theme=u'gray', margins=\(100, 100, 100, 100\)\)](#function-__form__init____experiment-rows2-spacing10-cols2-itemnone-themeugray-margins100-100-100-100) {#function-__form__init____experiment-rows2-spacing10-cols2-itemnone-themeugray-margins100-100-100-100}
+## [function __form\.\_\_init\_\___\(experiment, cols=2, rows=2, spacing=10, margins=\(100, 100, 100, 100\), theme=u'gray', item=None, timeout=None\)](#function-__form__init____experiment-cols2-rows2-spacing10-margins100-100-100-100-themeugray-itemnone-timeoutnone) {#function-__form__init____experiment-cols2-rows2-spacing10-margins100-100-100-100-themeugray-itemnone-timeoutnone}
 
 Constructor.
 
@@ -60,6 +60,9 @@ __Keywords:__
 - `item` -- The item of which the form is part.
 	- Type: item, NoneType
 	- Default: None
+- `timeout` -- A timeout value in milliseconds, or None if no timeout exists.
+	- Type: int, float, NoneType
+	- Default: None
 
 </div>
 
@@ -80,7 +83,7 @@ __Keywords:__
 
 __Returns:__
 
-Gives the return value of the form, which depends on how the user interacted with the widgets. For example, if the user pressed a button, the button text will be returned.
+Gives the return value of the form, which depends on how the user interacted with the widgets. For example, if the user pressed a button, the button text will be returned. If a timeout occurred, None will be returned.
 
 </div>
 
@@ -174,7 +177,7 @@ A cell index.
 [form]: #form
 
 
-[function __form\.\_\_init\_\___\(experiment, rows=2, spacing=10, cols=2, item=None, theme=u'gray', margins=\(100, 100, 100, 100\)\)]: #function-__form__init____experiment-rows2-spacing10-cols2-itemnone-themeugray-margins100-100-100-100
+[function __form\.\_\_init\_\___\(experiment, cols=2, rows=2, spacing=10, margins=\(100, 100, 100, 100\), theme=u'gray', item=None, timeout=None\)]: #function-__form__init____experiment-cols2-rows2-spacing10-margins100-100-100-100-themeugray-itemnone-timeoutnone
 [function __form\.\_exec__\(focus\_widget=None\)]: #function-__form_exec__focus_widgetnone
 [function __form\.cell\_index__\(pos\)]: #function-__formcell_index__pos
 [function __form\.render__\(\)]: #function-__formrender__
