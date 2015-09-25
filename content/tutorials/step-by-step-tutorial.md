@@ -60,13 +60,11 @@ This design:
     - *target letter* with two levels (F, H), or L<sub>2</sub>
 - has N subjects, or <u>S</u><sub>N</sub>
 
-You can write this design as:
-
-- <u>S</u><sub>N</sub>×G<sub>3</sub>×T<sub>2</sub>×L<sub>2</sub>
+You can write this design as <u>S</u><sub>N</sub>×G<sub>3</sub>×T<sub>2</sub>×L<sub>2</sub>
 
 For more information about this notation for experimental design, see:
 
-- [/misc/design-notation](/misc/design-notation)
+- [/miscellaneous/experimental-design/](/miscellaneous/experimental-design/)
 
 ## Step 1: Create the main sequence
 
