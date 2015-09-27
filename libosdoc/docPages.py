@@ -91,10 +91,10 @@ def generateDocPages():
 		except:
 			pass
 		createDoc(cls, u'content/_includes/doc/%s' % backend)
-	#
-	# cls = plugins.load_cls(u'../PyGaze/pygaze/_eyetracker',
-	# 	u'BaseEyeTracker', u'baseeyetracker')
-	# createDoc(cls, u'content/_includes/doc/pygaze')
+
+	cls = plugins.load_cls(u'../PyGaze/pygaze/_eyetracker',
+		u'BaseEyeTracker', u'baseeyetracker')
+	createDoc(cls, u'content/_includes/doc/pygaze', customName='eyetracker')
 	#
 	# cls = plugins.load_cls(u'../opensesame/plugins/joystick/_libjoystick',
 	# 	u'basejoystick', u'basejoystick')

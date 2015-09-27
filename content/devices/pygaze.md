@@ -28,10 +28,13 @@ Dalmaijer, E., Mathôt, S., & Van der Stigchel, S. (2013). PyGaze: An open-sourc
 
 ## Supported eye trackers
 
-Currently, PyGaze supports the following eye trackers:
+PyGaze supports the following eye trackers:
 
 - [__EyeLink__](http://www.sr-research.com/) -- For information on how to run OpenSesame with PyLink support, see [/devices/eyelink](/devices/eyelink).
 - [__EyeTribe__](http://theeyetribe.com/) -- Works out of the box.
+
+For the following eye trackers, there is experimental support:
+
 - [__SMI__](http://www.smivision.com/) -- SMI support is experimental.
 - [__Tobii__](http://www.tobii.com/en/eye-tracking-research/global/) -- Tobii support is experimental.
 
@@ -69,11 +72,9 @@ For an example of how to use the PyGaze plug-ins, see the PyGaze template that i
 Below is an example of how to use PyGaze in a Python `inline_script`. For a list of available functions, see [Function overview].
 
 ~~~ .python
-from openexp.canvas import canvas
-from openexp.keyboard import keyboard
 # Create a keyboard and a canvas object
-my_keyboard = keyboard(exp, timeout=0)
-my_canvas = canvas(exp)
+my_keyboard = keyboard(timeout=0)
+my_canvas = canvas()
 # Loop ...
 while True:
 	# ... until space is pressed
@@ -81,7 +82,7 @@ while True:
 	if key == 'space':
 		break
 	# Get gaze position from pygaze ...
-	x, y = exp.pygaze_eyetracker.sample()
+	x, y = eyetracker.sample()
 	# ... and draw a gaze-contingent fixation dot!
 	my_canvas.clear()
 	my_canvas.fixdot(x, y)
@@ -90,6 +91,6 @@ while True:
 
 ## Function overview
 
-To initialize PyGaze in OpenSesame, insert the `pygaze_init` plug-in into your experiment. Once you have done this, an `exp.pygaze_eyetracker` object will be available, which offers the following functions:
+To initialize PyGaze in OpenSesame, insert the `pygaze_init` plug-in into your experiment. Once you have done this, an `eyetracker` object will be available, which offers the following functions:
 
 {% include doc/pygaze %}
