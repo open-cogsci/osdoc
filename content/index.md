@@ -9,8 +9,15 @@ singleton: true
 ![Affiliations](/img/affiliations.png "Affiliations")
 {: .float-right}
 
+OpenSesame is a tool to create experiments for psychology, neuroscience, and experimental economics. The latest $status$ version is $version$ *$codename$*, released on $release-date$ ([release notes]).
 
-Welcome to the OpenSesame documentation area! Here you can find everything you always wanted to know about your favorite free and cross-platform experiment builder. The latest $status$ version of OpenSesame is $version$ *$codename$*, released on $release-date$ ([release notes]).
+## Features
+
+- __A comprehensive graphical user interface__--flexible and easy-to-use
+- __Support for Python scripting__--add the power of Python to your experiment
+- __Support for external devices__--use your eye tracker, button box, EEG equipment, etc.
+- __Free and open source__--released under the GPL3
+- __Crossplatform__--runs on Windows, Mac OS, Linux, and Android (runtime only)
 
 ## Recommended downloads
 
