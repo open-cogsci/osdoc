@@ -194,12 +194,12 @@ When the experiment is finished, we should inform the participant. For this we n
 
 By default, new items have names like *new_sequence* and *new_form_text_display_2*. It is good practice to give items sensible names. This makes it much easier to understand the structure of the experiment. If you want, you can also add a description to each item. Item names must consist of alphanumeric characters and/or underscores.
 
-- Select *form_text_display* in the overview area, click on its label in the top of the tab area and rename the item to *instructions*. (Overview-area shortcut: `F2`)
-- Select *loop* in the overview area and rename it to *practice_loop*.
-- Select *sequence* (under *practice_loop*) in the overview area and rename it to *block_sequence*. Because you have re-used this item in the *experimental_loop*, the name automatically changes there as well. This illustrates why it is efficient to create linked copies whenever this is possible.
-- Rename *_form_text_display* to *end_of_practice*.
-- Rename *_loop* to *experimental_loop*.
-- Rename *__form_text_display* to *end_of_experiment*.
+- Select *new_form_text_display* in the overview area, click on its label in the top of the tab area and rename the item to *instructions*. (Overview-area shortcut: `F2`)
+- Select *new_loop* in the overview area and rename it to *practice_loop*.
+- Select *new_sequence* (under *practice_loop*) in the overview area and rename it to *block_sequence*. Because you have re-used this item in the *experimental_loop*, the name automatically changes there as well. This illustrates why it is efficient to create linked copies whenever this is possible.
+- Rename *new_form_text_display_1* to *end_of_practice*.
+- Rename *new_loop_1* to *experimental_loop*.
+- Rename *new_form_text_display_2* to *end_of_experiment*.
 
 ### Give the whole experiment a sensible name.
 
@@ -244,7 +244,12 @@ After every block of trials we want to give feedback to the participant, so that
 
 ### Give the new items sensible names
 
-Rename *loop* to *block_loop* and *sequence* to *trial_sequence*. (See Step 1 if you don't remember how to do this.) The names *reset_feedback* and *feedback* are fine as they are.
+Rename: (See Step 1 if you don't remember how to do this.)
+
+- *new_loop* to *block_loop*
+- *sequence* to *trial_sequence*
+- *new_reset_feedback* to *reset_feedback*
+- *new_feedback* to *feedback*
 
 The overview of your experiment now looks like %FigStep2. Remember to save your experiment regularly. You can download the experiment up to this point here:
 
@@ -349,7 +354,15 @@ A trial in our experiment is fairly straightforward:
 
 Click on *trial_sequence* in the overview to open the *trial_sequence* tab. Select `sketchpad` in the item toolbar and drag it into the 'trial_sequence' four times. Next, select and append a `keyboard_response` item, a `sampler` item, and a `logger` item.
 
-Again, we will rename the new items, to make sure that the *trial_sequence* is easy to understand. Rename *sketchpad* to *fixation_dot*, *_sketchpad* to *neutral_gaze*, *\_\_sketchpad* to *gaze_cue*, *\_\_\_sketchpad* to *target*, and *sampler* to *incorrect_sound*. (See Step 1 if you don't remember how to do this.)
+Again, we will rename the new items, to make sure that the *trial_sequence* is easy to understand. Rename:
+
+- *new_sketchpad* to *fixation_dot*
+- *new_sketchpad_1* to *neutral_gaze*
+- *new_sketchpad_2* to *gaze_cue*
+- *new_sketchpad_3* to *target*
+- *new_keyboard_response* to *keyboard_response*
+- *new_sampler* to *incorrect_sound*
+- *new_logger* to *logger*
 
 The *incorrect_sound* item should only be executed if an error was made. To do this, we need to change the conditional statement (in the 'Run if …' field) to `[correct] = 0` in the *trial_sequence* tab. This works, because the *keyboard_response* item automatically creates a `correct` variable, which is set to `1` (correct), `0` (incorrect) or `undefined` (this relies on the `correct_response` variable that was defined in Step 3). The square brackets indicate that `correct` should be interpreted as the name of a variable and not as text. To change a run-if statement for an item in a `sequence`, simply double click on it (shortcut: `F3`).
 
@@ -739,5 +752,5 @@ Ulrich, R., & Giray, M. (1989). Time resolution of clocks: Effects on reaction t
 [step8]: /attachments/gaze-cuing/tutorial_step8.osexp
 [step10]: /attachments/gaze-cuing/tutorial_step10.osexp
 [step11]: /attachments/gaze-cuing/tutorial_step11.osexp
-[finished-experiment]: /attachments/gaze-cuing/gaze-cuing.osexp
+[finished-experiment]: /attachments/gaze-cuing/tutorial.osexp
 [python inline scripting]: /python/about
