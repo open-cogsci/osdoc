@@ -15,20 +15,20 @@ Defining a button widget with Python inline code:
 
 __Example (Python):__
 
-~~~ .python
+{% highlight python %}
 from libopensesame import widgets
 form = widgets.form(self.experiment)
 button = widgets.button(form, text='Click me!', frame=True, center=True,
         var='response')
 form.set_widget(button, (0,0))
 form._exec()
-~~~
+{% endhighlight %}
 
 __Function list:__
 
 
-- [function __button\.\_\_init\_\___\(form, var=None, text=u'button', frame=True, center=True\)](#function-__button__init____form-varnone-textubutton-frametrue-centertrue)
-- [function __button\.draw\_frame__\(style=u'normal', rect=None\)](#function-__buttondraw_frame__styleunormal-rectnone)
+- [function __button\.\_\_init\_\___\(form, text=u'button', frame=True, center=True, var=None\)](#function-__button__init____form-textubutton-frametrue-centertrue-varnone)
+- [function __button\.draw\_frame__\(rect=None, style=u'normal'\)](#function-__buttondraw_frame__rectnone-styleunormal)
 - [function __button\.draw\_text__\(text, html=True\)](#function-__buttondraw_text__text-htmltrue)
 - [function __button\.on\_mouse\_click__\(pos\)](#function-__buttonon_mouse_click__pos)
 - [function __button\.render__\(\)](#function-__buttonrender__)
@@ -39,7 +39,7 @@ __Function list:__
 
 <div class="FunctionDoc YAMLDoc" id="button-__init__" markdown="1">
 
-## [function __button\.\_\_init\_\___\(form, var=None, text=u'button', frame=True, center=True\)](#function-__button__init____form-varnone-textubutton-frametrue-centertrue) {#function-__button__init____form-varnone-textubutton-frametrue-centertrue}
+## [function __button\.\_\_init\_\___\(form, text=u'button', frame=True, center=True, var=None\)](#function-__button__init____form-textubutton-frametrue-centertrue-varnone) {#function-__button__init____form-textubutton-frametrue-centertrue-varnone}
 
 Constructor.
 
@@ -70,7 +70,7 @@ __Keywords:__
 
 <div class="FunctionDoc YAMLDoc" id="button-draw_frame" markdown="1">
 
-## [function __button\.draw\_frame__\(style=u'normal', rect=None\)](#function-__buttondraw_frame__styleunormal-rectnone) {#function-__buttondraw_frame__styleunormal-rectnone}
+## [function __button\.draw\_frame__\(rect=None, style=u'normal'\)](#function-__buttondraw_frame__rectnone-styleunormal) {#function-__buttondraw_frame__rectnone-styleunormal}
 
 Draws a simple frame around the widget.
 
@@ -185,8 +185,8 @@ __Keywords:__
 [button]: #button
 
 
-[function __button\.\_\_init\_\___\(form, var=None, text=u'button', frame=True, center=True\)]: #function-__button__init____form-varnone-textubutton-frametrue-centertrue
-[function __button\.draw\_frame__\(style=u'normal', rect=None\)]: #function-__buttondraw_frame__styleunormal-rectnone
+[function __button\.\_\_init\_\___\(form, text=u'button', frame=True, center=True, var=None\)]: #function-__button__init____form-textubutton-frametrue-centertrue-varnone
+[function __button\.draw\_frame__\(rect=None, style=u'normal'\)]: #function-__buttondraw_frame__rectnone-styleunormal
 [function __button\.draw\_text__\(text, html=True\)]: #function-__buttondraw_text__text-htmltrue
 [function __button\.on\_mouse\_click__\(pos\)]: #function-__buttonon_mouse_click__pos
 [function __button\.render__\(\)]: #function-__buttonrender__

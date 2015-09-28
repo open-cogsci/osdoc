@@ -14,7 +14,7 @@ widget 0 1 1 1 rating_scale var="response" nodes="Agree;Don't know;Disagree"
 
 __Example (OpenSesame script):__
 
-~~~ .python
+{% highlight python %}
 from libopensesame import widgets
 form = widgets.form(self.experiment)
 label = widgets.label(form, text='I like fluffy kittens')
@@ -23,13 +23,13 @@ rating_scale = widgets.rating_scale(form, nodes=['Agree', "Don't know",
 form.set_widget(label, (0,0))
 form.set_widget(rating_scale, (0,1))
 form._exec()
-~~~
+{% endhighlight %}
 
 __Function list:__
 
 
-- [function __rating\_scale\.\_\_init\_\___\(form, var=None, default=None, nodes=5, orientation=u'horizontal', click\_accepts=False\)](#function-__rating_scale__init____form-varnone-defaultnone-nodes5-orientationuhorizontal-click_acceptsfalse)
-- [function __rating\_scale\.draw\_frame__\(style=u'normal', rect=None\)](#function-__rating_scaledraw_frame__styleunormal-rectnone)
+- [function __rating\_scale\.\_\_init\_\___\(form, nodes=5, click\_accepts=False, orientation=u'horizontal', var=None, default=None\)](#function-__rating_scale__init____form-nodes5-click_acceptsfalse-orientationuhorizontal-varnone-defaultnone)
+- [function __rating\_scale\.draw\_frame__\(rect=None, style=u'normal'\)](#function-__rating_scaledraw_frame__rectnone-styleunormal)
 - [function __rating\_scale\.on\_mouse\_click__\(pos\)](#function-__rating_scaleon_mouse_click__pos)
 - [function __rating\_scale\.render__\(\)](#function-__rating_scalerender__)
 - [function __rating\_scale\.set\_rect__\(rect\)](#function-__rating_scaleset_rect__rect)
@@ -40,7 +40,7 @@ __Function list:__
 
 <div class="FunctionDoc YAMLDoc" id="rating_scale-__init__" markdown="1">
 
-## [function __rating\_scale\.\_\_init\_\___\(form, var=None, default=None, nodes=5, orientation=u'horizontal', click\_accepts=False\)](#function-__rating_scale__init____form-varnone-defaultnone-nodes5-orientationuhorizontal-click_acceptsfalse) {#function-__rating_scale__init____form-varnone-defaultnone-nodes5-orientationuhorizontal-click_acceptsfalse}
+## [function __rating\_scale\.\_\_init\_\___\(form, nodes=5, click\_accepts=False, orientation=u'horizontal', var=None, default=None\)](#function-__rating_scale__init____form-nodes5-click_acceptsfalse-orientationuhorizontal-varnone-defaultnone) {#function-__rating_scale__init____form-nodes5-click_acceptsfalse-orientationuhorizontal-varnone-defaultnone}
 
 Constructor.
 
@@ -76,7 +76,7 @@ scale.
 
 <div class="FunctionDoc YAMLDoc" id="rating_scale-draw_frame" markdown="1">
 
-## [function __rating\_scale\.draw\_frame__\(style=u'normal', rect=None\)](#function-__rating_scaledraw_frame__styleunormal-rectnone) {#function-__rating_scaledraw_frame__styleunormal-rectnone}
+## [function __rating\_scale\.draw\_frame__\(rect=None, style=u'normal'\)](#function-__rating_scaledraw_frame__rectnone-styleunormal) {#function-__rating_scaledraw_frame__rectnone-styleunormal}
 
 Draws a simple frame around the widget.
 
@@ -179,8 +179,8 @@ __Keywords:__
 [rating_scale]: #rating_scale
 
 
-[function __rating\_scale\.\_\_init\_\___\(form, var=None, default=None, nodes=5, orientation=u'horizontal', click\_accepts=False\)]: #function-__rating_scale__init____form-varnone-defaultnone-nodes5-orientationuhorizontal-click_acceptsfalse
-[function __rating\_scale\.draw\_frame__\(style=u'normal', rect=None\)]: #function-__rating_scaledraw_frame__styleunormal-rectnone
+[function __rating\_scale\.\_\_init\_\___\(form, nodes=5, click\_accepts=False, orientation=u'horizontal', var=None, default=None\)]: #function-__rating_scale__init____form-nodes5-click_acceptsfalse-orientationuhorizontal-varnone-defaultnone
+[function __rating\_scale\.draw\_frame__\(rect=None, style=u'normal'\)]: #function-__rating_scaledraw_frame__rectnone-styleunormal
 [function __rating\_scale\.on\_mouse\_click__\(pos\)]: #function-__rating_scaleon_mouse_click__pos
 [function __rating\_scale\.render__\(\)]: #function-__rating_scalerender__
 [function __rating\_scale\.set\_rect__\(rect\)]: #function-__rating_scaleset_rect__rect

@@ -12,22 +12,22 @@ widget 0 0 1 1 image path='5.png'
 
 __Example (Python):__
 
-~~~ .python
+{% highlight python %}
 from libopensesame import widgets
 form = widgets.form(self.experiment)
 # The full path to the image needs to be provided.
-# self.experiment.get_file() can be used to retrieve the full path
+# self.experiment.pool can be used to retrieve the full path
 # to an image in the file pool.
-image = widgets.image(form, path=self.experiment.get_file('5.png'))
+image = widgets.image(form, path=self.experiment.poool['5.png'])
 form.set_widget(image, (0,0))
 form._exec()
-~~~
+{% endhighlight %}
 
 __Function list:__
 
 
-- [function __image\.\_\_init\_\___\(form, path=None, frame=False, adjust=True\)](#function-__image__init____form-pathnone-framefalse-adjusttrue)
-- [function __image\.draw\_frame__\(style=u'normal', rect=None\)](#function-__imagedraw_frame__styleunormal-rectnone)
+- [function __image\.\_\_init\_\___\(form, path=None, adjust=True, frame=False\)](#function-__image__init____form-pathnone-adjusttrue-framefalse)
+- [function __image\.draw\_frame__\(rect=None, style=u'normal'\)](#function-__imagedraw_frame__rectnone-styleunormal)
 - [function __image\.on\_mouse\_click__\(pos\)](#function-__imageon_mouse_click__pos)
 - [function __image\.render__\(\)](#function-__imagerender__)
 - [function __image\.set\_rect__\(rect\)](#function-__imageset_rect__rect)
@@ -37,7 +37,7 @@ __Function list:__
 
 <div class="FunctionDoc YAMLDoc" id="image-__init__" markdown="1">
 
-## [function __image\.\_\_init\_\___\(form, path=None, frame=False, adjust=True\)](#function-__image__init____form-pathnone-framefalse-adjusttrue) {#function-__image__init____form-pathnone-framefalse-adjusttrue}
+## [function __image\.\_\_init\_\___\(form, path=None, adjust=True, frame=False\)](#function-__image__init____form-pathnone-adjusttrue-framefalse) {#function-__image__init____form-pathnone-adjusttrue-framefalse}
 
 Constructor.
 
@@ -65,7 +65,7 @@ __Keywords:__
 
 <div class="FunctionDoc YAMLDoc" id="image-draw_frame" markdown="1">
 
-## [function __image\.draw\_frame__\(style=u'normal', rect=None\)](#function-__imagedraw_frame__styleunormal-rectnone) {#function-__imagedraw_frame__styleunormal-rectnone}
+## [function __image\.draw\_frame__\(rect=None, style=u'normal'\)](#function-__imagedraw_frame__rectnone-styleunormal) {#function-__imagedraw_frame__rectnone-styleunormal}
 
 Draws a simple frame around the widget.
 
@@ -152,8 +152,8 @@ __Keywords:__
 [image]: #image
 
 
-[function __image\.\_\_init\_\___\(form, path=None, frame=False, adjust=True\)]: #function-__image__init____form-pathnone-framefalse-adjusttrue
-[function __image\.draw\_frame__\(style=u'normal', rect=None\)]: #function-__imagedraw_frame__styleunormal-rectnone
+[function __image\.\_\_init\_\___\(form, path=None, adjust=True, frame=False\)]: #function-__image__init____form-pathnone-adjusttrue-framefalse
+[function __image\.draw\_frame__\(rect=None, style=u'normal'\)]: #function-__imagedraw_frame__rectnone-styleunormal
 [function __image\.on\_mouse\_click__\(pos\)]: #function-__imageon_mouse_click__pos
 [function __image\.render__\(\)]: #function-__imagerender__
 [function __image\.set\_rect__\(rect\)]: #function-__imageset_rect__rect

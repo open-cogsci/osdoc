@@ -12,23 +12,23 @@ widget 0 0 1 1 image_button path='5.png' var='response'
 
 __Example (Python):__
 
-~~~ .python
+{% highlight python %}
 from libopensesame import widgets
 form = widgets.form(self.experiment)
 # The full path to the image needs to be provided.
-# self.experiment.get_file() can be used to retrieve the full path
+# self.experiment.pool can be used to retrieve the full path
 # to an image in the file pool.
 image_button = widgets.image_button(form,
-        path=self.experiment.get_file('5.png'), var='response')
+        path=self.experiment.pool['5.png'], var='response')
 form.set_widget(image_button, (0,0))
 form._exec()
-~~~
+{% endhighlight %}
 
 __Function list:__
 
 
-- [function __image\_button\.\_\_init\_\___\(form, var=None, path=None, frame=False, adjust=True, image\_id=None\)](#function-__image_button__init____form-varnone-pathnone-framefalse-adjusttrue-image_idnone)
-- [function __image\_button\.draw\_frame__\(style=u'normal', rect=None\)](#function-__image_buttondraw_frame__styleunormal-rectnone)
+- [function __image\_button\.\_\_init\_\___\(form, path=None, adjust=True, frame=False, image\_id=None, var=None\)](#function-__image_button__init____form-pathnone-adjusttrue-framefalse-image_idnone-varnone)
+- [function __image\_button\.draw\_frame__\(rect=None, style=u'normal'\)](#function-__image_buttondraw_frame__rectnone-styleunormal)
 - [function __image\_button\.on\_mouse\_click__\(pos\)](#function-__image_buttonon_mouse_click__pos)
 - [function __image\_button\.render__\(\)](#function-__image_buttonrender__)
 - [function __image\_button\.set\_rect__\(rect\)](#function-__image_buttonset_rect__rect)
@@ -38,7 +38,7 @@ __Function list:__
 
 <div class="FunctionDoc YAMLDoc" id="image_button-__init__" markdown="1">
 
-## [function __image\_button\.\_\_init\_\___\(form, var=None, path=None, frame=False, adjust=True, image\_id=None\)](#function-__image_button__init____form-varnone-pathnone-framefalse-adjusttrue-image_idnone) {#function-__image_button__init____form-varnone-pathnone-framefalse-adjusttrue-image_idnone}
+## [function __image\_button\.\_\_init\_\___\(form, path=None, adjust=True, frame=False, image\_id=None, var=None\)](#function-__image_button__init____form-pathnone-adjusttrue-framefalse-image_idnone-varnone) {#function-__image_button__init____form-pathnone-adjusttrue-framefalse-image_idnone-varnone}
 
 Constructor.
 
@@ -72,7 +72,7 @@ __Keywords:__
 
 <div class="FunctionDoc YAMLDoc" id="image_button-draw_frame" markdown="1">
 
-## [function __image\_button\.draw\_frame__\(style=u'normal', rect=None\)](#function-__image_buttondraw_frame__styleunormal-rectnone) {#function-__image_buttondraw_frame__styleunormal-rectnone}
+## [function __image\_button\.draw\_frame__\(rect=None, style=u'normal'\)](#function-__image_buttondraw_frame__rectnone-styleunormal) {#function-__image_buttondraw_frame__rectnone-styleunormal}
 
 Draws a simple frame around the widget.
 
@@ -159,8 +159,8 @@ __Keywords:__
 [image_button]: #image_button
 
 
-[function __image\_button\.\_\_init\_\___\(form, var=None, path=None, frame=False, adjust=True, image\_id=None\)]: #function-__image_button__init____form-varnone-pathnone-framefalse-adjusttrue-image_idnone
-[function __image\_button\.draw\_frame__\(style=u'normal', rect=None\)]: #function-__image_buttondraw_frame__styleunormal-rectnone
+[function __image\_button\.\_\_init\_\___\(form, path=None, adjust=True, frame=False, image\_id=None, var=None\)]: #function-__image_button__init____form-pathnone-adjusttrue-framefalse-image_idnone-varnone
+[function __image\_button\.draw\_frame__\(rect=None, style=u'normal'\)]: #function-__image_buttondraw_frame__rectnone-styleunormal
 [function __image\_button\.on\_mouse\_click__\(pos\)]: #function-__image_buttonon_mouse_click__pos
 [function __image\_button\.render__\(\)]: #function-__image_buttonrender__
 [function __image\_button\.set\_rect__\(rect\)]: #function-__image_buttonset_rect__rect

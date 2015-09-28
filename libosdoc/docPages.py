@@ -58,6 +58,14 @@ def generateDocPages():
 	build.TOCAnchorHeaders = True
 	build.TOCAppendHeaderRefs = True
 
+	# Form documentation
+	for widget in ['button', 'checkbox', 'image', 'image_button', 'label',
+		'rating_scale', 'text_input', 'form']:
+		cls = plugins.load_cls(u'../opensesame/libopensesame/widgets',
+			widget, '_%s' % widget)
+		createDoc(cls, u'content/_includes/doc/%s' % widget)
+
+	# Common functions and classes
 	from libopensesame import python_workspace_api
 	from libopensesame.file_pool_store import file_pool_store
 	from libopensesame.var_store import var_store
@@ -70,6 +78,8 @@ def generateDocPages():
 		customName=u'pool')
 	createDoc(item_store, u'content/_includes/doc/item_store',
 		customName=u'items')
+
+	# Backend classes
 	from libopensesame.experiment import experiment
 	exp = experiment('Dummy', '')
 	for backend in ['sampler', 'canvas', 'keyboard', 'mouse', 'clock', 'log']:
@@ -81,10 +91,10 @@ def generateDocPages():
 		except:
 			pass
 		createDoc(cls, u'content/_includes/doc/%s' % backend)
-	#
-	# cls = plugins.load_cls(u'../PyGaze/pygaze/_eyetracker',
-	# 	u'BaseEyeTracker', u'baseeyetracker')
-	# createDoc(cls, u'content/_includes/doc/pygaze')
+
+	cls = plugins.load_cls(u'../PyGaze/pygaze/_eyetracker',
+		u'BaseEyeTracker', u'baseeyetracker')
+	createDoc(cls, u'content/_includes/doc/pygaze', customName='eyetracker')
 	#
 	# cls = plugins.load_cls(u'../opensesame/plugins/joystick/_libjoystick',
 	# 	u'basejoystick', u'basejoystick')
@@ -95,10 +105,5 @@ def generateDocPages():
 	# cls = plugins.load_cls(u'../boks/opensesame/boks',
 	# 	u'libboks', u'libboks')
 	# createDoc(cls, u'content/_includes/doc/libboks')
-	# for widget in ['button', 'checkbox', 'image', 'image_button', 'label',
-	# 	'rating_scale', 'text_input', 'form']:
-	# 	cls = plugins.load_cls(u'../opensesame/libopensesame/widgets',
-	# 		widget, '_%s' % widget)
-	# 	createDoc(cls, u'content/_includes/doc/%s' % widget)
 	# createDoc(experiment, u'content/_includes/doc/experiment')
 	# createDoc(inline_script, u'content/_includes/doc/inline_script')

@@ -12,19 +12,19 @@ widget 0 0 1 1 label text='My text'
 
 __Example (Python):__
 
-~~~ .python
+{% highlight python %}
 from libopensesame import widgets
 form = widgets.form(self.experiment)
 label = widgets.label(form, text='My text')
 form.set_widget(label, (0,0))
 form._exec()
-~~~
+{% endhighlight %}
 
 __Function list:__
 
 
 - [function __label\.\_\_init\_\___\(form, text=u'label', frame=False, center=True\)](#function-__label__init____form-textulabel-framefalse-centertrue)
-- [function __label\.draw\_frame__\(style=u'normal', rect=None\)](#function-__labeldraw_frame__styleunormal-rectnone)
+- [function __label\.draw\_frame__\(rect=None, style=u'normal'\)](#function-__labeldraw_frame__rectnone-styleunormal)
 - [function __label\.draw\_text__\(text, html=True\)](#function-__labeldraw_text__text-htmltrue)
 - [function __label\.on\_mouse\_click__\(pos\)](#function-__labelon_mouse_click__pos)
 - [function __label\.render__\(\)](#function-__labelrender__)
@@ -63,7 +63,7 @@ __Keywords:__
 
 <div class="FunctionDoc YAMLDoc" id="label-draw_frame" markdown="1">
 
-## [function __label\.draw\_frame__\(style=u'normal', rect=None\)](#function-__labeldraw_frame__styleunormal-rectnone) {#function-__labeldraw_frame__styleunormal-rectnone}
+## [function __label\.draw\_frame__\(rect=None, style=u'normal'\)](#function-__labeldraw_frame__rectnone-styleunormal) {#function-__labeldraw_frame__rectnone-styleunormal}
 
 Draws a simple frame around the widget.
 
@@ -173,7 +173,7 @@ __Keywords:__
 
 
 [function __label\.\_\_init\_\___\(form, text=u'label', frame=False, center=True\)]: #function-__label__init____form-textulabel-framefalse-centertrue
-[function __label\.draw\_frame__\(style=u'normal', rect=None\)]: #function-__labeldraw_frame__styleunormal-rectnone
+[function __label\.draw\_frame__\(rect=None, style=u'normal'\)]: #function-__labeldraw_frame__rectnone-styleunormal
 [function __label\.draw\_text__\(text, html=True\)]: #function-__labeldraw_text__text-htmltrue
 [function __label\.on\_mouse\_click__\(pos\)]: #function-__labelon_mouse_click__pos
 [function __label\.render__\(\)]: #function-__labelrender__

@@ -5,7 +5,7 @@ group: Miscellaneous
 permalink: /important-changes-3/
 ---
 
-OpenSesame 3.0.X brings many improvements that make it even easier to develop experiments. Most changes are backwards compatible. That is, you can still do things the old way. However, a handful of changes are backwards incompatible, and it's important to be aware of those.
+OpenSesame 3.0 brings many improvements that make it even easier to develop experiments. Most changes are backwards compatible. That is, you can still do things the old way. However, a handful of changes are backwards incompatible, and it's important to be aware of those.
 
 ## Overview
 
@@ -129,7 +129,7 @@ You can finally undo actions!
 
 ### A new color scheme
 
-The default color scheme is now *Monokai*. Again a dark color scheme, but with a higher contrast then the previous default, *Solarized*. This increased should increase legibility. And it looks good!
+The default color scheme is now *Monokai*. Again a dark color scheme, but with a higher contrast than the previous default, *Solarized*. This increased should increase legibility. And it looks good!
 
 ## Consistent coordinates
 

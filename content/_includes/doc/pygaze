@@ -1,45 +1,45 @@
-<div class="ClassDoc YAMLDoc" id="pygaze_eyetracker" markdown="1">
+<div class="ClassDoc YAMLDoc" id="eyetracker" markdown="1">
 
-# class __pygaze_eyetracker__
+# class __eyetracker__
 
 A generic Python library for eye tracking.
 
 __Function list:__
 
 
-- [function __pygaze\_eyetracker\.calibrate__\(\)](#function-__pygaze_eyetrackercalibrate__)
-- [function __pygaze\_eyetracker\.close__\(\)](#function-__pygaze_eyetrackerclose__)
-- [function __pygaze\_eyetracker\.connected__\(\)](#function-__pygaze_eyetrackerconnected__)
-- [function __pygaze\_eyetracker\.draw\_calibration\_target__\(x, y\)](#function-__pygaze_eyetrackerdraw_calibration_target__x-y)
-- [function __pygaze\_eyetracker\.draw\_drift\_correction\_target__\(x, y\)](#function-__pygaze_eyetrackerdraw_drift_correction_target__x-y)
-- [function __pygaze\_eyetracker\.drift\_correction__\(pos=None, fix\_triggered=False\)](#function-__pygaze_eyetrackerdrift_correction__posnone-fix_triggeredfalse)
-- [function __pygaze\_eyetracker\.fix\_triggered\_drift\_correction__\(max\_dev=60, min\_samples=30, pos=None, reset\_threshold=10\)](#function-__pygaze_eyetrackerfix_triggered_drift_correction__max_dev60-min_samples30-posnone-reset_threshold10)
-- [function __pygaze\_eyetracker\.get\_eyetracker\_clock\_async__\(\)](#function-__pygaze_eyetrackerget_eyetracker_clock_async__)
-- [function __pygaze\_eyetracker\.log__\(msg\)](#function-__pygaze_eyetrackerlog__msg)
-- [function __pygaze\_eyetracker\.log\_var__\(var, val\)](#function-__pygaze_eyetrackerlog_var__var-val)
-- [function __pygaze\_eyetracker\.pupil\_size__\(\)](#function-__pygaze_eyetrackerpupil_size__)
-- [function __pygaze\_eyetracker\.sample__\(\)](#function-__pygaze_eyetrackersample__)
-- [function __pygaze\_eyetracker\.send\_command__\(cmd\)](#function-__pygaze_eyetrackersend_command__cmd)
-- [function __pygaze\_eyetracker\.set\_detection\_type__\(eventdetection\)](#function-__pygaze_eyetrackerset_detection_type__eventdetection)
-- [function __pygaze\_eyetracker\.set\_draw\_calibration\_target\_func__\(func\)](#function-__pygaze_eyetrackerset_draw_calibration_target_func__func)
-- [function __pygaze\_eyetracker\.set\_draw\_drift\_correction\_target\_func__\(func\)](#function-__pygaze_eyetrackerset_draw_drift_correction_target_func__func)
-- [function __pygaze\_eyetracker\.set\_eye\_used__\(\)](#function-__pygaze_eyetrackerset_eye_used__)
-- [function __pygaze\_eyetracker\.start\_recording__\(\)](#function-__pygaze_eyetrackerstart_recording__)
-- [function __pygaze\_eyetracker\.status\_msg__\(msg\)](#function-__pygaze_eyetrackerstatus_msg__msg)
-- [function __pygaze\_eyetracker\.stop\_recording__\(\)](#function-__pygaze_eyetrackerstop_recording__)
-- [function __pygaze\_eyetracker\.wait\_for\_blink\_end__\(\)](#function-__pygaze_eyetrackerwait_for_blink_end__)
-- [function __pygaze\_eyetracker\.wait\_for\_blink\_start__\(\)](#function-__pygaze_eyetrackerwait_for_blink_start__)
-- [function __pygaze\_eyetracker\.wait\_for\_event__\(event\)](#function-__pygaze_eyetrackerwait_for_event__event)
-- [function __pygaze\_eyetracker\.wait\_for\_fixation\_end__\(\)](#function-__pygaze_eyetrackerwait_for_fixation_end__)
-- [function __pygaze\_eyetracker\.wait\_for\_fixation\_start__\(\)](#function-__pygaze_eyetrackerwait_for_fixation_start__)
-- [function __pygaze\_eyetracker\.wait\_for\_saccade\_end__\(\)](#function-__pygaze_eyetrackerwait_for_saccade_end__)
-- [function __pygaze\_eyetracker\.wait\_for\_saccade\_start__\(\)](#function-__pygaze_eyetrackerwait_for_saccade_start__)
+- [function __eyetracker\.calibrate__\(\)](#function-__eyetrackercalibrate__)
+- [function __eyetracker\.close__\(\)](#function-__eyetrackerclose__)
+- [function __eyetracker\.connected__\(\)](#function-__eyetrackerconnected__)
+- [function __eyetracker\.draw\_calibration\_target__\(x, y\)](#function-__eyetrackerdraw_calibration_target__x-y)
+- [function __eyetracker\.draw\_drift\_correction\_target__\(x, y\)](#function-__eyetrackerdraw_drift_correction_target__x-y)
+- [function __eyetracker\.drift\_correction__\(pos=None, fix\_triggered=False\)](#function-__eyetrackerdrift_correction__posnone-fix_triggeredfalse)
+- [function __eyetracker\.fix\_triggered\_drift\_correction__\(pos=None, min\_samples=30, max\_dev=60, reset\_threshold=10\)](#function-__eyetrackerfix_triggered_drift_correction__posnone-min_samples30-max_dev60-reset_threshold10)
+- [function __eyetracker\.get\_eyetracker\_clock\_async__\(\)](#function-__eyetrackerget_eyetracker_clock_async__)
+- [function __eyetracker\.log__\(msg\)](#function-__eyetrackerlog__msg)
+- [function __eyetracker\.log\_var__\(var, val\)](#function-__eyetrackerlog_var__var-val)
+- [function __eyetracker\.pupil\_size__\(\)](#function-__eyetrackerpupil_size__)
+- [function __eyetracker\.sample__\(\)](#function-__eyetrackersample__)
+- [function __eyetracker\.send\_command__\(cmd\)](#function-__eyetrackersend_command__cmd)
+- [function __eyetracker\.set\_detection\_type__\(eventdetection\)](#function-__eyetrackerset_detection_type__eventdetection)
+- [function __eyetracker\.set\_draw\_calibration\_target\_func__\(func\)](#function-__eyetrackerset_draw_calibration_target_func__func)
+- [function __eyetracker\.set\_draw\_drift\_correction\_target\_func__\(func\)](#function-__eyetrackerset_draw_drift_correction_target_func__func)
+- [function __eyetracker\.set\_eye\_used__\(\)](#function-__eyetrackerset_eye_used__)
+- [function __eyetracker\.start\_recording__\(\)](#function-__eyetrackerstart_recording__)
+- [function __eyetracker\.status\_msg__\(msg\)](#function-__eyetrackerstatus_msg__msg)
+- [function __eyetracker\.stop\_recording__\(\)](#function-__eyetrackerstop_recording__)
+- [function __eyetracker\.wait\_for\_blink\_end__\(\)](#function-__eyetrackerwait_for_blink_end__)
+- [function __eyetracker\.wait\_for\_blink\_start__\(\)](#function-__eyetrackerwait_for_blink_start__)
+- [function __eyetracker\.wait\_for\_event__\(event\)](#function-__eyetrackerwait_for_event__event)
+- [function __eyetracker\.wait\_for\_fixation\_end__\(\)](#function-__eyetrackerwait_for_fixation_end__)
+- [function __eyetracker\.wait\_for\_fixation\_start__\(\)](#function-__eyetrackerwait_for_fixation_start__)
+- [function __eyetracker\.wait\_for\_saccade\_end__\(\)](#function-__eyetrackerwait_for_saccade_end__)
+- [function __eyetracker\.wait\_for\_saccade\_start__\(\)](#function-__eyetrackerwait_for_saccade_start__)
 
 
 
-<div class="FunctionDoc YAMLDoc" id="pygaze_eyetracker-calibrate" markdown="1">
+<div class="FunctionDoc YAMLDoc" id="eyetracker-calibrate" markdown="1">
 
-## [function __pygaze\_eyetracker\.calibrate__\(\)](#function-__pygaze_eyetrackercalibrate__) {#function-__pygaze_eyetrackercalibrate__}
+## [function __eyetracker\.calibrate__\(\)](#function-__eyetrackercalibrate__) {#function-__eyetrackercalibrate__}
 
 Calibrates the eye tracking system. The actual behavior of this
 function depends on the type of eye tracker and is described below.
@@ -67,24 +67,24 @@ algorithms).
 
 </div>
 
-[pygaze_eyetracker.calibrate]: #pygaze_eyetracker-calibrate
-[calibrate]: #pygaze_eyetracker-calibrate
+[eyetracker.calibrate]: #eyetracker-calibrate
+[calibrate]: #eyetracker-calibrate
 
-<div class="FunctionDoc YAMLDoc" id="pygaze_eyetracker-close" markdown="1">
+<div class="FunctionDoc YAMLDoc" id="eyetracker-close" markdown="1">
 
-## [function __pygaze\_eyetracker\.close__\(\)](#function-__pygaze_eyetrackerclose__) {#function-__pygaze_eyetrackerclose__}
+## [function __eyetracker\.close__\(\)](#function-__eyetrackerclose__) {#function-__eyetrackerclose__}
 
 Neatly closes connection to tracker. Saves data and sets
 `self.connected` to False.
 
 </div>
 
-[pygaze_eyetracker.close]: #pygaze_eyetracker-close
-[close]: #pygaze_eyetracker-close
+[eyetracker.close]: #eyetracker-close
+[close]: #eyetracker-close
 
-<div class="FunctionDoc YAMLDoc" id="pygaze_eyetracker-connected" markdown="1">
+<div class="FunctionDoc YAMLDoc" id="eyetracker-connected" markdown="1">
 
-## [function __pygaze\_eyetracker\.connected__\(\)](#function-__pygaze_eyetrackerconnected__) {#function-__pygaze_eyetrackerconnected__}
+## [function __eyetracker\.connected__\(\)](#function-__eyetrackerconnected__) {#function-__eyetrackerconnected__}
 
 Checks if the tracker is connected.
 
@@ -97,12 +97,12 @@ True if connection is established, False if not; sets
 
 </div>
 
-[pygaze_eyetracker.connected]: #pygaze_eyetracker-connected
-[connected]: #pygaze_eyetracker-connected
+[eyetracker.connected]: #eyetracker-connected
+[connected]: #eyetracker-connected
 
-<div class="FunctionDoc YAMLDoc" id="pygaze_eyetracker-draw_calibration_target" markdown="1">
+<div class="FunctionDoc YAMLDoc" id="eyetracker-draw_calibration_target" markdown="1">
 
-## [function __pygaze\_eyetracker\.draw\_calibration\_target__\(x, y\)](#function-__pygaze_eyetrackerdraw_calibration_target__x-y) {#function-__pygaze_eyetrackerdraw_calibration_target__x-y}
+## [function __eyetracker\.draw\_calibration\_target__\(x, y\)](#function-__eyetrackerdraw_calibration_target__x-y) {#function-__eyetrackerdraw_calibration_target__x-y}
 
 Draws a calibration target.
 
@@ -115,12 +115,12 @@ __Arguments:__
 
 </div>
 
-[pygaze_eyetracker.draw_calibration_target]: #pygaze_eyetracker-draw_calibration_target
-[draw_calibration_target]: #pygaze_eyetracker-draw_calibration_target
+[eyetracker.draw_calibration_target]: #eyetracker-draw_calibration_target
+[draw_calibration_target]: #eyetracker-draw_calibration_target
 
-<div class="FunctionDoc YAMLDoc" id="pygaze_eyetracker-draw_drift_correction_target" markdown="1">
+<div class="FunctionDoc YAMLDoc" id="eyetracker-draw_drift_correction_target" markdown="1">
 
-## [function __pygaze\_eyetracker\.draw\_drift\_correction\_target__\(x, y\)](#function-__pygaze_eyetrackerdraw_drift_correction_target__x-y) {#function-__pygaze_eyetrackerdraw_drift_correction_target__x-y}
+## [function __eyetracker\.draw\_drift\_correction\_target__\(x, y\)](#function-__eyetrackerdraw_drift_correction_target__x-y) {#function-__eyetrackerdraw_drift_correction_target__x-y}
 
 Draws a drift-correction target.
 
@@ -133,12 +133,12 @@ __Arguments:__
 
 </div>
 
-[pygaze_eyetracker.draw_drift_correction_target]: #pygaze_eyetracker-draw_drift_correction_target
-[draw_drift_correction_target]: #pygaze_eyetracker-draw_drift_correction_target
+[eyetracker.draw_drift_correction_target]: #eyetracker-draw_drift_correction_target
+[draw_drift_correction_target]: #eyetracker-draw_drift_correction_target
 
-<div class="FunctionDoc YAMLDoc" id="pygaze_eyetracker-drift_correction" markdown="1">
+<div class="FunctionDoc YAMLDoc" id="eyetracker-drift_correction" markdown="1">
 
-## [function __pygaze\_eyetracker\.drift\_correction__\(pos=None, fix\_triggered=False\)](#function-__pygaze_eyetrackerdrift_correction__posnone-fix_triggeredfalse) {#function-__pygaze_eyetrackerdrift_correction__posnone-fix_triggeredfalse}
+## [function __eyetracker\.drift\_correction__\(pos=None, fix\_triggered=False\)](#function-__eyetrackerdrift_correction__posnone-fix_triggeredfalse) {#function-__eyetrackerdrift_correction__posnone-fix_triggeredfalse}
 
 Performs a drift-correction procedure. The exact behavior of this
 function on the type of eye tracker and is described below. Because
@@ -169,12 +169,12 @@ A boolean indicating if drift check is ok (True) or not (False).
 
 </div>
 
-[pygaze_eyetracker.drift_correction]: #pygaze_eyetracker-drift_correction
-[drift_correction]: #pygaze_eyetracker-drift_correction
+[eyetracker.drift_correction]: #eyetracker-drift_correction
+[drift_correction]: #eyetracker-drift_correction
 
-<div class="FunctionDoc YAMLDoc" id="pygaze_eyetracker-fix_triggered_drift_correction" markdown="1">
+<div class="FunctionDoc YAMLDoc" id="eyetracker-fix_triggered_drift_correction" markdown="1">
 
-## [function __pygaze\_eyetracker\.fix\_triggered\_drift\_correction__\(max\_dev=60, min\_samples=30, pos=None, reset\_threshold=10\)](#function-__pygaze_eyetrackerfix_triggered_drift_correction__max_dev60-min_samples30-posnone-reset_threshold10) {#function-__pygaze_eyetrackerfix_triggered_drift_correction__max_dev60-min_samples30-posnone-reset_threshold10}
+## [function __eyetracker\.fix\_triggered\_drift\_correction__\(pos=None, min\_samples=30, max\_dev=60, reset\_threshold=10\)](#function-__eyetrackerfix_triggered_drift_correction__posnone-min_samples30-max_dev60-reset_threshold10) {#function-__eyetrackerfix_triggered_drift_correction__posnone-min_samples30-max_dev60-reset_threshold10}
 
 Performs a fixation triggered drift correction by collecting
 a number of samples and calculating the average distance from the
@@ -203,12 +203,12 @@ A boolean indicating if drift check is ok (True) or not (False).
 
 </div>
 
-[pygaze_eyetracker.fix_triggered_drift_correction]: #pygaze_eyetracker-fix_triggered_drift_correction
-[fix_triggered_drift_correction]: #pygaze_eyetracker-fix_triggered_drift_correction
+[eyetracker.fix_triggered_drift_correction]: #eyetracker-fix_triggered_drift_correction
+[fix_triggered_drift_correction]: #eyetracker-fix_triggered_drift_correction
 
-<div class="FunctionDoc YAMLDoc" id="pygaze_eyetracker-get_eyetracker_clock_async" markdown="1">
+<div class="FunctionDoc YAMLDoc" id="eyetracker-get_eyetracker_clock_async" markdown="1">
 
-## [function __pygaze\_eyetracker\.get\_eyetracker\_clock\_async__\(\)](#function-__pygaze_eyetrackerget_eyetracker_clock_async__) {#function-__pygaze_eyetrackerget_eyetracker_clock_async__}
+## [function __eyetracker\.get\_eyetracker\_clock\_async__\(\)](#function-__eyetrackerget_eyetracker_clock_async__) {#function-__eyetrackerget_eyetracker_clock_async__}
 
 Returns the difference between tracker time and PyGaze time, which can be used to synchronize timing
 
@@ -220,12 +220,12 @@ The difference between eyetracker time and PyGaze time.
 
 </div>
 
-[pygaze_eyetracker.get_eyetracker_clock_async]: #pygaze_eyetracker-get_eyetracker_clock_async
-[get_eyetracker_clock_async]: #pygaze_eyetracker-get_eyetracker_clock_async
+[eyetracker.get_eyetracker_clock_async]: #eyetracker-get_eyetracker_clock_async
+[get_eyetracker_clock_async]: #eyetracker-get_eyetracker_clock_async
 
-<div class="FunctionDoc YAMLDoc" id="pygaze_eyetracker-log" markdown="1">
+<div class="FunctionDoc YAMLDoc" id="eyetracker-log" markdown="1">
 
-## [function __pygaze\_eyetracker\.log__\(msg\)](#function-__pygaze_eyetrackerlog__msg) {#function-__pygaze_eyetrackerlog__msg}
+## [function __eyetracker\.log__\(msg\)](#function-__eyetrackerlog__msg) {#function-__eyetrackerlog__msg}
 
 Writes a message to the log file.
 
@@ -236,12 +236,12 @@ __Arguments:__
 
 </div>
 
-[pygaze_eyetracker.log]: #pygaze_eyetracker-log
-[log]: #pygaze_eyetracker-log
+[eyetracker.log]: #eyetracker-log
+[log]: #eyetracker-log
 
-<div class="FunctionDoc YAMLDoc" id="pygaze_eyetracker-log_var" markdown="1">
+<div class="FunctionDoc YAMLDoc" id="eyetracker-log_var" markdown="1">
 
-## [function __pygaze\_eyetracker\.log\_var__\(var, val\)](#function-__pygaze_eyetrackerlog_var__var-val) {#function-__pygaze_eyetrackerlog_var__var-val}
+## [function __eyetracker\.log\_var__\(var, val\)](#function-__eyetrackerlog_var__var-val) {#function-__eyetrackerlog_var__var-val}
 
 Writes a variable's name and value to the log file
 
@@ -253,12 +253,12 @@ __Arguments:__
 
 </div>
 
-[pygaze_eyetracker.log_var]: #pygaze_eyetracker-log_var
-[log_var]: #pygaze_eyetracker-log_var
+[eyetracker.log_var]: #eyetracker-log_var
+[log_var]: #eyetracker-log_var
 
-<div class="FunctionDoc YAMLDoc" id="pygaze_eyetracker-pupil_size" markdown="1">
+<div class="FunctionDoc YAMLDoc" id="eyetracker-pupil_size" markdown="1">
 
-## [function __pygaze\_eyetracker\.pupil\_size__\(\)](#function-__pygaze_eyetrackerpupil_size__) {#function-__pygaze_eyetrackerpupil_size__}
+## [function __eyetracker\.pupil\_size__\(\)](#function-__eyetrackerpupil_size__) {#function-__eyetrackerpupil_size__}
 
 Returns the newest pupil size sample; size may be measured as the diameter or the area of the pupil, depending on your setup (note that pupil size mostly is given in an arbitrary units).
 
@@ -270,12 +270,12 @@ Returns pupil size for the eye that is currently being tracked (as specified by 
 
 </div>
 
-[pygaze_eyetracker.pupil_size]: #pygaze_eyetracker-pupil_size
-[pupil_size]: #pygaze_eyetracker-pupil_size
+[eyetracker.pupil_size]: #eyetracker-pupil_size
+[pupil_size]: #eyetracker-pupil_size
 
-<div class="FunctionDoc YAMLDoc" id="pygaze_eyetracker-sample" markdown="1">
+<div class="FunctionDoc YAMLDoc" id="eyetracker-sample" markdown="1">
 
-## [function __pygaze\_eyetracker\.sample__\(\)](#function-__pygaze_eyetrackersample__) {#function-__pygaze_eyetrackersample__}
+## [function __eyetracker\.sample__\(\)](#function-__eyetrackersample__) {#function-__eyetrackersample__}
 
 Returns newest available gaze position.
 
@@ -287,12 +287,12 @@ An (x,y) tuple or a (-1,-1) on an error.
 
 </div>
 
-[pygaze_eyetracker.sample]: #pygaze_eyetracker-sample
-[sample]: #pygaze_eyetracker-sample
+[eyetracker.sample]: #eyetracker-sample
+[sample]: #eyetracker-sample
 
-<div class="FunctionDoc YAMLDoc" id="pygaze_eyetracker-send_command" markdown="1">
+<div class="FunctionDoc YAMLDoc" id="eyetracker-send_command" markdown="1">
 
-## [function __pygaze\_eyetracker\.send\_command__\(cmd\)](#function-__pygaze_eyetrackersend_command__cmd) {#function-__pygaze_eyetrackersend_command__cmd}
+## [function __eyetracker\.send\_command__\(cmd\)](#function-__eyetrackersend_command__cmd) {#function-__eyetrackersend_command__cmd}
 
 Directly sends a command to the eye tracker (not supported for all brands; might produce a warning message if your setup does not support direct commands).
 
@@ -303,12 +303,12 @@ __Arguments:__
 
 </div>
 
-[pygaze_eyetracker.send_command]: #pygaze_eyetracker-send_command
-[send_command]: #pygaze_eyetracker-send_command
+[eyetracker.send_command]: #eyetracker-send_command
+[send_command]: #eyetracker-send_command
 
-<div class="FunctionDoc YAMLDoc" id="pygaze_eyetracker-set_detection_type" markdown="1">
+<div class="FunctionDoc YAMLDoc" id="eyetracker-set_detection_type" markdown="1">
 
-## [function __pygaze\_eyetracker\.set\_detection\_type__\(eventdetection\)](#function-__pygaze_eyetrackerset_detection_type__eventdetection) {#function-__pygaze_eyetrackerset_detection_type__eventdetection}
+## [function __eyetracker\.set\_detection\_type__\(eventdetection\)](#function-__eyetrackerset_detection_type__eventdetection) {#function-__eyetrackerset_detection_type__eventdetection}
 
 Set the event detection type to either PyGaze algorithms, or
 native algorithms as provided by the manufacturer (only if
@@ -333,12 +333,12 @@ Detection type for saccades, fixations and blinks in a tuple, e.g. ('pygaze','na
 
 </div>
 
-[pygaze_eyetracker.set_detection_type]: #pygaze_eyetracker-set_detection_type
-[set_detection_type]: #pygaze_eyetracker-set_detection_type
+[eyetracker.set_detection_type]: #eyetracker-set_detection_type
+[set_detection_type]: #eyetracker-set_detection_type
 
-<div class="FunctionDoc YAMLDoc" id="pygaze_eyetracker-set_draw_calibration_target_func" markdown="1">
+<div class="FunctionDoc YAMLDoc" id="eyetracker-set_draw_calibration_target_func" markdown="1">
 
-## [function __pygaze\_eyetracker\.set\_draw\_calibration\_target\_func__\(func\)](#function-__pygaze_eyetrackerset_draw_calibration_target_func__func) {#function-__pygaze_eyetrackerset_draw_calibration_target_func__func}
+## [function __eyetracker\.set\_draw\_calibration\_target\_func__\(func\)](#function-__eyetrackerset_draw_calibration_target_func__func) {#function-__eyetrackerset_draw_calibration_target_func__func}
 
 Specifies a custom function to draw the calibration target. This will function will override the default [draw_calibration_target].
 
@@ -349,12 +349,12 @@ __Arguments:__
 
 </div>
 
-[pygaze_eyetracker.set_draw_calibration_target_func]: #pygaze_eyetracker-set_draw_calibration_target_func
-[set_draw_calibration_target_func]: #pygaze_eyetracker-set_draw_calibration_target_func
+[eyetracker.set_draw_calibration_target_func]: #eyetracker-set_draw_calibration_target_func
+[set_draw_calibration_target_func]: #eyetracker-set_draw_calibration_target_func
 
-<div class="FunctionDoc YAMLDoc" id="pygaze_eyetracker-set_draw_drift_correction_target_func" markdown="1">
+<div class="FunctionDoc YAMLDoc" id="eyetracker-set_draw_drift_correction_target_func" markdown="1">
 
-## [function __pygaze\_eyetracker\.set\_draw\_drift\_correction\_target\_func__\(func\)](#function-__pygaze_eyetrackerset_draw_drift_correction_target_func__func) {#function-__pygaze_eyetrackerset_draw_drift_correction_target_func__func}
+## [function __eyetracker\.set\_draw\_drift\_correction\_target\_func__\(func\)](#function-__eyetrackerset_draw_drift_correction_target_func__func) {#function-__eyetrackerset_draw_drift_correction_target_func__func}
 
 Specifies a custom function to draw the drift-correction target. This function will override the default [draw_drift_correction_target].
 
@@ -365,34 +365,34 @@ __Arguments:__
 
 </div>
 
-[pygaze_eyetracker.set_draw_drift_correction_target_func]: #pygaze_eyetracker-set_draw_drift_correction_target_func
-[set_draw_drift_correction_target_func]: #pygaze_eyetracker-set_draw_drift_correction_target_func
+[eyetracker.set_draw_drift_correction_target_func]: #eyetracker-set_draw_drift_correction_target_func
+[set_draw_drift_correction_target_func]: #eyetracker-set_draw_drift_correction_target_func
 
-<div class="FunctionDoc YAMLDoc" id="pygaze_eyetracker-set_eye_used" markdown="1">
+<div class="FunctionDoc YAMLDoc" id="eyetracker-set_eye_used" markdown="1">
 
-## [function __pygaze\_eyetracker\.set\_eye\_used__\(\)](#function-__pygaze_eyetrackerset_eye_used__) {#function-__pygaze_eyetrackerset_eye_used__}
+## [function __eyetracker\.set\_eye\_used__\(\)](#function-__eyetrackerset_eye_used__) {#function-__eyetrackerset_eye_used__}
 
 Logs the `eye_used` variable, based on which eye was specified (if both eyes are being tracked, the left eye is used). Does not return anything.
 
 </div>
 
-[pygaze_eyetracker.set_eye_used]: #pygaze_eyetracker-set_eye_used
-[set_eye_used]: #pygaze_eyetracker-set_eye_used
+[eyetracker.set_eye_used]: #eyetracker-set_eye_used
+[set_eye_used]: #eyetracker-set_eye_used
 
-<div class="FunctionDoc YAMLDoc" id="pygaze_eyetracker-start_recording" markdown="1">
+<div class="FunctionDoc YAMLDoc" id="eyetracker-start_recording" markdown="1">
 
-## [function __pygaze\_eyetracker\.start\_recording__\(\)](#function-__pygaze_eyetrackerstart_recording__) {#function-__pygaze_eyetrackerstart_recording__}
+## [function __eyetracker\.start\_recording__\(\)](#function-__eyetrackerstart_recording__) {#function-__eyetrackerstart_recording__}
 
 Starts recording. Sets `self.recording` to `True` when recording is successfully started.
 
 </div>
 
-[pygaze_eyetracker.start_recording]: #pygaze_eyetracker-start_recording
-[start_recording]: #pygaze_eyetracker-start_recording
+[eyetracker.start_recording]: #eyetracker-start_recording
+[start_recording]: #eyetracker-start_recording
 
-<div class="FunctionDoc YAMLDoc" id="pygaze_eyetracker-status_msg" markdown="1">
+<div class="FunctionDoc YAMLDoc" id="eyetracker-status_msg" markdown="1">
 
-## [function __pygaze\_eyetracker\.status\_msg__\(msg\)](#function-__pygaze_eyetrackerstatus_msg__msg) {#function-__pygaze_eyetrackerstatus_msg__msg}
+## [function __eyetracker\.status\_msg__\(msg\)](#function-__eyetrackerstatus_msg__msg) {#function-__eyetrackerstatus_msg__msg}
 
 Sends a status message to the eye tracker, which is displayed in the tracker's GUI (only available for EyeLink setups).
 
@@ -404,23 +404,23 @@ e.g.: "current trial: %d" % trialnr.
 
 </div>
 
-[pygaze_eyetracker.status_msg]: #pygaze_eyetracker-status_msg
-[status_msg]: #pygaze_eyetracker-status_msg
+[eyetracker.status_msg]: #eyetracker-status_msg
+[status_msg]: #eyetracker-status_msg
 
-<div class="FunctionDoc YAMLDoc" id="pygaze_eyetracker-stop_recording" markdown="1">
+<div class="FunctionDoc YAMLDoc" id="eyetracker-stop_recording" markdown="1">
 
-## [function __pygaze\_eyetracker\.stop\_recording__\(\)](#function-__pygaze_eyetrackerstop_recording__) {#function-__pygaze_eyetrackerstop_recording__}
+## [function __eyetracker\.stop\_recording__\(\)](#function-__eyetrackerstop_recording__) {#function-__eyetrackerstop_recording__}
 
 Stops recording. Sets `self.recording` to `False` when recording is successfully stopped.
 
 </div>
 
-[pygaze_eyetracker.stop_recording]: #pygaze_eyetracker-stop_recording
-[stop_recording]: #pygaze_eyetracker-stop_recording
+[eyetracker.stop_recording]: #eyetracker-stop_recording
+[stop_recording]: #eyetracker-stop_recording
 
-<div class="FunctionDoc YAMLDoc" id="pygaze_eyetracker-wait_for_blink_end" markdown="1">
+<div class="FunctionDoc YAMLDoc" id="eyetracker-wait_for_blink_end" markdown="1">
 
-## [function __pygaze\_eyetracker\.wait\_for\_blink\_end__\(\)](#function-__pygaze_eyetrackerwait_for_blink_end__) {#function-__pygaze_eyetrackerwait_for_blink_end__}
+## [function __eyetracker\.wait\_for\_blink\_end__\(\)](#function-__eyetrackerwait_for_blink_end__) {#function-__eyetrackerwait_for_blink_end__}
 
 Waits for a blink end and returns the blink ending time.
 Detection based on Dalmaijer et al. (2013) if EVENTDETECTION is set
@@ -436,12 +436,12 @@ Blink ending time in milliseconds, as measured from experiment begin time.
 
 </div>
 
-[pygaze_eyetracker.wait_for_blink_end]: #pygaze_eyetracker-wait_for_blink_end
-[wait_for_blink_end]: #pygaze_eyetracker-wait_for_blink_end
+[eyetracker.wait_for_blink_end]: #eyetracker-wait_for_blink_end
+[wait_for_blink_end]: #eyetracker-wait_for_blink_end
 
-<div class="FunctionDoc YAMLDoc" id="pygaze_eyetracker-wait_for_blink_start" markdown="1">
+<div class="FunctionDoc YAMLDoc" id="eyetracker-wait_for_blink_start" markdown="1">
 
-## [function __pygaze\_eyetracker\.wait\_for\_blink\_start__\(\)](#function-__pygaze_eyetrackerwait_for_blink_start__) {#function-__pygaze_eyetrackerwait_for_blink_start__}
+## [function __eyetracker\.wait\_for\_blink\_start__\(\)](#function-__eyetrackerwait_for_blink_start__) {#function-__eyetrackerwait_for_blink_start__}
 
 Waits for a blink start and returns the blink starting time.
 Detection based on Dalmaijer et al. (2013) if EVENTDETECTION is set
@@ -457,12 +457,12 @@ Blink starting time in milliseconds, as measured from experiment begin time
 
 </div>
 
-[pygaze_eyetracker.wait_for_blink_start]: #pygaze_eyetracker-wait_for_blink_start
-[wait_for_blink_start]: #pygaze_eyetracker-wait_for_blink_start
+[eyetracker.wait_for_blink_start]: #eyetracker-wait_for_blink_start
+[wait_for_blink_start]: #eyetracker-wait_for_blink_start
 
-<div class="FunctionDoc YAMLDoc" id="pygaze_eyetracker-wait_for_event" markdown="1">
+<div class="FunctionDoc YAMLDoc" id="eyetracker-wait_for_event" markdown="1">
 
-## [function __pygaze\_eyetracker\.wait\_for\_event__\(event\)](#function-__pygaze_eyetrackerwait_for_event__event) {#function-__pygaze_eyetrackerwait_for_event__event}
+## [function __eyetracker\.wait\_for\_event__\(event\)](#function-__eyetrackerwait_for_event__event) {#function-__eyetrackerwait_for_event__event}
 
 Waits for an event.
 
@@ -484,12 +484,12 @@ A `self.wait_for_*` method is called, depending on the specified event; the retu
 
 </div>
 
-[pygaze_eyetracker.wait_for_event]: #pygaze_eyetracker-wait_for_event
-[wait_for_event]: #pygaze_eyetracker-wait_for_event
+[eyetracker.wait_for_event]: #eyetracker-wait_for_event
+[wait_for_event]: #eyetracker-wait_for_event
 
-<div class="FunctionDoc YAMLDoc" id="pygaze_eyetracker-wait_for_fixation_end" markdown="1">
+<div class="FunctionDoc YAMLDoc" id="eyetracker-wait_for_fixation_end" markdown="1">
 
-## [function __pygaze\_eyetracker\.wait\_for\_fixation\_end__\(\)](#function-__pygaze_eyetrackerwait_for_fixation_end__) {#function-__pygaze_eyetrackerwait_for_fixation_end__}
+## [function __eyetracker\.wait\_for\_fixation\_end__\(\)](#function-__eyetrackerwait_for_fixation_end__) {#function-__eyetrackerwait_for_fixation_end__}
 
 Returns time and gaze position when a fixation has ended;
 function assumes that a 'fixation' has ended when a deviation of
@@ -509,12 +509,12 @@ A `time, gazepos` tuple. Time is the end time in milliseconds (from expstart), g
 
 </div>
 
-[pygaze_eyetracker.wait_for_fixation_end]: #pygaze_eyetracker-wait_for_fixation_end
-[wait_for_fixation_end]: #pygaze_eyetracker-wait_for_fixation_end
+[eyetracker.wait_for_fixation_end]: #eyetracker-wait_for_fixation_end
+[wait_for_fixation_end]: #eyetracker-wait_for_fixation_end
 
-<div class="FunctionDoc YAMLDoc" id="pygaze_eyetracker-wait_for_fixation_start" markdown="1">
+<div class="FunctionDoc YAMLDoc" id="eyetracker-wait_for_fixation_start" markdown="1">
 
-## [function __pygaze\_eyetracker\.wait\_for\_fixation\_start__\(\)](#function-__pygaze_eyetrackerwait_for_fixation_start__) {#function-__pygaze_eyetrackerwait_for_fixation_start__}
+## [function __eyetracker\.wait\_for\_fixation\_start__\(\)](#function-__eyetrackerwait_for_fixation_start__) {#function-__eyetrackerwait_for_fixation_start__}
 
 Returns starting time and position when a fixation is started;
 function assumes a 'fixation' has started when gaze position
@@ -535,12 +535,12 @@ A `time, gazepos` tuple. Time is the starting time in milliseconds (from expstar
 
 </div>
 
-[pygaze_eyetracker.wait_for_fixation_start]: #pygaze_eyetracker-wait_for_fixation_start
-[wait_for_fixation_start]: #pygaze_eyetracker-wait_for_fixation_start
+[eyetracker.wait_for_fixation_start]: #eyetracker-wait_for_fixation_start
+[wait_for_fixation_start]: #eyetracker-wait_for_fixation_start
 
-<div class="FunctionDoc YAMLDoc" id="pygaze_eyetracker-wait_for_saccade_end" markdown="1">
+<div class="FunctionDoc YAMLDoc" id="eyetracker-wait_for_saccade_end" markdown="1">
 
-## [function __pygaze\_eyetracker\.wait\_for\_saccade\_end__\(\)](#function-__pygaze_eyetrackerwait_for_saccade_end__) {#function-__pygaze_eyetrackerwait_for_saccade_end__}
+## [function __eyetracker\.wait\_for\_saccade\_end__\(\)](#function-__eyetrackerwait_for_saccade_end__) {#function-__eyetrackerwait_for_saccade_end__}
 
 Returns ending time, starting and end position when a saccade is
 ended; based on Dalmaijer et al. (2013) online saccade detection
@@ -557,12 +557,12 @@ An `endtime, startpos, endpos` tuple. Endtime in milliseconds (from expbegintime
 
 </div>
 
-[pygaze_eyetracker.wait_for_saccade_end]: #pygaze_eyetracker-wait_for_saccade_end
-[wait_for_saccade_end]: #pygaze_eyetracker-wait_for_saccade_end
+[eyetracker.wait_for_saccade_end]: #eyetracker-wait_for_saccade_end
+[wait_for_saccade_end]: #eyetracker-wait_for_saccade_end
 
-<div class="FunctionDoc YAMLDoc" id="pygaze_eyetracker-wait_for_saccade_start" markdown="1">
+<div class="FunctionDoc YAMLDoc" id="eyetracker-wait_for_saccade_start" markdown="1">
 
-## [function __pygaze\_eyetracker\.wait\_for\_saccade\_start__\(\)](#function-__pygaze_eyetrackerwait_for_saccade_start__) {#function-__pygaze_eyetrackerwait_for_saccade_start__}
+## [function __eyetracker\.wait\_for\_saccade\_start__\(\)](#function-__eyetrackerwait_for_saccade_start__) {#function-__eyetrackerwait_for_saccade_start__}
 
 Returns starting time and starting position when a saccade is
 started; based on Dalmaijer et al. (2013) online saccade detection
@@ -579,38 +579,38 @@ An `endtime, startpos` tuple. Endtime in milliseconds (from expbegintime); start
 
 </div>
 
-[pygaze_eyetracker.wait_for_saccade_start]: #pygaze_eyetracker-wait_for_saccade_start
-[wait_for_saccade_start]: #pygaze_eyetracker-wait_for_saccade_start
+[eyetracker.wait_for_saccade_start]: #eyetracker-wait_for_saccade_start
+[wait_for_saccade_start]: #eyetracker-wait_for_saccade_start
 
 </div>
 
-[pygaze_eyetracker]: #pygaze_eyetracker
+[eyetracker]: #eyetracker
 
 
-[function __pygaze\_eyetracker\.calibrate__\(\)]: #function-__pygaze_eyetrackercalibrate__
-[function __pygaze\_eyetracker\.close__\(\)]: #function-__pygaze_eyetrackerclose__
-[function __pygaze\_eyetracker\.connected__\(\)]: #function-__pygaze_eyetrackerconnected__
-[function __pygaze\_eyetracker\.draw\_calibration\_target__\(x, y\)]: #function-__pygaze_eyetrackerdraw_calibration_target__x-y
-[function __pygaze\_eyetracker\.draw\_drift\_correction\_target__\(x, y\)]: #function-__pygaze_eyetrackerdraw_drift_correction_target__x-y
-[function __pygaze\_eyetracker\.drift\_correction__\(pos=None, fix\_triggered=False\)]: #function-__pygaze_eyetrackerdrift_correction__posnone-fix_triggeredfalse
-[function __pygaze\_eyetracker\.fix\_triggered\_drift\_correction__\(max\_dev=60, min\_samples=30, pos=None, reset\_threshold=10\)]: #function-__pygaze_eyetrackerfix_triggered_drift_correction__max_dev60-min_samples30-posnone-reset_threshold10
-[function __pygaze\_eyetracker\.get\_eyetracker\_clock\_async__\(\)]: #function-__pygaze_eyetrackerget_eyetracker_clock_async__
-[function __pygaze\_eyetracker\.log__\(msg\)]: #function-__pygaze_eyetrackerlog__msg
-[function __pygaze\_eyetracker\.log\_var__\(var, val\)]: #function-__pygaze_eyetrackerlog_var__var-val
-[function __pygaze\_eyetracker\.pupil\_size__\(\)]: #function-__pygaze_eyetrackerpupil_size__
-[function __pygaze\_eyetracker\.sample__\(\)]: #function-__pygaze_eyetrackersample__
-[function __pygaze\_eyetracker\.send\_command__\(cmd\)]: #function-__pygaze_eyetrackersend_command__cmd
-[function __pygaze\_eyetracker\.set\_detection\_type__\(eventdetection\)]: #function-__pygaze_eyetrackerset_detection_type__eventdetection
-[function __pygaze\_eyetracker\.set\_draw\_calibration\_target\_func__\(func\)]: #function-__pygaze_eyetrackerset_draw_calibration_target_func__func
-[function __pygaze\_eyetracker\.set\_draw\_drift\_correction\_target\_func__\(func\)]: #function-__pygaze_eyetrackerset_draw_drift_correction_target_func__func
-[function __pygaze\_eyetracker\.set\_eye\_used__\(\)]: #function-__pygaze_eyetrackerset_eye_used__
-[function __pygaze\_eyetracker\.start\_recording__\(\)]: #function-__pygaze_eyetrackerstart_recording__
-[function __pygaze\_eyetracker\.status\_msg__\(msg\)]: #function-__pygaze_eyetrackerstatus_msg__msg
-[function __pygaze\_eyetracker\.stop\_recording__\(\)]: #function-__pygaze_eyetrackerstop_recording__
-[function __pygaze\_eyetracker\.wait\_for\_blink\_end__\(\)]: #function-__pygaze_eyetrackerwait_for_blink_end__
-[function __pygaze\_eyetracker\.wait\_for\_blink\_start__\(\)]: #function-__pygaze_eyetrackerwait_for_blink_start__
-[function __pygaze\_eyetracker\.wait\_for\_event__\(event\)]: #function-__pygaze_eyetrackerwait_for_event__event
-[function __pygaze\_eyetracker\.wait\_for\_fixation\_end__\(\)]: #function-__pygaze_eyetrackerwait_for_fixation_end__
-[function __pygaze\_eyetracker\.wait\_for\_fixation\_start__\(\)]: #function-__pygaze_eyetrackerwait_for_fixation_start__
-[function __pygaze\_eyetracker\.wait\_for\_saccade\_end__\(\)]: #function-__pygaze_eyetrackerwait_for_saccade_end__
-[function __pygaze\_eyetracker\.wait\_for\_saccade\_start__\(\)]: #function-__pygaze_eyetrackerwait_for_saccade_start__
+[function __eyetracker\.calibrate__\(\)]: #function-__eyetrackercalibrate__
+[function __eyetracker\.close__\(\)]: #function-__eyetrackerclose__
+[function __eyetracker\.connected__\(\)]: #function-__eyetrackerconnected__
+[function __eyetracker\.draw\_calibration\_target__\(x, y\)]: #function-__eyetrackerdraw_calibration_target__x-y
+[function __eyetracker\.draw\_drift\_correction\_target__\(x, y\)]: #function-__eyetrackerdraw_drift_correction_target__x-y
+[function __eyetracker\.drift\_correction__\(pos=None, fix\_triggered=False\)]: #function-__eyetrackerdrift_correction__posnone-fix_triggeredfalse
+[function __eyetracker\.fix\_triggered\_drift\_correction__\(pos=None, min\_samples=30, max\_dev=60, reset\_threshold=10\)]: #function-__eyetrackerfix_triggered_drift_correction__posnone-min_samples30-max_dev60-reset_threshold10
+[function __eyetracker\.get\_eyetracker\_clock\_async__\(\)]: #function-__eyetrackerget_eyetracker_clock_async__
+[function __eyetracker\.log__\(msg\)]: #function-__eyetrackerlog__msg
+[function __eyetracker\.log\_var__\(var, val\)]: #function-__eyetrackerlog_var__var-val
+[function __eyetracker\.pupil\_size__\(\)]: #function-__eyetrackerpupil_size__
+[function __eyetracker\.sample__\(\)]: #function-__eyetrackersample__
+[function __eyetracker\.send\_command__\(cmd\)]: #function-__eyetrackersend_command__cmd
+[function __eyetracker\.set\_detection\_type__\(eventdetection\)]: #function-__eyetrackerset_detection_type__eventdetection
+[function __eyetracker\.set\_draw\_calibration\_target\_func__\(func\)]: #function-__eyetrackerset_draw_calibration_target_func__func
+[function __eyetracker\.set\_draw\_drift\_correction\_target\_func__\(func\)]: #function-__eyetrackerset_draw_drift_correction_target_func__func
+[function __eyetracker\.set\_eye\_used__\(\)]: #function-__eyetrackerset_eye_used__
+[function __eyetracker\.start\_recording__\(\)]: #function-__eyetrackerstart_recording__
+[function __eyetracker\.status\_msg__\(msg\)]: #function-__eyetrackerstatus_msg__msg
+[function __eyetracker\.stop\_recording__\(\)]: #function-__eyetrackerstop_recording__
+[function __eyetracker\.wait\_for\_blink\_end__\(\)]: #function-__eyetrackerwait_for_blink_end__
+[function __eyetracker\.wait\_for\_blink\_start__\(\)]: #function-__eyetrackerwait_for_blink_start__
+[function __eyetracker\.wait\_for\_event__\(event\)]: #function-__eyetrackerwait_for_event__event
+[function __eyetracker\.wait\_for\_fixation\_end__\(\)]: #function-__eyetrackerwait_for_fixation_end__
+[function __eyetracker\.wait\_for\_fixation\_start__\(\)]: #function-__eyetrackerwait_for_fixation_start__
+[function __eyetracker\.wait\_for\_saccade\_end__\(\)]: #function-__eyetrackerwait_for_saccade_end__
+[function __eyetracker\.wait\_for\_saccade\_start__\(\)]: #function-__eyetrackerwait_for_saccade_start__
