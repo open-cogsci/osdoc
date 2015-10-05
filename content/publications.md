@@ -101,13 +101,20 @@ Van der Linden, L., Mathôt, S., Vitu, F. (2015). The role of object affordances
 Mathôt, S., van der Linden, L., Grainger, J., & Vitu, F. (2015). The pupillary light response reflects eye-movement preparation. *Journal of Experimental Psychology: Human Perception and Performance*, *41*(1), 28–35. doi:10.1037/a0038653
 {: .reference}
 
+Mathôt, S., Melmi, J.-B, & Castet, E. (2015). Intrasaccadic perception triggers pupillary constriction. *PeerJ*, *3*, e1150. doi:10.7717/peerj.1150
+{: .reference}
+
 Mathôt, S., Siebold, A., Donk, M., & Vitu, F. (2015). Large pupils predict goal-driven eye movements. *Journal of Experimental Psychology: General*. doi:10.1037/a0039168
 {: .reference}
+
 
 Nesari, S. J., & Kamari, E. (2015). Phonological errors among dyslexic and non-dyslexic children learning Persian. *International Journal of Applied Linguistics and English Literature*, *4*(3), 167–173. doi:10.7575/aiac.ijalel.v.4n.3p.167
 {: .reference}
 
 Nuutinen, M., Virtanen, T., Rummukainen, O., & Häkkinen, J. (2015). VQone MATLAB toolbox: A graphical experiment builder for image and video quality evaluations. *Behavior Research Methods*, 1–13. doi:10.3758/s13428-014-0555-y
+{: .reference}
+
+Pereira, D. M., & Khan, A. (2015). Hemispheric specialization of impaired disengagement of attention in depression: a tachistoscopic method. *Laterality: Asymmetries of Body, Brain and Cognition*, 1–16. doi:10.1080/1357650X.2015.1090444
 {: .reference}
 
 Rey, A. E., Roche, K., Versace, R., & Chainay, H. (2015). Manipulation gesture effect in visual and auditory presentations: the link between tools in perceptual and motor tasks. *Frontiers in Psychology*, *6*(1031). doi:10.3389/fpsyg.2015.01031
