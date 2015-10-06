@@ -86,6 +86,7 @@ Back-ends
 External devices
 	Ambulatory Monitoring System (VU-AMS)
 	Audio input
+	Button box
 	Grip devices (U Plymouth)
 	Joystick
 	Eyelink
