@@ -16,7 +16,7 @@ figure:
  caption: "The gaze-cuing paradigm [(Friesen and Kingstone, 1998)][references] that you will implement in this tutorial. This example depicts a trial in the incongruent condition, because the smiley looks at the distractor ('X') and not at the target ('F')."
 --%
 
-This document provides a detailed click-by-click walk-through. Screenshots are provided, as well as downloadable snapshots of the experiment as it should be after each step of the tutorial. This tutorial will take approximately one hour to complete.
+This document provides a detailed click-by-click walk-through. Screenshots are provided, as well as downloadable snapshots of the experiment as it should be after each step of the tutorial. This tutorial will take approximately one hour to complete. At every step, you will also find a link to the corresponding point in the [video tutorial](https://youtu.be/eiGXe-t-C28).
 
 ## Overview
 
@@ -67,6 +67,17 @@ For more information about this notation for experimental design, see:
 - [/miscellaneous/experimental-design/](/miscellaneous/experimental-design/)
 
 ## Step 1: Create the main sequence
+
+%--
+video:
+ source: youtube
+ id: VidTutorialStep1
+ videoid: eiGXe-t-C28?start=333
+ width: 640
+ height: 360
+ caption: |
+  Step 1 in the step-by-step video tutorial.
+--%
 
 The 'Get started' tab is the first thing that you see when you start OpenSesame (%FigGetStarted). (If this is the very first time that you have started OpenSesame, you will see a tab that points you towards this tutorial. If so, you can close this tab.) The box labeled 'New' contains a list of available templates, which provide convenient starting points for new experiments. After you saved your experiment the first time, you will see another box labeled 'Recent' that shows a list of recently opened experiments.
 
@@ -228,6 +239,17 @@ __Tip__ — You can enable 'one tab mode' (Menu -> View -> One tab mode) to prev
 
 ## Step 2: Create the block sequence
 
+%--
+video:
+ source: youtube
+ id: VidTutorialStep2
+ videoid: eiGXe-t-C28?start=790
+ width: 640
+ height: 360
+ caption: |
+  Step 2 in the step-by-step video tutorial.
+--%
+
 Click on *block_sequence* in the overview. At the moment this `sequence` is empty. We want *block sequence* to consist of a block of trials, followed by a  `feedback` display. For this we need to do the following:
 
 ### Append a reset_feedback item to reset the feedback variables
@@ -264,6 +286,17 @@ figure:
 --%
 
 ## Step 3: Fill the block loop with independent variables
+
+%--
+video:
+ source: youtube
+ id: VidTutorialStep3
+ videoid: eiGXe-t-C28?start=1041
+ width: 640
+ height: 360
+ caption: |
+  Step 3 in the step-by-step video tutorial.
+--%
 
 As the name suggests, *block_loop* corresponds to a single block of trials. In the previous step we created the *block_loop*, but we still need to 'fill' it with independent variables, which will be varied within the block. Our experiment has three independent variables:
 
@@ -318,6 +351,17 @@ __Tip__ -- You can set 'Repeat' to a non-integer number. For example, by setting
 
 ## Step 4: Add images and sound files to the file pool
 
+%--
+video:
+ source: youtube
+ id: VidTutorialStep4
+ videoid: eiGXe-t-C28?start=1373
+ width: 640
+ height: 360
+ caption: |
+  Step 4 in the step-by-step video tutorial.
+--%
+
 We will not actually draw the stimuli in this experiment, but use images from file. In addition, we will play a sound if the participant makes an error. For this we need a sound file.
 
 You can download the required files here (in most webbrowsers you can right-click the links and choose 'Save Link As' or a similar option):
@@ -341,6 +385,17 @@ figure:
 --%
 
 ## Step 5: Fill the trial sequence with items
+
+%--
+video:
+ source: youtube
+ id: VidTutorialStep5
+ videoid: eiGXe-t-C28?start=1504
+ width: 640
+ height: 360
+ caption: |
+  Step 5 in the step-by-step video tutorial.
+--%
 
 A trial in our experiment is fairly straightforward:
 
@@ -396,6 +451,17 @@ __Tip__ -- Variables and conditional "if" statements are very powerful! To learn
 </div>
 
 ## Step 6: Draw the sketchpad items
+
+%--
+video:
+ source: youtube
+ id: VidTutorialStep6
+ videoid: eiGXe-t-C28?start=1820
+ width: 640
+ height: 360
+ caption: |
+  Step 6 in the step-by-step video tutorial.
+--%
 
 The `sketchpad` items that we have created in Step 5 are still blank. It's time to do some drawing!
 
@@ -530,6 +596,17 @@ __Tip__ -- Make sure that the (foreground) color is set to black. Otherwise you 
 
 ## Step 7: Configure the keyboard response item
 
+%--
+video:
+ source: youtube
+ id: VidTutorialStep7
+ videoid: eiGXe-t-C28?start=2775
+ width: 640
+ height: 360
+ caption: |
+  Step 7 in the step-by-step video tutorial.
+--%
+
 Click on *keyboard_response* in the overview to open its tab. You will see three options: Correct response, Allowed responses, and Timeout.
 
 We have already set the `correct_response` variable in Step 3, so we don't need to set it here. If we do, we will simply override the previously set correct response, which is definitely not what we want.
@@ -563,6 +640,17 @@ __Tip__ -- To use special keys, such as '/' or the up-arrow key, you can use key
 
 ## Step 8: Configure the incorrect (sampler) item
 
+%--
+video:
+ source: youtube
+ id: VidTutorialStep8
+ videoid: eiGXe-t-C28?start=2899
+ width: 640
+ height: 360
+ caption: |
+  Step 8 in the step-by-step video tutorial.
+--%
+
 The *incorrect_sound* item doesn't need much work: We only need to select the sound that should be played. Click on *incorrect_sound* in the overview to open its tab. Click on the 'Browse' button and select `incorrect.ogg` from the file pool.
 
 The sampler now looks like %FigStep8. You can download the experiment up to this point here:
@@ -588,6 +676,17 @@ __Tip__ -- The `sampler` handles files in `.ogg` and `.wav` format. If you have 
 
 ## Step 9: Configure the variable logger
 
+%--
+video:
+ source: youtube
+ id: VidTutorialStep9
+ videoid: eiGXe-t-C28?start=2971
+ width: 640
+ height: 360
+ caption: |
+  Step 9 in the step-by-step video tutorial.
+--%
+
 Actually, we don't need to configure the variable `logger`, but let's take a look at it anyway. Click on *logger* in the overview to open its tab. You will see that the option 'Log all variables (recommended)' is selected. This means that OpenSesame logs everything, which is fine.
 
 <div class='info-box' markdown='1'>
@@ -601,6 +700,17 @@ __The one tip to rule them all__ -- Always triple-check whether all the necessar
 </div>
 
 ## Step 10: Draw the feedback item
+
+%--
+video:
+ source: youtube
+ id: VidTutorialStep10
+ videoid: eiGXe-t-C28?start=3095
+ width: 640
+ height: 360
+ caption: |
+  Step 10 in the step-by-step video tutorial.
+--%
 
 After every block of trials, we want to present feedback to the participant to let him/ her know how well he/ she is doing. Therefore, in Step 2, we added a `feedback` item, simply named *feedback* to the end of *block_sequence*.
 
@@ -646,6 +756,17 @@ __Tip__ -- For more information about feedback, see:
 
 ## Step 11: Set the length of the practice phase and experimental phase
 
+%--
+video:
+ source: youtube
+ id: VidTutorialStep11
+ videoid: eiGXe-t-C28?start=3195
+ width: 640
+ height: 360
+ caption: |
+  Step 11 in the step-by-step video tutorial.
+--%
+
 We have previously created the *practice_loop* and *experiment_loop* items, which both call *block_sequence* (i.e., a block of trials). However, right now they call *block_sequence* only once, which means that both the practice and the experimental phase consist of only a single block of trials.
 
 Click on *practice_loop* to open its tab and set 'Repeat' to '2.00'. This means that the practice phase consists of two blocks.
@@ -666,6 +787,17 @@ __Tip__ -- You can create a variable `practice` in both *practice_loop* and *exp
 
 ## Step 12: Write the instruction, end_of_practice and end_of_experiment forms
 
+%--
+video:
+ source: youtube
+ id: VidTutorialStep12
+ videoid: eiGXe-t-C28?start=3362
+ width: 640
+ height: 360
+ caption: |
+  Step 12 in the step-by-step video tutorial.
+--%
+
 I think you can handle this step your own! Simply open the appropriate tabs and add some text to present instructions, an end-of-practice message and an end-of-experiment message.
 
 <div class='info-box' markdown='1'>
@@ -679,6 +811,17 @@ __Tip__ -- You can use a subset of HTML tags to format your text. For example, *
 </div>
 
 ## Step 13: Run the experiment!
+
+%--
+video:
+ source: youtube
+ id: VidTutorialStep13
+ videoid: eiGXe-t-C28?start=3515
+ width: 640
+ height: 360
+ caption: |
+  Step 13 in the step-by-step video tutorial.
+--%
 
 You're done! Click on the 'Run in window' (shortcut: `Ctrl+W`) or 'Run fullscreen' (shortcut: `Ctrl+R`) buttons in the toolbar to run your experiment.
 
