@@ -62,7 +62,7 @@ The following PyGaze plug-ins are available:
 - `pygaze_drift_correct` -- Implements a drift correction procedure.
 - `pygaze_start_recording` -- Puts PyGaze in recording mode.
 - `pygaze_stop_recording` -- Puts PyGaze out of recording mode.
-- `pygaze_wait` -- Pauses until an event occurs, such a saccade start.
+- `pygaze_wait` -- Pauses until an event occurs, such as a saccade start.
 - `pygaze_log` -- Logs experimental variables and arbitrary text.
 
 ## Example
