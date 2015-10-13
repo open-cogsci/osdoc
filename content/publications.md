@@ -44,6 +44,9 @@ Boero, R. (2015). *Behavioral Computational Social Science*. Wiley.
 Bosse, T., & Schnitfink, K. (2015). The effect of simulated threat on task performance during emotion recognition. In D. Harris (Ed.), *Proceedings of the 12th International Conference on Engineering Psychology and Cognitive Ergonomics*. Los Angeles, CA, USA: Springer.
 {: .reference}
 
+Cakir, M. P., Çakir, N. A., Ayaz, H., & Lee, F. J. (2015). An optical brain imaging study on the improvements in mathematical fluency from game-based learning. In *Proceedings of the 2015 Annual Symposium on Computer-Human Interaction in Play* (pp. 209–219). New York, NY, USA: ACM. doi:10.1145/2793107.2793133
+{: .reference}
+
 Cameron, G., Schlund, M. W., & Dymond, S. (2015). Generalization of socially transmitted and instructed avoidance. *Frontiers in Behavioral Neuroscience*, *159*. doi:10.3389/fnbeh.2015.00159
 {: .reference}
 

@@ -10,6 +10,24 @@ toc:
  mindepth: 2
 --%
 
+## OpenSesame 3.0 step-by-step tutorial
+
+The video below walks through the [step-by-step tutorial](/tutorials/step-by-step-tutorial/).
+
+- Duration: 62 minutes
+- OpenSesame version: 3.0.0
+
+%--
+video:
+ source: youtube
+ id: VidTutorial30
+ videoid: eiGXe-t-C28
+ width: 640
+ height: 360
+ caption: |
+  The step-by-step tutorial in video form.
+--%
+
 ## Creating a cat-faces experiment
 
 The video below introduces the basic functionality of OpenSesame by providing a step-by-step walk-through for creating a 'cat-faces' experiment. In this experiment, the participant's task is to judge whether a (picture of a) cat is male or female. Quite tricky (the task, that is, creating the experiment is easy), but apparently people can do it after some training.
@@ -68,6 +86,3 @@ video:
 [tutorial]: /tutorials/step-by-step-tutorial
 [cat-faces-photos]: http://www.chrislongmore.co.uk/screencasts/supporting_material/catfacephotos.zip
 [cat-faces-experiment]: http://www.chrislongmore.co.uk/screencasts/supporting_material/cats.opensesame.tar.gz
-
-
-

@@ -19,6 +19,17 @@ OpenSesame is a tool to create experiments for psychology, neuroscience, and exp
 - __Free and open source__ -- released under the GPL3
 - __Crossplatform__ -- runs on Windows, Mac OS, Linux, and Android (runtime only)
 
+%--
+video:
+ source: youtube
+ id: VidTutorial30
+ videoid: eiGXe-t-C28
+ width: 640
+ height: 360
+ caption: |
+  The step-by-step video tutorial shows how to create a complete experiment from scratch.
+--%
+
 ## Recommended downloads
 
 {% include recommended-downloads %}
