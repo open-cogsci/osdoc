@@ -25,7 +25,7 @@ There are a number of ways to run OpenSesame under Windows:
 
 ## Ubuntu/ Debian/ Linux Mint {#ubuntu}
 
-OpenSesame is available through [NeuroDebian] (for Debian, Ubuntu, Linux Mint, and other derivatives) and the [Cogsci.nl PPA] (Ubuntu only). The [Cogsci.nl PPA] generally has the most up-to-date version.
+OpenSesame is available through the [Cogsci.nl PPA] (Ubuntu only). An older version is available through [NeuroDebian] (for Debian, Ubuntu, Linux Mint, and other derivatives).
 
 ### Cogsci.nl PPA
 
