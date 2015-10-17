@@ -3,7 +3,7 @@
   status: "current"
 - branch: "2.9"
   desc: "2.9.X (old)"
-  status: "dev"
+  status: "old"
 - branch: "2.8"
   desc: "2.8.X (old)"
   status: "old"
