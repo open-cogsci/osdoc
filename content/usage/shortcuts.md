@@ -2,7 +2,7 @@
 layout: osdoc
 title: Keyboard shortcuts
 group: usage
-permalink: /usage/
+permalink: /shortcuts/
 ---
 
 The keyboard shortcuts listed below are default values, and can be changed as described under [Changing shortcuts].
