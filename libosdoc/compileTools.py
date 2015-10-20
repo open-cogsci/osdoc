@@ -313,6 +313,9 @@ def preprocessSite(content, group, branch, status):
 			raise Exception(u'Failed to find "%s"' % title)
 	open(os.path.join(u'_content', u'sitemap.yml'), u'w').write(
 		yaml.dump(YAMLSitemap, default_flow_style=False))
+	shutil.copyfile(
+		os.path.join(u'content', u'metadata.yaml'),
+		os.path.join(u'_content', u'metadata.yaml'))
 
 def createTarball(siteFolder):
 
