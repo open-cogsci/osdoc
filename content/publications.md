@@ -59,6 +59,9 @@ Christoforou, C., Christou-Champi, S., Constantinidou, F., & Theodorou, M. (2015
 Contemori, C., Dal Pozzo, L., & Matteini, S. (2015). Resolving pronominal anaphora in real-time. In *Structures, Strategies and Beyond: Studies in honour of Adriana Belletti* (Vol. 223, p. 257).
 {: .reference}
 
+Cotet, C. D., & Veresezan, E. A. (n.d.). Affective forecasting in a negative feedback task. *Journal of Evidence-Based Psychotherapies*, *15*(2). Retrieved from http://jebp.psychotherapy.ro/vol-xv-no-1-2015/affective-forecasting-in-a-negative-feedback-task/
+{: .reference}
+
 De Groot, F., Huettig, F., & Olivers, C. N. (2015). When meaning matters: The temporal dynamics of semantic influences on visual attention. *Journal of Experimental Psychology: Human Perception and Performance.*
 {: .reference}
 
