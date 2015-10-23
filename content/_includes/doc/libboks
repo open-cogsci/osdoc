@@ -1,6 +1,6 @@
-<div class="ClassDoc YAMLDoc" id="libboks" markdown="1">
+<div class="ClassDoc YAMLDoc" id="srbox" markdown="1">
 
-# class __libboks__
+# class __srbox__
 
 A Python library to interface with Boks, a button box for psychological
 and neuroscientific experiments.
@@ -10,53 +10,53 @@ object can be accessed as `exp.boks` or `self.experiment.boks`.
 
 __Example__:
 
-~~~ .python
+{% highlight python %}
 # Collect a response time with a 2000ms timeout
 exp.boks.set_timeout(2000)
 t1 = self.time()
 button, t2 = exp.boks.get_button_press()
 exp.set('response', button)
 exp.set('response_time', t2-t1)
-~~~
+{% endhighlight %}
 
 __Function list:__
 
 
-- [function __libboks\.\_\_init\_\___\(baudrate=115200, led=False, buttons=None, experiment=None, timeout=None, port=None\)](#function-__libboks__init____baudrate115200-ledfalse-buttonsnone-experimentnone-timeoutnone-portnone)
-- [function __libboks\.button\_count__\(\)](#function-__libboksbutton_count__)
-- [function __libboks\.close__\(\)](#function-__libboksclose__)
-- [function __libboks\.get\_button\_press__\(\)](#function-__libboksget_button_press__)
-- [function __libboks\.get\_button\_release__\(\)](#function-__libboksget_button_release__)
-- [function __libboks\.get\_button\_state__\(\)](#function-__libboksget_button_state__)
-- [function __libboks\.get\_buttons__\(\)](#function-__libboksget_buttons__)
-- [function __libboks\.get\_sid__\(\)](#function-__libboksget_sid__)
-- [function __libboks\.get\_timeout__\(\)](#function-__libboksget_timeout__)
-- [function __libboks\.info__\(\)](#function-__libboksinfo__)
-- [function __libboks\.set\_buttons__\(buttons\)](#function-__libboksset_buttons__buttons)
-- [function __libboks\.set\_continuous__\(continuous=True\)](#function-__libboksset_continuous__continuoustrue)
-- [function __libboks\.set\_led__\(on=True\)](#function-__libboksset_led__ontrue)
-- [function __libboks\.set\_timeout__\(timeout\)](#function-__libboksset_timeout__timeout)
+- [function __srbox\.\_\_init\_\___\(port=None, experiment=None, baudrate=115200, buttons=None, timeout=None, led=False\)](#function-__srbox__init____portnone-experimentnone-baudrate115200-buttonsnone-timeoutnone-ledfalse)
+- [function __srbox\.button\_count__\(\)](#function-__srboxbutton_count__)
+- [function __srbox\.close__\(\)](#function-__srboxclose__)
+- [function __srbox\.get\_button\_press__\(\)](#function-__srboxget_button_press__)
+- [function __srbox\.get\_button\_release__\(\)](#function-__srboxget_button_release__)
+- [function __srbox\.get\_button\_state__\(\)](#function-__srboxget_button_state__)
+- [function __srbox\.get\_buttons__\(\)](#function-__srboxget_buttons__)
+- [function __srbox\.get\_sid__\(\)](#function-__srboxget_sid__)
+- [function __srbox\.get\_timeout__\(\)](#function-__srboxget_timeout__)
+- [function __srbox\.info__\(\)](#function-__srboxinfo__)
+- [function __srbox\.set\_buttons__\(buttons\)](#function-__srboxset_buttons__buttons)
+- [function __srbox\.set\_continuous__\(continuous=True\)](#function-__srboxset_continuous__continuoustrue)
+- [function __srbox\.set\_led__\(on=True\)](#function-__srboxset_led__ontrue)
+- [function __srbox\.set\_timeout__\(timeout\)](#function-__srboxset_timeout__timeout)
 
 
 
 
 
-<div class="FunctionDoc YAMLDoc" id="libboks-__init__" markdown="1">
+<div class="FunctionDoc YAMLDoc" id="srbox-__init__" markdown="1">
 
-## [function __libboks\.\_\_init\_\___\(baudrate=115200, led=False, buttons=None, experiment=None, timeout=None, port=None\)](#function-__libboks__init____baudrate115200-ledfalse-buttonsnone-experimentnone-timeoutnone-portnone) {#function-__libboks__init____baudrate115200-ledfalse-buttonsnone-experimentnone-timeoutnone-portnone}
+## [function __srbox\.\_\_init\_\___\(port=None, experiment=None, baudrate=115200, buttons=None, timeout=None, led=False\)](#function-__srbox__init____portnone-experimentnone-baudrate115200-buttonsnone-timeoutnone-ledfalse) {#function-__srbox__init____portnone-experimentnone-baudrate115200-buttonsnone-timeoutnone-ledfalse}
 
 Constructor. A Boks object is created automatically the first time that a Boks plug-in is prepared in OpenSesame.
 
 __Example:__
 
-~~~ .python
+{% highlight python %}
 # Collect a response with a 2000ms timeout
 exp.boks.set_timeout(2000)
 t1 = self.time()
 button, t2 = exp.boks.get_button_press()
 exp.set('response', button)
 exp.set('response_time', t2-t1)
-~~~
+{% endhighlight %}
 
 __Keywords:__
 
@@ -81,21 +81,21 @@ __Keywords:__
 
 </div>
 
-[libboks.__init__]: #libboks-__init__
-[__init__]: #libboks-__init__
+[srbox.__init__]: #srbox-__init__
+[__init__]: #srbox-__init__
 
-<div class="FunctionDoc YAMLDoc" id="libboks-button_count" markdown="1">
+<div class="FunctionDoc YAMLDoc" id="srbox-button_count" markdown="1">
 
-## [function __libboks\.button\_count__\(\)](#function-__libboksbutton_count__) {#function-__libboksbutton_count__}
+## [function __srbox\.button\_count__\(\)](#function-__srboxbutton_count__) {#function-__srboxbutton_count__}
 
 Gets the number of buttons that are physically present on the device. This number includes the photodiode, so a Boks with four buttons and a photodiode will be reported as having five buttons.
 
 __Example:__
 
-~~~ .python
+{% highlight python %}
 i = exp.boks.button_count()
 print('Your Boks has %d buttons' % i)
-~~~
+{% endhighlight %}
 
 __Returns:__
 
@@ -105,42 +105,42 @@ The number of buttons
 
 </div>
 
-[libboks.button_count]: #libboks-button_count
-[button_count]: #libboks-button_count
+[srbox.button_count]: #srbox-button_count
+[button_count]: #srbox-button_count
 
-<div class="FunctionDoc YAMLDoc" id="libboks-close" markdown="1">
+<div class="FunctionDoc YAMLDoc" id="srbox-close" markdown="1">
 
-## [function __libboks\.close__\(\)](#function-__libboksclose__) {#function-__libboksclose__}
+## [function __srbox\.close__\(\)](#function-__srboxclose__) {#function-__srboxclose__}
 
 Neatly close the device. This will deactivate the boks and close the serial port connection. OpenSesame will do this automatically when the experiment ends.
 
 __Example:__
 
-~~~ .python
+{% highlight python %}
 exp.boks.close()
-~~~
+{% endhighlight %}
 
 </div>
 
-[libboks.close]: #libboks-close
-[close]: #libboks-close
+[srbox.close]: #srbox-close
+[close]: #srbox-close
 
-<div class="FunctionDoc YAMLDoc" id="libboks-get_button_press" markdown="1">
+<div class="FunctionDoc YAMLDoc" id="srbox-get_button_press" markdown="1">
 
-## [function __libboks\.get\_button\_press__\(\)](#function-__libboksget_button_press__) {#function-__libboksget_button_press__}
+## [function __srbox\.get\_button\_press__\(\)](#function-__srboxget_button_press__) {#function-__srboxget_button_press__}
 
 Collects a button press.
 
 __Example:__
 
-~~~ .python
+{% highlight python %}
 # Collect a response with a 2000ms timeout
 exp.boks.set_timeout(2000)
 t1 = self.time()
 button, t2 = exp.boks.get_button_press()
 exp.set('response', button)
 exp.set('response_time', t2-t1)
-~~~
+{% endhighlight %}
 
 __Returns:__
 
@@ -152,25 +152,25 @@ float value in milliseconds.
 
 </div>
 
-[libboks.get_button_press]: #libboks-get_button_press
-[get_button_press]: #libboks-get_button_press
+[srbox.get_button_press]: #srbox-get_button_press
+[get_button_press]: #srbox-get_button_press
 
-<div class="FunctionDoc YAMLDoc" id="libboks-get_button_release" markdown="1">
+<div class="FunctionDoc YAMLDoc" id="srbox-get_button_release" markdown="1">
 
-## [function __libboks\.get\_button\_release__\(\)](#function-__libboksget_button_release__) {#function-__libboksget_button_release__}
+## [function __srbox\.get\_button\_release__\(\)](#function-__srboxget_button_release__) {#function-__srboxget_button_release__}
 
 Collects a button release.
 
 __Example:__
 
-~~~ .python
+{% highlight python %}
 # Collect a button release with a 2000ms timeout
 exp.boks.set_timeout(2000)
 t1 = self.time()
 button, t2 = exp.boks.get_button_release()
 exp.set('response', button)
 exp.set('response_time', t2-t1)
-~~~
+{% endhighlight %}
 
 __Returns:__
 
@@ -182,22 +182,22 @@ float value in milliseconds.
 
 </div>
 
-[libboks.get_button_release]: #libboks-get_button_release
-[get_button_release]: #libboks-get_button_release
+[srbox.get_button_release]: #srbox-get_button_release
+[get_button_release]: #srbox-get_button_release
 
-<div class="FunctionDoc YAMLDoc" id="libboks-get_button_state" markdown="1">
+<div class="FunctionDoc YAMLDoc" id="srbox-get_button_state" markdown="1">
 
-## [function __libboks\.get\_button\_state__\(\)](#function-__libboksget_button_state__) {#function-__libboksget_button_state__}
+## [function __srbox\.get\_button\_state__\(\)](#function-__srboxget_button_state__) {#function-__srboxget_button_state__}
 
 Checks which buttons are currently pressed.
 
 __Example:__
 
-~~~ .python
+{% highlight python %}
 l = exp.boks.get_button_state()
 if 1 in l:
         print('Button 1 is pressed')
-~~~
+{% endhighlight %}
 
 __Returns:__
 
@@ -207,22 +207,22 @@ A list of buttons that are currently pressed.
 
 </div>
 
-[libboks.get_button_state]: #libboks-get_button_state
-[get_button_state]: #libboks-get_button_state
+[srbox.get_button_state]: #srbox-get_button_state
+[get_button_state]: #srbox-get_button_state
 
-<div class="FunctionDoc YAMLDoc" id="libboks-get_buttons" markdown="1">
+<div class="FunctionDoc YAMLDoc" id="srbox-get_buttons" markdown="1">
 
-## [function __libboks\.get\_buttons__\(\)](#function-__libboksget_buttons__) {#function-__libboksget_buttons__}
+## [function __srbox\.get\_buttons__\(\)](#function-__srboxget_buttons__) {#function-__srboxget_buttons__}
 
 Retrieves the list of buttons that are 'active', i.e. that are used by [get_button_press], [get_button_release], and [get_button_state].
 
 __Example:__
 
-~~~ .python
+{% highlight python %}
 l = exp.boks.get_buttons()
 if 1 in l:
         print('Button 1 is currently being monitored')
-~~~
+{% endhighlight %}
 
 __Returns:__
 
@@ -232,21 +232,21 @@ A list of active buttons.
 
 </div>
 
-[libboks.get_buttons]: #libboks-get_buttons
-[get_buttons]: #libboks-get_buttons
+[srbox.get_buttons]: #srbox-get_buttons
+[get_buttons]: #srbox-get_buttons
 
-<div class="FunctionDoc YAMLDoc" id="libboks-get_sid" markdown="1">
+<div class="FunctionDoc YAMLDoc" id="srbox-get_sid" markdown="1">
 
-## [function __libboks\.get\_sid__\(\)](#function-__libboksget_sid__) {#function-__libboksget_sid__}
+## [function __srbox\.get\_sid__\(\)](#function-__srboxget_sid__) {#function-__srboxget_sid__}
 
 Retrieves the Arduino serial ID.
 
 __Example:__
 
-~~~ .python
+{% highlight python %}
 sid = exp.boks.get_sid()
 print('The Arduino serial ID of the Boks is %s' % sid)
-~~~
+{% endhighlight %}
 
 __Returns:__
 
@@ -256,22 +256,22 @@ A 7 character string containing the Arduino serial ID.
 
 </div>
 
-[libboks.get_sid]: #libboks-get_sid
-[get_sid]: #libboks-get_sid
+[srbox.get_sid]: #srbox-get_sid
+[get_sid]: #srbox-get_sid
 
-<div class="FunctionDoc YAMLDoc" id="libboks-get_timeout" markdown="1">
+<div class="FunctionDoc YAMLDoc" id="srbox-get_timeout" markdown="1">
 
-## [function __libboks\.get\_timeout__\(\)](#function-__libboksget_timeout__) {#function-__libboksget_timeout__}
+## [function __srbox\.get\_timeout__\(\)](#function-__srboxget_timeout__) {#function-__srboxget_timeout__}
 
 Gets the timeout used by [get_button_press] and [get_button_release].
 
 __Example:__
 
-~~~ .python
+{% highlight python %}
 exp.boks.set_timeout(2000)
 t = exp.boks.get_timeout()
 print('The Boks timeout is currently set to %d ms' % t)
-~~~
+{% endhighlight %}
 
 __Returns:__
 
@@ -281,22 +281,22 @@ A timeout value in milliseconds or `None` if no timeout is set.
 
 </div>
 
-[libboks.get_timeout]: #libboks-get_timeout
-[get_timeout]: #libboks-get_timeout
+[srbox.get_timeout]: #srbox-get_timeout
+[get_timeout]: #srbox-get_timeout
 
-<div class="FunctionDoc YAMLDoc" id="libboks-info" markdown="1">
+<div class="FunctionDoc YAMLDoc" id="srbox-info" markdown="1">
 
-## [function __libboks\.info__\(\)](#function-__libboksinfo__) {#function-__libboksinfo__}
+## [function __srbox\.info__\(\)](#function-__srboxinfo__) {#function-__srboxinfo__}
 
 Gets boks device info.
 
 __Example:__
 
-~~~ .python
+{% highlight python %}
 firmware, model = exp.boks.info()
 print('Boks model: %s' % model)
 print('Boks firmware: %s' % firmware)
-~~~
+{% endhighlight %}
 
 __Returns:__
 
@@ -306,25 +306,25 @@ A (firmware_version, model) tuple. The firmware_version is a string of the forma
 
 </div>
 
-[libboks.info]: #libboks-info
-[info]: #libboks-info
+[srbox.info]: #srbox-info
+[info]: #srbox-info
 
-<div class="FunctionDoc YAMLDoc" id="libboks-set_buttons" markdown="1">
+<div class="FunctionDoc YAMLDoc" id="srbox-set_buttons" markdown="1">
 
-## [function __libboks\.set\_buttons__\(buttons\)](#function-__libboksset_buttons__buttons) {#function-__libboksset_buttons__buttons}
+## [function __srbox\.set\_buttons__\(buttons\)](#function-__srboxset_buttons__buttons) {#function-__srboxset_buttons__buttons}
 
 Sets which buttons should be used for [get_button_press], [get_button_release], and [get_button_state].
 
 __Example:__
 
-~~~ .python
+{% highlight python %}
 # Only use buttons 1 and 2
 exp.boks.set_buttons([1,2])
 # Use all buttons except for the photodiode
 exp.boks.set_buttons(None)
 # Only use the photodiode (button 8)
 exp.boks.set_buttons([8])
-~~~
+{% endhighlight %}
 
 __Arguments:__
 
@@ -333,25 +333,25 @@ __Arguments:__
 
 </div>
 
-[libboks.set_buttons]: #libboks-set_buttons
-[set_buttons]: #libboks-set_buttons
+[srbox.set_buttons]: #srbox-set_buttons
+[set_buttons]: #srbox-set_buttons
 
-<div class="FunctionDoc YAMLDoc" id="libboks-set_continuous" markdown="1">
+<div class="FunctionDoc YAMLDoc" id="srbox-set_continuous" markdown="1">
 
-## [function __libboks\.set\_continuous__\(continuous=True\)](#function-__libboksset_continuous__continuoustrue) {#function-__libboksset_continuous__continuoustrue}
+## [function __srbox\.set\_continuous__\(continuous=True\)](#function-__srboxset_continuous__continuoustrue) {#function-__srboxset_continuous__continuoustrue}
 
 Determines whether [get_button_press] and [get_button_release] are triggered only by signal changes (discontinuous) or also by continuous signals. The Boks is by default in discontinuous mode, which is generally what you want. For example, in continuous mode, [get_button_press] will respond right away if any of the buttons is already pressed, whereas you are generally interested only in buttons that go from not being pressed to being pressed.
 
 __Example:__
 
-~~~ .python
+{% highlight python %}
 exp.boks.set_continuous(True)
 t1 = exp.time()
 # If some button is not pressed, this will return right away
 button, t2 = exp.boks.get_button_release()
 exp.set('response', button)
 exp.set('response_time', t2-t1)
-~~~
+{% endhighlight %}
 
 __Keywords:__
 
@@ -361,25 +361,25 @@ __Keywords:__
 
 </div>
 
-[libboks.set_continuous]: #libboks-set_continuous
-[set_continuous]: #libboks-set_continuous
+[srbox.set_continuous]: #srbox-set_continuous
+[set_continuous]: #srbox-set_continuous
 
-<div class="FunctionDoc YAMLDoc" id="libboks-set_led" markdown="1">
+<div class="FunctionDoc YAMLDoc" id="srbox-set_led" markdown="1">
 
-## [function __libboks\.set\_led__\(on=True\)](#function-__libboksset_led__ontrue) {#function-__libboksset_led__ontrue}
+## [function __srbox\.set\_led__\(on=True\)](#function-__srboxset_led__ontrue) {#function-__srboxset_led__ontrue}
 
 Turns the LED on or off.
 
 __Example:__
 
-~~~ .python
+{% highlight python %}
 # Blink LED five time
 for i in range(5):
         exp.boks.set_led(True)
         self.sleep(500)
         exp.boks.set_led(False)
         self.sleep(500)
-~~~
+{% endhighlight %}
 
 __Keywords:__
 
@@ -389,22 +389,22 @@ __Keywords:__
 
 </div>
 
-[libboks.set_led]: #libboks-set_led
-[set_led]: #libboks-set_led
+[srbox.set_led]: #srbox-set_led
+[set_led]: #srbox-set_led
 
-<div class="FunctionDoc YAMLDoc" id="libboks-set_timeout" markdown="1">
+<div class="FunctionDoc YAMLDoc" id="srbox-set_timeout" markdown="1">
 
-## [function __libboks\.set\_timeout__\(timeout\)](#function-__libboksset_timeout__timeout) {#function-__libboksset_timeout__timeout}
+## [function __srbox\.set\_timeout__\(timeout\)](#function-__srboxset_timeout__timeout) {#function-__srboxset_timeout__timeout}
 
 Sets the timeout used by [get_button_press] and [get_button_release].
 
 __Example:__
 
-~~~ .python
+{% highlight python %}
 exp.boks.set_timeout(2000)
 t = exp.boks.get_timeout()
 print('The Boks timeout is currently set to %d ms' % t)
-~~~
+{% endhighlight %}
 
 __Arguments:__
 
@@ -413,25 +413,25 @@ __Arguments:__
 
 </div>
 
-[libboks.set_timeout]: #libboks-set_timeout
-[set_timeout]: #libboks-set_timeout
+[srbox.set_timeout]: #srbox-set_timeout
+[set_timeout]: #srbox-set_timeout
 
 </div>
 
-[libboks]: #libboks
+[srbox]: #srbox
 
 
-[function __libboks\.\_\_init\_\___\(baudrate=115200, led=False, buttons=None, experiment=None, timeout=None, port=None\)]: #function-__libboks__init____baudrate115200-ledfalse-buttonsnone-experimentnone-timeoutnone-portnone
-[function __libboks\.button\_count__\(\)]: #function-__libboksbutton_count__
-[function __libboks\.close__\(\)]: #function-__libboksclose__
-[function __libboks\.get\_button\_press__\(\)]: #function-__libboksget_button_press__
-[function __libboks\.get\_button\_release__\(\)]: #function-__libboksget_button_release__
-[function __libboks\.get\_button\_state__\(\)]: #function-__libboksget_button_state__
-[function __libboks\.get\_buttons__\(\)]: #function-__libboksget_buttons__
-[function __libboks\.get\_sid__\(\)]: #function-__libboksget_sid__
-[function __libboks\.get\_timeout__\(\)]: #function-__libboksget_timeout__
-[function __libboks\.info__\(\)]: #function-__libboksinfo__
-[function __libboks\.set\_buttons__\(buttons\)]: #function-__libboksset_buttons__buttons
-[function __libboks\.set\_continuous__\(continuous=True\)]: #function-__libboksset_continuous__continuoustrue
-[function __libboks\.set\_led__\(on=True\)]: #function-__libboksset_led__ontrue
-[function __libboks\.set\_timeout__\(timeout\)]: #function-__libboksset_timeout__timeout
+[function __srbox\.\_\_init\_\___\(port=None, experiment=None, baudrate=115200, buttons=None, timeout=None, led=False\)]: #function-__srbox__init____portnone-experimentnone-baudrate115200-buttonsnone-timeoutnone-ledfalse
+[function __srbox\.button\_count__\(\)]: #function-__srboxbutton_count__
+[function __srbox\.close__\(\)]: #function-__srboxclose__
+[function __srbox\.get\_button\_press__\(\)]: #function-__srboxget_button_press__
+[function __srbox\.get\_button\_release__\(\)]: #function-__srboxget_button_release__
+[function __srbox\.get\_button\_state__\(\)]: #function-__srboxget_button_state__
+[function __srbox\.get\_buttons__\(\)]: #function-__srboxget_buttons__
+[function __srbox\.get\_sid__\(\)]: #function-__srboxget_sid__
+[function __srbox\.get\_timeout__\(\)]: #function-__srboxget_timeout__
+[function __srbox\.info__\(\)]: #function-__srboxinfo__
+[function __srbox\.set\_buttons__\(buttons\)]: #function-__srboxset_buttons__buttons
+[function __srbox\.set\_continuous__\(continuous=True\)]: #function-__srboxset_continuous__continuoustrue
+[function __srbox\.set\_led__\(on=True\)]: #function-__srboxset_led__ontrue
+[function __srbox\.set\_timeout__\(timeout\)]: #function-__srboxset_timeout__timeout
