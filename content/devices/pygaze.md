@@ -45,9 +45,25 @@ PyGaze also includes two dummy eye trackers for testing purposes:
 
 ## Installing PyGaze
 
-If you use the official Windows package of OpenSesame, PyGaze is already installed. If not, you can install PyGaze as follows:
+### Windows
 
-1. Download the PyGaze source code (`.zip`) from <https://github.com/esdalmaijer/PyGaze>. (Do *not* download the standalone Windows packages provided on the PyGaze website.)
+If you use the official Windows package of OpenSesame, PyGaze is already installed.
+
+### Ubuntu
+
+If you use Ubuntu, you can get PyGaze from the Cogsci.nl PPA:
+
+    sudo add-apt-repository ppa:smathot/cogscinl
+    sudo apt-get update
+    sudo apt-get install python-pygaze
+
+### Install from source
+
+On other systems, you can install PyGaze as follows:
+
+1. Download the PyGaze source code (`.zip`) from <https://github.com/esdalmaijer/PyGaze>.
+    - Do *not* download the standalone Windows packages provided on the PyGaze website.
+    - Verify that the version of PyGaze is compatible with your version of OpenSesame, as described [here](/getting-opensesame/running-from-source/).
 2. Extract the `.zip` archive somewhere.
 3. Inside, you will find these folders:
     - `opensesame_plugins`: As the name suggests, this folder contains the OpenSesame plug-ins, and need to be copied to (one of) the plugin folders, as described here: [/plug-ins/installation/]()

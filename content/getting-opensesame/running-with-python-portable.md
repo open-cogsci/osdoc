@@ -10,6 +10,9 @@ toc:
  mindepth: 2
 --%
 
+If you're simply looking for a portable version of OpenSesame, you can also use the official `.zip` "no installation required" package, which is available from the [main download page](/getting-opensesame/download/). The WinPython-based package discussed below is for specific purposes, and is not systematically updated.
+{: .page-notification}
+
 ## About
 
 [Edwin Dalmaijer][edwin] (Utrecht University) has bundled OpenSesame with [Portable Python][portable-python] (Windows only). As of OpenSesame 0.27.2, [WinPython][winpython] (another portable distribution of Python) is used in favor of Portable Python. The advantage of using WinPython is that it is tailord to scientific use, as is reflected in the fact that it contains Spyder (a code editor) and a number of analysis tools (e.g. NumPy and Matplotlib). For a full overview, please refer to the WinPython website.

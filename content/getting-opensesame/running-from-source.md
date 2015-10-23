@@ -47,6 +47,8 @@ The following packages are required to run a minimal version of the OpenSesame G
 The following packages are not required, but some functionality will be missing if they are not installed.
 
 - [Expyriment](http://www.expyriment.org/) is required for the [xpyriment] back-end.
+    - OpenSesame >= 3.0.0 requires Expyriment >= 0.8.0.
+    - OpenSesame < 3.0.0 requires Expyriment 0.7.0.
 - [NumPy](http://www.numpy.org/) is an advanced mathematical library that is used for various things, such as sound support.
 - [PIL](http://www.pythonware.com/products/pil/) is an imaging library that is used for various things.
     - You can also use `pillow`, an actively maintained fork of the original, and no longer maintained `PIL`.
@@ -70,6 +72,8 @@ The following packages are not used directly by OpenSesame, but may come in hand
 - [pyParallel](http://pyserial.sourceforge.net/pyparallel.html) allows communication via the parallel port.
 - [OpenCV](http://opencv.org/) (Python bindings) is an extensive computer-vision library.
 - [PyGaze](http://www.pygaze.org/) is a Python library for eye tracking.
+    - OpenSesame >= 3.0.0 requires PyGaze >= 0.6.0.
+    - OpenSesame < 3.0.0 requires PyGaze 0.5.0.
 
 ## Reasons to run from source
 
