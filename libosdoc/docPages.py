@@ -95,15 +95,10 @@ def generateDocPages():
 	cls = plugins.load_cls(u'../PyGaze/pygaze/_eyetracker',
 		u'BaseEyeTracker', u'baseeyetracker')
 	createDoc(cls, u'content/_includes/doc/pygaze', customName='eyetracker')
-	#
-	# cls = plugins.load_cls(u'../opensesame/plugins/joystick/_libjoystick',
-	# 	u'basejoystick', u'basejoystick')
-	# createDoc(cls, u'content/_includes/doc/libjoystick')
-	# cls = plugins.load_cls(u'../opensesame/plugins/srbox', u'libsrbox',
-	# 	u'libsrbox')
-	# createDoc(cls, u'content/_includes/doc/libsrbox')
-	# cls = plugins.load_cls(u'../boks/opensesame/boks',
-	# 	u'libboks', u'libboks')
-	# createDoc(cls, u'content/_includes/doc/libboks')
-	# createDoc(experiment, u'content/_includes/doc/experiment')
-	# createDoc(inline_script, u'content/_includes/doc/inline_script')
+
+	cls = plugins.load_cls(u'../opensesame/plugins/joystick/_libjoystick',
+		u'basejoystick', u'basejoystick')
+	createDoc(cls, u'content/_includes/doc/libjoystick')
+	cls = plugins.load_cls(u'../opensesame/plugins/srbox', u'libsrbox',
+		u'libsrbox')
+	createDoc(cls, u'content/_includes/doc/libsrbox', customName='srbox')

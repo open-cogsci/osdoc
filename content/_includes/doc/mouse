@@ -35,7 +35,6 @@ __Overview:__
 - [function __mouse\.get\_pressed__\(\)](#function-__mouseget_pressed__)
 - [function __mouse\.set\_pos__\(pos=\(0, 0\)\)](#function-__mouseset_pos__pos0-0)
 - [function __mouse\.show\_cursor__\(show=True\)](#function-__mouseshow_cursor__showtrue)
-- [function __mouse\.synonyms__\(button\)](#function-__mousesynonyms__button)
 
 
 
@@ -75,7 +74,8 @@ arguments:
 - `buttonlist` specifies a list of buttons that are accepted, or is set
   to `None` accept all keys.
 - `visible` indicates whether the mouse cursor becomes visible when a
-  click is collected (`True` or `False`).
+  click is collected (`True` or `False`). To immediately change cursor
+  visibility, use [mouse.show_cursor].
 
 {% highlight python %}
 # Get a left or right button press with a timeout of 3000 ms
@@ -287,28 +287,6 @@ __Keywords:__
 [mouse.show_cursor]: #mouse-show_cursor
 [show_cursor]: #mouse-show_cursor
 
-<div class="FunctionDoc YAMLDoc" id="mouse-synonyms" markdown="1">
-
-## [function __mouse\.synonyms__\(button\)](#function-__mousesynonyms__button) {#function-__mousesynonyms__button}
-
-Gives a list of synonyms for a mouse button. For example, 1 and 'left_button' are synonyms.
-
-__Arguments:__
-
-- `button` -- A button value.
-	- Type: int, str, unicode
-
-__Returns:__
-
-A list of synonyms.
-
-- Type: list
-
-</div>
-
-[mouse.synonyms]: #mouse-synonyms
-[synonyms]: #mouse-synonyms
-
 </div>
 
 [mouse]: #mouse
@@ -326,4 +304,3 @@ A list of synonyms.
 [function __mouse\.get\_pressed__\(\)]: #function-__mouseget_pressed__
 [function __mouse\.set\_pos__\(pos=\(0, 0\)\)]: #function-__mouseset_pos__pos0-0
 [function __mouse\.show\_cursor__\(show=True\)]: #function-__mouseshow_cursor__showtrue
-[function __mouse\.synonyms__\(button\)]: #function-__mousesynonyms__button

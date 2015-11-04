@@ -12,8 +12,7 @@ __Example__:
 
 {% highlight python %}
 # Programmatically prepare and run a sketchpad item.
-items[u'my_sketchpad'].prepare()
-items[u'my_sketchpad'].run()
+items.execute(u'my_sketchpad')
 # Check if an item exists
 if u'my_sketchpad' in items:
         print(u'my_sketchpad exists')
