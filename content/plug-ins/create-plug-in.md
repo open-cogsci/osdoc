@@ -126,7 +126,7 @@ class qtmy_plugin(my_plugin, qtautoplugin):
 	def __init__(self, name, experiment, script=None):
 
 		# Call parent constructors.
-		fixation_dot.__init__(self, name, experiment, script)
+		my_plugin.__init__(self, name, experiment, script)
 		qtautoplugin.__init__(self, __file__)
 ~~~
 
