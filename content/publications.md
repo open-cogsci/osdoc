@@ -56,6 +56,9 @@ Cavdaroglu, S., Katz, C., & Knops, A. (2015). Dissociating estimation from compa
 Christoforou, C., Christou-Champi, S., Constantinidou, F., & Theodorou, M. (2015). From the eyes and the heart: a novel eye-gaze metric that predicts video preferences of a large audience. *Frontiers in Psychology*, doi:10.3389/fpsyg.2015.00579
 {: .reference}
 
+Cohen, Z. Z., & Henik, A. (2015). Effects of Numerosity Range on Tactile and Visual Enumeration. *Perception*. doi:10.1177/0301006615614662
+{: .reference}
+
 Contemori, C., Dal Pozzo, L., & Matteini, S. (2015). Resolving pronominal anaphora in real-time. In *Structures, Strategies and Beyond: Studies in honour of Adriana Belletti* (Vol. 223, p. 257).
 {: .reference}
 
@@ -157,6 +160,9 @@ Wester, M., Corley, M., & Dall, R. (2015). The temporal delay hypothesis: Natura
 {: .reference}
 
 Wiener, S., & Turnbull, R. (2015). Constraints of tones, vowels and consonants on lexical selection in mandarin chinese. *Language and Speech*. doi:10.1177/0023830915578000
+{: .reference}
+
+Wongupparaj, P., Kumari, V., & Morris, R. G. (2015). The relation between a multicomponent working memory and intelligence: The roles of central executive and short-term storage functions. *Intelligence*, *53*, 166–180. doi:10.1016/j.intell.2015.10.007
 {: .reference}
 
 Zarr, N., & Brown, J. W. (2016). Hierarchical error representation in medial prefrontal cortex. *NeuroImage*, *124*, 238–247. doi:10.1016/j.neuroimage.2015.08.063
