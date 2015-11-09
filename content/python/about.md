@@ -26,6 +26,19 @@ toc:
 
 ## Python in the OpenSesame GUI
 
+### Screencast
+
+%--
+video:
+ source: youtube
+ id: VidTutorial30
+ videoid: sEjQlYCmY_w
+ width: 640
+ height: 360
+ caption: |
+  A screencast that the demonstrates the basics of using Python inline script in OpenSesame.
+--%
+
 ### A single Python workspace
 
 All Python code is executed in a single Python workspace. This means that variables that have been defined in one `inline_script` are accessible in all other `inline_script`s, as well as in Python statements that are embedded in run-if statements and text strings. The same principle applies to modules: once `import`ed, they are available everywhere.

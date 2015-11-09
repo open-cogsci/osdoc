@@ -28,6 +28,22 @@ video:
   The step-by-step tutorial in video form.
 --%
 
+## Using Python inline script in OpenSesame 3.0
+
+- Duration: 17 minutes
+- OpenSesame version: 3.0.2
+
+%--
+video:
+ source: youtube
+ id: VidTutorial30
+ videoid: sEjQlYCmY_w
+ width: 640
+ height: 360
+ caption: |
+  A screencast that the demonstrates the basics of using Python inline script in OpenSesame.
+--%
+
 ## Creating a cat-faces experiment
 
 The video below introduces the basic functionality of OpenSesame by providing a step-by-step walk-through for creating a 'cat-faces' experiment. In this experiment, the participant's task is to judge whether a (picture of a) cat is male or female. Quite tricky (the task, that is, creating the experiment is easy), but apparently people can do it after some training.
