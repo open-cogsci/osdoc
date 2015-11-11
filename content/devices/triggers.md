@@ -42,7 +42,7 @@ Instead of using the `parallel_port_trigger` plug-in, it is also possible to sen
 
 ~~~ .python
 try:
-  from ctypes import windll
+	from ctypes import windll
 	global io
 	io = windll.dlportio # requires dlportio.dll !!!
 except:
