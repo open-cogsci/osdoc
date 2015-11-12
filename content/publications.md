@@ -65,6 +65,9 @@ Contemori, C., Dal Pozzo, L., & Matteini, S. (2015). Resolving pronominal anapho
 Cotet, C. D., & Veresezan, E. A. (n.d.). Affective forecasting in a negative feedback task. *Journal of Evidence-Based Psychotherapies*, *15*(2). Retrieved from http://jebp.psychotherapy.ro/vol-xv-no-1-2015/affective-forecasting-in-a-negative-feedback-task/
 {: .reference}
 
+Darby, K. P., & Sloutsky, V. M. (2015). When delays improve memory: Stabilizing memory in children may require time. *Psychological Science.* doi:10.1177/0956797615607350
+{: .reference}
+
 De Groot, F., Huettig, F., & Olivers, C. N. (2015). When meaning matters: The temporal dynamics of semantic influences on visual attention. *Journal of Experimental Psychology: Human Perception and Performance.*
 {: .reference}
 
