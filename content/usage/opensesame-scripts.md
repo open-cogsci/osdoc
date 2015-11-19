@@ -146,7 +146,7 @@ logger
 
 ## *run* statement
 
-Indicates that an item should be run. In the case of the sequence, the order of the run statements determines the order in which items are called. In the case of the parallel plug-in all items are called at the same item.
+Indicates that an item should be run. In the case of the sequence, the order of the run statements determines the order in which items are called. In the case of the parallel plug-in all items are called at the same time.
 
 *Applies to*
 
