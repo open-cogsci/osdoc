@@ -141,10 +141,16 @@ Robinaugh, D. J., Crane, M. E., Enock, P. M., & McNally, R. J. (2015). Training 
 Sassenhagen, J., & Bornkessel-Schlesewsky, I. (2015). The P600 as a correlate of ventral attention network reorientation. *Cortex*. doi:10.1016/j.cortex.2014.12.019
 {: .reference}
 
+Seithe, M., Morina, J., & Glöckner, A. (2015). Bonn eXperimental System (BoXS): An open-source platform for interactive experiments in psychology and economics. *Behavior Research Methods*, 1–22. doi:10.3758/s13428-015-0660-6
+{: .reference}
+
 Sharma, B., Liu, C., & Yao, Y. (2015). Perceptual confusability of Mandarin sounds, tones, and syllables. *Proceedings of the 18th International Congress of Phonetic Sciences*. Retrieved from <https://www.internationalphoneticassociation.org/icphs-proceedings/ICPhS2015/Papers/ICPHS0890.pdf>
 {: .reference}
 
 Silvis, J. D., Olmos Solis, K., & Donk, M. (2015). The nature of the global effect beyond the first eye movement. *Vision Research*. doi:10.1016/j.visres.2014.12.020
+{: .reference}
+
+Silvis, J. D., Belopolsky, A. V., Murris, J. W. I., & Donk, M. (2015). The effects of feature-based priming and visual working memory on oculomotor capture. *PLoS ONE*, *10*(11), e0142696. doi:10.1371/journal.pone.0142696
 {: .reference}
 
 Simpson, H. E., & del Prado Martın, F. M. (2015). Memory capacity limits in processing of natural connected speech: The psychological reality of intonation units. In *CogSci2015 Proceedings*. Retrieved from http://mindmodeling.org/cogsci2015/papers/0380/paper0380.pdf
