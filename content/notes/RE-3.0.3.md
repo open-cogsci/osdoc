@@ -65,5 +65,3 @@ python-bidi 0.3.4
 python-markdown 2.6.2
 SciPy 0.15.1
 ~~~
-
-[]

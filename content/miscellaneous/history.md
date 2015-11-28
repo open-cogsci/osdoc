@@ -5,6 +5,7 @@ group: Miscellaneous
 permalink: /history/
 ---
 
+|Nov 28, 2015	| [3.0.4][] *Interactive Ising* (maintenance) 		|
 |Nov 26, 2015	| [3.0.3][] *Interactive Ising* (maintenance) 		|
 |Nov 4, 2015	| [3.0.2][] *Interactive Ising* (maintenance) 		|
 |Oct 23, 2015	| [3.0.1][] *Interactive Ising* (maintenance) 		|
@@ -77,3 +78,4 @@ permalink: /history/
 [3.0.1]: /notes/3.0.1/
 [3.0.2]: /notes/3.0.2/
 [3.0.3]: /notes/3.0.3/
+[3.0.4]: /notes/3.0.4/
