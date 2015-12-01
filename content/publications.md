@@ -80,6 +80,9 @@ Douglas, Z. H., Maniscalco, B., Hallett, M., Wassermann, E. M., & He, B. J. (201
 Duenser, A., Lochner, M., Engelke, U., & Rozado, D. (2015). Visual and manual control for human-robot tele-operation. *IEEE Computer Graphics and Applications*. doi:10.1109/MCG.2015.4
 {: .reference}
 
+Debener, S., Emkes, R., De Vos, M., & Bleichner, M. (2015). Unobtrusive ambulatory EEG using a smartphone and flexible printed electrodes around the ear. *Scientific Reports*, 5. doi:10.1038/srep16743
+{: .reference}
+
 Failing, M. F., & Theeuwes, J. (2015). Nonspatial attentional capture by previously rewarded scene semantics. *Visual Cognition*. doi:10.1080/13506285.2014.990546
 {: .reference}
 
