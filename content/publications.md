@@ -122,8 +122,10 @@ Mathôt, S., Melmi, J.-B, & Castet, E. (2015). Intrasaccadic perception triggers
 Mathôt, S., Siebold, A., Donk, M., & Vitu, F. (2015). Large pupils predict goal-driven eye movements. *Journal of Experimental Psychology: General*. doi:10.1037/a0039168
 {: .reference}
 
-
 Nesari, S. J., & Kamari, E. (2015). Phonological errors among dyslexic and non-dyslexic children learning Persian. *International Journal of Applied Linguistics and English Literature*, *4*(3), 167–173. doi:10.7575/aiac.ijalel.v.4n.3p.167
+{: .reference}
+
+Nielen, T. M. J., Mol, S. E., Jong, M. T. S., & Bus, A. G. (2015). Attentional bias toward reading in reluctant readers. *Contemporary Educational Psychology*. doi:10.1016/j.cedpsych.2015.11.004
 {: .reference}
 
 Nuutinen, M., Virtanen, T., Rummukainen, O., & Häkkinen, J. (2015). VQone MATLAB toolbox: A graphical experiment builder for image and video quality evaluations. *Behavior Research Methods*, 1–13. doi:10.3758/s13428-014-0555-y
