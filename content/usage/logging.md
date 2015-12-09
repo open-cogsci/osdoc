@@ -49,9 +49,55 @@ You should generally not write to the log file directly and use a `logger` item 
 
 ## Format of the data files
 
-If you have used the standard logger item, data files are in plain-text, comma-separated format, which can be opened in all popular spreadsheets. If you are looking for high quality, free spreadsheet software, take a look at [Libre Office][libreoffice], [OpenOffice.org][openoffice] or [Gnumeric][]. If you use Microsoft Excel, you may need to use the 'import' function to open the data files, because Excel may not properly separate the columns otherwise.
+If you have used the standard logger item, data files are in the following format format (simply standard csv):
 
-## Merging multiple data files into one large file
+- plain-text
+- comma-separated
+- double-quoted (literal double-quotes are escaped with backward slashes)
+- unix-style line endings
+- UTF-8 encoded
+- column names on the first row
+
+## Reading and processing data files
+
+### In Python with pandas
+
+In Python, you can use (for example) [pandas](http://pandas.pydata.org/) to read csv files.
+
+~~~ .python
+import pandas
+df = pandas.read_csv('subject-1.csv')
+print(df)
+~~~
+
+### In R
+
+In R, you can simply use the `read.csv()` function.
+
+~~~ .R
+df = read.csv('subject-1.csv')
+df
+~~~
+
+### In JASP
+
+[JASP](http://jasp-stats.org/), an open-source statistics package, opens csv files straight away.
+
+### In LibreOffice Calc
+
+If you open a csv file in LibreOffice Calc, you have to indicate the exact data format, as indicated in %FigLibreOffice. (The default settings are often correct.)
+
+%--
+figure:
+ source: libreoffice.png
+ id: FigLibreOffice
+--%
+
+### In Microsoft Excel
+
+In Microsoft Excel, you need to use the Text Import Wizard.
+
+### Merging multiple data files into one large file
 
 For some purposes, such as using pivot tables, it may be convenient to merge all data files into one large file. You can do this with the Datamerger program, written by Daniel Schreij.
 
