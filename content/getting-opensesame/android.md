@@ -63,12 +63,6 @@ Implement most user interactions through the `mouse_response` item or `touch_res
 
 The resolution for the `droid` backend is fixed at 1280x800. On Android, your experiment will be automatically scaled up or down depending on the resolution of the device, but the resolution that you design with is always 1280x800.
 
-### Available Python modules
-
-The OpenSesame runtime for Android is based on the [PyGame subset 4 Android][pgs4a]. A list of available Python modules can be found here:
-
-- <http://pygame.renpy.org/api.html>
-
 ### Debugging
 
 Debug output is written to `/sdcard/opensesame-debug.txt`.
@@ -86,15 +80,145 @@ On some devices, the default virtual keyboard is unresponsive (i.e. it shows but
 - [GO Keyboard](https://play.google.com/store/apps/details?id=com.jb.emoji.gokeyboard&hl=en)
 - [Smart Keyboard Trial](https://play.google.com/store/apps/details?id=net.cdeguet.smartkeyboardtrial&hl=en)
 
-## Forum topics
+## Available Python modules
 
-A general forum topic on the OpenSesame runtime for Android:
+Below is a list of Python modules that should be available in the OpenSesame runtime for android. (This list is copied from the pgs4a now-defunct website.)
 
-- <http://forum.cogsci.nl/index.php?p=/discussion/333/opensesame-runtime-for-android>
-
-Eoin Traver's project to test the OpenSesame runtime for Android (call for testers):
-
-- <http://forum.cogsci.nl/index.php?p=/discussion/439/opensesame-mobile-call-for-testers>
+~~~
+pygame
+pygame.base
+pygame.bufferproxy
+pygame.colordict
+pygame.color
+pygame.compat
+pygame.constants
+pygame.cursors
+pygame.display
+pygame.draw
+pygame.event
+pygame.fastevent
+pygame.font
+pygame.gfxdraw
+pygame.imageext
+pygame.image
+pygame.joystick
+pygame.key
+pygame.locals
+pygame.mask
+pygame.mouse
+pygame.overlay
+pygame.rect
+pygame.rwobject
+pygame.sprite
+pygame.surface
+pygame.surflock
+pygame.sysfont
+pygame.time
+pygame.transform
+pygame.version
+_abcoll
+abc
+aliases
+array
+ast
+atexit
+base64
+bisect
+binascii
+calendar
+cmath
+codecs
+collections
+compileall
+contextlib
+copy
+copy_reg
+cStringIO
+cPickle
+datetime
+difflib
+dis
+dummy_threading
+dummy_thread
+encodings
+encodings.raw_unicode_escape
+encodings.utf_8
+encodings.zlib_codec
+errno
+fcntl
+fnmatch
+functools
+__future__
+genericpath
+getopt
+glob
+gzip
+hashlib
+heapq
+httplib
+inspect
+itertools
+keyword
+linecache
+math
+md5
+mimetools
+opcode
+optparse
+os
+operator
+parser
+pickle
+platform
+posix
+posixpath
+pprint
+py_compile
+pwd
+Queue
+random
+repr
+re
+rfc822
+select
+sets
+shlex
+shutil
+site
+socket
+sre_compile
+sre_constants
+sre_parse
+ssl
+stat
+StringIO
+string
+struct
+subprocess
+symbol
+symtable
+strop
+tarfile
+tempfile
+textwrap
+_threading_local
+threading
+time
+tokenize
+token
+traceback
+types
+urllib
+urllib2
+urlparse
+UserDict
+warnings
+weakref
+webbrowser
+zipfile
+zipimport
+zlib
+~~~
 
 [google-play]: https://play.google.com/store/apps/details?id=nl.cogsci.opensesame
 [forum]: http://forum.cogsci.nl/index.php?p=/discussion/333/a-video-of-opensesame-running-natively-on-android
