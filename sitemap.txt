@@ -21,10 +21,10 @@ getting opensesame
 tutorials
 	step-by-step tutorial (beginner)
 	attentional-blink tutorial (advanced)
+	video tutorials
+	:Udemy course by Monk Prayogshala
 	aps tutorial
 	cambridge tutorial 2014
-#	python inline scripting tutorial
-	video tutorials
 	mouse-tracking tutorial
 	cats, dogs, and capybaras
 	amorçage catégorique
@@ -43,6 +43,7 @@ usage
 	Logging and reading data files
 	Video playback
 	The prepare-run strategy
+	coroutines (running items simultaneously)
 python inline code
 	About Python
 	Common functions
