@@ -20,7 +20,7 @@ toc:
 
 ## The variable inspector
 
-The variable inspector provides an of available variables (%FigVariableInspector). You can activate the variable inspector by pressing Control + I or through the menu (Menu → View → Show variable inspector). When the experiment is not running, this overview is based on a best guess of which variables will become available during the experiment. However, when the experiment is running, the variable inspector shows how a live overview of variables and their values. This is very useful for debugging your experiment.
+The variable inspector provides an of available variables (%FigVariableInspector). You can activate the variable inspector by pressing Control + I or through the menu (Menu → View → Show variable inspector). When the experiment is not running, this overview is based on a best guess of which variables will become available during the experiment. However, when the experiment is running, the variable inspector shows a live overview of variables and their values. This is very useful for debugging your experiment.
 
 %--
 figure:
