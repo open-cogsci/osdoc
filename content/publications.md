@@ -30,7 +30,12 @@ If you have used OpenSesame for your work, or discuss the software in your work,
 
 OpenSesame is used for, discussed in, or mentioned in:
 
-### 2015 / in press / online first
+### 2016 / in press / online first
+
+Failing, M. F., & Theeuwes, J. (2016). Reward alters the perception of time. *Cognition*, 148, 19–26. doi:10.1016/j.cognition.2015.12.005
+{: .reference}
+
+### 2015
 
 Alday, P. M., Schlesewsky, M., & Bornkessel-Schlesewsky, I. (2015). Discovering prominence and its role in language processing: An individual (differences) approach. *Linguistic Vanguard*. doi:10.1515/lingvan-2014-1013
 {: .reference}
