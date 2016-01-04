@@ -18,6 +18,8 @@ getting opensesame
 	running on a tablet/ mobile device
 	running on a raspberry pi
 	development snapshots
+	test
+		subtest
 tutorials
 	step-by-step tutorial (beginner)
 	attentional-blink tutorial (advanced)

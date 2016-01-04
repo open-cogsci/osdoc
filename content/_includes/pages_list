@@ -4,15 +4,23 @@
 			{% if expanded == 1 or node.level == 0 or group == null or group == node.group or only_group == node.group %}
 				{% if node.ext_url == null %}
 					{% if page.url == node.url %}
-						<span class="active {{node.menuclass}} lang-{{ node.lang }} level-{{ node.level}}"><a href="{{ site.host }}{{node.url}}">{{node.title}}</a></span>
+						<span class="active {{node.menuclass}} lang-{{ node.lang }} level-{{ node.level}}">
+							<a href="{{ site.host }}{{node.url}}">{{node.title}}</a>
+						</span>
 					{% else %}
-						<span class="inactive {{node.menuclass}} lang-{{ node.lang }} level-{{ node.level}}"><a href="{{ site.host }}{{node.url}}">{{node.title}}</a></span>
+						<span class="inactive {{node.menuclass}} lang-{{ node.lang }} level-{{ node.level}}">
+							<a href="{{ site.host }}{{node.url}}">{{node.title}}</a>
+						</span>
 					{% endif %}
 				{% else %}
 					{% if page.url == node.url %}
-						<span class="active {{node.menuclass}} lang-{{ node.lang }} level-{{ node.level}}"><a target="_blank" href="{{node.ext_url}}">{{node.title}}</a></span>
+						<span class="active {{node.menuclass}} lang-{{ node.lang }} level-{{ node.level}}">
+							<a target="_blank" href="{{node.ext_url}}">{{node.title}}</a>
+						</span>
 					{% else %}
-						<span class="inactive {{node.menuclass}} lang-{{ node.lang }} level-{{ node.level}}"><a target="_blank" href="{{node.ext_url}}">{{node.title}}</a></span>
+						<span class="inactive {{node.menuclass}} lang-{{ node.lang }} level-{{ node.level}}">
+							<a target="_blank" href="{{node.ext_url}}">{{node.title}}</a>
+						</span>
 					{% endif %}
 				{% endif %}
 			{% endif %}
