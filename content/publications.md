@@ -35,6 +35,16 @@ OpenSesame is used for, discussed in, or mentioned in:
 Failing, M. F., & Theeuwes, J. (2016). Reward alters the perception of time. *Cognition*, 148, 19–26. doi:10.1016/j.cognition.2015.12.005
 {: .reference}
 
+Hermens, F., Bindemann, M., & Mike Burton, A. (2016). Responding to social and symbolic extrafoveal cues: cue shape trumps biological relevance. *Psychological Research*. doi:10.1007/s00426-015-0733-2
+{: .reference}
+
+Holiday, J. J. (in press). Second language experience can hinder
+the discrimination of non-native contrasts. *Phonetica*.
+{: .reference}
+
+van der Linden, L., & Vitu, F. (2016). On the optimal viewing position for object processing. *Attention, Perception, & Psychophysics*. doi:10.3758/s13414-015-1025-z
+{: .reference}
+
 ### 2015
 
 Alday, P. M., Schlesewsky, M., & Bornkessel-Schlesewsky, I. (2015). Discovering prominence and its role in language processing: An individual (differences) approach. *Linguistic Vanguard*. doi:10.1515/lingvan-2014-1013
