@@ -22,7 +22,7 @@ tutorials
 	step-by-step tutorial (beginner)
 	attentional-blink tutorial (advanced)
 	video tutorials
-	:Udemy course by Monk Prayogshala
+	Udemy course by Monk Prayogshala
 	aps tutorial
 	cambridge tutorial 2014
 	mouse-tracking tutorial
