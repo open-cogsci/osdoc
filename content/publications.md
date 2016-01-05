@@ -42,6 +42,9 @@ Holiday, J. J. (in press). Second language experience can hinder
 the discrimination of non-native contrasts. *Phonetica*.
 {: .reference}
 
+Levin, Y., & Tzelgov, J. (2016). Contingency learning is not affected by conflict experience: Evidence from a task conflict-free, item-specific Stroop paradigm. *Acta Psychologica*, 164, 39–45. doi:10.1016/j.actpsy.2015.12.009
+{: .reference}
+
 van der Linden, L., & Vitu, F. (2016). On the optimal viewing position for object processing. *Attention, Perception, & Psychophysics*. doi:10.3758/s13414-015-1025-z
 {: .reference}
 
