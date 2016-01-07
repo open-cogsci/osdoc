@@ -82,7 +82,6 @@ Back-ends
 	Xpyriment
 	Psycho
 	Legacy
-	OpenGL
 	Droid
 External devices
 	Ambulatory Monitoring System (VU-AMS)
@@ -158,6 +157,7 @@ BRM Paper
 	:release notes for 3.0.2
 	:release notes for 3.0.3
 	:release notes for 3.0.4
+	:release notes for 3.0.5
 :APS Workshop
 :Page not found
 :languages

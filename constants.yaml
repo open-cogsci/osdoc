@@ -1,8 +1,9 @@
-version: 3.0.4
+version: 3.0.5
 status: stable
 codename: Interactive Ising
-release-date: Nov 28, 2015
-url-windows-exe: https://github.com/smathot/OpenSesame/releases/download/release%2F3.0.4/opensesame_3.0.4-py2.7-win32-1.exe
-url-windows-zip: https://github.com/smathot/OpenSesame/releases/download/release%2F3.0.4/opensesame_3.0.4-py2.7-win32-1.zip
+release-date: Jan 7, 2016
+url-windows-exe-py2: https://github.com/smathot/OpenSesame/releases/download/release%2F3.0.5/opensesame_3.0.5-py2.7-win32-1.exe
+url-windows-zip-py2: https://github.com/smathot/OpenSesame/releases/download/release%2F3.0.5/opensesame_3.0.5-py2.7-win32-1.zip
+url-windows-zip-py3: https://github.com/smathot/OpenSesame/releases/download/release%2F3.0.5/opensesame_3.0.5-py3.4-win32-1.zip
 url-source: https://github.com/smathot/OpenSesame
 url-old: https://github.com/smathot/OpenSesame/releases

@@ -1,57 +1,73 @@
 <h3>Common downloads</h3>
 
 <p class="button-winexe">
-	<a target="_blank" href="$url-windows-exe$" >
-	Windows XP/Vista/7 installer (.exe)
-	</a>
-</p>
-
-<p class="button-debian">
-	<a href="#ubuntu">
-	Ubuntu/ Debian package
-	</a>
-</p>
-
-<p class="button-arch">
-	<a target="_blank" href="https://aur.archlinux.org/packages/opensesame/" >
-	Arch Linux package
-	</a>
-</p>
-
-<p class="button-android">
-	<a href="/getting-opensesame/android">
-	OpenSesame runtime for Android
+	<a target="_blank" href="$url-windows-exe-py2$" >
+	Windows installer (.exe)<br />
+	<i>Based on Python 2.7</i>
 	</a>
 </p>
 
 <p class="button-macos">
 	<a href="#macos">
-	Mac OS package (.dmg)
+	Mac OS package (.dmg)<br />
+	<i>Read installation instructions</i>
+	</a>
+</p>
+
+<p class="button-android">
+	<a href="/getting-opensesame/android">
+	Android<br />
+	<i>Run experiments on a tablet or phone</i>
+	</a>
+</p>
+
+<p class="button-debian">
+	<a href="#ubuntu">
+	Ubuntu package<br />
+	<i>Read installation instructions</i>
+	</a>
+</p>
+
+<p class="button-arch">
+	<a target="_blank" href="https://aur.archlinux.org/packages/opensesame/" >
+	Arch Linux package<br />
+	<i>Read installation instructions</i>
 	</a>
 </p>
 
 <h3>Advanced downloads</h3>
 
 <p class="button-winzip">
-	<a target="_blank"  href="$url-windows-zip$">
-	Windows XP/Vista/7 no installation required (.zip)
+	<a target="_blank"  href="$url-windows-zip-py2$">
+	Windows no installation required (.zip)<br />
+	<i>Unzip and run! Based on Python 2.7</i>
+	</a>
+</p>
+
+<p class="button-winpy3">
+	<a target="_blank"  href="$url-windows-zip-py3$">
+	Windows no installation required (.zip)<br />
+	<i>Unzip and run! Based on Python 3.4 (experimental)</i>
 	</a>
 </p>
 
 <p class="button-src">
 	<a target="_blank" href="$url-source$">
-	Source code (GitHub)
+	Source code<br />
+	<i>Hosted on GitHub</i>
 	</a>
 </p>
 
 <p class="button-dev">
 	<a href="/getting-opensesame/development-snapshots/">
-	Development snapshots (pre-releases)
+	Prerelease packages<br />
+	<i>Live on the edge!</i>
 	</a>
 </p>
 
 <p class="button-old">
 	<a target="_blank" href="$url-old$">
-	Older downloads
+	Older downloads<br />
+	<i>So retro!</i>
 	</a>
 </p>

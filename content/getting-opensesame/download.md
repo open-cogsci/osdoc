@@ -15,21 +15,9 @@ The latest $status$ version of OpenSesame is $version$ *$codename$*, released on
 
 {% include downloads %}
 
-## Windows XP / Vista / 7
+## Install on Ubuntu/ Linux Mint {#ubuntu}
 
-There are a number of ways to run OpenSesame under Windows:
-
-- Use the automated installer (see link above). After installation, you can run OpenSesame from the start menu.
-- Download the Windows portable .zip file (see link above) and extract it to a location of your choice.
-- Download the WinPython-based package, which comes with a slightly different set of modules and offers more flexibility for advanced users. For more information, see [this article][python-portable].
-
-## Ubuntu/ Debian/ Linux Mint {#ubuntu}
-
-OpenSesame is available through the [Cogsci.nl PPA] (Ubuntu only). An older version is available through [NeuroDebian] (for Debian, Ubuntu, Linux Mint, and other derivatives).
-
-### Cogsci.nl PPA
-
-To add the [Cogsci.nl PPA] to your software sources and install OpenSesame, run the following commands in a terminal:
+OpenSesame is available through the [Cogsci.nl PPA]. To add this repository to your software sources and install OpenSesame, run the following commands in a terminal:
 
 	sudo add-apt-repository ppa:smathot/cogscinl
 	sudo apt-get update
@@ -39,14 +27,7 @@ If you experience missing icons, please install the package `gnome-icon-theme-fu
 
 	sudo apt-get install gnome-icon-theme-full
 
-### NeuroDebian
-
-Instructions for adding [NeuroDebian] to your software sources can be found on the [NeuroDebian] website. Once you have done this, you can install OpenSesame by running the following commands in a terminal:
-
-	sudo apt-get update
-	sudo apt-get install opensesame
-
-## Mac OS {#macos}
+## Install on Mac OS {#macos}
 
 We are looking for someone to improve and maintain the Mac OS packages for OpenSesame!
 {: .page-notification}
@@ -68,7 +49,7 @@ Older versions can be found here:
 
 For other OS X versions of OpenSesame refer to <http://www.cogsci.nl/dschreij/opensesame-mac/>.
 
-## Other platforms
+## Install on other platforms
 
 If there are no packages provided for your platform, you will need to run OpenSesame from source, as [per these instructions][running-from-source].
 
