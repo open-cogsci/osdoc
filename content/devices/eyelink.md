@@ -29,31 +29,25 @@ The Eyelink display software provides the libraries that are required to communi
 
 - <https://www.sr-support.com/forums/showthread.php?t=6>
 
-Add the following directory to the Path (this may have been added to the path automatically, but check to make sure):
+If you extract the .zip, and then run the .exe installer, the EyeLink display will be installed in one of the following folders (depending on your version of Windows:
 
-	C:\Program Files\SR Research\EyeLink\libs
+	C:\Program Files\SR Research\EyeLink\
+	C:\Program Files (x86)\SR Research\EyeLink
 
-You can do this by opening "My Computer", clicking on "View system information", opening the "Advanced" tab, clicking on "Environment Variables" and appending `;C:\Program Files\SR Research\EyeLink\libs` to the Path variable (under System variables).
+In this folder, there is a `libs` subfolder, which you need to add to the system Path (this may have been added to the path automatically, but check to make sure). You can do this by opening "My Computer", clicking on "View system information", opening the "Advanced" tab, clicking on "Environment Variables" and appending `;C:\Program Files\SR Research\EyeLink\libs` or (depending on your system) `;C:\Program Files (x86)\SR Research\EyeLink\libs` to the Path variable (under System variables).
 
 ### Installing PyLink
 
-PyLink is the Python library for EyeLink support. You can download Pylink from here:
+PyLink is the Python library for EyeLink support. PyLink is included with recent versions of the EyeLink display software (described above), and you can find it in one of the following folders (depending on your version of Windows):
+
+	C:\Program Files\SR Research\EyeLink\SampleExperiments\Python
+	C:\Program Files (x86)\SR Research\EyeLink\SampleExperiments\Python
+
+Alternatively, you can download older versions of Pylink from here:
 
 - <https://www.sr-support.com/showthread.php?14-Pylink>
 
-You should grab `pylink_win32.zip`. In this archive, you will find several folders, each corresponding to a specific Python version. Currently, OpenSesame uses Python 2.7, so you need to get `pylink27`. Copy this folder to the OpenSesame program folder, and rename it to `pylink`.
-
-If you experience crashes with the version of PyLink above, you can also try the version posted in this thread:
-
-- <https://www.sr-support.com/showthread.php?4126-PyLink-seems-to-interfere-with-PsychoPy>
-
-In `NOSDL-PyLink.zip`, you will find two folders. For the 32 bits Python 2.7, which is what OpenSesame uses by default, you need to extract `pylink27-32bit` and install it as described above.
-
-### Alternative: WinPython
-
-If you have trouble getting PyLink to work in OpenSesame, or if you experience random crashes, you can use the WinPython-based package of OpenSesame. This package comes with EyeLink support out of the box. See:
-
-- [/getting-opensesame/running-with-python-portable/](/getting-opensesame/running-with-python-portable/)
+To install PyLink in OpenSesame, simply copy the folder with the correct PyLink version to the OpenSesame program folder (i.e. `pylink27` for Python 2.7) and rename the folder to `pylink` (i.e. strip the Python version number from the folder name).
 
 ## Ubuntu
 
@@ -73,7 +67,7 @@ For 64 bit, add the following lines:
 	# Eyelink repository (64bit)
 	deb http://download.sr-support.com/x64 /
 
-Save the file (Control+O, Enter) and exit (Control+X). Now reload the software sources, and install the Eyelink display software (the version number might vary, at the time of writing it is 1.9):
+Don't fortget the trailing "/" character! Save the file (Control+O, Enter) and exit (Control+X). Now reload the software sources, and install the Eyelink display software (the version number might vary, at the time of writing it is 1.9):
 
 	sudo apt-get update
 	sudo apt-get install eyelink-display-software1.9
@@ -100,4 +94,4 @@ After you have install the EyeLink display software and PyLink per the instructi
 
 The OpenSesame EyeLink plug-ins have been deprecated in favor of PyGaze. However, even though the EyeLink plug-ins are no longer maintained, they still work. For more information, visit the older version of this documentation page:
 
-- <http://osdoc.cogsci.nl/2.8.3/devices/eyelink>
+- <http://osdoc.cogsci.nl/2.8/devices/eyelink>
