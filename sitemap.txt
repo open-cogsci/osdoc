@@ -10,6 +10,10 @@
 
 home
 about
+test level 0
+	test level 1
+		test level 2
+			test level 3
 getting opensesame
 	download
 	running from source
@@ -18,8 +22,6 @@ getting opensesame
 	running on a tablet/ mobile device
 	running on a raspberry pi
 	development snapshots
-	test
-		subtest
 tutorials
 	step-by-step tutorial (beginner)
 	attentional-blink tutorial (advanced)

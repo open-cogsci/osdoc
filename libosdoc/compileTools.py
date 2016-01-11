@@ -241,22 +241,17 @@ def preprocessSite(content, group, branch, status):
 	"""
 
 	print(u'\nCompiling pages ...')
-	sortkey = [0,0,0]
+	sortkey = [0]*10
 	_group = 'General'
 	sitemap = open('sitemap.txt').read().decode(u'utf-8')
 	YAMLSitemap = {}
 	for title in sitemap.split(u'\n'):
 		if title.startswith(u'#') or title.strip() == u'':
 			continue
-		if title.startswith(u'\t\t'):
-			sortkey[2] += 1
-			level = 2
-		elif title.startswith(u'\t'):
-			sortkey[1] += 1
-			level = 1
-		else:
-			sortkey[0] += 1
-			level = 0
+		for level in range(0, 10):
+			if not title.startswith(u'\t'*(level+1)):
+				break
+		sortkey[level] += 1
 		title = title.strip()
 		if title.startswith(u':'):
 			show = False
@@ -275,7 +270,7 @@ def preprocessSite(content, group, branch, status):
 					_group = info[u'group']
 				print '-> %s (%s)' % (title, path)
 				info[u'show'] = show
-				info[u'sortkey'] = u'%.3d.%.3d.%3d' % tuple(sortkey)
+				info[u'sortkey'] = u'.'.join(str(level) for level in sortkey)
 				info[u'level'] = level
 				info[u'group'] = _group
 				info[u'figures'] = 0
