@@ -91,6 +91,7 @@ External devices
 	Joystick
 	Eyelink
 	EyeTribe
+	:Mouse tracking
 	Oculus rift (virtual reality)
 	PyGaze (eye tracking)
 	Serial and parallel port
