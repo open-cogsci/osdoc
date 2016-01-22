@@ -1,6 +1,6 @@
 ---
 layout: osdoc
-title: Mouse-tracking (using the mousetrap plug-ins)
+title: Mouse-tracking
 group: Devices
 permalink: /mouse-tracking/
 ---
