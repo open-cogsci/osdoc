@@ -4,7 +4,6 @@ title: Publications
 group: General
 permalink: /publications/
 singleton: true
-parser: academicmarkdown
 ---
 
 ## Overview
@@ -32,6 +31,12 @@ OpenSesame is used for, discussed in, or mentioned in:
 
 ### 2016 / in press / online first
 
+Adamos, D. A., Dimitriadis, S. I., & Laskaris, N. A. (2016). Towards the bio-personalization of music recommendation systems: A single-sensor EEG biomarker of subjective music preference. *Information Sciences*. doi:10.1016/j.ins.2016.01.005
+{: .reference}
+
+Duncan, M. J., Smith, M., Clarke, N. D., Eyre, E. L. J., & Wright, S. L. (2016). Dual task performance in older adults: Examining visual discrimination performance whilst treadmill walking at preferred and non-preferred speeds. *Behavioural Brain Research*, *302*, 100–103. doi:10.1016/j.bbr.2016.01.020
+{: .reference}
+
 Failing, M. F., & Theeuwes, J. (2016). Reward alters the perception of time. *Cognition*, 148, 19–26. doi:10.1016/j.cognition.2015.12.005
 {: .reference}
 
@@ -42,10 +47,16 @@ Holiday, J. J. (in press). Second language experience can hinder
 the discrimination of non-native contrasts. *Phonetica*.
 {: .reference}
 
+Kruijne, W., & Meeter, M. (2016). Implicit short-and long-term memory direct our gaze in visual search. *Attention, Perception, & Psychophysics*. doi:10.3758/s13414-015-1021-3
+{: .reference}
+
 Levin, Y., & Tzelgov, J. (2016). Contingency learning is not affected by conflict experience: Evidence from a task conflict-free, item-specific Stroop paradigm. *Acta Psychologica*, 164, 39–45. doi:10.1016/j.actpsy.2015.12.009
 {: .reference}
 
 van der Linden, L., & Vitu, F. (2016). On the optimal viewing position for object processing. *Attention, Perception, & Psychophysics*. doi:10.3758/s13414-015-1025-z
+{: .reference}
+
+Siebold, A., Weaver, M. D., Donk, M., & van Zoest, W. (2016). Social salience does not transfer to oculomotor visual search. *Visual Cognition*. doi:10.1080/13506285.2015.1121946
 {: .reference}
 
 ### 2015
