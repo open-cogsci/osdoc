@@ -89,6 +89,7 @@ External devices
 	Button box
 	Grip devices (U Plymouth)
 	Joystick
+	Emotiv EEG
 	Eyelink
 	EyeTribe
 	Mouse tracking
