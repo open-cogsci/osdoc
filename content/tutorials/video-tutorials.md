@@ -28,23 +28,9 @@ video:
   The step-by-step tutorial in video form.
 --%
 
-## Using Python inline script in OpenSesame 3.0
+## Tutorials for older versions of OpenSesame
 
-- Duration: 17 minutes
-- OpenSesame version: 3.0.2
-
-%--
-video:
- source: youtube
- id: VidTutorial30
- videoid: sEjQlYCmY_w
- width: 640
- height: 360
- caption: |
-  A screencast that the demonstrates the basics of using Python inline script in OpenSesame.
---%
-
-## Creating a cat-faces experiment
+### Creating a cat-faces experiment
 
 The video below introduces the basic functionality of OpenSesame by providing a step-by-step walk-through for creating a 'cat-faces' experiment. In this experiment, the participant's task is to judge whether a (picture of a) cat is male or female. Quite tricky (the task, that is, creating the experiment is easy), but apparently people can do it after some training.
 
@@ -62,7 +48,7 @@ video:
   Video tutorial by <a href="http://chrislongmore.co.uk/">Chris Longmore</a>.
 --%
 
-## Implementing counterbalancing
+### Implementing counterbalancing
 
 The video below shows how you can implement counterbalancing in OpenSesame.
 
@@ -80,7 +66,7 @@ video:
   Video tutorial by <a href="http://chrislongmore.co.uk/">Chris Longmore</a>.
 --%
 
-## Creating an affordances/ orientation experiment
+### Creating an affordances/ orientation experiment
 
 The video below shows how to create a typical 'affordances/ orientation effect;-type experiment in OpenSesame in slightly over 5 minutes.
 
@@ -96,6 +82,47 @@ video:
  height: 360
  caption: |
   Creating an affordances/ orientation experiment.
+--%
+
+## Python tutorials
+
+### Using Python inline script in OpenSesame 3.0
+
+%--
+video:
+ source: youtube
+ id: VidTutorial30
+ videoid: sEjQlYCmY_w
+ width: 640
+ height: 360
+ caption: |
+  A screencast that the demonstrates the basics of using Python inline script in OpenSesame.
+--%
+
+### 7 simple tricks to write better Python
+
+%--
+video:
+ source: youtube
+ id: Vid7Tricks
+ videoid: VBokjWj_cEA
+ width: 640
+ height: 360
+ caption: |
+  7 simple tricks to write better Python.
+--%
+
+### Using lists effectively in Python
+
+%--
+video:
+ source: youtube
+ id: VidUsingLists
+ videoid: S55yOHvUyGk
+ width: 640
+ height: 360
+ caption: |
+  Using lists effectively in Python
 --%
 
 [chris-longmore]: http://www.chrislongmore.co.uk/
