@@ -34,6 +34,9 @@ OpenSesame is used for, discussed in, or mentioned in:
 Adamos, D. A., Dimitriadis, S. I., & Laskaris, N. A. (2016). Towards the bio-personalization of music recommendation systems: A single-sensor EEG biomarker of subjective music preference. *Information Sciences*. doi:10.1016/j.ins.2016.01.005
 {: .reference}
 
+Borja, M. F., Chung, S., & Wagers, M. (2015). Constituent order and parser control processes in Chamorro. In *Proceedings of the 21st Annual Meeting of the Austronesian Formal Linguistics Association*.
+{: .reference}
+
 Duncan, M. J., Smith, M., Clarke, N. D., Eyre, E. L. J., & Wright, S. L. (2016). Dual task performance in older adults: Examining visual discrimination performance whilst treadmill walking at preferred and non-preferred speeds. *Behavioural Brain Research*, *302*, 100–103. doi:10.1016/j.bbr.2016.01.020
 {: .reference}
 
@@ -54,6 +57,9 @@ Levin, Y., & Tzelgov, J. (2016). Contingency learning is not affected by conflic
 {: .reference}
 
 van der Linden, L., & Vitu, F. (2016). On the optimal viewing position for object processing. *Attention, Perception, & Psychophysics*. doi:10.3758/s13414-015-1025-z
+{: .reference}
+
+Mathôt, S., Melmi, J.-B., van der Linden, L., & Van der Stigchel, S. (2016). The mind-writing pupil: a human-computer interface based on decoding of covert attention through pupillometry. *PLoS ONE*, *11*(2), e0148805. doi:10.1371/journal.pone.0148805
 {: .reference}
 
 Siebold, A., Weaver, M. D., Donk, M., & van Zoest, W. (2016). Social salience does not transfer to oculomotor visual search. *Visual Cognition*. doi:10.1080/13506285.2015.1121946
