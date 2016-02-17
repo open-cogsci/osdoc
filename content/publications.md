@@ -59,6 +59,9 @@ Levin, Y., & Tzelgov, J. (2016). Contingency learning is not affected by conflic
 van der Linden, L., & Vitu, F. (2016). On the optimal viewing position for object processing. *Attention, Perception, & Psychophysics*. doi:10.3758/s13414-015-1025-z
 {: .reference}
 
+Littel, M., van den Hout, M. A., & Engelhard, I. M. (2016). Desensitizing addiction: Using eye movements to reduce the intensity of substance-related mental imagery and craving. *Addictive Disorders*, *14*. doi:10.3389/fpsyt.2016.00014
+{: .reference}
+
 Mathôt, S., Melmi, J.-B., van der Linden, L., & Van der Stigchel, S. (2016). The mind-writing pupil: a human-computer interface based on decoding of covert attention through pupillometry. *PLoS ONE*, *11*(2), e0148805. doi:10.1371/journal.pone.0148805
 {: .reference}
 
