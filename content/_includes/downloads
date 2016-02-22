@@ -8,9 +8,9 @@
 </p>
 
 <p class="button-macos">
-	<a href="#macos">
+	<a target="_blank" href="$url-osx-dmg-py2$" >
 	Mac OS package (.dmg)<br />
-	<i>Read installation instructions</i>
+	<i>Based on Python 2.7</i>
 	</a>
 </p>
 
