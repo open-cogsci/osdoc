@@ -160,6 +160,9 @@ Mathôt, S., Melmi, J.-B, & Castet, E. (2015). Intrasaccadic perception triggers
 Mathôt, S., Siebold, A., Donk, M., & Vitu, F. (2015). Large pupils predict goal-driven eye movements. *Journal of Experimental Psychology: General*. doi:10.1037/a0039168
 {: .reference}
 
+van Moorselaar, D., Theeuwes, J., & Olivers, C. N. (2016). Learning changes the attentional status of prospective memories. *Psychonomic Bulletin & Review*, 1–8. doi:10.3758/s13423-016-1008-7
+{: .reference}
+
 Nesari, S. J., & Kamari, E. (2015). Phonological errors among dyslexic and non-dyslexic children learning Persian. *International Journal of Applied Linguistics and English Literature*, *4*(3), 167–173. doi:10.7575/aiac.ijalel.v.4n.3p.167
 {: .reference}
 
