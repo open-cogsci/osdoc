@@ -43,6 +43,9 @@ Duncan, M. J., Smith, M., Clarke, N. D., Eyre, E. L. J., & Wright, S. L. (2016).
 Failing, M. F., & Theeuwes, J. (2016). Reward alters the perception of time. *Cognition*, 148, 19–26. doi:10.1016/j.cognition.2015.12.005
 {: .reference}
 
+Gordon, S., Getter, N., Oz, I., Garbi, D., & Todder, D. (2016). Mechanisms of cognitive control in cadet pilots. *Disaster and Military Medicine*. doi:10.1186/s40696-016-0016-5
+{: .reference}
+
 Hermens, F., Bindemann, M., & Mike Burton, A. (2016). Responding to social and symbolic extrafoveal cues: cue shape trumps biological relevance. *Psychological Research*. doi:10.1007/s00426-015-0733-2
 {: .reference}
 
@@ -62,10 +65,16 @@ van der Linden, L., & Vitu, F. (2016). On the optimal viewing position for objec
 Littel, M., van den Hout, M. A., & Engelhard, I. M. (2016). Desensitizing addiction: Using eye movements to reduce the intensity of substance-related mental imagery and craving. *Addictive Disorders*, *14*. doi:10.3389/fpsyt.2016.00014
 {: .reference}
 
+Loy, J. E., Rohde, H., & Corley, M. (in press). Effects of disfluency in online interpretation of deception. *Cognitive Science*.
+{: .reference}
+
 Mathôt, S., Melmi, J.-B., van der Linden, L., & Van der Stigchel, S. (2016). The mind-writing pupil: a human-computer interface based on decoding of covert attention through pupillometry. *PLoS ONE*, *11*(2), e0148805. doi:10.1371/journal.pone.0148805
 {: .reference}
 
 Siebold, A., Weaver, M. D., Donk, M., & van Zoest, W. (2016). Social salience does not transfer to oculomotor visual search. *Visual Cognition*. doi:10.1080/13506285.2015.1121946
+{: .reference}
+
+Whiting, W. L., & Murdock, K. K. (2016). Emerging adults’ sleep patterns and attentional capture: the pivotal role of consistency. *Cognitive Processing*. doi:10.1007/s10339-016-0754-9
 {: .reference}
 
 ### 2015
