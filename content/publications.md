@@ -37,6 +37,9 @@ Adamos, D. A., Dimitriadis, S. I., & Laskaris, N. A. (2016). Towards the bio-per
 Borja, M. F., Chung, S., & Wagers, M. (2015). Constituent order and parser control processes in Chamorro. In *Proceedings of the 21st Annual Meeting of the Austronesian Formal Linguistics Association*.
 {: .reference}
 
+Cuperus, A. A., Laken, M., van den Hout, M. A., & Engelhard, I. M. (2016). Degrading emotional memories induced by a virtual reality paradigm. *Journal of Behavior Therapy and Experimental Psychiatry*. doi:10.1016/j.jbtep.2016.03.004
+{: .reference}
+
 Duncan, M. J., Smith, M., Clarke, N. D., Eyre, E. L. J., & Wright, S. L. (2016). Dual task performance in older adults: Examining visual discrimination performance whilst treadmill walking at preferred and non-preferred speeds. *Behavioural Brain Research*, *302*, 100–103. doi:10.1016/j.bbr.2016.01.020
 {: .reference}
 
