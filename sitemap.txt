@@ -161,6 +161,7 @@ BRM Paper
 	:release notes for 3.0.4
 	:release notes for 3.0.5
 	:release notes for 3.0.6
+	:release notes for 3.0.7
 :APS Workshop
 :Page not found
 :languages
