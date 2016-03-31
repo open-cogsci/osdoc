@@ -72,11 +72,11 @@ print(df)
 
 ### In R
 
-In R, you can simply use the `read.csv()` function.
+In R, you can simply use the `read.csv()` function to read a single data file.
 
 ~~~ .R
-df = read.csv('subject-1.csv')
-df
+df = read.csv('subject-1.csv', encoding = 'UTF-8')
+head(df)
 ~~~
 
 ### In JASP
