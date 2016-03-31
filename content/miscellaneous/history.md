@@ -5,8 +5,8 @@ group: Miscellaneous
 permalink: /history/
 ---
 
-|Feb 16, 2016	| [3.0.7][] *Interactive Ising* (maintenance) 		|
-|Jan 25, 2016	| [3.0.6][] *Interactive Ising* (maintenance) 		|
+|Mar 16, 2016	| [3.0.7][] *Interactive Ising* (maintenance) 		|
+|Feb 25, 2016	| [3.0.6][] *Interactive Ising* (maintenance) 		|
 |Jan 7, 2016	| [3.0.5][] *Interactive Ising* (maintenance) 		|
 |Nov 28, 2015	| [3.0.4][] *Interactive Ising* (maintenance) 		|
 |Nov 26, 2015	| [3.0.3][] *Interactive Ising* (maintenance) 		|
