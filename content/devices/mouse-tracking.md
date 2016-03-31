@@ -13,3 +13,5 @@ The [mousetrap form plug-in](https://github.com/PascalKieslich/mousetrap-os/blob
 Besides, both plug-ins also provide Python classes, which can be used in Python inline scripts for maximum customizability.
 
 You can download the latest release of the plug-ins from the [GitHub release page](https://github.com/PascalKieslich/mousetrap-os/releases). More information about each plug-in can be found in its respective helpfiles (linked above). A number of example experiments that demonstrate the basic features are available in the [examples folder](https://github.com/PascalKieslich/mousetrap-os/tree/master/examples) on GitHub.
+
+Once data have been collected with the plug-ins, the data can be processed, analyzed and visualized using the [mousetrap R package](https://github.com/PascalKieslich/mousetrap).
