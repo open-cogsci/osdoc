@@ -79,16 +79,13 @@ df = read.csv('subject-1.csv', encoding = 'UTF-8')
 head(df)
 ~~~
 
-Besides, you can use the `read_opensesame()` function from the [readbulk](https://github.com/pascalkieslich/readbulk) package to easily read and merge multiple data files into one large data frame. The package is available on CRAN and can be installed via `install.packages('readbulk')`.
+In addition, you can use the `read_opensesame()` function from the [readbulk](https://github.com/pascalkieslich/readbulk) package to easily read and merge multiple data files into one large data frame. The package is available on CRAN and can be installed via `install.packages('readbulk')`.
 
 ~~~ .R
-# Load package
-library(readbulk)
-
 # Read and merge all data files stored in the folder 'raw_data'
+library(readbulk)
 df = read_opensesame('raw_data')
 ~~~
-
 
 ### In JASP
 
