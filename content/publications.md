@@ -74,7 +74,13 @@ Loy, J. E., Rohde, H., & Corley, M. (in press). Effects of disfluency in online 
 Mathôt, S., Melmi, J.-B., van der Linden, L., & Van der Stigchel, S. (2016). The mind-writing pupil: a human-computer interface based on decoding of covert attention through pupillometry. *PLoS ONE*, *11*(2), e0148805. doi:10.1371/journal.pone.0148805
 {: .reference}
 
+Patil, I., Melsbach, J., Hennig-Fast, K., & Silani, G. (2016). Divergent roles of autistic and alexithymic traits in utilitarian moral judgments in adults with autism. *Scientific Reports*, 6. doi:10.1038/srep23637
+{: .reference}
+
 Siebold, A., Weaver, M. D., Donk, M., & van Zoest, W. (2016). Social salience does not transfer to oculomotor visual search. *Visual Cognition*. doi:10.1080/13506285.2015.1121946
+{: .reference}
+
+Vadillo, M. A., & Garaizar, P. (2016). The effect of noise-induced variance on parameter recovery from reaction times. *BMC Bioinformatics*, *17*, 147. doi:10.1186/s12859-016-0993-x
 {: .reference}
 
 Whiting, W. L., & Murdock, K. K. (2016). Emerging adults’ sleep patterns and attentional capture: the pivotal role of consistency. *Cognitive Processing*. doi:10.1007/s10339-016-0754-9
