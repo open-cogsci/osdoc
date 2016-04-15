@@ -169,5 +169,6 @@ BRM Paper
 :Formation AMU Part 2
 :NeuroSpin 2015
 :EPOS workshop 2015
+AMU Workshop 2016
 #Experiments
 #Expériences
