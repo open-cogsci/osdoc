@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block head %}
+{{ super() }}
+{% if page.description %}
+<meta name="description" content="{{page.description}}" />
+{% endif %}
+
+{% for tag in page.tags %}
+<meta name="tags" content="{{tag}}" />
+{% endfor %}
+
+{% endblock %}
+
+{% block page_title %}
+{{ page.title }} // OpenSesame documentation
+{% endblock %}
+
+{% block title %}
+{{ page.title }}
+{% endblock title %}
+
+{% block content %}
+<section id="content" class="body">
+<div class="entry-content">
+
+{% if page.uptodate == "false" %}
+<div class="page-notification">
+This page has been written for an older version of OpenSesame.
+</div>
+{% endif %}
+
+<!-- {% for trans in pages %}
+	{% if trans.stub == page.stub and trans.lang != page.lang %}
+		<div class='cogsci-translation-link'>
+		{% if trans.lang == "en" %}
+			<a href="{{ SITEURL }}/{{ trans.url }}">English</a>
+		{% elif trans.lang == "fr" %}
+			<a href="{{ SITEURL }}/{{ trans.url }}">français</a>
+		{% endif %}
+		</div>
+	{% endif %}
+{% endfor %}
+
+<ol class="breadcrumb">
+  <li><a href="{{ SITEURL }}/">OpenSesame</a></li>
+  {% for parent in page.parents %}
+  <li><a href="{{ SITEURL }}/{{ parent.url }}">{{ parent.title }}</a></li>
+  {% endfor %}
+  <li class="active">{{ page.title }}</li>
+</ol> -->
+
+{% if page.show_title != "false" %}
+<h1>{{page.title}}</h1>
+{% endif %}
+
+{{ page.content }}
+</div><!-- /.entry-content -->
+
+</section>
+{% endblock %}
