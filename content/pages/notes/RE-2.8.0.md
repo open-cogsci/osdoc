@@ -1,0 +1,62 @@
+---
+layout: osdoc
+title: Release notes for 2.8.0
+group: notes
+permalink: /2.8.0/
+parser: academicmarkdown
+---
+
+## Changelog
+
+### New functionality and improvements
+
+- Add runner functionality
+- Improved exception handling
+- Migrate to QProgEdit editor component
+- Updated offline help pages
+- Improve support for non-Latin alphabets (#211)
+- Add correct-response option to touch_response plug-in (#214)
+- Add style argument to canvas.fixdot()
+- Add item.set_response() convenience method
+- Add gamma and suppress-warnings options to psycho back-end
+
+### Bugs fixed
+
+- Line wrapping causes double spaces (#203)
+- Keywords to `decode()` break compatibility with Python < 2.7 (#201)
+- Respect `focus=no` in `form_base` (#208)
+- Fix ugly exception on Escape press in joystick plug-in (#162)
+- Correctly parse non-Unix line separators in HTML parser
+- Do not give ugly warning on close (#124)
+- Set subject_parity in Android runtime (#221)
+
+###  Debian packaging
+
+- Remove large template files
+
+### Windows packaging
+
+- Update included libraries. See `modules()` output below.
+
+~~~
+OpenSesame 2.8.0
+Python 2.7.6 (default, Nov 10 2013, 19:24:18) [MSC v.1500 32 bit (Intel)]
+OpenCV is not available
+OpenCV2 2.4.7
+QProgedit 1.0.0
+Expyriment 0.7.0b~opensesame2 (Revision 0b10a83590c31285a5d94b3b8479f302f1abc8f3; Python 2.7.6)
+NumPy 1.8.0
+PIL is available (version is unknown)
+PsychoPy 1.78.01
+PyAudio 0.2.7
+PyGame 1.9.1release
+Pyglet 1.1.4
+PyOpenGL 3.0.2
+PyQt 4.10.3
+PySerial 2.7
+python-bidi 0.3.4
+python-markdown 2.3.1
+SciPy 0.13.2
+~~~
+
+[0.27.4 release notes]: /notes/0.27
