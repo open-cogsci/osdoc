@@ -1,2 +1,0 @@
-<a href='{{ page.gitlink }}'>View on GitHub</a> //
-<a href='{{ page.url | remove:'index.html' | remove:'.html' }}index.pdf'>Download as PDF</a>

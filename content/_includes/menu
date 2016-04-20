@@ -1,5 +1,0 @@
-<span class="sitemap level-0"><a href="#sitemap">Sitemap</a></span>
-
-{% assign group = page.group %}
-{% include pages_list %}
-
