@@ -1,11 +1,6 @@
----
-layout: osdoc
 title: Step-by-step tutorial (beginner)
-group: Tutorials
-permalink: /step-by-step-tutorial/
-parser: academicmarkdown
 author: Sebastiaan Mathôt, Elke Godefroid, Floor de Groot, Lotje van der Linden, and Eduard Ort
----
+uptodate: false
 
 In this tutorial you will learn how to create a simple but complete psychological experiment using OpenSesame [(Mathôt, Schreij, & Theeuwes, 2012)][references]. You will use mainly the graphical user interface of OpenSesame (i.e., no Python inline coding), although you will make small modifications to the OpenSesame script.
 
@@ -18,14 +13,7 @@ figure:
 
 This document provides a detailed click-by-click walk-through. Screenshots are provided, as well as downloadable snapshots of the experiment as it should be after each step of the tutorial. This tutorial will take approximately one hour to complete. At every step, you will also find a link to the corresponding point in the [video tutorial](https://youtu.be/eiGXe-t-C28).
 
-## Overview
-
-%--
-toc:
- mindepth: 2
- maxdepth: 2
- exclude: [Overview]
---%
+[TOC]
 
 ## About OpenSesame
 

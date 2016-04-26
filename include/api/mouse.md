@@ -20,6 +20,8 @@ while True:
         my_canvas.show()
 ~~~
 
+[TOC]
+
 ## Things to know
 
 ### Coordinates

@@ -15,6 +15,8 @@ var.response = key
 var.response_time = end_time - start_time
 ~~~
 
+[TOC]
+
 ## Things to know
 
 ### Key names

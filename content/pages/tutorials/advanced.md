@@ -1,20 +1,7 @@
----
-layout: osdoc
 title: Attentional-blink tutorial (advanced)
-group: Tutorials
-parser: academicmarkdown
-permalink: /attentional-blink/
-author: Sebastiaan Mathôt
----
+uptodate: false
 
-## Overview
-
-%--
-toc:
- mindepth: 2
- maxdepth: 2
- exclude: [Overview]
---%
+[TOC]
 
 ## Difficulty
 

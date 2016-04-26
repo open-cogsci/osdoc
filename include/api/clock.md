@@ -15,6 +15,8 @@ time_passed = t1 - t0
 print(u'This should be 1000: %s' % time_passed)
 ~~~
 
+[TOC]
+
 <div class="FunctionDoc YAMLDoc" id="clock-__init__" markdown="1">
 
 ## function __clock\.\_\_init\_\___\(experiment\)

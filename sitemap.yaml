@@ -18,21 +18,20 @@ Tutorials:
     Guía paso a paso: es/guia-paso-a-paso
 Manual:
     Basic:
-    Using the interface: TODO
+    Using the interface: manual/interface
     Flow and structure:
-        Looping and defining indepedent variables: TODO
-        Doing things in sequence: TODO
-        Doing things in parallel: TODO
-        Counterbalancing: manual/Counterbalancing
-        Pseudorandomization: TODO
+        Looping and defining indepedent variables: manual/structure/loop
+        Doing things in sequence: manual/structure/sequence
+        Doing things in parallel: manual/structure/coroutines
+        Counterbalancing: manual/structure/counterbalancing
     Stimulus presentation:
         Text: manual/stimuli/text
-        Visual stimuli: TODO
-        Auditory stimuli: TODO
-        Video:
+        Visual stimuli: manual/stimuli/visual
+        Auditory stimuli: manual/stimuli/auditory
+        Video: manual/stimuli/video
     Response collection:
-        Keyboard: TODO
-        Mouse: TODO
+        Keyboard: manual/response/keyboard
+        Mouse: manual/response/mouse
         Joystick: manual/response/joystick
         Button box: manual/response/buttonbox
         SR Box: manual/response/srbox
@@ -41,6 +40,8 @@ Manual:
         About forms: manual/forms/about
         Ready-made forms: manual/forms/readymade
         Custom forms: manual/forms/custom
+        Form variables: manual/forms/variables
+        Performance issues: manual/forms/performance
         Widgets:
             form: manual/forms/widgets/form
             _:
@@ -51,10 +52,7 @@ Manual:
             label: manual/forms/widgets/label
             rating_scale: manual/forms/widgets/rating_scale
             text_input: manual/forms/widgets/text_input
-        Form variables: manual/forms/variables
-        Performance issues: manual/forms/performance
-    Variables: TODO
-    If statements: TODO
+    Variables and if statements: manual/variables
     Data logging: manual/logging
     Using Python:
         Python in OpenSesame: manual/python/about
@@ -90,13 +88,14 @@ Manual:
     __:
     Examples: manual/examples
 Other:
-    Publications: other/publications
-    Meet the team!: other/team
-    Donate: TODO
-    Important changes in 3.0: other/important-changes-3
-    Release notes: TODO
-    Degrees of visual angle: other/visualangle
-    Notation for experimental design: other/experimentaldesign
+    Publications: publications
+    Meet the team!: team
+    Donate: donate
+    Important changes in 3.0: important-changes-3
+    Degrees of visual angle: visualangle
+    Notation for experimental design: experimentaldesign
+    Release notes:
+        3.0.7: notes/RE-307
 Dev:
     How to contribute: dev/howtocontribute
     Running for source: dev/fromsource

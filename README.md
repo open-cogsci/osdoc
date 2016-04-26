@@ -1,6 +1,6 @@
 # OpenSesame documentation area
 
-Copyright 2010-2015
+Copyright 2010-2016
 
 Sebastiaan Mathôt <s.mathot@cogsci.nl>
 
@@ -10,41 +10,39 @@ This repository contains the source for <http://osdoc.cogsci.nl/>.
 
 ## Format
 
-All files are formatted with Markdown syntax. They are pre-compiled with [academicmarkdown][], and converted to `.html` using [Kramdown][]. [Jekyll][] is used to generate the site structure. For documentation, see the respective homepages of these tools.
-
-The site content is available in the folder `content`.
+All files are formatted with Markdown syntax, supplemented with [academicmarkdown][].
 
 ## Important files and folders
 
-- `sitemap.txt` contains the site structure.
+- `sitemap.yaml` contains the site structure used to generate the menu.
 - `versions.yml` contains a description of all branches of the documentation. Each branch corresponds to a different documentation site, and lives in a different git branch of the repository.
-- `content/*` contains the site content.
+- `content/pages/` contains the site content.
 
 ## Site generation
 
-To generate the full documentation site for the currently active branch, run:
+To regenerate the menu file, run:
 
-	python generate.py
+	python3 build-menu.py
 
-This will generate the site in the folder `_site/[branch]`. The status of the current branch is read from `versions.yml`.
+To regenerate the Python API docs, run (see the source for assumptions about where OpenSesame and PyGaze are located):
 
-To quickly generate the site, while skipping PDF generation and optimization:
+	python3 build-api.py
 
-	python compile.py
+Finally, to generate the site, run:
 
-The site is generated in two stages. First, the site is pre-compiled and stored in `_content`. Next, Jekyll is used to compile `_content` into a full site, which is stored in `_site/[branch]`.
+	pelican
+
+This will generate the site in the folder `output`.
 
 ## Dependencies
 
 Most dependencies are available from the Ubuntu repositories or from the [Cogsci.nl PPA][]. Only [htmlcompressor.jar][] and [yui-compressor.jar][] must be downloaded from their respective websites and manually placed in the osdoc source folder.
 
-	jekyll (0.11.2)
+	pelican
+	pyyaml
+	htmlmin
 	python-academicmarkdown
-	python-yaml
-	ruby-kramdown
-	python-lesscpy
 	python-yamldoc
-	node-less
 	linkchecker         # Optional, for checking for dead links
 	htmlcompressor.jar  # Optional, for compressing HTML
 	yuicompressor		# Optional, for compressing HTML

@@ -23,9 +23,19 @@
 <section id="content" class="body">
 <div class="entry-content">
 
+<div class="alert alert-danger" role="alert">
+This documentation is for an unstable version of OpenSesame.
+</div>
+
 {% if page.uptodate == "false" %}
-<div class="page-notification">
+<div class="alert alert-warning" role="alert">
 This page has been written for an older version of OpenSesame.
+</div>
+{% endif %}
+
+{% if page.complete == "false" %}
+<div class="alert alert-info" role="alert">
+This page is incomplete.
 </div>
 {% endif %}
 

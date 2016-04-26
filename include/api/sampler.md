@@ -12,6 +12,8 @@ my_sampler = sampler(src, volume=.5)
 my_sampler.play()
 ~~~
 
+[TOC]
+
 ## Things to know
 
 ### Sampling rate

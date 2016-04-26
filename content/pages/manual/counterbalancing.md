@@ -1,24 +1,14 @@
----
-layout: osdoc
 title: Counterbalancing
-group: Miscellaneous
-permalink: /counterbalancing/
----
-
-%--
-toc:
- mindepth: 2
---%
-
-## What is counterbalancing?
 
 Counterbalancing is a way to remove confounding factors from an experiment by having slightly different tasks for different groups of participants. This sounds abstract, so let's consider two examples.
+
+[TOC]
 
 ### Example 1: Counterbalancing response rule
 
 Consider a lexical-decision experiment in which participants classify words as verbs by pressing 'z' with their left hand, or as nouns by pressing 'm' with their right hand. This design has a problem: If you find that participants respond faster to nouns than to verbs, this could be because nouns are processed faster than verbs, or because participants respond faster with their right than their left hand. You can fix this problem through counterbalancing the response rule.
 
-For even participant numbers: 
+For even participant numbers:
 
 - verb -> z
 - noun -> m

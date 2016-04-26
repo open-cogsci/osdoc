@@ -25,8 +25,10 @@ if u'my_variable' in var:
     print(u'my_variable exists!')
 # Loop through all experimental variables
 for var_name in var:
-    print(u'variable found: %s' % var_name)
+        print(u'variable found: %s' % var_name)
 ~~~
+
+[TOC]
 
 <div class="FunctionDoc YAMLDoc" id="var-get" markdown="1">
 

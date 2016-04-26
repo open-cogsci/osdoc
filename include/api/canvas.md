@@ -13,6 +13,8 @@ my_canvas.fixdot()
 my_canvas.show()
 ~~~
 
+[TOC]
+
 ## Things to know
 
 ### Coordinates

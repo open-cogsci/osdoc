@@ -40,6 +40,8 @@ else:
         my_canvas.show()
 ~~~
 
+[TOC]
+
 <div class="FunctionDoc YAMLDoc" id="pool-add" markdown="1">
 
 ## function __pool\.add__\(path, new\_name=None\)

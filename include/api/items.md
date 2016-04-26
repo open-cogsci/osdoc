@@ -23,6 +23,8 @@ for item_name in items:
         print(item_name)
 ~~~
 
+[TOC]
+
 <div class="FunctionDoc YAMLDoc" id="items-execute" markdown="1">
 
 ## function __items\.execute__\(name\)

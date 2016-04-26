@@ -15,6 +15,8 @@ constant:
                 A timeout value in milliseconds or `None` for no timeout.
 --%
 
+[TOC]
+
 <div class="FunctionDoc YAMLDoc" id="joystick-__init__" markdown="1">
 
 ## function __joystick\.\_\_init\_\___\(experiment, device=0, joybuttonlist=None, timeout=None\)

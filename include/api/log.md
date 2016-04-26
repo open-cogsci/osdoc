@@ -13,6 +13,8 @@ log.write(u'My custom log message')
 log.write_vars()
 ~~~
 
+[TOC]
+
 <div class="FunctionDoc YAMLDoc" id="log-__init__" markdown="1">
 
 ## function __log\.\_\_init\_\___\(experiment, path\)

@@ -30,6 +30,8 @@ if button == 1:
 srbox.stop()
 ~~~
 
+[TOC]
+
 <div class="FunctionDoc YAMLDoc" id="srbox-__init__" markdown="1">
 
 ## function __srbox\.\_\_init\_\___\(experiment, dev=None\)

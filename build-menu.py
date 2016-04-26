@@ -2,9 +2,14 @@
 # coding=utf-8
 
 from yamldoc._yaml import orderedLoad
-from collections import OrderedDict
+import sys
 
-ROOT = ''
+if '--publish' in sys.argv:
+	import publishconf as conf
+else:
+	import pelicanconf as conf
+
+ROOT = conf.SITEURL
 SUFFIX = '.html'
 
 def isseparator(pagename):
@@ -42,7 +47,13 @@ def build_menu(d):
 	return '\n'.join(l)
 
 
-with open('sitemap.yaml') as f:
-	d = orderedLoad(f)
-with open('themes/cogsci/templates/menu-content.html', 'w') as f:
-	f.write(build_menu(d))
+def main():
+
+	with open('sitemap.yaml') as f:
+		d = orderedLoad(f)
+	with open('themes/cogsci/templates/menu-content.html', 'w') as f:
+		f.write(build_menu(d))
+	print('Generated menu content')
+
+if __name__ == '__main__':
+	main()
