@@ -453,7 +453,7 @@ We will collect responses as follows:
 - Ask for T1
 - Collect a response, which is a single key press that corresponds to T1. So if T1 was 'A', the participant should press the 'a' key.
 - Ask for T2
-- Collect a response, which is 'y' when T2 was present and 'n' when T1 was absent.
+- Collect a response, which is 'y' when T2 was present and 'n' when T2 was absent.
 
 We will use the *ask_T1* `sketchpad` to ask the participant for T1. Click on *ask_T1* to open the item, and add a line of text, such as 'Please type the white letter'. Change the duration to 0. This 0 ms duration does not mean that the text is only shown for 0 ms, but that the experiment moves immediately to the next item, which is *response_T1*.
 
