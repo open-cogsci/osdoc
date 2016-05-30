@@ -346,7 +346,7 @@ Ok, `stim_list` now contains all letters that make up our RSVP stream on a given
 ~~~ .python
 if var.T2_present == 'y':
     var.T2_pos = var.T1_pos + var.lag
-    stim_list[T2_pos] = 'X'
+    stim_list[var.T2_pos] = 'X'
 ~~~
 
 We now have a variable called `stim_list` that specifies the letters in our RSVP stream. This is a `list` that might contain something like: `['M', 'F', 'O', 'P', 'S', 'R', 'Y', 'C', 'U', 'Z', 'G', 'A', 'T', 'E', 'H', 'J', 'V', 'N', 'B', 'K', 'X', 'Q']`. Note that `stim_list` is not an experimental variable, i.e. it is not a property of the `var` object. This is because experimental variables cannot be lists: The `var` object would turn the list into a character string, and that's not what we want!
