@@ -20,32 +20,27 @@ All files are formatted with Markdown syntax, supplemented with [academicmarkdow
 
 ## Site generation
 
-To regenerate the menu file, run:
+To generate the site for local testing:
 
-	python3 build-menu.py
+	python3 build-menu.py # optional, to regenerate the menu
+	python3 build-api.py # optional, to regenerate the Python api
+	pelican -s pelicanconf.py
 
-To regenerate the Python API docs, run (see the source for assumptions about where OpenSesame and PyGaze are located):
+Or, to generate the site for publication, run:
 
-	python3 build-api.py
-
-Finally, to generate the site, run:
-
-	pelican
+	python3 build-menu.py --publish
+	python3 build-api.py # optional, to regenerate the Python api
+	pelican -s publishconf.py
 
 This will generate the site in the folder `output`.
 
 ## Dependencies
 
-Most dependencies are available from the Ubuntu repositories or from the [Cogsci.nl PPA][]. Only [htmlcompressor.jar][] and [yui-compressor.jar][] must be downloaded from their respective websites and manually placed in the osdoc source folder.
-
-	pelican
-	pyyaml
-	htmlmin
-	python-academicmarkdown
-	python-yamldoc
-	linkchecker         # Optional, for checking for dead links
-	htmlcompressor.jar  # Optional, for compressing HTML
-	yuicompressor		# Optional, for compressing HTML
+- pelican
+- pyyaml
+- htmlmin
+- python-academicmarkdown
+- python-yamldoc
 
 ## License information
 
