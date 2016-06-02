@@ -26,13 +26,13 @@ The two main branches of OpenSesame are:
 
 For plug-in development, see:
 
-- [/plug-ins/create-plug-in](/plug-ins/create-plug-in)
+- %link:dev/plugin%
 
-## Source-code architecture
+## Translate the user interface
 
-For a description of the OpenSesame source-code architecture, see:
+For instructions on how to translate the user interface, see:
 
-- [/contribute/architecture](/contribute/architecture)
+- %link:dev/translate%
 
 ## Coding-style guidelines
 

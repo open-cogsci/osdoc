@@ -73,6 +73,14 @@ To install OpenSesame from PyPi (Python package index), type:
 pip install python-opensesame
 ~~~
 
+### Anaconda
+
+You can install OpenSesame in Anaconda through the CogSci channel:
+
+~~~ .bash
+conda install -c cogsci python-opensesame
+~~~
+
 ### Source code
 
 The source code of OpenSesame is available on [GitHub](https://github.com/smathot/OpenSesame).

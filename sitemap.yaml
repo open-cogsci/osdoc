@@ -27,7 +27,7 @@ Manual:
     Stimulus presentation:
         Text: manual/stimuli/text
         Visual stimuli: manual/stimuli/visual
-        Auditory stimuli: manual/stimuli/auditory
+        Sound: manual/stimuli/sound
         Video: manual/stimuli/video
     Response collection:
         Keyboard: manual/response/keyboard
@@ -69,6 +69,7 @@ Manual:
         Sampler: manual/python/sampler
     _:
     Advanced:
+    The prepare-run strategy: manual/prepare-run
     Timing: manual/timing
     Backends: manual/backends
     Running on Android: manual/android
@@ -85,6 +86,7 @@ Manual:
         Serial port: manual/devices/serial
         Parallel port (EEG triggers): manual/devices/parallel
         StimSync: manual/devices/stimsync
+    OpenSesame script: manual/opensesame-script
     __:
     Examples: manual/examples
 Other:
@@ -95,10 +97,33 @@ Other:
     Degrees of visual angle: visualangle
     Notation for experimental design: experimentaldesign
     Release notes:
-        3.0.7: notes/RE-307
+        3.0.7: notes/307
+        3.0.6: notes/306
+        3.0.5: notes/305
+        3.0.4: notes/304
+        3.0.3: notes/303
+        3.0.2: notes/302
+        3.0.1: notes/301
+        3.0.0: notes/300
+        2.9.7: notes/297
+        2.9.6: notes/296
+        2.9.5: notes/295
+        2.9.4: notes/294
+        2.9.3: notes/293
+        2.9.2: notes/292
+        2.9.1: notes/291
+        2.9.0: notes/290
+        2.8.3: notes/283
+        2.8.2: notes/282
+        2.8.1: notes/281
+        2.8.0: notes/280
+        0.27.4: notes/0274
+        0.27.3: notes/0273
+        0.27.2: notes/0272
+        0.27.1: notes/0271
 Dev:
     How to contribute: dev/howtocontribute
-    Running for source: dev/fromsource
+    Running from source: dev/fromsource
     File format (.osexp): dev/fileformat
     Translate: dev/translate
     Create a plugin: dev/plugin

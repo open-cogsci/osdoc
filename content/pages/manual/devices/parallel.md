@@ -1,4 +1,5 @@
 title: Parallel port (EEG triggers)
+reviewed: false
 
 In EEG/ ERP studies it is common to send triggers to mark the timestamp for significant events (e.g., the onset of a trial, presentation of a particular stimulus, etc.). Triggers are typically bytes that are sent via the parallel port to the EEG apparatus.
 

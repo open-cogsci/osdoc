@@ -1,9 +1,5 @@
----
-layout: osdoc
 title: Eyelink
-group: Devices
-permalink: /eyelink/
----
+reviewed: false
 
 [TOC]
 
@@ -84,7 +80,7 @@ Extract it to a location of your choice and rename the `pylink27` folder to `pyl
 
 After you have install the EyeLink display software and PyLink per the instructions above, you can use the EyeLink with PyGaze! See:
 
-- [/devices/pygaze](/devices/pygaze)
+- %link:pygaze%
 
 ## What happened to the EyeLink plug-ins?
 

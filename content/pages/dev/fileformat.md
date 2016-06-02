@@ -1,9 +1,4 @@
----
-layout: osdoc
 title: File format (.osexp)
-group: Miscellaneous
-permalink: /file-format/
----
 
 [TOC]
 
@@ -17,7 +12,7 @@ If the file pool is empty, the experiment is saved as a plain-text file. This fi
 
 The OpenSesame-script syntax is described here:
 
-- [/usage/opensesame-script/](/usage/opensesame-script/)
+- %link:opensesame-script%
 
 ## If the file pool is not empty
 

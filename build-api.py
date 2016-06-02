@@ -40,7 +40,6 @@ def main():
 	createdoc('libopensesame/python_workspace_api.py',
 		target='python_workspace_api.md', onlyContents=True,
 		types=[u'function', u'module'], cls=None, exclude=['osexception'])
-
 	for backend in ['sampler', 'canvas', 'keyboard', 'mouse', 'clock', 'log']:
 		createdoc('openexp/_%s/%s.py' % (backend, backend),
 			target='%s.md' % backend, cls=backend)

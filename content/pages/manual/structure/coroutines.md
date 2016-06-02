@@ -1,5 +1,5 @@
 title: Doing things in parallel
-complete: false
+reviewed: false
 
 Coroutines allow multiple items to run simultaneously--or, to be more exact, they allow items to run in rapid alternation in a way that looks like simultaneous execution. Only some items are supported (see [Supported items]).
 

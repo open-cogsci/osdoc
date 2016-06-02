@@ -1,5 +1,5 @@
 title: Using the interface
-complete: false
+reviewed: false
 
 OpenSesame has a powerful graphical interface that consists of several components.
 

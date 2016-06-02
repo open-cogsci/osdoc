@@ -1,4 +1,5 @@
 title: backends
+reviewed: false
 
 The *back-end* is the software layer that deals with input (keyboard input, mouse input, etc.) and output (display presentation, sound playback, etc.). There are many Python libraries that offer this type of functionality and OpenSesame could, in principle, use any one of them. For this reason, OpenSesame is back-end independent, in the sense that you can choose which back-end should be used. Currently there are five different back-ends: `legacy`, `psycho`, `droid`, `xpyriment`, and `opengl` (deprecated).
 

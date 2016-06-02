@@ -19,4 +19,4 @@ If you leave the Run-if statement empty or enter 'always', the item will always 
 
 Run-if statements use the same syntax as all OpenSesame conditional statements. For more information, see:
 
-- /manual/ifstatements
+- %link:variables%

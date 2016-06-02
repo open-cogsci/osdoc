@@ -1,6 +1,6 @@
 title: Important changes in 3.0
 
-OpenSesame 3.0 brings many improvements that make it even easier to develop experiments. Most changes are backwards compatible. That is, you can still do things the old way. However, a handful of changes are backwards incompatible, and it's important to be aware of those.
+OpenSesame 3.0 has brought many improvements that make it even easier to develop experiments. Most changes are backwards compatible. That is, you can still do things the old way. However, a handful of changes are backwards incompatible, and it's important to be aware of those.
 
 [TOC]
 
@@ -8,15 +8,22 @@ OpenSesame 3.0 brings many improvements that make it even easier to develop expe
 
 ### Sampler properties
 
-The `sampler` object has a number of properties that were previously functions. This concerns `sampler.fade_in`, `sampler.pan`, `sampler.pitch`, and `sampler.volume`. For more information, see:
+The `sampler` object has a number of properties that were previously functions. This concerns:
 
-- [/python/sampler/#backwards-incompatible-changes-from-29-to-30](/python/sampler/#backwards-incompatible-changes-from-29-to-30)
+- `sampler.fade_in`
+- `sampler.pan`
+- `sampler.pitch`
+- `sampler.volume`
+
+For more information, see:
+
+- %link:sampler%
 
 ### CSS3-compatible colors
 
 You can now use CSS3-compatible color specifications, as described here:
 
-- [/python/canvas/#colors](/python/canvas/#colors)
+- %link:canvas%
 
 If you use color names (e.g. 'red', 'green', etc.), this may result in slightly different colors. For example, according to CSS3, 'green' is `#008000` instead (as was the case previously) of `#00FF00`.
 
@@ -24,7 +31,7 @@ If you use color names (e.g. 'red', 'green', etc.), this may result in slightly 
 
 OpenSesame now saves experiments in `.osexp` format. Of course, you can still open the old formats (`.opensesame` and `.opensesame.tar.gz`). For more information, see:
 
-- [/miscellaneous/file-format/](/miscellaneous/file-format/)
+- %link:fileformat%
 
 ## Simplified Python API
 
@@ -38,7 +45,7 @@ set_subject_nr(2)
 
 For a list of common functions, see:
 
-- [/python/common/](/python/common/)
+- %link:common%
 
 ### The `var` object: Easy getting and setting of experimental variables
 
@@ -56,7 +63,7 @@ print('Condition is %s' % var.condition)
 
 For more information, see:
 
-- [/python/var/](/python/var/)
+- %link:var%
 
 ### The `clock` object: Time functions
 
@@ -69,7 +76,7 @@ clock.sleep(1000) # Sleep for 1 s
 
 For more information, see:
 
-- [/python/clock/](/python/clock/)
+- %link:clock%
 
 ### The `pool` object: Accessing the file pool
 
@@ -82,7 +89,7 @@ print('The full path to image.png is: %s' % path)
 
 For more information, see:
 
-- [/python/pool/](/python/pool/)
+- %link:pool%
 
 ### No more from openexp.* import *
 
@@ -96,7 +103,7 @@ There are similar factory functions (as these are called) for `keyboard`, `mouse
 
 For more information, see:
 
-- [/python/common/](/python/common/)
+- %link:common%
 
 ### The synth is now a sampler
 
@@ -142,8 +149,8 @@ Two times two equals 4
 
 For more information, see:
 
-- [/usage/text](/usage/text)
+- %link:text%
 
 ## Support for Python 3
 
-OpenSesame now supports Python 3.4. However, many of OpenSesame's dependencies, notably PsychoPy and Expyriment, are Python 2-only. Therefore, Python 2.7 remains the default version of Python.
+OpenSesame now supports Python >= 3.4. However, many of OpenSesame's dependencies, notably PsychoPy and Expyriment, are Python 2-only. Therefore, Python 2.7 remains the default version of Python.

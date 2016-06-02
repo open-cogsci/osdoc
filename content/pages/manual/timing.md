@@ -1,11 +1,5 @@
----
-layout: osdoc
 title: Timing
-group: Miscellaneous
-permalink: /timing/
-parser: academicmarkdown
----
-
+reviewed: false
 
 This page describes various issues related to timing, and provides benchmark results and tips for testing your own system. If you experience problems with timing, please take the time to read this page. Many issues are resolved by taking into account things such as stimulus preparation and the properties of your monitor.
 

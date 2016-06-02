@@ -3,11 +3,11 @@ title: OpenSesame
 OpenSesame is a program to create experiments for psychology, neuroscience, and experimental economics. The latest $status$ version is $version$ *$codename$*, released on $release-date$ ([release notes](/notes/$version$.html)).
 
 <div class="btn-group" role="group" aria-label="...">
-  <a role="button" class="btn btn-success" href="/download.html">
+  <a role="button" class="btn btn-success" href="download.html">
 		<span class="glyphicon glyphicon-download" aria-hidden="true"></span>
 		Download
 	 </a>
-  <a role="button" class="btn btn-success" href="/tutorials/beginner.html">
+  <a role="button" class="btn btn-success" href="tutorials/beginner.html">
   <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
   	Tutorial
   </a>
@@ -18,7 +18,7 @@ OpenSesame is a program to create experiments for psychology, neuroscience, and 
 
 ## Features
 
-- __A sweet user interface__ — flexible and easy-to-use
+- __A user-friendly interface__ — flexible yet easy-to-use
 - __Python__ — add the power of [Python](/python/about) to your experiment
 - __Use your devices__ — use your [eye tracker](/devices/pygaze/), [button box](/devices/button-box/), [EEG equipment](/devices/triggers/), etc.
 - __Free__ — released under the GPL3

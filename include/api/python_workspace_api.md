@@ -1,4 +1,4 @@
-<div class=" YAMLDoc" id="" markdown="1">
+<div class=" YAMLDoc" id="yamldoc-default-id" markdown="1">
 
  
 
@@ -9,7 +9,7 @@
 A convenience function that creates a new `canvas` object. For a
 description of possible keywords, see:
 
-- [/python/canvas/](/python/canvas/)
+- %link:manual/python/canvas%
 
 __Example:__
 

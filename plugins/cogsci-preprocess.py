@@ -1,17 +1,26 @@
 # encoding=utf-8
 
 import os
+import re
+import sys
 import yaml
+from yamldoc._yaml import orderedLoad
 from pelican import signals
 from pelican.readers import MarkdownReader
 from markdown import Markdown
 from markdown.extensions.toc import TocExtension
 from academicmarkdown import build, HTMLFilter
+if 'publishconf.py' in sys.argv:
+	from publishconf import *
+else:
+	from pelicanconf import *
 
 root = os.path.dirname(os.path.dirname(__file__)) + '/content'
 
 with open('constants.yaml') as f:
 	const = yaml.load(f)
+
+links = {}
 
 class AcademicMarkdownReader(MarkdownReader):
 
@@ -35,6 +44,14 @@ class AcademicMarkdownReader(MarkdownReader):
 		with open(source_path) as fd:
 			text = fd.read().decode('utf-8')
 			text = build.MD(text)
+			# Process internal links
+			for m in re.finditer('%link:(?P<link>[\w/-]+)%', text):
+				full = m.group(0)
+				link = m.group('link')
+				print(link, full)
+				if link not in links:
+					raise Exception(u'%s not a key in %s' % (link, links))
+				text = text.replace(full, '<%s/%s.html>' % (SITEURL, links[link]))			
 			text = text.replace(root, u'')
 			text = HTMLFilter.DOI(text)
 			content = self._md.convert(text)
@@ -48,15 +65,40 @@ def init_academicmarkdown(sender):
 
 	build.postMarkdownFilters = []
 	build.figureTemplate = 'jekyll'
+	build.figureSourcePrefix = SITEURL
 	build.path += u'include'
 	build.extensions.remove('toc')
 	build.extensions.insert(0, 'toc')
+	with open('sitemap.yaml') as f:
+		d = orderedLoad(f)
+	process_links(d)
+
+def isseparator(pagename):
+
+	for ch in pagename:
+		if ch != '_':
+			return False
+	return True
+
+def process_links(d):
+
+	for pagename, entry in d.items():
+		if isseparator(pagename) or entry is None:
+			continue
+		if isinstance(entry, dict):
+			process_links(entry)
+			continue
+		name = entry.split('/')[-1]
+		if not name.strip():
+			continue
+		links[entry] = entry
+		links[name] = entry
 
 def add_reader(readers):
 
 	readers.reader_classes['md'] = AcademicMarkdownReader
 
-# This is how pelican works.
+
 def register():
 
 	signals.readers_init.connect(add_reader)

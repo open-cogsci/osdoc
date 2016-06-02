@@ -1,9 +1,5 @@
----
-layout: osdoc
 title: PyGaze (eye tracking)
-group: Devices
-permalink: /pygaze/
----
+reviewed: false
 
 [TOC]
 
@@ -17,8 +13,7 @@ For more information on PyGaze, visit:
 
 Please cite PyGaze as:
 
-Dalmaijer, E., Mathôt, S., & Van der Stigchel, S. (2013). PyGaze: An open-source, cross-platform toolbox for minimal-effort programming of eyetracking experiments. *Behavior Research Methods*. doi:10.3758/s13428-013-0422-2
-{: .reference}
+- Dalmaijer, E., Mathôt, S., & Van der Stigchel, S. (2013). PyGaze: An open-source, cross-platform toolbox for minimal-effort programming of eyetracking experiments. *Behavior Research Methods*. doi:10.3758/s13428-013-0422-2
 
 ## Supported eye trackers
 

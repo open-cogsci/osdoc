@@ -33,31 +33,11 @@ This page has been written for an older version of OpenSesame.
 </div>
 {% endif %}
 
-{% if page.complete == "false" %}
+{% if page.reviewed == "false" %}
 <div class="alert alert-info" role="alert">
-This page is incomplete.
+This page needs to be reviewed.
 </div>
 {% endif %}
-
-<!-- {% for trans in pages %}
-	{% if trans.stub == page.stub and trans.lang != page.lang %}
-		<div class='cogsci-translation-link'>
-		{% if trans.lang == "en" %}
-			<a href="{{ SITEURL }}/{{ trans.url }}">English</a>
-		{% elif trans.lang == "fr" %}
-			<a href="{{ SITEURL }}/{{ trans.url }}">français</a>
-		{% endif %}
-		</div>
-	{% endif %}
-{% endfor %}
-
-<ol class="breadcrumb">
-  <li><a href="{{ SITEURL }}/">OpenSesame</a></li>
-  {% for parent in page.parents %}
-  <li><a href="{{ SITEURL }}/{{ parent.url }}">{{ parent.title }}</a></li>
-  {% endfor %}
-  <li class="active">{{ page.title }}</li>
-</ol> -->
 
 {% if page.show_title != "false" %}
 <h1>{{page.title}}</h1>

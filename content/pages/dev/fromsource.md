@@ -1,4 +1,5 @@
 title: Running from source
+reviewed: false
 
 This page describes how to set up a complete Python environment on your computer, so that you can run OpenSesame directly from the source code.
 

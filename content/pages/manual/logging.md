@@ -1,9 +1,5 @@
----
-layout: osdoc
 title: Logging and reading data files
-group: Usage
-permalink: /logging/
----
+reviewed: false
 
 Always triple check whether your data has been correctly logged before running your experiment!
 {: .page-notification}

@@ -1,4 +1,5 @@
 title: Translate
+reviewed: false
 
 In order to improve usability for non-English speaking users, the goal is to have OpenSesame adapt to the default language of the operating system. Very little technical skill is needed to contribute a translation.
 

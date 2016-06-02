@@ -1,11 +1,6 @@
----
-layout: osdoc
 title: Mouse tracking
-group: Devices
-permalink: /mouse-tracking/
----
 
-Mousetrap is a third-party plugin, but has been reviewed by the OpenSesame team.
+Mousetrap is a third-party plugin, and is not maintained by the OpenSesame team.
 {: .page-notification}
 
 Pascal Kieslich and Felix Henninger have developed the [mousetrap plug-ins for OpenSesame](https://github.com/PascalKieslich/mousetrap-os). These plug-ins allow you to track the movement of the mouse cursor, which has been used to investigate the time course of cognitive processes in many psychological domains [(Freeman, Dale, & Farmer, 2011)](http://dx.doi.org/10.3389/fpsyg.2011.00059).

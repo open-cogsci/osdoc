@@ -1,4 +1,5 @@
 title: About Python
+reviewed: false
 
 In OpenSesame you can create complex experiments using only the graphical user interface (GUI). But you will sometimes encounter situations in which the functionality provided by the GUI is insufficient. In these cases you can add Python code to your experiment.
 
@@ -28,7 +29,9 @@ video:
   A screencast that the demonstrates the basics of using Python inline script in OpenSesame.
 --%
 
-And see [more Python video tutorials](/tutorials/video-tutorials/#python-tutorials).
+And see more Python video tutorials:
+
+- %link:tutorials/video%
 
 ### A single Python workspace
 
@@ -62,7 +65,7 @@ As you can see, the `inline_script` item consists of two tabs: one for the prepa
 
 For more information about the prepare-run strategy, see:
 
-- [/usage/prepare-run/](/usage/prepare-run/)
+- %link:prepare-run%
 
 ### Loop tables and conditional ("if") statements
 
@@ -81,7 +84,7 @@ figure:
 
 For more information about conditional ("if") statements, see:
 
-- [/usage/variables-and-conditional-statements/#using-conditional-if-statements](/usage/variables-and-conditional-statements/#using-conditional-if-statements)
+- %link:variables%
 
 Similarly, you can use single-line Python statements to define variables in `loop` tables. Let's say that you want to assign a random value between 0 and 1000 to a variable. You could this by first `import`ing the `random` in an `inline_script`. Once the `random` module is available, you could use `random.randint()` to obtain a random variable in a `loop` item:
 
@@ -141,7 +144,7 @@ fixdot_canvas.show()
 
 For a list of common functions, see:
 
-- [/python/common/](/python/common/)
+- %link:manual/python/common%
 
 ### The `var` object: Access to experimental variables
 
@@ -156,7 +159,7 @@ var.my_variable = u'my_value'
 
 A full overview of the `var` object can be found here:
 
-- [/python/var/](/python/var/)
+- %link:manual/python/var%
 
 ### The `clock` object: Time functions
 
@@ -171,7 +174,7 @@ clock.sleep(1000)
 
 A full overview of the `clock` object can be found here:
 
-- [/python/clock/](/python/clock/)
+- %link:manual/python/clock%
 
 ### The `log` object: Data logging
 
@@ -186,7 +189,7 @@ log.write_vars()
 
 A full overview of the `log` object can be found here:
 
-- [/python/log/](/python/log/)
+- %link:manual/python/log%
 
 ### The `pool` object: Access to the file pool
 
@@ -202,7 +205,7 @@ my_canvas.show()
 
 A full overview of the `pool` object can be found here:
 
-- [/python/pool/](/python/pool/)
+- %link:manual/python/pool%
 
 ### The `win` object: The window handle
 
@@ -214,28 +217,28 @@ The `win` object is the window handle, and depends on the back-end. You will gen
 
 OpenSesame comes with a set of Python modules for presenting stimuli, handling input, etc. These modules work with all back-ends. The full API (i.e., a list of functions) can be found here:
 
-- [/python/canvas](/python/canvas/) for display presentation
-- [/python/keyboard](/python/keyboard/) for response collection using the keyboard
-- [/python/mouse](/python/mouse/) for response collection using the mouse
-- [/python/sampler](/python/sampler/) for sound playback
+- Display presentation: %link:manual/python/canvas%
+- Keyboard response collection: %link:manual/python/keyboard%
+- Mouse response collection: %link:manual/python/mouse%
+- Sound playback: %link:manual/python/sampler%
 
 ### `psychopy`
 
 If you are using the *psycho* back-end, you can directly use the various [PsychoPy] modules. For more information, see:
 
-- [/back-ends/psycho]()
+- %link:backends%
 
 ### `expyriment`
 
 If you are using the *xpyriment* back-end, you can directly use the various [Expyriment] modules. For more information, see:
 
-- [/back-ends/xpyriment](/back-ends/xpyriment)
+- %link:backends%
 
 ### `pygame`
 
 If you are using the *legacy*, *droid*, or *xpyriment* (only with "Use OpenGL" set to "no") back-end, you can directly use the various [PyGame] modules. For more information, see:
 
-- [/back-ends/legacy/](/back-ends/legacy)
+- %link:backends%
 
 [python]: http://www.python.org/
 [canvas]: /python/canvas
