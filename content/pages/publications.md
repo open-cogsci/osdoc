@@ -49,6 +49,8 @@ the discrimination of non-native contrasts. *Phonetica*.
 
 Ishii, A., Tanaka, M., & Watanabe, Y. (2016). The neural mechanisms of re-experiencing physical fatigue sensation: a magnetoencephalography study. *Experimental Brain Research*. doi:10.1007/s00221-016-4648-y
 
+Koningsbruggen, M. G. van, Ficarella, S. C., Battelli, L., & Hickey, C. (2016). Transcranial random-noise stimulation of visual cortex potentiates value-driven attentional capture. *Social Cognitive and Affective*. doi:10.1093/scan/nsw056
+
 Krokoszinski, L., & Hosser, D. (2016). Emotion regulation during deception: an EEG study of imprisoned fraudsters. *Journal of Criminal Psychology*. doi:10.1108/JCP-02-2016-0005
 
 Kruijne, W., & Meeter, M. (2016). Implicit short-and long-term memory direct our gaze in visual search. *Attention, Perception, & Psychophysics*. doi:10.3758/s13414-015-1021-3
