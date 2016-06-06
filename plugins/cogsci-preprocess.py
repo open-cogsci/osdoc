@@ -40,7 +40,7 @@ class AcademicMarkdownReader(MarkdownReader):
 			+ os.path.basename(source_path)[:-3]
 		tbl_path = os.path.dirname(source_path) + '/tbl/' \
 			+ os.path.basename(source_path)[:-3]
-		build.path += [img_path, lst_path, tbl_path]
+		build.path = [img_path, lst_path, tbl_path] + build.path
 		with open(source_path) as fd:
 			text = fd.read().decode('utf-8')
 			text = build.MD(text)
@@ -51,14 +51,14 @@ class AcademicMarkdownReader(MarkdownReader):
 				print(link, full)
 				if link not in links:
 					raise Exception(u'%s not a key in %s' % (link, links))
-				text = text.replace(full, '<%s/%s.html>' % (SITEURL, links[link]))			
+				text = text.replace(full, '<%s/%s.html>' % (SITEURL, links[link]))
 			text = text.replace(root, u'')
 			text = HTMLFilter.DOI(text)
 			content = self._md.convert(text)
 			for var, val in const.items():
 				content = content.replace(u'$%s$' % var, str(val))
 		metadata = self._parse_metadata(self._md.Meta)
-		build.path = build.path[:-2]
+		build.path = build.path[3:]
 		return content, metadata
 
 def init_academicmarkdown(sender):

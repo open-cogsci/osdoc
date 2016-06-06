@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 # coding=utf-8
 
+from collections import OrderedDict
 from yamldoc._yaml import orderedLoad
+import yaml
 import sys
 
 if '--publish' in sys.argv:
@@ -47,6 +49,22 @@ def build_menu(d):
 	return '\n'.join(l)
 
 
+def build_live_sitemap(d):
+
+	sitemap = OrderedDict()
+	for pagename, entry in d.items():
+		if isseparator(pagename) or entry is None:
+			continue
+		if isinstance(entry, dict):
+			sitemap[pagename] = build_live_sitemap(entry)
+			continue
+		if entry.startswith('http'):
+			sitemap[pagename] = entry
+		else:
+			sitemap[pagename] = '/' + conf.BRANCH + '/' + entry + SUFFIX
+	return sitemap
+
+
 def main():
 
 	with open('sitemap.yaml') as f:
@@ -54,6 +72,10 @@ def main():
 	with open('themes/cogsci/templates/menu-content.html', 'w') as f:
 		f.write(build_menu(d))
 	print('Generated menu content')
+	sitemap = build_live_sitemap(d)
+	with open(u'static/sitemap.yml', u'w') as fd:
+		yaml.dump(sitemap, fd, default_flow_style=False)
+	print('Generated live sitemap')
 
 if __name__ == '__main__':
 	main()
