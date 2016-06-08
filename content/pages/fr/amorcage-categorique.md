@@ -164,22 +164,22 @@ Comme montre la %trialSeq1, l'objectif est de construire une séquence d'essai c
 
 On appelle ces 6 étapes *des événements*. On va réaliser ces 6 événements en ajoutant des *items* au *trial_sequence*.
 
-Pour les premiers 4 événements, on utilise des items `sketchpad`. Cependant, pour l'instant, notre *trial_sequence* ne contient qu'un seul item `sketchpad`. Il faut donc en ajouter encore 3.
+Pour les premiers 4 événements, on utilise des items SKETCHPAD. Cependant, pour l'instant, notre *trial_sequence* ne contient qu'un seul item SKETCHPAD. Il faut donc en ajouter encore 3.
 
-Pour ajouter ces 3 items `sketchpad` :
+Pour ajouter ces 3 items SKETCHPAD :
 
 - Regardez la barre d'items (à la gauche).
-- Choisissez l'item `sketchpad`.
+- Choisissez l'item SKETCHPAD.
 - Faites glisser l'item vers la *trial_sequence* dans la vue d'ensemble.
 - *Attention:* Pour faire apparaître un item *au dessous* d'un autre item, déposez-le *sur* cet autre item.
-- Répétez la procédure glisser-déposer jusqu'à ce que vous ayez 4 items `sketchpad` dans votre *trial_sequence*.
+- Répétez la procédure glisser-déposer jusqu'à ce que vous ayez 4 items SKETCHPAD dans votre *trial_sequence*.
 
 %--
 figure:
  id: dragdrop
  source: dragdrop.png
  caption: |
-  Glisser-déposer des items (ici: des `sketchpad`s) de la barre d'outils vers la vue d'ensemble.
+  Glisser-déposer des items (ici: des SKETCHPADs) de la barre d'outils vers la vue d'ensemble.
 --%
 
 Par défaut, OpenSesame attribue des noms tels que *__sketchpad* ou *new_sketchpad_2* (selon la version d'OpenSesame) aux items nouvellement crées. Ces noms ne sont pas très informatifs. Il est donc fortement recommandé de les renommer.
@@ -189,28 +189,28 @@ Pour réaliser ça :
 - Cliquez-droit sur un item dans la vue d'ensemble ;
 - Choisissez « Renommer » ; et
 - Changez le nom.
-- Appelez les items `sketchpad` *fixation*, *amorce*, *intervalle* et *cible*, respectivement.
+- Appelez les items SKETCHPAD *fixation*, *amorce*, *intervalle* et *cible*, respectivement.
 
 %--
 figure:
  id: renamed
  source: renamed.png
  caption: |
-  La *trial_sequence* après on a ajouté et renommé trois nouveaux items `sketchpad`.
+  La *trial_sequence* après on a ajouté et renommé trois nouveaux items SKETCHPAD.
 --%
 
-Les derniers deux événements de la séquence d'essai (collecter la réponse et enregistrer les données) sont déjà répresentés par les items `keyboard_response` et `logger`, respectivement.
+Les derniers deux événements de la séquence d'essai (collecter la réponse et enregistrer les données) sont déjà répresentés par les items KEYBOARD_RESPONSE et LOGGER, respectivement.
 
 ### Étape 4 : Créer les items *fixation*, *amorce*, *intervalle* et *cible*
 
 #### fixation
 
-Maintenant, on va créer les contenus des items `sketchpad`. On commence avec le `sketchpad` *fixation*.
+Maintenant, on va créer les contenus des items SKETCHPAD. On commence avec le SKETCHPAD *fixation*.
 
 - Ouvrez l'onglet *fixation* en cliquant sur cet item dans la vue d'ensemble.
 - Comme vous voyez, grâce à l'Extended template, le point de fixation est déjà dessiné.
 
-Cependant, il faut qu'on fasse un petit changement sur cet item. Actuellement, la durée de ce `sketchpad` est mis sur 0. Ça veut dire que le point de fixation sera présenté pendant 0 millisecondes. Bien sur, ce n'est pas ce que l'on veut. On veut que le point de fixation soit présenté pendant 500 ms (voir %trialSeq1), et que, après, l'expérience avance automatiquement.
+Cependant, il faut qu'on fasse un petit changement sur cet item. Actuellement, la durée de ce SKETCHPAD est mis sur 0. Ça veut dire que le point de fixation sera présenté pendant 0 millisecondes. Bien sur, ce n'est pas ce que l'on veut. On veut que le point de fixation soit présenté pendant 500 ms (voir %trialSeq1), et que, après, l'expérience avance automatiquement.
 
 Pour réaliser ça, il faut changer la durée vers 500.
 
@@ -219,30 +219,30 @@ figure:
  id: fixation
  source: fixation.png
  caption: |
-  Le `sketchpad` *fixation*, avec une durée de 500 ms.
+  Le SKETCHPAD *fixation*, avec une durée de 500 ms.
 --%
 
 #### amorce
 
-Pour le point de fixation, on a créé un `sketchpad` *invariable*. Un `sketchpad` invariable montre la même chose (ici : un point de fixation pendant 500 ms) sur chaque essai.
+Pour le point de fixation, on a créé un SKETCHPAD *invariable*. Un SKETCHPAD invariable montre la même chose (ici : un point de fixation pendant 500 ms) sur chaque essai.
 
-On peut également créer des `sketchpad`s *variables*. Ça veut dire que le contenu du `sketchpad` est défini par une variable indépendante. Grâce aux `sketchpad`s variables, on ne doit pas créer deux `sketchpad`s différents pour chaque niveau de la variable Amorce (« ANIMAL » et « XXXXX »). Au lieu de ça, on en crée qu'un seul, et on laisse décider OpenSesame quel Amorce sera présentée sur chaque essai, sur la base des valeurs de la liste *block_loop*.
+On peut également créer des SKETCHPADs *variables*. Ça veut dire que le contenu du SKETCHPAD est défini par une variable indépendante. Grâce aux SKETCHPADs variables, on ne doit pas créer deux SKETCHPADs différents pour chaque niveau de la variable Amorce (« ANIMAL » et « XXXXX »). Au lieu de ça, on en crée qu'un seul, et on laisse décider OpenSesame quel Amorce sera présentée sur chaque essai, sur la base des valeurs de la liste *block_loop*.
 
-Pour indiquer à OpenSesame qu'il s'agit d'un `sketchpad` variable, on utilise la méthode *entre-crochets*. La méthode entre-crochets fonctionne comme expliqué ci-dessous :
+Pour indiquer à OpenSesame qu'il s'agit d'un SKETCHPAD variable, on utilise la méthode *entre-crochets*. La méthode entre-crochets fonctionne comme expliqué ci-dessous :
 
 - Ouvrez l'onglet *amorce* en cliquant sur cet item dans la vue d'ensemble
 - Cliquez sur l'icone « A » pour sélectionner l'outil texte
 - Cliquez sur le centre de l'écran
 - Cela ouvrira une boîte de dialogue pour entrer du texte
 - Au lieu de taper l'Amorce (par ex. « ANIMAL ») directement, on tape *le nom de la variable indépendante* ('amorce') entre crochets
-- Enfin, mettez la durée du `sketchpad` sur 100 ms
+- Enfin, mettez la durée du SKETCHPAD sur 100 ms
 
 %--
 figure:
  id: amorce
  source: amorce.png
  caption: |
-  Le `sketchpad` *amorce* après avoir sélectionné l'outil texte, saissi le nom de la variable, et mis la durée sur 100 ms.
+  Le SKETCHPAD *amorce* après avoir sélectionné l'outil texte, saissi le nom de la variable, et mis la durée sur 100 ms.
 --%
 
 Les crochets indiquent que nous avons affaire à une texte variable. Donc, au lieu de présenter « amorce » sur l'écran, OpenSesame présentera la valeur de la variable (i.e. « XXXXXX » ou « ANIMAL ») comme tirée de la liste *block_loop*.
@@ -257,13 +257,13 @@ figure:
 
 #### intervalle
 
-Le `sketchpad` *intervalle* est *invariable*. Il est facile de le créer, car il ne s'agit de rien de plus que d'un écran vide avec une durée de 1000 ms.
+Le SKETCHPAD *intervalle* est *invariable*. Il est facile de le créer, car il ne s'agit de rien de plus que d'un écran vide avec une durée de 1000 ms.
 
 #### cible
 
-Le `sketchpad` *cible* est un sketchpad *variable*, pareil que le sketchpad *amorce*. Donc, on utilise encore une fois la méthode entre-crochets. La seule différence est que, cette fois, on met le nom de notre autre variable indépendante, « cible », entre crochets.
+Le SKETCHPAD *cible* est un sketchpad *variable*, pareil que le sketchpad *amorce*. Donc, on utilise encore une fois la méthode entre-crochets. La seule différence est que, cette fois, on met le nom de notre autre variable indépendante, « cible », entre crochets.
 
-Ensuite, on met la durée du `sketchpad` *cible* sur 0 ms. Ça peut vous sembler contre-intuitif, mais ça veut juste dire que OpenSesame va initialiser le prochain item (ici, *keyboard_response*) tout de suite. L'item *keyboard_response* lui même ne change pas ce qui est actuellement montrer au sujet sur l'écran.
+Ensuite, on met la durée du SKETCHPAD *cible* sur 0 ms. Ça peut vous sembler contre-intuitif, mais ça veut juste dire que OpenSesame va initialiser le prochain item (ici, *keyboard_response*) tout de suite. L'item *keyboard_response* lui même ne change pas ce qui est actuellement montrer au sujet sur l'écran.
 
 Donc, en somme, le stimulus reste sur l'écran jusqu'à-ce que le sujet ait appuyé sur une touche.
 
@@ -325,17 +325,17 @@ Même si cette séquence de session est déjà presque parfaite, on va régler d
 
 #### instructions
 
-Le `sketchpad` *instructions* explique la tâche au participant. Pour l'instant, les instructions ne sont pas suffisamment précises.
+Le SKETCHPAD *instructions* explique la tâche au participant. Pour l'instant, les instructions ne sont pas suffisamment précises.
 
 Changez les instructions comme ci-dessous :
 
 - Supprimez le texte qui est actuellement montré :
 	- Sélectionnez la flèche de la barre d'outils ;
-	- Cliquez-droit sur le texte au centre du `sketchpad` ; et
+	- Cliquez-droit sur le texte au centre du SKETCHPAD ; et
 	- Sélectionnez « Supprimer » pour le supprimer.
 - Ajoutez un nouveau texte :
 	- Cliquez sur l'icone « A » pour sélectionner l'outil texte ;
-	- Cliquez quelque part sur le `sketchpad` ; et
+	- Cliquez quelque part sur le SKETCHPAD ; et
 	- Saisissez un petit texte qui informe le sujet de ce qu'il faut faire dans cette expérience. Une bonne instruction est à la fois brève et claire.
 
 #### experimental_loop
@@ -355,7 +355,7 @@ figure:
 
 #### end_of_experiment
 
-Cet élément `sketchpad` informe le participant que l'expérience est terminée.
+Cet élément SKETCHPAD informe le participant que l'expérience est terminée.
 
 - Mettez ce message en français en utilisant l'outil texte.
 
@@ -378,7 +378,7 @@ Après d'avoir exécuté (une part de) votre expérience, vous pouvez voir si vo
 
 ### Étape 8 : Donner du feedback après chaque essai
 
-On va étendre la séquence d'essai avec un item en plus : un `sketchpad` qui informe le participant, après chaque réponse, si sa réponse était juste ou fausse. En réalisant ça, on va apprendre deux astuces plus avancées :
+On va étendre la séquence d'essai avec un item en plus : un SKETCHPAD qui informe le participant, après chaque réponse, si sa réponse était juste ou fausse. En réalisant ça, on va apprendre deux astuces plus avancées :
 
 - Comment utiliser des *variables dépendantes* en ligne ; et
 - Comment utiliser des déclarations *exécuter-si* (run-if statements).
@@ -390,13 +390,13 @@ Pendant chaque essai, la précision du réponse du participant est enregistrée 
 
 On va utiliser cette variable *en ligne*, pour déterminer si le participant doit être informé que sa réponse était juste (en lui montant un point de fixation vert) ou fausse (en lui montant un point de fixation rouge).
 
-#### Créer les éléments `sketchpad`
+#### Créer les éléments SKETCHPAD
 
-- Ajoutez deux items `sketchpad` à la séquence d'essai.
+- Ajoutez deux items SKETCHPAD à la séquence d'essai.
 - Placez-les après l'item *keyboard_response*.
 - Donnez-leurs des noms informatifs, par ex. *juste* et *faux*.
 - Mettez leurs durées vers 500 ms.
-- Ouvrez le sketchpad *juste* et dessinez un croix de fixation vert sur le centre du `sketchpad`. Pour effectuer cette opération :
+- Ouvrez le sketchpad *juste* et dessinez un croix de fixation vert sur le centre du SKETCHPAD. Pour effectuer cette opération :
 	- Cliquez sur l'icône du point de fixation pour sélectionner cet outil.
 	- Changez sa couleur du blanc au vert, en tapant « green » dans la boite couleur.
 	- Cliquez sur le centre du sketchpad.
@@ -464,7 +464,7 @@ figure:
   Ajoutez une variable indépendante, qui va être varié entre blocs.
 --%
 
-- Ouvrez le `sketchpad` *intervalle*.
+- Ouvrez le SKETCHPAD *intervalle*.
 - Changez la durée sur « [intervalle] », indiquant que la durée de cet item dépend à la valeur de la variable `intervalle`.
 
 %--

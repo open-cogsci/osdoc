@@ -15,7 +15,7 @@ The short answer is: yes. The long answer is the rest of this page.
 
 OpenSesame allows you to control your experimental timing very accurately. But this does not guarantee accurate timing in every specific experiment! For any number of reasons, many of which described on this page, you may experience issues with timing. Therefore, in time-critical experiments you should always check whether the timing in your experiment is as intended. The easiest way to do this is by checking the display timestamps reported by OpenSesame.
 
-Every `sketchpad` item has a variable called `time_[sketchpad name]` that contains the timestamp of the last time that the `sketchpad` was shown. So, for example, if you want the `sketchpad` *target* to be shown for 100 ms, followed by the `sketchpad` *mask*, you should verify that `time_mask` - `time_target` is indeed 100. When using Python inline code, you can make use of the fact that `canvas.show()` returns the display timestamp.
+Every SKETCHPAD item has a variable called `time_[sketchpad name]` that contains the timestamp of the last time that the SKETCHPAD was shown. So, for example, if you want the SKETCHPAD *target* to be shown for 100 ms, followed by the SKETCHPAD *mask*, you should verify that `time_mask` - `time_target` is indeed 100. When using Python inline code, you can make use of the fact that `canvas.show()` returns the display timestamp.
 
 ### Understanding your monitor
 
@@ -68,7 +68,7 @@ Some tips regarding desktop effects for the various operating systems:
 
 If you care about accurate timing during visual-stimulus presentation, you should prepare your stimuli in advance. That way, you will not get any unpredictable delays due to stimulus preparation during the time-critical parts of your experiment.
 
-Let's first consider a script (you can paste this into an `inline_script` item) that includes stimulus-preparation time in the interval between `canvas1` and `canvas2` (%LstStimPrepBad). The interval that is specified is 95 ms, so--taking into account the 'rounding up' rule described in [Making the refresh deadline]--you would expect an interval of 100 ms on my 60 Hz monitor. However, on my test system the script below results in an interval of 150 ms, which corresponds to 9 frames on a 60 Hz monitor. This is an unexpected delay of 50 ms, or 3 frames, due to the preparation of `canvas2`.
+Let's first consider a script (you can paste this into an INLINE_SCRIPT item) that includes stimulus-preparation time in the interval between `canvas1` and `canvas2` (%LstStimPrepBad). The interval that is specified is 95 ms, so--taking into account the 'rounding up' rule described in [Making the refresh deadline]--you would expect an interval of 100 ms on my 60 Hz monitor. However, on my test system the script below results in an interval of 150 ms, which corresponds to 9 frames on a 60 Hz monitor. This is an unexpected delay of 50 ms, or 3 frames, due to the preparation of `canvas2`.
 
 %--
 code:
@@ -88,18 +88,18 @@ code:
  caption: "In this script, the duration between `canvas1` and `canvas2` is not confounded by stimulus-preparation time."
 --%
 
-When using the graphical interface, the same considerations apply, but OpenSesame helps you by automatically handling most of the stimulus preparation in advance. However, you have to take into account that this preparation occurs at the level of `sequence` items, and not at the level of `loop` items. Practically speaking, this means that the timing *within* a `sequence` is not confounded by stimulus-preparation time. But the timing *between* `sequence`s is.
+When using the graphical interface, the same considerations apply, but OpenSesame helps you by automatically handling most of the stimulus preparation in advance. However, you have to take into account that this preparation occurs at the level of SEQUENCE items, and not at the level of LOOP items. Practically speaking, this means that the timing *within* a SEQUENCE is not confounded by stimulus-preparation time. But the timing *between* SEQUENCEs is.
 
-To make this more concrete, let's consider the structure shown below (%FigStimPrepBad). Suppose that the duration of the `sketchpad` item is set to 95 ms, thus aiming for a 100 ms duration, or 6 frames on a 60 Hz monitor. On my test system the actual duration is 133 ms, or 8 frames, because the timing is confounded by preparation of the `sketchpad` item, which occurs each time that that the sequence is executed. So this is an example of how you should *not* implement time-critical parts of your experiment.
+To make this more concrete, let's consider the structure shown below (%FigStimPrepBad). Suppose that the duration of the SKETCHPAD item is set to 95 ms, thus aiming for a 100 ms duration, or 6 frames on a 60 Hz monitor. On my test system the actual duration is 133 ms, or 8 frames, because the timing is confounded by preparation of the SKETCHPAD item, which occurs each time that that the sequence is executed. So this is an example of how you should *not* implement time-critical parts of your experiment.
 
 %--
 figure:
  id: FigStimPrepBad
  source: stimulus-preparation-incorrect.png
- caption: "An example of an experimental structure in which the timing between successive presentations of `sketchpad` is confounded by stimulus-preparation time. The sequence of events in this case is as follows: prepare `sketchpad` (2 frames), show `sketchpad` (6 frames), prepare `sketchpad` (2 frames), show `sketchpad` (6 frames), etc."
+ caption: "An example of an experimental structure in which the timing between successive presentations of SKETCHPAD is confounded by stimulus-preparation time. The sequence of events in this case is as follows: prepare SKETCHPAD (2 frames), show SKETCHPAD (6 frames), prepare SKETCHPAD (2 frames), show SKETCHPAD (6 frames), etc."
 --%
 
-Now let's consider the structure shown below (%FigStimPrepGood). Suppose that the duration of `sketchpad1` is set to 95 ms, thus aiming for a 100 ms interval between `sketchpad1` and `sketchpad2`. In this case, both items are shown as part of the same `sequence` and the timing will not be confounded by stimulus-preparation time. On my test system the actual interval between `sketchpad1` and `sketchpad2` is therefore indeed 100 ms, or 6 frames on a 60 Hz monitor.
+Now let's consider the structure shown below (%FigStimPrepGood). Suppose that the duration of `sketchpad1` is set to 95 ms, thus aiming for a 100 ms interval between `sketchpad1` and `sketchpad2`. In this case, both items are shown as part of the same SEQUENCE and the timing will not be confounded by stimulus-preparation time. On my test system the actual interval between `sketchpad1` and `sketchpad2` is therefore indeed 100 ms, or 6 frames on a 60 Hz monitor.
 
 Note that this only applies to the interval between `sketchpad1` and `sketchpad2`, because they are executed in that order as part of the same sequence. The interval between `sketchpad2` on run *i* and `sketchpad1` on run *i+1* is again confounded by stimulus-preparation time.
 
@@ -137,7 +137,7 @@ See also:
 
 ### Checking whether v-sync is enabled
 
-As described in [Understanding your monitor], the presentation of a new display should ideally coincide with the start of a new refresh cycle (i.e. 'v-sync'). You can test whether this is the case by presenting displays of different colors in rapid alternation. If v-sync is not enabled you will clearly observe horizontal lines running across the monitor (i.e. 'tearing'). To perform this test, run an experiment with the following script in an `inline_script` item (%LstVSync):
+As described in [Understanding your monitor], the presentation of a new display should ideally coincide with the start of a new refresh cycle (i.e. 'v-sync'). You can test whether this is the case by presenting displays of different colors in rapid alternation. If v-sync is not enabled you will clearly observe horizontal lines running across the monitor (i.e. 'tearing'). To perform this test, run an experiment with the following script in an INLINE_SCRIPT item (%LstVSync):
 
 %--
 code:
@@ -163,7 +163,7 @@ code:
  id: LstIntervalBenchmark
  syntax: python
  source: interval-benchmark.py
- caption: A Python script to test the timing consistency and accuracy of display timestamps. You can paste this code into an `inline_script` item.
+ caption: A Python script to test the timing consistency and accuracy of display timestamps. You can paste this code into an INLINE_SCRIPT item.
 --%
 
 I ran %LstIntervalBenchmark on Windows XP, using all three back-ends. I also recorded the onsets of the white displays using a photodiode connected to a second computer. The results are summarized in %TblBenchmarkResults.
@@ -181,7 +181,7 @@ As you can see, the [xpyriment] and [psycho] back-ends consistently show a 100 m
 
 Under Windows, there are two ways to obtain the system time. The Windows *Performance Query Counter* (QPC) API reportedly provides the highest accuracy. The CPU *Time Stamp Counter* (TSC), which relies on the number of clock ticks since the CPU started running, is somewhat less accurate. Of course, these two timers should be in sync with each other. A significant deviation between the QPC and TSC indicates a problem with your system's internal timer. Currently, the [psycho] and [xpyriment] back-ends makes use of the QPC. The [legacy] back-ends rely on the TSC.
 
-%LstDriftBenchmark determines a drift value that indicates how much the QPC and TSC diverge. This value should be very close to 1, meaning no divergence. Values higher than 1 indicate that the TSC runs faster than the QPC. You can run this script directly in a Python interpreter or by pasting it in an `inline_script` item (in which case you may need to comment out the references to `matplotlib`, because this library is not included in all OpenSesame packages).
+%LstDriftBenchmark determines a drift value that indicates how much the QPC and TSC diverge. This value should be very close to 1, meaning no divergence. Values higher than 1 indicate that the TSC runs faster than the QPC. You can run this script directly in a Python interpreter or by pasting it in an INLINE_SCRIPT item (in which case you may need to comment out the references to `matplotlib`, because this library is not included in all OpenSesame packages).
 
 %--
 code:
@@ -220,7 +220,7 @@ A very nice set of benchmarks is available on the Expyriment website. This infor
 
 - <http://docs.expyriment.org/Timing.html>
 
-Expyriment includes a very useful test suite. You can launch this test suite by running the `test_suite.opensesame` example experiment, or by adding a simple `inline_script` to your experiment with the following lines of code (%LstExpyrimentTestSuite):
+Expyriment includes a very useful test suite. You can launch this test suite by running the `test_suite.opensesame` example experiment, or by adding a simple INLINE_SCRIPT to your experiment with the following lines of code (%LstExpyrimentTestSuite):
 
 %--
 code:

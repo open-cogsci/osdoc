@@ -32,7 +32,7 @@ figure:
 
 ## Using `dportio.dll` in a Python inline Script (Windows only)
 
-Instead of using the `parallel_port_trigger` plug-in, it is also possible to send triggers with `dlportio.dll` through a Python inline script. This approach is Windows only. To do so, first add an `inline_script` to the start of the experiment with the following code in the prepare phase:
+Instead of using the `parallel_port_trigger` plug-in, it is also possible to send triggers with `dlportio.dll` through a Python inline script. This approach is Windows only. To do so, first add an INLINE_SCRIPT to the start of the experiment with the following code in the prepare phase:
 
 ~~~ .python
 try:
@@ -45,7 +45,7 @@ except:
 
 This will load `dlportio.dll` as a global object called `io`. Please note that failure will not crash the experiment, so make sure to check the debug window for error messages!
 
-Now use the following code in an `inline_script` anywhere in the experiment to send a trigger:
+Now use the following code in an INLINE_SCRIPT anywhere in the experiment to send a trigger:
 
 ~~~ .python
 global io

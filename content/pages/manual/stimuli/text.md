@@ -1,28 +1,17 @@
----
-layout: osdoc
 title: Text
-group: Usage
-permalink: /text/
-parser: academicmarkdown
----
 
-## Overview
-
-%--
-toc:
- mindepth: 2
- exclude: [Overview]
---%
+[TOC]
 
 ## How can I present text?
 
-The most common way to show text is using a `sketchpad` or `feedback` item. These allow you to enter text and other visual stimuli. For a questionnaire-like way to show text, you can use [forms](/forms/about).
+The most common way to show text is using a SKETCHPAD or FEEDBACK item. These allow you to enter text and other visual stimuli. For a questionnaire-like way to show text, you can use [forms](%link:manual/forms/about%).
 
-Previously, OpenSesame included a `text_display` plug-in. This plug-in has been removed as of OpenSesame 3.0.0, because it was outdated and did not provide any functionality that is not offered by forms and `sketchpad` items.
+__Note:__ The TEXT_DISPLAY plug-in has been removed as of OpenSesame 3.0.0, because it was outdated and did not provide any functionality that is not offered by FORMs and SKETCHPAD items.
+{: .page-notification}
 
 ## Formatting (HTML subset)
 
-You can use a subset of HTML tags, which you can simply insert into your text. You can use these tags everywhere: In `sketchpad` items, in `inline_script`s (provided you use the `openexp.canvas` class), in forms, etc.
+You can use a subset of HTML tags, which you can simply insert into your text. You can use these tags everywhere: In SKETCHPAD items, in INLINE_SCRIPTs (provided you use the `openexp.canvas` class), in forms, etc.
 
 Example:
 
@@ -92,6 +81,7 @@ figure:
 The fonts have been renamed for clarity, but correspond to the following open-source fonts:
 
 |__Name in OpenSesame__		|__Actual font__		|
+|---------------------------|-----------------------|
 |`sans`						|Droid Sans				|
 |`serif`					|Droid Serif			|
 |`mono`						|Droid Sans Mono		|
@@ -106,7 +96,7 @@ If you select 'other ...' in the font selection dialog, you can select any font 
 
 ### Placing a custom font in the file pool
 
-Another way to use a custom font is to put a font file in the file pool. For example, if you place the font file `inconsolata.ttf` in the file pool, you can use this font in a `sketchpad` item, like so:
+Another way to use a custom font is to put a font file in the file pool. For example, if you place the font file `inconsolata.ttf` in the file pool, you can use this font in a SKETCHPAD item, like so:
 
 	draw textline 0.0 0.0 "This will be inconsolata" font_family="inconsolata"
 
@@ -125,6 +115,6 @@ figure:
 
 ## Why do I see squares or question marks when I run my experiment?
 
-If you select the font `mono` and add a string of, say, Hebrew text to a `sketchpad`, the user interface will display your text just fine. However, when you run the experiment, you will see a row of squares, and no characters. This happens because the `mono` font, which is actually 'Droid Sans Mono', does not contain Hebrew characters. The user interface deals with this by falling back to a different font that does contain Hebrew characters. However, the OpenSesame runtime deals with this by showing ... a bunch of squares.
+If you select the font `mono` and add a string of, say, Hebrew text to a SKETCHPAD, the user interface will display your text just fine. However, when you run the experiment, you will see a row of squares, and no characters. This happens because the `mono` font, which is actually 'Droid Sans Mono', does not contain Hebrew characters. The user interface deals with this by falling back to a different font that does contain Hebrew characters. However, the OpenSesame runtime deals with this by showing ... a bunch of squares.
 
-The bottom line is that if you find that characters are missing, you should select a different font that actually contains the characters--Even when the characters display fine in the user interface!
+The bottom line is that if you find that characters are missing, you should select a different font that actually contains the characters--even when the characters display fine in the user interface!

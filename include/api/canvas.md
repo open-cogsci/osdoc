@@ -306,7 +306,7 @@ Turns the current `canvas` into a copy of the passed `canvas`.
 
 __Note:__
 
-If you want to create a copy of a `sketchpad` `canvas`, you can also
+If you want to create a copy of a SKETCHPAD `canvas`, you can also
 use the `inline_script.copy_sketchpad` function.
 
 __Example:__

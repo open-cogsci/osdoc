@@ -10,7 +10,7 @@ Experimental variables in OpenSesame are those variables that:
 - You can refer to in the user interface with the '[variable_name]' syntax.
 - You can refer to in Python with the `var.variable_name` syntax.
 - Contain things like:
-	- The variables that you have defined in a `loop` item.
+	- The variables that you have defined in a LOOP item.
 	- The responses that you have collected.
 	- Various properties of the experiment.
 	- Etc.
@@ -28,13 +28,13 @@ figure:
 
 ## Defining variables
 
-The simplest way to define a variable is through the `loop` item. For example, %FigLoop shows how to define a variable named `target`. In this example, *trial_sequence* item is called once while `target` is 'left' and once while 'target' is 'right'.
+The simplest way to define a variable is through the LOOP item. For example, %FigLoop shows how to define a variable named `target`. In this example, *trial_sequence* item is called once while `target` is 'left' and once while 'target' is 'right'.
 
 %--
 figure:
  id: FigLoop
  source: defining-variables-in-a-loop.png
- caption: The most common way to define independent variables is using the `loop` table.
+ caption: The most common way to define independent variables is using the LOOP table.
 --%
 
 ## Built-in variables
@@ -62,12 +62,12 @@ There are also variables that keep track of all the items in the experiment.
 
 |Variable name			|Description|
 |-----------------------|-----------|
-|`time_[item_name]`		|Contains a timestamp of when the item was last executed. For `sketchpad` items, this can be used to verify the timing of display presentation.|
+|`time_[item_name]`		|Contains a timestamp of when the item was last executed. For SKETCHPAD items, this can be used to verify the timing of display presentation.|
 |`count_[item_name]`	|Is equal the number of times minus one (starting at 0, in other words) that an item has been called. This can, for example, be used as a trial or block counter.|
 
 ### Response variables
 
-When you use the standard response items, such as the `keyboard_response` and `mouse_response`, a number of variables are set based on the participant's response.
+When you use the standard response items, such as the KEYBOARD_RESPONSE and MOUSE_RESPONSE, a number of variables are set based on the participant's response.
 
 |Variable name					|Description|
 |-------------------------------|-----------|
@@ -91,22 +91,22 @@ Feedback variables maintain a running average of accuracy and response times.
 
 ## Using variables in the user interface
 
-Wherever you see a value in the user interface, you can replace that value by a variable using the '[variable name]' notation. For example, if you have defined a variable `soa` in a `loop` item, you can use this variable for the duration of a sketchpad as shown in %FigSketchpad.
+Wherever you see a value in the user interface, you can replace that value by a variable using the '[variable name]' notation. For example, if you have defined a variable `soa` in a LOOP item, you can use this variable for the duration of a sketchpad as shown in %FigSketchpad.
 
 %--
 figure:
  id: FigSketchpad
  source: variable-duration.png
- caption: The duration '[soa]' indicates that the duration of the `sketchpad` depends on the variable `soa`.
+ caption: The duration '[soa]' indicates that the duration of the SKETCHPAD depends on the variable `soa`.
 --%
 
-This works throughout the user interface. For example, if you have the defined a variable `my_freq`, you can use this variable as the frequency in a `synth` item, as shown in %FigSynth.
+This works throughout the user interface. For example, if you have the defined a variable `my_freq`, you can use this variable as the frequency in a SYNTH item, as shown in %FigSynth.
 
 %--
 figure:
  id: FigSynth
  source: variable-frequency.png
- caption: The frequency '[my_freq]' indicates that the frequency of the `synth` depends on the variable `my_freq`.
+ caption: The frequency '[my_freq]' indicates that the frequency of the SYNTH depends on the variable `my_freq`.
 --%
 
 Sometimes, the user interface doesn't let you type in arbitrary text. For example, the elements of a sketchpad are shown visually, and you cannot directly change an X coordinate to a variable. However, you can click on the *Select view → View script* button on the top right, and edit the script directly.
@@ -125,7 +125,7 @@ draw fixdot x=[xpos] y=[ypos]
 
 ## Using variables in Python
 
-In an `inline_script`, you can get experimental variables using the `var` object. The following, will print the value of the variable 'example_variable' to the debug window:
+In an INLINE_SCRIPT, you can get experimental variables using the `var` object. The following, will print the value of the variable 'example_variable' to the debug window:
 
 ~~~ .python
 print(var.example_variable)
@@ -145,7 +145,7 @@ For more information, see:
 
 Conditional statements, or 'if statements', provide a way to indicate that something should happen only under specific circumstances, such when a certain variable has a specific value.
 
-The most commonly used if-statement in OpenSesame is the run-if statement of the `sequence`, which allows you to specify the conditions under which a particular element is executed. If you open a `sequence` item, you will see that every item from the sequence has a 'Run if...' option. The default value is 'always', in which case the item is always called, but you can also enter a condition here. For example, if you want to show a green fixation dot after a correct response, and a red fixation dot after an incorrect response, you can create a sequence like the following (this makes use of the fact that a `keyboard_response` item automatically sets the `correct` variable, as discussed above) as shown in %FigRunIf.
+The most commonly used if-statement in OpenSesame is the run-if statement of the SEQUENCE, which allows you to specify the conditions under which a particular element is executed. If you open a SEQUENCE item, you will see that every item from the sequence has a 'Run if...' option. The default value is 'always', in which case the item is always called, but you can also enter a condition here. For example, if you want to show a green fixation dot after a correct response, and a red fixation dot after an incorrect response, you can create a sequence like the following (this makes use of the fact that a KEYBOARD_RESPONSE item automatically sets the `correct` variable, as discussed above) as shown in %FigRunIf.
 
 *Important:* A run-if statement only applies to the run phase of an item. The prepare phase of an item is always executed.
 
@@ -154,7 +154,7 @@ figure:
  id: FigRunIf
  source: run-if.png
  caption: |
-  'Run if' statements can be used to indicate that certain items from a `sequence` should only be executed under specific circumstances.
+  'Run if' statements can be used to indicate that certain items from a SEQUENCE should only be executed under specific circumstances.
 --%
 
 You can use more complex conditions as well. Let's take a look at a few examples:
@@ -170,15 +170,15 @@ Alternatively, you can use Python code in your conditional statements. To indica
 =var.correct == 0
 ~~~
 
-You cannot use the square-bracket syntax when using Python code. Instead, you use the `var` object to retrieve a variable, like you would in an ordinary `inline_script`.
+You cannot use the square-bracket syntax when using Python code. Instead, you use the `var` object to retrieve a variable, like you would in an ordinary INLINE_SCRIPT.
 
-The same principle applies to 'Show if' fields in `sketchpad` items. For example, if you want to draw a leftwards arrow only if the variable `cue` has been set to 'right', simply type the proper condition in the 'Show if ...' field and draw the arrow, as in %FigShowIf. Make sure that you draw the arrow after you have set the condition.
+The same principle applies to 'Show if' fields in SKETCHPAD items. For example, if you want to draw a leftwards arrow only if the variable `cue` has been set to 'right', simply type the proper condition in the 'Show if ...' field and draw the arrow, as in %FigShowIf. Make sure that you draw the arrow after you have set the condition.
 
 %--
 figure:
  id: FigShowIf
  source: show-if.png
- caption: "'Show if' statements can be used to indicate that certain elements from a `sketchpad` or `feedback` item should only be shown under specific circumstances."
+ caption: "'Show if' statements can be used to indicate that certain elements from a SKETCHPAD or FEEDBACK item should only be shown under specific circumstances."
 --%
 
 Important: The moment at which a conditional statement is evaluated may affect how your experiment works. This is related to the prepare-run strategy employed by OpenSesame, which is explained here:
@@ -217,6 +217,6 @@ figure:
  caption: If you see an error message of this type, you have probably used a variable name that was already in use by OpenSesame, resulting in a recursion error.
 --%
 
-This error maybe confusing at first, but is easy to prevent once you understand it. The problem is that the `synth` item (in this example) uses an item-level variable that is called `freq`. Therefore, if you try to use a global variable called `freq` to specify the item's internal variable called `freq`, OpenSesame will get into an infinite recursion!
+This error maybe confusing at first, but is easy to prevent once you understand it. The problem is that the SYNTH item (in this example) uses an item-level variable that is called `freq`. Therefore, if you try to use a global variable called `freq` to specify the item's internal variable called `freq`, OpenSesame will get into an infinite recursion!
 
 The solution, of course, is to use a different name for your own variable. For example, `my_freq` will do just fine.

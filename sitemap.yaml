@@ -24,7 +24,6 @@ Manual:
         Looping and defining indepedent variables: manual/structure/loop
         Doing things in sequence: manual/structure/sequence
         Doing things in parallel: manual/structure/coroutines
-        Counterbalancing: manual/structure/counterbalancing
     Stimulus presentation:
         Text: manual/stimuli/text
         Visual stimuli: manual/stimuli/visual
@@ -71,6 +70,7 @@ Manual:
     _:
     Advanced:
     The prepare-run strategy: manual/prepare-run
+    Counterbalancing: manual/counterbalancing
     Timing: manual/timing
     Backends: manual/backends
     Running on Android: manual/android

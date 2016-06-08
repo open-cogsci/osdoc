@@ -2,7 +2,7 @@
 
 # class __sampler__
 
-The `sampler` module provides functionality to play sound samples.
+The SAMPLER module provides functionality to play sound samples.
 
 __Example:__
 
@@ -104,7 +104,7 @@ my_sampler.play()
 
 ## function __sampler\.\_\_init\_\___\(experiment, src, \*\*playback\_args\)
 
-Constructor to create a new `sampler` object. You do not generally
+Constructor to create a new SAMPLER object. You do not generally
 call this constructor directly, but use the `sampler()` function,
 which is described here: [/python/sampler/]().
 
@@ -124,7 +124,7 @@ __Arguments:__
 
 __Keyword dict:__
 
-- `**playback_args`: Optional [playback keywords] that will be used as the default for this `sampler` object.
+- `**playback_args`: Optional [playback keywords] that will be used as the default for this SAMPLER object.
 
 </div>
 

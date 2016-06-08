@@ -56,11 +56,11 @@ figure:
 
 ### Background box 1
 
-Let's introduce the basics: OpenSesame experiments are collections of *items*. An item is a small chunk of functionality that, for example, can be used to present visual stimuli (the `sketchpad` item) or record key presses (the `keyboard_response` item). Items have a type and a name. For example, you might have two `keyboard_response` items, which are called *t1_response* and *t2_response*. To make the distinction between the type and the name of an item clear, we will use `code_style` for types, and *italic_style* for names.
+Let's introduce the basics: OpenSesame experiments are collections of *items*. An item is a small chunk of functionality that, for example, can be used to present visual stimuli (the SKETCHPAD item) or record key presses (the KEYBOARD_RESPONSE item). Items have a type and a name. For example, you might have two KEYBOARD_RESPONSE items, which are called *t1_response* and *t2_response*. To make the distinction between the type and the name of an item clear, we will use `code_style` for types, and *italic_style* for names.
 
-To give structure to your experiment, two types of items are especially important: the `loop` and the `sequence`. Understanding how you can combine `loop`s and `sequence`s to build experiments is perhaps the trickiest part of working with OpenSesame, so let's get that out of the way first.
+To give structure to your experiment, two types of items are especially important: the LOOP and the SEQUENCE. Understanding how you can combine LOOPs and SEQUENCEs to build experiments is perhaps the trickiest part of working with OpenSesame, so let's get that out of the way first.
 
-A `loop` is where, in most cases, you define your independent variables. In a `loop` you can create a table in which each column corresponds to a variable, and each row corresponds to a single run of the 'item to run'. To make this more concrete, let's consider the following *block_loop* (unrelated to this tutorial):
+A LOOP is where, in most cases, you define your independent variables. In a LOOP you can create a table in which each column corresponds to a variable, and each row corresponds to a single run of the 'item to run'. To make this more concrete, let's consider the following *block_loop* (unrelated to this tutorial):
 
 %--
 figure:
@@ -72,17 +72,17 @@ figure:
 
 This *block_loop* will execute *trial_sequence* four times. Once while `soa` is 100 and `target` is 'F', once while `soa` is 100 and `target` is 'H', etc. The order in which the rows are walked through is random by default, but can also be set to sequential in the top-right of the tab.
 
-A `sequence` consists of a series of items that are executed one after another. A prototypical `sequence` is the *trial_sequence*, which corresponds to a single trial. For example, a basic *trial_sequence* might consist of a `sketchpad`, to present a stimulus, a `keyboard_response`, to collect a response, and a `logger`, to write the trial information to the log file.
+A SEQUENCE consists of a series of items that are executed one after another. A prototypical SEQUENCE is the *trial_sequence*, which corresponds to a single trial. For example, a basic *trial_sequence* might consist of a SKETCHPAD, to present a stimulus, a KEYBOARD_RESPONSE, to collect a response, and a LOGGER, to write the trial information to the log file.
 
 %--
 figure:
  id: FigExampleSequence
  source: example-sequence.png
  caption: |
-  An example of a `sequence` item used as a trial sequence. (This example is not related to the experiment created in this tutorial.)
+  An example of a SEQUENCE item used as a trial sequence. (This example is not related to the experiment created in this tutorial.)
 --%
 
-You can combine `loop`s and `sequence`s in a hierarchical way, to create trial blocks, and practice and experimental phases. For example, the *trial_sequence* is called by the *block_loop*. Together, these correspond to a single block of trials. One level up, the *block_sequence* is called by the *practice_loop*. Together, these correspond to the practice phase of the experiment.
+You can combine LOOPs and SEQUENCEs in a hierarchical way, to create trial blocks, and practice and experimental phases. For example, the *trial_sequence* is called by the *block_loop*. Together, these correspond to a single block of trials. One level up, the *block_sequence* is called by the *practice_loop*. Together, these correspond to the practice phase of the experiment.
 
 </div>
 
@@ -106,11 +106,11 @@ The *back-end* is the layer of software that controls the display, input devices
 
 ## Step 3: Add a block_loop and trial_sequence
 
-The default template starts with three items: A `notepad` called *getting_started*, a `sketchpad` called *welcome*, and a `sequence` called *experiment*. We don't need *getting_started* and *welcome*, so let's remove these right away. To do so, right-click on these items and select 'Delete'. Don't remove *experiment*, because it is the entry for the experiment (i.e. the first item that is called when the experiment is started).
+The default template starts with three items: A `notepad` called *getting_started*, a SKETCHPAD called *welcome*, and a SEQUENCE called *experiment*. We don't need *getting_started* and *welcome*, so let's remove these right away. To do so, right-click on these items and select 'Delete'. Don't remove *experiment*, because it is the entry for the experiment (i.e. the first item that is called when the experiment is started).
 
-Our experiment will have a very simple structure. At the top of the hierarchy is a loop, which we will call *block_loop*. The *block_loop* is the place where we will define our independent variables (see also Background box 1). To add a `loop` to your experiment, drag the `loop` icon from the item toolbar onto the *experiment* item in the overview area.
+Our experiment will have a very simple structure. At the top of the hierarchy is a loop, which we will call *block_loop*. The *block_loop* is the place where we will define our independent variables (see also Background box 1). To add a LOOP to your experiment, drag the LOOP icon from the item toolbar onto the *experiment* item in the overview area.
 
-Because a `loop` item always needs another item to run, a dialog will appear that asks whether you want to create a new item for the `loop` or whether you want to select an existing item. We want to create a new `sequence` for our loop, so select `sequence` in the pull-down menu labeled 'Create new item to use' and click on the 'Create' button.
+Because a LOOP item always needs another item to run, a dialog will appear that asks whether you want to create a new item for the LOOP or whether you want to select an existing item. We want to create a new SEQUENCE for our loop, so select SEQUENCE in the pull-down menu labeled 'Create new item to use' and click on the 'Create' button.
 
 By default, items have names such as *sequence*, *loop*, *_sequence*, etc. These names are not very informative, and it is good practice to rename them. Item names must consist of alphanumeric characters and/ or underscores. To rename an item, right-click on the item in the overview area and select 'Rename'. Rename *sequence* to *trial_sequence* to indicate that it will correspond to a single trial. Rename *loop* to *block_loop* to indicate that will correspond to a block of trials.
 
@@ -128,7 +128,7 @@ figure:
 
 ### Background box 3
 
-__Tip__ -- Deleted items are still available in the 'Unused items' bin, until you select 'Permanently delete unused items' in the 'Unused items' tab. You can re-add deleted items to a `sequence` using the 'Append existing item' button.
+__Tip__ -- Deleted items are still available in the 'Unused items' bin, until you select 'Permanently delete unused items' in the 'Unused items' tab. You can re-add deleted items to a SEQUENCE using the 'Append existing item' button.
 
 </div>
 
@@ -164,25 +164,25 @@ figure:
   The loop wizard generates full-factorial designs.
 --%
 
-After clicking 'Ok', you will see that there is a `loop` table with four rows, one for each experimental variable. There are 150 cycles (=5x5x3x2), which means that we have 150 unique trials. Your `loop` table now looks as in %FigStep5.
+After clicking 'Ok', you will see that there is a LOOP table with four rows, one for each experimental variable. There are 150 cycles (=5x5x3x2), which means that we have 150 unique trials. Your LOOP table now looks as in %FigStep5.
 
 %--
 figure:
  id: FigStep5
  source: step5.png
  caption: |
-  The `loop` table at the end of Step 5.
+  The LOOP table at the end of Step 5.
 --%
 
 ## Step 6: Add items to the trial sequence
 
-Open *trial_sequence*. You will see that the `sequence` is empty. It's time to add some items! Our basic *trial_sequence* is:
+Open *trial_sequence*. You will see that the SEQUENCE is empty. It's time to add some items! Our basic *trial_sequence* is:
 
-1. A `sketchpad` to display a central fixation dot for 500 ms.
-2. A `sampler` to play an animal sound.
-3. A `sketchpad` to display an animal picture.
+1. A SKETCHPAD to display a central fixation dot for 500 ms.
+2. A SAMPLER to play an animal sound.
+3. A SKETCHPAD to display an animal picture.
 4. A `touch_response` to collect a response.
-5. A `logger` to write the data to file.
+5. A LOGGER to write the data to file.
 
 To add these items, simply drag them one by one from the item toolbar onto the *trial_sequence*. If necessary, you can open *trial_sequence* and re-order it by dragging the newly added items by their grab-handle (i.e. the four-square icon on the left). Once all items are in the correct order, give each of them a sensible name. The overview area now looks as shown in %FigStep6.
 
@@ -217,7 +217,7 @@ figure:
 Why specify a duration of 495 if we want a duration of 500 ms? The reason for this is that the actual display-presentation duration is always rounded up to a value that is compatible with your monitor's refresh rate. This may sound complicated, but for most purposes the following rules of thumb are sufficient:
 
 1. Choose a duration that is possible given your monitor's refresh rate. For example, if your monitor's refresh rate is 60 Hz, it means that every frame lasts 16.7 ms (=1000 ms/60 Hz). Therefore, on a 60 Hz monitor, you should always select a duration that is a multiple of 16.7 ms, such as 16.7, 33.3, 50, 100, etc.
-2. In the duration field of the `sketchpad` specify a duration that is a few milliseconds shorter than what you're aiming for. So if you want to present a `sketchpad` for 50 ms, choose a duration of 45. If you want to present a `sketchpad` for 1000 ms, choose a duration of 995. Etcetera.
+2. In the duration field of the SKETCHPAD specify a duration that is a few milliseconds shorter than what you're aiming for. So if you want to present a SKETCHPAD for 50 ms, choose a duration of 45. If you want to present a SKETCHPAD for 1000 ms, choose a duration of 995. Etcetera.
 
 For a detailed discussion of experimental timing, see:
 
@@ -227,11 +227,11 @@ For a detailed discussion of experimental timing, see:
 
 ## Step 8: Define the animal sound
 
-Open *animal_sound*. You will see that the `sampler` item provides a number of options, the most important one of which is the sound file that is to be played. Click on the browse button to open the file-pool selection dialog, and select one of the sound files, such as `bark1.ogg`.
+Open *animal_sound*. You will see that the SAMPLER item provides a number of options, the most important one of which is the sound file that is to be played. Click on the browse button to open the file-pool selection dialog, and select one of the sound files, such as `bark1.ogg`.
 
 Of course, we don't want to play the same sound over-and-over again. Instead, we want to select a sound based on the variables `sound` and `sound_nr` that we have defined in the *block_loop* (Step 5). To do this, simply replace the part of the string that you want to have depend on a variable by the name of that variable between square brackets. More specifically, 'bark1.ogg' becomes '[sound][sound_nr].ogg', because we want to replace 'bark' by the value of the variable `sound` and '1' by the value of `sound_nr`.
 
-We also need to change the duration of the `sampler`. By default, the duration is 'sound', which means that the experiment will pause while the sound is playing. Change the duration to 0. This does not mean that the sound will be played for only 0 ms, but that the experiment will advance right away to the next item, while the sound continues to play in the background. The item *animal_sound* now looks as shown in %FigStep8.
+We also need to change the duration of the SAMPLER. By default, the duration is 'sound', which means that the experiment will pause while the sound is playing. Change the duration to 0. This does not mean that the sound will be played for only 0 ms, but that the experiment will advance right away to the next item, while the sound continues to play in the background. The item *animal_sound* now looks as shown in %FigStep8.
 
 %--
 figure:
@@ -253,7 +253,7 @@ For more information about using variables, see:
 
 ## Step 9: Define the animal picture
 
-Open *animal_picture*. This will again open a `sketchpad` drawing board. Now select the image tool by clicking on the button with the aquarium-like icon. Click on the center of the screen (0, 0). The 'Select file from pool' dialog will appear. Select the file `capybara1.png` and click on 'Select'. The capybara will now lazily stare at you from the center of the screen. But of course, we don't always want to show the same capybara. Instead, we want to have the image depend on the variables `animal` and `pic_nr` that we have defined in the *block_loop* (Step 5).
+Open *animal_picture*. This will again open a SKETCHPAD drawing board. Now select the image tool by clicking on the button with the aquarium-like icon. Click on the center of the screen (0, 0). The 'Select file from pool' dialog will appear. Select the file `capybara1.png` and click on 'Select'. The capybara will now lazily stare at you from the center of the screen. But of course, we don't always want to show the same capybara. Instead, we want to have the image depend on the variables `animal` and `pic_nr` that we have defined in the *block_loop* (Step 5).
 
 We can use the basic same trick as we did for *animal_sound*, although things work slightly differently for images. First, right-click on the capybara and select 'Edit'. This will allow you to edit the following line of OpenSesame script that corresponds to the capybara picture:
 
@@ -265,7 +265,7 @@ Now change the name of image file from 'capybara.png' to '[animal][pic_nr].png' 
 
 ... and click on 'Ok' to apply the change. The capybara is now gone, and OpenSesame tells you that one object is not shown, because it is defined using variables. Don't worry, it will be shown during the experiment!
 
-To remind the participant of the task, we will also add two response circles, one marked 'dog' on the left side of the screen, and one marked 'cat' on the right side. I'm sure you will able to figure out how to do this with the `sketchpad` drawing tools. My version is shown in %FigStep9. Note that these response circles are purely visual, and we still need to explicitly define the response criteria (see Step 10).
+To remind the participant of the task, we will also add two response circles, one marked 'dog' on the left side of the screen, and one marked 'cat' on the right side. I'm sure you will able to figure out how to do this with the SKETCHPAD drawing tools. My version is shown in %FigStep9. Note that these response circles are purely visual, and we still need to explicitly define the response criteria (see Step 10).
 
 Finally, set 'Duration' field to '0'. This does not mean that the picture is presented for only 0 ms, but that the experiment will advance to the next item (the *touch_response*) right away. Since the *touch_response* waits for a response, but doesn't change what's on the screen, the target will remain visible until a response has been given.
 
@@ -274,7 +274,7 @@ figure:
  id: FigStep9
  source: step9.png
  caption: |
-  The *animal_picture* `sketchpad` at the end of Step 9.
+  The *animal_picture* SKETCHPAD at the end of Step 9.
 --%
 
 <div class='info-box' markdown='1'>
@@ -313,13 +313,13 @@ figure:
 
 ## Step 11: Define the correct response
 
-So far, we haven't defined what the correct response is for each stimulus. Typically, this is done by defining a `correct_response` variable in the `loop` table. Response items, such as the *touch_response* will automatically use this variable to decide whether a response was correct or not,  unless a different correct response is explicitly provided in the item.
+So far, we haven't defined what the correct response is for each stimulus. Typically, this is done by defining a `correct_response` variable in the LOOP table. Response items, such as the *touch_response* will automatically use this variable to decide whether a response was correct or not,  unless a different correct response is explicitly provided in the item.
 
 Open the *block_loop*. Click on 'Add variable' and add a variable named 'correct_response'. This will add a long empty column to the table. On rows where `animal` is 'dog', set `correct_response` to 1 (i.e. left-side tap). Where `animal` is 'cat', set `correct_response` to 2 (i.e. right-side tap). Where `animal` is 'capybara' set `correct_response` to 'None' (i.e. a timeout). I recommend using some clever copy-pasting to save some time!
 
 ## Step 12: Define the logger
 
-Actually, we don't need to configure the `logger`, but let's take a look at it anyway. Click on *logger* in the overview to open it. You will see that the option 'Automatically detect and log all variables' is selected. This means that OpenSesame logs everything, which is fine.
+Actually, we don't need to configure the LOGGER, but let's take a look at it anyway. Click on *logger* in the overview to open it. You will see that the option 'Automatically detect and log all variables' is selected. This means that OpenSesame logs everything, which is fine.
 
 <div class='info-box' markdown='1'>
 
@@ -333,7 +333,7 @@ __The one tip to rule them all__ -- Always triple-check whether all the necessar
 
 It is good practice to inform the participant of whether the response was correct or not. To avoid disrupting the flow of the experiment, this type of immediate feedback should be as unobtrusive as possible. Here, we will do this by briefly showing a green fixation dot after a correct response, and a red fixation dot after an incorrect response.
 
-First, add two new `sketchpad`s to the end of the *trial_sequence*. Rename the first one to *feedback_correct* and the second one to *feedback_incorrect*. Of course, we want to select only one of these items on any given trial, depending on whether or not the response was correct. To do this, we can make use of the built-in variable `correct`, which has the value 0 after an incorrect response, and 1 after a correct response. (Provided that we have defined `correct_response`, which we did in Step 11.) To tell the *trial_sequence* that the *feedback_correct* item should be called only when the response is correct, we use the following run-if statement:
+First, add two new SKETCHPADs to the end of the *trial_sequence*. Rename the first one to *feedback_correct* and the second one to *feedback_incorrect*. Of course, we want to select only one of these items on any given trial, depending on whether or not the response was correct. To do this, we can make use of the built-in variable `correct`, which has the value 0 after an incorrect response, and 1 after a correct response. (Provided that we have defined `correct_response`, which we did in Step 11.) To tell the *trial_sequence* that the *feedback_correct* item should be called only when the response is correct, we use the following run-if statement:
 
 	[correct] = 1
 
@@ -367,7 +367,7 @@ For more information about conditional 'if' statements, see:
 
 A good experiment always start with an instruction screen, and ends by thanking the participant for his or her time. The easiest way to do this in OpenSesame is with `form_text_display` items.
 
-Drag two `form_text_display`s into the main *experiment* `sequence`. One should be at the very start, and renamed to *form_instructions*. The other should be at the very end, and renamed to *form_finished*. Now simply add some appropriate text to these forms, for example as shown in %FigStep14.
+Drag two `form_text_display`s into the main *experiment* SEQUENCE. One should be at the very start, and renamed to *form_instructions*. The other should be at the very end, and renamed to *form_finished*. Now simply add some appropriate text to these forms, for example as shown in %FigStep14.
 
 %--
 figure:
@@ -401,7 +401,7 @@ __Tip__ -- A test run is executed even faster by clicking the orange 'Run in win
 
 ## Extra (easy): A smarter way to define the correct response
 
-In Step 11, we have defined `correct_response` variable manually. This works, but it takes time and is prone to mistakes. A smarter way is to use an `inline_script` and a bit of deductive logic to determine the correct response for a given trial. First, open *block_loop* and remove the `correct_response` column, because we don't need it anymore. Next, drag an `inline_script` item from the item toolbar to the start of the *trial_sequence*. Open the *prepare* tab of the `inline_script` and add the following script:
+In Step 11, we have defined `correct_response` variable manually. This works, but it takes time and is prone to mistakes. A smarter way is to use an INLINE_SCRIPT and a bit of deductive logic to determine the correct response for a given trial. First, open *block_loop* and remove the `correct_response` column, because we don't need it anymore. Next, drag an INLINE_SCRIPT item from the item toolbar to the start of the *trial_sequence*. Open the *prepare* tab of the INLINE_SCRIPT and add the following script:
 
 ~~~ .python
 if self.get('animal') == 'dog':
@@ -412,11 +412,11 @@ else:
 	exp.set('correct_response', None)
 ~~~
 
-So what's going on here? First things first: The reason for putting this code in the *prepare* tab is that every item in a `sequence` is called twice. The first phase is called the *prepare* phase, and is used to perform time consuming tasks before the time-critical run phase of the `sequence`. Determining the correct response is exactly the type of preparatory stuff that you would put in the *prepare* phase. During the *run* phase, the actual events happen. To give a concrete example, the contents of a `sketchpad` are created during the *prepare* phase, and during the *run* phase they are merely 'flipped' to the display. For more information about the prepare-run strategy, see:
+So what's going on here? First things first: The reason for putting this code in the *prepare* tab is that every item in a SEQUENCE is called twice. The first phase is called the *prepare* phase, and is used to perform time consuming tasks before the time-critical run phase of the SEQUENCE. Determining the correct response is exactly the type of preparatory stuff that you would put in the *prepare* phase. During the *run* phase, the actual events happen. To give a concrete example, the contents of a SKETCHPAD are created during the *prepare* phase, and during the *run* phase they are merely 'flipped' to the display. For more information about the prepare-run strategy, see:
 
 - [/usage/prepare-run/](/usage/prepare-run/)
 
-The script itself is almost human-readable language, at least if you know the following. Firstly, to retrieve an experimental variable in an `inline_script`, you need to use `self.get()`. So where you would write `[animal]` in OpenSesame script, you write `self.get('animal')` in a Python `inline_script`. Secondly, to define an experimental variable, you need to use `exp.set()`. Therefore, to set the variable `correct_response` to `2`, you call `exp.set('correct_response', 2)`. For more information, see:
+The script itself is almost human-readable language, at least if you know the following. Firstly, to retrieve an experimental variable in an INLINE_SCRIPT, you need to use `self.get()`. So where you would write `[animal]` in OpenSesame script, you write `self.get('animal')` in a Python INLINE_SCRIPT. Secondly, to define an experimental variable, you need to use `exp.set()`. Therefore, to set the variable `correct_response` to `2`, you call `exp.set('correct_response', 2)`. For more information, see:
 
 - [/python/about/](/python/about/)
 
@@ -441,9 +441,9 @@ Here we allow for the possibility that an animal is neither a dog, nor a cat, no
 
 Right now, our experiment consists of a single, very long block of trials. In most experiments, you would keep your *block_loop* short (30 trials, say) and repeat it several times with a short break after each block.
 
-However, this approach doesn't work here, because we have a lot of unique trials (150 to be exact), and there is no straightforward way to divide these trials into multiple blocks. Therefore, we will use the following trick: We will add a `feedback` item to our *trial_sequence*, and use a run-if statement to call it only after every 50 trials. This is moderately advanced, but follow me!
+However, this approach doesn't work here, because we have a lot of unique trials (150 to be exact), and there is no straightforward way to divide these trials into multiple blocks. Therefore, we will use the following trick: We will add a FEEDBACK item to our *trial_sequence*, and use a run-if statement to call it only after every 50 trials. This is moderately advanced, but follow me!
 
-First add a `feedback` item to the end of the *trial_sequence*. Next, assign the following run-if statement to it:
+First add a FEEDBACK item to the end of the *trial_sequence*. Next, assign the following run-if statement to it:
 
 ~~~ .python
 =self.get('count_trial_sequence') % 50 == 49
@@ -460,7 +460,7 @@ figure:
  id: FigBreak
  source: break.png
  caption: |
-  An example `feedback` display.
+  An example FEEDBACK display.
 --%
 
 For more information about feedback, see:
@@ -471,7 +471,7 @@ For more information about feedback, see:
 
 Right now, the animal picture stays on the screen until the participant gives a response. But let's say that we want to limit the presentation duration of the picture to 1000 ms. If we want to remove the picture during the response interval, we have to do things in parallel. And because of the purely serial way in which OpenSesame works, this is a bit tricky. Let's take a look at one way to do this, by replacing both the *animal_picture* and *touch_response* items by an `inline_script.
 
-First, remove *animal_picture* and *touch_response* from the *trial_sequence*, and add a single `inline_script` in their place. Now add the following code to the *prepare* phase of the `inline_script` (see the code comments for an explanation):
+First, remove *animal_picture* and *touch_response* from the *trial_sequence*, and add a single INLINE_SCRIPT in their place. Now add the following code to the *prepare* phase of the INLINE_SCRIPT (see the code comments for an explanation):
 
 ~~~ .python
 # Import the canvas and mouse classes
@@ -494,7 +494,7 @@ my_blank_canvas = canvas(exp)
 my_mouse = mouse(exp)
 ~~~
 
-The script above creates a `canvas` with the animal picture, an empty `canvas`, and a `mouse` object. But so far it's all preparation--The script doesn't *do* anything visible. Which brings us to the *run* phase of the `inline_script`:
+The script above creates a `canvas` with the animal picture, an empty `canvas`, and a `mouse` object. But so far it's all preparation--The script doesn't *do* anything visible. Which brings us to the *run* phase of the INLINE_SCRIPT:
 
 ~~~ .python
 # The time that we want to show the animal picture
@@ -555,7 +555,7 @@ If you aren't very familiar with Python and OpenSesame, the script above may loo
 4. Remove the animal picture (i.e. present a blank canvas)
 5. If a response was not received in step 2, try to collect a response again
 
-That's it. Once you're able to see understand this logic, and you understand how this logic can be implemented in an `inline_script`, you will pretty much be able to implement every experiment you want!
+That's it. Once you're able to see understand this logic, and you understand how this logic can be implemented in an INLINE_SCRIPT, you will pretty much be able to implement every experiment you want!
 
 ## References
 

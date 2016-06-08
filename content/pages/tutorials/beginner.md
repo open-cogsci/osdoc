@@ -67,9 +67,9 @@ figure:
 
 Click on 'Default template' to start with a minimal experimental template.
 
-By default there is a main `sequence`, which is simply called *experiment*. Click on *experiment* in the overview area (by default on the left side, see %FigInterface) to open its controls in the tab area. The *experiment* `sequence` consists of two items: a `notepad` called *getting started* and a `sketchpad` called *welcome*.
+By default there is a main SEQUENCE, which is simply called *experiment*. Click on *experiment* in the overview area (by default on the left side, see %FigInterface) to open its controls in the tab area. The *experiment* SEQUENCE consists of two items: a `notepad` called *getting started* and a SKETCHPAD called *welcome*.
 
-We don't need these two items. Remove *getting_started* by right-clicking on it in the overview area and selecting 'Delete' (shortcut: `Del`). Remove *welcome* in the same way. The *experiment* `sequence` is now empty.
+We don't need these two items. Remove *getting_started* by right-clicking on it in the overview area and selecting 'Delete' (shortcut: `Del`). Remove *welcome* in the same way. The *experiment* SEQUENCE is now empty.
 
 %--
 figure:
@@ -82,7 +82,7 @@ figure:
 
 __Background box__
 
-__Names vs types__ -- Items in OpenSesame have a name and a type. The name and type can be the same, but they are usually not. For example, a `sketchpad` item can have the name *my_target_sketchpad*. To make this distinction clear, we will use `monospace` to indicate item types, and *italics* to indicate names.
+__Names vs types__ -- Items in OpenSesame have a name and a type. The name and type can be the same, but they are usually not. For example, a SKETCHPAD item can have the name *my_target_sketchpad*. To make this distinction clear, we will use `monospace` to indicate item types, and *italics* to indicate names.
 
 __Tip__ -- The 'Extended template' is a good starting point for many experiments. It already contains the basic structure of a trial-based experiment.
 
@@ -90,7 +90,7 @@ __Tip__ -- You can click on the Help icons in the top right of an item's tab to 
 
 __Tip__ -- Save (shortcut: `Ctrl+S`) your experiment often! In the unfortunate (and unlikely) event of data loss, you will often be able to recover your work from the back-ups that are created automatically, by default, every 10 minutes (Menu → Tools → Open backup folder).
 
-__Tip__ -- Unless you have used 'Permanently delete' (shortcut: `Shift+Del`), deleted items are still available in the 'Unused items' bin, until you select 'Permanently delete unused items' in the 'Unused items' tab. You can re-add deleted items to a `sequence` by dragging them out of the 'Unused items' bin to somewhere in your experiment.
+__Tip__ -- Unless you have used 'Permanently delete' (shortcut: `Shift+Del`), deleted items are still available in the 'Unused items' bin, until you select 'Permanently delete unused items' in the 'Unused items' tab. You can re-add deleted items to a SEQUENCE by dragging them out of the 'Unused items' bin to somewhere in your experiment.
 
 __Tip__ -- %FigExperimentStructure schematically shows the structure of the experiment that you will create. If you get confused during the tutorial, you can refer to %FigExperimentStructure to see where you are.
 
@@ -108,39 +108,39 @@ __Append a form_text_display item for the instruction display__
 
 As the name suggests, a `form_text_display` is a form that displays text. We are going to use a `form_text_display` to give instructions to the participant at the beginning of the experiment.
 
-Click on *experiment* in the overview area to open its controls in the tab area. You will see an empty `sequence`. Drag a `form_text_display` from the item toolbar (under 'Form', see %FigInterface) onto the *experiment* `sequence` in the tab area. When you let go, a new `form_text_display` item will be inserted into the `sequence`. (We will get back to this in Step 12.)
+Click on *experiment* in the overview area to open its controls in the tab area. You will see an empty SEQUENCE. Drag a `form_text_display` from the item toolbar (under 'Form', see %FigInterface) onto the *experiment* SEQUENCE in the tab area. When you let go, a new `form_text_display` item will be inserted into the SEQUENCE. (We will get back to this in Step 12.)
 
 <div class='info-box' markdown='1'>
 
 __Background box__
 
-__Tip__ -- You can drag items into the overview area and into `sequence` tabs.
+__Tip__ -- You can drag items into the overview area and into SEQUENCE tabs.
 
 __Tip__ -- If a drop action is ambiguous, a pop-up menu will ask you what you want to do.
 
-__Tip__ -- A `form_text_display` only shows text. If you require images etc., you can use a `sketchpad` item. We will meet the `sketchpad` in Step 5.
+__Tip__ -- A `form_text_display` only shows text. If you require images etc., you can use a SKETCHPAD item. We will meet the SKETCHPAD in Step 5.
 
 </div>
 
 __Append a loop item, containing a new sequence item, for the practice phase__
 
-We need to append a `loop` item to the *experiment* `sequence`. We will use this `loop` for the practice phase of the experiment. Click on the *experiment* `sequence` to open its controls in the tab area.
+We need to append a LOOP item to the *experiment* SEQUENCE. We will use this LOOP for the practice phase of the experiment. Click on the *experiment* SEQUENCE to open its controls in the tab area.
 
-Drag the `loop` item from the item toolbar into the `sequence` just the way you added the `form_text_display`. New items are inserted below the item that they are dropped on, so if you drop the new `loop` onto the previously created `form_text_display`, it will appear where you want it: after the `form_text_display`. But don't worry if you drop a new item in the wrong place, because you can always re-order things later.
+Drag the LOOP item from the item toolbar into the SEQUENCE just the way you added the `form_text_display`. New items are inserted below the item that they are dropped on, so if you drop the new LOOP onto the previously created `form_text_display`, it will appear where you want it: after the `form_text_display`. But don't worry if you drop a new item in the wrong place, because you can always re-order things later.
 
-By itself, a `loop` does not do anything. A `loop` always needs another item to run. Therefore, you have to fill the new `loop` item with another item. (If you view the loop item, you will also see a warning: 'No item specified'.) Drag a `sequence` item from the item toolbar onto the `loop` item. A pop-up menu will appear, asking you whether you want to insert the `sequence` after or into the `loop` item. Select 'Insert into new_loop'. (We will get back to this in Step 2.)
+By itself, a LOOP does not do anything. A LOOP always needs another item to run. Therefore, you have to fill the new LOOP item with another item. (If you view the loop item, you will also see a warning: 'No item specified'.) Drag a SEQUENCE item from the item toolbar onto the LOOP item. A pop-up menu will appear, asking you whether you want to insert the SEQUENCE after or into the LOOP item. Select 'Insert into new_loop'. (We will get back to this in Step 2.)
 
 <div class='info-box' markdown='1'>
 
 __Background box__
 
-__What is a `loop` item?__ -- A `loop` is an item that adds structure to your experiment. It repeatedly runs another item, typically a `sequence`. A `loop` is also the place where you will usually define your independent variables, that is, those variables you manipulate in your experiment.
+__What is a LOOP item?__ -- A LOOP is an item that adds structure to your experiment. It repeatedly runs another item, typically a SEQUENCE. A LOOP is also the place where you will usually define your independent variables, that is, those variables you manipulate in your experiment.
 
-__What is a `sequence` item?__ -- A `sequence` item also adds structure to your experiment. As the name suggests, a `sequence` runs multiple other items in sequence.
+__What is a SEQUENCE item?__ -- A SEQUENCE item also adds structure to your experiment. As the name suggests, a SEQUENCE runs multiple other items in sequence.
 
-__The `loop`-`sequence` structure__ -- You often want to repeat a sequence of events. To do this, you will need a `loop` item that contains a `sequence` item. By itself, a `sequence` does not repeat. It simply starts with the first item and ends with the last item. By 'wrapping' a `loop` item around the `sequence`, you can repeat the `sequence` multiple times. For example, a single trial usually corresponds to a single `sequence` called *trial_sequence*. A `loop` (often called *block_loop*) around this *trial_sequence* would then constitute a single block of trials. Similarly, but at another level of the experiment, a `sequence` (often called *block_sequence*) may contain a single block of trials, followed by a `feedback` display. A *practice_phase* `loop` around this 'block' `sequence` would then constitute the practice phase of the experiment. This may seem a bit abstract right now, but as you follow this tutorial, you will become familiar with the use of `loop`s and `sequence`s.
+__The LOOP-SEQUENCE structure__ -- You often want to repeat a sequence of events. To do this, you will need a LOOP item that contains a SEQUENCE item. By itself, a SEQUENCE does not repeat. It simply starts with the first item and ends with the last item. By 'wrapping' a LOOP item around the SEQUENCE, you can repeat the SEQUENCE multiple times. For example, a single trial usually corresponds to a single SEQUENCE called *trial_sequence*. A LOOP (often called *block_loop*) around this *trial_sequence* would then constitute a single block of trials. Similarly, but at another level of the experiment, a SEQUENCE (often called *block_sequence*) may contain a single block of trials, followed by a FEEDBACK display. A *practice_phase* LOOP around this 'block' SEQUENCE would then constitute the practice phase of the experiment. This may seem a bit abstract right now, but as you follow this tutorial, you will become familiar with the use of LOOPs and SEQUENCEs.
 
-__Tip__ -- For more information about `sequence`s and `loop`s, see:
+__Tip__ -- For more information about SEQUENCEs and LOOPs, see:
 
 - %link:loop%
 - %link:sequence%
@@ -149,19 +149,19 @@ __Tip__ -- For more information about `sequence`s and `loop`s, see:
 
 __Append a new form_text_display item for the end-of-practice message__
 
-After the practice phase, we want to inform the participant that the real experiment will begin. For this we need another `form_text_display`. Go back to the *experiment* `sequence`, and drag a `form_text_display` from the item toolbar onto the `loop` item. The same pop-up menu will appear as before. This time, select 'Insert after new_loop'. (We will get back to this in Step 12.)
+After the practice phase, we want to inform the participant that the real experiment will begin. For this we need another `form_text_display`. Go back to the *experiment* SEQUENCE, and drag a `form_text_display` from the item toolbar onto the LOOP item. The same pop-up menu will appear as before. This time, select 'Insert after new_loop'. (We will get back to this in Step 12.)
 
 <div class='info-box' markdown='1'>
 
-__Tip__ -- Don't worry if you have accidentally changed a `loop`'s item to run. You can undo this easily by clicking the 'Undo' button in the toolbar (`Ctrl+Shift+Z`).
+__Tip__ -- Don't worry if you have accidentally changed a LOOP's item to run. You can undo this easily by clicking the 'Undo' button in the toolbar (`Ctrl+Shift+Z`).
 
 </div>
 
 __Append a new loop item, containing the previously created sequence, for the experimental phase__
 
-We need a `loop` item for the experimental phase, just like for the practice phase. Therefore, drag a `loop` from the item toolbar menu onto *_form_text_display*.
+We need a LOOP item for the experimental phase, just like for the practice phase. Therefore, drag a LOOP from the item toolbar menu onto *_form_text_display*.
 
-The newly created `loop` (called *new_loop_1*) is empty, and should be filled with a `sequence`, just like the `loop` we created before. However, because the trials of the practice and experimental phase are identical, they can use the same `sequence`. Therefore, instead of dragging a new `sequence` from the item toolbar, you can re-use the *existing* one (i.e. create a linked copy).
+The newly created LOOP (called *new_loop_1*) is empty, and should be filled with a SEQUENCE, just like the LOOP we created before. However, because the trials of the practice and experimental phase are identical, they can use the same SEQUENCE. Therefore, instead of dragging a new SEQUENCE from the item toolbar, you can re-use the *existing* one (i.e. create a linked copy).
 
 To do this, right-click on the previously created *new_sequence*, and select 'Create copy (linked)'. Now, right-click on *new_loop_1* and select 'Paste'. In the pop-up menu that appears, select 'Insert into new_loop 1'.
 
@@ -175,7 +175,7 @@ __Tip__ — There is an important distinction between *linked* and *unlinked* co
 
 __Append a new form_text_display item, for the goodbye message__
 
-When the experiment is finished, we should say goodbye to the participant. For this we need another `form_text_display` item. Go back to the *experiment* `sequence`, and drag a `form_text_display` from the item toolbar onto *new_loop_1*. In the pop-up menu that appears, select 'Insert after new_loop_1'. (We will get back to this in Step 12.)
+When the experiment is finished, we should say goodbye to the participant. For this we need another `form_text_display` item. Go back to the *experiment* SEQUENCE, and drag a `form_text_display` from the item toolbar onto *new_loop_1*. In the pop-up menu that appears, select 'Insert after new_loop_1'. (We will get back to this in Step 12.)
 
 __Give the new items sensible names__
 
@@ -214,7 +214,7 @@ __Tip__ — You can enable 'one tab mode' (Menu -> View -> One tab mode) to prev
 
 ## Step 2: Create the block sequence
 
-Click on *block_sequence* in the overview. At the moment this `sequence` is empty. We want *block sequence* to consist of a block of trials, followed by a  `feedback` display. For this we need to do the following:
+Click on *block_sequence* in the overview. At the moment this SEQUENCE is empty. We want *block sequence* to consist of a block of trials, followed by a  FEEDBACK display. For this we need to do the following:
 
 __Append a reset_feedback item to reset the feedback variables__
 
@@ -222,11 +222,11 @@ We don't want our feedback to be confounded by key presses that participants hav
 
 __Append a new loop, containing a new sequence, for a block of trials__
 
-For a single trial we need a `sequence`. For a block of trials, we need to repeat this `sequence` multiple times. Therefore, for a block of trials we need to wrap a `loop` around a `sequence`. Drag a `loop` from the item toolbar onto *reset_feedback*. Next, drag a `sequence` from the item toolbar onto the newly created `loop`, and select 'Insert into new_loop' in the pop-up menu that appears. (We will get back to this in Step 3.)
+For a single trial we need a SEQUENCE. For a block of trials, we need to repeat this SEQUENCE multiple times. Therefore, for a block of trials we need to wrap a LOOP around a SEQUENCE. Drag a LOOP from the item toolbar onto *reset_feedback*. Next, drag a SEQUENCE from the item toolbar onto the newly created LOOP, and select 'Insert into new_loop' in the pop-up menu that appears. (We will get back to this in Step 3.)
 
 __Append a feedback item__
 
-After every block of trials we want to give feedback to the participant, so that the participant knows how well he/ she is doing. For this we need a `feedback` item. Drag a `feedback` from the item toolbar onto *new_loop*, and select 'Insert after loop' in the pop-up menu that appears. (We will get back to this in Step 10.)
+After every block of trials we want to give feedback to the participant, so that the participant knows how well he/ she is doing. For this we need a FEEDBACK item. Drag a FEEDBACK from the item toolbar onto *new_loop*, and select 'Insert after loop' in the pop-up menu that appears. (We will get back to this in Step 10.)
 
 __Give the new items sensible names__
 
@@ -290,7 +290,7 @@ figure:
 
 __Background box__
 
-__Tip__ -- You can prepare your loop table in your favorite spreadsheet program and copy-paste it into the `loop` variable table.
+__Tip__ -- You can prepare your loop table in your favorite spreadsheet program and copy-paste it into the LOOP variable table.
 
 __Tip__ -- You can specify your loop table in a separate file (in `.xlsx` or `.csv`) format, and use this file directly. To do so, select 'file' under 'Source'.
 
@@ -324,15 +324,15 @@ figure:
 
 A trial in our experiment looks as follows:
 
-1. __Fixation dot__ -- 750 ms, `sketchpad` item
-2. __Neutral gaze__ -- 750 ms, `sketchpad` item
-3. __Gaze cue__ -- 500 ms, `sketchpad` item
-4. __Target__  -- 0 ms, `sketchpad` item
-5. __Response collection__ 	-- `keyboard_response` item
-6. __Play a sound if response was incorrect__ --  `sampler` item
-7. __Log response to file__ -- `logger` item
+1. __Fixation dot__ -- 750 ms, SKETCHPAD item
+2. __Neutral gaze__ -- 750 ms, SKETCHPAD item
+3. __Gaze cue__ -- 500 ms, SKETCHPAD item
+4. __Target__  -- 0 ms, SKETCHPAD item
+5. __Response collection__ 	-- KEYBOARD_RESPONSE item
+6. __Play a sound if response was incorrect__ --  SAMPLER item
+7. __Log response to file__ -- LOGGER item
 
-Click on *trial_sequence* in the overview to open the *trial_sequence* tab. Pick up a `sketchpad` from the item toolbar and drag it into the *trial_sequence*. Repeat this three more time, so that *trial_sequence* contains four `sketchpad`s. Next, select and append a `keyboard_response` item, a `sampler` item, and a `logger` item.
+Click on *trial_sequence* in the overview to open the *trial_sequence* tab. Pick up a SKETCHPAD from the item toolbar and drag it into the *trial_sequence*. Repeat this three more time, so that *trial_sequence* contains four SKETCHPADs. Next, select and append a KEYBOARD_RESPONSE item, a SAMPLER item, and a LOGGER item.
 
 Again, we will rename the new items, to make sure that the *trial_sequence* is easy to understand. Rename:
 
@@ -359,13 +359,13 @@ figure:
 
 __Background box__
 
-__What is a `sketchpad` item?__ -- A `sketchpad` is used to present visual stimuli: text, geometric shapes, fixation dots, Gabor patches, etc. You can draw on the `sketchpad` using the built-in drawing tools.
+__What is a SKETCHPAD item?__ -- A SKETCHPAD is used to present visual stimuli: text, geometric shapes, fixation dots, Gabor patches, etc. You can draw on the SKETCHPAD using the built-in drawing tools.
 
-__What is a `keyboard_response` item?__ -- A `keyboard_response` item collects a single participant's response from the keyboard.
+__What is a KEYBOARD_RESPONSE item?__ -- A KEYBOARD_RESPONSE item collects a single participant's response from the keyboard.
 
-__What is a `sampler` item?__ -- A `sampler` item plays a sound from a sound file.
+__What is a SAMPLER item?__ -- A SAMPLER item plays a sound from a sound file.
 
-__What is a `logger` item?__ -- A `logger` item writes data to the log file. This is very important: If you forget to include a `logger` item, no data will be logged during the experiment!
+__What is a LOGGER item?__ -- A LOGGER item writes data to the log file. This is very important: If you forget to include a LOGGER item, no data will be logged during the experiment!
 
 __Tip__ -- Variables and conditional "if" statements are very powerful! To learn more about them, see:
 
@@ -375,11 +375,11 @@ __Tip__ -- Variables and conditional "if" statements are very powerful! To learn
 
 ## Step 6: Draw the sketchpad items
 
-The `sketchpad` items that we have created in Step 5 are still blank. It's time to do some drawing!
+The SKETCHPAD items that we have created in Step 5 are still blank. It's time to do some drawing!
 
 __Set the background color to white__
 
-Click on *fixation_dot* in the overview area to open its tab. The `sketchpad` is still black, while the images that we have downloaded have a white background. Oops, we forgot to set the background color of the experiment to white (it is black by default)! Click on 'Tutorial: Gaze cuing' in the overview area to open the 'General properties' tab. Change 'Foreground color' to 'black' and 'Background color' to 'white'.
+Click on *fixation_dot* in the overview area to open its tab. The SKETCHPAD is still black, while the images that we have downloaded have a white background. Oops, we forgot to set the background color of the experiment to white (it is black by default)! Click on 'Tutorial: Gaze cuing' in the overview area to open the 'General properties' tab. Change 'Foreground color' to 'black' and 'Background color' to 'white'.
 
 <div class='info-box' markdown='1'>
 
@@ -398,7 +398,7 @@ Go back to the *fixation_dot* by clicking on *fixation_dot* in the overview. Now
 Finally, change the 'Duration' field from 'keypress' to '745', because we want the fixation dot to be presented for 750 ms. Wait ... *why didn't we just specify a duration of 750 ms?* The reason for this is that the actual display-presentation duration is always rounded up to a value that is compatible with your monitor's refresh rate. This may sound complicated, but for most purposes the following rules of thumb are sufficient:
 
 1. Choose a duration that is possible given your monitor's refresh rate. For example, if your monitor's refresh rate is 60 Hz, it means that every frame lasts 16.7 ms (= 1000 ms/60 Hz). Therefore, on a 60 Hz monitor, you should always select a duration that is a multiple of 16.7 ms, such as 16.7, 33.3, 50, 100, etc.
-2. In the duration field of the `sketchpad` specify a duration that is a few milliseconds less than what you're aiming for. So if you want to present a `sketchpad` for 50 ms, choose a duration of 45. If you want to present a `sketchpad` for 1000 ms, choose a duration of 995. Etcetera.
+2. In the duration field of the SKETCHPAD specify a duration that is a few milliseconds less than what you're aiming for. So if you want to present a SKETCHPAD for 50 ms, choose a duration of 45. If you want to present a SKETCHPAD for 1000 ms, choose a duration of 995. Etcetera.
 
 <div class='info-box' markdown='1'>
 
@@ -408,7 +408,7 @@ __Tip__ -- For a detailed discussion of experimental timing, see:
 
 - %link:timing%
 
-__Tip__ -- The duration of a `sketchpad` can be a value in milliseconds, but you can also enter 'keypress' or 'mouseclick' to collect a keyboard press or mouse click respectively. In this case a `sketchpad` will work much the same as a `keyboard_response` item (but with fewer options).
+__Tip__ -- The duration of a SKETCHPAD can be a value in milliseconds, but you can also enter 'keypress' or 'mouseclick' to collect a keyboard press or mouse click respectively. In this case a SKETCHPAD will work much the same as a KEYBOARD_RESPONSE item (but with fewer options).
 
 __Tip__ -- Make sure that the (foreground) color is set to black. Otherwise you will draw white on white and won't see anything!
 
@@ -416,7 +416,7 @@ __Tip__ -- Make sure that the (foreground) color is set to black. Otherwise you 
 
 __Draw the neutral gaze__
 
-Open the *neutral_gaze* `sketchpad`. Now select the image tool by clicking on the button with the moon-mountain-landscape-like icon. Click on the center of the screen (0, 0). The 'Select file from pool' dialog will appear. Select the file `gaze_neutral.png` and click on the 'Select' button. The neutral gaze image will now stare at you from the center of the screen! Finally, like before, change the 'Duration' field from 'keypress' to '745'. (And note again that this means a duration of 750 ms on most monitors!)
+Open the *neutral_gaze* SKETCHPAD. Now select the image tool by clicking on the button with the moon-mountain-landscape-like icon. Click on the center of the screen (0, 0). The 'Select file from pool' dialog will appear. Select the file `gaze_neutral.png` and click on the 'Select' button. The neutral gaze image will now stare at you from the center of the screen! Finally, like before, change the 'Duration' field from 'keypress' to '745'. (And note again that this means a duration of 750 ms on most monitors!)
 
 <div class='info-box' markdown='1'>
 
@@ -427,9 +427,9 @@ __Tip__ -- OpenSesame can handle a wide variety of image formats. However, some 
 
 __Draw the gaze cue__
 
-Open the *gaze_cue* `sketchpad`, and again select the image tool. Click on the center of the screen (0, 0) and select the file `gaze_left.png`.
+Open the *gaze_cue* SKETCHPAD, and again select the image tool. Click on the center of the screen (0, 0) and select the file `gaze_left.png`.
 
-Obviously, we are not done yet, because the gaze cue should not always be 'left', but should depend on the variable `gaze_cue`, which we have defined in Step 3. However, by drawing the `gaze_left.png` image to the `sketchpad`, we have generated a script that needs only a tiny modification to make sure that the proper image is shown. Click on the 'Select view' button at the top-right of the *gaze_cue* tab and select 'View script'. You will now see the script that corresponds to the sketchpad that we have just created:
+Obviously, we are not done yet, because the gaze cue should not always be 'left', but should depend on the variable `gaze_cue`, which we have defined in Step 3. However, by drawing the `gaze_left.png` image to the SKETCHPAD, we have generated a script that needs only a tiny modification to make sure that the proper image is shown. Click on the 'Select view' button at the top-right of the *gaze_cue* tab and select 'View script'. You will now see the script that corresponds to the sketchpad that we have just created:
 
 ~~~ .python
 set duration keypress
@@ -466,9 +466,9 @@ figure:
 
 __Draw the target__
 
-We want three objects to be part of the target display: the target letter, the distractor letter, and the gaze cue (see %FigGazeCuing). As before, we will start by creating a static display using the `sketchpad` editor. After this, we will only need to make minor changes to the script so that the exact display depends on the variables.
+We want three objects to be part of the target display: the target letter, the distractor letter, and the gaze cue (see %FigGazeCuing). As before, we will start by creating a static display using the SKETCHPAD editor. After this, we will only need to make minor changes to the script so that the exact display depends on the variables.
 
-Click on *target* in the overview to open the target tab and like before, draw the `gaze_left.png` image at the center of the screen. Now select the draw text tool by clicking on the button with the 'A' icon. Change the foreground color to 'black' (if it isn't already). The default font size is 18 px, which is a bit small for our purpose, so change the font size to 32 px. Now click on (-320, 0) in the `sketchpad` (the X-coordinate does not need to be exactly 320, since we will change this to a variable anyway). Enter "[target_letter]" in the dialog that appears, to draw the target letter (when drawing text, you can use variables directly). Similarly, click on (320, 0) and draw an 'X' (the distractor is always an 'X').
+Click on *target* in the overview to open the target tab and like before, draw the `gaze_left.png` image at the center of the screen. Now select the draw text tool by clicking on the button with the 'A' icon. Change the foreground color to 'black' (if it isn't already). The default font size is 18 px, which is a bit small for our purpose, so change the font size to 32 px. Now click on (-320, 0) in the SKETCHPAD (the X-coordinate does not need to be exactly 320, since we will change this to a variable anyway). Enter "[target_letter]" in the dialog that appears, to draw the target letter (when drawing text, you can use variables directly). Similarly, click on (320, 0) and draw an 'X' (the distractor is always an 'X').
 
 Now open the script editor by clicking on the 'Select view' button at the top-right of the tab and selecting 'View script'. The script looks like this:
 
@@ -500,7 +500,7 @@ Remember to save your experiment regularly.
 
 __Background box__
 
-__Tip__ -- Each element of a `sketchpad` has a 'Show if' option, which specifies when the element should be shown. You can use this to hide/ show elements from a `sketchpad` depending on certain variables, similar to run-if statements in a `sequence`.
+__Tip__ -- Each element of a SKETCHPAD has a 'Show if' option, which specifies when the element should be shown. You can use this to hide/ show elements from a SKETCHPAD depending on certain variables, similar to run-if statements in a SEQUENCE.
 
 __Tip__ -- Make sure that the (foreground) color is set to black. Otherwise you will draw white on white and won't see anything!
 
@@ -512,26 +512,26 @@ Click on *keyboard_response* in the overview to open its tab. You see three opti
 
 We have already set the `correct_response` variable in Step 3. Unless we explicitly specify a correct response, OpenSesame automatically uses the `correct_response` variable if it is available. Therefore, we don't need to change the 'Correct response' field here.
 
-We do need to set the allowed responses. Enter 'z;m' in the allowed-responses field (or other keys if you have chosen different response keys). The semicolon is used to separate responses. The `keyboard_response` now only accepts 'z' and 'm' keys. All other key presses are ignored, with the exception of 'escape', which pauses the experiment.
+We do need to set the allowed responses. Enter 'z;m' in the allowed-responses field (or other keys if you have chosen different response keys). The semicolon is used to separate responses. The KEYBOARD_RESPONSE now only accepts 'z' and 'm' keys. All other key presses are ignored, with the exception of 'escape', which pauses the experiment.
 
-We also want to set a timeout, which is the maximum interval that the `keyboard_response` waits before deciding that the response is incorrect and setting the 'response' variable to 'None'. '2000' (ms) is a good value.
+We also want to set a timeout, which is the maximum interval that the KEYBOARD_RESPONSE waits before deciding that the response is incorrect and setting the 'response' variable to 'None'. '2000' (ms) is a good value.
 
-The `keyboard_response` now looks like %FigStep7.
+The KEYBOARD_RESPONSE now looks like %FigStep7.
 
 %--
 figure:
  id: FigStep7
  source: step7.png
- caption: "The `keyboard_response` at the end of Step 7."
+ caption: "The KEYBOARD_RESPONSE at the end of Step 7."
 --%
 
 <div class='info-box' markdown='1'>
 
 __Background box__
 
-__Tip__ -- By default, the `keyboard_response` will use the `correct_response` variable to determine whether a response was correct. But you can use a different variable as well. To do this, enter a variable name between square brackets (`[my_variable]`) in the correct response field.
+__Tip__ -- By default, the KEYBOARD_RESPONSE will use the `correct_response` variable to determine whether a response was correct. But you can use a different variable as well. To do this, enter a variable name between square brackets (`[my_variable]`) in the correct response field.
 
-__Tip__ -- If 'flush pending key presses' is enabled (it is by default), all pending key presses are discarded when the `keyboard_response` item is called. This prevents carry-over effects, which might otherwise occur if the participant accidentally presses a key during a non-response part of the trial.
+__Tip__ -- If 'flush pending key presses' is enabled (it is by default), all pending key presses are discarded when the KEYBOARD_RESPONSE item is called. This prevents carry-over effects, which might otherwise occur if the participant accidentally presses a key during a non-response part of the trial.
 
 __Tip__ -- To use special keys, such as '/' or the up-arrow key, you can use key names (e.g., 'up' and 'space') or associated characters (e.g., '/' and ']'). The 'List available keys' button provides an overview of all valid key names.
 
@@ -556,19 +556,19 @@ __Background box__
 
 __Tip__ -- You can use variables to specify which sound should be played by using a variable name between square brackets as (part of) the file name. For example: `[a_word].ogg`
 
-__Tip__ -- The `sampler` handles files in `.ogg` and `.wav` format. If you have sound files in a different format, [Audacity] is a great free tool to convert sound files (and much more).
+__Tip__ -- The SAMPLER handles files in `.ogg` and `.wav` format. If you have sound files in a different format, [Audacity] is a great free tool to convert sound files (and much more).
 
 </div>
 
 ## Step 9: Configure the variable logger
 
-Actually, we don't need to configure the variable `logger`, but let's take a look at it anyway. Click on *logger* in the overview to open its tab. You see that the option 'Log all variables (recommended)' is selected. This means that OpenSesame logs everything, which is fine.
+Actually, we don't need to configure the variable LOGGER, but let's take a look at it anyway. Click on *logger* in the overview to open its tab. You see that the option 'Log all variables (recommended)' is selected. This means that OpenSesame logs everything, which is fine.
 
 <div class='info-box' markdown='1'>
 
 __Background box__
 
-__Tip__ -- If you like your log-files clean, you can disable the 'Log all variables' option and manually select variables, either by entering variable names manually ('Add custom variable'), or by dragging variables from the variable inspector into the `logger` table.
+__Tip__ -- If you like your log-files clean, you can disable the 'Log all variables' option and manually select variables, either by entering variable names manually ('Add custom variable'), or by dragging variables from the variable inspector into the LOGGER table.
 
 __The one tip to rule them all__ -- Always triple-check whether all the necessary variables are logged in your experiment! The best way to check this is to run the experiment and investigate the resulting log files.
 
@@ -576,7 +576,7 @@ __The one tip to rule them all__ -- Always triple-check whether all the necessar
 
 ## Step 10: Draw the feedback item
 
-After every block of trials, we want to present feedback to the participant to let him/ her know how well he/ she is doing. Therefore, in Step 2, we added a `feedback` item, simply named *feedback* to the end of *block_sequence*.
+After every block of trials, we want to present feedback to the participant to let him/ her know how well he/ she is doing. Therefore, in Step 2, we added a FEEDBACK item, simply named *feedback* to the end of *block_sequence*.
 
 Click on *feedback* in the overview to open its tab, select the draw text tool, change the foreground color to 'black' (if it isn't already), and click at (0, 0). Now enter the following text:
 
@@ -602,7 +602,7 @@ figure:
 
 __Background box__
 
-__What is a feedback item?__ -- A `feedback` item is almost identical to a `sketchpad` item. The only difference is that a `feedback` item is not prepared in advance. This means that you can use it to present feedback, which requires up-to-date information about a participant's response. You should not use `feedback` items to present time critical displays, because the fact that it is not prepared in advance means that its timing properties are not as good as that of the `sketchpad` item. See also:
+__What is a feedback item?__ -- A FEEDBACK item is almost identical to a SKETCHPAD item. The only difference is that a FEEDBACK item is not prepared in advance. This means that you can use it to present feedback, which requires up-to-date information about a participant's response. You should not use FEEDBACK items to present time critical displays, because the fact that it is not prepared in advance means that its timing properties are not as good as that of the SKETCHPAD item. See also:
 
 - %link:visual%
 

@@ -188,14 +188,14 @@ Comme montre la %trialSeq, l'objectif est de construire une séquence d'essai co
 
 On s'appelle ces 6 étapes *des événements*. On va réaliser ces 6 événements en ajoutant des *éléments* vers le *trial_sequence* de notre expérience.  
 
-Pour les premiers 4 événements, on utilisera des éléments `sketchpad`. Cependant, pour l'instant, notre *trial_sequence* ne contient qu'un seul élément `sketchpad`. Il faut donc en ajouter encore 3.  
-Pour ajouter ces 3 éléments `sketchpad` :
+Pour les premiers 4 événements, on utilisera des éléments SKETCHPAD. Cependant, pour l'instant, notre *trial_sequence* ne contient qu'un seul élément SKETCHPAD. Il faut donc en ajouter encore 3.  
+Pour ajouter ces 3 éléments SKETCHPAD :
 
 - Regardez la barre d'outils à l'extrème gauche de l'écran OpenSesame
-- Choisissez l'élément `sketchpad`
+- Choisissez l'élément SKETCHPAD
 - Faites glisser l'élément vers la `trial_sequence` dans la vue d'ensemble.
 - *Attention:* Pour faire apparaître un élément *au dessous* d'un autre élément, déposez-le *sur* cet autre élément.
-- Répétez la procédure glisser-déposer jusqu'à ce que vous avez 4 éléments `sketchpad` dans votre *trial_sequence*.
+- Répétez la procédure glisser-déposer jusqu'à ce que vous avez 4 éléments SKETCHPAD dans votre *trial_sequence*.
 
 %--
 figure:
@@ -211,17 +211,17 @@ Pour réaliser ça :
 - Clic droit sur un élément dans la vue d'ensemble
 - Choisissez 'Renommer'
 - Changez le nom
-- Appelez les éléments `sketchpad` *fixation*, *regard_neutre*, *regard_direction* et *cible*, respectivement.
+- Appelez les éléments SKETCHPAD *fixation*, *regard_neutre*, *regard_direction* et *cible*, respectivement.
 
 %--
 figure:
  id: renamed
  source: renamed.png
  caption: |
-  La vue d'ensemble avant et après avoir renommé des éléments `sketchpad`
+  La vue d'ensemble avant et après avoir renommé des éléments SKETCHPAD
 --%
 
-Les derniers deux événements de la séquence d'essai(collecter la réponse et enregistrer les données) sont déjà représentés par les éléments `keyboard_response` et `logger`, respectivement.
+Les derniers deux événements de la séquence d'essai(collecter la réponse et enregistrer les données) sont déjà représentés par les éléments KEYBOARD_RESPONSE et LOGGER, respectivement.
 
 ### Étape 4: Préparer le groupe de fichiers
 
@@ -248,16 +248,16 @@ figure:
 
 ### Étape 5: Créer les éléments de la séquence d'essai
 
-On va créer les `sketchpad`s grâce aux 'drawing tools' (des outils de dessin) de ces éléments.
+On va créer les SKETCHPADs grâce aux 'drawing tools' (des outils de dessin) de ces éléments.
 
 #### fixation
 
-Le `sketchpad` *fixation* est un `sketchpad` *invariable*. Ça veut dire que cette partie de la séquence d'essai ne change pas d'un essai à l'autre.
+Le SKETCHPAD *fixation* est un SKETCHPAD *invariable*. Ça veut dire que cette partie de la séquence d'essai ne change pas d'un essai à l'autre.
 
 - Ouvrez l'onglet *fixation* en cliquant sur cet élément dans la vue d'ensemble.
 - Comme vous voyez, grâce à l'Extended template, le point de fixation est déjà dessiné.
 
-Cependant, il faut qu'on fasse un petit changement sur cet élément. Actuellement, la durée de ce `sketchpad` est mis sur '0'. Ça veut dire que le point de fixation sera présenté pendant 0 ms. Bien sur, ce n'est pas ce qu'on veut. On veut que le point de fixation sera présenté par 750 ms (voyez %trialSeq), et que, après, l'expérience avance automatiquement.  
+Cependant, il faut qu'on fasse un petit changement sur cet élément. Actuellement, la durée de ce SKETCHPAD est mis sur '0'. Ça veut dire que le point de fixation sera présenté pendant 0 ms. Bien sur, ce n'est pas ce qu'on veut. On veut que le point de fixation sera présenté par 750 ms (voyez %trialSeq), et que, après, l'expérience avance automatiquement.  
 Pour réaliser ça :
 
 - Changez la durée vers '750'.
@@ -272,11 +272,11 @@ figure:
 
 #### regard_neutre
 
-Le *sketchpad_neutre* est également un `sketchpad` *invariable*.
+Le *sketchpad_neutre* est également un SKETCHPAD *invariable*.
 
 - Ouvrez l'onglet *regard_neutre* en cliquant sur cet élément dans la vue d'ensemble.
 - Sélectionnez l'outil Image (%neutral)
-- Cliquez sur le centre du `sketchpad`
+- Cliquez sur le centre du SKETCHPAD
 - Choisissez l'image 'regard_neutre.png' pour y insérer
 - Mettez la durée vers 750
 
@@ -290,13 +290,13 @@ figure:
 
 #### regard_direction
 
-Contrairement aux dernières deux `sketchpad`s, le `sketchpad` *regard_direction* est *variable*. Ça veut dire que ses propriétés sont *variés* entre essais, et qu'elles *dépendent* des valeurs dans la liste de bloc (*block_loop*). Pour indiquer à OpenSesame qu'il s'agit d'un `sketchpad` variable, on utilise la méthode *entre-crochets*. Après, on laisse décider OpenSesame quelle condition (ex. regard droit ou regard gauche) sera présentée sur chaque essai, au base des valeurs dans la liste *block_loop*.
+Contrairement aux dernières deux SKETCHPADs, le SKETCHPAD *regard_direction* est *variable*. Ça veut dire que ses propriétés sont *variés* entre essais, et qu'elles *dépendent* des valeurs dans la liste de bloc (*block_loop*). Pour indiquer à OpenSesame qu'il s'agit d'un SKETCHPAD variable, on utilise la méthode *entre-crochets*. Après, on laisse décider OpenSesame quelle condition (ex. regard droit ou regard gauche) sera présentée sur chaque essai, au base des valeurs dans la liste *block_loop*.
 
 - Ouvrez l'onglet *regard_direction* en cliquant sur cet élément dans la vue d'ensemble
 - Sélectionnez l'outil Image (%cue)
-- Cliquez sur le centre du `sketchpad`
+- Cliquez sur le centre du SKETCHPAD
 - Choisissez l'image 'regard_gauche.png'
-- Affichez le code du `sketchpad` en cliquant l'icône 'Select view' et sélecter 'View script'.
+- Affichez le code du SKETCHPAD en cliquant l'icône 'Select view' et sélecter 'View script'.
 
 %--
 figure:
@@ -308,7 +308,7 @@ figure:
 
 Le code a besoin d'un petit modification, en utilisant la méthode *entre-crochets*.
 
-Au début, le code du `sketchpad` *regard_direction* ressemble à:
+Au début, le code du SKETCHPAD *regard_direction* ressemble à:
 
 ~~~ .python
 set duration "keypress"
@@ -326,11 +326,11 @@ draw image 0 0 "regard_[direction_regard].png" scale=1 center=1 z_index=0 show_i
 - Cliquez sur 'Appliquer et fermer' pour appliquer les modifications
 - Mettez la durée vers 500
 
-*Attention:* Parce que les propriétés du `sketchpad` *regard_direction* changent pour chaque essai, le `sketchpad` ne montre plus l'image qu'on avait initialement insérée. Mais ne vous inquiétez pas. Elle sera bien montrée pendant l'exécution de l'expérience!!
+*Attention:* Parce que les propriétés du SKETCHPAD *regard_direction* changent pour chaque essai, le SKETCHPAD ne montre plus l'image qu'on avait initialement insérée. Mais ne vous inquiétez pas. Elle sera bien montrée pendant l'exécution de l'expérience!!
 
 #### cible
 
-Le `sketchpad` *cible* est également un sketchpad *variable*. Donc, on utilise encore une fois la méthode entre-crochets. Dans ce `sketchpad`, on a même 3 variables qui sont variées :
+Le SKETCHPAD *cible* est également un sketchpad *variable*. Donc, on utilise encore une fois la méthode entre-crochets. Dans ce SKETCHPAD, on a même 3 variables qui sont variées :
 
 1. La lettre de la cible (F ou H)
 2. La coordonnée *X* de la cible (-300 ou 300)
@@ -379,9 +379,9 @@ draw textline "[x_distractor]" 0 "X" center=1 color="white" font_family="mono" f
 
 Finalement:
 
-- Mettez la durée du `sketchpad` *cible* sur 0 ms.
+- Mettez la durée du SKETCHPAD *cible* sur 0 ms.
 
-Ça peut vous sembler contre-intuitif, mais ça veut juste dire que OpenSesame va initialiser la prochaine élément (ici, *keyboard_response*) tout de suite. L'élément *keyboard_response* lui même ne change pas ce qui est actuellement montrer au sujet sur l'écran. Donc, en somme, le dernier `sketchpad` reste sur l'écran jusqu'au sujet a appuyé sur une touche.
+Ça peut vous sembler contre-intuitif, mais ça veut juste dire que OpenSesame va initialiser la prochaine élément (ici, *keyboard_response*) tout de suite. L'élément *keyboard_response* lui même ne change pas ce qui est actuellement montrer au sujet sur l'écran. Donc, en somme, le dernier SKETCHPAD reste sur l'écran jusqu'au sujet a appuyé sur une touche.
 
 #### keyboard_response
 
@@ -389,7 +389,7 @@ Cliquez sur `keyboad_response` dans la vue d'ensemble pour ouvrir son onglet. Vo
 
 - *Correct response* : on a déjà indiqué la variable *correct_response* dans le block_loop, donc on n'a pas besoin de le mettre ici. Si nous le ferions, nous allons tout simplement annuler la réponse correcte précédemment défini, qui est certainement pas ce que nous voulons.
 - *Allowed responses* (réponses authorisées) : Entrez 'f;h' dans le champ-réponses autorisées. Le point-virgule est utilisé pour séparer des réponses distinctes. L'élément *keyboard_response* accepte maintenant seulement les touches 'f' et 'h'. Tous les autres touches sont ignorés, à l'exception de l'Esc', ce qui interrompt l'expérience.
-- *Timeout* (délai) : Nous voulons également définir un délai, qui est l'intervalle maximal que la `keyboard_response` attend avant de décider que la réponse était incorrecte. «2000» (ms) est une bonne valeur. Si un 'Timeout' arrive :
+- *Timeout* (délai) : Nous voulons également définir un délai, qui est l'intervalle maximal que la KEYBOARD_RESPONSE attend avant de décider que la réponse était incorrecte. «2000» (ms) est une bonne valeur. Si un 'Timeout' arrive :
 	- La variable dépendante "correct" obtient le valeur 0
 	- La variable "response" obtient le valeur 'None' (Rien) (%timeout)
 
@@ -463,9 +463,9 @@ figure:
 
 On va donner le sujet du feedback sur son performance après chaque essai. Plus précisément, on va jouer un petit son si le sujet fait un erreur. Si sa réponse est juste, le sujet ne va entendre rien.
 
-#### Créer un élément `sampler`
+#### Créer un élément SAMPLER
 
-- Selectionner un élément sampler et glisser le vers la vue d'ensembe, juste aprés le `keyboard_response`.
+- Selectionner un élément sampler et glisser le vers la vue d'ensembe, juste aprés le KEYBOARD_RESPONSE.
 - Renommez-le vers 'incorrect'.
 
 #### Indiquer le fichier de son
@@ -529,7 +529,7 @@ figure:
  id: output
  source: output.png
  caption: |
-  Trois variables importantes dans le fichier de données qui est généré par l'élément `logger`.
+  Trois variables importantes dans le fichier de données qui est généré par l'élément LOGGER.
 --%
 
 ## Extra
@@ -551,11 +551,11 @@ figure:
 ### Astuces:
 
 - Pour cet exercice, les éléments 'neutre' et 'indice' ne doivent pas être crées par des images, parce qu'on n'a pas des images des flèches dans notre groupe de fichiers.
-- Au lieu de ça, utilisez l'outil *arrow* (flèche) dans des éléments `sketchpad` pour :
-	- Créer deux `sketchpad`s indice: un des deux doit contenir une flèche pointant à gauche; l'autre doit contenir une flèche pointant à droite.
-	- Créer deux `sketchpad`s cible: un des deux doit contenir une flèche pointant à gauche; l'autre doit contenir une flèche pointant à droite.
-	- N'oubliez pas d'également ajouter la cible est le distractor vers les `sketchpad`s cible.
-	- Utilisez des déclarations "Run if" pour exécuter qu'un des `sketchpad`s indice et qu'un des `sketchpad`s cible, en fonction des valeurs dans le *block_loop*.
+- Au lieu de ça, utilisez l'outil *arrow* (flèche) dans des éléments SKETCHPAD pour :
+	- Créer deux SKETCHPADs indice: un des deux doit contenir une flèche pointant à gauche; l'autre doit contenir une flèche pointant à droite.
+	- Créer deux SKETCHPADs cible: un des deux doit contenir une flèche pointant à gauche; l'autre doit contenir une flèche pointant à droite.
+	- N'oubliez pas d'également ajouter la cible est le distractor vers les SKETCHPADs cible.
+	- Utilisez des déclarations "Run if" pour exécuter qu'un des SKETCHPADs indice et qu'un des SKETCHPADs cible, en fonction des valeurs dans le *block_loop*.
 
 
 ## Références

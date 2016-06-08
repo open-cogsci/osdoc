@@ -18,12 +18,12 @@ figure:
  id: FigLogger
  source: logger.png
  caption: |
-  The `logger` item.
+  The LOGGER item.
 --%
 
-The simplest way to use the `logger` is by leaving the 'Log all variables (recommended)' enabled. That way, all variables that OpenSesame knows about are written the log file.
+The simplest way to use the LOGGER is by leaving the 'Log all variables (recommended)' enabled. That way, all variables that OpenSesame knows about are written the log file.
 
-If you find that some variables are missing, you can explicitly add the name of a custom variable, or drag a variable from the variable inspector into the `logger` table.
+If you find that some variables are missing, you can explicitly add the name of a custom variable, or drag a variable from the variable inspector into the LOGGER table.
 
 If you prefer to log only certain variables, you can disable the 'Log all variables' option, and indicate explicitly which variables you want to log.
 
@@ -41,7 +41,7 @@ For more information, see:
 
 - [/python/log/](/python/log/)
 
-You should generally not write to the log file directly and use a `logger` item at the same time; doing so will result in messy log files.
+You should generally not write to the log file directly and use a LOGGER item at the same time; doing so will result in messy log files.
 
 ## Format of the data files
 

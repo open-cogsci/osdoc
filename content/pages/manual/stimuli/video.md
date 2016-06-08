@@ -1,17 +1,10 @@
 title: Video playback
-reviewed: false
 
 [TOC]
 
-## media_player_gst plug-in
-
-The `media_player_gst` plug-in is built on the Gstreamer framework. Downloads and installation instructions can be found here:
-
-- <https://github.com/dschreij/media_player_gst/>
-
 ## media_player_vlc plug-in
 
-As of OpenSesame 0.27, a plug-in based on the well-known VLC media player is included by default in the Windows release. You can download the latest version of the plug-in from here:
+The MEDIA_PLAYER_VLC plug-in is based on the well-known VLC media player. You can download the latest version from here (if it is not already installed):
 
 - <https://github.com/dschreij/media_player_vlc>
 
@@ -21,32 +14,36 @@ In addition, you need to install the VLC media player in the default location:
 
 *Troubleshooting:* If you encounter a black screen when running your experiment in fullscreen (i.e. the video appears to play, but you don't see anything), please try using a different back-end (i.e. switch from *legacy* to *xpyriment* or vice versa), or change the back-end settings for the *legacy* back-end.
 
-## media_player plug-in
-
-In OpenSesame 0.26, a media_player plug-in based on FFMpeg was included by default in the Windows release. Because the Python bindings for FFMpeg are not compatible with Python 2.7, this plug-in is unfortunately no longer included with recent (Python 2.7 based) builds of OpenSesame. If you want to use the media_player plug-in, you can download an older version of OpenSesame or run OpenSesame from source with a Python 2.6 environment.
-
-- Media_player source: <https://github.com/dschreij/media_player>
-
 ## OpenCV
 
 OpenCV is a powerful computer vision library, which contains (among many other things) routines for reading video files.
 
 - <http://docs.opencv.org/trunk/doc/py_tutorials/py_tutorials.html>
 
-%LstExampleCV1 shows how to playback a video using `cv`, the Python module for OpenCV 1. %LstExampleCV2 shows (approximately) the same thing using `cv2`, the Python module for OpenCV 2. This assumes that you are running the *legacy* back-end, or the *xpyriment* back-end without OpenGL.
+The following example shows how to play back a video file, while drawing a red square on top of the video. This example assumes that you're using the legacy backend.
 
-%--
-code:
- id: LstExampleCV1
- source: opencv-example.py
- syntax: python
- caption: "Playing back video in an `inline_script` with OpenCV 1."
---%
-
-%--
-code:
- id: LstExampleCV2
- source: opencv2-example.py
- syntax: python
- caption: "Playing back video in an `inline_script` with OpenCV 2."
---%
+~~~ .python
+import cv2
+import numpy
+import pygame
+# Full path to the video file in file pool
+path = pool['myvideo.avi']
+# Open the video
+video = cv2.VideoCapture(path)
+# A loop to play the video file. This can also be a while loop until a key
+# is pressed. etc.
+for i in range(100):
+	# Get a frame
+	retval, frame = video.read()
+	# Rotate it, because for some reason it otherwise appears flipped.
+	frame = numpy.rot90(frame)
+	# The video uses BGR colors and PyGame needs RGB
+	frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+	# Create a PyGame surface
+	surf = pygame.surfarray.make_surface(frame)
+	# Now you can draw whatever you want onto the PyGame surface!
+	pygame.draw.rect(surf, (255,0,0), (100, 100, 200, 200))
+	# Show the PyGame surface!
+	exp.surface.blit(surf, (0, 0))
+	pygame.display.flip()
+~~~

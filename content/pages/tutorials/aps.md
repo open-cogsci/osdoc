@@ -60,11 +60,11 @@ figure:
 
 ### Background box 1
 
-Let's introduce the basics: OpenSesame experiments are collections of *items*. An item is a small chunk of functionality that, for example, can be used to present visual stimuli (the `sketchpad` item) or record key presses (the `keyboard_response` item). Items have a type and a name. For example, you might have two `keyboard_response` items, which are called *t1_response* and *t2_response*. To make the distinction between the type and the name of an item clear, we will use `code_style` for types, and *italic_style* for names.
+Let's introduce the basics: OpenSesame experiments are collections of *items*. An item is a small chunk of functionality that, for example, can be used to present visual stimuli (the SKETCHPAD item) or record key presses (the KEYBOARD_RESPONSE item). Items have a type and a name. For example, you might have two KEYBOARD_RESPONSE items, which are called *t1_response* and *t2_response*. To make the distinction between the type and the name of an item clear, we will use `code_style` for types, and *italic_style* for names.
 
-To give structure to your experiment, two types of items are especially important: the `loop` and the `sequence`. Understanding how you can combine `loop`s and `sequence`s to build experiments is perhaps the trickiest part of working with OpenSesame, so let's get that out of the way first.
+To give structure to your experiment, two types of items are especially important: the LOOP and the SEQUENCE. Understanding how you can combine LOOPs and SEQUENCEs to build experiments is perhaps the trickiest part of working with OpenSesame, so let's get that out of the way first.
 
-A `loop` is where, in most cases, you define your independent variables. In a `loop` you can create a table, where each column corresponds to a variable, and each row corresponds to a single run of the 'item to run'. To make this more concrete, let's consider the following *block_loop*:
+A LOOP is where, in most cases, you define your independent variables. In a LOOP you can create a table, where each column corresponds to a variable, and each row corresponds to a single run of the 'item to run'. To make this more concrete, let's consider the following *block_loop*:
 
 %--
 figure:
@@ -76,23 +76,23 @@ figure:
 
 This *block_loop* will execute *trial_sequence* four times. Once while `soa` is 100 and `target` is 'F', once while `soa` is 100 and `target` is 'H', etc. The order in which the rows are walked through is random, but can also be set to sequential in the top-right of the tab.
 
-A `sequence` consists of a series of items that are executed one after another. A prototypical `sequence` is the *trial_sequence*, which corresponds to a single trial. For example, a basic *trial_sequence* might consist of a `sketchpad`, to present a stimulus, a `keyboard_response`, to collect a response, and a `logger`, to write the trial information to the log file.
+A SEQUENCE consists of a series of items that are executed one after another. A prototypical SEQUENCE is the *trial_sequence*, which corresponds to a single trial. For example, a basic *trial_sequence* might consist of a SKETCHPAD, to present a stimulus, a KEYBOARD_RESPONSE, to collect a response, and a LOGGER, to write the trial information to the log file.
 
 %--
 figure:
  id: FigExampleSequence
  source: 6.png
  caption: |
-  An example of a `sequence` item used as a trial sequence. (This example is not related to the experiment created in this tutorial.
+  An example of a SEQUENCE item used as a trial sequence. (This example is not related to the experiment created in this tutorial.
 --%
 
-You can combine `loop`s and `sequence`s in a hierarchical way, to create trial blocks, and practice and experimental phases. For example, the *trial_sequence* is called by the *block_loop*. Together, these correspond to a single block of trials. One level up, the *block_sequence* is called by the *practice_loop*. Together, these correspond to the practice phase of the experiment.
+You can combine LOOPs and SEQUENCEs in a hierarchical way, to create trial blocks, and practice and experimental phases. For example, the *trial_sequence* is called by the *block_loop*. Together, these correspond to a single block of trials. One level up, the *block_sequence* is called by the *practice_loop*. Together, these correspond to the practice phase of the experiment.
 
 </div>
 
 ## Step 2: Define the independent variables
 
-We will limit ourselves to two independent variables: `word` and `displacement`. The variable `word` simply contains the word that the participant must identify on a given trial. The variable `displacement` is the horizontal displacement of the word in pixels, where 0 is the central position. Fortunately, we do not need to type in all combinations of `word` and `displacement`, but can use the `loop`'s variable wizard to generate a factorial design for us. To do this, select the *block_loop* item and click on the 'Variable wizard' button.
+We will limit ourselves to two independent variables: `word` and `displacement`. The variable `word` simply contains the word that the participant must identify on a given trial. The variable `displacement` is the horizontal displacement of the word in pixels, where 0 is the central position. Fortunately, we do not need to type in all combinations of `word` and `displacement`, but can use the LOOP's variable wizard to generate a factorial design for us. To do this, select the *block_loop* item and click on the 'Variable wizard' button.
 
 Type the variable names on the first row of the variable wizard, an each level at the rows below. For `word`, just select some arbitrary five-letter words and non-words. (Or, if you're a psycholinguist, feel free to make an informed selection.) For `displacement`, we choose -60, -30, 0, 30, and 60. This corresponds to the horizontal displacement in pixels. Later, we will choose the font size such that 30 px corresponds to the width of a single letter. Click on the 'Ok' button to generate your design.
 
@@ -126,7 +126,7 @@ You can prepare your variable list in your favorite spreadsheet and copy-paste i
 
 ## Step 3: Add items to your trial sequence
 
-Right now, the *trial_sequence* contains only a single `sketchpad` item, which is called *sketchpad*. We want to have three `sketchpad`s, one for a fixation stimulus, one for the target word, and one for the mask. From the item toolbar, drag a `sketchpad` item onto the *trial_sequence* item in the overview area. This will add another `sketchpad`. Do this again to add the third `sketchpad`. Your *trial_sequence* now looks like this:
+Right now, the *trial_sequence* contains only a single SKETCHPAD item, which is called *sketchpad*. We want to have three SKETCHPADs, one for a fixation stimulus, one for the target word, and one for the mask. From the item toolbar, drag a SKETCHPAD item onto the *trial_sequence* item in the overview area. This will add another SKETCHPAD. Do this again to add the third SKETCHPAD. Your *trial_sequence* now looks like this:
 
 %--
 figure:
@@ -136,7 +136,7 @@ figure:
   Your *trial_sequence* after you have added two new sketchpads.
 --%
 
-By default, OpenSesame assigns names such as *__sketchpad* to newly created items. These names are not very informative, and it is good practice to change them. You can do this by right-clicking on the items in the overview area, and selecting 'rename'. Here we will rename the `sketchpad`s to *fixation*, *target*, and *mask*.
+By default, OpenSesame assigns names such as *__sketchpad* to newly created items. These names are not very informative, and it is good practice to change them. You can do this by right-clicking on the items in the overview area, and selecting 'rename'. Here we will rename the SKETCHPADs to *fixation*, *target*, and *mask*.
 
 %--
 figure:
@@ -146,11 +146,11 @@ figure:
   Your *trial_sequence* after you have give the new sketchpads more informative names.
 --%
 
-Often, you want to provide feedback to the participant after every trial. You can do this in various ways, but here we will use a `feedback` item. Drag a `feedback` item from item toolbar onto the *logger* in the *trial_sequence*. This will cause a new `feedback` item to be inserted before the *logger*. Rename the newly created item to *trial_feedback*.
+Often, you want to provide feedback to the participant after every trial. You can do this in various ways, but here we will use a FEEDBACK item. Drag a FEEDBACK item from item toolbar onto the *logger* in the *trial_sequence*. This will cause a new FEEDBACK item to be inserted before the *logger*. Rename the newly created item to *trial_feedback*.
 
-## Step 4: Design the *fixation*, *target*, and *mask* `sketchpad`s
+## Step 4: Design the *fixation*, *target*, and *mask* SKETCHPADs
 
-`sketchpad`s are one of the really powerful features of OpenSesame. They allow you to draw your stimulus displays using the built-in drawing tools. You can also use `sketchpad`s to create variably defined displays (i.e. displays that depend on variables), by first creating a prototype display, and then making certain aspects of this display variable. This may sound a bit abstract, but it's actually very easy.
+SKETCHPADs are one of the really powerful features of OpenSesame. They allow you to draw your stimulus displays using the built-in drawing tools. You can also use SKETCHPADs to create variably defined displays (i.e. displays that depend on variables), by first creating a prototype display, and then making certain aspects of this display variable. This may sound a bit abstract, but it's actually very easy.
 
 First, click on the *fixation* item. This will open a tab with drawing tools. If you're working on a small screen, this may not fit well on your screen, in which case you can click on 'Open editor in new window' to open a new window with only the drawing tools.
 
@@ -159,26 +159,26 @@ figure:
  id: Fig11
  source: 11.png
  caption: |
-  A blank `sketchpad` item.
+  A blank SKETCHPAD item.
 --%
 
 A fixation dot is available as a drawing primitive, so you can just click on the fixation-dot icon and then click on the middle of the display to draw a central fixation dot (the coordinates are shown in the top-right, where 0,0 is the center).
 
 However, in OVP studies it is also common to draw two vertical fixation bars, above and below the center, instead of a central fixation dot. I personally find this a bit weird, as it requires participants to fixate in blank space (which I doubt they will do), although I suppose it has the benefit of reduced forward masking. To draw the first fixation bar, click on the line icon to select the line tool and then indicate the beginning and the end of the line by a mouse click. Do the same for the second bar. (Draw whatever fixation stimulus you find most appropriate.)
 
-Right now the duration is set to 'keypress', which means that the *fixation* `sketchpad` will be shown until the participant presses a key. Change this value to a sensible duration, such as '1000' (ms).
+Right now the duration is set to 'keypress', which means that the *fixation* SKETCHPAD will be shown until the participant presses a key. Change this value to a sensible duration, such as '1000' (ms).
 
 %--
 figure:
  id: Fig12
  source: 12.png
  caption: |
-  A `sketchpad` item with fixation bars and a 1000 ms duration.
+  A SKETCHPAD item with fixation bars and a 1000 ms duration.
 --%
 
-Next, close the `sketchpad` window (only if you have opened a new window before) and open the *target* item by clicking on it in the overview area.
+Next, close the SKETCHPAD window (only if you have opened a new window before) and open the *target* item by clicking on it in the overview area.
 
-The *target* `sketchpad` should contain only a single word, which we have defined as the variable `word` in the *block_loop*. We want to present this word approximately in the center of the screen, but shifted a bit to the left or the right, depending on the value of the variable `displacement`.
+The *target* SKETCHPAD should contain only a single word, which we have defined as the variable `word` in the *block_loop*. We want to present this word approximately in the center of the screen, but shifted a bit to the left or the right, depending on the value of the variable `displacement`.
 
 First, click on the 'Ab' icon to select the text tool. When the text tool is selected, a number of controls will appear that let you customize the font etc. In this case, a monospace font (`mono`) of 38 pt will do just fine.
 
@@ -187,7 +187,7 @@ figure:
  id: Fig13
  source: 13.png
  caption: |
-  The text drawing-tool of the `sketchpad` item.
+  The text drawing-tool of the SKETCHPAD item.
 --%
 
 Click on the center of the screen. This will pop up a dialog asking you to specify a text. Enter `[word]` and click on 'Ok'. OpenSesame will automatically interpret the square brackets as indicating that we're dealing with a variable, as described [here][variables].
@@ -197,7 +197,7 @@ figure:
  id: Fig14
  source: 14.png
  caption: |
-  Text in a `sketchpad` item. The square brackets indicate that 'word' should be interpreted as a variable name.
+  Text in a SKETCHPAD item. The square brackets indicate that 'word' should be interpreted as a variable name.
 --%
 
 Of course, we don't want the word to always be presented in the center. To make the position of the word variable, we need to make a small adjustment to the OpenSesame script. Click on the 'Edit script' button in the top-right of the tab. This will open a script editor that contains the auto-generated script:
@@ -216,7 +216,7 @@ Also, while we're at it, change the duration to 150:
 
 To apply the changes, click on the 'Apply and close' button at the bottom-right of the tab. You will notice that the word is now no longer visible. Instead, OpenSesame says that one object is not shown, because it is defined using variables. Don't worry, it will be shown during the experiment!
 
-Now it's time to create the mask, which has its own `sketchpad` item. Click on the *mask* item in the overview area. You will probably find that there is a fixation dot in the center, which is part of the 'Extended template' that you started with. Right-click on the fixation dot and select 'Delete'. Now, draw the mask in the same way that you drew the word, except that you use the text `#####`, instead of `[word]`. Don't forget to set the font size to 38 and to make the X-coordinate of the mask variable!
+Now it's time to create the mask, which has its own SKETCHPAD item. Click on the *mask* item in the overview area. You will probably find that there is a fixation dot in the center, which is part of the 'Extended template' that you started with. Right-click on the fixation dot and select 'Delete'. Now, draw the mask in the same way that you drew the word, except that you use the text `#####`, instead of `[word]`. Don't forget to set the font size to 38 and to make the X-coordinate of the mask variable!
 
 %--
 figure:
@@ -239,7 +239,7 @@ figure:
  id: Fig16
  source: 16.png
  caption: |
-  The `keyboard_response` item.
+  The KEYBOARD_RESPONSE item.
 --%
 
 <div class='info-box' markdown='1'>
@@ -258,7 +258,7 @@ Click on the *trial_feedback* item in the overview area to open its tab. We will
 
 ### Background box 4
 
-`feedback` items are virtually identical to `sketchpad` items, except for the moment at which they are prepared. A `sketchpad` is prepared before the `sequence` that it is part of. This means that, during the `sequence`, there will be no lag due to the preparation of the `sketchpad`. The downside of this approach is that the contents of the sketchpad cannot depend on what happens during the `sequence`. Therefore, to give feedback during the trial, we use a `feedback` item, which is prepared just as when it is shown. For more information, see [here][prepare-run].
+FEEDBACK items are virtually identical to SKETCHPAD items, except for the moment at which they are prepared. A SKETCHPAD is prepared before the SEQUENCE that it is part of. This means that, during the SEQUENCE, there will be no lag due to the preparation of the SKETCHPAD. The downside of this approach is that the contents of the sketchpad cannot depend on what happens during the SEQUENCE. Therefore, to give feedback during the trial, we use a FEEDBACK item, which is prepared just as when it is shown. For more information, see [here][prepare-run].
 
 </div>
 
@@ -270,7 +270,7 @@ Here are two good stimuli for feedback: A smiley face for correct responses, and
 
 ![](/img/emotes/frowney.png)
 
-Right-click on the smiley and frowney faces and save them to your computer. Now select the image tool in the `feedback` item by clicking on the aquarium-like icon. We will first draw the smiley face, so enter `[correct] = 1` in the 'Show if' field (i.e. show only after a correct response). Next, click in the center of the canvas. This will pop up a file pool dialog, asking you to select an image. Currently, the file pool does not contain any items, so we first need to import the smiley and frowney faces. The easiest way to do this is to drag them into the file-pool selection dialog, from your Downloads folder or wherever the images are located.
+Right-click on the smiley and frowney faces and save them to your computer. Now select the image tool in the FEEDBACK item by clicking on the aquarium-like icon. We will first draw the smiley face, so enter `[correct] = 1` in the 'Show if' field (i.e. show only after a correct response). Next, click in the center of the canvas. This will pop up a file pool dialog, asking you to select an image. Currently, the file pool does not contain any items, so we first need to import the smiley and frowney faces. The easiest way to do this is to drag them into the file-pool selection dialog, from your Downloads folder or wherever the images are located.
 
 %--
 figure:
@@ -318,7 +318,7 @@ If you find that forms are really slow on your system, see [this article][forms-
 
 </div>
 
-Forms are very flexible. A number of commonly-used forms are available as plug-ins, but almost any kind of form can be easily implemented using [OpenSesame script][forms-opensesame] or, for more advanced users, [Python script][forms-python]. We will start simple, with the `form_consent` plug-in. Drag a new `form_consent` from the item toolbar onto the *experiment* `sequence` in the overview area. This will add a digital consent form to the start of your experiment.
+Forms are very flexible. A number of commonly-used forms are available as plug-ins, but almost any kind of form can be easily implemented using [OpenSesame script][forms-opensesame] or, for more advanced users, [Python script][forms-python]. We will start simple, with the `form_consent` plug-in. Drag a new `form_consent` from the item toolbar onto the *experiment* SEQUENCE in the overview area. This will add a digital consent form to the start of your experiment.
 
 %--
 figure:

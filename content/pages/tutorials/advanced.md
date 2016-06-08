@@ -70,7 +70,7 @@ In Raymond et al. (1992), the experimental and control conditions were mixed bet
 
 Let's start with the counterbalancing part, and use the participant number to decide which condition is tested first. We need to do this as the very first thing of the experiment, and we need to use some Python scripting to do it.
 
-Therefore, drag an `inline_script` from the item toolbar onto the very top of the experiment. Change the name of the new item to *counterbalance*. In the *Prepare* phase of the *counterbalance* item, enter the following script:
+Therefore, drag an INLINE_SCRIPT from the item toolbar onto the very top of the experiment. Change the name of the new item to *counterbalance*. In the *Prepare* phase of the *counterbalance* item, enter the following script:
 
 ~~~ .python
 if var.subject_parity == 'even':
@@ -83,9 +83,9 @@ else:
 
 Ok, let's take a moment to understand what's going on here.
 
-The first thing to know is that experimental variables are properties of the `var` object. Experimental variables are variables that you have defined yourself, for example in a `loop` item, as well as built-in variables. One such built-in experimental variable is `subject_parity`, which is automatically set to 'even' when the experiment is launched with an even subject number (0, 2, 4, etc.), and to 'odd' when the subject number is odd (1, 3, 5, etc.).
+The first thing to know is that experimental variables are properties of the `var` object. Experimental variables are variables that you have defined yourself, for example in a LOOP item, as well as built-in variables. One such built-in experimental variable is `subject_parity`, which is automatically set to 'even' when the experiment is launched with an even subject number (0, 2, 4, etc.), and to 'odd' when the subject number is odd (1, 3, 5, etc.).
 
-We further create two new experimental variables `condition1` and `condition2`. By setting these as properties of `var`, we make them available elsewhere in OpenSesame, outside of `inline_script` items. So this line:
+We further create two new experimental variables `condition1` and `condition2`. By setting these as properties of `var`, we make them available elsewhere in OpenSesame, outside of INLINE_SCRIPT items. So this line:
 
 ~~~ .python
 var.condition1 = 'experimental'
@@ -155,7 +155,7 @@ Do the same thing for *experimental_loop*, except that the variable `practice` h
 
 Because the task differs between blocks, we need to show an instruction screen before each block. The *block_sequence* is the place to do this, because, as explained above, it corresponds to a single block of trials plus the events that occur before and after every block.
 
-There are various items that we could use for an instruction screen, but we will use the `sketchpad`. Insert two new `sketchpad`s at the top of *block_sequence* by dragging them from the item toolbar. Rename the `sketchpad`s to *instructions_experimental* and *instructions_control*. Click on both items to add some instructional text, such as shown in %FigInstructions.
+There are various items that we could use for an instruction screen, but we will use the SKETCHPAD. Insert two new SKETCHPADs at the top of *block_sequence* by dragging them from the item toolbar. Rename the SKETCHPADs to *instructions_experimental* and *instructions_control*. Click on both items to add some instructional text, such as shown in %FigInstructions.
 
 %--
 figure:
@@ -248,15 +248,15 @@ figure:
 
 ## Step 8: Define trial sequence
 
-We will use an `inline_script` item to do most of the heavy lifting, and therefore our *trial_sequence* is quite simple. It consists of:
+We will use an INLINE_SCRIPT item to do most of the heavy lifting, and therefore our *trial_sequence* is quite simple. It consists of:
 
-1. A `sketchpad` (called *fixation*) to show a fixation dot.
-2. An `inline_script` (called *RSVP*) item that implements the RSVP stream.
-3. A `sketchpad` (called *ask_T1*) that asks the participant to report T1.
-4. A `keyboard_response` (called *response_T1*) that collects the T1 report.
-5. A `sketchpad` (called *ask_T2*) that asks the participant to report T2.
-6. A `keyboard_response` (called *response_T2*) that collects the T2 report.
-7. A `logger` (called *logger*) that writes all the data to a log file.
+1. A SKETCHPAD (called *fixation*) to show a fixation dot.
+2. An INLINE_SCRIPT (called *RSVP*) item that implements the RSVP stream.
+3. A SKETCHPAD (called *ask_T1*) that asks the participant to report T1.
+4. A KEYBOARD_RESPONSE (called *response_T1*) that collects the T1 report.
+5. A SKETCHPAD (called *ask_T2*) that asks the participant to report T2.
+6. A KEYBOARD_RESPONSE (called *response_T2*) that collects the T2 report.
+7. A LOGGER (called *logger*) that writes all the data to a log file.
 
 Drag all the required items from the item toolbar into *trial_sequence*, re-order them if necessary, and give them informative names. Also, use run-if statements to collect a T1 response only in the experimental condition. Your trial sequence should now look like %FigTrialSequence.
 
@@ -430,7 +430,7 @@ figure:
  id: FigFixation
  source: FigFixation.png
  caption: |
-  The *fixation* `sketchpad` after Step 11.
+  The *fixation* SKETCHPAD after Step 11.
 --%
 
 ## Step 12: Define response collection
@@ -442,7 +442,7 @@ We will collect responses as follows:
 - Ask for T2
 - Collect a response, which is 'y' when T2 was present and 'n' when T1 was absent.
 
-We will use the *ask_T1* `sketchpad` to ask the participant for T1. Click on *ask_T1* to open the item, and add a line of text, such as 'Please type the white letter'. Change the duration to 0. This 0 ms duration does not mean that the text is only shown for 0 ms, but that the experiment moves immediately to the next item, which is *response_T1*.
+We will use the *ask_T1* SKETCHPAD to ask the participant for T1. Click on *ask_T1* to open the item, and add a line of text, such as 'Please type the white letter'. Change the duration to 0. This 0 ms duration does not mean that the text is only shown for 0 ms, but that the experiment moves immediately to the next item, which is *response_T1*.
 
 Open *response_T1*. The only thing that we have to do is define the correct response. To do this, we can use the `T1` experimental variable that we have set while preparing the RSVP stream. Therefore, enter '[T1]' in the 'Correct response' field.
 
@@ -487,7 +487,7 @@ figure:
  id: FigVariableLoop
  source: FigVariableLoop.png
  caption: |
-  If the length of a `loop` is variably defined, OpenSesame notifies you of this.
+  If the length of a LOOP is variably defined, OpenSesame notifies you of this.
 --%
 
 Now open *practice_loop*. Add a variable `block_repeat` and give it the value 0.5. This means that 0.5 x 18 = 9 cycles of *block_loop* will be executed, just as we want.
@@ -499,7 +499,7 @@ figure:
  id: FigExperimentalLoop
  source: FigExperimentalLoop.png
  caption: |
-  If the length of a `loop` is variably defined, OpenSesame notifies you of this.
+  If the length of a LOOP is variably defined, OpenSesame notifies you of this.
 --%
 
 <div class='info-box' markdown='1'>
@@ -602,7 +602,7 @@ A Dutch proverb states that a mistake is in a small corner. (I suspect that acco
 
 For example, our experiment has two conditions, defined as 'experimental' and 'control'. But what if I accidentally misspelled 'experimental' as 'experimentel' in the *experimental_loop*? The experiment would still run, but it would no longer work as expected. Therefore, we want to make sure that `condition` is either 'experimental' or 'control', but nothing else. In computer-speak, we want to *assert* that this is the case. Let's take a look at how we can do this.
 
-First, drag a new `inline_script` item to the start of the *trial_sequence* and rename it to *assertions*. Add the following line to the *Run* tab:
+First, drag a new INLINE_SCRIPT item to the start of the *trial_sequence* and rename it to *assertions*. Add the following line to the *Run* tab:
 
 ~~~ .python
 assert(var.condition in ['experimental', 'control'])
@@ -644,7 +644,7 @@ OpenSesame is back-end independent. This means that different libraries can be u
 
 So far, we have used OpenSesame's own `canvas` object, which automatically maps onto the correct functions of the selected back-end. Therefore, you don't have to bother with or know about the details of each back-end. However, you can also directly use the functions offered by a specific back-end, such as PsychoPy. This is especially useful if you want to use functionality that is not available in OpenSesame's own modules.
 
-First, to use PsychoPy, you need to switch to the *psycho* back-end, which you can do in the 'General properties' tab of your experiment . Now, when you start the experiment, OpenSesame will automatically initialize PsychoPy, and the `psychopy.visual.Window` object will be available as `win` in `inline_script`s.
+First, to use PsychoPy, you need to switch to the *psycho* back-end, which you can do in the 'General properties' tab of your experiment . Now, when you start the experiment, OpenSesame will automatically initialize PsychoPy, and the `psychopy.visual.Window` object will be available as `win` in INLINE_SCRIPTs.
 
 Now let's see how we can implement our RSVP stream in PsychoPy. (The script below replaces the part in the *Prepare* phase of *RSVP* in which we created `letter_canvas_list`.)
 

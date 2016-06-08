@@ -1,6 +1,6 @@
 title: Looping and independent variables
 
-The `loop` item has two important functions:
+The LOOP item has two important functions:
 
 - It runs another item multiple times.
 - It is where you usually define your independent variables; that is, the variables that you manipulate in your experiment.
@@ -9,12 +9,12 @@ The `loop` item has two important functions:
 
 ## The item to run
 
-A `loop` is always connected to a single other item: the item to run. You select the item to run in the box labeled "Run". In most cases, the item to run is a `sequence`, which runs multiple items sequentially.
+A LOOP is always connected to a single other item: the item to run. You select the item to run in the box labeled "Run". In most cases, the item to run is a SEQUENCE, which runs multiple items sequentially.
 
-Two common `sequence`-`loop` structures are:
+Two common SEQUENCE-LOOP structures are:
 
-- If a `sequence` corresponds to a single trial (by convention called *trial_sequence*), then a `loop` that is connected to this sequence corresponds to multiple trials, or a block (by convention called *block_loop*).
-- If a `sequence` corresponds to a block of trials followed by a feedback display (by convention called *block_sequence*), then a loop that is connected to this sequence corresponds to multiple blocks, or a complete experimental session (by convention called *experimental_loop*).
+- If a SEQUENCE corresponds to a single trial (by convention called *trial_sequence*), then a LOOP that is connected to this sequence corresponds to multiple trials, or a block (by convention called *block_loop*).
+- If a SEQUENCE corresponds to a block of trials followed by a feedback display (by convention called *block_sequence*), then a loop that is connected to this sequence corresponds to multiple blocks, or a complete experimental session (by convention called *experimental_loop*).
 
 ## Defining independent variables
 

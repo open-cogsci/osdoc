@@ -35,16 +35,16 @@ And see more Python video tutorials:
 
 ### A single Python workspace
 
-All Python code is executed in a single Python workspace. This means that variables that have been defined in one `inline_script` are accessible in all other `inline_script`s, as well as in Python statements that are embedded in run-if statements and text strings. The same principle applies to modules: once `import`ed, they are available everywhere.
+All Python code is executed in a single Python workspace. This means that variables that have been defined in one INLINE_SCRIPT are accessible in all other INLINE_SCRIPTs, as well as in Python statements that are embedded in run-if statements and text strings. The same principle applies to modules: once `import`ed, they are available everywhere.
 
-For example, you can simply construct the `canvas` in one `inline_script` ...
+For example, you can simply construct the `canvas` in one INLINE_SCRIPT ...
 
 ~~~ .python
 my_canvas = canvas()
 my_canvas.fixdot()
 ~~~
 
-... and show it in another `inline_script` ...
+... and show it in another INLINE_SCRIPT ...
 
 ~~~ .python
 my_canvas.show()
@@ -52,16 +52,16 @@ my_canvas.show()
 
 ### Inline_script items
 
-In order to use Python code you need to add an `inline_script` item to your experiment. You can do this by dragging the Python icon (the blue/yellow icon) from the item toolbar into the experiment sequence. After you have done this you will see something like %FigInlineScript.
+In order to use Python code you need to add an INLINE_SCRIPT item to your experiment. You can do this by dragging the Python icon (the blue/yellow icon) from the item toolbar into the experiment sequence. After you have done this you will see something like %FigInlineScript.
 
 %--
 figure:
  id: FigInlineScript
  source: inline-script.png
- caption: The `inline_script` item.
+ caption: The INLINE_SCRIPT item.
 --%
 
-As you can see, the `inline_script` item consists of two tabs: one for the prepare phase and one for the run phase. The prepare phase is executed first, to allow items to prepare for the time critical run phase. It is good practice to construct `canvas` objects, `sampler` objects, etc. during the prepare phase, so that they can be presented without delay during the run phase. But this is only convention; you can execute arbitrary Python code during both phases.
+As you can see, the INLINE_SCRIPT item consists of two tabs: one for the prepare phase and one for the run phase. The prepare phase is executed first, to allow items to prepare for the time critical run phase. It is good practice to construct `canvas` objects, SAMPLER objects, etc. during the prepare phase, so that they can be presented without delay during the run phase. But this is only convention; you can execute arbitrary Python code during both phases.
 
 For more information about the prepare-run strategy, see:
 
@@ -79,14 +79,14 @@ You can use single-line Python statements also where you would normally type sta
 figure:
  id: FigRunIf
  source: run-if.png
- caption: Using Python script in the run-if statement of a `sequence` item.
+ caption: Using Python script in the run-if statement of a SEQUENCE item.
 --%
 
 For more information about conditional ("if") statements, see:
 
 - %link:variables%
 
-Similarly, you can use single-line Python statements to define variables in `loop` tables. Let's say that you want to assign a random value between 0 and 1000 to a variable. You could this by first `import`ing the `random` in an `inline_script`. Once the `random` module is available, you could use `random.randint()` to obtain a random variable in a `loop` item:
+Similarly, you can use single-line Python statements to define variables in LOOP tables. Let's say that you want to assign a random value between 0 and 1000 to a variable. You could this by first `import`ing the `random` in an INLINE_SCRIPT. Once the `random` module is available, you could use `random.randint()` to obtain a random variable in a LOOP item:
 
 ~~~ .python
 =random.randint(0, 1000)
@@ -96,12 +96,12 @@ Similarly, you can use single-line Python statements to define variables in `loo
 figure:
  id: FigLoopTable
  source: loop-table.png
- caption: Using Python script to define variables in a `loop` table.
+ caption: Using Python script to define variables in a LOOP table.
 --%
 
 ### Python in text strings
 
-You can embed Python statements in text strings using the `[=...]` syntax. For example, you could the following text to a `sketchpad`:
+You can embed Python statements in text strings using the `[=...]` syntax. For example, you could the following text to a SKETCHPAD:
 
     The resolution is [=var.width] x [=var.height] px
 
@@ -130,7 +130,7 @@ figure:
 
 ### Common functions
 
-Many common functions are directly available in an `inline_script` item, without the need to import anything. For example:
+Many common functions are directly available in an INLINE_SCRIPT item, without the need to import anything. For example:
 
 ~~~ .python
 # `canvas()` is a common function that returns a `canvas` object

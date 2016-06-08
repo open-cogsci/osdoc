@@ -45,7 +45,7 @@ You can use counterbalancing to change this experiment into a within-word design
 
 ## Implementing counterbalancing
 
-When you run an experiment in OpenSesame, you are asked for a subject number. This subject number is available as the experimental variable `subject_nr`. In  addition, the experimental variable `subject_parity` has the value 'odd' or 'even', depending on whether the subject number is odd or even. Now say that you want to counterbalance the response rule as in Example 1, you could add the following `inline_script` to the start of the experiment.
+When you run an experiment in OpenSesame, you are asked for a subject number. This subject number is available as the experimental variable `subject_nr`. In  addition, the experimental variable `subject_parity` has the value 'odd' or 'even', depending on whether the subject number is odd or even. Now say that you want to counterbalance the response rule as in Example 1, you could add the following INLINE_SCRIPT to the start of the experiment.
 
 ~~~ .python
 if var.subject_parity == 'odd':

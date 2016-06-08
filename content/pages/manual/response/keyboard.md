@@ -1,7 +1,7 @@
 title: Keyboard responses
 reviewed: false
 
-Keyboard responses are collected with the `keyboard_response` item.
+Keyboard responses are collected with the KEYBOARD_RESPONSE item.
 
 [TOC]
 
@@ -16,7 +16,7 @@ Keys are generally identified by their character and/ or their description (depe
 If you don't know what a particular key is named, you can:
 
 - Click on the 'List available keys' button; or
-- Create a simple experiment in which a `keyboard_response` is immediately followed by a `feedback` item with the text '[response]' on it. This will show the name of the previously collected response.
+- Create a simple experiment in which a KEYBOARD_RESPONSE is immediately followed by a FEEDBACK item with the text '[response]' on it. This will show the name of the previously collected response.
 
 %--include: include/correct_response.md--%
 

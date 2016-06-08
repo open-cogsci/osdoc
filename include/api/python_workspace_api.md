@@ -43,7 +43,7 @@ A `canvas` object.
 
 ## function __copy\_sketchpad__\(name\)
 
-Returns a copy of a `sketchpad`'s canvas.
+Returns a copy of a SKETCHPAD's canvas.
 
 __Example:__
 
@@ -54,12 +54,12 @@ my_canvas.show()
 
 __Arguments:__
 
-- `name` -- The name of the `sketchpad`.
+- `name` -- The name of the SKETCHPAD.
 	- Type: str, unicode
 
 __Returns:__
 
-A copy of the `sketchpad`'s canvas.
+A copy of the SKETCHPAD's canvas.
 
 - Type: canvas
 
@@ -157,7 +157,7 @@ reset_feedback()
 
 ## function __sampler__\(src, \*\*playback\_args\)
 
-A convenience function that creates a new `sampler` object. For a
+A convenience function that creates a new SAMPLER object. For a
 description of possible keywords, see:
 
 - [/python/sampler/](/python/sampler/)
@@ -180,7 +180,7 @@ __Keyword dict:__
 
 __Returns:__
 
-A `sampler` object.
+A SAMPLER object.
 
 - Type: sampler
 
@@ -247,7 +247,7 @@ True or False
 
 ## function __synth__\(osc=u'sine', freq=440, length=100, attack=0, decay=5\)
 
-Synthesizes a sound and returns it as a `sampler` object.
+Synthesizes a sound and returns it as a SAMPLER object.
 
 __Example:__
 
@@ -275,7 +275,7 @@ __Keywords:__
 
 __Returns:__
 
-A `sampler` object.
+A SAMPLER object.
 
 - Type: sampler
 

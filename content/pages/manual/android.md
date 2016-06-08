@@ -52,7 +52,7 @@ The OpenSesame runtime for Android requires the [droid] back-end, which is avail
 
 ### Design tips
 
-Implement most user interactions through the `mouse_response` item or `touch_response` plug-in. In general, screen touches are registered as mouse clicks. Using keyboard input will work as well, but it will show and hide the virtual keyboard after every key that is entered, which looks a bit messy.
+Implement most user interactions through the MOUSE_RESPONSE item or `touch_response` plug-in. In general, screen touches are registered as mouse clicks. Using keyboard input will work as well, but it will show and hide the virtual keyboard after every key that is entered, which looks a bit messy.
 
 The resolution for the `droid` backend is fixed at 1280x800. On Android, your experiment will be automatically scaled up or down depending on the resolution of the device, but the resolution that you design with is always 1280x800.
 

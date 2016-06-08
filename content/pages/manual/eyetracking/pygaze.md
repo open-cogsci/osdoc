@@ -74,7 +74,7 @@ The following PyGaze plug-ins are available:
 
 For an example of how to use the PyGaze plug-ins, see the PyGaze template that is included with OpenSesame.
 
-Below is an example of how to use PyGaze in a Python `inline_script`. For a list of available functions, see [Function overview].
+Below is an example of how to use PyGaze in a Python INLINE_SCRIPT. For a list of available functions, see [Function overview].
 
 ~~~ .python
 # Create a keyboard and a canvas object
