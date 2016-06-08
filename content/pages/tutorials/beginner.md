@@ -12,14 +12,6 @@ OpenSesame is freely available under the [General Public License v3][gpl].
 
 This tutorial shows how to create a simple but complete psychological experiment using OpenSesame [(Mathôt, Schreij, & Theeuwes, 2012)][references]. You will use mainly the graphical user interface of OpenSesame (i.e., no Python inline coding), although you will make small modifications to the OpenSesame script. This tutorial takes approximately one hour.
 
-%--
-figure:
- id: FigGazeCuing
- source: gaze-cuing.png
- caption: |
-  The gaze-cuing paradigm [(Friesen and Kingstone, 1998)][references] that you will implement in this tutorial. This example depicts a trial in the incongruent condition, because the smiley looks at the distractor ('X') and not at the target ('F').
---%
-
 ## Resources
 
 - __Download__ -- This tutorial assumes that you are running OpenSesame version 3.1.0 or later. To check which version you are running, see the bottom right of the 'Get started' tab (see %FigGetStarted). You can download the most recent version of OpenSesame from:
@@ -32,6 +24,14 @@ figure:
 ## The experiment
 
 In this tutorial, you will create a gaze-cuing experiment, as introduced by [Friesen and Kingstone (1998)][references]. In this experiment, a face is presented in the center of the screen (%FigGazeCuing). This face looks either to the right or to the left. A target letter (an 'F' or an 'H') is presented to the left or right of the face. A distractor stimulus (the letter 'X') is presented on the other side of the face. The task is to indicate as quickly as possible whether the target letter is an 'F' or an 'H'. In the congruent condition, the face looks at the target. In the incongruent condition, the face looks at the distractor. As you may have guessed, the typical finding is that participant respond faster in the congruent condition, compared to to the incongruent condition, even though the direction of gaze is not predictive of the target location. This shows that our attention is automatically guided by other people's gaze, even in situations where this doesn't serve any purpose. (And even when the face is just a smiley!)
+
+%--
+figure:
+ id: FigGazeCuing
+ source: gaze-cuing.png
+ caption: |
+  The gaze-cuing paradigm [(Friesen and Kingstone, 1998)][references] that you will implement in this tutorial. This example depicts a trial in the incongruent condition, because the smiley looks at the distractor ('X') and not at the target ('F').
+--%
 
 The experiment consists of a practice and an experimental phase. Visual feedback will be presented after every block of trials, and a sound will be played after every incorrect response.
 
@@ -676,8 +676,6 @@ See also:
 
 See also [Damian (2010)][references], [Brand and Bradley (2011)][references], and [Ulrich and Giray (1989)][references] for some general considerations about when to worry, and when not to worry about timing.
 
-<div class='info-box' markdown='1'>
-
 ## References
 
 <div class='reference' markdown='1'>
@@ -698,8 +696,8 @@ Ulrich, R., & Giray, M. (1989). Time resolution of clocks: Effects on reaction t
 
 </div>
 
-[references]: ./#references
-[gpl]: http://dummy.com
+[references]: #references
+[gpl]: http://www.gnu.org/licenses/gpl-3.0.en.html
 [gimp]: http://www.gimp.org/
 [audacity]: http://audacity.sourceforge.net/
 [finished-experiment]: /attachments/gaze-cuing/tutorial.osexp

@@ -15,7 +15,7 @@ Would you like to donate?
 	<a role="button" class="btn btn-default btn-face-angel" onclick="contribute25();">€25</a>
 </div>
 
-* Your contribution [helps us](/why-contribute.html).
+* Your contribution [helps us](%link:donate%).
 * OpenSesame is, and will always be, free software.
 * Donations are handled through PayPal.
 

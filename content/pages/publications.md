@@ -28,21 +28,15 @@ Cerni, T., Longcamp, M., & Job, R. (2016). Two thumbs and one index: A compariso
 
 Cuperus, A. A., Laken, M., van den Hout, M. A., & Engelhard, I. M. (2016). Degrading emotional memories induced by a virtual reality paradigm. *Journal of Behavior Therapy and Experimental Psychiatry*. doi:10.1016/j.jbtep.2016.03.004
 
-
 Dueñas, W. R., Manrique, H. M., Jaramillo, B. H., Narvaez, M. T., & Rojas, E. G. (2016). Sistema de apoyo experimental para el reconocimiento visual y el nombrado de objetos. *Revista Mexicana de Ingeniería Biomédica*, *37*(2). Retrieved from <http://www.rmib.somib.org.mx/pdfs/Vol37/No2/5.pdf>
-
 
 Duncan, M. J., Smith, M., Clarke, N. D., Eyre, E. L. J., & Wright, S. L. (2016). Dual task performance in older adults: Examining visual discrimination performance whilst treadmill walking at preferred and non-preferred speeds. *Behavioural Brain Research*, *302*, 100–103. doi:10.1016/j.bbr.2016.01.020
 
-
 Failing, M. F., & Theeuwes, J. (2016). Reward alters the perception of time. *Cognition*, 148, 19–26. doi:10.1016/j.cognition.2015.12.005
-
 
 Gordon, S., Getter, N., Oz, I., Garbi, D., & Todder, D. (2016). Mechanisms of cognitive control in cadet pilots. *Disaster and Military Medicine*. doi:10.1186/s40696-016-0016-5
 
-
 Hermens, F., Bindemann, M., & Mike Burton, A. (2016). Responding to social and symbolic extrafoveal cues: cue shape trumps biological relevance. *Psychological Research*. doi:10.1007/s00426-015-0733-2
-
 
 Holiday, J. J. (in press). Second language experience can hinder
 the discrimination of non-native contrasts. *Phonetica*.
@@ -55,21 +49,17 @@ Krokoszinski, L., & Hosser, D. (2016). Emotion regulation during deception: an E
 
 Kruijne, W., & Meeter, M. (2016). Implicit short-and long-term memory direct our gaze in visual search. *Attention, Perception, & Psychophysics*. doi:10.3758/s13414-015-1021-3
 
-
 Levin, Y., & Tzelgov, J. (2016). Contingency learning is not affected by conflict experience: Evidence from a task conflict-free, item-specific Stroop paradigm. *Acta Psychologica*, 164, 39–45. doi:10.1016/j.actpsy.2015.12.009
-
 
 van der Linden, L., & Vitu, F. (2016). On the optimal viewing position for object processing. *Attention, Perception, & Psychophysics*. doi:10.3758/s13414-015-1025-z
 
-
 Littel, M., van den Hout, M. A., & Engelhard, I. M. (2016). Desensitizing addiction: Using eye movements to reduce the intensity of substance-related mental imagery and craving. *Addictive Disorders*, *14*. doi:10.3389/fpsyt.2016.00014
-
 
 Loy, J. E., Rohde, H., & Corley, M. (in press). Effects of disfluency in online interpretation of deception. *Cognitive Science*.
 
-
 Mathôt, S., Melmi, J.-B., van der Linden, L., & Van der Stigchel, S. (2016). The mind-writing pupil: a human-computer interface based on decoding of covert attention through pupillometry. *PLoS ONE*, *11*(2), e0148805. doi:10.1371/journal.pone.0148805
 
+Otten, M., Schreij, D., & Los, S. A. (2016). The interplay of goal-driven and stimulus-driven influences on spatial orienting. *Attention, Perception, & Psychophysics*. doi:10.3758/s13414-016-1121-8
 
 Patil, I., Melsbach, J., Hennig-Fast, K., & Silani, G. (2016). Divergent roles of autistic and alexithymic traits in utilitarian moral judgments in adults with autism. *Scientific Reports*, 6. doi:10.1038/srep23637
 
@@ -77,9 +67,7 @@ Ruisoto, P., Bellido, A., Ruiz, J., Juanes, J.A. (2016). Building computer-based
 
 Siebold, A., Weaver, M. D., Donk, M., & van Zoest, W. (2016). Social salience does not transfer to oculomotor visual search. *Visual Cognition*. doi:10.1080/13506285.2015.1121946
 
-
 Vadillo, M. A., & Garaizar, P. (2016). The effect of noise-induced variance on parameter recovery from reaction times. *BMC Bioinformatics*, *17*, 147. doi:10.1186/s12859-016-0993-x
-
 
 Whiting, W. L., & Murdock, K. K. (2016). Emerging adults’ sleep patterns and attentional capture: the pivotal role of consistency. *Cognitive Processing*. doi:10.1007/s10339-016-0754-9
 

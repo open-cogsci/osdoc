@@ -15,6 +15,12 @@ if 'publishconf.py' in sys.argv:
 else:
 	from pelicanconf import *
 
+ITEM_TYPES = [
+	'SKETCHPAD', 'FEEDBACK', 'SEQUENCE', 'LOOP', 'SAMPLER', 'SYNTH', 'LOGGER',
+	'INLINE_SCRIPT', 'RESET_FEEDBACK', 'COROUTINES', 'KEYBOARD_RESPONSE',
+	'MOUSE_RESPONSE', 'JOYSTICK', 'SRBOX'
+	]
+
 root = os.path.dirname(os.path.dirname(__file__)) + '/content'
 
 with open('constants.yaml') as f:
@@ -57,6 +63,9 @@ class AcademicMarkdownReader(MarkdownReader):
 			content = self._md.convert(text)
 			for var, val in const.items():
 				content = content.replace(u'$%s$' % var, str(val))
+			for item_type in ITEM_TYPES:
+				content = content.replace(item_type,
+					u'<span class="item-type">%s</span>' % item_type.lower())
 		metadata = self._parse_metadata(self._md.Meta)
 		build.path = build.path[3:]
 		return content, metadata
