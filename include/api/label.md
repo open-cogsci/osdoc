@@ -12,7 +12,7 @@ widget 0 0 1 1 label text='My text'
 
 __Example (Python):__
 
-~~~ {.python}
+~~~ .python
 from libopensesame import widgets
 form = widgets.form(exp)
 label = widgets.label(form, text='My text')
@@ -20,13 +20,7 @@ form.set_widget(label, (0,0))
 form._exec()
 ~~~
 
-__Function list:__
-
-%--
-toc:
-        mindepth: 2
-        maxdepth: 2
---%
+[TOC]
 
 <div class="FunctionDoc YAMLDoc" id="label-__init__" markdown="1">
 

@@ -12,7 +12,7 @@ widget 0 0 1 1 image_button path='5.png' var='response'
 
 __Example (Python):__
 
-~~~ {.python}
+~~~ .python
 from libopensesame import widgets
 form = widgets.form(exp)
 # The full path to the image needs to be provided.
@@ -24,13 +24,7 @@ form.set_widget(image_button, (0,0))
 form._exec()
 ~~~
 
-__Function list:__
-
-%--
-toc:
-        mindepth: 2
-        maxdepth: 2
---%
+[TOC]
 
 <div class="FunctionDoc YAMLDoc" id="image_button-__init__" markdown="1">
 

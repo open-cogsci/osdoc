@@ -1,5 +1,4 @@
 title: About Python
-reviewed: false
 
 In OpenSesame you can create complex experiments using only the graphical user interface (GUI). But you will sometimes encounter situations in which the functionality provided by the GUI is insufficient. In these cases you can add Python code to your experiment.
 
@@ -61,7 +60,7 @@ figure:
  caption: The INLINE_SCRIPT item.
 --%
 
-As you can see, the INLINE_SCRIPT item consists of two tabs: one for the prepare phase and one for the run phase. The prepare phase is executed first, to allow items to prepare for the time critical run phase. It is good practice to construct `canvas` objects, SAMPLER objects, etc. during the prepare phase, so that they can be presented without delay during the run phase. But this is only convention; you can execute arbitrary Python code during both phases.
+As you can see, the INLINE_SCRIPT item consists of two tabs: one for the Prepare phase and one for the Run phase. The Prepare phase is executed first, to allow items to prepare for the time critical run phase. It is good practice to construct `canvas` objects, `sampler` objects, etc. during the Prepare phase, so that they can be presented without delay during the Run phase. But this is only convention; you can execute arbitrary Python code during both phases.
 
 For more information about the prepare-run strategy, see:
 
@@ -206,6 +205,19 @@ my_canvas.show()
 A full overview of the `pool` object can be found here:
 
 - %link:manual/python/pool%
+
+### The `responses` object: Access to participant responses
+
+The `responses` object keeps track of all participant responses that have been collected during the experiment. For example, to list the correctness of all responses so far:
+
+~~~ .python
+for response in responses:
+	print(response.correct)
+~~~
+
+A full overview of the `responses` object can be found here:
+
+- %link:manual/python/responses%
 
 ### The `win` object: The window handle
 

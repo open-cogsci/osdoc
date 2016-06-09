@@ -1,5 +1,4 @@
 title: Variables
-reviewed: false
 
 [TOC]
 
@@ -8,7 +7,7 @@ reviewed: false
 Experimental variables in OpenSesame are those variables that:
 
 - You can refer to in the user interface with the '[variable_name]' syntax.
-- You can refer to in Python with the `var.variable_name` syntax.
+- You can refer to in a Python INLINE_SCRIPT with the `var.variable_name` syntax.
 - Contain things like:
 	- The variables that you have defined in a LOOP item.
 	- The responses that you have collected.
@@ -53,8 +52,9 @@ The following variables are always available:
 |`width`				|The width-part of the display resolution. E.g., '1024'|
 |`subject_nr`			|The subject number, which is asked when the experiment is started.|
 |`subject_parity`		|Is 'odd' if `subject_nr` is odd and 'even' if `subject_nr` is even. Useful for counterbalancing.|
-|`experiment_path`		|Contains the folder of the current experiment, without the experiment filename itself. If the experiment is unsaved, it has the value 'None'.|
-|`pool_folder`			|Contains the folder where the contents of the file pool have been extracted to. This is generally a temporary folder.|
+|`experiment_path`		|The folder of the current experiment, without the experiment filename itself. If the experiment is unsaved, it has the value `None`.|
+|`pool_folder`			|The folder where the contents of the file pool have been extracted to. This is generally a temporary folder.|
+|`logfile`				|The path to the logfile.|
 
 ### Item variables
 
@@ -109,7 +109,7 @@ figure:
  caption: The frequency '[my_freq]' indicates that the frequency of the SYNTH depends on the variable `my_freq`.
 --%
 
-Sometimes, the user interface doesn't let you type in arbitrary text. For example, the elements of a sketchpad are shown visually, and you cannot directly change an X coordinate to a variable. However, you can click on the *Select view → View script* button on the top right, and edit the script directly.
+Sometimes, the user interface doesn't let you type in arbitrary text. For example, the elements of a SKETCHPAD are shown visually, and you cannot directly change an X coordinate to a variable. However, you can click on the *Select view → View script* button on the top right, and edit the script directly.
 
 For example, you can change the position of a fixation dot from the center:
 
@@ -125,7 +125,7 @@ draw fixdot x=[xpos] y=[ypos]
 
 ## Using variables in Python
 
-In an INLINE_SCRIPT, you can get experimental variables using the `var` object. The following, will print the value of the variable 'example_variable' to the debug window:
+In an INLINE_SCRIPT, you can access experimental variables through the `var` object. For example, if you have defined `example_variable` in a LOOP, then the following will print the value `example_variable` to the debug window:
 
 ~~~ .python
 print(var.example_variable)
@@ -143,11 +143,11 @@ For more information, see:
 
 ## Using conditional ("if") statements
 
-Conditional statements, or 'if statements', provide a way to indicate that something should happen only under specific circumstances, such when a certain variable has a specific value.
+Conditional statements, or 'if statements', provide a way to indicate that something should happen only under specific circumstances, such when some variable has a specific value.
 
-The most commonly used if-statement in OpenSesame is the run-if statement of the SEQUENCE, which allows you to specify the conditions under which a particular element is executed. If you open a SEQUENCE item, you will see that every item from the sequence has a 'Run if...' option. The default value is 'always', in which case the item is always called, but you can also enter a condition here. For example, if you want to show a green fixation dot after a correct response, and a red fixation dot after an incorrect response, you can create a sequence like the following (this makes use of the fact that a KEYBOARD_RESPONSE item automatically sets the `correct` variable, as discussed above) as shown in %FigRunIf.
+The most commonly used if-statement in OpenSesame is the run-if statement of the SEQUENCE, which allows you to specify the conditions under which a particular element is executed. If you open a SEQUENCE item, you see that every item from the sequence has a 'Run if …'' option. The default value is 'always', which means that the item is always run; but you can also enter a condition here. For example, if you want to show a green fixation dot after a correct response, and a red fixation dot after an incorrect response, you can create a SEQUENCE like the following (this makes use of the fact that a KEYBOARD_RESPONSE item automatically sets the `correct` variable, as discussed above) as shown in %FigRunIf.
 
-*Important:* A run-if statement only applies to the run phase of an item. The prepare phase of an item is always executed.
+*Important:* Run-if statements only apply to the Run phase of items. The Prepare phase is always executed. See also [this page](%link:prepare-run%).
 
 %--
 figure:
@@ -202,21 +202,3 @@ var.l = '0'
 print(var.l == '0') # will print False
 print(var.l == 0) # will print True
 ~~~
-
-## Resolving recursion errors
-
-Sometimes, you may encounter a runtime error of the following type (%FigRecursion):
-
-	Recursion detected! Is variable 'freq' defined
-	in terms of itself (e.g., 'var = [var]')
-
-%--
-figure:
- id: FigRecursion
- source: recursion-error.png
- caption: If you see an error message of this type, you have probably used a variable name that was already in use by OpenSesame, resulting in a recursion error.
---%
-
-This error maybe confusing at first, but is easy to prevent once you understand it. The problem is that the SYNTH item (in this example) uses an item-level variable that is called `freq`. Therefore, if you try to use a global variable called `freq` to specify the item's internal variable called `freq`, OpenSesame will get into an infinite recursion!
-
-The solution, of course, is to use a different name for your own variable. For example, `my_freq` will do just fine.

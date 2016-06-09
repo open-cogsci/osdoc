@@ -1,12 +1,6 @@
----
-layout: osdoc
 title: Joystick and gamepad
-group: Devices
-permalink: /joystick/
-parser: academicmarkdown
----
 
-Joysticks and gamepads are supported through the `joystick` plug-in.
+Joysticks and gamepads are supported through the JOYSTICK plug-in.
 
 [TOC]
 

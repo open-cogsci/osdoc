@@ -14,7 +14,7 @@ widget 0 0 1 1 text_input var='response' return_accepts='yes'
 
 __Example (Python):__
 
-~~~ {.python}
+~~~ .python
 from libopensesame import widgets
 form = widgets.form(exp)
 text_input = widgets.text_input(form, var='response',
@@ -23,13 +23,7 @@ form.set_widget(text_input, (0,0))
 form._exec()
 ~~~
 
-__Function list:__
-
-%--
-toc:
-        mindepth: 2
-        maxdepth: 2
---%
+[TOC]
 
 <div class="FunctionDoc YAMLDoc" id="text_input-__init__" markdown="1">
 

@@ -1,6 +1,6 @@
 ## Correct response
 
-The *Correct response* field indicates which response is considered correct. After a correct response, the `correct` variable is automatically set to 1; after an incorrect response (i.e. everything else), `correct` is set to 0.
+The *Correct response* field indicates which response is considered correct. After a correct response, the `correct` variable is automatically set to 1; after an incorrect response (i.e. everything else), `correct` is set to 0; if no correct response is specified, `correct` is set to 'undefined'.
 
 You can indicate the correct response in three main ways:
 

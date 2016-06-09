@@ -14,7 +14,7 @@ widget 0 1 1 1 rating_scale var="response" nodes="Agree;Don't know;Disagree"
 
 __Example (OpenSesame script):__
 
-~~~ {.python}
+~~~ .python
 from libopensesame import widgets
 form = widgets.form(exp)
 label = widgets.label(form, text='I like fluffy kittens')
@@ -25,13 +25,7 @@ form.set_widget(rating_scale, (0,1))
 form._exec()
 ~~~
 
-__Function list:__
-
-%--
-toc:
-        mindepth: 2
-        maxdepth: 2
---%
+[TOC]
 
 <div class="FunctionDoc YAMLDoc" id="rating_scale-__init__" markdown="1">
 

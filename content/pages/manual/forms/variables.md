@@ -1,41 +1,33 @@
----
-layout: osdoc
 title: Form variables
-group: Forms
-permalink: /form-variables/
----
 
-If you experience performance issues when using forms, see [this post](/forms/performance-issues-and-troubleshooting/).
+If forms are slow, see [this page](%link:manual/forms/performance%).
 {: .page-notification}
 
-%--
-toc:
- mindepth: 2
---%
+[TOC]
 
 ## About form variables
 
-When you present a form with multiple `checkbox`es, you generally want to know which `checkbox` the user has checked. Similarly, when you present a form with two `button`s, you want to know which `button` the user has clicked. This information is available through variables that are automatically set when the user interacts with a form. You can specify yourself which response variables should be used. How this is done depends on how you have created your form:
+When you present a form with multiple `checkbox`es, you generally want to know which `checkbox` the user has checked. Similarly, when you present a form with two `button`s, you want to know which `button` the user has clicked. This information is available through variables that are automatically set when the user interacts with a form. You can specify yourself which response variables should be used. How this is done depends on how you have created your form.
 
-### In ready-made `form_*` plug-ins
+### In ready-made form plug-ins
 
-When you use one of the ready-made form plug-ins, such as `form_text_input`, you can specify the name of the response variable directly in the plug-in controls.
+When you use one of the ready-made form plug-ins, such as FORM_TEXT_INPUT, you can specify the name of the response variable directly in the plug-in controls.
 
 ### In custom forms
 
-You can use the `var` keyword to indicate which variable should be used. For example, the following OpenSesame script, which you can enter into a `form_base` plug-in, indicates that the response from a `text_input` widget should be stored in a variable called `my_response_var`:
-	
+You can use the `var` keyword to indicate which variable should be used. For example, the following OpenSesame script, which you can enter into a FORM_BASE plug-in, indicates that the response from a `text_input` widget should be stored in a variable called `my_response_var`:
+
 ~~~
-widget 0 0 1 1 text_input var="my_response_var"
+widget 0 0 1 1 text_input var=my_response_var
 ~~~
 
 The equivalent Python code is:
-	
+
 ~~~ .python
 my_widget = widgets.text_input(form, var='my_response_var')
 ~~~
 
-## Widget-specific notes
+## Widget-specific information
 
 Each widget uses its response variable in a slightly different way.
 

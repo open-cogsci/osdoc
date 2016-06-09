@@ -1,14 +1,7 @@
----
-layout: osdoc
-title: Audio input
-group: Devices
-permalink: /soundrecorder/
----
+title: Sound recording
+reviewed: false
 
-%--
-toc:
- mindepth: 2
---%
+[TOC]
 
 ## About the sound recorder plug-ins
 
@@ -18,7 +11,12 @@ The plugin consists of two items: sound_start_recording and sound_stop_recording
 
 ## Screenshot
 
-![](/img/fig/fig9.9.1.png)
+%--
+figure:
+ id: FigSoundRecording
+ source: soundrecording.png
+ caption: The SOUND_START_RECORDING plugin.
+--%
 
 ## Requirements
 
@@ -42,12 +40,12 @@ In a limited way, you can also use the sound recorder object with inline_script.
 This object has two functions which you can call:
 
 ~~~ .python
-soundrecorder.is_recording(): 
+soundrecorder.is_recording():
 ~~~
 Returns True if it is currently recording and False if it has finished recording
 
 ~~~ .python
-soundrecorder.stop(): 
+soundrecorder.stop():
 ~~~
 Stops recording. This does the same as the sound_stop_recording item (which basically only calls the stop() function from the exp.soundrecorder item)
 

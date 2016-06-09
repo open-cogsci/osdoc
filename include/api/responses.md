@@ -59,7 +59,7 @@ __Keywords:__
 - `item` -- The item that collected the response.
 	- Type: str, None
 	- Default: None
-- FEEDBACK -- Indicates whether the response should be included in feedback on accuracy and average response time.
+- `feedback` -- Indicates whether the response should be included in feedback on accuracy and average response time.
 	- Type: bool
 	- Default: True
 

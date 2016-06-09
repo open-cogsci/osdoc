@@ -2,7 +2,7 @@
 
 # class __canvas__
 
-The `canvas` class is used to present visual stimuli.
+The CANVAS class is used to present visual stimuli.
 
 __Example__:
 
@@ -137,7 +137,7 @@ constant:
 
 ## function __canvas\.\_\_init\_\___\(experiment, auto\_prepare=True, \*\*style\_args\)
 
-Constructor to create a new `canvas` object. You do not generally
+Constructor to create a new CANVAS object. You do not generally
 call this constructor directly, but use the `canvas()` function,
 which is described here: [/python/common/]().
 
@@ -174,7 +174,7 @@ __Keywords:__
 
 __Keyword dict:__
 
-- `**style_args`: Optional [style keywords], which will be used as the default for all drawing operations on this `canvas`.
+- `**style_args`: Optional [style keywords], which will be used as the default for all drawing operations on this CANVAS.
 
 </div>
 
@@ -302,11 +302,11 @@ __Arguments:__
 
 ## function __canvas\.copy__\(canvas\)
 
-Turns the current `canvas` into a copy of the passed `canvas`.
+Turns the current CANVAS into a copy of the passed CANVAS.
 
 __Note:__
 
-If you want to create a copy of a SKETCHPAD `canvas`, you can also
+If you want to create a copy of a `sketchpad` CANVAS, you can also
 use the `inline_script.copy_sketchpad` function.
 
 __Example:__
@@ -322,7 +322,7 @@ my_copied_canvas.show()
 
 __Arguments:__
 
-- `canvas` -- The `canvas` to copy.
+- `canvas` -- The CANVAS to copy.
 	- Type: canvas
 
 </div>

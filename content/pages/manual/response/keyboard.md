@@ -1,5 +1,4 @@
 title: Keyboard responses
-reviewed: false
 
 Keyboard responses are collected with the KEYBOARD_RESPONSE item.
 

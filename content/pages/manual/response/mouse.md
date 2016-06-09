@@ -1,7 +1,6 @@
 title: Mouse responses
-reviewed: false
 
-Mouse responses are collected with the MOUSE_RESPONSE item. The MOUSE_RESPONSE is primarily intended to collect individual mouse clicks. If you want to collect mouse-cursor trajectories, take a look at the mousetrap plugins:
+Mouse responses are collected with the MOUSE_RESPONSE item. The MOUSE_RESPONSE is primarily intended to collect individual mouse clicks. If you want to collect mouse-cursor trajectories, take a look at the MOUSETRAP plugins:
 
 - %link:mousetracking%
 

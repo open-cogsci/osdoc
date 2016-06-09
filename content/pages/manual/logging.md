@@ -1,17 +1,13 @@
 title: Logging and reading data files
-reviewed: false
 
-Always triple check whether your data has been correctly logged before running your experiment!
+Always triple check whether your data has been logged correctly before running your experiment!
 {: .page-notification}
 
-%--
-toc:
- mindepth: 2
---%
+[TOC]
 
 ## Using the logger item
 
-OpenSesame will not log your data automatically. Instead, you need to insert a *logger* item, typically at the end of your trial sequence.
+OpenSesame will not log your data automatically. Instead, you need to insert a LOGGER item, typically at the end of your trial sequence.
 
 %--
 figure:
@@ -27,7 +23,7 @@ If you find that some variables are missing, you can explicitly add the name of 
 
 If you prefer to log only certain variables, you can disable the 'Log all variables' option, and indicate explicitly which variables you want to log.
 
-In general, you should create only one logger item, and reuse that item at different locations in your experiment if necessary. If you create multiple logger items (rather than using a single logger multiple times), they will all write to the same log file, and the result will be a mess!
+In general, you should create only one logger item, and reuse that LOGGER at different locations in your experiment if necessary. If you create multiple LOGGERs (rather than using a single LOGGER multiple times), they will all write to the same log file, and the result will be a mess!
 
 ## Using Python inline script
 
@@ -39,7 +35,7 @@ log.write('This will be written to the log file!')
 
 For more information, see:
 
-- [/python/log/](/python/log/)
+- %link:log%
 
 You should generally not write to the log file directly and use a LOGGER item at the same time; doing so will result in messy log files.
 

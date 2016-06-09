@@ -13,7 +13,7 @@ widget 0 1 1 1 checkbox group="group" text="Option 2"
 
 __Example (Python):__
 
-~~~ {.python}
+~~~ .python
 from libopensesame import widgets
 form = widgets.form(exp)
 checkbox1 = widgets.checkbox(form, text='Option 1', group='group')
@@ -22,13 +22,7 @@ form.set_widget(checkbox1, (0,0))
 form.set_widget(checkbox2, (0,1))
 ~~~
 
-__Function list:__
-
-%--
-toc:
-        mindepth: 2
-        maxdepth: 2
---%
+[TOC]
 
 <div class="FunctionDoc YAMLDoc" id="checkbox-__init__" markdown="1">
 

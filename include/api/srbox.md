@@ -3,8 +3,8 @@
 # class __srbox__
 
 If you insert the srbox plugin at the start of your experiment, an
-instance of `srbox` automatically becomes part of the experiment
-object and can be accessed within an inline_script item as `srbox`.
+instance of SRBOX automatically becomes part of the experiment
+object and can be accessed within an inline_script item as SRBOX.
 
 __Important note 1:__
 
@@ -36,7 +36,7 @@ srbox.stop()
 
 ## function __srbox\.\_\_init\_\___\(experiment, dev=None\)
 
-Constructor. An `srbox` object is created automatically by the `srbox` plug-in, and you do not generally need to call the constructor yourself.
+Constructor. An SRBOX object is created automatically by the SRBOX plug-in, and you do not generally need to call the constructor yourself.
 
 __Arguments:__
 
@@ -57,7 +57,7 @@ __Keywords:__
 
 ## function __srbox\.close__\(\)
 
-Closes the connection to the srbox. This is done automatically by the `srbox` plugin when the experiment finishes.
+Closes the connection to the srbox. This is done automatically by the SRBOX plugin when the experiment finishes.
 
 </div>
 

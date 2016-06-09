@@ -15,7 +15,7 @@ Defining a button widget with Python inline code:
 
 __Example (Python):__
 
-~~~ {.python}
+~~~ .python
 from libopensesame import widgets
 form = widgets.form(exp)
 button = widgets.button(form, text='Click me!', frame=True, center=True,
@@ -24,13 +24,7 @@ form.set_widget(button, (0,0))
 form._exec()
 ~~~
 
-__Function list:__
-
-%--
-toc:
-        mindepth: 2
-        maxdepth: 2
---%
+[TOC]
 
 <div class="FunctionDoc YAMLDoc" id="button-__init__" markdown="1">
 

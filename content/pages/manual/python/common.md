@@ -1,5 +1,6 @@
 title: Common functions
-reviewed: false
+
+[TOC]
 
 The following functions are available in INLINE_SCRIPT items:
 

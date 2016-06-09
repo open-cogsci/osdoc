@@ -6,7 +6,7 @@
 
 ## function __canvas__\(auto\_prepare=True, \*\*style\_args\)
 
-A convenience function that creates a new `canvas` object. For a
+A convenience function that creates a new CANVAS object. For a
 description of possible keywords, see:
 
 - %link:manual/python/canvas%
@@ -31,7 +31,7 @@ __Keyword dict:__
 
 __Returns:__
 
-A `canvas` object.
+A CANVAS object.
 
 - Type: canvas
 
@@ -43,7 +43,7 @@ A `canvas` object.
 
 ## function __copy\_sketchpad__\(name\)
 
-Returns a copy of a SKETCHPAD's canvas.
+Returns a copy of a `sketchpad`'s canvas.
 
 __Example:__
 
@@ -54,12 +54,12 @@ my_canvas.show()
 
 __Arguments:__
 
-- `name` -- The name of the SKETCHPAD.
+- `name` -- The name of the `sketchpad`.
 	- Type: str, unicode
 
 __Returns:__
 
-A copy of the SKETCHPAD's canvas.
+A copy of the `sketchpad`'s canvas.
 
 - Type: canvas
 
@@ -74,7 +74,7 @@ A copy of the SKETCHPAD's canvas.
 A convenience function that creates a new `keyboard` object. For a
 description of possible keywords, see:
 
-- [/python/keyboard/](/python/keyboard/)
+- %link:manual/python/keyboard%
 
 __Example:__
 
@@ -104,7 +104,7 @@ A `keyboard` object.
 A convenience function that creates a new `mouse` object. For a
 description of possible keywords, see:
 
-- [/python/mouse/](/python/mouse/)
+- %link:manual/python/mouse%
 
 __Example:__
 
@@ -160,7 +160,7 @@ reset_feedback()
 A convenience function that creates a new SAMPLER object. For a
 description of possible keywords, see:
 
-- [/python/sampler/](/python/sampler/)
+- %link:manual/python/sampler%
 
 __Example:__
 

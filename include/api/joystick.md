@@ -2,9 +2,9 @@
 
 # class __joystick__
 
-If you insert the `joystick` plugin at the start of your experiment, a
-`joystick` object automatically becomes part of the experiment object
-and can be used within an inline_script item as `joystick`.
+If you insert the JOYSTICK plugin at the start of your experiment, a
+JOYSTICK object automatically becomes part of the experiment object
+and can be used within an inline_script item as JOYSTICK.
 
 %--
 constant:
