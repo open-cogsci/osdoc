@@ -39,7 +39,7 @@ In OpenSesame 0.26, a media_player plug-in based on FFMpeg was included by defau
 
 OpenCV is a powerful computer vision library, which contains (among many other things) routines for reading video files.
 
-- <http://docs.opencv.org/trunk/doc/py_tutorials/py_tutorials.html>
+- <http://docs.opencv.org/3.0-beta/doc/py_tutorials/py_tutorials.html>
 
 %LstExampleCV1 shows how to playback a video using `cv`, the Python module for OpenCV 1. %LstExampleCV2 shows (approximately) the same thing using `cv2`, the Python module for OpenCV 2. This assumes that you are running the *legacy* back-end, or the *xpyriment* back-end without OpenGL.
 
