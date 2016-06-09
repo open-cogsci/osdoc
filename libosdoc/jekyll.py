@@ -32,7 +32,7 @@ def runJekyll(status, branch):
 
 	print(u'\nCreating _config.yml')
 	cfg = {
-		'notifications' 	: False,
+		'notifications' 	: True,
 		'status'			: status,
 		'pygments'			: True,
 		'markdown'			: 'kramdown',
