@@ -59,12 +59,10 @@ For example, if you select the `psycho` back-end, the following code will be gen
 - [xpyriment][] (uses Expyriment)
 - [psycho][] (uses PsychoPy)
 - [legacy][] (uses PyGame without OpenGL)
-- [opengl][] (uses PyGame with OpenGL)
 - [droid][] (uses PyGame subset for Android)
 
 [inline-script]: /python/about
 [legacy]: /back-ends/legacy
-[opengl]: /back-ends/opengl
 [xpyriment]: /back-ends/xpyriment
 [psycho]: /back-ends/psycho
 [droid]: /back-ends/droid
