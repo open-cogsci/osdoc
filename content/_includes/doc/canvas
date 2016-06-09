@@ -183,7 +183,7 @@ __Arguments:__
 
 __Keywords:__
 
-- `auto_prepare` -- Indicates whether the canvas should be automatically prepared after each drawing operation, so that [canvas.show] will be maximally efficient. If auto_prepare is turned off, drawing operations may be faster, but [canvas.show] will take longer, unless [canvas.prepare] is explicitly called in advance. Generally, it only makes sense to disable auto_prepare when you want to draw a large number of stimuli, as in the second example below. Currently, the auto_prepare parameter only applies to the xpyriment backend, and is ignored by the other backends.
+- `auto_prepare` -- Indicates whether the canvas should be automatically prepared after each drawing operation, so that [canvas.show] will be maximally efficient. If auto_prepare is turned off, drawing operations may be faster, but [canvas.show] will take longer, unless [canvas.prepare] is explicitly called in advance. Generally, it only makes sense to disable auto_prepare when you want to draw a large number of stimuli, as in the second example above. Currently, the auto_prepare parameter only applies to the xpyriment backend, and is ignored by the other backends.
 	- Type: bool
 	- Default: True
 
