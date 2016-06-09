@@ -68,7 +68,7 @@ The following packages are not used directly by OpenSesame, but may come in hand
 - [Matplotlib](http://matplotlib.org/) is a library for plotting graphs.
 - [Scipy](http://www.scipy.org/) is a set of miscellaneous scientific routines.
 - [pyCairo](http://www.lfd.uci.edu/~gohlke/pythonlibs/#pycairo) is a library for vector graphics.
-- [pyParallel](http://pyserial.sourceforge.net/pyparallel.html) allows communication via the parallel port.
+- [pyParallel](http://sourceforge.net/projects/pyserial/files/pyparallel) allows communication via the parallel port.
 - [OpenCV](http://opencv.org/) (Python bindings) is an extensive computer-vision library.
 - [PyGaze](http://www.pygaze.org/) is a Python library for eye tracking.
     - OpenSesame >= 3.0.0 requires PyGaze >= 0.6.0.

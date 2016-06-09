@@ -123,10 +123,8 @@ pygame.display.flip() # Update the display to show the red rectangle.
 
 ## droid
 
-The *droid* backend is built on top of the [PyGame subset for Android][pgs4a] and allows you to run your OpenSesame experiments on Android devices, using the [OpenSesame runtime for Android](%link:android%). The *droid* backend is in most ways identical to the *legacy* backend.
+The *droid* backend is built on top of the PyGame subset for Android and allows you to run your OpenSesame experiments on Android devices, using the [OpenSesame runtime for Android](%link:android%). The *droid* backend is in most ways identical to the *legacy* backend.
 
-[pgs4a]: http://pygame.renpy.org/
-[legacy]: /backends/legacy
 [pygame]: http://www.pygame.org/
 [psychopy]: http://www.psychopy.org/
 [expyriment]: http://www.expyriment.org

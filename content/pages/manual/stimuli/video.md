@@ -18,7 +18,7 @@ In addition, you need to install the VLC media player in the default location:
 
 OpenCV is a powerful computer vision library, which contains (among many other things) routines for reading video files.
 
-- <http://docs.opencv.org/trunk/doc/py_tutorials/py_tutorials.html>
+- <http://docs.opencv.org/3.0-beta/doc/py_tutorials/py_tutorials.html>
 
 The following example shows how to play back a video file, while drawing a red square on top of the video. This example assumes that you're using the legacy backend.
 

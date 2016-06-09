@@ -333,7 +333,7 @@ Ok, `stim_list` now contains all letters that make up our RSVP stream on a given
 ~~~ .python
 if var.T2_present == 'y':
     var.T2_pos = var.T1_pos + var.lag
-    stim_list[T2_pos] = 'X'
+    stim_list[var.T2_pos] = 'X'
 ~~~
 
 We now have a variable called `stim_list` that specifies the letters in our RSVP stream. This is a `list` that might contain something like: `['M', 'F', 'O', 'P', 'S', 'R', 'Y', 'C', 'U', 'Z', 'G', 'A', 'T', 'E', 'H', 'J', 'V', 'N', 'B', 'K', 'X', 'Q']`. Note that `stim_list` is not an experimental variable, i.e. it is not a property of the `var` object. This is because experimental variables cannot be lists: The `var` object would turn the list into a character string, and that's not what we want!
@@ -440,7 +440,7 @@ We will collect responses as follows:
 - Ask for T1
 - Collect a response, which is a single key press that corresponds to T1. So if T1 was 'A', the participant should press the 'a' key.
 - Ask for T2
-- Collect a response, which is 'y' when T2 was present and 'n' when T1 was absent.
+- Collect a response, which is 'y' when T2 was present and 'n' when T2 was absent.
 
 We will use the *ask_T1* SKETCHPAD to ask the participant for T1. Click on *ask_T1* to open the item, and add a line of text, such as 'Please type the white letter'. Change the duration to 0. This 0 ms duration does not mean that the text is only shown for 0 ms, but that the experiment moves immediately to the next item, which is *response_T1*.
 
