@@ -1,5 +1,4 @@
 title: Eyelink
-reviewed: false
 
 [TOC]
 
@@ -82,8 +81,8 @@ After you have install the EyeLink display software and PyLink per the instructi
 
 - %link:pygaze%
 
-## What happened to the EyeLink plug-ins?
+## What happened to the EyeLink plugins?
 
-The OpenSesame EyeLink plug-ins have been deprecated in favor of PyGaze. However, even though the EyeLink plug-ins are no longer maintained, they still work. For more information, visit the older version of this documentation page:
+The OpenSesame EyeLink plugins have been deprecated in favor of PyGaze. However, even though the EyeLink plugins are no longer maintained, they still work. For more information, visit the older version of this documentation page:
 
 - <http://osdoc.cogsci.nl/2.8/devices/eyelink>

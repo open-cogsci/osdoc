@@ -318,17 +318,17 @@ If you find that forms are really slow on your system, see [this article][forms-
 
 </div>
 
-Forms are very flexible. A number of commonly-used forms are available as plug-ins, but almost any kind of form can be easily implemented using [OpenSesame script][forms-opensesame] or, for more advanced users, [Python script][forms-python]. We will start simple, with the `form_consent` plug-in. Drag a new `form_consent` from the item toolbar onto the *experiment* SEQUENCE in the overview area. This will add a digital consent form to the start of your experiment.
+Forms are very flexible. A number of commonly-used forms are available as plugins, but almost any kind of form can be easily implemented using [OpenSesame script][forms-opensesame] or, for more advanced users, [Python script][forms-python]. We will start simple, with the `form_consent` plugin. Drag a new `form_consent` from the item toolbar onto the *experiment* SEQUENCE in the overview area. This will add a digital consent form to the start of your experiment.
 
 %--
 figure:
  id: Fig18
  source: 18.png
  caption: |
-  The `form_consent` plug-in.
+  The `form_consent` plugin.
 --%
 
-We will also record the gender, age and handedness of each participant. We could to this by inserting two `form_multiple_choice` items (for gender and handedness) and a `form_text_input` (for age) item into the experiment. That would the easiest way, but it's nicer to combine these questions in a single form. To do this, you need to define your own form with the `form_base` plug-in. So drag a new `form_base` item into your experiment, just below *form_consent*.
+We will also record the gender, age and handedness of each participant. We could to this by inserting two `form_multiple_choice` items (for gender and handedness) and a `form_text_input` (for age) item into the experiment. That would the easiest way, but it's nicer to combine these questions in a single form. To do this, you need to define your own form with the `form_base` plugin. So drag a new `form_base` item into your experiment, just below *form_consent*.
 
 You will notice that *form_base* does not have any controls. Instead, it just says 'Edit the script to modify the form'. Click on the 'Edit script' button in the top-right of the tab to open the script. Right now, the script is completely empty: The form hasn't been defined yet.
 

@@ -114,24 +114,24 @@ For more information, see:
 
 - [usage/prepare-run]
 
-### Differences between back-ends
+### Differences between backends
 
-OpenSesame is not tied to one specific way of controlling the display, system timer, etc. Therefore, OpenSesame *per se* does not have specific timing properties, because these depend on the back-end that is used. The performance characteristics of the various back-ends are not perfectly correlated: It is possible that on some system the [psycho] back-end works best, whereas on another system the [xpyriment] back-end works best. Therefore, one of the great things about OpenSesame is that you can choose which back-end works best for you!
+OpenSesame is not tied to one specific way of controlling the display, system timer, etc. Therefore, OpenSesame *per se* does not have specific timing properties, because these depend on the backend that is used. The performance characteristics of the various backends are not perfectly correlated: It is possible that on some system the [psycho] backend works best, whereas on another system the [xpyriment] backend works best. Therefore, one of the great things about OpenSesame is that you can choose which backend works best for you!
 
-In general, the [xpyriment] and [psycho] back-ends are preferable for time-critical experiments, because they use a blocking flip, as described in [Understanding your monitor]. On the other hand, the [legacy] back-end is slightly more stable and also considerably faster when using [forms].
+In general, the [xpyriment] and [psycho] backends are preferable for time-critical experiments, because they use a blocking flip, as described in [Understanding your monitor]. On the other hand, the [legacy] backend is slightly more stable and also considerably faster when using [forms].
 
-Under normal circumstances the three current OpenSesame back-ends have the properties shown in %TblBackendInfo.
+Under normal circumstances the three current OpenSesame backends have the properties shown in %TblBackendInfo.
 
 %--
 table:
  id: TblBackendInfo
  source: backend-info.csv
- caption: Back-end properties.
+ caption: backend properties.
 --%
 
 See also:
 
-- [back-ends]
+- [backends]
 
 ## Benchmark results and tips for testing your own system
 
@@ -155,7 +155,7 @@ To keep things simple, let's assume that your monitor is running at 100 Hz, whic
 
 We can use two ways to verify whether the interval between two white displays is indeed 100 ms:
 
-1. Using the timestamps reported by OpenSesame. This is the easiest way and is generally accurate when the back-end uses a blocking flip, as described in [Understanding your monitor].
+1. Using the timestamps reported by OpenSesame. This is the easiest way and is generally accurate when the backend uses a blocking flip, as described in [Understanding your monitor].
 2. Using a photodiode that responds to the onsets of the white displays and logs the timestamps of these onsets to an external computer. This is the best way to verify the timing, because it does not rely on introspection of the software. Certain issues, such as TFT input lag, discussed in [Understanding your monitor], will come out only using external photodiode measurement.
 
 %--
@@ -166,7 +166,7 @@ code:
  caption: A Python script to test the timing consistency and accuracy of display timestamps. You can paste this code into an INLINE_SCRIPT item.
 --%
 
-I ran %LstIntervalBenchmark on Windows XP, using all three back-ends. I also recorded the onsets of the white displays using a photodiode connected to a second computer. The results are summarized in %TblBenchmarkResults.
+I ran %LstIntervalBenchmark on Windows XP, using all three backends. I also recorded the onsets of the white displays using a photodiode connected to a second computer. The results are summarized in %TblBenchmarkResults.
 
 %--
 table:
@@ -175,11 +175,11 @@ table:
  caption: Benchmark results for [listing 4]. Tested with Windows XP, HP Compaq dc7900, Intel Core 2 Quad Q9400 @ 2.66Ghz, 3GB, 21" ViewSonic P227f CRT. Each test was conducted twice (i.e. two sessions). The column `Session` corresponds to different test runs. The column `Source` indicates whether the measurements are from an external photiodiode, or based on OpenSesame's internal timestamps.
 --%
 
-As you can see, the [xpyriment] and [psycho] back-ends consistently show a 100 ms interval. This is good and just as we would expect. However, the [legacy] back-end shows a 90 ms interval. This discrepancy is due to the fact that the [legacy] back-end does not use a blocking flip (see [Understanding your monitor]), which leads to some unpredictability in display timing. Note also that there is close agreement between the timestamps as recorded by the external photodiode and the timestamps reported by OpenSesame. This agreement demonstrates that OpenSesame's timestamps are reliable, although, again, they are slightly less reliable for the [legacy] back-end due to the lack of a blocking-flip.
+As you can see, the [xpyriment] and [psycho] backends consistently show a 100 ms interval. This is good and just as we would expect. However, the [legacy] backend shows a 90 ms interval. This discrepancy is due to the fact that the [legacy] backend does not use a blocking flip (see [Understanding your monitor]), which leads to some unpredictability in display timing. Note also that there is close agreement between the timestamps as recorded by the external photodiode and the timestamps reported by OpenSesame. This agreement demonstrates that OpenSesame's timestamps are reliable, although, again, they are slightly less reliable for the [legacy] backend due to the lack of a blocking-flip.
 
 ### Checking for clock drift in high-resolution timers (Windows only)
 
-Under Windows, there are two ways to obtain the system time. The Windows *Performance Query Counter* (QPC) API reportedly provides the highest accuracy. The CPU *Time Stamp Counter* (TSC), which relies on the number of clock ticks since the CPU started running, is somewhat less accurate. Of course, these two timers should be in sync with each other. A significant deviation between the QPC and TSC indicates a problem with your system's internal timer. Currently, the [psycho] and [xpyriment] back-ends makes use of the QPC. The [legacy] back-ends rely on the TSC.
+Under Windows, there are two ways to obtain the system time. The Windows *Performance Query Counter* (QPC) API reportedly provides the highest accuracy. The CPU *Time Stamp Counter* (TSC), which relies on the number of clock ticks since the CPU started running, is somewhat less accurate. Of course, these two timers should be in sync with each other. A significant deviation between the QPC and TSC indicates a problem with your system's internal timer. Currently, the [psycho] and [xpyriment] backends makes use of the QPC. The [legacy] backends rely on the TSC.
 
 %LstDriftBenchmark determines a drift value that indicates how much the QPC and TSC diverge. This value should be very close to 1, meaning no divergence. Values higher than 1 indicate that the TSC runs faster than the QPC. You can run this script directly in a Python interpreter or by pasting it in an INLINE_SCRIPT item (in which case you may need to comment out the references to `matplotlib`, because this library is not included in all OpenSesame packages).
 
@@ -216,7 +216,7 @@ This issue is described in more detail on the Psychophysics Toolbox website.
 
 ## Expyriment benchmarks and test suite
 
-A very nice set of benchmarks is available on the Expyriment website. This information is applicable to OpenSesame experiments using the [xpyriment] back-end.
+A very nice set of benchmarks is available on the Expyriment website. This information is applicable to OpenSesame experiments using the [xpyriment] backend.
 
 - <http://docs.expyriment.org/Timing.html>
 
@@ -236,14 +236,14 @@ For more information, please visit:
 
 ## PsychoPy benchmarks and timing-related information
 
-Some information about timing is available on the PsychoPy documentation site. This information is applicable to OpenSesame experiments using the [psycho] back-end.
+Some information about timing is available on the PsychoPy documentation site. This information is applicable to OpenSesame experiments using the [psycho] backend.
 
 - <http://www.psychopy.org/general/timing/timing.html>
 
-[psycho]: /back-ends/xpyriment/
-[xpyriment]: /back-ends/xpyriment/
-[legacy]: /back-ends/legacy/
+[psycho]: /backends/xpyriment/
+[xpyriment]: /backends/xpyriment/
+[legacy]: /backends/legacy/
 [miscellaneous/clock-drift]: /miscellaneous/clock-drift
 [usage/prepare-run]: /usage/prepare-run
-[back-ends]: /back-ends
+[backends]: /backends
 [forms]: /forms

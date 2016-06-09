@@ -1,8 +1,8 @@
 title: Installing plugins and extensions
 
-To install a plug-in or extension, simply copy the plug-in/ extension folder to one of the folders that OpenSesame scans for plug-ins and extensions.
+To install a plugin or extension, simply copy the plugin/ extension folder to one of the folders that OpenSesame scans for plugins and extensions.
 
-Under Windows, you can place plug-ins in the following folders:
+Under Windows, you can place plugins in the following folders:
 
 	[opensesame folder]\opensesame_plugins
 	[drive]:\Documents and Settings\[user name]\.opensesame\opensesame_plugins
@@ -12,7 +12,7 @@ Under Windows, you can place extensions in the following folders:
 	[opensesame folder]\opensesame_extensions
 	[drive]:\Documents and Settings\[user name]\.opensesame\opensesame_extensions
 
-Under Linux you can place plug-ins in the following folders:
+Under Linux you can place plugins in the following folders:
 
 	/home/[user name]/.opensesame/opensesame_plugins
 	/usr/share/opensesame/opensesame_plugins

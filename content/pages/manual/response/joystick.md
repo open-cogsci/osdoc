@@ -1,6 +1,6 @@
 title: Joystick and gamepad
 
-Joysticks and gamepads are supported through the JOYSTICK plug-in.
+Joysticks and gamepads are supported through the JOYSTICK plugin.
 
 [TOC]
 

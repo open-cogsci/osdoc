@@ -20,7 +20,7 @@ my_sampler.play()
 
 If you find that your sample plays to slowly (low pitch) or too quickly
 (high pitch), make sure that the sampling rate of your sample matches
-the sampling rate of the sampler back-end as specified under back-end
+the sampling rate of the sampler backend as specified under backend
 settings.
 
 ### Supported file formats

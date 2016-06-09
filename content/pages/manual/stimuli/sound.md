@@ -8,7 +8,7 @@ The most common way to play sound is using the SAMPLER item, for playback of aud
 
 The SAMPLER plays back a single sound file, typically from the file pool. Currently, only `.wav` and `.ogg` files are supported; if you want to use a sound file that has a different format, you can convert it using the free software [Audacity](http://www.audacityteam.org/).
 
-Sound files are always played back at the sampling rate that is used by the OpenSesame sampler backend. If your sample appears to be sped up (high pitch) or slowed down (low pitch), you can adjust the sampling rate of your sound file in a sound editor, or change the sampling rate used by the OpenSesame sampler backend (under 'Show back-end settings and info' in the General tab).
+Sound files are always played back at the sampling rate that is used by the OpenSesame sampler backend. If your sample appears to be sped up (high pitch) or slowed down (low pitch), you can adjust the sampling rate of your sound file in a sound editor, or change the sampling rate used by the OpenSesame sampler backend (under 'Show backend settings and info' in the General tab).
 
 The SAMPLER has a few options:
 

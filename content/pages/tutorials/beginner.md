@@ -660,14 +660,14 @@ __Tip__ -- A test run is executed even faster by clicking the orange 'Run in win
 
 </div>
 
-## Finally: Some general considerations regarding timing and back-end selection
+## Finally: Some general considerations regarding timing and backend selection
 
-In the 'General properties' tab of the experiment (the tab that you open by clicking on the experiment name), you can select a back-end. The back-end is the layer of software that controls the display, input devices, sound, etc. Most experiments work with all back-ends, but there are reasons to prefer one back-end over the other, mostly related to timing. Currently there are four back-ends (depending on your system, not all three may be available):
+In the 'General properties' tab of the experiment (the tab that you open by clicking on the experiment name), you can select a backend. The backend is the layer of software that controls the display, input devices, sound, etc. Most experiments work with all backends, but there are reasons to prefer one backend over the other, mostly related to timing. Currently there are four backends (depending on your system, not all three may be available):
 
-- __legacy__ -- a 'safe' back-end, based on PyGame. It provides reliable performance on most platforms, but, due to a lack of hardware acceleration, its timing properties are not as good as those of the other back-ends.
-- __psycho__ -- a hardware accelerated back-end, based on PsychoPy [(Peirce, 2007)][references].
-- __xpyriment__ -- a hardware-accelerated back-end, based on Expyriment [(Krause & Lindeman, 2013)][references]
-- __droid__ -- a back-end that allows you to run your experiment on an Android device with the [OpenSesame runtime for Android](/getting-opensesame/android/).
+- __legacy__ -- a 'safe' backend, based on PyGame. It provides reliable performance on most platforms, but, due to a lack of hardware acceleration, its timing properties are not as good as those of the other backends.
+- __psycho__ -- a hardware accelerated backend, based on PsychoPy [(Peirce, 2007)][references].
+- __xpyriment__ -- a hardware-accelerated backend, based on Expyriment [(Krause & Lindeman, 2013)][references]
+- __droid__ -- a backend that allows you to run your experiment on an Android device with the [OpenSesame runtime for Android](/getting-opensesame/android/).
 
 See also:
 

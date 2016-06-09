@@ -12,6 +12,14 @@ This repository contains the source for <http://osdoc.cogsci.nl/>.
 
 All files are formatted with Markdown syntax, supplemented with [academicmarkdown][].
 
+## Style
+
+- Write item types in uppercase: *SKETCHPAD* (This is automatically parsed and styled.)
+- Write item names in italics: `*new_sketchpad*`
+- Write backend names in italics: `*psycho*`
+- Do not hyphenate 'backend' or 'plugin'
+- Capitalize 'Run phase' and 'Prepare phase'
+
 ## Important files and folders
 
 - `sitemap.yaml` contains the site structure used to generate the menu.

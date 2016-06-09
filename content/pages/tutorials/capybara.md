@@ -88,7 +88,7 @@ You can combine LOOPs and SEQUENCEs in a hierarchical way, to create trial block
 
 ## Step 2: Making your experiment Android-ready
 
-Click on 'New experiment' in the overview area to open a tab that has some general options for the experiment. To make our experiment work on Android devices, we need to select the *droid* back-end in the 'back-end' pull-down menu.
+Click on 'New experiment' in the overview area to open a tab that has some general options for the experiment. To make our experiment work on Android devices, we need to select the *droid* backend in the 'backend' pull-down menu.
 
 Change the resolution to 1280 x 800 px. You don't have to worry about the actual resolution of the phone/ tablet that you will run the experiment on, because the display will be scaled automatically. But 1280 x 800 px is the resolution that you will develop with.
 
@@ -98,9 +98,9 @@ That's it. You have now made the necessary changes to run your experiment on And
 
 ### Background box 2
 
-The *back-end* is the layer of software that controls the display, input devices, sound, etc. Many experiments will work with all back-ends, but there are reasons to prefer one back-end over the other, mostly related to timing and cross-platform support. For more information about back-ends, see:
+The *backend* is the layer of software that controls the display, input devices, sound, etc. Many experiments will work with all backends, but there are reasons to prefer one backend over the other, mostly related to timing and cross-platform support. For more information about backends, see:
 
-- [/back-ends/about](/back-ends/about)
+- [/backends/about](/backends/about)
 
 </div>
 

@@ -415,7 +415,7 @@ __Keyword dict:__
 ## function __canvas\.gabor__\(x, y, orient, freq, env=u'gaussian', size=96, stdev=12, phase=0, col1=u'white', col2=u'black', bgmode=u'avg'\)
 
 Draws a Gabor patch. Note: The exact rendering of the Gabor patch
-depends on the back-end.
+depends on the backend.
 
 __Example:__
 
@@ -452,7 +452,7 @@ __Keywords:__
 - `col1` -- A color for the peaks.
 	- Type: str, unicode
 	- Default: 'white'
-- `col2` -- A color for the troughs. Note: The psycho back-end
+- `col2` -- A color for the troughs. Note: The psycho backend
 ignores this parameter and always uses the inverse of
 `col1` for the throughs.
 	- Type: str, unicode
@@ -563,7 +563,7 @@ __Keyword dict:__
 
 ## function __canvas\.noise\_patch__\(x, y, env=u'gaussian', size=96, stdev=12, col1=u'white', col2=u'black', bgmode=u'avg'\)
 
-Draws a patch of noise, with an envelope. The exact rendering of the noise patch depends on the back-end.
+Draws a patch of noise, with an envelope. The exact rendering of the noise patch depends on the backend.
 
 __Example:__
 
@@ -593,7 +593,7 @@ __Keywords:__
 - `col1` -- The first color.
 	- Type: str, unicode
 	- Default: 'white'
-- `col2` -- The second color. Note: The psycho back-end ignores this
+- `col2` -- The second color. Note: The psycho backend ignores this
 parameter and always uses the inverse of `col1`.
 	- Type: str, unicode
 	- Default: 'black'
@@ -697,7 +697,7 @@ exp.set('time_fixdot', t)
 
 __Returns:__
 
-A timestamp of the time at which the canvas actually appeared on the screen, or a best guess if precise temporal information is not available. For more information about timing, see </misc/timing>. Depending on the back-end the timestamp is an `int` or a `float`.
+A timestamp of the time at which the canvas actually appeared on the screen, or a best guess if precise temporal information is not available. For more information about timing, see </misc/timing>. Depending on the backend the timestamp is an `int` or a `float`.
 
 - Type: int, float
 

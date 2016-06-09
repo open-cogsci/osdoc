@@ -3,7 +3,7 @@ reviewed: false
 
 [TOC]
 
-## About the sound recorder plug-ins
+## About the sound recorder plugins
 
 With the sound recorder plugin you can record audio directly from your microphone or devices connected to your sound card's line-in port. Please make sure that the input channel you want to record from is indicated as the default audio input device in your operating system settings.
 

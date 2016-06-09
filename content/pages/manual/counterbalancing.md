@@ -10,13 +10,13 @@ Consider a lexical-decision experiment in which participants classify words as v
 
 For even participant numbers:
 
-- verb -> z
-- noun -> m
+- verb → z
+- noun → m
 
 For uneven participant numbers:
 
-- verb -> m
-- noun -> z
+- verb → m
+- noun → z
 
 ### Example 2: Rotating stimulus conditions
 

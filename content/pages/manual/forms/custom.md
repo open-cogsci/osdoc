@@ -48,12 +48,12 @@ figure:
 
 There are two ways to create custom forms. You can:
 
-- Use the FORM_BASE plug-in, and specify your form using OpenSesame script.
+- Use the FORM_BASE plugin, and specify your form using OpenSesame script.
 - Use the `libopensesame.widgets` package and create your form using Python code. The Python way is slightly more flexible, but for most purposes both ways can be used.
 
 ### Creating forms using OpenSesame script
 
-We will create the form described above using OpenSesame script. First, drag the FORM_BASE plug-in into your experiment. Click on the newly created item to open its tab. Next, click on the 'Edit script' button (with the terminal icon), in the top-right of the tab area. This will open the script editor. Enter the following script to generate the form described above (see the comments for explanations).
+We will create the form described above using OpenSesame script. First, drag the FORM_BASE plugin into your experiment. Click on the newly created item to open its tab. Next, click on the 'Edit script' button (with the terminal icon), in the top-right of the tab area. This will open the script editor. Enter the following script to generate the form described above (see the comments for explanations).
 
 ~~~
 # Margins are defined as "top;right;bottom;left". Each value corresponds to a
@@ -86,7 +86,7 @@ widget 1 2 1 1 button text="$0.05"
 
 ### Creating forms using Python inline script
 
-The exact same form can be created using an INLINE_SCRIPT and a bit of Python code. You will notice that the Python code somewhat resembles the OpenSesame script shown above. This is no wonder: The FORM_BASE plug-in essentially translates the OpenSesame script into Python code.
+The exact same form can be created using an INLINE_SCRIPT and a bit of Python code. You will notice that the Python code somewhat resembles the OpenSesame script shown above. This is no wonder: The FORM_BASE plugin essentially translates the OpenSesame script into Python code.
 
 First, drag an INLINE_SCRIPT into your experiment. Select the newly created item to open its tab, and add the following script into the Run phase of the INLINE_SCRIPT item (see the comments for explanations).
 
@@ -180,7 +180,7 @@ Click on the links below to see a full description of keywords and functions (Py
 
 ## Another example
 
-The following OpenSesame script (in a form_base plug-in) will produce a questionnaire of three rating scales plus a next button:
+The following OpenSesame script (in a form_base plugin) will produce a questionnaire of three rating scales plus a next button:
 
 ~~~
 set rows "1;1;1;1;1"

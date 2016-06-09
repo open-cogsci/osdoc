@@ -22,9 +22,9 @@ The two main branches of OpenSesame are:
 - `master` contains reasonably stable code.
 - `playground` contains potentially unstable code.
 
-## Developing a plug-in
+## Developing a plugin
 
-For plug-in development, see:
+For plugin development, see:
 
 - %link:dev/plugin%
 

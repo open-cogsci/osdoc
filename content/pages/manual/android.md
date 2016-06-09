@@ -1,5 +1,4 @@
 title: Runtime for Android
-reviewed: false
 
 [TOC]
 
@@ -7,18 +6,12 @@ reviewed: false
 
 ### Download
 
-You can download the OpenSesame runtime for Android through the Android market / Google Play Store:
+You can download the OpenSesame runtime for Android through the Google Play Store:
 
 <a href="https://play.google.com/store/apps/details?id=nl.cogsci.opensesame" style="border:none;">
   <img alt="Get it on Google Play"
        src="https://developer.android.com/images/brand/en_generic_rgb_wo_45.png" />
 </a>
-
-Alternatively, you can download the latest OpenSesame runtime for Android package in `.apk` format from here:
-
-- <http://files.cogsci.nl/software/opensesame/>
-
-Once you have installed this package (please refer to Google for tips on installing `.apk` packages on your device) the OpenSesame runtime will simply appear as an app.
 
 ### Usage
 
@@ -28,7 +21,7 @@ The `Back` button serves the same purpose as the `Escape` key on regular systems
 
 ### Supported devices
 
-If you have tested the OpenSesame runtime for Android on a device, please [share your experiences][forum]. OpenSesame is developed with the Nexus 4 and 9 as reference devices. In general, any device that runs Android 2.2. 'Froyo' or later appears to work.
+OpenSesame is developed with the Nexus 4 and 9 as reference devices. In general, any device that runs Android 2.2. 'Froyo' or later appears to work.
 
 ### Disabling automatic updates
 
@@ -46,15 +39,15 @@ logfile: /sdcard/data/subject03.csv
 
 ## Developing experiments for Android
 
-### Back-end
+### backend
 
-The OpenSesame runtime for Android requires the [droid] back-end, which is available as of OpenSesame 0.27.2.
+The OpenSesame runtime for Android requires the *droid* backend.
 
 ### Design tips
 
-Implement most user interactions through the MOUSE_RESPONSE item or `touch_response` plug-in. In general, screen touches are registered as mouse clicks. Using keyboard input will work as well, but it will show and hide the virtual keyboard after every key that is entered, which looks a bit messy.
+Implement most user interactions through the MOUSE_RESPONSE item or TOUCH_RESPONSE plugin. In general, screen touches are registered as mouse clicks. Using keyboard input will work as well, but it will show and hide the virtual keyboard after every key that is entered, which looks messy.
 
-The resolution for the `droid` backend is fixed at 1280x800. On Android, your experiment will be automatically scaled up or down depending on the resolution of the device, but the resolution that you design with is always 1280x800.
+The resolution for the DROID backend is fixed at 1280x800 (landscape). On Android, your experiment will be automatically scaled up or down depending on the resolution of the device, but the resolution that you design with is always 1280x800.
 
 ### Debugging
 
@@ -62,9 +55,8 @@ Debug output is written to `/sdcard/opensesame-debug.txt`.
 
 ### Limitations
 
-- The *synth* item and `openexp.synth` module are not functional.
-- The *sampler* item and `openexp.sampler` module will ignore panning and pitching.
-- Participants may be eaten by dragons.
+- The SYNTH item and `openexp.synth` module are not functional.
+- The SAMPLER item and `openexp.sampler` module will ignore panning and pitching.
 
 ## Know issue: Frozen or misbehaving virtual keyboard
 
@@ -215,5 +207,5 @@ zlib
 
 [google-play]: https://play.google.com/store/apps/details?id=nl.cogsci.opensesame
 [forum]: http://forum.cogsci.nl/index.php?p=/discussion/333/a-video-of-opensesame-running-natively-on-android
-[droid]: /back-ends/droid
+[droid]: /backends/droid
 [pgs4a]: http://pygame.renpy.org/

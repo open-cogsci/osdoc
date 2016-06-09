@@ -6,7 +6,7 @@ title: Text
 
 The most common way to show text is using a SKETCHPAD or FEEDBACK item. These allow you to enter text and other visual stimuli. For a questionnaire-like way to show text, you can use [forms](%link:manual/forms/about%).
 
-__Note:__ The TEXT_DISPLAY plug-in has been removed as of OpenSesame 3.0.0, because it was outdated and did not provide any functionality that is not offered by FORMs and SKETCHPAD items.
+__Note:__ The TEXT_DISPLAY plugin has been removed as of OpenSesame 3.0.0, because it was outdated and did not provide any functionality that is not offered by FORMs and SKETCHPAD items.
 {: .page-notification}
 
 ## Formatting (HTML subset)

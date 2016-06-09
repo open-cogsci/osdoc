@@ -2,9 +2,9 @@ title: Video playback
 
 [TOC]
 
-## media_player_vlc plug-in
+## media_player_vlc plugin
 
-The MEDIA_PLAYER_VLC plug-in is based on the well-known VLC media player. You can download the latest version from here (if it is not already installed):
+The MEDIA_PLAYER_VLC plugin is based on the well-known VLC media player. You can download the latest version from here (if it is not already installed):
 
 - <https://github.com/dschreij/media_player_vlc>
 
@@ -12,7 +12,7 @@ In addition, you need to install the VLC media player in the default location:
 
 - <http://www.videolan.org/>
 
-*Troubleshooting:* If you encounter a black screen when running your experiment in fullscreen (i.e. the video appears to play, but you don't see anything), please try using a different back-end (i.e. switch from *legacy* to *xpyriment* or vice versa), or change the back-end settings for the *legacy* back-end.
+*Troubleshooting:* If you encounter a black screen when running your experiment in fullscreen (i.e. the video appears to play, but you don't see anything), please try using a different backend (i.e. switch from *legacy* to *xpyriment* or vice versa), or change the backend settings for the *legacy* backend.
 
 ## OpenCV
 

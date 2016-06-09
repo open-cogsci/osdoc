@@ -8,7 +8,7 @@ object and can be accessed within an inline_script item as SRBOX.
 
 __Important note 1:__
 
-If you do not specify a device, the plug-in will try to autodetect the
+If you do not specify a device, the plugin will try to autodetect the
 SR Box port. However, on some systems this freezes the experiment, so
 it is better to explicitly specify a device.
 
@@ -36,7 +36,7 @@ srbox.stop()
 
 ## function __srbox\.\_\_init\_\___\(experiment, dev=None\)
 
-Constructor. An SRBOX object is created automatically by the SRBOX plug-in, and you do not generally need to call the constructor yourself.
+Constructor. An SRBOX object is created automatically by the SRBOX plugin, and you do not generally need to call the constructor yourself.
 
 __Arguments:__
 

@@ -137,7 +137,7 @@ logger
 
 ## *run* statement
 
-Indicates that an item should be run. In the case of the sequence, the order of the run statements determines the order in which items are called. In the case of the parallel plug-in all items are called at the same time.
+Indicates that an item should be run. In the case of the sequence, the order of the run statements determines the order in which items are called. In the case of the parallel plugin all items are called at the same time.
 
 *Applies to*
 
@@ -212,11 +212,11 @@ Loop
 
 ## *widget* statement
 
-Adds a widget (buttons, labels, etc.) to a form. Valid keywords depend on the type of widget. The widget statement is not strictly part of the core OpenSesame syntax, but is used by the form_base plug-in.
+Adds a widget (buttons, labels, etc.) to a form. Valid keywords depend on the type of widget. The widget statement is not strictly part of the core OpenSesame syntax, but is used by the form_base plugin.
 
 *Applies to*
 
-form_base (plug-in)
+form_base (plugin)
 
 *Format*
 

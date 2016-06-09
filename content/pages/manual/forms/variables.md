@@ -9,13 +9,13 @@ If forms are slow, see [this page](%link:manual/forms/performance%).
 
 When you present a form with multiple `checkbox`es, you generally want to know which `checkbox` the user has checked. Similarly, when you present a form with two `button`s, you want to know which `button` the user has clicked. This information is available through variables that are automatically set when the user interacts with a form. You can specify yourself which response variables should be used. How this is done depends on how you have created your form.
 
-### In ready-made form plug-ins
+### In ready-made form plugins
 
-When you use one of the ready-made form plug-ins, such as FORM_TEXT_INPUT, you can specify the name of the response variable directly in the plug-in controls.
+When you use one of the ready-made form plugins, such as FORM_TEXT_INPUT, you can specify the name of the response variable directly in the plugin controls.
 
 ### In custom forms
 
-You can use the `var` keyword to indicate which variable should be used. For example, the following OpenSesame script, which you can enter into a FORM_BASE plug-in, indicates that the response from a `text_input` widget should be stored in a variable called `my_response_var`:
+You can use the `var` keyword to indicate which variable should be used. For example, the following OpenSesame script, which you can enter into a FORM_BASE plugin, indicates that the response from a `text_input` widget should be stored in a variable called `my_response_var`:
 
 ~~~
 widget 0 0 1 1 text_input var=my_response_var

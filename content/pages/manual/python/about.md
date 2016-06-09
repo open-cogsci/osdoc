@@ -221,13 +221,13 @@ A full overview of the `responses` object can be found here:
 
 ### The `win` object: The window handle
 
-The `win` object is the window handle, and depends on the back-end. You will generally use the `win` object only in special cases, such as when creating PsychoPy stimuli..
+The `win` object is the window handle, and depends on the backend. You will generally use the `win` object only in special cases, such as when creating PsychoPy stimuli..
 
 ## Modules for display presentation, response collection, etc.
 
 ### `openexp` (Native OpenSesame modules)
 
-OpenSesame comes with a set of Python modules for presenting stimuli, handling input, etc. These modules work with all back-ends. The full API (i.e., a list of functions) can be found here:
+OpenSesame comes with a set of Python modules for presenting stimuli, handling input, etc. These modules work with all backends. The full API (i.e., a list of functions) can be found here:
 
 - Display presentation: %link:manual/python/canvas%
 - Keyboard response collection: %link:manual/python/keyboard%
@@ -236,19 +236,19 @@ OpenSesame comes with a set of Python modules for presenting stimuli, handling i
 
 ### `psychopy`
 
-If you are using the *psycho* back-end, you can directly use the various [PsychoPy] modules. For more information, see:
+If you are using the *psycho* backend, you can directly use the various [PsychoPy] modules. For more information, see:
 
 - %link:backends%
 
 ### `expyriment`
 
-If you are using the *xpyriment* back-end, you can directly use the various [Expyriment] modules. For more information, see:
+If you are using the *xpyriment* backend, you can directly use the various [Expyriment] modules. For more information, see:
 
 - %link:backends%
 
 ### `pygame`
 
-If you are using the *legacy*, *droid*, or *xpyriment* (only with "Use OpenGL" set to "no") back-end, you can directly use the various [PyGame] modules. For more information, see:
+If you are using the *legacy*, *droid*, or *xpyriment* (only with "Use OpenGL" set to "no") backend, you can directly use the various [PyGame] modules. For more information, see:
 
 - %link:backends%
 
@@ -258,7 +258,7 @@ If you are using the *legacy*, *droid*, or *xpyriment* (only with "Use OpenGL" s
 [mouse]: /python/mouse
 [sampler]: /python/sampler
 [synth]: /python/synth
-[back-ends]: /back-ends/about-back-ends
+[backends]: /backends/about-backends
 [ipython]: http://ipython.org/
 [swaroop]: http://www.swaroopch.com/notes/Python
 [swaroop-direct]: http://www.ibiblio.org/swaroopch/byteofpython/files/120/byteofpython_120.pdf

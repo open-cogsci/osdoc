@@ -640,11 +640,11 @@ assert((var.lag == '') != (var.T2_present == 'y'))
 
 ## Extra 3: Use PsychoPy directly
 
-OpenSesame is back-end independent. This means that different libraries can be used for controlling the display, sound, response collection, etc. You can select the back-end in the General tab.
+OpenSesame is backend independent. This means that different libraries can be used for controlling the display, sound, response collection, etc. You can select the backend in the General tab.
 
-So far, we have used OpenSesame's own `canvas` object, which automatically maps onto the correct functions of the selected back-end. Therefore, you don't have to bother with or know about the details of each back-end. However, you can also directly use the functions offered by a specific back-end, such as PsychoPy. This is especially useful if you want to use functionality that is not available in OpenSesame's own modules.
+So far, we have used OpenSesame's own `canvas` object, which automatically maps onto the correct functions of the selected backend. Therefore, you don't have to bother with or know about the details of each backend. However, you can also directly use the functions offered by a specific backend, such as PsychoPy. This is especially useful if you want to use functionality that is not available in OpenSesame's own modules.
 
-First, to use PsychoPy, you need to switch to the *psycho* back-end, which you can do in the 'General properties' tab of your experiment . Now, when you start the experiment, OpenSesame will automatically initialize PsychoPy, and the `psychopy.visual.Window` object will be available as `win` in INLINE_SCRIPTs.
+First, to use PsychoPy, you need to switch to the *psycho* backend, which you can do in the 'General properties' tab of your experiment . Now, when you start the experiment, OpenSesame will automatically initialize PsychoPy, and the `psychopy.visual.Window` object will be available as `win` in INLINE_SCRIPTs.
 
 Now let's see how we can implement our RSVP stream in PsychoPy. (The script below replaces the part in the *Prepare* phase of *RSVP* in which we created `letter_canvas_list`.)
 
@@ -683,7 +683,7 @@ That's it!
 
 ### Links
 
-- [/back-ends/psycho/](/back-ends/psycho/)
+- [/backends/psycho/](/backends/psycho/)
 - <http://www.psychopy.org/api/visual.html>
 
 </div>

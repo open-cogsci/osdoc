@@ -13,9 +13,9 @@ Let's assume that your extension is called `my_extension`. In that case, your ex
 
 ## Extension information
 
-Extension information is defined in `info.yaml`. This works the same way as for plug-ins, with the exception that you don't define any controls. For more information, see:
+Extension information is defined in `info.yaml`. This works the same way as for plugins, with the exception that you don't define any controls. For more information, see:
 
-- [/plug-ins/create-plug-in/#defining-the-gui](/plug-ins/create-plug-in/#defining-the-gui)
+- [/plugins/create-plugin/#defining-the-gui](/plugins/create-plugin/#defining-the-gui)
 
 ## Writing the extension code
 

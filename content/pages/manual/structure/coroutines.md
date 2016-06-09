@@ -6,16 +6,16 @@ Coroutines run multiple items in parallel--or, to be more exact, they run items 
 
 ## Using coroutines
 
-You can use coroutines through the COROUTINES plug-in (see %FigCoroutinesInterface).
+You can use coroutines through the COROUTINES plugin (see %FigCoroutinesInterface).
 
 %--
 figure:
  source: FigCoroutinesInterface.png
- caption: The interface of the coroutines plug-in.
+ caption: The interface of the coroutines plugin.
  id: FigCoroutinesInterface
 --%
 
-As you can see, the COROUTINES plug-in looks similar to the SEQUENCE item, but has a few extra options:
+As you can see, the COROUTINES plugin looks similar to the SEQUENCE item, but has a few extra options:
 
 - *Duration* indicates the total duration of the coroutines.
 - *Generator function name (optional)* indicates the name of a generator function that has been defined in an inline_script (see Writing a custom coroutine below).
@@ -27,7 +27,7 @@ Specifically, the example from %FigCoroutinesInterface (from the [stop-signal-ta
 - If the `stop_after` variable is not empty, it shows the stop_signal display after an interval specified by the `stop_after` variable.
 - During the entire (2000 ms) interval, a keyboard response is collected.
 
-The temporal flow is controlled by the COROUTINES plug-in. Therefore, the timeout and duration values specified in the items are not used. For example, in %FigCoroutinesInterface, the KEYBOARD_RESPONSE will run for 2000 ms, regardless of the timeout that is specified in the item.
+The temporal flow is controlled by the COROUTINES plugin. Therefore, the timeout and duration values specified in the items are not used. For example, in %FigCoroutinesInterface, the KEYBOARD_RESPONSE will run for 2000 ms, regardless of the timeout that is specified in the item.
 
 ## Supported items
 
@@ -44,12 +44,12 @@ Currently, the following items are supported:
 
 Technically, coroutines are [generators](https://en.wikipedia.org/wiki/Generator_(computer_programming)). Generators are functions that can suspend their execution (i.e., they `yield`) and resume later on; therefore, multiple generators can run in a rapidly alternating suspend-resume cycle. This trick is sometimes called *weightless threading*, because it has most of benefits of real threading, without any of the overhead or (potential) instability. Coroutines *do not* use threading or multiprocessing.
 
-In the coroutines plug-in, you can indicate the name of a generator function that you have defined in an INLINE_SCRIPT. This generator needs to work in a particular way (as illustrated in the examples below):
+In the coroutines plugin, you can indicate the name of a generator function that you have defined in an INLINE_SCRIPT. This generator needs to work in a particular way (as illustrated in the examples below):
 
 - It must initialize and then `yield`. This first `yield` returns nothing.
 - It may loop while `yield`ing on every iteration. The loop breaks when:
 	- The coroutine should end; or
-	- When the `yield` returns `False`; this is the `coroutine` plug-in's way to signal the end of the coroutine.
+	- When the `yield` returns `False`; this is the `coroutine` plugin's way to signal the end of the coroutine.
 - No time-consuming things should happen between `yield` statements, except during initialization.
 
 The first and simplest option is to write a one-shot coroutine. This is a function that is called once to prepare itself, once to execute, and then terminates. For example:

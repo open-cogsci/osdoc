@@ -1,36 +1,34 @@
 title: PyGaze (eye tracking)
-reviewed: false
 
 [TOC]
 
 ## About
 
-PyGaze is a Python library for eye tracking. A set of plug-ins allow you to use PyGaze from within OpenSesame. As of OpenSesame 2.9.0, these plug-ins are included by default in the OpenSesame Windows packages.
-
-For more information on PyGaze, visit:
+PyGaze is a Python library for eye tracking. A set of plugins allow you to use PyGaze from within OpenSesame. For more information on PyGaze, visit:
 
 - <http://www.pygaze.org/>
 
 Please cite PyGaze as:
 
-- Dalmaijer, E., Mathôt, S., & Van der Stigchel, S. (2013). PyGaze: An open-source, cross-platform toolbox for minimal-effort programming of eyetracking experiments. *Behavior Research Methods*. doi:10.3758/s13428-013-0422-2
+Dalmaijer, E., Mathôt, S., & Van der Stigchel, S. (2013). PyGaze: An open-source, cross-platform toolbox for minimal-effort programming of eyetracking experiments. *Behavior Research Methods*. doi:10.3758/s13428-013-0422-2
+{: .reference}
 
 ## Supported eye trackers
 
 PyGaze supports the following eye trackers:
 
-- [__EyeLink__](http://www.sr-research.com/) -- For information on how to run OpenSesame with PyLink support, see [/devices/eyelink](/devices/eyelink).
-- [__EyeTribe__](http://theeyetribe.com/) -- Works out of the box.
+- [__EyeLink__](http://www.sr-research.com/) — For information on how to run OpenSesame with PyLink support, see [this page](%link:eyelink%).
+- [__EyeTribe__](http://theeyetribe.com/) — Works out of the box.
 
 For the following eye trackers, there is experimental support:
 
-- [__SMI__](http://www.smivision.com/) -- SMI support is experimental.
-- [__Tobii__](http://www.tobii.com/en/eye-tracking-research/global/) -- Tobii support is experimental.
+- [__SMI__](http://www.smivision.com/) — SMI support is experimental.
+- [__Tobii__](http://www.tobii.com/en/eye-tracking-research/global/) — Tobii support is experimental.
 
 PyGaze also includes two dummy eye trackers for testing purposes:
 
-- __Simple dummy__ -- Does nothing.
-- __Advanced dummy__ -- Mouse simulation of eye movements.
+- __Simple dummy__ — Does nothing.
+- __Advanced dummy__ — Mouse simulation of eye movements.
 
 ## Installing PyGaze
 
@@ -46,35 +44,41 @@ If you use Ubuntu, you can get PyGaze from the Cogsci.nl PPA:
     sudo apt-get update
     sudo apt-get install python-pygaze
 
+## pip install (all platform)
+
+You can install PyGaze with `pip`:
+
+	pip install python-pygaze
+
 ### Install from source
 
 On other systems, you can install PyGaze as follows:
 
 1. Download the PyGaze source code (`.zip`) from <https://github.com/esdalmaijer/PyGaze>.
     - Do *not* download the standalone Windows packages provided on the PyGaze website.
-    - Verify that the version of PyGaze is compatible with your version of OpenSesame, as described [here](/getting-opensesame/running-from-source/).
+    - Verify that the version of PyGaze is compatible with your version of OpenSesame, as described [here](%link:fromsource%).
 2. Extract the `.zip` archive somewhere.
 3. Inside, you will find these folders:
-    - `opensesame_plugins`: As the name suggests, this folder contains the OpenSesame plug-ins, and need to be copied to (one of) the plugin folders, as described here: [/plug-ins/installation/]()
+    - `opensesame_plugins`: As the name suggests, this folder contains the OpenSesame plugins, which need to be copied to (one of) the plugin folders, as described [here](%link:manual/plugins%).
     - `pygaze`: This is the PyGaze Python library. You need to copy this to a folder in the Python path. On Windows, you can copy this folder to the OpenSesame program folder.
 4. Done!
 
-## PyGaze OpenSesame plug-ins
+## PyGaze OpenSesame plugins
 
-The following PyGaze plug-ins are available:
+The following PyGaze plugins are available:
 
-- `pygaze_init` -- Initializes PyGaze. This plug-in is generally inserted at the start of the experiment.
-- `pygaze_drift_correct` -- Implements a drift correction procedure.
-- `pygaze_start_recording` -- Puts PyGaze in recording mode.
-- `pygaze_stop_recording` -- Puts PyGaze out of recording mode.
-- `pygaze_wait` -- Pauses until an event occurs, such as a saccade start.
-- `pygaze_log` -- Logs experimental variables and arbitrary text.
+- PYGAZE_INIT — Initializes PyGaze. This plugin is generally inserted at the start of the experiment.
+- PYGAZE_DRIFT_CORRECT — Implements a drift correction procedure.
+- PYGAZE_START_RECORDING — Puts PyGaze in recording mode.
+- PYGAZE_STOP_RECORDING — Puts PyGaze out of recording mode.
+- PYGAZE_WAIT — Pauses until an event occurs, such as a saccade start.
+- PYGAZE_LOG — Logs experimental variables and arbitrary text.
 
 ## Example
 
-For an example of how to use the PyGaze plug-ins, see the PyGaze template that is included with OpenSesame.
+For an example of how to use the PyGaze plugins, see the PyGaze template that is included with OpenSesame.
 
-Below is an example of how to use PyGaze in a Python INLINE_SCRIPT. For a list of available functions, see [Function overview].
+Below is an example of how to use PyGaze in a Python INLINE_SCRIPT:
 
 ~~~ .python
 # Create a keyboard and a canvas object
@@ -96,6 +100,6 @@ while True:
 
 ## Function overview
 
-To initialize PyGaze in OpenSesame, insert the `pygaze_init` plug-in into your experiment. Once you have done this, an `eyetracker` object will be available, which offers the following functions:
+To initialize PyGaze in OpenSesame, insert the PYGAZE_INIT plugin into your experiment. Once you have done this, an `eyetracker` object will be available, which offers the following functions:
 
 %-- include: include/api/eyetracker.md --%

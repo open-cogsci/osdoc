@@ -485,5 +485,5 @@ Mathôt, S., & Theeuwes, J. (2011). Mantra: An open method for object and moveme
 
 </div>
 
-[psycho]: /back-ends/psycho
-[xpyriment]: /back-ends/xpyriment
+[psycho]: /backends/psycho
+[xpyriment]: /backends/xpyriment

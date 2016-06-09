@@ -19,7 +19,7 @@ You can also download a development snapshot of the code. To obtain a reasonable
 
 ### Required
 
-The following packages are required to run a minimal version of the OpenSesame GUI, with only support for the [legacy] back-end, no sound support, and no plug-in support.
+The following packages are required to run a minimal version of the OpenSesame GUI, with only support for the [legacy] backend, no sound support, and no plugin support.
 
 - [Python](http://www.python.org) is the programming language in which OpenSesame is created. The following versions of Python are supported:
 	- Python 2.7 (default)
@@ -44,13 +44,13 @@ The following packages are required to run a minimal version of the OpenSesame G
 
 The following packages are not required, but some functionality will be missing if they are not installed.
 
-- [Expyriment](http://www.expyriment.org/) is required for the [xpyriment] back-end.
+- [Expyriment](http://www.expyriment.org/) is required for the [xpyriment] backend.
     - OpenSesame >= 3.0.0 requires Expyriment >= 0.8.0.
     - OpenSesame < 3.0.0 requires Expyriment 0.7.0.
 - [NumPy](http://www.numpy.org/) is an advanced mathematical library that is used for various things, such as sound support.
 - [PIL](http://www.pythonware.com/products/pil/) is an imaging library that is used for various things.
     - You can also use `pillow`, an actively maintained fork of the original, and no longer maintained `PIL`.
-- [PsychoPy](http://www.psychopy.org/) is required for the [psycho] back-end.
+- [PsychoPy](http://www.psychopy.org/) is required for the [psycho] backend.
 - [pyflakes](https://pypi.python.org/pypi/pyflakes) is required for automatic validation of your Python scripts.
 - [Pyglet](http://www.pyglet.org/) is required by PsychoPy.
 - [PyOpenGL](http://pyopengl.sourceforge.net/) is required by PsychoPy and Expyriment.
@@ -360,7 +360,7 @@ You may need to manually install Matplotlib, wxPython because (at the time of te
 
 *NOTE:* The psychopy backend does not seem to work yet and crashes. The reason is that PsychoPy (or rather its underlying library pyglet) can't cope with the 64-bit cocoa environment of the newer Mac OS X versions yet. In newer versions of psychopy this problem is hopefully solved.
 
-#### Install wxPython (Optional, required for the PsychoPy back-end)
+#### Install wxPython (Optional, required for the PsychoPy backend)
 
 You can download wxPython yourself or install it using easy_install (see "install PsychoPy").
 
@@ -368,7 +368,7 @@ Website: <http://wxpython.org/>
 
 Direct download: <http://downloads.sourceforge.net/wxpython/wxPython2.9-osx-2.9.4.0-cocoa-py2.7.dmg>
 
-#### Install PyOpenGL (Optional, required for opengl or expyriment back-end)
+#### Install PyOpenGL (Optional, required for opengl or expyriment backend)
 
 You can download PyOpenGL yourself or install it using easy_install (see "install PsychoPy").
 
@@ -390,7 +390,7 @@ Run OpenSesame using one of the following commands:
 [winpython-based package]: /getting-opensesame/running-with-python-portable/
 [EPD_Download]: http://www.enthought.com/products/epd.php
 [EPD_Packages]: http://www.enthought.com/products/epdlibraries.php
-[xpyriment]: /back-ends/xpyriment
-[legacy]: /back-ends/legacy
-[psycho]: /back-ends/psycho
+[xpyriment]: /backends/xpyriment
+[legacy]: /backends/legacy
+[psycho]: /backends/psycho
 [cogsci.nl ppa]: https://launchpad.net/~smathot/+archive/cogscinl

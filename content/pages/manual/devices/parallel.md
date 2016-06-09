@@ -5,12 +5,12 @@ In EEG/ ERP studies it is common to send triggers to mark the timestamp for sign
 
 [TOC]
 
-## Using the `parallel_port_trigger` plug-in
+## Using the `parallel_port_trigger` plugin
 
 Parallel_port_trigger is a third-party plugin, but has been reviewed by the OpenSesame team.
 {: .page-notification}
 
-Triggers can be sent with the `parallel_port_trigger` plug-in which works under Linux and Windows.
+Triggers can be sent with the `parallel_port_trigger` plugin which works under Linux and Windows.
 
 The plugin has three input boxes:
 
@@ -27,12 +27,12 @@ figure:
  id: FigScreenshot
  source: plugin-screenshot.png
  caption: |
-  A screenshot of the `parallel_port_trigger` plug-in.
+  A screenshot of the `parallel_port_trigger` plugin.
 --%
 
 ## Using `dportio.dll` in a Python inline Script (Windows only)
 
-Instead of using the `parallel_port_trigger` plug-in, it is also possible to send triggers with `dlportio.dll` through a Python inline script. This approach is Windows only. To do so, first add an INLINE_SCRIPT to the start of the experiment with the following code in the prepare phase:
+Instead of using the `parallel_port_trigger` plugin, it is also possible to send triggers with `dlportio.dll` through a Python inline script. This approach is Windows only. To do so, first add an INLINE_SCRIPT to the start of the experiment with the following code in the prepare phase:
 
 ~~~ .python
 try:
@@ -95,7 +95,7 @@ Source: [Forum post by Absurd][post-3]
 ## Recommendations
 
 - Start your experiment with a 'zero' trigger to make sure all the pins are set to zero.
-- It's recommended to use the [psycho] or [xpyriment] back-ends instead of the [legacy] back-end (using PyGame) for time-critical experiments. This is because [psycho] and [xpyriment] takes the refresh rate of the monitor into account when returning timestamps, whereas [legacy] does not. For more information, see [miscellaneous/timing].
+- It's recommended to use the [psycho] or [xpyriment] backends instead of the [legacy] backend (using PyGame) for time-critical experiments. This is because [psycho] and [xpyriment] takes the refresh rate of the monitor into account when returning timestamps, whereas [legacy] does not. For more information, see [miscellaneous/timing].
 - Send the trigger code right after (instead of just before) the presentation of your stimulus (assuming that it's the stimulus onset you want to mark). By doing so you'll make sure that the time stamp is as accurately as possible and will not suffer from a small random jitter due to your monitor's refresh rate. [Source: lvanderlinden][post-2]
 
 ## Troubleshooting
@@ -113,6 +113,6 @@ Please don't hesitate to post questions on the forum, or to let us know of your 
 [post-2]: http://forum.cogsci.nl/index.php?p=/discussion/comment/780#Comment_780
 [post-3]: http://forum.cogsci.nl/index.php?p=/discussion/comment/745#Comment_745
 [miscellaneous/timing]: /miscellaneous/timing
-[legacy]: /back-ends/legacy
-[xpyriment]: /back-ends/xpyriment
-[psycho]: /back-ends/psycho
+[legacy]: /backends/legacy
+[xpyriment]: /backends/xpyriment
+[psycho]: /backends/psycho

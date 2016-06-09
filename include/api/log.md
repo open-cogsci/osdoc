@@ -64,7 +64,7 @@ log.open(u'/path/to/new/logfile.csv')
 
 __Arguments:__
 
-- `path` -- The path to the current logfile. In most cases (unless) a custom log back-end is used, this will be a filename.
+- `path` -- The path to the current logfile. In most cases (unless) a custom log backend is used, this will be a filename.
 	- Type: str, unicode
 
 </div>
