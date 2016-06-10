@@ -42,13 +42,25 @@ Or, to generate the site for publication, run:
 
 This will generate the site in the folder `output`.
 
+## Previewing
+
+Once the site has been generated, open a terminal in the `output` folder and start a basic webserver to view it:
+
+	python -m SimpleHTTPServer
+
+You can now visit `http://localhost:8000` in a browser to view the site, which will be in a subfolder, e.g. `http://localhost:8000/3.1`
+
 ## Dependencies
 
 - pelican
-- pyyaml
-- htmlmin
+- inkscape (used for converting svg to png)
 - python-academicmarkdown
 - python-yamldoc
+
+To install these on Ubuntu 16.04:
+
+	sudo apt-get install pelican inkscape
+	pip install python-academicmarkdown python-yamldoc
 
 ## License information
 
