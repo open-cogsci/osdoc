@@ -1,6 +1,7 @@
 # coding=utf-8
 
 from __future__ import unicode_literals
+import os
 
 BRANCH = '3.1'
 PLUGIN_PATHS = ["plugins"]
@@ -13,6 +14,8 @@ AUTHOR = u'Sebastiaan Math\xf4t'
 SITENAME = u'OpenSesame documentation'
 STATIC_PATHS = ['pages']
 
+ROOT_PATH = os.getcwd()
+GITHUB_ROOT_URL = 'https://github.com/smathot/osdoc/blob/' + BRANCH
 OUTPUT_PATH = 'output/' + BRANCH
 PATH = 'content'
 THEME=  'themes/cogsci'
