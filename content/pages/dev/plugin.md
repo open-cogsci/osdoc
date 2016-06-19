@@ -1,5 +1,4 @@
 title: Creating a plugin
-reviewed: false
 
 [TOC]
 
@@ -10,13 +9,14 @@ Let's assume that your plugin is called `my_plugin`. In that case, your plugin c
 	my_plugin/
 		info.yaml
 		my_plugin.md
-		my_plugin.png
-		my_plugin_large.png
 		my_plugin.py
 
 ## Icons
 
-Your plugin needs two icons. A small 16x16-pixel icon, which is called `my_plugin.png` and is shown in the overview area, and a larger 32x32-pixel icon, which is called `my_plugin_large.png`. These files need to be placed directly in the plugin folder.
+Each plug-in needs an icon, which you can specify in one of two ways:
+
+- Include two icon files in the plugin folder. The first should be a 16x16 px png file called `my_plugin.png`; the second should be a 32x32 px png file called `my_plugin_large.png`.
+- Specify an `icon` key in `info.yaml`. If you do this, the plugin icon will be taken from the icon theme.
 
 ## Help file
 
@@ -24,9 +24,9 @@ You can provide a help file in [Markdown] or [HTML] format. To add a Markdown he
 
 ## Defining the GUI
 
-The GUI is defined in a file called `info.yaml`[^json]. [YAML] is an easily readable format, and provides a quick and straight-forward way to define your plugin controls, and specify various kinds of information. Make sure that your file is syntactically valid YAML, for example using a validator such as [yamllint.com].
+The GUI is defined in a file called `info.yaml`[^json]. [YAML] provides a straight-forward way to define your plugin controls, and specify other kinds of information. Make sure that your file is syntactically valid YAML, for example using a validator such as [yamllint.com].
 
-The following top-level fields are used to show plugin information by the plugin and extension manager: `author`, `url`, `version`. and `description`. Another important field is `category`, which specifies in which group the plugin should appear in the item toolbar (e.g. 'Visual stimuli', etc.). Finally, the `priority` field determines the order in which plugins are loaded, where high priority values are loaded last.
+The following top-level fields are used to show plugin information by the plugin and extension manager: `author`, `url`, `version`. and `description`. Another important field is `category`, which specifies in which group the plugin should appear in the item toolbar (e.g. 'Visual stimuli', etc.). The `icon` field specifies an icon name (as explained above). Finally, the `priority` field determines the order in which plugins are loaded, where high priority values are loaded last.
 
 The `control` field contains a list of controls. Each control is itself an object that has various fields. The most important fields are:
 
@@ -49,6 +49,7 @@ The `control` field contains a list of controls. Each control is itself an objec
 author: Your name
 category: Some category
 description: This is my plugin
+icon: text-x-generic
 url: http://your.website
 controls:
 -
@@ -69,7 +70,12 @@ See the `auto_example` [example](#examples) for a full list of all controls and 
 
 ## Writing the main plugin code
 
-The main plugin code is placed in `my_plugin.py`. This file has two classes: The first is `my_plugin`, which contains the runtime part of the plugin. The second is `qtmy_plugin`, which controls the GUI and is almost empty in most cases, because the controls are defined in `info.yaml`. In many cases, you will only be concerned with three methods:
+The main plugin code is placed in `my_plugin.py`. This file has two classes:
+
+- `my_plugin`, which contains the runtime part of the plugin.
+- `qtmy_plugin`, which controls the GUI. This class is almost empty in most cases, because the controls are defined in `info.yaml`.
+
+In many cases, you will only be concerned with three methods:
 
 - `my_plugin.reset()` is where you specify default values for the plugin variables.
 - `my_plugin.prepare()` is where you implement the prepare phase of your plugin. It is good practice to move as much functionality as possible into `prepare()`, so that the time-critical run phase goes as smooth as possible.

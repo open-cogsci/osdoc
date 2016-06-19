@@ -44,12 +44,13 @@ Currently, the following items are supported:
 
 Technically, coroutines are [generators](https://en.wikipedia.org/wiki/Generator_(computer_programming)). Generators are functions that can suspend their execution (i.e., they `yield`) and resume later on; therefore, multiple generators can run in a rapidly alternating suspend-resume cycle. This trick is sometimes called *weightless threading*, because it has most of benefits of real threading, without any of the overhead or (potential) instability. Coroutines *do not* use threading or multiprocessing.
 
-In the coroutines plugin, you can indicate the name of a generator function that you have defined in an INLINE_SCRIPT. This generator needs to work in a particular way (as illustrated in the examples below):
+In the COROUTINES plugin, you can indicate the name of a generator function that you have defined in an INLINE_SCRIPT. This generator needs to work in a particular way (as illustrated in the examples below):
 
 - It must initialize and then `yield`. This first `yield` returns nothing.
 - It may loop while `yield`ing on every iteration. The loop breaks when:
 	- The coroutine should end; or
-	- When the `yield` returns `False`; this is the `coroutine` plugin's way to signal the end of the coroutine.
+	- When the `yield` returns `False`; this is a signal from the COROUTINES plugin to the generator to signal that the coroutines ends.
+	- When the generator `yields False` itself; this is a signal from the generator to the COROUTINES to signal that the coroutines ends.
 - No time-consuming things should happen between `yield` statements, except during initialization.
 
 The first and simplest option is to write a one-shot coroutine. This is a function that is called once to prepare itself, once to execute, and then terminates. For example:
@@ -99,4 +100,30 @@ def my_coroutine():
 
 	# We are done!
 	print('Stopped after %d cycles!' % i)
+~~~
+
+Another example, which stops the coroutines when a response has been collected.
+
+~~~ .python
+def my_coroutine():
+
+	"""
+	This is an example of a generator coroutine that aborts the coroutines when
+	a response has been collected.
+	"""
+
+	# To start, set response to None
+	var.response = None
+	yield
+	# Loop while coroutines is running
+	while True:
+		# If response is None (i.e. no response has been collected), signal
+		# True to the coroutines to indicate that, from this end, the coroutines
+		# should keep going.
+		signal_to_coroutines = var.response is None
+		# Send the signal to the coroutines, and get a return signal. If the
+		# return signal is False, we should break the loop.
+		signal_from_coroutines = yield signal_to_coroutines
+		if not signal_from_coroutines:
+			break
 ~~~

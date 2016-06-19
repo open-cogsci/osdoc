@@ -17,16 +17,14 @@ The best (and easiest) way to contribute code is as follows:
 3. Modify your fork.
 4. Send a 'pull request', asking for your changes to be merged back into the main repository.
 
-The two main branches of OpenSesame are:
+Each major version of OpenSesame has its own branch. For example, the `ising` branch contains the code for 3.0 *Interactive Ising*. The `master` branch contains the code for the latest stable release.
 
-- `master` contains reasonably stable code.
-- `playground` contains potentially unstable code.
+## Developing a plugin or extension
 
-## Developing a plugin
-
-For plugin development, see:
+For plugin or extension development, see:
 
 - %link:dev/plugin%
+- %link:dev/extension%
 
 ## Translate the user interface
 

@@ -40,11 +40,18 @@ If you want to read independent variables from file, rather than entering them i
 
 The source file follows the same conventions as the loop table; that is, each column corresponds to a variable, and each row corresponds to a cycle.
 
+CSV files are expected to be in the following format:
+
+- plain-text
+- comma-separated
+- double-quoted (literal double-quotes are escaped with backward slashes)
+- UTF-8 encoded
+
 ## Breaking the loop
 
 If you want to break the loop before all cycles have been executed, you can specify a break-if statement. This break-if statement follows the same syntax as other if statements, as described on:
 
-- http://osdoc.cogsci.nl/manual/ifstatements
+- %link:variables%
 
 For example, the following break-if statement would break the loop as soon as a correct response is given:
 

@@ -1,11 +1,10 @@
 title: Creating an extension
-reviewed: false
 
 [TOC]
 
 ## Relevant files
 
-Let's assume that your extension is called `my_extension`. In that case, your extension corresponds to a folder called `my_extension`, containing at least the following 2 files:
+Let's assume that your extension is called `my_extension`. In that case, your extension corresponds to a folder called `my_extension`, which contains at least the following 2 files:
 
 	my_extension/
 		info.yaml
@@ -15,7 +14,7 @@ Let's assume that your extension is called `my_extension`. In that case, your ex
 
 Extension information is defined in `info.yaml`. This works the same way as for plugins, with the exception that you don't define any controls. For more information, see:
 
-- [/plugins/create-plugin/#defining-the-gui](/plugins/create-plugin/#defining-the-gui)
+- %link:dev/plugin%
 
 ## Writing the extension code
 

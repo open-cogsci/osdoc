@@ -23,7 +23,7 @@ The following packages are required to run a minimal version of the OpenSesame G
 
 - [Python](http://www.python.org) is the programming language in which OpenSesame is created. The following versions of Python are supported:
 	- Python 2.7 (default)
-    - Python 3.4
+    - OpenSesame >= 3.0.0 supports Python >= 3.4
 - [PyGame](http://www.pygame.org) is a library that is used for graphics and sound.
 - [qtpy](https://github.com/goanpeca/qtpy) is the abstraction layer on top of PyQt4 or PyQt5.
 	- [PyQt4](http://www.riverbankcomputing.com/software/pyqt/download) is the graphics toolkit that is used to for the user interface; or
@@ -31,9 +31,6 @@ The following packages are required to run a minimal version of the OpenSesame G
 - [QScintilla2](http://www.riverbankcomputing.com/software/pyqt/download) is a basic text-editor component. In some cases, it is bundled with `PyQt4`.
 - [QProgEdit](https://github.com/smathot/QProgEdit) is an advanced text-editor component built on top of `QScintilla2`.
 	- OpenSesame >= 3.1.0 requires QProgEdit >= 4.0.0
-	- OpenSesame >= 3.0.0 requires QProgEdit >= 3.0.0
-	- OpenSesame >= 2.9.0 requires QProgEdit >= 2.0.0
-	- OpenSesame <= 2.8.3 requires QProgEdit 1.3.4.
 - [PyYAML](http://pyyaml.org/) is a library used for loading `yaml` files.
 - [WebColors](https://pypi.python.org/pypi/webcolors) is a library used for interpreting color descriptions.
 - [python-datamatrix](https://github.com/smathot/python-datamatrix) is used by the loop item.
@@ -46,7 +43,6 @@ The following packages are not required, but some functionality will be missing 
 
 - [Expyriment](http://www.expyriment.org/) is required for the [xpyriment] backend.
     - OpenSesame >= 3.0.0 requires Expyriment >= 0.8.0.
-    - OpenSesame < 3.0.0 requires Expyriment 0.7.0.
 - [NumPy](http://www.numpy.org/) is an advanced mathematical library that is used for various things, such as sound support.
 - [PIL](http://www.pythonware.com/products/pil/) is an imaging library that is used for various things.
     - You can also use `pillow`, an actively maintained fork of the original, and no longer maintained `PIL`.
@@ -72,42 +68,6 @@ The following packages are not used directly by OpenSesame, but may come in hand
 - [OpenCV](http://opencv.org/) (Python bindings) is an extensive computer-vision library.
 - [PyGaze](http://www.pygaze.org/) is a Python library for eye tracking.
     - OpenSesame >= 3.0.0 requires PyGaze >= 0.6.0.
-    - OpenSesame < 3.0.0 requires PyGaze 0.5.0.
-
-## Reasons to run from source
-
-The main reasons to run from source are:
-
-- You want to hack on the OpenSesame source code.
-- There may not be a package available for your platform.
-
-## Instructions for Linux
-
-Under Ubuntu, all dependencies are available via the official repositories or the [Cogsci.nl PPA]. Therefore, the easiest way to install all dependencies is by first adding the Cogsci.nl PPA, and then installing all dependencies in one go.
-
-	sudo add-apt-repository ppa:smathot/cogscinl
-	sudo apt-get update
-	sudo apt-get install python-pygame python-numpy python-qt4 \
-		python-qscintilla2 psychopy expyriment python-qprogedit \
-		python-serial
-
-See [Dependencies](#dependencies) for a list of additional packages that you may want to install.
-
-To start OpenSesame, open a terminal in the folder where OpenSesame has been extracted and run OpenSesame using one of the following commands:
-
-	python opensesame
-	python opensesame --debug
-
-## Instructions for Windows
-
-There are multiple versions of Python available. OpenSesame has been tested extensively with 2.7. Because 64-bit versions are not available for some of the required packages, it is recommended to stick to 32-bit versions of everything. Python 3.4 is supported, but not all (optional and extra) dependencies are available for Python 3.4.
-
-To start OpenSesame, open a command prompt in the folder where OpenSesame has been extracted and run OpenSesame using one of the following commands (this example assumes that you have installed Python in `c:\Python27`):
-
-	c:\Python27\python.exe opensesame
-	c:\Python27\python.exe opensesame --debug
-
-It's convenient to create a batch file for running OpenSesame from source. You can do this simply by creating a file called `opensesame.bat` containing one of the commands above. You will then be able to run OpenSesame by executing the batch file.
 
 ## Instructions for Mac OS
 

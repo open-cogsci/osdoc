@@ -7,18 +7,6 @@ If you want to provide a translation, it's recommended to first send an inquiry 
 
 [TOC]
 
-## Status of current translations
-
-|**Code**	|**Language**		|**Status**			|**Author(s)**					|
-|`en_EN`	|English			|Default			|								|
-|`it_IT` 	|Italian			|Complete			|Andrea Epifani					|
-|`fr_FR`	|French				|Complete			|Romain Monfollet				|
-|`zh_CN`	|Chinese			|Complete			|[Zhongquan Li](https://github.com/zqlinju) and Gabriel Chan	|
-|`nl_NL`	|Dutch				|In progress		|[Lotje van der Linden](https://github.com/lvanderlinden)			|
-|`de_DE`	|German				|Complete			|Timo Lüke				|
-|`ru_RU`	|Russian 			|Complete			|Vladimir Kosonogov		|
-|`es_ES`	|Spanish 			|Complete			|Alberto Hernández Sande		|
-
 ## Starting OpenSesame with a specific language
 
 By default, OpenSesame will try to use the default locale of your operating system, and fall back to English if a translation is not available. To start OpenSesame with a specific language, you can use the `--locale` command line argument. For example, to use the Italian translation start OpenSesame as follows:
