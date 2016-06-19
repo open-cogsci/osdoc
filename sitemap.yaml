@@ -71,6 +71,7 @@ Manual:
     Advanced:
     The prepare-run strategy: manual/prepare-run
     Counterbalancing: manual/counterbalancing
+    OSF Integration: manual/osf
     Timing: manual/timing
     Backends: manual/backends
     Running on Android: manual/android
