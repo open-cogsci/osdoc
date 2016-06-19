@@ -14,11 +14,11 @@ This tutorial shows how to create a basic visual-search experiment using OpenSes
 
 ## Resources
 
-- __Download__ -- This tutorial assumes that you are running OpenSesame version 3.1.0 or later. You can download the most recent version of OpenSesame from:
+- __Download__ — This tutorial assumes that you are running OpenSesame version 3.1.0 or later. You can download the most recent version of OpenSesame from:
 	- %link:download%
-- __Documentation__ -- A dedicated documentation website can be found at:
+- __Documentation__ — A dedicated documentation website can be found at:
 	- <http://osdoc.cogsci.nl/>
-- __Forum__ -- A support forum can be found at:
+- __Forum__ — A support forum can be found at:
 	- <http://forum.cogsci.nl/>
 
 ## The experiment
@@ -46,8 +46,8 @@ figure:
 Experiments like this show two typical findings:
 
 - It takes more time to find the target in the Conjunction condition than in the two Feature conditions.
-- In the Conjunction condition, response times go up as the number of distractors increases. This suggests that people search for the target one item at a time; this is called *serial search*.
-- In the Feature conditions (both shape and color), response times do not, or hardly, go up as the the number of distractors increases. This suggests that people process the entire display at once; this is called *parallel search*.
+- In the Conjunction condition, response times increase as the number of distractors increases. This suggests that people search for the target one item at a time; this is called *serial search*.
+- In the Feature conditions (both shape and color), response times do not, or hardly, increase as the the number of distractors increases. This suggests that people process the entire display at once; this is called *parallel search*.
 
 According to Treisman and Gelade's feature-integration theory, these results reflect that the Conjunction condition requires that you combine, or *bind*, the color and shape of each object. This binding requires attention, and you therefore need to shift your attention from one object to the next; this is slow, and explains why response times depend on how many objects there are. In contrast, in the Feature conditions, color and shape do not need to be bound, and therefore the whole display can be processed in a single sweep without attention being directed at each and every object.
 
@@ -60,7 +60,7 @@ This design:
 - Has three conditions (or factors):
 	- Varied within blocks:
 		- `set_size` with three levels (1, 5, 15), or SS<sub>3</sub>
-		- `condition` with two levels (conjunction, feature_shape, feature_color), or CN<sub>2</sub>
+		- `condition` with three levels (conjunction, feature_shape, feature_color), or CN<sub>3</sub>
 		- `target_present` with two levels (present, absent), or TP<sub>2</sub>
 	- Varied between blocks:
 		- `target_shape` with two levels (square, circle), or TS<sub>2</sub>
@@ -107,7 +107,7 @@ As described above, two variables are varied between blocks in our experiment: `
 - *block_sequence* corresponds to a block of trials, preceded by resetting of the feedback variables, and followed by participant feedback
 - *experimental_loop* corresponds to multiple blocks of trials
 	- Therefore, variables defined here vary for each run of *block_sequence*; in other words, variables defined in *experimental_loop* are varied __between blocks__.
-- *experiment* corresponds to the entire experimental, which is an instruction screen, followed by multiple blocks of trials, followed by a end-of-experiment screen
+- *experiment* corresponds to the entire experimental, which is an instruction screen, followed by multiple blocks of trials, followed by an end-of-experiment screen
 
 Click on experimental loop, and define:
 
@@ -182,7 +182,7 @@ figure:
 
 ## Step 4: Define experimental variables that are varied within blocks
 
-Three variables are varied within blocks in our experiment: `condition`, `set_size`, and `target_present`. We described under Step 2, we need to define these variables in the *block_loop* so that they vary for each run of *trial_sequence*.
+Three variables are varied within blocks in our experiment: `condition`, `set_size`, and `target_present`. As described under Step 2, we need to define these variables in the *block_loop* so that they vary for each run of *trial_sequence*.
 
 The three variables make a total of 3 × 3 × 2 = 18 different combinations. We can type these into the table manually, but, because we have full-factorial design, we can also use the full-factorial-design wizard. To do this, first open *block_loop* and click on the 'Full-factorial design' button.
 
@@ -214,6 +214,7 @@ We want our trial sequence to look as follows:
 - A search display, which we will create in Python with a custom INLINE_SCRIPT.
 - Response collection, for which we will use a KEYBOARD_RESPONSE.
 - Data logging, for which we will use a LOGGER.
+- (We also want immediate feedback after each trial, but we will get back to this later.)
 
 So the only thing that is missing is an INLINE_SCRIPT.
 
@@ -235,12 +236,12 @@ figure:
 
 __Top-down and defensive programming__
 
-Now things get interesting: We will start programming in Python. We will use two guiding principles: *top-down* and *defensive* programming.
+Now things will get interesting: We will start programming in Python. We will use two guiding principles: *top-down* and *defensive* programming.
 
-- Top-down programming means that we start with the most abstract logic, without bothering with how this logic is implemented. Once the most abstract logic is in place, we will move down to a slightly less abstract logic, and so on, until we arrive at the details of the implementation. This technique helps to keep the code structured.
-- Defensive programming means that we assume that we make mistakes. Therefore, to protect us from ourselves, we build sanity checks into the code.
+- *Top-down programming* means that we start with the most abstract logic, without bothering with how this logic is implemented. Once the most abstract logic is in place, we will move down to a slightly less abstract logic, and so on, until we arrive at the details of the implementation. This technique helps to keep the code structured.
+- *Defensive programming* means that we assume that we make mistakes. Therefore, to protect us from ourselves, we build sanity checks into the code.
 
-*Note:* The explanation below assumes that you're somewhat familiar with Python code. If concepts like `list`, `tuple`, and functions don't mean anything to you, then it's best to first walk through an introductory Python tutorial. See also:
+*Note:* The explanation below assumes that you're somewhat familiar with Python code. If concepts like `list`, `tuple`, and functions don't mean anything to you, then it's best to first walk through an introductory Python tutorial. You can find links to Python tutorials here:
 
 - %link:manual/python/about%
 
@@ -269,7 +270,7 @@ See also:
 
 __Implement the abstract level__
 
-We start at the most abstract level: defining a function that draws a visual-search display. We don't specify *how* this is done; we simply assume that there is a function that does this, and we will worry about the details later--that's top-down programming.
+We start at the most abstract level: defining a function that draws a visual-search display. We don't specify *how* this is done; we simply assume that there is a function that does this, and we will worry about the details later—that's top-down programming.
 
 In the Prepare tab, enter the following code:
 
@@ -302,6 +303,9 @@ def draw_canvas():
 	if var.target_present == 'present':
 		x, y = xy_list.pop()
 		draw_target(c, x, y)
+	elif var.target_present != 'absent':
+		raise Exception(
+			'Invalid value for target_present %s' % var.target_present)		
 	for x, y in xy_list:
 		draw_distractor(c, x, y)
 	return c
@@ -312,6 +316,7 @@ What happens here? We …
 - Create an empty canvas, `c`, using the common OpenSesame function `canvas()`.
 - Generate a list of random `x, y` coordinates, called `xy_list`, using another common function, `xy_random()`. This list determines where the stimuli are shown.
 - Check if the experimental variable `target_present` has the value 'present'; if so, `pop()` one `x, y` tuple from `xy_list`, and draw the target at this location. This assumes that there is a function `draw_target()`, even though we haven't defined it yet.
+- If `target_present` is neither 'present' nor 'absent', we raise an `Exception`; this is defensive programming, and protects us from typos (e.g. if we had accidentally entered 'presenr' instead of 'present').
 - Loop through all remaining `x, y` tuples and draw a distractor at each position. This assumes that there is a function `draw_distractor()`, even though we haven't defined it yet.
 - Return `c`, which now has the search display drawn onto it.
 
@@ -433,8 +438,10 @@ def draw_feature_shape_distractor(c, x, y):
 	color = random.choice(colors)
 	if var.target_shape == 'circle':
 		shape = 'square'
-	else:
+	elif var.target_shape == 'square':
 		shape = 'circle'
+	else:
+		raise Exception('Invalid target_shape: %s' % var.target_shape)
 	draw_shape(c, x, y, color=color, shape=shape)
 ~~~
 
@@ -442,6 +449,7 @@ What happens here? We …
 
 - Randomly select a color.
 - Choose a square shape if the target is a circle, and a circle shape if the target is square.
+- If `target_shape` is neither 'circle' nor 'square', raise an `Exception`—more defensive programming!
 - Call another function, `draw_shape()`, and specify the color and shape of the to-be-drawn distractor. This assumes that there is a function `draw_shape()`, even though we haven't defined it yet.
 
 Now we define the function that draws distractors in the Color Feature condition (right below the `import` statement):
@@ -463,8 +471,10 @@ def draw_feature_color_distractor(c, x, y):
 	shape = random.choice(shapes)
 	if var.target_color == 'yellow':
 		color = 'blue'
-	else:
+	elif var.target_color == 'blue':
 		color = 'yellow'
+	else:
+		raise Exception('Invalid target_color: %s' % var.target_color)
 	draw_shape(c, x, y, color=color, shape=shape)
 ~~~
 
@@ -472,6 +482,7 @@ What happens here? We …
 
 - Randomly select a shape.
 - Choose a blue color if the target is yellow, and a yellow color if the target is blue.
+- If `target_color` is neither 'yellow' nor 'blue', raise an `Exception`—more defensive programming!
 - Call another function, `draw_shape()`, and specify the color and shape of the to-be-drawn distractor. This assumes that there is a function `draw_shape()`, even though we haven't defined it yet.
 
 __Implement the detailed level__
@@ -536,7 +547,7 @@ else:
 What happens here? We …
 
 - Check whether the target is present or not. If the target is present, the correct response is 'right' (the right arrow key); if the target is absent, the correct response is 'left' (the left arrow key). The experimental variable `var.correct_response` is automatically used by OpenSesame; therefore, we don't need to explicitly indicate that this variable contains the correct response.
-- Check if the target is either present or absent, and if not raise an `Exception`--another example of defensive programming.
+- Check if the target is either present or absent, and if not raise an `Exception`—another example of defensive programming.
 
 ## Step 8: Give per-trial feedback
 
@@ -544,7 +555,7 @@ Feedback after every trial can motivate participants; however, per-trial feedbac
 
 To do this:
 
-- Draw two new SKETCHPADs into *trial_sequence*, just after *keyboard_response*.
+- Insert two new SKETCHPADs into *trial_sequence*, just after *keyboard_response*.
 - Rename one SKETCHPAD to *green_dot*, draw a central green fixation dot onto it, and change its duration to 500.
 - Rename the other SKETCHPAD to *red_dot*, draw a central red fixation dot onto it, and change its duration to 500.
 
