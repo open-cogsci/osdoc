@@ -24,6 +24,8 @@ Bonny, J. W., Castaneda, L. M., & Swanson, T. (2016). Using an international gam
 
 Borja, M. F., Chung, S., & Wagers, M. (2015). Constituent order and parser control processes in Chamorro. In *Proceedings of the 21st Annual Meeting of the Austronesian Formal Linguistics Association*.
 
+Brockmeyer, T., Pellegrino, J., Münch, H., Herzog, W., Dziobek, I., & Friederich, H.-C. (2016). Social cognition in anorexia nervosa: Specific difficulties in decoding emotional but not nonemotional mental states. *International Journal of Eating Disorders*. doi:10.1002/eat.22574
+
 Cerni, T., Longcamp, M., & Job, R. (2016). Two thumbs and one index: A comparison of manual coordination in touch-typing and mobile-typing. *Acta Psychologica*, *167*, 16–23. doi:10.1016/j.actpsy.2016.03.007
 
 Cuperus, A. A., Laken, M., van den Hout, M. A., & Engelhard, I. M. (2016). Degrading emotional memories induced by a virtual reality paradigm. *Journal of Behavior Therapy and Experimental Psychiatry*. doi:10.1016/j.jbtep.2016.03.004
@@ -35,6 +37,8 @@ Duncan, M. J., Smith, M., Clarke, N. D., Eyre, E. L. J., & Wright, S. L. (2016).
 Failing, M. F., & Theeuwes, J. (2016). Reward alters the perception of time. *Cognition*, 148, 19–26. doi:10.1016/j.cognition.2015.12.005
 
 Gordon, S., Getter, N., Oz, I., Garbi, D., & Todder, D. (2016). Mechanisms of cognitive control in cadet pilots. *Disaster and Military Medicine*. doi:10.1186/s40696-016-0016-5
+
+Heck, D. W., & Erdfelder, E. (2016). Extending multinomial processing tree models to measure the relative speed of cognitive processes. *Psychonomic Bulletin & Review*, 1–26. doi:10.3758/s13423-016-1025-6
 
 Hermens, F., Bindemann, M., & Mike Burton, A. (2016). Responding to social and symbolic extrafoveal cues: cue shape trumps biological relevance. *Psychological Research*. doi:10.1007/s00426-015-0733-2
 
