@@ -69,6 +69,8 @@ Patil, I., Melsbach, J., Hennig-Fast, K., & Silani, G. (2016). Divergent roles o
 
 Ruisoto, P., Bellido, A., Ruiz, J., Juanes, J.A. (2016). Building computer-based experiments in psychology without programming skills. *Journal of Medical Systems.* doi:10.1007/s10916-016-0511-8
 
+Scarpina, F., Migliorati, D., Marzullo, P., Mauro, A., Scacchi, M., & Costantini, M. (2016). Altered multisensory temporal integration in obesity. *Scientific Reports*, 6, 28382. doi:10.1038/srep28382
+
 Siebold, A., Weaver, M. D., Donk, M., & van Zoest, W. (2016). Social salience does not transfer to oculomotor visual search. *Visual Cognition*. doi:10.1080/13506285.2015.1121946
 
 Vadillo, M. A., & Garaizar, P. (2016). The effect of noise-induced variance on parameter recovery from reaction times. *BMC Bioinformatics*, *17*, 147. doi:10.1186/s12859-016-0993-x
