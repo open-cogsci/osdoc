@@ -12,7 +12,7 @@ else:
 	import pelicanconf as conf
 
 ROOT = conf.SITEURL
-SUFFIX = '.html'
+SUFFIX = ''
 
 def isseparator(pagename):
 

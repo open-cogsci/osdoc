@@ -3,11 +3,11 @@ title: OpenSesame
 OpenSesame is a program to create experiments for psychology, neuroscience, and experimental economics. The latest $status$ version is $version$ *$codename$*, released on $release-date$ ([release notes](/notes/$version$.html)).
 
 <div class="btn-group" role="group" aria-label="...">
-  <a role="button" class="btn btn-success" href="download.html">
+  <a role="button" class="btn btn-success" href="%url:download%">
 		<span class="glyphicon glyphicon-download" aria-hidden="true"></span>
 		Download
 	 </a>
-  <a role="button" class="btn btn-success" href="tutorials/beginner.html">
+  <a role="button" class="btn btn-success" href="%url:beginner%">
   <span class="glyphicon glyphicon-education" aria-hidden="true"></span>
   	Tutorial
   </a>

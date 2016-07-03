@@ -63,7 +63,14 @@ class AcademicMarkdownReader(MarkdownReader):
 				print(link, full)
 				if link not in links:
 					raise Exception(u'%s not a key in %s' % (link, links))
-				text = text.replace(full, '<%s/%s.html>' % (SITEURL, links[link]))
+				text = text.replace(full, '<%s/%s>' % (SITEURL, links[link]))
+			for m in re.finditer('%url:(?P<link>[\w/-]+)%', text):
+				full = m.group(0)
+				link = m.group('link')
+				print(link, full)
+				if link not in links:
+					raise Exception(u'%s not a key in %s' % (link, links))
+				text = text.replace(full, '%s/%s' % (SITEURL, links[link]))
 			text = text.replace(root, u'')
 			text = HTMLFilter.DOI(text)
 			content = self._md.convert(text)
