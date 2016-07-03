@@ -8,7 +8,7 @@ OpenSesame is a program to create experiments for psychology, neuroscience, and 
 		Download
 	 </a>
   <a role="button" class="btn btn-success" href="tutorials/beginner.html">
-  <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+  <span class="glyphicon glyphicon-education" aria-hidden="true"></span>
   	Tutorial
   </a>
   <a role="button" class="btn btn-success" href="http://forum.cogsci.nl/">

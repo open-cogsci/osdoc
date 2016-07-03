@@ -1,4 +1,4 @@
-title: Performance issues and troubleshooting
+title: Slow performance and troubleshooting
 
 [TOC]
 

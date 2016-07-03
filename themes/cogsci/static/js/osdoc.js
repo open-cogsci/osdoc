@@ -43,3 +43,7 @@ function recommend_download() {
 }
 
 recommend_download();
+
+jQuery(document).on('click', '.mega-dropdown', function(e) {
+  e.stopPropagation()
+})

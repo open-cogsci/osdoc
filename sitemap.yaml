@@ -20,15 +20,15 @@ Tutorials:
 Manual:
     Basic:
     Using the interface: manual/interface
+    Variables and if statements: manual/variables
+    Data logging: manual/logging
+    Examples: manual/examples
+
     Flow and structure:
         Looping and defining indepedent variables: manual/structure/loop
         Doing things in sequence: manual/structure/sequence
         Doing things in parallel: manual/structure/coroutines
-    Stimulus presentation:
-        Text: manual/stimuli/text
-        Visual stimuli: manual/stimuli/visual
-        Sound: manual/stimuli/sound
-        Video: manual/stimuli/video
+
     Response collection:
         Keyboard: manual/response/keyboard
         Mouse: manual/response/mouse
@@ -36,26 +36,36 @@ Manual:
         Button box: manual/response/buttonbox
         SR Box: manual/response/srbox
         Sound recording: manual/response/soundrecording
+
+    Stimulus presentation:
+        Text: manual/stimuli/text
+        Visual stimuli: manual/stimuli/visual
+        Sound: manual/stimuli/sound
+        Video: manual/stimuli/video
+
+    _:
+
     Forms:
-        About forms: manual/forms/about
-        Ready-made forms: manual/forms/readymade
-        Custom forms: manual/forms/custom
-        Form variables: manual/forms/variables
-        Performance issues: manual/forms/performance
-        Widgets:
-            form: manual/forms/widgets/form
-            _:
-            button: manual/forms/widgets/button
-            checkbox: manual/forms/widgets/checkbox
-            image: manual/forms/widgets/image
-            image_button: manual/forms/widgets/image_button
-            label: manual/forms/widgets/label
-            rating_scale: manual/forms/widgets/rating_scale
-            text_input: manual/forms/widgets/text_input
-    Variables and if statements: manual/variables
-    Data logging: manual/logging
-    Using Python:
-        Python in OpenSesame: manual/python/about
+    Forms in OpenSesame: manual/forms/about
+    Ready-made forms: manual/forms/readymade
+    Custom forms: manual/forms/custom
+    Form variables: manual/forms/variables
+    Slow performance: manual/forms/performance
+    Widgets:
+        form: manual/forms/widgets/form
+        button: manual/forms/widgets/button
+        checkbox: manual/forms/widgets/checkbox
+        image: manual/forms/widgets/image
+        image_button: manual/forms/widgets/image_button
+        label: manual/forms/widgets/label
+        rating_scale: manual/forms/widgets/rating_scale
+        text_input: manual/forms/widgets/text_input
+
+    ___:
+
+    Python:
+    Python in OpenSesame: manual/python/about
+    API reference:
         Common functions: manual/python/common
         Variables: manual/python/var
         File pool: manual/python/pool
@@ -67,7 +77,17 @@ Manual:
         Log: manual/python/log
         Mouse: manual/python/mouse
         Sampler: manual/python/sampler
-    _:
+
+    Eye tracking:
+    PyGaze: manual/eyetracking/pygaze
+    Models:
+        EyeLink: manual/eyetracking/eyelink
+        EyeTribe: manual/eyetracking/eyetribe
+        SMI: manual/eyetracking/smi
+        Tobii: manual/eyetracking/tobii
+
+    ____:
+
     Advanced:
     The prepare-run strategy: manual/prepare-run
     Counterbalancing: manual/counterbalancing
@@ -76,57 +96,42 @@ Manual:
     Backends: manual/backends
     Running on Android: manual/android
     Installing plugins and extensions: manual/plugins
-    Using external devices:
-        Mouse tracking: manual/mousetracking
-        Eye tracking:
-            PyGaze: manual/eyetracking/pygaze
-            EyeLink: manual/eyetracking/eyelink
-            EyeTribe: manual/eyetracking/eyetribe
-        Ambulatory Monitoring System (VU-AMS): manual/devices/vuams
-        Emotiv EEG: manual/devices/emotiv
-        Oculus rift: manual/devices/oculusrift
-        Serial port: manual/devices/serial
-        Parallel port (EEG triggers): manual/devices/parallel
-        StimSync: manual/devices/stimsync
     OpenSesame script: manual/opensesame-script
-    __:
-    Examples: manual/examples
+
+    Devices:
+    Mouse tracking: manual/mousetracking
+    Ambulatory Monitoring System (VU-AMS): manual/devices/vuams
+    Emotiv EEG: manual/devices/emotiv
+    Oculus rift: manual/devices/oculusrift
+    Serial port: manual/devices/serial
+    Parallel port (EEG triggers): manual/devices/parallel
+    StimSync: manual/devices/stimsync
+
 Other:
+
+    Other:
     Publications: publications
     Meet the team!: team
     Donate: donate
     Important changes in 3.0: important-changes-3
     Degrees of visual angle: visualangle
     Notation for experimental design: experimentaldesign
-    Release notes:
-        3.0.7: notes/307
-        3.0.6: notes/306
-        3.0.5: notes/305
-        3.0.4: notes/304
-        3.0.3: notes/303
-        3.0.2: notes/302
-        3.0.1: notes/301
-        3.0.0: notes/300
-        2.9.7: notes/297
-        2.9.6: notes/296
-        2.9.5: notes/295
-        2.9.4: notes/294
-        2.9.3: notes/293
-        2.9.2: notes/292
-        2.9.1: notes/291
-        2.9.0: notes/290
-        2.8.3: notes/283
-        2.8.2: notes/282
-        2.8.1: notes/281
-        2.8.0: notes/280
-        0.27.4: notes/0274
-        0.27.3: notes/0273
-        0.27.2: notes/0272
-        0.27.1: notes/0271
-Dev:
+    Release notes: notes/notes
+
+    _:
+
+    Development:
     How to contribute: dev/howtocontribute
     Running from source: dev/fromsource
     File format (.osexp): dev/fileformat
     Translate: dev/translate
     Create a plugin: dev/plugin
     Create an extension: dev/extension
+
+Forum: http://forum.cogsci.nl/
+Blog: http://www.cogsci.nl/
+v3.1:
+    v3.1: http://osdoc.cogsci.nl/3.1/
+    v3.0: http://osdoc.cogsci.nl/3.0/
+    v2.9: http://osdoc.cogsci.nl/2.9/
+    v2.8: http://osdoc.cogsci.nl/2.8/

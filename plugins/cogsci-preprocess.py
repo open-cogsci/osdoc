@@ -98,7 +98,9 @@ def isseparator(pagename):
 def process_links(d):
 
 	for pagename, entry in d.items():
-		if isseparator(pagename) or entry is None:
+		if isinstance(entry, list):
+			entry = entry[0]
+		if isseparator(pagename) or entry in [None, '']:
 			continue
 		if isinstance(entry, dict):
 			process_links(entry)

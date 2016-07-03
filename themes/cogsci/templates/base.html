@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="icon" href="{{ SITEURL }}/theme/img/osdoc.png" />
 		<title>{% block page_title %}{% endblock %}</title>
-		<link href="{{ SITEURL }}/theme/css/multi-navbar.css" rel="stylesheet">
+		<link href="{{ SITEURL }}/theme/css/mega-menu.css" rel="stylesheet">
 		<link href="{{ SITEURL }}/theme/css/bootstrap.min.css" rel="stylesheet">
 		<link href="{{ SITEURL }}/theme/css/monokai.css" rel="stylesheet">
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -39,7 +39,7 @@
 			</div>
 			<!--  Top menu, only visible for small screens -->
 			<div class="row">
-				{% include 'menu.html' %}
+				{% include 'mega-menu.html' %}
 			</div>
 			<!-- Main row containing both the sidebar and the content-->
 			<div class="row">
@@ -69,7 +69,6 @@
 		<!-- Bootstrap/ jquery JavaScript -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script src="{{ SITEURL }}/theme/js/bootstrap.min.js"></script>
-		<script src="{{ SITEURL }}/theme/js/multi-navbar.js"></script>
 		<script src="{{ SITEURL }}/theme/js/osdoc.js"></script>
 	</body>
 </html>
