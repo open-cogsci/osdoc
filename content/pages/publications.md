@@ -36,6 +36,9 @@ Duncan, M. J., Smith, M., Clarke, N. D., Eyre, E. L. J., & Wright, S. L. (2016).
 
 Failing, M. F., & Theeuwes, J. (2016). Reward alters the perception of time. *Cognition*, 148, 19–26. doi:10.1016/j.cognition.2015.12.005
 
+Formoso, J., Barreyro, J. P., Jacubovich, S., Leiman, M., & Injoque-Ricle, I. (2016). Discriminación de cantidad: efecto de la razón numérica sobre
+velocidad y precisión. *Liberabit*, *22*(1), 21-29.
+
 Gordon, S., Getter, N., Oz, I., Garbi, D., & Todder, D. (2016). Mechanisms of cognitive control in cadet pilots. *Disaster and Military Medicine*. doi:10.1186/s40696-016-0016-5
 
 Heck, D. W., & Erdfelder, E. (2016). Extending multinomial processing tree models to measure the relative speed of cognitive processes. *Psychonomic Bulletin & Review*, 1–26. doi:10.3758/s13423-016-1025-6
@@ -46,6 +49,8 @@ Holiday, J. J. (in press). Second language experience can hinder
 the discrimination of non-native contrasts. *Phonetica*.
 
 Ishii, A., Tanaka, M., & Watanabe, Y. (2016). The neural mechanisms of re-experiencing physical fatigue sensation: a magnetoencephalography study. *Experimental Brain Research*. doi:10.1007/s00221-016-4648-y
+
+Jahfari, S., & Theeuwes, J. (2016). Sensitivity to value-driven attention is predicted by how we learn from value. *Psychonomic Bulletin & Review*. doi:10.3758/s13423-016-1106-6
 
 Koningsbruggen, M. G. van, Ficarella, S. C., Battelli, L., & Hickey, C. (2016). Transcranial random-noise stimulation of visual cortex potentiates value-driven attentional capture. *Social Cognitive and Affective*. doi:10.1093/scan/nsw056
 
@@ -66,6 +71,8 @@ Mathôt, S., Melmi, J.-B., van der Linden, L., & Van der Stigchel, S. (2016). Th
 Otten, M., Schreij, D., & Los, S. A. (2016). The interplay of goal-driven and stimulus-driven influences on spatial orienting. *Attention, Perception, & Psychophysics*. doi:10.3758/s13414-016-1121-8
 
 Patil, I., Melsbach, J., Hennig-Fast, K., & Silani, G. (2016). Divergent roles of autistic and alexithymic traits in utilitarian moral judgments in adults with autism. *Scientific Reports*, 6. doi:10.1038/srep23637
+
+Rosa, A. O.-L., Corradi, G., Villacampa, J., Martí-Vilar, M., Arango, O. E., & Rosselló, J. (2016). Effects of suboptimally presented erotic pictures on moral judgments: a cross-cultural comparison. *PLoS ONE*, *11*(7), e0158690. doi:10.1371/journal.pone.0158690
 
 Ruisoto, P., Bellido, A., Ruiz, J., Juanes, J.A. (2016). Building computer-based experiments in psychology without programming skills. *Journal of Medical Systems.* doi:10.1007/s10916-016-0511-8
 
