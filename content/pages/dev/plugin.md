@@ -129,15 +129,18 @@ class qtmy_plugin(my_plugin, qtautoplugin):
 
 Experimental variables are properties of the `var` object. An example is `self.var.my_line_edit_var` from the example above. These variables that define the plugin, and are parsed to and from the OpenSesame script.
 
+## Writing a setup.py script
+
+You can use a `setup.py` file to automatically install a plugin, or to upload it to PyPi. To see how this is done, see the setup script included with the example plugin.
+
 ## Examples
 
-- the [`auto_example`][auto_example] plugin is a dummy plugin that contains a lot of information, and a detailed `info.json` that you can use as a basis for your own plugin.
-- the [`fixation_dot`][fixation_dot] plugin is a simple, but functional example.
+For a working example, see:
+
+- <https://github.com/smathot/opensesame-plugin-example>
 
 [^json]: In OpenSesame 2.8.3, plugin information was stored in `info.json`. This still works, but for newer plugins it is recommend to use `info.yaml`, because YAML-syntax is simpler than JSON-syntax. (In fact, JSON is a specific case of YAML.)
 
-[auto_example]: https://github.com/smathot/OpenSesame/tree/master/plugins/auto_example
-[fixation_dot]: https://github.com/smathot/OpenSesame/tree/master/plugins/fixation_dot
 [html]: http://en.wikipedia.org/wiki/HTML#Markup
 [yaml]: http://en.wikipedia.org/wiki/YAML
 [yamllint.com]: http://yamllint.com/
