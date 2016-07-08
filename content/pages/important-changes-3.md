@@ -1,12 +1,54 @@
-title: Important changes in 3.0
-
-OpenSesame 3.0 has brought many improvements that make it even easier to develop experiments. Most changes are backwards compatible. That is, you can still do things the old way. However, a handful of changes are backwards incompatible, and it's important to be aware of those.
+title: Important changes in OpenSesame 3
 
 [TOC]
 
-## Backwards incompatible changes
+## Changes in 3.1
 
-### Sampler properties
+OpenSesame 3.1 brings many improvements that make it even easier to develop experiments. OpenSesame 3.1 is fully backwards compatible with 3.0.
+
+### A new look!
+
+OpenSesame has a new icon theme, based on [Moka](https://snwh.org/moka) by Sam Hewitt. In addition, the user interface has been redesigned based on consistent human-interface guidelines. We hope you like the new look as much as we do!
+
+### A redesigned loop
+
+The LOOP is now easier to use, and allows you to constrain randomization; this makes it possible, for example, to prevent the same stimulus from occurring twice in a row.
+
+For more information, see:
+
+- %link:loop%
+
+### Coroutines: doing things in parallel
+
+The COROUTINES plugin is now included by default. COROUTINES allows you to run multiple other items in parallel; this makes it possible, for example, to continuously collect key presses while presenting a series of SKETCHPADs.
+
+For more information, see:
+
+- %link:coroutines%
+
+### Open Science Framework integration
+
+You can now log into the [Open Science Framework](http://osf.io) (OSF) from within OpenSesame, and effortlessly synchronize experiments and data between your computer and the OSF. Thanks to the [Center for Open Science](http://cos.io/) for supporting this functionality!
+
+For more information, see:
+
+- %link:osf%
+
+### A responses object
+
+There is a new standard Python object: `responses`. This keeps track of all responses that have been collected during the experiment.
+
+For more information, see:
+
+- %link:responses%
+
+## Changes in 3.0
+
+OpenSesame 3.0 has brought many improvements that make it even easier to develop experiments. Most changes are backwards compatible. That is, you can still do things the old way. However, a handful of changes are backwards incompatible, and it's important to be aware of those.
+
+### Backwards incompatible changes
+
+#### Sampler properties
 
 The SAMPLER object has a number of properties that were previously functions. This concerns:
 
@@ -19,7 +61,7 @@ For more information, see:
 
 - %link:sampler%
 
-### CSS3-compatible colors
+#### CSS3-compatible colors
 
 You can now use CSS3-compatible color specifications, as described here:
 
@@ -27,15 +69,15 @@ You can now use CSS3-compatible color specifications, as described here:
 
 If you use color names (e.g. 'red', 'green', etc.), this may result in slightly different colors. For example, according to CSS3, 'green' is `#008000` instead (as was the case previously) of `#00FF00`.
 
-## New file format (.osexp)
+### New file format (.osexp)
 
 OpenSesame now saves experiments in `.osexp` format. Of course, you can still open the old formats (`.opensesame` and `.opensesame.tar.gz`). For more information, see:
 
 - %link:fileformat%
 
-## Simplified Python API
+### Simplified Python API
 
-### No more self and exp
+#### No more self and exp
 
 It is no longer necessary to prefix `self.` or `exp.` when calling commonly used functions. For example, this will programmatically set the subject number to 2:
 
@@ -47,7 +89,7 @@ For a list of common functions, see:
 
 - %link:common%
 
-### The `var` object: Easy getting and setting of experimental variables
+#### The `var` object: Easy getting and setting of experimental variables
 
 The old way of using `self.get()` to get, and `exp.set()` to set experimental variables has been replaced by a simpler syntax. For example, to set the variable `condition`, so that you can refer to it as `[condition]` in SKETCHPADs, etc.:
 
@@ -65,7 +107,7 @@ For more information, see:
 
 - %link:var%
 
-### The `clock` object: Time functions
+#### The `clock` object: Time functions
 
 Time functions are now available through the `clock` object:
 
@@ -78,7 +120,7 @@ For more information, see:
 
 - %link:clock%
 
-### The `pool` object: Accessing the file pool
+#### The `pool` object: Accessing the file pool
 
 The file pool is now accessible through the `pool` object, which supports a `dict`-like interface (but is not really a Python `dict`):
 
@@ -91,7 +133,7 @@ For more information, see:
 
 - %link:pool%
 
-### No more from openexp.* import *
+#### No more from openexp.* import *
 
 It is no longer necessary to import `openexp` classes, and to pass `exp` as the first argument. Instead, to create a `canvas` object, you can simply do:
 
@@ -105,35 +147,35 @@ For more information, see:
 
 - %link:common%
 
-### The synth is now a sampler
+#### The synth is now a sampler
 
 The SYNTH is no longer a class of its own. Instead, it's a function that returns a SAMPLER object that has been filled with a synthesized sample.
 
-## User-interface improvements
+### User-interface improvements
 
-### An IPython debug window
+#### An IPython debug window
 
 IPython, an interactive Python terminal for scientific computing, is now used for the debug window.
 
-### A live variable inspector
+#### A live variable inspector
 
 The variable inspector now shows the actual values of your variables while your experiment is running, and after your experiment has finished.
 
-### Undo
+#### Undo
 
 You can finally undo actions!
 
-### A new color scheme
+#### A new color scheme
 
 The default color scheme is now *Monokai*. Again a dark color scheme, but with a higher contrast than the previous default, *Solarized*. This increased should increase legibility. And it looks good!
 
-## Consistent coordinates
+### Consistent coordinates
 
 Previously, OpenSesame used mixed, inconsistent screen coordinates: `0,0` was the display top-left when using Python code, and the display center when working in SKETCHPAD items etc. As of 3.0, the display center is always `0,0`, also in Python code.
 
 If you want to switch back to the old behavior, you can disable the 'Uniform coordinates' option in the general tab. For backwards compatibility, 'Uniform coordinates' are automatically disabled when you open an old experiment.
 
-## Using Python in text strings
+### Using Python in text strings
 
 You can now embed Python in text strings using the `[=...]` syntax. For example, the following text string in a SKETCHPAD:
 
@@ -151,6 +193,6 @@ For more information, see:
 
 - %link:text%
 
-## Support for Python 3
+### Support for Python 3
 
 OpenSesame now supports Python >= 3.4. However, many of OpenSesame's dependencies, notably PsychoPy and Expyriment, are Python 2-only. Therefore, Python 2.7 remains the default version of Python.

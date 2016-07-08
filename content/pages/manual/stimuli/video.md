@@ -2,9 +2,23 @@ title: Video playback
 
 [TOC]
 
+## media_player_mpy plugin
+
+The MEDIA_PLAYER_MPY plugin is based on MoviePy. As of OpenSesame 3.1, it is included by default with the Windows and Mac OS packages of OpenSesame. If it is not installed, you can get it by installing the `opensesame-plugin-media_player_mpy` package, as described here:
+
+- %link:environment%
+
+The source code is hosted at:
+
+- https://github.com/dschreij/opensesame-plugin-mediaplayer
+
 ## media_player_vlc plugin
 
-The MEDIA_PLAYER_VLC plugin is based on the well-known VLC media player. You can download the latest version from here (if it is not already installed):
+The MEDIA_PLAYER_VLC plugin is based on the well-known VLC media player. As of OpenSesame 3.1, it is *no longer* included by default with the Windows and Mac OS packages of OpenSesame. If it is not installed, you can get it by installing the `opensesame-plugin-media_player_vlc` package, as described here:
+
+- %link:environment%
+
+The source code is hosted at:
 
 - <https://github.com/dschreij/media_player_vlc>
 

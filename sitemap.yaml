@@ -95,8 +95,8 @@ Manual:
     Timing: manual/timing
     Backends: manual/backends
     Running on Android: manual/android
-    Installing plugins and extensions: manual/plugins
     OpenSesame script: manual/opensesame-script
+    Installing packages, plugins, and extensions: manual/environment
 
     Devices:
     Mouse tracking: manual/mousetracking
@@ -113,7 +113,7 @@ Other:
     Publications: publications
     Meet the team!: team
     Donate: donate
-    Important changes in 3.0: important-changes-3
+    Important changes in OpenSesame 3: important-changes-3
     Degrees of visual angle: visualangle
     Notation for experimental design: experimentaldesign
     Release notes: notes/notes

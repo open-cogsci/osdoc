@@ -14,21 +14,30 @@ toc:
 <a role="button" class="btn btn-default btn-align-left" href="$url-windows-exe-py2$">
 	Windows installer (.exe)
 	<br /><span class='cogsci-btn-info'>
-		Based on Python 2.7
+		Based on Python 2.7 for 32 and 64 bit systems
 	</span>
 </a>
 
 <a role="button" class="btn btn-default btn-align-left" href="$url-windows-zip-py2$">
 	Windows no installation required (.zip)
 	<br /><span class='cogsci-btn-info'>
-		Unzip and run! Based on Python 2.7
+		Unzip and run! Based on Python 2.7 for 32 and 64 bit systems
 	</span>
 </a>
 
-<a role="button" class="btn btn-default btn-align-left" href="$url-windows-zip-py2$">
+Support for Python 3.5 is experimental:
+
+<a role="button" class="btn btn-default btn-align-left" href="$url-windows-exe-py3$">
+	Windows installer (.exe)
+	<br /><span class='cogsci-btn-info'>
+		Based on Python 3.5 for 64 bit systems
+	</span>
+</a>
+
+<a role="button" class="btn btn-default btn-align-left" href="$url-windows-zip-py3$">
 	Windows no installation required (.zip)
 	<br /><span class='cogsci-btn-info'>
-		Unzip and run! Based on Python 3.4
+		Unzip and run! Based on Python 3.5 for 64 bit systems
 	</span>
 </a>
 
@@ -37,7 +46,7 @@ toc:
 <a role="button" class="btn btn-default btn-align-left" href="$url-osx-dmg-py2$">
 	Mac OS package (.dmg)
 	<br /><span class='cogsci-btn-info'>
-		Based on Python 2.7
+		Based on Python 2.7 for 64 bit systems
 	</span>
 </a>
 
@@ -55,7 +64,7 @@ sudo apt-get update
 sudo apt-get install opensesame
 ~~~
 
-If you experience missing icons, please install the package gnome-icon-theme-full.
+If you experience missing icons, install `gnome-icon-theme-full`.
 
 ~~~ .bash
 sudo apt-get install gnome-icon-theme-full
