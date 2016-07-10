@@ -2,9 +2,15 @@ title: Creating a plugin
 
 [TOC]
 
+## What is an OpenSesame plugin?
+
+*Plugins* are extra items that appear in the OpenSesame item toolbar. Plugins add functionality that you can use in experiments. To add functionality to the OpenSesame user interface, you need an *extension*:
+
+- %link:extension%
+
 ## Relevant files
 
-Let's assume that your plugin is called `my_plugin`. In that case, your plugin corresponds to a folder called `my_plugin`, containing at least the following 5 files:
+Let's assume that your plugin is called `my_plugin`. In that case, your plugin corresponds to a folder called `my_plugin`, containing at least the following 3 files:
 
 	my_plugin/
 		info.yaml
@@ -15,8 +21,10 @@ Let's assume that your plugin is called `my_plugin`. In that case, your plugin c
 
 Each plug-in needs an icon, which you can specify in one of two ways:
 
-- Include two icon files in the plugin folder. The first should be a 16x16 px png file called `my_plugin.png`; the second should be a 32x32 px png file called `my_plugin_large.png`.
-- Specify an `icon` key in `info.yaml`. If you do this, the plugin icon will be taken from the icon theme.
+- Include two icon files in the plugin folder:
+	- A 16x16 px png file called `my_plugin.png`; and
+	- A 32x32 px png file called `my_plugin_large.png`.
+- Or specify an `icon` key in `info.yaml`. If you do this, the plugin icon will be taken from the icon theme.
 
 ## Help file
 
@@ -34,7 +42,7 @@ The `control` field contains a list of controls. Each control is itself an objec
 	- `checkbox` is a checkable box (`QtGui.QCheckBox`)
 	- `color_edit` is a color-select widget (`libqtopensesame.widgets.color_edit`)
 	- `combobox` is a drop-down box with multiple options (`QtGui.QComboBox`)
-	- `editor` is a multiline text editor (`libqtopensesame.widgets.inline_editor`)
+	- `editor` is a multiline text editor (`QProgEdit.QTabManager`)
 	- `filepool` is a file-select widget (`QtGui.QLineEdit`)
 	- `line_edit` is a single-line text input (`QtGui.QLineEdit`)
 	- `spinbox` is a text-based numeric-value selector (`QtGui.QSpinBox`)
@@ -66,7 +74,7 @@ controls:
     var: my_checkbox_var
 ~~~
 
-See the `auto_example` [example](#examples) for a full list of all controls and options.
+See the [example](#examples) plugin for a list of all controls and options.
 
 ## Writing the main plugin code
 
@@ -127,17 +135,23 @@ class qtmy_plugin(my_plugin, qtautoplugin):
 
 ## Experimental variables
 
-Experimental variables are properties of the `var` object. An example is `self.var.my_line_edit_var` from the example above. These variables that define the plugin, and are parsed to and from the OpenSesame script.
+Experimental variables are properties of the `var` object. An example is `self.var.my_line_edit_var` from the example above. These variables that define the plugin, and are parsed to and from the OpenSesame script. See also:
 
-## Writing a setup.py script
+- %link:manual/variables%
 
-You can use a `setup.py` file to automatically install a plugin, or to upload it to PyPi. To see how this is done, see the setup script included with the example plugin.
+## Writing a setup.py and uploading to PyPi
+
+You can use a `setup.py` file to automatically install a plugin, or to upload it to PyPi (so that it can be installed through `pip install`). To see how this is done, see the setup script included with the example plugin.
+
+To upload a package to PyPi, you need to create a PyPi account, and then register and upload your package. This is a fairly simple process, and is described on the [PyPi website](https://pypi.python.org/pypi).
 
 ## Examples
 
 For a working example, see:
 
 - <https://github.com/smathot/opensesame-plugin-example>
+
+Other examples can be found in the `opensesame_plugins` folder inlud
 
 [^json]: In OpenSesame 2.8.3, plugin information was stored in `info.json`. This still works, but for newer plugins it is recommend to use `info.yaml`, because YAML-syntax is simpler than JSON-syntax. (In fact, JSON is a specific case of YAML.)
 

@@ -2,6 +2,12 @@ title: Creating an extension
 
 [TOC]
 
+## What is an OpenSesame extension?
+
+*Extensions* add arbitrary functionality to the OpenSesame user interface. For example, an extension can add a new entry to the main toolbar or the menubar. To add functionality that you can use in experiments, you need a *plugin*:
+
+- %link:plugin%
+
 ## Relevant files
 
 Let's assume that your extension is called `my_extension`. In that case, your extension corresponds to a folder called `my_extension`, which contains at least the following 2 files:
@@ -14,7 +20,7 @@ Let's assume that your extension is called `my_extension`. In that case, your ex
 
 Extension information is defined in `info.yaml`. This works the same way as for plugins, with the exception that you don't define any controls. For more information, see:
 
-- %link:dev/plugin%
+- %link:plugin%
 
 ## Writing the extension code
 
@@ -79,10 +85,20 @@ class my_extension(base_extension):
 
 Note that some events take keyword arguments, such as `path` in the case of `save_experiment`. The keyword signature of your function must match the expected keyword signature. A list of events can be found in the [example] extension.
 
+## Writing a setup.py and uploading to PyPi
+
+See:
+
+- %link:plugin%
+- <https://github.com/smathot/opensesame-extension-example>
+
 ## Examples
 
-- The [`example`][example] extension is a dummy extension that demonstrates how to implement a basic extension.
-- Other examples can be found in the `extensions` folder included with OpenSesame.
+For a working example, see:
+
+- <https://github.com/smathot/opensesame-extension-example>
+
+- Other examples can be found in the `opensesame_extensions` folder included with OpenSesame.
 
 [example]: https://github.com/smathot/OpenSesame/tree/master/extensions/example
 [icon-spec]: http://standards.freedesktop.org/icon-naming-spec/icon-naming-spec-latest.html
