@@ -44,7 +44,7 @@ Support for Python 3.5 is experimental:
 ### Mac OS
 
 <a role="button" class="btn btn-default btn-align-left" href="$url-osx-dmg-py2$">
-	Mac OS package (.dmg)
+	Mac OS package (.zip)
 	<br /><span class='cogsci-btn-info'>
 		Based on Python 2.7 for 64 bit systems
 	</span>
