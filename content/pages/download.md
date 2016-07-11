@@ -44,7 +44,7 @@ Support for Python 3.5 is experimental:
 ### Mac OS
 
 <a role="button" class="btn btn-default btn-align-left" href="$url-osx-dmg-py2$">
-	Mac OS package (.zip)
+	Mac OS package (.dmg)
 	<br /><span class='cogsci-btn-info'>
 		Based on Python 2.7 for 64 bit systems
 	</span>
@@ -89,6 +89,12 @@ You can install OpenSesame in Anaconda through the CogSci channel:
 ~~~ .bash
 conda install -c cogsci python-opensesame
 ~~~
+
+### Older versions
+
+Older versions can be downloaded from GitHub releases:
+
+- <https://github.com/smathot/OpenSesame/releases>
 
 ### Source code
 

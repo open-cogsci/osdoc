@@ -31,7 +31,7 @@ function recommend_download() {
 		link.innerHTML = "Windows installer (.exe)"
 		link.href = "$url-windows-exe-py2$";
 	} else if (OSName == "MacOS") {
-		link.innerHTML = "Mac OS package (.zip)"
+		link.innerHTML = "Mac OS package (.dmg)"
 		link.href = "$url-osx-dmg-py2$";
 	} else if (OSName == "Android") {
 		link.innerHTML = "Google Play Store"
