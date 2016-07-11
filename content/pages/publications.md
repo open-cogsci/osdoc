@@ -82,6 +82,8 @@ Siebold, A., Weaver, M. D., Donk, M., & van Zoest, W. (2016). Social salience do
 
 Vadillo, M. A., & Garaizar, P. (2016). The effect of noise-induced variance on parameter recovery from reaction times. *BMC Bioinformatics*, *17*, 147. doi:10.1186/s12859-016-0993-x
 
+van Veen, S. C., Engelhard, I. M., & van den Hout, M. A. (2016). The effects of eye movements on emotional memories: using an objective measure of cognitive load. *European Journal of Psychotraumatology*. doi:10.3402/ejpt.v7.30122
+
 Whiting, W. L., & Murdock, K. K. (2016). Emerging adults’ sleep patterns and attentional capture: the pivotal role of consistency. *Cognitive Processing*. doi:10.1007/s10339-016-0754-9
 
 ### 2015
