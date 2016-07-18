@@ -52,6 +52,8 @@ Ishii, A., Tanaka, M., & Watanabe, Y. (2016). The neural mechanisms of re-experi
 
 Jahfari, S., & Theeuwes, J. (2016). Sensitivity to value-driven attention is predicted by how we learn from value. *Psychonomic Bulletin & Review*. doi:10.3758/s13423-016-1106-6
 
+Jeunehomme, O., & D’Argembeau, A. (2016). Accessibility and characteristics of memories of the future. *Memory*. doi:10.1080/09658211.2016.1205096
+
 Koningsbruggen, M. G. van, Ficarella, S. C., Battelli, L., & Hickey, C. (2016). Transcranial random-noise stimulation of visual cortex potentiates value-driven attentional capture. *Social Cognitive and Affective*. doi:10.1093/scan/nsw056
 
 Krokoszinski, L., & Hosser, D. (2016). Emotion regulation during deception: an EEG study of imprisoned fraudsters. *Journal of Criminal Psychology*. doi:10.1108/JCP-02-2016-0005
