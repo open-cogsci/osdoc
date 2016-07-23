@@ -43,20 +43,16 @@
 			</div>
 			<!-- Main row containing both the sidebar and the content-->
 			<div class="row">
-				<div class="col-md-12">
-					<div class="row">
-						<!-- Sidebar, only visible on large screens -->
-						<div class="col-md-4 cogsci-sidebar visible-lg visible-md">
-							{% include 'social.html' %}
-							{% include 'search.html' %}
-							{% include 'supported-by.html' %}
-						</div>
-						<!-- Content -->
-						<div class="col-md-8 cogsci-content">
-							{% block content %}
-							{% endblock %}
-						</div>
-					</div>
+				<!-- Sidebar, only visible on large screens -->
+				<div class="col-md-4 cogsci-sidebar visible-lg visible-md">
+					{% include 'social.html' %}
+					{% include 'search.html' %}
+					{% include 'supported-by.html' %}
+				</div>
+				<!-- Content -->
+				<div class="col-md-8 cogsci-content">
+					{% block content %}
+					{% endblock %}
 				</div>
 			</div>
 			<!-- Footer -->
