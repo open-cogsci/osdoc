@@ -82,6 +82,8 @@ Scarpina, F., Migliorati, D., Marzullo, P., Mauro, A., Scacchi, M., & Costantini
 
 Siebold, A., Weaver, M. D., Donk, M., & van Zoest, W. (2016). Social salience does not transfer to oculomotor visual search. *Visual Cognition*. doi:10.1080/13506285.2015.1121946
 
+Smith, M., Tallis, J., Miller, A., Clarke, N. D., Guimarães-Ferreira, L., Duncan, M. J. (2016). The effect of exercise intensity on cognitive performance during short duration treadmill running. *Journal of Human Kinetics*, *51*, 27-35. doi:10.1515/hukin-2015-0167
+
 Vadillo, M. A., & Garaizar, P. (2016). The effect of noise-induced variance on parameter recovery from reaction times. *BMC Bioinformatics*, *17*, 147. doi:10.1186/s12859-016-0993-x
 
 van Veen, S. C., Engelhard, I. M., & van den Hout, M. A. (2016). The effects of eye movements on emotional memories: using an objective measure of cognitive load. *European Journal of Psychotraumatology*. doi:10.3402/ejpt.v7.30122
