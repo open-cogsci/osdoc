@@ -74,6 +74,8 @@ Otten, M., Schreij, D., & Los, S. A. (2016). The interplay of goal-driven and st
 
 Patil, I., Melsbach, J., Hennig-Fast, K., & Silani, G. (2016). Divergent roles of autistic and alexithymic traits in utilitarian moral judgments in adults with autism. *Scientific Reports*, 6. doi:10.1038/srep23637
 
+Petzoldt, T. (2016). Size speed bias or size arrival effect—How judgments of vehicles’ approach speed and time to arrival are influenced by the vehicles’ size. *Accident Analysis & Prevention*, *95*(Part A), 132–137. doi:10.1016/j.aap.2016.07.010
+
 Rosa, A. O.-L., Corradi, G., Villacampa, J., Martí-Vilar, M., Arango, O. E., & Rosselló, J. (2016). Effects of suboptimally presented erotic pictures on moral judgments: a cross-cultural comparison. *PLoS ONE*, *11*(7), e0158690. doi:10.1371/journal.pone.0158690
 
 Ruisoto, P., Bellido, A., Ruiz, J., Juanes, J.A. (2016). Building computer-based experiments in psychology without programming skills. *Journal of Medical Systems.* doi:10.1007/s10916-016-0511-8
