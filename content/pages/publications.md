@@ -60,6 +60,8 @@ Krokoszinski, L., & Hosser, D. (2016). Emotion regulation during deception: an E
 
 Kruijne, W., & Meeter, M. (2016). Implicit short-and long-term memory direct our gaze in visual search. *Attention, Perception, & Psychophysics*. doi:10.3758/s13414-015-1021-3
 
+Lange, F., Haiduk, M., Boos, M., Tinschert, P., Schwarze, A., & Eggert, F. (2016). Road crossing behavior under traffic light conflict: Modulating effects of green light duration and signal congruency. *Accident Analysis & Prevention*, *95*, Part A, 292–298. doi:10.1016/j.aap.2016.07.023
+
 Levin, Y., & Tzelgov, J. (2016). Contingency learning is not affected by conflict experience: Evidence from a task conflict-free, item-specific Stroop paradigm. *Acta Psychologica*, 164, 39–45. doi:10.1016/j.actpsy.2015.12.009
 
 van der Linden, L., & Vitu, F. (2016). On the optimal viewing position for object processing. *Attention, Perception, & Psychophysics*. doi:10.3758/s13414-015-1025-z
@@ -85,6 +87,8 @@ Scarpina, F., Migliorati, D., Marzullo, P., Mauro, A., Scacchi, M., & Costantini
 Siebold, A., Weaver, M. D., Donk, M., & van Zoest, W. (2016). Social salience does not transfer to oculomotor visual search. *Visual Cognition*. doi:10.1080/13506285.2015.1121946
 
 Smith, M., Tallis, J., Miller, A., Clarke, N. D., Guimarães-Ferreira, L., Duncan, M. J. (2016). The effect of exercise intensity on cognitive performance during short duration treadmill running. *Journal of Human Kinetics*, *51*, 27-35. doi:10.1515/hukin-2015-0167
+
+Snell, J., Vitu, F., & Grainger, J. (2016). Integration of parafoveal orthographic information during foveal word reading: Beyond the sub-lexical level? *The Quarterly Journal of Experimental Psychology*. doi:10.1080/17470218.2016.1217247
 
 Vadillo, M. A., & Garaizar, P. (2016). The effect of noise-induced variance on parameter recovery from reaction times. *BMC Bioinformatics*, *17*, 147. doi:10.1186/s12859-016-0993-x
 
