@@ -275,9 +275,7 @@ But we are not done yet. We need to add three more variables: the location of th
 
 We need to do one last thing. 'Repeat' is currently set to '1.00'. This means that each cycle will be executed once. So the block now consists of 8 trials, which is a bit short. A reasonable length for a block of trials is 24, so set 'Repeat' to 3.00 (3 repeats x 8 cycles = 24 trials). You don't need to change 'Order', because 'random' is exactly what we want.
 
-The *block_loop* now looks like %FigStep3. Remember to save your experiment regularly. You can download the experiment up to this point here:
-
-- [tutorial_step3.osexp][step3]
+The *block_loop* now looks like %FigStep3. Remember to save your experiment regularly.
 
 %--
 figure:
@@ -304,10 +302,10 @@ For our stimuli, we will use images from file. In addition, we will play a sound
 
 You can download the required files here (in most webbrowsers you can right-click the links and choose 'Save Link As' or a similar option):
 
-- [gaze_neutral.png](/attachments/gaze-cuing/gaze_neutral.png)
-- [gaze_left.png](/attachments/gaze-cuing/gaze_left.png)
-- [gaze_right.png](/attachments/gaze-cuing/gaze_right.png)
-- [incorrect.ogg](/attachments/gaze-cuing/incorrect.ogg)
+- [gaze_neutral.png](/img/beginner-tutorial/gaze_neutral.png)
+- [gaze_left.png](/img/beginner-tutorial/gaze_left.png)
+- [gaze_right.png](/img/beginner-tutorial/gaze_right.png)
+- [incorrect.ogg](/img/beginner-tutorial/incorrect.ogg)
 
 After you have downloaded these files (to your desktop, for example), you can add them to the file pool. If the file pool is not already visible (by default on the right side of the window), click on the 'Show file pool' button in the main toolbar (shortcut: `Ctrl+P`). The easiest way to add the four files to the file pool is to drag them from the desktop (or wherever you have downloaded the files to) into the file pool. Alternatively, you can click on the '+' button in the file pool and add files using the file select dialog that appears. The file pool will be automatically saved with your experiment.
 
@@ -648,10 +646,6 @@ __Tip__ -- You can use a subset of HTML tags to format your text. For example, *
 
 You're done! Click on the 'Run in window' (shortcut: `Ctrl+W`) or 'Run fullscreen' (shortcut: `Ctrl+R`) buttons in the toolbar to run your experiment.
 
-You can download the finished experiment here:
-
-- [tutorial.osexp][finished-experiment]
-
 <div class='info-box' markdown='1'>
 
 __Background box__
@@ -700,5 +694,4 @@ Ulrich, R., & Giray, M. (1989). Time resolution of clocks: Effects on reaction t
 [gpl]: http://www.gnu.org/licenses/gpl-3.0.en.html
 [gimp]: http://www.gimp.org/
 [audacity]: http://audacity.sourceforge.net/
-[finished-experiment]: /attachments/gaze-cuing/tutorial.osexp
 [python inline scripting]: /python/about
