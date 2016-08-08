@@ -59,7 +59,7 @@ On other systems, you can install PyGaze as follows:
     - Verify that the version of PyGaze is compatible with your version of OpenSesame, as described [here](%link:fromsource%).
 2. Extract the `.zip` archive somewhere.
 3. Inside, you will find these folders:
-    - `opensesame_plugins`: As the name suggests, this folder contains the OpenSesame plugins, which need to be copied to (one of) the plugin folders, as described [here](%link:manual/plugins%).
+    - `opensesame_plugins`: As the name suggests, this folder contains the OpenSesame plugins, which need to be copied to (one of) the plugin folders, as described [here](%link:manual/environment%).
     - `pygaze`: This is the PyGaze Python library. You need to copy this to a folder in the Python path. On Windows, you can copy this folder to the OpenSesame program folder.
 4. Done!
 
