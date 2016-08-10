@@ -35,7 +35,7 @@ The FEEDBACK item has an option 'Reset feedback variables'. When this option is 
 
 For more information about feedback variables, see:
 
-- %link:variables%
+- %link:manual/variables%
 
 ## Presenting visual stimuli in Python
 

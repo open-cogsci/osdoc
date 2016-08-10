@@ -51,7 +51,7 @@ CSV files are expected to be in the following format:
 
 If you want to break the loop before all cycles have been executed, you can specify a break-if statement. This break-if statement follows the same syntax as other if statements, as described on:
 
-- %link:variables%
+- %link:manual/variables%
 
 For example, the following break-if statement would break the loop as soon as a correct response is given:
 

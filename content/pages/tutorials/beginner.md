@@ -367,7 +367,7 @@ __What is a LOGGER item?__ -- A LOGGER item writes data to the log file. This is
 
 __Tip__ -- Variables and conditional "if" statements are very powerful! To learn more about them, see:
 
-- %link:variables%
+- %link:manual/variables%
 
 </div>
 
@@ -606,7 +606,7 @@ __What is a feedback item?__ -- A FEEDBACK item is almost identical to a SKETCHP
 
 __Feedback and variables__ -- Response items automatically keep track of the accuracy and average response time of the participant in the variables 'acc' (synonym: 'accuracy') and 'avg_rt' (synonym: 'average_response_time') respectively. See also:
 
-- %link:variables%
+- %link:manual/variables%
 
 __Tip__ -- Make sure that the (foreground) color is set to black. Otherwise you will draw white on white and won't see anything!
 

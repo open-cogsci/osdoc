@@ -83,7 +83,7 @@ figure:
 
 For more information about conditional ("if") statements, see:
 
-- %link:variables%
+- %link:manual/variables%
 
 Similarly, you can use single-line Python statements to define variables in LOOP tables. Let's say that you want to assign a random value between 0 and 1000 to a variable. You could this by first `import`ing the `random` in an INLINE_SCRIPT. Once the `random` module is available, you could use `random.randint()` to obtain a random variable in a LOOP item:
 

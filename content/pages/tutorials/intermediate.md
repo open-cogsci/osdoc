@@ -162,7 +162,7 @@ It also good to show the participant the actual stimulus that she needs to find.
 
 In other words, we have drawn a circle of which the color is determined by `target_color`; furthermore, this circle is only shown when the variable `target_shape` has the value 'circle'. For more information about variables and show-if statements, see:
 
-- %link:variables%
+- %link:manual/variables%
 
 We use the same trick to draw a square:
 
@@ -566,7 +566,7 @@ Of course, only one of the two dots should be shown on each trial. To accomplish
 
 The variable `correct` is automatically created if the variable `correct_response` is available; that's why we defined `correct_response` in step 7. For more information about variables and run-if statements, see:
 
-- %link:variables%
+- %link:manual/variables%
 
 The *trial_sequence* should now look like %FigStep8.
 

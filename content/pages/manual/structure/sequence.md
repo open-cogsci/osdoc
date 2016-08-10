@@ -15,7 +15,7 @@ You can use run-if statements to determine whether or not a particular item shou
 
 If you leave the Run-if statement empty or enter 'always', the item will always be run. Run-if statements use the same syntax as all OpenSesame conditional statements. For more information, see:
 
-- %link:variables%
+- %link:manual/variables%
 
 Run-if statements only affect which items are run, not which items are prepared. Phrased differently, the prepare phase of all items in a SEQUENCE is always executed, regardless of the run-if statement. See also:
 
