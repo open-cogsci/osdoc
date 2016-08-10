@@ -24,7 +24,7 @@ ITEM_TYPES = [
 	'MEDIA_PLAYER_MPY', 'MOUSETRAP', 'SOUND_START_RECORDING',
 	'SOUND_STOP_RECORDING', 'TOUCH_RESPONSE', 'PYGAZE_INIT', 'PYGAZE_LOG',
 	'PYGAZE_WAIT', 'PYGAZE_DRIFT_CORRECT', 'PYGAZE_STOP_RECORDING',
-	'PYGAZE_START_RECORDING'
+	'PYGAZE_START_RECORDING', 'THIS_STYLE'
 	]
 
 root = os.path.dirname(os.path.dirname(__file__)) + '/content'
@@ -33,6 +33,7 @@ with open('constants.yaml') as f:
 	const = yaml.load(f)
 
 links = {}
+duplicate_names = []
 
 class AcademicMarkdownReader(MarkdownReader):
 
@@ -60,17 +61,22 @@ class AcademicMarkdownReader(MarkdownReader):
 			for m in re.finditer('%link:(?P<link>[\w/-]+)%', text):
 				full = m.group(0)
 				link = m.group('link')
-				print(link, full)
+				print('link', link, full)
 				if link not in links:
 					raise Exception(u'%s not a key in %s' % (link, links))
 				text = text.replace(full, '<%s/%s>' % (SITEURL, links[link]))
 			for m in re.finditer('%url:(?P<link>[\w/-]+)%', text):
 				full = m.group(0)
 				link = m.group('link')
-				print(link, full)
+				print('url', link, full)
 				if link not in links:
 					raise Exception(u'%s not a key in %s' % (link, links))
 				text = text.replace(full, '%s/%s' % (SITEURL, links[link]))
+			for m in re.finditer('%static:(?P<link>[\w/.-]+)%', text):
+				full = m.group(0)
+				link = m.group('link')
+				print('static', link, full)
+				text = text.replace(full, '<%s/%s>' % (SITEURL, link))
 			text = text.replace(root, u'')
 			text = HTMLFilter.DOI(text)
 			content = self._md.convert(text)
@@ -82,6 +88,7 @@ class AcademicMarkdownReader(MarkdownReader):
 		metadata = self._parse_metadata(self._md.Meta)
 		build.path = build.path[3:]
 		return content, metadata
+
 
 def init_academicmarkdown(sender):
 
@@ -95,12 +102,14 @@ def init_academicmarkdown(sender):
 		d = orderedLoad(f)
 	process_links(d)
 
+
 def isseparator(pagename):
 
 	for ch in pagename:
 		if ch != '_':
 			return False
 	return True
+
 
 def process_links(d):
 
@@ -116,7 +125,15 @@ def process_links(d):
 		if not name.strip():
 			continue
 		links[entry] = entry
-		links[name] = entry
+		if entry == name or name in duplicate_names:
+			continue
+		if name not in links:
+			links[name] = entry
+			continue
+		duplicate_names.append(name)
+		del links[name]
+		print('Duplicate name: %s' % name)
+
 
 def add_reader(readers):
 
