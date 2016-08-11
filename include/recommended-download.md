@@ -1,11 +1,5 @@
 <div id="cogsci-recommended-download" class='info-box' markdown=1>
 
-Your recommended download:
-
-<a role="button" class="btn btn-success" id="cogsci-recommended-download-link" href="/">
-	Determining recommended download …
-</a>
-
 Would you like to donate?
 
 <div class="cogsci-contribute btn-group" data-toggle="buttons">
@@ -18,5 +12,11 @@ Would you like to donate?
 * Your contribution [helps us](%link:donate%)
 * OpenSesame is, and will always be, free software
 * Donations are handled through PayPal
+
+Your recommended download:
+
+<a role="button" class="btn btn-success" id="cogsci-recommended-download-link" href="/">
+	Determining recommended download …
+</a>
 
 </div>
