@@ -44,6 +44,7 @@ arguments:
 - `html` indicates whether HTML-tags are interpreted, and should be
   `True` or `False`. For supported tags, see [/usage/text/]().
 - `font_family` is the name of a font family, such as 'sans'.
+- `font_size` is a font size in pixels.
 - `font_italic` indicates whether text should italics, and should be
   `True` or `False`.
 - `font_bold` indicates whether text should bold, and should be
@@ -168,7 +169,7 @@ __Arguments:__
 
 __Keywords:__
 
-- `auto_prepare` -- Indicates whether the canvas should be automatically prepared after each drawing operation, so that [canvas.show] will be maximally efficient. If auto_prepare is turned off, drawing operations may be faster, but [canvas.show] will take longer, unless [canvas.prepare] is explicitly called in advance. Generally, it only makes sense to disable auto_prepare when you want to draw a large number of stimuli, as in the second example below. Currently, the auto_prepare parameter only applies to the xpyriment backend, and is ignored by the other backends.
+- `auto_prepare` -- Indicates whether the canvas should be automatically prepared after each drawing operation, so that [canvas.show] will be maximally efficient. If auto_prepare is turned off, drawing operations may be faster, but [canvas.show] will take longer, unless [canvas.prepare] is explicitly called in advance. Generally, it only makes sense to disable auto_prepare when you want to draw a large number of stimuli, as in the second example above. Currently, the auto_prepare parameter only applies to the xpyriment backend, and is ignored by the other backends.
 	- Type: bool
 	- Default: True
 
@@ -415,7 +416,7 @@ __Keyword dict:__
 ## function __canvas\.gabor__\(x, y, orient, freq, env=u'gaussian', size=96, stdev=12, phase=0, col1=u'white', col2=u'black', bgmode=u'avg'\)
 
 Draws a Gabor patch. Note: The exact rendering of the Gabor patch
-depends on the backend.
+depends on the back-end.
 
 __Example:__
 
@@ -452,7 +453,7 @@ __Keywords:__
 - `col1` -- A color for the peaks.
 	- Type: str, unicode
 	- Default: 'white'
-- `col2` -- A color for the troughs. Note: The psycho backend
+- `col2` -- A color for the troughs. Note: The psycho back-end
 ignores this parameter and always uses the inverse of
 `col1` for the throughs.
 	- Type: str, unicode
@@ -494,7 +495,7 @@ my_canvas.image(path)
 
 __Arguments:__
 
-- `fname` -- The filename of the image. If this is a `str` it is assumed to be in utf-8 encoding.
+- `fname` -- The filename of the image. When using Python 2, this should be either `unicode` or a utf-8-encoded `str`. When using Python 3, this should be either `str` or a utf-8-encoded `bytes`.
 	- Type: str, unicode
 
 __Keywords:__
@@ -563,7 +564,7 @@ __Keyword dict:__
 
 ## function __canvas\.noise\_patch__\(x, y, env=u'gaussian', size=96, stdev=12, col1=u'white', col2=u'black', bgmode=u'avg'\)
 
-Draws a patch of noise, with an envelope. The exact rendering of the noise patch depends on the backend.
+Draws a patch of noise, with an envelope. The exact rendering of the noise patch depends on the back-end.
 
 __Example:__
 
@@ -593,7 +594,7 @@ __Keywords:__
 - `col1` -- The first color.
 	- Type: str, unicode
 	- Default: 'white'
-- `col2` -- The second color. Note: The psycho backend ignores this
+- `col2` -- The second color. Note: The psycho back-end ignores this
 parameter and always uses the inverse of `col1`.
 	- Type: str, unicode
 	- Default: 'black'
@@ -697,7 +698,7 @@ exp.set('time_fixdot', t)
 
 __Returns:__
 
-A timestamp of the time at which the canvas actually appeared on the screen, or a best guess if precise temporal information is not available. For more information about timing, see </misc/timing>. Depending on the backend the timestamp is an `int` or a `float`.
+A timestamp of the time at which the canvas actually appeared on the screen, or a best guess if precise temporal information is not available. For more information about timing, see </misc/timing>. Depending on the back-end the timestamp is an `int` or a `float`.
 
 - Type: int, float
 
@@ -732,7 +733,7 @@ my_canvas.text('Some text with <b>boldface</b> and <i>italics</i>')
 
 __Arguments:__
 
-- `text` -- A string of text.
+- `text` -- A string of text. When using Python 2, this should be either `unicode` or a utf-8-encoded `str`. When using Python 3, this should be either `str` or a utf-8-encoded `bytes`.
 	- Type: str, unicode
 
 __Keywords:__

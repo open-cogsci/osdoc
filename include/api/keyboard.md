@@ -180,12 +180,12 @@ A list of keyboard moderators. An empty list is returned if no moderators are pr
 ## function __keyboard\.show\_virtual\_keyboard__\(visible=True\)
 
 Shows or hides a virtual keyboard if this is supported by the
-backend. This function is only necessary if you want the virtual
+back-end. This function is only necessary if you want the virtual
 keyboard to remain visible while collecting multicharacter
 responses. Otherwise, [keyboard.get_key] will implicitly shown and
 hide the keyboard for a single-character response.
 
-This function does nothing for backends that do not support virtual
+This function does nothing for back-ends that do not support virtual
 keyboards.
 
 __Example:__

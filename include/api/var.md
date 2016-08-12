@@ -30,6 +30,25 @@ for var_name in var:
 
 [TOC]
 
+<div class="FunctionDoc YAMLDoc" id="var-clear" markdown="1">
+
+## function __var\.clear__\(preserve=\[\]\)
+
+*New in 3.1.2*
+
+Clears all experimentals variables.
+
+__Keywords:__
+
+- `preserve` -- A list of variable names that shouldn't be cleared.
+	- Type: list
+	- Default: []
+
+</div>
+
+[var.clear]: #var-clear
+[clear]: #var-clear
+
 <div class="FunctionDoc YAMLDoc" id="var-get" markdown="1">
 
 ## function __var\.get__\(var, default=None, \_eval=True, valid=None\)

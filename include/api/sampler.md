@@ -7,7 +7,7 @@ The SAMPLER module provides functionality to play sound samples.
 __Example:__
 
 ~~~ .python
-src = exp.pool['bark.ogg']
+src = pool['bark.ogg']
 my_sampler = sampler(src, volume=.5)
 my_sampler.play()
 ~~~
@@ -20,7 +20,7 @@ my_sampler.play()
 
 If you find that your sample plays to slowly (low pitch) or too quickly
 (high pitch), make sure that the sampling rate of your sample matches
-the sampling rate of the sampler backend as specified under backend
+the sampling rate of the sampler back-end as specified under back-end
 settings.
 
 ### Supported file formats

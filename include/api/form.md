@@ -3,7 +3,7 @@
 # class __form__
 
 The `form` is a container for widgets, such as labels, etc. If you use the
-FORM_BASE plugin in combination with OpenSesame script, you do not need
+FORM_BASE plug-in in combination with OpenSesame script, you do not need
 to explicitly create a form. However, if you use Python inline code, you
 do.
 

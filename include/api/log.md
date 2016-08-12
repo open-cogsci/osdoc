@@ -64,7 +64,7 @@ log.open(u'/path/to/new/logfile.csv')
 
 __Arguments:__
 
-- `path` -- The path to the current logfile. In most cases (unless) a custom log backend is used, this will be a filename.
+- `path` -- The path to the current logfile. In most cases (unless) a custom log back-end is used, this will be a filename.
 	- Type: str, unicode
 
 </div>
@@ -87,7 +87,7 @@ log.write(u'time = %s' % clock.time())
 
 __Arguments:__
 
-- `msg` -- A text message.
+- `msg` -- A text message. When using Python 2, this should be either `unicode` or a utf-8-encoded `str`. When using Python 3, this should be either `str` or a utf-8-encoded `bytes`.
 	- Type: str, unicode
 
 __Keywords:__

@@ -3,7 +3,7 @@
 # class __text_input__
 
 The text_input widget allows the participant to enter multi-character
-responses. (This widget has no relation to the text_input plugin, which
+responses. (This widget has no relation to the text_input plug-in, which
 was created before forms where added to OpenSesame.)
 
 __Example (OpenSesame script):__
