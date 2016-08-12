@@ -21,7 +21,7 @@ figure:
 
 ## Using the `vu-ams` plugin
 
-Parallel_port_trigger is a third-party plugin.
+vu-ams is a third-party plugin.
 {: .page-notification}
 
 Markers can be sent with the `vu-ams` plugin which currently works under **Windows only**.
