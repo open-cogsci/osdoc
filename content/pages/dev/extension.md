@@ -83,7 +83,7 @@ class my_extension(base_extension):
 		debug.msg(u'Event fired: save_experiment(path=%s)' % path)
 ~~~
 
-Note that some events take keyword arguments, such as `path` in the case of `save_experiment`. The keyword signature of your function must match the expected keyword signature. A list of events can be found in the [example] extension.
+Note that some events take keyword arguments, such as `path` in the case of `save_experiment`. The keyword signature of your function must match the expected keyword signature. A list of events can be found in the [example extension](https://github.com/smathot/opensesame-extension-example/blob/master/opensesame_extensions/example_extension/example_extension.py).
 
 ## Writing a setup.py and uploading to PyPi
 
