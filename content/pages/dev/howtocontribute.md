@@ -102,7 +102,7 @@ from libopensesame.py3compat import *
 
 This module:
 
-- Remaps the Python-2 `str` and `unicode` types to the (roughly) equivalent Python-3 `bytes` and `str` types. Therefore you should code with `str` objects in most case and `bytes` object in special cases.
+- Remaps the Python-2 `str` and `unicode` types to the (roughly) equivalent Python-3 `bytes` and `str` types. Therefore you should code with `str` objects in most cases and `bytes` object in special cases.
 - Adds the following functions:
   - `safe_decode(s, enc='utf-8', errors='strict')` turns any object into a `str` object
   - `safe_encode(s, enc='utf-8', errors='strict')` turns any object into a `bytes` object
