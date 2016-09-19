@@ -324,7 +324,7 @@ Jiang, Y. (2014). Measuring facial expression and emotional experience under div
 Katz, C., & Knops, A. (2014). Operational momentum in multiplication and division? *PLoS ONE*, *9*(8), e104777. doi:10.1371/journal.pone.0104777
 
 
-Kieslich, P. J., & Hilbich, B. E. (2014). Cognitive conflict in social dilemmas: An analysis of response dynamics. *Judgment and Decision Making*, *9*(6), 510-522.  Retrieved from <http://journal.sjdm.org/14/14808/jdm14808.html>
+Kieslich, P. J., & Hilbig, B. E. (2014). Cognitive conflict in social dilemmas: An analysis of response dynamics. *Judgment and Decision Making*, *9*(6), 510-522.  Retrieved from <http://journal.sjdm.org/14/14808/jdm14808.pdf>
 
 
 Krukar, J. (2014). Walk, look, remember: The influence of the gallery’s spatial layout on human memory for an art exhibition. Behavioral Sciences, 4(3), 181–201. doi:10.3390/bs4030181
