@@ -43,6 +43,8 @@ Gordon, S., Getter, N., Oz, I., Garbi, D., & Todder, D. (2016). Mechanisms of co
 
 Heck, D. W., & Erdfelder, E. (2016). Extending multinomial processing tree models to measure the relative speed of cognitive processes. *Psychonomic Bulletin & Review*, 1–26. doi:10.3758/s13423-016-1025-6
 
+Hilbig, B. E., Thielmann, I., Klein, S. A., & Henninger, F. (2016). The two faces of cooperation: On the unique role of HEXACO Agreeableness for forgiveness versus retaliation. *Journal of Research in Personality*. doi:10.1016/j.jrp.2016.08.004
+
 Hermens, F., Bindemann, M., & Mike Burton, A. (2016). Responding to social and symbolic extrafoveal cues: cue shape trumps biological relevance. *Psychological Research*. doi:10.1007/s00426-015-0733-2
 
 Holiday, J. J. (in press). Second language experience can hinder
