@@ -5,7 +5,7 @@ import yamldoc
 import imp
 import sys
 
-ROOT = '/home/sebastiaan/git/opensesame-james/'
+ROOT = '/home/sebastiaan/git/OpenSesame/'
 TARGET = 'include/api/'
 sys.path.insert(0, ROOT)
 
