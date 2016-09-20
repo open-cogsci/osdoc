@@ -1,4 +1,4 @@
-<div class=" YAMLDoc" id="yamldoc-default-id" markdown="1">
+<div class=" YAMLDoc" id="" markdown="1">
 
  
 
@@ -6,7 +6,7 @@
 
 ## function __canvas__\(auto\_prepare=True, \*\*style\_args\)
 
-A convenience function that creates a new CANVAS object. For a
+A convenience function that creates a new `canvas` object. For a
 description of possible keywords, see:
 
 - %link:manual/python/canvas%
@@ -157,7 +157,7 @@ reset_feedback()
 
 ## function __sampler__\(src, \*\*playback\_args\)
 
-A convenience function that creates a new SAMPLER object. For a
+A convenience function that creates a new `sampler` object. For a
 description of possible keywords, see:
 
 - %link:manual/python/sampler%
@@ -247,7 +247,7 @@ True or False
 
 ## function __synth__\(osc=u'sine', freq=440, length=100, attack=0, decay=5\)
 
-Synthesizes a sound and returns it as a SAMPLER object.
+Synthesizes a sound and returns it as a `sampler` object.
 
 __Example:__
 

@@ -27,7 +27,7 @@ print(responses[:2])
 
 ## property __responses.acc__
 
-The percentage correct responses for all responses that are included in feedback. If there are no responses to give feedback on, 'undefined' is returned.
+The percentage of correct responses for all responses that are included in feedback. If there are no responses to give feedback on, 'undefined' is returned.
 
 </div>
 
@@ -68,16 +68,16 @@ __Keywords:__
 [responses.add]: #responses-add
 [add]: #responses-add
 
-<div class="PropertyDoc YAMLDoc" id="responses-acc" markdown="1">
+<div class="PropertyDoc YAMLDoc" id="responses-avg_rt" markdown="1">
 
-## property __responses.acc__
+## property __responses.avg_rt__
 
 The average response time for all responses that are included in feedback. If there are no responses to give feedback on, 'undefined' is returned.
 
 </div>
 
-[responses.acc]: #responses-acc
-[acc]: #responses-acc
+[responses.avg_rt]: #responses-avg_rt
+[avg_rt]: #responses-avg_rt
 
 <div class="FunctionDoc YAMLDoc" id="responses-clear" markdown="1">
 
@@ -107,16 +107,16 @@ A list of all correct (0, 1, or None) values.
 [responses.correct]: #responses-correct
 [correct]: #responses-correct
 
-<div class="PropertyDoc YAMLDoc" id="responses-item" markdown="1">
+<div class="PropertyDoc YAMLDoc" id="responses-feedback" markdown="1">
 
-## property __responses.item__
+## property __responses.feedback__
 
 A list of the feedback status (True or False) associated with each response.
 
 </div>
 
-[responses.item]: #responses-item
-[item]: #responses-item
+[responses.feedback]: #responses-feedback
+[feedback]: #responses-feedback
 
 <div class="PropertyDoc YAMLDoc" id="responses-item" markdown="1">
 
@@ -157,16 +157,16 @@ A list of all response values. (I.e. not response objects, but actual response k
 [responses.response]: #responses-response
 [response]: #responses-response
 
-<div class="PropertyDoc YAMLDoc" id="responses-correct" markdown="1">
+<div class="PropertyDoc YAMLDoc" id="responses-response_time" markdown="1">
 
-## property __responses.correct__
+## property __responses.response_time__
 
 A list of all response times (float or None).
 
 </div>
 
-[responses.correct]: #responses-correct
-[correct]: #responses-correct
+[responses.response_time]: #responses-response_time
+[response_time]: #responses-response_time
 
 </div>
 
