@@ -30,6 +30,8 @@ Cerni, T., Longcamp, M., & Job, R. (2016). Two thumbs and one index: A compariso
 
 Cuperus, A. A., Laken, M., van den Hout, M. A., & Engelhard, I. M. (2016). Degrading emotional memories induced by a virtual reality paradigm. *Journal of Behavior Therapy and Experimental Psychiatry*. doi:10.1016/j.jbtep.2016.03.004
 
+De Groot, F., Huettig, F., & Olivers, C. N. L. (2016). Revisiting the looking at nothing phenomenon: Visual and semantic biases in memory search. *Visual Cognition*.
+
 Dueñas, W. R., Manrique, H. M., Jaramillo, B. H., Narvaez, M. T., & Rojas, E. G. (2016). Sistema de apoyo experimental para el reconocimiento visual y el nombrado de objetos. *Revista Mexicana de Ingeniería Biomédica*, *37*(2). Retrieved from <http://www.rmib.somib.org.mx/pdfs/Vol37/No2/5.pdf>
 
 Duncan, M. J., Smith, M., Clarke, N. D., Eyre, E. L. J., & Wright, S. L. (2016). Dual task performance in older adults: Examining visual discrimination performance whilst treadmill walking at preferred and non-preferred speeds. *Behavioural Brain Research*, *302*, 100–103. doi:10.1016/j.bbr.2016.01.020
