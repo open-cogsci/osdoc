@@ -1,14 +1,6 @@
----
-layout: osdoc
 title: Video tutorials
-group: Tutorials
-permalink: /video-tutorials/
----
 
-%--
-toc:
- mindepth: 2
---%
+[TOC]
 
 ## OpenSesame 3.0 step-by-step tutorial
 
@@ -112,7 +104,20 @@ video:
   7 simple tricks to write better Python.
 --%
 
-### Using lists effectively in Python
+### A simple explanation of function arguments and keywords
+
+%--
+video:
+ source: youtube
+ id: VidArguments
+ videoid: CfI4cR66jQY
+ width: 640
+ height: 360
+ caption: |
+  A simple explanation of function arguments and keywords.
+--%
+
+### Using lists effectively
 
 %--
 video:
@@ -122,7 +127,20 @@ video:
  width: 640
  height: 360
  caption: |
-  Using lists effectively in Python
+  Using lists effectively in Python.
+--%
+
+### Different ways to use objects and attributes
+
+%--
+video:
+ source: youtube
+ id: VidObjectsAttributes
+ videoid: EBlOpvOAbxc
+ width: 640
+ height: 360
+ caption: |
+  Different ways to use objects and attributes.
 --%
 
 [chris-longmore]: http://www.chrislongmore.co.uk/
