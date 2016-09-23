@@ -311,6 +311,11 @@ def draw_canvas():
 	return c
 ~~~
 
+<div class="alert alert-info" role="alert" markdown=1>
+__Note:__ If drawing on a `canvas` is slow, you should disable `auto_prepare`. See also: %link:canvas%
+</div>
+
+
 What happens here? We …
 
 - Create an empty canvas, `c`, using the common OpenSesame function `canvas()`.

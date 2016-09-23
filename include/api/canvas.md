@@ -2,7 +2,7 @@
 
 # class __canvas__
 
-The CANVAS class is used to present visual stimuli.
+The `canvas` class is used to present visual stimuli.
 
 __Example__:
 
@@ -12,6 +12,26 @@ my_canvas = canvas()
 my_canvas.fixdot()
 my_canvas.show()
 ~~~
+
+If drawing on a `canvas` is slow, especially if you draw many stimuli,
+you should disable `auto_prepare` and explicitly call `canvas.prepare()`
+after all drawing operations are done, but before calling
+`canvas.show()`.
+
+__Example__:
+
+~~~ .python
+import random
+import string
+
+# Create and show a canvas with a grid of random letters
+my_canvas = canvas(auto_prepare=False)
+for x, y in xy_grid(n=10, spacing=20):
+        letter = random.choice(string.ascii_uppercase)
+        my_canvas.text(text=letter, x=x, y=y)
+my_canvas.prepare()
+my_canvas.show()
+~~~             
 
 [TOC]
 
@@ -138,7 +158,7 @@ constant:
 
 ## function __canvas\.\_\_init\_\___\(experiment, auto\_prepare=True, \*\*style\_args\)
 
-Constructor to create a new CANVAS object. You do not generally
+Constructor to create a new `canvas` object. You do not generally
 call this constructor directly, but use the `canvas()` function,
 which is described here: [/python/common/]().
 
@@ -175,7 +195,7 @@ __Keywords:__
 
 __Keyword dict:__
 
-- `**style_args`: Optional [style keywords], which will be used as the default for all drawing operations on this CANVAS.
+- `**style_args`: Optional [style keywords], which will be used as the default for all drawing operations on this `canvas`.
 
 </div>
 
@@ -303,11 +323,11 @@ __Arguments:__
 
 ## function __canvas\.copy__\(canvas\)
 
-Turns the current CANVAS into a copy of the passed CANVAS.
+Turns the current `canvas` into a copy of the passed `canvas`.
 
 __Note:__
 
-If you want to create a copy of a `sketchpad` CANVAS, you can also
+If you want to create a copy of a `sketchpad` `canvas`, you can also
 use the `inline_script.copy_sketchpad` function.
 
 __Example:__
@@ -323,7 +343,7 @@ my_copied_canvas.show()
 
 __Arguments:__
 
-- `canvas` -- The CANVAS to copy.
+- `canvas` -- The `canvas` to copy.
 	- Type: canvas
 
 </div>
