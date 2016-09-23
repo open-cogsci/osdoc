@@ -55,6 +55,7 @@ dictitems:
           Mouse: /3.1/manual/response/mouse
           SR Box: /3.1/manual/response/srbox
           Sound recording: /3.1/manual/response/soundrecording
+      Running experiments without the GUI: /3.1/manual/opensesamerun
       Running on Android: /3.1/manual/android
       Serial port: /3.1/manual/devices/serial
       Slow performance: /3.1/manual/forms/performance
