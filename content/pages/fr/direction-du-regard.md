@@ -2,14 +2,9 @@ title: Direction du regard
 author: Lotje van der Linden
 uptodate: false
 
-## Vue d'ensemble
 
-%--
-toc:
- mindepth: 2
- maxdepth: 3
- exclude: ["Vue d'ensemble"]
---%
+[TOC]
+
 
 ## Introduction
 
