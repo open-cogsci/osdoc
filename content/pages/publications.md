@@ -41,6 +41,8 @@ Failing, M. F., & Theeuwes, J. (2016). Reward alters the perception of time. *Co
 Formoso, J., Barreyro, J. P., Jacubovich, S., Leiman, M., & Injoque-Ricle, I. (2016). Discriminación de cantidad: efecto de la razón numérica sobre
 velocidad y precisión. *Liberabit*, *22*(1), 21-29.
 
+Gómez-Lugo, M., Saavedra-Roa, A., Pérez-Durán, C., & Vallejo-Medina, P. (2016). Validity and reliability of a set of sexual stimuli in a sample of Colombian heterosexual young women. *Suma Psicológica*. doi:10.1016/j.sumpsi.2016.09.001
+
 Gordon, S., Getter, N., Oz, I., Garbi, D., & Todder, D. (2016). Mechanisms of cognitive control in cadet pilots. *Disaster and Military Medicine*. doi:10.1186/s40696-016-0016-5
 
 Heck, D. W., & Erdfelder, E. (2016). Extending multinomial processing tree models to measure the relative speed of cognitive processes. *Psychonomic Bulletin & Review*, 1–26. doi:10.3758/s13423-016-1025-6
@@ -93,6 +95,8 @@ Siebold, A., Weaver, M. D., Donk, M., & van Zoest, W. (2016). Social salience do
 Smith, M., Tallis, J., Miller, A., Clarke, N. D., Guimarães-Ferreira, L., Duncan, M. J. (2016). The effect of exercise intensity on cognitive performance during short duration treadmill running. *Journal of Human Kinetics*, *51*, 27-35. doi:10.1515/hukin-2015-0167
 
 Snell, J., Vitu, F., & Grainger, J. (2016). Integration of parafoveal orthographic information during foveal word reading: Beyond the sub-lexical level? *The Quarterly Journal of Experimental Psychology*. doi:10.1080/17470218.2016.1217247
+
+Tünnermann, J., & Scharlau, I. (2016). Peripheral visual cues: Their fate in processing and effects on attention and temporal-order perception. *Frontiers in Psychology*, 7, 1442. doi:10.3389/fpsyg.2016.01442
 
 Vadillo, M. A., & Garaizar, P. (2016). The effect of noise-induced variance on parameter recovery from reaction times. *BMC Bioinformatics*, *17*, 147. doi:10.1186/s12859-016-0993-x
 
