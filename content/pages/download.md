@@ -2,12 +2,16 @@ title: Download
 
 %-- include: "include/recommended-download.md" --%
 
-## All download options
+## Overview
 
 %--
 toc:
- mindepth: 3
+ exclude: [Overview]
+ mindepth: 2
+ maxdepth: 3
 --%
+
+## All download options
 
 ### Windows
 
@@ -99,3 +103,18 @@ Older versions can be downloaded from GitHub releases:
 ### Source code
 
 The source code of OpenSesame is available on [GitHub](https://github.com/smathot/OpenSesame).
+
+
+## Tips
+
+### When (not) to update?
+
+- Update while developing and testing your experiment; it is always best to use the latest version of OpenSesame.
+- Do not update while running an experiment; that is, do not update while you are collecting data.
+- Run an experiment with the same version of OpenSesame that you used for developing and testing.
+
+
+### Tips for system administrators
+
+- When a new major version of OpenSesame is released (with a version ending in 0, e.g. 3.1.0), it is generally followed quickly by one or two maintenance releases (e.g. 3.1.1 and 3.1.2) that address major bugs. Therefore, if you are installing OpenSesame on systems that you do not update often, it is best to wait until the second or third maintenance release (e.g. 3.0.2, 3.1.3, etc.). That way you minimize the risk of rolling out a version of OpenSesame that contains major bugs.
+- The Windows installer allows you to silently install OpenSesame using the `/S` flag.
