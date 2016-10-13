@@ -38,3 +38,14 @@ video:
  caption: |
   The step-by-step video tutorial shows how to create a complete experiment from scratch.
 --%
+
+%--
+video:
+ source: youtube
+ id: VidTutorial31
+ videoid: zXStoHomIJE
+ width: 640
+ height: 360
+ caption: |
+  A shorter, slightly more advanced tutorial showing how to implement a visual-search experiment.
+--%
