@@ -2,12 +2,10 @@ title: Video tutorials
 
 [TOC]
 
+
 ## OpenSesame 3.0 step-by-step tutorial
 
 The video below walks through the [step-by-step tutorial](/tutorials/step-by-step-tutorial/).
-
-- Duration: 62 minutes
-- OpenSesame version: 3.0.0
 
 %--
 video:
@@ -19,6 +17,21 @@ video:
  caption: |
   The step-by-step tutorial in video form.
 --%
+
+
+## OpenSesame 3.1 tutorial: Creating a visual-search experiment
+
+%--
+video:
+ source: youtube
+ id: VidTutorial31
+ videoid: zXStoHomIJE
+ width: 640
+ height: 360
+ caption: |
+  A shorter, slightly more advanced tutorial showing how to implement a visual-search experiment.
+--%
+
 
 ## Tutorials for older versions of OpenSesame
 
@@ -76,6 +89,7 @@ video:
   Creating an affordances/ orientation experiment.
 --%
 
+
 ## Python tutorials
 
 ### Using Python inline script in OpenSesame 3.0
@@ -115,6 +129,19 @@ video:
  height: 360
  caption: |
   A simple explanation of function arguments and keywords.
+--%
+
+### List slicing and list comprehensions
+
+%--
+video:
+ source: youtube
+ id: VidListSlicing
+ videoid: HobjHIpLhZk
+ width: 640
+ height: 360
+ caption: |
+  Using lists effectively in Python.
 --%
 
 ### Using lists effectively
