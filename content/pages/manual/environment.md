@@ -6,6 +6,9 @@ title: Installing packages, plugins, and extensions
 
 ## Using pip / PyPi
 
+If you receive permission errors on Windows, run OpenSesame as administrator.
+{: .alert .alert-info}
+
 ### Installing
 
 The easiest way to install Python packages, and OpenSesame plugins/ extensions is through pip, the PyPA-recommended tool for installing Python packages. Although OpenSesame plugins/ extensions are not strictly Python packages, they can nevertheless be installed as such.
