@@ -20,6 +20,10 @@ Adamos, D. A., Dimitriadis, S. I., & Laskaris, N. A. (2016). Towards the bio-per
 
 Anderson, N. C., Donk, M., & Meeter, M. (2016). The influence of a scene preview on eye movement behavior in natural scenes. *Psychonomic Bulletin & Review*, 1–8. doi:10.3758/s13423-016-1035-4
 
+Bernstein, J. P. K., & Langfitt, J. (2016). The King–Devick test as a predictor of cognitive effects after chronic partial sleep restriction: a pilot study. *Sleep and Biological Rhythms*. doi:10.1007/s41105-016-0081-7
+
+Bonny, J. W., & Castaneda, L. M. (2017). Number processing ability is connected to longitudinal changes in multiplayer online battle arena skill. *Computers in Human Behavior*, *66*, 377–387. doi:10.1016/j.chb.2016.10.005
+
 Bonny, J. W., Castaneda, L. M., & Swanson, T. (2016). Using an international gaming tournament to study individual differences in MOBA expertise and cognitive skills. *ESports*, doi:10.1145/2858036.2858190
 
 Borja, M. F., Chung, S., & Wagers, M. (2015). Constituent order and parser control processes in Chamorro. In *Proceedings of the 21st Annual Meeting of the Austronesian Formal Linguistics Association*.
@@ -82,6 +86,8 @@ Otten, M., Schreij, D., & Los, S. A. (2016). The interplay of goal-driven and st
 
 Patil, I., Melsbach, J., Hennig-Fast, K., & Silani, G. (2016). Divergent roles of autistic and alexithymic traits in utilitarian moral judgments in adults with autism. *Scientific Reports*, 6. doi:10.1038/srep23637
 
+Pavani, F., Venturini, M., Baruffaldi, F., Artesini, L., Bonfioli, F., Frau, G. N., & van Zoest, W. (2016). Spatial and non-spatial multisensory cueing in unilateral cochlear implant users. *Hearing Research*. doi:10.1016/j.heares.2016.10.025
+
 Petzoldt, T. (2016). Size speed bias or size arrival effect—How judgments of vehicles’ approach speed and time to arrival are influenced by the vehicles’ size. *Accident Analysis & Prevention*, *95*(Part A), 132–137. doi:10.1016/j.aap.2016.07.010
 
 Rosa, A. O.-L., Corradi, G., Villacampa, J., Martí-Vilar, M., Arango, O. E., & Rosselló, J. (2016). Effects of suboptimally presented erotic pictures on moral judgments: a cross-cultural comparison. *PLoS ONE*, *11*(7), e0158690. doi:10.1371/journal.pone.0158690
@@ -101,6 +107,8 @@ Tünnermann, J., & Scharlau, I. (2016). Peripheral visual cues: Their fate in pr
 Vadillo, M. A., & Garaizar, P. (2016). The effect of noise-induced variance on parameter recovery from reaction times. *BMC Bioinformatics*, *17*, 147. doi:10.1186/s12859-016-0993-x
 
 van Veen, S. C., Engelhard, I. M., & van den Hout, M. A. (2016). The effects of eye movements on emotional memories: using an objective measure of cognitive load. *European Journal of Psychotraumatology*. doi:10.3402/ejpt.v7.30122
+
+Vilchez, J. L. (2016). Representativity and univocity of traffic signs and their effect on trajectory movement in a driving-simulation task: Warning signs. *Traffic Injury Prevention*. doi:10.1080/15389588.2016.1255330
 
 Whiting, W. L., & Murdock, K. K. (2016). Emerging adults’ sleep patterns and attentional capture: the pivotal role of consistency. *Cognitive Processing*. doi:10.1007/s10339-016-0754-9
 
