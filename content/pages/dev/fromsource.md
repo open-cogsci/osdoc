@@ -17,6 +17,16 @@ You can also download a development snapshot of the code. To obtain a reasonable
 
 ## Dependencies
 
+### Icon theme
+
+If you run OpenSesame directly from source, the icon theme is not included. OpenSesame uses two icon themes: [MokaSesame](https://github.com/smathot/moka-icon-theme/tree/MokaSesame), a fork of Moka, and [Faba](https://github.com/snwh/faba-icon-theme). 
+
+It's possible to compile these icon themes yourself, but you can also download precompiled themes from here:
+
+- http://forum.cogsci.nl/uploads/editor/we/p1y3i4qm70ch.zip
+
+Place the `Faba` and `MokaSesame` folders as subfolders of `opensesame_resources/theme/default/`.
+
 ### Required
 
 The following packages are required to run a minimal version of the OpenSesame GUI, with only support for the [legacy] backend, no sound support, and no plugin support.
@@ -36,6 +46,7 @@ The following packages are required to run a minimal version of the OpenSesame G
 - [python-datamatrix](https://github.com/smathot/python-datamatrix) is used by the loop item.
 - [python-qdatamatrix](https://github.com/smathot/python-qdatamatrix) is used by the loop item.
 - [python-pseudorandom](https://github.com/smathot/python-pseudorandom) is used by the loop item.
+- [QNotifications](https://github.com/dschreij/QNotifications) is used by the notifications extension.
 
 ### Optional
 
