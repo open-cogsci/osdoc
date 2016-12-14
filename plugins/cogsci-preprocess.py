@@ -3,17 +3,27 @@
 import os
 import re
 import sys
+sys.path.insert(0, '/home/sebastiaan/git/academicmarkdown')
+sys.path.insert(0, '/home/sebastiaan/git/cachedurlget')
+import cachedurlget
 import yaml
 from yamldoc._yaml import orderedLoad
 from pelican import signals
 from pelican.readers import MarkdownReader
 from markdown import Markdown
 from markdown.extensions.toc import TocExtension
-from academicmarkdown import build, HTMLFilter
+from markdown.extensions.tables import TableExtension
+from academicmarkdown import build, HTMLFilter, _FigureParser
 if 'publishconf.py' in sys.argv:
 	from publishconf import *
 else:
 	from pelicanconf import *
+	
+_FigureParser.figureTemplate[u'jekyll'] = u"""
+![%(source)s](/3.1%(source)s)
+
+__Figure %(nFig)d.__ %(caption)s\n{: .fig-caption #%(id)s}\n
+"""
 
 ITEM_TYPES = [
 	'SKETCHPAD', 'FEEDBACK', 'SEQUENCE', 'LOOP', 'SAMPLER', 'SYNTH', 'LOGGER',
@@ -45,7 +55,8 @@ class AcademicMarkdownReader(MarkdownReader):
 
 		self._source_path = source_path
 		self._md = Markdown(
-			extensions=self.extensions + [TocExtension(title='Overview')],
+			extensions=self.extensions + [TocExtension(title='Overview'),
+				TableExtension()],
 			extpeension_configs=self.extensions)
 		img_path = os.path.dirname(source_path) + '/img/' \
 			+ os.path.basename(source_path)[:-3]
@@ -84,7 +95,7 @@ class AcademicMarkdownReader(MarkdownReader):
 				content = content.replace(u'$%s$' % var, str(val))
 			for item_type in ITEM_TYPES:
 				content = content.replace(item_type,
-					u'<span class="item-type">%s</span>' % item_type.lower())
+					u'<span class="item-type">%s</span>' % item_type.lower())			
 		metadata = self._parse_metadata(self._md.Meta)
 		build.path = build.path[3:]
 		return content, metadata
@@ -94,6 +105,7 @@ def init_academicmarkdown(sender):
 
 	build.postMarkdownFilters = []
 	build.figureTemplate = 'jekyll'
+	build.tableTemplate = 'kramdown'
 	build.figureSourcePrefix = SITEURL
 	build.path += u'include'
 	build.extensions.remove('toc')

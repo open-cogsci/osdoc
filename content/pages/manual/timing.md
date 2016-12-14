@@ -172,7 +172,7 @@ I ran %LstIntervalBenchmark on Windows XP, using all three backends. I also reco
 table:
  id: TblBenchmarkResults
  source: benchmark-results.csv
- caption: Benchmark results for [listing 4]. Tested with Windows XP, HP Compaq dc7900, Intel Core 2 Quad Q9400 @ 2.66Ghz, 3GB, 21" ViewSonic P227f CRT. Each test was conducted twice (i.e. two sessions). The column `Session` corresponds to different test runs. The column `Source` indicates whether the measurements are from an external photiodiode, or based on OpenSesame's internal timestamps.
+ caption: Benchmark results for %LstIntervalBenchmark. Tested with Windows XP, HP Compaq dc7900, Intel Core 2 Quad Q9400 @ 2.66Ghz, 3GB, 21" ViewSonic P227f CRT. Each test was conducted twice (i.e. two sessions). The column `Session` corresponds to different test runs. The column `Source` indicates whether the measurements are from an external photiodiode, or based on OpenSesame's internal timestamps.
 --%
 
 As you can see, the [xpyriment] and [psycho] backends consistently show a 100 ms interval. This is good and just as we would expect. However, the [legacy] backend shows a 90 ms interval. This discrepancy is due to the fact that the [legacy] backend does not use a blocking flip (see [Understanding your monitor]), which leads to some unpredictability in display timing. Note also that there is close agreement between the timestamps as recorded by the external photodiode and the timestamps reported by OpenSesame. This agreement demonstrates that OpenSesame's timestamps are reliable, although, again, they are slightly less reliable for the [legacy] backend due to the lack of a blocking-flip.
