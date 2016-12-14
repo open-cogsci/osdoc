@@ -30,9 +30,13 @@ Borja, M. F., Chung, S., & Wagers, M. (2015). Constituent order and parser contr
 
 Brockmeyer, T., Pellegrino, J., Münch, H., Herzog, W., Dziobek, I., & Friederich, H.-C. (2016). Social cognition in anorexia nervosa: Specific difficulties in decoding emotional but not nonemotional mental states. *International Journal of Eating Disorders*. doi:10.1002/eat.22574
 
+Bucker, B., & Theeuwes, J. (2016). Pavlovian reward learning underlies value driven attentional capture. *Attention, Perception, & Psychophysics*. doi:10.3758/s13414-016-1241-1
+
 Cerni, T., Longcamp, M., & Job, R. (2016). Two thumbs and one index: A comparison of manual coordination in touch-typing and mobile-typing. *Acta Psychologica*, *167*, 16–23. doi:10.1016/j.actpsy.2016.03.007
 
 Cuperus, A. A., Laken, M., van den Hout, M. A., & Engelhard, I. M. (2016). Degrading emotional memories induced by a virtual reality paradigm. *Journal of Behavior Therapy and Experimental Psychiatry*. doi:10.1016/j.jbtep.2016.03.004
+
+Defoe, I. N., Semon Dubas, J., Somerville, L. H., Lugtig, P., & G, A. (2016). The unique roles of intrapersonal and social factors in adolescent smoking development. *Developmental Psychology*, *52*(12), 2044–2056. doi:10.1037/dev0000198
 
 De Groot, F., Huettig, F., & Olivers, C. N. L. (2016). Revisiting the looking at nothing phenomenon: Visual and semantic biases in memory search. *Visual Cognition*.
 
@@ -70,6 +74,8 @@ Krokoszinski, L., & Hosser, D. (2016). Emotion regulation during deception: an E
 
 Kruijne, W., & Meeter, M. (2016). Implicit short-and long-term memory direct our gaze in visual search. *Attention, Perception, & Psychophysics*. doi:10.3758/s13414-015-1021-3
 
+Kuziek, J. W. P., Shienh, A., & Mathewson, K. E. (2016). Transitioning EEG experiments away from the laboratory using a Raspberry Pi 2. *Journal of Neuroscience Methods*. doi:10.1016/j.jneumeth.2016.11.013
+
 Lange, F., Haiduk, M., Boos, M., Tinschert, P., Schwarze, A., & Eggert, F. (2016). Road crossing behavior under traffic light conflict: Modulating effects of green light duration and signal congruency. *Accident Analysis & Prevention*, *95*, Part A, 292–298. doi:10.1016/j.aap.2016.07.023
 
 Levin, Y., & Tzelgov, J. (2016). Contingency learning is not affected by conflict experience: Evidence from a task conflict-free, item-specific Stroop paradigm. *Acta Psychologica*, 164, 39–45. doi:10.1016/j.actpsy.2015.12.009
@@ -80,7 +86,11 @@ Littel, M., van den Hout, M. A., & Engelhard, I. M. (2016). Desensitizing addict
 
 Loy, J. E., Rohde, H., & Corley, M. (in press). Effects of disfluency in online interpretation of deception. *Cognitive Science*.
 
+Macatee, R. J., Albanese, B. J., Schmidt, N. B., & Cougle, J. R. (2017). The moderating influence of heart rate variability on stressor-elicited change in pupillary and attentional indices of emotional processing: An eye-Tracking study. *Biological Psychology*, *123*, 83–93. doi:10.1016/j.biopsycho.2016.11.013
+
 Mathôt, S., Melmi, J.-B., van der Linden, L., & Van der Stigchel, S. (2016). The mind-writing pupil: a human-computer interface based on decoding of covert attention through pupillometry. *PLoS ONE*, *11*(2), e0148805. doi:10.1371/journal.pone.0148805
+
+McCoy, B., & Theeuwes, J. (2016). Effects of reward on oculomotor control. *Journal of Neurophysiology*, 116(5), 2453–2466. doi:10.1152/jn.00498.2016
 
 Otten, M., Schreij, D., & Los, S. A. (2016). The interplay of goal-driven and stimulus-driven influences on spatial orienting. *Attention, Perception, & Psychophysics*. doi:10.3758/s13414-016-1121-8
 
