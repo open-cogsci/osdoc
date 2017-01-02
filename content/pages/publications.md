@@ -2,6 +2,7 @@ title: Publications
 
 [TOC]
 
+
 ## How to cite OpenSesame
 
 If you have used OpenSesame, we would appreciate it if you cite us:
@@ -10,11 +11,16 @@ If you have used OpenSesame, we would appreciate it if you cite us:
 
 If you make extensive use of modules such as SciPy/ NumPy, [PsychoPy][psycho], or [Expyriment][xpyriment], please also cite the respective authors.
 
+
 ## OpenSesame in publications, theses, conference proceedings, etc.
 
-### 2016 / in press / online first
-
 <div class="reference" markdown="1">
+
+### 2017 / in press / online first
+
+Macatee, R. J., Albanese, B. J., Schmidt, N. B., & Cougle, J. R. (2017). Attention bias towards negative emotional information and its relationship with daily worry in the context of acute stress: An eye-tracking study. *Behaviour Research and Therapy*, *90*, 96–110. doi:10.1016/j.brat.2016.12.013
+
+### 2016
 
 Adamos, D. A., Dimitriadis, S. I., & Laskaris, N. A. (2016). Towards the bio-personalization of music recommendation systems: A single-sensor EEG biomarker of subjective music preference. *Information Sciences*. doi:10.1016/j.ins.2016.01.005
 
@@ -22,7 +28,8 @@ Anderson, N. C., Donk, M., & Meeter, M. (2016). The influence of a scene preview
 
 Bernstein, J. P. K., & Langfitt, J. (2016). The King–Devick test as a predictor of cognitive effects after chronic partial sleep restriction: a pilot study. *Sleep and Biological Rhythms*. doi:10.1007/s41105-016-0081-7
 
-Bonny, J. W., & Castaneda, L. M. (2017). Number processing ability is connected to longitudinal changes in multiplayer online battle arena skill. *Computers in Human Behavior*, *66*, 377–387. doi:10.1016/j.chb.2016.10.005
+Bonny, J. W., & Castaneda, L. M. (2017). Number processing ability is connected to longitud
+Spontaneous Pupillary Oscillatioinal changes in multiplayer online battle arena skill. *Computers in Human Behavior*, *66*, 377–387. doi:10.1016/j.chb.2016.10.005
 
 Bonny, J. W., Castaneda, L. M., & Swanson, T. (2016). Using an international gaming tournament to study individual differences in MOBA expertise and cognitive skills. *ESports*, doi:10.1145/2858036.2858190
 
@@ -33,6 +40,10 @@ Brockmeyer, T., Pellegrino, J., Münch, H., Herzog, W., Dziobek, I., & Friederic
 Bucker, B., & Theeuwes, J. (2016). Pavlovian reward learning underlies value driven attentional capture. *Attention, Perception, & Psychophysics*. doi:10.3758/s13414-016-1241-1
 
 Cerni, T., Longcamp, M., & Job, R. (2016). Two thumbs and one index: A comparison of manual coordination in touch-typing and mobile-typing. *Acta Psychologica*, *167*, 16–23. doi:10.1016/j.actpsy.2016.03.007
+
+Cohen, Z. Z., Aisenberg, D., & Henik, A. (2016). The effects of training on tactile enumeration. *Psychological Research*. doi:10.1007/s00426-016-0835-5
+
+Costea, A. R., Jurchi#350;, R., & Opre, A. N. (2016). Influencing the expression of implicitly learned knowledge with subliminal priming. *Cognitie, Creier, Comportament/Cognition, Brain, Behavior*, *20*(5), 331–343.
 
 Cuperus, A. A., Laken, M., van den Hout, M. A., & Engelhard, I. M. (2016). Degrading emotional memories induced by a virtual reality paradigm. *Journal of Behavior Therapy and Experimental Psychiatry*. doi:10.1016/j.jbtep.2016.03.004
 
@@ -52,6 +63,8 @@ velocidad y precisión. *Liberabit*, *22*(1), 21-29.
 Gómez-Lugo, M., Saavedra-Roa, A., Pérez-Durán, C., & Vallejo-Medina, P. (2016). Validity and reliability of a set of sexual stimuli in a sample of Colombian heterosexual young women. *Suma Psicológica*. doi:10.1016/j.sumpsi.2016.09.001
 
 Gordon, S., Getter, N., Oz, I., Garbi, D., & Todder, D. (2016). Mechanisms of cognitive control in cadet pilots. *Disaster and Military Medicine*. doi:10.1186/s40696-016-0016-5
+
+Gorin, S., Kowialiewski, B., & Majerus, S. (2016). Domain-generality of timing-based serial order processes in short-term memory: New insights from musical and verbal domains. *PLoS ONE*, *11*(12), e0168699. doi:10.1371/journal.pone.0168699
 
 Heck, D. W., & Erdfelder, E. (2016). Extending multinomial processing tree models to measure the relative speed of cognitive processes. *Psychonomic Bulletin & Review*, 1–26. doi:10.3758/s13423-016-1025-6
 
@@ -105,6 +118,8 @@ Rosa, A. O.-L., Corradi, G., Villacampa, J., Martí-Vilar, M., Arango, O. E., & 
 Ruisoto, P., Bellido, A., Ruiz, J., Juanes, J.A. (2016). Building computer-based experiments in psychology without programming skills. *Journal of Medical Systems.* doi:10.1007/s10916-016-0511-8
 
 Scarpina, F., Migliorati, D., Marzullo, P., Mauro, A., Scacchi, M., & Costantini, M. (2016). Altered multisensory temporal integration in obesity. *Scientific Reports*, 6, 28382. doi:10.1038/srep28382
+
+Schneevogt, D., & Paggio, P. (2016). The effect of gender and age differences on the recognition of emotions from facial expressions. *Proceedings of the Workshop on Computational Modeling of People’s Opinions, Personality, and Emotions in Social Media*. 11–19. Retrieved from: <http://www.aclweb.org/anthology/W/W16/W16-43.pdf>
 
 Siebold, A., Weaver, M. D., Donk, M., & van Zoest, W. (2016). Social salience does not transfer to oculomotor visual search. *Visual Cognition*. doi:10.1080/13506285.2015.1121946
 
