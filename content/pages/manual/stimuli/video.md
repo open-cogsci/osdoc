@@ -2,6 +2,7 @@ title: Video playback
 
 [TOC]
 
+
 ## media_player_mpy plugin
 
 The MEDIA_PLAYER_MPY plugin is based on MoviePy. As of OpenSesame 3.1, it is included by default with the Windows and Mac OS packages of OpenSesame. If it is not installed, you can get it by installing the `opensesame-plugin-media_player_mpy` package, as described here:
@@ -10,9 +11,13 @@ The MEDIA_PLAYER_MPY plugin is based on MoviePy. As of OpenSesame 3.1, it is inc
 
 The source code is hosted at:
 
-- https://github.com/dschreij/opensesame-plugin-mediaplayer
+- <https://github.com/dschreij/opensesame-plugin-mediaplayer>
+
 
 ## media_player_vlc plugin
+
+The `media_player_vlc` plugin is outdated. It's better to use the `media_player_mpy` plugin instead.
+{: .page-notification}
 
 The MEDIA_PLAYER_VLC plugin is based on the well-known VLC media player. As of OpenSesame 3.1, it is *no longer* included by default with the Windows and Mac OS packages of OpenSesame. If it is not installed, you can get it by installing the `opensesame-plugin-media_player_vlc` package, as described here:
 
@@ -27,6 +32,7 @@ In addition, you need to install the VLC media player in the default location:
 - <http://www.videolan.org/>
 
 *Troubleshooting:* If you encounter a black screen when running your experiment in fullscreen (i.e. the video appears to play, but you don't see anything), please try using a different backend (i.e. switch from *legacy* to *xpyriment* or vice versa), or change the backend settings for the *legacy* backend.
+
 
 ## OpenCV
 
