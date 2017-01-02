@@ -118,6 +118,19 @@ video:
   7 simple tricks to write better Python.
 --%
 
+### 7 more tricks to write better Python
+
+%--
+video:
+ source: youtube
+ id: Vid7MoreTricks
+ videoid: SNTZpy0oDB8
+ width: 640
+ height: 360
+ caption: |
+  7 more tricks to write better Python.
+--%
+
 ### A simple explanation of function arguments and keywords
 
 %--
