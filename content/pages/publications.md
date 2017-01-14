@@ -20,6 +20,9 @@ If you make extensive use of modules such as SciPy/ NumPy, [PsychoPy][psycho], o
 
 Macatee, R. J., Albanese, B. J., Schmidt, N. B., & Cougle, J. R. (2017). Attention bias towards negative emotional information and its relationship with daily worry in the context of acute stress: An eye-tracking study. *Behaviour Research and Therapy*, *90*, 96–110. doi:10.1016/j.brat.2016.12.013
 
+de Vries, I. E. J., Driel, J. van, & Olivers, C. N. L. (2017). Posterior alpha EEG dynamics dissociate current from future goals in working memory guided visual search. *Journal of Neuroscience*. doi:10.1523/JNEUROSCI.2945-16.2016
+
+
 ### 2016
 
 Adamos, D. A., Dimitriadis, S. I., & Laskaris, N. A. (2016). Towards the bio-personalization of music recommendation systems: A single-sensor EEG biomarker of subjective music preference. *Information Sciences*. doi:10.1016/j.ins.2016.01.005
