@@ -206,3 +206,29 @@ horse | 1
 If you have specified constraints, or have used advanced loop operations, then it is a good idea to check that the result is as expected. To do so, you can generate a preview of the loop table as it will be (or could be, in case of randomization) when you run the experiment.
 
 To generate a preview, click on the *Preview* button.
+
+
+## Accessing the loop table in Python inline script
+
+The original `loop` table, as you see it in the OpenSesame user interface, is a [`DataMatrix`](http://datamatrix.cogsci.nl/) object called `dm`, and is a property of the `loop` item.
+
+This original `loop` table is usually transformed in various ways; for example, the order of the rows can be randomized, and rows can be repeated multiple times. The transformed `loop` is also a `DataMatrix` object, and is called `live_dm`. `live_dm` is created just before the loop is executed (i.e. during the *run* phase of the `loop`).
+
+Finally, the current row is stored as the experimental variable `live_row`. That is, `live_row` indicates the currently active row of `live_dm`.
+
+So let's say that we have a `loop` called *block_loop*. We could then access the `loop` table in a Python inline script as follows:
+
+~~~ .python
+print('The original loop table:')
+print(items['block_loop'].dm)
+
+print('The transformed loop table:')
+print(items['block_loop'].live_dm)
+
+print('The current row:')
+print(items['block_loop'].live_dm[var.live_row])
+~~~
+
+`DataMatrix` objects are powerful structures for working with tabular data. For more information, see:
+
+- <http://datamatrix.cogsci.nl/>
