@@ -46,6 +46,15 @@ This is a standard Implicit Association Test created using OpenSesame. It has be
 - __License:__ [CC-by]
 - __Citation:__ Kapoor, H. (in press). The creative side of the Dark Triad. *Creativity Research Journal*.
 
+### Another implicit association test (IAT) 
+
+This is another Implicit Association Test created using OpenSesame. It was designed with adaptability in mind, so you could modify the template for your purposes very easily. It offers several improvements over other IAT versions found at the time of writing, such as better randomization of stimuli, optional secret skip-sequence shortcut key to make development and testing easier, arbitrary ITI, arbitrary number of stimuli per category, using both images and words as stimuli, optional feedback on error, optional error correction, and much more. You should check it out and compare...
+
+- __Developer:__ Michael Pinus
+- __URL:__ <https://osf.io/v8yaj/>
+- __License:__ [MIT]
+- __Citation:__ Pinus, M., & Bar-Anan, Y. (2017, January 24). An IAT Template for OpenSesame. http://doi.org/10.17605/OSF.IO/V8YAJ
+
 ### Mini version of the New York Cognition Questionnaire
 
 New York Cognition Questionnaire (NYC-Q) is a questionnaire probing the content and form of self generated thoughts (mindwandering). This is a minimal version of the NYC-Q suitable for using after behavioural tests or resting state fMRI scans. Available in English and German.
