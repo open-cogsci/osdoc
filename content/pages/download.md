@@ -47,6 +47,8 @@ Support for Python 3.5 is experimental:
 
 ### Mac OS
 
+The Mac OS package doesn't work entirely smoothly on some systems. We are aware of this, and are working to improve it.
+
 <a role="button" class="btn btn-default btn-align-left" href="$url-osx-dmg-py2$">
 	Mac OS package (.dmg)
 	<br /><span class='cogsci-btn-info'>
