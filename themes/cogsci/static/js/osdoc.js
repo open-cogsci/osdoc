@@ -32,10 +32,10 @@ function recommend_download() {
 		link.href = "$url-windows-exe-py2$";
 	} else if (OSName == "MacOS") {
 		link.innerHTML = "Mac OS package (.dmg)"
-		link.href = "$url-osx-dmg-py2$";
+		link.href = "#mac-os";
 	} else if (OSName == "Android") {
 		link.innerHTML = "Google Play Store"
-		link.href = "https://play.google.com/store/apps/details?id=nl.cogsci.opensesame";
+		link.href = "#android";
 	} else {
 		link.innerHTML = "Sorry, I don't recognize your system!<br />Maybe you can try pip install?";
 		link.href = "#all-platforms-pip";

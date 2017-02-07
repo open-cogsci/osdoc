@@ -47,7 +47,7 @@ Support for Python 3.5 is experimental:
 
 ### Mac OS
 
-The Mac OS package doesn't work entirely smoothly on some systems. We are aware of this, and are working to improve it.
+The Mac OS package is slightly outdated, and doesn't work smoothly on some systems. We are aware of this, and are working to improve it.
 
 <a role="button" class="btn btn-default btn-align-left" href="$url-osx-dmg-py2$">
 	Mac OS package (.dmg)
@@ -58,7 +58,9 @@ The Mac OS package doesn't work entirely smoothly on some systems. We are aware 
 
 ### Android
 
-The OpenSesame runtime for Android is available on the [Google Play Store](https://play.google.com/store/apps/details?id=nl.cogsci.opensesame).
+For more information about the OpenSesame runtime for Android, see:
+
+- %link:android%
 
 ### Ubuntu
 
@@ -114,6 +116,12 @@ The source code of OpenSesame is available on [GitHub](https://github.com/smatho
 - Update while developing and testing your experiment; it is always best to use the latest version of OpenSesame.
 - Do not update while running an experiment; that is, do not update while you are collecting data.
 - Run an experiment with the same version of OpenSesame that you used for developing and testing.
+
+
+### Manually upgrading packages
+
+- OpenSesame is a regular Python environment, and you can upgrade packages with `pip` as described here:
+	- %link:environment%
 
 
 ### Tips for system administrators

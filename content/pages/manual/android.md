@@ -1,6 +1,12 @@
 title: Runtime for Android
 
+
+__Important note:__ The OpenSesame runtime for Android is based on software by others that is no longer developed. As a result, we are unable to make sure that the runtime works with recent versions of Android. Windows 10 tablets with Intel processors are a good alternative.
+{: .alert .alert-warning}
+
+
 [TOC]
+
 
 ## OpenSesame runtime for Android
 
