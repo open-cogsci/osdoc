@@ -23,7 +23,7 @@ If you find that some variables are missing, you can explicitly add the name of 
 
 If you prefer to log only certain variables, you can disable the 'Log all variables' option, and indicate explicitly which variables you want to log.
 
-In general, you should create only one logger item, and reuse that LOGGER at different locations in your experiment if necessary. If you create multiple LOGGERs (rather than using a single LOGGER multiple times), they will all write to the same log file, and the result will be a mess!
+In general, you should create only one logger item, and reuse that LOGGER at different locations in your experiment if necessary (i.e. use linked copies of the same LOGGER item). If you create multiple LOGGERs (rather than using a single LOGGER multiple times), they will all write to the same log file, and the result will be a mess!
 
 ## Using Python inline script
 
@@ -41,7 +41,7 @@ You should generally not write to the log file directly and use a LOGGER item at
 
 ## Format of the data files
 
-If you have used the standard logger item, data files are in the following format format (simply standard csv):
+If you have used the standard LOGGER item, data files are in the following format format (simply standard csv):
 
 - plain-text
 - comma-separated
