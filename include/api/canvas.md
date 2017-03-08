@@ -273,7 +273,7 @@ __Keyword dict:__
 
 <div class="FunctionDoc YAMLDoc" id="canvas-clear" markdown="1">
 
-## function __canvas\.clear__\(color=None, \*\*style\_args\)
+## function __canvas\.clear__\(\*\*style\_args\)
 
 Clears the canvas with the current background color. Note that it is generally faster to use a different canvas for each experimental display than to use a single canvas and repeatedly clear and redraw it.
 
@@ -288,11 +288,6 @@ my_canvas.clear()
 my_canvas.fixdot(color='red')
 my_canvas.show()
 ~~~
-
-__Keywords:__
-
-- `color` -- Deprecated. Specify `background_color` as part of `style_args` instead.
-	- Default: None
 
 __Keyword dict:__
 
