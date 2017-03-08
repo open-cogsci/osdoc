@@ -20,9 +20,15 @@ If you make extensive use of modules such as SciPy/ NumPy, [PsychoPy][psycho], o
 
 Bonny, J. W., Lindberg, J. C., & Pacampara, M. C. (2017). Hip hop dance experience linked to sociocognitive ability. *PLoS ONE*, *12*(2), e0169947. doi:journal.pone.0169947
 
+Çakır, M. P., Çakır, N. A., Ayaz, H., & Lee, F. J. (2016). Behavioral and neural effects of game-based learning on improving 					computational fluency with numbers. *Zeitschrift Für Psychologie*, *224*(4), 297–302. doi:10.1027/2151-2604/a000267
+
+Fairhurst, M. T., & Deroy, O. (2017). Testing the shared spatial representation of magnitude of auditory and visual intensity. *Journal of Experimental Psychology: Human Perception and Performance*, *43*(3), 629–637. doi:10.1037/xhp0000332
+
 Garza, R., Heredia, R. R., & Cieślicka, A. B. (2017). An eye tracking examination of men’s attractiveness by conceptive risk women. *Evolutionary Psychology*, *15*(1). doi:10.1177/1474704917690741
 
 Macatee, R. J., Albanese, B. J., Schmidt, N. B., & Cougle, J. R. (2017). Attention bias towards negative emotional information and its relationship with daily worry in the context of acute stress: An eye-tracking study. *Behaviour Research and Therapy*, *90*, 96–110. doi:10.1016/j.brat.2016.12.013
+
+Vallejo-Medina, P. (2017). Procedure to validate sexual stimuli: reliability and validity of a set of sexual stimuli in a sample of young colombian heterosexual males. *International Journal of Psychological Research*, *10*(1), 18–24. doi:10.21500/20112084.2268
 
 de Vries, I. E. J., Driel, J. van, & Olivers, C. N. L. (2017). Posterior alpha EEG dynamics dissociate current from future goals in working memory guided visual search. *Journal of Neuroscience*. doi:10.1523/JNEUROSCI.2945-16.2016
 
