@@ -26,7 +26,13 @@ Fairhurst, M. T., & Deroy, O. (2017). Testing the shared spatial representation 
 
 Garza, R., Heredia, R. R., & Cieślicka, A. B. (2017). An eye tracking examination of men’s attractiveness by conceptive risk women. *Evolutionary Psychology*, *15*(1). doi:10.1177/1474704917690741
 
+Graveline, Y. M., & Wamsley, E. J. (2017). The impact of sleep on novel concept learning. *Neurobiology of Learning and Memory*. doi:10.1016/j.nlm.2017.03.008
+
 Macatee, R. J., Albanese, B. J., Schmidt, N. B., & Cougle, J. R. (2017). Attention bias towards negative emotional information and its relationship with daily worry in the context of acute stress: An eye-tracking study. *Behaviour Research and Therapy*, *90*, 96–110. doi:10.1016/j.brat.2016.12.013
+
+Snell, J., Meeter, M., & Grainger, J. (2017). Evidence for simultaneous syntactic processing of multiple words during reading. *PLOS ONE*, *12*(3), e0173720. doi:10.1371/journal.pone.017372
+
+Sollberger, S., Bernauer, T., & Ehlert, U. (2017). Predictors of visual attention to climate change images: An eye-tracking study. *Journal of Environmental Psychology*. doi:10.1016/j.jenvp.2017.03.001
 
 Vallejo-Medina, P. (2017). Procedure to validate sexual stimuli: reliability and validity of a set of sexual stimuli in a sample of young colombian heterosexual males. *International Journal of Psychological Research*, *10*(1), 18–24. doi:10.21500/20112084.2268
 
