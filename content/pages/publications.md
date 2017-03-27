@@ -24,11 +24,17 @@ Bonny, J. W., Lindberg, J. C., & Pacampara, M. C. (2017). Hip hop dance experien
 
 Fairhurst, M. T., & Deroy, O. (2017). Testing the shared spatial representation of magnitude of auditory and visual intensity. *Journal of Experimental Psychology: Human Perception and Performance*, *43*(3), 629–637. doi:10.1037/xhp0000332
 
+Fairchild, S., & Papafragou, A. (2017). Flexible expectations of speaker informativeness shape pragmatic inference. *University of Pennsylvania Working Papers in Linguistics*, 23(1), 7.
+
 Garza, R., Heredia, R. R., & Cieślicka, A. B. (2017). An eye tracking examination of men’s attractiveness by conceptive risk women. *Evolutionary Psychology*, *15*(1). doi:10.1177/1474704917690741
 
 Graveline, Y. M., & Wamsley, E. J. (2017). The impact of sleep on novel concept learning. *Neurobiology of Learning and Memory*. doi:10.1016/j.nlm.2017.03.008
 
 Macatee, R. J., Albanese, B. J., Schmidt, N. B., & Cougle, J. R. (2017). Attention bias towards negative emotional information and its relationship with daily worry in the context of acute stress: An eye-tracking study. *Behaviour Research and Therapy*, *90*, 96–110. doi:10.1016/j.brat.2016.12.013
+
+Panagiotidi, M., Overton, P. G., & Stafford, T. (2017). Increased microsaccade rate in individuals with ADHD traits. *Journal of Eye Movement Research*, *10*(1). doi:10.16910/jemr.10.1.6
+
+Schomaker, J., Walper, D., Wittmann, B. C., & Einhäuser, W. (2017). Attention in natural scenes: Affective-motivational factors guide gaze independently of visual salience. *Vision Research*, *133*, 161–175. doi:10.1016/j.visres.2017.02.003
 
 Snell, J., Meeter, M., & Grainger, J. (2017). Evidence for simultaneous syntactic processing of multiple words during reading. *PLOS ONE*, *12*(3), e0173720. doi:10.1371/journal.pone.017372
 
