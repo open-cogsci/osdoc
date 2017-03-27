@@ -98,6 +98,7 @@ Manual:
     OpenSesame script: manual/opensesame-script
     Running experiments without the GUI: manual/opensesamerun
     Installing packages, plugins, and extensions: manual/environment
+    Runners: manual/runners
 
     Devices:
     Mouse tracking: manual/mousetracking
