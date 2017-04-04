@@ -3,15 +3,15 @@ title: Video tutorials
 [TOC]
 
 
-## OpenSesame 3.0 step-by-step tutorial
+## OpenSesame 3.1 step-by-step tutorial
 
 The video below walks through the [step-by-step tutorial](/tutorials/step-by-step-tutorial/).
 
 %--
 video:
  source: youtube
- id: VidTutorial30
- videoid: eiGXe-t-C28
+ id: BeginnerTutorial31
+ videoid: FCXcnAv9aMA
  width: 640
  height: 360
  caption: |
@@ -34,6 +34,21 @@ video:
 
 
 ## Tutorials for older versions of OpenSesame
+
+### OpenSesame 3.0 step-by-step tutorial
+
+The video below walks through the [step-by-step tutorial](/tutorials/step-by-step-tutorial/).
+
+%--
+video:
+ source: youtube
+ id: VidTutorial30
+ videoid: eiGXe-t-C28
+ width: 640
+ height: 360
+ caption: |
+  The step-by-step tutorial in video form.
+--%
 
 ### Creating a cat-faces experiment
 

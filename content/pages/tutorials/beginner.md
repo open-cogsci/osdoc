@@ -12,6 +12,22 @@ OpenSesame is freely available under the [General Public License v3][gpl].
 
 This tutorial shows how to create a simple but complete psychological experiment using OpenSesame [(Mathôt, Schreij, & Theeuwes, 2012)][references]. You will use mainly the graphical user interface of OpenSesame (i.e., no Python inline coding), although you will make small modifications to the OpenSesame script. This tutorial takes approximately one hour.
 
+## Tutorial screencast
+
+This tutorial is also available as a screencast:
+
+%--
+video:
+ source: youtube
+ id: BeginnerTutorial
+ videoid: FCXcnAv9aMA
+ width: 640
+ height: 360
+ caption: |
+  A screencast of the beginner tutorial.
+--%
+
+
 ## Resources
 
 - __Download__ -- This tutorial assumes that you are running OpenSesame version 3.1.0 or later. To check which version you are running, see the bottom right of the 'Get started' tab (see %FigGetStarted). You can download the most recent version of OpenSesame from:

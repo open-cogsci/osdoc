@@ -31,8 +31,8 @@ OpenSesame is a program to create experiments for psychology, neuroscience, and 
 %--
 video:
  source: youtube
- id: VidTutorial30
- videoid: eiGXe-t-C28
+ id: BeginnerTutorial
+ videoid: FCXcnAv9aMA
  width: 640
  height: 360
  caption: |
