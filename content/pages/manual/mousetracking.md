@@ -16,14 +16,15 @@ Once data have been collected with the plugins, the data can be processed, analy
 
 ## Installation
 
-You can download the latest release of the plugins from the [GitHub release page](https://github.com/PascalKieslich/mousetrap-os/releases). More information about each plugin can be found in its respective helpfiles (linked above). A number of example experiments that demonstrate the basic features are available in the [examples folder](https://github.com/PascalKieslich/mousetrap-os/tree/master/examples) on GitHub.
-
-Or run the following in the OpenSesame debug window:
+Mousetrap is available [on the Python Package Index](https://pypi.python.org/pypi/opensesame-plugin-mousetrap). To install the latest release, please run the following commands in the OpenSesame [debug window](%link:manual/interface/#the-debug-window%):
 
 ~~~ .python
 import pip
-pip.main(['install', 'https://github.com/PascalKieslich/mousetrap-os/archive/stable.zip'])
+pip.main(['install', 'opensesame-plugin-mousetrap'])
 ~~~
+
+You can also download the latest release of the plugins from the [GitHub release page](https://github.com/PascalKieslich/mousetrap-os/releases). More information about each plugin can be found in its respective helpfiles (linked above). A number of example experiments that demonstrate the basic features are available in the [examples folder](https://github.com/PascalKieslich/mousetrap-os/tree/master/examples#example-experiments) on GitHub.
+
 
 See also:
 
