@@ -40,46 +40,26 @@ Alternatively, you can download older versions of Pylink from here:
 
 To install PyLink in OpenSesame, simply copy the folder with the correct PyLink version to the OpenSesame program folder (i.e. `pylink27` for Python 2.7) and rename the folder to `pylink` (i.e. strip the Python version number from the folder name).
 
+
 ## Ubuntu
 
-### Installing the EyeLink display software
+The EyeLink display software can be installed directly from a repository. This also installs PyLink and various convenient tools, such ast the `edf2asc` converter.
 
-There is a repository with the Eyelink display software available for Ubuntu Linux. To add this repository to your software sources, type the following in a terminal:
-
-	sudo nano /etc/apt/sources.list
-
-This will open the software sources in a simple text editor. At the bottom of the file, add the following lines for 32 bit systems:
-
-	# Eyelink repository (32bit)
-	deb http://download.sr-support.com /
-
-For 64 bit, add the following lines:
-
-	# Eyelink repository (64bit)
-	deb http://download.sr-support.com/x64 /
-
-Don't fortget the trailing "/" character! Save the file (Control+O, Enter) and exit (Control+X). Now reload the software sources, and install the Eyelink display software (the version number might vary, at the time of writing it is 1.9):
-
+	sudo add-apt-repository "deb http://download.sr-support.com/software SRResearch main"
 	sudo apt-get update
-	sudo apt-get install eyelink-display-software1.9
+	sudo apt-get install eyelink-display-software
 
 For more information, please visit:
 
-- <https://www.sr-support.com/showthread.php?16-Linux-Display-Software-Package>
+- <https://www.sr-support.com/forum/downloads/eyelink-display-software/46-eyelink-developers-kit-for-linux-linux-display-software?16-EyeLink-Developers-Kit-for-Linux-(Linux-Display-Software)=>
 
-### Installing PyLink
-
-Download the correct PyLink for your distribution from here (make sure that you have the correct Python version, usually 2.7, and chipset, x64 for 64 bit and x32 for 32 bit):
-
-- <https://www.sr-support.com/forums/showthread.php?t=14>
-
-Extract it to a location of your choice and rename the `pylink27` folder to `pylink`.
 
 ## PyGaze
 
 After you have install the EyeLink display software and PyLink per the instructions above, you can use the EyeLink with PyGaze! See:
 
 - %link:pygaze%
+
 
 ## What happened to the EyeLink plugins?
 
