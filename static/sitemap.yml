@@ -1,116 +1,209 @@
 !!python/object/apply:collections.OrderedDict
-dictitems:
-  Blog: http://www.cogsci.nl/
-  Download: /3.1/download
-  Forum: http://forum.cogsci.nl/
-  Manual: !!python/object/apply:collections.OrderedDict
-    dictitems:
-      API reference: !!python/object/apply:collections.OrderedDict
-        dictitems:
-          Canvas: /3.1/manual/python/canvas
-          Clock: /3.1/manual/python/clock
-          Common functions: /3.1/manual/python/common
-          File pool: /3.1/manual/python/pool
-          Items: /3.1/manual/python/items
-          Keyboard: /3.1/manual/python/keyboard
-          Log: /3.1/manual/python/log
-          Mouse: /3.1/manual/python/mouse
-          Response history: /3.1/manual/python/responses
-          Sampler: /3.1/manual/python/sampler
-          Variables: /3.1/manual/python/var
-      Ambulatory Monitoring System (VU-AMS): /3.1/manual/devices/vuams
-      Backends: /3.1/manual/backends
-      Counterbalancing: /3.1/manual/counterbalancing
-      Custom forms: /3.1/manual/forms/custom
-      Data logging: /3.1/manual/logging
-      Emotiv EEG: /3.1/manual/devices/emotiv
-      Examples: /3.1/manual/examples
-      Flow and structure: !!python/object/apply:collections.OrderedDict
-        dictitems:
-          Doing things in parallel: /3.1/manual/structure/coroutines
-          Doing things in sequence: /3.1/manual/structure/sequence
-          Looping and defining indepedent variables: /3.1/manual/structure/loop
-      Form variables: /3.1/manual/forms/variables
-      Forms in OpenSesame: /3.1/manual/forms/about
-      Installing packages, plugins, and extensions: /3.1/manual/environment
-      Models: !!python/object/apply:collections.OrderedDict
-        dictitems:
-          EyeLink: /3.1/manual/eyetracking/eyelink
-          EyeTribe: /3.1/manual/eyetracking/eyetribe
-          SMI: /3.1/manual/eyetracking/smi
-          Tobii: /3.1/manual/eyetracking/tobii
-      Mouse tracking: /3.1/manual/mousetracking
-      OSF Integration: /3.1/manual/osf
-      Oculus rift: /3.1/manual/devices/oculusrift
-      OpenSesame script: /3.1/manual/opensesame-script
-      Parallel port (EEG triggers): /3.1/manual/devices/parallel
-      PyGaze: /3.1/manual/eyetracking/pygaze
-      Python in OpenSesame: /3.1/manual/python/about
-      Ready-made forms: /3.1/manual/forms/readymade
-      Response collection: !!python/object/apply:collections.OrderedDict
-        dictitems:
-          Button box: /3.1/manual/response/buttonbox
-          Joystick: /3.1/manual/response/joystick
-          Keyboard: /3.1/manual/response/keyboard
-          Mouse: /3.1/manual/response/mouse
-          SR Box: /3.1/manual/response/srbox
-          Sound recording: /3.1/manual/response/soundrecording
-      Runners: /3.1/manual/runners
-      Running experiments without the GUI: /3.1/manual/opensesamerun
-      Running on Android: /3.1/manual/android
-      Serial port: /3.1/manual/devices/serial
-      Slow performance: /3.1/manual/forms/performance
-      StimSync: /3.1/manual/devices/stimsync
-      Stimulus presentation: !!python/object/apply:collections.OrderedDict
-        dictitems:
-          Sound: /3.1/manual/stimuli/sound
-          Text: /3.1/manual/stimuli/text
-          Video: /3.1/manual/stimuli/video
-          Visual stimuli: /3.1/manual/stimuli/visual
-      The prepare-run strategy: /3.1/manual/prepare-run
-      Timing: /3.1/manual/timing
-      Using the interface: /3.1/manual/interface
-      Variables and if statements: /3.1/manual/variables
-      Widgets: !!python/object/apply:collections.OrderedDict
-        dictitems:
-          button: /3.1/manual/forms/widgets/button
-          checkbox: /3.1/manual/forms/widgets/checkbox
-          form: /3.1/manual/forms/widgets/form
-          image: /3.1/manual/forms/widgets/image
-          image_button: /3.1/manual/forms/widgets/image_button
-          label: /3.1/manual/forms/widgets/label
-          rating_scale: /3.1/manual/forms/widgets/rating_scale
-          text_input: /3.1/manual/forms/widgets/text_input
-  Other: !!python/object/apply:collections.OrderedDict
-    dictitems:
-      Create a plugin: /3.1/dev/plugin
-      Create an extension: /3.1/dev/extension
-      Degrees of visual angle: /3.1/visualangle
-      Donate: /3.1/donate
-      File format (.osexp): /3.1/dev/fileformat
-      How to contribute: /3.1/dev/howtocontribute
-      Important changes in OpenSesame 3: /3.1/important-changes-3
-      Meet the team!: /3.1/team
-      Notation for experimental design: /3.1/experimentaldesign
-      Publications: /3.1/publications
-      Release notes: /3.1/notes/notes
-      Running from source: /3.1/dev/fromsource
-      Translate: /3.1/dev/translate
-  Tutorials: !!python/object/apply:collections.OrderedDict
-    dictitems:
-      APS tutorial: /3.1/tutorials/aps
-      Advanced tutorial: /3.1/tutorials/advanced
-      "Amor\xE7age cat\xE9gorique": /3.1/fr/amorcage-categorique
-      Beginner tutorial: /3.1/tutorials/beginner
-      Cats, dogs, and capybaras: /3.1/tutorials/capybara
-      Direction du regard: /3.1/fr/direction-du-regard
-      "Gu\xEDa paso a paso": /3.1/es/guia-paso-a-paso
-      Intermediate tutorial: /3.1/tutorials/intermediate
-      Udemy course (by Monk Prayogshala): https://www.udemy.com/opensesame-the-experiment-building-software/
-      Video tutorials: /3.1/tutorials/video
-  v3.1: !!python/object/apply:collections.OrderedDict
-    dictitems:
-      v2.8: http://osdoc.cogsci.nl/2.8/
-      v2.9: http://osdoc.cogsci.nl/2.9/
-      v3.0: http://osdoc.cogsci.nl/3.0/
-      v3.1: http://osdoc.cogsci.nl/3.1/
+- - - Download
+    - /3.1/download
+  - - Tutorials
+    - !!python/object/apply:collections.OrderedDict
+      - - - Beginner tutorial
+          - /3.1/tutorials/beginner
+        - - Intermediate tutorial
+          - /3.1/tutorials/intermediate
+        - - Advanced tutorial
+          - /3.1/tutorials/advanced
+        - - Video tutorials
+          - /3.1/tutorials/video
+        - - Udemy course (by Monk Prayogshala)
+          - https://www.udemy.com/opensesame-the-experiment-building-software/
+        - - APS tutorial
+          - /3.1/tutorials/aps
+        - - Cats, dogs, and capybaras
+          - /3.1/tutorials/capybara
+        - - "Amor\xE7age cat\xE9gorique"
+          - /3.1/fr/amorcage-categorique
+        - - Direction du regard
+          - /3.1/fr/direction-du-regard
+        - - "Gu\xEDa paso a paso"
+          - /3.1/es/guia-paso-a-paso
+  - - Manual
+    - !!python/object/apply:collections.OrderedDict
+      - - - Using the interface
+          - /3.1/manual/interface
+        - - Variables and if statements
+          - /3.1/manual/variables
+        - - Data logging
+          - /3.1/manual/logging
+        - - Examples
+          - /3.1/manual/examples
+        - - Flow and structure
+          - !!python/object/apply:collections.OrderedDict
+            - - - Looping and defining indepedent variables
+                - /3.1/manual/structure/loop
+              - - Doing things in sequence
+                - /3.1/manual/structure/sequence
+              - - Doing things in parallel
+                - /3.1/manual/structure/coroutines
+        - - Response collection
+          - !!python/object/apply:collections.OrderedDict
+            - - - Keyboard
+                - /3.1/manual/response/keyboard
+              - - Mouse
+                - /3.1/manual/response/mouse
+              - - Joystick
+                - /3.1/manual/response/joystick
+              - - Button box
+                - /3.1/manual/response/buttonbox
+              - - SR Box
+                - /3.1/manual/response/srbox
+              - - Sound recording
+                - /3.1/manual/response/soundrecording
+        - - Stimulus presentation
+          - !!python/object/apply:collections.OrderedDict
+            - - - Text
+                - /3.1/manual/stimuli/text
+              - - Visual stimuli
+                - /3.1/manual/stimuli/visual
+              - - Sound
+                - /3.1/manual/stimuli/sound
+              - - Video
+                - /3.1/manual/stimuli/video
+        - - Forms in OpenSesame
+          - /3.1/manual/forms/about
+        - - Ready-made forms
+          - /3.1/manual/forms/readymade
+        - - Custom forms
+          - /3.1/manual/forms/custom
+        - - Form variables
+          - /3.1/manual/forms/variables
+        - - Slow performance
+          - /3.1/manual/forms/performance
+        - - Widgets
+          - !!python/object/apply:collections.OrderedDict
+            - - - form
+                - /3.1/manual/forms/widgets/form
+              - - button
+                - /3.1/manual/forms/widgets/button
+              - - checkbox
+                - /3.1/manual/forms/widgets/checkbox
+              - - image
+                - /3.1/manual/forms/widgets/image
+              - - image_button
+                - /3.1/manual/forms/widgets/image_button
+              - - label
+                - /3.1/manual/forms/widgets/label
+              - - rating_scale
+                - /3.1/manual/forms/widgets/rating_scale
+              - - text_input
+                - /3.1/manual/forms/widgets/text_input
+        - - Python in OpenSesame
+          - /3.1/manual/python/about
+        - - API reference
+          - !!python/object/apply:collections.OrderedDict
+            - - - Common functions
+                - /3.1/manual/python/common
+              - - Variables
+                - /3.1/manual/python/var
+              - - File pool
+                - /3.1/manual/python/pool
+              - - Items
+                - /3.1/manual/python/items
+              - - Response history
+                - /3.1/manual/python/responses
+              - - Clock
+                - /3.1/manual/python/clock
+              - - Canvas
+                - /3.1/manual/python/canvas
+              - - Keyboard
+                - /3.1/manual/python/keyboard
+              - - Log
+                - /3.1/manual/python/log
+              - - Mouse
+                - /3.1/manual/python/mouse
+              - - Sampler
+                - /3.1/manual/python/sampler
+        - - PyGaze
+          - /3.1/manual/eyetracking/pygaze
+        - - Models
+          - !!python/object/apply:collections.OrderedDict
+            - - - EyeLink
+                - /3.1/manual/eyetracking/eyelink
+              - - EyeTribe
+                - /3.1/manual/eyetracking/eyetribe
+              - - SMI
+                - /3.1/manual/eyetracking/smi
+              - - Tobii
+                - /3.1/manual/eyetracking/tobii
+        - - The prepare-run strategy
+          - /3.1/manual/prepare-run
+        - - Counterbalancing
+          - /3.1/manual/counterbalancing
+        - - OSF Integration
+          - /3.1/manual/osf
+        - - Timing
+          - /3.1/manual/timing
+        - - Backends
+          - /3.1/manual/backends
+        - - Running on Android
+          - /3.1/manual/android
+        - - OpenSesame script
+          - /3.1/manual/opensesame-script
+        - - Running experiments without the GUI
+          - /3.1/manual/opensesamerun
+        - - Installing packages, plugins, and extensions
+          - /3.1/manual/environment
+        - - Runners
+          - /3.1/manual/runners
+        - - Mouse tracking
+          - /3.1/manual/mousetracking
+        - - Ambulatory Monitoring System (VU-AMS)
+          - /3.1/manual/devices/vuams
+        - - Emotiv EEG
+          - /3.1/manual/devices/emotiv
+        - - Oculus rift
+          - /3.1/manual/devices/oculusrift
+        - - Serial port
+          - /3.1/manual/devices/serial
+        - - Parallel port (EEG triggers)
+          - /3.1/manual/devices/parallel
+        - - StimSync
+          - /3.1/manual/devices/stimsync
+  - - Other
+    - !!python/object/apply:collections.OrderedDict
+      - - - Publications
+          - /3.1/publications
+        - - Meet the team!
+          - /3.1/team
+        - - Donate
+          - /3.1/donate
+        - - Important changes in OpenSesame 3
+          - /3.1/important-changes-3
+        - - Degrees of visual angle
+          - /3.1/visualangle
+        - - Notation for experimental design
+          - /3.1/experimentaldesign
+        - - Release notes
+          - /3.1/notes/notes
+        - - How to contribute
+          - /3.1/dev/howtocontribute
+        - - Running from source
+          - /3.1/dev/fromsource
+        - - File format (.osexp)
+          - /3.1/dev/fileformat
+        - - Translate
+          - /3.1/dev/translate
+        - - Create a plugin
+          - /3.1/dev/plugin
+        - - Create an extension
+          - /3.1/dev/extension
+  - - Forum
+    - http://forum.cogsci.nl/
+  - - Blog
+    - http://www.cogsci.nl/
+  - - v3.1
+    - !!python/object/apply:collections.OrderedDict
+      - - - v3.1
+          - http://osdoc.cogsci.nl/3.1/
+        - - v3.0
+          - http://osdoc.cogsci.nl/3.0/
+        - - v2.9
+          - http://osdoc.cogsci.nl/2.9/
+        - - v2.8
+          - http://osdoc.cogsci.nl/2.8/
