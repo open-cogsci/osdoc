@@ -22,6 +22,8 @@ Adamou, E., & Shen, X. R. (2017). There are no language switching costs when cod
 
 Bonny, J. W., Lindberg, J. C., & Pacampara, M. C. (2017). Hip hop dance experience linked to sociocognitive ability. *PLoS ONE*, *12*(2), e0169947. doi:journal.pone.0169947
 
+Bernstein, E. E., Heeren, A., & McNally, R. J. (2017). Unpacking Rumination and Executive Control: A Network Perspective. *Clinical Psychological Science*. doi:10.1177/2167702617702717
+
 Çakır, M. P., Çakır, N. A., Ayaz, H., & Lee, F. J. (2016). Behavioral and neural effects of game-based learning on improving 					computational fluency with numbers. *Zeitschrift Für Psychologie*, *224*(4), 297–302. doi:10.1027/2151-2604/a000267
 
 Fairhurst, M. T., & Deroy, O. (2017). Testing the shared spatial representation of magnitude of auditory and visual intensity. *Journal of Experimental Psychology: Human Perception and Performance*, *43*(3), 629–637. doi:10.1037/xhp0000332
@@ -46,6 +48,8 @@ Klein, S. A., Hilbig, B. E., & Heck, D. W. (2016). Which is the greater good? A 
 
 Krüger, A., Tünnermann, J., & Scharlau, I. (2017). Measuring and modeling salience with the theory of visual attention. *Attention, Perception, & Psychophysic*. doi:10.3758/s13414-017-1325-6
 
+Loon, A. M. van, Olmos-Solis, K., & Olivers, C. N. L. (2017). Subtle eye movement metrics reveal task-relevant representations prior to visual search. *Journal of Vision*. doi:10.1167/17.6.13
+
 Macatee, R. J., Albanese, B. J., Schmidt, N. B., & Cougle, J. R. (2017). Attention bias towards negative emotional information and its relationship with daily worry in the context of acute stress: An eye-tracking study. *Behaviour Research and Therapy*, *90*, 96–110. doi:10.1016/j.brat.2016.12.013
 
 van Moorselaar, D., Gayet, S., Paffen, C. L. E., Theeuwes, J., Van der Stigchel, S., & Olivers, C. N. L. (2017). Competitive interactions in visual working memory drive access to awareness. *Cortex*. doi:10.1016/j.cortex.2017.03.026
@@ -63,6 +67,8 @@ Sampaio, T. O. da M. (2017). A escolha de software e hardware na psicolinguísti
 Schomaker, J., Walper, D., Wittmann, B. C., & Einhäuser, W. (2017). Attention in natural scenes: Affective-motivational factors guide gaze independently of visual salience. *Vision Research*, *133*, 161–175. doi:10.1016/j.visres.2017.02.003
 
 Sedda, A., Petito, S., Guarino, M., & Stracciari, A. (2017). Identification and intensity of disgust: distinguishing visual, linguistic and facial expressions processing in Parkinson disease. *Behavioural Brain Research*. doi:10.1016/j.bbr.2017.05.003
+
+Semmelmann, K., & Weigelt, S. (2017). Online webcam-based eye tracking in cognitive science: A first look. *Behavior Research Methods*. doi:10.3758/s13428-017-0913-7
 
 Snell, J., Meeter, M., & Grainger, J. (2017). Evidence for simultaneous syntactic processing of multiple words during reading. *PLOS ONE*, *12*(3), e0173720. doi:10.1371/journal.pone.017372
 
