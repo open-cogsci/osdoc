@@ -52,11 +52,17 @@ Klein, S. A., Hilbig, B. E., & Heck, D. W. (2016). Which is the greater good? A 
 
 Krüger, A., Tünnermann, J., & Scharlau, I. (2017). Measuring and modeling salience with the theory of visual attention. *Attention, Perception, & Psychophysic*. doi:10.3758/s13414-017-1325-6
 
+Leibovich, T., & Ansari, D. (2017). Accumulation of non-numerical evidence during nonsymbolic number processing in the brain: An fMRI study. *Human Brain Mapping*. doi:10.1002/hbm.23703
+
 Loon, A. M. van, Olmos-Solis, K., & Olivers, C. N. L. (2017). Subtle eye movement metrics reveal task-relevant representations prior to visual search. *Journal of Vision*. doi:10.1167/17.6.13
 
 Macatee, R. J., Albanese, B. J., Schmidt, N. B., & Cougle, J. R. (2017). Attention bias towards negative emotional information and its relationship with daily worry in the context of acute stress: An eye-tracking study. *Behaviour Research and Therapy*, *90*, 96–110. doi:10.1016/j.brat.2016.12.013
 
+Mathôt, S., Grainger, J., & Strijkers, K. (2017). Pupillary responses to words that convey a sense of brightness or darkness. *Psychological Science*. doi:10.1177/0956797617702699
+
 van Moorselaar, D., Gayet, S., Paffen, C. L. E., Theeuwes, J., Van der Stigchel, S., & Olivers, C. N. L. (2017). Competitive interactions in visual working memory drive access to awareness. *Cortex*. doi:10.1016/j.cortex.2017.03.026
+
+Ort, E., Fahrenfort, J. J., & Olivers, C. N. L. (2017). Lack of free choice reveals the cost of having to search for more than one object. *Psychological Science*. doi:10.1177/0956797617705667
 
 Panagiotidi, M., Overton, P. G., & Stafford, T. (2017). Increased microsaccade rate in individuals with ADHD traits. *Journal of Eye Movement Research*, *10*(1). doi:10.16910/jemr.10.1.6
 
@@ -69,6 +75,8 @@ Remington, A., & Fairnie, J. (2017). A sound advantage: Increased auditory capac
 Sampaio, T. O. da M. (2017). A escolha de software e hardware na psicolinguística: revisão e opinião. *Revista de Estudos da Linguagem*. doi:10.17851/relin.v0i0.11283
 
 Schomaker, J., Walper, D., Wittmann, B. C., & Einhäuser, W. (2017). Attention in natural scenes: Affective-motivational factors guide gaze independently of visual salience. *Vision Research*, *133*, 161–175. doi:10.1016/j.visres.2017.02.003
+
+Schulte-Holierhoek, A., Verastegui-Tena, L., Goedegebure, R. P. G., Piqueras Fiszman, B., & Smeets, P. A. M. (2017). Sensory expectation, perception, and autonomic nervous system responses to package colours and product popularity. *Food Quality and Preference*. doi:10.1016/j.foodqual.2017.06.017
 
 Sedda, A., Petito, S., Guarino, M., & Stracciari, A. (2017). Identification and intensity of disgust: distinguishing visual, linguistic and facial expressions processing in Parkinson disease. *Behavioural Brain Research*. doi:10.1016/j.bbr.2017.05.003
 
