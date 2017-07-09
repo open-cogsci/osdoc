@@ -1,12 +1,12 @@
-version: 3.1.6
-notes: 316
+version: 3.1.7
+notes: 317
 status: stable
 codename: Jazzy James
-release-date: February 7, 2017
-url-windows-exe-py2: https://github.com/smathot/OpenSesame/releases/download/release%2F3.1.6/opensesame_3.1.6-py2.7-win32-1.exe
-url-windows-zip-py2: https://github.com/smathot/OpenSesame/releases/download/release%2F3.1.6/opensesame_3.1.6-py2.7-win32-1.zip
-url-windows-exe-py3: https://github.com/smathot/OpenSesame/releases/download/release%2F3.1.6/opensesame_3.1.6-py3.5-win64-1.exe
-url-windows-zip-py3: https://github.com/smathot/OpenSesame/releases/download/release%2F3.1.6/opensesame_3.1.6-py3.5-win64-1.zip
-url-osx-dmg-py2: https://github.com/smathot/OpenSesame/releases/download/release%2F3.1.6/opensesame_3.1.6-py2.7-macos-2.dmg
+release-date: July 7, 2017
+url-windows-exe-py2: https://github.com/smathot/OpenSesame/releases/download/release%2F3.1.7/opensesame_3.1.7-py2.7-win32-1.exe
+url-windows-zip-py2: https://github.com/smathot/OpenSesame/releases/download/release%2F3.1.7/opensesame_3.1.7-py2.7-win32-1.zip
+url-windows-exe-py3: https://github.com/smathot/OpenSesame/releases/download/release%2F3.1.7/opensesame_3.1.7-py3.5-win64-1.exe
+url-windows-zip-py3: https://github.com/smathot/OpenSesame/releases/download/release%2F3.1.7/opensesame_3.1.7-py3.5-win64-1.zip
+url-osx-dmg-py2: https://github.com/smathot/OpenSesame/releases/download/release%2F3.1.7/opensesame_3.1.7-py2.7-macos-1.dmg
 url-source: https://github.com/smathot/OpenSesame
 url-old: https://github.com/smathot/OpenSesame/releases
