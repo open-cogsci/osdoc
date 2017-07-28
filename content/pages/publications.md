@@ -74,6 +74,10 @@ Remington, A., & Fairnie, J. (2017). A sound advantage: Increased auditory capac
 
 Sampaio, T. O. da M. (2017). A escolha de software e hardware na psicolinguística: revisão e opinião. *Revista de Estudos da Linguagem*. doi:10.17851/relin.v0i0.11283
 
+Schneider, D., Bonmassar, C., & Hickey, C. (2017). Motivation and short-term memory in visual search: Attention’s accelerator revisited. *Cortex*. doi:10.1016/j.cortex.2017.06.022
+
+Schomaker, J., & Wittmann, B. C. (2017). Memory Performance for Everyday Motivational and Neutral Objects Is Dissociable from Attention. *Frontiers in Behavioral Neuroscience*, *11*. doi:10.3389/fnbeh.2017.00121
+
 Schomaker, J., Walper, D., Wittmann, B. C., & Einhäuser, W. (2017). Attention in natural scenes: Affective-motivational factors guide gaze independently of visual salience. *Vision Research*, *133*, 161–175. doi:10.1016/j.visres.2017.02.003
 
 Schulte-Holierhoek, A., Verastegui-Tena, L., Goedegebure, R. P. G., Piqueras Fiszman, B., & Smeets, P. A. M. (2017). Sensory expectation, perception, and autonomic nervous system responses to package colours and product popularity. *Food Quality and Preference*. doi:10.1016/j.foodqual.2017.06.017
@@ -82,11 +86,15 @@ Sedda, A., Petito, S., Guarino, M., & Stracciari, A. (2017). Identification and 
 
 Semmelmann, K., & Weigelt, S. (2017). Online webcam-based eye tracking in cognitive science: A first look. *Behavior Research Methods*. doi:10.3758/s13428-017-0913-7
 
+Snell, J., & Grainger, J. (2017). The sentence superiority effect revisited. Cognition, *168*, 217–221. doi:10.1016/j.cognition.2017.07.003
+
 Snell, J., Meeter, M., & Grainger, J. (2017). Evidence for simultaneous syntactic processing of multiple words during reading. *PLOS ONE*, *12*(3), e0173720. doi:10.1371/journal.pone.017372
 
 Sollberger, S., Bernauer, T., & Ehlert, U. (2017). Predictors of visual attention to climate change images: An eye-tracking study. *Journal of Environmental Psychology*. doi:10.1016/j.jenvp.2017.03.001
 
 Vallejo-Medina, P. (2017). Procedure to validate sexual stimuli: reliability and validity of a set of sexual stimuli in a sample of young colombian heterosexual males. *International Journal of Psychological Research*, *10*(1), 18–24. doi:10.21500/20112084.2268
+
+Verastegui-Tena, L., Schulte-Holierhoek, A., van Trijp, H., & Fiszman, B. P. (2017). Beyond expectations: The responses of the autonomic nervous system to visual food cues. *Physiology & Behavior*. doi:10.1016/j.physbeh.2017.07.025
 
 de Vries, I. E. J., Driel, J. van, & Olivers, C. N. L. (2017). Posterior alpha EEG dynamics dissociate current from future goals in working memory guided visual search. *Journal of Neuroscience*. doi:10.1523/JNEUROSCI.2945-16.2016
 
@@ -94,7 +102,11 @@ Vuorre, M., & Metcalfe, J. (2017). Voluntary action alters the perception of vis
 
 White, K., Bronkhorst, A. W., & Meeter, M. (2017). Annoyance by transportation noise: The effects of source identity and tonal components. *The Journal of the Acoustical Society of America*, *141*(5), 3137–3144. doi:10.1121/1.4982921
 
+Wirzberger, M., Esmaeili Bijarsari, S., & Rey, G. D. (2017). Embedded interruptions and task complexity influence schema-related cognitive load progression in an abstract learning task. *Acta Psychologica*, *179*, 30–41. doi:10.1016/j.actpsy.2017.07.001
+
 Xia, W., Dymond, S., Lloyd, K., & Vervliet, B. (2017). Partial reinforcement of avoidance and resistance to extinction in humans. *Behaviour Research and Therapy*. doi:10.1016/j.brat.2017.04.002
+
+Yamauchi, T., Leontyev, A., & Wolfe, M. (2017). Choice reaching trajectory analysis as essential behavioral measures for psychological science. *Insights in Psychology*. Retrieved from <http://oprscience.com/wp-content/uploads/2016/07/IIP-17-04-V1.pdf>
 
 望景山. (2017). 新たな認知機能測定ツールとしてのタブレットの有用性. 基礎心理学研究, 35(2), 142–148. doi:10.14947/psychono.35.25
 
