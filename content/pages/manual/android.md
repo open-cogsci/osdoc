@@ -31,7 +31,7 @@ OpenSesame is developed with the Nexus 4 and 9 as reference devices. In general,
 
 ### Disabling automatic updates
 
-If you are using the OpenSesame runtime for Android in a production environment (e.g., while you are running an experiment), it is recommended to disable the Auto-update feature of the Google Play Store, at least for OpenSesame. This will prevent the app from being updated and potentially changing its behavior.
+If you are using the OpenSesame runtime for Android in a production environment (e.g., while you are running an experiment), it is recommended to disable the Auto-update feature of the Google Play Store, at least for OpenSesame. This will prevent the app from being updated and potentially changing its behavior. In case you need to downgrade to a previous version of the Android runtime, you can find the `.apk` files for previous releases [here](https://github.com/smathot/OpenSesame/releases).
 
 ### Automatically start an experiment
 
