@@ -70,6 +70,8 @@ Parra, F., Miljkovitch, R., Persiaux, G., Morales, M., & Scherer, S. (2017). The
 
 Parsons, O. E., Bayliss, A. P., & Remington, A. (2017). A few of my favorite things: circumscribed interests in autism are not accompanied by increased attentional salience on a personalized selective attention task. *Molecular Autism*, *8*, 20. doi:10.1186/s13229-017-0132-1
 
+Quigley, M., & Reed, P. (2017). Over-selective responding in a diagnostic judgment task. *Applied Cognitive Psychology*. doi:10.1002/acp.3341
+
 Remington, A., & Fairnie, J. (2017). A sound advantage: Increased auditory capacity in autism. *Cognition*. doi:10.1016/j.cognition.2017.04.002
 
 Sampaio, T. O. da M. (2017). A escolha de software e hardware na psicolinguística: revisão e opinião. *Revista de Estudos da Linguagem*. doi:10.17851/relin.v0i0.11283
@@ -95,6 +97,8 @@ Sollberger, S., Bernauer, T., & Ehlert, U. (2017). Predictors of visual attentio
 Vallejo-Medina, P. (2017). Procedure to validate sexual stimuli: reliability and validity of a set of sexual stimuli in a sample of young colombian heterosexual males. *International Journal of Psychological Research*, *10*(1), 18–24. doi:10.21500/20112084.2268
 
 Verastegui-Tena, L., Schulte-Holierhoek, A., van Trijp, H., & Fiszman, B. P. (2017). Beyond expectations: The responses of the autonomic nervous system to visual food cues. *Physiology & Behavior*. doi:10.1016/j.physbeh.2017.07.025
+
+Vicary, S., Sperling, M., Zimmermann, J. von, Richardson, D. C., & Orgs, G. (2017). Joint action aesthetics. *PLOS ONE*, *12*(7), e0180101. doi:10.1371/journal.pone.0180101
 
 de Vries, I. E. J., Driel, J. van, & Olivers, C. N. L. (2017). Posterior alpha EEG dynamics dissociate current from future goals in working memory guided visual search. *Journal of Neuroscience*. doi:10.1523/JNEUROSCI.2945-16.2016
 
