@@ -30,6 +30,8 @@ Fairhurst, M. T., & Deroy, O. (2017). Testing the shared spatial representation 
 
 Fairchild, S., & Papafragou, A. (2017). Flexible expectations of speaker informativeness shape pragmatic inference. *University of Pennsylvania Working Papers in Linguistics*, 23(1), 7.
 
+Fido, D., Santo, M. G. E., Bloxsom, C. A. J., Gregson, M., & Sumich, A. L. (2017). Electrophysiological study of the violence inhibition mechanism in relation to callous-unemotional and aggressive traits. *Personality and Individual Differences*, *118*, 44–49. doi:10.1016/j.paid.2017.01.049
+
 Formoso, J., Barreyro, J.P, Jacubovich, S., & Injoque-Ricle, I. (2017). Possible associations between subitizing, estimation
 and visuospatial working memory (VSWM) in
 children. *The Spanish Journal of Psychology*. doi:10.1017/sjp.2017.23
