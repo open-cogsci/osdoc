@@ -32,7 +32,7 @@
 		}(document, 'script', 'facebook-jssdk'));</script>
 
 		<!-- Main container than contains everything -->
-		<div class="container cogsci-container osdoc">
+		<div class="container osdoc-container osdoc">
 			<!-- Top banner -->
 			<div class="row visible-lg visible-md">
 				<div class="col-md-12 osdoc-banner"></div>
@@ -44,16 +44,22 @@
 			<!-- Main row containing both the sidebar and the content-->
 			<div class="row">
 				<!-- Sidebar, only visible on large screens -->
-				<div class="col-md-4 cogsci-sidebar visible-lg visible-md">
+				<div class="col-md-3 cogsci-sidebar visible-lg visible-md">
 					{% include 'social.html' %}
-					{% include 'search.html' %}
-					{% include 'supported-by.html' %}
+					{% include 'videos.html' %}
 				</div>
 				<!-- Content -->
-				<div class="col-md-8 cogsci-content">
+				<div class="col-md-6 cogsci-content">
+					<div class='visible-md visible-sm visible-xs'>
+						{% include 'search.html' %}
+					</div>
 					{% block content %}
 					{% endblock %}
 				</div>
+				<div class="col-md-3 cogsci-sidebar visible-lg">
+					{% include 'search.html' %}
+					{% include 'supported-by.html' %}
+				</div>				
 			</div>
 			<!-- Footer -->
 			<div class="row">

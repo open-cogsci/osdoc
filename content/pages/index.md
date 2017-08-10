@@ -27,25 +27,3 @@ OpenSesame is a program to create experiments for psychology, neuroscience, and 
 ## Citation
 
 - Mathôt, S., Schreij, D., & Theeuwes, J. (2012). OpenSesame: An open-source, graphical experiment builder for the social sciences. *Behavior Research Methods*, *44*(2), 314-324. doi:10.3758/s13428-011-0168-7
-
-%--
-video:
- source: youtube
- id: BeginnerTutorial
- videoid: FCXcnAv9aMA
- width: 640
- height: 360
- caption: |
-  The step-by-step video tutorial shows how to create a complete experiment from scratch.
---%
-
-%--
-video:
- source: youtube
- id: VidTutorial31
- videoid: zXStoHomIJE
- width: 640
- height: 360
- caption: |
-  A shorter, slightly more advanced tutorial showing how to implement a visual-search experiment.
---%
