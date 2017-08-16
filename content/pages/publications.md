@@ -20,15 +20,19 @@ If you make extensive use of modules such as SciPy/ NumPy, [PsychoPy][psycho], o
 
 Adamou, E., & Shen, X. R. (2017). There are no language switching costs when codeswitching is frequent. *International Journal of Bilingualism*. doi:10.1177/1367006917709094
 
+Bahn, D., Vesker, M., García Alanis, J. C., Schwarzer, G., & Kauschke, C. (2017). Age-dependent positivity-bias in children’s processing of emotion terms. *Frontiers in Psychology*, 8. doi:10.3389/fpsyg.2017.01268
+
 Bonny, J. W., Lindberg, J. C., & Pacampara, M. C. (2017). Hip hop dance experience linked to sociocognitive ability. *PLoS ONE*, *12*(2), e0169947. doi:journal.pone.0169947
 
 Bernstein, E. E., Heeren, A., & McNally, R. J. (2017). Unpacking Rumination and Executive Control: A Network Perspective. *Clinical Psychological Science*. doi:10.1177/2167702617702717
 
-Çakır, M. P., Çakır, N. A., Ayaz, H., & Lee, F. J. (2016). Behavioral and neural effects of game-based learning on improving 					computational fluency with numbers. *Zeitschrift Für Psychologie*, *224*(4), 297–302. doi:10.1027/2151-2604/a000267
+Çakır, M. P., Çakır, N. A., Ayaz, H., & Lee, F. J. (2016). Behavioral and neural effects of game-based learning on improving computational fluency with numbers. *Zeitschrift Für Psychologie*, *224*(4), 297–302. doi:10.1027/2151-2604/a000267
 
 Fairhurst, M. T., & Deroy, O. (2017). Testing the shared spatial representation of magnitude of auditory and visual intensity. *Journal of Experimental Psychology: Human Perception and Performance*, *43*(3), 629–637. doi:10.1037/xhp0000332
 
 Fairchild, S., & Papafragou, A. (2017). Flexible expectations of speaker informativeness shape pragmatic inference. *University of Pennsylvania Working Papers in Linguistics*, 23(1), 7.
+
+Ferrand, L., Méot, A., Spinelli, E., New, B., Pallier, C., Bonin, P., Dufau, S., Mathôt, S., & Grainger, J. (2017). MEGALEX: A megastudy of visual and auditory word recogntion. *Behavior Research Methods*. doi:10.3758/s13428-017-0943-1
 
 Fido, D., Santo, M. G. E., Bloxsom, C. A. J., Gregson, M., & Sumich, A. L. (2017). Electrophysiological study of the violence inhibition mechanism in relation to callous-unemotional and aggressive traits. *Personality and Individual Differences*, *118*, 44–49. doi:10.1016/j.paid.2017.01.049
 
@@ -64,6 +68,8 @@ Mathôt, S., Grainger, J., & Strijkers, K. (2017). Pupillary responses to words 
 
 van Moorselaar, D., Gayet, S., Paffen, C. L. E., Theeuwes, J., Van der Stigchel, S., & Olivers, C. N. L. (2017). Competitive interactions in visual working memory drive access to awareness. *Cortex*. doi:10.1016/j.cortex.2017.03.026
 
+Orghian, D., Smith, A., Garcia-Marques, L., & Heinke, D. (2017). Capturing spontaneous trait inference with the modified free association paradigm. *Journal of Experimental Social Psychology*. doi:10.1016/j.jesp.2017.07.004
+
 Ort, E., Fahrenfort, J. J., & Olivers, C. N. L. (2017). Lack of free choice reveals the cost of having to search for more than one object. *Psychological Science*. doi:10.1177/0956797617705667
 
 Panagiotidi, M., Overton, P. G., & Stafford, T. (2017). Increased microsaccade rate in individuals with ADHD traits. *Journal of Eye Movement Research*, *10*(1). doi:10.16910/jemr.10.1.6
@@ -95,6 +101,10 @@ Snell, J., & Grainger, J. (2017). The sentence superiority effect revisited. Cog
 Snell, J., Meeter, M., & Grainger, J. (2017). Evidence for simultaneous syntactic processing of multiple words during reading. *PLOS ONE*, *12*(3), e0173720. doi:10.1371/journal.pone.017372
 
 Sollberger, S., Bernauer, T., & Ehlert, U. (2017). Predictors of visual attention to climate change images: An eye-tracking study. *Journal of Environmental Psychology*. doi:10.1016/j.jenvp.2017.03.001
+
+Starr, R. L., Theng, A. J., Wong, K. M., Tong, N. J. Y., Ibrahim, N. A. B., Chua, A. M. Y., … Peh, M. T. J. (2017). Third culture kids in the outer circle: The development of sociolinguistic knowledge among local and expatriate children in Singapore. *Language in Society*. doi:10.1017/S0047404517000380
+
+Turton, T. L., Berres, A. S., Rogers, D. H., & Ahrens, J. (2017). ETK: An evaluation toolkit for visualization user studies. *Eurographics Conference on Visualization (EuroVis) 2017*.
 
 Vallejo-Medina, P. (2017). Procedure to validate sexual stimuli: reliability and validity of a set of sexual stimuli in a sample of young colombian heterosexual males. *International Journal of Psychological Research*, *10*(1), 18–24. doi:10.21500/20112084.2268
 
