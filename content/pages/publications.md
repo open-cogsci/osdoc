@@ -68,6 +68,8 @@ Mathôt, S., Grainger, J., & Strijkers, K. (2017). Pupillary responses to words 
 
 van Moorselaar, D., Gayet, S., Paffen, C. L. E., Theeuwes, J., Van der Stigchel, S., & Olivers, C. N. L. (2017). Competitive interactions in visual working memory drive access to awareness. *Cortex*. doi:10.1016/j.cortex.2017.03.026
 
+Olmos-Solis, K., van Loon, A. M., Los, S. A., & Olivers, C. N. (2017). Oculomotor measures reveal the temporal dynamics of preparing for search. *Progress in Brain Research*. doi:10.1016/bs.pbr.2017.07.003
+
 Orghian, D., Smith, A., Garcia-Marques, L., & Heinke, D. (2017). Capturing spontaneous trait inference with the modified free association paradigm. *Journal of Experimental Social Psychology*. doi:10.1016/j.jesp.2017.07.004
 
 Ort, E., Fahrenfort, J. J., & Olivers, C. N. L. (2017). Lack of free choice reveals the cost of having to search for more than one object. *Psychological Science*. doi:10.1177/0956797617705667
@@ -83,6 +85,8 @@ Quigley, M., & Reed, P. (2017). Over-selective responding in a diagnostic judgme
 Remington, A., & Fairnie, J. (2017). A sound advantage: Increased auditory capacity in autism. *Cognition*. doi:10.1016/j.cognition.2017.04.002
 
 Sampaio, T. O. da M. (2017). A escolha de software e hardware na psicolinguística: revisão e opinião. *Revista de Estudos da Linguagem*. doi:10.17851/relin.v0i0.11283
+
+Saunders, D. R., Melcher, D., & Zoest, W. van. (2017). No evidence of task co-representation in a joint Stroop task. *Psychological Research*. doi:10.1007/s00426-017-0909-z
 
 Schneider, D., Bonmassar, C., & Hickey, C. (2017). Motivation and short-term memory in visual search: Attention’s accelerator revisited. *Cortex*. doi:10.1016/j.cortex.2017.06.022
 
