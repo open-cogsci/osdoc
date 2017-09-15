@@ -5,21 +5,17 @@ title: ESCoP 2017 workshop
 
 ## About the workshop
 
-There will be an OpenSesame workshop as a pre-conference event before ESCoP 2017!
+This OpenSesame workshop took place as a pre-conference event before ESCoP 2017.
 
-Registration is free! But we do ask that you register, so that we know how many people to expect. You're also welcome if you don't attend ESCoP itself (although, if you're there, chances are that you're there for the conference).
+The workshop consisted of two main parts. In the first part, corresponding to the Tutorial below, we created a complete experiment together. In the second part, corresponding to the Extra assignments below, the workshop participants improved this experiment by themselves, based on a few suggestions.
 
-You can use the same registration link to register for the [JASP](http://jasp-stats.org/) workshop.
+You can download the full experiment, including the solutions of the extra assignments here:
 
-
-### Registration link (free)
-
-- <http://bit.ly/2skLRV7>
-
+- <http://osf.io/jw7dr>
 
 ### When?
 
-- September 3rd, 2017 
+- September 3rd, 2017
 - JASP: 09:00 - 12:00
 - OpenSesame: 13:00 - 16:00
 
@@ -36,6 +32,21 @@ You can use the same registration link to register for the [JASP](http://jasp-st
 
 - Conference site: <http://www.escop2017.org/program>
 - JASP site: <https://jasp-stats.org/>
+
+
+## Screencast
+
+%--
+video:
+ source: youtube
+ id: EscopTutorial
+ videoid: ICa0vPoYrYw
+ width: 640
+ height: 360
+ caption: |
+  The tutorial in video form.
+--%
+
 
 ## The tutorial
 
@@ -430,6 +441,51 @@ Your experiment is now finished! Click on the 'Run fullscreen' (`Control+R`) but
 __Tip__ — A test run is executed even faster by clicking the orange 'Run in window' button, which doesn't ask you how to save the logfile (and should therefore only be used for testing purposes).
 
 </div>
+
+
+## Extra assignments
+
+The solutions to these extra assingments can be found in the [experiment file](http://osf.io/jw7dr).
+
+### Extra 1: Add an instruction and goodbye screen
+
+Tips:
+
+- SKETCHPAD and FORM_TEXT_DISPLAY can present text
+- Good instructions are brief and concrete
+
+### Extra 2: Analyze the data
+
+Tips:
+
+- Run the experiment once on yourself
+- Open the data file in Excel, LibreOffice, or JASP
+
+### Extra 3: Divide the trials into multiple blocks
+
+Tips:
+
+- Use a break-if statement to break the loop after (say) 15 trials: `([count_trial_sequence]+1) % 15 = 0`
+- Add a new LOOP-SEQUENCE structure above the *block_loop* to repeat a block of trials multiple times
+- Disable the 'Evaluate on first cycle' option in the *block_loop* so that the break-if statement isn't evaluated when the `count_trial_sequence` variable doesn't yet exist
+- Enable the 'Resume after break' option in the *block_loop* to randomly sample without replacement from the LOOP table
+
+### Extra 4: Add accuracy and average response time feedback after every block
+
+First do Extra 3!
+
+Tips:
+
+- Use a FEEDBACK item to provide feedback
+- The variables `acc` and `avg_rt` contain the running accuracy and average reaction time
+
+### Extra 5: Counterbalance the response rule
+
+Tips:
+
+- The variable `subject_parity` is 'even' or 'odd'
+- This requires a simple INLINE_SCRIPT
+- Make sure that the instructions match the response rule!
 
 
 ## References
