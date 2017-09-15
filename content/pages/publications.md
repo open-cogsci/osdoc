@@ -20,6 +20,8 @@ If you make extensive use of modules such as SciPy/ NumPy, [PsychoPy][psycho], o
 
 Adamou, E., & Shen, X. R. (2017). There are no language switching costs when codeswitching is frequent. *International Journal of Bilingualism*. doi:10.1177/1367006917709094
 
+Albonico, A., & Barton, J. J. S. (2017). Face perception in pure alexia: Complementary contributions of the left fusiform gyrus to facial identity and facial speech processing. *Cortex*. doi:10.1016/j.cortex.2017.08.029
+
 Bahn, D., Vesker, M., García Alanis, J. C., Schwarzer, G., & Kauschke, C. (2017). Age-dependent positivity-bias in children’s processing of emotion terms. *Frontiers in Psychology*, 8. doi:10.3389/fpsyg.2017.01268
 
 Bonny, J. W., Lindberg, J. C., & Pacampara, M. C. (2017). Hip hop dance experience linked to sociocognitive ability. *PLoS ONE*, *12*(2), e0169947. doi:journal.pone.0169947
@@ -45,6 +47,8 @@ Garza, R., Heredia, R. R., & Cieślicka, A. B. (2017). An eye tracking examinati
 Gerván, P., Soltész, P., Filep, O., Berencsi, A., & Kovács, I. (2017). Posterior–anterior brain maturation reflected in perceptual, motor and cognitive performance. *Frontiers in Psychology*. doi:10.3389/fpsyg.2017.00674
 
 Graveline, Y. M., & Wamsley, E. J. (2017). The impact of sleep on novel concept learning. *Neurobiology of Learning and Memory*. doi:10.1016/j.nlm.2017.03.008
+
+Irrmischer, M., Sangiuliano Intra, F., Mansvelder, H. D., Poil, S.-S., & Linkenkaer-Hansen, K. (2017). Strong long-range temporal correlations of beta/gamma oscillations are associated with poor sustained visual attention performance. *European Journal of Neuroscience*. doi:10.1111/ejn.13672
 
 Joubert, S., Vallet, G. T., Montembeault, M., Boukadi, M., Wilson, M. A., Laforce, R. J., … Brambati, S. M. (2017). Comprehension of concrete and abstract words in semantic variant primary progressive aphasia and Alzheimer’s disease: A behavioral and neuroimaging study. *Brain and Language*, *170*, 93–102. doi:10.1016/j.bandl.2017.04.004
 
