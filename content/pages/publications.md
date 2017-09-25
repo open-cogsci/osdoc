@@ -30,6 +30,8 @@ Bernstein, E. E., Heeren, A., & McNally, R. J. (2017). Unpacking Rumination and 
 
 Çakır, M. P., Çakır, N. A., Ayaz, H., & Lee, F. J. (2016). Behavioral and neural effects of game-based learning on improving computational fluency with numbers. *Zeitschrift Für Psychologie*, *224*(4), 297–302. doi:10.1027/2151-2604/a000267
 
+Ćirić, M., & Đurđević, D. F. (2017). Procene konkretnosti reči zavise od stimulusnog konteksta. *Primenjena Psihologija*, *10*(3), 375–400. doi:10.19090/pp.2017.3.375-400
+
 Fairhurst, M. T., & Deroy, O. (2017). Testing the shared spatial representation of magnitude of auditory and visual intensity. *Journal of Experimental Psychology: Human Perception and Performance*, *43*(3), 629–637. doi:10.1037/xhp0000332
 
 Fairchild, S., & Papafragou, A. (2017). Flexible expectations of speaker informativeness shape pragmatic inference. *University of Pennsylvania Working Papers in Linguistics*, 23(1), 7.
@@ -41,6 +43,8 @@ Fido, D., Santo, M. G. E., Bloxsom, C. A. J., Gregson, M., & Sumich, A. L. (2017
 Formoso, J., Barreyro, J.P, Jacubovich, S., & Injoque-Ricle, I. (2017). Possible associations between subitizing, estimation
 and visuospatial working memory (VSWM) in
 children. *The Spanish Journal of Psychology*. doi:10.1017/sjp.2017.23
+
+Garaizar, P., & Vadillo, M. A. (2017). Metronome LKM: An open source virtual keyboard driver to measure experiment software latencies. *Behavior Research Methods*. doi:10.3758/s13428-017-0958-7
 
 Garza, R., Heredia, R. R., & Cieślicka, A. B. (2017). An eye tracking examination of men’s attractiveness by conceptive risk women. *Evolutionary Psychology*, *15*(1). doi:10.1177/1474704917690741
 
@@ -61,6 +65,8 @@ Kieslich, P. J., & Henninger, F. (2017). Mousetrap: An integrated, open-source m
 Klein, S. A., Hilbig, B. E., & Heck, D. W. (2016). Which is the greater good? A social dilemma paradigm disentangling environmentalism and cooperation. *Journal of Environmental Psychology*. doi:10.1016/j.jenvp.2017.06.001
 
 Krüger, A., Tünnermann, J., & Scharlau, I. (2017). Measuring and modeling salience with the theory of visual attention. *Attention, Perception, & Psychophysic*. doi:10.3758/s13414-017-1325-6
+
+Kuehner, C., Welz, A., Reinhard, I., & Alpers, G. W. (2017). Lab meets real life: A laboratory assessment of spontaneous thought and its ecological validity. *PLOS ONE*, *12*(9), e0184488. doi:10.1371/journal.pone.0184488
 
 Leibovich, T., & Ansari, D. (2017). Accumulation of non-numerical evidence during nonsymbolic number processing in the brain: An fMRI study. *Human Brain Mapping*. doi:10.1002/hbm.23703
 
