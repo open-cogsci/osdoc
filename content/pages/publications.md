@@ -32,6 +32,8 @@ Bernstein, E. E., Heeren, A., & McNally, R. J. (2017). Unpacking Rumination and 
 
 Ćirić, M., & Đurđević, D. F. (2017). Procene konkretnosti reči zavise od stimulusnog konteksta. *Primenjena Psihologija*, *10*(3), 375–400. doi:10.19090/pp.2017.3.375-400
 
+Declerck, M., Snell, J., & Grainger, J. (2017). On the role of language membership information during word recognition in bilinguals: Evidence from flanker-language congruency effects. *Psychonomic Bulletin & Review*. doi:10.3758/s13423-017-1374-9
+
 Fairhurst, M. T., & Deroy, O. (2017). Testing the shared spatial representation of magnitude of auditory and visual intensity. *Journal of Experimental Psychology: Human Perception and Performance*, *43*(3), 629–637. doi:10.1037/xhp0000332
 
 Fairchild, S., & Papafragou, A. (2017). Flexible expectations of speaker informativeness shape pragmatic inference. *University of Pennsylvania Working Papers in Linguistics*, 23(1), 7.
@@ -64,6 +66,8 @@ Kieslich, P. J., & Henninger, F. (2017). Mousetrap: An integrated, open-source m
 
 Klein, S. A., Hilbig, B. E., & Heck, D. W. (2016). Which is the greater good? A social dilemma paradigm disentangling environmentalism and cooperation. *Journal of Environmental Psychology*. doi:10.1016/j.jenvp.2017.06.001
 
+Kosonogov, V., Zorzi, L. D., Honoré, J., Martínez-Velázquez, E. S., Nandrino, J.-L., Martinez-Selva, J. M., & Sequeira, H. (2017). Facial thermal variations: A new marker of emotional arousal. *PLOS ONE*, *12*(9), e0183592. doi:10.1371/journal.pone.0183592
+
 Krüger, A., Tünnermann, J., & Scharlau, I. (2017). Measuring and modeling salience with the theory of visual attention. *Attention, Perception, & Psychophysic*. doi:10.3758/s13414-017-1325-6
 
 Kuehner, C., Welz, A., Reinhard, I., & Alpers, G. W. (2017). Lab meets real life: A laboratory assessment of spontaneous thought and its ecological validity. *PLOS ONE*, *12*(9), e0184488. doi:10.1371/journal.pone.0184488
@@ -89,6 +93,8 @@ Panagiotidi, M., Overton, P. G., & Stafford, T. (2017). Increased microsaccade r
 Parra, F., Miljkovitch, R., Persiaux, G., Morales, M., & Scherer, S. (2017). The multimodal assessment of adult attachment security: developing the biometric attachment test. *Journal of Medical Internet Research*, *19*(4), e100. doi:10.2196/jmir.6898
 
 Parsons, O. E., Bayliss, A. P., & Remington, A. (2017). A few of my favorite things: circumscribed interests in autism are not accompanied by increased attentional salience on a personalized selective attention task. *Molecular Autism*, *8*, 20. doi:10.1186/s13229-017-0132-1
+
+Poortman, E. B. (2017). Concept Typicality and the Interpretation of Plural Predicate Conjunction. In *Compositionality and Concepts in Linguistics and Psychology* (pp. 139–162). Springer, Cham. doi:10.1007/978-3-319-45977-6_6
 
 Quigley, M., & Reed, P. (2017). Over-selective responding in a diagnostic judgment task. *Applied Cognitive Psychology*. doi:10.1002/acp.3341
 
