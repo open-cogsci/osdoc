@@ -1,9 +1,10 @@
 <div class="ClassDoc YAMLDoc" id="items" markdown="1">
 
-# class __items__
+# instance __items__
 
 The `items` object provides dict-like access to the items. It's mainly
-useful for programatically executing items.
+useful for programatically executing items. An `items` object is created
+automatically when the experiment starts.
 
 In addition to the functions listed below, the following semantics are
 supported:
@@ -38,9 +39,6 @@ __Arguments:__
 
 </div>
 
-[items.execute]: #items-execute
-[execute]: #items-execute
-
 <div class="PropertyDoc YAMLDoc" id="items-items" markdown="1">
 
 ## property __items.items__
@@ -49,9 +47,6 @@ Returns a list of (item name, item object) tuples.
 
 </div>
 
-[items.items]: #items-items
-[items]: #items-items
-
 <div class="PropertyDoc YAMLDoc" id="items-keys" markdown="1">
 
 ## property __items.keys__
@@ -59,9 +54,6 @@ Returns a list of (item name, item object) tuples.
 Returns a list of item names.
 
 </div>
-
-[items.keys]: #items-keys
-[keys]: #items-keys
 
 <div class="FunctionDoc YAMLDoc" id="items-new" markdown="1">
 
@@ -99,9 +91,6 @@ The newly generated item.
 
 </div>
 
-[items.new]: #items-new
-[new]: #items-new
-
 <div class="FunctionDoc YAMLDoc" id="items-prepare" markdown="1">
 
 ## function __items\.prepare__\(name\)
@@ -115,9 +104,6 @@ __Arguments:__
 
 </div>
 
-[items.prepare]: #items-prepare
-[prepare]: #items-prepare
-
 <div class="FunctionDoc YAMLDoc" id="items-run" markdown="1">
 
 ## function __items\.run__\(name\)
@@ -130,9 +116,6 @@ __Arguments:__
 	- Type: str
 
 </div>
-
-[items.run]: #items-run
-[run]: #items-run
 
 <div class="FunctionDoc YAMLDoc" id="items-valid_name" markdown="1">
 
@@ -159,9 +142,6 @@ A unique name.
 
 </div>
 
-[items.valid_name]: #items-valid_name
-[valid_name]: #items-valid_name
-
 <div class="PropertyDoc YAMLDoc" id="items-values" markdown="1">
 
 ## property __items.values__
@@ -170,10 +150,5 @@ Returns a list of `item` objects.
 
 </div>
 
-[items.values]: #items-values
-[values]: #items-values
-
 </div>
-
-[items]: #items
 

@@ -1,8 +1,8 @@
-<div class="ClassDoc YAMLDoc" id="image" markdown="1">
+<div class="ClassDoc YAMLDoc" id="ImageWidget" markdown="1">
 
-# class __image__
+# class __ImageWidget__
 
-The image widget is used to display a non-interactive image.
+The `Image` widget is used to display a non-interactive image.
 
 __Example (OpenSesame script):__
 
@@ -13,23 +13,25 @@ widget 0 0 1 1 image path='5.png'
 __Example (Python):__
 
 ~~~ .python
-from libopensesame import widgets
-form = widgets.form(exp)
+form = Form()
 # The full path to the image needs to be provided.
 # self.experiment.pool can be used to retrieve the full path
 # to an image in the file pool.
-image = widgets.image(form, path=pool['5.png'])
+image = ImageWidget(path=pool['5.png'])
 form.set_widget(image, (0,0))
 form._exec()
 ~~~
 
 [TOC]
 
-<div class="FunctionDoc YAMLDoc" id="image-__init__" markdown="1">
+<div class="FunctionDoc YAMLDoc" id="ImageWidget-__init__" markdown="1">
 
-## function __image\.\_\_init\_\___\(form, path=None, adjust=True, frame=False\)
+## function __ImageWidget\.\_\_init\_\___\(form, path=None, adjust=True, frame=False\)
 
-Constructor.
+Constructor to create a new `ImageWidget` object. You do not
+generally call this constructor directly, but use the
+`ImageWidget()` factory function, which is described here:
+[/python/common/]().
 
 __Arguments:__
 
@@ -50,12 +52,25 @@ __Keywords:__
 
 </div>
 
-[image.__init__]: #image-__init__
-[__init__]: #image-__init__
+<div class="FunctionDoc YAMLDoc" id="ImageWidget-_init_canvas_elements" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="image-draw_frame" markdown="1">
+## function __ImageWidget\.\_init\_canvas\_elements__\(\)
 
-## function __image\.draw\_frame__\(rect=None, style=u'normal'\)
+Initializes all canvas elements.
+
+</div>
+
+<div class="FunctionDoc YAMLDoc" id="ImageWidget-_update" markdown="1">
+
+## function __ImageWidget\.\_update__\(\)
+
+Draws the widget.
+
+</div>
+
+<div class="FunctionDoc YAMLDoc" id="ImageWidget-_update_frame" markdown="1">
+
+## function __ImageWidget\.\_update\_frame__\(rect=None, style=u'normal'\)
 
 Draws a simple frame around the widget.
 
@@ -70,12 +85,30 @@ __Keywords:__
 
 </div>
 
-[image.draw_frame]: #image-draw_frame
-[draw_frame]: #image-draw_frame
+<div class="FunctionDoc YAMLDoc" id="ImageWidget-coroutine" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="image-on_mouse_click" markdown="1">
+## function __ImageWidget\.coroutine__\(\)
 
-## function __image\.on\_mouse\_click__\(pos\)
+Implements the interaction. This can be overridden to implement more complicated keyboard/ mouse interactions.
+
+</div>
+
+<div class="FunctionDoc YAMLDoc" id="ImageWidget-on_key_press" markdown="1">
+
+## function __ImageWidget\.on\_key\_press__\(key\)
+
+Is called whenever the widget is focused and the users enters a key.
+
+__Arguments:__
+
+- `key` -- A key
+	- Type: str
+
+</div>
+
+<div class="FunctionDoc YAMLDoc" id="ImageWidget-on_mouse_click" markdown="1">
+
+## function __ImageWidget\.on\_mouse\_click__\(pos\)
 
 Is called whenever the user clicks on the widget.
 
@@ -86,23 +119,9 @@ __Arguments:__
 
 </div>
 
-[image.on_mouse_click]: #image-on_mouse_click
-[on_mouse_click]: #image-on_mouse_click
+<div class="FunctionDoc YAMLDoc" id="ImageWidget-set_rect" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="image-render" markdown="1">
-
-## function __image\.render__\(\)
-
-Draws the widget.
-
-</div>
-
-[image.render]: #image-render
-[render]: #image-render
-
-<div class="FunctionDoc YAMLDoc" id="image-set_rect" markdown="1">
-
-## function __image\.set\_rect__\(rect\)
+## function __ImageWidget\.set\_rect__\(rect\)
 
 Sets the widget geometry.
 
@@ -113,12 +132,9 @@ __Arguments:__
 
 </div>
 
-[image.set_rect]: #image-set_rect
-[set_rect]: #image-set_rect
+<div class="FunctionDoc YAMLDoc" id="ImageWidget-set_var" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="image-set_var" markdown="1">
-
-## function __image\.set\_var__\(val, var=None\)
+## function __ImageWidget\.set\_var__\(val, var=None\)
 
 Sets an experimental variable.
 
@@ -134,10 +150,5 @@ __Keywords:__
 
 </div>
 
-[image.set_var]: #image-set_var
-[set_var]: #image-set_var
-
 </div>
-
-[image]: #image
 

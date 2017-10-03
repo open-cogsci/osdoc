@@ -1,14 +1,16 @@
-<div class="ClassDoc YAMLDoc" id="sampler" markdown="1">
+<div class="ClassDoc YAMLDoc" id="Sampler" markdown="1">
 
-# class __sampler__
+# class __Sampler__
 
-The SAMPLER module provides functionality to play sound samples.
+The `Sampler` class provides functionality to play sound samples. You
+generally create a `Sampler` object with the `Sampler()` factory
+function.
 
 __Example:__
 
 ~~~ .python
 src = pool['bark.ogg']
-my_sampler = sampler(src, volume=.5)
+my_sampler = Sampler(src, volume=.5)
 my_sampler.play()
 ~~~
 
@@ -73,8 +75,8 @@ arguments:
   playback or not (`False`).
 
 ~~~ .python
-src = exp.pool['bark.ogg']
-my_sampler = sampler(src)
+src = pool['bark.ogg']
+my_sampler = Sampler(src)
 my_sampler.play(volume=.5, pan='left')
 ~~~
 
@@ -83,8 +85,8 @@ to [sampler.\_\_init\_\_][__init__]). To change the behavior for all
 subsequent operations, set the playback properties directly:
 
 ~~~ .python
-src = exp.pool['bark.ogg']
-my_sampler = sampler(src)
+src = pool['bark.ogg']
+my_sampler = Sampler(src)
 my_sampler.volume = .5
 my_sampler.pan = 'left'
 my_sampler.play()
@@ -94,25 +96,25 @@ my_sampler.play()
 Or pass the playback keywords to [sampler.\_\_init\_\_][__init__]:
 
 ~~~ .python
-src = exp.pool['bark.ogg']
-my_sampler = sampler(src, volume=.5, pan='left')
+src = pool['bark.ogg']
+my_sampler = Sampler(src, volume=.5, pan='left')
 my_sampler.play()
 my_sampler.play()
 ~~~
 
-<div class="FunctionDoc YAMLDoc" id="sampler-__init__" markdown="1">
+<div class="FunctionDoc YAMLDoc" id="Sampler-__init__" markdown="1">
 
-## function __sampler\.\_\_init\_\___\(experiment, src, \*\*playback\_args\)
+## function __Sampler\.\_\_init\_\___\(experiment, src, \*\*playback\_args\)
 
 Constructor to create a new SAMPLER object. You do not generally
-call this constructor directly, but use the `sampler()` function,
+call this constructor directly, but use the `Sampler()` function,
 which is described here: [/python/sampler/]().
 
 __Example:__
 
 ~~~ .python
-src = exp.pool[u'my_sound.ogg']
-my_sampler = sampler(src, volume=.5)
+src = pool[u'my_sound.ogg']
+my_sampler = Sampler(src, volume=.5)
 ~~~
 
 __Arguments:__
@@ -128,12 +130,9 @@ __Keyword dict:__
 
 </div>
 
-[sampler.__init__]: #sampler-__init__
-[__init__]: #sampler-__init__
+<div class="FunctionDoc YAMLDoc" id="Sampler-close_sound" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="sampler-close_sound" markdown="1">
-
-## function __sampler\.close\_sound__\(experiment\)
+## function __Sampler\.close\_sound__\(experiment\)
 
 Closes the mixer after the experiment is finished.
 
@@ -144,12 +143,9 @@ __Arguments:__
 
 </div>
 
-[sampler.close_sound]: #sampler-close_sound
-[close_sound]: #sampler-close_sound
+<div class="FunctionDoc YAMLDoc" id="Sampler-init_sound" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="sampler-init_sound" markdown="1">
-
-## function __sampler\.init\_sound__\(experiment\)
+## function __Sampler\.init\_sound__\(experiment\)
 
 Initializes the pygame mixer before the experiment begins.
 
@@ -160,12 +156,9 @@ __Arguments:__
 
 </div>
 
-[sampler.init_sound]: #sampler-init_sound
-[init_sound]: #sampler-init_sound
+<div class="FunctionDoc YAMLDoc" id="Sampler-is_playing" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="sampler-is_playing" markdown="1">
-
-## function __sampler\.is\_playing__\(\)
+## function __Sampler\.is\_playing__\(\)
 
 Checks if a sound is currently playing.
 
@@ -177,20 +170,17 @@ True if a sound is playing, False if not.
 
 </div>
 
-[sampler.is_playing]: #sampler-is_playing
-[is_playing]: #sampler-is_playing
+<div class="FunctionDoc YAMLDoc" id="Sampler-pause" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="sampler-pause" markdown="1">
-
-## function __sampler\.pause__\(\)
+## function __Sampler\.pause__\(\)
 
 Pauses playback (if any).
 
 __Example:__
 
 ~~~ .python
-src = exp.pool[u'my_sound.ogg']
-my_sampler = sampler(src)
+src = pool[u'my_sound.ogg']
+my_sampler = Sampler(src)
 my_sampler.play()
 sleep(100)
 my_sampler.pause()
@@ -200,20 +190,17 @@ my_sampler.resume()
 
 </div>
 
-[sampler.pause]: #sampler-pause
-[pause]: #sampler-pause
+<div class="FunctionDoc YAMLDoc" id="Sampler-play" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="sampler-play" markdown="1">
-
-## function __sampler\.play__\(\*\*playback\_args\)
+## function __Sampler\.play__\(\*\*playback\_args\)
 
 Plays the sound.
 
 __Example:__
 
 ~~~ .python
-src = exp.pool[u'my_sound.ogg']
-my_sampler = sampler(src)
+src = pool[u'my_sound.ogg']
+my_sampler = Sampler(src)
 my_sampler.play(pitch=.5, block=True)
 ~~~
 
@@ -223,20 +210,17 @@ __Keyword dict:__
 
 </div>
 
-[sampler.play]: #sampler-play
-[play]: #sampler-play
+<div class="FunctionDoc YAMLDoc" id="Sampler-resume" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="sampler-resume" markdown="1">
-
-## function __sampler\.resume__\(\)
+## function __Sampler\.resume__\(\)
 
 Resumes playback (if any).
 
 __Example:__
 
 ~~~ .python
-src = exp.pool[u'my_sound.ogg']
-my_sampler = sampler(src)
+src = pool[u'my_sound.ogg']
+my_sampler = Sampler(src)
 my_sampler.play()
 sleep(100)
 my_sampler.pause()
@@ -246,20 +230,17 @@ my_sampler.resume()
 
 </div>
 
-[sampler.resume]: #sampler-resume
-[resume]: #sampler-resume
+<div class="FunctionDoc YAMLDoc" id="Sampler-stop" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="sampler-stop" markdown="1">
-
-## function __sampler\.stop__\(\)
+## function __Sampler\.stop__\(\)
 
 Stops the currently playing sound (if any).
 
 __Example:__
 
 ~~~ .python
-src = exp.pool[u'my_sound.ogg']
-my_sampler = sampler(src)
+src = pool[u'my_sound.ogg']
+my_sampler = Sampler(src)
 my_sampler.play()
 sleep(100)
 my_sampler.stop()
@@ -267,20 +248,17 @@ my_sampler.stop()
 
 </div>
 
-[sampler.stop]: #sampler-stop
-[stop]: #sampler-stop
+<div class="FunctionDoc YAMLDoc" id="Sampler-wait" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="sampler-wait" markdown="1">
-
-## function __sampler\.wait__\(\)
+## function __Sampler\.wait__\(\)
 
 Blocks until the sound has finished playing or returns right away if no sound is playing.
 
 __Example:__
 
 ~~~ .python
-src = exp.pool[u'my_sound.ogg']
-my_sampler = sampler(src)
+src = pool[u'my_sound.ogg']
+my_sampler = Sampler(src)
 my_sampler.play()
 my_sampler.wait()
 print('The sampler is finished!')
@@ -288,10 +266,5 @@ print('The sampler is finished!')
 
 </div>
 
-[sampler.wait]: #sampler-wait
-[wait]: #sampler-wait
-
 </div>
-
-[sampler]: #sampler
 

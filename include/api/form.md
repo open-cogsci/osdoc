@@ -1,29 +1,30 @@
-<div class="ClassDoc YAMLDoc" id="form" markdown="1">
+<div class="ClassDoc YAMLDoc" id="Form" markdown="1">
 
-# class __form__
+# class __Form__
 
-The `form` is a container for widgets, such as labels, etc. If you use the
-FORM_BASE plug-in in combination with OpenSesame script, you do not need
-to explicitly create a form. However, if you use Python inline code, you
-do.
+The `Form` is a container for widgets, such as labels, etc. If you use
+the FORM_BASE plug-in in combination with OpenSesame script, you do not
+need to explicitly create a `Form` object. However, if you use Python
+inline code, you do.
 
 __Example__:
 
 ~~~ .python
-from libopensesame import widgets
-form = widgets.form(exp)
-label = widgets.label(form, text='label)
+form = Form()
+label = Label(text='label)
 form.set_widget(label, (0,0))
 form._exec()
 ~~~
 
 [TOC]
 
-<div class="FunctionDoc YAMLDoc" id="form-__init__" markdown="1">
+<div class="FunctionDoc YAMLDoc" id="Form-__init__" markdown="1">
 
-## function __form\.\_\_init\_\___\(experiment, cols=2, rows=2, spacing=10, margins=\(100, 100, 100, 100\), theme=u'gray', item=None, timeout=None, clicks=False\)
+## function __Form\.\_\_init\_\___\(experiment, cols=2, rows=2, spacing=10, margins=\(100, 100, 100, 100\), theme=u'gray', item=None, timeout=None, clicks=False, validator=None\)
 
-Constructor.
+Constructor to create a new `Form` object. You do not generally
+call this constructor directly, but use the `Form()` factory
+function, which is described here: [/python/common/]().
 
 __Arguments:__
 
@@ -56,15 +57,15 @@ __Keywords:__
 - `clicks` -- If enabled, an auditory click is played on user interactions. This can help to make interactions feel smoother if there is some visual lag.
 	- Type: bool
 	- Default: False
+- `validator` -- A function that takes no arguments and returns True if the foru is successfully validated, and False if not.
+	- Type: FunctionType, NoneType
+	- Default: None
 
 </div>
 
-[form.__init__]: #form-__init__
-[__init__]: #form-__init__
+<div class="FunctionDoc YAMLDoc" id="Form-_exec" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="form-_exec" markdown="1">
-
-## function __form\.\_exec__\(focus\_widget=None\)
+## function __Form\.\_exec__\(focus\_widget=None\)
 
 Executes the form.
 
@@ -80,12 +81,9 @@ Gives the return value of the form, which depends on how the user interacted wit
 
 </div>
 
-[form._exec]: #form-_exec
-[_exec]: #form-_exec
+<div class="FunctionDoc YAMLDoc" id="Form-cell_index" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="form-cell_index" markdown="1">
-
-## function __form\.cell\_index__\(pos\)
+## function __Form\.cell\_index__\(pos\)
 
 Converts a position to a cell index. A cell index corresponds to the number of the cell in the form, from left-to-right, top-to-bottom.
 
@@ -102,23 +100,9 @@ A cell index.
 
 </div>
 
-[form.cell_index]: #form-cell_index
-[cell_index]: #form-cell_index
+<div class="FunctionDoc YAMLDoc" id="Form-set_widget" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="form-render" markdown="1">
-
-## function __form\.render__\(\)
-
-Draws the form and all the widgets in it.
-
-</div>
-
-[form.render]: #form-render
-[render]: #form-render
-
-<div class="FunctionDoc YAMLDoc" id="form-set_widget" markdown="1">
-
-## function __form\.set\_widget__\(widget, pos, colspan=1, rowspan=1\)
+## function __Form\.set\_widget__\(widget, pos, colspan=1, rowspan=1\)
 
 Adds a widget to the form.
 
@@ -140,12 +124,9 @@ __Keywords:__
 
 </div>
 
-[form.set_widget]: #form-set_widget
-[set_widget]: #form-set_widget
+<div class="FunctionDoc YAMLDoc" id="Form-xy_to_index" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="form-xy_to_index" markdown="1">
-
-## function __form\.xy\_to\_index__\(xy\)
+## function __Form\.xy\_to\_index__\(xy\)
 
 Converts a coordinate in pixels to a cell index. This allows you to determine on which widget a user has clicked.
 
@@ -162,10 +143,5 @@ A cell index.
 
 </div>
 
-[form.xy_to_index]: #form-xy_to_index
-[xy_to_index]: #form-xy_to_index
-
 </div>
-
-[form]: #form
 

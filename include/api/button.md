@@ -1,9 +1,9 @@
-<div class="ClassDoc YAMLDoc" id="button" markdown="1">
+<div class="ClassDoc YAMLDoc" id="Button" markdown="1">
 
-# class __button__
+# class __Button__
 
-The button widget is a clickable text string, by default surrounded by a
-button-like frame.
+The `Button` widget is a clickable text string, by default surrounded by
+a button-like frame.
 
 __Example (OpenSesame script):__
 
@@ -16,21 +16,21 @@ Defining a button widget with Python inline code:
 __Example (Python):__
 
 ~~~ .python
-from libopensesame import widgets
-form = widgets.form(exp)
-button = widgets.button(form, text='Click me!', frame=True, center=True,
-        var='response')
+form = Form()
+button = Button(text='Click me!', frame=True, center=True, var='response')
 form.set_widget(button, (0,0))
 form._exec()
 ~~~
 
 [TOC]
 
-<div class="FunctionDoc YAMLDoc" id="button-__init__" markdown="1">
+<div class="FunctionDoc YAMLDoc" id="Button-__init__" markdown="1">
 
-## function __button\.\_\_init\_\___\(form, text=u'button', frame=True, center=True, var=None\)
+## function __Button\.\_\_init\_\___\(form, text=u'button', frame=True, center=True, var=None\)
 
-Constructor.
+Constructor to create a new `Button` object. You do not generally
+call this constructor directly, but use the `Button()` factory
+function, which is described here: [/python/common/]().
 
 __Arguments:__
 
@@ -54,12 +54,25 @@ __Keywords:__
 
 </div>
 
-[button.__init__]: #button-__init__
-[__init__]: #button-__init__
+<div class="FunctionDoc YAMLDoc" id="Button-_init_canvas_elements" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="button-draw_frame" markdown="1">
+## function __Button\.\_init\_canvas\_elements__\(\)
 
-## function __button\.draw\_frame__\(rect=None, style=u'normal'\)
+Initializes all canvas elements.
+
+</div>
+
+<div class="FunctionDoc YAMLDoc" id="Button-_update" markdown="1">
+
+## function __Button\.\_update__\(\)
+
+Draws the widget.
+
+</div>
+
+<div class="FunctionDoc YAMLDoc" id="Button-_update_frame" markdown="1">
+
+## function __Button\.\_update\_frame__\(rect=None, style=u'normal'\)
 
 Draws a simple frame around the widget.
 
@@ -74,12 +87,9 @@ __Keywords:__
 
 </div>
 
-[button.draw_frame]: #button-draw_frame
-[draw_frame]: #button-draw_frame
+<div class="FunctionDoc YAMLDoc" id="Button-_update_text" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="button-draw_text" markdown="1">
-
-## function __button\.draw\_text__\(text, html=True\)
+## function __Button\.\_update\_text__\(text\)
 
 Draws text inside the widget.
 
@@ -88,20 +98,32 @@ __Arguments:__
 - `text` -- The text to draw.
 	- Type: str, unicode
 
-__Keywords:__
+</div>
 
-- `html` -- Indicates whether HTML should be parsed.
-	- Type: bool
-	- Default: True
+<div class="FunctionDoc YAMLDoc" id="Button-coroutine" markdown="1">
+
+## function __Button\.coroutine__\(\)
+
+Implements the interaction. This can be overridden to implement more complicated keyboard/ mouse interactions.
 
 </div>
 
-[button.draw_text]: #button-draw_text
-[draw_text]: #button-draw_text
+<div class="FunctionDoc YAMLDoc" id="Button-on_key_press" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="button-on_mouse_click" markdown="1">
+## function __Button\.on\_key\_press__\(key\)
 
-## function __button\.on\_mouse\_click__\(pos\)
+Is called whenever the widget is focused and the users enters a key.
+
+__Arguments:__
+
+- `key` -- A key
+	- Type: str
+
+</div>
+
+<div class="FunctionDoc YAMLDoc" id="Button-on_mouse_click" markdown="1">
+
+## function __Button\.on\_mouse\_click__\(pos\)
 
 Is called when the user clicks on the button. Returns the button text.
 
@@ -118,23 +140,9 @@ The button text.
 
 </div>
 
-[button.on_mouse_click]: #button-on_mouse_click
-[on_mouse_click]: #button-on_mouse_click
+<div class="FunctionDoc YAMLDoc" id="Button-set_rect" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="button-render" markdown="1">
-
-## function __button\.render__\(\)
-
-Draws the widget.
-
-</div>
-
-[button.render]: #button-render
-[render]: #button-render
-
-<div class="FunctionDoc YAMLDoc" id="button-set_rect" markdown="1">
-
-## function __button\.set\_rect__\(rect\)
+## function __Button\.set\_rect__\(rect\)
 
 Sets the widget geometry.
 
@@ -145,12 +153,9 @@ __Arguments:__
 
 </div>
 
-[button.set_rect]: #button-set_rect
-[set_rect]: #button-set_rect
+<div class="FunctionDoc YAMLDoc" id="Button-set_var" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="button-set_var" markdown="1">
-
-## function __button\.set\_var__\(val, var=None\)
+## function __Button\.set\_var__\(val, var=None\)
 
 Sets an experimental variable.
 
@@ -166,10 +171,5 @@ __Keywords:__
 
 </div>
 
-[button.set_var]: #button-set_var
-[set_var]: #button-set_var
-
 </div>
-
-[button]: #button
 

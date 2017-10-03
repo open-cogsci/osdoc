@@ -1,14 +1,16 @@
-<div class="ClassDoc YAMLDoc" id="keyboard" markdown="1">
+<div class="ClassDoc YAMLDoc" id="Keyboard" markdown="1">
 
-# class __keyboard__
+# class __Keyboard__
 
-The `keyboard` class is used to collect keyboard responses.
+The `Keyboard` class is used to collect keyboard responses. You
+generally create a `Keyboard` object with the `Keyboard()` factory
+function.
 
 __Example:__
 
 ~~~ .python
 # Wait for a 'z' or 'x' key with a timeout of 3000 ms
-my_keyboard = keyboard(keylist=['z', 'x'], timeout=3000)
+my_keyboard = Keyboard(keylist=['z', 'x'], timeout=3000)
 start_time = clock.time()
 key, end_time = my_keyboard.get_key()
 var.response = key
@@ -47,7 +49,7 @@ arguments:
 
 ~~~ .python
 # Get a left or right arrow press with a timeout of 3000 ms
-my_keyboard = keyboard()
+my_keyboard = Keyboard()
 key, time = my_keyboard.get_key(keylist=[u'left', u'right'],
         timeout=3000)
 ~~~
@@ -58,7 +60,7 @@ subsequent operations, set the response properties directly:
 
 ~~~ .python
 # Get two key A or B presses with a 5000 ms timeout
-my_keyboard = keyboard()
+my_keyboard = Keyboard()
 my_keyboard.keylist = [u'a', u'b']
 my_keyboard.timeout = 5000
 key1, time1 = my_keyboard.get_key()
@@ -69,23 +71,23 @@ Or pass the response options to [keyboard.\_\_init\_\_][__init__]:
 
 ~~~ .python
 # Get two key A or B presses with a 5000 ms timeout
-my_keyboard = keyboard(keylist=[u'a', u'b'], timeout=5000)
+my_keyboard = Keyboard(keylist=[u'a', u'b'], timeout=5000)
 key1, time1 = my_keyboard.get_key()
 key2, time2 = my_keyboard.get_key()
 ~~~
 
-<div class="FunctionDoc YAMLDoc" id="keyboard-__init__" markdown="1">
+<div class="FunctionDoc YAMLDoc" id="Keyboard-__init__" markdown="1">
 
-## function __keyboard\.\_\_init\_\___\(experiment, \*\*resp\_args\)
+## function __Keyboard\.\_\_init\_\___\(experiment, \*\*resp\_args\)
 
-Constructor to create a new `keyboard` object. You do not generally
-call this constructor directly, but use the `keyboard()` function,
+Constructor to create a new `Keyboard` object. You do not generally
+call this constructor directly, but use the `Keyboard()` function,
 which is described here: [/python/common/]().
 
 __Example:__
 
 ~~~ .python
-my_keyboard = keyboard(keylist=['z', 'm'], timeout=2000)
+my_keyboard = Keyboard(keylist=['z', 'm'], timeout=2000)
 ~~~
 
 __Arguments:__
@@ -95,16 +97,13 @@ __Arguments:__
 
 __Keyword dict:__
 
-- `**resp_args`: Optional [response keywords] (`timeout` and `keylist`) that will be used as the default for this `keyboard` object.
+- `**resp_args`: Optional [response keywords] (`timeout` and `keylist`) that will be used as the default for this `Keyboard` object.
 
 </div>
 
-[keyboard.__init__]: #keyboard-__init__
-[__init__]: #keyboard-__init__
+<div class="FunctionDoc YAMLDoc" id="Keyboard-flush" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="keyboard-flush" markdown="1">
-
-## function __keyboard\.flush__\(\)
+## function __Keyboard\.flush__\(\)
 
 Clears all pending keyboard input, not limited to the keyboard.
 
@@ -116,19 +115,16 @@ True if a key had been pressed (i.e., if there was something to flush) and False
 
 </div>
 
-[keyboard.flush]: #keyboard-flush
-[flush]: #keyboard-flush
+<div class="FunctionDoc YAMLDoc" id="Keyboard-get_key" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="keyboard-get_key" markdown="1">
-
-## function __keyboard\.get\_key__\(\*\*resp\_args\)
+## function __Keyboard\.get\_key__\(\*\*resp\_args\)
 
 Collects a single key press.
 
 __Example:__
 
 ~~~ .python
-my_keyboard = keyboard()
+my_keyboard = Keyboard()
 response, timestamp = my_keyboard.get_key(timeout=5000)
 if response is None:
         print(u'A timeout occurred!')
@@ -146,19 +142,16 @@ A `(key, timestamp)` tuple. `key` is None if a timeout occurs.
 
 </div>
 
-[keyboard.get_key]: #keyboard-get_key
-[get_key]: #keyboard-get_key
+<div class="FunctionDoc YAMLDoc" id="Keyboard-get_mods" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="keyboard-get_mods" markdown="1">
-
-## function __keyboard\.get\_mods__\(\)
+## function __Keyboard\.get\_mods__\(\)
 
 Returns a list of keyboard moderators (e.g., shift, alt, etc.) that are currently pressed.
 
 __Example:__
 
 ~~~ .python
-my_keyboard = keyboard()
+my_keyboard = Keyboard()
 moderators = my_keyboard.get_mods()
 if u'shift' in moderators:
         print(u'The shift-key is down!')
@@ -172,12 +165,9 @@ A list of keyboard moderators. An empty list is returned if no moderators are pr
 
 </div>
 
-[keyboard.get_mods]: #keyboard-get_mods
-[get_mods]: #keyboard-get_mods
+<div class="FunctionDoc YAMLDoc" id="Keyboard-show_virtual_keyboard" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="keyboard-show_virtual_keyboard" markdown="1">
-
-## function __keyboard\.show\_virtual\_keyboard__\(visible=True\)
+## function __Keyboard\.show\_virtual\_keyboard__\(visible=True\)
 
 Shows or hides a virtual keyboard if this is supported by the
 back-end. This function is only necessary if you want the virtual
@@ -191,7 +181,7 @@ keyboards.
 __Example:__
 
 ~~~ .python
-my_keyboard = keyboard()
+my_keyboard = Keyboard()
 my_keyboard.show_virtual_keyboard(True)
 response1, timestamp2 = my_keyboard.get_key()
 response2, timestamp2 = my_keyboard.get_key()
@@ -206,10 +196,5 @@ __Keywords:__
 
 </div>
 
-[keyboard.show_virtual_keyboard]: #keyboard-show_virtual_keyboard
-[show_virtual_keyboard]: #keyboard-show_virtual_keyboard
-
 </div>
-
-[keyboard]: #keyboard
 

@@ -2,11 +2,11 @@
 
  
 
-<div class="FunctionDoc YAMLDoc" id="canvas" markdown="1">
+<div class="FunctionDoc YAMLDoc" id="Canvas" markdown="1">
 
-## function __canvas__\(auto\_prepare=True, \*\*style\_args\)
+## function __Canvas__\(auto\_prepare=True, \*\*style\_args\)
 
-A convenience function that creates a new `canvas` object. For a
+A factory function that creates a new `Canvas` object. For a
 description of possible keywords, see:
 
 - %link:manual/python/canvas%
@@ -14,7 +14,7 @@ description of possible keywords, see:
 __Example:__
 
 ~~~ .python
-my_canvas = canvas(color=u'red', penwidth=2)
+my_canvas = Canvas(color=u'red', penwidth=2)
 my_canvas.line(-10, -10, 10, 10)
 my_canvas.line(-10, 10, 10, -10)
 my_canvas.show()
@@ -37,7 +37,132 @@ A CANVAS object.
 
 </div>
 
-[canvas]: #canvas
+<div class="FunctionDoc YAMLDoc" id="Keyboard" markdown="1">
+
+## function __Keyboard__\(\*\*resp\_args\)
+
+A factory function that creates a new `Keyboard` object. For a
+description of possible keywords, see:
+
+- %link:manual/python/keyboard%
+
+__Example:__
+
+~~~ .python
+my_keyboard = Keyboard(keylist=[u'a', u'b'], timeout=5000)
+key, time = my_keyboard.get_key()
+~~~
+
+__Keyword dict:__
+
+- `**resp_args`: No description.
+
+__Returns:__
+
+A `Keyboard` object.
+
+- Type: keyboard
+
+</div>
+
+<div class="FunctionDoc YAMLDoc" id="Mouse" markdown="1">
+
+## function __Mouse__\(\*\*resp\_args\)
+
+A factory function that creates a new `Mouse` object. For a
+description of possible keywords, see:
+
+- %link:manual/python/mouse%
+
+__Example:__
+
+~~~ .python
+my_mouse = Mouse(keylist=[1,3], timeout=5000)
+button, time = my_mouse.get_button()
+~~~
+
+__Keyword dict:__
+
+- `**resp_args`: No description.
+
+__Returns:__
+
+A `mouse` object.
+
+- Type: mouse
+
+</div>
+
+<div class="FunctionDoc YAMLDoc" id="Sampler" markdown="1">
+
+## function __Sampler__\(src, \*\*playback\_args\)
+
+A factory function that creates a new `Sampler` object. For a
+description of possible keywords, see:
+
+- %link:manual/python/sampler%
+
+__Example:__
+
+~~~ .python
+src = pool['bark.ogg']
+my_sampler = Sampler(src, volume=.5, pan='left')
+my_sampler.play()
+~~~
+
+__Arguments:__
+
+- `src` -- No description
+
+__Keyword dict:__
+
+- `**playback_args`: No description.
+
+__Returns:__
+
+A SAMPLER object.
+
+- Type: sampler
+
+</div>
+
+<div class="FunctionDoc YAMLDoc" id="Synth" markdown="1">
+
+## function __Synth__\(osc=u'sine', freq=440, length=100, attack=0, decay=5\)
+
+A factory function that synthesizes a sound and returns it as a `Sampler` object.
+
+__Example:__
+
+~~~ .python
+my_sampler = Synth(freq=u'b2', length=500)
+~~~
+
+__Keywords:__
+
+- `osc` -- Oscillator, can be "sine", "saw", "square" or "white_noise".
+	- Type: str, unicode
+	- Default: 'sine'
+- `freq` -- Frequency, either an integer value (value in hertz) or a string ("A1", "eb2", etc.).
+	- Type: str, unicode, int, float
+	- Default: 440
+- `length` -- The length of the sound in milliseconds.
+	- Type: int, float
+	- Default: 100
+- `attack` -- The attack (fade-in) time in milliseconds.
+	- Type: int, float
+	- Default: 0
+- `decay` -- The decay (fade-out) time in milliseconds.
+	- Type: int, float
+	- Default: 5
+
+__Returns:__
+
+A SAMPLER object.
+
+- Type: sampler
+
+</div>
 
 <div class="FunctionDoc YAMLDoc" id="copy_sketchpad" markdown="1">
 
@@ -65,68 +190,6 @@ A copy of the `sketchpad`'s canvas.
 
 </div>
 
-[copy_sketchpad]: #copy_sketchpad
-
-<div class="FunctionDoc YAMLDoc" id="keyboard" markdown="1">
-
-## function __keyboard__\(\*\*resp\_args\)
-
-A convenience function that creates a new `keyboard` object. For a
-description of possible keywords, see:
-
-- %link:manual/python/keyboard%
-
-__Example:__
-
-~~~ .python
-my_keyboard = keyboard(keylist=[u'a', u'b'], timeout=5000)
-key, time = my_keyboard.get_key()
-~~~
-
-__Keyword dict:__
-
-- `**resp_args`: No description.
-
-__Returns:__
-
-A `keyboard` object.
-
-- Type: keyboard
-
-</div>
-
-[keyboard]: #keyboard
-
-<div class="FunctionDoc YAMLDoc" id="mouse" markdown="1">
-
-## function __mouse__\(\*\*resp\_args\)
-
-A convenience function that creates a new `mouse` object. For a
-description of possible keywords, see:
-
-- %link:manual/python/mouse%
-
-__Example:__
-
-~~~ .python
-my_mouse = mouse(keylist=[1,3], timeout=5000)
-button, time = my_mouse.get_button()
-~~~
-
-__Keyword dict:__
-
-- `**resp_args`: No description.
-
-__Returns:__
-
-A `mouse` object.
-
-- Type: mouse
-
-</div>
-
-[mouse]: #mouse
-
 <div class="FunctionDoc YAMLDoc" id="pause" markdown="1">
 
 ## function __pause__\(\)
@@ -134,8 +197,6 @@ A `mouse` object.
 Pauses the experiment.
 
 </div>
-
-[pause]: #pause
 
 <div class="FunctionDoc YAMLDoc" id="reset_feedback" markdown="1">
 
@@ -150,43 +211,6 @@ reset_feedback()
 ~~~
 
 </div>
-
-[reset_feedback]: #reset_feedback
-
-<div class="FunctionDoc YAMLDoc" id="sampler" markdown="1">
-
-## function __sampler__\(src, \*\*playback\_args\)
-
-A convenience function that creates a new `sampler` object. For a
-description of possible keywords, see:
-
-- %link:manual/python/sampler%
-
-__Example:__
-
-~~~ .python
-src = exp.pool['bark.ogg']
-my_sampler = sampler(src, volume=.5, pan='left')
-my_sampler.play()
-~~~
-
-__Arguments:__
-
-- `src` -- No description
-
-__Keyword dict:__
-
-- `**playback_args`: No description.
-
-__Returns:__
-
-A SAMPLER object.
-
-- Type: sampler
-
-</div>
-
-[sampler]: #sampler
 
 <div class="FunctionDoc YAMLDoc" id="set_subject_nr" markdown="1">
 
@@ -208,8 +232,6 @@ __Arguments:__
 	- Type: int
 
 </div>
-
-[set_subject_nr]: #set_subject_nr
 
 <div class="FunctionDoc YAMLDoc" id="sometimes" markdown="1">
 
@@ -240,48 +262,6 @@ True or False
 - Type: bool
 
 </div>
-
-[sometimes]: #sometimes
-
-<div class="FunctionDoc YAMLDoc" id="synth" markdown="1">
-
-## function __synth__\(osc=u'sine', freq=440, length=100, attack=0, decay=5\)
-
-Synthesizes a sound and returns it as a `sampler` object.
-
-__Example:__
-
-~~~ .python
-my_sampler = synth(freq=u'b2', length=500)
-~~~
-
-__Keywords:__
-
-- `osc` -- Oscillator, can be "sine", "saw", "square" or "white_noise".
-	- Type: str, unicode
-	- Default: 'sine'
-- `freq` -- Frequency, either an integer value (value in hertz) or a string ("A1", "eb2", etc.).
-	- Type: str, unicode, int, float
-	- Default: 440
-- `length` -- The length of the sound in milliseconds.
-	- Type: int, float
-	- Default: 100
-- `attack` -- The attack (fade-in) time in milliseconds.
-	- Type: int, float
-	- Default: 0
-- `decay` -- The decay (fade-out) time in milliseconds.
-	- Type: int, float
-	- Default: 5
-
-__Returns:__
-
-A SAMPLER object.
-
-- Type: sampler
-
-</div>
-
-[synth]: #synth
 
 <div class="FunctionDoc YAMLDoc" id="xy_circle" markdown="1">
 
@@ -324,8 +304,6 @@ A list of (x,y) coordinate tuples.
 
 </div>
 
-[xy_circle]: #xy_circle
-
 <div class="FunctionDoc YAMLDoc" id="xy_distance" markdown="1">
 
 ## function __xy\_distance__\(x1, y1, x2, y2\)
@@ -350,8 +328,6 @@ The distance between the two points.
 - Type: float
 
 </div>
-
-[xy_distance]: #xy_distance
 
 <div class="FunctionDoc YAMLDoc" id="xy_from_polar" markdown="1">
 
@@ -392,8 +368,6 @@ An (x, y) coordinate tuple.
 
 </div>
 
-[xy_from_polar]: #xy_from_polar
-
 <div class="FunctionDoc YAMLDoc" id="xy_grid" markdown="1">
 
 ## function __xy\_grid__\(n, spacing, pole=\(0, 0\)\)
@@ -431,8 +405,6 @@ A list of (x,y) coordinate tuples.
 - Type: list
 
 </div>
-
-[xy_grid]: #xy_grid
 
 <div class="FunctionDoc YAMLDoc" id="xy_random" markdown="1">
 
@@ -477,8 +449,6 @@ A list of (x,y) coordinate tuples.
 
 </div>
 
-[xy_random]: #xy_random
-
 <div class="FunctionDoc YAMLDoc" id="xy_to_polar" markdown="1">
 
 ## function __xy\_to\_polar__\(x, y, pole=\(0, 0\)\)
@@ -512,9 +482,5 @@ An (rho, phi) coordinate tuple. Here, `rho` is the radial coordinate, also dista
 
 </div>
 
-[xy_to_polar]: #xy_to_polar
-
 </div>
-
-[dummy]: #dummy
 

@@ -1,15 +1,16 @@
-<div class="ClassDoc YAMLDoc" id="mouse" markdown="1">
+<div class="ClassDoc YAMLDoc" id="Mouse" markdown="1">
 
-# class __mouse__
+# class __Mouse__
 
-The `mouse` class is used to collect mouse input.
+The `Mouse` class is used to collect mouse input. You generally create a
+`Mouse` object with the `Mouse()` factory function.
 
 __Example:__
 
 ~~~ .python
 # Draw a 'fixation-dot mouse cursor' until a button is clicked
-my_mouse = mouse()
-my_canvas = canvas()
+my_mouse = Mouse()
+my_canvas = Canvas()
 while True:
         button, position, timestamp = my_mouse.get_click(timeout=20)
         if button is not None:
@@ -63,7 +64,7 @@ arguments:
 
 ~~~ .python
 # Get a left or right button press with a timeout of 3000 ms
-my_mouse = mouse()
+my_mouse = Mouse()
 button, time = my_mouse.get_key(buttonlist=[1,3], timeout=3000)
 ~~~
 
@@ -73,7 +74,7 @@ subsequent operations, set the response properties directly:
 
 ~~~ .python
 # Get two key left or right presses with a 5000 ms timeout
-my_mouse = mouse()
+my_mouse = Mouse()
 my_mouse.keylist = [1,3]
 my_mouse.timeout = 5000
 button1, time1 = my_mouse.get_button()
@@ -84,23 +85,23 @@ Or pass the response keywords to [mouse.\_\_init\_\_][__init__]:
 
 ~~~ .python
 # Get two key left or right presses with a 5000 ms timeout
-my_mouse = mouse(keylist=[1,3], timeout=5000)
+my_mouse = Mouse(keylist=[1,3], timeout=5000)
 button1, time1 = my_mouse.get_button()
 button2, time2 = my_mouse.get_button()
 ~~~
 
-<div class="FunctionDoc YAMLDoc" id="mouse-__init__" markdown="1">
+<div class="FunctionDoc YAMLDoc" id="Mouse-__init__" markdown="1">
 
-## function __mouse\.\_\_init\_\___\(experiment, \*\*resp\_args\)
+## function __Mouse\.\_\_init\_\___\(experiment, \*\*resp\_args\)
 
-Constructor to create a new `mouse` object. You do not generally
-call this constructor directly, but use the `mouse()` function,
+Constructor to create a new `Mouse` object. You do not generally
+call this constructor directly, but use the `Mouse()` function,
 which is described here: [/python/common/]().
 
 __Example:__
 
 ~~~ .python
-my_mouse = mouse(buttonlist=[1, 2], timeout=2000)
+my_mouse = Mouse(buttonlist=[1, 2], timeout=2000)
 ~~~
 
 __Arguments:__
@@ -110,23 +111,20 @@ __Arguments:__
 
 __Keyword dict:__
 
-- `**resp_args`: Optional [response keywords] that will be used as the default for this `mouse` object.
+- `**resp_args`: Optional [response keywords] that will be used as the default for this `Mouse` object.
 
 </div>
 
-[mouse.__init__]: #mouse-__init__
-[__init__]: #mouse-__init__
+<div class="FunctionDoc YAMLDoc" id="Mouse-flush" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="mouse-flush" markdown="1">
-
-## function __mouse\.flush__\(\)
+## function __Mouse\.flush__\(\)
 
 Clears all pending input, not limited to the mouse.
 
 __Example:__
 
 ~~~ .python
-my_mouse = mouse()
+my_mouse = Mouse()
 my_mouse.flush()
 button, position, timestamp = my_mouse.get_click()
 ~~~
@@ -139,19 +137,16 @@ True if a button had been clicked (i.e., if there was something to flush) and Fa
 
 </div>
 
-[mouse.flush]: #mouse-flush
-[flush]: #mouse-flush
+<div class="FunctionDoc YAMLDoc" id="Mouse-get_click" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="mouse-get_click" markdown="1">
-
-## function __mouse\.get\_click__\(\*\*resp\_args\)
+## function __Mouse\.get\_click__\(\*\*resp\_args\)
 
 Collects a mouse click.
 
 __Example:__
 
 ~~~ .python
-my_mouse = mouse()
+my_mouse = Mouse()
 button, (x, y), timestamp = my_mouse.get_click(timeout=5000)
 if button is None:
         print('A timeout occurred!')
@@ -169,19 +164,16 @@ A (button, position, timestamp) tuple. The button and position are `None` if a t
 
 </div>
 
-[mouse.get_click]: #mouse-get_click
-[get_click]: #mouse-get_click
+<div class="FunctionDoc YAMLDoc" id="Mouse-get_pos" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="mouse-get_pos" markdown="1">
-
-## function __mouse\.get\_pos__\(\)
+## function __Mouse\.get\_pos__\(\)
 
 Returns the current position of the cursor.
 
 __Example:__
 
 ~~~ .python
-my_mouse = mouse()
+my_mouse = Mouse()
 (x, y), timestamp = my_mouse.get_pos()
 print('The cursor was at (%d, %d)' % (x, y))
 ~~~
@@ -194,19 +186,16 @@ A (position, timestamp) tuple.
 
 </div>
 
-[mouse.get_pos]: #mouse-get_pos
-[get_pos]: #mouse-get_pos
+<div class="FunctionDoc YAMLDoc" id="Mouse-get_pressed" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="mouse-get_pressed" markdown="1">
-
-## function __mouse\.get\_pressed__\(\)
+## function __Mouse\.get\_pressed__\(\)
 
 Returns the current state of the mouse buttons. A True value means the button is currently being pressed.
 
 __Example:__
 
 ~~~ .python
-my_mouse = mouse()
+my_mouse = Mouse()
 buttons = my_mouse.get_pressed()
 b1, b2, b3 = buttons
 print('Currently pressed mouse buttons: (%d,%d,%d)' % (b1,b2,b3))
@@ -220,12 +209,9 @@ A (button1, button2, button3) tuple of boolean values.
 
 </div>
 
-[mouse.get_pressed]: #mouse-get_pressed
-[get_pressed]: #mouse-get_pressed
+<div class="FunctionDoc YAMLDoc" id="Mouse-set_pos" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="mouse-set_pos" markdown="1">
-
-## function __mouse\.set\_pos__\(pos=\(0, 0\)\)
+## function __Mouse\.set\_pos__\(pos=\(0, 0\)\)
 
 Sets the position of the mouse cursor.
 
@@ -235,7 +221,7 @@ some systems.
 __Example:__
 
 ~~~ .python
-my_mouse = mouse()
+my_mouse = Mouse()
 my_mouse.set_pos(pos=(0,0))
 ~~~
 
@@ -247,12 +233,9 @@ __Keywords:__
 
 </div>
 
-[mouse.set_pos]: #mouse-set_pos
-[set_pos]: #mouse-set_pos
+<div class="FunctionDoc YAMLDoc" id="Mouse-show_cursor" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="mouse-show_cursor" markdown="1">
-
-## function __mouse\.show\_cursor__\(show=True\)
+## function __Mouse\.show\_cursor__\(show=True\)
 
 Immediately changes the visibility of the mouse cursor.
 
@@ -268,10 +251,5 @@ __Keywords:__
 
 </div>
 
-[mouse.show_cursor]: #mouse-show_cursor
-[show_cursor]: #mouse-show_cursor
-
 </div>
-
-[mouse]: #mouse
 

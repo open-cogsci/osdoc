@@ -1,6 +1,6 @@
-<div class="ClassDoc YAMLDoc" id="rating_scale" markdown="1">
+<div class="ClassDoc YAMLDoc" id="RatingScale" markdown="1">
 
-# class __rating_scale__
+# class __RatingScale__
 
 The rating_scale widget is a horizontally aligned series of checkable
 boxes (nodes), optionally with a label attached to each node.
@@ -15,10 +15,9 @@ widget 0 1 1 1 rating_scale var="response" nodes="Agree;Don't know;Disagree"
 __Example (OpenSesame script):__
 
 ~~~ .python
-from libopensesame import widgets
-form = widgets.form(exp)
-label = widgets.label(form, text='I like fluffy kittens')
-rating_scale = widgets.rating_scale(form, nodes=['Agree', "Don't know",
+form = Form()
+label = Label(text='I like fluffy kittens')
+rating_scale = RatingScale(nodes=['Agree', "Don't know",
         'Disagree'], var='response')
 form.set_widget(label, (0,0))
 form.set_widget(rating_scale, (0,1))
@@ -27,11 +26,14 @@ form._exec()
 
 [TOC]
 
-<div class="FunctionDoc YAMLDoc" id="rating_scale-__init__" markdown="1">
+<div class="FunctionDoc YAMLDoc" id="RatingScale-__init__" markdown="1">
 
-## function __rating\_scale\.\_\_init\_\___\(form, nodes=5, click\_accepts=False, orientation=u'horizontal', var=None, default=None\)
+## function __RatingScale\.\_\_init\_\___\(form, nodes=5, click\_accepts=False, orientation=u'horizontal', var=None, default=None\)
 
-Constructor.
+Constructor to create a new `RatingScale` object. You do not
+generally call this constructor directly, but use the
+`RatingScale()` factory function, which is described here:
+[/python/common/]().
 
 __Arguments:__
 
@@ -60,12 +62,25 @@ scale.
 
 </div>
 
-[rating_scale.__init__]: #rating_scale-__init__
-[__init__]: #rating_scale-__init__
+<div class="FunctionDoc YAMLDoc" id="RatingScale-_init_canvas_elements" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="rating_scale-draw_frame" markdown="1">
+## function __RatingScale\.\_init\_canvas\_elements__\(\)
 
-## function __rating\_scale\.draw\_frame__\(rect=None, style=u'normal'\)
+Initializes all canvas elements.
+
+</div>
+
+<div class="FunctionDoc YAMLDoc" id="RatingScale-_update" markdown="1">
+
+## function __RatingScale\.\_update__\(\)
+
+Draws the widget.
+
+</div>
+
+<div class="FunctionDoc YAMLDoc" id="RatingScale-_update_frame" markdown="1">
+
+## function __RatingScale\.\_update\_frame__\(rect=None, style=u'normal'\)
 
 Draws a simple frame around the widget.
 
@@ -80,12 +95,30 @@ __Keywords:__
 
 </div>
 
-[rating_scale.draw_frame]: #rating_scale-draw_frame
-[draw_frame]: #rating_scale-draw_frame
+<div class="FunctionDoc YAMLDoc" id="RatingScale-coroutine" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="rating_scale-on_mouse_click" markdown="1">
+## function __RatingScale\.coroutine__\(\)
 
-## function __rating\_scale\.on\_mouse\_click__\(pos\)
+Implements the interaction. This can be overridden to implement more complicated keyboard/ mouse interactions.
+
+</div>
+
+<div class="FunctionDoc YAMLDoc" id="RatingScale-on_key_press" markdown="1">
+
+## function __RatingScale\.on\_key\_press__\(key\)
+
+Is called whenever the widget is focused and the users enters a key.
+
+__Arguments:__
+
+- `key` -- A key
+	- Type: str
+
+</div>
+
+<div class="FunctionDoc YAMLDoc" id="RatingScale-on_mouse_click" markdown="1">
+
+## function __RatingScale\.on\_mouse\_click__\(pos\)
 
 Is called whenever the user clicks on the widget. Selects the correct value from the scale and optionally closes the form.
 
@@ -96,23 +129,9 @@ __Arguments:__
 
 </div>
 
-[rating_scale.on_mouse_click]: #rating_scale-on_mouse_click
-[on_mouse_click]: #rating_scale-on_mouse_click
+<div class="FunctionDoc YAMLDoc" id="RatingScale-set_rect" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="rating_scale-render" markdown="1">
-
-## function __rating\_scale\.render__\(\)
-
-Draws the widget.
-
-</div>
-
-[rating_scale.render]: #rating_scale-render
-[render]: #rating_scale-render
-
-<div class="FunctionDoc YAMLDoc" id="rating_scale-set_rect" markdown="1">
-
-## function __rating\_scale\.set\_rect__\(rect\)
+## function __RatingScale\.set\_rect__\(rect\)
 
 Sets the widget geometry.
 
@@ -123,12 +142,9 @@ __Arguments:__
 
 </div>
 
-[rating_scale.set_rect]: #rating_scale-set_rect
-[set_rect]: #rating_scale-set_rect
+<div class="FunctionDoc YAMLDoc" id="RatingScale-set_value" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="rating_scale-set_value" markdown="1">
-
-## function __rating\_scale\.set\_value__\(val\)
+## function __RatingScale\.set\_value__\(val\)
 
 Sets the rating scale value.
 
@@ -139,12 +155,9 @@ __Arguments:__
 
 </div>
 
-[rating_scale.set_value]: #rating_scale-set_value
-[set_value]: #rating_scale-set_value
+<div class="FunctionDoc YAMLDoc" id="RatingScale-set_var" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="rating_scale-set_var" markdown="1">
-
-## function __rating\_scale\.set\_var__\(val, var=None\)
+## function __RatingScale\.set\_var__\(val, var=None\)
 
 Sets an experimental variable.
 
@@ -160,10 +173,5 @@ __Keywords:__
 
 </div>
 
-[rating_scale.set_var]: #rating_scale-set_var
-[set_var]: #rating_scale-set_var
-
 </div>
-
-[rating_scale]: #rating_scale
 

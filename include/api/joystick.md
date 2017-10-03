@@ -42,9 +42,6 @@ __Keywords:__
 
 </div>
 
-[joystick.__init__]: #joystick-__init__
-[__init__]: #joystick-__init__
-
 <div class="FunctionDoc YAMLDoc" id="joystick-flush" markdown="1">
 
 ## function __joystick\.flush__\(\)
@@ -58,9 +55,6 @@ True if joyinput was pending (i.e., if there was something to flush) and False o
 - Type: bool
 
 </div>
-
-[joystick.flush]: #joystick-flush
-[flush]: #joystick-flush
 
 <div class="FunctionDoc YAMLDoc" id="joystick-get_joyaxes" markdown="1">
 
@@ -82,9 +76,6 @@ A (position, timestamp) tuple. The position is None if a timeout occurs.
 
 </div>
 
-[joystick.get_joyaxes]: #joystick-get_joyaxes
-[get_joyaxes]: #joystick-get_joyaxes
-
 <div class="FunctionDoc YAMLDoc" id="joystick-get_joyballs" markdown="1">
 
 ## function __joystick\.get\_joyballs__\(timeout=None\)
@@ -104,9 +95,6 @@ A (position, timestamp) tuple. The position is `None` if a timeout occurs.
 - Type: tuple
 
 </div>
-
-[joystick.get_joyballs]: #joystick-get_joyballs
-[get_joyballs]: #joystick-get_joyballs
 
 <div class="FunctionDoc YAMLDoc" id="joystick-get_joybutton" markdown="1">
 
@@ -131,9 +119,6 @@ A (joybutton, timestamp) tuple. The joybutton is `None` if a timeout occurs.
 
 </div>
 
-[joystick.get_joybutton]: #joystick-get_joybutton
-[get_joybutton]: #joystick-get_joybutton
-
 <div class="FunctionDoc YAMLDoc" id="joystick-get_joyhats" markdown="1">
 
 ## function __joystick\.get\_joyhats__\(timeout=None\)
@@ -153,9 +138,6 @@ A (position, timestamp) tuple. The position is `None` if a timeout occurs.
 - Type: tuple
 
 </div>
-
-[joystick.get_joyhats]: #joystick-get_joyhats
-[get_joyhats]: #joystick-get_joyhats
 
 <div class="FunctionDoc YAMLDoc" id="joystick-get_joyinput" markdown="1">
 
@@ -180,9 +162,6 @@ A (event, value, timestamp) tuple. The value is `None` if a timeout occurs.
 
 </div>
 
-[joystick.get_joyinput]: #joystick-get_joyinput
-[get_joyinput]: #joystick-get_joyinput
-
 <div class="FunctionDoc YAMLDoc" id="joystick-input_options" markdown="1">
 
 ## function __joystick\.input\_options__\(\)
@@ -198,9 +177,6 @@ hats].
 
 </div>
 
-[joystick.input_options]: #joystick-input_options
-[input_options]: #joystick-input_options
-
 <div class="FunctionDoc YAMLDoc" id="joystick-set_joybuttonlist" markdown="1">
 
 ## function __joystick\.set\_joybuttonlist__\(joybuttonlist=None\)
@@ -214,9 +190,6 @@ __Keywords:__
 	- Default: None
 
 </div>
-
-[joystick.set_joybuttonlist]: #joystick-set_joybuttonlist
-[set_joybuttonlist]: #joystick-set_joybuttonlist
 
 <div class="FunctionDoc YAMLDoc" id="joystick-set_timeout" markdown="1">
 
@@ -232,10 +205,5 @@ __Keywords:__
 
 </div>
 
-[joystick.set_timeout]: #joystick-set_timeout
-[set_timeout]: #joystick-set_timeout
-
 </div>
-
-[joystick]: #joystick
 

@@ -1,8 +1,9 @@
 <div class="ClassDoc YAMLDoc" id="clock" markdown="1">
 
-# class __clock__
+# instance __clock__
 
-The `clock` offers basic time functions.
+The `clock` object offers basic time functions. A `clock` object is
+created automatically when the experiment starts.
 
 __Example__:
 
@@ -29,9 +30,6 @@ __Arguments:__
 	- Type: experiment
 
 </div>
-
-[clock.__init__]: #clock-__init__
-[__init__]: #clock-__init__
 
 <div class="FunctionDoc YAMLDoc" id="clock-sleep" markdown="1">
 
@@ -60,9 +58,6 @@ __Arguments:__
 
 </div>
 
-[clock.sleep]: #clock-sleep
-[sleep]: #clock-sleep
-
 <div class="FunctionDoc YAMLDoc" id="clock-time" markdown="1">
 
 ## function __clock\.time__\(\)
@@ -84,10 +79,5 @@ A timestamp.
 
 </div>
 
-[clock.time]: #clock-time
-[time]: #clock-time
-
 </div>
-
-[clock]: #clock
 

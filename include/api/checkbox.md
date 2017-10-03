@@ -1,8 +1,9 @@
-<div class="ClassDoc YAMLDoc" id="checkbox" markdown="1">
+<div class="ClassDoc YAMLDoc" id="Checkbox" markdown="1">
 
-# class __checkbox__
+# class __Checkbox__
 
-The checkbox widget is a checkable box accompanied by a string of text.
+The `Checkbox` widget is a checkable box accompanied by a string of
+text.
 
 __Example (OpenSesame script):__
 
@@ -14,21 +15,22 @@ widget 0 1 1 1 checkbox group="group" text="Option 2"
 __Example (Python):__
 
 ~~~ .python
-from libopensesame import widgets
-form = widgets.form(exp)
-checkbox1 = widgets.checkbox(form, text='Option 1', group='group')
-checkbox2 = widgets.checkbox(form, text='Option 2', group='group')
+form = Form()
+checkbox1 = Checkbox(text='Option 1', group='group')
+checkbox2 = Checkbox(text='Option 2', group='group')
 form.set_widget(checkbox1, (0,0))
 form.set_widget(checkbox2, (0,1))
 ~~~
 
 [TOC]
 
-<div class="FunctionDoc YAMLDoc" id="checkbox-__init__" markdown="1">
+<div class="FunctionDoc YAMLDoc" id="Checkbox-__init__" markdown="1">
 
-## function __checkbox\.\_\_init\_\___\(form, text=u'checkbox', frame=False, group=None, checked=False, click\_accepts=False, var=None\)
+## function __Checkbox\.\_\_init\_\___\(form, text=u'checkbox', frame=False, group=None, checked=False, click\_accepts=False, var=None\)
 
-Constructor.
+Constructor to create a new `Checkbox` object. You do not generally
+call this constructor directly, but use the `Checkbox()` factory
+function, which is described here: [/python/common/]().
 
 __Arguments:__
 
@@ -58,12 +60,25 @@ __Keywords:__
 
 </div>
 
-[checkbox.__init__]: #checkbox-__init__
-[__init__]: #checkbox-__init__
+<div class="FunctionDoc YAMLDoc" id="Checkbox-_init_canvas_elements" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="checkbox-draw_frame" markdown="1">
+## function __Checkbox\.\_init\_canvas\_elements__\(\)
 
-## function __checkbox\.draw\_frame__\(rect=None, style=u'normal'\)
+Initializes all canvas elements.
+
+</div>
+
+<div class="FunctionDoc YAMLDoc" id="Checkbox-_update" markdown="1">
+
+## function __Checkbox\.\_update__\(\)
+
+Draws the widget.
+
+</div>
+
+<div class="FunctionDoc YAMLDoc" id="Checkbox-_update_frame" markdown="1">
+
+## function __Checkbox\.\_update\_frame__\(rect=None, style=u'normal'\)
 
 Draws a simple frame around the widget.
 
@@ -78,12 +93,9 @@ __Keywords:__
 
 </div>
 
-[checkbox.draw_frame]: #checkbox-draw_frame
-[draw_frame]: #checkbox-draw_frame
+<div class="FunctionDoc YAMLDoc" id="Checkbox-_update_text" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="checkbox-draw_text" markdown="1">
-
-## function __checkbox\.draw\_text__\(text, html=True\)
+## function __Checkbox\.\_update\_text__\(text\)
 
 Draws text inside the widget.
 
@@ -92,20 +104,32 @@ __Arguments:__
 - `text` -- The text to draw.
 	- Type: str, unicode
 
-__Keywords:__
+</div>
 
-- `html` -- Indicates whether HTML should be parsed.
-	- Type: bool
-	- Default: True
+<div class="FunctionDoc YAMLDoc" id="Checkbox-coroutine" markdown="1">
+
+## function __Checkbox\.coroutine__\(\)
+
+Implements the interaction. This can be overridden to implement more complicated keyboard/ mouse interactions.
 
 </div>
 
-[checkbox.draw_text]: #checkbox-draw_text
-[draw_text]: #checkbox-draw_text
+<div class="FunctionDoc YAMLDoc" id="Checkbox-on_key_press" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="checkbox-on_mouse_click" markdown="1">
+## function __Checkbox\.on\_key\_press__\(key\)
 
-## function __checkbox\.on\_mouse\_click__\(pos\)
+Is called whenever the widget is focused and the users enters a key.
+
+__Arguments:__
+
+- `key` -- A key
+	- Type: str
+
+</div>
+
+<div class="FunctionDoc YAMLDoc" id="Checkbox-on_mouse_click" markdown="1">
+
+## function __Checkbox\.on\_mouse\_click__\(pos\)
 
 Is called whenever the user clicks on the widget. Toggles the state of the checkbox.
 
@@ -116,23 +140,9 @@ __Arguments:__
 
 </div>
 
-[checkbox.on_mouse_click]: #checkbox-on_mouse_click
-[on_mouse_click]: #checkbox-on_mouse_click
+<div class="FunctionDoc YAMLDoc" id="Checkbox-set_checked" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="checkbox-render" markdown="1">
-
-## function __checkbox\.render__\(\)
-
-Draws the widget.
-
-</div>
-
-[checkbox.render]: #checkbox-render
-[render]: #checkbox-render
-
-<div class="FunctionDoc YAMLDoc" id="checkbox-set_checked" markdown="1">
-
-## function __checkbox\.set\_checked__\(checked=True\)
+## function __Checkbox\.set\_checked__\(checked=True\)
 
 Sets the checked status of the checkbox.
 
@@ -144,12 +154,9 @@ __Keywords:__
 
 </div>
 
-[checkbox.set_checked]: #checkbox-set_checked
-[set_checked]: #checkbox-set_checked
+<div class="FunctionDoc YAMLDoc" id="Checkbox-set_rect" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="checkbox-set_rect" markdown="1">
-
-## function __checkbox\.set\_rect__\(rect\)
+## function __Checkbox\.set\_rect__\(rect\)
 
 Sets the widget geometry.
 
@@ -160,12 +167,9 @@ __Arguments:__
 
 </div>
 
-[checkbox.set_rect]: #checkbox-set_rect
-[set_rect]: #checkbox-set_rect
+<div class="FunctionDoc YAMLDoc" id="Checkbox-set_var" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="checkbox-set_var" markdown="1">
-
-## function __checkbox\.set\_var__\(val, var=None\)
+## function __Checkbox\.set\_var__\(val, var=None\)
 
 Sets an experimental variable.
 
@@ -182,10 +186,5 @@ __Keywords:__
 
 </div>
 
-[checkbox.set_var]: #checkbox-set_var
-[set_var]: #checkbox-set_var
-
 </div>
-
-[checkbox]: #checkbox
 

@@ -1,6 +1,6 @@
-<div class="ClassDoc YAMLDoc" id="image_button" markdown="1">
+<div class="ClassDoc YAMLDoc" id="ImageButton" markdown="1">
 
-# class __image_button__
+# class __ImageButton__
 
 The image_button widget is a clickable image.
 
@@ -13,24 +13,25 @@ widget 0 0 1 1 image_button path='5.png' var='response'
 __Example (Python):__
 
 ~~~ .python
-from libopensesame import widgets
-form = widgets.form(exp)
+form = Form()
 # The full path to the image needs to be provided.
 # self.experiment.pool can be used to retrieve the full path
 # to an image in the file pool.
-image_button = widgets.image_button(form, path=pool['5.png'],
-        var='response')
+image_button = ImageButton(path=pool['5.png'], var='response')
 form.set_widget(image_button, (0,0))
 form._exec()
 ~~~
 
 [TOC]
 
-<div class="FunctionDoc YAMLDoc" id="image_button-__init__" markdown="1">
+<div class="FunctionDoc YAMLDoc" id="ImageButton-__init__" markdown="1">
 
-## function __image\_button\.\_\_init\_\___\(form, path=None, adjust=True, frame=False, image\_id=None, var=None\)
+## function __ImageButton\.\_\_init\_\___\(form, path=None, adjust=True, frame=False, image\_id=None, var=None\)
 
-Constructor.
+Constructor to create a new `ImageButton` object. You do not
+generally call this constructor directly, but use the
+`ImageButton()` factory function, which is described here:
+[/python/common/]().
 
 __Arguments:__
 
@@ -57,12 +58,25 @@ __Keywords:__
 
 </div>
 
-[image_button.__init__]: #image_button-__init__
-[__init__]: #image_button-__init__
+<div class="FunctionDoc YAMLDoc" id="ImageButton-_init_canvas_elements" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="image_button-draw_frame" markdown="1">
+## function __ImageButton\.\_init\_canvas\_elements__\(\)
 
-## function __image\_button\.draw\_frame__\(rect=None, style=u'normal'\)
+Initializes all canvas elements.
+
+</div>
+
+<div class="FunctionDoc YAMLDoc" id="ImageButton-_update" markdown="1">
+
+## function __ImageButton\.\_update__\(\)
+
+Draws the widget.
+
+</div>
+
+<div class="FunctionDoc YAMLDoc" id="ImageButton-_update_frame" markdown="1">
+
+## function __ImageButton\.\_update\_frame__\(rect=None, style=u'normal'\)
 
 Draws a simple frame around the widget.
 
@@ -77,12 +91,30 @@ __Keywords:__
 
 </div>
 
-[image_button.draw_frame]: #image_button-draw_frame
-[draw_frame]: #image_button-draw_frame
+<div class="FunctionDoc YAMLDoc" id="ImageButton-coroutine" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="image_button-on_mouse_click" markdown="1">
+## function __ImageButton\.coroutine__\(\)
 
-## function __image\_button\.on\_mouse\_click__\(pos\)
+Implements the interaction. This can be overridden to implement more complicated keyboard/ mouse interactions.
+
+</div>
+
+<div class="FunctionDoc YAMLDoc" id="ImageButton-on_key_press" markdown="1">
+
+## function __ImageButton\.on\_key\_press__\(key\)
+
+Is called whenever the widget is focused and the users enters a key.
+
+__Arguments:__
+
+- `key` -- A key
+	- Type: str
+
+</div>
+
+<div class="FunctionDoc YAMLDoc" id="ImageButton-on_mouse_click" markdown="1">
+
+## function __ImageButton\.on\_mouse\_click__\(pos\)
 
 Is called whenever the user clicks on the widget. Returns the image_id or the path to the image if no image_id has been specified.
 
@@ -93,23 +125,9 @@ __Arguments:__
 
 </div>
 
-[image_button.on_mouse_click]: #image_button-on_mouse_click
-[on_mouse_click]: #image_button-on_mouse_click
+<div class="FunctionDoc YAMLDoc" id="ImageButton-set_rect" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="image_button-render" markdown="1">
-
-## function __image\_button\.render__\(\)
-
-Draws the widget.
-
-</div>
-
-[image_button.render]: #image_button-render
-[render]: #image_button-render
-
-<div class="FunctionDoc YAMLDoc" id="image_button-set_rect" markdown="1">
-
-## function __image\_button\.set\_rect__\(rect\)
+## function __ImageButton\.set\_rect__\(rect\)
 
 Sets the widget geometry.
 
@@ -120,12 +138,9 @@ __Arguments:__
 
 </div>
 
-[image_button.set_rect]: #image_button-set_rect
-[set_rect]: #image_button-set_rect
+<div class="FunctionDoc YAMLDoc" id="ImageButton-set_var" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="image_button-set_var" markdown="1">
-
-## function __image\_button\.set\_var__\(val, var=None\)
+## function __ImageButton\.set\_var__\(val, var=None\)
 
 Sets an experimental variable.
 
@@ -141,10 +156,5 @@ __Keywords:__
 
 </div>
 
-[image_button.set_var]: #image_button-set_var
-[set_var]: #image_button-set_var
-
 </div>
-
-[image_button]: #image_button
 

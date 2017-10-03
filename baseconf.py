@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 import os
 
-BRANCH = '3.1'
+BRANCH = '3.2'
 PLUGIN_PATHS = ["plugins"]
 PLUGINS = ["cogsci-preprocess", "page_hierarchy"]
 LOCALE = 'en_US'
@@ -18,7 +18,7 @@ ROOT_PATH = os.getcwd()
 GITHUB_ROOT_URL = 'https://github.com/smathot/osdoc/blob/' + BRANCH
 OUTPUT_PATH = 'output/' + BRANCH
 PATH = 'content'
-THEME=  'themes/cogsci'
+THEME= 'themes/cogsci'
 TIMEZONE = 'Europe/Paris'
 ARTICLE_URL = 'blog/{slug}'
 ARTICLE_SAVE_AS = 'blog/{slug}.html'

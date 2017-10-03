@@ -1,37 +1,30 @@
-<div class="ClassDoc YAMLDoc" id="canvas" markdown="1">
+<div class="ClassDoc YAMLDoc" id="Canvas" markdown="1">
 
-# class __canvas__
+# class __Canvas__
 
-The `canvas` class is used to present visual stimuli.
+The `Canvas` class is used to present visual stimuli. You generally
+create a `Canvas` object with the `Canvas()` factory function.
 
 __Example__:
 
 ~~~ .python
 # Create and show a canvas with a central fixation dot
-my_canvas = canvas()
+my_canvas = Canvas()
 my_canvas.fixdot()
 my_canvas.show()
 ~~~
 
-If drawing on a `canvas` is slow, especially if you draw many stimuli,
-you should disable `auto_prepare` and explicitly call `canvas.prepare()`
-after all drawing operations are done, but before calling
-`canvas.show()`.
-
 __Example__:
 
-~~~ .python
-import random
-import string
+As of OpenSesame 3.2, you can also add `Canvas` elements as objects.
+See also the section on [Naming, accessing, and modifying elements](#naming-accessing-and-modifying-elements).
 
-# Create and show a canvas with a grid of random letters
-my_canvas = canvas(auto_prepare=False)
-for x, y in xy_grid(n=10, spacing=20):
-        letter = random.choice(string.ascii_uppercase)
-        my_canvas.text(text=letter, x=x, y=y)
-my_canvas.prepare()
+~~~ .python
+# Create a canvas with a fixation dot and a rectangle
+my_canvas = Canvas()
+my_canvas['my_fixdot'] = FixDot()
 my_canvas.show()
-~~~             
+~~~
 
 [TOC]
 
@@ -74,7 +67,7 @@ arguments:
 
 ~~~ .python
 # Draw a green fixation dot
-my_canvas = canvas()
+my_canvas = Canvas()
 my_canvas.fixdot(color='green')
 my_canvas.show()
 ~~~
@@ -86,7 +79,7 @@ subsequent drawing operations, set style properties, such as
 
 ~~~ .python
 # Draw a red cross with a 2px penwidth
-my_canvas = canvas()
+my_canvas = Canvas()
 my_canvas.color = u'red'
 my_canvas.penwidth = 2
 my_canvas.line(-10, -10, 10, 10)
@@ -98,7 +91,7 @@ Or pass the style properties to [canvas.\_\_init\_\_][__init__]:
 
 ~~~ .python
 # Draw a red cross with a 2px penwidth
-my_canvas = canvas(color=u'red', penwidth=2)
+my_canvas = Canvas(color=u'red', penwidth=2)
 my_canvas.line(-10, -10, 10, 10)
 my_canvas.line(-10, 10, 10, -10)
 my_canvas.show()
@@ -137,6 +130,47 @@ my_canvas.fixdot(color=(0,255,0))
 my_canvas.fixdot(color=255)
 ~~~
 
+## Naming, accessing, and modifying elements
+
+As of OpenSesame 3.2, the `Canvas` supports an object-based interface
+that allows you to name elements, and to access and modify elements
+individually, without having to redraw the entire `Canvas`.
+
+For example, the following will first add a red `Line` element to a
+`Canvas` and show it, and then change the color of the line to green and
+show it again. The name of the element (`my_line`) is used to refer to
+the element later on to change it.
+
+~~~ .python
+my_canvas = Canvas()
+my_canvas['my_line'] = Line(-100, -100, 100, 100, color='red')
+my_canvas.show()
+clock.sleep(1000)
+my_canvas['my_line'].color = 'green'
+my_canvas.show()
+~~~
+
+You can also add an element without explicitly providing a name for it.
+In that case, a name is generated automatically (e.g. `stim0`).
+
+~~~ .python
+my_canvas = Canvas()
+my_canvas += FixDot()
+my_canvas.show()
+~~~
+
+If you add a list of elements, they will be automatically grouped
+together, and you can refer to the entire group by name.
+
+~~~ .python
+my_canvas = Canvas()
+my_canvas['my_cross'] = [
+        Line(-100, 0, 100, 0),
+        Line(0, -100, 0, 100)
+]
+my_canvas.show()
+~~~
+
 %--
 constant:
         arg_max_width: |
@@ -154,31 +188,19 @@ constant:
                 operations.
 --%
 
-<div class="FunctionDoc YAMLDoc" id="canvas-__init__" markdown="1">
+<div class="FunctionDoc YAMLDoc" id="Canvas-__init__" markdown="1">
 
-## function __canvas\.\_\_init\_\___\(experiment, auto\_prepare=True, \*\*style\_args\)
+## function __Canvas\.\_\_init\_\___\(experiment, auto\_prepare=True, \*\*style\_args\)
 
-Constructor to create a new `canvas` object. You do not generally
-call this constructor directly, but use the `canvas()` function,
-which is described here: [/python/common/]().
+Constructor to create a new `Canvas` object. You do not generally
+call this constructor directly, but use the `Canvas()` factory
+function, which is described here: [/python/common/]().
 
 __Example:__
 
 ~~~ .python
-# Example 1: Show a central fixation dot.
-my_canvas = canvas()
+my_canvas = Canvas()
 my_canvas.fixdot()
-my_canvas.show()
-
-# Example 2: Show many randomly positioned fixation dot. Here we
-# disable `auto_prepare`, so that drawing goes more quickly.
-from random import randint
-my_canvas = canvas(auto_prepare=False)
-for i in range(1000):
-        x = randint(0, my_canvas.width)
-        y = randint(0, my_canvas.height)
-        my_canvas.fixdot(x, y)
-my_canvas.prepare()
 my_canvas.show()
 ~~~
 
@@ -189,22 +211,19 @@ __Arguments:__
 
 __Keywords:__
 
-- `auto_prepare` -- Indicates whether the canvas should be automatically prepared after each drawing operation, so that [canvas.show] will be maximally efficient. If auto_prepare is turned off, drawing operations may be faster, but [canvas.show] will take longer, unless [canvas.prepare] is explicitly called in advance. Generally, it only makes sense to disable auto_prepare when you want to draw a large number of stimuli, as in the second example above. Currently, the auto_prepare parameter only applies to the xpyriment backend, and is ignored by the other backends.
+- `auto_prepare` -- Indicates whether the canvas should be automatically prepared after each drawing operation, so that [canvas.show] will be maximally efficient. If auto_prepare is turned off, drawing operations may be faster, but [canvas.show] will take longer, unless [canvas.prepare] is explicitly called in advance. This option exists mostly for historical purposes, because there are currently no backends for which it is necessary to disable auto prepare.
 	- Type: bool
 	- Default: True
 
 __Keyword dict:__
 
-- `**style_args`: Optional [style keywords], which will be used as the default for all drawing operations on this `canvas`.
+- `**style_args`: Optional [style keywords], which will be used as the default for all drawing operations on this `Canvas`.
 
 </div>
 
-[canvas.__init__]: #canvas-__init__
-[__init__]: #canvas-__init__
+<div class="FunctionDoc YAMLDoc" id="Canvas-arrow" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="canvas-arrow" markdown="1">
-
-## function __canvas\.arrow__\(sx, sy, ex, ey, body\_length=0\.8, body\_width=0\.5, head\_width=30, \*\*style\_args\)
+## function __Canvas\.arrow__\(sx, sy, ex, ey, body\_length=0\.8, body\_width=0\.5, head\_width=30, \*\*style\_args\)
 
 Draws an arrow. An arrow is a polygon consisting of 7 vertices, with an arrowhead pointing at (ex, ey).
 
@@ -237,20 +256,28 @@ __Keyword dict:__
 
 </div>
 
-[canvas.arrow]: #canvas-arrow
-[arrow]: #canvas-arrow
+<div class="PropertyDoc YAMLDoc" id="Canvas-bottom" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="canvas-circle" markdown="1">
+## property __Canvas.bottom__
 
-## function __canvas\.circle__\(x, y, r, \*\*style\_args\)
+The y coordinate of the bottom edge of the display. This is a read-only property.
+
+</div>
+
+<div class="FunctionDoc YAMLDoc" id="Canvas-circle" markdown="1">
+
+## function __Canvas\.circle__\(x, y, r, \*\*style\_args\)
 
 Draws a circle.
 
 __Example:__
 
 ~~~ .python
-my_canvas = canvas()
+my_canvas = Canvas()
+# Function interface
 my_canvas.circle(100, 100, 50, fill=True, color='red')
+# Element interface
+my_canvas['my_circle'] = Circle(100, 100, 50, fill=True, color='red')
 ~~~
 
 __Arguments:__
@@ -268,19 +295,16 @@ __Keyword dict:__
 
 </div>
 
-[canvas.circle]: #canvas-circle
-[circle]: #canvas-circle
+<div class="FunctionDoc YAMLDoc" id="Canvas-clear" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="canvas-clear" markdown="1">
-
-## function __canvas\.clear__\(\*\*style\_args\)
+## function __Canvas\.clear__\(\*\*style\_args\)
 
 Clears the canvas with the current background color. Note that it is generally faster to use a different canvas for each experimental display than to use a single canvas and repeatedly clear and redraw it.
 
 __Example:__
 
 ~~~ .python
-my_canvas = canvas()
+my_canvas = Canvas()
 my_canvas.fixdot(color='green')
 my_canvas.show()
 sleep(1000)
@@ -295,12 +319,9 @@ __Keyword dict:__
 
 </div>
 
-[canvas.clear]: #canvas-clear
-[clear]: #canvas-clear
+<div class="FunctionDoc YAMLDoc" id="Canvas-close_display" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="canvas-close_display" markdown="1">
-
-## function __canvas\.close\_display__\(experiment\)
+## function __Canvas\.close\_display__\(experiment\)
 
 Closes the display after the experiment is finished.
 
@@ -311,26 +332,23 @@ __Arguments:__
 
 </div>
 
-[canvas.close_display]: #canvas-close_display
-[close_display]: #canvas-close_display
+<div class="FunctionDoc YAMLDoc" id="Canvas-copy" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="canvas-copy" markdown="1">
+## function __Canvas\.copy__\(canvas\)
 
-## function __canvas\.copy__\(canvas\)
-
-Turns the current `canvas` into a copy of the passed `canvas`.
+Turns the current `Canvas` into a copy of the passed `Canvas`.
 
 __Note:__
 
-If you want to create a copy of a `sketchpad` `canvas`, you can also
+If you want to create a copy of a `sketchpad` `Canvas`, you can also
 use the `inline_script.copy_sketchpad` function.
 
 __Example:__
 
 ~~~ .python
-my_canvas = canvas()
+my_canvas = Canvas()
 my_canvas.fixdot(x=100, color='green')
-my_copied_canvas = canvas()
+my_copied_canvas = Canvas()
 my_copied_canvas.copy(my_canvas)
 my_copied_canvas.fixdot(x=200, color="blue")
 my_copied_canvas.show()
@@ -338,25 +356,25 @@ my_copied_canvas.show()
 
 __Arguments:__
 
-- `canvas` -- The `canvas` to copy.
+- `canvas` -- The `Canvas` to copy.
 	- Type: canvas
 
 </div>
 
-[canvas.copy]: #canvas-copy
-[copy]: #canvas-copy
+<div class="FunctionDoc YAMLDoc" id="Canvas-ellipse" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="canvas-ellipse" markdown="1">
-
-## function __canvas\.ellipse__\(x, y, w, h, \*\*style\_args\)
+## function __Canvas\.ellipse__\(x, y, w, h, \*\*style\_args\)
 
 Draws an ellipse.
 
 __Example:__
 
 ~~~ .python
-my_canvas = canvas()
+my_canvas = Canvas()
+# Function interface
 my_canvas.ellipse(-10, -10, 20, 20, fill=True)
+# Element interface
+my_canvas['my_ellipse'] = Ellipse(-10, -10, 20, 20, fill=True)
 ~~~
 
 __Arguments:__
@@ -376,12 +394,9 @@ __Keyword dict:__
 
 </div>
 
-[canvas.ellipse]: #canvas-ellipse
-[ellipse]: #canvas-ellipse
+<div class="FunctionDoc YAMLDoc" id="Canvas-fixdot" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="canvas-fixdot" markdown="1">
-
-## function __canvas\.fixdot__\(x=None, y=None, style=u'default', \*\*style\_args\)
+## function __Canvas\.fixdot__\(x=None, y=None, style=u'default', \*\*style\_args\)
 
 Draws a fixation dot. The default style is medium-open.
 
@@ -398,8 +413,11 @@ Draws a fixation dot. The default style is medium-open.
 __Example:__
 
 ~~~ .python
-my_canvas = canvas()
+my_canvas = Canvas()
+# Function interface
 my_canvas.fixdot()
+# Element interface
+my_canvas['my_fixdot'] = FixDot()
 ~~~
 
 __Keywords:__
@@ -423,12 +441,9 @@ __Keyword dict:__
 
 </div>
 
-[canvas.fixdot]: #canvas-fixdot
-[fixdot]: #canvas-fixdot
+<div class="FunctionDoc YAMLDoc" id="Canvas-gabor" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="canvas-gabor" markdown="1">
-
-## function __canvas\.gabor__\(x, y, orient, freq, env=u'gaussian', size=96, stdev=12, phase=0, col1=u'white', col2=u'black', bgmode=u'avg'\)
+## function __Canvas\.gabor__\(x, y, orient, freq, env=u'gaussian', size=96, stdev=12, phase=0, col1=u'white', col2=u'black', bgmode=u'avg'\)
 
 Draws a Gabor patch. Note: The exact rendering of the Gabor patch
 depends on the back-end.
@@ -436,8 +451,11 @@ depends on the back-end.
 __Example:__
 
 ~~~ .python
-my_canvas = canvas()
+my_canvas = Canvas()
+# Function interface
 my_canvas.gabor(100, 100, 45, .05)
+# Element interface
+my_canvas['my_gabor'] = Gabor(100, 100, 45, .05)
 ~~~
 
 __Arguments:__
@@ -479,33 +497,30 @@ ignores this parameter and always uses the inverse of
 
 </div>
 
-[canvas.gabor]: #canvas-gabor
-[gabor]: #canvas-gabor
+<div class="PropertyDoc YAMLDoc" id="Canvas-height" markdown="1">
 
-<div class="PropertyDoc YAMLDoc" id="canvas-height" markdown="1">
-
-## property __canvas.height__
+## property __Canvas.height__
 
 The height of the canvas. This is a read-only property.
 
 </div>
 
-[canvas.height]: #canvas-height
-[height]: #canvas-height
+<div class="FunctionDoc YAMLDoc" id="Canvas-image" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="canvas-image" markdown="1">
-
-## function __canvas\.image__\(fname, center=True, x=None, y=None, scale=None\)
+## function __Canvas\.image__\(fname, center=True, x=None, y=None, scale=None\)
 
 Draws an image from file. This function does not look in the file pool, but takes an absolute path.
 
 __Example:__
 
 ~~~ .python
-my_canvas = canvas()
+my_canvas = Canvas()
 # Determine the absolute path:
 path = exp.pool[u'image_in_pool.png']
+# Function interface
 my_canvas.image(path)
+# Element interface
+my_canvas['my_image'] = Image(path)
 ~~~
 
 __Arguments:__
@@ -530,12 +545,9 @@ __Keywords:__
 
 </div>
 
-[canvas.image]: #canvas-image
-[image]: #canvas-image
+<div class="FunctionDoc YAMLDoc" id="Canvas-init_display" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="canvas-init_display" markdown="1">
-
-## function __canvas\.init\_display__\(experiment\)
+## function __Canvas\.init\_display__\(experiment\)
 
 Initializes the display before the experiment begins.
 
@@ -546,12 +558,17 @@ __Arguments:__
 
 </div>
 
-[canvas.init_display]: #canvas-init_display
-[init_display]: #canvas-init_display
+<div class="PropertyDoc YAMLDoc" id="Canvas-left" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="canvas-line" markdown="1">
+## property __Canvas.left__
 
-## function __canvas\.line__\(sx, sy, ex, ey, \*\*style\_args\)
+The x coordinate of the left edge of the display. This is a read-only property.
+
+</div>
+
+<div class="FunctionDoc YAMLDoc" id="Canvas-line" markdown="1">
+
+## function __Canvas\.line__\(sx, sy, ex, ey, \*\*style\_args\)
 
 Draws a line.
 
@@ -572,20 +589,33 @@ __Keyword dict:__
 
 </div>
 
-[canvas.line]: #canvas-line
-[line]: #canvas-line
+<div class="FunctionDoc YAMLDoc" id="Canvas-lower_to_bottom" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="canvas-noise_patch" markdown="1">
+## function __Canvas\.lower\_to\_bottom__\(element\)
 
-## function __canvas\.noise\_patch__\(x, y, env=u'gaussian', size=96, stdev=12, col1=u'white', col2=u'black', bgmode=u'avg'\)
+Lowers an element to the bottom, so that it is drawn first; that is, it becomes the background.
+
+__Arguments:__
+
+- `element` -- A SKETCHPAD element, or its name.
+	- Type: Element, str
+
+</div>
+
+<div class="FunctionDoc YAMLDoc" id="Canvas-noise_patch" markdown="1">
+
+## function __Canvas\.noise\_patch__\(x, y, env=u'gaussian', size=96, stdev=12, col1=u'white', col2=u'black', bgmode=u'avg'\)
 
 Draws a patch of noise, with an envelope. The exact rendering of the noise patch depends on the back-end.
 
 __Example:__
 
 ~~~ .python
-my_canvas = canvas()
+my_canvas = Canvas()
+# Function interface
 my_canvas.noise_patch(100, 100, env='circular')
+# Element interface
+my_canvas['my_noise_patch'] = NoisePatch(100, 100, env='circular')
 ~~~
 
 __Arguments:__
@@ -619,23 +649,23 @@ parameter and always uses the inverse of `col1`.
 
 </div>
 
-[canvas.noise_patch]: #canvas-noise_patch
-[noise_patch]: #canvas-noise_patch
+<div class="FunctionDoc YAMLDoc" id="Canvas-polygon" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="canvas-polygon" markdown="1">
-
-## function __canvas\.polygon__\(vertices, \*\*style\_args\)
+## function __Canvas\.polygon__\(vertices, \*\*style\_args\)
 
 Draws a polygon that defined by a list of vertices. I.e. a shape of points connected by lines.
 
 __Example:__
 
 ~~~ .python
-my_canvas = canvas()
+my_canvas = Canvas()
 n1 = 0,0
 n2 = 100, 100
 n3 = 0, 100
+# Function interface
 my_canvas.polygon([n1, n2, n3])
+# Element interface
+my_canvas['my_polygon'] = Polygon([n1, n2, n3])
 ~~~
 
 __Arguments:__
@@ -649,31 +679,41 @@ __Keyword dict:__
 
 </div>
 
-[canvas.polygon]: #canvas-polygon
-[polygon]: #canvas-polygon
+<div class="FunctionDoc YAMLDoc" id="Canvas-prepare" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="canvas-prepare" markdown="1">
-
-## function __canvas\.prepare__\(\)
+## function __Canvas\.prepare__\(\)
 
 Finishes pending canvas operations (if any), so that a subsequent call to [canvas.show] is extra fast. It's only necessary to call this function if you have disabled `auto_prepare` in [canvas.__init__].
 
 </div>
 
-[canvas.prepare]: #canvas-prepare
-[prepare]: #canvas-prepare
+<div class="FunctionDoc YAMLDoc" id="Canvas-raise_to_top" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="canvas-rect" markdown="1">
+## function __Canvas\.raise\_to\_top__\(element\)
 
-## function __canvas\.rect__\(x, y, w, h, \*\*style\_args\)
+Raises an element to the top, so that it is drawn last; that is, it becomes the foreground.
+
+__Arguments:__
+
+- `element` -- A SKETCHPAD element, or its name.
+	- Type: Element, str
+
+</div>
+
+<div class="FunctionDoc YAMLDoc" id="Canvas-rect" markdown="1">
+
+## function __Canvas\.rect__\(x, y, w, h, \*\*style\_args\)
 
 Draws a rectangle.
 
 __Example:__
 
 ~~~ .python
-my_canvas = canvas()
+my_canvas = Canvas()
+# Function interface
 my_canvas.rect(-10, -10, 20, 20, fill=True)
+# Element interface
+my_canvas['my_rect'] = Rect(-10, -10, 20, 20, fill=True)
 ~~~
 
 __Arguments:__
@@ -693,19 +733,24 @@ __Keyword dict:__
 
 </div>
 
-[canvas.rect]: #canvas-rect
-[rect]: #canvas-rect
+<div class="PropertyDoc YAMLDoc" id="Canvas-right" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="canvas-show" markdown="1">
+## property __Canvas.right__
 
-## function __canvas\.show__\(\)
+The x coordinate of the right edge of the display. This is a read-only property.
+
+</div>
+
+<div class="FunctionDoc YAMLDoc" id="Canvas-show" markdown="1">
+
+## function __Canvas\.show__\(\)
 
 Shows, or 'flips', the canvas on the screen.
 
 __Example:__
 
 ~~~ .python
-my_canvas = canvas()
+my_canvas = Canvas()
 my_canvas.fixdot()
 t = my_canvas.show()
 exp.set('time_fixdot', t)
@@ -719,31 +764,28 @@ A timestamp of the time at which the canvas actually appeared on the screen, or 
 
 </div>
 
-[canvas.show]: #canvas-show
-[show]: #canvas-show
+<div class="PropertyDoc YAMLDoc" id="Canvas-size" markdown="1">
 
-<div class="PropertyDoc YAMLDoc" id="canvas-size" markdown="1">
-
-## property __canvas.size__
+## property __Canvas.size__
 
 The size of the canvas as a `(width, height)` tuple. This is a read-only property.
 
 </div>
 
-[canvas.size]: #canvas-size
-[size]: #canvas-size
+<div class="FunctionDoc YAMLDoc" id="Canvas-text" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="canvas-text" markdown="1">
-
-## function __canvas\.text__\(text, center=True, x=None, y=None, max\_width=None, \*\*style\_args\)
+## function __Canvas\.text__\(text, center=True, x=None, y=None, max\_width=None, \*\*style\_args\)
 
 Draws text.
 
 __Example:__
 
 ~~~ .python
-my_canvas = canvas()
+my_canvas = Canvas()
+# Function interface
 my_canvas.text('Some text with <b>boldface</b> and <i>italics</i>')
+# Element interface
+my_canvas['my_text'] = Text('Some text with <b>boldface</b> and <i>italics</i>')
 ~~~
 
 __Arguments:__
@@ -772,19 +814,16 @@ __Keyword dict:__
 
 </div>
 
-[canvas.text]: #canvas-text
-[text]: #canvas-text
+<div class="FunctionDoc YAMLDoc" id="Canvas-text_size" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="canvas-text_size" markdown="1">
-
-## function __canvas\.text\_size__\(text, max\_width=None, \*\*style\_args\)
+## function __Canvas\.text\_size__\(text, max\_width=None, \*\*style\_args\)
 
 Determines the size of a text string in pixels.
 
 __Example:__
 
 ~~~ .python
-my_canvas = canvas()
+my_canvas = Canvas()
 w, h = my_canvas.text_size('Some text')
 ~~~
 
@@ -811,21 +850,21 @@ A (width, height) tuple containing the dimensions of the text string.
 
 </div>
 
-[canvas.text_size]: #canvas-text_size
-[text_size]: #canvas-text_size
+<div class="PropertyDoc YAMLDoc" id="Canvas-top" markdown="1">
 
-<div class="PropertyDoc YAMLDoc" id="canvas-width" markdown="1">
+## property __Canvas.top__
 
-## property __canvas.width__
+The y coordinate of the top edge of the display. This is a read-only property.
+
+</div>
+
+<div class="PropertyDoc YAMLDoc" id="Canvas-width" markdown="1">
+
+## property __Canvas.width__
 
 The width of the canvas. This is a read-only property.
 
 </div>
 
-[canvas.width]: #canvas-width
-[width]: #canvas-width
-
 </div>
-
-[canvas]: #canvas
 

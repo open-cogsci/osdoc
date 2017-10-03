@@ -1,8 +1,8 @@
-<div class="ClassDoc YAMLDoc" id="label" markdown="1">
+<div class="ClassDoc YAMLDoc" id="Label" markdown="1">
 
-# class __label__
+# class __Label__
 
-The label widget is a non-interactive string of text.
+The `Label` widget is a non-interactive string of text.
 
 __Example (OpenSesame script):__
 
@@ -13,20 +13,21 @@ widget 0 0 1 1 label text='My text'
 __Example (Python):__
 
 ~~~ .python
-from libopensesame import widgets
-form = widgets.form(exp)
-label = widgets.label(form, text='My text')
+form = Form()
+label = Label(text='My text')
 form.set_widget(label, (0,0))
 form._exec()
 ~~~
 
 [TOC]
 
-<div class="FunctionDoc YAMLDoc" id="label-__init__" markdown="1">
+<div class="FunctionDoc YAMLDoc" id="Label-__init__" markdown="1">
 
-## function __label\.\_\_init\_\___\(form, text=u'label', frame=False, center=True\)
+## function __Label\.\_\_init\_\___\(form, text=u'label', frame=False, center=True\)
 
-Constructor.
+Constructor to create a new `Label` object. You do not generally
+call this constructor directly, but use the `Label()` factory
+function, which is described here: [/python/common/]().
 
 __Arguments:__
 
@@ -47,12 +48,25 @@ __Keywords:__
 
 </div>
 
-[label.__init__]: #label-__init__
-[__init__]: #label-__init__
+<div class="FunctionDoc YAMLDoc" id="Label-_init_canvas_elements" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="label-draw_frame" markdown="1">
+## function __Label\.\_init\_canvas\_elements__\(\)
 
-## function __label\.draw\_frame__\(rect=None, style=u'normal'\)
+Initializes all canvas elements.
+
+</div>
+
+<div class="FunctionDoc YAMLDoc" id="Label-_update" markdown="1">
+
+## function __Label\.\_update__\(\)
+
+Draws the widget.
+
+</div>
+
+<div class="FunctionDoc YAMLDoc" id="Label-_update_frame" markdown="1">
+
+## function __Label\.\_update\_frame__\(rect=None, style=u'normal'\)
 
 Draws a simple frame around the widget.
 
@@ -67,12 +81,9 @@ __Keywords:__
 
 </div>
 
-[label.draw_frame]: #label-draw_frame
-[draw_frame]: #label-draw_frame
+<div class="FunctionDoc YAMLDoc" id="Label-_update_text" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="label-draw_text" markdown="1">
-
-## function __label\.draw\_text__\(text, html=True\)
+## function __Label\.\_update\_text__\(text\)
 
 Draws text inside the widget.
 
@@ -81,20 +92,32 @@ __Arguments:__
 - `text` -- The text to draw.
 	- Type: str, unicode
 
-__Keywords:__
+</div>
 
-- `html` -- Indicates whether HTML should be parsed.
-	- Type: bool
-	- Default: True
+<div class="FunctionDoc YAMLDoc" id="Label-coroutine" markdown="1">
+
+## function __Label\.coroutine__\(\)
+
+Implements the interaction. This can be overridden to implement more complicated keyboard/ mouse interactions.
 
 </div>
 
-[label.draw_text]: #label-draw_text
-[draw_text]: #label-draw_text
+<div class="FunctionDoc YAMLDoc" id="Label-on_key_press" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="label-on_mouse_click" markdown="1">
+## function __Label\.on\_key\_press__\(key\)
 
-## function __label\.on\_mouse\_click__\(pos\)
+Is called whenever the widget is focused and the users enters a key.
+
+__Arguments:__
+
+- `key` -- A key
+	- Type: str
+
+</div>
+
+<div class="FunctionDoc YAMLDoc" id="Label-on_mouse_click" markdown="1">
+
+## function __Label\.on\_mouse\_click__\(pos\)
 
 Is called whenever the user clicks on the widget.
 
@@ -105,23 +128,9 @@ __Arguments:__
 
 </div>
 
-[label.on_mouse_click]: #label-on_mouse_click
-[on_mouse_click]: #label-on_mouse_click
+<div class="FunctionDoc YAMLDoc" id="Label-set_rect" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="label-render" markdown="1">
-
-## function __label\.render__\(\)
-
-Draws the widget.
-
-</div>
-
-[label.render]: #label-render
-[render]: #label-render
-
-<div class="FunctionDoc YAMLDoc" id="label-set_rect" markdown="1">
-
-## function __label\.set\_rect__\(rect\)
+## function __Label\.set\_rect__\(rect\)
 
 Sets the widget geometry.
 
@@ -132,12 +141,9 @@ __Arguments:__
 
 </div>
 
-[label.set_rect]: #label-set_rect
-[set_rect]: #label-set_rect
+<div class="FunctionDoc YAMLDoc" id="Label-set_var" markdown="1">
 
-<div class="FunctionDoc YAMLDoc" id="label-set_var" markdown="1">
-
-## function __label\.set\_var__\(val, var=None\)
+## function __Label\.set\_var__\(val, var=None\)
 
 Sets an experimental variable.
 
@@ -153,10 +159,5 @@ __Keywords:__
 
 </div>
 
-[label.set_var]: #label-set_var
-[set_var]: #label-set_var
-
 </div>
-
-[label]: #label
 

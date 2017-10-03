@@ -30,19 +30,27 @@ def main():
 	createdoc(src='opensesame_plugins/srbox/libsrbox.py',
 		target='srbox.md', cls='libsrbox', customName='srbox')
 	createdoc(src='libopensesame/var_store.py',
-		target='var.md', cls='var_store', customName='var')
+		target='var.md', cls='var_store', customName='var',
+		customDescriptor='instance')
 	createdoc(src='libopensesame/file_pool_store.py',
-		target='pool.md', cls='file_pool_store', customName='pool')
+		target='pool.md', cls='file_pool_store', customName='pool',
+		customDescriptor='instance')
 	createdoc(src='libopensesame/item_store.py',
-		target='items.md', cls='item_store', customName='items')
+		target='items.md', cls='item_store', customName='items',
+		customDescriptor='instance')
 	createdoc(src='libopensesame/response_store.py',
-		target='responses.md', cls='response_store', customName='responses')
+		target='responses.md', cls='response_store', customName='responses',
+		customDescriptor='instance')
 	createdoc('libopensesame/python_workspace_api.py',
 		target='python_workspace_api.md', onlyContents=True,
 		types=[u'function', u'module'], cls=None, exclude=['osexception'])
-	for backend in ['sampler', 'canvas', 'keyboard', 'mouse', 'clock', 'log']:
+	for backend in ['sampler', 'canvas', 'keyboard', 'mouse']:
 		createdoc('openexp/_%s/%s.py' % (backend, backend),
 			target='%s.md' % backend, cls=backend)
+	for backend in ['clock', 'log']:
+		createdoc('openexp/_%s/%s.py' % (backend, backend),
+			target='%s.md' % backend, cls=backend, customName=backend,
+			customDescriptor='instance')
 
 	for widget in ['form', 'button', 'image', 'image_button', 'checkbox',
 		'rating_scale', 'label', 'text_input']:

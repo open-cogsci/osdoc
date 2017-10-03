@@ -1,12 +1,13 @@
 <div class="ClassDoc YAMLDoc" id="var" markdown="1">
 
-# class __var__
+# instance __var__
 
 The `var` object provides access to experimental variables.
 Experimental variables are the variables that live in the GUI, and are
 commonly set as independent variables in the LOOP item, referred
 to using the square-bracket (`[my_variable]`) notation, and logged by
-the LOGGER item.
+the LOGGER item. A `var` object is created automatically when the
+experiment starts.
 
 In addition to the functions listed below, the following semantics are
 supported:
@@ -46,9 +47,6 @@ __Keywords:__
 
 </div>
 
-[var.clear]: #var-clear
-[clear]: #var-clear
-
 <div class="FunctionDoc YAMLDoc" id="var-get" markdown="1">
 
 ## function __var\.get__\(var, default=None, \_eval=True, valid=None\)
@@ -84,9 +82,6 @@ __Keywords:__
 
 </div>
 
-[var.get]: #var-get
-[get]: #var-get
-
 <div class="FunctionDoc YAMLDoc" id="var-has" markdown="1">
 
 ## function __var\.has__\(var\)
@@ -110,9 +105,6 @@ __Arguments:__
 
 </div>
 
-[var.has]: #var-has
-[has]: #var-has
-
 <div class="FunctionDoc YAMLDoc" id="var-items" markdown="1">
 
 ## function __var\.items__\(\)
@@ -126,9 +118,6 @@ A list of (variable_name, value) tuples.
 - Type: list
 
 </div>
-
-[var.items]: #var-items
-[items]: #var-items
 
 <div class="FunctionDoc YAMLDoc" id="var-set" markdown="1">
 
@@ -153,9 +142,6 @@ __Arguments:__
 
 </div>
 
-[var.set]: #var-set
-[set]: #var-set
-
 <div class="FunctionDoc YAMLDoc" id="var-unset" markdown="1">
 
 ## function __var\.unset__\(var\)
@@ -177,9 +163,6 @@ __Arguments:__
 
 </div>
 
-[var.unset]: #var-unset
-[unset]: #var-unset
-
 <div class="FunctionDoc YAMLDoc" id="var-vars" markdown="1">
 
 ## function __var\.vars__\(\)
@@ -194,10 +177,5 @@ A list of variable names.
 
 </div>
 
-[var.vars]: #var-vars
-[vars]: #var-vars
-
 </div>
-
-[var]: #var
 
