@@ -1,9 +1,8 @@
 title: Creating custom forms
 
-If forms are slow, see [this page](%link:manual/forms/performance%).
-{: .page-notification}
 
 [TOC]
+
 
 ## About forms, geometries, and widgets
 
@@ -48,8 +47,8 @@ figure:
 
 There are two ways to create custom forms. You can:
 
-- Use the FORM_BASE plugin, and specify your form using OpenSesame script.
-- Use the `libopensesame.widgets` package and create your form using Python code. The Python way is slightly more flexible, but for most purposes both ways can be used.
+- Use the FORM_BASE item, and specify your form using OpenSesame script.
+- Using Python in an INLINE_SCRIPT item. The Python way is slightly more flexible, but for most purposes both ways can be used.
 
 ### Creating forms using OpenSesame script
 
@@ -59,20 +58,16 @@ We will create the form described above using OpenSesame script. First, drag the
 # Margins are defined as "top;right;bottom;left". Each value corresponds to a
 # margin in pixels.
 set margins "50;100;50;100"
-
 # The spacing is simply a value in pixels.
 set spacing "25"
-
 # The sizes of the rows are relative. "1;2;1" means that there are three rows,
 # where the middle one is twice as large as the bottom and top ones. So "1;2;1"
 # means exactly the same thing as "3;6;3". Please note that "3" does not mean
 # that there are three equally-sized rows (but "1;1;1" does).
 set rows "1;2;1"
-
 # Columns are defined in the same way. "1;1" simply means that there
 # are two columns of the same size.
 set cols "1;1"
-
 # Widgets are defined as follows:
 # widget [column] [row] [column span] [row span] [widget type] [keywords]
 #
@@ -91,28 +86,25 @@ The exact same form can be created using an INLINE_SCRIPT and a bit of Python co
 First, drag an INLINE_SCRIPT into your experiment. Select the newly created item to open its tab, and add the following script into the Run phase of the INLINE_SCRIPT item (see the comments for explanations).
 
 ~~~ .python
-# Import the widgets library
-from libopensesame import widgets
-
 # Create a form
-form = widgets.form(exp, cols=[1,1], rows=[1,2,1],
-	margins=(50,100,50,100), spacing=25)
-
+form = Form(
+	cols=[1,1], rows=[1,2,1],
+	margins=(50,100,50,100), spacing=25
+)
 # Create four widgets
-labelTitle = widgets.label(form, text='Question')
-labelQuestion = widgets.label(form,
-	text='A bat and a baseball together cost $1.10. The bat costs one dollar more than the ball. How much does the ball cost?',
-	center=False)
-button5cts = widgets.button(form, text='$0.05')
-button10cts = widgets.button(form, text='$0.10')
-
+labelTitle = Label(text=u'Question')
+labelQuestion = Label(
+	text=u'A bat and a baseball together cost $1.10. The bat costs one dollar more than the ball. How much does the ball cost?',
+	center=False
+)
+button5cts = Button(text=u'$0.05')
+button10cts = Button(text=u'$0.10')
 # Add the widgets to the form. The position in the form is indicated as a
 # (column, row) tuple.
 form.set_widget(labelTitle, (0,0), colspan=2)
 form.set_widget(labelQuestion, (0,1), colspan=2)
 form.set_widget(button5cts, (0,2))
 form.set_widget(button10cts, (1,2))
-
 # Execute the form! In this case, the form will return the text of the button that
 # was clicked. This is one way to get a return value out of the form. Another way
 # is to use the 'var' keyword, supported some of the widgets.
@@ -123,7 +115,7 @@ button_clicked = form._exec()
 
 Usually, a form will have an input field, a button, or some other interactive element. However, you can also use forms without having any interactive element. To do this in OpenSesame script, you set `only_render` to "yes":
 
-	set only_render "yes"
+	set only_render yes
 
 To this in a Python INLINE_SCRIPT, you call `form.render()`, instead of `form._exec()`.
 
@@ -136,51 +128,24 @@ Forms support theming. Currently, two themes are available: 'gray' and 'plain'. 
 And by using the `theme` keyword in Python inline script:
 
 ~~~ .python
-form = widgets.form(exp, theme='plain')
+form = Form(theme=u'plain')
 ~~~
 
 ### Available widgets and keywords
 
-The following widgets are available:
+For a list of available widgets and keywords, see:
 
-%--
-figure:
- id: FigWidgets
- source: widgets.png
- caption: A list of available FORM widgets.
---%
+- %link:manual/forms/widgets%
 
-You can define a widget using keywords. In Python inline code, you pass these keywords to the constructor of the widget class, like so:
+### Validating input
 
-~~~ .python
-# text, frame, and var are keywords
-button = widgets.button(form, text='Click me!', frame=True, var='response_variable')
-~~~
+To see how you can validate form input, see:
 
-In OpenSesame script, you list the keyword options after the widget type, like so:
-
-	widget 0 0 1 1 button text='Click me!' frame='yes' var='response_variable
-
-The keywords that are used when defining widgets in OpenSesame script are the same as those used in Python inline script, so you can rely on the Python documentation to see which keywords are available (see links below). However, there are a few things to keep in mind.
-
-- If a keyword should be boolean (`True` or `False`) in Python, it should be 'yes' or 'no' in OpenSesame script.
-- If a keyword requires a path name, you can directly enter the name of a file in the file pool. (Whereas in Python inline script you would have to use the `pool` object to accomplish this.)
-- The keywords in OpenSesame script are the arguments to the `__init__()` function (the constructor) of the corresponding Python class. Only the arguments that are listed as 'Keyword arguments' are valid keywords.
-
-Click on the links below to see a full description of keywords and functions (Python API):
-
-- [Button](%link:manual/forms/widgets/button%)
-- [Checkbox](%link:manual/forms/widgets/checkbox%)
-- [Image](%link:manual/forms/widgets/image%)
-- [Image_button](%link:manual/forms/widgets/image_button%)
-- [Label](%link:manual/forms/widgets/label%)
-- [Rating_scale](%link:manual/forms/widgets/rating_scale%)
-- [Text_input](%link:manual/forms/widgets/text_input%)
-- [Form](%link:manual/forms/widgets/form%)
+- %link:manual/forms/validation%
 
 ## Another example
 
-The following OpenSesame script (in a form_base plugin) will produce a questionnaire of three rating scales plus a next button:
+The following OpenSesame script (in a FORM_BASE plugin) will produce a questionnaire of three rating scales plus a next button:
 
 ~~~
 set rows "1;1;1;1;1"
@@ -198,28 +163,32 @@ widget 0 4 2 1 button text="Next"
 The following Python inline_script will produce the same questionnaire.
 
 ~~~ .python
-from libopensesame import widgets
-form = widgets.form(exp, cols=[1,1], rows=[1,1,1,1,1])
-title = widgets.label(form,
-	text='Indicate how much you agree with the following statement')
-question1 = widgets.label(form, text='Forms are easy', center=False)
-question2 = widgets.label(form, text='I like data', center=False)
-question3 = widgets.label(form, text='I like questionnaires', center=False)
-ratingScale1 = widgets.rating_scale(form, var='question1',
-	nodes=['Agree', "Don't know", 'Disagree'])
-ratingScale2 = widgets.rating_scale(form, var='question2',
-	nodes=['Agree', "Don't know", 'Disagree'])
-ratingScale3 = widgets.rating_scale(form, var='question3',
-	nodes=['Agree', "Don't know", 'Disagree'])
-nextButton = widgets.button(form, text='Next')
-form.set_widget(title, (0,0), colspan=2)
-form.set_widget(question1, (0,1))
-form.set_widget(question2, (0,2))
-form.set_widget(question3, (0,3))
-form.set_widget(ratingScale1, (1,1))
-form.set_widget(ratingScale2, (1,2))
-form.set_widget(ratingScale3, (1,3))
-form.set_widget(nextButton, (0,4), colspan=2)
+form = Form(cols=[1,1], rows=[1,1,1,1,1])
+title = Label(
+	text=u'Indicate how much you agree with the following statement'
+)
+question1 = Label(text=u'Forms are easy', center=False)
+question2 = Label(text=u'I like data', center=False)
+question3 = Label(text=u'I like questionnaires', center=False)
+ratingScale1 = RatingScale(
+	var=u'question1',
+	nodes=[u'Agree', u"Don't know", u'Disagree']
+)
+ratingScale2 = RatingScale(
+	var=u'question2',
+	nodes=[u'Agree', u"Don't know", u'Disagree']
+)
+ratingScale3 = RatingScale(var='question3',
+	nodes=[u'Agree', u"Don't know", u'Disagree'])
+nextButton = Button(text=u'Next')
+form.set_widget(title, (0, 0), colspan=2)
+form.set_widget(question1, (0, 1))
+form.set_widget(question2, (0, 2))
+form.set_widget(question3, (0, 3))
+form.set_widget(ratingScale1, (1, 1))
+form.set_widget(ratingScale2, (1, 2))
+form.set_widget(ratingScale3, (1, 3))
+form.set_widget(nextButton, (0, 4), colspan=2)
 form._exec()
 ~~~
 

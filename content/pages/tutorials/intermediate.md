@@ -14,7 +14,7 @@ This tutorial shows how to create a basic visual-search experiment using OpenSes
 
 ## Resources
 
-- __Download__ — This tutorial assumes that you are running OpenSesame version 3.1.0 or later. You can download the most recent version of OpenSesame from:
+- __Download__ — This tutorial assumes that you are running OpenSesame version 3.2.0 or later. You can download the most recent version of OpenSesame from:
 	- %link:download%
 - __Documentation__ — A dedicated documentation website can be found at:
 	- <http://osdoc.cogsci.nl/>
@@ -280,9 +280,9 @@ c = draw_canvas()
 
 What happens here? We …
 
-- Call `draw_canvas()`, which returns a `canvas` object that we store as `c`; in other words, `c` is a `canvas` object that corresponds the search display. This assumes that there is a function `draw_canvas()`, even though we haven't defined it yet.
+- Call `draw_canvas()`, which returns a `Canvas` object that we store as `c`; in other words, `c` is a `Canvas` object that corresponds the search display. This assumes that there is a function `draw_canvas()`, even though we haven't defined it yet.
 
-A `canvas` object is a single display; it is, in a sense, the Python counterpart of a SKETCHPAD. See also:
+A `Canvas` object is a single display; it is, in a sense, the Python counterpart of a SKETCHPAD. See also:
 
 - %link:canvas%	 
 
@@ -295,10 +295,10 @@ def draw_canvas():
 	Draws the search canvas.
 
 	Returns:
-	A canvas.
+	A Canvas.
 	"""
 
-	c = canvas()
+	c = Canvas()
 	xy_list = xy_random(n=var.set_size, width=500, height=500, min_dist=75)
 	if var.target_present == 'present':
 		x, y = xy_list.pop()
@@ -311,21 +311,17 @@ def draw_canvas():
 	return c
 ~~~
 
-<div class="alert alert-info" role="alert" markdown=1>
-__Note:__ If drawing on a `canvas` is slow, you should disable `auto_prepare`. See also: %link:canvas%
-</div>
-
 
 What happens here? We …
 
-- Create an empty canvas, `c`, using the common OpenSesame function `canvas()`.
+- Create an empty canvas, `c`, using the factory function `Canvas()`.
 - Generate a list of random `x, y` coordinates, called `xy_list`, using another common function, `xy_random()`. This list determines where the stimuli are shown.
 - Check if the experimental variable `target_present` has the value 'present'; if so, `pop()` one `x, y` tuple from `xy_list`, and draw the target at this location. This assumes that there is a function `draw_target()`, even though we haven't defined it yet.
 - If `target_present` is neither 'present' nor 'absent', we raise an `Exception`; this is defensive programming, and protects us from typos (e.g. if we had accidentally entered 'presenr' instead of 'present').
 - Loop through all remaining `x, y` tuples and draw a distractor at each position. This assumes that there is a function `draw_distractor()`, even though we haven't defined it yet.
 - Return `c`, which now has the search display drawn onto it.
 
-There are several common functions, such as `canvas()` and `xy_random()`, which are always available. See:
+There are several common functions, such as `Canvas()` and `xy_random()`, which are always available. See:
 
 - %link:common%
 
@@ -344,7 +340,7 @@ def draw_target(c, x, y):
 	Draws the target.
 
 	arguments:
-	c:	A canvas.
+	c:	A Canvas.
 	x:	An x coordinate.
 	y:	A y coordinate.
 	"""
@@ -365,7 +361,7 @@ def draw_distractor(c, x, y):
 	Draws a single distractor.
 
 	Arguments:
-	c:	A canvas.
+	c:	A Canvas.
 	x:	An x coordinate.
 	y:	A y coordinate.
 	"""
@@ -390,6 +386,7 @@ Now we define the function that draws distractors in the Conjunction condition (
 ~~~ .python
 import random
 
+
 def draw_conjunction_distractor(c, x, y):
 
 	"""
@@ -397,7 +394,7 @@ def draw_conjunction_distractor(c, x, y):
 	can have any shape and color, but cannot be identical to the target.
 
 	arguments:
-	c:	A canvas.
+	c:	A Canvas.
 	x:	An x coordinate.
 	y:	A y coordinate.
 	"""
@@ -434,7 +431,7 @@ def draw_feature_shape_distractor(c, x, y):
 	has a different shape from the target, but can have any color.
 
 	Arguments:
-	c:	A canvas.
+	c:	A Canvas.
 	x:	An x coordinate.
 	y:	A y coordinate.
 	"""		
@@ -467,7 +464,7 @@ def draw_feature_color_distractor(c, x, y):
 	has a different color from the target, but can have any shape.
 
 	Arguments:
-	c:	A canvas.
+	c:	A Canvas.
 	x:	An x coordinate.
 	y:	A y coordinate.
 	"""
@@ -501,7 +498,7 @@ def draw_shape(c, x, y, color, shape):
 	Draws a single shape.
 
 	Arguments:
-	c:		A canvas.
+	c:		A Canvas.
 	x:		An x coordinate.
 	y:		A y coordinate.
 	color:	A color (yellow or blue)
@@ -509,9 +506,9 @@ def draw_shape(c, x, y, color, shape):
 	"""		
 
 	if shape == 'square':
-		c.rect(x=x-25, y=y-25, w=50, h=50, color=color, fill=True)
+		c += Rect(x=x-25, y=y-25, w=50, h=50, color=color, fill=True)
 	elif shape == 'circle':
-		c.circle(x=x, y=y, r=25, color=color, fill=True)
+		c += Circle(x=x, y=y, r=25, color=color, fill=True)
 	else:
 		raise Exception('Invalid shape: %s' % shape)
 	if color not in ['yellow', 'blue']:
@@ -520,7 +517,7 @@ def draw_shape(c, x, y, color, shape):
 
 What happens here? We …
 
-- Check which shape should be drawn. For squares, we call the `canvas.rect()` function. For circles, we call the `canvas.circle()` function
+- Check which shape should be drawn. For squares, we add a `Rect()` element to the canvas. For circles, we add a `Circle()` element.
 - Check if the the shape is either a square or a circle, and if not raise an `Exception`. This is another example of defensive programming! We're making sure that we haven't accidentally specified an invalid shape.
 - Check if the the color is neither yellow nor blue, and if not raise an `Exception`.
 
@@ -533,6 +530,7 @@ c.show()
 ~~~
 
 That's it! Now you have drawn a full visual-search display. And, importantly, you have done so in a way that is easy to understand, because of top-down programming, and safe, because of defensive programming.
+
 
 ## Step 7: Define the correct response
 

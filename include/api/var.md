@@ -6,8 +6,9 @@ The `var` object provides access to experimental variables.
 Experimental variables are the variables that live in the GUI, and are
 commonly set as independent variables in the LOOP item, referred
 to using the square-bracket (`[my_variable]`) notation, and logged by
-the LOGGER item. A `var` object is created automatically when the
-experiment starts.
+the LOGGER item.
+
+A `var` object is created automatically when the experiment starts.
 
 In addition to the functions listed below, the following semantics are
 supported:
@@ -38,6 +39,12 @@ for var_name in var:
 *New in 3.1.2*
 
 Clears all experimentals variables.
+
+__Example:__
+
+~~~ .python
+var.clear()
+~~~
 
 __Keywords:__
 
@@ -111,6 +118,13 @@ __Arguments:__
 
 Returns a list of (variable_name, value) tuples. See [vars] for a note about the non-exhaustiveness of this function.
 
+__Example:__
+
+~~~ .python
+for varname, value in var.items():
+        print(varname, value)
+~~~
+
 __Returns:__
 
 A list of (variable_name, value) tuples.
@@ -168,6 +182,13 @@ __Arguments:__
 ## function __var\.vars__\(\)
 
 Returns a list of experimental variables. Because experimental variables can be stored in multiple places, this list may not be exhaustive. That is, `u'my_var' in var` may return `True`, while u'my_var' is not in the list of variables as returned by this function.
+
+__Example:__
+
+~~~ .python
+for varname in var.vars():
+        print(varname)
+~~~
 
 __Returns:__
 

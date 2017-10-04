@@ -31,7 +31,43 @@ __Keyword dict:__
 
 __Returns:__
 
-A CANVAS object.
+A `Canvas` object.
+
+- Type: canvas
+
+</div>
+
+<div class="FunctionDoc YAMLDoc" id="Form" markdown="1">
+
+## function __Form__\(\*args, \*\*kwargs\)
+
+A factory function that creates a new `Form` object. For a
+description of possible keywords, see:
+
+- %link:manual/forms/widgets%
+
+__Example:__
+
+~~~ .python
+form = Form()
+label = Label(text='label')
+button = Button(text='Ok')
+form.set_widget(label, (0,0))
+form.set_widget(button, (0,1))
+form._exec()
+~~~
+
+__Argument list:__
+
+- `*args`: No description.
+
+__Keyword dict:__
+
+- `**kwargs`: No description.
+
+__Returns:__
+
+A `Form` object.
 
 - Type: canvas
 
@@ -273,7 +309,7 @@ __Example:__
 
 ~~~ .python
 # Draw 8 rectangles around a central fixation dot
-c = canvas()
+c = Canvas()
 c.fixdot()
 for x, y in xy_circle(8, 100):
         c.rect(x-10, y-10, 20, 20)
@@ -341,7 +377,7 @@ __Example:__
 # Draw a cross
 x1, y1 = xy_from_polar(100, 45)
 x2, y2 = xy_from_polar(100, -45)
-c = canvas()
+c = Canvas()
 c.line(x1, y1, -x1, -y1)
 c.line(x2, y2, -x2, -y2)
 c.show()
@@ -378,7 +414,7 @@ __Example:__
 
 ~~~ .python
 # Draw a 4x4 grid of rectangles
-c = canvas()
+c = Canvas()
 c.fixdot()
 for x, y in xy_grid(4, 100):
         c.rect(x-10, y-10, 20, 20)
@@ -416,7 +452,7 @@ __Example:__
 
 ~~~ .python
 # Draw a 50 rectangles in a random grid
-c = canvas()
+c = Canvas()
 c.fixdot()
 for x, y in xy_random(50, 500, 500, min_dist=40):
         c.rect(x-10, y-10, 20, 20)

@@ -36,10 +36,10 @@ And see more Python video tutorials:
 
 All Python code is executed in a single Python workspace. This means that variables that have been defined in one INLINE_SCRIPT are accessible in all other INLINE_SCRIPTs, as well as in Python statements that are embedded in run-if statements and text strings. The same principle applies to modules: once `import`ed, they are available everywhere.
 
-For example, you can simply construct the `canvas` in one INLINE_SCRIPT ...
+For example, you can simply construct the `Canvas` in one INLINE_SCRIPT ...
 
 ~~~ .python
-my_canvas = canvas()
+my_canvas = Canvas()
 my_canvas.fixdot()
 ~~~
 
@@ -60,15 +60,16 @@ figure:
  caption: The INLINE_SCRIPT item.
 --%
 
-As you can see, the INLINE_SCRIPT item consists of two tabs: one for the Prepare phase and one for the Run phase. The Prepare phase is executed first, to allow items to prepare for the time critical run phase. It is good practice to construct `canvas` objects, `sampler` objects, etc. during the Prepare phase, so that they can be presented without delay during the Run phase. But this is only convention; you can execute arbitrary Python code during both phases.
+As you can see, the INLINE_SCRIPT item consists of two tabs: one for the Prepare phase and one for the Run phase. The Prepare phase is executed first, to allow items to prepare for the time-critical run phase. It is good practice to construct `Canvas` objects, `Sampler` objects, etc. during the Prepare phase, so that they can be presented without delay during the Run phase. But this is only convention; you can execute arbitrary Python code during both phases.
 
 For more information about the prepare-run strategy, see:
 
 - %link:prepare-run%
 
+
 ### Loop tables and conditional ("if") statements
 
-You can use single-line Python statements also where you would normally type static values, or would use the OpenSesame square-brackets notation to indicate values (i.e. `[my_var]`). To do so, you need to add an `=` prefix. For example, you can use the following Python script as a run-if statement (see also %FigRunIf):
+You can use single-line Python statements also where you would normally type static values, or would use the OpenSesame square-brackets notation to indicate values (i.e. `[my_var]`). To do so, you need to prefix an `=`. For example, you can use the following Python script as a run-if statement (see also %FigRunIf):
 
 ~~~ .python
 =var.correct == 1 and var.response_time < 1000
@@ -98,6 +99,7 @@ figure:
  caption: Using Python script to define variables in a LOOP table.
 --%
 
+
 ### Python in text strings
 
 You can embed Python statements in text strings using the `[=...]` syntax. For example, you could the following text to a SKETCHPAD:
@@ -108,9 +110,10 @@ Depending on your experiment's resolution, this might evaluate to:
 
     The resolution is 1024 x 768 px
 
+
 ### The IPython debug window
 
-OpenSesame reroutes the standard output to the debug window, which you can activate using Control + D or through the menu (Menu -> View -> Show debug window; see %FigDebugNormal). You can print to the debug window using the Python `print()` statement:
+OpenSesame reroutes the standard output to the debug window, which you can activate using Control + D or through the menu (Menu -> View -> Show debug window; see %FigDebugNormal). You can print to the debug window using `print()`:
 
 ~~~ .python
 print('This will appear in the debug window!')
@@ -125,6 +128,7 @@ figure:
  caption: The debug window.
 --%
 
+
 ## Things to know
 
 ### Common functions
@@ -132,8 +136,8 @@ figure:
 Many common functions are directly available in an INLINE_SCRIPT item, without the need to import anything. For example:
 
 ~~~ .python
-# `canvas()` is a common function that returns a `canvas` object
-fixdot_canvas = canvas()
+# `Canvas()` is a factory function that returns a `Canvas` object
+fixdot_canvas = Canvas()
 if sometimes(): # Sometimes the fixdot is green
     fixdot_canvas.fixdot(color='green')
 else: # Sometimes it is red
@@ -144,6 +148,7 @@ fixdot_canvas.show()
 For a list of common functions, see:
 
 - %link:manual/python/common%
+
 
 ### The `var` object: Access to experimental variables
 
@@ -160,6 +165,7 @@ A full overview of the `var` object can be found here:
 
 - %link:manual/python/var%
 
+
 ### The `clock` object: Time functions
 
 Basic time functions are available through the `clock` object:
@@ -174,6 +180,7 @@ clock.sleep(1000)
 A full overview of the `clock` object can be found here:
 
 - %link:manual/python/clock%
+
 
 ### The `log` object: Data logging
 
@@ -190,6 +197,7 @@ A full overview of the `log` object can be found here:
 
 - %link:manual/python/log%
 
+
 ### The `pool` object: Access to the file pool
 
 You get the full path to a file in the file pool through the `pool` object:
@@ -197,7 +205,7 @@ You get the full path to a file in the file pool through the `pool` object:
 ~~~ .python
 # Show an image from the file pool
 path = pool['img.png']
-my_canvas = canvas()
+my_canvas = Canvas()
 my_canvas.image(path)
 my_canvas.show()
 ~~~
@@ -205,6 +213,7 @@ my_canvas.show()
 A full overview of the `pool` object can be found here:
 
 - %link:manual/python/pool%
+
 
 ### The `responses` object: Access to participant responses
 
@@ -219,26 +228,73 @@ A full overview of the `responses` object can be found here:
 
 - %link:manual/python/responses%
 
-### The `win` object: The window handle
 
-The `win` object is the window handle, and depends on the backend. You will generally use the `win` object only in special cases, such as when creating PsychoPy stimuli..
+### The `Canvas` class: Presenting visual stimuli
 
-## Modules for display presentation, response collection, etc.
+The `Canvas` class is used to present visual stimuli. For example, you can show a fixation dot as follows:
 
-### `openexp` (Native OpenSesame modules)
+~~~ .python
+my_canvas = Canvas()
+my_canvas.fixdot()
+my_canvas.show()
+~~~
 
-OpenSesame comes with a set of Python modules for presenting stimuli, handling input, etc. These modules work with all backends. The full API (i.e., a list of functions) can be found here:
+A full overview of the `Canvas` class can be found here:
 
-- Display presentation: %link:manual/python/canvas%
-- Keyboard response collection: %link:manual/python/keyboard%
-- Mouse response collection: %link:manual/python/mouse%
-- Sound playback: %link:manual/python/sampler%
+- %link:manual/python/canvas%
+
+
+### The `Keyboard` class: Collecting key presses
+
+The `Keyboard` class is used to collect key presses. For example, to collect a key press with a timeout of 1000 ms:
+
+~~~ .python
+my_keyboard = Keyboard(timeout=1000)
+key, time = my_keyboard.get_key()
+~~~
+
+A full overview of the `Keyboard` class can be found here:
+
+- %link:manual/python/keyboard%
+
+
+### The `Mouse` class: Collecting mouse clicks and screen touches
+
+The `Mouse` class is used to collect mouse clicks and screen touches. (OpenSesame makes no distinction between the two.) For example, to collect a mouse click with a timeout of 1000 ms:
+
+~~~ .python
+my_mouse = Mouse(timeout=1000)
+button, position, time = my_mouse.get_click()
+~~~
+
+A full overview of the `Mouse` class can be found here:
+
+- %link:manual/python/mouse%
+
+
+### The `Sampler` class: Sound playback
+
+The `Sampler` class is used to play back sound samples. For example, to play back a simple beep:
+
+~~~ .python
+my_sampler = Sampler()
+my_sampler.play()
+~~~
+
+A full overview of the `Sampler` class can be found here:
+
+- %link:manual/python/sampler%
+
+
+## Alternative modules for display presentation, response collection, etc.
+
 
 ### `psychopy`
 
 If you are using the *psycho* backend, you can directly use the various [PsychoPy] modules. For more information, see:
 
 - %link:backends%
+
 
 ### `expyriment`
 
@@ -252,12 +308,8 @@ If you are using the *legacy*, *droid*, or *xpyriment* (only with "Use OpenGL" s
 
 - %link:backends%
 
+
 [python]: http://www.python.org/
-[canvas]: /python/canvas
-[keyboard]: /python/keyboard
-[mouse]: /python/mouse
-[sampler]: /python/sampler
-[synth]: /python/synth
 [backends]: /backends/about-backends
 [ipython]: http://ipython.org/
 [swaroop]: http://www.swaroopch.com/notes/Python

@@ -1,8 +1,5 @@
 title: Form variables
 
-If forms are slow, see [this page](%link:manual/forms/performance%).
-{: .page-notification}
-
 [TOC]
 
 ## About form variables
@@ -24,8 +21,12 @@ widget 0 0 1 1 text_input var=my_response_var
 The equivalent Python code is:
 
 ~~~ .python
-my_widget = widgets.text_input(form, var='my_response_var')
+my_widget = TextInput(var='my_response_var')
 ~~~
+
+See also:
+
+- %link:manual/forms/widgets%
 
 ## Widget-specific information
 

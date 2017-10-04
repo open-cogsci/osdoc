@@ -57,7 +57,7 @@ __Keywords:__
 - `clicks` -- If enabled, an auditory click is played on user interactions. This can help to make interactions feel smoother if there is some visual lag.
 	- Type: bool
 	- Default: False
-- `validator` -- A function that takes no arguments and returns True if the foru is successfully validated, and False if not.
+- `validator` -- A function that takes no arguments and returns True if the form is successfully validated, and False if not.
 	- Type: FunctionType, NoneType
 	- Default: None
 

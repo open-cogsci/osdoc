@@ -4,7 +4,8 @@
 
 The `Sampler` class provides functionality to play sound samples. You
 generally create a `Sampler` object with the `Sampler()` factory
-function.
+function, as described in the section
+[Creating a Sampler](#creating-a-sampler).
 
 __Example:__
 
@@ -17,6 +18,24 @@ my_sampler.play()
 [TOC]
 
 ## Things to know
+
+### Creating a Sampler
+
+You generally create a `Sampler` with the `Sampler()` factory function,
+which takes the full path to a sound file as the first argument.
+
+~~~ .python
+src = pool['bark.ogg']
+my_sampler = Sampler(src)
+~~~
+
+Optionally, you can pass [Playback keywords](#playback-keywords) to
+`Sampler()` to set the default behavior:
+
+~~~ .python
+src = pool['bark.ogg']
+my_sampler = Sampler(src, volume=.5)
+~~~
 
 ### Sampling rate
 
@@ -102,65 +121,22 @@ my_sampler.play()
 my_sampler.play()
 ~~~
 
-<div class="FunctionDoc YAMLDoc" id="Sampler-__init__" markdown="1">
-
-## function __Sampler\.\_\_init\_\___\(experiment, src, \*\*playback\_args\)
-
-Constructor to create a new SAMPLER object. You do not generally
-call this constructor directly, but use the `Sampler()` function,
-which is described here: [/python/sampler/]().
-
-__Example:__
-
-~~~ .python
-src = pool[u'my_sound.ogg']
-my_sampler = Sampler(src, volume=.5)
-~~~
-
-__Arguments:__
-
-- `experiment` -- The experiment object.
-	- Type: experiment
-- `src` -- The full path to a `.wav` or `.ogg` file.
-	- Type: unicode, str
-
-__Keyword dict:__
-
-- `**playback_args`: Optional [playback keywords] that will be used as the default for this SAMPLER object.
-
-</div>
-
-<div class="FunctionDoc YAMLDoc" id="Sampler-close_sound" markdown="1">
-
-## function __Sampler\.close\_sound__\(experiment\)
-
-Closes the mixer after the experiment is finished.
-
-__Arguments:__
-
-- `experiment` -- The experiment object.
-	- Type: experiment
-
-</div>
-
-<div class="FunctionDoc YAMLDoc" id="Sampler-init_sound" markdown="1">
-
-## function __Sampler\.init\_sound__\(experiment\)
-
-Initializes the pygame mixer before the experiment begins.
-
-__Arguments:__
-
-- `experiment` -- The experiment object.
-	- Type: experiment
-
-</div>
-
 <div class="FunctionDoc YAMLDoc" id="Sampler-is_playing" markdown="1">
 
 ## function __Sampler\.is\_playing__\(\)
 
 Checks if a sound is currently playing.
+
+__Example:__
+
+~~~ .python
+src = pool[u'my_sound.ogg']
+my_sampler = Sampler(src)
+my_sampler.play()
+sleep(100)
+if my_sampler.is_playing():
+        print('The sampler is still playing!')
+~~~
 
 __Returns:__
 

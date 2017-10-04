@@ -48,18 +48,10 @@ Manual:
     Forms:
     Forms in OpenSesame: manual/forms/about
     Ready-made forms: manual/forms/readymade
-    Custom forms: manual/forms/custom
     Form variables: manual/forms/variables
-    Slow performance: manual/forms/performance
-    Widgets:
-        form: manual/forms/widgets/form
-        button: manual/forms/widgets/button
-        checkbox: manual/forms/widgets/checkbox
-        image: manual/forms/widgets/image
-        image_button: manual/forms/widgets/image_button
-        label: manual/forms/widgets/label
-        rating_scale: manual/forms/widgets/rating_scale
-        text_input: manual/forms/widgets/text_input
+    Custom forms: manual/forms/custom
+    Widgets and keywords: manual/forms/widgets
+    Validating form input: manual/forms/validation
 
     ___:
 

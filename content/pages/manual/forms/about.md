@@ -1,8 +1,5 @@
 title: About forms
 
-If forms are slow, see [this page](%link:manual/forms/performance%).
-{: .page-notification}
-
 Forms are simple interactive displays that can be used to implement questionnaires, instructions, text input displays, etc. You can use forms in three ways.
 
 - Use the form plugins, such as FORM_TEXT_INPUT, which offer ready-made forms. This is the easiest, but least flexible way of using forms.

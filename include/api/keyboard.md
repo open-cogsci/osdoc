@@ -4,7 +4,8 @@
 
 The `Keyboard` class is used to collect keyboard responses. You
 generally create a `Keyboard` object with the `Keyboard()` factory
-function.
+function, as described in the section
+[Creating a Keyboard](#creating-a-keyboard).
 
 __Example:__
 
@@ -20,6 +21,21 @@ var.response_time = end_time - start_time
 [TOC]
 
 ## Things to know
+
+### Creating a Keyboard
+
+You generally create a `Keyboard` with the `Keyboard()` factory function:
+
+~~~ .python
+my_keyboard = Keyboard()
+~~~
+
+Optionally, you can pass [Response keywords](#response-keywords) to
+`Keyboard()` to set the default behavior:
+
+~~~ .python
+my_keyboard = Keyboard(timeout=2000)
+~~~
 
 ### Key names
 
@@ -75,31 +91,6 @@ my_keyboard = Keyboard(keylist=[u'a', u'b'], timeout=5000)
 key1, time1 = my_keyboard.get_key()
 key2, time2 = my_keyboard.get_key()
 ~~~
-
-<div class="FunctionDoc YAMLDoc" id="Keyboard-__init__" markdown="1">
-
-## function __Keyboard\.\_\_init\_\___\(experiment, \*\*resp\_args\)
-
-Constructor to create a new `Keyboard` object. You do not generally
-call this constructor directly, but use the `Keyboard()` function,
-which is described here: [/python/common/]().
-
-__Example:__
-
-~~~ .python
-my_keyboard = Keyboard(keylist=['z', 'm'], timeout=2000)
-~~~
-
-__Arguments:__
-
-- `experiment` -- The experiment object.
-	- Type: experiment
-
-__Keyword dict:__
-
-- `**resp_args`: Optional [response keywords] (`timeout` and `keylist`) that will be used as the default for this `Keyboard` object.
-
-</div>
 
 <div class="FunctionDoc YAMLDoc" id="Keyboard-flush" markdown="1">
 

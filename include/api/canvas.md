@@ -3,7 +3,8 @@
 # class __Canvas__
 
 The `Canvas` class is used to present visual stimuli. You generally
-create a `Canvas` object with the `Canvas()` factory function.
+create a `Canvas` object with the `Canvas()` factory function, as
+described in the section [Creating a Canvas](#creating-a-canvas).
 
 __Example__:
 
@@ -30,14 +31,21 @@ my_canvas.show()
 
 ## Things to know
 
-### Coordinates
+### Creating a Canvas
 
-- When *Uniform coordinates* is set to 'yes', coordinates are
-  relative to the center of the display. That is, (0,0) is the center.
-  This is the default as of OpenSesame 3.0.0.
-- When *Uniform coordinates* is set to 'no', coordinates are relative to
-  the top-left of the display. That is, (0,0) is the top-left. This was
-  the default in OpenSesame 2.9.X and earlier.
+You generally create a `Canvas` with the `Canvas()` factory function:
+
+~~~ .python
+my_canvas = Canvas()
+~~~
+
+Optionally, you can pass [Style keywords](#style-keywords) to `Canvas()`
+to set the default style:
+
+~~~ .python
+my_canvas = Canvas(color='green')
+my_canvas.fixdot() # Will be green
+~~~
 
 ### Style keywords
 
@@ -73,8 +81,8 @@ my_canvas.show()
 ~~~
 
 Style keywords only affect the current drawing operation (except when
-passed to [canvas.\_\_init\_\_][__init__]). To change the style for all
-subsequent drawing operations, set style properties, such as
+passed to `Canvas()` while creating the `Canvas`). To change the style
+for all subsequent drawing operations, set style properties, such as
 [canvas.color], directly:
 
 ~~~ .python
@@ -87,7 +95,7 @@ my_canvas.line(-10, 10, 10, -10)
 my_canvas.show()
 ~~~
 
-Or pass the style properties to [canvas.\_\_init\_\_][__init__]:
+Or pass the style properties to `Canvas()`:
 
 ~~~ .python
 # Draw a red cross with a 2px penwidth
@@ -96,6 +104,15 @@ my_canvas.line(-10, -10, 10, 10)
 my_canvas.line(-10, 10, 10, -10)
 my_canvas.show()
 ~~~
+
+### Coordinates
+
+- When *Uniform coordinates* is set to 'yes', coordinates are
+  relative to the center of the display. That is, (0,0) is the center.
+  This is the default as of OpenSesame 3.0.0.
+- When *Uniform coordinates* is set to 'no', coordinates are relative to
+  the top-left of the display. That is, (0,0) is the top-left. This was
+  the default in OpenSesame 2.9.X and earlier.
 
 ### Colors
 
@@ -130,7 +147,7 @@ my_canvas.fixdot(color=(0,255,0))
 my_canvas.fixdot(color=255)
 ~~~
 
-## Naming, accessing, and modifying elements
+### Naming, accessing, and modifying elements
 
 As of OpenSesame 3.2, the `Canvas` supports an object-based interface
 that allows you to name elements, and to access and modify elements
@@ -187,39 +204,6 @@ constant:
                 drawing operation. This does not affect subsequent drawing
                 operations.
 --%
-
-<div class="FunctionDoc YAMLDoc" id="Canvas-__init__" markdown="1">
-
-## function __Canvas\.\_\_init\_\___\(experiment, auto\_prepare=True, \*\*style\_args\)
-
-Constructor to create a new `Canvas` object. You do not generally
-call this constructor directly, but use the `Canvas()` factory
-function, which is described here: [/python/common/]().
-
-__Example:__
-
-~~~ .python
-my_canvas = Canvas()
-my_canvas.fixdot()
-my_canvas.show()
-~~~
-
-__Arguments:__
-
-- `experiment` -- The experiment object.
-	- Type: experiment
-
-__Keywords:__
-
-- `auto_prepare` -- Indicates whether the canvas should be automatically prepared after each drawing operation, so that [canvas.show] will be maximally efficient. If auto_prepare is turned off, drawing operations may be faster, but [canvas.show] will take longer, unless [canvas.prepare] is explicitly called in advance. This option exists mostly for historical purposes, because there are currently no backends for which it is necessary to disable auto prepare.
-	- Type: bool
-	- Default: True
-
-__Keyword dict:__
-
-- `**style_args`: Optional [style keywords], which will be used as the default for all drawing operations on this `Canvas`.
-
-</div>
 
 <div class="FunctionDoc YAMLDoc" id="Canvas-arrow" markdown="1">
 
@@ -316,19 +300,6 @@ my_canvas.show()
 __Keyword dict:__
 
 - `**style_args`: %arg_style
-
-</div>
-
-<div class="FunctionDoc YAMLDoc" id="Canvas-close_display" markdown="1">
-
-## function __Canvas\.close\_display__\(experiment\)
-
-Closes the display after the experiment is finished.
-
-__Arguments:__
-
-- `experiment` -- An experiment object.
-	- Type: experiment
 
 </div>
 
@@ -545,19 +516,6 @@ __Keywords:__
 
 </div>
 
-<div class="FunctionDoc YAMLDoc" id="Canvas-init_display" markdown="1">
-
-## function __Canvas\.init\_display__\(experiment\)
-
-Initializes the display before the experiment begins.
-
-__Arguments:__
-
-- `experiment` -- An experiment object.
-	- Type: experiment
-
-</div>
-
 <div class="PropertyDoc YAMLDoc" id="Canvas-left" markdown="1">
 
 ## property __Canvas.left__
@@ -676,14 +634,6 @@ __Arguments:__
 __Keyword dict:__
 
 - `**style_args`: %arg_style
-
-</div>
-
-<div class="FunctionDoc YAMLDoc" id="Canvas-prepare" markdown="1">
-
-## function __Canvas\.prepare__\(\)
-
-Finishes pending canvas operations (if any), so that a subsequent call to [canvas.show] is extra fast. It's only necessary to call this function if you have disabled `auto_prepare` in [canvas.__init__].
 
 </div>
 

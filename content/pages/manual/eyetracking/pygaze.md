@@ -82,8 +82,9 @@ Below is an example of how to use PyGaze in a Python INLINE_SCRIPT:
 
 ~~~ .python
 # Create a keyboard and a canvas object
-my_keyboard = keyboard(timeout=0)
-my_canvas = canvas()
+my_keyboard = Keyboard(timeout=0)
+my_canvas = Canvas()
+my_canvas['dot'] = Circle(x=0, y=0, r=10, fill=True)
 # Loop ...
 while True:
 	# ... until space is pressed
@@ -93,8 +94,8 @@ while True:
 	# Get gaze position from pygaze ...
 	x, y = eyetracker.sample()
 	# ... and draw a gaze-contingent fixation dot!
-	my_canvas.clear()
-	my_canvas.fixdot(x, y)
+	my_canvas['dot'].x = x + my_canvas.left
+	my_canvas['dot'].y = y + my_canvas.top
 	my_canvas.show()
 ~~~
 

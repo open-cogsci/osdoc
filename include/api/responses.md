@@ -3,8 +3,9 @@
 # instance __responses__
 
 The `responses` object contains the history of the responses that were
-collected during the experiment. A `responses` object is created
-automatically when the experiment starts.
+collected during the experiment.
+
+A `responses` object is created automatically when the experiment starts.
 
 In addition to the functions listed below, the following semantics are
 supported:
@@ -29,6 +30,12 @@ print(responses[:2])
 ## property __responses.acc__
 
 The percentage of correct responses for all responses that are included in feedback. If there are no responses to give feedback on, 'undefined' is returned.
+
+__Example:__
+
+~~~ .python
+print('The accuracy was %s%%' % responses.acc)
+~~~
 
 </div>
 
@@ -69,6 +76,12 @@ __Keywords:__
 
 The average response time for all responses that are included in feedback. If there are no responses to give feedback on, 'undefined' is returned.
 
+__Example:__
+
+~~~ .python
+print('The average RT was %s ms' % responses.avg_rt)
+~~~
+
 </div>
 
 <div class="FunctionDoc YAMLDoc" id="responses-clear" markdown="1">
@@ -91,6 +104,13 @@ responses.clear()
 
 A list of all correct (0, 1, or None) values.
 
+__Example:__
+
+~~~ .python
+for correct in responses.correct:
+        print(correct)
+~~~
+
 </div>
 
 <div class="PropertyDoc YAMLDoc" id="responses-feedback" markdown="1">
@@ -99,6 +119,13 @@ A list of all correct (0, 1, or None) values.
 
 A list of the feedback status (True or False) associated with each response.
 
+__Example:__
+
+~~~ .python
+for feedback in responses.feedback:
+        print(feedback)
+~~~
+
 </div>
 
 <div class="PropertyDoc YAMLDoc" id="responses-item" markdown="1">
@@ -106,6 +133,13 @@ A list of the feedback status (True or False) associated with each response.
 ## property __responses.item__
 
 A list of all item names (str or None) associated with each response.
+
+__Example:__
+
+~~~ .python
+for item in responses.item:
+        print(item)
+~~~
 
 </div>
 
@@ -129,6 +163,13 @@ responses.reset_feedback()
 
 A list of all response values. (I.e. not response objects, but actual response keys, buttons, etc.)
 
+__Example:__
+
+~~~ .python
+for response in responses.response:
+        print(response)
+~~~
+
 </div>
 
 <div class="PropertyDoc YAMLDoc" id="responses-response_time" markdown="1">
@@ -136,6 +177,13 @@ A list of all response values. (I.e. not response objects, but actual response k
 ## property __responses.response_time__
 
 A list of all response times (float or None).
+
+__Example:__
+
+~~~ .python
+for rt in responses.response_time:
+        print(rt)
+~~~
 
 </div>
 

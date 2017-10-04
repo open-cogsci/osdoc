@@ -18,9 +18,9 @@ if 'publishconf.py' in sys.argv:
 	from publishconf import *
 else:
 	from pelicanconf import *
-	
+
 _FigureParser.figureTemplate[u'jekyll'] = u"""
-![%(source)s](/3.1%(source)s)
+![%(source)s](/3.2%(source)s)
 
 __Figure %(nFig)d.__ %(caption)s\n{: .fig-caption #%(id)s}\n
 """
@@ -105,7 +105,7 @@ class AcademicMarkdownReader(MarkdownReader):
 				content = content.replace(u'$%s$' % var, str(val))
 			for item_type in ITEM_TYPES:
 				content = content.replace(item_type,
-					u'<span class="item-type">%s</span>' % item_type.lower())			
+					u'<span class="item-type">%s</span>' % item_type.lower())
 		metadata = self._parse_metadata(self._md.Meta)
 		build.path = build.path[3:]
 		return content, metadata

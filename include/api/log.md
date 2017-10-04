@@ -16,20 +16,6 @@ log.write_vars()
 
 [TOC]
 
-<div class="FunctionDoc YAMLDoc" id="log-__init__" markdown="1">
-
-## function __log\.\_\_init\_\___\(experiment, path\)
-
-Constructor to create a new `log` object. You do not generally call this constructor directly, because a `log` object is created automatically when the experiment is launched.
-
-__Arguments:__
-
-- `experiment` -- The experiment object.
-	- Type: experiment
-- `path` -- No description
-
-</div>
-
 <div class="FunctionDoc YAMLDoc" id="log-close" markdown="1">
 
 ## function __log\.close__\(\)
@@ -48,7 +34,7 @@ log.close()
 
 ## function __log\.open__\(path\)
 
-Opens the current log. If a log was already open, it is closed automatically.
+Opens the current log. If a log was already open, it is closed automatically, and re-opened.
 
 __Example:__
 

@@ -1,8 +1,5 @@
 title: Using the form plugins
 
-If forms are slow, see [this page](%link:manual/forms/performance%).
-{: .page-notification}
-
 A number of commonly used forms are available as ready-made plugins. These allow you to use common forms, without any need for scripting.
 
 - FORM_CONSENT is a simple digital consent form (disclaimer: some journals may require *written* consent)

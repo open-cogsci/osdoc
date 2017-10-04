@@ -4,8 +4,9 @@
 
 The `pool` object provides dict-like access to the file pool. When
 checking whether a file is in the file pool, several folders are
-searched. For more details, see [folders]. A `pool` object is created
-automatically when the experiment starts.
+searched. For more details, see [folders].
+
+A `pool` object is created automatically when the experiment starts.
 
 In addition to the functions listed below, the following semantics are
 supported:
@@ -36,7 +37,7 @@ if u'img.png' in pool:
         print(u'img.png could not be found!')
 else:
         image_path = pool[u'img.png']
-        my_canvas = canvas()
+        my_canvas = Canvas()
         my_canvas.image(image_path)
         my_canvas.show()
 ~~~
@@ -117,7 +118,7 @@ A list of full paths.
 
 ## function __pool\.folder__\(\)
 
-No description specified.
+Gives the full path to the (main) pool folder. This is typically a temporary folder that is deleted when the experiment is finished.
 
 __Example:__
 
@@ -127,7 +128,7 @@ print(u'The pool folder is here: ' % pool.folder())
 
 __Returns:__
 
-The full path to the (main) pool folder. This is typically a temporary folder that is deleted when the experiment is finished.
+The full path to the main pool folder.
 
 - Type: unicode
 
@@ -175,6 +176,12 @@ A list of all folders.
 ## function __pool\.in\_folder__\(path\)
 
 Checks whether path is in the pool folder. This is different from the `path in pool` syntax in that it only checks the main pool folder, and not the fallback pool folder and experiment folder.
+
+__Example:__
+
+~~~ .python
+print(pool.in_folder('cue.png'))
+~~~
 
 __Arguments:__
 

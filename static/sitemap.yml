@@ -69,30 +69,14 @@
           - /3.2/manual/forms/about
         - - Ready-made forms
           - /3.2/manual/forms/readymade
-        - - Custom forms
-          - /3.2/manual/forms/custom
         - - Form variables
           - /3.2/manual/forms/variables
-        - - Slow performance
-          - /3.2/manual/forms/performance
-        - - Widgets
-          - !!python/object/apply:collections.OrderedDict
-            - - - form
-                - /3.2/manual/forms/widgets/form
-              - - button
-                - /3.2/manual/forms/widgets/button
-              - - checkbox
-                - /3.2/manual/forms/widgets/checkbox
-              - - image
-                - /3.2/manual/forms/widgets/image
-              - - image_button
-                - /3.2/manual/forms/widgets/image_button
-              - - label
-                - /3.2/manual/forms/widgets/label
-              - - rating_scale
-                - /3.2/manual/forms/widgets/rating_scale
-              - - text_input
-                - /3.2/manual/forms/widgets/text_input
+        - - Custom forms
+          - /3.2/manual/forms/custom
+        - - Widgets and keywords
+          - /3.2/manual/forms/widgets
+        - - Validating form input
+          - /3.2/manual/forms/validation
         - - Python in OpenSesame
           - /3.2/manual/python/about
         - - API reference

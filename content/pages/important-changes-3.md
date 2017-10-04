@@ -2,6 +2,67 @@ title: Important changes in OpenSesame 3
 
 [TOC]
 
+
+## Changes in 3.2
+
+OpenSesame 3.2 brings several major improvements that make it even easier to develop experiments. OpenSesame 3.2 is fully backwards compatible with 3.1.
+
+
+### A better, PEP-8-compliant Python API
+
+PEP-8 is a style guide for Python. Much modern Python software follows the PEP-8 guidelines—but, for historical reasons, OpenSesame didn't. As of 3.2, the public API now follows the guideline that the names of classes (and factory functions that generate classes) should be `CamelCase`, while names of objects and functions should be `underscore_case`. Practically speaking, this means that you now create `Canvas` object as follows:
+
+~~~ .python
+my_canvas = Canvas() # Note the capital C!
+my_canvas.fixdot()
+my_canvas.show())
+~~~
+
+Of course, the old `underscore_case` names are still available as aliases, so backwards compatibility is preserved.
+
+The API for forms has also been simplified. You no longer need to import `libopensesame.widgets`, and you no longer need to pass `exp` as the first argument:
+
+~~~ .python
+form = Form()
+button = Button(text=u'Ok!')
+form.set_widget(button, (0, 0))
+form._exec()
+~~~
+
+
+### Access and modify Canvas elements
+
+Elements of a `Canvas` are now objects that can be named, accessed, and modified. This means that you no longer need to redraw an entire canvas to change a single element. For example, you can draw a rotating arm as follows:
+
+~~~ .python
+my_canvas = Canvas()
+my_canvas['arm'] = Line(0, 0, 0, 0)
+for x, y in xy_circle(n=100, rho=100):
+	my_canvas['arm'].ex = x
+	my_canvas['arm'].ey = y
+	my_canvas.show()
+	clock.sleep(10)
+~~~
+
+For more information, see:
+
+- %link:canvas%
+
+
+### Improved form performance
+
+Forms are now much faster when using the *psycho* and *xpyriment* backends. This is due to the fact that `Canvas` elements can now be updated individually, as described above.
+
+
+### Validation of form input
+
+You can now validate the input of a form; that is, you can prevent a form from closing until certain criteria are met. In addition, you can exclude characters as input from `TextInput` widgets.
+
+For more information, see:
+
+- %link:manual/forms/validation%
+
+
 ## Changes in 3.1
 
 OpenSesame 3.1 brings many improvements that make it even easier to develop experiments. OpenSesame 3.1 is fully backwards compatible with 3.0.

@@ -3,7 +3,8 @@
 # class __Mouse__
 
 The `Mouse` class is used to collect mouse input. You generally create a
-`Mouse` object with the `Mouse()` factory function.
+`Mouse` object with the `Mouse()` factory function, as described in the
+section [Creating a Mouse](#creating-a-mouse).
 
 __Example:__
 
@@ -24,6 +25,21 @@ while True:
 [TOC]
 
 ## Things to know
+
+### Creating a Mouse
+
+You generally create a `Mouse` with the `Mouse()` factory function:
+
+~~~ .python
+my_mouse = Mouse()
+~~~
+
+Optionally, you can pass [Response keywords](#response-keywords) to
+`Keyboard()` to set the default behavior:
+
+~~~ .python
+my_mouse = Mouse(timeout=2000)
+~~~
 
 ### Coordinates
 
@@ -89,31 +105,6 @@ my_mouse = Mouse(keylist=[1,3], timeout=5000)
 button1, time1 = my_mouse.get_button()
 button2, time2 = my_mouse.get_button()
 ~~~
-
-<div class="FunctionDoc YAMLDoc" id="Mouse-__init__" markdown="1">
-
-## function __Mouse\.\_\_init\_\___\(experiment, \*\*resp\_args\)
-
-Constructor to create a new `Mouse` object. You do not generally
-call this constructor directly, but use the `Mouse()` function,
-which is described here: [/python/common/]().
-
-__Example:__
-
-~~~ .python
-my_mouse = Mouse(buttonlist=[1, 2], timeout=2000)
-~~~
-
-__Arguments:__
-
-- `experiment` -- The experiment object.
-	- Type: experiment
-
-__Keyword dict:__
-
-- `**resp_args`: Optional [response keywords] that will be used as the default for this `Mouse` object.
-
-</div>
 
 <div class="FunctionDoc YAMLDoc" id="Mouse-flush" markdown="1">
 

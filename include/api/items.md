@@ -3,8 +3,9 @@
 # instance __items__
 
 The `items` object provides dict-like access to the items. It's mainly
-useful for programatically executing items. An `items` object is created
-automatically when the experiment starts.
+useful for programatically executing items.
+
+An `items` object is created automatically when the experiment starts.
 
 In addition to the functions listed below, the following semantics are
 supported:
@@ -26,32 +27,47 @@ for item_name in items:
 
 [TOC]
 
+<div class="FunctionDoc YAMLDoc" id="items-_type" markdown="1">
+
+## function __items\.\_type__\(name\)
+
+Gets the type of an item.
+
+__Example:__
+
+~~~ .python
+print(items._type('target_sketchpad'))
+~~~
+
+__Arguments:__
+
+- `name` -- The name of an item.
+	- Type: unicode
+
+__Returns:__
+
+The type of an item, or `None` if the item doesn't exist.
+
+- Type: unicode, NoneType
+
+</div>
+
 <div class="FunctionDoc YAMLDoc" id="items-execute" markdown="1">
 
 ## function __items\.execute__\(name\)
 
 Executes the run and prepare phases of an item, and updates the item stack.
 
+__Example:__
+
+~~~ .python
+items.execute(u'target_sketchpad')
+~~~
+
 __Arguments:__
 
 - `name` -- An item name.
 	- Type: str
-
-</div>
-
-<div class="PropertyDoc YAMLDoc" id="items-items" markdown="1">
-
-## property __items.items__
-
-Returns a list of (item name, item object) tuples.
-
-</div>
-
-<div class="PropertyDoc YAMLDoc" id="items-keys" markdown="1">
-
-## property __items.keys__
-
-Returns a list of item names.
 
 </div>
 
@@ -97,6 +113,13 @@ The newly generated item.
 
 Executes the prepare phase of an item, and updates the item stack.
 
+__Example:__
+
+~~~ .python
+items.prepare('target_sketchpad')
+items.run('target_sketchpad')
+~~~
+
 __Arguments:__
 
 - `name` -- An item name.
@@ -110,6 +133,13 @@ __Arguments:__
 
 Executes the run phase of an item, and updates the item stack.
 
+__Example:__
+
+~~~ .python
+items.prepare('target_sketchpad')
+items.run('target_sketchpad')
+~~~
+
 __Arguments:__
 
 - `name` -- An item name.
@@ -122,6 +152,12 @@ __Arguments:__
 ## function __items\.valid\_name__\(item\_type, suggestion=None\)
 
 Generates a unique name that is valid and resembles the desired name.
+
+__Example:__
+
+~~~ .python
+valid_name = items.valid_name(u'sketchpad', u'an invalid name')
+~~~
 
 __Arguments:__
 
@@ -139,14 +175,6 @@ __Returns:__
 A unique name.
 
 - Type: unicode
-
-</div>
-
-<div class="PropertyDoc YAMLDoc" id="items-values" markdown="1">
-
-## property __items.values__
-
-Returns a list of `item` objects.
 
 </div>
 

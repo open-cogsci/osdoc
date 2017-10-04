@@ -18,19 +18,6 @@ print(u'This should be 1000: %s' % time_passed)
 
 [TOC]
 
-<div class="FunctionDoc YAMLDoc" id="clock-__init__" markdown="1">
-
-## function __clock\.\_\_init\_\___\(experiment\)
-
-Constructor to create a new `clock` object. You do not generally call this constructor directly, because a `clock` object is created automatically when the experiment is launched.
-
-__Arguments:__
-
-- `experiment` -- The experiment object.
-	- Type: experiment
-
-</div>
-
 <div class="FunctionDoc YAMLDoc" id="clock-sleep" markdown="1">
 
 ## function __clock\.sleep__\(ms\)
@@ -41,9 +28,9 @@ __Example:__
 
 ~~~ .python
 # Create two canvas objects ...
-my_canvas1 = canvas()
+my_canvas1 = Canvas()
 my_canvas1.text(u'1')
-my_canvas2 = canvas()
+my_canvas2 = Canvas()
 my_canvas2.text(u'2')
 # ... and show them with 1 s in between
 my_canvas1.show()
