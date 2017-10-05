@@ -77,6 +77,18 @@
           - /3.2/manual/forms/widgets
         - - Validating form input
           - /3.2/manual/forms/validation
+        - - PyGaze
+          - /3.2/manual/eyetracking/pygaze
+        - - Models
+          - !!python/object/apply:collections.OrderedDict
+            - - - EyeLink
+                - /3.2/manual/eyetracking/eyelink
+              - - EyeTribe
+                - /3.2/manual/eyetracking/eyetribe
+              - - SMI
+                - /3.2/manual/eyetracking/smi
+              - - Tobii
+                - /3.2/manual/eyetracking/tobii
         - - Python in OpenSesame
           - /3.2/manual/python/about
         - - API reference
@@ -103,18 +115,6 @@
                 - /3.2/manual/python/mouse
               - - Sampler
                 - /3.2/manual/python/sampler
-        - - PyGaze
-          - /3.2/manual/eyetracking/pygaze
-        - - Models
-          - !!python/object/apply:collections.OrderedDict
-            - - - EyeLink
-                - /3.2/manual/eyetracking/eyelink
-              - - EyeTribe
-                - /3.2/manual/eyetracking/eyetribe
-              - - SMI
-                - /3.2/manual/eyetracking/smi
-              - - Tobii
-                - /3.2/manual/eyetracking/tobii
         - - The prepare-run strategy
           - /3.2/manual/prepare-run
         - - Counterbalancing

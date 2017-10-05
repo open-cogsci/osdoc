@@ -53,6 +53,14 @@ Manual:
     Widgets and keywords: manual/forms/widgets
     Validating form input: manual/forms/validation
 
+    Eye tracking:
+    PyGaze: manual/eyetracking/pygaze
+    Models:
+        EyeLink: manual/eyetracking/eyelink
+        EyeTribe: manual/eyetracking/eyetribe
+        SMI: manual/eyetracking/smi
+        Tobii: manual/eyetracking/tobii    
+
     ___:
 
     Python:
@@ -69,14 +77,6 @@ Manual:
         Log: manual/python/log
         Mouse: manual/python/mouse
         Sampler: manual/python/sampler
-
-    Eye tracking:
-    PyGaze: manual/eyetracking/pygaze
-    Models:
-        EyeLink: manual/eyetracking/eyelink
-        EyeTribe: manual/eyetracking/eyetribe
-        SMI: manual/eyetracking/smi
-        Tobii: manual/eyetracking/tobii
 
     ____:
 

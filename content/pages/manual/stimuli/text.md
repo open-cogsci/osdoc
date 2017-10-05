@@ -9,9 +9,12 @@ The most common way to show text is using a SKETCHPAD or FEEDBACK item. These al
 __Note:__ The TEXT_DISPLAY plugin has been removed as of OpenSesame 3.0.0, because it was outdated and did not provide any functionality that is not offered by FORMs and SKETCHPAD items.
 {: .page-notification}
 
-## Formatting (HTML subset)
+## HTML formatting
 
-You can use a subset of HTML tags, which you can simply insert into your text. You can use these tags everywhere: In SKETCHPAD items, in INLINE_SCRIPTs (provided you use the `openexp.canvas` class), in forms, etc.
+You can use a HTML tags, which you can simply insert into your text. You can use these tags everywhere: In SKETCHPAD items, in INLINE_SCRIPTs (provided you use the `Canvas` class), in forms, etc.
+
+__Note:__ Using `color`, `size`, and `style` directly as keywords in a `<span>` tag no longer works. This was invalid HTML, and has been deprecated as of OpenSesame 3.2. The example below shows the correct way to change the family (style), size, and color of text.
+{: .page-notification}
 
 Example:
 
@@ -22,22 +25,14 @@ OpenSesame supports a sub-set of HTML tags:
 - <u>Underline</u>
 
 In addition, you can pass 'color', 'size', and 'style' as keywords to a 'span' tag:
-- <span color="red">Color</span>
-- <span size="32">Font size</span>
-- <span style="serif">Font style</span>
+- <span style='color:red;'>Color</span>
+- <span style='font-size:32;'>Font size</span>
+- <span style='font-family:serif;'>Font style</span>
 
 Finally, you can force newlines with the 'br' tag:
 Line 1<br>Line 2
 ~~~
 
-The text above will be rendered as shown in %FigHTML. (The exact appearance depends on your default colors, font, etc.)
-
-%--
-figure:
- id: FigHTML
- source: form-example.png
- caption: "Using (a subset of) HTML, you can define the appearance of your text."
---%
 
 ## Variables and inline Python
 
@@ -101,20 +96,3 @@ Another way to use a custom font is to put a font file in the file pool. For exa
 	draw textline 0.0 0.0 "This will be inconsolata" font_family="inconsolata"
 
 Note that the font file must be a truetype `.ttf` file.
-
-## Bi-directional text support
-
-By default, all text is rendered from left to right. However, you can enable bi-directional-text support through the 'Bi-directional-text support' checkbox in the general tab:
-
-%--
-figure:
- id: FigBidi
- source: bidi.png
- caption: ".bat lareneg eht hguorht delbane eb nac troppus txet-lanoitcerid-iB"
---%
-
-## Why do I see squares or question marks when I run my experiment?
-
-If you select the font `mono` and add a string of, say, Hebrew text to a SKETCHPAD, the user interface will display your text just fine. However, when you run the experiment, you will see a row of squares, and no characters. This happens because the `mono` font, which is actually 'Droid Sans Mono', does not contain Hebrew characters. The user interface deals with this by falling back to a different font that does contain Hebrew characters. However, the OpenSesame runtime deals with this by showing ... a bunch of squares.
-
-The bottom line is that if you find that characters are missing, you should select a different font that actually contains the characters--even when the characters display fine in the user interface!

@@ -44,9 +44,16 @@ for x, y in xy_circle(n=100, rho=100):
 	clock.sleep(10)
 ~~~
 
+The SKETCHPAD also allows you to name elements.
+
 For more information, see:
 
 - %link:canvas%
+
+
+### Improved support for HTML and non-Latin script
+
+Text is now rendered by Qt, which is a modern library (the same library that is also used for the graphical interface). This means that you can now use real HTML in your text. This also means that left-to-right script and other non-Latin scripts are rendered much better.
 
 
 ### Improved form performance
