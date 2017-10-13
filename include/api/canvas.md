@@ -60,8 +60,6 @@ arguments:
   are filled (`True`), or drawn as an outline (`False`).
 - `penwidth` indicates a penwidth in pixels and should be `int` or
   `float`.
-- `bidi` indicates whether bidirectional-text support is enabled, and
-  should be `True` or `False`.
 - `html` indicates whether HTML-tags are interpreted, and should be
   `True` or `False`. For supported tags, see [/usage/text/]().
 - `font_family` is the name of a font family, such as 'sans'.
@@ -478,7 +476,7 @@ The height of the canvas. This is a read-only property.
 
 <div class="FunctionDoc YAMLDoc" id="Canvas-image" markdown="1">
 
-## function __Canvas\.image__\(fname, center=True, x=None, y=None, scale=None\)
+## function __Canvas\.image__\(fname, center=True, x=None, y=None, scale=None, rotation=None\)
 
 Draws an image from file. This function does not look in the file pool, but takes an absolute path.
 
@@ -511,6 +509,9 @@ __Keywords:__
 	- Type: int, NoneType
 	- Default: None
 - `scale` -- The scaling factor of the image. `None` or 1 indicate the original size. 2.0 indicates a 200% zoom, etc.
+	- Type: float, int, NoneType
+	- Default: None
+- `rotation` -- The rotation of the image `None` or 0 indicate the original rotation. Positive values indicate a counterclockwise rotation in degrees.
 	- Type: float, int, NoneType
 	- Default: None
 

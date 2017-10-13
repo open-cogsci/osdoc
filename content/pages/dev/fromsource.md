@@ -19,7 +19,7 @@ You can also download a development snapshot of the code. To obtain a reasonable
 
 ### Icon theme
 
-If you run OpenSesame directly from source, the icon theme is not included. OpenSesame uses two icon themes: [MokaSesame](https://github.com/smathot/moka-icon-theme/tree/MokaSesame), a fork of Moka, and [Faba](https://github.com/snwh/faba-icon-theme). 
+If you run OpenSesame directly from source, the icon theme is not included. OpenSesame uses two icon themes: [MokaSesame](https://github.com/smathot/moka-icon-theme/tree/MokaSesame), a fork of Moka, and [Faba](https://github.com/snwh/faba-icon-theme).
 
 It's possible to compile these icon themes yourself, but you can also download precompiled themes from here:
 
@@ -62,7 +62,6 @@ The following packages are not required, but some functionality will be missing 
 - [Pyglet](http://www.pyglet.org/) is required by PsychoPy.
 - [PyOpenGL](http://pyopengl.sourceforge.net/) is required by PsychoPy and Expyriment.
 - [pySerial](http://pyserial.sourceforge.net/) is required for serial-port communication.
-- [python-bidi](https://pypi.python.org/pypi/python-bidi) is required for bi-directional-text support.
 - [python-markdown](https://pypi.python.org/pypi/Markdown) is required for viewing in-program help files.
 - [IPython](http://ipython.org/), when available, is used for the debug window.
 - [python-fileinspector](https://github.com/dschreij/fileinspector) is used to generate file-type-specific icons.

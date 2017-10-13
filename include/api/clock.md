@@ -18,6 +18,41 @@ print(u'This should be 1000: %s' % time_passed)
 
 [TOC]
 
+<div class="FunctionDoc YAMLDoc" id="clock-loop_for" markdown="1">
+
+## function __clock\.loop\_for__\(ms, throttle=None, t0=None\)
+
+*New in v3.2.0*
+
+An iterator that loops for a fixed time.
+
+__Example:__
+
+~~~ .python
+for ms in clock.sleep_for(100, throttle=10):
+        print(ms)
+~~~
+
+__Arguments:__
+
+- `ms` -- The number of milliseconds to loop for.
+	- Type: int. float
+
+__Keywords:__
+
+- `throttle` -- A period to sleep for in between each iteration.
+	- Type: NoneType, float, int
+	- Default: None
+- `t0` -- A starting time. If `None`, the starting time is the moment at which the iteration starts.
+	- Type: NoneType, float, int
+	- Default: None
+
+__Returns:__
+
+An Iterator over times in milliseconds that have passed since `t0`.
+
+</div>
+
 <div class="FunctionDoc YAMLDoc" id="clock-sleep" markdown="1">
 
 ## function __clock\.sleep__\(ms\)
