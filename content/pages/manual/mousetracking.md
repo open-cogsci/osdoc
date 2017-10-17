@@ -5,7 +5,7 @@ Mousetrap is a third-party plugin, and is not maintained by the OpenSesame team.
 
 ## About
 
-Pascal Kieslich and Felix Henninger have developed the [mousetrap plugins](https://github.com/PascalKieslich/mousetrap-os) for OpenSesame [(Kieslich & Henninger, in press)](https://dx.doi.org/10.3758/s13428-017-0900-z). These plugins allow you to track the movement of the mouse cursor, which has been used to investigate the time course of cognitive processes in many psychological domains [(Freeman, Dale, & Farmer, 2011)](https://dx.doi.org/10.3389/fpsyg.2011.00059).
+Pascal Kieslich and Felix Henninger have developed the [mousetrap plugins](https://github.com/PascalKieslich/mousetrap-os) for OpenSesame [(Kieslich & Henninger, 2017)](https://dx.doi.org/10.3758/s13428-017-0900-z). These plugins allow you to track the movement of the mouse cursor, which has been used to investigate the time course of cognitive processes in many psychological domains [(Freeman, Dale, & Farmer, 2011)](https://dx.doi.org/10.3389/fpsyg.2011.00059).
 
 Mousetrap offers two plugins for mouse tracking in OpenSesame that can be included in the experiment via drag-and-drop.
 The [mousetrap response plugin](https://github.com/PascalKieslich/mousetrap-os/blob/master/plugins/mousetrap_response/mousetrap_response.md) tracks mouse movements while another stimulus (e.g., a sketchpad) is shown, analogous to a keyboard or mouse response item.
