@@ -56,11 +56,11 @@ Irrmischer, M., Sangiuliano Intra, F., Mansvelder, H. D., Poil, S.-S., & Linkenk
 
 Joubert, S., Vallet, G. T., Montembeault, M., Boukadi, M., Wilson, M. A., Laforce, R. J., … Brambati, S. M. (2017). Comprehension of concrete and abstract words in semantic variant primary progressive aphasia and Alzheimer’s disease: A behavioral and neuroimaging study. *Brain and Language*, *170*, 93–102. doi:10.1016/j.bandl.2017.04.004
 
-Henninger, F., Kieslich, P. J., & Hilbig, B. E. (2017). Psynteract: A flexible, cross-platform, open framework for interactive experiments. *Behavior Research Methods*. doi:10.3758/s13428-016-0801-6
+Henninger, F., Kieslich, P. J., & Hilbig, B. E. (2017). Psynteract: A flexible, cross-platform, open framework for interactive experiments. *Behavior Research Methods*, *49*(5), 1605-1614. doi:10.3758/s13428-016-0801-6
 
 Kalaiah, M. K., Theruvan, N. B., Kumar, K., & Bhat, J. S. (2017). Role of active listening and listening effort on contralateral suppression of transient evoked otoacousic emissions. *Journal of Audiology & Otology*, *21*(1), 1–8. doi:10.7874/jao.2017.21.1.1
 
-Kieslich, P. J., & Henninger, F. (2017). Mousetrap: An integrated, open-source mouse-tracking package. *Behavior Research Methods*. doi:10.3758/s13428-017-0900-z
+Kieslich, P. J., & Henninger, F. (2017). Mousetrap: An integrated, open-source mouse-tracking package. *Behavior Research Methods*, *49*(5), 1652-1667. doi:10.3758/s13428-017-0900-z
 
 Klein, S. A., Hilbig, B. E., & Heck, D. W. (2016). Which is the greater good? A social dilemma paradigm disentangling environmentalism and cooperation. *Journal of Environmental Psychology*. doi:10.1016/j.jenvp.2017.06.001
 
