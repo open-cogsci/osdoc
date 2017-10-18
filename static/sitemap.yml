@@ -199,7 +199,9 @@
     - http://www.cogsci.nl/
   - - v3.1
     - !!python/object/apply:collections.OrderedDict
-      - - - v3.1
+      - - - v3.2
+          - http://osdoc.cogsci.nl/3.2/
+        - - v3.1
           - http://osdoc.cogsci.nl/3.1/
         - - v3.0
           - http://osdoc.cogsci.nl/3.0/
