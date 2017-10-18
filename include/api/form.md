@@ -59,9 +59,6 @@ __Keywords:__
 
 </div>
 
-[form.__init__]: #form-__init__
-[__init__]: #form-__init__
-
 <div class="FunctionDoc YAMLDoc" id="form-_exec" markdown="1">
 
 ## function __form\.\_exec__\(focus\_widget=None\)
@@ -79,9 +76,6 @@ __Returns:__
 Gives the return value of the form, which depends on how the user interacted with the widgets. For example, if the user pressed a button, the button text will be returned. If a timeout occurred, None will be returned.
 
 </div>
-
-[form._exec]: #form-_exec
-[_exec]: #form-_exec
 
 <div class="FunctionDoc YAMLDoc" id="form-cell_index" markdown="1">
 
@@ -102,9 +96,6 @@ A cell index.
 
 </div>
 
-[form.cell_index]: #form-cell_index
-[cell_index]: #form-cell_index
-
 <div class="FunctionDoc YAMLDoc" id="form-render" markdown="1">
 
 ## function __form\.render__\(\)
@@ -112,9 +103,6 @@ A cell index.
 Draws the form and all the widgets in it.
 
 </div>
-
-[form.render]: #form-render
-[render]: #form-render
 
 <div class="FunctionDoc YAMLDoc" id="form-set_widget" markdown="1">
 
@@ -140,9 +128,6 @@ __Keywords:__
 
 </div>
 
-[form.set_widget]: #form-set_widget
-[set_widget]: #form-set_widget
-
 <div class="FunctionDoc YAMLDoc" id="form-xy_to_index" markdown="1">
 
 ## function __form\.xy\_to\_index__\(xy\)
@@ -162,10 +147,5 @@ A cell index.
 
 </div>
 
-[form.xy_to_index]: #form-xy_to_index
-[xy_to_index]: #form-xy_to_index
-
 </div>
-
-[form]: #form
 

@@ -54,9 +54,6 @@ __Keywords:__
 
 </div>
 
-[button.__init__]: #button-__init__
-[__init__]: #button-__init__
-
 <div class="FunctionDoc YAMLDoc" id="button-draw_frame" markdown="1">
 
 ## function __button\.draw\_frame__\(rect=None, style=u'normal'\)
@@ -73,9 +70,6 @@ __Keywords:__
 	- Default: 'normal'
 
 </div>
-
-[button.draw_frame]: #button-draw_frame
-[draw_frame]: #button-draw_frame
 
 <div class="FunctionDoc YAMLDoc" id="button-draw_text" markdown="1">
 
@@ -96,9 +90,6 @@ __Keywords:__
 
 </div>
 
-[button.draw_text]: #button-draw_text
-[draw_text]: #button-draw_text
-
 <div class="FunctionDoc YAMLDoc" id="button-on_mouse_click" markdown="1">
 
 ## function __button\.on\_mouse\_click__\(pos\)
@@ -118,9 +109,6 @@ The button text.
 
 </div>
 
-[button.on_mouse_click]: #button-on_mouse_click
-[on_mouse_click]: #button-on_mouse_click
-
 <div class="FunctionDoc YAMLDoc" id="button-render" markdown="1">
 
 ## function __button\.render__\(\)
@@ -128,9 +116,6 @@ The button text.
 Draws the widget.
 
 </div>
-
-[button.render]: #button-render
-[render]: #button-render
 
 <div class="FunctionDoc YAMLDoc" id="button-set_rect" markdown="1">
 
@@ -144,9 +129,6 @@ __Arguments:__
 	- Type: tuple
 
 </div>
-
-[button.set_rect]: #button-set_rect
-[set_rect]: #button-set_rect
 
 <div class="FunctionDoc YAMLDoc" id="button-set_var" markdown="1">
 
@@ -166,10 +148,5 @@ __Keywords:__
 
 </div>
 
-[button.set_var]: #button-set_var
-[set_var]: #button-set_var
-
 </div>
-
-[button]: #button
 

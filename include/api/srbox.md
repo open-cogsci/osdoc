@@ -50,9 +50,6 @@ __Keywords:__
 
 </div>
 
-[srbox.__init__]: #srbox-__init__
-[__init__]: #srbox-__init__
-
 <div class="FunctionDoc YAMLDoc" id="srbox-close" markdown="1">
 
 ## function __srbox\.close__\(\)
@@ -60,9 +57,6 @@ __Keywords:__
 Closes the connection to the srbox. This is done automatically by the SRBOX plugin when the experiment finishes.
 
 </div>
-
-[srbox.close]: #srbox-close
-[close]: #srbox-close
 
 <div class="FunctionDoc YAMLDoc" id="srbox-get_button_press" markdown="1">
 
@@ -89,9 +83,6 @@ A button_list, timestamp tuple. button_list is None if no button was pressed (i.
 
 </div>
 
-[srbox.get_button_press]: #srbox-get_button_press
-[get_button_press]: #srbox-get_button_press
-
 <div class="FunctionDoc YAMLDoc" id="srbox-send" markdown="1">
 
 ## function __srbox\.send__\(ch\)
@@ -105,9 +96,6 @@ __Arguments:__
 
 </div>
 
-[srbox.send]: #srbox-send
-[send]: #srbox-send
-
 <div class="FunctionDoc YAMLDoc" id="srbox-start" markdown="1">
 
 ## function __srbox\.start__\(\)
@@ -115,9 +103,6 @@ __Arguments:__
 Turns on sending mode, so that the SR Box starts to send output. The SR Box must be in sending mode when you call [srbox.get_button_press].
 
 </div>
-
-[srbox.start]: #srbox-start
-[start]: #srbox-start
 
 <div class="FunctionDoc YAMLDoc" id="srbox-stop" markdown="1">
 
@@ -127,10 +112,5 @@ Turns off sending mode, so that the SR Box stops giving output.
 
 </div>
 
-[srbox.stop]: #srbox-stop
-[stop]: #srbox-stop
-
 </div>
-
-[srbox]: #srbox
 

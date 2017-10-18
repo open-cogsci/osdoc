@@ -199,9 +199,6 @@ __Keyword dict:__
 
 </div>
 
-[canvas.__init__]: #canvas-__init__
-[__init__]: #canvas-__init__
-
 <div class="FunctionDoc YAMLDoc" id="canvas-arrow" markdown="1">
 
 ## function __canvas\.arrow__\(sx, sy, ex, ey, body\_length=0\.8, body\_width=0\.5, head\_width=30, \*\*style\_args\)
@@ -237,8 +234,13 @@ __Keyword dict:__
 
 </div>
 
-[canvas.arrow]: #canvas-arrow
-[arrow]: #canvas-arrow
+<div class="PropertyDoc YAMLDoc" id="canvas-bottom" markdown="1">
+
+## property __canvas.bottom__
+
+The y coordinate of the bottom edge of the display. This is a read-only property.
+
+</div>
 
 <div class="FunctionDoc YAMLDoc" id="canvas-circle" markdown="1">
 
@@ -268,9 +270,6 @@ __Keyword dict:__
 
 </div>
 
-[canvas.circle]: #canvas-circle
-[circle]: #canvas-circle
-
 <div class="FunctionDoc YAMLDoc" id="canvas-clear" markdown="1">
 
 ## function __canvas\.clear__\(\*\*style\_args\)
@@ -295,9 +294,6 @@ __Keyword dict:__
 
 </div>
 
-[canvas.clear]: #canvas-clear
-[clear]: #canvas-clear
-
 <div class="FunctionDoc YAMLDoc" id="canvas-close_display" markdown="1">
 
 ## function __canvas\.close\_display__\(experiment\)
@@ -310,9 +306,6 @@ __Arguments:__
 	- Type: experiment
 
 </div>
-
-[canvas.close_display]: #canvas-close_display
-[close_display]: #canvas-close_display
 
 <div class="FunctionDoc YAMLDoc" id="canvas-copy" markdown="1">
 
@@ -343,9 +336,6 @@ __Arguments:__
 
 </div>
 
-[canvas.copy]: #canvas-copy
-[copy]: #canvas-copy
-
 <div class="FunctionDoc YAMLDoc" id="canvas-ellipse" markdown="1">
 
 ## function __canvas\.ellipse__\(x, y, w, h, \*\*style\_args\)
@@ -375,9 +365,6 @@ __Keyword dict:__
 - `**style_args`: %arg_style
 
 </div>
-
-[canvas.ellipse]: #canvas-ellipse
-[ellipse]: #canvas-ellipse
 
 <div class="FunctionDoc YAMLDoc" id="canvas-fixdot" markdown="1">
 
@@ -422,9 +409,6 @@ __Keyword dict:__
 - `**style_args`: %arg_style
 
 </div>
-
-[canvas.fixdot]: #canvas-fixdot
-[fixdot]: #canvas-fixdot
 
 <div class="FunctionDoc YAMLDoc" id="canvas-gabor" markdown="1">
 
@@ -479,9 +463,6 @@ ignores this parameter and always uses the inverse of
 
 </div>
 
-[canvas.gabor]: #canvas-gabor
-[gabor]: #canvas-gabor
-
 <div class="PropertyDoc YAMLDoc" id="canvas-height" markdown="1">
 
 ## property __canvas.height__
@@ -489,9 +470,6 @@ ignores this parameter and always uses the inverse of
 The height of the canvas. This is a read-only property.
 
 </div>
-
-[canvas.height]: #canvas-height
-[height]: #canvas-height
 
 <div class="FunctionDoc YAMLDoc" id="canvas-image" markdown="1">
 
@@ -530,9 +508,6 @@ __Keywords:__
 
 </div>
 
-[canvas.image]: #canvas-image
-[image]: #canvas-image
-
 <div class="FunctionDoc YAMLDoc" id="canvas-init_display" markdown="1">
 
 ## function __canvas\.init\_display__\(experiment\)
@@ -546,8 +521,13 @@ __Arguments:__
 
 </div>
 
-[canvas.init_display]: #canvas-init_display
-[init_display]: #canvas-init_display
+<div class="PropertyDoc YAMLDoc" id="canvas-left" markdown="1">
+
+## property __canvas.left__
+
+The x coordinate of the left edge of the display. This is a read-only property.
+
+</div>
 
 <div class="FunctionDoc YAMLDoc" id="canvas-line" markdown="1">
 
@@ -571,9 +551,6 @@ __Keyword dict:__
 - `**style_args`: %arg_style
 
 </div>
-
-[canvas.line]: #canvas-line
-[line]: #canvas-line
 
 <div class="FunctionDoc YAMLDoc" id="canvas-noise_patch" markdown="1">
 
@@ -619,9 +596,6 @@ parameter and always uses the inverse of `col1`.
 
 </div>
 
-[canvas.noise_patch]: #canvas-noise_patch
-[noise_patch]: #canvas-noise_patch
-
 <div class="FunctionDoc YAMLDoc" id="canvas-polygon" markdown="1">
 
 ## function __canvas\.polygon__\(vertices, \*\*style\_args\)
@@ -649,9 +623,6 @@ __Keyword dict:__
 
 </div>
 
-[canvas.polygon]: #canvas-polygon
-[polygon]: #canvas-polygon
-
 <div class="FunctionDoc YAMLDoc" id="canvas-prepare" markdown="1">
 
 ## function __canvas\.prepare__\(\)
@@ -659,9 +630,6 @@ __Keyword dict:__
 Finishes pending canvas operations (if any), so that a subsequent call to [canvas.show] is extra fast. It's only necessary to call this function if you have disabled `auto_prepare` in [canvas.__init__].
 
 </div>
-
-[canvas.prepare]: #canvas-prepare
-[prepare]: #canvas-prepare
 
 <div class="FunctionDoc YAMLDoc" id="canvas-rect" markdown="1">
 
@@ -693,8 +661,13 @@ __Keyword dict:__
 
 </div>
 
-[canvas.rect]: #canvas-rect
-[rect]: #canvas-rect
+<div class="PropertyDoc YAMLDoc" id="canvas-right" markdown="1">
+
+## property __canvas.right__
+
+The x coordinate of the right edge of the display. This is a read-only property.
+
+</div>
 
 <div class="FunctionDoc YAMLDoc" id="canvas-show" markdown="1">
 
@@ -719,9 +692,6 @@ A timestamp of the time at which the canvas actually appeared on the screen, or 
 
 </div>
 
-[canvas.show]: #canvas-show
-[show]: #canvas-show
-
 <div class="PropertyDoc YAMLDoc" id="canvas-size" markdown="1">
 
 ## property __canvas.size__
@@ -729,9 +699,6 @@ A timestamp of the time at which the canvas actually appeared on the screen, or 
 The size of the canvas as a `(width, height)` tuple. This is a read-only property.
 
 </div>
-
-[canvas.size]: #canvas-size
-[size]: #canvas-size
 
 <div class="FunctionDoc YAMLDoc" id="canvas-text" markdown="1">
 
@@ -772,9 +739,6 @@ __Keyword dict:__
 
 </div>
 
-[canvas.text]: #canvas-text
-[text]: #canvas-text
-
 <div class="FunctionDoc YAMLDoc" id="canvas-text_size" markdown="1">
 
 ## function __canvas\.text\_size__\(text, max\_width=None, \*\*style\_args\)
@@ -811,8 +775,13 @@ A (width, height) tuple containing the dimensions of the text string.
 
 </div>
 
-[canvas.text_size]: #canvas-text_size
-[text_size]: #canvas-text_size
+<div class="PropertyDoc YAMLDoc" id="canvas-top" markdown="1">
+
+## property __canvas.top__
+
+The y coordinate of the top edge of the display. This is a read-only property.
+
+</div>
 
 <div class="PropertyDoc YAMLDoc" id="canvas-width" markdown="1">
 
@@ -822,10 +791,5 @@ The width of the canvas. This is a read-only property.
 
 </div>
 
-[canvas.width]: #canvas-width
-[width]: #canvas-width
-
 </div>
-
-[canvas]: #canvas
 

@@ -37,8 +37,6 @@ A CANVAS object.
 
 </div>
 
-[canvas]: #canvas
-
 <div class="FunctionDoc YAMLDoc" id="copy_sketchpad" markdown="1">
 
 ## function __copy\_sketchpad__\(name\)
@@ -64,8 +62,6 @@ A copy of the `sketchpad`'s canvas.
 - Type: canvas
 
 </div>
-
-[copy_sketchpad]: #copy_sketchpad
 
 <div class="FunctionDoc YAMLDoc" id="keyboard" markdown="1">
 
@@ -95,8 +91,6 @@ A `keyboard` object.
 
 </div>
 
-[keyboard]: #keyboard
-
 <div class="FunctionDoc YAMLDoc" id="mouse" markdown="1">
 
 ## function __mouse__\(\*\*resp\_args\)
@@ -125,8 +119,6 @@ A `mouse` object.
 
 </div>
 
-[mouse]: #mouse
-
 <div class="FunctionDoc YAMLDoc" id="pause" markdown="1">
 
 ## function __pause__\(\)
@@ -134,8 +126,6 @@ A `mouse` object.
 Pauses the experiment.
 
 </div>
-
-[pause]: #pause
 
 <div class="FunctionDoc YAMLDoc" id="reset_feedback" markdown="1">
 
@@ -150,8 +140,6 @@ reset_feedback()
 ~~~
 
 </div>
-
-[reset_feedback]: #reset_feedback
 
 <div class="FunctionDoc YAMLDoc" id="sampler" markdown="1">
 
@@ -186,8 +174,6 @@ A SAMPLER object.
 
 </div>
 
-[sampler]: #sampler
-
 <div class="FunctionDoc YAMLDoc" id="set_subject_nr" markdown="1">
 
 ## function __set\_subject\_nr__\(nr\)
@@ -208,8 +194,6 @@ __Arguments:__
 	- Type: int
 
 </div>
-
-[set_subject_nr]: #set_subject_nr
 
 <div class="FunctionDoc YAMLDoc" id="sometimes" markdown="1">
 
@@ -240,8 +224,6 @@ True or False
 - Type: bool
 
 </div>
-
-[sometimes]: #sometimes
 
 <div class="FunctionDoc YAMLDoc" id="synth" markdown="1">
 
@@ -280,8 +262,6 @@ A SAMPLER object.
 - Type: sampler
 
 </div>
-
-[synth]: #synth
 
 <div class="FunctionDoc YAMLDoc" id="xy_circle" markdown="1">
 
@@ -324,8 +304,6 @@ A list of (x,y) coordinate tuples.
 
 </div>
 
-[xy_circle]: #xy_circle
-
 <div class="FunctionDoc YAMLDoc" id="xy_distance" markdown="1">
 
 ## function __xy\_distance__\(x1, y1, x2, y2\)
@@ -350,8 +328,6 @@ The distance between the two points.
 - Type: float
 
 </div>
-
-[xy_distance]: #xy_distance
 
 <div class="FunctionDoc YAMLDoc" id="xy_from_polar" markdown="1">
 
@@ -392,8 +368,6 @@ An (x, y) coordinate tuple.
 
 </div>
 
-[xy_from_polar]: #xy_from_polar
-
 <div class="FunctionDoc YAMLDoc" id="xy_grid" markdown="1">
 
 ## function __xy\_grid__\(n, spacing, pole=\(0, 0\)\)
@@ -431,8 +405,6 @@ A list of (x,y) coordinate tuples.
 - Type: list
 
 </div>
-
-[xy_grid]: #xy_grid
 
 <div class="FunctionDoc YAMLDoc" id="xy_random" markdown="1">
 
@@ -477,8 +449,6 @@ A list of (x,y) coordinate tuples.
 
 </div>
 
-[xy_random]: #xy_random
-
 <div class="FunctionDoc YAMLDoc" id="xy_to_polar" markdown="1">
 
 ## function __xy\_to\_polar__\(x, y, pole=\(0, 0\)\)
@@ -512,9 +482,5 @@ An (rho, phi) coordinate tuple. Here, `rho` is the radial coordinate, also dista
 
 </div>
 
-[xy_to_polar]: #xy_to_polar
-
 </div>
-
-[dummy]: #dummy
 

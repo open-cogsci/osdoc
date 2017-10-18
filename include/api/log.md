@@ -29,9 +29,6 @@ __Arguments:__
 
 </div>
 
-[log.__init__]: #log-__init__
-[__init__]: #log-__init__
-
 <div class="FunctionDoc YAMLDoc" id="log-close" markdown="1">
 
 ## function __log\.close__\(\)
@@ -45,9 +42,6 @@ log.close()
 ~~~
 
 </div>
-
-[log.close]: #log-close
-[close]: #log-close
 
 <div class="FunctionDoc YAMLDoc" id="log-open" markdown="1">
 
@@ -68,9 +62,6 @@ __Arguments:__
 	- Type: str, unicode
 
 </div>
-
-[log.open]: #log-open
-[open]: #log-open
 
 <div class="FunctionDoc YAMLDoc" id="log-write" markdown="1">
 
@@ -98,9 +89,6 @@ __Keywords:__
 
 </div>
 
-[log.write]: #log-write
-[write]: #log-write
-
 <div class="FunctionDoc YAMLDoc" id="log-write_vars" markdown="1">
 
 ## function __log\.write\_vars__\(var\_list=None\)
@@ -122,10 +110,5 @@ __Keywords:__
 
 </div>
 
-[log.write_vars]: #log-write_vars
-[write_vars]: #log-write_vars
-
 </div>
-
-[log]: #log
 

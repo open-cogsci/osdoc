@@ -50,9 +50,6 @@ __Keywords:__
 
 </div>
 
-[image.__init__]: #image-__init__
-[__init__]: #image-__init__
-
 <div class="FunctionDoc YAMLDoc" id="image-draw_frame" markdown="1">
 
 ## function __image\.draw\_frame__\(rect=None, style=u'normal'\)
@@ -70,9 +67,6 @@ __Keywords:__
 
 </div>
 
-[image.draw_frame]: #image-draw_frame
-[draw_frame]: #image-draw_frame
-
 <div class="FunctionDoc YAMLDoc" id="image-on_mouse_click" markdown="1">
 
 ## function __image\.on\_mouse\_click__\(pos\)
@@ -86,9 +80,6 @@ __Arguments:__
 
 </div>
 
-[image.on_mouse_click]: #image-on_mouse_click
-[on_mouse_click]: #image-on_mouse_click
-
 <div class="FunctionDoc YAMLDoc" id="image-render" markdown="1">
 
 ## function __image\.render__\(\)
@@ -96,9 +87,6 @@ __Arguments:__
 Draws the widget.
 
 </div>
-
-[image.render]: #image-render
-[render]: #image-render
 
 <div class="FunctionDoc YAMLDoc" id="image-set_rect" markdown="1">
 
@@ -112,9 +100,6 @@ __Arguments:__
 	- Type: tuple
 
 </div>
-
-[image.set_rect]: #image-set_rect
-[set_rect]: #image-set_rect
 
 <div class="FunctionDoc YAMLDoc" id="image-set_var" markdown="1">
 
@@ -134,10 +119,5 @@ __Keywords:__
 
 </div>
 
-[image.set_var]: #image-set_var
-[set_var]: #image-set_var
-
 </div>
-
-[image]: #image
 

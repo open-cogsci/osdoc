@@ -128,9 +128,6 @@ __Keyword dict:__
 
 </div>
 
-[sampler.__init__]: #sampler-__init__
-[__init__]: #sampler-__init__
-
 <div class="FunctionDoc YAMLDoc" id="sampler-close_sound" markdown="1">
 
 ## function __sampler\.close\_sound__\(experiment\)
@@ -143,9 +140,6 @@ __Arguments:__
 	- Type: experiment
 
 </div>
-
-[sampler.close_sound]: #sampler-close_sound
-[close_sound]: #sampler-close_sound
 
 <div class="FunctionDoc YAMLDoc" id="sampler-init_sound" markdown="1">
 
@@ -160,9 +154,6 @@ __Arguments:__
 
 </div>
 
-[sampler.init_sound]: #sampler-init_sound
-[init_sound]: #sampler-init_sound
-
 <div class="FunctionDoc YAMLDoc" id="sampler-is_playing" markdown="1">
 
 ## function __sampler\.is\_playing__\(\)
@@ -176,9 +167,6 @@ True if a sound is playing, False if not.
 - Type: bool
 
 </div>
-
-[sampler.is_playing]: #sampler-is_playing
-[is_playing]: #sampler-is_playing
 
 <div class="FunctionDoc YAMLDoc" id="sampler-pause" markdown="1">
 
@@ -200,9 +188,6 @@ my_sampler.resume()
 
 </div>
 
-[sampler.pause]: #sampler-pause
-[pause]: #sampler-pause
-
 <div class="FunctionDoc YAMLDoc" id="sampler-play" markdown="1">
 
 ## function __sampler\.play__\(\*\*playback\_args\)
@@ -222,9 +207,6 @@ __Keyword dict:__
 - `**playback_args`: Optional [playback keywords] that will be used for this call to [sampler.play]. This does not affect subsequent operations.
 
 </div>
-
-[sampler.play]: #sampler-play
-[play]: #sampler-play
 
 <div class="FunctionDoc YAMLDoc" id="sampler-resume" markdown="1">
 
@@ -246,9 +228,6 @@ my_sampler.resume()
 
 </div>
 
-[sampler.resume]: #sampler-resume
-[resume]: #sampler-resume
-
 <div class="FunctionDoc YAMLDoc" id="sampler-stop" markdown="1">
 
 ## function __sampler\.stop__\(\)
@@ -266,9 +245,6 @@ my_sampler.stop()
 ~~~
 
 </div>
-
-[sampler.stop]: #sampler-stop
-[stop]: #sampler-stop
 
 <div class="FunctionDoc YAMLDoc" id="sampler-wait" markdown="1">
 
@@ -288,10 +264,5 @@ print('The sampler is finished!')
 
 </div>
 
-[sampler.wait]: #sampler-wait
-[wait]: #sampler-wait
-
 </div>
-
-[sampler]: #sampler
 

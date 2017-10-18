@@ -57,9 +57,6 @@ __Keywords:__
 
 </div>
 
-[image_button.__init__]: #image_button-__init__
-[__init__]: #image_button-__init__
-
 <div class="FunctionDoc YAMLDoc" id="image_button-draw_frame" markdown="1">
 
 ## function __image\_button\.draw\_frame__\(rect=None, style=u'normal'\)
@@ -77,9 +74,6 @@ __Keywords:__
 
 </div>
 
-[image_button.draw_frame]: #image_button-draw_frame
-[draw_frame]: #image_button-draw_frame
-
 <div class="FunctionDoc YAMLDoc" id="image_button-on_mouse_click" markdown="1">
 
 ## function __image\_button\.on\_mouse\_click__\(pos\)
@@ -93,9 +87,6 @@ __Arguments:__
 
 </div>
 
-[image_button.on_mouse_click]: #image_button-on_mouse_click
-[on_mouse_click]: #image_button-on_mouse_click
-
 <div class="FunctionDoc YAMLDoc" id="image_button-render" markdown="1">
 
 ## function __image\_button\.render__\(\)
@@ -103,9 +94,6 @@ __Arguments:__
 Draws the widget.
 
 </div>
-
-[image_button.render]: #image_button-render
-[render]: #image_button-render
 
 <div class="FunctionDoc YAMLDoc" id="image_button-set_rect" markdown="1">
 
@@ -119,9 +107,6 @@ __Arguments:__
 	- Type: tuple
 
 </div>
-
-[image_button.set_rect]: #image_button-set_rect
-[set_rect]: #image_button-set_rect
 
 <div class="FunctionDoc YAMLDoc" id="image_button-set_var" markdown="1">
 
@@ -141,10 +126,5 @@ __Keywords:__
 
 </div>
 
-[image_button.set_var]: #image_button-set_var
-[set_var]: #image_button-set_var
-
 </div>
-
-[image_button]: #image_button
 

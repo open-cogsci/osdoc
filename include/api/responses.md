@@ -31,9 +31,6 @@ The percentage of correct responses for all responses that are included in feedb
 
 </div>
 
-[responses.acc]: #responses-acc
-[acc]: #responses-acc
-
 <div class="FunctionDoc YAMLDoc" id="responses-add" markdown="1">
 
 ## function __responses\.add__\(response=None, correct=None, response\_time=None, item=None, feedback=True\)
@@ -65,9 +62,6 @@ __Keywords:__
 
 </div>
 
-[responses.add]: #responses-add
-[add]: #responses-add
-
 <div class="PropertyDoc YAMLDoc" id="responses-avg_rt" markdown="1">
 
 ## property __responses.avg_rt__
@@ -75,9 +69,6 @@ __Keywords:__
 The average response time for all responses that are included in feedback. If there are no responses to give feedback on, 'undefined' is returned.
 
 </div>
-
-[responses.avg_rt]: #responses-avg_rt
-[avg_rt]: #responses-avg_rt
 
 <div class="FunctionDoc YAMLDoc" id="responses-clear" markdown="1">
 
@@ -93,9 +84,6 @@ responses.clear()
 
 </div>
 
-[responses.clear]: #responses-clear
-[clear]: #responses-clear
-
 <div class="PropertyDoc YAMLDoc" id="responses-correct" markdown="1">
 
 ## property __responses.correct__
@@ -103,9 +91,6 @@ responses.clear()
 A list of all correct (0, 1, or None) values.
 
 </div>
-
-[responses.correct]: #responses-correct
-[correct]: #responses-correct
 
 <div class="PropertyDoc YAMLDoc" id="responses-feedback" markdown="1">
 
@@ -115,9 +100,6 @@ A list of the feedback status (True or False) associated with each response.
 
 </div>
 
-[responses.feedback]: #responses-feedback
-[feedback]: #responses-feedback
-
 <div class="PropertyDoc YAMLDoc" id="responses-item" markdown="1">
 
 ## property __responses.item__
@@ -125,9 +107,6 @@ A list of the feedback status (True or False) associated with each response.
 A list of all item names (str or None) associated with each response.
 
 </div>
-
-[responses.item]: #responses-item
-[item]: #responses-item
 
 <div class="FunctionDoc YAMLDoc" id="responses-reset_feedback" markdown="1">
 
@@ -143,9 +122,6 @@ responses.reset_feedback()
 
 </div>
 
-[responses.reset_feedback]: #responses-reset_feedback
-[reset_feedback]: #responses-reset_feedback
-
 <div class="PropertyDoc YAMLDoc" id="responses-response" markdown="1">
 
 ## property __responses.response__
@@ -153,9 +129,6 @@ responses.reset_feedback()
 A list of all response values. (I.e. not response objects, but actual response keys, buttons, etc.)
 
 </div>
-
-[responses.response]: #responses-response
-[response]: #responses-response
 
 <div class="PropertyDoc YAMLDoc" id="responses-response_time" markdown="1">
 
@@ -165,10 +138,5 @@ A list of all response times (float or None).
 
 </div>
 
-[responses.response_time]: #responses-response_time
-[response_time]: #responses-response_time
-
 </div>
-
-[responses]: #responses
 

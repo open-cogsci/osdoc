@@ -114,9 +114,6 @@ __Keyword dict:__
 
 </div>
 
-[mouse.__init__]: #mouse-__init__
-[__init__]: #mouse-__init__
-
 <div class="FunctionDoc YAMLDoc" id="mouse-flush" markdown="1">
 
 ## function __mouse\.flush__\(\)
@@ -138,9 +135,6 @@ True if a button had been clicked (i.e., if there was something to flush) and Fa
 - Type: bool
 
 </div>
-
-[mouse.flush]: #mouse-flush
-[flush]: #mouse-flush
 
 <div class="FunctionDoc YAMLDoc" id="mouse-get_click" markdown="1">
 
@@ -169,9 +163,6 @@ A (button, position, timestamp) tuple. The button and position are `None` if a t
 
 </div>
 
-[mouse.get_click]: #mouse-get_click
-[get_click]: #mouse-get_click
-
 <div class="FunctionDoc YAMLDoc" id="mouse-get_pos" markdown="1">
 
 ## function __mouse\.get\_pos__\(\)
@@ -193,9 +184,6 @@ A (position, timestamp) tuple.
 - Type: tuple
 
 </div>
-
-[mouse.get_pos]: #mouse-get_pos
-[get_pos]: #mouse-get_pos
 
 <div class="FunctionDoc YAMLDoc" id="mouse-get_pressed" markdown="1">
 
@@ -219,9 +207,6 @@ A (button1, button2, button3) tuple of boolean values.
 - Type: tuple.
 
 </div>
-
-[mouse.get_pressed]: #mouse-get_pressed
-[get_pressed]: #mouse-get_pressed
 
 <div class="FunctionDoc YAMLDoc" id="mouse-set_pos" markdown="1">
 
@@ -247,9 +232,6 @@ __Keywords:__
 
 </div>
 
-[mouse.set_pos]: #mouse-set_pos
-[set_pos]: #mouse-set_pos
-
 <div class="FunctionDoc YAMLDoc" id="mouse-show_cursor" markdown="1">
 
 ## function __mouse\.show\_cursor__\(show=True\)
@@ -268,10 +250,5 @@ __Keywords:__
 
 </div>
 
-[mouse.show_cursor]: #mouse-show_cursor
-[show_cursor]: #mouse-show_cursor
-
 </div>
-
-[mouse]: #mouse
 

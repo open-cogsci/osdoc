@@ -60,9 +60,6 @@ scale.
 
 </div>
 
-[rating_scale.__init__]: #rating_scale-__init__
-[__init__]: #rating_scale-__init__
-
 <div class="FunctionDoc YAMLDoc" id="rating_scale-draw_frame" markdown="1">
 
 ## function __rating\_scale\.draw\_frame__\(rect=None, style=u'normal'\)
@@ -80,9 +77,6 @@ __Keywords:__
 
 </div>
 
-[rating_scale.draw_frame]: #rating_scale-draw_frame
-[draw_frame]: #rating_scale-draw_frame
-
 <div class="FunctionDoc YAMLDoc" id="rating_scale-on_mouse_click" markdown="1">
 
 ## function __rating\_scale\.on\_mouse\_click__\(pos\)
@@ -96,9 +90,6 @@ __Arguments:__
 
 </div>
 
-[rating_scale.on_mouse_click]: #rating_scale-on_mouse_click
-[on_mouse_click]: #rating_scale-on_mouse_click
-
 <div class="FunctionDoc YAMLDoc" id="rating_scale-render" markdown="1">
 
 ## function __rating\_scale\.render__\(\)
@@ -106,9 +97,6 @@ __Arguments:__
 Draws the widget.
 
 </div>
-
-[rating_scale.render]: #rating_scale-render
-[render]: #rating_scale-render
 
 <div class="FunctionDoc YAMLDoc" id="rating_scale-set_rect" markdown="1">
 
@@ -123,9 +111,6 @@ __Arguments:__
 
 </div>
 
-[rating_scale.set_rect]: #rating_scale-set_rect
-[set_rect]: #rating_scale-set_rect
-
 <div class="FunctionDoc YAMLDoc" id="rating_scale-set_value" markdown="1">
 
 ## function __rating\_scale\.set\_value__\(val\)
@@ -138,9 +123,6 @@ __Arguments:__
 	- Type: int
 
 </div>
-
-[rating_scale.set_value]: #rating_scale-set_value
-[set_value]: #rating_scale-set_value
 
 <div class="FunctionDoc YAMLDoc" id="rating_scale-set_var" markdown="1">
 
@@ -160,10 +142,5 @@ __Keywords:__
 
 </div>
 
-[rating_scale.set_var]: #rating_scale-set_var
-[set_var]: #rating_scale-set_var
-
 </div>
-
-[rating_scale]: #rating_scale
 

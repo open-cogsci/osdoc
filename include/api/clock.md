@@ -30,9 +30,6 @@ __Arguments:__
 
 </div>
 
-[clock.__init__]: #clock-__init__
-[__init__]: #clock-__init__
-
 <div class="FunctionDoc YAMLDoc" id="clock-sleep" markdown="1">
 
 ## function __clock\.sleep__\(ms\)
@@ -60,9 +57,6 @@ __Arguments:__
 
 </div>
 
-[clock.sleep]: #clock-sleep
-[sleep]: #clock-sleep
-
 <div class="FunctionDoc YAMLDoc" id="clock-time" markdown="1">
 
 ## function __clock\.time__\(\)
@@ -84,10 +78,5 @@ A timestamp.
 
 </div>
 
-[clock.time]: #clock-time
-[time]: #clock-time
-
 </div>
-
-[clock]: #clock
 

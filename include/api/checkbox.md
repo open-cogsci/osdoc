@@ -58,9 +58,6 @@ __Keywords:__
 
 </div>
 
-[checkbox.__init__]: #checkbox-__init__
-[__init__]: #checkbox-__init__
-
 <div class="FunctionDoc YAMLDoc" id="checkbox-draw_frame" markdown="1">
 
 ## function __checkbox\.draw\_frame__\(rect=None, style=u'normal'\)
@@ -77,9 +74,6 @@ __Keywords:__
 	- Default: 'normal'
 
 </div>
-
-[checkbox.draw_frame]: #checkbox-draw_frame
-[draw_frame]: #checkbox-draw_frame
 
 <div class="FunctionDoc YAMLDoc" id="checkbox-draw_text" markdown="1">
 
@@ -100,9 +94,6 @@ __Keywords:__
 
 </div>
 
-[checkbox.draw_text]: #checkbox-draw_text
-[draw_text]: #checkbox-draw_text
-
 <div class="FunctionDoc YAMLDoc" id="checkbox-on_mouse_click" markdown="1">
 
 ## function __checkbox\.on\_mouse\_click__\(pos\)
@@ -116,9 +107,6 @@ __Arguments:__
 
 </div>
 
-[checkbox.on_mouse_click]: #checkbox-on_mouse_click
-[on_mouse_click]: #checkbox-on_mouse_click
-
 <div class="FunctionDoc YAMLDoc" id="checkbox-render" markdown="1">
 
 ## function __checkbox\.render__\(\)
@@ -126,9 +114,6 @@ __Arguments:__
 Draws the widget.
 
 </div>
-
-[checkbox.render]: #checkbox-render
-[render]: #checkbox-render
 
 <div class="FunctionDoc YAMLDoc" id="checkbox-set_checked" markdown="1">
 
@@ -144,9 +129,6 @@ __Keywords:__
 
 </div>
 
-[checkbox.set_checked]: #checkbox-set_checked
-[set_checked]: #checkbox-set_checked
-
 <div class="FunctionDoc YAMLDoc" id="checkbox-set_rect" markdown="1">
 
 ## function __checkbox\.set\_rect__\(rect\)
@@ -159,9 +141,6 @@ __Arguments:__
 	- Type: tuple
 
 </div>
-
-[checkbox.set_rect]: #checkbox-set_rect
-[set_rect]: #checkbox-set_rect
 
 <div class="FunctionDoc YAMLDoc" id="checkbox-set_var" markdown="1">
 
@@ -182,10 +161,5 @@ __Keywords:__
 
 </div>
 
-[checkbox.set_var]: #checkbox-set_var
-[set_var]: #checkbox-set_var
-
 </div>
-
-[checkbox]: #checkbox
 

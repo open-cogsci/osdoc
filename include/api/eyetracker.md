@@ -34,9 +34,6 @@ algorithms).
 
 </div>
 
-[eyetracker.calibrate]: #eyetracker-calibrate
-[calibrate]: #eyetracker-calibrate
-
 <div class="FunctionDoc YAMLDoc" id="eyetracker-close" markdown="1">
 
 ## function __eyetracker\.close__\(\)
@@ -45,9 +42,6 @@ Neatly closes connection to tracker. Saves data and sets
 `self.connected` to False.
 
 </div>
-
-[eyetracker.close]: #eyetracker-close
-[close]: #eyetracker-close
 
 <div class="FunctionDoc YAMLDoc" id="eyetracker-connected" markdown="1">
 
@@ -64,9 +58,6 @@ True if connection is established, False if not; sets
 
 </div>
 
-[eyetracker.connected]: #eyetracker-connected
-[connected]: #eyetracker-connected
-
 <div class="FunctionDoc YAMLDoc" id="eyetracker-draw_calibration_target" markdown="1">
 
 ## function __eyetracker\.draw\_calibration\_target__\(x, y\)
@@ -82,9 +73,6 @@ __Arguments:__
 
 </div>
 
-[eyetracker.draw_calibration_target]: #eyetracker-draw_calibration_target
-[draw_calibration_target]: #eyetracker-draw_calibration_target
-
 <div class="FunctionDoc YAMLDoc" id="eyetracker-draw_drift_correction_target" markdown="1">
 
 ## function __eyetracker\.draw\_drift\_correction\_target__\(x, y\)
@@ -99,9 +87,6 @@ __Arguments:__
 	- Type: int
 
 </div>
-
-[eyetracker.draw_drift_correction_target]: #eyetracker-draw_drift_correction_target
-[draw_drift_correction_target]: #eyetracker-draw_drift_correction_target
 
 <div class="FunctionDoc YAMLDoc" id="eyetracker-drift_correction" markdown="1">
 
@@ -136,9 +121,6 @@ A boolean indicating if drift check is ok (True) or not (False).
 
 </div>
 
-[eyetracker.drift_correction]: #eyetracker-drift_correction
-[drift_correction]: #eyetracker-drift_correction
-
 <div class="FunctionDoc YAMLDoc" id="eyetracker-fix_triggered_drift_correction" markdown="1">
 
 ## function __eyetracker\.fix\_triggered\_drift\_correction__\(pos=None, min\_samples=30, max\_dev=60, reset\_threshold=10\)
@@ -170,9 +152,6 @@ A boolean indicating if drift check is ok (True) or not (False).
 
 </div>
 
-[eyetracker.fix_triggered_drift_correction]: #eyetracker-fix_triggered_drift_correction
-[fix_triggered_drift_correction]: #eyetracker-fix_triggered_drift_correction
-
 <div class="FunctionDoc YAMLDoc" id="eyetracker-get_eyetracker_clock_async" markdown="1">
 
 ## function __eyetracker\.get\_eyetracker\_clock\_async__\(\)
@@ -187,9 +166,6 @@ The difference between eyetracker time and PyGaze time.
 
 </div>
 
-[eyetracker.get_eyetracker_clock_async]: #eyetracker-get_eyetracker_clock_async
-[get_eyetracker_clock_async]: #eyetracker-get_eyetracker_clock_async
-
 <div class="FunctionDoc YAMLDoc" id="eyetracker-log" markdown="1">
 
 ## function __eyetracker\.log__\(msg\)
@@ -202,9 +178,6 @@ __Arguments:__
 	- Type: str, unicode
 
 </div>
-
-[eyetracker.log]: #eyetracker-log
-[log]: #eyetracker-log
 
 <div class="FunctionDoc YAMLDoc" id="eyetracker-log_var" markdown="1">
 
@@ -220,9 +193,6 @@ __Arguments:__
 
 </div>
 
-[eyetracker.log_var]: #eyetracker-log_var
-[log_var]: #eyetracker-log_var
-
 <div class="FunctionDoc YAMLDoc" id="eyetracker-pupil_size" markdown="1">
 
 ## function __eyetracker\.pupil\_size__\(\)
@@ -236,9 +206,6 @@ Returns pupil size for the eye that is currently being tracked (as specified by 
 - Type: int, float
 
 </div>
-
-[eyetracker.pupil_size]: #eyetracker-pupil_size
-[pupil_size]: #eyetracker-pupil_size
 
 <div class="FunctionDoc YAMLDoc" id="eyetracker-sample" markdown="1">
 
@@ -254,9 +221,6 @@ An (x,y) tuple or a (-1,-1) on an error.
 
 </div>
 
-[eyetracker.sample]: #eyetracker-sample
-[sample]: #eyetracker-sample
-
 <div class="FunctionDoc YAMLDoc" id="eyetracker-send_command" markdown="1">
 
 ## function __eyetracker\.send\_command__\(cmd\)
@@ -269,9 +233,6 @@ __Arguments:__
 	- Type: str, unicode
 
 </div>
-
-[eyetracker.send_command]: #eyetracker-send_command
-[send_command]: #eyetracker-send_command
 
 <div class="FunctionDoc YAMLDoc" id="eyetracker-set_detection_type" markdown="1">
 
@@ -300,9 +261,6 @@ Detection type for saccades, fixations and blinks in a tuple, e.g. ('pygaze','na
 
 </div>
 
-[eyetracker.set_detection_type]: #eyetracker-set_detection_type
-[set_detection_type]: #eyetracker-set_detection_type
-
 <div class="FunctionDoc YAMLDoc" id="eyetracker-set_draw_calibration_target_func" markdown="1">
 
 ## function __eyetracker\.set\_draw\_calibration\_target\_func__\(func\)
@@ -315,9 +273,6 @@ __Arguments:__
 	- Type: function
 
 </div>
-
-[eyetracker.set_draw_calibration_target_func]: #eyetracker-set_draw_calibration_target_func
-[set_draw_calibration_target_func]: #eyetracker-set_draw_calibration_target_func
 
 <div class="FunctionDoc YAMLDoc" id="eyetracker-set_draw_drift_correction_target_func" markdown="1">
 
@@ -332,9 +287,6 @@ __Arguments:__
 
 </div>
 
-[eyetracker.set_draw_drift_correction_target_func]: #eyetracker-set_draw_drift_correction_target_func
-[set_draw_drift_correction_target_func]: #eyetracker-set_draw_drift_correction_target_func
-
 <div class="FunctionDoc YAMLDoc" id="eyetracker-set_eye_used" markdown="1">
 
 ## function __eyetracker\.set\_eye\_used__\(\)
@@ -343,9 +295,6 @@ Logs the `eye_used` variable, based on which eye was specified (if both eyes are
 
 </div>
 
-[eyetracker.set_eye_used]: #eyetracker-set_eye_used
-[set_eye_used]: #eyetracker-set_eye_used
-
 <div class="FunctionDoc YAMLDoc" id="eyetracker-start_recording" markdown="1">
 
 ## function __eyetracker\.start\_recording__\(\)
@@ -353,9 +302,6 @@ Logs the `eye_used` variable, based on which eye was specified (if both eyes are
 Starts recording. Sets `self.recording` to `True` when recording is successfully started.
 
 </div>
-
-[eyetracker.start_recording]: #eyetracker-start_recording
-[start_recording]: #eyetracker-start_recording
 
 <div class="FunctionDoc YAMLDoc" id="eyetracker-status_msg" markdown="1">
 
@@ -371,9 +317,6 @@ e.g.: "current trial: %d" % trialnr.
 
 </div>
 
-[eyetracker.status_msg]: #eyetracker-status_msg
-[status_msg]: #eyetracker-status_msg
-
 <div class="FunctionDoc YAMLDoc" id="eyetracker-stop_recording" markdown="1">
 
 ## function __eyetracker\.stop\_recording__\(\)
@@ -381,9 +324,6 @@ e.g.: "current trial: %d" % trialnr.
 Stops recording. Sets `self.recording` to `False` when recording is successfully stopped.
 
 </div>
-
-[eyetracker.stop_recording]: #eyetracker-stop_recording
-[stop_recording]: #eyetracker-stop_recording
 
 <div class="FunctionDoc YAMLDoc" id="eyetracker-wait_for_blink_end" markdown="1">
 
@@ -403,9 +343,6 @@ Blink ending time in milliseconds, as measured from experiment begin time.
 
 </div>
 
-[eyetracker.wait_for_blink_end]: #eyetracker-wait_for_blink_end
-[wait_for_blink_end]: #eyetracker-wait_for_blink_end
-
 <div class="FunctionDoc YAMLDoc" id="eyetracker-wait_for_blink_start" markdown="1">
 
 ## function __eyetracker\.wait\_for\_blink\_start__\(\)
@@ -423,9 +360,6 @@ Blink starting time in milliseconds, as measured from experiment begin time
 - Type: int, float
 
 </div>
-
-[eyetracker.wait_for_blink_start]: #eyetracker-wait_for_blink_start
-[wait_for_blink_start]: #eyetracker-wait_for_blink_start
 
 <div class="FunctionDoc YAMLDoc" id="eyetracker-wait_for_event" markdown="1">
 
@@ -451,9 +385,6 @@ A `self.wait_for_*` method is called, depending on the specified event; the retu
 
 </div>
 
-[eyetracker.wait_for_event]: #eyetracker-wait_for_event
-[wait_for_event]: #eyetracker-wait_for_event
-
 <div class="FunctionDoc YAMLDoc" id="eyetracker-wait_for_fixation_end" markdown="1">
 
 ## function __eyetracker\.wait\_for\_fixation\_end__\(\)
@@ -475,9 +406,6 @@ A `time, gazepos` tuple. Time is the end time in milliseconds (from expstart), g
 - Type: tuple
 
 </div>
-
-[eyetracker.wait_for_fixation_end]: #eyetracker-wait_for_fixation_end
-[wait_for_fixation_end]: #eyetracker-wait_for_fixation_end
 
 <div class="FunctionDoc YAMLDoc" id="eyetracker-wait_for_fixation_start" markdown="1">
 
@@ -502,9 +430,6 @@ A `time, gazepos` tuple. Time is the starting time in milliseconds (from expstar
 
 </div>
 
-[eyetracker.wait_for_fixation_start]: #eyetracker-wait_for_fixation_start
-[wait_for_fixation_start]: #eyetracker-wait_for_fixation_start
-
 <div class="FunctionDoc YAMLDoc" id="eyetracker-wait_for_saccade_end" markdown="1">
 
 ## function __eyetracker\.wait\_for\_saccade\_end__\(\)
@@ -523,9 +448,6 @@ An `endtime, startpos, endpos` tuple. Endtime in milliseconds (from expbegintime
 - Type: tuple
 
 </div>
-
-[eyetracker.wait_for_saccade_end]: #eyetracker-wait_for_saccade_end
-[wait_for_saccade_end]: #eyetracker-wait_for_saccade_end
 
 <div class="FunctionDoc YAMLDoc" id="eyetracker-wait_for_saccade_start" markdown="1">
 
@@ -546,10 +468,5 @@ An `endtime, startpos` tuple. Endtime in milliseconds (from expbegintime); start
 
 </div>
 
-[eyetracker.wait_for_saccade_start]: #eyetracker-wait_for_saccade_start
-[wait_for_saccade_start]: #eyetracker-wait_for_saccade_start
-
 </div>
-
-[eyetracker]: #eyetracker
 

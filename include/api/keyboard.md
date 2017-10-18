@@ -99,9 +99,6 @@ __Keyword dict:__
 
 </div>
 
-[keyboard.__init__]: #keyboard-__init__
-[__init__]: #keyboard-__init__
-
 <div class="FunctionDoc YAMLDoc" id="keyboard-flush" markdown="1">
 
 ## function __keyboard\.flush__\(\)
@@ -115,9 +112,6 @@ True if a key had been pressed (i.e., if there was something to flush) and False
 - Type: bool
 
 </div>
-
-[keyboard.flush]: #keyboard-flush
-[flush]: #keyboard-flush
 
 <div class="FunctionDoc YAMLDoc" id="keyboard-get_key" markdown="1">
 
@@ -146,9 +140,6 @@ A `(key, timestamp)` tuple. `key` is None if a timeout occurs.
 
 </div>
 
-[keyboard.get_key]: #keyboard-get_key
-[get_key]: #keyboard-get_key
-
 <div class="FunctionDoc YAMLDoc" id="keyboard-get_mods" markdown="1">
 
 ## function __keyboard\.get\_mods__\(\)
@@ -171,9 +162,6 @@ A list of keyboard moderators. An empty list is returned if no moderators are pr
 - Type: list
 
 </div>
-
-[keyboard.get_mods]: #keyboard-get_mods
-[get_mods]: #keyboard-get_mods
 
 <div class="FunctionDoc YAMLDoc" id="keyboard-show_virtual_keyboard" markdown="1">
 
@@ -206,10 +194,5 @@ __Keywords:__
 
 </div>
 
-[keyboard.show_virtual_keyboard]: #keyboard-show_virtual_keyboard
-[show_virtual_keyboard]: #keyboard-show_virtual_keyboard
-
 </div>
-
-[keyboard]: #keyboard
 

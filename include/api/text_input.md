@@ -59,9 +59,6 @@ __Keywords:__
 
 </div>
 
-[text_input.__init__]: #text_input-__init__
-[__init__]: #text_input-__init__
-
 <div class="FunctionDoc YAMLDoc" id="text_input-draw_frame" markdown="1">
 
 ## function __text\_input\.draw\_frame__\(rect=None, style=u'normal'\)
@@ -78,9 +75,6 @@ __Keywords:__
 	- Default: 'normal'
 
 </div>
-
-[text_input.draw_frame]: #text_input-draw_frame
-[draw_frame]: #text_input-draw_frame
 
 <div class="FunctionDoc YAMLDoc" id="text_input-draw_text" markdown="1">
 
@@ -101,9 +95,6 @@ __Keywords:__
 
 </div>
 
-[text_input.draw_text]: #text_input-draw_text
-[draw_text]: #text_input-draw_text
-
 <div class="FunctionDoc YAMLDoc" id="text_input-on_mouse_click" markdown="1">
 
 ## function __text\_input\.on\_mouse\_click__\(pos\)
@@ -117,9 +108,6 @@ __Arguments:__
 
 </div>
 
-[text_input.on_mouse_click]: #text_input-on_mouse_click
-[on_mouse_click]: #text_input-on_mouse_click
-
 <div class="FunctionDoc YAMLDoc" id="text_input-render" markdown="1">
 
 ## function __text\_input\.render__\(\)
@@ -127,9 +115,6 @@ __Arguments:__
 Draws the widget.
 
 </div>
-
-[text_input.render]: #text_input-render
-[render]: #text_input-render
 
 <div class="FunctionDoc YAMLDoc" id="text_input-set_rect" markdown="1">
 
@@ -143,9 +128,6 @@ __Arguments:__
 	- Type: tuple
 
 </div>
-
-[text_input.set_rect]: #text_input-set_rect
-[set_rect]: #text_input-set_rect
 
 <div class="FunctionDoc YAMLDoc" id="text_input-set_var" markdown="1">
 
@@ -165,10 +147,5 @@ __Keywords:__
 
 </div>
 
-[text_input.set_var]: #text_input-set_var
-[set_var]: #text_input-set_var
-
 </div>
-
-[text_input]: #text_input
 

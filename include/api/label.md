@@ -47,9 +47,6 @@ __Keywords:__
 
 </div>
 
-[label.__init__]: #label-__init__
-[__init__]: #label-__init__
-
 <div class="FunctionDoc YAMLDoc" id="label-draw_frame" markdown="1">
 
 ## function __label\.draw\_frame__\(rect=None, style=u'normal'\)
@@ -66,9 +63,6 @@ __Keywords:__
 	- Default: 'normal'
 
 </div>
-
-[label.draw_frame]: #label-draw_frame
-[draw_frame]: #label-draw_frame
 
 <div class="FunctionDoc YAMLDoc" id="label-draw_text" markdown="1">
 
@@ -89,9 +83,6 @@ __Keywords:__
 
 </div>
 
-[label.draw_text]: #label-draw_text
-[draw_text]: #label-draw_text
-
 <div class="FunctionDoc YAMLDoc" id="label-on_mouse_click" markdown="1">
 
 ## function __label\.on\_mouse\_click__\(pos\)
@@ -105,9 +96,6 @@ __Arguments:__
 
 </div>
 
-[label.on_mouse_click]: #label-on_mouse_click
-[on_mouse_click]: #label-on_mouse_click
-
 <div class="FunctionDoc YAMLDoc" id="label-render" markdown="1">
 
 ## function __label\.render__\(\)
@@ -115,9 +103,6 @@ __Arguments:__
 Draws the widget.
 
 </div>
-
-[label.render]: #label-render
-[render]: #label-render
 
 <div class="FunctionDoc YAMLDoc" id="label-set_rect" markdown="1">
 
@@ -131,9 +116,6 @@ __Arguments:__
 	- Type: tuple
 
 </div>
-
-[label.set_rect]: #label-set_rect
-[set_rect]: #label-set_rect
 
 <div class="FunctionDoc YAMLDoc" id="label-set_var" markdown="1">
 
@@ -153,10 +135,5 @@ __Keywords:__
 
 </div>
 
-[label.set_var]: #label-set_var
-[set_var]: #label-set_var
-
 </div>
-
-[label]: #label
 

@@ -67,9 +67,6 @@ __Keywords:__
 
 </div>
 
-[pool.add]: #pool-add
-[add]: #pool-add
-
 <div class="FunctionDoc YAMLDoc" id="pool-fallback_folder" markdown="1">
 
 ## function __pool\.fallback\_folder__\(\)
@@ -85,14 +82,11 @@ if pool.fallback_folder() is not None:
 
 __Returns:__
 
-The full path to the fallback pool folder, which is the `__pool__` subfolder of the current experiment folder, or `None` if this folder does not exist. The fallback pool folder is mostly useful in combination with a [versioning system](/miscellaneous/git/).
+The full path to the fallback pool folder, which is the `__pool__` subfolder of the current experiment folder, or `None` if this folder does not exist. The fallback pool folder is mostly useful in combination with a versioning system, such as git, because it allows you to save the experiment as a plain-text file, even when having files in the file pool.
 
 - Type: unicode, NoneType
 
 </div>
-
-[pool.fallback_folder]: #pool-fallback_folder
-[fallback_folder]: #pool-fallback_folder
 
 <div class="FunctionDoc YAMLDoc" id="pool-files" markdown="1">
 
@@ -118,9 +112,6 @@ A list of full paths.
 
 </div>
 
-[pool.files]: #pool-files
-[files]: #pool-files
-
 <div class="FunctionDoc YAMLDoc" id="pool-folder" markdown="1">
 
 ## function __pool\.folder__\(\)
@@ -140,9 +131,6 @@ The full path to the (main) pool folder. This is typically a temporary folder th
 - Type: unicode
 
 </div>
-
-[pool.folder]: #pool-folder
-[folder]: #pool-folder
 
 <div class="FunctionDoc YAMLDoc" id="pool-folders" markdown="1">
 
@@ -181,9 +169,6 @@ A list of all folders.
 
 </div>
 
-[pool.folders]: #pool-folders
-[folders]: #pool-folders
-
 <div class="FunctionDoc YAMLDoc" id="pool-in_folder" markdown="1">
 
 ## function __pool\.in\_folder__\(path\)
@@ -202,9 +187,6 @@ No description
 - Type: bool
 
 </div>
-
-[pool.in_folder]: #pool-in_folder
-[in_folder]: #pool-in_folder
 
 <div class="FunctionDoc YAMLDoc" id="pool-rename" markdown="1">
 
@@ -227,9 +209,6 @@ __Arguments:__
 
 </div>
 
-[pool.rename]: #pool-rename
-[rename]: #pool-rename
-
 <div class="FunctionDoc YAMLDoc" id="pool-size" markdown="1">
 
 ## function __pool\.size__\(\)
@@ -250,10 +229,5 @@ The combined size in bytes of all files in the file pool.
 
 </div>
 
-[pool.size]: #pool-size
-[size]: #pool-size
-
 </div>
-
-[pool]: #pool
 
