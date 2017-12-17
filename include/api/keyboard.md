@@ -123,7 +123,41 @@ if response is None:
 
 __Keyword dict:__
 
-- `**resp_args`: Optional [response keywords] (`timeout` and `keylist`) that will be used for this call to [keyboard.get_key] this does not affect subsequent operations.
+- `**resp_args`: Optional [response keywords] (`timeout` and `keylist`) that will be used for this call to [keyboard.get_key]. This does not affect subsequent operations.
+
+__Returns:__
+
+A `(key, timestamp)` tuple. `key` is None if a timeout occurs.
+
+- Type: tuple
+
+</div>
+
+<div class="FunctionDoc YAMLDoc" id="Keyboard-get_key_release" markdown="1">
+
+## function __Keyboard\.get\_key\_release__\(\*\*resp\_args\)
+
+*New in v3.2.0*
+
+Collects a single key release.
+
+*Important:* This function currently assumes a QWERTY keyboard
+layout (unlike `Keyboard.get_key()`). This means that the returned
+`key` may be incorrect on non-QWERTY keyboard layouts. In addition,
+this function is not implemented for the *psycho* backend.
+
+__Example:__
+
+~~~ .python
+my_keyboard = Keyboard()
+response, timestamp = my_keyboard.get_key_release(timeout=5000)
+if response is None:
+        print(u'A timeout occurred!')
+~~~
+
+__Keyword dict:__
+
+- `**resp_args`: Optional [response keywords] (`timeout` and `keylist`) that will be used for this call to [keyboard.get_key_release]. This does not affect subsequent operations.
 
 __Returns:__
 

@@ -234,6 +234,26 @@ Pauses the experiment.
 
 </div>
 
+<div class="FunctionDoc YAMLDoc" id="register_cleanup_function" markdown="1">
+
+## function __register\_cleanup\_function__\(fnc\)
+
+Registers a clean-up function, which is executed when the experiment ends. Clean-up functions are executed at the very end, after the display, sound device, and log file have been closed. Clean-up functions are also executed when the experiment crashes.
+
+__Example:__
+
+~~~ .python
+def my_cleanup_function():
+        print(u'The experiment is finished!')
+register_cleanup_function(my_cleanup_function)
+~~~
+
+__Arguments:__
+
+- `fnc` -- No description
+
+</div>
+
 <div class="FunctionDoc YAMLDoc" id="reset_feedback" markdown="1">
 
 ## function __reset\_feedback__\(\)
@@ -387,7 +407,7 @@ __Arguments:__
 
 - `rho` -- The radial coordinate, also distance or eccentricity.
 	- Type: float
-- `phi` -- The angular coordinate. This reflects a counterclockwise rotation in degrees (i.e. not radians), where 0 is straight right.
+- `phi` -- The angular coordinate. This reflects a clockwise rotation in degrees (i.e. not radians), where 0 is straight right.
 	- Type: float
 
 __Keywords:__

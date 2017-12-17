@@ -18,10 +18,11 @@ figure:
 As you can see, the COROUTINES plugin looks similar to the SEQUENCE item, but has a few extra options:
 
 - *Duration* indicates the total duration of the coroutines.
+- *End after item (optional)* indicates that the coroutines should end when a specific item has ended. This allows you, for example, to indicate that the coroutines should end when a key press has been collected, by selecting a KEYBOARD_RESPONSE item here.
 - *Generator function name (optional)* indicates the name of a generator function that has been defined in an inline_script (see Writing a custom coroutine below).
 - Each item has a *Start time*. Most items also have an *End time*. The end time does not apply to one-shot items; for example, SKETCHPADs show a display and terminate immediately, so they have no end time.
 
-Specifically, the example from %FigCoroutinesInterface (from the [stop-signal-task example](https://github.com/smathot/opensesame_coroutines/tree/master/examples)) does the following:
+Specifically, the example from %FigCoroutinesInterface (from the stop-signal-task example) does the following:
 
 - It shows a target display immediately.
 - If the `stop_after` variable is not empty, it shows the stop_signal display after an interval specified by the `stop_after` variable.

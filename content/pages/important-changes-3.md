@@ -30,7 +30,9 @@ form._exec()
 ~~~
 
 
-### Access and modify Canvas elements
+### Improvements to the sketchpad and Canvas
+
+#### Access and modify Canvas elements
 
 Elements of a `Canvas` are now objects that can be named, accessed, and modified. This means that you no longer need to redraw an entire canvas to change a single element. For example, you can draw a rotating arm as follows:
 
@@ -51,23 +53,64 @@ For more information, see:
 - %link:canvas%
 
 
-### Improved support for HTML and non-Latin script
+#### Improved support for HTML and non-Latin script
 
 Text is now rendered by Qt, which is a modern library (the same library that is also used for the graphical interface). This means that you can now use real HTML in your text. This also means that left-to-right script and other non-Latin scripts are rendered much better.
 
 
-### Improved form performance
+#### Images can be rotated
+
+Images can now be rotated. This work both in SKETCHPAD items and `Canvas` objects.
+
+
+#### Work with polar coordinates
+
+If you right-click on a SKETCHPAD elements, you can select 'Specify polar coordinates'. This allows you to calculate cartesian (x, y) coordinates based on polar coordinates, which is especially useful if you want to create circular configurations.
+
+
+### Form improvements
+
+#### Improved form performance
 
 Forms are now much faster when using the *psycho* and *xpyriment* backends. This is due to the fact that `Canvas` elements can now be updated individually, as described above.
 
 
-### Validation of form input
+#### Validation of form input
 
 You can now validate the input of a form; that is, you can prevent a form from closing until certain criteria are met. In addition, you can exclude characters as input from `TextInput` widgets.
 
 For more information, see:
 
 - %link:manual/forms/validation%
+
+
+### Keyboard Improvements
+
+#### Support for key-release events
+
+The `Keyboard()` object now has a `get_key_release()` function, which allows you to collect key releases. Due to limitations of the underlying libraries, the function has two important limitations:
+
+- The returned `key` may be incorrect on non-QWERTY keyboard layouts
+- The function has not been implemented for the *psycho* backend
+
+For more information, see:
+
+- %link:manual/response/keyboard%
+
+
+### Mouse Improvements
+
+#### Support for mouse-release events
+
+The `Mouse()` object now has a `get_click_release()` function, which allows you to collect mouse-click releases. This function is currently not implemented for the *psycho* backend.
+
+For more information, see:
+
+- %link:manual/response/mouse%
+
+#### Use sketchpads to define regions of interest
+
+You can now define a linked SKETCHPAD in a `mouse_response` item. If you do this, the names of the elements on the SKETCHPAD will be automatically used as regions of interest (ROIs) for the mouse clicks.
 
 
 ## Changes in 3.1

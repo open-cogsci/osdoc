@@ -2,7 +2,9 @@ title: Visual stimuli
 
 The most common way to present visual stimuli is using the SKETCHPAD item, or, for non-time-critical stimuli, the FEEDBACK item.
 
+
 [TOC]
+
 
 ## Using the sketchpad and feedback items
 
@@ -15,9 +17,11 @@ figure:
  caption: The SKETCHPAD provides built-in drawing tools.
 --%
 
+
 ## The difference between sketchpad and feedback items
 
 The SKETCHPAD and FEEDBACK items are identical in most ways, except for two important differences.
+
 
 ### Sketchpad items are prepared in advance, feedback items are not
 
@@ -29,6 +33,7 @@ For more information about the prepare-run strategy, see:
 
 - %link:prepare-run%
 
+
 ### Feedback variables are (by default) reset by feedback items
 
 The FEEDBACK item has an option 'Reset feedback variables'. When this option is enabled (it is by default), feedback variables are reset when the FEEDBACK item is shown.
@@ -37,8 +42,23 @@ For more information about feedback variables, see:
 
 - %link:manual/variables%
 
-## Presenting visual stimuli in Python
 
-You can use the `canvas` object to present visual stimuli in Python:
+## Presenting visual stimuli in Python inline script
+
+### Accessing a SKETCHPAD in Python
+
+You can access the `Canvas` object for a SKETCHPAD as the items `canvas` property. For example, say that your SKETCHPAD is called *my_sketchpad*, and contains an image elements with the name 'my_image'. You could then have this image rotate with the following script:
+
+~~~ .python
+my_canvas = items['my_sketchpad'].canvas
+for angle in range(360):
+	my_canvas['my_image'].rotation = angle
+	my_canvas.show()
+~~~
+
+
+### Creating a Canvas in Python
+
+You can use the `Canvas` object to present visual stimuli in Python:
 
 - %link:canvas%

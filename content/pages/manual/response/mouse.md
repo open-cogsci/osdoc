@@ -22,6 +22,12 @@ Mouse buttons have a number (`1`, etc.) as well as a name (`left_button`, etc.).
 
 %--include: include/timeout.md--%
 
+## Coordinates and regions of interest (ROIs)
+
+The `cursor_x` and `cursor_y` variables hold the location of the mouse click.
+
+If you indicate a linked SKETCHPAD, the variable `cursor_roi` will hold a comma-separated list of names of elements that contain the clicked coordinate. In other words, elements on the SKETCHPAD automatically serve as regions of interest for the mouse click.
+
 ## Collecting mouse responses in Python
 
 You can use the `mouse` object to collect mouse responses in Python:

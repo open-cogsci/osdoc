@@ -29,7 +29,7 @@ An iterator that loops for a fixed time.
 __Example:__
 
 ~~~ .python
-for ms in clock.sleep_for(100, throttle=10):
+for ms in clock.loop_for(100, throttle=10):
         print(ms)
 ~~~
 

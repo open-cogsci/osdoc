@@ -155,6 +155,38 @@ A (button, position, timestamp) tuple. The button and position are `None` if a t
 
 </div>
 
+<div class="FunctionDoc YAMLDoc" id="Mouse-get_click_release" markdown="1">
+
+## function __Mouse\.get\_click\_release__\(\*\*resp\_args\)
+
+*New in v3.2.0*
+
+Collects a mouse-click release.
+
+*Important:* This function is currently not implemented for the
+*psycho* backend.
+
+__Example:__
+
+~~~ .python
+my_mouse = Mouse()
+button, (x, y), timestamp = my_mouse.get_click_release(timeout=5000)
+if button is None:
+        print('A timeout occurred!')
+~~~
+
+__Keyword dict:__
+
+- `**resp_args`: Optional [response keywords] that will be used for this call to [mouse.get_click_release]. This does not affect subsequent operations.
+
+__Returns:__
+
+A (button, position, timestamp) tuple. The button and position are `None` if a timeout occurs. Position is an (x, y) tuple in screen coordinates.
+
+- Type: tuple
+
+</div>
+
 <div class="FunctionDoc YAMLDoc" id="Mouse-get_pos" markdown="1">
 
 ## function __Mouse\.get\_pos__\(\)

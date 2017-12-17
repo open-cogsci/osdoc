@@ -70,7 +70,7 @@ __Keywords:__
 
 __Returns:__
 
-A (position, timestamp) tuple. The position is None if a timeout occurs.
+A `(position, timestamp)` tuple. `position` is `None` if a timeout occurs. Otherwise, `position` is an `(x, y, z)` tuple.
 
 - Type: tuple
 
@@ -90,7 +90,7 @@ __Keywords:__
 
 __Returns:__
 
-A (position, timestamp) tuple. The position is `None` if a timeout occurs.
+A `(position, timestamp)` tuple. The position is `None` if a timeout occurs.
 
 - Type: tuple
 
@@ -133,7 +133,7 @@ __Keywords:__
 
 __Returns:__
 
-A (position, timestamp) tuple. The position is `None` if a timeout occurs.
+A `(position, timestamp)` tuple. `position` is `None` if a timeout occurs. Otherwise, `position` is an `(x, y)` tuple.
 
 - Type: tuple
 
@@ -156,7 +156,7 @@ __Keywords:__
 
 __Returns:__
 
-A (event, value, timestamp) tuple. The value is `None` if a timeout occurs.
+A (event, value, timestamp) tuple. The value is `None` if a timeout occurs. `event` is one of `None`, 'joybuttonpress', 'joyballmotion', 'joyaxismotion', or 'joyhatmotion'
 
 - Type: tuple
 

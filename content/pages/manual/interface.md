@@ -118,7 +118,7 @@ The keyboard shortcuts listed below are default values, and can be changed as de
 
 The following keyboard shortcuts are available everywhere:
 
-- Quick switcher: `Meta+O`
+- Quick switcher: `Ctrl+Space`
 - New experiment: `Ctrl+N`
 - Open experiment: `Ctrl+O`
 - Save experiment: `Ctrl+S`

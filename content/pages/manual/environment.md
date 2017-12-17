@@ -4,6 +4,11 @@ title: Installing packages, plugins, and extensions
 [TOC]
 
 
+## Using the Python package manager
+
+A graphical package manager is available under Menu → Tools → Python package manager. This is a graphical manager for pip / PyPi.
+
+
 ## Using pip / PyPi
 
 If you receive permission errors on Windows, run OpenSesame as administrator.

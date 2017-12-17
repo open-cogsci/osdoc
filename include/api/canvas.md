@@ -186,6 +186,25 @@ my_canvas['my_cross'] = [
 my_canvas.show()
 ~~~
 
+To check whether a particular `x,y` coordinate falls within the bounding
+rectangle of an element, you can use `in`:
+
+~~~ .python
+my_mouse = Mouse(visible=True)
+my_canvas = Canvas()
+my_canvas['rect'] = Rect(-100, -100, 200, 200)
+my_canvas.show()
+button, (x, y), time = my_mouse.get_click()
+if (x, y) in my_canvas['rect']:
+        print('Clicked in rectangle')
+else:
+        print('Clicked outside of rectangle')
+~~~
+
+You can also get a list of the names of all elements that contain an
+`x,y` coordinate, using the `Canvas.elements_at()` function, documented
+below.
+
 %--
 constant:
         arg_max_width: |
@@ -327,6 +346,47 @@ __Arguments:__
 
 - `canvas` -- The `Canvas` to copy.
 	- Type: canvas
+
+</div>
+
+<div class="FunctionDoc YAMLDoc" id="Canvas-elements_at" markdown="1">
+
+## function __Canvas\.elements\_at__\(x, y\)
+
+*New in v3.2.0*
+
+Gets the names of elements that contain a particular `x, y`
+coordinate.
+
+__Example:__
+
+~~~ .python
+# Create and show a canvas with two partly overlapping rectangles
+my_canvas = Canvas()
+my_canvas['right_rect'] = Rect(x=-200, y=-100, w=200, h=200, color='red')
+my_canvas['left_rect'] = Rect(x=-100, y=-100, w=200, h=200, color='green')
+my_canvas.show()
+# Collect a mouse click and print the names of the elements that
+# contain the clicked point
+my_mouse = Mouse(visible=True)
+button, pos, time = my_mouse.get_click()
+if pos is not None:
+    x, y = pos
+    print('Clicked on elements: %s' % my_canvas.elements_at(x, y))
+~~~
+
+__Arguments:__
+
+- `x` -- An X coordinate.
+	- Type: int, float
+- `y` -- A Y coordinate.
+	- Type: int, float
+
+__Returns:__
+
+A `list` of element names that contain the coordinate `x, y`.
+
+- Type: list
 
 </div>
 
@@ -511,7 +571,7 @@ __Keywords:__
 - `scale` -- The scaling factor of the image. `None` or 1 indicate the original size. 2.0 indicates a 200% zoom, etc.
 	- Type: float, int, NoneType
 	- Default: None
-- `rotation` -- The rotation of the image `None` or 0 indicate the original rotation. Positive values indicate a counterclockwise rotation in degrees.
+- `rotation` -- The rotation of the image `None` or 0 indicate the original rotation. Positive values indicate a clockwise rotation in degrees.
 	- Type: float, int, NoneType
 	- Default: None
 
