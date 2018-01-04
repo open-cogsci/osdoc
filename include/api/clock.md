@@ -53,6 +53,41 @@ An Iterator over times in milliseconds that have passed since `t0`.
 
 </div>
 
+<div class="FunctionDoc YAMLDoc" id="clock-once_in_a_while" markdown="1">
+
+## function __clock\.once\_in\_a\_while__\(ms=1000\)
+
+*New in v3.2.0*
+
+Periodically returns `True`. This is mostly useful for executing
+code (e.g. within a `for` loop) that should only be executed once
+in a while.
+
+__Example:__
+
+~~~ .python
+for i in range(1000000):
+        if clock.once_in_a_while(ms=50):
+                # Execute this code only once every 50 ms
+                print(clock.time())
+~~~
+
+__Keywords:__
+
+- `ms` -- The minimum waiting period.
+	- Type: int, float
+	- Default: 1000
+
+__Returns:__
+
+`True` after (at least) the minimum waiting period has
+passed since the last call to `Clock.once_in_a_while()`, or
+`False` otherwise.
+
+- Type: bool
+
+</div>
+
 <div class="FunctionDoc YAMLDoc" id="clock-sleep" markdown="1">
 
 ## function __clock\.sleep__\(ms\)
