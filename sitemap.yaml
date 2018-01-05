@@ -10,6 +10,7 @@ Tutorials:
     Udemy course (by Monk Prayogshala): https://www.udemy.com/opensesame-the-experiment-building-software/
     APS tutorial: tutorials/aps
     Cats, dogs, and capybaras: /escop2017
+    Visual-world paradigm: tutorials/visual-world
     __:
     Français:
     Amorçage catégorique: fr/amorcage-categorique
@@ -59,7 +60,7 @@ Manual:
         EyeLink: manual/eyetracking/eyelink
         EyeTribe: manual/eyetracking/eyetribe
         SMI: manual/eyetracking/smi
-        Tobii: manual/eyetracking/tobii    
+        Tobii: manual/eyetracking/tobii
 
     ___:
 
