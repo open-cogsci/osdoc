@@ -44,9 +44,15 @@
 			<!-- Main row containing both the sidebar and the content-->
 			<div class="row">
 				<!-- Sidebar, only visible on large screens -->
-				<div class="col-md-3 cogsci-sidebar visible-lg visible-md">
+				<div class="col-md-3 cogsci-sidebar visible-lg">
 					{% include 'social.html' %}
 					{% include 'videos.html' %}
+					{% include 'ads.html' %}
+				</div>
+				<div class="col-md-3 cogsci-sidebar visible-md">
+					{% include 'social.html' %}
+					{% include 'supported-by.html' %}
+					{% include 'ads.html' %}
 				</div>
 				<!-- Content -->
 				<div class="col-md-6 cogsci-content">
@@ -59,7 +65,7 @@
 				<div class="col-md-3 cogsci-sidebar visible-lg">
 					{% include 'search.html' %}
 					{% include 'supported-by.html' %}
-				</div>				
+				</div>
 			</div>
 			<!-- Footer -->
 			<div class="row">
