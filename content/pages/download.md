@@ -2,6 +2,8 @@ title: Download
 
 %-- include: "include/recommended-download.md" --%
 
+%-- include: include/ads-inpage.md --%
+
 ## Overview
 
 %--
