@@ -113,6 +113,21 @@ For more information, see:
 You can now define a linked SKETCHPAD in a `mouse_response` item. If you do this, the names of the elements on the SKETCHPAD will be automatically used as regions of interest (ROIs) for the mouse clicks.
 
 
+### Forcibly end your experiment
+
+You can now forcibly end your experiment by clicking on the Kill button in the main toolbar. This means that you no longer need to open a process/ task manager to end run-away experiments!
+
+
+### Improved Mac OS support
+
+The Mac OS packages have been rebuilt from the ground up by %-- github: user: aytackarabay --%. The Mac OS experience should now be much smoother, faster, and less crash-prone.
+
+
+### A Turkish translation
+
+A complete Turkish translation has been contributed by %-- github: user: aytackarabay --%. This means that OpenSesame is now fully translated into French, German, and Turkish. A partial translation is available in several other languages.
+
+
 ## Changes in 3.1
 
 OpenSesame 3.1 brings many improvements that make it even easier to develop experiments. OpenSesame 3.1 is fully backwards compatible with 3.0.
