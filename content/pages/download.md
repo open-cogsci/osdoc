@@ -69,7 +69,6 @@ For more information about the OpenSesame runtime for Android, see:
 OpenSesame is available through the [Cogsci.nl PPA](https://launchpad.net/~smathot/+archive/cogscinl). To add this repository to your software sources and install OpenSesame, run the following commands in a terminal:
 
 ~~~ .bash
-sudo add-apt-repository ppa:smathot/opensesame-kuhn # only for testing 3.2
 sudo add-apt-repository ppa:smathot/cogscinl
 sudo apt-get update
 sudo apt-get install opensesame
