@@ -120,12 +120,12 @@ You can now forcibly end your experiment by clicking on the Kill button in the m
 
 ### Improved Mac OS support
 
-The Mac OS packages have been rebuilt from the ground up by %-- github: user: aytackarabay --%. The Mac OS experience should now be much smoother, faster, and less crash-prone.
+The Mac OS packages have been rebuilt from the ground up by %-- github: {user: dschreij} --%. The Mac OS experience should now be much smoother, faster, and less crash-prone.
 
 
 ### A Turkish translation
 
-A complete Turkish translation has been contributed by %-- github: user: aytackarabay --%. This means that OpenSesame is now fully translated into French, German, and Turkish. A partial translation is available in several other languages.
+A complete Turkish translation has been contributed by %-- github: {user: aytackarabay} --%. This means that OpenSesame is now fully translated into French, German, and Turkish. A partial translation is available in several other languages.
 
 
 ## Changes in 3.1
