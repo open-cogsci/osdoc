@@ -2,6 +2,19 @@ title: Video tutorials
 
 [TOC]
 
+## OpenSesame 3.2: creating a visual-search experiment
+
+%--
+video:
+ source: youtube
+ id: VisualSearch32
+ videoid: K2dcG_7Hs3Y
+ width: 640
+ height: 360
+ caption: |
+  An intermediate-level tutorial for OpenSesame 3.2.
+--%
+
 
 ## OpenSesame 3.1 step-by-step tutorial
 
