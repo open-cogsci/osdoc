@@ -36,14 +36,14 @@ Support for Python 3.5 is experimental:
 <a role="button" class="btn btn-default btn-align-left" href="$url-windows-exe-py3$">
 	Windows installer (.exe)
 	<br /><span class='cogsci-btn-info'>
-		Based on Python 3.5 for 64 bit systems
+		Based on Python 3.6 for 64 bit systems
 	</span>
 </a>
 
 <a role="button" class="btn btn-default btn-align-left" href="$url-windows-zip-py3$">
 	Windows no installation required (.zip)
 	<br /><span class='cogsci-btn-info'>
-		Unzip and run! Based on Python 3.5 for 64 bit systems
+		Unzip and run! Based on Python 3.6 for 64 bit systems
 	</span>
 </a>
 
