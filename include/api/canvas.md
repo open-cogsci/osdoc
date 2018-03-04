@@ -220,6 +220,9 @@ constant:
                 Optional [style keywords] that specify the style of the current
                 drawing operation. This does not affect subsequent drawing
                 operations.
+        arg_center: |
+                A bool indicating whether the coordinates reflect the center
+                (`True`) or top-left (`False`) of the text.
 --%
 
 <div class="FunctionDoc YAMLDoc" id="Canvas-arrow" markdown="1">
@@ -806,7 +809,7 @@ __Arguments:__
 
 __Keywords:__
 
-- `center` -- A bool indicating whether the coordinates reflect the center (True) or top-left (False) of the text.
+- `center` -- %arg_center
 	- Type: bool
 	- Default: True
 - `x` -- The X coordinate, or None to draw horizontally centered text.
@@ -827,7 +830,7 @@ __Keyword dict:__
 
 <div class="FunctionDoc YAMLDoc" id="Canvas-text_size" markdown="1">
 
-## function __Canvas\.text\_size__\(text, max\_width=None, \*\*style\_args\)
+## function __Canvas\.text\_size__\(text, center=True, max\_width=None, \*\*style\_args\)
 
 Determines the size of a text string in pixels.
 
@@ -845,6 +848,9 @@ __Arguments:__
 
 __Keywords:__
 
+- `center` -- %arg_center
+	- Type: bool
+	- Default: True
 - `max_width` -- %arg_max_width
 	- Type: int, NoneType
 	- Default: None
