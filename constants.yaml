@@ -1,12 +1,12 @@
-version: 3.2.1
-notes: 321
+version: 3.2.2
+notes: 322
 status: stable
 codename: Kafkaesque Koffka
-release-date: Feb 16, 2018
-url-windows-exe-py2: https://github.com/smathot/OpenSesame/releases/download/release%2F3.2.1/opensesame_3.2.1-py2.7-win32-2.exe
-url-windows-zip-py2: https://github.com/smathot/OpenSesame/releases/download/release%2F3.2.1/opensesame_3.2.1-py2.7-win32-2.zip
-url-windows-exe-py3: https://github.com/smathot/OpenSesame/releases/download/release%2F3.2.1/opensesame_3.2.1-py3.6-win64-1.exe
-url-windows-zip-py3: https://github.com/smathot/OpenSesame/releases/download/release%2F3.2.1/opensesame_3.2.1-py3.6-win64-1.zip
-url-osx-dmg-py2: https://github.com/smathot/OpenSesame/releases/download/release%2F3.2.1/opensesame_3.2.1-py2.7-macos-1.dmg
+release-date: Mar 23, 2018
+url-windows-exe-py2: https://github.com/smathot/OpenSesame/releases/download/release%2F3.2.2/opensesame_3.2.2-py2.7-win32-1.exe
+url-windows-zip-py2: https://github.com/smathot/OpenSesame/releases/download/release%2F3.2.2/opensesame_3.2.2-py2.7-win32-1.zip
+url-windows-exe-py3: https://github.com/smathot/OpenSesame/releases/download/release%2F3.2.2/opensesame_3.2.2-py3.6-win64-1.exe
+url-windows-zip-py3: https://github.com/smathot/OpenSesame/releases/download/release%2F3.2.2/opensesame_3.2.2-py3.6-win64-1.zip
+url-osx-dmg-py2: https://github.com/smathot/OpenSesame/releases/download/release%2F3.2.2/opensesame_3.2.2-py2.7-macos-1.dmg
 url-source: https://github.com/smathot/OpenSesame
 url-old: https://github.com/smathot/OpenSesame/releases
