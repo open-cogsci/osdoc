@@ -25,6 +25,8 @@
           - /3.2/fr/direction-du-regard
         - - "Gu\xEDa paso a paso"
           - /3.2/es/guia-paso-a-paso
+        - - "\u732B\u3068\u72AC\u3068\u30AB\u30D4\u30D0\u30E9"
+          - /3.2/jp/capybara
   - - Manual
     - !!python/object/apply:collections.OrderedDict
       - - - Using the interface
