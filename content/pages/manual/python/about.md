@@ -6,6 +6,8 @@ In OpenSesame you can create complex experiments using only the graphical user i
 
 ## Learning Python
 
+- __Learn Python__ -- A set of basic tutorials and exercises to get you started:
+    - <http://python.cogsci.nl/>
 - __Code Academy__ -- The Python track at Code Academy is an excellent way to get started with Python:
     - <http://www.codecademy.com/tracks/python>
 - __A Byte of Python__ -- A good free E-book to learn Python for non-programmers is "A Byte of Python", by Swaroop. Make sure to get the version for Python 2, which is what OpenSesame uses.

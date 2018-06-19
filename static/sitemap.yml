@@ -185,6 +185,8 @@
     - http://forum.cogsci.nl/
   - - Blog
     - http://www.cogsci.nl/
+  - - Learn Python
+    - http://python.cogsci.nl/
   - - v3.2
     - !!python/object/apply:collections.OrderedDict
       - - - v3.2
