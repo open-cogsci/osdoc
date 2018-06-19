@@ -358,7 +358,7 @@ The extra assignments below are for you to solve on your own. The solutions to t
 
 - Add a SKETCHPAD to the end of the trial_sequence that invites participants to take a short break
 - Use a Run If statement to run this SKETCHPAD only after every 15 trials
-- You need the module (`%`) operator to do this, as well as the variable `count_trial_sequence`
+- You need the modulo (`%`) operator to do this, as well as the variable `count_trial_sequence`
 
 
 ## References
