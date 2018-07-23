@@ -4,11 +4,10 @@ Tutorials:
     Beginner tutorial: tutorials/beginner
     Intermediate tutorial: tutorials/intermediate
     Advanced tutorial: tutorials/advanced
-    Video tutorials: tutorials/video
     _:
     Other:
-    Udemy course (by Monk Prayogshala): https://www.udemy.com/opensesame-the-experiment-building-software/
-    APS tutorial: tutorials/aps
+    Python tutorials: http://python.cogsci.nl/
+    YouTube tutorials: https://www.youtube.com/sebastiaanmathot
     Cats, dogs, and capybaras: /tutorials/capybara
     Visual-world paradigm: tutorials/visual-world
     __:
