@@ -31,7 +31,7 @@ toc:
 	</span>
 </a>
 
-Support for Python 3.5 is experimental:
+Some Python packages, notably PyGaze and PsychoPy, are not compatible with Python 3, and are therefore not available in the Python 3 packages of OpenSesame.
 
 <a role="button" class="btn btn-default btn-align-left" href="$url-windows-exe-py3$">
 	Windows installer (.exe)
@@ -48,8 +48,6 @@ Support for Python 3.5 is experimental:
 </a>
 
 ### Mac OS
-
-The Mac OS package doesn't work smoothly on some systems. We are aware of this, and are working to improve it. Please let us know of any issues on the forum!
 
 <a role="button" class="btn btn-default btn-align-left" href="$url-osx-dmg-py2$">
 	Mac OS package (.dmg)

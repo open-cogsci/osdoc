@@ -30,9 +30,6 @@ video:
   A screencast that the demonstrates the basics of using Python inline script in OpenSesame.
 --%
 
-And see more Python video tutorials:
-
-- %link:tutorials/video%
 
 ### A single Python workspace
 

@@ -65,6 +65,7 @@ The following packages are not required, but some functionality will be missing 
 - [python-markdown](https://pypi.python.org/pypi/Markdown) is required for viewing in-program help files.
 - [IPython](http://ipython.org/), when available, is used for the debug window.
 - [python-fileinspector](https://github.com/dschreij/fileinspector) is used to generate file-type-specific icons.
+- [shapely](https://pypi.org/project/Shapely/) is used to check the boundaries of `Canvas` elements
 
 ### Extra
 

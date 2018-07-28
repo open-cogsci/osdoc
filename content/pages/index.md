@@ -16,6 +16,8 @@ OpenSesame is a program to create experiments for psychology, neuroscience, and 
   Forum</a>
 </div>
 
+%-- include: include/ads-inpage.md --%
+
 ## Features
 
 - __A user-friendly interface__ — flexible yet easy-to-use
