@@ -1,6 +1,6 @@
 title: OpenSesame
 
-OpenSesame is a program to create experiments for psychology, neuroscience, and experimental economics. The latest $status$ version is $version$ *$codename$*, released on $release-date$ ([release notes](%url:notes%/../$notes$)).
+OpenSesame is a program to create experiments for psychology, neuroscience, and experimental economics. The latest $status$ version is $version$ *$codename$*, released on $release-date$ ([release notes](http://osdoc.cogsci.nl/notes/$notes$)).
 
 <div class="btn-group" role="group" aria-label="...">
   <a role="button" class="btn btn-success" href="%url:download%">
@@ -16,8 +16,6 @@ OpenSesame is a program to create experiments for psychology, neuroscience, and 
   Forum</a>
 </div>
 
-%-- include: include/ads-inpage.md --%
-
 ## Features
 
 - __A user-friendly interface__ — flexible yet easy-to-use
@@ -25,6 +23,8 @@ OpenSesame is a program to create experiments for psychology, neuroscience, and 
 - __Use your devices__ — use your [eye tracker](%link:pygaze%), [button box](%link:buttonbox%), [EEG equipment](%link:parallel%), and more.
 - __Free__ — released under the GPL3
 - __Crossplatform__ — Windows, Mac OS, Linux, and Android (runtime only)
+
+%-- include: include/ads-inpage.md --%
 
 ## Citation
 

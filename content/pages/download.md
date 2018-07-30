@@ -15,6 +15,8 @@ toc:
 
 ## All download options
 
+The latest $status$ version is $version$ *$codename$*, released on $release-date$ ([release notes](http://osdoc.cogsci.nl/notes/$notes$)).
+
 ### Windows
 
 <a role="button" class="btn btn-default btn-align-left" href="$url-windows-exe-py2$">
