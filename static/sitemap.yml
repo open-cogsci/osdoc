@@ -137,6 +137,8 @@
           - /3.2/manual/environment
         - - Runners
           - /3.2/manual/runners
+        - - Running experiments online
+          - /3.2/manual/osweb
         - - Mouse tracking
           - /3.2/manual/mousetracking
         - - Ambulatory Monitoring System (VU-AMS)
