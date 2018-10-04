@@ -23,6 +23,11 @@ From within OpenSesame, to install `opensesame-plugin-media_player_mpy`, run the
 	import pip
 	pip.main(['install', 'opensesame-plugin-media_player_mpy'])
 
+Or for recent versions of pip:
+
+	import pip._internal
+	pip._internal.main(['install', 'opensesame-plugin-media_player_mpy'])
+
 From a terminal, to install `opensesame-plugin-media_player_mpy`, run:
 
 	pip install opensesame-plugin-media_player_mpy
@@ -33,6 +38,11 @@ From within OpenSesame, to upgrade `python-pygaze` to the latest version, run th
 
 	import pip
 	pip.main(['install', 'python-pygaze', '--upgrade'])
+
+Or for recent versions of pip:
+
+	import pip._internal
+	pip._internal.main(['install', 'python-pygaze', '--upgrade'])
 
 From a terminal, to upgrade `python-pygaze` to the latest version, run:
 
