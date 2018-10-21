@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /2.8/
+Disallow: /2.9/
+Disallow: /3.0/
+Disallow: /3.1/
+Sitemap: https://osdoc.cogsci.nl/3.2/seo-sitemap.txt

@@ -57,6 +57,20 @@ def build_menu(d, lvl=1):
 	return '\n'.join(l)
 
 
+def build_seo_sitemap(d):
+
+	sitemap = []
+	for pagename, entry in d.items():
+		if isseparator(pagename) or entry in [None, '']:
+			continue
+		if isinstance(entry, dict):
+			sitemap += build_seo_sitemap(entry)
+			continue
+		if not entry.startswith('http'):
+			sitemap.append(ROOT + '/' + entry + SUFFIX)
+	return sitemap
+
+
 def build_live_sitemap(d):
 
 	sitemap = OrderedDict()
@@ -89,6 +103,9 @@ def main():
 	with open(u'static/sitemap.yml', u'w') as fd:
 		yaml.dump(sitemap, fd, default_flow_style=False)
 	print('Generated live sitemap')
+	with open(u'static/seo-sitemap.txt', u'w') as fd:
+		fd.write(u'\n'.join(build_seo_sitemap(d)) + u'\n')
+	print('Generated seo sitemap')
 
 if __name__ == '__main__':
 	main()
