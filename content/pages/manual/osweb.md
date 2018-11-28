@@ -20,7 +20,7 @@ OSWeb is under active development and not ready for use in production
 
 The [OSWeb extension for OpenSesame] (%FigOSWebExtension) allows you to test experiments in a browser, and to export experiments in a format that you can import into JATOS (desribed below).
 
-The extension is installed in the latest prerelease of OpenSesame 3.1.6, which you can download from here:
+The extension is installed in the latest prerelease of OpenSesame 3.2.6, which you can download from here:
 
 - <http://files.cogsci.nl/software/opensesame/pre-releases/>
 
