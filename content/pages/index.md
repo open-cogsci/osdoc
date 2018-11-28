@@ -11,7 +11,7 @@ OpenSesame is a program to create experiments for psychology, neuroscience, and 
   <span class="glyphicon glyphicon-education" aria-hidden="true"></span>
   	Tutorial
   </a>
-  <a role="button" class="btn btn-success" href="http://forum.cogsci.nl/">
+  <a role="button" class="btn btn-success" href="https://forum.cogsci.nl/">
   <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
   Forum</a>
 </div>
@@ -25,6 +25,14 @@ OpenSesame is a program to create experiments for psychology, neuroscience, and 
 - __Crossplatform__ — Windows, Mac OS, Linux, and Android (runtime only)
 
 %-- include: include/ads-inpage.md --%
+
+Make the most of OpenSesame with Python!
+
+<div class="btn-group" role="group" aria-label="...">
+  <a role="button" class="btn btn-success" href="https://python.cogsci.nl/">
+  <span class="glyphicon glyphicon-education" aria-hidden="true"></span>
+  Learn Python</a>
+</div>
 
 ## Citation
 
