@@ -11,6 +11,9 @@ OpenSesame is a program to create experiments for psychology, neuroscience, and 
   <span class="glyphicon glyphicon-education" aria-hidden="true"></span>
   	Tutorial
   </a>
+  <a role="button" class="btn btn-success" href="https://python.cogsci.nl/">
+  <span class="glyphicon glyphicon-education" aria-hidden="true"></span>
+  Learn Python</a>  
   <a role="button" class="btn btn-success" href="https://forum.cogsci.nl/">
   <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
   Forum</a>
@@ -27,14 +30,6 @@ OpenSesame is a program to create experiments for psychology, neuroscience, and 
 
 %-- include: include/ads-inpage.md --%
 
-Make the most of OpenSesame with Python!
-
-<div class="btn-group" role="group" aria-label="...">
-  <a role="button" class="btn btn-success" href="https://python.cogsci.nl/">
-  <span class="glyphicon glyphicon-education" aria-hidden="true"></span>
-  Learn Python</a>
-</div>
-
 ## Citation
 
 - Mathôt, S., Schreij, D., & Theeuwes, J. (2012). OpenSesame: An open-source, graphical experiment builder for the social sciences. *Behavior Research Methods*, *44*(2), 314-324. doi:10.3758/s13428-011-0168-7
@@ -42,10 +37,10 @@ Make the most of OpenSesame with Python!
 %--
 video:
  source: youtube
- id: VisualSearch32
- videoid: K2dcG_7Hs3Y
+ id: OSWeb
+ videoid: 0448NeoUaqU
  width: 644
  height: 362
  caption: |
-  Build a visual-search experiment in 15 minutes!
+  Run your OpenSesame experiment online!
 --%
