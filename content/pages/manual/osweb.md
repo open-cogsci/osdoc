@@ -66,6 +66,15 @@ The following items are supported by OSWeb:
 - `touch_response`
 
 
+### Upgrading OSWeb
+
+OSWeb is under active development. If you want to make sure that you're running the latest version, you can upgrade the OSWeb extension by running the command below in the OpenSesame debug window. This may require you to run OpenSesame as administrator on Windows.
+
+~~~
+!pip install opensesame-extension-osweb --upgrade
+~~~
+
+
 ## JATOS
 
 
@@ -113,6 +122,19 @@ figure:
  id: FigJatos3
  source: jatos-3.png
  caption: Once the experiment has been successfully imported in JATOS, it appears in the list of experiments.
+--%
+
+## Video tutorial
+
+%--
+video:
+ source: youtube
+ id: OSWeb
+ videoid: 0448NeoUaqU
+ width: 644
+ height: 362
+ caption: |
+  Run your OpenSesame experiment online!
 --%
 
 
