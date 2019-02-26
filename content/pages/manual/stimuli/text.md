@@ -26,7 +26,7 @@ OpenSesame supports a sub-set of HTML tags:
 
 In addition, you can pass 'color', 'size', and 'style' as keywords to a 'span' tag:
 - <span style='color:red;'>Color</span>
-- <span style='font-size:32;'>Font size</span>
+- <span style='font-size:32px;'>Font size</span>
 - <span style='font-family:serif;'>Font style</span>
 
 Finally, you can force newlines with the 'br' tag:
@@ -59,6 +59,39 @@ The subject number modulo five is [=var.subject_nr % 5]
 ~~~ .python
 The subject number modulo five is 2
 ~~~
+
+
+## Vertical alignment
+
+__Note:__ This section on vertical alignment applies to OpenSesame 3.2
+{: .page-notification}
+
+As of OpenSesame 3.2, text is aligned based on the bounding box around the text. This is not ideal if you present text as individual words. For example, the word 'get' (with a downwards-protruding 'g') will appear higher than the word 'bet' (with an upwards-protruding 'b'):
+
+%--
+figure:
+ id: FigFontMisaligned
+ source: font-misaligned.png
+ caption: "Individually presented words are not always correctly aligned."
+--%
+
+As a workaround, you can place (nearly) invisible characters around the text that you want to display, so that the bounding boxes of the different words are the same height. To make characters invisible, you can place them inside a `span` and set the color to nearly transparent using an `rgba()` color.
+
+The following will show 'get', flanked on both sides by (nearly) invisible 'gb' characters:
+
+~~~ .html
+<span style='color:rgba(0,0,0,.01)'>gb</span>get<span style='color:rgba(0,0,0,.01)'>gb</span>
+~~~
+
+If you do this for both 'get' and 'bet', the result will be perfectly aligned text:
+
+%--
+figure:
+ id: FigFontMisaligned
+ source: font-aligned.png
+ caption: "Perfectly aligned words!"
+--%
+
 
 ## Fonts
 
