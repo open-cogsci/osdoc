@@ -73,7 +73,7 @@ __Arguments:__
 
 <div class="FunctionDoc YAMLDoc" id="items-new" markdown="1">
 
-## function __items\.new__\(\_type, name=None, script=None\)
+## function __items\.new__\(\_type, name=None, script=None, allow\_rename=True\)
 
 Creates a new item.
 
@@ -98,6 +98,9 @@ __Keywords:__
 - `script` -- A definition script, or None to start with a blank item.
 	- Type: unicode, NoneType
 	- Default: None
+- `allow_rename` -- Indicates whether OpenSesame can use a different name from the one that is provided as `name` to avoid duplicate names etc.
+	- Type: bool
+	- Default: True
 
 __Returns:__
 

@@ -496,7 +496,14 @@ __Arguments:__
 	- Type: int
 - `y` -- The center Y coordinate.
 	- Type: int
-- `orient` -- Orientation in degrees [0 .. 360].
+- `orient` -- Orientation in degrees [0 .. 360]. This refers to a
+clockwise rotation from a vertical.
+
+__Version note:__ In version 3.2.6 and earlier, the
+orientation was *counterclockwise* for the *legacy* and
+*xpyriment* backends, and clockwise for the *psycho*
+backends. As of 3.2.7, the orientation is *clockwise*
+for all backends.
 	- Type: float, int
 - `freq` -- Frequency in cycles/px of the sinusoid.
 	- Type: float, int

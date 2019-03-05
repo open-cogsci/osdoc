@@ -100,6 +100,14 @@ A cell index.
 
 </div>
 
+<div class="FunctionDoc YAMLDoc" id="Form-render" markdown="1">
+
+## function __Form\.render__\(\)
+
+Shows the form canvas without any user interaction.
+
+</div>
+
 <div class="FunctionDoc YAMLDoc" id="Form-set_widget" markdown="1">
 
 ## function __Form\.set\_widget__\(widget, pos, colspan=1, rowspan=1\)
