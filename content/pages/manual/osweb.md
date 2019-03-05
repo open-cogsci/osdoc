@@ -52,9 +52,10 @@ The following items are supported by OSWeb:
 
 - `advanced_delay`
 - `feedback` (named elements not supported)
+- `inline_javascript`
 - `keyboard` (key release not supported)
 - `logger`
-- `loop`
+- `loop` (except 'Resume after break', 'Evaluate on first cycle', and 'file' source)
 - `mouse` (mouse release not supported; linked sketchpad not supported)
 - `notepad` (does nothing)
 - `repeat_cycle`
@@ -64,6 +65,28 @@ The following items are supported by OSWeb:
 - `sketchpad` (named elements not supported)
 - `synth`
 - `touch_response`
+
+
+### Inline JavaScript
+
+The `inline_javascript` item is available as of OSWeb 1.3
+{: .page-notification}
+
+The `inline_javascript` item works similarly to the regular `inline_script` item, except that it runs JavaScript instead of Python code. Important considerations:
+
+- You can get and set experimental variables using the `vars` object, which works similarly to the `var` object in Python.
+- You cannot create `Canvas`, `Keyboard` objects, etc.
+- The JavaScript workspace is not persistent. That is, if you define a variable in one script, it will not be accessible in another script. The only exception is the `vars` object, which is persistent.
+
+Example:
+
+``` .javascript
+if (vars.subject_nr % 2 == 0) {
+  vars.target_color = 'blue'
+} else {
+  vars.target_color = 'red'
+}
+```
 
 
 ### Upgrading OSWeb
