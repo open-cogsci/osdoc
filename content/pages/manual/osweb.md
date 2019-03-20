@@ -36,6 +36,7 @@ figure:
 - The extension will perform a simple (and incomplete) check to see if your experiment appears to be compatible with OSWeb.
 - If no problems are detected, click 'Test experiment in external browser'.
 - This will open the experiment in your default browser so that you can check if the experiment runs as expected (%FigTestRun).
+- As of OSWeb 1.3, you can also click the 'Run in browser' button in the main toolbar (Alt+Ctrl+W)
 
 
 %--
