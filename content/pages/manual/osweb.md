@@ -99,6 +99,18 @@ OSWeb is under active development. If you want to make sure that you're running 
 ~~~
 
 
+### Supported browsers
+
+The following browsers are supported:
+
+- Edge >= 17
+- Firefox >= 52
+- Google Chrome >= 49
+- Internet Explorer >= 11
+- Opera >= 56
+- Safari >= 10
+
+
 ## JATOS
 
 
