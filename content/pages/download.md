@@ -78,6 +78,7 @@ OpenSesame is available through the [Cogsci.nl PPA](https://launchpad.net/~smath
 sudo add-apt-repository ppa:smathot/cogscinl
 sudo apt-get update
 sudo apt-get install opensesame
+pip install expyriment 
 ~~~
 
 If you experience missing icons, install `gnome-icon-theme-full`.
