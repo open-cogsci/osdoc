@@ -6,6 +6,9 @@ title: Installing packages, plugins, and extensions
 
 ## Using the Python package manager
 
+The Python package manager is unstable. If it crashes, use the installation/ upgrade method described below.
+{: .alert .alert-info}
+
 A graphical package manager is available under Menu → Tools → Python package manager. This is a graphical manager for pip / PyPi.
 
 
