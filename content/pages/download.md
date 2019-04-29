@@ -80,7 +80,13 @@ sudo apt-get update
 sudo apt-get install opensesame
 ~~~
 
-If you experience missing icons, install `gnome-icon-theme-full`.
+Some commonly used packages are not available through the PPA. You can install them through `pip`:
+
+~~~ .bash
+pip install expyriment psychopy==1.85.3 python-pygaze opensesame-extension-osf opensesame-extension-osweb
+~~~
+
+On some older versions of Ubuntu, you may experience missing icons. If this happens, you can install the package `gnome-icon-theme-full`. (This package does not exist on recent versions of Ubuntu anymore.)
 
 ~~~ .bash
 sudo apt-get install gnome-icon-theme-full
