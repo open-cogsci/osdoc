@@ -34,7 +34,7 @@ figure:
 
 - In OpenSesame, open the OSWeb extension (Menu → Tools → OSWeb).
 - The extension will perform a simple (and incomplete) check to see if your experiment appears to be compatible with OSWeb.
-- If no problems are detected, click 'Test experiment in external browser'.
+- If no problems are detected, click 'Test experiment in external browser', or click on the corresponding button in the main toolbar.
 - This will open the experiment in your default browser so that you can check if the experiment runs as expected (%FigTestRun).
 - As of OSWeb 1.3, you can also click the 'Run in browser' button in the main toolbar (Alt+Ctrl+W)
 
@@ -92,11 +92,9 @@ if (vars.subject_nr % 2 == 0) {
 
 ### Upgrading OSWeb
 
-OSWeb is under active development. If you want to make sure that you're running the latest version, you can upgrade the OSWeb extension by running the command below in the OpenSesame debug window. This may require you to run OpenSesame as administrator on Windows.
+OSWeb is under active development. If you want to make sure that you're running the latest version, you can upgrade the OSWeb extension, which is called `opensesame-extension-osweb`, as described here:
 
-~~~
-!pip install opensesame-extension-osweb --upgrade
-~~~
+- %link:environment%
 
 
 ### Supported browsers
@@ -159,6 +157,26 @@ figure:
  source: jatos-3.png
  caption: Once the experiment has been successfully imported in JATOS, it appears in the list of experiments.
 --%
+
+
+## Downloading and converting data
+
+If you have collected data with OSWeb through JATOS, you can download this data in JATOS by navigating to your experiment, clicking on Results, and then selecting Export Results → All (see %FigJatosExportResults).
+
+
+%--
+figure:
+ id: FigJatosExportResults
+ source: jatos-export-results.png
+ caption: Exporting results collecting with OSWeb through JATOS.
+--%
+
+
+The 'Convert JATOS results to csv/ xlsx' option is available as of OSWeb 1.3.1
+{: .page-notification}
+
+You will then download a file that has a name similar to `jatos_results_20190429113807.txt`. This file contains mostly JSON data, but may also contain fragments of data that render the file invalid as a regular JSON string. However, you can easily convert the data to a `.csv` or `.xlsx` file with 'Convert JATOS results to csv/ xlsx' option in the OSWeb extension (see %FigOSWebExtension).
+
 
 ## Video tutorial
 
