@@ -108,6 +108,8 @@ The following browsers are supported:
 - Opera >= 56
 - Safari >= 10
 
+Certain extensions, such as Ad blockers or Script blockers, may prevent OSWeb from running.
+
 
 ## JATOS
 
