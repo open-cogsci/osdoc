@@ -1,11 +1,6 @@
 title: Download
 
 
-<div class="alert alert-warning" role="alert">
-See <a href="https://forum.cogsci.nl/discussion/4656/">this discussion</a> if you experience trouble with OpenSesame on Mac OS Mojave.
-</div>
-
-
 %-- include: "include/recommended-download.md" --%
 
 %-- include: include/ads-inpage.md --%

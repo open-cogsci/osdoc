@@ -66,8 +66,6 @@ https://osdoc.cogsci.nl/3.2/manual/devices/oculusrift
 https://osdoc.cogsci.nl/3.2/manual/devices/serial
 https://osdoc.cogsci.nl/3.2/manual/devices/parallel
 https://osdoc.cogsci.nl/3.2/manual/devices/stimsync
-https://osdoc.cogsci.nl/3.2/publications
-https://osdoc.cogsci.nl/3.2/team
 https://osdoc.cogsci.nl/3.2/donate
 https://osdoc.cogsci.nl/3.2/important-changes-3
 https://osdoc.cogsci.nl/3.2/visualangle
@@ -79,3 +77,4 @@ https://osdoc.cogsci.nl/3.2/dev/fileformat
 https://osdoc.cogsci.nl/3.2/dev/translate
 https://osdoc.cogsci.nl/3.2/dev/plugin
 https://osdoc.cogsci.nl/3.2/dev/extension
+https://osdoc.cogsci.nl/3.2/professional

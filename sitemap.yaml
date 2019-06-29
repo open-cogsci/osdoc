@@ -107,8 +107,8 @@ Manual:
 Other:
 
     Other:
-    Publications: publications
-    Meet the team!: team
+    # Publications: publications
+    # Meet the team!: team
     Donate: donate
     Important changes in OpenSesame 3: important-changes-3
     Degrees of visual angle: visualangle
@@ -126,8 +126,9 @@ Other:
     Create an extension: dev/extension
 
 Forum: http://forum.cogsci.nl/
-Blog: http://www.cogsci.nl/
-Learn Python: http://python.cogsci.nl/
+# Blog: http://www.cogsci.nl/
+Professional support: professional
+# Learn Python: http://python.cogsci.nl/
 v3.2:
     v3.2: http://osdoc.cogsci.nl/3.2/
     v3.1: http://osdoc.cogsci.nl/3.1/
