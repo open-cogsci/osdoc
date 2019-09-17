@@ -11,6 +11,7 @@ from yamldoc._yaml import orderedLoad
 from pelican import signals
 from pelican.readers import MarkdownReader
 from markdown import Markdown
+from markdown.extensions import codehilite
 from markdown.extensions.toc import TocExtension
 from markdown.extensions.tables import TableExtension
 from academicmarkdown import build, HTMLFilter, _FigureParser
@@ -34,7 +35,7 @@ ITEM_TYPES = [
 	'MEDIA_PLAYER_MPY', 'MOUSETRAP', 'SOUND_START_RECORDING',
 	'SOUND_STOP_RECORDING', 'TOUCH_RESPONSE', 'PYGAZE_INIT', 'PYGAZE_LOG',
 	'PYGAZE_WAIT', 'PYGAZE_DRIFT_CORRECT', 'PYGAZE_STOP_RECORDING',
-	'PYGAZE_START_RECORDING', 'THIS_STYLE', 'NOTEPAD'
+	'PYGAZE_START_RECORDING', 'THIS_STYLE', 'NOTEPAD', 'INLINE_JAVASCRIPT'
 	]
 
 root = os.path.dirname(os.path.dirname(__file__)) + '/content'
@@ -59,9 +60,8 @@ class AcademicMarkdownReader(MarkdownReader):
 				'markdown.extensions.toc',
 				'markdown.extensions.tables',
 				'markdown.extensions.meta',
-				'markdown.extensions.headerid',
 				'markdown.extensions.extra',
-				'markdown.extensions.codehilite(css_class=highlight)',
+				codehilite.CodeHiliteExtension(css_class='highlight'),
 				],
 			)
 		# self._md = Markdown(
@@ -76,7 +76,7 @@ class AcademicMarkdownReader(MarkdownReader):
 			+ os.path.basename(source_path)[:-3]
 		build.path = [img_path, lst_path, tbl_path] + build.path
 		with open(source_path) as fd:
-			text = fd.read().decode('utf-8')
+			text = fd.read()
 			text = build.MD(text)
 			# Process internal links
 			for m in re.finditer('%link:(?P<link>[\w/-]+)%', text):
