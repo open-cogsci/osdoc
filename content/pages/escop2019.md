@@ -1,5 +1,4 @@
 title: ESCoP 2019 workshop
-reviewed: false
 
 
 [TOC]
