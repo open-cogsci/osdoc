@@ -4,6 +4,7 @@ https://osdoc.cogsci.nl/3.2/tutorials/intermediate
 https://osdoc.cogsci.nl/3.2/tutorials/advanced
 https://osdoc.cogsci.nl/3.2//tutorials/capybara
 https://osdoc.cogsci.nl/3.2/tutorials/visual-world
+https://osdoc.cogsci.nl/3.2/tutorials/wcst
 https://osdoc.cogsci.nl/3.2/fr/amorcage-categorique
 https://osdoc.cogsci.nl/3.2/fr/direction-du-regard
 https://osdoc.cogsci.nl/3.2/es/guia-paso-a-paso

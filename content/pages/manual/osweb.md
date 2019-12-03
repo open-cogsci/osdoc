@@ -180,7 +180,16 @@ The 'Convert JATOS results to csv/ xlsx' option is available as of OSWeb 1.3.1
 You will then download a file that has a name similar to `jatos_results_20190429113807.txt`. This file contains mostly JSON data, but may also contain fragments of data that render the file invalid as a regular JSON string. However, you can easily convert the data to a `.csv` or `.xlsx` file with 'Convert JATOS results to csv/ xlsx' option in the OSWeb extension (see %FigOSWebExtension).
 
 
-## Video tutorial
+## Tutorials
+
+### Wisconsin Card Sorting Test
+
+Learn how to implement the Wisconsin Card Sorting Test with OSWeb:
+
+- %link:wcst%
+
+
+### Video tutorial
 
 %--
 video:
