@@ -20,6 +20,22 @@ The latest $status$ version is $version$ *$codename$*, released on $release-date
 
 ### Windows
 
+Some Python packages, notably PyGaze and PsychoPy, are not compatible with Python 3, and are therefore not available in the Python 3 packages of OpenSesame. If you want to use those, please download the Python 2 package.
+
+<a role="button" class="btn btn-default btn-align-left" href="$url-windows-exe-py3$">
+	Windows installer (.exe)
+	<br /><span class='cogsci-btn-info'>
+		Based on Python 3.7 for 64 bit systems
+	</span>
+</a>
+
+<a role="button" class="btn btn-default btn-align-left" href="$url-windows-zip-py3$">
+	Windows no installation required (.zip)
+	<br /><span class='cogsci-btn-info'>
+		Unzip and run! Based on Python 3.7 for 64 bit systems
+	</span>
+</a>
+
 <a role="button" class="btn btn-default btn-align-left" href="$url-windows-exe-py2$">
 	Windows installer (.exe)
 	<br /><span class='cogsci-btn-info'>
@@ -34,64 +50,41 @@ The latest $status$ version is $version$ *$codename$*, released on $release-date
 	</span>
 </a>
 
-Some Python packages, notably PyGaze and PsychoPy, are not compatible with Python 3, and are therefore not available in the Python 3 packages of OpenSesame.
-
-<a role="button" class="btn btn-default btn-align-left" href="$url-windows-exe-py3$">
-	Windows installer (.exe)
-	<br /><span class='cogsci-btn-info'>
-		Based on Python 3.6 for 64 bit systems
-	</span>
-</a>
-
-<a role="button" class="btn btn-default btn-align-left" href="$url-windows-zip-py3$">
-	Windows no installation required (.zip)
-	<br /><span class='cogsci-btn-info'>
-		Unzip and run! Based on Python 3.6 for 64 bit systems
-	</span>
-</a>
-
 ### Mac OS
 
 <a role="button" class="btn btn-default btn-align-left" href="$url-osx-dmg-py2$">
 	Mac OS package (.dmg)
 	<br /><span class='cogsci-btn-info'>
-		Based on Python 2.7 for 64 bit systems
+		Based on Python X.X for 64 bit systems
 	</span>
 </a>
 
-### Android
-
-For more information about the OpenSesame runtime for Android, see:
-
-- %link:android%
 
 ### Ubuntu
 
-OpenSesame is available through the [Cogsci.nl PPA](https://launchpad.net/~smathot/+archive/cogscinl). To add this repository to your software sources and install OpenSesame, run the following commands in a terminal:
+OpenSesame 3.3 is available through the [Rapunzel PPA](https://launchpad.net/~smathot/+archive/rapunzel). To add this repository to your software sources and install OpenSesame, run the following commands in a terminal:
 
 ~~~ .bash
-sudo add-apt-repository ppa:smathot/cogscinl
+sudo add-apt-repository ppa:smathot/rapunzel
 sudo apt-get update
-sudo apt-get install opensesame
+sudo apt-get install python3-opensesame opensesame-extension-osf opensesame-extension-osweb opensesame-plugin-psychopy
+# To install also rapunzel, the OpenSesame-based code editor
+sudo apt-get install python3-rapunzel
 ~~~
 
 Some commonly used packages are not available through the PPA. You can install them through `pip`:
 
 ~~~ .bash
-pip install expyriment psychopy==1.85.3 python-pygaze opensesame-extension-osf opensesame-extension-osweb
+pip install psychopy expyriment
 ~~~
 
-On some older versions of Ubuntu, you may experience missing icons. If this happens, you can install the package `gnome-icon-theme-full`. (This package does not exist on recent versions of Ubuntu anymore.)
-
-~~~ .bash
-sudo apt-get install gnome-icon-theme-full
-~~~
 
 ### Arch Linux
 
 Arch Linux packages are available in the [Arch Linux user repository](https://aur.archlinux.org/packages/opensesame/).
 
-### All platforms (pip)
+
+### Pip / PyPi (cross-playform)
 
 To install OpenSesame from PyPi (Python package index), type:
 
@@ -99,11 +92,36 @@ To install OpenSesame from PyPi (Python package index), type:
 pip install python-opensesame
 ~~~
 
+
+### Anaconda (cross-platform)
+
+First, create a new Python environment for OpenSesame (optional):
+
+```bash
+conda create -n opensesame-py3 python=3.7.3  # For Python 2: ptyhon=2.7.15
+conda activate opensesame-py3
+```
+
+Next, add the relevant channels (`cogsci`) and (`conda-forge`) and install all relevant packages:
+
+```bash
+conda config --add channels cogsci --add channels conda-forge
+conda install python-opensesame opensesame-extension-osf opensesame-extension-osweb opensesame-plugin-psychopy psychopy rapunzel
+```
+
+[PyGaze](%url:pygaze%), a Python eye-tracking library, is only available on Python 2.
+
+```bash
+conda install python-pygaze
+```
+
+
 ### Older versions
 
 Older versions can be downloaded from GitHub releases:
 
 - <https://github.com/smathot/OpenSesame/releases>
+
 
 ### Source code
 
@@ -111,6 +129,11 @@ The source code of OpenSesame is available on [GitHub](https://github.com/smatho
 
 
 ## Tips
+
+
+### Which version of Python to use?
+
+OpenSesame is currently built with Python 3.7.3 (standard package) and Python 2.7.15.
 
 ### When (not) to update?
 

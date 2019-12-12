@@ -3,6 +3,30 @@ title: Important changes in OpenSesame 3
 [TOC]
 
 
+## Changes in 3.3
+
+OpenSesame 3.3 several major improvements that make it even easier to develop experiments. OpenSesame 3.2 is fully backwards compatible with 3.1.
+
+
+### Rapunzel: a new code editor
+
+Rapunzel is a code editor, focused on numerical computing with Python and R. Technically, Rapunzel is a set of extensions for OpenSesame. But it looks and behaves as a standalone program. Happy coding!
+
+- <https://rapunzel.cogsci.nl/>
+
+
+### OpenSesame: A new inline_script editor
+
+Related to the development of Rapuznel: The INLINE_SCRIPT item now uses a different library (`PyQode`) for the code editor. As a result, the code editor now supports many of the features that you would expect from a modern code editor, including code introspection and static code checking.
+
+
+### OpenSesame: more color spaces
+
+OpenSesame now natively supports the HSV, HSL, and CIElab color spaces.
+
+- %link:canvas%
+
+
 ## Changes in 3.2
 
 OpenSesame 3.2 brings several major improvements that make it even easier to develop experiments. OpenSesame 3.2 is fully backwards compatible with 3.1.

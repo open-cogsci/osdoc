@@ -120,11 +120,3 @@ pygame.draw.rect(self.experiment.window, pygame.Color("red"),
 	[20, 20, 100, 100]) # Draw a red rectangle. Not shown yet...
 pygame.display.flip() # Update the display to show the red rectangle.
 ~~~
-
-## droid
-
-The *droid* backend is built on top of the PyGame subset for Android and allows you to run your OpenSesame experiments on Android devices, using the [OpenSesame runtime for Android](%link:android%). The *droid* backend is in most ways identical to the *legacy* backend.
-
-[pygame]: http://www.pygame.org/
-[psychopy]: http://www.psychopy.org/
-[expyriment]: http://www.expyriment.org

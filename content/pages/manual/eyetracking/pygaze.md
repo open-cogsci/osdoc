@@ -40,28 +40,25 @@ If you use the official Windows package of OpenSesame, PyGaze is already install
 
 If you use Ubuntu, you can get PyGaze from the Cogsci.nl PPA:
 
-    sudo add-apt-repository ppa:smathot/cogscinl
-    sudo apt-get update
-    sudo apt-get install python-pygaze
+```
+sudo add-apt-repository ppa:smathot/cogscinl
+sudo apt-get update
+sudo apt-get install python-pygaze
+```
 
-## pip install (all platform)
+## pip install (all platforms)
 
 You can install PyGaze with `pip`:
 
-	pip install python-pygaze
+```
+pip install python-pygaze
+```
 
-### Install from source
+### Anaconda (all platforms)
 
-On other systems, you can install PyGaze as follows:
-
-1. Download the PyGaze source code (`.zip`) from <https://github.com/esdalmaijer/PyGaze>.
-    - Do *not* download the standalone Windows packages provided on the PyGaze website.
-    - Verify that the version of PyGaze is compatible with your version of OpenSesame, as described [here](%link:fromsource%).
-2. Extract the `.zip` archive somewhere.
-3. Inside, you will find these folders:
-    - `opensesame_plugins`: As the name suggests, this folder contains the OpenSesame plugins, which need to be copied to (one of) the plugin folders, as described [here](%link:manual/environment%).
-    - `pygaze`: This is the PyGaze Python library. You need to copy this to a folder in the Python path. On Windows, you can copy this folder to the OpenSesame program folder.
-4. Done!
+```
+conda install python-pygaze -c cogsci
+```
 
 ## PyGaze OpenSesame plugins
 

@@ -1,5 +1,6 @@
 #!/bin/bash
-BRANCH=3.2
+BRANCH=`git rev-parse --abbrev-ref HEAD`
+echo "Building documentation for $BRANCH"
 rm -Rf output/*
 mkdir output
 mkdir output/$BRANCH

@@ -89,7 +89,7 @@ Manual:
     OSF Integration: manual/osf
     Timing: manual/timing
     Backends: manual/backends
-    Running on Android: manual/android
+    # Running on Android: manual/android
     OpenSesame script: manual/opensesame-script
     Running experiments without the GUI: manual/opensesamerun
     Installing packages, plugins, and extensions: manual/environment
@@ -120,7 +120,7 @@ Other:
 
     Development:
     How to contribute: dev/howtocontribute
-    Running from source: dev/fromsource
+    # Running from source: dev/fromsource
     File format (.osexp): dev/fileformat
     Translate: dev/translate
     Create a plugin: dev/plugin
@@ -130,7 +130,8 @@ Forum: http://forum.cogsci.nl/
 # Blog: http://www.cogsci.nl/
 Professional support: professional
 # Learn Python: http://python.cogsci.nl/
-v3.2:
+v3.3:
+    v3.3: http://osdoc.cogsci.nl/3.3/
     v3.2: http://osdoc.cogsci.nl/3.2/
     v3.1: http://osdoc.cogsci.nl/3.1/
     v3.0: http://osdoc.cogsci.nl/3.0/

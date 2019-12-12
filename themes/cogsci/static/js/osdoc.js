@@ -29,7 +29,7 @@ function recommend_download() {
 		link.href = "#ubuntu";
 	} else if (OSName == "Windows") {
 		link.innerHTML = "Windows installer (.exe)"
-		link.href = "$url-windows-exe-py2$";
+		link.href = "$url-windows-exe-py3$";
 	} else if (OSName == "MacOS") {
 		link.innerHTML = "Mac OS package (.dmg)"
 		link.href = "#mac-os";
