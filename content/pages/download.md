@@ -16,11 +16,9 @@ toc:
 
 ## All download options
 
-The latest $status$ version is $version$ *$codename$*, released on $release-date$ ([release notes](http://osdoc.cogsci.nl/notes/$notes$)).
+The latest $status$ version is $version$ *$codename$*, released on $release-date$ ([release notes](http://osdoc.cogsci.nl/$branch$/notes/$notes$)).
 
 ### Windows
-
-Some Python packages, notably PyGaze and PsychoPy, are not compatible with Python 3, and are therefore not available in the Python 3 packages of OpenSesame. If you want to use those, please download the Python 2 package.
 
 <a role="button" class="btn btn-default btn-align-left" href="$url-windows-exe-py3$">
 	Windows installer (.exe)
@@ -35,6 +33,8 @@ Some Python packages, notably PyGaze and PsychoPy, are not compatible with Pytho
 		Unzip and run! Based on Python 3.7 for 64 bit systems
 	</span>
 </a>
+
+Some Python packages, notably PyGaze, are not compatible with Python 3, and are therefore not available in the Python 3 packages of OpenSesame. If you want to use those, please download the Python 2 package.
 
 <a role="button" class="btn btn-default btn-align-left" href="$url-windows-exe-py2$">
 	Windows installer (.exe)

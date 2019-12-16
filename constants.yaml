@@ -4,10 +4,10 @@ notes: 330
 status: development
 codename: Lentiform Loewenfeld
 release-date: Unreleased
-url-windows-exe-py2: https://github.com/smathot/OpenSesame/releases
-url-windows-zip-py2: https://github.com/smathot/OpenSesame/releases
-url-windows-exe-py3: https://github.com/smathot/OpenSesame/releases
-url-windows-zip-py3: https://github.com/smathot/OpenSesame/releases
+url-windows-exe-py2: https://github.com/smathot/OpenSesame/releases/download/prerelease%2F3.3.0a41/opensesame_3.3.0a41-rapunzel_0.3.14-py2-1.zip
+url-windows-zip-py2: https://github.com/smathot/OpenSesame/releases/download/prerelease%2F3.3.0a41/opensesame_3.3.0a41-rapunzel_0.3.14-py2-1.zip
+url-windows-exe-py3: https://github.com/smathot/OpenSesame/releases/download/prerelease%2F3.3.0a41/opensesame_3.3.0a41-rapunzel_0.3.14-py3-1.zip
+url-windows-zip-py3: https://github.com/smathot/OpenSesame/releases/download/prerelease%2F3.3.0a41/opensesame_3.3.0a41-rapunzel_0.3.14-py3-1.zip
 url-osx-dmg-py2: https://github.com/smathot/OpenSesame/releases/
 url-source: https://github.com/smathot/OpenSesame
 url-old: https://github.com/smathot/OpenSesame/releases
