@@ -52,15 +52,23 @@ If you have used the standard LOGGER item, data files are in the following forma
 
 ## Reading and processing data files
 
-### In Python with pandas
+### In Python with pandas or DataMatrix
 
-In Python, you can use (for example) [pandas](http://pandas.pydata.org/) to read csv files.
+In Python, you can use [pandas](http://pandas.pydata.org/) to read csv files.
 
-~~~ .python
+```python
 import pandas
 df = pandas.read_csv('subject-1.csv')
 print(df)
-~~~
+```
+
+Or [DataMatrix](https://datamatrix.cogsci.nl/):
+
+```python
+from datamatrix import io
+dm = io.readtxt('subject-1.csv')
+print(dm)
+```
 
 ### In R
 
@@ -99,29 +107,29 @@ In Microsoft Excel, you need to use the Text Import Wizard.
 
 ### Merging multiple data files into one large file
 
-For some purposes, such as using pivot tables, it may be convenient to merge all data files into one large file. You can do this with the Datamerger program, written by Daniel Schreij.
+For some purposes, such as using pivot tables, it may be convenient to merge all data files into one large file. With Python DataMatrix, you can do this with the following script:
 
-%--
-figure:
- id: FigDatamerger
- source: datamerger.png
- caption: |
-  The DataMerger program allows you to merge multiple files into one large file.
---%
+```python
+import os
+from datamatrix import DataMatrix, io, operations as ops
 
-You can download Datamerger for Windows and Mac OS from here:
+# Change this to the folder that contains the .csv files
+SRC_FOLDER = 'student_data'
+# Change this to a list of column names that you want to keep
+COLUMNS_TO_KEEP = [
+    'RT_search',
+    'load',
+    'memory_resp'
+]
 
-- <http://www.cogsci.nl/dschreij/datamerger/>
 
-For Ubuntu, you can install the `datamerger` package from the [Cogsci.nl PPA][ppa]:
-
-	sudo add-apt-repository ppa:smathot/cogscinl
-	sudo apt-get update
-	sudo apt-get install datamerger
-
-The source code is available from here:
-
-- <https://github.com/dschreij/Datamerger>
+dm = DataMatrix()
+for basename in os.listdir(SRC_FOLDER):
+    path = os.path.join(SRC_FOLDER, basename)
+    print('Reading {}'.format(path))
+    dm <<= ops.keep_only(io.readtxt(path), *COLUMNS_TO_KEEP)
+io.writetxt(dm, 'merged-data.csv')
+```
 
 [libreoffice]: http://www.libreoffice.org/
 [openoffice]: http://www.openoffice.org/

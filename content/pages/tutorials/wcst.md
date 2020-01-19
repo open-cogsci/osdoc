@@ -1,32 +1,7 @@
-title: ESCoP 2019 workshop
+title: Wisconsin Card Sorting Test
 
 
 [TOC]
-
-
-## About the workshop
-
-This OpenSesame workshop will take place as a pre-conference event before *ESCoP 2019*. Participation is free and no registration is required.
-
-The workshop consists of two main parts. In the first part, corresponding to the Basic Steps below, we created a complete experiment together. In the second part, corresponding to the Extra Assignments below, you will finish and improve the experiment by yourself.
-
-
-### When?
-
-- September 25th, 2019
-- 14:30 - 16:10
-
-### Where?
-
-- Conference Center "La Pirámide de Arona" (Mare Nostrum Resort)
-- Av. las Américas
-- 38650 Arona
-- Santa Cruz de Tenerife
-- Spain
-
-### More info
-
-- Conference site: <https://escop2019.webs.ull.es/>
 
 
 ## The basic steps
@@ -41,7 +16,7 @@ figure:
 --%
 
 
-You will implement the Wisconsin Card Sorting Test (WCST) and learn how you can run this test online with OSWeb.
+In this tutorial, you will implement the Wisconsin Card Sorting Test (WCST) and learn how you can run this test online with OSWeb.
 
 In the WCST, participants see four stimulus cards, which differ on three dimensions: color (red, green, blue, yellow), shape (circle, star, triangle, cross), and number of shapes (one, two, three, or four). Participants also see a single response card, which also has a color, shape, and number.
 

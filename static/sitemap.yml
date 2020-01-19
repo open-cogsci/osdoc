@@ -17,6 +17,8 @@
           - /3.2//tutorials/capybara
         - - Visual-world paradigm
           - /3.2/tutorials/visual-world
+        - - Wisconsin Card Sorting Test
+          - /3.2/tutorials/wcst
         - - "Amor\xE7age cat\xE9gorique"
           - /3.2/fr/amorcage-categorique
         - - Direction du regard
