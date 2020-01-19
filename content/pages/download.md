@@ -20,6 +20,11 @@ The latest $status$ version is $version$ *$codename$*, released on $release-date
 
 ### Windows
 
+Installers are not yet available. You can use the `.zip` files instead.
+{: .page-notification}
+
+The recommended download is based on Python 3.7. The installer and `.zip` packages are identical, except for the installation.
+
 <a role="button" class="btn btn-default btn-align-left" href="$url-windows-exe-py3$">
 	Windows installer (.exe)
 	<br /><span class='cogsci-btn-info'>
@@ -34,7 +39,7 @@ The latest $status$ version is $version$ *$codename$*, released on $release-date
 	</span>
 </a>
 
-Some Python packages, notably PyGaze, are not compatible with Python 3, and are therefore not available in the Python 3 packages of OpenSesame. If you want to use those, please download the Python 2 package.
+Some Python packages, notably PyGaze, are not compatible with Python 3. If you want to use those, please download the Python 2 package below.
 
 <a role="button" class="btn btn-default btn-align-left" href="$url-windows-exe-py2$">
 	Windows installer (.exe)
@@ -51,6 +56,9 @@ Some Python packages, notably PyGaze, are not compatible with Python 3, and are 
 </a>
 
 ### Mac OS
+
+Mac OS packages are not yet available. For now, you can install OpenSesame 3.3 on Mac OS through Anaconda (see below).
+{: .page-notification}
 
 <a role="button" class="btn btn-default btn-align-left" href="$url-osx-dmg-py2$">
 	Mac OS package (.dmg)
