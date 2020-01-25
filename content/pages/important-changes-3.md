@@ -15,16 +15,32 @@ Rapunzel is a code editor, focused on numerical computing with Python and R. Tec
 - <https://rapunzel.cogsci.nl/>
 
 
-### OpenSesame: A new inline_script editor
+### A new inline_script editor
 
 Related to the development of Rapuznel: The INLINE_SCRIPT item now uses a different library (`PyQode`) for the code editor. As a result, the code editor now supports many of the features that you would expect from a modern code editor, including code introspection and static code checking.
 
 
-### OpenSesame: more color spaces
+### More color spaces
 
 OpenSesame now natively supports the HSV, HSL, and CIElab color spaces.
 
 - %link:canvas%
+
+
+### New sound backend based on PsychoPy
+
+The default backend is now *psycho*. One of the advantages of this backend is that the timing of sound presentation should be better. If you experience stuttering (clicky sound playback), you can still fall back to the the *psycho_legacy* backend, which uses the old PyGame-based sound system.
+
+
+### Support for inline_script items in coroutines
+
+You can now use `inline_script` items in `coroutines`. This makes it easier to combine Python scripting with coroutines, as compared to the old method of writing a custom generator function.
+
+- %link:coroutines%
+
+
+
+### OpenSesame: 
 
 
 ## Changes in 3.2
