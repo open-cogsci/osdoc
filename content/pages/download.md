@@ -20,9 +20,6 @@ The latest $status$ version is $version$ *$codename$*, released on $release-date
 
 ### Windows
 
-Installers are not yet available. You can use the `.zip` files instead.
-{: .page-notification}
-
 The recommended download is based on Python 3.7. The installer and `.zip` packages are identical, except for the installation.
 
 <a role="button" class="btn btn-default btn-align-left" href="$url-windows-exe-py3$">
@@ -39,19 +36,19 @@ The recommended download is based on Python 3.7. The installer and `.zip` packag
 	</span>
 </a>
 
-Some Python packages, notably PyGaze, are not compatible with Python 3. If you want to use those, please download the Python 2 package below.
+Some Python packages are not compatible with Python 3. If you want to use those, please download the Python 2.7 package below. Note: As of January 1, 2020, Python 2.7 is no longer maintained.
 
 <a role="button" class="btn btn-default btn-align-left" href="$url-windows-exe-py2$">
 	Windows installer (.exe)
 	<br /><span class='cogsci-btn-info'>
-		Based on Python 2.7 for 32 and 64 bit systems
+		Based on Python 2.7 for 64 bit systems
 	</span>
 </a>
 
 <a role="button" class="btn btn-default btn-align-left" href="$url-windows-zip-py2$">
 	Windows no installation required (.zip)
 	<br /><span class='cogsci-btn-info'>
-		Unzip and run! Based on Python 2.7 for 32 and 64 bit systems
+		Unzip and run! Based on Python 2.7 for 64 bit systems
 	</span>
 </a>
 
