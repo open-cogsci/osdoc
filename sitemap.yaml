@@ -3,7 +3,7 @@ Tutorials:
     Main:
     Beginner tutorial: tutorials/beginner
     Intermediate tutorial: tutorials/intermediate
-    Advanced tutorial: tutorials/advanced
+    # Advanced tutorial: tutorials/advanced
     _:
     Other:
     Python tutorials: http://python.cogsci.nl/
