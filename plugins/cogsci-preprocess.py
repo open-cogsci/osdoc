@@ -21,7 +21,7 @@ else:
 	from pelicanconf import *
 
 _FigureParser.figureTemplate[u'jekyll'] = u"""
-![%(source)s](/3.2%(source)s)
+![%(source)s](/""" + BRANCH + """%(source)s)
 
 __Figure %(nFig)d.__ %(caption)s\n{: .fig-caption #%(id)s}\n
 """
