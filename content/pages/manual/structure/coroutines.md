@@ -1,12 +1,16 @@
 title: Doing things in parallel
 
+
 Coroutines run multiple items in parallel--or, to be more exact, they run items in rapid alternation in a way that looks parallel. Not all items support coroutines.
 
+
 [TOC]
+
 
 ## Using coroutines
 
 You can use coroutines through the COROUTINES plugin (see %FigCoroutinesInterface).
+
 
 %--
 figure:
@@ -14,6 +18,7 @@ figure:
  caption: The interface of the coroutines plugin.
  id: FigCoroutinesInterface
 --%
+
 
 As you can see, the COROUTINES plugin looks similar to the SEQUENCE item, but has a few extra options:
 
@@ -30,6 +35,7 @@ Specifically, the example from %FigCoroutinesInterface (from the stop-signal-tas
 
 The temporal flow is controlled by the COROUTINES plugin. Therefore, the timeout and duration values specified in the items are not used. For example, in %FigCoroutinesInterface, the KEYBOARD_RESPONSE will run for 2000 ms, regardless of the timeout that is specified in the item.
 
+
 ## Supported items
 
 Currently, the following items are supported:
@@ -39,9 +45,42 @@ Currently, the following items are supported:
 - SAMPLER
 - SKETCHPAD
 - FEEDBACK
-- INLINE_SCRIPT (see Writing a custom coroutine)
+- INLINE_SCRIPT
 
-## Writing a custom coroutine
+
+## Using inline_script items in coroutines
+
+When you use an INLINE_SCRIPT item in a COROUTINES, the Run phase works a little differently from what you might be used to. Specifically, the Run phase is executed on every iteration of the COROUTINES. In addition, the Run phase should only contain code that takes very little time to execute; this is because time-consuming operations will block the COROUTINES, thus interfering with the timing of other items in the COROUTINES as well. To end the COROUTINES, you can raise an `AbortCoroutines()` exception.
+
+For example, say that you have a COROUTINES with two KEYBOARD_RESPONSE items, *kb1* and *kb2*, and you want to run the COROUTINES until two key presses have been collected, with a timeout of 5000 ms. You could then create the following COROUTINES structure:
+
+
+%--
+figure:
+ source: FigCoroutinesTwoResponses.png
+ caption: A coroutines that collects two keypress responses
+ id: FigCoroutinesTwoResponses
+--%
+
+The *check_responses* INLINE_SCRIPT would then first set both responses variables to an empty string in the Prepare phase:
+
+```python
+# This is executed at the start of the coroutines
+var.response_kb1 = ''
+var.response_kb2 = ''
+```
+
+And then, in the Run phase, check if both variables have been set, and abort the coroutines if this is the case:
+
+```python
+# Values that are not an empty string are True for Python
+# This code will be executed many times!
+if var.response_kb1 and var.response_kb2:
+    raise AbortCoroutines()
+```
+
+
+## Using a custom generator function in coroutines
 
 Technically, coroutines are [generators](https://en.wikipedia.org/wiki/Generator_(computer_programming)). Generators are functions that can suspend their execution (i.e., they `yield`) and resume later on; therefore, multiple generators can run in a rapidly alternating suspend-resume cycle. This trick is sometimes called *weightless threading*, because it has most of benefits of real threading, without any of the overhead or (potential) instability. Coroutines *do not* use threading or multiprocessing.
 
@@ -49,9 +88,10 @@ In the COROUTINES plugin, you can indicate the name of a generator function that
 
 - It must initialize and then `yield`. This first `yield` returns nothing.
 - It may loop while `yield`ing on every iteration. The loop breaks when:
-	- The coroutine should end; or
-	- When the `yield` returns `False`; this is a signal from the COROUTINES plugin to the generator to signal that the coroutines ends.
-	- When the generator `yields False` itself; this is a signal from the generator to the COROUTINES to signal that the coroutines ends.
+    - The coroutine should end; or
+    - When the `yield` returns `False`; this is a signal from the COROUTINES plugin to the generator to signal that the coroutines ends.
+    - When the generator `yields False` itself; this is a signal from the generator to the COROUTINES to signal that the coroutines ends.
+    - Alternatively, the generator can `raise AbortCoroutines()` to signal that the coroutines ends.
 - No time-consuming things should happen between `yield` statements, except during initialization.
 
 The first and simplest option is to write a one-shot coroutine. This is a function that is called once to prepare itself, once to execute, and then terminates. For example:
