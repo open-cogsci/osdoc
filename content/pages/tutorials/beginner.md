@@ -59,17 +59,12 @@ This design:
 
 - is *within-subject*, because all participants do all conditions
 - is *fully-crossed* (or full factorial), because all combinations of conditions occur
-- has three conditions (or factors):
-    - *gaze side* with three levels (left, right, neutral), or G<sub>3</sub>
-    - *target side* with two levels (left, right), or T<sub>2</sub>
-    - *target letter* with two levels (F, H), or L<sub>2</sub>
-- has N subjects, or <u>S</u><sub>N</sub>
+- has three factors (or factors):
+    - *gaze side* with two levels (left, right)
+    - *target side* with two levels (left, right)
+    - *target letter* with two levels (F, H)
+- has N subjects
 
-You can write this design as <u>S</u><sub>N</sub>×G<sub>3</sub>×T<sub>2</sub>×L<sub>2</sub>
-
-For more information about this notation for experimental design, see:
-
-- %link:experimentaldesign%
 
 ## Step 1: Create the main sequence
 
