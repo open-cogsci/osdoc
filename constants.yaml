@@ -1,13 +1,13 @@
-version: 3.3.0a57
+version: 3.3.0a58
 branch: 3.3
 notes: 330
 status: development
 codename: Lentiform Loewenfeld
 release-date: Unreleased
-url-windows-exe-py2: https://github.com/smathot/OpenSesame/releases/download/prerelease%2F3.3.0a57/opensesame_3.3.0a57-py2-win64-1.exe
-url-windows-zip-py2: https://github.com/smathot/OpenSesame/releases/download/prerelease%2F3.3.0a57/opensesame_3.3.0a57-py2-win64-1.zip
-url-windows-exe-py3: https://github.com/smathot/OpenSesame/releases/download/prerelease%2F3.3.0a57/opensesame_3.3.0a57-py3-win64-1.exe
-url-windows-zip-py3: https://github.com/smathot/OpenSesame/releases/download/prerelease%2F3.3.0a57/opensesame_3.3.0a57-py3-win64-1.zip
+url-windows-exe-py2: https://github.com/smathot/OpenSesame/releases/download/prerelease%2F3.3.0a58/opensesame_3.3.0a58-py2-win64-2.exe
+url-windows-zip-py2: https://github.com/smathot/OpenSesame/releases/download/prerelease%2F3.3.0a58/opensesame_3.3.0a58-py2-win64-2.zip
+url-windows-exe-py3: https://github.com/smathot/OpenSesame/releases/download/prerelease%2F3.3.0a58/opensesame_3.3.0a58-py3-win64-2.exe
+url-windows-zip-py3: https://github.com/smathot/OpenSesame/releases/download/prerelease%2F3.3.0a58/opensesame_3.3.0a58-py3-win64-2.zip
 url-osx-dmg-py2: https://github.com/smathot/OpenSesame/releases/
 url-source: https://github.com/smathot/OpenSesame
 url-old: https://github.com/smathot/OpenSesame/releases
