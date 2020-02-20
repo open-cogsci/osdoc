@@ -73,11 +73,11 @@ See also %DesignScreencast for an explanation of the logic and design of the exp
 video:
  source: youtube
  id: DesignScreencast
- videoid: https://youtu.be/aWvibRH6D4E
+ videoid: aWvibRH6D4E
  width: 640
  height: 360
  caption: |
-  A screencast of the beginner tutorial.
+  An explanation of the experimental logic and design.
 --%
 
 
