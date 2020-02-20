@@ -66,6 +66,21 @@ This design:
 - has N subjects
 
 
+See also %DesignScreencast for an explanation of the logic and design of the experiment.
+
+
+%--
+video:
+ source: youtube
+ id: DesignScreencast
+ videoid: https://youtu.be/aWvibRH6D4E
+ width: 640
+ height: 360
+ caption: |
+  A screencast of the beginner tutorial.
+--%
+
+
 ## Step 1: Create the main sequence
 
 When you start OpenSesame, you see the 'Get started!' tab (%FigGetStarted). (If this is the very first time that you have started OpenSesame, you will see a tab that points you towards this tutorial. If so, you can close this tab.) A list of templates is shown below 'Start a new experiment'. These templates provide convenient starting points for new experiments. After you saved an experiment the first time, recently opened experiments are shown under 'Continue with a recent experiment'.
