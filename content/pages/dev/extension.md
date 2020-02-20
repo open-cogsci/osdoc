@@ -2,11 +2,13 @@ title: Creating an extension
 
 [TOC]
 
+
 ## What is an OpenSesame extension?
 
 *Extensions* add arbitrary functionality to the OpenSesame user interface. For example, an extension can add a new entry to the main toolbar or the menubar. To add functionality that you can use in experiments, you need a *plugin*:
 
 - %link:plugin%
+
 
 ## Relevant files
 
@@ -16,23 +18,27 @@ Let's assume that your extension is called `my_extension`. In that case, your ex
 		info.yaml
 		my_extension.py
 
+
 ## Extension information
 
 Extension information is defined in `info.yaml`. This works the same way as for plugins, with the exception that you don't define any controls. For more information, see:
 
 - %link:plugin%
 
+
 ## Writing the extension code
 
-The main extension code is placed in `my_extension.py`. This file has one class, `my_extension`, which inherits `libqtopensesame.extensions.base_extension.base_extension`. So a basic (non-functional) extension class looks like this:
+The main extension code is placed in `MyExtension.py`. This file has one class, `MyExtension` (the same name as the file), which inherits `libqtopensesame.extensions.BaseExtension`. So a basic (non-functional) extension class looks like this:
 
 ~~~ .python
-from libqtopensesame.extensions import base_extension
+from libqtopensesame.extensions import BaseExtension
 
-class my_extension(base_extension):
+
+class MyExtension(BaseExtension):
 
 	pass
 ~~~
+
 
 ### Activating an extension through the menu/ toolbar
 
@@ -58,32 +64,36 @@ The `label` is the text that will appear in the menu. The `icon` is a [freedeskt
 To have your extension respond to menu/ toolbar activation, implement the `activate()` method:
 
 ~~~ .python
-from libopensesame import debug
-from libqtopensesame.extensions import base_extension
+from libopensesame.oslogging import oslogger
+from libqtopensesame.extensions import BaseExtension
 
-class my_extension(base_extension):
+
+class MyExtension(BaseExtension):
 
 	def activate(self):
 
-		debug.msg(u'My extension was activated!')
+		oslogger.info('My extension was activated!')
 ~~~
+
 
 ### Listening for events
 
 OpenSesame fires events whenever something important happens. For example, the `save_experiment` event is fired when an experiment is saved. To have your extension listen to an event, simply implement a method with the name `event_[event name]`.
 
 ~~~ .python
-from libopensesame import debug
-from libqtopensesame.extensions import base_extension
+from libopensesame.oslogging import oslogger
+from libqtopensesame.extensions import BaseExtension
 
-class my_extension(base_extension):
+
+class MyExtension(BaseExtension):
 
 	def event_save_experiment(self, path):
 
-		debug.msg(u'Event fired: save_experiment(path=%s)' % path)
+		oslogger.info('Event fired: save_experiment(path={})'.format(path))
 ~~~
 
 Note that some events take keyword arguments, such as `path` in the case of `save_experiment`. The keyword signature of your function must match the expected keyword signature. A list of events can be found in the [example extension](https://github.com/smathot/opensesame-extension-example/blob/master/opensesame_extensions/example_extension/example_extension.py).
+
 
 ## Writing a setup.py and uploading to PyPi
 

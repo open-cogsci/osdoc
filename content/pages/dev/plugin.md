@@ -2,33 +2,38 @@ title: Creating a plugin
 
 [TOC]
 
+
 ## What is an OpenSesame plugin?
 
 *Plugins* are extra items that appear in the OpenSesame item toolbar. Plugins add functionality that you can use in experiments. To add functionality to the OpenSesame user interface, you need an *extension*:
 
 - %link:extension%
 
+
 ## Relevant files
 
-Let's assume that your plugin is called `my_plugin`. In that case, your plugin corresponds to a folder called `my_plugin`, containing at least the following 3 files:
+Let's assume that your plugin is called `MyPlugin`. In that case, your plugin corresponds to a folder called `MyPlugin`, containing at least the following 3 files:
 
-	my_plugin/
+	MyPlugin/
 		info.yaml
-		my_plugin.md
-		my_plugin.py
+		MyPlugin.md
+		MyPlugin.py
+
 
 ## Icons
 
 Each plug-in needs an icon, which you can specify in one of two ways:
 
 - Include two icon files in the plugin folder:
-	- A 16x16 px png file called `my_plugin.png`; and
-	- A 32x32 px png file called `my_plugin_large.png`.
+	- A 16x16 px png file called `MyPlugin.png`; and
+	- A 32x32 px png file called `MyPlugin_large.png`.
 - Or specify an `icon` key in `info.yaml`. If you do this, the plugin icon will be taken from the icon theme.
+
 
 ## Help file
 
-You can provide a help file in [Markdown] or [HTML] format. To add a Markdown help file, simply create a file called `my_plugin.md` in the plugin folder. For an HTML help file, create a file called `my_plugin.html`. Markdown format is preferred, because it is easier to read. Strictly speaking, the help file is optional, and your plugin will work without it. However, an informative help file is an essential part of a good plugin.
+You can provide a help file in [Markdown] or [HTML] format. To add a Markdown help file, simply create a file called `MyPlugin.md` in the plugin folder. For an HTML help file, create a file called `MyPlugin.html`. Markdown format is preferred, because it is easier to read. Strictly speaking, the help file is optional, and your plugin will work without it. However, an informative help file is an essential part of a good plugin.
+
 
 ## Defining the GUI
 
@@ -78,16 +83,16 @@ See the [example](#examples) plugin for a list of all controls and options.
 
 ## Writing the main plugin code
 
-The main plugin code is placed in `my_plugin.py`. This file has two classes:
+The main plugin code is placed in `MyPlugin.py`. This file has two classes:
 
-- `my_plugin`, which contains the runtime part of the plugin.
-- `qtmy_plugin`, which controls the GUI. This class is almost empty in most cases, because the controls are defined in `info.yaml`.
+- `MyPlugin`, which contains the runtime part of the plugin.
+- `qtMyPlugin`, which controls the GUI. This class is almost empty in most cases, because the controls are defined in `info.yaml`.
 
 In many cases, you will only be concerned with three methods:
 
-- `my_plugin.reset()` is where you specify default values for the plugin variables.
-- `my_plugin.prepare()` is where you implement the prepare phase of your plugin. It is good practice to move as much functionality as possible into `prepare()`, so that the time-critical run phase goes as smooth as possible.
-- `my_plugin.run()` is where you implement the run phase of your plugin.
+- `MyPlugin.reset()` is where you specify default values for the plugin variables.
+- `MyPlugin.prepare()` is where you implement the prepare phase of your plugin. It is good practice to move as much functionality as possible into `prepare()`, so that the time-critical run phase goes as smooth as possible.
+- `MyPlugin.run()` is where you implement the run phase of your plugin.
 
 A very simple example looks like this (see the [examples](#examples) for more realistic examples):
 
@@ -95,11 +100,13 @@ A very simple example looks like this (see the [examples](#examples) for more re
 # Import Python 3 compatibility functions
 from libopensesame.py3compat import *
 # Import the required modules.
-from libopensesame import debug
-from libopensesame.item import item
-from libqtopensesame.items.qtautoplugin import qtautoplugin
+from libopensesame.oslogging import oslogger
+# Should be `qtautoplugin` and `item` for versions <= 3.2
+from libopensesame.item import Item
+from libqtopensesame.items.qtautoplugin import QtAutoPlugin  
 
-class my_plugin(item):
+
+class MyPlugin(Item):
 
 	description = u'plugin description'
 
@@ -110,12 +117,12 @@ class my_plugin(item):
 		self.var.my_checkbox_var = u'some default'
 		# Debugging output is only visible when OpenSesame is started with the
 		# --debug argument.
-		debug.msg(u'My plugin has been initialized!')
+		oslogger.debug('My plugin has been initialized!')
 
 	def prepare(self):
 
 		# Call parent functions.
-		item.prepare(self)
+		Item.prepare(self)
 		# Prepare your plugin here.
 
 	def run(self):
@@ -124,14 +131,16 @@ class my_plugin(item):
 		self.set_item_onset()
 		# Run your plugin here.
 
-class qtmy_plugin(my_plugin, qtautoplugin):
+
+class qtMyPlugin(MyPlugin, QtAutoPlugin):
 
 	def __init__(self, name, experiment, script=None):
 
 		# Call parent constructors.
-		my_plugin.__init__(self, name, experiment, script)
-		qtautoplugin.__init__(self, __file__)
+		MyPlugin.__init__(self, name, experiment, script)
+		QtAutoPlugin.__init__(self, __file__)
 ~~~
+
 
 ## Experimental variables
 
@@ -139,11 +148,13 @@ Experimental variables are properties of the `var` object. An example is `self.v
 
 - %link:manual/variables%
 
+
 ## Writing a setup.py and uploading to PyPi
 
 You can use a `setup.py` file to automatically install a plugin, or to upload it to PyPi (so that it can be installed through `pip install`). To see how this is done, see the setup script included with the example plugin.
 
 To upload a package to PyPi, you need to create a PyPi account, and then register and upload your package. This is a fairly simple process, and is described on the [PyPi website](https://pypi.python.org/pypi).
+
 
 ## Examples
 
