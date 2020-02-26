@@ -22,7 +22,6 @@ function recommend_download() {
 	if (navigator.appVersion.indexOf("Win") != -1) OSName="Windows";
 	if (navigator.appVersion.indexOf("Mac") != -1) OSName="MacOS";
 	if (navigator.appVersion.indexOf("Linux") != -1) OSName="Linux";
-	if (navigator.userAgent.toLowerCase().indexOf("android") != -1) OSName="Android";
 
 	if (OSName == "Linux") {
 		link.innerHTML = "View Linux installation options";
@@ -33,12 +32,9 @@ function recommend_download() {
 	} else if (OSName == "MacOS") {
 		link.innerHTML = "Mac OS package (.dmg)"
 		link.href = "#mac-os";
-	} else if (OSName == "Android") {
-		link.innerHTML = "Google Play Store"
-		link.href = "#android";
 	} else {
-		link.innerHTML = "Sorry, I don't recognize your system!<br />Maybe you can try pip install?";
-		link.href = "#all-platforms-pip";
+		link.innerHTML = "Sorry, I don't recognize your system!<br />Maybe you can try Anaconda?";
+		link.href = "#anaconda-cross-platform";
 	}
 }
 
