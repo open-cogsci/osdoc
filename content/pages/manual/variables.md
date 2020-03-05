@@ -27,7 +27,7 @@ figure:
 
 ## Defining variables
 
-The simplest way to define a variable is through the LOOP item. For example, %FigLoop shows how to define a variable named `target`. In this example, *trial_sequence* item is called once while `target` is 'left' and once while 'target' is 'right'.
+The simplest way to define a variable is through the LOOP item. For example, %FigLoop shows how to define a variable named `gaze_cue`. In this example, *trial_sequence* item is called four times while `gaze_cue` is 'left' and another four times while 'gaze_cue' is 'right'.
 
 %--
 figure:
@@ -191,6 +191,8 @@ You don't need to indicate whether the type of your variable is a string, intege
 
 - If a value is *numeric and integer*, it is treated as an integer. An example is the value *10*.
 - If a value is *numeric, but not integer*, it is treated as a float. An example is the value *0.1*.
+- Python 2: If a value is *bytes* then it is decoded to *str* assuming utf-8 encoding.
+- Python 3: If a value is *str* then it is decoded to *unicode* assuming utf-8 encoding.
 - All other values are left as is.
 
 The reason for this smart typing is convenience: You can compare one value that looks like a number to another value that looks like a number, without needing to explicitly indicate that the variables are numbers, and not strings. However, in some cases, smart typing can lead to unpredictable behavior.

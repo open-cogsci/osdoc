@@ -112,7 +112,7 @@ figure:
 
 ## Keyboard shortcuts
 
-The keyboard shortcuts listed below are default values, and can be changed as described under [Changing shortcuts]().
+The keyboard shortcuts listed below are default values. Many of them can be changed through *Menu → Tools → Preferences*.
 
 ### General shortcuts
 
@@ -142,15 +142,11 @@ The following keyboard shortcuts are available everywhere:
 
 The following keyboard shortcuts are available in editor components, such as the INLINE_SCRIPT:
 
-- Run selected code in debug window (if applicable): `Alt+R`
-- Run all code in debug window (if applicable): `Shift+Alt+R`
-- Comment selected line(s): `Ctrl+M`
-- Uncomment selected line(s): `Ctrl+Shift+M`
-- Show find/ replace dialog: `Ctrl+F`
+- (Un)comment selected line(s): `Ctrl+/`
+- Find text: `Ctrl+F`
+- Replace text: `Ctrl+H`
 - Hide find/ replace dialog: `Escape`
-- Show/ hide preferences: `Ctrl+Shift+P`
-- Next tab (if applicable): `Alt+Left`
-- Previous tab (if applicable): `Alt+Right`
+- Duplicate line: `Ctrl+D`
 - Undo: `Ctrl+Z`
 - Redo: `Ctrl+Shift+Z`
 - Copy: `Ctrl+C`
@@ -164,7 +160,7 @@ The following keyboard shortcuts are available in the tab area:
 - Next tab: `Ctrl+Tab`
 - Previous tab: `Ctrl+Shift+Tab`
 - Close other tabs: `Ctrl+T`
-- Close all tabs: `Ctrl+Shift+T`
+- Close all tabs: `Ctrl+Alt+T`
 - Close current tab: `Alt+T`
 
 ### Overview-area and sequence shortcuts
@@ -172,27 +168,10 @@ The following keyboard shortcuts are available in the tab area:
 The following keyboard shortcuts are available in the overview area and the SEQUENCE item:
 
 - Context menu: `+`
-- Copy item: `Ctrl+C`
+- Copy item (unlinked): `Ctrl+C`
+- Copy item (linked): `Ctrl+Shift+C`
 - Paste item: `Ctrl+V`
 - Delete item: `Del`
 - Permanently delete item: `Shift+Del`
-- Create linked copy: `Ctrl+Shift+L`
-- Create unlinked copy: `Ctrl+Shift+U`
 - Rename: `F2`
 - Change run-if statement (if applicable): `F3`
-
-### Changing shortcuts
-
-Currently, you can change most keyboard shortcuts only through the `cfg` object in the debug window. First, get a list of configuration options by typing:
-
-~~~ .python
-print(cfg)
-~~~
-
-Locate the name of the shortcut that you want change, such as `qProgEditRunSelectedShortcut`. Next, change it by typing:
-
-~~~ .python
-cfg.qProgEditRunSelectedShortcut = 'Ctrl+Shift+E'
-~~~
-
-Finally, restart OpenSesame for the new shortcuts to take effect.

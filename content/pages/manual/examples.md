@@ -1,5 +1,5 @@
 title: Examples
 
-Example experiments are included with OpenSesame. A list of examples is available through Menu → Tools → Example experiments. Alternatively, you can download the examples from GitHub:
+Example experiments are included with OpenSesame. A list of curated examples is available through Menu → Tools → Example experiments. You can also search for publicly available experiments on the OpenScienceFramework by using 'osexp' as search term.
 
-- <https://github.com/smathot/OpenSesame/tree/ising/extensions/example_experiments/examples>
+- <https://osf.io/search/?q=osexp>
