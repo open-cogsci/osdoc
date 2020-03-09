@@ -1,7 +1,7 @@
 title: Translate
 
 
-If you want to provide a translation, it's recommended to first send an inquiry to <l.vanderlinden@cogsci.nl> or post a message on the [forum][] to make sure that your language is not already being worked on.
+If you want to provide a translation, it's recommended to first send an inquiry to <s.mathot@cogsci.nl> or post a message on the [forum](https://forum.cogsci.nl/) to make sure that your language is not already being worked on.
 
 Very little technical skill is needed to contribute a translation!
 
@@ -15,7 +15,9 @@ By default, OpenSesame uses the default locale of your operating system if a tra
 
 ## How to translate
 
+
 ### Translating Markdown tabs
+
 
 #### How to translate Markdown tabs
 
@@ -31,11 +33,15 @@ Next, copy this original file to `[original folder]\locale\[your locale code]\ge
 
 Finally, simply open the to-be-translated `get_started.md` in a text editor, and translate it.
 
+
 #### A list of Markdown tabs that need to be translated
+
+In the [OpenSesame source code](https://github.com/smathot/opensesame):
 
 - `opensesame_extensions/update_checker/failed.md`
 - `opensesame_extensions/update_checker/update-available.md`
 - `opensesame_extensions/update_checker/up-to-date.md`
+- `opensesame_extensions/toolbar_menu/system-information.md`
 - `opensesame_extensions/help/offline_help.md`
 - `opensesame_extensions/bug_report/failure.md`
 - `opensesame_extensions/bug_report/report.md`
@@ -62,36 +68,57 @@ Finally, simply open the to-be-translated `get_started.md` in a text editor, and
 - `opensesame_resources/help/missing.md`
 - `opensesame_resources/help/new_item_warning.md`
 
+In the [Rapunzel source code](https://github.com/smathot/rapunzel):
+
+- `opensesame_extensions/RapunzelWelcome/rapunzel_welcome.md`
+
 
 ### Translating the source code and user interface
 
+
 #### Step 1: Download translatables.ts
 
-`translatables.ts` is an XML file that contains all the strings that are to be translated. You can download it from here:
+If you are starting a translation from scratch, then you start from `translatables.ts`, which contains all the strings that are to be translated. OpenSesame and Rapunzel each have their own version of this file, both of which need to be translated.
 
-- <https://github.com/smathot/OpenSesame/blob/james/opensesame_resources/ts/translatables.ts>
+In the [OpenSesame source code](https://github.com/smathot/OpenSesame/), this file can be found at:
 
-At the top-right of the file, you will see a 'Raw' link. Right-click on this link and select 'Save file as' (or something along those lines, depending on your browser) to save the file your disk.
+- `opensesame_resources/ts/translatables.ts`
 
-#### Step 2: Install QtLinguist
+In the [Rapunzel source code](https://github.com/smathot/rapunzel/), this file can be found at:
 
-QtLinguist is a graphical tool that will assist you in the translation process. It's very user friendly, and allows you to simply select a string of (English) text and enter a translation.
+- `opensesame_extensions/RapunzelLocale/translatables.ts`
 
-__Windows and Mac OS__
+You can either download or clone the source code and directly open these files. Or you can view them through GitHub. In the last case, at the top-right of the file, you will see a 'Raw' link. Right-click on this link and select 'Save file as' (or something along those lines, depending on your browser) to save the file your disk.
 
-You can download QtLinguist as part of the [Qt development toolkit](http://qt-project.org/downloads) or as a [standalone program] (http://code.google.com/p/qtlinguistdownload/). The standalone option is probably easiest for most people.
+
+#### Step 2: Install Qt Linguist
+
+Qt Linguist is a graphical tool that will assist you in the translation process. It's user friendly, and allows you to simply select a string of (English) text and enter a translation.
+
+__Windows__
+
+You can download a standalone version of Qt Linguist from here:
+
+- <https://github.com/thurask/Qt-Linguist/releases>
+
+
+__Mac OS__
+
+You can download a standalone version of Qt Linguist from here:
+- <https://github.com/lelegard/qtlinguist-installers/releases>
 
 __Linux__
 
-On Linux, QtLinguist is generally available in the repositories. For example, on Ubuntu it can be installed with:
+On Linux, Qt Linguist is generally available in the repositories. For example, on Ubuntu it can be installed with:
 
-	sudo apt-get install qt4-linguist-tools
+	sudo apt-get install qttools5-dev-tools
 
-#### Step 3: Open translatables.ts in QtLinguist
 
-Now start QtLinguist and open `translatables.ts`. You will first be asked to enter a source and target language. Leave the source as it is: 'POSIX/ Any country'. The target language should be set to the language that you will translate OpenSesame into. Leave the Country/Region option at 'Any country'. You can change these settings later via Menu -> Edit -> Translation file settings.
+#### Step 3: Open translatables.ts in Qt Linguist
 
-Now you can start translating! On the left you will see a list of 'contexts'. These indicate in which context the text is shown, which is helpful. To translate, simply click on the first source text-string in the first context, enter an appropriate translation, and press 'Control+Enter' to advance to the next string.
+Now start Qt Linguist and open `translatables.ts`. You will first be asked to enter a source and target language. Leave the source as it is: 'POSIX/ Any country'. The target language should be set to the language that you will translate OpenSesame into. Leave the Country/Region option at 'Any country'. You can change these settings later via Menu → Edit → Translation file settings.
+
+Now you can start translating! On the left you will see a list of 'contexts'. These indicate in which context the text is shown, which is helpful. To translate, simply click on the first source text-string in the first context, enter an appropriate translation, and press `Ctrl+Enter` to advance to the next string.
 
 Some strings will contain HTML tags, like so:
 
@@ -105,21 +132,31 @@ Also, some strings contain wildcards, like so:
 
 	Tell me more about the %s item
 
-These `%s` (and `%d`, `%f`, etc.) wildcards are blanks that are filled in on-the-fly by OpenSesame. Please respect these (removing a wild-card will crash the program!) and try to build an appropriate translation around them. So, for a Dutch translation this would become:
+These `%s` (and `%d`, `%f`, `{}`, etc.) wildcards are blanks that are filled in on-the-fly by OpenSesame. Please respect these (removing a wild-card will crash the program!) and try to build an appropriate translation around them. So, for a Dutch translation this would become:
 
 	Vertel me meer over het %s item
 
+
 #### Step 4: Compile your translation to `.qm` and test it
 
-OpenSesame doesn't use the `.ts` file directly, but requires a file in `.qm` format. You can create this file easily from within Qt Linguist by selecting 'File -> Release as'. Create a `.qm` file with the same name (except for the extension) as the original file, and place it in the `opensesame_resources/locale` subfolder of the OpenSesame folder. So, for example, if you're working on a French translation, your original source file would be `opensesame_resources/ts/fr_FR.ts` and your compiled file would be `opensesame_resources/locale/fr_FR.qm`.
+OpenSesame doesn't use the `.ts` file directly, but requires a file in `.qm` format. You can create this file easily from within Qt Linguist by selecting 'File → Release as'. Create a `.qm` file with the same name (except for the extension) as the original file.
 
-Once you have compiled your translation file to `.qm` format and placed it in the resources folder, run OpenSesame with your new locale as described at the top of this page.
+For OpenSesame, this file should be saved to (change `fr_FR` to the appropriate locale):
+
+- `opensesame_resources/locale/fr_FR.qm`
+
+For Rapunzel, this file should be save to (change `fr_FR` to the appropriate locale):
+
+- `opensesame_extensions/RapunzelLocale/fr_FR.qm`
+
 
 ## Save and submit your translations
 
+
 ### Send by e-mail
 
-Once you are satisfied with your translations, send the translated `.ts` file and all translated `md` files to <l.vanderlinden@cogsci.nl>.
+Once you are satisfied with your translations, send the translated `.ts` file and all translated `md` files to <s.mathot@cogsci.nl>.
+
 
 ### Submit through GitHub
 
@@ -133,5 +170,3 @@ Finally, submit a pull request to have your translation included in OpenSesame.
 ## Updating an existing translation
 
 The process to update an existing translation is similar to that described above for creating a new translation. The crucial difference is that you don't start with `resources/ts/translatables.ts`, but with a non-blank translation file, such as `resources/ts/fr_FR.ts`.
-
-[forum]: http://forum.cogsci.nl/
