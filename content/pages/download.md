@@ -107,7 +107,25 @@ Next, add the relevant channels (`cogsci`) and (`conda-forge`) and install all r
 
 ```bash
 conda config --add channels cogsci --add channels conda-forge
-conda install python-opensesame opensesame-extension-osf opensesame-extension-osweb opensesame-plugin-psychopy psychopy rapunzel python-pygaze
+conda install python-opensesame opensesame-extension-osweb opensesame-plugin-psychopy psychopy rapunzel python-pygaze
+```
+
+Some packages are not available through conda. You can use `pip install` for these.
+
+```bash
+pip install soundfile pygame yolk3k opensesame-extension-osf python-qtpip http://files.cogsci.nl/expyriment-0.10.0+opensesame2-py3-none-any.whl
+```
+
+Once you have installed all packages, you can simply run OpenSesame by (after having activated the correct environment) running:
+
+```bash
+opensesame
+```
+
+Or for the Rapunzel code editor:
+
+```bash
+rapunzel
 ```
 
 
@@ -128,7 +146,7 @@ The source code of OpenSesame is available on [GitHub](https://github.com/smatho
 
 ### Which version of Python to use?
 
-OpenSesame is currently built with Python 3.7.3 (standard package) and Python 2.7.15.
+OpenSesame is currently built with Python 3.7.6 (standard package) and Python 2.7.15.
 
 ### When (not) to update?
 

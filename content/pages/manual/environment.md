@@ -3,61 +3,61 @@ title: Installing packages, plugins, and extensions
 
 [TOC]
 
+If you receive permission errors on Windows, run OpenSesame as administrator.
+{: .alert .alert-info}
 
-## Using the Python package manager
 
-The Python package manager is unstable. If it crashes, use the installation/ upgrade method described below.
+## Using conda (preferred)
+
+As of OpenSesame 3.3, the standard Windows packages come with a fully functioning Anaconda environment. This means that you can use `conda` to manage packages. To execute `conda` from the console:
+
+- Prefix `conda` with `!` (to indicate that you want to execute a program rather than Python code)
+- Pass the `-y` flag to avoid conda from prompting for input (which sometimes freezes the console)
+- Have patience! (`conda` is known to be slow, and you will not get visual feedback until the command is finished)
+
+Example: to install seaborn (a plotting library):
+
+```
+!conda install seaborn -y
+```
+
+Example: to update `rapunzel` and all its dependencies (which includes OpenSesame) using the `cogsci` and `conda-forge` channels:
+
+```
+!conda update rapunzel -c cogsci -c conda-forge -y
+```
+
+See also:
+
+- <https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-pkgs.html>
+
+
+## Using pip
+
+As of OpenSesame 3.3, you can use `pip` to manage packages directly from the console. Prefix `pip` with `!` (to indicate that you want to execute a program rather than Python code).
+
+Example: to install the OpenScienceFramework extension:
+
+```
+!pip install opensesame-extension-osf
+```
+
+To see how you can use `pip` as a Python module, see the old documentation (this is no longer recommended):
+
+- <https://osdoc.cogsci.nl/3.2/manual/environment/#using-pip-pypi>
+
+
+## Using the Python package manager (experimental)
+
+The Python package manager is unstable. If it crashes, use the installation/ upgrade methods described above.
 {: .alert .alert-info}
 
 A graphical package manager is available under Menu → Tools → Python package manager. This is a graphical manager for pip / PyPi.
 
 
-## Using pip / PyPi
-
-If you receive permission errors on Windows, run OpenSesame as administrator.
-{: .alert .alert-info}
-
-### Installing
-
-The easiest way to install Python packages, and OpenSesame plugins/ extensions is through pip, the PyPA-recommended tool for installing Python packages. Although OpenSesame plugins/ extensions are not strictly Python packages, they can nevertheless be installed as such.
-
-From within OpenSesame, to install `opensesame-plugin-media_player_mpy`, run the following in the debug window:
-
-	import pip
-	pip.main(['install', 'opensesame-plugin-media_player_mpy'])
-
-Or for recent versions of pip:
-
-	import pip._internal
-	pip._internal.main(['install', 'opensesame-plugin-media_player_mpy'])
-
-From a terminal, to install `opensesame-plugin-media_player_mpy`, run:
-
-	pip install opensesame-plugin-media_player_mpy
-
-### Upgrading
-
-From within OpenSesame, to upgrade `python-pygaze` to the latest version, run the following in the debug window:
-
-	import pip
-	pip.main(['install', 'python-pygaze', '--upgrade'])
-
-Or for recent versions of pip:
-
-	import pip._internal
-	pip._internal.main(['install', 'python-pygaze', '--upgrade'])
-
-From a terminal, to upgrade `python-pygaze` to the latest version, run:
-
-	pip install python-pygaze --upgrade
-
-
 ## Manually installing plugins and extensions
 
-The easiest way to install OpenSesame plugins/ extensions is using `pip install`, as described above.
-{: .alert .alert-info}
-
-To manually install a plugin or extension, simply copy the plugin/ extension folder to one of the folders that OpenSesame scans for plugins and extensions. Which folders these are depends on your operating system and distribution of OpenSesame.
+To manually install a plugin or extension, simply copy the plugin/ extension folder to one of the folders that OpenSesame scans for plugins and extensions. Which folders those are depends on your operating system and distribution of OpenSesame.
 
 Under Windows, assuming that OpenSesame has been installed to `c:\Program Files (x86)\OpenSesame`, you can generally place plugins/ extensions in the following folders:
 
@@ -76,9 +76,6 @@ If you are unsure which folders are scanned, you can see the list of folders by 
 
 
 ## Manually installing Python packages and modules
-
-The easiest way to install Python packages is using `pip install`, as described above.
-{: .alert .alert-info}
 
 You can also copy a Python package or module to one of the folders in the Python path. Which folders these are depends on your operating system and distribution of OpenSesame. You can get a list of all folders in the Python path by executing the following in the debug window:
 
