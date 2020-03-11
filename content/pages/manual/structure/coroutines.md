@@ -1,7 +1,7 @@
 title: Doing things in parallel
 
 
-Coroutines run multiple items in parallel--or, to be more exact, they run items in rapid alternation in a way that looks parallel. Not all items support coroutines.
+Coroutines run multiple items in parallel—or, to be more exact, they run items in rapid alternation in a way that looks parallel. Not all items support coroutines.
 
 
 [TOC]
@@ -40,12 +40,14 @@ The temporal flow is controlled by the COROUTINES plugin. Therefore, the timeout
 
 Currently, the following items are supported:
 
-- KEYBOARD_RESPONSE
-- MOUSE_RESPONSE
-- SAMPLER
-- SKETCHPAD
 - FEEDBACK
 - INLINE_SCRIPT
+- KEYBOARD_RESPONSE
+- LOGGER
+- MOUSE_RESPONSE
+- SAMPLER
+- SYNTH
+- SKETCHPAD
 
 
 ## Using inline_script items in coroutines
@@ -82,7 +84,7 @@ if var.response_kb1 and var.response_kb2:
 
 ## Using a custom generator function in coroutines
 
-Technically, coroutines are [generators](https://en.wikipedia.org/wiki/Generator_(computer_programming)). Generators are functions that can suspend their execution (i.e., they `yield`) and resume later on; therefore, multiple generators can run in a rapidly alternating suspend-resume cycle. This trick is sometimes called *weightless threading*, because it has most of benefits of real threading, without any of the overhead or (potential) instability. Coroutines *do not* use threading or multiprocessing.
+Technically, coroutines are [generators](https://en.wikipedia.org/wiki/Generator_(computer_programming)). Generators are functions that can suspend their execution (i.e., they `yield`) and resume later on; therefore, multiple generators can run in a rapidly alternating suspend-resume cycle. This trick is sometimes called *weightless threading*, because it has most of benefits of real threading, without any of the overhead or (potential) instability. Coroutines do not use threading or multiprocessing.
 
 In the COROUTINES plugin, you can indicate the name of a generator function that you have defined in an INLINE_SCRIPT. This generator needs to work in a particular way (as illustrated in the examples below):
 
