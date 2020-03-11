@@ -57,7 +57,7 @@ For example, the following break-if statement would break the loop as soon as a 
 
 	[correct] = 1
 
-The *Evaluate on first cycle* option indicates whether the break-if statement should be evaluated before the first cycle, in which case no cycles may be executed at all, or only before the second cycle, in which case at least one cycle is always executed.
+The *Evaluate on first cycle* option indicates whether the break-if statement should be evaluated before the first cycle, in which case no cycles may be executed at all, or only before the second cycle, in which case at least one cycle is always executed. In some cases, the break-if statement will refer to a variable that is only defined after the first cycle, in which case you should disable the 'Evaluate on first cycle' option to avoid a 'Variable does not exist' error.
 
 ## Generating a full-factorial design
 
@@ -65,7 +65,7 @@ By clicking on the *Full-factorial design* you open a wizard that allows you to 
 
 ## Pseudorandomization
 
-You can add constraints for pseudorandomization to the script of the loop item. (Currently, this is not possible through the GUI.)
+You can add constraints for pseudorandomization to the script of the loop item. This shuffles the rows, even if Order is set to sequential. (Currently, this is not possible through the GUI.)
 
 Example: Make sure that repetitions of the same word (given by the `word` variable) are separated by at least 4 cycles:
 
