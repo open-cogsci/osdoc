@@ -2,6 +2,7 @@ title: OpenSesame
 
 OpenSesame is a program to create experiments for psychology, neuroscience, and experimental economics. The latest $status$ version is $version$ *$codename$*, released on $release-date$ ([release notes](http://osdoc.cogsci.nl/$branch$/notes/$notes$)).
 
+
 <div class="btn-group" role="group" aria-label="...">
   <a role="button" class="btn btn-success" href="%url:download%">
 		<span class="glyphicon glyphicon-download" aria-hidden="true"></span>
@@ -11,14 +12,15 @@ OpenSesame is a program to create experiments for psychology, neuroscience, and 
   <span class="glyphicon glyphicon-education" aria-hidden="true"></span>
   	Tutorial
   </a>
-  <a role="button" class="btn btn-success" href="https://forum.cogsci.nl/">
+  <a role="button" class="btn btn-success" href="%url:support%">
   <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
-  Forum</a>
+  Support</a>
 </div>
 
 ## Features
 
 - __A user-friendly interface__ — flexible yet easy-to-use
+- Includes [Rapunzel](https://rapunzel.cogsci.nl/), a standalone code editor for numerical computing
 - __Python__ — add the power of [Python](%link:manual/python/about%) to your experiment
 - __Use your devices__ — use your [eye tracker](%link:pygaze%), [button box](%link:buttonbox%), [EEG equipment](%link:parallel%), and more.
 - __Free__ — released under the GPL3

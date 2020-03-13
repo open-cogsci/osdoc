@@ -173,10 +173,8 @@
           - /3.3/dev/plugin
         - - Create an extension
           - /3.3/dev/extension
-  - - Forum
-    - http://forum.cogsci.nl/
-  - - Professional support
-    - /3.3/professional
+  - - Support
+    - /3.3/support
   - - v3.3
     - !!python/object/apply:collections.OrderedDict
       - - - v3.3

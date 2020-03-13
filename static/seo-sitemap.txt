@@ -75,4 +75,4 @@ https://osdoc.cogsci.nl/3.3/dev/fileformat
 https://osdoc.cogsci.nl/3.3/dev/translate
 https://osdoc.cogsci.nl/3.3/dev/plugin
 https://osdoc.cogsci.nl/3.3/dev/extension
-https://osdoc.cogsci.nl/3.3/professional
+https://osdoc.cogsci.nl/3.3/support
