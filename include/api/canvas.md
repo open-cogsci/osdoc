@@ -135,7 +135,8 @@ v3.3.0.
 - __LAB strings:__ `lab(53, -20, 0)`. In the [CIELAB](https://en.wikipedia.org/wiki/CIELAB_color_space)
         color space, the parameters reflect lightness (`l*`),
         green-red axis (`a*`, negative is green), and blue-yellow axis
-        (`b*`, negative is blue).
+        (`b*`, negative is blue). This uses the D65 white point and the
+        sRGB transfer function, as implemented [here](https://www.psychopy.org/_modules/psychopy/tools/colorspacetools.html).
 - __Luminance values:__  `255`, `0`, etc. Here, values range from `0` to
         `255` so that `255` is white.
 
@@ -338,10 +339,12 @@ __Keyword dict:__
 
 Turns the current `Canvas` into a copy of the passed `Canvas`.
 
-__Note:__
+__Warning:__
 
-If you want to create a copy of a `sketchpad` `Canvas`, you can also
-use the `inline_script.copy_sketchpad` function.
+Copying `Canvas` objects can result in unpredictable behavior. In
+many cases, a better solution is to recreate multiple `Canvas`
+objects from scratch, and/ or to use the element interface to
+update `Canvas` elements individually.
 
 __Example:__
 
