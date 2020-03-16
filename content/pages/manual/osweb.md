@@ -30,13 +30,13 @@ figure:
 --%
 
 
-### Testing the experiment in a browser
+### Testing in a browser
 
 - In OpenSesame, open the OSWeb extension (Menu → Tools → OSWeb).
 - The extension will perform a simple (and incomplete) check to see if your experiment appears to be compatible with OSWeb.
 - If no problems are detected, click 'Test experiment in external browser', or click on the corresponding button in the main toolbar.
 - This will open the experiment in your default browser so that you can check if the experiment runs as expected (%FigTestRun).
-- As of OSWeb 1.3, you can also click the 'Run in browser' button in the main toolbar (Alt+Ctrl+W)
+- You can also click the 'Run in browser' button in the main toolbar (Alt+Ctrl+W)
 
 
 %--
@@ -47,31 +47,53 @@ figure:
 --%
 
 
+### Debugging
+
+First, make sure that your experiment only uses supported functionality, as described below. Next, run the experiment in the traditional (non-browser) way in OpenSesame. This will give you the most informative error messages that you can use for debugging.
+
+If your experiment uses only supported functionality and runs normally in OpenSesame, then you can use the browser console to see JavaScript error messages. These are much less informative than OpenSesame's error messages, but they can still be helpful. Each browser has a different way to access the console. In Chrome, you can access the console by right-clicking somewhere, selecting Inspect (`Ctrl+Shift+I`), and then switching to the Console tab (see %FigChromeConsole). In Firefox, you can access the console by clicking on the Menu icon in the top right and then selecting Web Developer → Web Console (`Ctrl+Shift+K`).
+
+
+%--
+figure:
+ id: FigChromeConsole
+ source: chrome-console.png
+ caption: Chrome's browser console.
+--%
+
+
+
 ### Supported functionality
 
 The following items are supported by OSWeb:
 
 - `advanced_delay`
-- `feedback` (named elements not supported)
+- `feedback`
+    - Unsupported: named elements
 - `inline_javascript`
-- `keyboard` (key release not supported)
+- `keyboard`
+    - Unsupported: key release
 - `logger`
-- `loop` (except 'Resume after break', 'Evaluate on first cycle', and 'file' source)
-- `mouse` (mouse release not supported; linked sketchpad not supported)
-- `notepad` (does nothing)
+- `loop`
+    - Unsupported: resume after break
+    - Unsupported: evaluate on first cycle
+    - Unsupported: file source
+    - Unsupported: constraints (pseudorandomization)
+- `mouse`
+    - Unsupported: mouse release
+    - Unsupported: linked sketchpad
+- `notepad`
 - `repeat_cycle`
 - `reset_feedback`
 - `sampler`
 - `sequence`
-- `sketchpad` (named elements not supported)
+- `sketchpad`
+    - Unsupported: named elements
 - `synth`
 - `touch_response`
 
 
 ### Inline JavaScript
-
-The `inline_javascript` item is available as of OSWeb 1.3
-{: .page-notification}
 
 The `inline_javascript` item works similarly to the regular `inline_script` item, except that it runs JavaScript instead of Python code. Important considerations:
 
@@ -173,9 +195,6 @@ figure:
  caption: Exporting results collecting with OSWeb through JATOS.
 --%
 
-
-The 'Convert JATOS results to csv/ xlsx' option is available as of OSWeb 1.3.1
-{: .page-notification}
 
 You will then download a file that has a name similar to `jatos_results_20190429113807.txt`. This file contains mostly JSON data, but may also contain fragments of data that render the file invalid as a regular JSON string. However, you can easily convert the data to a `.csv` or `.xlsx` file with 'Convert JATOS results to csv/ xlsx' option in the OSWeb extension (see %FigOSWebExtension).
 
