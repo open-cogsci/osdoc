@@ -30,7 +30,7 @@ The standard download is based on Python 3.7 for 64 bit systems. The installer a
 	<b>Standard</b> Windows no installation required (.zip)
 </a>
 
-The Megapack is identical to the standard Python 3.7 download above, except that it comes with a large number of libraries for scientific computing pre-installed. 
+The Megapack is identical to the standard Python 3.7 download above, except that it comes with a large number of libraries for scientific computing pre-installed.
 
 <a role="button" class="btn btn-default btn-align-left" href="$url-windows-exe-py3$">
 	<b>Megapack</b> Windows installer (.exe)
@@ -52,13 +52,10 @@ Some Python packages are not compatible with Python 3. If you want to use those,
 
 ### Mac OS
 
-Mac OS packages are not yet available. For now, you can install OpenSesame 3.3 on Mac OS through Anaconda (see below).
-{: .page-notification}
-
-<a role="button" class="btn btn-default btn-align-left" href="$url-osx-dmg-py2$">
+<a role="button" class="btn btn-default btn-align-left" href="$url-osx-dmg-py3$">
 	Mac OS package (.dmg)
 	<br /><span class='cogsci-btn-info'>
-		Based on Python X.X for 64 bit systems
+		Based on Python 3.7 for 64 bit systems
 	</span>
 </a>
 

@@ -227,6 +227,10 @@ video:
 - [Attentional capture](https://jatos.cogsci.nl/publix/20/start?batchId=50&generalMultiple)
 - [Lexical decision](https://jatos.cogsci.nl/publix/39/start?batchId=54&generalMultiple)
 
+A common question is how to collect multiple character input, for example to ask for a student number at the start of the experiment. See this forum discussion for a solution:
+
+- <https://forum.cogsci.nl/discussion/5876/>
+
 
 [jatos]: https://www.jatos.org/
 [osweb]: http://github.com/shyras/osweb
