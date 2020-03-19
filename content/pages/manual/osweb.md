@@ -1,6 +1,10 @@
 title: Running experiments online
 
 
+[OpenSesame 3.3](https://osdoc.cogsci.nl/3.3/manual/osweb/) comes with a more recent version of OSWeb that has many bugfixes.
+{: .page-notification}
+
+
 [TOC]
 
 
