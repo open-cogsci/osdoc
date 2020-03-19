@@ -114,7 +114,13 @@ if (vars.subject_nr % 2 == 0) {
 
 ### Upgrading OSWeb
 
-OSWeb is under active development. If you want to make sure that you're running the latest version, you can upgrade the OSWeb extension, which is called `opensesame-extension-osweb`, as described here:
+OSWeb is under active development. If you want to make sure that you're running the latest version, you can upgrade the OSWeb extension, which is called `opensesame-extension-osweb`. As of OpenSesame 3.3, you can do this by running the following command in the console:
+
+```
+!conda update opensesame-extension-osweb -c cogsci -c conda-forge -y
+```
+
+See also:
 
 - %link:environment%
 
@@ -197,6 +203,10 @@ figure:
 
 
 You will then download a file that has a name similar to `jatos_results_20190429113807.txt`. This file contains mostly JSON data, but may also contain fragments of data that render the file invalid as a regular JSON string. However, you can easily convert the data to a `.csv` or `.xlsx` file with 'Convert JATOS results to csv/ xlsx' option in the OSWeb extension (see %FigOSWebExtension).
+
+## Sona Systems
+
+Sona Systems is an online tool that many universities use for recruiting participants, granting course credit to student participants, etc. There is currently no direct way to integrate OSWeb with Sona Systems such that credits are automatically granted when a participant finishes the study. (We're working on this, and the documentation will be updated as soon as a solution is in place.) For now, the best options is to create a General Multiple Worker link in JATOS (see above), and have participants enter their student or Sona ID (or some other identifying feature) at the start of the experiment (see [this forum post](https://forum.cogsci.nl/discussion/5876/)).
 
 
 ## Tutorials
