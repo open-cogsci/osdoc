@@ -89,7 +89,6 @@ The following items are supported by OSWeb:
 - `sequence`
 - `sketchpad`
     - Unsupported: named elements
-- `synth`
 - `touch_response`
 
 
