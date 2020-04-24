@@ -23,8 +23,11 @@
 <section id="content" class="body">
 <div class="entry-content">
 
-<div class="alert alert-info" role="alert">
-Check out <a href="https://osdoc.cogsci.nl/3.3">the next major release of OpenSesame</a>!
+<div class="alert alert-warning" role="alert" style='position:fixed;top:0px;left:0px;width:100%;border:none;text-align:center;'>
+Visit
+<a href='{{ page.url | replace("pages", "http://osdoc.cogsci.nl") }}'>
+{{ page.url | replace("pages", "http://osdoc.cogsci.nl") }}
+</a> for the latest documentation
 </div>
 
 {% if page.uptodate == "false" %}
