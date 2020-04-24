@@ -53,10 +53,7 @@ Some Python packages are not compatible with Python 3. If you want to use those,
 ### Mac OS
 
 <a role="button" class="btn btn-default btn-align-left" href="$url-osx-dmg-py3$">
-	Mac OS package (.dmg)
-	<br /><span class='cogsci-btn-info'>
-		Based on Python 3.7 for 64 bit systems
-	</span>
+	<b>Python 3</b> Mac OS package (.dmg)
 </a>
 
 
@@ -154,7 +151,7 @@ OpenSesame is currently built with Python 3.7.6 (standard package) and Python 2.
 
 ### Manually upgrading packages
 
-- OpenSesame is a regular Python environment, and you can upgrade packages with `pip` as described here:
+- OpenSesame is a regular Python environment, and you can upgrade packages with `pip` or `conda` as described here:
 	- %link:environment%
 
 
