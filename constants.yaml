@@ -1,15 +1,15 @@
-version: 3.3.0a73
+version: 3.3.0
 branch: 3.3
 notes: 330
 status: development
 codename: Lentiform Loewenfeld
-release-date: April 21, 2020
-url-windows-exe-py2: https://github.com/smathot/OpenSesame/releases/download/prerelease%2F3.3.0a73/opensesame_3.3.0a73-py27-win64-1.exe
-url-windows-zip-py2: https://github.com/smathot/OpenSesame/releases/download/prerelease%2F3.3.0a73/opensesame_3.3.0a73-py27-win64-1.zip
-url-windows-exe-py3: https://github.com/smathot/OpenSesame/releases/download/prerelease%2F3.3.0a73/opensesame_3.3.0a73-py37-win64-1.exe
-url-windows-zip-py3: https://github.com/smathot/OpenSesame/releases/download/prerelease%2F3.3.0a73/opensesame_3.3.0a73-py37-win64-1.zip
-url-windows-exe-py3-megapack: https://github.com/smathot/OpenSesame/releases/download/prerelease%2F3.3.0a73/opensesame_3.3.0a73-py37-megapack-win64-1.exe
-url-windows-zip-py3-megapack: https://github.com/smathot/OpenSesame/releases/download/prerelease%2F3.3.0a73/opensesame_3.3.0a73-py37-megapack-win64-1.zip
-url-osx-dmg-py3: https://github.com/smathot/OpenSesame/releases/download/prerelease%2F3.3.0a73/opensesame_3.3.0a73-py37-macos-1.dmg
+release-date: April 24, 2020
+url-windows-exe-py2: https://github.com/smathot/OpenSesame/releases/download/prerelease%2F3.3.0/opensesame_3.3.0-py27-win64-1.exe
+url-windows-zip-py2: https://github.com/smathot/OpenSesame/releases/download/prerelease%2F3.3.0/opensesame_3.3.0-py27-win64-1.zip
+url-windows-exe-py3: https://github.com/smathot/OpenSesame/releases/download/prerelease%2F3.3.0/opensesame_3.3.0-py37-win64-1.exe
+url-windows-zip-py3: https://github.com/smathot/OpenSesame/releases/download/prerelease%2F3.3.0/opensesame_3.3.0-py37-win64-1.zip
+url-windows-exe-py3-megapack: https://github.com/smathot/OpenSesame/releases/download/prerelease%2F3.3.0/opensesame_3.3.0-py37-megapack-win64-1.exe
+url-windows-zip-py3-megapack: https://github.com/smathot/OpenSesame/releases/download/prerelease%2F3.3.0/opensesame_3.3.0-py37-megapack-win64-1.zip
+url-osx-dmg-py3: https://github.com/smathot/OpenSesame/releases/download/prerelease%2F3.3.0/opensesame_3.3.0-py37-macos-1.dmg
 url-source: https://github.com/smathot/OpenSesame
 url-old: https://github.com/smathot/OpenSesame/releases

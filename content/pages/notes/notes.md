@@ -1,5 +1,6 @@
 title: Release notes
 
+- [3.3.0](%url:notes%/../330)
 - [3.2.8](%url:notes%/../328)
 - [3.2.7](%url:notes%/../327)
 - [3.2.6](%url:notes%/../326)
