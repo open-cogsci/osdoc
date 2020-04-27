@@ -32,11 +32,11 @@ The standard download is based on Python 3.7 for 64 bit systems. The installer a
 
 The Megapack is identical to the standard Python 3.7 download above, except that it comes with a large number of libraries for scientific computing pre-installed.
 
-<a role="button" class="btn btn-default btn-align-left" href="$url-windows-exe-py3$">
+<a role="button" class="btn btn-default btn-align-left" href="$url-windows-exe-py3-megapack$">
 	<b>Megapack</b> Windows installer (.exe)
 </a>
 
-<a role="button" class="btn btn-default btn-align-left" href="$url-windows-zip-py3$">
+<a role="button" class="btn btn-default btn-align-left" href="$url-windows-zip-py3-megapack$">
 	<b>Megapack</b> Windows no installation required (.zip)
 </a>
 
@@ -59,32 +59,18 @@ Some Python packages are not compatible with Python 3. If you want to use those,
 
 ### Ubuntu
 
-OpenSesame 3.3 is available through the [Rapunzel PPA](https://launchpad.net/~smathot/+archive/rapunzel). To add this repository to your software sources and install OpenSesame, run the following commands in a terminal:
+OpenSesame 3.3 is available through the [Cogscinl PPA](https://launchpad.net/~smathot/+archive/cogscinl). To add this repository to your software sources and install OpenSesame, run the following commands in a terminal:
 
 ~~~ .bash
-sudo add-apt-repository ppa:smathot/rapunzel
+sudo add-apt-repository ppa:smathot/cogscinl
 sudo apt-get update
-sudo apt-get install python3-opensesame python3-rapunzel opensesame-extension-osf opensesame-extension-osweb opensesame-plugin-psychopy
+sudo apt-get install python3-opensesame python3-rapunzel opensesame-extension-osf opensesame-extension-osweb opensesame-plugin-psychopy python-pygaze
 ~~~
 
 Some commonly used packages are not available through the PPA. You can install them through `pip`:
 
 ~~~ .bash
-pip install psychopy expyriment python-pygaze
-~~~
-
-
-### Arch Linux
-
-Arch Linux packages are available in the [Arch Linux user repository](https://aur.archlinux.org/packages/opensesame/).
-
-
-### Pip / PyPi (cross-playform)
-
-To install OpenSesame from PyPi (Python package index), type:
-
-~~~ .bash
-pip install python-opensesame
+pip install psychopy expyriment
 ~~~
 
 
@@ -93,7 +79,7 @@ pip install python-opensesame
 First, create a new Python environment for OpenSesame (optional):
 
 ```bash
-conda create -n opensesame-py3 python=3.7  # For Python 2: ptyhon=2.7.15
+conda create -n opensesame-py3 python=3.7  # For Python 2: python=2.7.15
 conda activate opensesame-py3
 ```
 
