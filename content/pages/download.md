@@ -63,14 +63,14 @@ OpenSesame 3.3 is available through the [Cogscinl PPA](https://launchpad.net/~sm
 
 ~~~ .bash
 sudo add-apt-repository ppa:smathot/cogscinl
-sudo apt-get update
-sudo apt-get install python3-opensesame python3-rapunzel opensesame-extension-osf opensesame-extension-osweb opensesame-plugin-psychopy python-pygaze
+sudo apt update
+sudo apt install python3-opensesame python3-rapunzel python3-opensesame-plugin-psychopy
 ~~~
 
 Some commonly used packages are not available through the PPA. You can install them through `pip`:
 
 ~~~ .bash
-pip install psychopy expyriment
+pip install sounddevice python-bidi expyriment python-pygaze opensesame-extension-osf opensesame-extension-osweb pyspellchecker fastnumbers
 ~~~
 
 
