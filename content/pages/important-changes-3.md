@@ -5,7 +5,7 @@ title: Important changes in OpenSesame 3
 
 ## Changes in 3.3
 
-OpenSesame 3.3 several major improvements that make it even easier to develop experiments. OpenSesame 3.2 is fully backwards compatible with 3.1.
+OpenSesame 3.3 several major improvements that make it even easier to develop experiments. OpenSesame 3.3 is fully backwards compatible with 3.2.
 
 
 ### Rapunzel: a new code editor

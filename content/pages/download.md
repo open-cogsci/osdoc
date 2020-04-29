@@ -5,6 +5,7 @@ title: Download
 
 %-- include: include/ads-inpage.md --%
 
+
 ## Overview
 
 %--
@@ -14,9 +15,11 @@ toc:
  maxdepth: 3
 --%
 
+
 ## All download options
 
 The latest $status$ version is $version$ *$codename$*, released on $release-date$ ([release notes](http://osdoc.cogsci.nl/$branch$/notes/$notes$)).
+
 
 ### Windows
 
@@ -50,7 +53,10 @@ Some Python packages are not compatible with Python 3. If you want to use those,
 	<b>Python 2</b> Windows no installation required (.zip)
 </a>
 
+
 ### Mac OS
+
+[This article](https://support.apple.com/en-in/guide/mac-help/mh40616/mac) on the Mac OS support site explains how to override the security settings of Mac OS that will by default prevent OpenSesame from launching.
 
 <a role="button" class="btn btn-default btn-align-left" href="$url-osx-dmg-py3$">
 	<b>Python 3</b> Mac OS package (.dmg)
