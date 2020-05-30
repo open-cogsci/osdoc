@@ -73,6 +73,7 @@ The following items are supported by OSWeb:
 - `inline_javascript`
 - `keyboard`
     - Unsupported: key release
+    - HSV, HSL, and CIELab color spaces
 - `logger`
 - `loop`
     - Unsupported: resume after break
@@ -89,7 +90,10 @@ The following items are supported by OSWeb:
 - `sequence`
 - `sketchpad`
     - Unsupported: named elements
+    - HSV, HSL, and CIELab color spaces
 - `touch_response`
+
+Important note regarding linked copies: Having multiple linked copies of an item as part of the same SEQUENCE can result in the experiment freezing. This is a [known issue](https://github.com/smathot/osweb/issues/16), and we're working on this.
 
 
 ### Inline JavaScript
