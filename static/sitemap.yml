@@ -79,18 +79,26 @@
           - /3.3/manual/forms/widgets
         - - Validating form input
           - /3.3/manual/forms/validation
-        - - PyGaze
-          - /3.3/manual/eyetracking/pygaze
-        - - Models
+        - - Workflow
+          - /3.3/manual/osweb/workflow
+        - - Development
           - !!python/object/apply:collections.OrderedDict
-            - - - EyeLink
-                - /3.3/manual/eyetracking/eyelink
-              - - EyeTribe
-                - /3.3/manual/eyetracking/eyetribe
-              - - SMI
-                - /3.3/manual/eyetracking/smi
-              - - Tobii
-                - /3.3/manual/eyetracking/tobii
+            - - - OSWeb
+                - /3.3/manual/osweb/osweb
+              - - JATOS
+                - /3.3/manual/osweb/jatos
+              - - JavaScript
+                - /3.3/manual/osweb/javascript
+              - - Data
+                - /3.3/manual/osweb/data
+        - - Recruiting participants
+          - !!python/object/apply:collections.OrderedDict
+            - - - Prolific
+                - /3.3/manual/osweb/prolific
+              - - Mechanical Turk
+                - /3.3/manual/osweb/mturk
+              - - Sona Systems
+                - /3.3/manual/osweb/sonasystems
         - - Python in OpenSesame
           - /3.3/manual/python/about
         - - API reference
@@ -117,6 +125,18 @@
                 - /3.3/manual/python/mouse
               - - Sampler
                 - /3.3/manual/python/sampler
+        - - PyGaze
+          - /3.3/manual/eyetracking/pygaze
+        - - Models
+          - !!python/object/apply:collections.OrderedDict
+            - - - EyeLink
+                - /3.3/manual/eyetracking/eyelink
+              - - EyeTribe
+                - /3.3/manual/eyetracking/eyetribe
+              - - SMI
+                - /3.3/manual/eyetracking/smi
+              - - Tobii
+                - /3.3/manual/eyetracking/tobii
         - - The prepare-run strategy
           - /3.3/manual/prepare-run
         - - Counterbalancing
@@ -135,8 +155,6 @@
           - /3.3/manual/environment
         - - Runners
           - /3.3/manual/runners
-        - - Running experiments online
-          - /3.3/manual/osweb
         - - Mouse tracking
           - /3.3/manual/mousetracking
         - - Ambulatory Monitoring System (VU-AMS)

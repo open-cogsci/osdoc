@@ -55,14 +55,18 @@ Manual:
     Custom forms: manual/forms/custom
     Widgets and keywords: manual/forms/widgets
     Validating form input: manual/forms/validation
-
-    Eye tracking:
-    PyGaze: manual/eyetracking/pygaze
-    Models:
-        EyeLink: manual/eyetracking/eyelink
-        EyeTribe: manual/eyetracking/eyetribe
-        SMI: manual/eyetracking/smi
-        Tobii: manual/eyetracking/tobii
+    
+    Online experiments:
+    Workflow: manual/osweb/workflow
+    Development:
+        OSWeb: manual/osweb/osweb
+        JATOS: manual/osweb/jatos
+        JavaScript: manual/osweb/javascript
+        Data: manual/osweb/data
+    Recruiting participants:
+        Prolific: manual/osweb/prolific
+        Mechanical Turk: manual/osweb/mturk
+        Sona Systems: manual/osweb/sonasystems    
 
     ___:
 
@@ -80,7 +84,15 @@ Manual:
         Log: manual/python/log
         Mouse: manual/python/mouse
         Sampler: manual/python/sampler
-
+        
+    Eye tracking:
+    PyGaze: manual/eyetracking/pygaze
+    Models:
+        EyeLink: manual/eyetracking/eyelink
+        EyeTribe: manual/eyetracking/eyetribe
+        SMI: manual/eyetracking/smi
+        Tobii: manual/eyetracking/tobii
+        
     ____:
 
     Advanced:
@@ -94,7 +106,7 @@ Manual:
     Running experiments without the GUI: manual/opensesamerun
     Installing packages, plugins, and extensions: manual/environment
     Runners: manual/runners
-    Running experiments online: manual/osweb
+    # Running experiments online: manual/osweb
 
     Devices:
     Mouse tracking: manual/mousetracking

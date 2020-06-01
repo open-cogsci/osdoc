@@ -346,7 +346,7 @@ Our WCST is compatible with OSWeb, which means that you can run it in a browser.
 
 However, to collect actual data with the experiment in a browser, you need to import the experiment into JATOS, and use JATOS to generate a link that you can distribute to your participants. This is much easier than it sounds! For more information, see:
 
-- %link:osweb%
+- %link:manual/osweb/workflow%
 
 
 ## Solutions

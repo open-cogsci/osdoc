@@ -28,7 +28,7 @@ OpenSesame is a program to create experiments for psychology, neuroscience, and 
 - __Use your devices__ — use your [eye tracker](%link:pygaze%), [button box](%link:buttonbox%), [EEG equipment](%link:parallel%), and more.
 - __Free__ — released under the GPL3
 - __Crossplatform__ — Windows, Mac OS, Linux, and Android (runtime only)
-- Run your experiments __[online](%link:osweb%)__
+- Run your experiments __[online](%link:manual/osweb/workflow%)__
 
 %-- include: include/ads-inpage.md --%
 
