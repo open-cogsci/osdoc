@@ -22,7 +22,7 @@ figure:
 --%
 
 
-### Testing in a browser
+## Testing in a browser
 
 - In OpenSesame, open the OSWeb extension (Menu → Tools → OSWeb).
 - The extension will perform a simple (and incomplete) check to see if your experiment appears to be compatible with OSWeb.
@@ -57,7 +57,7 @@ figure:
 
 ## Supported functionality
 
-The following items are supported by OSWeb:
+You can check whether your experiment is compatible with OSWeb using the Compatibility Check (%FigOSWebExtension). This compatibility check is fairly superficial. A more complete overview of supported functionality:
 
 - `advanced_delay`
 - `feedback`
@@ -88,6 +88,19 @@ The following items are supported by OSWeb:
 __Important note regarding linked copies:__ Having multiple linked copies of an item as part of the same SEQUENCE can result in the experiment freezing. This is a [known issue](https://github.com/smathot/osweb/issues/16), and we're working on this.
 
 
+## Supported browsers
+
+The following browsers are supported:
+
+- Edge >= 17
+- Firefox >= 52
+- Google Chrome >= 49
+- Internet Explorer >= 11
+- Opera >= 56
+- Safari >= 10
+
+Certain extensions, such as Ad blockers or Script blockers, may prevent OSWeb from running.
+
 
 ## Upgrading OSWeb
 
@@ -100,17 +113,3 @@ OSWeb is under active development. If you want to make sure that you're running 
 See also:
 
 - %link:environment%
-
-
-### Supported browsers
-
-The following browsers are supported:
-
-- Edge >= 17
-- Firefox >= 52
-- Google Chrome >= 49
-- Internet Explorer >= 11
-- Opera >= 56
-- Safari >= 10
-
-Certain extensions, such as Ad blockers or Script blockers, may prevent OSWeb from running.
