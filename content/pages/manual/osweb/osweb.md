@@ -79,6 +79,7 @@ You can check whether your experiment is compatible with OSWeb using the Compati
 - `repeat_cycle`
 - `reset_feedback`
 - `sampler`
+    - Unsupported: panning, pitch, stop after, and fade in
 - `sequence`
 - `sketchpad`
     - Unsupported: named elements
