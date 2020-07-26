@@ -281,42 +281,33 @@ __Pro-tip:__ Set the repeat value of the *block_loop* to 0.1 to reduce the numbe
 
 A good experiment comes with clear instructions. And a polite experiment says goodbye to the participants when they are done. You can use a SKETCHPAD to do this.
 
-__Pro-tip:__ A FORM_TEXT_DISPLAY is not compatible with OSWeb, so you should not use it for instructions if you want to run your experiment online.
 
+### Extra 4 (medium): Set the correct response and matching rule through Python inline script
 
-### Extra 4 (medium): Set the correct response and matching rule through JavaScript
+To include Python scripting in OpenSesame, you can use the INLINE_SCRIPT item.
 
-To include scripting in OSWeb, you can use the INLINE_JAVASCRIPT item, which supports JavaScript. (But it does not currently provide all the functionality that is offered by the regular Python INLINE_SCRIPT!)
+So far, the matching rule is always to match by shape. To change this, add an INLINE_SCRIPT item to the start of the experiment, and use the following script (in the *prepare* phase) to randomly set the variable `matching_rule` to 'shape', 'number', or 'color'.
 
-So far, the matching rule is always to match by shape. To change this, add an INLINE_JAVASCRIPT item to the start of the experiment, and use the following script (in the *prepare* phase) to randomly set the variable `matching_rule` to 'shape', 'number', or 'color'.
+```python
+import random
 
-```javascript
-function choice(choices) {
-    // JavaScript does not have a built-in choice function, so we define it
-    // here.
-    let index = Math.floor(Math.random() * choices.length)
-    return choices[index]
-}
-
-
-// The vars object contains all experimental variables, like the var object
-// in Python inline script
-vars.matching_rule = choice(['shape', 'number', 'color'])
+var.matching_rule = random.choice(['shape', 'number', 'color'])
 ```
 
-Now add another INLINE_JAVASCRIPT item to the start of the *trial_sequence*. In the *prepare* phase, add a script to set the `correct_response` variable to 'a', 'b', 'c', or 'd'. To do so, you need a series of `if` statements, that first look at the matching rule, and then look at which shape corresponds to the response shape (for the shape-matching rule) or which color corresponds to the response color (for the color-matching rule) etc.
+Now add another INLINE_SCRIPT item to the start of the *trial_sequence*. In the *prepare* phase, add a script to set the `correct_response` variable to 'a', 'b', 'c', or 'd'. To do so, you need a series of `if` statements, that first look at the matching rule, and then look at which shape corresponds to the response shape (for the shape-matching rule) or which color corresponds to the response color (for the color-matching rule) etc.
 
 To get started, here's part of the solution (but it needs to be completed!):
 
-```javascript
-if (vars.matching_rule === 'shape') {
-    if (vars.shape1 === vars.response_shape) vars.correct_response = 'a'
-    // Not done yet
-} // Not done yet
+```python
+if var.matching_rule == 'shape':
+    if var.shape1 == var.response_shape:
+        var.correct_response = 'a'
+    # Not done yet
+# Not done yet
 
-// Let's print some info to the debug window
-console.log('matching_rule = ' + vars.matching_rule)
-console.log('correct_response = ' + vars.correct_response)
+# Let's print some info to the debug window
+print('matching_rule = {}'.format(var.matching_rule))
+print('correct_response = {}'.format(var.correct_response))
 ```
 
 
@@ -324,7 +315,7 @@ console.log('correct_response = ' + vars.correct_response)
 
 So far, the matching rule is randomly determined at the start of the experiment, but then remains constant throughout the experiment. In a real WCST, the matching rule changes periodically, typically after the participant has made a fixed number of correct responses.
 
-To implement this, you need another INLINE_JAVASCRIPT. Here are some pointers to get started:
+To implement this, you need another INLINE_SCRIPT. Here are some pointers to get started:
 
 - Use a counter variable that increments by 1 after a correct response, and is reset to 0 after an incorrect response.
 - When changing the matching rule, make sure that it is not (by coincidence) set to the same matching rule again.
@@ -335,15 +326,6 @@ To implement this, you need another INLINE_JAVASCRIPT. Here are some pointers to
 Right now, the response card can overlap with a stimulus card on multiple dimensions. For example, if one of the stimulus cards is a single blue circle, the response card might be two blue circles, thus overlapping on both color and shape. In a real WCST, the response card should overlap with each stimulus card on no more than a dimension.
 
 This one is up to you. No pointers this time!
-
-
-### Extra 7 (easy): Running the experiment online with JATOS
-
-Our WCST is compatible with OSWeb, which means that you can run it in a browser. To test if this still works, you can click on the run-in-browser button in OpenSesame.
-
-However, to collect actual data with the experiment in a browser, you need to import the experiment into JATOS, and use JATOS to generate a link that you can distribute to your participants. This is much easier than it sounds! For more information, see:
-
-- %link:manual/osweb/workflow%
 
 
 ## Solutions

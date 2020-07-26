@@ -15,8 +15,10 @@
           - /3.3//tutorials/capybara
         - - Visual-world paradigm
           - /3.3/tutorials/visual-world
-        - - Wisconsin Card Sorting Test
+        - - Wisconsin Card Sorting Test (JavaScript)
           - /3.3/tutorials/wcst
+        - - Wisconsin Card Sorting Test (Python)
+          - /3.3/tutorials/wcst-python
         - - "Amor\xE7age cat\xE9gorique"
           - /3.3/fr/amorcage-categorique
         - - Direction du regard
@@ -101,7 +103,7 @@
                 - /3.3/manual/osweb/sonasystems
         - - Python in OpenSesame
           - /3.3/manual/python/about
-        - - API reference
+        - - Python functions
           - !!python/object/apply:collections.OrderedDict
             - - - Common functions
                 - /3.3/manual/python/common

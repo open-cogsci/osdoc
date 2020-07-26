@@ -10,7 +10,8 @@ Tutorials:
     YouTube tutorials: https://www.youtube.com/sebastiaanmathot
     Cats, dogs, and capybaras: /tutorials/capybara
     Visual-world paradigm: tutorials/visual-world
-    Wisconsin Card Sorting Test: tutorials/wcst
+    Wisconsin Card Sorting Test (JavaScript): tutorials/wcst
+    Wisconsin Card Sorting Test (Python): tutorials/wcst-python
     __:
     Français:
     Amorçage catégorique: fr/amorcage-categorique
@@ -72,7 +73,7 @@ Manual:
 
     Python:
     Python in OpenSesame: manual/python/about
-    API reference:
+    Python functions:
         Common functions: manual/python/common
         Variables: manual/python/var
         File pool: manual/python/pool
