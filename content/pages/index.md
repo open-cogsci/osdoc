@@ -8,9 +8,9 @@ OpenSesame is a program to create experiments for psychology, neuroscience, and 
 		<span class="glyphicon glyphicon-download" aria-hidden="true"></span>
 		Download
 	 </a>
-  <a role="button" class="btn btn-danger" href="https://www.buymeacoffee.com/cogsci">
+  <a role="button" class="btn btn-danger" href="https://www.patreon.com/cogsci">
   <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-  Buy us a coffee</a>
+  Become a patron</a>
   <a role="button" class="btn btn-success" href="%url:beginner%">
   <span class="glyphicon glyphicon-education" aria-hidden="true"></span>
   	Tutorial

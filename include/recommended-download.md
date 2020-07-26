@@ -4,8 +4,8 @@ What would you like to do?
     <a role="button" class="btn btn-success" id="cogsci-recommended-download-link" href="/">
         Determining recommended download …
     </a>
-    <a role="button" class="btn btn-danger" href="https://www.buymeacoffee.com/cogsci">
+    <a role="button" class="btn btn-danger" href="https://www.patreon.com/cogsci">
         <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-        Buy us a coffee
+        Become a patron
     </a>
 </div>
