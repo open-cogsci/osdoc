@@ -23,7 +23,7 @@ OpenSesame is a program to create experiments for psychology, neuroscience, and 
 ## Features
 
 - __A user-friendly interface__ — flexible yet easy-to-use
-- Includes [Rapunzel](https://rapunzel.cogsci.nl/), a standalone code editor for numerical computing
+- Includes __[Rapunzel](https://rapunzel.cogsci.nl/)__, a standalone code editor for numerical computing
 - __Python__ — add the power of [Python](%link:manual/python/about%) to your experiment
 - __Use your devices__ — use your [eye tracker](%link:pygaze%), [button box](%link:buttonbox%), [EEG equipment](%link:parallel%), and more.
 - __Free__ — released under the GPL3

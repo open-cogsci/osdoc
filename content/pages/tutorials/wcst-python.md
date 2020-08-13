@@ -16,7 +16,7 @@ figure:
 --%
 
 
-In this tutorial, you will implement the Wisconsin Card Sorting Test (WCST) and learn how you can run this test online with OSWeb.
+In this tutorial, you will implement the Wisconsin Card Sorting Test (WCST). You will also learn how to embed Python code in the experiment. (For the OSWeb implementation of this task, see [this tutorial](%url:wcst%)).
 
 In the WCST, participants see four stimulus cards, which differ on three dimensions: color (red, green, blue, yellow), shape (circle, star, triangle, cross), and number of shapes (one, two, three, or four). Participants also see a single response card, which also has a color, shape, and number.
 
