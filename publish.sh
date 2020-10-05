@@ -1,8 +1,7 @@
 #!/bin/bash
 BRANCH=`git rev-parse --abbrev-ref HEAD`
 echo "Building documentation for $BRANCH"
-rm -Rf output/*
-mkdir output
+rm -Rf output/$BRANCH
 mkdir output/$BRANCH
 cp -R static/* output/$BRANCH
 python3 build-menu.py --publish
