@@ -6,8 +6,7 @@ Tutorials:
     # Advanced tutorial: tutorials/advanced
     _:
     Other:
-    Python tutorials: http://python.cogsci.nl/
-    YouTube tutorials: https://www.youtube.com/sebastiaanmathot
+    Implicit association task (IAT): /tutorials/iat
     Cats, dogs, and capybaras: /tutorials/capybara
     Visual-world paradigm: tutorials/visual-world
     Wisconsin Card Sorting Test (JavaScript): tutorials/wcst

@@ -1,9 +1,4 @@
----
-layout: osdoc
 title: Implicit Association Task
-group: Tutorials
-permalink: /KLWI-IAT-simple/
----
 
 
 ## Implicit Association Task
@@ -11,6 +6,24 @@ permalink: /KLWI-IAT-simple/
 The implicit association task measures the strength of associations between concepts (e.g. young people and old people) and evaluations (e.g. good and bad). The idea is that making a response is easier (and therefore *faster*) when related items share the same response key.
 
 Here, we will measure the association between young and old, and good and bad. We hypothesize that young participants (subconsciously) associate positive words with young faces rather than with old faces.
+
+
+## Tutorial screencast
+
+This tutorial is also available as a screencast:
+
+%--
+video:
+ source: youtube
+ id: Screencast
+ videoid: zd-nxgGOGlE
+ width: 640
+ height: 360
+ caption: |
+  A screencast of the IAT tutorial.
+--%
+
+
 
 ## Experimental hierarchy
 

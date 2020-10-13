@@ -7,10 +7,8 @@
           - /3.3/tutorials/beginner
         - - Intermediate tutorial
           - /3.3/tutorials/intermediate
-        - - Python tutorials
-          - http://python.cogsci.nl/
-        - - YouTube tutorials
-          - https://www.youtube.com/sebastiaanmathot
+        - - Implicit association task (IAT)
+          - /3.3//tutorials/iat
         - - Cats, dogs, and capybaras
           - /3.3//tutorials/capybara
         - - Visual-world paradigm

@@ -1,6 +1,7 @@
 https://osdoc.cogsci.nl/3.3/download
 https://osdoc.cogsci.nl/3.3/tutorials/beginner
 https://osdoc.cogsci.nl/3.3/tutorials/intermediate
+https://osdoc.cogsci.nl/3.3//tutorials/iat
 https://osdoc.cogsci.nl/3.3//tutorials/capybara
 https://osdoc.cogsci.nl/3.3/tutorials/visual-world
 https://osdoc.cogsci.nl/3.3/tutorials/wcst
