@@ -83,6 +83,7 @@ You can check whether your experiment is compatible with OSWeb using the Compati
 - `sequence`
 - `sketchpad`
     - Unsupported: named elements
+    - Unsupported: image rotation 
     - Unsupported: HSV, HSL, and CIELab color spaces
 - `touch_response`
 
