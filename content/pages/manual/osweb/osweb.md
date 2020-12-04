@@ -87,7 +87,15 @@ You can check whether your experiment is compatible with OSWeb using the Compati
     - Unsupported: HSV, HSL, and CIELab color spaces
 - `touch_response`
 
-__Important note regarding linked copies:__ Having multiple linked copies of an item as part of the same SEQUENCE can result in the experiment freezing. This is a [known issue](https://github.com/smathot/osweb/issues/16), and we're working on this.
+
+The compatibility check may also indicate errors of the following type:
+
+```
+The prepare phase for item new_logger is called multiple times in a row
+The run phase for item new_logger is called multiple times in a row
+```
+
+This error results from how the experiment is structured, and specifically the use of linked copies. It's not always easy to understand where this error comes from, but you can read more about the prepare-run strategy in [this article](%url:prepare-run%). As a workaround, you can put the problematic items in a dummy LOOP, that is, a LOOP that simply calls the item once.
 
 
 ## Supported browsers
