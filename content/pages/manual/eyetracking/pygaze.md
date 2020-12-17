@@ -46,6 +46,12 @@ sudo apt-get update
 sudo apt-get install python-pygaze
 ```
 
+Or, if you are using Python 3, change the last comment to:
+
+```
+sudo apt-get install python3-pygaze
+```
+
 ## pip install (all platforms)
 
 You can install PyGaze with `pip`:
