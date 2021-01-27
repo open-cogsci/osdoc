@@ -131,7 +131,7 @@ Other:
     _:
 
     Development:
-    How to contribute: dev/howtocontribute
+    # How to contribute: dev/howtocontribute
     # Running from source: dev/fromsource
     File format (.osexp): dev/fileformat
     Translate: dev/translate

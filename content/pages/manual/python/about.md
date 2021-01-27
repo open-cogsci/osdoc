@@ -23,7 +23,7 @@ In OpenSesame you can create complex experiments using only the graphical user i
 video:
  source: youtube
  id: VidTutorial30
- videoid: sEjQlYCmY_w
+ videoid: hmQhk_nMn5c
  width: 640
  height: 360
  caption: |
