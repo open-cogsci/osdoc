@@ -1,7 +1,9 @@
 title: OpenSesame
 
-Check out [Rapunzel](https://rapunzel.cogsci.nl/), a sweet code editor for numerical computing with Python and R!
+
+Check out [Rapunzel](https://rapunzel.cogsci.nl/), a sweet code editor for numerical computing with Python and R! Rapunzel is included with the windows packages of OpenSesame. &#x1F9BE;
 {: .page-notification}
+
 
 OpenSesame is a program to create experiments for psychology, neuroscience, and experimental economics. The latest $status$ version is $version$ *$codename$*, released on $release-date$ ([release notes](http://osdoc.cogsci.nl/$branch$/notes/$notes$)).
 

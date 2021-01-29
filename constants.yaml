@@ -3,7 +3,7 @@ branch: 3.3
 notes: 337
 status: stable
 codename: Lentiform Loewenfeld
-release-date: Jan 27, 2021
+release-date: Jan 29, 2021
 url-windows-exe-py2: https://github.com/open-cogsci/OpenSesame/releases/download/release%2F3.3.7/opensesame_3.3.7-py27-win64-1.exe
 url-windows-zip-py2: https://github.com/open-cogsci/OpenSesame/releases/download/release%2F3.3.7/opensesame_3.3.7-py27-win64-1.zip
 url-windows-exe-py3: https://github.com/open-cogsci/OpenSesame/releases/download/release%2F3.3.7/opensesame_3.3.7-py37-win64-1.exe

@@ -79,7 +79,6 @@ https://osdoc.cogsci.nl/3.3/important-changes-3
 https://osdoc.cogsci.nl/3.3/visualangle
 https://osdoc.cogsci.nl/3.3/experimentaldesign
 https://osdoc.cogsci.nl/3.3/notes/notes
-https://osdoc.cogsci.nl/3.3/dev/howtocontribute
 https://osdoc.cogsci.nl/3.3/dev/fileformat
 https://osdoc.cogsci.nl/3.3/dev/translate
 https://osdoc.cogsci.nl/3.3/dev/plugin
