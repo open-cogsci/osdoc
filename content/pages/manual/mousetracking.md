@@ -12,18 +12,11 @@ The [mousetrap response plugin](https://github.com/PascalKieslich/mousetrap-os/b
 The [mousetrap form plugin](https://github.com/PascalKieslich/mousetrap-os/blob/master/plugins/mousetrap_form/mousetrap_form.md) allows for tracking of mouse movements in [custom forms](%link:manual/forms/custom%).
 Besides, both plugins also provide Python classes, which can be used in Python inline scripts for maximum customizability.
 
-Once data have been collected with the plugins, the data can be processed, analyzed and visualized using the [mousetrap R package](https://github.com/PascalKieslich/mousetrap).
+Once data have been collected with the plugins, the data can be processed, analyzed and visualized using the [mousetrap R package](http://pascalkieslich.github.io/mousetrap/).
 
 ## Installation
 
-Mousetrap is available [on the Python Package Index](https://pypi.python.org/pypi/opensesame-plugin-mousetrap). To install the latest release, please run the following commands in the OpenSesame [debug window](%link:manual/interface%):
-
-~~~ .python
-import pip
-pip.main(['install', 'opensesame-plugin-mousetrap'])
-~~~
-
-You can also download the latest release of the plugins from the [GitHub release page](https://github.com/PascalKieslich/mousetrap-os/releases). More information about each plugin can be found in its respective helpfiles (linked above). A number of example experiments that demonstrate the basic features are available in the [examples folder](https://github.com/PascalKieslich/mousetrap-os/tree/master/examples#example-experiments) on GitHub.
+Information about how to install the mousetrap plugin can be found on its [GitHub page](https://github.com/PascalKieslich/mousetrap-os#installation). A number of example experiments that demonstrate the basic features are available in the [examples folder](https://github.com/PascalKieslich/mousetrap-os/tree/master/examples#example-experiments).
 
 
 See also:
