@@ -69,11 +69,15 @@ You can add constraints for pseudorandomization to the script of the loop item. 
 
 Example: Make sure that repetitions of the same word (given by the `word` variable) are separated by at least 4 cycles:
 
-	constrain word mindist=4
+```python
+constrain word mindist=4
+```
 
 Example: Make sure that the same word is not repeated:
 
-	constrain word maxrep=1
+```python
+constrain word maxrep=1
+```
 
 `constrain` commands must come *after* `setcycle` commands.
 

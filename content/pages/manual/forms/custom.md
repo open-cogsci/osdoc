@@ -115,7 +115,9 @@ button_clicked = form._exec()
 
 Usually, a form will have an input field, a button, or some other interactive element. However, you can also use forms without having any interactive element. To do this in OpenSesame script, you set `only_render` to "yes":
 
-	set only_render yes
+```python
+set only_render yes
+```
 
 To this in a Python INLINE_SCRIPT, you call `form.render()`, instead of `form._exec()`.
 
@@ -123,7 +125,9 @@ To this in a Python INLINE_SCRIPT, you call `form.render()`, instead of `form._e
 
 Forms support theming. Currently, two themes are available: 'gray' and 'plain'. The 'gray' theme is the default. Although the 'gray' theme is already quite plain, the 'plain' theme is even more basic. You can choose a theme like this in OpenSesame script:
 
-	set theme plain
+```python
+set theme plain
+```
 
 And by using the `theme` keyword in Python inline script:
 
@@ -147,7 +151,7 @@ To see how you can validate form input, see:
 
 The following OpenSesame script (in a FORM_BASE plugin) will produce a questionnaire of three rating scales plus a next button:
 
-~~~
+```python
 set rows "1;1;1;1;1"
 set cols "1;1"
 widget 0 0 2 1 label text="Indicate how much you agree with the following statements"
@@ -158,7 +162,7 @@ widget 1 2 1 1 rating_scale var="question2" nodes="Agree;Don't know;Disagree"
 widget 0 3 1 1 label center="no" text="I like questionnaires"
 widget 1 3 1 1 rating_scale var="question3" nodes="Agree;Don't know;Disagree"
 widget 0 4 2 1 button text="Next"
-~~~
+```
 
 The following Python inline_script will produce the same questionnaire.
 

@@ -47,7 +47,7 @@ form._exec()
 
 OpenSesame script:
 
-~~~
+~~~python
 widget 0 0 1 1 button text="Click me!" center=yes frame=yes var=response
 ~~~
 
@@ -71,7 +71,7 @@ The `group` keyword also affects how variables are stored, as described here:
 
 OpenSesame script:
 
-~~~
+~~~python
 widget 0 0 1 1 checkbox group=group text="Option 1"
 widget 0 1 1 1 checkbox group=group text="Option 2"
 ~~~
@@ -94,7 +94,7 @@ The Python object is called `ImageWidget` to distinguish it from the `Image` can
 
 OpenSesame script:
 
-~~~
+~~~python
 # Only path is a required keyword
 widget 0 0 1 1 image path="my_image.png" adjust=yes frame=no
 ~~~
@@ -116,7 +116,7 @@ The `image_id` keyword is used to identify the image button when it is clicked. 
 
 OpenSesame script:
 
-~~~
+~~~python
 # Only path is a required keyword
 widget 0 0 1 1 image_button path="my_image.png" adjust=yes frame=no image_id=my_image var=response
 ~~~
@@ -139,7 +139,7 @@ form._exec()
 
 OpenSesame script:
 
-~~~
+~~~python
 widget 0 0 1 1 label text="My text" frame=no center=yes
 ~~~
 
@@ -161,7 +161,7 @@ The `default` keyword indicates which node number is selected by default, where 
 
 OpenSesame script:
 
-~~~
+~~~python
 widget 0 1 1 1 rating_scale var=response nodes="Agree;Don't know;Disagree" click_accepts=no orientation=horizontal var=response default=0
 ~~~
 
@@ -186,7 +186,7 @@ The `stub` keyword indicates placeholder text that is shown when no text has bee
 
 OpenSesame script:
 
-~~~
+~~~python
 widget 0 0 1 1 text_input text="Initial text" frame=yes center=no stub="Type here …" return_accepts=yes var=response
 ~~~
 
