@@ -28,6 +28,17 @@ The `cursor_x` and `cursor_y` variables hold the location of the mouse click.
 
 If you indicate a linked SKETCHPAD, the variable `cursor_roi` will hold a comma-separated list of names of elements that contain the clicked coordinate. In other words, elements on the SKETCHPAD automatically serve as regions of interest for the mouse click.
 
+%--
+video:
+ source: youtube
+ id: VidMouseROI
+ videoid: 21cgX_zHDiA
+ width: 640
+ height: 360
+ caption: |
+  Collecting mouse clicks and using regions of interest.
+--%
+
 ## Collecting mouse responses in Python
 
 You can use the `mouse` object to collect mouse responses in Python:
