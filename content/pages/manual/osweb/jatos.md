@@ -55,8 +55,8 @@ For testing purposes:
 
 For data collection:
 
-- Ideally, you set up your own JATOS server, or use a JATOS server that is provided by your institution
-- You can also make use of a [free JATOS server](http://www.jatos.org/JATOS-server-during-the-COVID-19-pandemic.html) that is provided by the JATOS developers
+- You can set up your own JATOS server, or use a JATOS server that is provided by your institution
+- Or you can also make use of <https://mindprobe.eu/>, a free JATOS server sponsored by ESCoP and OpenSesame.
 
 
 %--

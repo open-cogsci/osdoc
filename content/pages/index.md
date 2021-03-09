@@ -3,9 +3,6 @@ title: OpenSesame
 
 OpenSesame is a program to create experiments for psychology, neuroscience, and experimental economics. The latest $status$ version is $version$ *$codename$*, released on $release-date$ ([release notes](http://osdoc.cogsci.nl/$branch$/notes/$notes$)).
 
-Also try [Rapunzel](https://rapunzel.cogsci.nl/) (included with the Windows packages), a modern code editor for numerical computing with Python and R.
-
-
 <div class="btn-group" role="group" aria-label="...">
   <a role="button" class="btn btn-success" href="%url:download%">
 		<span class="glyphicon glyphicon-download" aria-hidden="true"></span>

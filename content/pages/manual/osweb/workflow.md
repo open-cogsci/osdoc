@@ -31,7 +31,7 @@ First, you develop your experiment as you ordinarily would, using the OpenSesame
 
 Once you have developed your experiment, you export it from OpenSesame and upload it to JATOS. JATOS is a web server that manages experiments: it allows you to generate links that you can distribute participants, and it stores data that has been collected.
 
-There is not a single JATOS server. Rather, many institutions maintain their own JATOS server. If you do have access to a JATOS server, a free server is provided by the developers.
+There is not a single JATOS server. Rather, many institutions maintain their own JATOS server. In addition, <https://mindprobe.eu> is a free JATOS server, sponsored by ESCoP and OpenSesame.
 
 - %link:jatos%
 
