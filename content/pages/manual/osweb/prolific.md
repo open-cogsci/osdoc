@@ -31,7 +31,7 @@ figure:
 
 Next, create a study on Prolific. Under Study Details (%FigProlific), insert the JATOS study URL in the field labeled "What is the URL of your study?". This will tell Prolific how to start the experiment. Importantly, add the following to the end of the URL (this will pass important information from Prolific to your experiment):
 
-```
+```bash
 &PROLIFIC_PID={{%PROLIFIC_PID%}}&STUDY_ID={{%STUDY_ID%}}&SESSION_ID={{%SESSION_ID%}}
 ```
 

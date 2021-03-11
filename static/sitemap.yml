@@ -91,6 +91,8 @@
                 - /3.3/manual/osweb/javascript
               - - Data
                 - /3.3/manual/osweb/data
+              - - Questionnaires
+                - /3.3/manual/osweb/questionnaires
         - - Recruiting participants
           - !!python/object/apply:collections.OrderedDict
             - - - Prolific

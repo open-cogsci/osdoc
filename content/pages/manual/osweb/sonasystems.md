@@ -22,7 +22,7 @@ First, import your experiment into JATOS, as described above. Next, go the Worke
 
 Next, create a study on Sona Systems. Insert the JATOS study URL in the field labeled "Study URL". This will tell Sona Systems how to start the experiment. Importantly, add the following to the end of the URL (this will pass the participant's Sona ID to your experiment):
 
-```
+```bash
 &SONA_ID=%SURVEY_CODE% 
 ```
 

@@ -25,6 +25,7 @@ First, you develop your experiment as you ordinarily would, using the OpenSesame
 
 - %link:manual/osweb/osweb%
 - %link:javascript%
+- %link:manual/osweb/questionnaires%
 
 
 ### Uploading your experiment to JATOS
@@ -36,7 +37,7 @@ There is not a single JATOS server. Rather, many institutions maintain their own
 - %link:jatos%
 
 
-### Collect data
+### Collecting data
 
 One you have uploaded your experiment to JATOS, you can start collecting data. You can do this by manually sending links to participants, for example through email. Or you can use a platform for participant recruitment, such as Prolific, Mechanical Turk, or Sona Systems.
 

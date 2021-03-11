@@ -116,8 +116,14 @@ Certain extensions, such as Ad blockers or Script blockers, may prevent OSWeb fr
 
 OSWeb is under active development. If you want to make sure that you're running the latest version, you can upgrade the OSWeb extension, which is called `opensesame-extension-osweb`. As of OpenSesame 3.3, you can do this by running the following command in the console:
 
+```bash
+conda update opensesame-extension-osweb -c cogsci -c conda-forge -y
 ```
-!conda update opensesame-extension-osweb -c cogsci -c conda-forge -y
+
+Or:
+
+```bash
+pip install opensesame-extension-osweb --upgrade
 ```
 
 See also:
