@@ -46,3 +46,31 @@ if (window.jatos && jatos.urlQueryParameters.SONA_ID) {
 }
 console.log('sona_participant_id = ' + vars.sona_participant_id)
 ```
+
+
+## Automatically grant credits on study completion
+
+Sona Systems provides a completion URL (client-side), which should be called when a study is succesfully completed, so that Sona Systems can grant credit to the participant (see %FigCompletionURL).
+
+%--
+figure:
+ id: FigCompletionURL
+ source: completion-url.png
+ caption: The completion URL in the Sona Systems study information.
+--%
+
+The completion URL has three arguments in it:
+
+- `experiment_id` which identifies the study and is the same for all participants
+- `credit_token` which (apparently) changes when you change the study information, but is otherwise the same for all participants
+- `survey_code` which corresponds to the Sona Participant ID, and is therefore different for each participant
+
+Currently, you cannot use the end-redirect URL in JATOS for this, because it does not allow you to specify the Sona Participant ID (survey code). Instead, you need to add a small `inline_javascript` to the end of the experimen that calls `jatos.endStudyAndRedirect()` with the appropriate URL. (Make sure to strip the `XXXX` from the end of the completion URL, because this is merely a placeholder that should be replaced by the actual Sona Participant ID!)
+
+```javascript
+if (window.jatos) {
+    // Replace this by your own completion URL
+    const end_redirect_url = 'https://your-institute.sona-systems.com/webstudy_credit.aspx?experiment_id=123&credit_token=12345678123456781234567812345678&survey_code='
+    jatos.endStudyAndRedirect(end_redirect_url + vars.sona_participant_id)
+} 
+```
