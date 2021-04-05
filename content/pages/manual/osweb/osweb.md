@@ -61,7 +61,7 @@ You can check whether your experiment is compatible with OSWeb using the Compati
 
 - `advanced_delay`
 - `feedback`
-    - Unsupported: named elements
+    - See `sketchpad`
 - `inline_javascript`
 - `keyboard`
     - Unsupported: key release
@@ -69,7 +69,7 @@ You can check whether your experiment is compatible with OSWeb using the Compati
 - `logger`
 - `loop`
     - Unsupported: resume after break
-    - Unsupported: evaluate on first cycle
+    - Unsupported: Disabling of evaluate on first cycle
     - Unsupported: file source
     - Unsupported: constraints (pseudorandomization)
 - `mouse`
@@ -90,7 +90,7 @@ You can check whether your experiment is compatible with OSWeb using the Compati
 
 The compatibility check may also indicate errors of the following type:
 
-```
+```bash
 The prepare phase for item new_logger is called multiple times in a row
 The run phase for item new_logger is called multiple times in a row
 ```
