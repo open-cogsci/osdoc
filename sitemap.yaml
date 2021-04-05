@@ -118,6 +118,49 @@ Manual:
     Parallel port (EEG triggers): manual/devices/parallel
     StimSync: manual/devices/stimsync
 
+Items:
+    __advanced delay: items/advanced_delay
+    __coroutines: manual/structure/coroutines
+    __feedback: manual/stimuli/visual
+    __form_base: manual/forms/custom
+    __form_consent: manual/forms/readymade
+    __form_multiple_choice: manual/forms/readymade
+    __form_text_display: manual/forms/readymade
+    __form_text_input: manual/forms/readymade
+    __inline_javascript: manual/osweb/javascript
+    __inline_script: manual/python/about
+    
+    _:
+    
+    __joystick: manual/response/joystick
+    __keyboard response: manual/response/keyboard
+    __logger: manual/logging
+    __loop: manual/structure/loop
+    __mouse response: manual/response/mouse
+    __psychopy_text_stim: https://github.com/open-cogsci/opensesame-plugin-psychopy
+    __psychopy_grating_stim: https://github.com/open-cogsci/opensesame-plugin-psychopy
+    __pygaze_drift_correct: manual/eyetracking/pygaze
+    __pygaze_init: manual/eyetracking/pygaze
+    __pygaze_log: manual/eyetracking/pygaze
+    
+    __:
+    
+    __pygaze_start_recording: manual/eyetracking/pygaze
+    __pygaze_stop_recording: manual/eyetracking/pygaze
+    __pygaze_wait: manual/eyetracking/pygaze
+    __quest_staircase_init: items/quest_staircase_init
+    __quest_staircase_next: items/quest_staircase_next
+    __repeat cycle: items/repeat_cycle
+    __reset feedback: items/reset_feedback
+    __sampler: manual/stimuli/sound
+    __sequence: manual/structure/sequence
+    __sketchpad: manual/stimuli/visual
+    
+    ___:
+    
+    __srbox: manual/response/srbox
+    __synth: manual/stimuli/sound
+    __touch_response: items/touch_response
 Other:
 
     Other:
