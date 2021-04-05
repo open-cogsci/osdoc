@@ -129,6 +129,8 @@ def isseparator(pagename):
 def process_links(d):
 
     for pagename, entry in d.items():
+        if pagename.startswith('__'):
+            continue
         if isinstance(entry, list):
             entry = entry[0]
         if isseparator(pagename) or entry in [None, '']:

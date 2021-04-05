@@ -26,6 +26,8 @@ def build_menu(d, lvl=1):
 
 	l = []
 	for pagename, entry in d.items():
+		if pagename.startswith('__'):
+			pagename = pagename[2:]
 		if isseparator(pagename):
 			l.append('</ul></li>\n<li class="col-sm-3"><ul>')
 			continue

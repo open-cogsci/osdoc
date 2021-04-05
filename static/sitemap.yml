@@ -171,6 +171,74 @@
           - /3.3/manual/devices/parallel
         - - StimSync
           - /3.3/manual/devices/stimsync
+  - - Items
+    - !!python/object/apply:collections.OrderedDict
+      - - - __advanced delay
+          - /3.3/items/advanced_delay
+        - - __coroutines
+          - /3.3/manual/structure/coroutines
+        - - __feedback
+          - /3.3/manual/stimuli/visual
+        - - __form_base
+          - /3.3/manual/forms/custom
+        - - __form_consent
+          - /3.3/manual/forms/readymade
+        - - __form_multiple_choice
+          - /3.3/manual/forms/readymade
+        - - __form_text_display
+          - /3.3/manual/forms/readymade
+        - - __form_text_input
+          - /3.3/manual/forms/readymade
+        - - __inline_javascript
+          - /3.3/manual/osweb/javascript
+        - - __inline_script
+          - /3.3/manual/python/about
+        - - __joystick
+          - /3.3/manual/response/joystick
+        - - __keyboard response
+          - /3.3/manual/response/keyboard
+        - - __logger
+          - /3.3/manual/logging
+        - - __loop
+          - /3.3/manual/structure/loop
+        - - __mouse response
+          - /3.3/manual/response/mouse
+        - - __psychopy_text_stim
+          - https://github.com/open-cogsci/opensesame-plugin-psychopy
+        - - __psychopy_grating_stim
+          - https://github.com/open-cogsci/opensesame-plugin-psychopy
+        - - __pygaze_drift_correct
+          - /3.3/manual/eyetracking/pygaze
+        - - __pygaze_init
+          - /3.3/manual/eyetracking/pygaze
+        - - __pygaze_log
+          - /3.3/manual/eyetracking/pygaze
+        - - __pygaze_start_recording
+          - /3.3/manual/eyetracking/pygaze
+        - - __pygaze_stop_recording
+          - /3.3/manual/eyetracking/pygaze
+        - - __pygaze_wait
+          - /3.3/manual/eyetracking/pygaze
+        - - __quest_staircase_init
+          - /3.3/items/quest_staircase_init
+        - - __quest_staircase_next
+          - /3.3/items/quest_staircase_next
+        - - __repeat cycle
+          - /3.3/items/repeat_cycle
+        - - __reset feedback
+          - /3.3/items/reset_feedback
+        - - __sampler
+          - /3.3/manual/stimuli/sound
+        - - __sequence
+          - /3.3/manual/structure/sequence
+        - - __sketchpad
+          - /3.3/manual/stimuli/visual
+        - - __srbox
+          - /3.3/manual/response/srbox
+        - - __synth
+          - /3.3/manual/stimuli/sound
+        - - __touch_response
+          - /3.3/items/touch_response
   - - Other
     - !!python/object/apply:collections.OrderedDict
       - - - Donate
