@@ -6,14 +6,8 @@ In OpenSesame you can create complex experiments using only the graphical user i
 
 ## Learning Python
 
-- __Learn Python__ -- A set of basic tutorials and exercises to get you started:
-    - <http://python.cogsci.nl/>
-- __Code Academy__ -- The Python track at Code Academy is an excellent way to get started with Python:
-    - <http://www.codecademy.com/tracks/python>
-- __A Byte of Python__ -- A good free E-book to learn Python for non-programmers is "A Byte of Python", by Swaroop. Make sure to get the version for Python 2, which is what OpenSesame uses.
-    - ["A Byte of Python"][swaroop] by Swaroop [[Download PDF for Python 2.X]][swaroop-direct]
-- __Think Python__ -- Another good free E-Book is "Think Python", by Allen B. Downey. This book should work for Python 2 as well as Python 3.
-    - ["Think Python"][downey] by Allen B. Downey [[Download PDF]][downey-direct]
+You can find a set of basic tutorials and exercises to get you started with Python at <https://python.cogsci.nl/>.
+
 
 ## Python in the OpenSesame GUI
 
@@ -103,29 +97,26 @@ figure:
 
 You can embed Python statements in text strings using the `[=...]` syntax. For example, you could the following text to a SKETCHPAD:
 
-    The resolution is [=var.width] x [=var.height] px
+```bash
+The resolution is [=var.width] x [=var.height] px
+```
 
 Depending on your experiment's resolution, this might evaluate to:
 
-    The resolution is 1024 x 768 px
+```bash
+The resolution is 1024 x 768 px
+```
 
 
-### The IPython debug window
+### The Jupyter console (debug window)
 
-OpenSesame reroutes the standard output to the debug window, which you can activate using Control + D or through the menu (Menu -> View -> Show debug window; see %FigDebugNormal). You can print to the debug window using `print()`:
+OpenSesame reroutes the standard output to the console (or: debug window), which you can activate using Control + D or through the menu (Menu -> View -> Show debug window; see %FigDebugNormal). You can print to the console using `print()`.
 
 ~~~ .python
 print('This will appear in the debug window!')
 ~~~
 
-If available, the debug window is an [IPython] terminal. IPython is a powerful interactive Python terminal. If IPython is not available, a simple fallback terminal will be used.
-
-%--
-figure:
- id: FigDebugNormal
- source: debug-window.png
- caption: The debug window.
---%
+The console is also an interactive Python interpreter powered by [project Jupyter](https://jupyter.org).
 
 
 ## Things to know
