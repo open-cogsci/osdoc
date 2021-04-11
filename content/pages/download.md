@@ -31,7 +31,7 @@ The standard download is based on Python 3.7 for 64 bit systems. The installer a
 	<b>Standard</b> Windows no installation required (.zip)
 </a>
 
-The Megapack is identical to the standard Python 3.7 download above, except that it comes with a large number of libraries for scientific computing pre-installed.
+The Megapack is identical to the standard Python 3.7 download above, except that it comes with a large number of libraries for scientific computing pre-installed. The Megapack also includes advanced support for JavaScript (code completion, syntax checking, etc.).
 
 <a role="button" class="btn btn-default btn-align-left" href="$url-windows-exe-py3-megapack$">
 	<b>Megapack</b> Windows installer (.exe)
