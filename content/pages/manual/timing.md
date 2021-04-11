@@ -9,13 +9,15 @@ This page describes various issues related to timing, and provides benchmark res
 
 The short answer is: yes. The long answer is the rest of this page.
 
+
 ## Important considerations for time-critical experiments
 
 ### Check your timing!
 
-OpenSesame allows you to control your experimental timing very accurately. But this does not guarantee accurate timing in every specific experiment! For any number of reasons, many of which described on this page, you may experience issues with timing. Therefore, in time-critical experiments you should always check whether the timing in your experiment is as intended. The easiest way to do this is by checking the display timestamps reported by OpenSesame.
+OpenSesame allows you to control your experimental timing very accurately. But this does not guarantee accurate timing in every specific experiment! For any number of reasons, many of which are described on this page, you may experience issues with timing. Therefore, in time-critical experiments you should always check whether the timing in your experiment is as intended. The easiest way to do this is by checking the display timestamps reported by OpenSesame.
 
-Every SKETCHPAD item has a variable called `time_[sketchpad name]` that contains the timestamp of the last time that the SKETCHPAD was shown. So, for example, if you want the SKETCHPAD *target* to be shown for 100 ms, followed by the SKETCHPAD *mask*, you should verify that `time_mask` - `time_target` is indeed 100. When using Python inline code, you can make use of the fact that `canvas.show()` returns the display timestamp.
+Every SKETCHPAD item has a variable called `time_[sketchpad name]` that contains the timestamp of the last time that the SKETCHPAD was shown. Therefore, if you want the SKETCHPAD *target* to be shown for 100 ms, followed by the SKETCHPAD *mask*, you should verify that `time_mask` - `time_target` is indeed 100. When using Python inline code, you can make use of the fact that `canvas.show()` returns the display timestamp.
+
 
 ### Understanding your monitor
 
@@ -33,36 +35,41 @@ video:
  caption: A slow-motion video of the refresh cycle on CRT (center) and LCD/ TFT monitors. Video courtesy of Jarik den Hartog and the VU University Amsterdam technical support staff.
 --%
 
-If a new stimulus display is presented while the refresh cycle is halfway, you will observe 'tearing'. That is, the upper half of the monitor will show the old display, while the lower part will show the new display. This is generally considered undesirable, and therefore a new display should be presented at the exact moment that the refresh cycle starts from the top. This is called 'synchronization to the vertical refresh' or simply 'v-sync'. When v-sync is enabled, tearing is no longer visible, because the tear coincides with the upper edge of the monitor. However, and this appears to be a little recognized fact, v-sync does not change anything about the fact that the monitor will always, for some time, show both the old and the new display.
+If a new stimulus display is presented while the refresh cycle is halfway, you will observe 'tearing'. That is, the upper half of the monitor will show the old display, while the lower part will show the new display. This is generally considered undesirable, and therefore a new display should be presented at the exact moment that the refresh cycle starts from the top. This is called 'synchronization to the vertical refresh' or simply 'v-sync'. When v-sync is enabled, tearing is no longer visible, because the tear coincides with the upper edge of the monitor. However, v-sync does not change anything about the fact that a monitor does not refresh instantaneously and will therefore always, for some time, show both the old and the new display.
 
-Another important concept is that of 'blocking on the vertical retrace' or the 'blocking flip'. Usually, when you send a command to show a new display, the computer will accept this command right away and put the to-be-shown display in a queue. However, the display may not actually appear on the monitor for some time, typically until the start of the next refresh cycle (assuming that v-sync is enabled). Therefore, you don't know exactly when the display has appeared, because your timestamp reflects the moment that the display was queued, rather than the moment that it was presented. To get around this issue, you can use a so-called 'blocking flip'. This basically means that when you send a command to show a new display, the computer will freeze until the display actually appears. This allows you to get very accurate display timestamps, at the cost of a significant performance hit due to the computer being frozen for much of the time. But for the purpose of experiments, a blocking flip is generally considered the optimal strategy.
+Another important concept is that of 'blocking on the vertical retrace' or the 'blocking flip'. Usually, when you send a command to show a new display, the computer will accept this command right away and put the to-be-shown display in a queue. However, the display may not actually appear on the monitor until some time later, typically until the start of the next refresh cycle (assuming that v-sync is enabled). Therefore, you don't know exactly when the display has appeared, because your timestamp reflects the moment that the display was queued, rather than the moment that it was presented. To get around this issue, you can use a so-called 'blocking flip'. This basically means that when you send a command to show a new display, the computer will freeze until the display actually appears. This allows you to get very accurate display timestamps, at the cost of a significant performance hit due to the computer being frozen for much of the time while it is waiting for a display to be shown. But for the purpose of experiments, a blocking flip is generally considered the optimal strategy.
 
-Finally, LCD monitors may suffer from 'input lag'. This means that there is an additional and sometimes variable delay between the moment that the computer 'thinks' that a display appears, and the moment that the display actually appears. This delay results from various forms of digital processing that are performed by the monitor, such as color correction or image smoothing. As far as I know, input lag is not something that can be resolved programmatically, and you should avoid monitors with significant input lag for time-critical experiments.
+Finally, LCD monitors may suffer from 'input lag'. This means that there is an additional and sometimes variable delay between the moment that the computer 'thinks' that a display appears, and the moment that the display actually appears. This delay results from various forms of digital processing that are performed by the monitor, such as color correction or image smoothing. As far as I know, input lag is not something that can be resolved programmatically, and you should avoid monitors with significant input lag for time-critical experiments. 
 
 For a related discussion, see:
 
 - <http://docs.expyriment.org/Timing.html#visual>
 
+
 ### Making the refresh deadline
 
-Imagine that you arrive at a train station at 10:30. Your train leaves at 11:00, which gives you exactly 30 minutes to get a cup of coffee. However, when you have coffee for exactly 30 minutes, you will arrive back at the track just in time to see your train depart and you will have to wait for the next train. Therefore, if you have 30 minutes waiting time, you should have a coffee for slightly less than 30 minutes. 25 minutes, for example.
+Imagine that you arrive at a train station at 10:30. Your train leaves at 11:00, which gives you exactly 30 minutes to get a cup of coffee. However, if you have coffee for exactly 30 minutes, then you will arrive back at the platform just in time to see your train depart, and you will have to wait for the next train. Therefore, if you have 30 minutes waiting time, you should have a coffee for slightly less than 30 minutes, such as 25 minutes.
 
-The situation is analogous when specifying intervals for visual-stimulus presentation. Let's say that you have a 100 Hz monitor (so 1 refresh every 10 ms) and want to present a target stimulus for 100 ms, followed by a mask. Your first inclination might be to specify an interval of 100 ms between the target and the mask, because that's after all what you want. However, specifying an interval of exactly 100 ms will likely cause the mask to 'miss the refresh deadline', and the mask will be presented only on the next refresh cycle, which is 10 ms later (assuming that v-sync is enabled). So if you specify an interval of 100 ms, you will in most cases end up with an interval of 110 ms! The solution is simple: You should specify an interval that is slightly shorter than what you are aiming for, such as 95 ms. Don't worry about the interval being too short, because on a 100 Hz monitor the interval between two stimulus displays is necessarily a multiple of 10 ms. Therefore, 95 ms will become 100 ms (10 frames), 1 ms will become 10 ms (1 frame), etc. Phrased differently, intervals will be rounded up (but never rounded down!) to the nearest interval that is consistent with your monitor's refresh rate.
+The situation is analogous when specifying intervals for visual-stimulus presentation. Let's say that you have a 100 Hz monitor (so 1 refresh every 10 ms) and want to present a target stimulus for 100 ms, followed by a mask. Your first inclination might be to specify an interval of 100 ms between the target and the mask, because that's after all what you want. However, specifying an interval of exactly 100 ms will likely cause the mask to 'miss the refresh deadline', and the mask will be presented only on the next refresh cycle, which is 10 ms later (assuming that v-sync is enabled). So if you specify an interval of 100 ms, you will in most cases end up with an interval of 110 ms!
+
+The solution is simple: You should specify an interval that is slightly shorter than what you are aiming for, such as 95 ms. Don't worry about the interval being too short, because on a 100 Hz monitor the interval between two stimulus displays is necessarily a multiple of 10 ms. Therefore, 95 ms will become 100 ms (10 frames), 1 ms will become 10 ms (1 frame), etc. Phrased differently, intervals will be rounded up (and never rounded down!) to the nearest interval that is consistent with your monitor's refresh rate.
+
 
 ### Disabling desktop effects
 
-Many modern operating systems make use of graphical desktop effects. These provide, for example, the transparency effects on Windows 7, the wobbly windows on Linux, or the smooth window minimization and maximization effects that you see on many systems. Although the software that underlies these effects differs from system to system, they generally form an additional layer between your application and the display. This additional layer may prevent OpenSesame from synchronizing to the vertical refresh and/ or from implementing a blocking flip, as described under [Understanding your monitor].
+Many modern operating systems make use of graphical desktop effects. These provide, for example, the transparency effects and the smooth window minimization and maximization effects that you see on most modern operating systems. Although the software that underlies these effects differs from system to system, they generally form an additional layer between your application and the display. This additional layer may prevent OpenSesame from synchronizing to the vertical refresh and/ or from implementing a blocking flip.
 
-Note that although desktop effects *may* cause problems, they usually don't. This appears to vary from system to system and from video card to video card. Nevertheless, to be safe, I recommend disabling desktop effects on systems that are used for experimental testing.
+Although desktop effects *may* cause problems, they usually don't. This appears to vary from system to system and from video card to video card. Nevertheless, when the operating systems allows it, it's best to disable desktop effects on systems that are used for experimental testing.
 
 Some tips regarding desktop effects for the various operating systems:
 
 - Under *Windows XP* there are no desktop effects at all.
 - Under *Windows 7* desktop effects can be disabled by selecting any of the themes listed under 'Basic and High Contrast Themes' in the 'Personalization' section.
-- Under *Ubuntu* you can use Unity 2D to disable desktop effects.
-- Under *Linux distributions using Gnome 3* there is apparently no way to disable desktop effects.
+- Under *Windows 10* there is no way to completely disable desktop effects.
+- Under *Ubuntu and other Linux distributions using Gnome 3* there is no way to completely disable desktop effects.
 - Under *Linux distributions using KDE* you can disable desktop effects in the 'Desktop Effects' section of the System Settings.
-- Under *Mac OS* there is apparently no way to disable desktop effects.
+- Under *Mac OS* there is apparently no way to completely disable desktop effects.
+
 
 ### Taking into account stimulus-preparation time/ the prepare-run structure
 
@@ -118,7 +125,7 @@ For more information, see:
 
 OpenSesame is not tied to one specific way of controlling the display, system timer, etc. Therefore, OpenSesame *per se* does not have specific timing properties, because these depend on the backend that is used. The performance characteristics of the various backends are not perfectly correlated: It is possible that on some system the [psycho] backend works best, whereas on another system the [xpyriment] backend works best. Therefore, one of the great things about OpenSesame is that you can choose which backend works best for you!
 
-In general, the [xpyriment] and [psycho] backends are preferable for time-critical experiments, because they use a blocking flip, as described in [Understanding your monitor]. On the other hand, the [legacy] backend is slightly more stable and also considerably faster when using [forms].
+In general, the [xpyriment] and [psycho] backends are preferable for time-critical experiments, because they use a blocking flip. On the other hand, the [legacy] backend is slightly more stable and also considerably faster when using [forms].
 
 Under normal circumstances the three current OpenSesame backends have the properties shown in %TblBackendInfo.
 
@@ -147,16 +154,16 @@ code:
  caption: A script that presents yellow and blue displays in rapid alternation. A lack of synchronization with the vertical refresh can be observed as horizontal lines running through the monitor.
 --%
 
-### Testing consistency of timing and timestamp accuracy
+### Testing precision and accuracy of timing
 
-Timing is consistent when you can present visual stimuli over and over again with the same timing. Timestamps are accurate when they accurately reflect when visual stimuli appear on the monitor. The script below shows how you can check timing consistency and timestamp accuracy. This test can be performed both with and without an external photodiode, although the use of a photodiode provides extra verification.
+Timing is precise or consistent when you can present visual stimuli over and over again with the same timing. Timestamps are accurate when they accurately reflect when visual stimuli appear on the monitor. The script below shows how you can check precision and accuracy of timing. This test can be performed both with and without an external photodiode, although the use of a photodiode provides extra verification.
 
 To keep things simple, let's assume that your monitor is running at 100 Hz, which means that a single frame takes 10 ms. The script then presents a white canvas for 1 frame (10 ms). Next, the script presents a black canvas for 9 frames (90 ms). Note that we have specified a duration of 85, which is rounded up as explained under [Making the refresh deadline]. Therefore, we expect that the interval between the onsets of two consecutive white displays will be 10 frames or 100 ms (= 10 ms + 90 ms).
 
 We can use two ways to verify whether the interval between two white displays is indeed 100 ms:
 
-1. Using the timestamps reported by OpenSesame. This is the easiest way and is generally accurate when the backend uses a blocking flip, as described in [Understanding your monitor].
-2. Using a photodiode that responds to the onsets of the white displays and logs the timestamps of these onsets to an external computer. This is the best way to verify the timing, because it does not rely on introspection of the software. Certain issues, such as TFT input lag, discussed in [Understanding your monitor], will come out only using external photodiode measurement.
+1. Using the timestamps reported by OpenSesame. This is the easiest way and is generally accurate when the backend uses a blocking flip.
+2. Using a photodiode that responds to the onsets of the white displays and logs the timestamps of these onsets to an external computer. This is the best way to verify the timing, because it does not rely on introspection of the software. Certain issues, such as TFT input lag, discussed above, will come out only using external photodiode measurement.
 
 %--
 code:
@@ -177,42 +184,6 @@ table:
 
 As you can see, the [xpyriment] and [psycho] backends consistently show a 100 ms interval. This is good and just as we would expect. However, the [legacy] backend shows a 90 ms interval. This discrepancy is due to the fact that the [legacy] backend does not use a blocking flip (see [Understanding your monitor]), which leads to some unpredictability in display timing. Note also that there is close agreement between the timestamps as recorded by the external photodiode and the timestamps reported by OpenSesame. This agreement demonstrates that OpenSesame's timestamps are reliable, although, again, they are slightly less reliable for the [legacy] backend due to the lack of a blocking-flip.
 
-### Checking for clock drift in high-resolution timers (Windows only)
-
-Under Windows, there are two ways to obtain the system time. The Windows *Performance Query Counter* (QPC) API reportedly provides the highest accuracy. The CPU *Time Stamp Counter* (TSC), which relies on the number of clock ticks since the CPU started running, is somewhat less accurate. Of course, these two timers should be in sync with each other. A significant deviation between the QPC and TSC indicates a problem with your system's internal timer. Currently, the [psycho] and [xpyriment] backends makes use of the QPC. The [legacy] backends rely on the TSC.
-
-%LstDriftBenchmark determines a drift value that indicates how much the QPC and TSC diverge. This value should be very close to 1, meaning no divergence. Values higher than 1 indicate that the TSC runs faster than the QPC. You can run this script directly in a Python interpreter or by pasting it in an INLINE_SCRIPT item (in which case you may need to comment out the references to `matplotlib`, because this library is not included in all OpenSesame packages).
-
-%--
-code:
- id: LstDriftBenchmark
- syntax: python
- source: clock-drift-benchmark.py
- caption: A Python script to test drift between the TSC and high-resolution QPC timers.
---%
-
-I tested this script on two systems. On the first system, shown in %FigClockDrift1, there was a slight drift of about 1.2%. This drift was consistently present within this particularly session, but not across different sessions. On many other occasions the same system did not exhibit any drift at all. The reason why, on this system, a slight clock drift comes and goes is unclear.
-
-%--
-figure:
- id: FigClockDrift1
- source: clock-drift-system1.png
- caption: Windows XP, HP Compaq dc7900, Intel Core 2 Quad Q9400 @ 2.66Ghz, 3GB
---%
-
-The second system, shown in %FigClockDrift2, showed no drift at all, at least not during this particular session.
-
-%--
-figure:
- id: FigClockDrift2
- source: clock-drift-system2.png
- caption: Windows 7, Acer Aspire V5-171, Intel Core I3-2365M @ 1.4Ghz, 6GB
---%
-
-This issue is described in more detail on the Psychophysics Toolbox website.
-
-- <http://docs.psychtoolbox.org/GetSecsTest>
-- <http://msdn.microsoft.com/en-us/library/ee417693%28VS.85%29.aspx>
 
 ## Expyriment benchmarks and test suite
 
