@@ -347,7 +347,7 @@ In the face equivalent of the task, we need images of six young and six old face
 
 You can download an example set of stimuli (in JPG format) here:
 
-- %static:attachments/iat2020/face-stimuli.zip%
+- %static:attachments/iat/face-stimuli.zip%
 
 In most web browsers you can right-click the link and choose 'Save Link As' or a similar option. After you have downloaded these files (to your Downloads folder, for example), you can unzip them.
 
