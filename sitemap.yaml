@@ -131,11 +131,12 @@ Items:
     __form_multiple_choice: manual/forms/readymade
     __form_text_display: manual/forms/readymade
     __form_text_input: manual/forms/readymade
-    __inline_javascript: manual/osweb/javascript
-    __inline_script: manual/python/about
+    __inline_html: manual/forms/html
+    __inline_javascript: manual/javascript/about
     
     _:
     
+    __inline_script: manual/python/about
     __joystick: manual/response/joystick
     __keyboard response: manual/response/keyboard
     __logger: manual/logging
@@ -145,10 +146,10 @@ Items:
     __psychopy_grating_stim: https://github.com/open-cogsci/opensesame-plugin-psychopy
     __pygaze_drift_correct: manual/eyetracking/pygaze
     __pygaze_init: manual/eyetracking/pygaze
-    __pygaze_log: manual/eyetracking/pygaze
     
     __:
     
+    __pygaze_log: manual/eyetracking/pygaze
     __pygaze_start_recording: manual/eyetracking/pygaze
     __pygaze_stop_recording: manual/eyetracking/pygaze
     __pygaze_wait: manual/eyetracking/pygaze
@@ -158,10 +159,10 @@ Items:
     __reset feedback: items/reset_feedback
     __sampler: manual/stimuli/sound
     __sequence: manual/structure/sequence
-    __sketchpad: manual/stimuli/visual
     
     ___:
     
+    __sketchpad: manual/stimuli/visual
     __srbox: manual/response/srbox
     __synth: manual/stimuli/sound
     __touch_response: items/touch_response

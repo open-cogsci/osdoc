@@ -197,8 +197,10 @@
           - /3.3/manual/forms/readymade
         - - __form_text_input
           - /3.3/manual/forms/readymade
+        - - __inline_html
+          - /3.3/manual/forms/html
         - - __inline_javascript
-          - /3.3/manual/osweb/javascript
+          - /3.3/manual/javascript/about
         - - __inline_script
           - /3.3/manual/python/about
         - - __joystick

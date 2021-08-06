@@ -86,7 +86,8 @@ https://osdoc.cogsci.nl/3.3/manual/forms/readymade
 https://osdoc.cogsci.nl/3.3/manual/forms/readymade
 https://osdoc.cogsci.nl/3.3/manual/forms/readymade
 https://osdoc.cogsci.nl/3.3/manual/forms/readymade
-https://osdoc.cogsci.nl/3.3/manual/osweb/javascript
+https://osdoc.cogsci.nl/3.3/manual/forms/html
+https://osdoc.cogsci.nl/3.3/manual/javascript/about
 https://osdoc.cogsci.nl/3.3/manual/python/about
 https://osdoc.cogsci.nl/3.3/manual/response/joystick
 https://osdoc.cogsci.nl/3.3/manual/response/keyboard
