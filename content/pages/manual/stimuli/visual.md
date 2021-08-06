@@ -61,4 +61,4 @@ for angle in range(360):
 
 You can use the `Canvas` object to present visual stimuli in Python:
 
-- %link:canvas%
+- %link:manual/python/canvas%

@@ -184,7 +184,7 @@ figure:
 
 Three variables are varied within blocks in our experiment: `condition`, `set_size`, and `target_present`. As described under Step 2, we need to define these variables in the *block_loop* so that they vary for each run of *trial_sequence*.
 
-The three variables make a total of 3 × 3 × 2 = 18 different combinations. We can type these into the table manually, but, because we have full-factorial design, we can also use the full-factorial-design wizard. To do this, first open *block_loop* and click on the 'Full-factorial design' button.
+The three variables make a total of 3 × 3 × 2 = 18 different combinations. We can type these into the table manually, but, because we have full-factorial design, we can also use the full-factorial-design wizard. To do this, first open *block_loop* and click on the 'Full-factorial design' button.
 
 In the table that appears, put the variable names on the first row, and the values on the rows below, as shown in %FigFullFactorial.
 
@@ -284,7 +284,7 @@ What happens here? We …
 
 A `Canvas` object is a single display; it is, in a sense, the Python counterpart of a SKETCHPAD. See also:
 
-- %link:canvas%	 
+- %link:manual/python/canvas%	 
 
 We now go one step down by defining `draw_canvas()` (above the rest of the script so far):
 
@@ -323,7 +323,7 @@ What happens here? We …
 
 There are several common functions, such as `Canvas()` and `xy_random()`, which are always available. See:
 
-- %link:common%
+- %link:manual/python/common%
 
 Experimental variables are stored as properties of the `var` object. That's why you write `var.set_size` and not directly `set_size`. See:
 

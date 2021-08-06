@@ -24,7 +24,7 @@ Related to the development of Rapuznel: The INLINE_SCRIPT item now uses a differ
 
 OpenSesame now natively supports the HSV, HSL, and CIElab color spaces.
 
-- %link:canvas%
+- %link:manual/python/canvas%
 
 
 ### New sound backend based on PsychoPy
@@ -90,7 +90,7 @@ The SKETCHPAD also allows you to name elements.
 
 For more information, see:
 
-- %link:canvas%
+- %link:manual/python/canvas%
 
 
 #### Improved support for HTML and non-Latin script
@@ -231,7 +231,7 @@ For more information, see:
 
 You can now use CSS3-compatible color specifications, as described here:
 
-- %link:canvas%
+- %link:manual/python/canvas%
 
 If you use color names (e.g. 'red', 'green', etc.), this may result in slightly different colors. For example, according to CSS3, 'green' is `#008000` instead (as was the case previously) of `#00FF00`.
 
@@ -253,7 +253,7 @@ set_subject_nr(2)
 
 For a list of common functions, see:
 
-- %link:common%
+- %link:manual/python/common%
 
 #### The `var` object: Easy getting and setting of experimental variables
 
@@ -311,7 +311,7 @@ There are similar factory functions (as these are called) for `keyboard`, `mouse
 
 For more information, see:
 
-- %link:common%
+- %link:manual/python/common%
 
 #### The synth is now a sampler
 

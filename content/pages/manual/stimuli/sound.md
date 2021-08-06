@@ -43,4 +43,4 @@ number of options:
 You can use the SAMPLER object and the SYNTH function to present visual stimuli in Python:
 
 - %link:sampler%
-- %link:common%
+- %link:manual/python/common%

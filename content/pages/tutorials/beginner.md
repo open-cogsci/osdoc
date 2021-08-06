@@ -413,7 +413,7 @@ __Background box__
 
 __Tip__ -- For more fine-grained control over colors, you can also use the hexadecimal RGB notation (e.g., `#FF000` for red) or use the color-picker tool. See also:
 
-- %link:canvas%
+- %link:manual/python/canvas%
 
 </div>
 
