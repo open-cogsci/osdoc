@@ -87,7 +87,7 @@ conda create -n opensesame-py3 python=3.7  # For Python 2: python=2.7.15
 conda activate opensesame-py3
 ```
 
-Next, add the relevant channels (`cogsci`) and (`conda-forge`) and install all relevant packages:
+Next, add the relevant channels (`cogsci`) and (`conda-forge`) and install all relevant packages. Make sure that `pyqode.core` and `pyqode.python` are >= 3.2 from the `cogsci` channel, and not the older versions from the `conda-forge` channel.
 
 ```bash
 conda config --add channels cogsci --add channels conda-forge
