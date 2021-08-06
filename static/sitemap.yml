@@ -79,6 +79,8 @@
           - /3.3/manual/forms/widgets
         - - Validating form input
           - /3.3/manual/forms/validation
+        - - Custom HTML forms
+          - /3.3/manual/forms/html
         - - Workflow
           - /3.3/manual/osweb/workflow
         - - Development
@@ -87,8 +89,6 @@
                 - /3.3/manual/osweb/osweb
               - - JATOS
                 - /3.3/manual/osweb/jatos
-              - - JavaScript
-                - /3.3/manual/osweb/javascript
               - - Data
                 - /3.3/manual/osweb/data
               - - Questionnaires
@@ -127,6 +127,14 @@
                 - /3.3/manual/python/mouse
               - - Sampler
                 - /3.3/manual/python/sampler
+        - - JavaScript in OpenSesame
+          - /3.3/manual/javascript/about
+        - - JavaScript functions
+          - !!python/object/apply:collections.OrderedDict
+            - - - Common functions
+                - /3.3/manual/javascript/common
+              - - Canvas
+                - /3.3/manual/javascript/canvas
         - - PyGaze
           - /3.3/manual/eyetracking/pygaze
         - - Models

@@ -3,6 +3,8 @@
 import os
 import re
 import sys
+import sys
+sys.path.insert(0, '/home/sebastiaan/git/academicmarkdown')
 import yaml
 from collections import OrderedDict
 from pelican import signals
@@ -32,7 +34,8 @@ ITEM_TYPES = [
     'MEDIA_PLAYE<R_MPY', 'MOUSETRAP', 'SOUND_START_RECORDING',
     'SOUND_STOP_RECORDING', 'TOUCH_RESPONSE', 'PYGAZE_INIT', 'PYGAZE_LOG',
     'PYGAZE_WAIT', 'PYGAZE_DRIFT_CORRECT', 'PYGAZE_STOP_RECORDING',
-    'PYGAZE_START_RECORDING', 'THIS_STYLE', 'NOTEPAD', 'INLINE_JAVASCRIPT'
+    'PYGAZE_START_RECORDING', 'THIS_STYLE', 'NOTEPAD', 'INLINE_JAVASCRIPT',
+    'INLINE_HTML'
 ]
 
 root = os.path.dirname(os.path.dirname(__file__)) + '/content'
