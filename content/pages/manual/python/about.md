@@ -2,11 +2,13 @@ title: About Python
 
 In OpenSesame you can create complex experiments using only the graphical user interface (GUI). But you will sometimes encounter situations in which the functionality provided by the GUI is insufficient. In these cases you can add Python code to your experiment.
 
+Python is not supported in online experiments with OSWeb. If you need to run your experiment online, you have to use [JavaScript](%url:manual/javascript/about%) instead.
+
 [TOC]
 
 ## Learning Python
 
-You can find a set of basic tutorials and exercises to get you started with Python at <https://python.cogsci.nl/>.
+You can find a set of basic tutorials and exercises to get you started with Python at <https://pythontutorials.eu/>.
 
 
 ## Python in the OpenSesame GUI
