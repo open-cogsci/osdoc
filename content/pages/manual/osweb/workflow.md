@@ -24,7 +24,7 @@ video:
 First, you develop your experiment as you ordinarily would, using the OpenSesame desktop application. Not all functionality is available in online experiments. Notably, you cannot use Python INLINE_SCRIPT items, but have to use JavaScript INLINE_JAVASCRIPT items instead. During the development of your experiment, it is therefore important to check that your experiment is compatible with OSWeb.
 
 - %link:manual/osweb/osweb%
-- %link:javascript%
+- %link:manual/javascript/about%
 - %link:manual/osweb/questionnaires%
 
 

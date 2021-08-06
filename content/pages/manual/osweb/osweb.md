@@ -43,7 +43,11 @@ figure:
 
 First, make sure that your experiment only uses supported functionality, as described below. Next, run the experiment in the traditional (non-browser) way in OpenSesame. This will give you the most informative error messages that you can use for debugging.
 
-If your experiment uses only supported functionality and runs normally in OpenSesame, then you can use the browser console to see JavaScript error messages. These are much less informative than OpenSesame's error messages, but they can still be helpful. Each browser has a different way to access the console. In Chrome, you can access the console by right-clicking somewhere, selecting Inspect (`Ctrl+Shift+I`), and then switching to the Console tab (see %FigChromeConsole). In Firefox, you can access the console by clicking on the Menu icon in the top right and then selecting Web Developer → Web Console (`Ctrl+Shift+K`).
+If your experiment uses only supported functionality and runs normally in OpenSesame, then you can use the browser console to see JavaScript error messages. These are much less informative than OpenSesame's error messages, but they can still be helpful. Each browser has a different way to access the console. In Chrome, you can access the console by right-clicking somewhere, selecting Inspect (`Ctrl+Shift+I`), and then switching to the Console tab (see %FigChromeConsole). In Firefox, you can access the console by clicking on the Menu icon in the top right and then selecting Web Developer → Web Console (`Ctrl+Shift+I`).
+
+If you're using INLINE_JAVASCRIPT items in your experiment, the browser console is also a powerful way to debug your scripts, as described here:
+
+- %link:manual/javascript/about%
 
 
 %--
@@ -57,11 +61,18 @@ figure:
 
 ## Supported functionality
 
-You can check whether your experiment is compatible with OSWeb using the Compatibility Check (%FigOSWebExtension). This compatibility check is fairly superficial. A more complete overview of supported functionality:
+You can check whether your experiment is compatible with OSWeb using the Compatibility Check (%FigOSWebExtension). This compatibility check is fairly superficial. A more complete overview of supported functionality can be found below.
+
+__Important__: A lot of supported functionality was added in OSWeb 1.4. Therefore, check your version of OSWeb against the version notes in the list below.
 
 - `advanced_delay`
 - `feedback`
     - See `sketchpad`
+- `form_consent` (unsupported <= v1.3)
+- `form_text_display` (unsupported <= v1.3)
+- `form_text_input` (unsupported <= v1.3)
+- `form_multiple_choice` (unsupported <= v1.3)
+- `inline_html` (unsupported <= v1.3)
 - `inline_javascript`
 - `keyboard`
     - Unsupported: key release
@@ -70,8 +81,8 @@ You can check whether your experiment is compatible with OSWeb using the Compati
 - `loop`
     - Unsupported: resume after break
     - Unsupported: Disabling of evaluate on first cycle
-    - Unsupported: file source
     - Unsupported: constraints (pseudorandomization)
+    - Unsupported <= v1.3: file source
 - `mouse`
     - Unsupported: mouse release
     - Unsupported: linked sketchpad
@@ -83,7 +94,7 @@ You can check whether your experiment is compatible with OSWeb using the Compati
 - `sequence`
 - `sketchpad`
     - Unsupported: named elements
-    - Unsupported: image rotation 
+    - Unsupported <= v1.3: image rotation
     - Unsupported: HSV, HSL, and CIELab color spaces
 - `touch_response`
 
