@@ -48,15 +48,6 @@ Manual:
 
     _:
 
-    Forms:
-    Forms in OpenSesame: manual/forms/about
-    Ready-made forms: manual/forms/readymade
-    Form variables: manual/forms/variables
-    Custom forms: manual/forms/custom
-    Widgets and keywords: manual/forms/widgets
-    Validating form input: manual/forms/validation
-    Custom HTML forms: manual/forms/html
-    
     Online experiments:
     Workflow: manual/osweb/workflow
     Development:
@@ -67,7 +58,16 @@ Manual:
     Recruiting participants:
         Prolific: manual/osweb/prolific
         Mechanical Turk: manual/osweb/mturk
-        Sona Systems: manual/osweb/sonasystems    
+        Sona Systems: manual/osweb/sonasystems
+    
+    Forms:
+    Forms in OpenSesame: manual/forms/about
+    Ready-made forms: manual/forms/readymade
+    Form variables: manual/forms/variables
+    Custom forms: manual/forms/custom
+    Widgets and keywords: manual/forms/widgets
+    Validating form input: manual/forms/validation
+    Custom HTML forms: manual/forms/html
 
     ___:
 

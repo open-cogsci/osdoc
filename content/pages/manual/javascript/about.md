@@ -42,36 +42,10 @@ __Important__: If you declare a variable or function in one script, it won't aut
 You can print to the console with the `console.log()` command:
 
 ```js
-console.log('This will appear in the console!`)
+console.log('This will appear in the console!')
 ```
 
 When running on the desktop, the output will appear in the OpenSesame console (or: debug window). When running in a browser, the output will appear in the browser console.
-
-
-## Debugging
-
-Most modern browsers, especially Chrome and Firefox, have a powerful built-in debugger. You can activate the debugger by adding a line that simply states `debugger` to your script (%FigDebuggerInlineJavaScript).
-
-%--
-figure:
- id: FigDebuggerInlineJavaScript
- source: debugger-inline-javascript.png
- caption: Activating the debugger from an INLINE_JAVASCRIPT item.
---%
-
-
-Then start the experiment and show the debugger (or: Dev tools in Chrome, or: Web Developer Tools in Firefox) as soon as the OSWeb welcome screen appears. The debugger will then pause the experiment when it encounters the `debugger` statement. At this point, you can use the Console to interact with the JavaScript workspace, or you can inspect variables using the Scope tool (%FigDebuggerChrome).
-
-%--
-figure:
- id: FigDebuggerChrome
- source: debugger-chrome.png
- caption: Inspecting the variable scope in Chrome.
---%
-
-See also:
-
-- %link:manual/osweb/osweb%
 
 
 ## Things to know
@@ -84,7 +58,7 @@ The formal name of JavaScript is ECMASCRIPT, which exists in different versions.
 - `for … of …` loops that iterate over values (in addition to the old `for … in …` loops that iterate over indices)
 - [Destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment), which allows you to assign the elements of an array to multiple variables at once.
 
-ECMA 6 is supported by most modern browser, which means that you can use these features when running an experiment in a browser.
+ECMA 6 is supported by most modern browsers, which means that you can use these features when running an experiment in a browser.
 
 ```js
 // ECMA 6 (browser only)
@@ -172,12 +146,16 @@ vars.my_variable = 'my_value'
 New in OSWeb v1.4
 {:.page-notification}
 
-You access 'files' from the file pool through the `pool` object. Each file corresponds to an `object`, which is not straightforward to use. However, if you want to interact with the file pool directly, you can retrieve an object from the pool as shown below, and then use the browser debugger to inspect it. This is mostly for advanced users.
+You access 'files' from the file pool through the `pool` object. The most obvious use of this is to parse CSV files, for example with experimental conditions, from the file pool using the `csv-parse` library (described in more detail below).
 
 ```js
-// Get an image from the file pool
-var obj = pool['img.png']
-console.log(obj)
+const conditions = csvParse(
+    pool['attentional-capture-jobs.csv'].data,
+    {columns: true}
+)
+for (const trial of conditions) {
+    console.log(trial.distractor)
+}
 ```
 
 
@@ -197,3 +175,121 @@ myCanvas.show()
 A full overview of the `Canvas` class can be found here:
 
 - %link:manual/javascript/canvas%
+
+
+## Available JavaScript libraries
+
+New in OSWeb v1.4
+{:.page-notification}
+
+Several convenient JavaScript libraries are bundled with OSWeb. These libraries are only available when running in a browser (and *not* on the desktop).
+
+
+### random-ext: advanced randomization
+
+
+The `random-ext` library is available as `random`. This library provides many convenient, higher-level functions for randomization.
+__Example:__
+
+Draw eight circle with a random color and a location that is randomly sampled from a five by five grid:
+
+```js
+// ECMA 6 (browser only)
+let positions = xy_grid(5, 50)
+positions = random.subArray(positions, 8)
+const cnv = Canvas()
+cnv.fixdot()
+for (const [x, y] of positions) {
+    cnv.circle({x: x, y: y, r: 20, fill: true, color: random.color()})
+}
+cnv.show()
+```
+
+For an overview, see:
+
+- <https://www.npmjs.com/package/random-ext>
+
+
+### pythonic: Python-like functions for iterating over arrays
+
+The `pythonic` library provides Python-like functions for iterating over arrays. Available functions are: `range()`, `enumerate()`, `items()`, `zip()`, and `zipLongest()`.
+
+__Example:__
+
+Draw a five by five grid of incrementing numbers:
+
+```js
+// ECMA 6 (browser only)
+let positions = xy_grid(5, 50)
+const cnv = Canvas()
+for (const [i, [x, y]] of enumerate(positions)) {
+    cnv.text({text: i, x: x, y: y})
+}
+cnv.show()
+```
+
+For an overview, see:
+
+- <https://www.npmjs.com/package/pythonic>
+
+
+### color-convert: color conversion utilities
+
+The `color-convert` library is available as `convert`. It provides convenient high level functions for converting from one color specification to another.
+
+__Example:__
+
+```js
+console.log('The RGB values for blue are ' + convert.keyword.rgb('blue'))
+```
+
+For an overview, see:
+
+- <https://www.npmjs.com/package/color-convert>
+
+
+### csv-parse: parse CSV-formatted text into an Object
+
+The synchronous `parse()` function from the `csv-parse` library is available. This allows you to parse CSV-formatted text, for example from a CSV file in the file pool, into an Object.
+
+__Example:__
+
+```js
+const conditions = csvParse(
+    pool['attentional-capture-jobs.csv'].data,
+    {columns: true}
+)
+for (const trial of conditions) {
+    console.log(trial.distractor)
+}
+```
+
+For an overview, see:
+
+- <https://csv.js.org/parse/api/sync/#sync-api>
+
+
+## Debugging
+
+Most modern browsers, especially Chrome and Firefox, have a powerful built-in debugger. You can activate the debugger by adding a line that simply states `debugger` to your script (%FigDebuggerInlineJavaScript).
+
+%--
+figure:
+ id: FigDebuggerInlineJavaScript
+ source: debugger-inline-javascript.png
+ caption: Activating the debugger from an INLINE_JAVASCRIPT item.
+--%
+
+
+Then start the experiment and show the debugger (or: Dev tools in Chrome, or: Web Developer Tools in Firefox) as soon as the OSWeb welcome screen appears. The debugger will then pause the experiment when it encounters the `debugger` statement. At this point, you can use the Console to interact with the JavaScript workspace, or you can inspect variables using the Scope tool (%FigDebuggerChrome).
+
+%--
+figure:
+ id: FigDebuggerChrome
+ source: debugger-chrome.png
+ caption: Inspecting the variable scope in Chrome.
+--%
+
+See also:
+
+- %link:manual/osweb/osweb%

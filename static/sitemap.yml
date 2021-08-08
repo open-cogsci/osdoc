@@ -67,20 +67,6 @@
                 - /3.3/manual/stimuli/sound
               - - Video
                 - /3.3/manual/stimuli/video
-        - - Forms in OpenSesame
-          - /3.3/manual/forms/about
-        - - Ready-made forms
-          - /3.3/manual/forms/readymade
-        - - Form variables
-          - /3.3/manual/forms/variables
-        - - Custom forms
-          - /3.3/manual/forms/custom
-        - - Widgets and keywords
-          - /3.3/manual/forms/widgets
-        - - Validating form input
-          - /3.3/manual/forms/validation
-        - - Custom HTML forms
-          - /3.3/manual/forms/html
         - - Workflow
           - /3.3/manual/osweb/workflow
         - - Development
@@ -101,6 +87,20 @@
                 - /3.3/manual/osweb/mturk
               - - Sona Systems
                 - /3.3/manual/osweb/sonasystems
+        - - Forms in OpenSesame
+          - /3.3/manual/forms/about
+        - - Ready-made forms
+          - /3.3/manual/forms/readymade
+        - - Form variables
+          - /3.3/manual/forms/variables
+        - - Custom forms
+          - /3.3/manual/forms/custom
+        - - Widgets and keywords
+          - /3.3/manual/forms/widgets
+        - - Validating form input
+          - /3.3/manual/forms/validation
+        - - Custom HTML forms
+          - /3.3/manual/forms/html
         - - Python in OpenSesame
           - /3.3/manual/python/about
         - - Python functions
