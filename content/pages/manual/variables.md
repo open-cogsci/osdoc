@@ -141,6 +141,20 @@ For more information, see:
 
 - %link:manual/python/var%
 
+## Using variables in JavaScript
+
+In an INLINE_JAVASCRIPT, you can access experimental variables through the `vars` object. For example, if you have defined `example_variable` in a LOOP, then the following will print the value `example_variable` to the debug window:
+
+```js
+console.log(vars.example_variable)
+```
+
+You can set the experimental variable `example_variable` to the value 'some value' as follows:
+
+```js
+vars.example_variable = 'some value'
+```
+
 ## Using conditional ("if") statements
 
 Conditional statements, or 'if statements', provide a way to indicate that something should happen only under specific circumstances, such when some variable has a specific value.
