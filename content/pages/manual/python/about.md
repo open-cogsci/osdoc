@@ -99,13 +99,13 @@ figure:
 
 You can embed Python statements in text strings using the `[=...]` syntax. For example, you could the following text to a SKETCHPAD:
 
-```bash
+```text
 The resolution is [=var.width] x [=var.height] px
 ```
 
 Depending on your experiment's resolution, this might evaluate to:
 
-```bash
+```text
 The resolution is 1024 x 768 px
 ```
 
