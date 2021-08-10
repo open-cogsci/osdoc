@@ -1,16 +1,20 @@
-title: Intermediate tutorial: visual search
+title: Intermediate tutorial (Python) visual search
 
 [TOC]
 
 ## About OpenSesame
 
-OpenSesame is a user-friendly program for the development of behavioral experiments for psychology, neuroscience, and experimental economy. For beginners, OpenSesame has a comprehensive graphical, point-and-click interface. For advanced users, OpenSesame supports Python scripting.
+OpenSesame is a user-friendly program for the development of behavioral experiments for psychology, neuroscience, and experimental economy. For beginners, OpenSesame has a comprehensive graphical, point-and-click interface.  For advanced users, OpenSesame supports Python (desktop only) and JavaScript (desktop and browser).
 
 OpenSesame is freely available under the [General Public License v3][gpl].
 
 ## About this tutorial
 
 This tutorial shows how to create a basic visual-search experiment using OpenSesame [(Mathôt, Schreij, & Theeuwes, 2012)][references]. We will use both the graphical interface and Python scripting. Some experience with OpenSesame and Python is recommended. This tutorial takes approximately one hour.
+
+A JavaScript-based version of this tutorial is also available. If you want to run your experiments online (with OSWeb), then the JavaScript tutorial is what you need:
+
+- %link:tutorials/intermediate-javascript%
 
 ## Resources
 
@@ -141,14 +145,16 @@ __Add instructional text__
 
 Click on *instructions* to open it, and add a good instructional text, such as:
 
-	INSTRUCTIONS
+```text
+INSTRUCTIONS
 
-	Search for the [target_color] [target_shape]
+Search for the [target_color] [target_shape]
 
-	Press the right-arrow key if you find it
-	Press the left-arrow key if you don't
+Press the right-arrow key if you find it
+Press the left-arrow key if you don't
 
-	Press any key to begin
+Press any key to begin
+```
 
 The square brackets around '[target_color]' and '[target_shape]' indicate that these are not literal text, but refer to the variables that we have defined in *experimental_loop*. When the experiment runs, the values of these variables will appear here, and the participant will see (for example), 'Search for the yellow circle'.
 
