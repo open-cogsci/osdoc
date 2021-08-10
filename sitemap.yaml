@@ -2,7 +2,8 @@ Download: download
 Tutorials:
     Main:
     Beginner tutorial: tutorials/beginner
-    Intermediate tutorial: tutorials/intermediate
+    Intermediate tutorial (Python): tutorials/intermediate
+    Intermediate tutorial (JavaScript): tutorials/intermediate-javascript
     # Advanced tutorial: tutorials/advanced
     _:
     Other:
