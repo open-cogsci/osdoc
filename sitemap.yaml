@@ -1,11 +1,9 @@
 Download: download
 Tutorials:
     Main:
-    "&#x1F476; Beginner": tutorials/beginner
-    "&#x1F469; Intermediate (Python)": tutorials/intermediate
-    "&#x1F468; Intermediate (JavaScript)": tutorials/intermediate-javascript
-    "&#x1F4BB; Pythontutorials.eu": https://pythontutorials.eu/
-    # Advanced tutorial: tutorials/advanced
+    Beginner: tutorials/beginner
+    Intermediate (Python): tutorials/intermediate
+    Intermediate (JavaScript): tutorials/intermediate-javascript
     _:
     Other:
     Implicit association task (IAT): /tutorials/iat
