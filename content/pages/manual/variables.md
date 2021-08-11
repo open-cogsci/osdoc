@@ -8,6 +8,7 @@ Experimental variables in OpenSesame are those variables that:
 
 - You can refer to in the user interface with the '[variable_name]' syntax.
 - You can refer to in a Python INLINE_SCRIPT with the `var.variable_name` syntax.
+- You can refer to in a JavaScript INLINE_JAVASCRIPT with the `vars.variable_name` syntax.
 - Contain things like:
 	- The variables that you have defined in a LOOP item.
 	- The responses that you have collected.
@@ -113,15 +114,15 @@ Sometimes, the user interface doesn't let you type in arbitrary text. For exampl
 
 For example, you can change the position of a fixation dot from the center:
 
-~~~
+```text
 draw fixdot x=0 y=0
-~~~
+```
 
 … to a position defined by the variables `xpos` and `ypos`:
 
-~~~
+```text
 draw fixdot x=[xpos] y=[ypos]
-~~~
+```text
 
 ## Using variables in Python
 
