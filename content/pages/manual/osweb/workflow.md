@@ -1,23 +1,14 @@
 title: Running experiments online with OSWeb
 
 
-%--
-video:
- source: youtube
- id: OSWeb
- videoid: -DHAX_EyKlE
- width: 644
- height: 362
- caption: |
-  A series of video tutorials that shows the workflow for running experiments online.
---%
-
-
 [TOC]
 
 
 ## The workflow
 
+For an introduction to the workflow, see also:
+
+- Mathôt, S., & March, J. (2021). Conducting linguistic experiments online with OpenSesame and OSWeb. *PsyArXiv*. doi:10.31234/osf.io/wnryc
 
 ### Developing your experiment
 
@@ -46,8 +37,7 @@ One you have uploaded your experiment to JATOS, you can start collecting data. Y
 - %link:sonasystems%
 
 
-## Tutorial
+## Tutorials
 
-Learn how to implement the Wisconsin Card Sorting Test with OSWeb:
-
+- %link:tutorials/intermediate-javascript%
 - %link:wcst%

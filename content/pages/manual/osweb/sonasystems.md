@@ -59,18 +59,17 @@ figure:
  caption: The completion URL in the Sona Systems study information.
 --%
 
-The completion URL has three arguments in it:
+The completion URL (client side) has three arguments in it:
 
 - `experiment_id` which identifies the study and is the same for all participants
 - `credit_token` which (apparently) changes when you change the study information, but is otherwise the same for all participants
 - `survey_code` which corresponds to the Sona Participant ID, and is therefore different for each participant
 
-Currently, you cannot use the end-redirect URL in JATOS for this, because it does not allow you to specify the Sona Participant ID (survey code). Instead, you need to add a small `inline_javascript` to the end of the experimen that calls `jatos.endStudyAndRedirect()` with the appropriate URL. (Make sure to strip the `XXXX` from the end of the completion URL, because this is merely a placeholder that should be replaced by the actual Sona Participant ID!)
+Copy the completion URL, and replace the `XXX` by `[SONA_ID]`. Go to Study Properties on JATOS, and insert the resulting URL into the End Redirect URL field.
 
-```javascript
-if (window.jatos) {
-    // Replace this by your own completion URL
-    const end_redirect_url = 'https://your-institute.sona-systems.com/webstudy_credit.aspx?experiment_id=123&credit_token=12345678123456781234567812345678&survey_code='
-    jatos.endStudyAndRedirect(end_redirect_url + vars.sona_participant_id)
-} 
-```
+%--
+figure:
+ id: FigEndRedirectURL
+ source: end-redirect-url.png
+ caption: The end-redirect URL in the JATOS study properties.
+--%
