@@ -119,6 +119,7 @@ The keyboard shortcuts listed below are default values. Many of them can be chan
 The following keyboard shortcuts are available everywhere:
 
 - Quick switcher: `Ctrl+Space`
+- Command palette: `Ctrl+Shift+P`
 - New experiment: `Ctrl+N`
 - Open experiment: `Ctrl+O`
 - Save experiment: `Ctrl+S`
@@ -128,6 +129,7 @@ The following keyboard shortcuts are available everywhere:
 - Run experiment fullscreen: `Ctrl+R`
 - Run experiment in window: `Ctrl+W`
 - Quick-run experiment: `Ctrl+Shift+W`
+- Test experiment in browser: `Alt+Ctrl+W`
 - Show/ hide overview area: `Ctrl+\`
 - Show/ hide debug window: `Ctrl+D`
 - Show/ hide file pool: `Ctrl+P`
@@ -146,7 +148,7 @@ The following keyboard shortcuts are available in editor components, such as the
 - Find text: `Ctrl+F`
 - Replace text: `Ctrl+H`
 - Hide find/ replace dialog: `Escape`
-- Duplicate line: `Ctrl+D`
+- Duplicate line: `Ctrl+Shift+D`
 - Undo: `Ctrl+Z`
 - Redo: `Ctrl+Shift+Z`
 - Copy: `Ctrl+C`
