@@ -1,7 +1,27 @@
 title: Download
 
+<script>
+function startDownload(url) {
+	document.getElementById('click-here').href = url
+	window.location.href = url
+	document.getElementById('download-started').style.display = 'block'
+	document.getElementById('download-started').scrollIntoView()
+}
+</script>
 
-%-- include: "include/recommended-download.md" --%
+<div class="info-box" id="download-started" markdown="1" style="display:none;">
+
+<h3>Your download should start shortly!</h3>
+
+<a role="button" class="btn btn-success btn-align-left" href="https://www.buymeacoffee.com/cogsci">
+<span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+Buy us a coffee!
+</a>
+
+Coffee keeps us awake so that we can develop free software and answer your questions on the support forum!
+
+Click <a id="click-here">here</a> if your download doesn't start.
+</div>
 
 
 ## Overview
@@ -23,31 +43,31 @@ The latest $status$ version is $version$ *$codename$*, released on $release-date
 
 The standard download is based on Python 3.7 for 64 bit systems. The installer and `.zip` packages are identical, except for the installation.
 
-<a role="button" class="btn btn-success btn-align-left" href="$url-windows-exe-py3$">
+<a role="button" class="btn btn-success btn-align-left" onclick="startDownload('$url-windows-exe-py3$')">
 	<b>Standard</b> Windows installer (.exe)
 </a>
 
-<a role="button" class="btn btn-default btn-align-left" href="$url-windows-zip-py3$">
+<a role="button" class="btn btn-default btn-align-left" onclick="startDownload('$url-windows-zip-py3$')">
 	<b>Standard</b> Windows no installation required (.zip)
 </a>
 
 The Megapack is identical to the standard Python 3.7 download above, except that it comes with a large number of libraries for scientific computing pre-installed. The Megapack also includes advanced support for JavaScript (code completion, syntax checking, etc.).
 
-<a role="button" class="btn btn-default btn-align-left" href="$url-windows-exe-py3-megapack$">
+<a role="button" class="btn btn-default btn-align-left" onclick="startDownload('$url-windows-exe-py3-megapack$')">
 	<b>Megapack</b> Windows installer (.exe)
 </a>
 
-<a role="button" class="btn btn-default btn-align-left" href="$url-windows-zip-py3-megapack$">
+<a role="button" class="btn btn-default btn-align-left" onclick="startDownload('$url-windows-zip-py3-megapack$')">
 	<b>Megapack</b> Windows no installation required (.zip)
 </a>
 
 Some Python packages are not compatible with Python 3. If you want to use those, please download the Python 2.7 (64 bit) package below. Note: As of January 1, 2020, Python 2.7 is no longer maintained.
 
-<a role="button" class="btn btn-default btn-align-left" href="$url-windows-exe-py2$">
+<a role="button" class="btn btn-default btn-align-left" onclick="startDownload('$url-windows-exe-py2$')">
 	<b>Python 2</b> Windows installer (.exe)
 </a>
 
-<a role="button" class="btn btn-default btn-align-left" href="$url-windows-zip-py2$">
+<a role="button" class="btn btn-default btn-align-left" onclick="startDownload('$url-windows-zip-py2$')">
 	<b>Python 2</b> Windows no installation required (.zip)
 </a>
 
@@ -56,7 +76,7 @@ Some Python packages are not compatible with Python 3. If you want to use those,
 
 [This article](https://support.apple.com/en-in/guide/mac-help/mh40616/mac) on the Mac OS support site explains how to override the security settings of Mac OS that will by default prevent OpenSesame from launching.
 
-<a role="button" class="btn btn-default btn-align-left" href="$url-osx-dmg-py3$">
+<a role="button" class="btn btn-default btn-align-left" onclick="startDownload('$url-osx-dmg-py3$')">
 	<b>Python 3</b> Mac OS package (.dmg)
 </a>
 
