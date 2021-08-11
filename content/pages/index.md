@@ -19,13 +19,13 @@ OpenSesame is a program to create experiments for psychology, neuroscience, and 
 
 ## Features
 
-- __A user-friendly interface__ — flexible yet easy-to-use
-- Includes __[Rapunzel](https://rapunzel.cogsci.nl/)__, a standalone code editor for numerical computing
+- __A user-friendly interface__ — a modern, professional, and easy-to-use graphical [interface](%link:manual/interface%)
+- __Online experiments__ — run your experiment in a browser with [OSWeb](%link:manual/osweb/workflow%)
 - __Python__ — add the power of [Python](%link:manual/python/about%) to your experiment
+- __JavaScript__ — add the power of [JavaScript](%link:manual/python/about%) to your experiment
 - __Use your devices__ — use your [eye tracker](%link:pygaze%), [button box](%link:buttonbox%), [EEG equipment](%link:parallel%), and more.
 - __Free__ — released under the GPL3
-- __Crossplatform__ — Windows, Mac OS, Linux, and Android (runtime only)
-- Run your experiments __[online](%link:manual/osweb/workflow%)__
+- __Crossplatform__ — Windows, Mac OS, and Linux
 
 ## Citation
 
