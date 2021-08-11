@@ -3,14 +3,12 @@
     - /3.3/download
   - - Tutorials
     - !!python/object/apply:collections.OrderedDict
-      - - - '&#x1F476; Beginner'
+      - - - Beginner
           - /3.3/tutorials/beginner
-        - - '&#x1F469; Intermediate (Python)'
+        - - Intermediate (Python)
           - /3.3/tutorials/intermediate
-        - - '&#x1F468; Intermediate (JavaScript)'
+        - - Intermediate (JavaScript)
           - /3.3/tutorials/intermediate-javascript
-        - - '&#x1F4BB; Pythontutorials.eu'
-          - https://pythontutorials.eu/
         - - Implicit association task (IAT)
           - /3.3//tutorials/iat
         - - Cats, dogs, and capybaras
