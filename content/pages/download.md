@@ -41,7 +41,7 @@ The latest $status$ version is $version$ *$codename$*, released on $release-date
 
 ### Windows
 
-The standard download is based on Python 3.7 for 64 bit systems. The installer and `.zip` packages are identical, except for the installation.
+The standard download is based on Python 3.7 for 64 bit systems. The installer and `.zip` packages are identical, except for the installation. Most people download the installer package (green button).
 
 <a role="button" class="btn btn-success btn-align-left" onclick="startDownload('$url-windows-exe-py3$')">
 	<b>Standard</b> Windows installer (.exe)
@@ -76,8 +76,16 @@ Some Python packages are not compatible with Python 3. If you want to use those,
 
 [This article](https://support.apple.com/en-in/guide/mac-help/mh40616/mac) on the Mac OS support site explains how to override the security settings of Mac OS that will by default prevent OpenSesame from launching.
 
-<a role="button" class="btn btn-default btn-align-left" onclick="startDownload('$url-osx-dmg-py3$')">
-	<b>Python 3</b> Mac OS package (.dmg)
+The Intel x64 package is for the traditional MacBooks with Intel processors.
+
+<a role="button" class="btn btn-default btn-align-left" onclick="startDownload('$url-osx-dmg-x64-py3$')">
+	<b>Python 3 for Intel x64</b> Mac OS package (.dmg)
+</a>
+
+The ARM package is for the newer MacBooks with ARM (M1) processors.
+
+<a role="button" class="btn btn-default btn-align-left" onclick="startDownload('$url-osx-dmg-arm-py3$')">
+	<b>Python 3 for ARM</b> Mac OS package (.dmg)
 </a>
 
 

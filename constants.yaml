@@ -1,15 +1,16 @@
-version: 3.3.9
+version: 3.3.10
 branch: 3.3
-notes: 339
+notes: 3310
 status: stable
 codename: Lentiform Loewenfeld
-release-date: April 10, 2021
-url-windows-exe-py2: https://github.com/open-cogsci/OpenSesame/releases/download/release%2F3.3.9/opensesame_3.3.9-py27-win64-2.exe
-url-windows-zip-py2: https://github.com/open-cogsci/OpenSesame/releases/download/release%2F3.3.9/opensesame_3.3.9-py27-win64-2.zip
-url-windows-exe-py3: https://github.com/open-cogsci/OpenSesame/releases/download/release%2F3.3.9/opensesame_3.3.9-py37-win64-2.exe
-url-windows-zip-py3: https://github.com/open-cogsci/OpenSesame/releases/download/release%2F3.3.9/opensesame_3.3.9-py37-win64-2.zip
-url-windows-exe-py3-megapack: https://github.com/open-cogsci/OpenSesame/releases/download/release%2F3.3.9/opensesame_3.3.9-py37-megapack-win64-2.exe
-url-windows-zip-py3-megapack: https://github.com/open-cogsci/OpenSesame/releases/download/release%2F3.3.9/opensesame_3.3.9-py37-megapack-win64-2.zip
-url-osx-dmg-py3: https://github.com/open-cogsci/OpenSesame/releases/download/release%2F3.3.9/opensesame_3.3.9-py37-macos-1.dmg
+release-date: September 6, 2021
+url-windows-exe-py2: https://github.com/open-cogsci/OpenSesame/releases/download/release%2F3.3.10/opensesame_3.3.10-py27-win64-1.exe
+url-windows-zip-py2: https://github.com/open-cogsci/OpenSesame/releases/download/release%2F3.3.10/opensesame_3.3.10-py27-win64-1.zip
+url-windows-exe-py3: https://github.com/open-cogsci/OpenSesame/releases/download/release%2F3.3.10/opensesame_3.3.10-py37-win64-1.exe
+url-windows-zip-py3: https://github.com/open-cogsci/OpenSesame/releases/download/release%2F3.3.10/opensesame_3.3.10-py37-win64-1.zip
+url-windows-exe-py3-megapack: https://github.com/open-cogsci/OpenSesame/releases/download/release%2F3.3.10/opensesame_3.3.10-py37-megapack-win64-1.exe
+url-windows-zip-py3-megapack: https://github.com/open-cogsci/OpenSesame/releases/download/release%2F3.3.10/opensesame_3.3.10-py37-megapack-win64-1.zip
+url-osx-dmg-x64-py3: https://github.com/open-cogsci/OpenSesame/releases/download/release%2F3.3.10/opensesame_3.3.10-py37-macos-arm-1.dmg
+url-osx-dmg-arm-py3: https://github.com/open-cogsci/OpenSesame/releases/download/release%2F3.3.10/opensesame_3.3.10-py37-macos-x64-1.dmg
 url-source: https://github.com/open-cogsci/OpenSesame
 url-old: https://github.com/open-cogsci/OpenSesame/releases
