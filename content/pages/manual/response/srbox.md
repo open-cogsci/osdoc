@@ -21,11 +21,15 @@ figure:
 
 By default, the plugin tries to autodetect your SR Box. If this works, you don't have to change it. If your experiment freezes, OpenSesame has chosen the wrong serial port and you must enter the device name manually. Under Windows, the device is probably called something like
 
-	COM4
+```text
+COM4
+```
 
 Under Linux the device is probably called something like
 
-	/dev/tty0
+```text
+/dev/tty0
+```
 
 ## Requirements
 
@@ -34,5 +38,7 @@ An SR Box or compatible button box. Not all button boxes are compatible, see:
 - %link:buttonbox%
 
 ## Using the SR Box from Python inline code
+
+The `srbox` object does *not* exist when the plug-in is in dummy mode.
 
 %-- include: include/api/srbox.md --%
