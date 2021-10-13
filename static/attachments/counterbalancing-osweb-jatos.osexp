@@ -1,0 +1,184 @@
+---
+API: 2.1
+OpenSesame: 3.3.9b1
+Platform: posix
+---
+set width 1024
+set uniform_coordinates yes
+set title Counterbalancing
+set subject_parity even
+set subject_nr 0
+set start counterbalancing_sequence
+set sound_sample_size -16
+set sound_freq 48000
+set sound_channels 2
+set sound_buf_size 1024
+set sampler_backend psycho
+set round_decimals 2
+set mouse_backend psycho
+set keyboard_backend psycho
+set height 768
+set fullscreen no
+set form_clicks no
+set foreground white
+set font_underline no
+set font_size 18
+set font_italic no
+set font_family mono
+set font_bold no
+set experiment_path "/home/sebastiaan/Downloads"
+set disable_garbage_collection yes
+set description "The main experiment item"
+set coordinates uniform
+set compensation 0
+set color_backend psycho
+set clock_backend psycho
+set canvas_backend psycho
+set background black
+
+define repeat_cycle continue
+	set description "Optionally repeat a cycle from a loop"
+	set condition "[waiting] = 1"
+
+define sequence counterbalancing_sequence
+	set flush_keyboard yes
+	set description "Runs a number of items in sequence"
+	run init_condition always
+	run waiting_to_start always
+	run experiment_already_finished "[experiment_finished] = 1"
+	run main_loop "[experiment_finished] = 0"
+	run finish_condition "[experiment_finished] = 0"
+	run waiting_to_finish "[experiment_finished] = 0"
+	run display_finished "[experiment_finished] = 0"
+
+define sketchpad display_finished
+	set duration keypress
+	set description "Displays stimuli"
+	draw textline center=1 color=white font_bold=no font_family=mono font_italic=no font_size=18 html=yes show_if=always text="The experiment is finished!" x=0 y=0 z_index=0
+
+define sketchpad display_wait
+	set start_response_interval no
+	set reset_variables no
+	set duration 500
+	set description "Displays stimuli"
+	draw textline center=1 color=white font_bold=no font_family=serif font_italic=no font_size=32 html=yes show_if=always text="Please wait …" x=0 y=0 z_index=0
+
+define sequence experiment
+	set flush_keyboard yes
+	set description "Runs a number of items in sequence"
+	run show_condition always
+
+define feedback experiment_already_finished
+	set reset_variables yes
+	set duration keypress
+	set description "Provides feedback to the participant"
+	draw textline center=1 color=white font_bold=no font_family=mono font_italic=no font_size=18 html=yes show_if=always text="You cannot participate in this experiment anymore, sorry!" x=0 y=0 z_index=0
+
+define inline_javascript finish_condition
+	set description "Executes JavaScript code (ECMA 5.1)"
+	___run__
+	function finishCondition() {
+	    console.log('adding finished conditions')
+	    vars.waiting = 1
+	    jatos.batchSession.add('/finished/-', vars.condition)
+	        .then(() => {
+	            console.log('done')
+	            vars.waiting = 0
+	        })
+	        .catch(() => {
+	            console.log('failed to finish condition')
+	            setTimeout(() => finishCondition(), 1)
+	        })
+	}
+	
+	if (window.jatos) {
+	    finishCondition()
+	}
+	__end__
+	set _prepare ""
+
+define inline_javascript init_condition
+	set description "Executes JavaScript code (ECMA 5.1)"
+	set _run ""
+	___prepare__
+	function getCondition() {
+	    console.log('getting pending conditions')
+	    vars.waiting = 1
+	    let condition = jatos.batchSession.find('/pending/0')
+	    if (typeof condition === "undefined") {
+	        vars.experiment_finished = 1
+	        vars.waiting = 0
+	    } else {
+	        vars.experiment_finished = 0
+	        jatos.batchSession.move('/pending/0', '/started/0')
+	            .then(() => {
+	                console.log('starting with condition ' + condition)
+	                vars.condition = condition
+	                vars.waiting = 0
+	            })
+	            .catch(() => {
+	                console.log('failed to start condition')
+	                setTimeout(() => getCondition(), 1)
+	                getCondition()
+	            })
+	    }
+	}
+	
+	if (window.jatos) {
+	    getCondition()
+	} else {
+	    vars.waiting = 0
+	    vars.condition = 'a'
+	}
+	__end__
+
+define loop main_loop
+	set source_file ""
+	set source table
+	set repeat 1
+	set order random
+	set description "Repeatedly runs another item"
+	set cycles 1
+	set continuous no
+	set break_if_on_first yes
+	set break_if never
+	setcycle 0 empty_column ""
+	run experiment
+
+define sketchpad show_condition
+	set duration keypress
+	set description "Displays stimuli"
+	draw textline center=1 color=white font_bold=no font_family=mono font_italic=no font_size=18 html=yes show_if=always text="Condition: [condition]" x=0 y=0 z_index=0
+
+define sequence waiting_sequence
+	set flush_keyboard yes
+	set description "Runs a number of items in sequence"
+	run display_wait always
+	run continue always
+
+define loop waiting_to_finish
+	set source_file ""
+	set source table
+	set repeat 1
+	set order random
+	set description "Repeatedly runs another item"
+	set cycles 1
+	set continuous no
+	set break_if_on_first yes
+	set break_if never
+	setcycle 0 empty_column ""
+	run waiting_sequence
+
+define loop waiting_to_start
+	set source_file ""
+	set source table
+	set repeat 1
+	set order random
+	set description "Repeatedly runs another item"
+	set cycles 1
+	set continuous no
+	set break_if_on_first yes
+	set break_if never
+	setcycle 0 empty_column ""
+	run waiting_sequence
+

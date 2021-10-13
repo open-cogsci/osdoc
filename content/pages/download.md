@@ -82,7 +82,8 @@ The Intel x64 package is for the traditional MacBooks with Intel processors.
 	<b>Python 3 for Intel x64</b> Mac OS package (.dmg)
 </a>
 
-The ARM package is for the newer MacBooks with ARM (M1) processors.
+
+The ARM package is for the newer MacBooks with ARM (M1) processors. __Warning:__ The ARM package currently has a bug that results in some tabs, such as the Getting Started tab, showing a white screen.
 
 <a role="button" class="btn btn-default btn-align-left" onclick="startDownload('$url-osx-dmg-arm-py3$')">
 	<b>Python 3 for ARM</b> Mac OS package (.dmg)
