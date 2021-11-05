@@ -158,6 +158,12 @@ for (const trial of conditions) {
 }
 ```
 
+You can also play sound files from the file pool directly. Assuming that there is a file called `bark.ogg` in the file pool, you can play it like so:
+
+```js
+pool['bark.ogg'].data.play()
+```
+
 
 ### The `Canvas` class: Presenting visual stimuli
 

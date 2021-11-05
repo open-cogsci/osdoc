@@ -71,6 +71,7 @@ __Important__: A lot of supported functionality was added in OSWeb 1.4. Therefor
 - `form_consent` (unsupported <= v1.3)
 - `form_text_display` (unsupported <= v1.3)
 - `form_text_input` (unsupported <= v1.3)
+    - Unsupported: fullscreen mode
 - `form_multiple_choice` (unsupported <= v1.3)
 - `inline_html` (unsupported <= v1.3)
 - `inline_javascript`
