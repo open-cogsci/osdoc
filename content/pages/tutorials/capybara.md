@@ -17,7 +17,7 @@ We make two simple predictions:
 
 ### Step 1: Download and start OpenSesame
 
-OpenSesame is available for Windows, Linux, Mac OS, and Android (runtime only). This tutorial is written for OpenSesame 3.2.X, and you can use either the version based on Python 2.7 (default) or Python 3.5. You can download OpenSesame from here:
+OpenSesame is available for Windows, Linux, Mac OS, and Android (runtime only). This tutorial is written for OpenSesame 3.3.X. You can download OpenSesame from here:
 
 - %link:download%
 
@@ -230,11 +230,15 @@ Open *animal_picture*. Select the image tool by clicking on the button with the 
 
 We can use essentially the same trick as we did for *animal_sound*, although things work slightly differently for images. First, right-click on the capybara and select 'Edit script'. This allows you to edit the following line of OpenSesame script that corresponds to the capybara picture:
 
-	draw image center=1 file="capybara1.png" scale=1 show_if=always x=0 y=0 z_index=0
+```python
+draw image center=1 file="capybara1.png" scale=1 show_if=always x=0 y=0 z_index=0
+```
 
 Now change the name of image file from 'capybara.png' to '[animal][pic_nr].png':
 
-	draw image center=1 file="[animal][pic_nr].png" scale=1 show_if=always x=0 y=0 z_index=0
+```python
+draw image center=1 file="[animal][pic_nr].png" scale=1 show_if=always x=0 y=0 z_index=0
+```
 
 Click on 'Ok' to apply the change. The capybara is now gone, replaced by a placeholder image, and OpenSesame tells you that one object is not shown, because it is defined using variables. Don't worry, it will be shown during the experiment!
 
