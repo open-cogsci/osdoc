@@ -365,6 +365,13 @@ The extra assignments below are for you to solve on your own. The solutions to t
 - You need the modulo (`%`) operator to do this, as well as the variable `count_trial_sequence`
 
 
+### Difficult: Adapt the experiment for running online
+
+- This requires an INLINE_JAVASCRIPT
+- Currently, OSWeb does not support linking a MOUSE_RESPONSE to a SKETCHPAD. This means that you need to use the determine `cursor_x` variable to determine where the participant clicked, and whether the response was correct.
+- OSWeb does not support INLINE_SCRIPT items
+
+
 ## References
 
 Mathôt, S., Schreij, D., & Theeuwes, J. (2012). OpenSesame: An open-source, graphical experiment builder for the social sciences. *Behavior Research Methods*, *44*(2), 314–324. doi:10.3758/s13428-011-0168-7
