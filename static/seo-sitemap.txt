@@ -59,6 +59,7 @@ https://osdoc.cogsci.nl/3.3/manual/javascript/common
 https://osdoc.cogsci.nl/3.3/manual/javascript/canvas
 https://osdoc.cogsci.nl/3.3/manual/eyetracking/pygaze
 https://osdoc.cogsci.nl/3.3/manual/eyetracking/eyelink
+https://osdoc.cogsci.nl/3.3/manual/eyetracking/eyelogic
 https://osdoc.cogsci.nl/3.3/manual/eyetracking/eyetribe
 https://osdoc.cogsci.nl/3.3/manual/eyetracking/smi
 https://osdoc.cogsci.nl/3.3/manual/eyetracking/tobii

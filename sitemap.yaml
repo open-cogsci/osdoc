@@ -94,6 +94,7 @@ Manual:
     PyGaze: manual/eyetracking/pygaze
     Models:
         EyeLink: manual/eyetracking/eyelink
+        EyeLogic: manual/eyetracking/eyelogic
         EyeTribe: manual/eyetracking/eyetribe
         SMI: manual/eyetracking/smi
         Tobii: manual/eyetracking/tobii

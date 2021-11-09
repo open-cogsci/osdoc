@@ -18,6 +18,7 @@ Dalmaijer, E., Mathôt, S., & Van der Stigchel, S. (2014). PyGaze: An open-sourc
 PyGaze supports the following eye trackers:
 
 - [__EyeLink__](http://www.sr-research.com/) — For information on how to run OpenSesame with PyLink support, see [this page](%link:eyelink%).
+- [__EyeLogic__](http://eyelogic.de/) — Works out of the box.
 - [__EyeTribe__](http://theeyetribe.com/) — Works out of the box.
 
 For the following eye trackers, there is experimental support:

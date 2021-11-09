@@ -143,6 +143,8 @@
           - !!python/object/apply:collections.OrderedDict
             - - - EyeLink
                 - /3.3/manual/eyetracking/eyelink
+              - - EyeLogic
+                - /3.3/manual/eyetracking/eyelogic
               - - EyeTribe
                 - /3.3/manual/eyetracking/eyetribe
               - - SMI
