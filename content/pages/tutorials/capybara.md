@@ -1,5 +1,15 @@
 title: Cats, dogs, and capybaras
 
+
+%--
+figure:
+ id: FigCapybara
+ source: capybara.png
+ caption: |
+  A capybara.
+--%
+
+
 [TOC]
 
 
