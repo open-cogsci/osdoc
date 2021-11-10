@@ -8,7 +8,7 @@ The eye tracking devices from EyeLogic meet the highest standards in accuracy an
 
 - <https://www.eyelogic.de/>
 
-The EyeLogic OpenSesame-plugin is included in the official release of OpenSesame, versions from 3.3.10.
+The EyeLogic PyGaze-plugin is included in the official release of OpenSesame, versions from 3.3.10.
 
 ## Installation
 
