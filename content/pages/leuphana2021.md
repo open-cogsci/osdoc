@@ -53,8 +53,11 @@ Slides: %static:attachments/leuphana2021/leuphana-day-2.pdf%
 
 ### Day 3 (Nov 24): Eye-tracking experiments
 
+Slides: %static:attachments/leuphana2021/leuphana-day-3.pdf%
+
 - 13:00 – 14:30: __Building a self-paced reading task with eye-tracking.__ We will start this session with a general introduction to eye tracking. This is followed by a hands-on tutorial in which you will implement a self-paced reading task with basic eye tracking. We will focus on using the EyeLink, which is a specific eye tracker. However, concepts and techniques are largely also applicable to other eye trackers.
 Break
-- 15:00 – 17:00: __Gaze-contingent eye-tracking.__ You will learn how to implement experiments that react to the eye movements of the participant, that is, gaze-contingent experiments.
+- Break
+- 15:00 – 16:00: __Gaze-contingent eye-tracking.__ You will learn how to implement experiments that react to the eye movements of the participant, that is, gaze-contingent experiments.
 - 16:00 – 17:00: __Free time to develop your own experiment.__ During this session, you will continue to work on your own experiment.
 - 17:00 – 17:30: __Q&A.__ We will close the workshop with time for questions and remarks.
