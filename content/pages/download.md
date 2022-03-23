@@ -80,22 +80,28 @@ Some Python packages are not compatible with Python 3. If you want to use those,
 	<b>Python 3 for Intel x64</b> Mac OS package (.dmg)
 </a>
 
+To install OpenSesame with [Homebrew](https://brew.sh/), run the following command in a terminal:
+
+```bash
+brew install --cask opensesame
+```
+
 
 ### Ubuntu
 
 OpenSesame 3.3 is available through the [Cogscinl PPA](https://launchpad.net/~smathot/+archive/cogscinl). Packages are developed and tested on Ubuntu 20.04 Focal Fossa. To add this repository to your software sources and install OpenSesame, run the following commands in a terminal:
 
-~~~ .bash
+```bash
 sudo add-apt-repository ppa:smathot/cogscinl
 sudo apt update
 sudo apt install python3-opensesame
-~~~
+```
 
 Some commonly used packages are not available through the PPA. You can install them through `pip`:
 
-~~~ .bash
+```bash
 pip install psychopy expyriment pyspellchecker fastnumbers js2py
-~~~
+```
 
 
 ### Anaconda (cross-platform)
