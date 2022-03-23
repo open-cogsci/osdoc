@@ -76,6 +76,8 @@ Some Python packages are not compatible with Python 3. If you want to use those,
 
 [This article](https://support.apple.com/en-in/guide/mac-help/mh40616/mac) on the Mac OS support site explains how to override the security settings of Mac OS that will by default prevent OpenSesame from launching.
 
+The package below is built for Intel processors but also runs on ARM (M1) processors.
+
 <a role="button" class="btn btn-default btn-align-left" onclick="startDownload('$url-osx-dmg-x64-py3$')">
 	<b>Python 3 for Intel x64</b> Mac OS package (.dmg)
 </a>
