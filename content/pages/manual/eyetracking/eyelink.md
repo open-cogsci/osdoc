@@ -54,7 +54,7 @@ __Important:__ The Python version of PyLink needs to match the Python version of
 
 The EyeLink display software can be installed directly from a repository. This also installs PyLink and various convenient tools, such ast the `edf2asc` converter.
 
-```
+```bash
 sudo add-apt-repository "deb http://download.sr-support.com/software SRResearch main"
 sudo apt-get update
 sudo apt-get install eyelink-display-software

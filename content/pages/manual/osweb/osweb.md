@@ -141,3 +141,17 @@ pip install opensesame-extension-osweb --upgrade
 See also:
 
 - %link:environment%
+
+
+## Including external JavaScript packages
+
+New in OSWeb v1.4.6.1
+{:.page-notification}
+
+You can include external JavaScript packages by entering URLs to these packages (one URL per line) in the input field labeled 'External JavaScript libraries'. These packages are then included with `<script>` tags in the head of the HTML.
+
+For example, you can include [WebGazer](%url:webgazer%) for in-browser by entering the following link:
+
+```
+https://webgazer.cs.brown.edu/webgazer.js
+```

@@ -60,6 +60,12 @@ Manual:
         Mechanical Turk: manual/osweb/mturk
         Sona Systems: manual/osweb/sonasystems
     
+    JavaScript:
+    JavaScript in OpenSesame: manual/javascript/about
+    JavaScript functions:
+        Common functions: manual/javascript/common
+        Canvas: manual/javascript/canvas
+    
     Forms:
     Forms in OpenSesame: manual/forms/about
     Ready-made forms: manual/forms/readymade
@@ -85,18 +91,16 @@ Manual:
         Log: manual/python/log
         Mouse: manual/python/mouse
         Sampler: manual/python/sampler
-    JavaScript:
-    JavaScript in OpenSesame: manual/javascript/about
-    JavaScript functions:
-        Common functions: manual/javascript/common
-        Canvas: manual/javascript/canvas
     Eye tracking:
     PyGaze: manual/eyetracking/pygaze
     Models:
         EyeLink: manual/eyetracking/eyelink
+        EyeLogic: manual/eyetracking/eyelogic
         EyeTribe: manual/eyetracking/eyetribe
+        GazePoint / OpenGaze: manual/eyetracking/gazepoint
         SMI: manual/eyetracking/smi
         Tobii: manual/eyetracking/tobii
+        WebGazer.js (online): manual/eyetracking/webgazer
         
     ____:
 

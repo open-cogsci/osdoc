@@ -89,6 +89,14 @@
                 - /3.3/manual/osweb/mturk
               - - Sona Systems
                 - /3.3/manual/osweb/sonasystems
+        - - JavaScript in OpenSesame
+          - /3.3/manual/javascript/about
+        - - JavaScript functions
+          - !!python/object/apply:collections.OrderedDict
+            - - - Common functions
+                - /3.3/manual/javascript/common
+              - - Canvas
+                - /3.3/manual/javascript/canvas
         - - Forms in OpenSesame
           - /3.3/manual/forms/about
         - - Ready-made forms
@@ -129,26 +137,24 @@
                 - /3.3/manual/python/mouse
               - - Sampler
                 - /3.3/manual/python/sampler
-        - - JavaScript in OpenSesame
-          - /3.3/manual/javascript/about
-        - - JavaScript functions
-          - !!python/object/apply:collections.OrderedDict
-            - - - Common functions
-                - /3.3/manual/javascript/common
-              - - Canvas
-                - /3.3/manual/javascript/canvas
         - - PyGaze
           - /3.3/manual/eyetracking/pygaze
         - - Models
           - !!python/object/apply:collections.OrderedDict
             - - - EyeLink
                 - /3.3/manual/eyetracking/eyelink
+              - - EyeLogic
+                - /3.3/manual/eyetracking/eyelogic
               - - EyeTribe
                 - /3.3/manual/eyetracking/eyetribe
+              - - GazePoint / OpenGaze
+                - /3.3/manual/eyetracking/gazepoint
               - - SMI
                 - /3.3/manual/eyetracking/smi
               - - Tobii
                 - /3.3/manual/eyetracking/tobii
+              - - WebGazer.js (online)
+                - /3.3/manual/eyetracking/webgazer
         - - The prepare-run strategy
           - /3.3/manual/prepare-run
         - - Counterbalancing

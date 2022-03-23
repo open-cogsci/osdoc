@@ -17,13 +17,19 @@ Dalmaijer, E., Mathôt, S., & Van der Stigchel, S. (2014). PyGaze: An open-sourc
 
 PyGaze supports the following eye trackers:
 
-- [__EyeLink__](http://www.sr-research.com/) — For information on how to run OpenSesame with PyLink support, see [this page](%link:eyelink%).
-- [__EyeTribe__](http://theeyetribe.com/) — Works out of the box.
+- [EyeLink](%link:eyelink%)
+- [EyeTribe](%link:eyetribe%)
 
 For the following eye trackers, there is experimental support:
 
-- [__SMI__](http://www.smivision.com/) — SMI support is experimental.
-- [__Tobii__](http://www.tobii.com/en/eye-tracking-research/global/) — Tobii support is experimental.
+- [EyeLogic](%link:eyelogic%)
+- [GazePoint / OpenGaze](%link:gazepoint%)
+- [SMI](%link:smi%)
+- [Tobii](%link:tobii%)
+
+You can also perform basic eye tracking in online experiments with WebGazer.js:
+
+- [WebGazer.js](%link:webgazer%)
 
 PyGaze also includes two dummy eye trackers for testing purposes:
 

@@ -35,6 +35,9 @@ https://osdoc.cogsci.nl/3.3/manual/osweb/questionnaires
 https://osdoc.cogsci.nl/3.3/manual/osweb/prolific
 https://osdoc.cogsci.nl/3.3/manual/osweb/mturk
 https://osdoc.cogsci.nl/3.3/manual/osweb/sonasystems
+https://osdoc.cogsci.nl/3.3/manual/javascript/about
+https://osdoc.cogsci.nl/3.3/manual/javascript/common
+https://osdoc.cogsci.nl/3.3/manual/javascript/canvas
 https://osdoc.cogsci.nl/3.3/manual/forms/about
 https://osdoc.cogsci.nl/3.3/manual/forms/readymade
 https://osdoc.cogsci.nl/3.3/manual/forms/variables
@@ -54,14 +57,14 @@ https://osdoc.cogsci.nl/3.3/manual/python/keyboard
 https://osdoc.cogsci.nl/3.3/manual/python/log
 https://osdoc.cogsci.nl/3.3/manual/python/mouse
 https://osdoc.cogsci.nl/3.3/manual/python/sampler
-https://osdoc.cogsci.nl/3.3/manual/javascript/about
-https://osdoc.cogsci.nl/3.3/manual/javascript/common
-https://osdoc.cogsci.nl/3.3/manual/javascript/canvas
 https://osdoc.cogsci.nl/3.3/manual/eyetracking/pygaze
 https://osdoc.cogsci.nl/3.3/manual/eyetracking/eyelink
+https://osdoc.cogsci.nl/3.3/manual/eyetracking/eyelogic
 https://osdoc.cogsci.nl/3.3/manual/eyetracking/eyetribe
+https://osdoc.cogsci.nl/3.3/manual/eyetracking/gazepoint
 https://osdoc.cogsci.nl/3.3/manual/eyetracking/smi
 https://osdoc.cogsci.nl/3.3/manual/eyetracking/tobii
+https://osdoc.cogsci.nl/3.3/manual/eyetracking/webgazer
 https://osdoc.cogsci.nl/3.3/manual/prepare-run
 https://osdoc.cogsci.nl/3.3/manual/counterbalancing
 https://osdoc.cogsci.nl/3.3/manual/osf
