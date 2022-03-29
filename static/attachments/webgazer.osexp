@@ -1,0 +1,165 @@
+---
+API: 2.1
+OpenSesame: 3.3.12a1
+Platform: posix
+---
+set width 1024
+set uniform_coordinates yes
+set title "WebGazer.js demo"
+set subject_parity even
+set subject_nr 0
+set start experiment
+set sound_sample_size -16
+set sound_freq 48000
+set sound_channels 2
+set sound_buf_size 1024
+set sampler_backend psycho
+set round_decimals 2
+set mouse_backend psycho
+set keyboard_backend psycho
+set height 768
+set fullscreen no
+set form_clicks no
+set foreground white
+set font_underline no
+set font_size 18
+set font_italic no
+set font_family mono
+set font_bold no
+set experiment_path "/home/sebastiaan/Downloads"
+set disable_garbage_collection yes
+set description "The main experiment item"
+set coordinates uniform
+set compensation 0
+set color_backend psycho
+set clock_backend psycho
+set canvas_backend psycho
+set background black
+
+define sketchpad ask_calibration
+	set duration keypress
+	set description "Displays stimuli"
+	draw textline center=1 color=white font_bold=no font_family=mono font_italic=no font_size=18 html=yes show_if=always text="Do you want to clear calibration data and recalibrate?<br /><br />(Y / N)" x=0 y=0 z_index=0
+
+define loop calibrate_loop
+	set source table
+	set repeat 3
+	set order random
+	set description "Repeatedly runs another item"
+	set cycles 9
+	set continuous no
+	set break_if_on_first yes
+	set break_if never
+	setcycle 0 calx -1
+	setcycle 0 caly -1
+	setcycle 1 calx 1
+	setcycle 1 caly -1
+	setcycle 2 calx 0
+	setcycle 2 caly -1
+	setcycle 3 calx -1
+	setcycle 3 caly 1
+	setcycle 4 calx 1
+	setcycle 4 caly 1
+	setcycle 5 calx 0
+	setcycle 5 caly 1
+	setcycle 6 calx -1
+	setcycle 6 caly 0
+	setcycle 7 calx 1
+	setcycle 7 caly 0
+	setcycle 8 calx 0
+	setcycle 8 caly 0
+	run calibrate_sequence
+
+define sequence calibrate_sequence
+	set flush_keyboard yes
+	set description "Runs a number of items in sequence"
+	run setcalpoints always
+	run dots always
+	run mouse_response_1 always
+
+define inline_javascript clear_calibration
+	set description "Executes JavaScript code"
+	___run__
+	webgazer.clearData()
+	__end__
+	set _prepare ""
+
+define sketchpad dots
+	set start_response_interval no
+	set reset_variables no
+	set duration 0
+	set description "Displays stimuli"
+	draw fixdot color=white show_if=always style="large-open" x="[calx]" y="[caly]" z_index=0
+	draw textline center=1 color=white font_bold=no font_family=mono font_italic=no font_size=18 html=yes show_if=always text="Follow the dot with your eyes<br />and click on it" x=0.0 y=-96.0 z_index=0
+
+define sequence experiment
+	set flush_keyboard yes
+	set description "Runs a number of items in sequence"
+	run ask_calibration always
+	run clear_calibration "[response] = y"
+	run init_webgazer always
+	run calibrate_loop "[response] = y"
+	run test_sketchpad always
+
+define inline_javascript init_webgazer
+	set description "Executes JavaScript code"
+	___run__
+	function monitorGaze(data, elapsedTime) {
+	    if (data === null)  // no valid data
+	        return
+	    // The x and y coordinates as recorded by WebGazer are relative
+	    // to the current viewport. Here convert the coordinates to the
+	    // units used by OpenSesame, i.e. with 0, 0 as the display 
+	    // center and taking into account possibily scaling of the
+	    // window.
+	    const rect = runner._renderer.view.getBoundingClientRect()
+	    const scale = Math.min(
+	      (rect.right - rect.left) / vars.width,
+	      (rect.bottom - rect.top) / vars.height
+	    )
+	    const centerX = scale * vars.width / 2
+	    const centerY = scale * vars.height / 2
+	    // Set gazeX and gazeY as experimental variables. These can be
+	    // used in the experiment as regular response variables. They
+	    // are updated continuously.
+	    vars.gazeX = (data.x - centerX - rect.left) / scale
+	    vars.gazeY = (data.y - centerY - rect.top) / scale        
+	}
+	
+	// Start webgazer!
+	vars.gazeX = 0
+	vars.gazeY = 0
+	webgazer.setGazeListener(monitorGaze)
+	webgazer.begin()
+	__end__
+	set _prepare ""
+
+define mouse_response mouse_response_1
+	set timeout infinite
+	set show_cursor yes
+	set linked_sketchpad ""
+	set flush yes
+	set event_type mouseclick
+	set duration mouseclick
+	set description "Collects mouse responses"
+
+define inline_javascript setcalpoints
+	set description "Executes JavaScript code"
+	set _run ""
+	___prepare__
+	vars.calx = vars.width / 2.5 * vars.calx
+	vars.caly = vars.height/ 2.5 * vars.caly
+	__end__
+
+define sketchpad test_sketchpad
+	set duration keypress
+	set description "Displays stimuli"
+	draw line color=white penwidth=4 show_if=always x1=-416 x2=448 y1=0 y2=0 z_index=0
+	draw line color=white penwidth=4 show_if=always x1=0 x2=0 y1=-320 y2=320 z_index=0
+	draw rect color=white fill=0 h=640 penwidth=4 show_if=always w=864 x=-416.0 y=-320.0 z_index=0
+	draw textline center=1 color=white font_bold=no font_family=mono font_italic=no font_size=18 html=yes show_if=always text="Calibration finished. Press any key to quit!" x=0 y=-352 z_index=0
+	draw fixdot color=white show_if=always style=default x=-224 y=-160 z_index=0
+	draw fixdot color=white show_if=always style=default x=256 y=-160 z_index=0
+	draw fixdot color=white show_if=always style=default x=256 y=160 z_index=0
+	draw fixdot color=white show_if=always style=default x=-224 y=160 z_index=0
+
