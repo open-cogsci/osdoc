@@ -14,7 +14,7 @@ title: Binus University 2022 workshop
     - Day 3: Thursday, April 21st, 2022, 08:00-12:00 CEST, 13:00 - 17:00 Jakarta
     - Day 4: Wednesday, April 27th, 2022, 08:00-12:00 CEST, 13:00 - 17:00 Jakarta
 - Presenter: Sebastiaan Mathôt
-- [Spreadsheet with participant overview](https://docs.google.com/spreadsheets/d/1VNlgf1ezGJn-jdPx8IphahGCCA3Limdat9sMfRct9qw/edit?usp=sharing)
+- [Spreadsheet with participant overview](https://binusianorg.sharepoint.com/sites/WyLab/_layouts/15/guestaccess.aspx?guestaccesstoken=wvSvcpJoabwkk99w%2BuZhpJX58EgC6O4ug%2FgWYbN4H%2BI%3D&docid=2_15f25248401074bb79187e333dcb63088&rev=1&e=iPtB1U)
 
 
 ## Description
@@ -26,7 +26,7 @@ In this four-day, hands-on, online workshop, you will learn how to implement psy
 - How to include eye tracking in laboratory-based experiments. (And a sneak-peak at eye-tracking in online experiments!)
 - How to analyze data collected from online and laboratory-based experiments.
 
-Finally, using the skills that you will learn during the workshop, you will design and implement an experiment for your own research, of course with assistance from us! For this purpose, please already think about what kind of experiment you'd like to create, and indicate this in the [participant spreadsheet](https://docs.google.com/spreadsheets/d/1VNlgf1ezGJn-jdPx8IphahGCCA3Limdat9sMfRct9qw/edit?usp=sharing). If you're unsure what kind of experiment you'd like to create, take a look a the list of suggested experiments below.
+Finally, using the skills that you will learn during the workshop, you will design and implement an experiment for your own research, of course with assistance from us! For this purpose, please already think about what kind of experiment you'd like to create, and indicate this in the [participant spreadsheet](https://binusianorg.sharepoint.com/sites/WyLab/_layouts/15/guestaccess.aspx?guestaccesstoken=wvSvcpJoabwkk99w%2BuZhpJX58EgC6O4ug%2FgWYbN4H%2BI%3D&docid=2_15f25248401074bb79187e333dcb63088&rev=1&e=iPtB1U). If you're unsure what kind of experiment you'd like to create, take a look a the list of suggested experiments below.
 
 Please install OpenSesame on your computer before the workshop. You can download OpenSesame for free from <https://osdoc.cogsci.nl/>. No prior experience with OpenSesame, Python, or JavaScript is required.
 
@@ -37,6 +37,8 @@ I’m looking forward to meeting you all!
 
 ## Day 1: Introduction (April 1)
 
+Slides: %static:attachments/binus2022/binus-day-1.pdf%
+
 - 13:00 – 14:30: __Introduction to OpenSesame__. A general introduction to the software OpenSesame, followed by a hands-on tutorial in which you will learn the basic concepts of the software.
 - Break
 - 15:00 – 16:00: __Introduction to OpenSesame (continued)__.
@@ -45,6 +47,8 @@ I’m looking forward to meeting you all!
 
 ## Day 2: Online experiments (April 20)
 
+Slides: %static:attachments/binus2022/binus-day-2.pdf%
+
 - 13:00 – 14:30: __Building an online task (cats, dogs, and capybaras)__. We will start this session with a general introduction to online experiments. This is followed by a hands-on tutorial in which you will implement a task that is suitable for running online. The tutorial includes various assignments of different difficulty levels.
 - Break
 - 15:00 – 16:00: __Using <https://mindprobe.eu> (a JATOS server) to run experiments online__. In this session, you will learn how to use mindprobe.eu, which is a free server that runs the open-source software JATOS, to actually run an experiment online. A mindprobe.eu account will be provided to each participant.
@@ -52,6 +56,8 @@ I’m looking forward to meeting you all!
 
 
 ## Day 3 : Eye-tracking experiments (April 21)
+
+Slides: %static:attachments/binus2022/binus-day-3.pdf%
 
 - 13:00 – 14:30: __Building a self-paced reading task with eye-tracking__. We will start this session with a general introduction to eye tracking. This is followed by a hands-on tutorial in which you will implement a self-paced reading task with basic eye tracking. We will focus on using the EyeLink, which is a specific eye tracker. However, concepts and techniques are largely also applicable to other eye trackers. We will also briefly look at eye tracking in online experiment with WebGazer.js.
 - Break
