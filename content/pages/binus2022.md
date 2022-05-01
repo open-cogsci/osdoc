@@ -67,6 +67,8 @@ Slides: %static:attachments/binus2022/binus-day-3.pdf%
 
 ## Day 4: Data analysis (April 27)
 
+Slides: %static:attachments/binus2022/binus-day-4.pdf%
+
 - 13:00 – 14:30: __Getting data ready for analysis.__ We will start this session with a general explanation of how data is structured, both for experiments that are conducted online and for experiments that are conducted in a traditional laboratory set-up. Next, we will see how to transform this data into a format that lends itself to statistical analysis in the free statistical software JASP. Specifically, we will learn how data from multiple participants can be merged into a single .csv spreadsheet; we will also learn how data from an online experiment can be downloaded from JATOS and converted to a .csv spreadsheet; finally, we will learn how to create a so-called ‘pivot table’, which lends itself to analysis in JASP.
 - Break
 - 15:00 – 16:30: __Conducting a statistical analysis__. We will use the open-source software JASP to perform statistical tests.
