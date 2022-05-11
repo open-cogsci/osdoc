@@ -190,8 +190,8 @@ c.show()
 // ECMA 6 (browser only)
 let c = Canvas()
 c.fixdot()
-for (let [x, y] in xy_grid(4, 100)) {
-  c.rect({x: x-10, y: y-10, w: 20, y: 20})
+for (let [x, y] of xy_grid(4, 100)) {
+  c.rect({x: x-10, y: y-10, w: 20, h: 20})
 }
 c.show()
 ```
