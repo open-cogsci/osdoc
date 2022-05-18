@@ -68,12 +68,12 @@ __Important__: A lot of supported functionality was added in OSWeb 1.4. Therefor
 - `advanced_delay`
 - `feedback`
     - See `sketchpad`
-- `form_consent` (unsupported <= v1.3)
-- `form_text_display` (unsupported <= v1.3)
-- `form_text_input` (unsupported <= v1.3)
+- `form_consent` (supported >= v1.4)
+- `form_text_display` (supported >= 1.4)
+- `form_text_input` (supported >= 1.4)
     - Unsupported: fullscreen mode
-- `form_multiple_choice` (unsupported <= v1.3)
-- `inline_html` (unsupported <= v1.3)
+- `form_multiple_choice` (supported >= 1.4)
+- `inline_html` (supported >= 1.4)
 - `inline_javascript`
 - `keyboard`
     - Unsupported: key release
@@ -83,7 +83,7 @@ __Important__: A lot of supported functionality was added in OSWeb 1.4. Therefor
     - Unsupported: resume after break
     - Unsupported: Disabling of evaluate on first cycle
     - Unsupported: constraints (pseudorandomization)
-    - Unsupported <= v1.3: file source
+    - supported >= 1.4: file source
 - `mouse`
     - Unsupported: mouse release
     - Unsupported: linked sketchpad
@@ -92,10 +92,11 @@ __Important__: A lot of supported functionality was added in OSWeb 1.4. Therefor
 - `reset_feedback`
 - `sampler`
     - Unsupported: panning, pitch, stop after, and fade in
+    - Unsupported: sound playback currently not suppered on Safari on Mac OS or any browser on iOS
 - `sequence`
 - `sketchpad`
     - Unsupported: named elements
-    - Unsupported <= v1.3: image rotation
+    - supported >= 1.4: image rotation
     - Unsupported: HSV, HSL, and CIELab color spaces
 - `touch_response`
 
@@ -112,16 +113,28 @@ This error results from how the experiment is structured, and specifically the u
 
 ## Supported browsers
 
-The following browsers are supported:
+The following combinations of browser and operating systems have been tested. Older browser versions and operating systems may work, but have not undergone recent testing. Certain extensions, such as Ad blockers or Script blockers, may prevent OSWeb from running.
 
-- Edge >= 17
-- Firefox >= 52
-- Google Chrome >= 49
-- Internet Explorer >= 11
-- Opera >= 56
-- Safari >= 10
 
-Certain extensions, such as Ad blockers or Script blockers, may prevent OSWeb from running.
+### Fully supported
+
+- Chrome >= 101 (Windows 11, Mac OS Monterey, Ubuntu 22.04, Android 12.0)
+- Edge >= 101 (Windows 11, Mac OS Monterey)
+- Firefox >= 99 (Windows 11, Mac OS Monterey, Ubuntu 22.04, Android 12.0)
+- Opera >= 86 (Windows 11) 
+
+### Supported but no sound playback
+
+- Chromium >= 101 (iOS 15.2)
+- Firefox >= 99 (iOS 15.2)
+- Opera >= 86 (Mac OS Monterey) 
+- Safari >= 15 (iOS 15.2, Mac OS Monterey)
+
+### Unsupported
+
+- Internet Explorer >= 11 (Windows 10) 
+
+__Important note:__ Sound playback does not work on Safari on Mac OS and any browser on iOS. This is related to a security limitation.
 
 
 ## Upgrading OSWeb
