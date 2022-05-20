@@ -32,7 +32,15 @@ We're looking forward to meeting you all!
 
 ### Day 1 (May 19): Introduction
 
-Slides: *Will be made available here*
+First presentation:
+
+- %static:attachments/leiden2022/1_Intro_OpenSesame_slides.pdf%
+
+Second presentation:
+
+- %static:attachments/leiden2022/2_Cats_dogs_slides.pdf%
+
+Schedule:
 
 - 13:00 – 14:30: __Introduction to OpenSesame__. A general introduction to the software OpenSesame, followed by a hands-on tutorial in which you will learn the basic concepts of the software.
 - Break
@@ -42,7 +50,19 @@ Slides: *Will be made available here*
 
 ### Day 2 (May 20): Online experiments + data analysis
 
-Slides: *Will be made available here*
+Slides:
+
+- *Will be made available here*
+
+Experiment file (in case you didn't create your own during day 1):
+
+- %static:attachments/leiden2022/capybaras.osexp%
+
+Participant data files (experiment 2 from [this paper](https://doi.org/10.16910/jemr.5.2.4)):
+
+- %static:attachments/leiden2022/jemr2012exp2.zip%
+
+Schedule:
 
 - 13:00 – 14:00: __Building an online experiment.__ We will start this session with a general introduction to online experiments. This is followed by a hands-on tutorial in which we will modify the experiment that we created during Day 1 so that it is suitable for running online.
 - 14:00 – 15:00: __Using <https://mindprobe.eu> (a JATOS server) to run experiments online.__ In this session, you will learn how to use mindprobe.eu, which is a free server that runs the open-source software JATOS, to actually run an experiment online. A mindprobe.eu account will be provided to each participant.
