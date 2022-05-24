@@ -115,6 +115,7 @@ This error results from how the experiment is structured, and specifically the u
 
 The following combinations of browser and operating systems have been tested. Older browser versions and operating systems may work, but have not undergone recent testing. Certain extensions, such as Ad blockers or Script blockers, may prevent OSWeb from running.
 
+__Important note:__ Sound playback (except `.ogg` files) is supported on Safari on Mac OS and any browser on iOS as of 1.4.11.
 
 ### Fully supported
 
@@ -122,9 +123,6 @@ The following combinations of browser and operating systems have been tested. Ol
 - Edge >= 101 (Windows 11, Mac OS Monterey)
 - Firefox >= 99 (Windows 11, Mac OS Monterey, Ubuntu 22.04, Android 12.0)
 - Opera >= 86 (Windows 11) 
-
-### Supported but no sound playback
-
 - Chromium >= 101 (iOS 15.2)
 - Firefox >= 99 (iOS 15.2)
 - Opera >= 86 (Mac OS Monterey) 
@@ -134,7 +132,6 @@ The following combinations of browser and operating systems have been tested. Ol
 
 - Internet Explorer >= 11 (Windows 10) 
 
-__Important note:__ Sound playback does not work on Safari on Mac OS and any browser on iOS. This is related to a security limitation.
 
 
 ## Upgrading OSWeb
@@ -153,7 +150,7 @@ pip install opensesame-extension-osweb --upgrade
 
 See also:
 
-- %link:environment%
+- <https://rapunzel.cogsci.nl/manual/environment/>
 
 
 ## Including external JavaScript packages
