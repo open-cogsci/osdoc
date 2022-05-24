@@ -1,6 +1,6 @@
 title: Custom HTML forms
 
-Custom HTML forms are only supported in OSWeb 1.4 when running in a browser. Significant improvements were introduced in OSWeb 1.4.8.
+Custom HTML forms are only supported in when running in a browser. Make sure to use the latest version of OSWeb, because this functionality improves rapidly.
 {:.page-notification}
 
 The INLINE_HTML item allows you to implement forms using custom HTML.
@@ -9,6 +9,7 @@ The INLINE_HTML item allows you to implement forms using custom HTML.
 - For `checkbox` and `radio` elements, you can use the `id` attribute to assign a specific value to the associated experimental variable.
 - You can use the `required` attribute to indicate that a form cannot be submitted before a field has been filled out.
 - The form is closed when the participant clicks on an input of type submit.
+- To include images from the file pool in a custom HTML form, first retrieve the URL to the file, assign it to an experimental variable, and then use this variable as the source for the `<img>` tag (see Example 3).
 
 
 Example 1:
@@ -29,4 +30,19 @@ Example 2:
 <input type="radio" id="age3" name="age" value="100">
 <label for="age3">61 - 100</label><br><br>
 <input type="submit" value="Submit">
+```
+
+Example 3:
+
+You can get the URL to an image in the file pool …
+
+```javascript
+vars.img_url = pool['capybara.png'].data.src
+```
+
+… and then use this URL in a custom HTML form:
+
+```html
+<img src="[img_url]">
+<input type='submit' value='ok'>
 ```
