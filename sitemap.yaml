@@ -113,7 +113,7 @@ Manual:
     # Running on Android: manual/android
     OpenSesame script: manual/opensesame-script
     Running experiments without the GUI: manual/opensesamerun
-    Installing packages, plugins, and extensions: manual/environment
+    Installing packages, plugins, and extensions: https://rapunzel.cogsci.nl/manual/environment/
     Runners: manual/runners
     # Running experiments online: manual/osweb
 

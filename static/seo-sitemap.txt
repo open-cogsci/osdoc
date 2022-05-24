@@ -72,7 +72,6 @@ https://osdoc.cogsci.nl/3.3/manual/timing
 https://osdoc.cogsci.nl/3.3/manual/backends
 https://osdoc.cogsci.nl/3.3/manual/opensesame-script
 https://osdoc.cogsci.nl/3.3/manual/opensesamerun
-https://osdoc.cogsci.nl/3.3/manual/environment
 https://osdoc.cogsci.nl/3.3/manual/runners
 https://osdoc.cogsci.nl/3.3/manual/mousetracking
 https://osdoc.cogsci.nl/3.3/manual/devices/vuams

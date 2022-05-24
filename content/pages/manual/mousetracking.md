@@ -21,4 +21,4 @@ Information about how to install the mousetrap plugin can be found on its [GitHu
 
 See also:
 
-- %link:environment%
+- <https://rapunzel.cogsci.nl/manual/environment/>

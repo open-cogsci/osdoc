@@ -170,7 +170,7 @@
         - - Running experiments without the GUI
           - /3.3/manual/opensesamerun
         - - Installing packages, plugins, and extensions
-          - /3.3/manual/environment
+          - https://rapunzel.cogsci.nl/manual/environment/
         - - Runners
           - /3.3/manual/runners
         - - Mouse tracking

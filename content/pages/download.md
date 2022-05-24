@@ -170,7 +170,7 @@ OpenSesame is currently built with Python 3.7.6 (standard package) and Python 2.
 ### Manually upgrading packages
 
 - OpenSesame is a regular Python environment, and you can upgrade packages with `pip` or `conda` as described here:
-	- %link:environment%
+	- <https://rapunzel.cogsci.nl/manual/environment/>
 
 
 ### Tips for system administrators
