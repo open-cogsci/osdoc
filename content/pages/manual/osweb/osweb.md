@@ -83,7 +83,7 @@ __Important__: A lot of supported functionality was added in OSWeb 1.4. Therefor
     - Unsupported: resume after break
     - Unsupported: Disabling of evaluate on first cycle
     - Unsupported: constraints (pseudorandomization)
-    - supported >= 1.4: file source
+    - Supported >= 1.4: file source
 - `mouse`
     - Unsupported: mouse release
     - Unsupported: linked sketchpad
@@ -91,12 +91,13 @@ __Important__: A lot of supported functionality was added in OSWeb 1.4. Therefor
 - `repeat_cycle`
 - `reset_feedback`
 - `sampler`
-    - Unsupported: panning, pitch, stop after, and fade in
-    - Unsupported: sound playback currently not suppered on Safari on Mac OS or any browser on iOS
+    - Supported >= 1.4.12: panning, pitch, and fade in
+    - Supported >= 1.4.12: Sound playback on Safari on Mac OS or any browser on iOS
+    - Unsupported: stop after
 - `sequence`
 - `sketchpad`
     - Unsupported: named elements
-    - supported >= 1.4: image rotation
+    - Supported >= 1.4: image rotation
     - Unsupported: HSV, HSL, and CIELab color spaces
 - `touch_response`
 
@@ -113,9 +114,7 @@ This error results from how the experiment is structured, and specifically the u
 
 ## Supported browsers
 
-The following combinations of browser and operating systems have been tested. Older browser versions and operating systems may work, but have not undergone recent testing. Certain extensions, such as Ad blockers or Script blockers, may prevent OSWeb from running.
-
-__Important note:__ Sound playback (except `.ogg` files) is supported on Safari on Mac OS and any browser on iOS as of 1.4.11.
+The following combinations of browser and operating systems have been tested with the latest version of OSWeb. Older browser versions, operating systems, and versions of OSWeb may work, but have not undergone recent testing. Certain extensions, such as Ad blockers or Script blockers, may prevent OSWeb from running.
 
 ### Fully supported
 
