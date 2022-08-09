@@ -170,3 +170,10 @@ def my_coroutine():
 		if not signal_from_coroutines:
 			break
 ~~~
+
+
+## Run-if statements
+
+The behavior of run-if statements in COROUTINES is a bit different from that in SEQUENCE items. Specifically, run-if statements in COROUTINES are evaluated during the prepare phase. See also:
+
+- %link:prepare-run%

@@ -19,14 +19,14 @@ This reduces the risk of timing glitches. The prepare-run strategy is implemente
 
 A LOOP item is not prepared in advance. It is important to take this into account when using a LOOP to implement time-critical parts. For example, you may be tempted to implement an RSVP stream using a LOOP item as follows:
 
-~~~
+~~~text
 rsvp_loop item (4 cycles)
 - stimulus_item
 ~~~
 
 In this construction, *stimulus_item* will be prepared and run four times in alternation, like so:
 
-~~~
+~~~text
 prepare stimulus_item
 run stimulus_item
 prepare stimulus_item
@@ -43,7 +43,7 @@ Therefore, you need to verify that the preparation of *stimulus_item* does not c
 
 All items that are part of a SEQUENCE are prepared in advance. Therefore, the following construction ...
 
-~~~
+~~~text
 trial_sequence
 - fixation_sketchpad
 - target_sketchpad
@@ -53,7 +53,7 @@ trial_sequence
 
 ... will be executed as follows ...
 
-~~~
+~~~text
 prepare fixation_sketchpad
 prepare target_sketchpad
 prepare keyboard_response
@@ -90,5 +90,7 @@ In general, items should follow the principle of performing as much as possible 
 ## Conditional statements ('Run if' and 'Show if')
 
 In SEQUENCE items, the 'Run if' condition is evaluated at the last moment, during the run phase. Therefore, you can use a condition like `[correct] = 0` which depends on the results of a KEYBOARD_RESPONSE item which has been called just before. It is important to take into account that the 'Run if' statement applies *only* to the run phase of an item—The prepare phase is *always* executed.
+
+In COROUTINES items, the 'Run if' condition is evaluated during the Prepare phase. Therefore, the conditions cannot depend on events that occur during the execution of the COROUTINES.
 
 In SKETCHPAD items, the 'Show if' condition is evaluated during the Prepare phase, when the canvas is constructed. In FEEDBACK items, the 'Show if' condition is evaluated during the Run phase (because the canvas is only constructed in the Run phase).

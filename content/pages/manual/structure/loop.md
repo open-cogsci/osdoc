@@ -216,9 +216,9 @@ To generate a preview, click on the *Preview* button.
 
 The original LOOP table, as you see it in the OpenSesame user interface, is a [`DataMatrix`](http://datamatrix.cogsci.nl/) object called `dm`, and is a property of the LOOP item.
 
-This original LOOP table is usually transformed in various ways; for example, the order of the rows can be randomized, and rows can be repeated multiple times. The transformed LOOP is also a `DataMatrix` object, and is called `live_dm`. `live_dm` is created just before the loop is executed (i.e. during the *run* phase of the LOOP).
+This original LOOP table is usually transformed in various ways; for example, the order of the rows can be randomized, and rows can be repeated multiple times. The transformed LOOP is also a `DataMatrix` object, and is called `live_dm`. `live_dm` is created just before the loop is executed and is set to `None` when the loop is finished; that is, `live_dm` is only available during the *run* phase of the LOOP.
 
-Finally, the current row is stored as the experimental variable `live_row`. That is, `live_row` indicates the currently active row of `live_dm`.
+Finally, the index of the current row is stored as the experimental variable `live_row`. That is, `live_row` indicates the currently active row of `live_dm`.
 
 So let's say that we have a LOOP called *block_loop*. We could then access the LOOP table in a Python inline script as follows:
 
@@ -245,4 +245,4 @@ items['block_loop'].dm.cue_validity = 'valid', 'valid', 'invalid', 'invalid'
 
 `DataMatrix` objects are powerful structures for working with tabular data. For more information, see:
 
-- <http://datamatrix.cogsci.nl/>
+- <https://pydatamatrix.eu/>
