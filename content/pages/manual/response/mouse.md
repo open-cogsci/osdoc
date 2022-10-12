@@ -6,9 +6,17 @@ Mouse responses are collected with the MOUSE_RESPONSE item. The MOUSE_RESPONSE i
 
 [TOC]
 
+
+## Response variables
+
+The MOUSE_RESPONSE sets the standard response variables as described here:
+
+- %link:manual/variables%
+
+
 ## Mouse-button names
 
-Mouse buttons have a number (`1`, etc.) as well as a name (`left_button`, etc.). Both can be used to specify correct and allowed responses, but numbers will be used for logging.
+Mouse buttons have a number (`1`, etc.) as well as a name (`left_button`, etc.). Both can be used to specify correct and allowed responses, but the `response` variable will be set to a number.
 
 - `left_button` corresponds to `1`
 - `middle_button` corresponds to `2`
@@ -16,9 +24,22 @@ Mouse buttons have a number (`1`, etc.) as well as a name (`left_button`, etc.).
 - `scroll_up` corresponds to `4`
 - `scroll_down` corresponds to `5`
 
-%--include: include/correct_response.md--%
 
-%--include: include/allowed_responses.md--%
+## Correct response
+
+The *Correct response* field indicates which response is considered correct. After a correct response, the `correct` variable is automatically set to 1; after an incorrect response or a timeout (i.e. everything else), `correct` is set to 0; if no correct response is specified, `correct` is set to 'undefined'.
+
+You can indicate the correct response in three main ways:
+
+- *Leave the field empty.* If you leave the *Correct response* field empty, OpenSesame will automatically check if a variable called `correct_response` has been defined, and, if so, use this variable for the correct response.
+- *Enter a literal value.* You can explicitly enter a response, such as 1. This is only useful if the correct response is fixed.
+- *Enter a variable name.* You can enter a variable, such as '[cr]'. In this case, this variable will be used for the correct response.
+
+
+## Allowed responses
+
+The *Allowed responses* field indicates a list of allowed responses. All other responses will be ignored, except for 'Escape', which will pause the experiment. The allowed responses should be a semicolon-separated list of responses, such as '1;3' to allow the left and right mouse buttons. To accept all responses, leave the *Allowed responses* field empty.
+
 
 %--include: include/timeout.md--%
 
