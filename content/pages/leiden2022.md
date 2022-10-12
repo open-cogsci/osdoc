@@ -8,8 +8,8 @@ title: Leiden University 2022 workshop
 
 - Host: Leiden University
 - Location and dates: 
-    - Day 1: May 19, Pieter de la Court, rooms 1A46 and 1A32, 13:00 - 17:00
-    - Day 2: May 20, Pieter de la Court, rooms 1A46 and 2B04, 13:00 - 17:00
+    - Day 1: Oct 10, FSW, Living Lab 1B01, 13:00 - 17:00
+    - Day 2: Oct 17, FSW, Living Lab 1B01, 13:00 - 17:00
 - Presenters: Lotje van der Linden and Sebastiaan Mathôt
 
 
@@ -30,7 +30,7 @@ We're looking forward to meeting you all!
 — Lotje and Sebastiaan
 
 
-### Day 1 (May 19): Introduction
+### Day 1 (Oct 10): Introduction
 
 First presentation:
 
@@ -48,7 +48,7 @@ Schedule:
 - 16:00 – 17:00: __Q&A__ What kind of experiment would you like to build for your own research? And what kind of help do you need from us?
 
 
-### Day 2 (May 20): Online experiments + data analysis
+### Day 2 (Oct 17): Online experiments + data analysis
 
 Slides:
 
