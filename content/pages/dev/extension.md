@@ -14,9 +14,9 @@ title: Creating an extension
 
 Let's assume that your extension is called `my_extension`. In that case, your extension corresponds to a folder called `my_extension`, which contains at least the following 2 files:
 
-	my_extension/
+	MyExtension/
 		info.yaml
-		my_extension.py
+		MyExtension.py
 
 
 ## Extension information
@@ -89,7 +89,7 @@ class MyExtension(BaseExtension):
 
 	def event_save_experiment(self, path):
 
-		oslogger.info('Event fired: save_experiment(path={})'.format(path))
+		oslogger.info(f'Event fired: save_experiment(path={path})')
 ~~~
 
 Note that some events take keyword arguments, such as `path` in the case of `save_experiment`. The keyword signature of your function must match the expected keyword signature. A list of events can be found in the [example extension](https://github.com/smathot/opensesame-extension-example/blob/master/opensesame_extensions/example_extension/example_extension.py).
@@ -112,3 +112,10 @@ For a working example, see:
 
 [example]: https://github.com/smathot/OpenSesame/tree/master/extensions/example
 [icon-spec]: http://standards.freedesktop.org/icon-naming-spec/icon-naming-spec-latest.html
+
+
+## Event overview
+
+This overview lists all events that are fired somewhere in the code, and that your extenstion can therefore listen to by implementing the corresponding `event_[eventname]()` functions.
+
+%-- include: include/events.md --%

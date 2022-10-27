@@ -14,10 +14,12 @@ title: Creating a plugin
 
 Let's assume that your plugin is called `MyPlugin`. In that case, your plugin corresponds to a folder called `MyPlugin`, containing at least the following 3 files:
 
-	MyPlugin/
-		info.yaml
-		MyPlugin.md
-		MyPlugin.py
+```text
+MyPlugin/
+	info.yaml
+	MyPlugin.md
+	MyPlugin.py
+```
 
 
 ## Icons
@@ -45,10 +47,10 @@ The `control` field contains a list of controls. Each control is itself an objec
 
 - `type` specifies the type of the control. Possible values:
 	- `checkbox` is a checkable box (`QtGui.QCheckBox`)
-	- `color_edit` is a color-select widget (`libqtopensesame.widgets.color_edit`)
+	- `color_edit` is a color-selection widget (`libqtopensesame.widgets.color_edit`)
 	- `combobox` is a drop-down box with multiple options (`QtGui.QComboBox`)
-	- `editor` is a multiline text editor (`QProgEdit.QTabManager`)
-	- `filepool` is a file-select widget (`QtGui.QLineEdit`)
+	- `editor` is a multiline text editor (using PyQode)
+	- `filepool` is a file-selection widget (`QtGui.QLineEdit`)
 	- `line_edit` is a single-line text input (`QtGui.QLineEdit`)
 	- `spinbox` is a text-based numeric-value selector (`QtGui.QSpinBox`)
 	- `slider` is a sliding numeric-value selector (`QtGui.QSlider`)
@@ -101,23 +103,21 @@ A very simple example looks like this (see the [examples](#examples) for more re
 from libopensesame.py3compat import *
 # Import the required modules.
 from libopensesame.oslogging import oslogger
-# Should be `qtautoplugin` and `item` for versions <= 3.2
 from libopensesame.item import Item
 from libqtopensesame.items.qtautoplugin import QtAutoPlugin  
 
 
 class MyPlugin(Item):
 
-	description = u'plugin description'
+	description = 'plugin description'
 
 	def reset(self):
 
 		# Set default experimental variables and values
-		self.var.my_line_edit_var = u'some default'
-		self.var.my_checkbox_var = u'some default'
-		# Debugging output is only visible when OpenSesame is started with the
-		# --debug argument.
-		oslogger.debug('My plugin has been initialized!')
+		self.var.my_line_edit_var = 'some default'
+		self.var.my_checkbox_var = 'some default'
+		oslogger.debug('This is written to debug log when started with --debug flag')
+		oslogger.info('This is always printed')
 
 	def prepare(self):
 
