@@ -25,24 +25,39 @@ You will need to know three things in order to convert pixels to visual degrees:
 - `d` is the distance from the participant to the monitor in centimeters, which you can measure with a ruler. (e.g., 60cm)
 - `r` is the vertical resolution of the monitor in pixels, which you can find in your operating system's display settings (e.g., 768 px)
 
-You can calculate angular size of your stimulus as shown in %LstDeg. You can execute this script in the OpenSesame debug window. Of course, you need to substitute all values so that they correspond to your setup. Note that a single visual degree typically corresponds to 30 - 60 pixels, depending on the distance and size of the monitor. Conversely, a single pixel typically corresponds to 0.01 to 0.03 visual degrees. If you obtain values that are far outside of this range, you have probably made a mistake.
+You can calculate angular size of your stimulus as shown below. You can execute this script in the OpenSesame debug window. Of course, you need to substitute all values so that they correspond to your setup. Note that a single visual degree typically corresponds to 30 - 60 pixels, depending on the distance and size of the monitor. Conversely, a single pixel typically corresponds to 0.01 to 0.03 visual degrees. If you obtain values that are far outside of this range, you have probably made a mistake.
 
-%--
-code:
- id: LstDeg
- syntax: python
- source: to-degrees.py
- caption: A Python script to convert pixels to visual degrees.
---%
+```python
+from math import atan2, degrees
+
+h = 25           # Monitor height in cm
+d = 60           # Distance between monitor and participant in cm
+r = 768          # Vertical resolution of the monitor
+size_in_px = 100 # The stimulus size in pixels
+# Calculate the number of degrees that correspond to a single pixel. This will
+# generally be a very small value, something like 0.03.
+deg_per_px = degrees(atan2(.5 * h, d)) / (.5 * r)
+print(f'{deg_per_px} degrees correspond to a single pixel')
+# Calculate the size of the stimulus in degrees
+size_in_deg = size_in_px * deg_per_px
+print(f'The size of the stimulus is {size_in_px} pixels and {size_in_deg} visual degrees')
+```
 
 ## Convert visual degrees to pixels
 
-Converting visual degrees to pixels is simply the inverse of the procedure described above, and can be done as shown in %LstPix.
+Converting visual degrees to pixels is simply the inverse of the procedure described above, and can be done as follows:
 
-%--
-code:
- id: LstPix
- syntax: python
- source: to-pixels.py
- caption: A Python script to convert pixels to visual degrees.
---%
+```python
+from math import atan2, degrees
+h = 25           # Monitor height in cm
+d = 60           # Distance between monitor and participant in cm
+r = 768          # Vertical resolution of the monitor
+size_in_deg = 3. # The stimulus size in pixels
+# Calculate the number of degrees that correspond to a single pixel. This will
+# generally be a very small value, something like 0.03.
+deg_per_px = degrees(atan2(.5 * h, d)) / (.5 * r)
+print(f'{deg_per_px} degrees correspond to a single pixel')
+# Calculate the size of the stimulus in degrees
+size_in_px = size_in_deg / deg_per_px
+print(f'The size of the stimulus is {size_in_px} pixels and {size_in_deg} visual degrees')
+```
