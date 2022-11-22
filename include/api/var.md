@@ -116,7 +116,7 @@ __Arguments:__
 
 ## function __var\.items__\(\)
 
-Returns a list of (variable_name, value) tuples. See [vars] for a note about the non-exhaustiveness of this function.
+Returns a list of (variable_name, value) tuples. See `var.vars()` for a note about the non-exhaustiveness of this function.
 
 __Example:__
 

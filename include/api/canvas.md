@@ -53,9 +53,9 @@ All functions that accept `**style_args` take the following keyword
 arguments:
 
 - `color` specifies the foreground color. For valid color
-        specifications, see [colors].
+        specifications, see [colors](#colors).
 - `background_color` specifies the background color. For valid color
-        specifications, see [colors].
+        specifications, see [colors](#colors).
 - `fill` indicates whether rectangles, circles, polygons, and ellipses
         are filled (`True`), or drawn as an outline (`False`).
 - `penwidth` indicates a penwidth in pixels and should be `int` or
@@ -164,7 +164,7 @@ individually, without having to redraw the entire `Canvas`.
 For example, the following will first add a red `Line` element to a
 `Canvas` and show it, then change the color of the line to green and
 show it again, and then finally delete the line and show the canvas
-again (which is now blank_. The name of the element (`my_line`) is used
+again (which is now blank). The name of the element (`my_line`) is used
 to refer to the element for all the operations.
 
 ~~~ .python
@@ -231,9 +231,9 @@ constant:
                 this parameter is ignored by the psycho backend, which uses
                 increasing transparency for the background.
         arg_style: |
-                Optional [style keywords] that specify the style of the current
-                drawing operation. This does not affect subsequent drawing
-                operations.
+                Optional [style keywords](#style-keywords) that specify the
+                style of the current drawing operation. This does not affect
+                subsequent drawing operations.
         arg_center: |
                 A bool indicating whether the coordinates reflect the center
                 (`True`) or top-left (`False`) of the text.

@@ -52,15 +52,15 @@ convert samples from a different format, you can use
 
 ### Backwards incompatible changes from 2.9 to 3.0
 
-The following are now properties, as described under
-[playback keywords]:
+The following are now properties (and no longer functions), as
+described under [playback keywords](#playback-keywords):
 
-- [sampler.block]
-- [sampler.duration]
-- [sampler.fade_in]
-- [sampler.pan]
-- [sampler.pitch]
-- [sampler.volume]
+- `sampler.block`
+- `sampler.duration`
+- `sampler.fade_in`
+- `sampler.pan`
+- `sampler.pitch`
+- `sampler.volume`
 
 Therefore, the following will no longer work:
 
@@ -100,8 +100,8 @@ my_sampler.play(volume=.5, pan='left')
 ~~~
 
 Playback keywords only affect the current operation (except when passed
-to [sampler.\_\_init\_\_][__init__]). To change the behavior for all
-subsequent operations, set the playback properties directly:
+to `Sampler()` when creating the object). To change the behavior for
+all subsequent operations, set the playback properties directly:
 
 ~~~ .python
 src = pool['bark.ogg']
@@ -112,7 +112,7 @@ my_sampler.play()
 my_sampler.play()
 ~~~
 
-Or pass the playback keywords to [sampler.\_\_init\_\_][__init__]:
+Or pass the playback keywords to `Sampler()` when creating the object:
 
 ~~~ .python
 src = pool['bark.ogg']
@@ -182,7 +182,7 @@ my_sampler.play(pitch=.5, block=True)
 
 __Keyword dict:__
 
-- `**playback_args`: Optional [playback keywords] that will be used for this call to [sampler.play]. This does not affect subsequent operations.
+- `**playback_args`: Optional [playback keywords](#playback-keywords) that will be used for this call to `Sampler.play()`. This does not affect subsequent operations.
 
 </div>
 

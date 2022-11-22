@@ -123,7 +123,7 @@ if response is None:
 
 __Keyword dict:__
 
-- `**resp_args`: Optional [response keywords] (`timeout` and `keylist`) that will be used for this call to [keyboard.get_key]. This does not affect subsequent operations.
+- `**resp_args`: Optional [response keywords](#response-keywords) (`timeout and `keylist`) that will be used for this call to `Keyboard.get_key()`. This does not affect subsequent operations.
 
 __Returns:__
 
@@ -157,7 +157,7 @@ if response is None:
 
 __Keyword dict:__
 
-- `**resp_args`: Optional [response keywords] (`timeout` and `keylist`) that will be used for this call to [keyboard.get_key_release]. This does not affect subsequent operations.
+- `**resp_args`: Optional [response keywords](#response-keywords) (`timeout` and `keylist`) that will be used for this call to `Keyboard.get_key_release()`. This does not affect subsequent operations.
 
 __Returns:__
 
@@ -197,7 +197,7 @@ A list of keyboard moderators. An empty list is returned if no moderators are pr
 Shows or hides a virtual keyboard if this is supported by the
 back-end. This function is only necessary if you want the virtual
 keyboard to remain visible while collecting multicharacter
-responses. Otherwise, [keyboard.get_key] will implicitly shown and
+responses. Otherwise, `Keyboard.get_key()` will implicitly show and
 hide the keyboard for a single-character response.
 
 This function does nothing for back-ends that do not support virtual
