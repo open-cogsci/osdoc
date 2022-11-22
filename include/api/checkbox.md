@@ -54,7 +54,7 @@ __Keywords:__
 - `click_accepts` -- Indicates whether a click press should accept and close the form.
 	- Type: bool
 	- Default: False
-- `var` -- The name of the experimental variable that should be used to log the widget status. This variable will contain a semi-colon separated list of the text of all checked checkboxes in the same group, or 'no' if no checkbox in the group is checked. For the purpose of the variable, all checkboxes that are not part of a group are placed in the same group. For more information about the use of response variables in forms, see the form documentation page.
+- `var` -- The name of the experimental variable that should be used to log the widget status. This variable will contain a semi-colon separated list of the text of all checked checkboxes in the same group (falling back to checkbox1, etc. if no text has been specified), or 'no' if no checkbox in the group is checked.    For the purpose of the variable, all checkboxes that are not part of a group are placed in the same group. For more information about the use of response variables in forms, see the form documentation page.
 	- Type: str, unicode, NoneType
 	- Default: None
 

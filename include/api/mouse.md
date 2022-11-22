@@ -24,7 +24,7 @@ while True:
 
 [TOC]
 
-## Things to know
+## Things to know
 
 ### Creating a Mouse
 
@@ -263,8 +263,11 @@ __Keywords:__
 Immediately changes the visibility of the mouse cursor.
 
 __Note:__ In most cases, you will want to use the `visible`
-[keyword][Response keywords], which changes the visibility during
-response collection, that is, while `mouse.get_click()` is called.
+keyword, which changes the visibility during response collection,
+that is, while `mouse.get_click()` is called. Calling 
+`show_cursor()` will not implicitly change the value of `visible`, 
+which can lead to the somewhat unintuitive behavior that the cursor
+is hidden as soon as `get_click()` is called.
 
 __Keywords:__
 
