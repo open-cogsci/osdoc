@@ -195,6 +195,7 @@ Several convenient JavaScript libraries are bundled with OSWeb. These libraries 
 
 
 The `random-ext` library is available as `random`. This library provides many convenient, higher-level functions for randomization.
+
 __Example:__
 
 Draw eight circle with a random color and a location that is randomly sampled from a five by five grid:

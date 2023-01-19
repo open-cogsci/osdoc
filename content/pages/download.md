@@ -61,16 +61,6 @@ The Megapack is identical to the standard Python 3.7 download above, except that
 	<b>Megapack</b> Windows no installation required (.zip)
 </a>
 
-Some Python packages are not compatible with Python 3. If you want to use those, please download the Python 2.7 (64 bit) package below. Note: As of January 1, 2020, Python 2.7 is no longer maintained.
-
-<a role="button" class="btn btn-default btn-align-left" onclick="startDownload('$url-windows-exe-py2$')">
-	<b>Python 2</b> Windows installer (.exe)
-</a>
-
-<a role="button" class="btn btn-default btn-align-left" onclick="startDownload('$url-windows-zip-py2$')">
-	<b>Python 2</b> Windows no installation required (.zip)
-</a>
-
 
 ### Mac OS
 
@@ -91,10 +81,11 @@ brew install --cask opensesame
 
 ### Ubuntu
 
-OpenSesame 3.3 is available through the [Cogscinl PPA](https://launchpad.net/~smathot/+archive/cogscinl). Packages are developed and tested on Ubuntu 20.04 Focal Fossa. To add this repository to your software sources and install OpenSesame, run the following commands in a terminal:
+OpenSesame 3.3 is available through the [Cogscinl PPA](https://launchpad.net/~smathot/+archive/cogscinl). Packages are developed and tested on Ubuntu 22.04 Jammy Jellyfish. To add this repository to your software sources and install OpenSesame, run the following commands in a terminal:
 
 ```bash
-sudo add-apt-repository ppa:smathot/cogscinl
+sudo add-apt-repository ppa:smathot/cogscinl  # For stable releases
+sudo add-apt-repository ppa:smathot/rapunzel  # For development releases
 sudo apt update
 sudo apt install python3-opensesame
 ```
@@ -111,7 +102,7 @@ pip install psychopy expyriment pyspellchecker fastnumbers js2py
 First, create a new Python environment for OpenSesame (optional):
 
 ```bash
-conda create -n opensesame-py3 python=3.7  # For Python 2: python=2.7.15
+conda create -n opensesame-py3
 conda activate opensesame-py3
 ```
 
@@ -158,7 +149,8 @@ The source code of OpenSesame is available on [GitHub](https://github.com/smatho
 
 ### Which version of Python to use?
 
-OpenSesame is currently built with Python 3.7.6 (standard package) and Python 2.7.15.
+OpenSesame is currently built and tested with Python 3.7.6. Newer versions of Python 3 work but are not extensively tested. Python 2 is no longer supported. The last release that included a Python 2 package was 3.3.12, which can still be downloaded from the [release archive](https://github.com/open-cogsci/OpenSesame/releases/tag/release%2F3.3.12).
+
 
 ### When (not) to update?
 

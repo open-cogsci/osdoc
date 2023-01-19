@@ -278,7 +278,7 @@
         - - Create an extension
           - /3.3/dev/extension
   - - Support
-    - /3.3/support
+    - https://professional.cogsci.nl/
   - - v3.3
     - !!python/object/apply:collections.OrderedDict
       - - - v3.3
