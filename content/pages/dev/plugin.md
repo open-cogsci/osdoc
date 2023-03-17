@@ -5,49 +5,50 @@ title: Creating a plugin
 
 ## What is an OpenSesame plugin?
 
-*Plugins* are extra items that appear in the OpenSesame item toolbar. Plugins add functionality that you can use in experiments. To add functionality to the OpenSesame user interface, you need an *extension*:
+*Plugins* are extra items that appear in the OpenSesame item toolbar. Plugins add functionality that you can use in experiments. (To add functionality to the OpenSesame user interface, you need an [*extension*](%url:extension%).)
 
-- %link:extension%
 
 
 ## Relevant files
 
-Let's assume that your plugin is called `MyPlugin`. In that case, your plugin corresponds to a folder called `MyPlugin`, containing at least the following 3 files:
+One or more plugins are put together in a plugin package, which is always a subpackage of `opensesame_plugins` (which is itself a so-called implicit namespace package, but that's a technical detail that is not very important). Let's say that your plugin package is called `example`, and that it contains a single plugin (there can be more) called `example_plugin`. This would correspond to the following file-and-folder structure:
 
-```text
-MyPlugin/
-	info.yaml
-	MyPlugin.md
-	MyPlugin.py
 ```
-
+opensesame_plugins/
+    example/
+        __init__.py                  # can be empty but must exist
+        example_plugin/
+            __init__.py              # contains plugin information
+            example_plugin.py        # contains plugin class
+            example_plugin.png       # 16 x 16 icon (optional)
+            example_plugin_large.png # 32 x 32 icon (optional)
+            example_plugin.md        # Help file in Markdown format (optional)
+```
 
 ## Icons
 
 Each plug-in needs an icon, which you can specify in one of two ways:
 
-- Include two icon files in the plugin folder:
-	- A 16x16 px png file called `MyPlugin.png`; and
-	- A 32x32 px png file called `MyPlugin_large.png`.
-- Or specify an `icon` key in `info.yaml`. If you do this, the plugin icon will be taken from the icon theme.
+- Include two icon files in the plugin folder as shown above:
+    - A 16x16 px png file called `[plugin_name].png`; and
+    - A 32x32 px png file called `[plugin_name]_large.png`.
+- Or specify an `icon` name in the plugin information (`__init__.py`). If you do this, the plugin icon will be taken from the icon theme.
 
 
 ## Help file
 
-You can provide a help file in [Markdown] or [HTML] format. To add a Markdown help file, simply create a file called `MyPlugin.md` in the plugin folder. For an HTML help file, create a file called `MyPlugin.html`. Markdown format is preferred, because it is easier to read. Strictly speaking, the help file is optional, and your plugin will work without it. However, an informative help file is an essential part of a good plugin.
+You can provide a help file in Markdown or HTML format. To add a Markdown help file, simply create a file called `[plugin_name].md` in the plugin folder. For an HTML help file, create a file called `[plugin_name].html`. Markdown format is preferred, because it is easier to read. Strictly speaking, the help file is optional, and your plugin will work without it. However, an informative help file is an essential part of a good plugin.
 
 
 ## Defining the GUI
 
-The GUI is defined in a file called `info.yaml`[^json]. [YAML] provides a straight-forward way to define your plugin controls, and specify other kinds of information. Make sure that your file is syntactically valid YAML, for example using a validator such as [yamllint.com].
+The plugin information (`__init__.py`) defines (at least) a docstring, a `category` variable, and a `controls` variable.
 
-The following top-level fields are used to show plugin information by the plugin and extension manager: `author`, `url`, `version`. and `description`. Another important field is `category`, which specifies in which group the plugin should appear in the item toolbar (e.g. 'Visual stimuli', etc.). The `icon` field specifies an icon name (as explained above). Finally, the `priority` field determines the order in which plugins are loaded, where high priority values are loaded last.
-
-The `control` field contains a list of controls. Each control is itself an object that has various fields. The most important fields are:
+The `controls` variable is a list of `dict` elements that define the GUI controls. The most important fields are:
 
 - `type` specifies the type of the control. Possible values:
 	- `checkbox` is a checkable box (`QtGui.QCheckBox`)
-	- `color_edit` is a color-selection widget (`libqtopensesame.widgets.color_edit`)
+	- `color_edit` is a color-selection widget (`libqtopensesame.widgets.color_edit.ColorEdit`)
 	- `combobox` is a drop-down box with multiple options (`QtGui.QComboBox`)
 	- `editor` is a multiline text editor (using PyQode)
 	- `filepool` is a file-selection widget (`QtGui.QLineEdit`)
@@ -60,86 +61,84 @@ The `control` field contains a list of controls. Each control is itself an objec
 - `name` (optional) specifies under which name the widget should be added to the plugin object, so that it can be referred to as `self.[name]`.
 - `tooltip` (optional) an informative tooltip.
 
-~~~ .yaml
-author: Your name
-category: Some category
-description: This is my plugin
-icon: text-x-generic
-url: http://your.website
-controls:
--
-    label: My line edit control
-    name: line_edit_widget
-    tooltip: You can type something here
-    type: line_edit
-    var: my_line_edit_var
--
-    label: My line checkbox control
-    name: checkbox_widget
-    tooltip: You can type something here
-    type: checkbox
-    var: my_checkbox_var
-~~~
+
+```python
+"""A docstring with a description of the plugin"""
+
+# The category determines the group for the plugin in the item toolbar
+category = "Visual stimuli"
+# Defines the GUI controls
+controls = [
+    {
+        "type": "checkbox",
+        "var": "checkbox",
+        "label": "Example checkbox",
+        "name": "checkbox_widget",
+        "tooltip": "An example checkbox"
+    }, {
+        "type": "color_edit",
+        "var": "color",
+        "label": "Color",
+        "name": "color_widget",
+        "tooltip": "An example color edit"
+    }
+]
+```
 
 See the [example](#examples) plugin for a list of all controls and options.
 
-## Writing the main plugin code
 
-The main plugin code is placed in `MyPlugin.py`. This file has two classes:
+## Writing the plugin code
 
-- `MyPlugin`, which contains the runtime part of the plugin.
-- `qtMyPlugin`, which controls the GUI. This class is almost empty in most cases, because the controls are defined in `info.yaml`.
+The main plugin code is placed in `[plugin_name].py`. This file generally contains only a single class named `[PluginName].py`, that is, a class with the CamelCase equivalent of the plugin name, which inherits from `libopensesame.item.Item`. A basic plugin class looks like this:
 
-In many cases, you will only be concerned with three methods:
 
-- `MyPlugin.reset()` is where you specify default values for the plugin variables.
-- `MyPlugin.prepare()` is where you implement the prepare phase of your plugin. It is good practice to move as much functionality as possible into `prepare()`, so that the time-critical run phase goes as smooth as possible.
-- `MyPlugin.run()` is where you implement the run phase of your plugin.
-
-A very simple example looks like this (see the [examples](#examples) for more realistic examples):
-
-~~~ .python
-# Import Python 3 compatibility functions
+```python
 from libopensesame.py3compat import *
-# Import the required modules.
-from libopensesame.oslogging import oslogger
 from libopensesame.item import Item
-from libqtopensesame.items.qtautoplugin import QtAutoPlugin  
+from libqtopensesame.items.qtautoplugin import QtAutoPlugin
+from openexp.canvas import Canvas
 
 
-class MyPlugin(Item):
+class ExamplePlugin(Item):
+    """An example plugin that shows a simple canvas. The class name
+    should be the CamelCase version of the folder_name and file_name. So in
+    this case both the plugin folder (which is a Python package) and the
+    .py file (which is a Python module) are called example_plugin, whereas
+    the class is called ExamplePlugin.
+    """
+    def reset(self):
+        """Resets plug-in to initial values."""
+        # Here we provide default values for the variables that are specified
+        # in __init__.py. If you do not provide default values, the plug-in
+        # will work, but the variables will be undefined when they are not
+        # explicitly # set in the GUI.
+        self.var.checkbox = 'yes'  # yes = checked, no = unchecked
+        self.var.color = 'white'
+        self.var.option = 'Option 1'
+        self.var.file = ''
+        self.var.text = 'Default text'
+        self.var.spinbox_value = 1
+        self.var.slider_value = 1
+        self.var.script = 'print(10)'
 
-	description = 'plugin description'
+    def prepare(self):
+        """The preparation phase of the plug-in goes here."""
+        # Call the parent constructor.
+        super().prepare()
+        # Here simply prepare a canvas with a fixatio dot.
+        self.c = Canvas(self.experiment)
+        self.c.fixdot()
 
-	def reset(self):
-
-		# Set default experimental variables and values
-		self.var.my_line_edit_var = 'some default'
-		self.var.my_checkbox_var = 'some default'
-		oslogger.debug('This is written to debug log when started with --debug flag')
-		oslogger.info('This is always printed')
-
-	def prepare(self):
-
-		# Call parent functions.
-		Item.prepare(self)
-		# Prepare your plugin here.
-
-	def run(self):
-
-		# Record the timestamp of the plugin execution.
-		self.set_item_onset()
-		# Run your plugin here.
+    def run(self):
+        """The run phase of the plug-in goes here."""
+        # self.set_item_onset() sets the time_[item name] variable. Optionally,
+        # you can pass a timestamp, such as returned by canvas.show().
+        self.set_item_onset(self.c.show())
+```
 
 
-class qtMyPlugin(MyPlugin, QtAutoPlugin):
-
-	def __init__(self, name, experiment, script=None):
-
-		# Call parent constructors.
-		MyPlugin.__init__(self, name, experiment, script)
-		QtAutoPlugin.__init__(self, __file__)
-~~~
+If you want to implement custom GUI controls for your plugin, you also need to implement a `Qt[PluginName]` class in the same file. This is illustrated in the [example](#examples) plugin. If you don't implement this class, a default GUI will be created based on the controls as defined in `__init__.py`.
 
 
 ## Experimental variables
@@ -149,24 +148,66 @@ Experimental variables are properties of the `var` object. An example is `self.v
 - %link:manual/variables%
 
 
-## Writing a setup.py and uploading to PyPi
+## Building a package and uploading to pypi
 
-You can use a `setup.py` file to automatically install a plugin, or to upload it to PyPi (so that it can be installed through `pip install`). To see how this is done, see the setup script included with the example plugin.
+The easiest way to build a package for your plugin is by defined a `pyproject.toml` file and using `poetry` to build the package and upload it to `pypi`.
 
-To upload a package to PyPi, you need to create a PyPi account, and then register and upload your package. This is a fairly simple process, and is described on the [PyPi website](https://pypi.python.org/pypi).
+- <https://python-poetry.org/>
+
+An example `pyproject.toml` file looks as follows:
+
+```toml
+[tool.poetry]
+name = "opensesame-plugin-example"
+version = "0.0.1"
+description = "An example plugin for OpenSesame"
+authors = ["Sebastiaan Mathôt <s.mathot@cogsci.nl>"]
+readme = "readme.md"
+packages = [
+    {include = "opensesame_plugins"},
+]
+
+[tool.poetry.dependencies]
+python = ">= 3.7"
+opensesame-core = ">= 4.0.0a0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+```
+
+Once you have add this file to the root folder of your plugin code, you can build a `.whl` package by running:
+
+```bash
+poetry build
+```
+
+Once you have succesfully built a package, create an account on <https://pypi.org/>, create an API token for your account, and authenticate `poetry` like this:
+
+```bash
+poetry config pypi-token.pypi [api_token]
+```
+
+Once this is done, you can publish your package to PyPi by running the following command:
+
+```bash
+poetry publish
+```
+
+
+Your users will now be able to pip-install your plugin!
+
+```bash
+pip install opensesame-plugin-example
+```
 
 
 ## Examples
 
 For a working example, see:
 
-- <https://github.com/smathot/opensesame-plugin-example>
+- <https://github.com/open-cogsci/opensesame-plugin-example>
 
-Other examples can be found in the `opensesame_plugins` folder inlud
+Other examples can be found in the `opensesame_plugins` folder of the OpenSesame source code:
 
-[^json]: In OpenSesame 2.8.3, plugin information was stored in `info.json`. This still works, but for newer plugins it is recommend to use `info.yaml`, because YAML-syntax is simpler than JSON-syntax. (In fact, JSON is a specific case of YAML.)
-
-[html]: http://en.wikipedia.org/wiki/HTML#Markup
-[yaml]: http://en.wikipedia.org/wiki/YAML
-[yamllint.com]: http://yamllint.com/
-[markdown]: http://daringfireball.net/projects/markdown/syntax
+- <https://github.com/open-cogsci/OpenSesame/tree/milgram/opensesame_plugins/core>
