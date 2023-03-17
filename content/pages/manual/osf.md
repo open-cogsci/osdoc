@@ -2,6 +2,10 @@ title: Integration with the Open Science Framework
 
 [TOC]
 
+OSF integration is broken due to a change in the OSF API. This functionality will be replaced by integration with JATOS in OpenSesame 4.0.
+{: .page-notification}
+
+
 ## About
 
 The OpenScienceFramework extension connects OpenSesame to the [Open Science Framework](https://osf.io) (OSF), which is a web platform for sharing, connecting, and streamlining scientific workflows. To use this extension, [you need an OSF account](https://osf.io/login/?sign_up=True).
