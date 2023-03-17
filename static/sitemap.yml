@@ -281,7 +281,9 @@
     - https://professional.cogsci.nl/
   - - v3.3
     - !!python/object/apply:collections.OrderedDict
-      - - - v3.3
+      - - - v4.0
+          - http://osdoc.cogsci.nl/4.0/
+        - - v3.3
           - http://osdoc.cogsci.nl/3.3/
         - - v3.2
           - http://osdoc.cogsci.nl/3.2/
