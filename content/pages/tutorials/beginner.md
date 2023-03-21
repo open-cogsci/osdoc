@@ -2,8 +2,6 @@ title: Beginner tutorial: gaze cuing
 
 [TOC]
 
-%-- include: include/ads-inpage.md --%
-
 ## About OpenSesame
 
 OpenSesame is a program for easy of development of behavioral experiments for psychology, neuroscience, and experimental economy. For beginners, OpenSesame has a comprehensive graphical, point-and-click interface. For advanced users, OpenSesame supports Python scripting (not covered in this tutorial).

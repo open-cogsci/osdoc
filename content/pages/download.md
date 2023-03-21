@@ -41,7 +41,7 @@ The latest $status$ version is $version$ *$codename$*, released on $release-date
 
 ### Windows
 
-The standard download is based on Python 3.7 for 64 bit systems. The installer and `.zip` packages are identical, except for the installation. Most people download the installer package (green button).
+The Windows package is based on Python 3.11 for 64 bit systems. The installer and `.zip` packages are identical, except for the installation. Most people download the installer package (green button).
 
 <a role="button" class="btn btn-success btn-align-left" onclick="startDownload('$url-windows-exe-py3$')">
 	<b>Standard</b> Windows installer (.exe)
@@ -51,18 +51,11 @@ The standard download is based on Python 3.7 for 64 bit systems. The installer a
 	<b>Standard</b> Windows no installation required (.zip)
 </a>
 
-The Megapack is identical to the standard Python 3.7 download above, except that it comes with a large number of libraries for scientific computing pre-installed. The Megapack also includes advanced support for JavaScript (code completion, syntax checking, etc.).
-
-<a role="button" class="btn btn-default btn-align-left" onclick="startDownload('$url-windows-exe-py3-megapack$')">
-	<b>Megapack</b> Windows installer (.exe)
-</a>
-
-<a role="button" class="btn btn-default btn-align-left" onclick="startDownload('$url-windows-zip-py3-megapack$')">
-	<b>Megapack</b> Windows no installation required (.zip)
-</a>
-
 
 ### Mac OS
+
+There are currently no prerelease packages of OpenSesame 4.0 for Mac OS. Please use conda or pip.
+{: .page-notification}
 
 [This article](https://support.apple.com/en-in/guide/mac-help/mh40616/mac) on the Mac OS support site explains how to override the security settings of Mac OS that will by default prevent OpenSesame from launching.
 
@@ -81,19 +74,66 @@ brew install --cask opensesame
 
 ### Ubuntu
 
-OpenSesame 3.3 is available through the [Cogscinl PPA](https://launchpad.net/~smathot/+archive/cogscinl). Packages are developed and tested on Ubuntu 22.04 Jammy Jellyfish. To add this repository to your software sources and install OpenSesame, run the following commands in a terminal:
+Packages are developed and tested on Ubuntu 22.04 Jammy Jellyfish. Packages are only available for 22.04 and 22.10.
+
+If you have OpenSesame 3.X installed, first deinstall all packages . This is required to avoid package conflicts due to slight renaming of some packages in OpenSesame 4.0.
 
 ```bash
-sudo add-apt-repository ppa:smathot/cogscinl  # For stable releases
-sudo add-apt-repository ppa:smathot/rapunzel  # For development releases
-sudo apt update
-sudo apt install python3-opensesame
+# If necessary: uninstall OpenSesame 3.X
+sudo apt remove python3-opensesame python3-pyqode.python python3-pyqode.core python3-rapunzel python3-opensesame-extension* python3-opensesame-plugin*
+```
+
+Next, to add the required repositories to your software sources and install OpenSesame (and Rapunzel), run the following commands in a terminal:
+
+```bash
+# Add repository for stable packages
+sudo add-apt-repository ppa:smathot/cogscinl
+# Add repository for development packages
+sudo add-apt-repository ppa:smathot/milgram
+# Install basic OpenSesame 4.X packages
+sudo apt install python3-opensesame python3-rapunzel
+# Add eye-tracking support
+sudo apt install python3-pygaze
+# PyGame is needed for the legacy and xpyriment backends
+sudo apt install python3-pygame
+# experimental language server support
+sudo apt install python3-opensesame-extension-language_server
 ```
 
 Some commonly used packages are not available through the PPA. You can install them through `pip`:
 
 ```bash
-pip install psychopy expyriment pyspellchecker fastnumbers js2py
+# Install optional packages that are only available through pip
+pip install opensesame-extension-osweb opensesame-plugin-psychopy opensesame-plugin-media_player_mpy http://files.cogsci.nl/expyriment-0.10.0+opensesame2-py3-none-any.whl
+```
+
+PsychoPy is best installed through pip, because the Ubuntu package is currently broken. 
+
+```bash
+# Install psychopy
+pip install psychopy psychopy_sounddevice python-bidi arabic_reshaper
+```
+
+
+### PyPi (crossplatform)
+
+All packages can be pip-installed:
+
+```bash
+pip install --pre opensesame rapunzel opensesame-extension-osweb opensesame-plugin-psychopy opensesame-plugin-media_player_mpy
+pip install psychopy psychopy_sounddevice pygame http://files.cogsci.nl/expyriment-0.10.0+opensesame2-py3-none-any.whl https://github.com/smathot/PyGaze/releases/download/prerelease%2F0.8.0a3/python_pygaze-0.8.0a3-py3-none-any.whl
+```
+
+Once you have installed all packages, you can simply run OpenSesame by (after having activated the correct environment) running:
+
+```bash
+opensesame
+```
+
+Or for the Rapunzel code editor:
+
+```bash
+rapunzel
 ```
 
 
@@ -110,13 +150,13 @@ Next, add the relevant channels (`cogsci`) and (`conda-forge`) and install all r
 
 ```bash
 conda config --add channels cogsci --add channels conda-forge
-conda install opensesame opensesame-extension-osweb opensesame-plugin-psychopy psychopy rapunzel python-pygaze
+conda install opensesame opensesame-extension-osweb opensesame-plugin-psychopy psychopy rapunzel
 ```
 
 Some packages are not available through conda. You can use `pip install` for these.
 
 ```bash
-pip install soundfile pygame yolk3k opensesame-extension-osf python-qtpip http://files.cogsci.nl/expyriment-0.10.0+opensesame2-py3-none-any.whl
+pip install soundfile pygame http://files.cogsci.nl/expyriment-0.10.0+opensesame2-py3-none-any.whl https://github.com/smathot/PyGaze/releases/download/prerelease%2F0.8.0a3/python_pygaze-0.8.0a3-py3-none-any.whl
 ```
 
 Once you have installed all packages, you can simply run OpenSesame by (after having activated the correct environment) running:
@@ -136,12 +176,12 @@ rapunzel
 
 Older versions can be downloaded from GitHub releases:
 
-- <https://github.com/smathot/OpenSesame/releases>
+- <https://github.com/open-cogsci/OpenSesame/releases>
 
 
 ### Source code
 
-The source code of OpenSesame is available on [GitHub](https://github.com/smathot/OpenSesame).
+The source code of OpenSesame is available on [GitHub](https://github.com/open-cogsci/OpenSesame).
 
 
 ## Tips
@@ -149,7 +189,7 @@ The source code of OpenSesame is available on [GitHub](https://github.com/smatho
 
 ### Which version of Python to use?
 
-OpenSesame is currently built and tested with Python 3.7.6. Newer versions of Python 3 work but are not extensively tested. Python 2 is no longer supported. The last release that included a Python 2 package was 3.3.12, which can still be downloaded from the [release archive](https://github.com/open-cogsci/OpenSesame/releases/tag/release%2F3.3.12).
+OpenSesame is currently built and tested with Python 3.11.0. Others versions of Python >=3.7 work but are not extensively tested. Python 2 is no longer supported. The last release that included a Python 2 package was 3.3.12, which can still be downloaded from the [release archive](https://github.com/open-cogsci/OpenSesame/releases/tag/release%2F3.3.12).
 
 
 ### When (not) to update?
@@ -161,8 +201,9 @@ OpenSesame is currently built and tested with Python 3.7.6. Newer versions of Py
 
 ### Manually upgrading packages
 
-- OpenSesame is a regular Python environment, and you can upgrade packages with `pip` or `conda` as described here:
-	- <https://rapunzel.cogsci.nl/manual/environment/>
+OpenSesame is a regular Python environment, and you can upgrade packages with `pip` or `conda` as described here:
+
+- <https://rapunzel.cogsci.nl/manual/environment/>
 
 
 ### Tips for system administrators
