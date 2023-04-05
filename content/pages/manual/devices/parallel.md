@@ -40,7 +40,7 @@ try:
 	global io
 	io = windll.dlportio # requires dlportio.dll !!!
 except:
-	print 'The parallel port couldn\'t be opened'
+	print('The parallel port couldn\'t be opened')
 ~~~
 
 This will load `dlportio.dll` as a global object called `io`. Please note that failure will not crash the experiment, so make sure to check the debug window for error messages!
@@ -54,7 +54,7 @@ port = 0x378
 try:
 	io.DlPortWritePortUchar(port, trigger)
 except:
-	print 'Failed to send trigger!'
+	print('Failed to send trigger!')
 ~~~
 
 Note that this sends trigger 1 to port 0x378 (=888). Change these values according to your set-up.
