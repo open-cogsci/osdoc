@@ -111,8 +111,10 @@
           - /4.0/manual/forms/validation
         - - Custom HTML forms
           - /4.0/manual/forms/html
-        - - Python in OpenSesame
+        - - Python in the OpenSesame GUI
           - /4.0/manual/python/about
+        - - OpenSesame Python module (no GUI)
+          - /4.0/manual/python/nogui
         - - Python functions
           - !!python/object/apply:collections.OrderedDict
             - - - Common functions

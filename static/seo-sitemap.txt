@@ -46,6 +46,7 @@ https://osdoc.cogsci.nl/4.0/manual/forms/widgets
 https://osdoc.cogsci.nl/4.0/manual/forms/validation
 https://osdoc.cogsci.nl/4.0/manual/forms/html
 https://osdoc.cogsci.nl/4.0/manual/python/about
+https://osdoc.cogsci.nl/4.0/manual/python/nogui
 https://osdoc.cogsci.nl/4.0/manual/python/common
 https://osdoc.cogsci.nl/4.0/manual/python/var
 https://osdoc.cogsci.nl/4.0/manual/python/pool

@@ -78,7 +78,8 @@ Manual:
     ___:
 
     Python:
-    Python in OpenSesame: manual/python/about
+    Python in the OpenSesame GUI: manual/python/about
+    OpenSesame Python module (no GUI): manual/python/nogui
     Python functions:
         Common functions: manual/python/common
         Variables: manual/python/var
