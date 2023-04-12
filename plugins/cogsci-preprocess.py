@@ -4,6 +4,7 @@ import os
 import re
 import sys
 import sys
+import jinja2
 sys.path.insert(0, '/home/sebastiaan/git/academicmarkdown')
 import yaml
 from collections import OrderedDict
@@ -88,6 +89,7 @@ class AcademicMarkdownReader(MarkdownReader):
         with open(source_path) as fd:
             text = fd.read()
             text = build.MD(text)
+            text = jinja2.Template(text).render()
             # Process internal links
             for m in re.finditer('%link:(?P<link>[\w/-]+)%', text):
                 full = m.group(0)

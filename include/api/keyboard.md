@@ -1,13 +1,12 @@
-<div class="ClassDoc YAMLDoc" id="Keyboard" markdown="1">
+<div class="ClassDoc YAMLDoc" markdown="1">
 
 # class __Keyboard__
 
-The `Keyboard` class is used to collect keyboard responses. You
-generally create a `Keyboard` object with the `Keyboard()` factory
-function, as described in the section
-[Creating a Keyboard](#creating-a-keyboard).
+The `Keyboard` class is used to collect keyboard responses. You generally create
+a `Keyboard` object with the `Keyboard()` factory function, as described in the
+section [Creating a Keyboard](#creating-a-keyboard).
 
-__Example:__
+__Example__
 
 ~~~ .python
 # Wait for a 'z' or 'x' key with a timeout of 3000 ms
@@ -30,8 +29,8 @@ You generally create a `Keyboard` with the `Keyboard()` factory function:
 my_keyboard = Keyboard()
 ~~~
 
-Optionally, you can pass [Response keywords](#response-keywords) to
-`Keyboard()` to set the default behavior:
+Optionally, you can pass [Response keywords](#response-keywords) to `Keyboard()`
+to set the default behavior:
 
 ~~~ .python
 my_keyboard = Keyboard(timeout=2000)
@@ -40,39 +39,35 @@ my_keyboard = Keyboard(timeout=2000)
 ### Key names
 
 - Key names may differ between backends.
-- Keys can be identified either by character or name, and are
-  case-insentive. For example:
+- Keys can be identified either by character or name, and are case-insentive.
+  For example:
   - The key 'a' is represented by 'a' and 'A'
   - The up arrow is represented by 'up' and 'UP'
   - The '/' key is represented by '/', 'slash', and 'SLASH'
   - The spacebar is represented by 'space' and 'SPACE'
 - To find out the name of key, you can:
-  - Click on the 'list available keys' button of the
-    KEYBOARD_RESPONSE item.
-  - Collect a key press with a KEYBOARD_RESPONSE item, and display
-    the key name through a FEEDBACK item with the text 'You
-    pressed [response]' in it.
+  - Click on the 'list available keys' button of the KEYBOARD_RESPONSE item.
+  - Collect a key press with a KEYBOARD_RESPONSE item, and display the key name
+    through a FEEDBACK item with the text 'You pressed [response]' in it.
 
 ### Response keywords
 
-Functions that accept `**resp_args` take the following keyword
-arguments:
+Functions that accept `**resp_args` take the following keyword arguments:
 
-- `timeout` specifies a timeout value in milliseconds, or is set to
-  `None` to disable the timeout.
-- `keylist` specifies a list of keys that are accepted, or is set to
-  `None` accept all keys.
+- `timeout` specifies a timeout value in milliseconds, or is set to `None` to
+  disable the timeout.
+- `keylist` specifies a list of keys that are accepted, or is set to `None`
+  accept all keys.
 
 ~~~ .python
 # Get a left or right arrow press with a timeout of 3000 ms
 my_keyboard = Keyboard()
-key, time = my_keyboard.get_key(keylist=[u'left', u'right'],
-        timeout=3000)
+key, time = my_keyboard.get_key(keylist=[u'left', u'right'], timeout=3000)
 ~~~
 
-Response keywords only affect the current operation (except when passed
-to [keyboard.\_\_init\_\_][__init__]). To change the behavior for all
-subsequent operations, set the response properties directly:
+Response keywords only affect the current operation (except when passed to
+`Keyboard()`). To change the behavior for all subsequent
+operations, set the response properties directly:
 
 ~~~ .python
 # Get two key A or B presses with a 5000 ms timeout
@@ -83,7 +78,7 @@ key1, time1 = my_keyboard.get_key()
 key2, time2 = my_keyboard.get_key()
 ~~~
 
-Or pass the response options to [keyboard.\_\_init\_\_][__init__]:
+Or pass the response options to [keyboard.__init__][__init__]:
 
 ~~~ .python
 # Get two key A or B presses with a 5000 ms timeout
@@ -92,27 +87,34 @@ key1, time1 = my_keyboard.get_key()
 key2, time2 = my_keyboard.get_key()
 ~~~
 
-<div class="FunctionDoc YAMLDoc" id="Keyboard-flush" markdown="1">
-
-## function __Keyboard\.flush__\(\)
+## flush(self)
 
 Clears all pending keyboard input, not limited to the keyboard.
 
-__Returns:__
 
-True if a key had been pressed (i.e., if there was something to flush) and False otherwise.
 
-- Type: bool
+__Returns__
 
-</div>
+- True if a key had been pressed (i.e., if there was something to
+flush) and False otherwise.
 
-<div class="FunctionDoc YAMLDoc" id="Keyboard-get_key" markdown="1">
 
-## function __Keyboard\.get\_key__\(\*\*resp\_args\)
+## get_key(\*arglist, \*\*kwdict)
 
 Collects a single key press.
 
-__Example:__
+
+__Parameters__
+
+- **\*\*resp_args**: Optional [response keywords](#response-keywords) (`timeout` and
+`keylist`) that will be used for this call to `Keyboard.get_key()`.
+This does not affect subsequent operations.
+
+__Returns__
+
+- A `(key, timestamp)` tuple. `key` is None if a timeout occurs.
+
+__Example__
 
 ~~~ .python
 my_keyboard = Keyboard()
@@ -121,32 +123,35 @@ if response is None:
         print(u'A timeout occurred!')
 ~~~
 
-__Keyword dict:__
 
-- `**resp_args`: Optional [response keywords](#response-keywords) (`timeout and `keylist`) that will be used for this call to `Keyboard.get_key()`. This does not affect subsequent operations.
 
-__Returns:__
-
-A `(key, timestamp)` tuple. `key` is None if a timeout occurs.
-
-- Type: tuple
-
-</div>
-
-<div class="FunctionDoc YAMLDoc" id="Keyboard-get_key_release" markdown="1">
-
-## function __Keyboard\.get\_key\_release__\(\*\*resp\_args\)
+## get_key_release(\*arglist, \*\*kwdict)
 
 *New in v3.2.0*
 
 Collects a single key release.
 
-*Important:* This function currently assumes a QWERTY keyboard
-layout (unlike `Keyboard.get_key()`). This means that the returned
-`key` may be incorrect on non-QWERTY keyboard layouts. In addition,
-this function is not implemented for the *psycho* backend.
+*Important:* This
+function currently assumes a QWERTY keyboard
+layout (unlike
+`Keyboard.get_key()`). This means that the returned
+`key` may be
+incorrect on non-QWERTY keyboard layouts. In addition,
+this function is
+not implemented for the *psycho* backend.
 
-__Example:__
+__Parameters__
+
+- **\*\*resp_args**: Optional [response keywords](#response-keywords) (`timeout` and
+`keylist`) that will be used for this call to
+`Keyboard.get_key_release()`. This does not affect subsequent
+operations.
+
+__Returns__
+
+- A `(key, timestamp)` tuple. `key` is None if a timeout occurs.
+
+__Example__
 
 ~~~ .python
 my_keyboard = Keyboard()
@@ -155,25 +160,21 @@ if response is None:
         print(u'A timeout occurred!')
 ~~~
 
-__Keyword dict:__
 
-- `**resp_args`: Optional [response keywords](#response-keywords) (`timeout` and `keylist`) that will be used for this call to `Keyboard.get_key_release()`. This does not affect subsequent operations.
 
-__Returns:__
+## get_mods(self)
 
-A `(key, timestamp)` tuple. `key` is None if a timeout occurs.
+Returns a list of keyboard moderators (e.g., shift, alt, etc.) that
+are currently pressed.
 
-- Type: tuple
 
-</div>
 
-<div class="FunctionDoc YAMLDoc" id="Keyboard-get_mods" markdown="1">
+__Returns__
 
-## function __Keyboard\.get\_mods__\(\)
+- A list of keyboard moderators. An empty list is returned if no
+moderators are pressed.
 
-Returns a list of keyboard moderators (e.g., shift, alt, etc.) that are currently pressed.
-
-__Example:__
+__Example__
 
 ~~~ .python
 my_keyboard = Keyboard()
@@ -182,17 +183,9 @@ if u'shift' in moderators:
         print(u'The shift-key is down!')
 ~~~
 
-__Returns:__
 
-A list of keyboard moderators. An empty list is returned if no moderators are pressed.
 
-- Type: list
-
-</div>
-
-<div class="FunctionDoc YAMLDoc" id="Keyboard-show_virtual_keyboard" markdown="1">
-
-## function __Keyboard\.show\_virtual\_keyboard__\(visible=True\)
+## show_virtual_keyboard(visible=True)
 
 Shows or hides a virtual keyboard if this is supported by the
 back-end. This function is only necessary if you want the virtual
@@ -203,7 +196,11 @@ hide the keyboard for a single-character response.
 This function does nothing for back-ends that do not support virtual
 keyboards.
 
-__Example:__
+__Parameters__
+
+- **visible**: True if the keyboard should be shown, False otherwise.
+
+__Example__
 
 ~~~ .python
 my_keyboard = Keyboard()
@@ -213,13 +210,31 @@ response2, timestamp2 = my_keyboard.get_key()
 my_keyboard.show_virtual_keyboard(False)
 ~~~
 
-__Keywords:__
 
-- `visible` -- True if the keyboard should be shown, False otherwise.
-	- Type: bool
-	- Default: True
 
-</div>
+## synonyms(key)
+
+Gives a list of synonyms for a key, either codes or names. Synonyms
+include all variables as types and as Unicode strings (if applicable).
+
+
+
+__Returns__
+
+- A list of synonyms
+
+
+## valid_keys(self)
+
+Tries to guess which key names are accepted by the back-end. For
+internal use.
+
+
+
+__Returns__
+
+- A list of valid key names.
+
 
 </div>
 

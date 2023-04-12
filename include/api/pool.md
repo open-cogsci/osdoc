@@ -1,241 +1,232 @@
-<div class="ClassDoc YAMLDoc" id="pool" markdown="1">
+<div class="ClassDoc YAMLDoc" markdown="1">
 
 # instance __pool__
 
 The `pool` object provides dict-like access to the file pool. When
 checking whether a file is in the file pool, several folders are
-searched. For more details, see `pool.folders()`.
+searched.
+For more details, see `pool.folders()`.
 
-A `pool` object is created automatically when the experiment starts.
+A `pool` object is created
+automatically when the experiment starts.
 
-In addition to the functions listed below, the following semantics are
+In addition to the functions
+listed below, the following semantics are
 supported:
 
-__Example 1__:
+__Examples__
+
+Basic use:
 
 ~~~ .python
 # Get the full path to a file in the file pool
-print(u'The full path to img.png is %s' %  pool[u'img.png'])
+print(f'The full path to img.png is {pool["img.png"]}')
 # Check if a file is in the file pool
-if u'img.png' in pool:
-        print(u'img.png is in the file pool')
+if 'img.png' in pool:
+    print('img.png is in the file pool')
 # Delete a file from the file pool
-del pool[u'img.png']
-# Walk through all files in the file pool. This retrieves the full
-# paths.
+del pool['img.png']
+# Walk through all files in the file pool. This retrieves the full paths.
 for path in pool:
-        print(path)
+    print(path)
 # Check the number of files in the file pool
-print(u'There are %d files in the file pool' % len(pool))
+print(f'There are {len(pool)} files in the file pool')
 ~~~
 
-__Example 2__:
+Get an image from the file pool and use a `Canvas` to show it.
 
 ~~~ .python
-# Get the full path to an image from the file pool and show it
-if u'img.png' in pool:
-        print(u'img.png could not be found!')
-else:
-        image_path = pool[u'img.png']
-        my_canvas = Canvas()
-        my_canvas.image(image_path)
-        my_canvas.show()
+image_path = pool['img.png']
+my_canvas = Canvas()
+my_canvas.image(image_path)
+my_canvas.show()
 ~~~
 
 [TOC]
 
-<div class="FunctionDoc YAMLDoc" id="pool-add" markdown="1">
-
-## function __pool\.add__\(path, new\_name=None\)
+## add(path, new_name=None)
 
 Copies a file to the file pool.
 
-__Example:__
+
+__Parameters__
+
+- **path**: The full path to the file on disk.
+- **new_name**: A new name for the file in the pool, or None to use the file's
+original name.
+
+__Example__
 
 ~~~ .python
-pool.add(u'/home/username/Pictures/my_ing.png')
+pool.add('/home/username/Pictures/my_ing.png')
 ~~~
 
-__Arguments:__
 
-- `path` -- The full path to the file on disk.
-	- Type: str, unicode
 
-__Keywords:__
+## clean_up(self)
 
-- `new_name` -- A new name for the file in the pool, or None to use the file's original name.
-	- Type: str, NoneType
-	- Default: None
+Removes the pool folder.
 
-</div>
 
-<div class="FunctionDoc YAMLDoc" id="pool-fallback_folder" markdown="1">
 
-## function __pool\.fallback\_folder__\(\)
 
-No description specified.
+## fallback_folder(self)
 
-__Example:__
+The full path to the fallback pool folder, which is the
+`__pool__` subfolder of the current experiment folder, or
+`None` if this folder does not exist. The fallback pool
+folder is mostly useful in combination with a versioning
+system, such as git, because it allows you to save the
+experiment as a plain-text file, even when having files
+in the file pool.
+
+
+
+__Returns__
+
+- 
+
+__Example__
 
 ~~~ .python
 if pool.fallback_folder() is not None:
-        print(u'There is a fallback pool folder!')
+    print('There is a fallback pool folder!')
 ~~~
 
-__Returns:__
 
-The full path to the fallback pool folder, which is the `__pool__` subfolder of the current experiment folder, or `None` if this folder does not exist. The fallback pool folder is mostly useful in combination with a versioning system, such as git, because it allows you to save the experiment as a plain-text file, even when having files in the file pool.
 
-- Type: unicode, NoneType
-
-</div>
-
-<div class="FunctionDoc YAMLDoc" id="pool-files" markdown="1">
-
-## function __pool\.files__\(\)
+## files(self)
 
 Returns all files in the file pool.
 
-__Example:__
+
+
+__Returns__
+
+- A list of full paths.
+
+__Example__
 
 ~~~ .python
 for path in pool.files():
-        print(path)
+    print(path)
 # Equivalent to:
 for path in pool:
-        print(path)
+    print(path)
 ~~~
 
-__Returns:__
 
-A list of full paths.
 
-- Type: list
+## folder(self)
 
-</div>
+Gives the full path to the (main) pool folder. This is typically a
+temporary folder that is deleted when the experiment is finished.
 
-<div class="FunctionDoc YAMLDoc" id="pool-folder" markdown="1">
 
-## function __pool\.folder__\(\)
 
-Gives the full path to the (main) pool folder. This is typically a temporary folder that is deleted when the experiment is finished.
+__Returns__
 
-__Example:__
+- The full path to the main pool folder.
+
+__Example__
 
 ~~~ .python
-print(u'The pool folder is here: ' % pool.folder())
+print(f'The pool folder is here: {pool.folder()}')
 ~~~
 
-__Returns:__
 
-The full path to the main pool folder.
 
-- Type: unicode
-
-</div>
-
-<div class="FunctionDoc YAMLDoc" id="pool-folders" markdown="1">
-
-## function __pool\.folders__\(include\_fallback\_folder=True, include\_experiment\_path=False\)
+## folders(include_fallback_folder=True, include_experiment_path=False)
 
 Gives a list of all folders that are searched when retrieving the
 full path to a file. These are (in order):
 
-1. The file pool folder itself, as returned by `pool.folder()`.
-2. The folder of the current experiment (if it exists)
+1. The file pool folder
+itself, as returned by `pool.folder()`.
+2. The folder of the current
+experiment (if it exists)
 3. The fallback pool folder, as returned by
-   `pool.fallback_folder()` (if it exists)
+`pool.fallback_folder()` (if it exists)
 
-__Example:__
+__Parameters__
+
+- **include_fallback_folder**: Indicates whether the fallback pool folder should be included if it
+exists.
+- **include_experiment_path**: Indicates whether the experiment folder should be included if it
+exists.
+
+__Returns__
+
+- A list of all folders.
+
+__Example__
 
 ~~~ .python
-print(u'The following folders are searched for files:')
+print('The following folders are searched for files:')
 for folder in pool.folders():
-        print(folder)
+    print(folder)
 ~~~
 
-__Keywords:__
 
-- `include_fallback_folder` -- Indicates whether the fallback pool folder should be included if it exists.
-	- Type: bool
-	- Default: True
-- `include_experiment_path` -- Indicates whether the experiment folder should be included if it exists.
-	- Type: bool
-	- Default: False
 
-__Returns:__
+## in_folder(path)
 
-A list of all folders.
+Checks whether path is in the pool folder. This is different from
+the `path in pool` syntax in that it only checks the main pool folder,
+and not the fallback pool folder and experiment folder.
 
-- Type: list
 
-</div>
+__Parameters__
 
-<div class="FunctionDoc YAMLDoc" id="pool-in_folder" markdown="1">
+- **path**: A file basename to check.
 
-## function __pool\.in\_folder__\(path\)
+__Returns__
 
-Checks whether path is in the pool folder. This is different from the `path in pool` syntax in that it only checks the main pool folder, and not the fallback pool folder and experiment folder.
+- 
 
-__Example:__
+__Example__
 
 ~~~ .python
 print(pool.in_folder('cue.png'))
 ~~~
 
-__Arguments:__
 
-- `path` -- A file basename to check.
-	- Type: str
 
-__Returns:__
-
-No description
-
-- Type: bool
-
-</div>
-
-<div class="FunctionDoc YAMLDoc" id="pool-rename" markdown="1">
-
-## function __pool\.rename__\(old\_path, new\_path\)
+## rename(old_path, new_path)
 
 Renames a file in the pool folder.
 
-__Example:__
+
+__Parameters__
+
+- **old_path**: The old file name.
+- **new_path**: The new file name.
+
+__Example__
 
 ~~~ .python
-pool.rename(u'my_old_img.png', u'my_new_img.png')
+pool.rename('my_old_img.png', 'my_new_img.png')
 ~~~
 
-__Arguments:__
 
-- `old_path` -- The old file name.
-	- Type: str, unicode
-- `new_path` -- The new file name.
-	- Type: str, unicode
 
-</div>
+## size(self)
 
-<div class="FunctionDoc YAMLDoc" id="pool-size" markdown="1">
+Gets the combined size in bytes of all files in the file pool.
 
-## function __pool\.size__\(\)
 
-No description specified.
 
-__Example:__
+__Returns__
+
+- 
+
+__Example__
 
 ~~~ .python
-print(u'The size of the file pool is %d bytes' % pool.size())
+print(f'The size of the file pool is {pool.size()} bytes')
 ~~~
 
-__Returns:__
 
-The combined size in bytes of all files in the file pool.
-
-- Type: int
-
-</div>
 
 </div>
 
