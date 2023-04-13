@@ -108,10 +108,11 @@ Manual:
     Advanced:
     The prepare-run strategy: manual/prepare-run
     Counterbalancing: manual/counterbalancing
+    <nodoc> OSF Integration: manual/osf
     Timing: manual/timing
     Backends: manual/backends
     OpenSesame script: manual/opensesame-script
-    Running experiments without the GUI: manual/opensesamerun
+    OpenSesameRun (no GUI): manual/opensesamerun
     Installing packages, plugins, and extensions: https://rapunzel.cogsci.nl/manual/environment/
     Runners: manual/runners
 
@@ -174,6 +175,7 @@ Other:
     # Publications: publications
     # Meet the team!: team
     Donate: donate
+    <nodoc> Important changes in OpenSesame 3: important-changes-3
     Degrees of visual angle: visualangle
     Notation for experimental design: experimentaldesign
     Release notes: notes/notes

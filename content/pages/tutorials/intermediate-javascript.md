@@ -1,7 +1,5 @@
 title: Intermediate tutorial (JavaScript): visual search
-
-This tutorial requires OSWeb 1.4 or later
-{:.page-notification}
+uptodate: false
 
 [TOC]
 

@@ -68,6 +68,7 @@ https://osdoc.cogsci.nl/4.0/manual/eyetracking/tobii
 https://osdoc.cogsci.nl/4.0/manual/eyetracking/webgazer
 https://osdoc.cogsci.nl/4.0/manual/prepare-run
 https://osdoc.cogsci.nl/4.0/manual/counterbalancing
+https://osdoc.cogsci.nl/4.0/manual/osf
 https://osdoc.cogsci.nl/4.0/manual/timing
 https://osdoc.cogsci.nl/4.0/manual/backends
 https://osdoc.cogsci.nl/4.0/manual/opensesame-script
@@ -113,6 +114,7 @@ https://osdoc.cogsci.nl/4.0/manual/response/srbox
 https://osdoc.cogsci.nl/4.0/manual/stimuli/sound
 https://osdoc.cogsci.nl/4.0/items/touch_response
 https://osdoc.cogsci.nl/4.0/donate
+https://osdoc.cogsci.nl/4.0/important-changes-3
 https://osdoc.cogsci.nl/4.0/visualangle
 https://osdoc.cogsci.nl/4.0/experimentaldesign
 https://osdoc.cogsci.nl/4.0/notes/notes

@@ -127,4 +127,4 @@ pygame.display.flip() # Update the display to show the red rectangle.
 
 The *osweb* backend is built on top of OSWeb and allows you run experiments in a browser. For more information, see:
 
-- %url:manual/osweb/workflow%
+- %link:manual/osweb/workflow%

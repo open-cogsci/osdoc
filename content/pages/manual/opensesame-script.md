@@ -137,7 +137,7 @@ logger
 
 ## *run* statement
 
-Indicates that an item should be run. In the case of the sequence, the order of the run statements determines the order in which items are called. In the case of the parallel plugin all items are called at the same time.
+Indicates that an item should be run. In the case of the sequence, the order of the run statements determines the order in which items are called. In the case of the coroutines plugin all items are called at the same time.
 
 *Applies to*
 
@@ -145,7 +145,7 @@ sequence
 
 *Format*
 
-	run [item name] [optional: condition]
+	run [item name] [optional: condition] [optional: disabled]
 
 *Parameters*
 
@@ -198,7 +198,7 @@ Loop
 
 *Format*
 
-	Setcycle [cycle #] [variable name] [variable value]
+	setcycle [cycle #] [variable name] [variable value]
 
 *Parameters*
 

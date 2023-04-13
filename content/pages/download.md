@@ -15,7 +15,7 @@ function startDownload(url) {
 
 <a role="button" class="btn btn-success btn-align-left" href="https://www.buymeacoffee.com/cogsci">
 <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-Buy us a coffee!
+Help us stay focused and buy us a coffee!
 </a>
 
 Coffee keeps us awake so that we can develop free software and answer your questions on the support forum!

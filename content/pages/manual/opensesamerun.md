@@ -1,4 +1,4 @@
-title: Running experiment without the GUI
+title: OpenSesameRun (no GUI)
 
 ## About
 
@@ -44,3 +44,10 @@ Let's say that you want to run the gaze cuing example experiment, for subject #1
 ~~~
 opensesamerun /usr/share/opensesame/examples/gaze_cuing.opensesame.tar.gz -s 1 -l /home/sebastiaan/Documents/subject1.tsv -f 
 ~~~
+
+
+## Alternative `libopensesame`
+
+You can also start experiments without using the GUI through the `libopensesame` Python module:
+
+- %link:manual/python/nogui%
