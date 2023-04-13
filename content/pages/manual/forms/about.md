@@ -8,7 +8,7 @@ Forms are simple interactive displays that can be used to implement questionnair
 	- %link:manual/forms/custom%
 - Create custom forms using Python inline script. This offers the most flexibility, but requires some knowledge of Python programming. This only works on the desktop.
 	- %link:manual/forms/custom%
-- Create custom forms using HTML code. This only works in a browser.
+- Create custom forms using HTML code. This only works when running experiments in a browser with OSWeb.
 	- %link:manual/forms/html%
 
 %--

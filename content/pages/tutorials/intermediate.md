@@ -1,4 +1,5 @@
 title: Intermediate tutorial (Python) visual search
+uptodate: false
 
 [TOC]
 

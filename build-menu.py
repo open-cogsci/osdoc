@@ -39,6 +39,9 @@ def build_menu(d, lvl=1):
 
     l = []
     for pagename, entry in d.items():
+        if pagename.startswith('<nodoc>'):
+            print(f'ignoring {pagename}')
+            continue
         if pagename.startswith('__'):
             pagename = pagename[2:]
         if isseparator(pagename):

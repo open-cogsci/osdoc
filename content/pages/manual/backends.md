@@ -1,13 +1,14 @@
 title: Backends
 
-The *backend* is the software layer that deals with input (keyboard input, mouse input, etc.) and output (display presentation, sound playback, etc.). There are many Python libraries that offer this type of functionality and OpenSesame could, in principle, use any one of them. For this reason, OpenSesame is backend-independent, in the sense that you can choose which backend should be used. Currently there are four backends: *legacy*, *psycho*, *droid*, and *xpyriment*.
+The *backend* is the software layer that deals with input (keyboard input, mouse input, etc.) and output (display presentation, sound playback, etc.). There are many libraries that offer this type of functionality and OpenSesame could, in principle, use any one of them. For this reason, OpenSesame is backend-independent, in the sense that you can choose which backend should be used. Currently there are four backends: *legacy*, *psycho*, *xpyriment*, and *osweb*.
 
 [TOC]
 
 ## Differences and some tips
 
-Usually, you won't notice which backend is used. The differences between backends are largely technical, and, as long as you use the graphical user interface or the `openexp` Python modules, all backends work the same way. However, there are a few reasons to prefer one backend over another:
+Usually, you won't notice which backend is used. The differences between backends are largely technical, and, as long as you use the graphical user interface, all backends work more ore less the same way. However, there are a few reasons to prefer one backend over another:
 
+- If you want to run the experiment in a browser, you need to select the *osweb* backend.
 - Backend differs in [temporal precision](%link:timing%).
 	- Tip: If you care about millisecond temporal precision, use *xpyriment* or *psycho*.
 - Backends differ in how long stimulus preparation takes.
@@ -21,13 +22,13 @@ Usually, you won't notice which backend is used. The differences between backend
 
 ## Selecting a backend
 
-The easiest way to select a backend is using the combobox in the general-properties (%FigSelect).
+You can select a backend in the general properties of the experiment (%FigSelect).
 
 %--
 figure:
  id: FigSelect
  source: fig-select.png
- caption: "The backend selection combobox."
+ caption: "Selecting a backend"
 --%
 
 If you view the general script (select "Show script editor"), you will see that there are actually six distinct backends: canvas, keyboard, mouse, sampler, color, and clock. The combobox-method automatically selects an appropriate, predefined combination of backends, but you could, in theory, mix and match.
@@ -120,3 +121,10 @@ pygame.draw.rect(self.experiment.window, pygame.Color("red"),
 	[20, 20, 100, 100]) # Draw a red rectangle. Not shown yet...
 pygame.display.flip() # Update the display to show the red rectangle.
 ~~~
+
+
+## osweb
+
+The *osweb* backend is built on top of OSWeb and allows you run experiments in a browser. For more information, see:
+
+- %link:manual/osweb/workflow%

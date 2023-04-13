@@ -204,7 +204,7 @@ figure:
 You can use more complex conditions as well. Let's take a look at a few examples:
 
 ```python
-correct = 1 and response_time > 2000
+correct == 1 and response_time > 2000
 correct != 1 or response_time > max_response_time or response_time < min_response_time
 ```
 

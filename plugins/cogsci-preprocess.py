@@ -4,6 +4,7 @@ import os
 import re
 import sys
 import sys
+import jinja2
 sys.path.insert(0, '/home/sebastiaan/git/academicmarkdown')
 import yaml
 from collections import OrderedDict
@@ -31,7 +32,7 @@ ITEM_TYPES = [
     'MOUSE_RESPONSE', 'JOYSTICK', 'SRBOX', 'TEXT_DISPLAY', 'FORM_BASE',
     'FORM_TEXT_INPUT', 'FORM_TEXT_DISPLAY', 'FORM_MULTIPLE_CHOICE',
     'FORM_CONSENT', 'FORM', 'MEDIA_PLAYER_VLC', 'MEDIA_PLAYER_GST',
-    'MEDIA_PLAYE<R_MPY', 'MOUSETRAP', 'SOUND_START_RECORDING',
+    'MEDIA_PLAYER_MPY', 'MOUSETRAP', 'SOUND_START_RECORDING',
     'SOUND_STOP_RECORDING', 'TOUCH_RESPONSE', 'PYGAZE_INIT', 'PYGAZE_LOG',
     'PYGAZE_WAIT', 'PYGAZE_DRIFT_CORRECT', 'PYGAZE_STOP_RECORDING',
     'PYGAZE_START_RECORDING', 'THIS_STYLE', 'NOTEPAD', 'INLINE_JAVASCRIPT',
@@ -88,6 +89,7 @@ class AcademicMarkdownReader(MarkdownReader):
         with open(source_path) as fd:
             text = fd.read()
             text = build.MD(text)
+            text = jinja2.Template(text).render()
             # Process internal links
             for m in re.finditer('%link:(?P<link>[\w/-]+)%', text):
                 full = m.group(0)

@@ -2,7 +2,10 @@ title: About JavaScript
 
 In OpenSesame you can create complex experiments using only the graphical user interface (GUI). But you will sometimes encounter situations in which the functionality provided by the GUI is insufficient. In these cases you can add JavaScript code to your experiment.
 
-JavaScript is mostly intended for online experiments with OSWeb, although you can also run JavaScript on the desktop, provided that you use (the outdated) ECMA 5.1 syntax, as explained below. If you do not need to run your experiment online, it is generally easier to use [Python](%url:manual/python/about%) instead of JavaScript.
+JavaScript is for experiments that run in a browser with OSWeb. If you need to run your experiment on the desktop, you need to use [Python](%url:manual/python/about%) instead of JavaScript.
+
+__Version note:__ Desktop support for JavaScript was removed in OpeSesame 4.0. This is because JavaScript support on the desktop was incomplete and was perceived by users as confusing without adding much benefit.
+{: .page-notification}
 
 [TOC]
 
@@ -34,8 +37,6 @@ For more information about the prepare-run strategy, see:
 
 - %link:prepare-run%
 
-__Important__: If you declare a variable or function in one script, it won't automatically be available in another script, unless you attach it to the `persistent` object, as described below.
-
 
 ### Printing output to the console
 
@@ -50,51 +51,13 @@ When running on the desktop, the output will appear in the OpenSesame console (o
 
 ## Things to know
 
-### Versions of JavaScript: ECMA 5.1 and ECMA 6
-
-The formal name of JavaScript is ECMASCRIPT, which exists in different versions. The latest version, ECMA 6 (or: ECMA 2015), has some useful features:
-
-- `let` and `const` keywords for variable definitions (in addition to the old `var` keyword)
-- `for … of …` loops that iterate over values (in addition to the old `for … in …` loops that iterate over indices)
-- [Destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment), which allows you to assign the elements of an array to multiple variables at once.
-
-ECMA 6 is supported by most modern browsers, which means that you can use these features when running an experiment in a browser.
-
-```js
-// ECMA 6 (browser only)
-const c = Canvas()
-c.fixdot()
-for (const [x, y] of xy_circle(8, 100)) {
-    c.rect({x: x - 10, y: y - 10, w: 20, h: 20})
-}
-c.show()
-```
-
-However, due to a limitation of the `js2py` library, which is used by OpenSesame to run JavaScript on the desktop, you can only use ECMA 5.1 when running the experiment on the desktop (in addition to in a browser). This means that the script above becomes less elegant when you want to be able to run it on the desktop:
-
-```js
-// ECMA 5.1 (browser + desktop)
-var c = Canvas()
-c.fixdot()
-var points = xy_circle(8, 100)
-for (var i in points) {
-    var x = points[i][0]
-    var y = points[i][1]
-    c.rect({x: x - 10, y: y - 10, w: 20, h: 20})
-}
-c.show()
-```
-
 ### Common functions
-
-New in OSWeb v1.4
-{:.page-notification}
 
 Many common functions are directly available in an INLINE_JAVASCRIPT item. For example:
 
 ```js
 // `Canvas()` is a factory function that returns a `Canvas` object
-var fixdotCanvas = Canvas()
+let fixdotCanvas = Canvas()
 if (sometimes()) {  // Sometimes the fixdot is green
     fixdotCanvas.fixdot({color: 'green'})
 } else {  // Sometimes it is red
@@ -110,7 +73,7 @@ For a list of common functions, see:
 
 ### The `persistent` object: preserving objects across scripts
 
-New in OSWeb v1.4
+__Version note__ As of OSWeb 2.0, all JavaScript code is executed in the same workspace and objects are therefore preserved across scripts. This means that you no longer need the `persistent` object.
 {:.page-notification}
 
 Each INLINE_JAVASCRIPT item is executed in its own workspace. This means—and this is different from Python INLINE_SCRIPT items!—that you cannot use variables or functions that you've declared in one script in another script. As a workaround, you can attach variables or functions as properties to the `persistent` object, which serves as a container of things that you want to preserve across scripts.
@@ -131,6 +94,9 @@ persistent.myCanvas.show()
 
 ### The `vars` object: Access to experimental variables
 
+__Version note__ As of OSWeb 2.0, all experimental variables are available as globals. This means that you no longer need the `vars` object.
+{:.page-notification}
+
 You can access experimental variables through the `vars` object:
 
 ```js
@@ -142,9 +108,6 @@ vars.my_variable = 'my_value'
 
 
 ### The `pool` object: Access to the file pool
-
-New in OSWeb v1.4
-{:.page-notification}
 
 You access 'files' from the file pool through the `pool` object. The most obvious use of this is to parse CSV files, for example with experimental conditions, from the file pool using the `csv-parse` library (described in more detail below).
 
@@ -167,13 +130,10 @@ pool['bark.ogg'].data.play()
 
 ### The `Canvas` class: Presenting visual stimuli
 
-New in OSWeb v1.4
-{:.page-notification}
-
 The `Canvas` class is used to present visual stimuli. For example, you can show a fixation dot as follows:
 
 ```js
-var myCanvas = Canvas()
+let myCanvas = Canvas()
 myCanvas.fixdot()
 myCanvas.show()
 ```
@@ -185,10 +145,7 @@ A full overview of the `Canvas` class can be found here:
 
 ## Available JavaScript libraries
 
-New in OSWeb v1.4
-{:.page-notification}
-
-Several convenient JavaScript libraries are bundled with OSWeb. These libraries are only available when running in a browser (and *not* on the desktop).
+Several convenient JavaScript libraries are bundled with OSWeb.
 
 
 ### random-ext: advanced randomization
@@ -201,7 +158,6 @@ __Example:__
 Draw eight circle with a random color and a location that is randomly sampled from a five by five grid:
 
 ```js
-// ECMA 6 (browser only)
 let positions = xy_grid(5, 50)
 positions = random.subArray(positions, 8)
 const cnv = Canvas()
@@ -226,7 +182,6 @@ __Example:__
 Draw a five by five grid of incrementing numbers:
 
 ```js
-// ECMA 6 (browser only)
 let positions = xy_grid(5, 50)
 const cnv = Canvas()
 for (const [i, [x, y]] of enumerate(positions)) {

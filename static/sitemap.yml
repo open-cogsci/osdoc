@@ -111,8 +111,10 @@
           - /4.0/manual/forms/validation
         - - Custom HTML forms
           - /4.0/manual/forms/html
-        - - Python in OpenSesame
+        - - Python in the OpenSesame GUI
           - /4.0/manual/python/about
+        - - OpenSesame Python module (no GUI)
+          - /4.0/manual/python/nogui
         - - Python functions
           - !!python/object/apply:collections.OrderedDict
             - - - Common functions
@@ -159,7 +161,7 @@
           - /4.0/manual/prepare-run
         - - Counterbalancing
           - /4.0/manual/counterbalancing
-        - - OSF Integration
+        - - <nodoc> OSF Integration
           - /4.0/manual/osf
         - - Timing
           - /4.0/manual/timing
@@ -167,7 +169,7 @@
           - /4.0/manual/backends
         - - OpenSesame script
           - /4.0/manual/opensesame-script
-        - - Running experiments without the GUI
+        - - OpenSesameRun (no GUI)
           - /4.0/manual/opensesamerun
         - - Installing packages, plugins, and extensions
           - https://rapunzel.cogsci.nl/manual/environment/
@@ -261,7 +263,7 @@
     - !!python/object/apply:collections.OrderedDict
       - - - Donate
           - /4.0/donate
-        - - Important changes in OpenSesame 3
+        - - <nodoc> Important changes in OpenSesame 3
           - /4.0/important-changes-3
         - - Degrees of visual angle
           - /4.0/visualangle

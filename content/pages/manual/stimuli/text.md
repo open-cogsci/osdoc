@@ -6,15 +6,10 @@ title: Text
 
 The most common way to show text is using a SKETCHPAD or FEEDBACK item. These allow you to enter text and other visual stimuli. For a questionnaire-like way to show text, you can use [forms](%link:manual/forms/about%).
 
-__Note:__ The TEXT_DISPLAY plugin has been removed as of OpenSesame 3.0.0, because it was outdated and did not provide any functionality that is not offered by FORMs and SKETCHPAD items.
-{: .page-notification}
 
 ## HTML formatting
 
 You can use a HTML tags, which you can simply insert into your text. You can use these tags everywhere: In SKETCHPAD items, in INLINE_SCRIPTs (provided you use the `Canvas` class), in forms, etc.
-
-__Note:__ Using `color`, `size`, and `style` directly as keywords in a `<span>` tag no longer works. This was invalid HTML, and has been deprecated as of OpenSesame 3.2. The example below shows the correct way to change the family (style), size, and color of text.
-{: .page-notification}
 
 Example:
 
@@ -36,10 +31,10 @@ Line 1<br>Line 2
 
 ## Variables and inline Python
 
-You can embed variables in text using the `[...]` syntax. For example, the following:
+You can embed variables in text using the `{...}` syntax. For example, the following:
 
 ~~~ .python
-The subject number is [subject_nr]
+The subject number is {subject_nr}
 ~~~
 
 ... might evaluate to (for subject 1):
@@ -48,10 +43,10 @@ The subject number is [subject_nr]
 The subject number is 1
 ~~~
 
-You can embed Python code using the `[=...]` syntax. For example, the following:
+You can also embed Python expression. For example, the following:
 
 ~~~ .python
-The subject number modulo five is [=var.subject_nr % 5]
+The subject number modulo five is {subject_nr % 5}
 ~~~
 
 ... might evaluate to (for subject 7)
@@ -59,38 +54,6 @@ The subject number modulo five is [=var.subject_nr % 5]
 ~~~ .python
 The subject number modulo five is 2
 ~~~
-
-
-## Vertical alignment
-
-__Note:__ This section on vertical alignment applies to OpenSesame 3.2
-{: .page-notification}
-
-As of OpenSesame 3.2, text is aligned based on the bounding box around the text. This is not ideal if you present text as individual words. For example, the word 'get' (with a downwards-protruding 'g') will appear higher than the word 'bet' (with an upwards-protruding 'b'):
-
-%--
-figure:
- id: FigFontMisaligned
- source: font-misaligned.png
- caption: "Individually presented words are not always correctly aligned."
---%
-
-As a workaround, you can place (nearly) invisible characters around the text that you want to display, so that the bounding boxes of the different words are the same height. To make characters invisible, you can place them inside a `span` and set the color to nearly transparent using an `rgba()` color.
-
-The following will show 'get', flanked on both sides by (nearly) invisible 'gb' characters:
-
-~~~ .html
-<span style='color:rgba(0,0,0,.01)'>gb</span>get<span style='color:rgba(0,0,0,.01)'>gb</span>
-~~~
-
-If you do this for both 'get' and 'bet', the result will be perfectly aligned text:
-
-%--
-figure:
- id: FigFontMisaligned
- source: font-aligned.png
- caption: "Perfectly aligned words!"
---%
 
 
 ## Fonts

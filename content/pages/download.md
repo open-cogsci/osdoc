@@ -15,7 +15,7 @@ function startDownload(url) {
 
 <a role="button" class="btn btn-success btn-align-left" href="https://www.buymeacoffee.com/cogsci">
 <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-Buy us a coffee!
+Help us stay focused and buy us a coffee!
 </a>
 
 Coffee keeps us awake so that we can develop free software and answer your questions on the support forum!
@@ -90,14 +90,8 @@ Next, to add the required repositories to your software sources and install Open
 sudo add-apt-repository ppa:smathot/cogscinl
 # Add repository for development packages
 sudo add-apt-repository ppa:smathot/milgram
-# Install basic OpenSesame 4.X packages
-sudo apt install python3-opensesame python3-rapunzel
-# Add eye-tracking support
-sudo apt install python3-pygaze
-# PyGame is needed for the legacy and xpyriment backends
-sudo apt install python3-pygame
-# experimental language server support
-sudo apt install python3-opensesame-extension-language_server
+# Install OpenSesame 4.X packages plus useful extensions
+sudo apt install python3-opensesame python3-rapunzel python3-opensesame-extension-updater python3-pygaze python3-pygame python3-opensesame-extension-language_server
 ```
 
 Some commonly used packages are not available through the PPA. You can install them through `pip`:
@@ -117,10 +111,10 @@ pip install psychopy psychopy_sounddevice python-bidi arabic_reshaper
 
 ### PyPi (crossplatform)
 
-All packages can be pip-installed:
+All packages can be pip-installed. Note that OpenSesame is called `opensesame-core` on PyPi.
 
 ```bash
-pip install --pre opensesame rapunzel opensesame-extension-osweb opensesame-plugin-psychopy opensesame-plugin-media_player_mpy
+pip install --pre opensesame-core rapunzel opensesame-extension-osweb opensesame-extension-updater opensesame-plugin-psychopy opensesame-plugin-media_player_mpy
 pip install psychopy psychopy_sounddevice pygame http://files.cogsci.nl/expyriment-0.10.0+opensesame2-py3-none-any.whl https://github.com/smathot/PyGaze/releases/download/prerelease%2F0.8.0a3/python_pygaze-0.8.0a3-py3-none-any.whl
 ```
 
@@ -149,14 +143,14 @@ conda activate opensesame-py3
 Next, add the relevant channels (`cogsci`) and (`conda-forge`) and install all relevant packages. Make sure that `pyqode.core` and `pyqode.python` are >= 3.2 from the `cogsci` channel, and not the older versions from the `conda-forge` channel.
 
 ```bash
-conda config --add channels cogsci --add channels conda-forge
-conda install opensesame opensesame-extension-osweb opensesame-plugin-psychopy psychopy rapunzel
+conda config --add channels conda-forge --add channels cogsci
+conda install opensesame opensesame-extension-osweb opensesame-extension-updater opensesame-plugin-psychopy rapunzel
 ```
 
 Some packages are not available through conda. You can use `pip install` for these.
 
 ```bash
-pip install soundfile pygame http://files.cogsci.nl/expyriment-0.10.0+opensesame2-py3-none-any.whl https://github.com/smathot/PyGaze/releases/download/prerelease%2F0.8.0a3/python_pygaze-0.8.0a3-py3-none-any.whl
+pip install soundfile pygame psychopy psychopy-sounddevice http://files.cogsci.nl/expyriment-0.10.0+opensesame2-py3-none-any.whl https://github.com/smathot/PyGaze/releases/download/prerelease%2F0.8.0a3/python_pygaze-0.8.0a3-py3-none-any.whl
 ```
 
 Once you have installed all packages, you can simply run OpenSesame by (after having activated the correct environment) running:

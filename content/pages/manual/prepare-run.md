@@ -87,9 +87,9 @@ In an INLINE_SCRIPT item, you can choose how you want to implement the run and p
 
 In general, items should follow the principle of performing as much as possible time-consuming preparation during the Prepare phase, and minimizing the Run phase. However, every plugin is implemented differently. If you are unsure about a specific case, please post a query on the forum.
 
-## Conditional statements ('Run if' and 'Show if')
+## Conditional expressions (run if, show if, break if, etc)
 
-In SEQUENCE items, the 'Run if' condition is evaluated at the last moment, during the run phase. Therefore, you can use a condition like `[correct] = 0` which depends on the results of a KEYBOARD_RESPONSE item which has been called just before. It is important to take into account that the 'Run if' statement applies *only* to the run phase of an item—The prepare phase is *always* executed.
+In SEQUENCE items, the 'Run if' condition is evaluated at the last moment, during the run phase. Therefore, you can use a condition like `correct == 0` which depends on the results of a KEYBOARD_RESPONSE item which has been called just before. It is important to take into account that the 'Run if' expression applies *only* to the run phase of an item—The prepare phase is *always* executed.
 
 In COROUTINES items, the 'Run if' condition is evaluated during the Prepare phase. Therefore, the conditions cannot depend on events that occur during the execution of the COROUTINES.
 

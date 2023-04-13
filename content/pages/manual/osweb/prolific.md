@@ -31,9 +31,11 @@ figure:
 
 Next, create a study on Prolific. Under Study Details (%FigProlific), insert the JATOS study URL in the field labeled "What is the URL of your study?". This will tell Prolific how to start the experiment. Importantly, add the following to the end of the URL (this will pass important information from Prolific to your experiment):
 
+{% raw %}
 ```bash
 &PROLIFIC_PID={{%PROLIFIC_PID%}}&STUDY_ID={{%STUDY_ID%}}&SESSION_ID={{%SESSION_ID%}}
 ```
+{% endraw %}
 
 When the experiment is finished, Prolific needs to know about it. For this purpose, Prolific uses an End Redirect URL, which is listed in the field labeled "To prove that participants have completed your study …". Copy this End Redirect URL. Also check the box labeled "I've set up my study to redirect to this url at the end".
 

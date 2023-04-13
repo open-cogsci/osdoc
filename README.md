@@ -1,6 +1,6 @@
 # OpenSesame documentation area
 
-Copyright 2010-2022
+Copyright 2010-2023
 
 Sebastiaan Mathôt <s.mathot@cogsci.nl>
 
@@ -46,7 +46,7 @@ This will generate the site in the folder `output`.
 
 Once the site has been generated, open a terminal in the `output` folder and start a basic webserver to view it:
 
-	python -m SimpleHTTPServer
+	python -m http.server
 
 You can now visit `http://localhost:8000` in a browser to view the site, which will be in a subfolder, e.g. `http://localhost:8000/3.1`
 
@@ -54,13 +54,9 @@ You can now visit `http://localhost:8000` in a browser to view the site, which w
 
 - pelican
 - inkscape (used for converting svg to png)
+- jinja2
 - python-academicmarkdown
 - python-yamldoc
-
-To install these on Ubuntu 16.04:
-
-	sudo apt-get install pelican inkscape
-	pip install python-academicmarkdown python-yamldoc
 
 ## License information
 
