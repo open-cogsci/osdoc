@@ -5,6 +5,7 @@ Always triple check whether your data has been logged correctly before running y
 
 [TOC]
 
+
 ## Using the logger item
 
 OpenSesame will not log your data automatically. Instead, you need to insert a LOGGER item, typically at the end of your trial sequence.
@@ -17,11 +18,11 @@ figure:
   The LOGGER item.
 --%
 
-The simplest way to use the LOGGER is by leaving the 'Log all variables (recommended)' enabled. That way, all variables that OpenSesame knows about are written the log file.
+The simplest way to use the LOGGER is by leaving the option 'Automatically log all variables' enabled. That way, all variables that OpenSesame knows about are written the log file, except for those that are explicitly excluded (see below).
 
-If you find that some variables are missing, you can explicitly add the name of a custom variable, or drag a variable from the variable inspector into the LOGGER table.
+You can explicitly *include* which variables you want to log. The main reason for doing so is when you find that some variables are missing (because OpenSesame did not automatically detect them), or if you have disabled the option 'Automatically log all variables', 
 
-If you prefer to log only certain variables, you can disable the 'Log all variables' option, and indicate explicitly which variables you want to log.
+You can also explicitly exclude certain variables from the log file. The main reason for doing so is to keep the log files clean by excluding variables that are generally not useful.
 
 In general, you should create only one logger item, and reuse that LOGGER at different locations in your experiment if necessary (i.e. use linked copies of the same LOGGER item). If you create multiple LOGGERs (rather than using a single LOGGER multiple times), they will all write to the same log file, and the result will be a mess!
 
@@ -130,6 +131,19 @@ for basename in os.listdir(SRC_FOLDER):
     dm <<= ops.keep_only(io.readtxt(path), *COLUMNS_TO_KEEP)
 io.writetxt(dm, 'merged-data.csv')
 ```
+
+
+## Logging in OSWeb
+
+When you run an experiment in a browser with OSWeb, logging works differently from when you run an experiment on the desktop.
+
+Specifically, when you launch an OSWeb experiment directly from within OpenSesame, the log file is downloaded at the end of the experiment. This log file is in `.json` format. When you launch an OSWeb experiment from JATOS, there is no log file as such, but rather all data is sent to JATOS from where it can be downloaded.
+
+See also:
+
+- %link:manual/osweb/workflow%
+
+
 
 [libreoffice]: http://www.libreoffice.org/
 [openoffice]: http://www.openoffice.org/
