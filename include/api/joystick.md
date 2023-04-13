@@ -4,7 +4,7 @@
 
 If you insert the JOYSTICK plugin at the start of your experiment, a
 JOYSTICK object automatically becomes part of the experiment object
-and can be used within an inline_script item as JOYSTICK.
+and can be used within an INLINE_SCRIPT item as `joystick`.
 
 {% set arg_joybuttonlist = "A list of buttons that are accepted or " +
 "`None` to accept all buttons." %}

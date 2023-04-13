@@ -161,8 +161,6 @@
           - /4.0/manual/prepare-run
         - - Counterbalancing
           - /4.0/manual/counterbalancing
-        - - OSF Integration
-          - /4.0/manual/osf
         - - Timing
           - /4.0/manual/timing
         - - Backends
@@ -263,8 +261,6 @@
     - !!python/object/apply:collections.OrderedDict
       - - - Donate
           - /4.0/donate
-        - - Important changes in OpenSesame 3
-          - /4.0/important-changes-3
         - - Degrees of visual angle
           - /4.0/visualangle
         - - Notation for experimental design

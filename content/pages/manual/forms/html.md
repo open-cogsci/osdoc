@@ -1,7 +1,5 @@
 title: Custom HTML forms
 
-Custom HTML forms are only supported in when running in a browser. Make sure to use the latest version of OSWeb, because this functionality improves rapidly.
-{:.page-notification}
 
 The INLINE_HTML item allows you to implement forms using custom HTML.
 
@@ -14,12 +12,16 @@ The INLINE_HTML item allows you to implement forms using custom HTML.
 
 Example 1:
 
+A very basic text input form:
+
 ```html
 <input type='text' name='text_response'>
 <input type='submit' value='click here to continue'>
 ```
 
 Example 2:
+
+A form with multiple radio buttons:
 
 ```html
 <p>Please select your age:</p>
@@ -34,15 +36,22 @@ Example 2:
 
 Example 3:
 
-You can get the URL to an image in the file pool …
-
-```javascript
-vars.img_url = pool['capybara.png'].data.src
-```
-
-… and then use this URL in a custom HTML form:
+You can include variable references (except within `<script>` tags, where curly braces are simply interpreted as part of JavaScript code):
 
 ```html
-<img src="[img_url]">
+<p>You age group is {age}</p>
 <input type='submit' value='ok'>
+```
+
+Example 4:
+
+You can JavaScript through `<script>` tags. For example, you can get an image from the file pool and assign to an initially empty `<img>` tag like this:
+
+```html
+<img id='capybara'>
+<input type='submit' value='ok'>
+
+<script>
+document.getElementById('capybara').src = pool['capybara.png'].data.src
+</script>
 ```

@@ -65,8 +65,11 @@ def generate_markdown_docs(obj, name=None, descriptor=None):
         npdoc = docstring_to_markdown(method.__doc__)
         if npdoc is None:
             continue
+        # Get the function signature but remove self as the first argument
         method_sig = str(inspect.signature(method)).replace('self, ', '') \
             .replace('*', r'\*')
+        if method_sig == 'self':
+            method_sig = ''
         md += f"## {method_name}{method_sig}\n\n{npdoc}\n\n"
     return md + '</div>\n\n'
 

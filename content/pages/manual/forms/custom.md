@@ -88,17 +88,17 @@ First, drag an INLINE_SCRIPT into your experiment. Select the newly created item
 ~~~ .python
 # Create a form
 form = Form(
-	cols=[1,1], rows=[1,2,1],
-	margins=(50,100,50,100), spacing=25
+    cols=[1,1], rows=[1,2,1],
+    margins=(50,100,50,100), spacing=25
 )
 # Create four widgets
-labelTitle = Label(text=u'Question')
+labelTitle = Label(text='Question')
 labelQuestion = Label(
-	text=u'A bat and a baseball together cost $1.10. The bat costs one dollar more than the ball. How much does the ball cost?',
-	center=False
+    text='A bat and a baseball together cost $1.10. The bat costs one dollar more than the ball. How much does the ball cost?',
+    center=False
 )
-button5cts = Button(text=u'$0.05')
-button10cts = Button(text=u'$0.10')
+button5cts = Button(text='$0.05')
+button10cts = Button(text='$0.10')
 # Add the widgets to the form. The position in the form is indicated as a
 # (column, row) tuple.
 form.set_widget(labelTitle, (0,0), colspan=2)
@@ -109,6 +109,12 @@ form.set_widget(button10cts, (1,2))
 # was clicked. This is one way to get a return value out of the form. Another way
 # is to use the 'var' keyword, supported some of the widgets.
 button_clicked = form._exec()
+~~~
+
+If you want a specific widget to receive the focus when the form is executed, you can use the `focus_wiget` keyword:
+
+~~~ .python
+button_clicked = form._exec(focus_widget=button5cts)
 ~~~
 
 ### Non-interactive forms
@@ -132,7 +138,7 @@ set theme plain
 And by using the `theme` keyword in Python inline script:
 
 ~~~ .python
-form = Form(theme=u'plain')
+form = Form(theme='plain')
 ~~~
 
 ### Available widgets and keywords
@@ -169,22 +175,22 @@ The following Python inline_script will produce the same questionnaire.
 ~~~ .python
 form = Form(cols=[1,1], rows=[1,1,1,1,1])
 title = Label(
-	text=u'Indicate how much you agree with the following statement'
+    text='Indicate how much you agree with the following statement'
 )
-question1 = Label(text=u'Forms are easy', center=False)
-question2 = Label(text=u'I like data', center=False)
-question3 = Label(text=u'I like questionnaires', center=False)
+question1 = Label(text='Forms are easy', center=False)
+question2 = Label(text='I like data', center=False)
+question3 = Label(text='I like questionnaires', center=False)
 ratingScale1 = RatingScale(
-	var=u'question1',
-	nodes=[u'Agree', u"Don't know", u'Disagree']
+    var='question1',
+    nodes=['Agree', u"Don't know", 'Disagree']
 )
 ratingScale2 = RatingScale(
-	var=u'question2',
-	nodes=[u'Agree', u"Don't know", u'Disagree']
+    var='question2',
+    nodes=['Agree', u"Don't know", 'Disagree']
 )
 ratingScale3 = RatingScale(var='question3',
-	nodes=[u'Agree', u"Don't know", u'Disagree'])
-nextButton = Button(text=u'Next')
+    nodes=['Agree', u"Don't know", 'Disagree'])
+nextButton = Button(text='Next')
 form.set_widget(title, (0, 0), colspan=2)
 form.set_widget(question1, (0, 1))
 form.set_widget(question2, (0, 2))

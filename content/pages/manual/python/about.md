@@ -13,20 +13,6 @@ You can find a set of basic tutorials and exercises to get you started with Pyth
 
 ## Python in the OpenSesame GUI
 
-### Screencast
-
-%--
-video:
- source: youtube
- id: VidTutorial30
- videoid: hmQhk_nMn5c
- width: 640
- height: 360
- caption: |
-  A screencast that the demonstrates the basics of using Python inline script in OpenSesame.
---%
-
-
 ### A single Python workspace
 
 All Python code is executed in a single Python workspace. This means that variables that have been defined in one INLINE_SCRIPT are accessible in all other INLINE_SCRIPTs, as well as in Python statements that are embedded in run-if statements and text strings. The same principle applies to modules: once `import`ed, they are available everywhere.
@@ -62,12 +48,12 @@ For more information about the prepare-run strategy, see:
 - %link:prepare-run%
 
 
-### Loop tables and conditional ("if") statements
+### Conditional ("if") expressions
 
-You can use single-line Python statements also where you would normally type static values, or would use the OpenSesame square-brackets notation to indicate values (i.e. `[my_var]`). To do so, you need to prefix an `=`. For example, you can use the following Python script as a run-if statement (see also %FigRunIf):
+You can use single-line Python expressions in conditional expressions. For example, you can use the following Python script as a run-if expression (see also %FigRunIf):
 
 ~~~ .python
-=var.correct == 1 and var.response_time < 1000
+correct == 1 and response_time < 1000
 ~~~
 
 %--
@@ -77,37 +63,29 @@ figure:
  caption: Using Python script in the run-if statement of a SEQUENCE item.
 --%
 
-For more information about conditional ("if") statements, see:
+For more information about conditional ("if") expressions, see:
 
 - %link:manual/variables%
-
-Similarly, you can use single-line Python statements to define variables in LOOP tables. Let's say that you want to assign a random value between 0 and 1000 to a variable. You could this by first `import`ing the `random` in an INLINE_SCRIPT. Once the `random` module is available, you could use `random.randint()` to obtain a random variable in a LOOP item:
-
-~~~ .python
-=random.randint(0, 1000)
-~~~
-
-%--
-figure:
- id: FigLoopTable
- source: loop-table.png
- caption: Using Python script to define variables in a LOOP table.
---%
 
 
 ### Python in text strings
 
-You can embed Python statements in text strings using the `[=...]` syntax. For example, you could the following text to a SKETCHPAD:
+You can embed Python statements in text strings using the `{...} syntax. This works for simple variable references, but also for single-line expressions. For example, you could the following text to a SKETCHPAD:
 
 ```text
-The resolution is [=var.width] x [=var.height] px
+The resolution is {width} x {height} px, which is a total of {width * height} pixels
 ```
 
 Depending on your experiment's resolution, this might evaluate to:
 
 ```text
-The resolution is 1024 x 768 px
+The resolution is 1024 x 768 px, which is a total of 786432 pixels
 ```
+
+For more information about variables and text, see:
+
+- %link:manual/variables%
+- %link:manual/stimuli/text%
 
 
 ### The Jupyter console (debug window)
@@ -144,13 +122,16 @@ For a list of common functions, see:
 
 ### The `var` object: Access to experimental variables
 
+__Version note__ As of OpenSesame 4.0, all experimental variables are available as globals. This means that you no longer need the `var` object.
+{:.page-notification}
+
 You can access experimental variables through the `var` object:
 
 ~~~ .python
 # Get an experimental variable
-print(u'my_variable is: %s' % var.my_variable)
+print('my_variable is: %s' % var.my_variable)
 # Set an experimental variable
-var.my_variable = u'my_value'
+var.my_variable = 'my_value'
 ~~~
 
 A full overview of the `var` object can be found here:
@@ -180,7 +161,7 @@ Data logging is available through the `log` object:
 
 ~~~ .python
 # Write one line of text
-log.write(u'My custom log message')
+log.write('My custom log message')
 # Write all variables
 log.write_vars()
 ~~~

@@ -22,7 +22,7 @@ Keys are generally identified by their character and/ or their description (depe
 If you don't know what a particular key is named, you can:
 
 - Click on the 'List available keys' button; or
-- Create a simple experiment in which a KEYBOARD_RESPONSE is immediately followed by a FEEDBACK item with the text '[response]' on it. This will show the name of the previously collected response.
+- Create a simple experiment in which a KEYBOARD_RESPONSE is immediately followed by a FEEDBACK item with the text '{response}' on it. This will show the name of the previously collected response.
 
 
 ## Correct response
@@ -33,7 +33,7 @@ You can indicate the correct response in three main ways:
 
 - *Leave the field empty.* If you leave the *Correct response* field empty, OpenSesame will automatically check if a variable called `correct_response` has been defined, and, if so, use this variable for the correct response.
 - *Enter a literal value.* You can explicitly enter a response, such as 'left' in the case of a KEYBOARD_RESPONSE item. This is only useful if the correct response is fixed.
-- *Enter a variable name.* You can enter a variable, such as '[cr]'. In this case, this variable will be used for the correct response.
+- *Enter a variable name.* You can enter a variable, such as '{cr}'. In this case, this variable will be used for the correct response.
 
 
 ## Allowed responses

@@ -1,8 +1,5 @@
 title: Common functions
 
-New in OSWeb v1.4
-{:.page-notification}
-
 [TOC]
 
 

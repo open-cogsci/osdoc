@@ -7,8 +7,7 @@ instance of SRBOX automatically becomes part of the experiment
 object and
 can be accessed within an inline_script item as SRBOX.
 
-__Important note
-1:__
+__Important note1:__
 
 If you do not specify a device, the plug-in will try to autodetect
 the
@@ -26,23 +25,14 @@ __Example:__
 ~~~ .python
 t0 = clock.time()
 srbox.start()
-button, t1 =
-srbox.get_button_press(allowed_buttons=[1,2],
-require_state_change=True)
+button, t1 = srbox.get_button_press(allowed_buttons=[1, 2],
+                                    require_state_change=True)
 if button == 1:
-        response_time = t1 - t0
-print('Button 1 was pressed in %d ms!' % response_time)
+    response_time = t1 - t0
+print(f'Button 1 was pressed in {response_time} ms!')
 srbox.stop()
 ~~~
 [TOC]
-
-## close(self)
-
-Closes the connection to the srbox. This is done automatically by
-the SRBOX plugin when the experiment finishes.
-
-
-
 
 ## get_button_press(allowed_buttons=None, timeout=None, require_state_change=False)
 
@@ -59,20 +49,21 @@ is accepted (True).
 
 __Returns__
 
-- A button_list, timestamp tuple. button_list is None if no button
-was pressed (i.e. a timeout occurred).
+- A `(button_list, timestamp)` tuple. `button_list` is `None` if no 
+button was pressed (i.e. a timeout occurred).
 
 
 ## send(ch)
 
-Sends a single character to the SR Box. Send '\x60' to turn off all
-lights, '\x61' for light 1 on, '\x62' for light 2 on,'\x63' for lights
+Sends a single character to the SR Box. Send '`' to turn off all
+lights, 'a' for light 1 on, 'b' for light 2 on,'c' for lights
 1 and 2 on etc.
 
 
 __Parameters__
 
-- **ch**: The character to send.
+- **ch**: The character to send. If a `str` is passed, it is encoded to
+`bytes` using utf-8 encoding.
 
 
 ## start(self)

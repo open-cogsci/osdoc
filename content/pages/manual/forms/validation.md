@@ -7,27 +7,23 @@ In addition, you can validate (or filter) input to a `TextInput` widget to exclu
 
 ~~~ .python
 def my_form_validator():
-
-	"""Checks whether both the gender and age fields have been filled out"""
-
-	return var.gender != u'no' and var.age != u''
+    """Checks whether both the gender and age fields have been filled out"""
+    return gender != 'no' and age != ''
 
 
 def filter_digits(ch):
-
-	"""Allows only digit characters as input"""
-
-	return ch in u'0123456789'
+    """Allows only digit characters as input"""
+    return ch in '0123456789'
 
 
 # Define all widgets
-button_ok = Button(text=u'Ok')
-label_gender= Label(u'Your gender')
-checkbox_male = Checkbox(text=u'Male', group=u'gender', var=u'gender')
-checkbox_female = Checkbox(text=u'Female', group=u'gender', var=u'gender')
-label_age = Label(u'Your age')
+button_ok = Button(text='Ok')
+label_gender= Label('Your gender')
+checkbox_male = Checkbox(text='Male', group='gender', var='gender')
+checkbox_female = Checkbox(text='Female', group='gender', var='gender')
+label_age = Label('Your age')
 # Specify a key filter so that only digits are accepted as text input
-input_age = TextInput(stub=u'Age here …', var=u'age', key_filter=filter_digits)
+input_age = TextInput(stub='Age here …', var='age', key_filter=filter_digits)
 # Build the form. Specify a validator function to make sure that the form is
 # completed.
 my_form = Form(validator=my_form_validator, rows=[1,1,1], cols=[1,1,1])

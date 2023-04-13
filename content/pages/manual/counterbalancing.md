@@ -54,27 +54,27 @@ When you run an experiment in OpenSesame on the desktop, you are asked for a sub
 This subject number is available as the experimental variable `subject_nr`. In  addition, the experimental variable `subject_parity` has the value 'odd' or 'even', depending on whether the subject number is odd or even. Now say that you want to counterbalance the response rule as in Example 1, you could add the following INLINE_SCRIPT to the start of the experiment.
 
 ```python
-if var.subject_parity == 'odd':
-	var.verb_response = 'z'
-	var.noun_response = 'm'
+if subject_parity == 'odd':
+    verb_response = 'z'
+    noun_response = 'm'
 else:
-	var.verb_response = 'm'
-	var.noun_response = 'z'
+    verb_response = 'm'
+    noun_response = 'z'
 ```
 
 Or, when creating an OSWeb experiment, add the following INLINE_JAVASCRIPT to the start of the experiment:
 
 ```javascript
-if (vars.subject_parity === 'odd') {
-	vars.verb_response = 'z'
-	vars.noun_response = 'm'
+if (subject_parity === 'odd') {
+    verb_response = 'z'
+    noun_response = 'm'
 } else {
-	vars.verb_response = 'm'
-	vars.noun_response = 'z'
+    verb_response = 'm'
+    noun_response = 'z'
 }
 ```
 
-Now, in your *block_loop*, instead of setting `correct_response` to a fixed value, you set it to a variable: `[verb_response]` or `[noun_response]`. You can take a look at the *lexical-decision task* example to see how this works (Menu -> Tools -> Example experiments).
+Now, in your *block_loop*, instead of setting `correct_response` to a fixed value, you set it to a variable: `{verb_response}` or `{noun_response}`. You can take a look at the *lexical-decision task* example to see how this works (Menu -> Tools -> Example experiments).
 
 
 ### Using Batch Session Data (JATOS and OSWeb only)

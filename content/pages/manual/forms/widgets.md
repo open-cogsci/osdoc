@@ -34,10 +34,10 @@ Python script:
 
 ~~~ .python
 form = Form(
-	cols=2, rows=2, spacing=10, margins=(100, 100, 100, 100), theme=u'gray',
-	timeout=None, clicks=False, validator=None
+    cols=2, rows=2, spacing=10, margins=(100, 100, 100, 100), theme='gray',
+    timeout=None, clicks=False, validator=None
 )
-button = Button(text=u'Ok!')
+button = Button(text='Ok!')
 form.set_widget(button, (0, 0))
 form._exec()
 ~~~
@@ -55,7 +55,7 @@ Python script:
 
 ~~~ .python
 form = Form()
-button = Button(text=u'Click me!', frame=True, center=True, var=u'response')
+button = Button(text='Click me!', frame=True, center=True, var='response')
 form.set_widget(button, (0, 0))
 form._exec()
 ~~~
@@ -80,8 +80,8 @@ Python script:
 
 ~~~ .python
 form = Form()
-checkbox1 = Checkbox(text=u'Option 1', group=u'group')
-checkbox2 = Checkbox(text=u'Option 2', group=u'group')
+checkbox1 = Checkbox(text='Option 1', group='group')
+checkbox2 = Checkbox(text='Option 2', group='group')
 form.set_widget(checkbox1, (0, 0))
 form.set_widget(checkbox2, (0, 1))
 form._exec()
@@ -104,7 +104,7 @@ Python script:
 ~~~ .python
 # Only path is a required keyword
 form = Form()
-image = ImageWidget(path=pool[u'my_image.png'], adjust=True, frame=False)
+image = ImageWidget(path=pool['my_image.png'], adjust=True, frame=False)
 form.set_widget(image, (0, 0))
 form._exec()
 ~~~
@@ -127,8 +127,8 @@ Python script:
 # Only path is a required keyword
 form = Form()
 image_button = ImageButton(
-	path=pool[u'my_image.png'], adjust=True, frame=False,
-	image_id=u'my_image', var=u'response'
+    path=pool['my_image.png'], adjust=True, frame=False,
+    image_id='my_image', var='response'
 )
 form.set_widget(image_button, (0, 0))
 form._exec()
@@ -147,7 +147,7 @@ Python script:
 
 ~~~ .python
 form = Form()
-label = Label(text=u'My text', frame=False, center=True)
+label = Label(text='My text', frame=False, center=True)
 form.set_widget(label, (0,0))
 form._exec()
 ~~~
@@ -170,8 +170,8 @@ Python script:
 ~~~ .python
 form = Form()
 rating_scale = RatingScale(
-	nodes=[u'Agree', u"Don't know", u'Disagree'], click_accepts=False,
-	orientation=u'horizontal', var='response', default=0
+    nodes=['Agree', u"Don't know", 'Disagree'], click_accepts=False,
+    orientation='horizontal', var='response', default=0
 )
 form.set_widget(rating_scale, (0, 0))
 form._exec()
@@ -195,8 +195,8 @@ Python script:
 ~~~ .python
 form = Form()
 text_input = TextInput(
-		text=u'Initial text', frame=True, center=False, stub=u'Type here …',
-		return_accepts=True, var=u'response', key_filter=my_filter_function
+    text='Initial text', frame=True, center=False, stub='Type here …',
+    return_accepts=True, var='response', key_filter=my_filter_function
 )
 form.set_widget(text_input, (0, 0))
 form._exec()

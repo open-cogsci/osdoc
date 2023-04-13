@@ -108,15 +108,12 @@ Manual:
     Advanced:
     The prepare-run strategy: manual/prepare-run
     Counterbalancing: manual/counterbalancing
-    OSF Integration: manual/osf
     Timing: manual/timing
     Backends: manual/backends
-    # Running on Android: manual/android
     OpenSesame script: manual/opensesame-script
     Running experiments without the GUI: manual/opensesamerun
     Installing packages, plugins, and extensions: https://rapunzel.cogsci.nl/manual/environment/
     Runners: manual/runners
-    # Running experiments online: manual/osweb
 
     Devices:
     Mouse tracking: manual/mousetracking
@@ -177,7 +174,6 @@ Other:
     # Publications: publications
     # Meet the team!: team
     Donate: donate
-    Important changes in OpenSesame 3: important-changes-3
     Degrees of visual angle: visualangle
     Notation for experimental design: experimentaldesign
     Release notes: notes/notes
