@@ -664,9 +664,9 @@ __Tip__ -- A test run is executed even faster by clicking the orange 'Run in win
 
 ## Understanding errors
 
-Understanding error messages is a crucial skill when working with OpenSeame. After all, a newly built experiment rarely runs immediately without any errors!
+Being able to understand error messages is a crucial skill when working with OpenSeame. After all, a newly built experiment rarely runs immediately without any errors!
 
-Let's say that we made a mistake during one of the steps above. When trying to runthe experiment, we get the following error message (%FigErrorMessage):
+Let's say that we made a mistake during one of the steps above. When trying to run the experiment, we get the following error message (%FigErrorMessage):
 
 %--
 figure:
@@ -679,9 +679,9 @@ The error message starts with a name, in this case `FStringError`, which indicat
 
 The error message also indicates that the error comes from the prepare phase of the *gaze_cue* item.
 
-Finally, the error message indicates what specifically when wrong when evaluating the text 'gaze_{gaze_ceu}.png'. Specifically, the name 'gaze_ceu' is not defined.
+Finally, the error message indicates what specifically went wrong when evaluating the text 'gaze_{gaze_ceu}.png': the name 'gaze_ceu' is not defined.
 
-While reading the error message carefully, the cause and solution probably already came to your mind: we made a simple spelling mistake in the *gaze_cue* item, writing '{gaze_ceu}' rather than `{gaze_cue}`! And this resulted in an error because there is no variable with the name `gaze_ceu`. This can be easily fixed by opening the script of the *gaze_cue* item and fixing the typo.
+While reading the error message carefully, the cause and solution probably already came to your mind: we made a simple spelling mistake in the *gaze_cue* item, writing '{gaze_ceu}' instead of '{gaze_cue}'! And this resulted in an error because there is no variable with the name `gaze_ceu`. This can be easily fixed by opening the script of the *gaze_cue* item and fixing the typo.
 
 
 ## Finally: Some general considerations regarding timing and backend selection
