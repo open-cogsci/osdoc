@@ -15,6 +15,7 @@ from markdown.extensions import codehilite
 from markdown.extensions.toc import TocExtension
 from markdown.extensions.tables import TableExtension
 from academicmarkdown import build, HTMLFilter, _FigureParser
+from translation_tools.translation_utils import LOCALES, parse_metadata
 if 'publishconf.py' in sys.argv:
     from publishconf import *
 else:
@@ -43,9 +44,6 @@ root = os.path.dirname(os.path.dirname(__file__)) + '/content'
 
 with open('constants.yaml') as f:
     const = yaml.load(f, Loader=yaml.SafeLoader)
-
-links = {}
-duplicate_names = []
 
 
 def orderedLoad(stream, Loader=yaml.Loader, object_pairs_hook=OrderedDict):
@@ -79,6 +77,12 @@ class AcademicMarkdownReader(MarkdownReader):
                 codehilite.CodeHiliteExtension(css_class='highlight'),
                 ],
             )
+        with open(source_path) as fd:
+            text = fd.read()
+        print(f'****** {source_path}')
+        metadata = parse_metadata(text)
+        print(metadata)
+        links = locale_links[metadata.get('locale', None)]
         img_path = os.path.dirname(source_path) + '/img/' \
             + os.path.basename(source_path)[:-3]
         lst_path = os.path.dirname(source_path) + '/lst/' \
@@ -86,40 +90,39 @@ class AcademicMarkdownReader(MarkdownReader):
         tbl_path = os.path.dirname(source_path) + '/tbl/' \
             + os.path.basename(source_path)[:-3]
         build.path = [img_path, lst_path, tbl_path] + build.path
-        with open(source_path) as fd:
-            text = fd.read()
-            text = build.MD(text)
-            text = jinja2.Template(text).render()
-            # Process internal links
-            for m in re.finditer('%link:(?P<link>[\w/-]+)%', text):
-                full = m.group(0)
-                link = m.group('link')
-                print('link', link, full)
-                if link not in links:
-                    raise Exception(u'%s not a key in %s' % (link, links))
-                text = text.replace(full, '<%s/%s>' % (SITEURL, links[link]))
-            for m in re.finditer('%url:(?P<link>[\w/-]+)%', text):
-                full = m.group(0)
-                link = m.group('link')
-                print('url', link, full)
-                if link not in links:
-                    raise Exception(u'%s not a key in %s' % (link, links))
-                text = text.replace(full, '%s/%s' % (SITEURL, links[link]))
-            for m in re.finditer('%static:(?P<link>[\w/.-]+)%', text):
-                full = m.group(0)
-                link = m.group('link')
-                print('static', link, full)
-                text = text.replace(full, '<%s/%s>' % (SITEURL, link))
-            text = text.replace(root, u'')
-            text = HTMLFilter.DOI(text)
-            content = self._md.convert(text)
-            for var, val in const.items():
-                content = content.replace(u'$%s$' % var, str(val))
-            for item_type in ITEM_TYPES:
-                content = content.replace(item_type,
-                    u'<span class="item-type">%s</span>' % item_type.lower())
-        metadata = self._parse_metadata(self._md.Meta)
+
+        text = build.MD(text)
+        text = jinja2.Template(text).render()
+        # Process internal links
+        for m in re.finditer('%link:(?P<link>[\w/-]+)%', text):
+            full = m.group(0)
+            link = m.group('link')
+            print('link', link, full)
+            if link not in links:
+                raise Exception(u'%s not a key in %s' % (link, links))
+            text = text.replace(full, '<%s/%s>' % (SITEURL, links[link]))
+        for m in re.finditer('%url:(?P<link>[\w/-]+)%', text):
+            full = m.group(0)
+            link = m.group('link')
+            print('url', link, full)
+            if link not in links:
+                raise Exception(u'%s not a key in %s' % (link, links))
+            text = text.replace(full, '%s/%s' % (SITEURL, links[link]))
+        for m in re.finditer('%static:(?P<link>[\w/.-]+)%', text):
+            full = m.group(0)
+            link = m.group('link')
+            print('static', link, full)
+            text = text.replace(full, '<%s/%s>' % (SITEURL, link))
+        text = text.replace(root, u'')
+        text = HTMLFilter.DOI(text)
+        content = self._md.convert(text)
+        for var, val in const.items():
+            content = content.replace(u'$%s$' % var, str(val))
+        for item_type in ITEM_TYPES:
+            content = content.replace(item_type,
+                u'<span class="item-type">%s</span>' % item_type.lower())
         build.path = build.path[3:]
+        metadata = self._parse_metadata(self._md.Meta)
         return content, metadata
 
 
@@ -132,9 +135,22 @@ def init_academicmarkdown(sender):
     build.path += u'include'
     build.extensions.remove('toc')
     build.extensions.insert(0, 'toc')
-    with open('sitemap.yaml') as f:
-        d = orderedLoad(f)
-    process_links(d)
+    
+    global links, duplicate_names, locale_links
+    locale_links = {}
+    for locale in [None, 'fr']:
+        links = {}
+        duplicate_names = []
+        if locale is not None:
+            print(f'loading sitemap-{locale}.yaml')
+            with open(f'sitemap/sitemap-{locale}.yaml') as f:
+                d = orderedLoad(f)
+        else:
+            print('loading sitemap.yaml')
+            with open('sitemap/sitemap.yaml') as f:
+                d = orderedLoad(f)
+        process_links(d)
+        locale_links[locale] = links
 
 
 def isseparator(pagename):
@@ -158,13 +174,19 @@ def process_links(d):
             process_links(entry)
             continue
         name = entry.split('/')[-1]
+        url = entry
         if not name.strip():
             continue
-        links[entry] = entry
+        clean_entry = entry
+        for language, code in LOCALES:
+            if entry.startswith(code + '/'):
+                entry = entry[len(code) + 1:]
+                break
+        links[entry] = url
         if entry == name or name in duplicate_names:
             continue
         if name not in links:
-            links[name] = entry
+            links[name] = url
             continue
         duplicate_names.append(name)
         del links[name]

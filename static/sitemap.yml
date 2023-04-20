@@ -19,14 +19,6 @@
           - /4.0/tutorials/wcst
         - - Wisconsin Card Sorting Test (Python)
           - /4.0/tutorials/wcst-python
-        - - "Amor\xE7age cat\xE9gorique"
-          - /4.0/fr/amorcage-categorique
-        - - Direction du regard
-          - /4.0/fr/direction-du-regard
-        - - "Manual del software opensesame en espa\xF1ol"
-          - http://dx.doi.org/10.13140/RG.2.2.29611.16163
-        - - "\u732B\u3068\u72AC\u3068\u30AB\u30D4\u30D0\u30E9"
-          - /4.0/jp/capybara
   - - Manual
     - !!python/object/apply:collections.OrderedDict
       - - - Using the interface
@@ -243,9 +235,9 @@
           - /4.0/items/quest_staircase_init
         - - __quest_staircase_next
           - /4.0/items/quest_staircase_next
-        - - __repeat cycle
+        - - __repeat_cycle
           - /4.0/items/repeat_cycle
-        - - __reset feedback
+        - - __reset_feedback
           - /4.0/items/reset_feedback
         - - __sampler
           - /4.0/manual/stimuli/sound
@@ -284,16 +276,22 @@
   - - v4.0
     - !!python/object/apply:collections.OrderedDict
       - - - v4.0
-          - http://osdoc.cogsci.nl/4.0/
+          - https://osdoc.cogsci.nl/4.0/
         - - v3.3
-          - http://osdoc.cogsci.nl/3.3/
+          - https://osdoc.cogsci.nl/3.3/
         - - v3.2
-          - http://osdoc.cogsci.nl/3.2/
+          - https://osdoc.cogsci.nl/3.2/
         - - v3.1
-          - http://osdoc.cogsci.nl/3.1/
+          - https://osdoc.cogsci.nl/3.1/
         - - v3.0
-          - http://osdoc.cogsci.nl/3.0/
+          - https://osdoc.cogsci.nl/3.0/
         - - v2.9
-          - http://osdoc.cogsci.nl/2.9/
+          - https://osdoc.cogsci.nl/2.9/
         - - v2.8
-          - http://osdoc.cogsci.nl/2.8/
+          - https://osdoc.cogsci.nl/2.8/
+  - - English
+    - !!python/object/apply:collections.OrderedDict
+      - - - English
+          - /4.0//
+        - - "Fran\xE7ais"
+          - /4.0//fr

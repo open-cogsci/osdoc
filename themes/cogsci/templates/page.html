@@ -19,6 +19,15 @@
 {{ page.title }}
 {% endblock title %}
 
+{% block mega_menu %}
+	{% if page.locale %}
+		{% set menu_template = 'mega-menu-content-' + page.locale + '.html' %}
+		{% include menu_template %}
+	{% else %}
+		{% include 'mega-menu-content.html' %}
+	{% endif %}
+{% endblock mega_menu %}
+
 {% block content %}
 <section id="content" class="body">
 <div class="entry-content">

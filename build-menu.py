@@ -2,6 +2,7 @@
 # coding=utf-8
 
 from collections import OrderedDict
+from translation_tools.translation_utils import LOCALES
 import yaml
 import sys
 
@@ -112,7 +113,7 @@ def build_live_sitemap(d):
 
 def main():
 
-    with open('sitemap.yaml') as f:
+    with open('sitemap/sitemap.yaml') as f:
         d = orderedLoad(f)
     with open('themes/cogsci/templates/mega-menu-content.html', 'w') as f:
         f.write(build_menu(d))
@@ -124,6 +125,13 @@ def main():
     with open(u'static/seo-sitemap.txt', u'w') as fd:
         fd.write(u'\n'.join(build_seo_sitemap(d)) + u'\n')
     print('Generated seo sitemap')
+    for language, code in LOCALES:
+        with open(f'sitemap/sitemap-{code}.yaml') as f:
+            d = orderedLoad(f)
+            with open(f'themes/cogsci/templates/mega-menu-content-{code}.html', 'w') as f:
+                f.write(build_menu(d))
+        
+
 
 if __name__ == '__main__':
     main()
