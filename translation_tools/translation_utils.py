@@ -1,6 +1,8 @@
 import openai
 from pathlib import Path
 import json
+import hashlib
+
 
 LOCALES = [
     ('French', 'fr'),
@@ -59,6 +61,13 @@ else:
     translations = {}
 
 
+def consistent_hash(string):
+    sha256 = hashlib.sha256()
+    sha256.update(string.encode('utf-8'))
+    hash_hex = sha256.hexdigest()
+    return hash_hex
+
+
 def parse_metadata(text):
     if '\n\n' in text:
         text = text[:text.find('\n\n')]
@@ -88,7 +97,8 @@ def translate_text(text, language, code, system=SYSTEM):
     response = openai.ChatCompletion.create(
         model=MODEL,
         messages=[{"role": "system", "content": SYSTEM % language},
-                  {"role": "user", "content": text}])
+                  {"role": "user", "content": text}],
+                  request_timeout=600)
     reply = response['choices'][0]['message']['content']
     translations[text][code] = reply
     with TRANSLATION_CACHE.open('w') as fd:

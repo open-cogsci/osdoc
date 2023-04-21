@@ -21,8 +21,9 @@
 		<link href='https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Ubuntu+Mono|Roboto+Slab' rel='stylesheet' type='text/css'>
 		{% include "google-analytics.html" %}
 		{% include "cookie-consent.html" %}
+		{% include "translation.html" %}
 	</head>
-	<body onpageshow="if (typeof onPageShow !== 'undefined') onPageShow()">
+	<body onpageshow="if (typeof onPageShow !== 'undefined') onPageShow()" onload="suggestTranslation();">
 		{% include 'cogsci-products.html' %}
 		<!-- Main container than contains everything -->
 		<div class="container osdoc-container osdoc">

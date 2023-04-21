@@ -1,0 +1,34 @@
+<script>
+function getBrowserLanguage() {
+  return navigator.language || navigator.userLanguage;
+}
+
+function getCurrentPage() {
+    const url = new URL(window.location.href);
+    const path = url.pathname;
+    return path.substring(path.indexOf('/', 1) + 1);
+}
+
+function suggestTranslation() {
+  const browserLanguage = getBrowserLanguage().substring(0, 2);
+  const baseUrl = '/4.0/';
+  const currentPage = getCurrentPage();
+  let suggestion;
+  let translatedUrl;
+  if (browserLanguage === 'fr') {
+    suggestion = 'Cette page est également disponible en français: ';
+  } else if (browserLanguage === 'es') {
+    suggestion = 'Esta página también está disponible en español: '
+  } else if (browserLanguage === 'de') {
+    suggestion = 'Diese Seite ist auch in Deutsch verfügbar: '
+  } else if (browserLanguage === 'zh') {
+    suggestion = '本页面也有中文版： '
+  } else {
+    return
+  }
+  translatedUrl = `${baseUrl}${browserLanguage}/${currentPage}`
+  const div = document.getElementById('translation-available')
+  div.innerHTML = `${suggestion} <a href='${translatedUrl}'>${translatedUrl}</a>`
+  div.style.display = 'block'
+}
+</script>
