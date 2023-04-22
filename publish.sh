@@ -7,4 +7,5 @@ cp -R static/* output/$BRANCH
 python build-menu.py --publish
 pelican -s publishconf.py
 cp output/$BRANCH/index/index.html output/$BRANCH/index.html
+cp output/$BRANCH/fr/index/index.html output/$BRANCH/fr/index.html
 python parse-theme.py
