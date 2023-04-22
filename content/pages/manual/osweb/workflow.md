@@ -8,8 +8,10 @@ title: Running experiments online with OSWeb
 
 For an introduction to the workflow, see also:
 
+<notranslate>
 Mathôt, S., & March, J. (2022). Conducting linguistic experiments online with OpenSesame and OSWeb. *Language Learning*. doi:10.1111/lang.12509
 <br /><small>[Related preprint (not identical to published manuscript)](https://doi.org/10.31234/osf.io/wnryc)</small>
+</notranslate>
 
 
 ### Developing your experiment

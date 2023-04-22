@@ -1,5 +1,6 @@
 title: APS tutorial
 uptodate: false
+translate: false
 
 This OpenSesame workshop was presented at the 25th annual convention of the Association for Psychological Science (APS) on May 26, 2013. The workshop was co-sponsored by the Society of Multivariate Experimental Psychology ([SMEP][]). This page is a slightly modified version of the original workshop page, which can be found [here](/aps2013).
 
