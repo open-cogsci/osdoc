@@ -7,6 +7,7 @@ import sys
 import jinja2
 sys.path.insert(0, '/home/sebastiaan/git/academicmarkdown')
 import yaml
+from pathlib import Path
 from collections import OrderedDict
 from pelican import signals
 from pelican.readers import MarkdownReader
@@ -82,6 +83,23 @@ class AcademicMarkdownReader(MarkdownReader):
         print(f'****** {source_path}')
         metadata = parse_metadata(text)
         print(metadata)
+        # Fix things that have been incorrectly translated. This is a hacky
+        # list that is created based on compilation errors.
+        # For French
+        text = text.replace(':manuel/', ':manual/')
+        text = text.replace('api/clavier', 'api/keyboard')
+        text = text.replace('api/souris', 'api/mouse')
+        text = text.replace('api/horloge', 'api/clock')
+        text = text.replace('coroutine%', 'coroutines%')
+        text = text.replace('syntaxe :', 'syntax:')
+        text = text.replace('inclure/', 'include/')
+        text = text.replace('inclure:', 'include:')
+        text = text.replace('inclure :', 'include:')
+        text = text.replace('réponses.md', 'responses.md')
+        # Recode include links based onthe locale
+        if 'locale' in metadata:
+            text = text.replace(' include/', ' include/fr/')
+        # Extract links and paths
         links = locale_links[metadata.get('locale', None)]
         img_path = os.path.dirname(source_path) + '/img/' \
             + os.path.basename(source_path)[:-3]
@@ -89,8 +107,17 @@ class AcademicMarkdownReader(MarkdownReader):
             + os.path.basename(source_path)[:-3]
         tbl_path = os.path.dirname(source_path) + '/tbl/' \
             + os.path.basename(source_path)[:-3]
-        build.path = [img_path, lst_path, tbl_path] + build.path
-
+        # The include path depends on the locale, because the included files
+        # should also be translated
+        for language, code in LOCALES:
+            if code in Path(source_path).parts:
+                include_path = f'include/{code}'
+                break
+        else:
+            include_path = 'include'
+        print(f'include path: {include_path}')
+        build_path = build.path
+        build.path = [include_path, img_path, lst_path, tbl_path] + build_path
         text = build.MD(text)
         text = jinja2.Template(text).render()
         # Process internal links
@@ -123,6 +150,7 @@ class AcademicMarkdownReader(MarkdownReader):
                 u'<span class="item-type">%s</span>' % item_type.lower())
         build.path = build.path[3:]
         metadata = self._parse_metadata(self._md.Meta)
+        build.path = build_path
         return content, metadata
 
 
@@ -132,7 +160,6 @@ def init_academicmarkdown(sender):
     build.figureTemplate = 'jekyll'
     build.tableTemplate = 'kramdown'
     build.figureSourcePrefix = SITEURL
-    build.path += u'include'
     build.extensions.remove('toc')
     build.extensions.insert(0, 'toc')
     
@@ -183,13 +210,16 @@ def process_links(d):
                 entry = entry[len(code) + 1:]
                 break
         links[entry] = url
+        links['/' + entry] = url
         if entry == name or name in duplicate_names:
             continue
         if name not in links:
             links[name] = url
+            links['/' + name] = url
             continue
         duplicate_names.append(name)
         del links[name]
+        del links['/' + name]
         print('Duplicate name: %s' % name)
 
 

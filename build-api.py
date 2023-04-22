@@ -108,18 +108,18 @@ gendoc(Clock, 'clock.md', 'clock', descriptor='instance')
 from openexp._log.log import Log
 gendoc(Log, 'log.md', 'log', descriptor='instance')
 from libopensesame.widgets._form import Form
-gendoc(Form, 'form.md')
-from libopensesame.widgets._button import Button
-gendoc(Button, 'button.md')
-from libopensesame.widgets._image import Image
-gendoc(Image, 'image.md')
-from libopensesame.widgets._image_button import ImageButton
-gendoc(ImageButton, 'image_button.md')
-from libopensesame.widgets._checkbox import Checkbox
-gendoc(Checkbox, 'checkbox.md')
-from libopensesame.widgets._rating_scale import RatingScale
-gendoc(RatingScale, 'rating_scale.md')
-from libopensesame.widgets._label import Label
-gendoc(Label, 'label.md')
-from libopensesame.widgets._text_input import TextInput
-gendoc(TextInput, 'text_input.md')
+# gendoc(Form, 'form.md')
+# from libopensesame.widgets._button import Button
+# gendoc(Button, 'button.md')
+# from libopensesame.widgets._image import Image
+# gendoc(Image, 'image.md')
+# from libopensesame.widgets._image_button import ImageButton
+# gendoc(ImageButton, 'image_button.md')
+# from libopensesame.widgets._checkbox import Checkbox
+# gendoc(Checkbox, 'checkbox.md')
+# from libopensesame.widgets._rating_scale import RatingScale
+# gendoc(RatingScale, 'rating_scale.md')
+# from libopensesame.widgets._label import Label
+# gendoc(Label, 'label.md')
+# from libopensesame.widgets._text_input import TextInput
+# gendoc(TextInput, 'text_input.md')

@@ -119,17 +119,20 @@ def main():
         f.write(build_menu(d))
     print('Generated menu content')
     sitemap = build_live_sitemap(d)
-    with open(u'static/sitemap.yml', u'w') as fd:
+    with open('static/sitemap.yml', 'w') as fd:
         yaml.dump(sitemap, fd, default_flow_style=False)
     print('Generated live sitemap')
-    with open(u'static/seo-sitemap.txt', u'w') as fd:
-        fd.write(u'\n'.join(build_seo_sitemap(d)) + u'\n')
+    with open('static/seo-sitemap.txt', 'w') as fd:
+        fd.write('\n'.join(build_seo_sitemap(d)) + '\n')
     print('Generated seo sitemap')
     for language, code in LOCALES:
+        print(f'Generated locale sitemap for {code}')
         with open(f'sitemap/sitemap-{code}.yaml') as f:
             d = orderedLoad(f)
             with open(f'themes/cogsci/templates/mega-menu-content-{code}.html', 'w') as f:
                 f.write(build_menu(d))
+        with open(f'static/seo-sitemap-{code}.txt', 'w') as fd:
+            fd.write('\n'.join(build_seo_sitemap(d)) + '\n')
         
 
 

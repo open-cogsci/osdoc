@@ -6,15 +6,16 @@ import hashlib
 
 LOCALES = [
     ('French', 'fr'),
+#    ('German', 'de'),
+#    ('Spanish', 'es'),
+#    ('Chinese', 'zh'),
 ]
+
 # LOCALES = [
 #     ('Dutch', 'nl'),
-#     ('German', 'de'),
 #     ('French', 'fr'),
-#     ('Spanish', 'es'),
 #     ('Italian', 'it'),
 #     ('Portuguese', 'pt'),
-#     ('Chinese', 'zh'),
 #     ('Cantonese', 'yue'),
 #     ('Japanese', 'ja'),
 #     ('Korean', 'ko'),
@@ -49,17 +50,18 @@ SPECIAL_TERMS = [
 SYSTEM = f'''You're a translator for OpenSesame, a program for developing psychology experiments. Do not translate: markup and tags, text in ALL_CAPS, technical terms, terms that have a special meaning within OpenSesame, such as: {', '.join(SPECIAL_TERMS)}, and other similar terms. Preserve markdown formatting, whitespace, capitalization, and punctuation.
 
 Reply with a %s translation. Only provide the translated text without adding any additional text. This concludes the instruction. The to be translated text will be provided next.'''
+SYSTEM_API = f'''You're a translator for OpenSesame, a program for developing psychology experiments. Do not translate: markup and tags, text in ALL_CAPS, technical terms, terms that have a special meaning within OpenSesame, such as: {', '.join(SPECIAL_TERMS)}, and other similar terms. Preserve markdown formatting, whitespace, capitalization, and punctuation.
+
+Important: This text is an API documentation. Therefore, do not translate class names, function names, and parameter names.
+
+Reply with a %s translation. Only provide the translated text without adding any additional text. This concludes the instruction. The to be translated text will be provided next.'''
 MODEL = 'gpt-4'
 openai.api_key = (Path.home() / '.openai-api-key').read_text().strip()
 ROOT = Path('../content/pages')
+INCLUDE = Path('../include')
 MAX_SECTION_LENGTH = 4000
 TRANSLATION_CACHE = Path('translations.json')
-if TRANSLATION_CACHE.exists():
-    with TRANSLATION_CACHE.open() as fd:
-        translations = json.load(fd)
-else:
-    translations = {}
-
+N_PROCESS = 20  # For multiprocessing
 
 def consistent_hash(string):
     sha256 = hashlib.sha256()
@@ -88,19 +90,34 @@ def metadata_to_text(metadata):
     return '\n'.join(lines)
 
 
-def translate_text(text, language, code, system=SYSTEM):
+def translation_cache():
+    if TRANSLATION_CACHE.exists():
+        with TRANSLATION_CACHE.open() as fd:
+            return json.load(fd)
+    return {}
+
+
+def translate_text(text, language, code, system=SYSTEM, lock=None):
+    translations = translation_cache()
     if text not in translations:
         translations[text] = {}
     if code in translations[text]:
-        print('retrieving translation from cache')
+        print('Retrieving translation from cache')
         return translations[text][code]
     response = openai.ChatCompletion.create(
         model=MODEL,
         messages=[{"role": "system", "content": SYSTEM % language},
                   {"role": "user", "content": text}],
-                  request_timeout=600)
+        request_timeout=600)
     reply = response['choices'][0]['message']['content']
+    if lock is not None:
+        lock.acquire()
+    translations = translation_cache()
+    if text not in translations:
+        translations[text] = {}
     translations[text][code] = reply
     with TRANSLATION_CACHE.open('w') as fd:
         json.dump(translations, fd, ensure_ascii=False, indent=2)
+    if lock is not None:
+        lock.release()
     return reply
