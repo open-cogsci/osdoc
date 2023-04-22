@@ -101,7 +101,7 @@ my_canvas2.show()
 
 
 
-## time(self)
+## time()
 
 Gives a current timestamp in milliseconds. The absolute meaning of
 the timestamp (i.e. when it was 0) depends on the backend.
@@ -122,4 +122,3 @@ print(f'The current time is {t}')
 
 
 </div>
-
