@@ -9,13 +9,32 @@ function getCurrentPage() {
     return path.substring(path.indexOf('/', 1) + 1);
 }
 
+function stripLanguageCode(url) {
+  const regex = /^([a-z]{2})\//i;
+  const match = url.match(regex);
+  if (match) {
+    // Remove the language code by replacing the matched string with just a slash
+    const strippedUrl = url.replace(match[0], "/");
+    const languageCode = match[1];
+    return [ strippedUrl, languageCode ]
+  } else {
+    // Return the original URL if no language code is found
+    return [ url, 'en' ]
+  }
+}
+
 function suggestTranslation() {
   const browserLanguage = getBrowserLanguage().substring(0, 2);
   const baseUrl = '/4.0/';
-  const currentPage = getCurrentPage();
+  const [ currentPage, languageCode ] = stripLanguageCode(getCurrentPage());
+  if (languageCode === browserLanguage) {
+    return
+  }
   let suggestion;
   let translatedUrl;
-  if (browserLanguage === 'fr') {
+  if (browserLanguage === 'en') {
+    suggestion = 'This page is also available in English: ';
+  } else if (browserLanguage === 'fr') {
     suggestion = 'Cette page est également disponible en français: ';
   } else if (browserLanguage === 'es') {
     suggestion = 'Esta página también está disponible en español: '
@@ -26,7 +45,11 @@ function suggestTranslation() {
   } else {
     return
   }
-  translatedUrl = `${baseUrl}${browserLanguage}/${currentPage}`
+  if (browserLanguage === 'en') {
+    translatedUrl = `${baseUrl}${currentPage}`
+  } else {
+    translatedUrl = `${baseUrl}${browserLanguage}/${currentPage}`
+  }
   const div = document.getElementById('translation-available')
   div.innerHTML = `${suggestion} <a href='${translatedUrl}'>${translatedUrl}</a>`
   div.style.display = 'block'
