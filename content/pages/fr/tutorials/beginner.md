@@ -1,5 +1,4 @@
 title: Tutoriel débutant : orientation du regard
-uptodate: false
 hash: b28c45b6918382f9501e7777e9058c1aafa95db4fbac25abe0b6db06f88c2a78
 locale: fr
 language: French
