@@ -11,18 +11,17 @@ Tutorials:
     Visual-world paradigm: tutorials/visual-world
     Wisconsin Card Sorting Test (JavaScript): tutorials/wcst
     Wisconsin Card Sorting Test (Python): tutorials/wcst-python
+
 Manual:
     Basic:
     Using the interface: manual/interface
     Variables and if statements: manual/variables
     Data logging: manual/logging
     Examples: manual/examples
-
     Flow and structure:
         Looping and defining indepedent variables: manual/structure/loop
         Doing things in sequence: manual/structure/sequence
         Doing things in parallel: manual/structure/coroutines
-
     Response collection:
         Keyboard: manual/response/keyboard
         Mouse: manual/response/mouse
@@ -30,15 +29,12 @@ Manual:
         Button box: manual/response/buttonbox
         SR Box: manual/response/srbox
         Sound recording: manual/response/soundrecording
-
     Stimulus presentation:
         Text: manual/stimuli/text
         Visual stimuli: manual/stimuli/visual
         Sound: manual/stimuli/sound
         Video: manual/stimuli/video
-
     _:
-
     Online experiments:
     Workflow: manual/osweb/workflow
     Development:
@@ -50,13 +46,11 @@ Manual:
         Prolific: manual/osweb/prolific
         Mechanical Turk: manual/osweb/mturk
         Sona Systems: manual/osweb/sonasystems
-    
     JavaScript:
     JavaScript in OpenSesame: manual/javascript/about
     JavaScript functions:
         Common functions: manual/javascript/common
         Canvas: manual/javascript/canvas
-    
     Forms:
     Forms in OpenSesame: manual/forms/about
     Ready-made forms: manual/forms/readymade
@@ -65,9 +59,7 @@ Manual:
     Widgets and keywords: manual/forms/widgets
     Validating form input: manual/forms/validation
     Custom HTML forms: manual/forms/html
-
     ___:
-
     Python:
     Python in the OpenSesame GUI: manual/python/about
     OpenSesame Python module (no GUI): manual/python/nogui
@@ -93,9 +85,7 @@ Manual:
         SMI: manual/eyetracking/smi
         Tobii: manual/eyetracking/tobii
         WebGazer.js (online): manual/eyetracking/webgazer
-        
     ____:
-
     Advanced:
     The prepare-run strategy: manual/prepare-run
     Counterbalancing: manual/counterbalancing
@@ -106,7 +96,6 @@ Manual:
     OpenSesameRun (no GUI): manual/opensesamerun
     Installing packages, plugins, and extensions: https://rapunzel.cogsci.nl/manual/environment/
     Runners: manual/runners
-
     Devices:
     Mouse tracking: manual/mousetracking
     Ambulatory Monitoring System (VU-AMS): manual/devices/vuams
@@ -127,9 +116,7 @@ Items:
     __form_text_input: manual/forms/readymade
     __inline_html: manual/forms/html
     __inline_javascript: manual/javascript/about
-    
     _:
-    
     __inline_script: manual/python/about
     __joystick: manual/response/joystick
     __keyboard response: manual/response/keyboard
@@ -140,9 +127,7 @@ Items:
     __psychopy_grating_stim: https://github.com/open-cogsci/opensesame-plugin-psychopy
     __pygaze_drift_correct: manual/eyetracking/pygaze
     __pygaze_init: manual/eyetracking/pygaze
-    
     __:
-    
     __pygaze_log: manual/eyetracking/pygaze
     __pygaze_start_recording: manual/eyetracking/pygaze
     __pygaze_stop_recording: manual/eyetracking/pygaze
@@ -153,26 +138,20 @@ Items:
     __reset_feedback: items/reset_feedback
     __sampler: manual/stimuli/sound
     __sequence: manual/structure/sequence
-    
     ___:
-    
     __sketchpad: manual/stimuli/visual
     __srbox: manual/response/srbox
     __synth: manual/stimuli/sound
     __touch_response: items/touch_response
-Other:
 
+Other:
     Other:
-    # Publications: publications
-    # Meet the team!: team
     Donate: donate
     <nodoc> Important changes in OpenSesame 3: important-changes-3
     Degrees of visual angle: visualangle
     Notation for experimental design: experimentaldesign
     Release notes: notes/notes
-
     _:
-
     Development:
     # How to contribute: dev/howtocontribute
     # Running from source: dev/fromsource
@@ -190,6 +169,9 @@ v4.0:
     v3.0: https://osdoc.cogsci.nl/3.0/
     v2.9: https://osdoc.cogsci.nl/2.9/
     v2.8: https://osdoc.cogsci.nl/2.8/
-English :
-    English: /
-    Français: /fr
+"&#x1F1EC;&#x1F1E7; English":
+    # "&#x1F1E9;&#x1F1EA; Deutsch": https://osdoc.cogsci.nl/4.0/de
+    "&#x1F1EC;&#x1F1E7; English": https://osdoc.cogsci.nl/4.0/
+    #  "&#x1F1EA;&#x1F1F8; Español": https://osdoc.cogsci.nl/4.0/es
+    "&#x1F1EB;&#x1F1F7; Français": https://osdoc.cogsci.nl/4.0/fr
+    # "&#x1F1E8;&#x1F1F3; 简体中文": https://osdoc.cogsci.nl/4.0/fr

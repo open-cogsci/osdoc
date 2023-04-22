@@ -1,4 +1,4 @@
-Title: Tobii
+title: Tobii
 
 PyGaze offers *experimental* support for Tobii eye trackers. The `tobii-research` package can be installed through `pip`, but at the time of writing it requires a specific version of Python—and *which* version of Python it requires varies from release to release. Therefore, the first step is to find out which version of Python you need. You can do that by visiting the `tobii-research` on PyPi and clicking on 'Download files':
 

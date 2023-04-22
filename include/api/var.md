@@ -9,10 +9,8 @@ don't need the `var` object anymore.
 The `var` object provides access to experimental variables.
 Experimental variables are the variables that live in the GUI, and are
 commonly set as independent variables in the LOOP item, referred
-to using
-the square-bracket (`[my_variable]`) notation, and logged by
-the LOGGER
-item.
+to using the curly-braces (`{my_variable}`) notation, and logged by
+the LOGGER item.
 
 A `var` object is created automatically when the experiment starts.
 In addition to the functions listed below, the following semantics are
@@ -201,4 +199,3 @@ for varname in var.vars():
 
 
 </div>
-

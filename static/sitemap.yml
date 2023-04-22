@@ -289,9 +289,9 @@
           - https://osdoc.cogsci.nl/2.9/
         - - v2.8
           - https://osdoc.cogsci.nl/2.8/
-  - - English
+  - - '&#x1F1EC;&#x1F1E7; English'
     - !!python/object/apply:collections.OrderedDict
-      - - - English
-          - /4.0//
-        - - "Fran\xE7ais"
-          - /4.0//fr
+      - - - '&#x1F1EC;&#x1F1E7; English'
+          - https://osdoc.cogsci.nl/4.0/
+        - - "&#x1F1EB;&#x1F1F7; Fran\xE7ais"
+          - https://osdoc.cogsci.nl/4.0/fr

@@ -1,5 +1,6 @@
 title: Attentional-blink tutorial (advanced)
 uptodate: false
+translate: false
 
 [TOC]
 
@@ -252,9 +253,9 @@ We will use an INLINE_SCRIPT item to do most of the heavy lifting, and therefore
 
 1. A SKETCHPAD (called *fixation*) to show a fixation dot.
 2. An INLINE_SCRIPT (called *RSVP*) item that implements the RSVP stream.
-3. A SKETCHPAD (called *ask_T1*) that asks the participant to report T1.
+3. A SKETCHPAD (called *ask_T1*) that asks the participant to report T1.
 4. A KEYBOARD_RESPONSE (called *response_T1*) that collects the T1 report.
-5. A SKETCHPAD (called *ask_T2*) that asks the participant to report T2.
+5. A SKETCHPAD (called *ask_T2*) that asks the participant to report T2.
 6. A KEYBOARD_RESPONSE (called *response_T2*) that collects the T2 report.
 7. A LOGGER (called *logger*) that writes all the data to a log file.
 

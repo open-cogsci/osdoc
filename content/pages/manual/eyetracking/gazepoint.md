@@ -1,4 +1,4 @@
-Title: GazePoint / OpenGaze
+title: GazePoint / OpenGaze
 
 PyGaze offers *experimental* support for GazePoint eye trackers through the OpenGaze API as of OpenSesame 3.3.11. For more information, see:
 
