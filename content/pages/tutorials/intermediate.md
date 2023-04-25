@@ -1,5 +1,4 @@
 title: Intermediate tutorial (Python) visual search
-uptodate: false
 
 [TOC]
 
@@ -11,15 +10,15 @@ OpenSesame is freely available under the [General Public License v3][gpl].
 
 ## About this tutorial
 
-This tutorial shows how to create a basic visual-search experiment using OpenSesame [(Mathôt, Schreij, & Theeuwes, 2012)][references]. We will use both the graphical interface and Python scripting. Some experience with OpenSesame and Python is recommended. This tutorial takes approximately one hour.
+This tutorial shows how to create a basic visual-search experiment using OpenSesame [(Mathôt, Schreij, & Theeuwes, 2012)][references]. We will use both the graphical interface and Python scripting to develop an experiment that you can run on the desktop in a traditional lab-based setting. Some experience with OpenSesame and Python is recommended. This tutorial takes approximately one hour.
 
-A JavaScript-based version of this tutorial is also available. If you want to run your experiments online (with OSWeb), then the JavaScript tutorial is what you need:
+A JavaScript-based version of this tutorial is also available. If you want to run your experiments online in a browser (with OSWeb), then the JavaScript tutorial is what you need:
 
 - %link:tutorials/intermediate-javascript%
 
 ## Resources
 
-- __Download__ — This tutorial assumes that you are running OpenSesame version 3.2.0 or later. You can download the most recent version of OpenSesame from:
+- __Download__ — This tutorial assumes that you are running OpenSesame version 4.0.0 or later. You can download the most recent version of OpenSesame from:
 	- %link:download%
 - __Documentation__ — A dedicated documentation website can be found at:
 	- <http://osdoc.cogsci.nl/>
@@ -61,7 +60,7 @@ According to Treisman and Gelade's feature-integration theory, these results ref
 This design:
 
 - Is *within-subject*, because all participants do all conditions
-- Is *fully-crossed* (or full factorial), because all combinations of conditions occur
+- Is *fully crossed* (or full-factorial), because all combinations of conditions occur
 - Has three conditions (or factors):
 	- Varied within blocks:
 		- `set_size` with three levels (1, 5, 15), or SS<sub>3</sub>
@@ -149,7 +148,7 @@ Click on *instructions* to open it, and add a good instructional text, such as:
 ```text
 INSTRUCTIONS
 
-Search for the [target_color] [target_shape]
+Search for the {target_color} {target_shape}
 
 Press the right-arrow key if you find it
 Press the left-arrow key if you don't
@@ -157,15 +156,15 @@ Press the left-arrow key if you don't
 Press any key to begin
 ```
 
-The square brackets around '[target_color]' and '[target_shape]' indicate that these are not literal text, but refer to the variables that we have defined in *experimental_loop*. When the experiment runs, the values of these variables will appear here, and the participant will see (for example), 'Search for the yellow circle'.
+The curly braces brackets around '{target_color}' and '{target_shape}' indicate that these are not literal text, but refer to the variables that we have defined in *experimental_loop*. When the experiment runs, the values of these variables will appear here, and the participant will see (for example), 'Search for the yellow circle'.
 
 __Give a visual preview of the target__
 
 It also good to show the participant the actual stimulus that she needs to find. To do this:
 
 - Draw a filled circle at the center of the display (make sure it doesn't overlap with the text);
-- Change the color of the circle to '[target_color]'. This means that the color of the circle depends on the value of the variable `target_color`; and
-- Change the show-if statement to '[target_shape] = circle'.
+- Change the color of the circle to '{target_color}'. This means that the color of the circle depends on the value of the variable `target_color`; and
+- Change the show-if expression to `target_shape == 'circle'`. This is a Python expression that checks if the variable `target_shape` has the value 'circle'.
 
 In other words, we have drawn a circle of which the color is determined by `target_color`; furthermore, this circle is only shown when the variable `target_shape` has the value 'circle'. For more information about variables and show-if statements, see:
 
@@ -174,8 +173,8 @@ In other words, we have drawn a circle of which the color is determined by `targ
 We use the same trick to draw a square:
 
 - Draw a filled square at the center of the display;
-- Change the color of the square to '[target_color]'; and
-- Change the show-if statement to '[target_shape] = square'
+- Change the color of the square to '{target_color}'; and
+- Change the show-if statement to `target_shape == 'square'`
 
 The *instructions*  screen should now look like %FigStep3:
 
@@ -248,9 +247,9 @@ Now things will get interesting: We will start programming in Python. We will us
 - *Top-down programming* means that we start with the most abstract logic, without bothering with how this logic is implemented. Once the most abstract logic is in place, we will move down to a slightly less abstract logic, and so on, until we arrive at the details of the implementation. This technique helps to keep the code structured.
 - *Defensive programming* means that we assume that we make mistakes. Therefore, to protect us from ourselves, we build sanity checks into the code.
 
-*Note:* The explanation below assumes that you're somewhat familiar with Python code. If concepts like `list`, `tuple`, and functions don't mean anything to you, then it's best to first walk through an introductory Python tutorial. You can find links to Python tutorials here:
+*Note:* The explanation below assumes that you're somewhat familiar with Python code. If concepts like `list`, `tuple`, and functions don't mean anything to you, then it's best to first walk through an introductory Python tutorial, such as this one:
 
-- %link:manual/python/about%
+- <https://pythontutorials.eu/>
 
 The logic of the code is shown in %FigHierarchy. The numbers indicate the order in which we will implement the functionality, starting at the abstract level.
 
@@ -291,31 +290,28 @@ What happens here? We …
 
 A `Canvas` object is a single display; it is, in a sense, the Python counterpart of a SKETCHPAD. See also:
 
-- %link:manual/python/canvas%	 
+- %link:manual/python/canvas%
 
 We now go one step down by defining `draw_canvas()` (above the rest of the script so far):
 
 ~~~ .python
 def draw_canvas():
+    """Draws the search canvas.
 
-	"""
-	Draws the search canvas.
-
-	Returns:
-	A Canvas.
-	"""
-
-	c = Canvas()
-	xy_list = xy_random(n=var.set_size, width=500, height=500, min_dist=75)
-	if var.target_present == 'present':
-		x, y = xy_list.pop()
-		draw_target(c, x, y)
-	elif var.target_present != 'absent':
-		raise Exception(
-			'Invalid value for target_present %s' % var.target_present)		
-	for x, y in xy_list:
-		draw_distractor(c, x, y)
-	return c
+    Returns
+    -------
+    Canvas
+    """
+    c = Canvas()
+    xy_list = xy_random(n=set_size, width=500, height=500, min_dist=75)
+    if target_present == 'present':
+        x, y = xy_list.pop()
+        draw_target(c, x, y)
+    elif target_present != 'absent':
+        raise Exception(f'Invalid value for target_present: {target_present}')
+    for x, y in xy_list:
+        draw_distractor(c, x, y)
+    return c
 ~~~
 
 
@@ -332,7 +328,7 @@ There are several common functions, such as `Canvas()` and `xy_random()`, which 
 
 - %link:manual/python/common%
 
-Experimental variables are stored as properties of the `var` object. That's why you write `var.set_size` and not directly `set_size`. See:
+Experimental variables are global variables. That's why you can refer to `set_size`, which is defined in *block_loop*, even though the variable `set_size` is never explicitly defined in the script. The same is true for `target_shape`, `target_color`, `condition`, etc. See:
 
 - %link:var%
 
@@ -342,17 +338,15 @@ We now go one more step down by defining `draw_target` (above the rest of the sc
 
 ~~~ .python
 def draw_target(c, x, y):
+    """Draws the target.
 
-	"""
-	Draws the target.
-
-	arguments:
-	c:	A Canvas.
-	x:	An x coordinate.
-	y:	A y coordinate.
-	"""
-
-	draw_shape(c, x, y, color=var.target_color, shape=var.target_shape)
+    Parameters
+    ----------
+    c: Canvas
+    x: int
+    y: int
+    """
+    draw_shape(c, x, y, color=target_color, shape=target_shape)
 ~~~
 
 What happens here? We …
@@ -363,30 +357,28 @@ We also define `draw_distractor` (above the rest of the script so far):
 
 ~~~ .python
 def draw_distractor(c, x, y):
+    """Draws a single distractor.
 
-	"""
-	Draws a single distractor.
-
-	Arguments:
-	c:	A Canvas.
-	x:	An x coordinate.
-	y:	A y coordinate.
-	"""
-
-	if var.condition == 'conjunction':
-		draw_conjunction_distractor(c, x, y)
-	elif var.condition == 'feature_shape':
-		draw_feature_shape_distractor(c, x, y)
-	elif var.condition == 'feature_color':
-		draw_feature_color_distractor(c, x, y)
-	else:
-		raise Exception('Invalid condition: %s' % var.condition)
+    Parameters
+    ----------
+    c: Canvas
+    x: int
+    y: int
+    """
+    if condition == 'conjunction':
+        draw_conjunction_distractor(c, x, y)
+    elif condition == 'feature_shape':
+        draw_feature_shape_distractor(c, x, y)
+    elif condition == 'feature_color':
+        draw_feature_color_distractor(c, x, y)
+    else:
+        raise Exception(f'Invalid condition: {condition}')
 ~~~
 
 What happens here? We …
 
 - Call another function to draw a more specific distractor depending on the Condition.
-- Check whether `var.condition` has any of the expected values. If not, we raise an `Exception`. This is defensive programming! Without this check, if we made a typo somewhere, the distractor might simply not be shown without causing an error message.
+- Check whether `condition` has any of the expected values. If not, we raise an `Exception`. This is defensive programming! Without this check, if we made a typo somewhere, the distractor might simply not be shown without causing an error message.
 
 Now we define the function that draws distractors in the Conjunction condition (above the rest of the script so far):
 
@@ -395,26 +387,22 @@ import random
 
 
 def draw_conjunction_distractor(c, x, y):
+    """Draws a single distractor in the conjunction condition: an object that
+    can have any shape and color, but cannot be identical to the target.
 
-	"""
-	Draws a single distractor in the conjunction condition: an object that
-	can have any shape and color, but cannot be identical to the target.
-
-	arguments:
-	c:	A Canvas.
-	x:	An x coordinate.
-	y:	A y coordinate.
-	"""
-
-	conjunctions = [
-		('yellow', 'circle'),
-		('blue', 'circle'),
-		('yellow', 'square'),
-		('blue', 'square'),
-		]
-	conjunctions.remove( (var.target_color, var.target_shape) )
-	color, shape = random.choice(conjunctions)
-	draw_shape(c, x, y, color=color, shape=shape)
+    Parameters
+    ----------
+    c: Canvas
+    x: int
+    y: int
+    """
+    conjunctions = [('yellow', 'circle'),
+                    ('blue',   'circle'),
+                    ('yellow', 'square'),
+                    ('blue',   'square')]
+    conjunctions.remove((target_color, target_shape))
+    color, shape = random.choice(conjunctions)
+    draw_shape(c, x, y, color=color, shape=shape)
 ~~~
 
 What happens here? We …
@@ -432,26 +420,24 @@ Now we define the function that draws distractors in the Shape Feature condition
 
 ~~~ .python
 def draw_feature_shape_distractor(c, x, y):
+    """Draws a single distractor in the feature-shape condition: an object that
+    has a different shape from the target, but can have any color.
 
-	"""
-	Draws a single distractor in the feature-shape condition: an object that
-	has a different shape from the target, but can have any color.
-
-	Arguments:
-	c:	A Canvas.
-	x:	An x coordinate.
-	y:	A y coordinate.
-	"""		
-
-	colors = ['yellow', 'blue']
-	color = random.choice(colors)
-	if var.target_shape == 'circle':
-		shape = 'square'
-	elif var.target_shape == 'square':
-		shape = 'circle'
-	else:
-		raise Exception('Invalid target_shape: %s' % var.target_shape)
-	draw_shape(c, x, y, color=color, shape=shape)
+    Parameters
+    ----------
+    c: Canvas
+    x: int
+    y: int
+    """
+    colors = ['yellow', 'blue']
+    color = random.choice(colors)
+    if target_shape == 'circle':
+        shape = 'square'
+    elif target_shape == 'square':
+        shape = 'circle'
+    else:
+        raise Exception(f'Invalid target_shape: {target_shape}')
+    draw_shape(c, x, y, color=color, shape=shape)
 ~~~
 
 What happens here? We …
@@ -465,26 +451,24 @@ Now we define the function that draws distractors in the Color Feature condition
 
 ~~~ .python
 def draw_feature_color_distractor(c, x, y):
+    """Draws a single distractor in the feature-color condition: an object that
+    has a different color from the target, but can have any shape.
 
-	"""
-	Draws a single distractor in the feature-color condition: an object that
-	has a different color from the target, but can have any shape.
-
-	Arguments:
-	c:	A Canvas.
-	x:	An x coordinate.
-	y:	A y coordinate.
-	"""
-
-	shapes = ['circle', 'square']
-	shape = random.choice(shapes)
-	if var.target_color == 'yellow':
-		color = 'blue'
-	elif var.target_color == 'blue':
-		color = 'yellow'
-	else:
-		raise Exception('Invalid target_color: %s' % var.target_color)
-	draw_shape(c, x, y, color=color, shape=shape)
+    Parameters
+    ----------
+    c: Canvas
+    x: int
+    y: int
+    """
+    shapes = ['circle', 'square']
+    shape = random.choice(shapes)
+    if target_color == 'yellow':
+        color = 'blue'
+    elif target_color == 'blue':
+        color = 'yellow'
+    else:
+        raise Exception(f'Invalid target_color: {target_color}')
+    draw_shape(c, x, y, color=color, shape=shape)
 ~~~
 
 What happens here? We …
@@ -500,26 +484,24 @@ Now we go all the way down to the details by defining the function that actually
 
 ~~~ .python
 def draw_shape(c, x, y, color, shape):
+    """Draws a single shape.
 
-	"""
-	Draws a single shape.
-
-	Arguments:
-	c:		A Canvas.
-	x:		An x coordinate.
-	y:		A y coordinate.
-	color:	A color (yellow or blue)
-	shape:	A shape (square or circle)
-	"""		
-
-	if shape == 'square':
-		c += Rect(x=x-25, y=y-25, w=50, h=50, color=color, fill=True)
-	elif shape == 'circle':
-		c += Circle(x=x, y=y, r=25, color=color, fill=True)
-	else:
-		raise Exception('Invalid shape: %s' % shape)
-	if color not in ['yellow', 'blue']:
-		raise Exception('Invalid color: %s' % color)
+    Parameters
+    ----------
+    c: Canvas
+    x: int
+    y: int
+    color: str
+    shape: str
+    """
+    if shape == 'square':
+        c += Rect(x=x-25, y=y-25, w=50, h=50, color=color, fill=True)
+    elif shape == 'circle':
+        c += Circle(x=x, y=y, r=25, color=color, fill=True)
+    else:
+        raise Exception(f'Invalid shape: {shape}')
+    if color not in ['yellow', 'blue']:
+        raise Exception(f'Invalid color: {color}')
 ~~~
 
 What happens here? We …
@@ -543,20 +525,20 @@ That's it! Now you have drawn a full visual-search display. And, importantly, yo
 
 To know if the participant responds correctly, we need to know the correct response. You can define this explicitly in the *block_loop* (as done in the beginner tutorial); but here we're going to use a simple Python script that checks whether the target is present or not, and defines the correct response accordingly.
 
-To do this, insert a new INLINE_SCRIPT at the start of *trial_sequence*, and rename it to *correct_response_script*. In the Prepare phase, enter the following code:
+To do this, insert a new INLINE_SCRIPT at the start of *trial_sequence*, and rename it to *correct_response_script*. In the Prepare phase (not the Run phase!), enter the following code:
 
 ~~~ .python
-if var.target_present == 'present':
-	var.correct_response = 'right'
-elif var.target_present == 'absent':
-	var.correct_response = 'left'
+if target_present == 'present':
+    correct_response = 'right'
+elif target_present == 'absent':
+    correct_response = 'left'
 else:
-	raise Exception('target_present should be absent or present, not %s' % var.target)
+    raise Exception(f'target_present should be absent or present, not {target}')
 ~~~
 
 What happens here? We …
 
-- Check whether the target is present or not. If the target is present, the correct response is 'right' (the right arrow key); if the target is absent, the correct response is 'left' (the left arrow key). The experimental variable `var.correct_response` is automatically used by OpenSesame; therefore, we don't need to explicitly indicate that this variable contains the correct response.
+- Check whether the target is present or not. If the target is present, the correct response is 'right' (the right arrow key); if the target is absent, the correct response is 'left' (the left arrow key). The experimental (global) variable `correct_response` is automatically recognized by *keyboard_response*; therefore, we don't need to explicitly indicate that this variable contains the correct response.
 - Check if the target is either present or absent, and if not raise an `Exception`—another example of defensive programming.
 
 ## Step 8: Give per-trial feedback
@@ -569,10 +551,10 @@ To do this:
 - Rename one SKETCHPAD to *green_dot*, draw a central green fixation dot onto it, and change its duration to 500.
 - Rename the other SKETCHPAD to *red_dot*, draw a central red fixation dot onto it, and change its duration to 500.
 
-Of course, only one of the two dots should be shown on each trial. To accomplish this, we will specify run-if statements in *trial_sequence*:
+Of course, only one of the two dots should be shown on each trial. To accomplish this, we will specify run-if expressions in *trial_sequence*:
 
-- Change the run-if statement for *green_dot* to '[correct] = 1', indicating that it should only be shown after a correct response.
-- Change the run-if statement for *red_dot* to '[correct] = 0', indicating that it should only be shown after an incorrect response.
+- Change the run-if expression for *green_dot* to 'correct == 1', indicating that it should only be shown after a correct response.
+- Change the run-if expression for *red_dot* to 'correct == 0', indicating that it should only be shown after an incorrect response.
 
 The variable `correct` is automatically created if the variable `correct_response` is available; that's why we defined `correct_response` in step 7. For more information about variables and run-if statements, see:
 
@@ -598,9 +580,11 @@ If the experiment doesn't work on the first try: Don't worry, and calmly figure 
 
 <div class='reference' markdown='1'>
 
+<notranslate>
 Mathôt, S., Schreij, D., & Theeuwes, J. (2012). OpenSesame: An open-source, graphical experiment builder for the social sciences. *Behavior Research Methods*, *44*(2), 314-324. doi:10.3758/s13428-011-0168-7
 
 Treisman, A. M., & Gelade, G. (1980). A feature-integration theory of attention. *Cognitive Psychology*, 12(1), 97–136. doi:10.1016/0010-0285(80)90005-5
+</notranslate>
 
 </div>
 

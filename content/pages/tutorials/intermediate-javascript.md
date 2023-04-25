@@ -1,5 +1,4 @@
 title: Intermediate tutorial (JavaScript): visual search
-uptodate: false
 
 [TOC]
 
@@ -11,7 +10,7 @@ OpenSesame is freely available under the [General Public License v3][gpl].
 
 ## About this tutorial
 
-This tutorial shows how to create a basic visual-search experiment using OpenSesame [(Mathôt, Schreij, & Theeuwes, 2012)][references]. We will use both the graphical interface and JavaScript. Some experience with OpenSesame and JavaScript is recommended. This tutorial takes approximately one hour.
+This tutorial shows how to create a basic visual-search experiment using OpenSesame [(Mathôt, Schreij, & Theeuwes, 2012)][references]. We will use both the graphical interface and JavaScript to develop an experiment that you can run online in a browser. Some experience with OpenSesame and JavaScript is recommended. This tutorial takes approximately one hour.
 
 A Python-based version of this tutorial is also available. If you don't need to run your experiments online, then the Python tutorial is likely what you need:
 
@@ -20,7 +19,7 @@ A Python-based version of this tutorial is also available. If you don't need to 
 
 ## Resources
 
-- __Download__ — This tutorial assumes that you are running OpenSesame version 3.3.10 or later and OSWeb 1.4 or later. You can download the most recent version of OpenSesame from:
+- __Download__ — This tutorial assumes that you are running OpenSesame version 4.0.0 or later and OSWeb 2.0 or later. You can download the most recent version of OpenSesame from:
 	- %link:download%
 - __Documentation__ — A dedicated documentation website can be found at:
 	- <http://osdoc.cogsci.nl/>
@@ -98,6 +97,8 @@ When you have deleted these items, they are still visible in the 'Unused items' 
 
 Finally, give the experiment a good title, such as 'Visual search'. To do this, open the general-properties tab (by clicking on 'Extended template' in the overview area) and click on the experiment name to edit it.
 
+Also configure OpenSesame to run the experiment in a browser, rather than on the desktop.
+
 The overview area should now look like %FigStep1:
 
 %--
@@ -107,6 +108,7 @@ figure:
  caption: |
   The overview area at the end of step 1.
 --%
+
 
 ## Step 2: Define experimental variables that are varied between blocks
 
@@ -155,7 +157,7 @@ Click on *instructions* to open it, and add a good instructional text, such as:
 ```text
 INSTRUCTIONS
 
-Search for the [target_color] [target_shape]
+Search for the {target_color} {target_shape}
 
 Press the right-arrow key if you find it
 Press the left-arrow key if you don't
@@ -163,15 +165,15 @@ Press the left-arrow key if you don't
 Press any key to begin
 ```
 
-The square brackets around '[target_color]' and '[target_shape]' indicate that these are not literal text, but refer to the variables that we have defined in *experimental_loop*. When the experiment runs, the values of these variables will appear here, and the participant will see (for example), 'Search for the yellow circle'.
+The curly braces brackets around '{target_color}' and '{target_shape}' indicate that these are not literal text, but refer to the variables that we have defined in *experimental_loop*. When the experiment runs, the values of these variables will appear here, and the participant will see (for example), 'Search for the yellow circle'.
 
 __Give a visual preview of the target__
 
 It also good to show the participant the actual stimulus that she needs to find. To do this:
 
 - Draw a filled circle at the center of the display (make sure it doesn't overlap with the text);
-- Change the color of the circle to '[target_color]'. This means that the color of the circle depends on the value of the variable `target_color`; and
-- Change the show-if statement to '[target_shape] = circle'.
+- Change the color of the circle to '{target_color}'. This means that the color of the circle depends on the value of the variable `target_color`; and
+- Change the show-if expression to `target_shape == 'circle'`. This is a Python expression that checks if the variable `target_shape` has the value 'circle'. Note that even though you *cannot* use full-fledged Python `inline_script` items when running experiments in a browser, you *can* use Python for these simple conditional expressions.
 
 In other words, we have drawn a circle of which the color is determined by `target_color`; furthermore, this circle is only shown when the variable `target_shape` has the value 'circle'. For more information about variables and show-if statements, see:
 
@@ -180,8 +182,8 @@ In other words, we have drawn a circle of which the color is determined by `targ
 We use the same trick to draw a square:
 
 - Draw a filled square at the center of the display;
-- Change the color of the square to '[target_color]'; and
-- Change the show-if statement to '[target_shape] = square'
+- Change the color of the square to '{target_color}'; and
+- Change the show-if statement to `target_shape == 'square'`
 
 The *instructions*  screen should now look like %FigStep3:
 
@@ -192,6 +194,7 @@ figure:
  caption: |
   The *instructions* screen at the end of step 3.
 --%
+
 
 ## Step 4: Define experimental variables that are varied within blocks
 
@@ -219,7 +222,7 @@ figure:
   The table of *block_loop* at the end of step 4.
 --%
 
-## Step 5: Create the trial sequence
+## Step 5: Create the trial sequence and add an initialization script
 
 We want our trial sequence to look as follows:
 
@@ -229,11 +232,15 @@ We want our trial sequence to look as follows:
 - Data logging, for which we will use a LOGGER.
 - (We also want immediate feedback after each trial, but we will get back to this later.)
 
-So the only thing that is missing is an INLINE_JAVASCRIPT.
+So the only thing that is missing from *trial_sequence* is an INLINE_JAVASCRIPT.
 
 - Insert a new INLINE_JAVASCRIPT after *sketchpad* and rename it to *search_display_script*.
 - Rename *sketchpad* to *fixation_dot*, so that its function is clear; and
 - Change the duration of *fixation_dot* to 500, so that the fixation dot is shown for 500 ms. (There should already be a fixation dot drawn; if not, draw one in the center of *fixation_dot*.)
+
+We also need to add a initialization script to start of the experiment. We will use this only to define (`let`) a variable that will hold the `Canvas` object on which we will draw. In JavaScript, you have to define a variable exactly once, which is why we cannot do that in the *trial_sequence*.
+
+- Insert a new INLINE_JAVASCRIPT at the top of the *experiment* sequence and rename it to *init*.
 
 The overview area should now look like %FigStep5.
 
@@ -268,6 +275,21 @@ figure:
   The logic of the code to draw a visual-search display.
 --%
 
+__Declaring variables with let, var, and const__
+
+In JavaScript, you have to 'declare' a variable before you can use it. (In Python, this is not necessary.) In our case, we will use a variable called `c`, which we therefore need to declare. To do so, open the Prepare tab of the *init* script and use the `let` keyword to declare the variable `c`:
+
+```js
+let c
+```
+
+There are three different ways to declare variables:
+
+- Using `let`, as we've done here. In OpenSesame, this makes the variable available in JavaScript but not as an experimental variable in the user interface.
+- Using `var`. In OpenSesame, this makes the variable also available as an experimental variable in the user interface. (We will do that later for the variable `correct_response`.)
+- Using `const`. This is like `var` with the important difference that the variable cannot be re-assigned later.
+
+
 __The Prepare and Run phases__
 
 Open *search_display_script* and switch to the Prepare tab. OpenSesame distinguishes two phases of execution:
@@ -282,15 +304,6 @@ See also:
 - %link:prepare-run%
 
 
-__Choosing your version of JavaScript: ECMA 5.1 or 6__
-
-The formal name of JavaScript is ECMASCRIPT, which exists in different versions. The latest version, ECMA 6 (or: ECMA 2015), has a number of useful features. ECMA 6 is supported by most modern browsers, which means that you can use these features when running an experiment in a browser. However, due to a limitation of the `js2py` library, which is used by OpenSesame to run JavaScript on the desktop, you can only use ECMA 5.1 when running the experiment on the desktop.
-
-In many cases, you don't really care about being able to run your online experiment also on the desktop, in which case it makes sense to make use of ECMA 6. This is also the approach that we will take for this tutorial.
-
-In other words: we will use ECMA 6 syntax, and therefore we will only be able to run the experiment in a browser, and not on the desktop.
-
-
 __Implement the abstract level__
 
 We start at the most abstract level: defining a function that draws a visual-search display. We don't specify *how* this is done; we simply assume that there is a function that does this, and we will worry about the details later—that's top-down programming.
@@ -298,7 +311,7 @@ We start at the most abstract level: defining a function that draws a visual-sea
 In the Prepare tab, enter the following code:
 
 ```js
-persistent.c = draw_canvas()
+c = draw_canvas()
 ```
 
 What happens here? We …
@@ -309,8 +322,6 @@ A `Canvas` object is a single display; it is, in a sense, the JavaScript counter
 
 - %link:manual/javascript/canvas%
 
-We assign `c` as a property of the `persistent` object. This ensures that we are able to access `c` in the *Run* phase as well. This is necessary, because (unlike for Python INLINE_SCRIPT items) variables are not automatically shared between different INLINE_JAVASCRIPT items, nor between the Run and Prepare phase of the same INLINE_JAVASCRIPT item. See also:
-
 We now go one step down by defining `draw_canvas()` (above the rest of the script so far):
 
 ```js
@@ -320,12 +331,12 @@ We now go one step down by defining `draw_canvas()` (above the rest of the scrip
  **/
 function draw_canvas() {
     let c = Canvas()
-    let xy_list = xy_random(vars.set_size, 500, 500, 75)
-    if (vars.target_present === 'present') {
+    let xy_list = xy_random(set_size, 500, 500, 75)
+    if (target_present === 'present') {
         let [x, y] = xy_list.pop()
         draw_target(c, x, y)
-    } else if (vars.target_present !== 'absent') {
-        throw 'Invalid value for target_present ' + vars.target_present
+    } else if (target_present !== 'absent') {
+        throw 'Invalid value for target_present ' + target_present
     }
     for (let [x, y] of xy_list) {
         draw_distractor(c, x, y)
@@ -348,7 +359,10 @@ There are several common functions, such as `Canvas()` and `xy_random()`, which 
 
 - %link:manual/javascript/common%
 
-In JavaScript, experimental variables are stored as properties of the `vars` object. That's why you write `vars.set_size` and not directly `set_size`.
+Experimental variables are global variables. That's why you can refer to `set_size`, which is defined in *block_loop*, even though the variable `set_size` is never explicitly defined in the script. The same is true for `target_shape`, `target_color`, `condition`, etc. See:
+
+- %link:var%
+
 
 __Implement the intermediate level__
 
@@ -362,7 +376,7 @@ We now go one more step down by defining `draw_target` (above the rest of the sc
  * @param y A y coordinate
  **/
 function draw_target(c, x, y) {
-    draw_shape(c, x, y, vars.target_color, vars.target_shape)
+    draw_shape(c, x, y, target_color, target_shape)
 }
 ```
 
@@ -380,14 +394,14 @@ We also define `draw_distractor` (above the rest of the script so far):
  * @param y A y coordinate
  **/
 function draw_distractor(c, x, y) {
-    if (vars.condition === 'conjunction') {
+    if (condition === 'conjunction') {
         draw_conjunction_distractor(c, x, y)
-    } else if (vars.condition === 'feature_shape') {
+    } else if (condition === 'feature_shape') {
         draw_feature_shape_distractor(c, x, y)
-    } else if (vars.condition === 'feature_color') {
+    } else if (condition === 'feature_color') {
         draw_feature_color_distractor(c, x, y)
     } else {
-        throw 'Invalid condition: ' + vars.condition
+        throw 'Invalid condition: ' + condition
     }
 }
 ```
@@ -395,7 +409,7 @@ function draw_distractor(c, x, y) {
 What happens here? We …
 
 - Call another function to draw a more specific distractor depending on the Condition.
-- Check whether `vars.condition` has any of the expected values. If not, we `throw` an error. This is defensive programming! Without this check, if we made a typo somewhere, the distractor might simply not be shown without causing an error message.
+- Check whether `condition` has any of the expected values. If not, we `throw` an error. This is defensive programming! Without this check, if we made a typo somewhere, the distractor might simply not be shown without causing an error message.
 
 Now we define the function that draws distractors in the Conjunction condition (above the rest of the script so far):
 
@@ -412,10 +426,10 @@ function draw_conjunction_distractor(c, x, y) {
         ['yellow', 'circle'],
         ['blue', 'circle'],
         ['yellow', 'square'],
-        ['blue', 'square'],
+        ['blue', 'square']
     ]
     let [color, shape] = random.pick(conjunctions)
-    while (color === vars.target_color && shape === vars.target_shape) {
+    while (color === target_color && shape === target_shape) {
         [color, shape] = random.pick(conjunctions)
     }
     draw_shape(c, x, y, color, shape)
@@ -447,12 +461,12 @@ function draw_feature_shape_distractor(c, x, y) {
     let colors = ['yellow', 'blue']
     let color = random.pick(colors)
     let shape
-    if (vars.target_shape === 'circle') {
+    if (target_shape === 'circle') {
         shape = 'square'
-    } else if (vars.target_shape === 'square') {
+    } else if (target_shape === 'square') {
         shape = 'circle'
     } else {
-        throw 'Invalid target_shape: ' + vars.target_shape
+        throw 'Invalid target_shape: ' + target_shape
     }
     draw_shape(c, x, y, color, shape)
 }
@@ -479,12 +493,12 @@ function draw_feature_color_distractor(c, x, y) {
     let shapes = ['circle', 'square']
     let shape = random.pick(shapes)
     let color
-    if (vars.target_color === 'yellow') {
+    if (target_color === 'yellow') {
         color = 'blue'
-    } else if (vars.target_color === 'blue') {
+    } else if (target_color === 'blue') {
         color = 'yellow'
     } else {
-        throw 'Invalid target_color: ' + vars.target_color
+        throw 'Invalid target_color: ' + target_color
     }
     draw_shape(c, x, y, color, shape)
 }
@@ -548,10 +562,8 @@ __Implement the Run phase__
 Because we have done all the hard work in the Prepare phase, the Run phase is just:
 
 ```js
-persistent.c.show()
+c.show()
 ```
-
-Note that we have assigned the canvas as a property of the `persistent` object in the Prepare phase, which is why we can refer to it also in the Run phase.
 
 That's it! Now you have drawn a full visual-search display. And, importantly, you have done so in a way that is easy to understand, because of top-down programming, and safe, because of defensive programming.
 
@@ -560,15 +572,21 @@ That's it! Now you have drawn a full visual-search display. And, importantly, yo
 
 To know if the participant responds correctly, we need to know the correct response. You can define this explicitly in the *block_loop* (as done in the beginner tutorial); but here we're going to use some simple JavaScript that checks whether the target is present or not, and defines the correct response accordingly.
 
-To do this, insert a new INLINE_JAVASCRIPT at the start of *trial_sequence*, and rename it to *correct_response_script*. In the Prepare phase, enter the following code:
+To do this, we first need to declare the variable in the Prepare tab of the *init* script, just below `let c`. This time, we use the `var` keyword to declare `correct_response`, because this makes the variable available in the user interface (whereas `let` does not do this):
 
 ```js
-if (vars.target_present === 'present') {
-    vars.correct_response = 'right'
+var correct_response
+```
+
+Next, insert a new INLINE_JAVASCRIPT at the start of *trial_sequence*, and rename it to *correct_response_script*. In the Prepare phase, enter the following code:
+
+```js
+if (target_present === 'present') {
+    correct_response = 'right'
 } else if (vars.target_present === 'absent') {
-    vars.correct_response = 'left'
+    correct_response = 'left'
 } else {
-    throw 'target_present should be absent or present, not ' + vars.target
+    throw 'target_present should be absent or present, not ' + target
 }
 ```
 
@@ -589,8 +607,8 @@ To do this:
 
 Of course, only one of the two dots should be shown on each trial. To accomplish this, we will specify run-if statements in *trial_sequence*:
 
-- Change the run-if statement for *green_dot* to '[correct] = 1', indicating that it should only be shown after a correct response.
-- Change the run-if statement for *red_dot* to '[correct] = 0', indicating that it should only be shown after an incorrect response.
+- Change the run-if statement for *green_dot* to 'correct == 1', indicating that it should only be shown after a correct response.
+- Change the run-if statement for *red_dot* to 'correct == 0', indicating that it should only be shown after an incorrect response.
 
 The variable `correct` is automatically created if the variable `correct_response` is available; that's why we defined `correct_response` in step 7. For more information about variables and run-if statements, see:
 
@@ -609,28 +627,15 @@ figure:
 
 ## Step 9: Checking compatibility
 
-When you want to run an experiment in a browser, you cannot use all of OpenSesame's functionality. To check whether your experiment is able to run in a browser, you can use the OSWeb compatibility check by going to Menu → Tools → OSweb. If you've followed all the steps of this tutorial, the compatibility check will fail with the following warning (%FigCompatibilityCheck):
+When you want to run an experiment in a browser, you cannot use all of OpenSesame's functionality. To check whether your experiment is able to run in a browser, you can use the OSWeb compatibility check by going to Menu → Tools → OSweb. If you've followed all the steps of this tutorial, the compatibility check will succeeed:
 
 %--
 figure:
  id: FigCompatibilityCheck
  source: compatibility-check.png
  caption: |
-  The compatibility check may give warnings or errors.
+  The compatibility check indicates whether the experiment is compatible with OSWeb.
 --%
-
-This is a warning that the *logger* has the option 'Log all variables' enabled. Enabling this option is recommended when running an experiment on the desktop, in which case it's no problem to collect a lot of unnecessary information. However, enabling this option is *not* recommend when running an experiment online, because doing so results in unnecessarily large data files and consumes an unnecessary amount of bandwidth.
-
-Therefore, go the *logger*, disable the 'Log all variables' option, and select only those variables that you actually need. You can do that by opening the variable inspector and dragging variables into the *logger* table (%FigLogger).
-
-%--
-figure:
- id: FigLogger
- source: logger.png
- caption: |
-  Logging only relevant variables is recommended when running an experiment online to save bandwidth.
---%
-
 
 For a list of functionality that is supported by OSWeb, see:
 
@@ -647,9 +652,11 @@ If the experiment doesn't work on the first try: Don't worry, and calmly figure 
 
 <div class='reference' markdown='1'>
 
+<notranslate>
 Mathôt, S., Schreij, D., & Theeuwes, J. (2012). OpenSesame: An open-source, graphical experiment builder for the social sciences. *Behavior Research Methods*, *44*(2), 314-324. doi:10.3758/s13428-011-0168-7
 
 Treisman, A. M., & Gelade, G. (1980). A feature-integration theory of attention. *Cognitive Psychology*, 12(1), 97–136. doi:10.1016/0010-0285(80)90005-5
+</notranslate>
 
 </div>
 
