@@ -13,7 +13,7 @@ PyGaze est une bibliothèque Python pour l'eye tracking. Un ensemble de plugins 
 
 Veuillez citer PyGaze comme suit :
 
-Dalmaijer, E., Mathôt, S., & Van der Stigchel, S. (2014). PyGaze: une boîte à outils open source et multiplateforme pour la programmation d'expériences d'eye tracking avec un effort minimal. *Behavior Research Methods*. doi:10.3758/s13428-013-0422-2
+Dalmaijer, E., Mathôt, S., & Van der Stigchel, S. (2014). PyGaze: An open-source, cross-platform toolbox for minimal-effort programming of eyetracking experiments. *Behavior Research Methods*. doi:10.3758/s13428-013-0422-2
 {: .reference}
 
 ## Eye trackers pris en charge

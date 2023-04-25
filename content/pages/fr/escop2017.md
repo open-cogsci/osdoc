@@ -155,7 +155,7 @@ figure:
 
 **Encadré 3 : Éléments inutilisés**
 
-__Astuce__ — Les éléments supprimés sont toujours disponibles dans la corbeille des éléments inutilisés, jusqu'à ce que vous sélectionniez "Supprimer définitivement les éléments inutilisés" dans l'onglet des éléments inutilisés. Vous pouvez remettre les éléments supprimés dans votre expérience en les faisant glisser depuis la corbeille des éléments inutilisés vers une SÉQUENCE ou LOOP.
+__Astuce__ — Les éléments supprimés sont toujours disponibles dans la corbeille des éléments inutilisés, jusqu'à ce que vous sélectionniez "Supprimer définitivement les éléments inutilisés" dans l'onglet des éléments inutilisés. Vous pouvez remettre les éléments supprimés dans votre expérience en les faisant glisser depuis la corbeille des éléments inutilisés vers une SEQUENCE ou LOOP.
 
 </div>
 

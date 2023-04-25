@@ -171,7 +171,7 @@ __Ajoutez un nouvel élément de boucle, contenant la séquence précédemment c
 
 Nous avons besoin d'un élément LOOP pour la phase expérimentale, tout comme pour la phase de pratique. Par conséquent, faites glisser un LOOP depuis le menu de la barre d'outils des éléments sur * _ form_text_display *.
 
-La nouvelle BOUCLE (appelée *new_loop_1*) est vide et doit être remplie avec une SÉQUENCE, tout comme la BOUCLE que nous avons créée précédemment. Cependant, comme les essais de la phase de pratique et expérimentale sont identiques, ils peuvent utiliser la même SÉQUENCE. Par conséquent, au lieu de faire glisser une nouvelle SEQUENCE à partir de la barre d'outils, vous pouvez réutiliser celle *existante* (c'est-à-dire créer une copie liée).
+La nouvelle LOOP (appelée *new_loop_1*) est vide et doit être remplie avec une SEQUENCE, tout comme la BOUCLE que nous avons créée précédemment. Cependant, comme les essais de la phase de pratique et expérimentale sont identiques, ils peuvent utiliser la même SÉQUENCE. Par conséquent, au lieu de faire glisser une nouvelle SEQUENCE à partir de la barre d'outils, vous pouvez réutiliser celle *existante* (c'est-à-dire créer une copie liée).
 
 Pour ce faire, faites un clic droit sur la *new_sequence* précédemment créée et sélectionnez "Copier (lié)". Maintenant, faites un clic droit sur *new_loop_1* et sélectionnez "Coller". Dans le menu contextuel qui apparaît, sélectionnez "Insérer dans new_loop_1".
 
@@ -185,7 +185,7 @@ __Astuce__ : Il existe une distinction importante entre les copies *liées* et *
 
 __Ajoutez un nouvel élément form_text_display pour le message d'au revoir__
 
-Lorsque l'expérience est terminée, nous devons dire au revoir au participant. Pour cela, nous avons besoin d'un autre élément `form_text_display`. Revenez à la SÉQUENCE *expérimentale* et faites glisser un `form_text_display` depuis la barre d'outils sur *new_loop_1*. Dans le menu contextuel qui apparaît, sélectionnez "Insérer après new_loop_1" (nous reviendrons à cela à l'étape 12).
+Lorsque l'expérience est terminée, nous devons dire au revoir au participant. Pour cela, nous avons besoin d'un autre élément `form_text_display`. Revenez à la SEQUENCE *expérimentale* et faites glisser un `form_text_display` depuis la barre d'outils sur *new_loop_1*. Dans le menu contextuel qui apparaît, sélectionnez "Insérer après new_loop_1" (nous reviendrons à cela à l'étape 12).
 
 __Donnez aux nouveaux éléments des noms significatifs__
 
@@ -223,7 +223,7 @@ Nous ne voulons pas que notre retour soit biaisé par les touches que les partic
 
 __Ajoutez une nouvelle boucle, contenant une nouvelle séquence, pour un bloc d'essais__
 
-Pour une seule essai, nous avons besoin d'une SÉQUENCE. Pour un bloc d'essais, nous devons répéter cette SÉQUENCE plusieurs fois. Par conséquent, pour un bloc d'essais, nous devons entourer une BOUCLE autour d'une SÉQUENCE. Faites glisser une BOUCLE depuis la barre d'outils des éléments sur *new_reset_feedback*. Ensuite, faites glisser une SÉQUENCE depuis la barre d'outils des éléments sur la BOUCLE nouvellement créée, et sélectionnez 'Insérer dans new_loop' dans le menu contextuel qui apparaît. (Nous reviendrons sur ce point à l'étape 3.)
+Pour une seule essai, nous avons besoin d'une SEQUENCE. Pour un bloc d'essais, nous devons répéter cette SÉQUENCE plusieurs fois. Par conséquent, pour un bloc d'essais, nous devons entourer une LOOP autour d'une SÉQUENCE. Faites glisser une BOUCLE depuis la barre d'outils des éléments sur *new_reset_feedback*. Ensuite, faites glisser une SÉQUENCE depuis la barre d'outils des éléments sur la BOUCLE nouvellement créée, et sélectionnez 'Insérer dans new_loop' dans le menu contextuel qui apparaît. (Nous reviendrons sur ce point à l'étape 3.)
 
 __Ajoutez un élément de feedback__
 
