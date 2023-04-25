@@ -652,11 +652,9 @@ If the experiment doesn't work on the first try: Don't worry, and calmly figure 
 
 <div class='reference' markdown='1'>
 
-<notranslate>
 Mathôt, S., Schreij, D., & Theeuwes, J. (2012). OpenSesame: An open-source, graphical experiment builder for the social sciences. *Behavior Research Methods*, *44*(2), 314-324. doi:10.3758/s13428-011-0168-7
 
 Treisman, A. M., & Gelade, G. (1980). A feature-integration theory of attention. *Cognitive Psychology*, 12(1), 97–136. doi:10.1016/0010-0285(80)90005-5
-</notranslate>
 
 </div>
 

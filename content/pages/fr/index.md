@@ -3,7 +3,7 @@ hash: a39c261b0a0aff058455782ca677d0f92d3ef7e0a24d1fa6dc94af5e2ebc50b9
 locale: fr
 language: French
 
-OpenSesame est un programme pour créer des expériences en psychologie, neurosciences et économie expérimentale. La dernière version $status$ est la $version$ *$codename$*, publiée le $release-date$ ([notes de version](http://osdoc.cogsci.nl/$branch$/notes/$notes$)).
+OpenSesame est un programme pour créer des expériences en psychologie, neurosciences et économie expérimentale. La dernière version $status$ est la $version$ *$codename$*, publiée le $release-date$ ([notes de version](http://osdoc.cogsci.nl/$branch$/fr/notes/$notes$)).
 
 <div class="btn-group" role="group" aria-label="...">
   <a role="button" class="btn btn-success" href="%url:download%">
