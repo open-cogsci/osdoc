@@ -67,7 +67,6 @@ class AcademicMarkdownReader(MarkdownReader):
     def read(self, source_path):
 
         """Parse content and metadata of markdown files"""
-
         self._source_path = source_path
         self._md = Markdown(
             extensions=[
@@ -85,7 +84,8 @@ class AcademicMarkdownReader(MarkdownReader):
         print(metadata)
         # Fix things that have been incorrectly translated. This is a hacky
         # list that is created based on compilation errors.
-        # For French
+        #
+        # French
         text = text.replace(':manuel/', ':manual/')
         text = text.replace('api/clavier', 'api/keyboard')
         text = text.replace('api/souris', 'api/mouse')
@@ -96,9 +96,46 @@ class AcademicMarkdownReader(MarkdownReader):
         text = text.replace('inclure:', 'include:')
         text = text.replace('inclure :', 'include:')
         text = text.replace('réponses.md', 'responses.md')
+        # Chinese
+        text = text.replace('包含/', 'include/')
+        text = text.replace('包括/', 'include/')
+        text = text.replace('figure：', 'figure:')
+        text = text.replace('id：', 'id:')
+        text = text.replace('source：', 'source:')
+        text = text.replace('caption：', 'caption:')
+        text = text.replace('width：', 'width:')
+        text = text.replace('height：', 'height:')
+        text = text.replace('视频:', 'video:')
+        text = text.replace('视频：', 'video:')
+        text = text.replace('来源:', 'source:')
+        text = text.replace('来源：', 'source:')
+        text = text.replace('源:', 'source:')
+        text = text.replace('源：', 'source:')
+        text = text.replace('视频id:', 'videoid:')
+        text = text.replace('视频id：', 'videoid:')
+        text = text.replace('宽度:', 'width:')
+        text = text.replace('宽度：', 'width:')
+        text = text.replace('高度:', 'height:')
+        text = text.replace('高度：', 'height:')
+        text = text.replace('标题:', 'caption:')
+        text = text.replace('标题：', 'caption:')
+        text = text.replace('图像:', 'figure:')
+        text = text.replace('图像：', 'figure:')
+        text = text.replace('图示:', 'figure:')
+        text = text.replace('图示：', 'figure:')
+        text = text.replace('图:', 'figure:')
+        text = text.replace('图：', 'figure:')
+        
+        text = text.replace('figure:', 'figure: ')
+        text = text.replace('source:', 'source: ')
+        text = text.replace('caption:', 'caption: ')
+        text = text.replace('width:', 'width: ')
+        text = text.replace('height:', 'height: ')
+        text = text.replace('video:', 'video: ')
+        text = text.replace('id:', 'id: ')
         # Recode include links based onthe locale
         if 'locale' in metadata:
-            text = text.replace(' include/', ' include/fr/')
+            text = text.replace(' include/', f' include/{metadata["locale"]}/')
         # Extract links and paths
         links = locale_links[metadata.get('locale', None)]
         img_path = os.path.dirname(source_path) + '/img/' \
@@ -165,7 +202,7 @@ def init_academicmarkdown(sender):
     
     global links, duplicate_names, locale_links
     locale_links = {}
-    for locale in [None, 'fr']:
+    for locale in [None] + [code for _, code in LOCALES]:
         links = {}
         duplicate_names = []
         if locale is not None:
