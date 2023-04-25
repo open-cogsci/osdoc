@@ -1,0 +1,200 @@
+下载: zh/download
+教程:
+    主要:
+    初学者: zh/tutorials/beginner
+    中级 (Python): zh/tutorials/intermediate
+    中级 (JavaScript): zh/tutorials/intermediate-javascript
+    _:
+    其他:
+    内隐联想任务 (IAT): zh/tutorials/iat
+    猫, 狗和水豚: zh/tutorials/capybara
+    视觉世界范式: zh/tutorials/visual-world
+    威斯康星卡片分类测验 (JavaScript): zh/tutorials/wcst
+    威斯康星卡片分类测验 (Python): zh/tutorials/wcst-python
+手册:
+    基础:
+    使用界面: zh/manual/interface
+    变量和if语句: zh/manual/variables
+    数据记录: zh/manual/logging
+    示例: zh/manual/examples
+
+    流程和结构:
+        循环和定义独立变量: zh/manual/structure/loop
+        按顺序执行事务: zh/manual/structure/sequence
+        并行执行事务: zh/manual/structure/coroutines
+
+    响应收集:
+        键盘: zh/manual/response/keyboard
+        鼠标: zh/manual/response/mouse
+        游戏手柄: zh/manual/response/joystick
+        按钮盒: zh/manual/response/buttonbox
+        SR盒: zh/manual/response/srbox
+        声音记录: zh/manual/response/soundrecording
+
+    刺激呈现:
+        文本: zh/manual/stimuli/text
+        视觉刺激: zh/manual/stimuli/visual
+        声音: zh/manual/stimuli/sound
+        视频: zh/manual/stimuli/video
+
+    _:
+
+    在线实验:
+    工作流程: zh/manual/osweb/workflow
+    开发:
+        OSWeb: zh/manual/osweb/osweb
+        JATOS: zh/manual/osweb/jatos
+        数据: zh/manual/osweb/data
+        问卷: zh/manual/osweb/questionnaires
+    招募参与者:
+        Prolific: zh/manual/osweb/prolific
+        机械土耳其: zh/manual/osweb/mturk
+        Sona系统: zh/manual/osweb/sonasystems
+    
+    JavaScript:
+    OpenSesame中的JavaScript: zh/manual/javascript/about
+    JavaScript函数:
+        通用函数: zh/manual/javascript/common
+        画布: zh/manual/javascript/canvas
+    
+    表单:
+    OpenSesame中的表单: zh/manual/forms/about
+    现成的表单: zh/manual/forms/readymade
+    表单变量: zh/manual/forms/variables
+    自定义表单: zh/manual/forms/custom
+    小部件和关键词: zh/manual/forms/widgets
+    验证表单输入: zh/manual/forms/validation
+    自定义HTML表单: zh/manual/forms/html
+
+    ___:
+
+    Python:
+    OpenSesame图形用户界面中的Python: zh/manual/python/about
+    OpenSesame Python模块（无图形用户界面）: zh/manual/python/nogui
+    Python函数:
+        通用函数: zh/manual/python/common
+        变量: zh/manual/python/var
+        文件池: zh/manual/python/pool
+        项目: zh/manual/python/items
+        响应历史: zh/manual/python/responses
+        时钟: zh/manual/python/clock
+        画布: zh/manual/python/canvas
+        键盘: zh/manual/python/keyboard
+        日志: zh/manual/python/log
+        鼠标: zh/manual/python/mouse
+        采样器: zh/manual/python/sampler
+    眼动追踪:
+    PyGaze: zh/manual/eyetracking/pygaze
+    模型:
+        EyeLink: zh/manual/eyetracking/eyelink
+        EyeLogic: zh/manual/eyetracking/eyelogic
+        EyeTribe: zh/manual/eyetracking/eyetribe
+        GazePoint / OpenGaze: zh/manual/eyetracking/gazepoint
+        SMI: zh/manual/eyetracking/smi
+        Tobii: zh/manual/eyetracking/tobii
+        WebGazer.js（在线）: zh/manual/eyetracking/webgazer
+
+    ____:
+
+    高级:
+    准备-运行策略: zh/manual/prepare-run
+    平衡计数: zh/manual/counterbalancing
+    <nodoc> OSF集成: zh/manual/osf
+    计时: zh/manual/timing
+    后端: zh/manual/backends
+    OpenSesame脚本: zh/manual/opensesame-script
+    OpenSesameRun (无GUI): zh/manual/opensesamerun
+    安装包、插件和扩展: https://rapunzel.cogsci.nl/manual/environment/
+    运行器: zh/manual/runners
+
+    设备:
+    鼠标追踪: zh/manual/mousetracking
+    移动监测系统 (VU-AMS): zh/manual/devices/vuams
+    Emotiv EEG: zh/manual/devices/emotiv
+    Oculus rift: zh/manual/devices/oculusrift
+    串行端口: zh/manual/devices/serial
+    并行端口 (EEG触发器): zh/manual/devices/parallel
+    StimSync: zh/manual/devices/stimsync
+
+项目:
+    __advanced_delay: zh/items/advanced_delay
+    __coroutines: zh/manual/structure/coroutines
+    __feedback: zh/manual/stimuli/visual
+    __form_base: zh/manual/forms/custom
+    __form_consent: zh/manual/forms/readymade
+    __form_multiple_choice: zh/manual/forms/readymade
+    __form_text_display: zh/manual/forms/readymade
+    __form_text_input: zh/manual/forms/readymade
+    __inline_html: zh/manual/forms/html
+    __inline_javascript: zh/manual/javascript/about
+    
+    _:
+    
+    __inline_script: zh/manual/python/about
+    __joystick: zh/manual/response/joystick
+    __keyboard_response: zh/manual/response/keyboard
+    __logger: zh/manual/logging
+    __loop: zh/manual/structure/loop
+    __mouse_response: zh/manual/response/mouse
+    __psychopy_text_stim: https://github.com/open-cogsci/opensesame-plugin-psychopy
+    __psychopy_grating_stim: https://github.com/open-cogsci/opensesame-plugin-psychopy
+    __pygaze_drift_correct: zh/manual/eyetracking/pygaze
+    __pygaze_init: zh/manual/eyetracking/pygaze
+    
+    __:
+    
+    __pygaze_log: zh/manual/eyetracking/pygaze
+    __pygaze_start_recording: zh/manual/eyetracking/pygaze
+    __pygaze_stop_recording: zh/manual/eyetracking/pygaze
+    __pygaze_wait: zh/manual/eyetracking/pygaze
+    __quest_staircase_init: zh/items/quest_staircase_init
+    __quest_staircase_next: zh/items/quest_staircase_next
+    __repeat_cycle: zh/items/repeat_cycle
+    __reset_feedback: zh/items/reset_feedback
+    __sampler: zh/manual/stimuli/sound
+    __sequence: zh/manual/structure/sequence
+    
+    ___:
+    
+    __sketchpad: zh/manual/stimuli/visual
+    __srbox: zh/manual/response/srbox
+    __synth: zh/manual/stimuli/sound
+    __touch_response: zh/items/touch_response
+
+其他:
+
+    其他:
+    # Publications: zh/publications
+    # Meet the team!: zh/team
+    捐款: zh/donate
+    <nodoc> OpenSesame 3的重要变化: zh/important-changes-3
+    视角度: zh/visualangle
+    实验设计符号法: zh/experimentaldesign
+    发布说明: zh/notes/notes
+
+    _:
+
+    开发:
+    # 如何贡献: zh/dev/howtocontribute
+    # 从源代码运行: zh/dev/fromsource
+    文件格式 (.osexp): zh/dev/fileformat
+    翻译: zh/dev/translate
+    创建插件: zh/dev/plugin
+    创建扩展: zh/dev/extension
+
+支持: https://professional.cogsci.nl/
+
+v4.0:
+    v4.0: https://osdoc.cogsci.nl/4.0/zh
+    v3.3: https://osdoc.cogsci.nl/3.3/
+    v3.2: https://osdoc.cogsci.nl/3.2/
+    v3.1: https://osdoc.cogsci.nl/3.1/
+    v3.0: https://osdoc.cogsci.nl/3.0/
+    v2.9: https://osdoc.cogsci.nl/2.9/
+    v2.8: https://osdoc.cogsci.nl/2.8/
+"&#x1F1E8;&#x1F1F3; 简体中文":
+    #"&#x1F1E9;&#x1F1EA; Deutsch": https://osdoc.cogsci.nl/4.0/de
+    "&#x1F1EC;&#x1F1E7; English": https://osdoc.cogsci.nl/4.0/
+    #"&#x1F1EA;&#x1F1F8; Español": https://osdoc.cogsci.nl/4.0/es
+    "&#x1F1EB;&#x1F1F7; Français": https://osdoc.cogsci.nl/4.0/fr
+    "&#x1F1E8;&#x1F1F3; 简体中文": https://osdoc.cogsci.nl/4.0/fr
