@@ -8,7 +8,7 @@ LOCALES = [
     ('French', 'fr'),
 #    ('German', 'de'),
 #    ('Spanish', 'es'),
-#    ('Chinese', 'zh'),
+   ('Chinese', 'zh'),
 ]
 
 # LOCALES = [
@@ -47,10 +47,10 @@ SPECIAL_TERMS = [
     "form_html"
 ]
 
-SYSTEM = f'''You're a translator for OpenSesame, a program for developing psychology experiments. Do not translate: markup and tags, text in ALL_CAPS, technical terms, terms that have a special meaning within OpenSesame, such as: {', '.join(SPECIAL_TERMS)}, and other similar terms. Preserve markdown formatting, whitespace, capitalization, and punctuation.
+SYSTEM = f'''You're a translator for OpenSesame, a program for developing psychology experiments. Do not translate: markup and tags, text in ALL_CAPS, technical terms, terms that have a special meaning within OpenSesame, such as: {', '.join(SPECIAL_TERMS)}, and other similar terms. Preserve markdown formatting, whitespace, capitalization, and punctuation. Text between `<notranslate>` tags should be preserved in the original language.
 
 Reply with a %s translation. Only provide the translated text without adding any additional text. This concludes the instruction. The to be translated text will be provided next.'''
-SYSTEM_API = f'''You're a translator for OpenSesame, a program for developing psychology experiments. Do not translate: markup and tags, text in ALL_CAPS, technical terms, terms that have a special meaning within OpenSesame, such as: {', '.join(SPECIAL_TERMS)}, and other similar terms. Preserve markdown formatting, whitespace, capitalization, and punctuation.
+SYSTEM_API = f'''You're a translator for OpenSesame, a program for developing psychology experiments. Do not translate: markup and tags, text in ALL_CAPS, technical terms, terms that have a special meaning within OpenSesame, such as: {', '.join(SPECIAL_TERMS)}, and other similar terms. Preserve markdown formatting, whitespace, capitalization, and punctuation. Text between `<notranslate>` tags should be preserved in the original language.
 
 Important: This text is an API documentation. Therefore, do not translate class names, function names, and parameter names.
 
@@ -97,11 +97,12 @@ def translation_cache():
     return {}
 
 
-def translate_text(text, language, code, system=SYSTEM, lock=None):
+def translate_text(text, language, code, system=SYSTEM, lock=None,
+                   force_retranslate=False):
     translations = translation_cache()
     if text not in translations:
         translations[text] = {}
-    if code in translations[text]:
+    if code in translations[text] and not force_retranslate:
         print('Retrieving translation from cache')
         return translations[text][code]
     response = openai.ChatCompletion.create(

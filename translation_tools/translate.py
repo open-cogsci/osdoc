@@ -11,7 +11,7 @@ import argparse
 
 
 def translate_page(target, root, language, code, interactive=False, lock=None,
-                   has_info=True, system=None):
+                   has_info=True, system=None, force_retranslate=False):
     """Translates a page.
 
     Parameters
@@ -42,7 +42,7 @@ def translate_page(target, root, language, code, interactive=False, lock=None,
         return
     # If we're not in interactive mode, we assume that existing translations
     # are fine (i.e. we don't offer to retranslate)
-    if dst.exists() and not interactive:
+    if dst.exists() and not interactive and not force_retranslate:
         print(f'File {dst} already exists. Skipping')
         return
     text = src.read_text()
@@ -63,7 +63,8 @@ def translate_page(target, root, language, code, interactive=False, lock=None,
         # Translate the title from YAML info
         print(f'Original title: {info["title"]}')
         info['title'] = translate_text(info['title'], language, code,
-                                       lock=lock, system=system)
+                                       lock=lock, system=system,
+                                       force_retranslate=force_retranslate)
         print(f'Translated title: {info["title"]}')
         info = metadata_to_text(info)
     # Make sure that academicmarkdown blocks aren't translated
@@ -86,7 +87,8 @@ def translate_page(target, root, language, code, interactive=False, lock=None,
     # Translate the sections one by one
     translated_sections = [info] if has_info else []
     for i, section in enumerate(sections):
-        translated_section = translate_text(section, language, code, lock=lock)
+        translated_section = translate_text(section, language, code, lock=lock,
+                                            force_retranslate=force_retranslate)
         translated_sections.append(translated_section)
         print(f'* Translated section {i + 1} / {len(sections)} (n_words: {len(section)} -> {len(translated_section)})')
     # Write the translations to file. We do this continuously so that we
@@ -137,16 +139,17 @@ def copy_resources(target, root, resource, code, lock=None):
         lock.release()
 
 
-def mp_translate(target, root, language, code, lock, has_info, system):
+def mp_translate(target, root, language, code, lock, has_info, system,
+                 force_retranslate):
     """A simple wrapper function for the multiprocessing module"""
     translate_page(target, root, language, code, lock=lock, has_info=has_info,
-                   system=system)
+                   system=system, force_retranslate=force_retranslate)
     copy_resources(target, root, 'img', code, lock=lock)
     copy_resources(target, root, 'lst', code, lock=lock)
     copy_resources(target, root, 'tbl', code, lock=lock)
 
 
-def main_multiprocessing():
+def main_multiprocessing(locales, select_path, force_retranslate):
     """Performs a full translation using multiple processes. This ignores
     existing translations, regardless of their content.
     """
@@ -154,7 +157,12 @@ def main_multiprocessing():
     manager = mp.Manager()
     lock = manager.Lock()
     for language, code in LOCALES:
+        if locales and code not in locales:
+            continue
         for path in it.chain(ROOT.glob('**/*.md'), INCLUDE.glob('**/*.md')):
+            # If a specific path is specified, only process that path
+            if select_path and Path(select_path).absolute() != path.absolute():
+                continue
             if path.is_relative_to(ROOT):
                 target = path.relative_to(ROOT)
                 root = ROOT
@@ -167,17 +175,24 @@ def main_multiprocessing():
                 system = SYSTEM_API
             if any(target.parts[0] == code for language, code in LOCALES):
                 continue
-            args.append([target, root, language, code, lock, has_info, system])
+            args.append([target, root, language, code, lock, has_info, system,
+                         force_retranslate])
     with mp.Pool(N_PROCESS) as pool:
         pool.starmap(mp_translate, args)
         
 
-def main():
+def main(locales, select_path, force_retranslate):
     """Performs a full translation is a single process. This also prompts the
     user for what to do with existing but non-matching translations.
     """
     for language, code in LOCALES:
+        # If a locale is specified, only process that locale
+        if locales and code not in locales:
+            continue
         for path in it.chain(ROOT.glob('**/*.md'), INCLUDE.glob('**/*.md')):
+            # If a specific path is specified, only process that path
+            if select_path and Path(select_path).absolute() != path.absolute():
+                continue
             if path.is_relative_to(ROOT):
                 target = path.relative_to(ROOT)
                 root = ROOT
@@ -191,7 +206,8 @@ def main():
             if any(target.parts[0] == code for language, code in LOCALES):
                 continue
             translate_page(target, root, language, code, interactive=True,
-                           has_info=has_info, system=system)
+                           has_info=has_info, system=system,
+                           force_retranslate=force_retranslate)
             copy_resources(target, root, 'img', code)
             copy_resources(target, root, 'lst', code)
             copy_resources(target, root, 'tbl', code)
@@ -201,8 +217,15 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--multiprocessing', action='store_true',
                         help='Use multiprocessing')
+    parser.add_argument('--locales', action='store',
+                        help='A comma-separated list of language codes')
+    parser.add_argument('--path', action='store',
+                        help='A path to a specific file to be translated')
+    parser.add_argument('--force-retranslate', action='store_true',
+                        help='Retriggers a translation even if a file has '
+                             'already been translated')
     args = parser.parse_args()
     if args.multiprocessing:
-        main_multiprocessing()
+        main_multiprocessing(args.locales, args.path, args.force_retranslate)
     else:
-        main()
+        main(args.locales, args.path, args.force_retranslate)
