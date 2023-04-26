@@ -39,7 +39,7 @@ Vous pouvez indiquer la réponse correcte de trois manières principales :
 
 Le champ *Réponses autorisées* indique une liste de réponses autorisées. Toutes les autres réponses seront ignorées, sauf "Escape", qui mettra en pause l'expérience. Les réponses autorisées doivent être une liste de réponses séparées par des points-virgules, comme "1;3" pour autoriser les boutons gauche et droit de la souris. Pour accepter toutes les réponses, laissez le champ *Réponses autorisées* vide.
 
-%--include: include/timeout.md--%</notranslate>
+%--include: include/timeout.md--%
 
 ## Coordonnées et régions d'intérêt (ROI)
 

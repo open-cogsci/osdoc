@@ -338,7 +338,7 @@ figure:
 Bien sûr, nous ne voulons pas montrer les mêmes objets encore et encore. Plutôt, nous voulons que les variables `pic[x]` spécifient quels objets sont montrés, et que les variables `pos[x]` spécifient où ces objets sont montrés. Commençons par le premier objet : l'objet en haut à gauche, qui dans mon exemple est une pomme.
 
 Consultez le script et trouvez la ligne qui correspond au premier objet. Dans mon exemple, il s'agit de la ligne suivante :
- name=pic1
+
 ~~~ .python
 draw image center=1 file="apple.jpg" scale=1 show_if=always x=-256 y=-192 z_index=0
 ~~~

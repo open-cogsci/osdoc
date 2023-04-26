@@ -348,7 +348,7 @@ figure:
 当然，我们不希望一次又一次地展示相同的对象。相反，我们希望 `pic[x]` 变量指定显示的对象，以及 `pos[x]` 变量指定这些对象的显示位置。让我们从第一个对象开始：左上角的对象，在我的示例中是一个苹果。
 
 查看脚本并找到与第一个对象相关的行。在我的示例中，这是以下行：
- name=pic1
+
 ~~~ .python
 draw image center=1 file="apple.jpg" scale=1 show_if=always x=-256 y=-192 z_index=0
 ~~~

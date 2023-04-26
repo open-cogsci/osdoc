@@ -175,7 +175,6 @@ Autre:
 
     Développement:
     # Comment contribuer: fr/dev/howtocontribute
-    # Exécuter à partir de la source: fr/dev/fromsource
     Format de fichier (.osexp): fr/dev/fileformat
     Traduire: fr/dev/translate
     Créer un plugin: fr/dev/plugin
@@ -191,7 +190,7 @@ v4.0:
     v2.9: https://osdoc.cogsci.nl/2.9
     v2.8: https://osdoc.cogsci.nl/2.8
 "&#x1F1EB;&#x1F1F7; Français":
-    # "&#x1F1E9;&#x1F1EA; Deutsch": https://osdoc.cogsci.nl/4.0/de
+    "&#x1F1E9;&#x1F1EA; Deutsch": https://osdoc.cogsci.nl/4.0/de
     "&#x1F1EC;&#x1F1E7; English": https://osdoc.cogsci.nl/4.0/
     # "&#x1F1EA;&#x1F1F8; Español": https://osdoc.cogsci.nl/4.0/es
     "&#x1F1EB;&#x1F1F7; Français": https://osdoc.cogsci.nl/4.0/fr

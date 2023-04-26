@@ -6,9 +6,9 @@ import hashlib
 
 LOCALES = [
     ('French', 'fr'),
-#    ('German', 'de'),
-#    ('Spanish', 'es'),
-   ('Chinese', 'zh'),
+    ('German', 'de'),
+    # ('Spanish', 'es'),
+    ('Chinese', 'zh'),
 ]
 
 # LOCALES = [
