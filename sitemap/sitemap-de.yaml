@@ -1,0 +1,173 @@
+Herunterladen: de/download
+Anleitungen:
+    Haupt:
+    Anfänger: de/tutorials/beginner
+    Fortgeschrittene (Python): de/tutorials/intermediate
+    Fortgeschrittene (JavaScript): de/tutorials/intermediate-javascript
+    _:
+    Andere:
+    Implizite Assoziationsaufgabe (IAT): de/tutorials/iat
+    Katzen, Hunde und Capybaras: de/tutorials/capybara
+    Visuelle-Welt-Paradigma: de/tutorials/visual-world
+    Wisconsin Card Sorting Test (JavaScript): de/tutorials/wcst
+    Wisconsin Card Sorting Test (Python): de/tutorials/wcst-python
+Handbuch:
+    Grundlagen:
+    Verwendung der Benutzeroberfläche: de/manual/interface
+    Variablen und If-Anweisungen: de/manual/variables
+    Datenprotokollierung: de/manual/logging
+    Beispiele: de/manual/examples
+    Ablauf und Struktur:
+        Schleifen und Definition unabhängiger Variablen: de/manual/structure/loop
+        Dinge nacheinander tun: de/manual/structure/sequence
+        Dinge gleichzeitig tun: de/manual/structure/coroutines
+    Antwort Erfassung:
+        Tastatur: de/manual/response/keyboard
+        Maus: de/manual/response/mouse
+        Joystick: de/manual/response/joystick
+        Tastenfeld: de/manual/response/buttonbox
+        SR Box: de/manual/response/srbox
+        Tonaufnahme: de/manual/response/soundrecording
+    Reizpräsentation:
+        Text: de/manual/stimuli/text
+        Visuelle Reize: de/manual/stimuli/visual
+        Ton: de/manual/stimuli/sound
+        Video: de/manual/stimuli/video
+    _:
+    Online-Experimente:
+    Arbeitsablauf: de/manual/osweb/workflow
+    Entwicklung:
+        OSWeb: de/manual/osweb/osweb
+        JATOS: de/manual/osweb/jatos
+        Daten: de/manual/osweb/data
+        Fragebögen: de/manual/osweb/questionnaires
+    Teilnehmer rekrutieren:
+        Prolific: de/manual/osweb/prolific
+        Mechanical Turk: de/manual/osweb/mturk
+        Sona Systems: de/manual/osweb/sonasystems
+    JavaScript:
+    JavaScript in OpenSesame: de/manual/javascript/about
+    JavaScript-Funktionen:
+        Allgemeine Funktionen: de/manual/javascript/common
+        Canvas: de/manual/javascript/canvas
+    Formulare:
+    Formulare in OpenSesame: de/manual/forms/about
+    Vorgefertigte Formulare: de/manual/forms/readymade
+    Formularvariablen: de/manual/forms/variables
+    Individuelle Formulare: de/manual/forms/custom
+    Widgets und Schlüsselwörter: de/manual/forms/widgets
+    Validierung von Formulareingaben: de/manual/forms/validation
+    Individuelle HTML-Formulare: de/manual/forms/html
+    ___:
+    Python:
+    Python in der OpenSesame-Benutzeroberfläche: de/manual/python/about
+    OpenSesame Python-Modul (ohne Benutzeroberfläche): de/manual/python/nogui
+    Python-Funktionen:
+        Allgemeine Funktionen: de/manual/python/common
+        Variablen: de/manual/python/var
+        Datei-Pool: de/manual/python/pool
+        Elemente: de/manual/python/items
+        Antwortverlauf: de/manual/python/responses
+        Uhr (clock): de/manual/python/clock
+        Leinwand (Canvas): de/manual/python/canvas
+        Tastatur (Keyboard): de/manual/python/keyboard
+        Protokoll (log): de/manual/python/log
+        Maus (Mouse): de/manual/python/mouse
+        Sampler: de/manual/python/sampler
+    Eye-Tracking:
+    PyGaze: de/manual/eyetracking/pygaze
+    Modelle:
+        EyeLink: de/manual/eyetracking/eyelink
+        EyeLogic: de/manual/eyetracking/eyelogic
+        EyeTribe: de/manual/eyetracking/eyetribe
+        GazePoint / OpenGaze: de/manual/eyetracking/gazepoint
+        SMI: de/manual/eyetracking/smi
+        Tobii: de/manual/eyetracking/tobii
+        WebGazer.js (online): de/manual/eyetracking/webgazer
+    ____:
+    Erweitert:
+    Die Prepare-Run-Strategie: de/manual/prepare-run
+    Gegengewichtung: de/manual/counterbalancing
+    <nodoc> OSF-Integration: de/manual/osf
+    Zeitsteuerung: de/manual/timing
+    Backends: de/manual/backends
+    OpenSesame-Skript: de/manual/opensesame-script
+    OpenSesameRun (kein GUI): de/manual/opensesamerun
+    Pakete, Plugins und Erweiterungen installieren: https://rapunzel.cogsci.nl/manual/environment/
+    Runner: de/manual/runners
+    Geräte:
+    Mausverfolgung: de/manual/mousetracking
+    Ambulantes Überwachungssystem (VU-AMS): de/manual/devices/vuams
+    Emotiv EEG: de/manual/devices/emotiv
+    Oculus Rift: de/manual/devices/oculusrift
+    Serieller Anschluss: de/manual/devices/serial
+    Paralleler Anschluss (EEG-Auslöser): de/manual/devices/parallel
+    StimSync: de/manual/devices/stimsync
+Elemente:
+    __advanced delay: de/items/advanced_delay
+    __coroutines: de/manual/structure/coroutines
+    __feedback: de/manual/stimuli/visual
+    __form_base: de/manual/forms/custom
+    __form_consent: de/manual/forms/readymade
+    __form_multiple_choice: de/manual/forms/readymade
+    __form_text_display: de/manual/forms/readymade
+    __form_text_input: de/manual/forms/readymade
+    __inline_html: de/manual/forms/html
+    __inline_javascript: de/manual/javascript/about
+    _:
+    __inline_script: de/manual/python/about
+    __joystick: de/manual/response/joystick
+    __keyboard response: de/manual/response/keyboard
+    __logger: de/manual/logging
+    __loop: de/manual/structure/loop
+    __mouse response: de/manual/response/mouse
+    __psychopy_text_stim: https://github.com/open-cogsci/opensesame-plugin-psychopy
+    __psychopy_grating_stim: https://github.com/open-cogsci/opensesame-plugin-psychopy
+    __pygaze_drift_correct: de/manual/eyetracking/pygaze
+    __pygaze_init: de/manual/eyetracking/pygaze
+    __:
+    __pygaze_log: de/manual/eyetracking/pygaze
+    __pygaze_start_recording: de/manual/eyetracking/pygaze
+    __pygaze_stop_recording: de/manual/eyetracking/pygaze
+    __pygaze_wait: de/manual/eyetracking/pygaze
+    __quest_staircase_init: de/items/quest_staircase_init
+    __quest_staircase_next: de/items/quest_staircase_next
+    __repeat_cycle: de/items/repeat_cycle
+    __reset_feedback: de/items/reset_feedback
+    __sampler: de/manual/stimuli/sound
+    __sequence: de/manual/structure/sequence
+    ___:
+    __sketchpad: de/manual/stimuli/visual
+    __srbox: de/manual/response/srbox
+    __synth: de/manual/stimuli/sound
+    __touch_response: de/items/touch_response
+Andere:
+    Andere:
+    Spenden: de/donate
+    <nodoc> Wichtige Änderungen in OpenSesame 3: de/important-changes-3
+    Grad des Sehwinkels: de/visualangle
+    Notation für experimentelles Design: de/experimentaldesign
+    Versionshinweise: de/notes/notes
+    _:
+    Entwicklung:
+    # Wie man beiträgt: de/dev/howtocontribute
+    Dateiformat (.osexp): de/dev/fileformat
+    Übersetzen: de/dev/translate
+    Ein Plugin erstellen: de/dev/plugin
+    Eine Erweiterung erstellen: de/dev/extension
+
+Unterstützung: https://professional.cogsci.nl/
+v4.0:
+    v4.0: https://osdoc.cogsci.nl/4.0/de
+    v3.3: https://osdoc.cogsci.nl/3.3/
+    v3.2: https://osdoc.cogsci.nl/3.2/
+    v3.1: https://osdoc.cogsci.nl/3.1/
+    v3.0: https://osdoc.cogsci.nl/3.0/
+    v2.9: https://osdoc.cogsci.nl/2.9/
+    v2.8: https://osdoc.cogsci.nl/2.8/
+"&#x1F1E9;&#x1F1EA; Deutsch":
+    "&#x1F1E9;&#x1F1EA; Deutsch": https://osdoc.cogsci.nl/4.0/de
+    "&#x1F1EC;&#x1F1E7; English": https://osdoc.cogsci.nl/4.0/
+    #  "&#x1F1EA;&#x1F1F8; Español": https://osdoc.cogsci.nl/4.0/es
+    "&#x1F1EB;&#x1F1F7; Français": https://osdoc.cogsci.nl/4.0/fr
+    "&#x1F1E8;&#x1F1F3; 简体中文": https://osdoc.cogsci.nl/4.0/zh
