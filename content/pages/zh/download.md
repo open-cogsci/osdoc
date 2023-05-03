@@ -93,7 +93,7 @@ sudo add-apt-repository ppa:smathot/cogscinl
 # 添加开发包存储库
 sudo add-apt-repository ppa:smathot/milgram
 # 安装 OpenSesame 4.X 软件包及有用的扩展
-sudo apt install python3-opensesame python3-rapunzel python3-opensesame-extension-updater python3-pygaze python3-pygame python3-opensesame-extension-language_server
+sudo apt install python3-opensesame python3-rapunzel python3-opensesame-extension-updater python3-pygaze python3-pygame python3-opensesame-extension-language-server
 ```
 
 一些常用软件包无法通过 PPA 获取。您可以通过 `pip` 安装它们：

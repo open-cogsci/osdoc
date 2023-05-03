@@ -91,7 +91,7 @@ sudo add-apt-repository ppa:smathot/cogscinl
 # Add repository for development packages
 sudo add-apt-repository ppa:smathot/milgram
 # Install OpenSesame 4.X packages plus useful extensions
-sudo apt install python3-opensesame python3-rapunzel python3-opensesame-extension-updater python3-pygaze python3-pygame python3-opensesame-extension-language_server
+sudo apt install python3-opensesame python3-rapunzel python3-opensesame-extension-updater python3-pygaze python3-pygame python3-opensesame-extension-language-server
 ```
 
 Some commonly used packages are not available through the PPA. You can install them through `pip`:
