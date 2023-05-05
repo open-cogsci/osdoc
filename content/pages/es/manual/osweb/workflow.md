@@ -9,8 +9,8 @@ language: Spanish
 
 Para una introducción al flujo de trabajo, consulta también:
 
-Mathôt, S., & March, J. (2022). Realizando experimentos lingüísticos en línea con OpenSesame y OSWeb. *Language Learning*. doi:10.1111/lang.12509
-<br /><small>[Prepublicación relacionada (no idéntica al manuscrito publicado)](https://doi.org/10.31234/osf.io/wnryc)</small>
+Mathôt, S., & March, J. (2022). Conducting linguistic experiments online with OpenSesame and OSWeb. *Language Learning*. doi:10.1111/lang.12509
+<br /><small>[Related preprint (not identical to published manuscript)](https://doi.org/10.31234/osf.io/wnryc)</small>
 
 ### Desarrollando tu experimento
 

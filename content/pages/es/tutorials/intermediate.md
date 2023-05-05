@@ -581,9 +581,9 @@ Si el experimento no funciona en el primer intento: No te preocupes y averigua c
 
 <div class='reference' markdown='1'>
 
-Mathôt, S., Schreij, D., & Theeuwes, J. (2012). OpenSesame: Un creador de experimentos abierto y gráfico para las ciencias sociales. *Métodos de investigación en comportamiento*, *44*(2), 314-324. doi:10.3758/s13428-011-0168-7
+Mathôt, S., Schreij, D., & Theeuwes, J. (2012). OpenSesame: An open-source, graphical experiment builder for the social sciences. *Behavior Research Methods*, *44*(2), 314-324. doi:10.3758/s13428-011-0168-7
 
-Treisman, A. M., & Gelade, G. (1980). Una teoría de integración de características de atención. *Psicología cognitiva*, 12(1), 97–136. doi:10.1016/0010-0285(80)90005-5
+Treisman, A. M., & Gelade, G. (1980). A feature-integration theory of attention. *Cognitive Psychology*, 12(1), 97–136. doi:10.1016/0010-0285(80)90005-5
 
 </div>
 

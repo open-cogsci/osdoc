@@ -702,20 +702,20 @@ Ver también:
 
 <div class='reference' markdown='1'>
 
-Brand, A., & Bradley, M. T. (2011). Evaluación de los efectos de la variación técnica en los resultados estadísticos de los experimentos web que miden los tiempos de respuesta. *Social Science Computer Review*. doi:10.1177/0894439311415604
+Brand, A., & Bradley, M. T. (2011). Assessing the effects of technical variance on the statistical outcomes of web experiments measuring response times. *Social Science Computer Review*. doi:10.1177/0894439311415604
 
-Damian, M. F. (2010). ¿La variabilidad en el rendimiento humano supera la imprecisión en dispositivos de respuesta como los teclados de computadora? *Behavior Research Methods*, *42*, 205-211. doi:10.3758/BRM.42.1.205
+Damian, M. F. (2010). Does variability in human performance outweigh imprecision in response devices such as computer keyboards? *Behavior Research Methods*, *42*, 205-211. doi:10.3758/BRM.42.1.205
 
-Friesen, C. K., & Kingstone, A. (1998). ¡Los ojos lo tienen! La orientación refleja se activa por la mirada no predictiva. *Psychonomic Bulletin & Review*, *5*, 490-495. doi:10.3758/BF03208827
+Friesen, C. K., & Kingstone, A. (1998). The eyes have it! Reflexive orienting is triggered by nonpredictive gaze. *Psychonomic Bulletin & Review*, *5*, 490–495. doi:10.3758/BF03208827
 
-Krause, F., & Lindemann, O. (2013). Expyriment: una biblioteca de Python para experimentos cognitivos y neurocientíficos. *Behavior Research Methods*. doi:10.3758/s13428-013-0390-6
+Krause, F., & Lindemann, O. (2013). Expyriment: A Python library for cognitive and neuroscientific experiments. *Behavior Research Methods*. doi:10.3758/s13428-013-0390-6
 
-Mathôt, S., Schreij, D., & Theeuwes, J. (2012). OpenSesame: un constructor de experimentos gráfico de código abierto para las ciencias sociales. *Behavior Research Methods*, *44*(2), 314-324. doi:10.3758/s13428-011-0168-7
+Mathôt, S., Schreij, D., & Theeuwes, J. (2012). OpenSesame: An open-source, graphical experiment builder for the social sciences. *Behavior Research Methods*, *44*(2), 314-324. doi:10.3758/s13428-011-0168-7
 
-Mathôt, S., & March, J. (2022). Realización de experimentos lingüísticos en línea con OpenSesame y OSWeb. *Language Learning*. doi:10.1111/lang.12509
+Mathôt, S., & March, J. (2022). Conducting linguistic experiments online with OpenSesame and OSWeb. *Language Learning*. doi:10.1111/lang.12509
 
-Peirce, J. W. (2007). PsychoPy: software de psicofísica en Python. *Journal of Neuroscience Methods*, *162*(1-2), 8-13. doi:10.1016/j.jneumeth.2006.11.017
+Peirce, J. W. (2007). PsychoPy: Psychophysics software in Python. *Journal of Neuroscience Methods*, *162*(1-2), 8-13. doi:10.1016/j.jneumeth.2006.11.017
 
-Ulrich, R., & Giray, M. (1989). Resolución de tiempo de los relojes: efectos en la medición del tiempo de reacción: buenas noticias para los relojes malos. *British Journal of Mathematical and Statistical Psychology*, *42*(1), 1-12. doi:10.1111/j.2044-8317.1989.tb01111.x
+Ulrich, R., & Giray, M. (1989). Time resolution of clocks: Effects on reaction time measurement—Good news for bad clocks. *British Journal of Mathematical and Statistical Psychology*, *42*(1), 1-12. doi:10.1111/j.2044-8317.1989.tb01111.x
 
 </div>
