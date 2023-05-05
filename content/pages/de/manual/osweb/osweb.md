@@ -134,7 +134,7 @@ conda update opensesame-extension-osweb -c cogsci -c conda-forge -y
 Oder:
 
 ```bash
-pip install opensesame-extension-osweb --upgrade
+pip install --pre opensesame-extension-osweb --upgrade
 ```
 
 Siehe auch:

@@ -98,7 +98,7 @@ Some commonly used packages are not available through the PPA. You can install t
 
 ```bash
 # Install optional packages that are only available through pip
-pip install opensesame-extension-osweb opensesame-plugin-psychopy opensesame-plugin-media_player_mpy http://files.cogsci.nl/expyriment-0.10.0+opensesame2-py3-none-any.whl
+pip install --pre opensesame-extension-osweb opensesame-plugin-psychopy opensesame-plugin-media_player_mpy http://files.cogsci.nl/expyriment-0.10.0+opensesame2-py3-none-any.whl
 ```
 
 PsychoPy is best installed through pip, because the Ubuntu package is currently broken. 

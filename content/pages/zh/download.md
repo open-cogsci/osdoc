@@ -100,7 +100,7 @@ sudo apt install python3-opensesame python3-rapunzel python3-opensesame-extensio
 
 ```bash
 # 安装仅通过 pip 提供的可选软件包
-pip install opensesame-extension-osweb opensesame-plugin-psychopy opensesame-plugin-media_player_mpy http://files.cogsci.nl/expyriment-0.10.0+opensesame2-py3-none-any.whl
+pip install --pre opensesame-extension-osweb opensesame-plugin-psychopy opensesame-plugin-media_player_mpy http://files.cogsci.nl/expyriment-0.10.0+opensesame2-py3-none-any.whl
 ```
 
 最好通过 pip 安装 PsychoPy，因为 Ubuntu 软件包当前已损坏。
