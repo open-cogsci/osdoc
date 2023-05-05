@@ -142,6 +142,17 @@ class AcademicMarkdownReader(MarkdownReader):
         text = text.replace('Videoid:', 'videoid:')
         text = text.replace('Code:', 'code:')
         text = text.replace('Syntax:', 'syntax:')
+        # Spanish
+        text = text.replace('fuente:', 'source:')
+        text = text.replace(':descarga', ':download')
+        text = text.replace(':texto', ':text')
+        text = text.replace('ancho:', 'width:')
+        text = text.replace('alto:', 'height:')
+        text = text.replace('leyenda:', 'caption:')
+        text = text.replace('ID del video:', 'videoid:')
+        text = text.replace('incluir/', 'include/')
+        text = text.replace('link:diseñoexperimental',
+                            'link:experimentaldesign')
         # General
         text = text.replace('figure:', 'figure: ')
         text = text.replace('source:', 'source: ')

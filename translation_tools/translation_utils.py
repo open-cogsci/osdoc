@@ -7,7 +7,7 @@ import hashlib
 LOCALES = [
     ('French', 'fr'),
     ('German', 'de'),
-    # ('Spanish', 'es'),
+    ('Spanish', 'es'),
     ('Chinese', 'zh'),
 ]
 

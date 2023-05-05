@@ -38,6 +38,7 @@ def translate_page(target, root, language, code, interactive=False, lock=None,
     if target.is_relative_to('notes') and \
             target.parts[-1][0] in ('2', '3', '0'):
         print(f'Not translating old release note {dst}')
+        dst.parent.mkdir(exist_ok=True)
         dst.write_text(src.read_text())
         return
     # If we're not in interactive mode, we assume that existing translations
@@ -117,6 +118,7 @@ def translate_page(target, root, language, code, interactive=False, lock=None,
             print('Keeping modifications')
             return
         print('Overwriting translation')
+    dst.parent.mkdir(exist_ok=True)
     dst.write_text(translation)
     print(f'translation finished in {time.time() - t0:.1f}s')
 
