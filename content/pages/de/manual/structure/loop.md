@@ -59,7 +59,7 @@ Wenn Sie die Schleife beenden möchten, bevor alle Zyklen ausgeführt wurden, k�
 Zum Beispiel würde der folgende "break-if"-Ausdruck die Schleife unterbrechen, sobald eine korrekte Antwort gegeben wird:
 
 ```python
-{correct} == 1
+correct == 1
 ```
 
 Die Option *Bei erstem Zyklus auswerten* gibt an, ob der "break-if"-Ausdruck vor dem ersten Zyklus ausgewertet werden sollte, in welchem Fall möglicherweise kein Zyklus ausgeführt wird, oder nur vor dem zweiten Zyklus, bei dem immer mindestens ein Zyklus ausgeführt wird. In einigen Fällen wird der "break-if"-Ausdruck auf eine Variable verweisen, die erst nach dem ersten Zyklus definiert ist. In diesem Fall sollten Sie die Option "Bei erstem Zyklus auswerten" deaktivieren, um einen "Variable existiert nicht"-Fehler zu vermeiden.

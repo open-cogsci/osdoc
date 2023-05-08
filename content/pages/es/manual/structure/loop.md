@@ -59,7 +59,7 @@ Si desea interrumpir el LOOP antes de que se hayan ejecutado todos los ciclos, p
 Por ejemplo, la siguiente declaración de interrupción rompería el LOOP tan pronto como se dé una respuesta correcta:
 
 ```python
-{correct} == 1
+correct == 1
 ```
 
 La opción *evaluar en primer ciclo* indica si la declaración de interrupción debe evaluarse antes del primer ciclo, en cuyo caso es posible que no se ejecute ningún ciclo, o solo antes del segundo ciclo, en cuyo caso siempre se ejecuta al menos un ciclo. En algunos casos, la declaración de interrupción se referirá a una variable que solo se define después del primer ciclo; en ese caso, debe deshabilitar la opción 'Evaluar en primer ciclo' para evitar un error de 'Variable no existe'.

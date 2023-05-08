@@ -15,7 +15,7 @@ Les SEQUENCEs sont exécutées de haut en bas ; c'est-à-dire que l'élément si
 Vous pouvez utiliser des expressions run-if pour déterminer si un élément particulier doit être exécuté ou non. Par exemple, si vous souhaitez afficher un écran uniquement si un participant a donné une réponse incorrecte, vous pouvez définir les expressions run-if pour cet élément comme suit :
 
 ```python
-{correct} == 0
+correct == 0
 ```
 
 Si vous laissez les expressions run-if vides ou saisissez `True`, l'élément sera toujours exécuté. Les expressions run-if utilisent la même syntaxe que les autres expressions conditionnelles. Pour plus d'informations, consultez :

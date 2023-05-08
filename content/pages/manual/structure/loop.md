@@ -56,7 +56,7 @@ If you want to break the loop before all cycles have been executed, you can spec
 For example, the following break-if statement would break the loop as soon as a correct response is given:
 
 ```python
-{correct} == 1
+correct == 1
 ```
 
 The *Evaluate on first cycle* option indicates whether the break-if statement should be evaluated before the first cycle, in which case no cycles may be executed at all, or only before the second cycle, in which case at least one cycle is always executed. In some cases, the break-if statement will refer to a variable that is only defined after the first cycle, in which case you should disable the 'Evaluate on first cycle' option to avoid a 'Variable does not exist' error.

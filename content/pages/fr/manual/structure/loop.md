@@ -59,7 +59,7 @@ Si vous souhaitez interrompre la boucle avant que tous les cycles aient été ex
 Par exemple, l'instruction break-if suivante interromprait la boucle dès qu'une réponse correcte est donnée :
 
 ```python
-{correct} == 1
+correct == 1
 ```
 
 L'option *Évaluer au premier cycle* indique si l'instruction break-if doit être évaluée avant le premier cycle, auquel cas aucun cycle peut ne pas être exécuté du tout, ou seulement avant le deuxième cycle, auquel cas au moins un cycle est toujours exécuté. Dans certains cas, l'instruction break-if fera référence à une variable qui n'est définie qu'après le premier cycle, auquel cas vous devez désactiver l'option 'Évaluer au premier cycle' pour éviter une erreur 'Variable does not exist'.

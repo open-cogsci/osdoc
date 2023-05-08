@@ -15,7 +15,7 @@ SEQUENCEs werden von oben nach unten ausgeführt; das heißt, das Element oben w
 Sie können Run-if-Ausdrücke verwenden, um zu bestimmen, ob ein bestimmtes Element ausgeführt werden soll oder nicht. Wenn Sie zum Beispiel möchten, dass eine Anzeige nur dann präsentiert wird, wenn ein Teilnehmer eine falsche Antwort gegeben hat, können Sie die Run-if-Ausdrücke für dieses Element auf folgendes setzen:
 
 ```python
-{correct} == 0
+correct == 0
 ```
 
 Wenn Sie die Run-if-Ausdrücke leer lassen oder `True` eingeben, wird das Element immer ausgeführt. Run-if-Ausdrücke verwenden die gleiche Syntax wie andere bedingte Ausdrücke. Weitere Informationen finden Sie unter:

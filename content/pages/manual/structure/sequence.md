@@ -12,7 +12,7 @@ SEQUENCEs are run from top to bottom; that is, the item at the top is run first.
 You can use run-if expressions to determine whether or not a particular item should be run. For example, if you want a display to be presented only if a participant has made an incorrect response, you can set the run-if expressions for that item to:
 
 ```python
-{correct} == 0
+correct == 0
 ```
 
 If you leave the run-if expressions empty or enter `True`, the item will always be run. Run-if expressions use the same syntax as other conditional expressions. For more information, see:

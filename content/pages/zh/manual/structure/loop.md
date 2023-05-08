@@ -59,7 +59,7 @@ CSV 文件应符合以下格式：
 例如，以下 break-if 语句会在给出正确答案后立即中断循环：
 
 ```python
-{correct} == 1
+correct == 1
 ```
 
 *Evaluate on first cycle* 选项指示 break-if 语句是在第一个周期之前进行评估，这样可能一个周期也不会执行，还是仅在第二个周期之前进行评估，这样至少会执行一个周期。 在某些情况下，break-if 语句将引用仅在第一个周期之后定义的变量，在这种情况下，为避免出现 'Variable does not exist' 错误，您应禁用 'Evaluate on first cycle' 选项。
