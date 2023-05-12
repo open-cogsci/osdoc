@@ -146,7 +146,7 @@ conda activate opensesame-py3
 
 ```bash
 conda config --add channels conda-forge --add channels cogsci
-conda install opensesame opensesame-extension-osweb opensesame-extension-updater opensesame-plugin-psychopy rapunzel pygaze
+conda install opensesame opensesame-extension-osweb opensesame-extension-updater opensesame-plugin-psychopy rapunzel pygaze qtconsole pyqtwebengine wxpython
 ```
 
 有些软件包无法通过conda安装。您可以使用`pip install`安装这些软件包。

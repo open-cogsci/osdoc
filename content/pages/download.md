@@ -144,7 +144,7 @@ Next, add the relevant channels (`cogsci`) and (`conda-forge`) and install all r
 
 ```bash
 conda config --add channels conda-forge --add channels cogsci
-conda install opensesame opensesame-extension-osweb opensesame-extension-updater opensesame-plugin-psychopy rapunzel pygaze
+conda install opensesame opensesame-extension-osweb opensesame-extension-updater opensesame-plugin-psychopy rapunzel pygaze qtconsole pyqtwebengine wxpython
 ```
 
 Some packages are not available through conda. You can use `pip install` for these.
