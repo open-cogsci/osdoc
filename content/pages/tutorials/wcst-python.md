@@ -28,7 +28,7 @@ To make things more difficult, the matching rule changes after every five correc
 
 ### Step 1: Download and start OpenSesame
 
-OpenSesame is available for Windows, Linux, and Mac OS. This tutorial is written for OpenSesame 3.2 or higher.
+OpenSesame is available for Windows, Linux, and Mac OS. This tutorial is written for OpenSesame 4.0 or higher.
 
 When you start OpenSesame, you will be given a choice of template experiments, and (if any) a list of recently opened experiments (see %FigStartUp).
 
@@ -61,7 +61,7 @@ A LOOP item needs another item to run; usually, and in this case as well, this i
 
 By default, items have names such as *new_sequence*, *new_loop*, *new_sequence_2*, etc. These names are not very informative, and it is good practice to rename them. Item names must consist of alphanumeric characters and/ or underscores. To rename an item, double-click on the item in the overview area. Rename *new_sequence* to *trial_sequence* to indicate that it will correspond to a single trial. Rename *new_loop* to *block_loop* to indicate that will correspond to a block of trials.
 
-Finally, click on 'New experiment'to open the General Properties tab. Click on the title of the experiment, and rename it to 'Wisconsin Card Sorting Test'.
+Finally, click on 'New experiment' to open the General Properties tab. Click on the title of the experiment, and rename it to 'Wisconsin Card Sorting Test'.
 
 The overview area of our experiment now looks as in %FigBasicStructure.
 
@@ -97,7 +97,7 @@ figure:
 
 To start with, we'll create a display with four stimulus cards and one response card. However, which cards are shown will not, for now, depend on variables; that is, we will create a *static* display.
 
-Drag a a SKETCHPAD into *trial_sequence*, and rename it to *card_display*. Use the image tool to draw four cards in a horizontal row somewhere near the top of the display; these will be the stimulus cards. Draw a single card near the bottom of the display; this will be the response card. Also add some text to indicate to the participant what he or she has to do, namely press `a`, `b`, `c`, or `d` to indicate which of the stimulus cards matches the response card. The exact text, layout, and cards are up to you! Tips: you can use the *scale* option to adjust the size of the cards; you can change the background color in the General Properties tab, which you can open by clicking on the top-level item of the experiment.
+Drag a SKETCHPAD into *trial_sequence*, and rename it to *card_display*. Use the image tool to draw four cards in a horizontal row somewhere near the top of the display; these will be the stimulus cards. Draw a single card near the bottom of the display; this will be the response card. Also add some text to indicate to the participant what he or she has to do, namely press `a`, `b`, `c`, or `d` to indicate which of the stimulus cards matches the response card. The exact text, layout, and cards are up to you! Tips: you can use the *scale* option to adjust the size of the cards; you can change the background color in the General Properties tab, which you can open by clicking on the top-level item of the experiment.
 
 For me, the result looks like this:
 
@@ -149,11 +149,11 @@ The script for *card_display* mostly consists of `draw` commands, which define e
 draw image center=1 file="1-blue-triangle.png" scale=0.5 show_if=always x=0 y=192 z_index=0
 ```
 
-Right now, in my example, the image file for the response card is always `"1-blue-triangle.png"`. But of course we don't always want to show a single blue triangle. Instead, we want to have the image file depend on the variables that we have defined in the *block_loop*. To do so, replace the number by `[response_number]`, the color by `[response_color]`, and the shape by `[response_shape]`: (The square brackets indicate that these refer to names of variables.)
+Right now, in my example, the image file for the response card is always `"1-blue-triangle.png"`. But of course we don't always want to show a single blue triangle. Instead, we want to have the image file depend on the variables that we have defined in the *block_loop*. To do so, replace the number by `{response_number}`, the color by `{response_color}`, and the shape by `{response_shape}`: (The square brackets indicate that these refer to names of variables.)
 
 
 ```
-draw image center=1 file="[response_number]-[response_color]-[response_shape].png" scale=0.5 show_if=always x=0 y=192 z_index=0
+draw image center=1 file="{response_number}-{response_color}-{response_shape}.png" scale=0.5 show_if=always x=0 y=192 z_index=0
 ```
 
 Click on Apply to accept the changes to the script. The response card has now been replaced by a question-mark icon. This is because OpenSesame doesn't know how to show a preview of an image that has been defined using variables. But don't worry: the image will be shown when you run the experiment!
@@ -211,7 +211,7 @@ But this is not enough! Right now there's a single response item that assumes th
 
 To accomplish this, first create three more KEYBOARD_RESPONSE items: *press_b*, *press_c*, and *press_d*. These are all the same, except for the correct response, which is defined for each of them separately and should be respectively 'b', 'c', and 'd'.
 
-Finally, in the *trial_sequence*, use Run If statements to decide under which condition each of the four KEYBOARD_RESPONSE items should be executed (thus deciding what the correct response is). For *press_a*, the condition is that `shape1` should be equal to `response_shape`. Why? Well, because that means that the shape of the first stimulus card is equal to the shape of the response card, and in that case the correct response is 'a'. This condition corresponds to the following run-if statement: `[shape1] = [response_shape]`. The run-if statements for the other KEYBOARD_RESPONSE items are analogous (see %FigTrialSequence1).
+Finally, in the *trial_sequence*, use Run If statements to decide under which condition each of the four KEYBOARD_RESPONSE items should be executed (thus deciding what the correct response is). For *press_a*, the condition is that `shape1` should be equal to `response_shape`. Why? Well, because that means that the shape of the first stimulus card is equal to the shape of the response card, and in that case the correct response is 'a'. This condition corresponds to the following run-if statement: `shape1 = response_shape`. The run-if statements for the other KEYBOARD_RESPONSE items are analogous (see %FigTrialSequence1).
 
 
 %--
@@ -246,17 +246,7 @@ Finally, add some useful content to both SKETCHPADs. For example, for *correct_f
 
 You have now created a basic (but incomplete!) implementation of the Wisconsin Card Sorting Test. (You will complete the implementation as part of the Extra Assignments below.)
 
-
-%--
-figure:
- id: FigRunButtons
- source: run-buttons.png
- caption: |
-  The main toolbar contains buttons to (from left to right): run fullscreen, run in a window, quick-run (run in a window without asking for log file or participant numebr ), abort the experiment, and run in a browser.
---%
-
-
-To test the experiment, click on the quick-run button (the blue double arrows) to test the experiment on the desktop (see %FigRunButtons). If the experiment runs as expected on the desktop, click on the run-in-browser button (the arrow inside a green circle) to test the experiment in a browser.
+To test the experiment, click on the quick-run button (the blue double arrows) or the Run in fullscreen button (the green arrow).
 
 
 ## Extra assignments
@@ -292,7 +282,7 @@ So far, the matching rule is always to match by shape. To change this, add an IN
 ```python
 import random
 
-var.matching_rule = random.choice(['shape', 'number', 'color'])
+matching_rule = random.choice(['shape', 'number', 'color'])
 ```
 
 Now add another INLINE_SCRIPT item to the start of the *trial_sequence*. In the *prepare* phase, add a script to set the `correct_response` variable to 'a', 'b', 'c', or 'd'. To do so, you need a series of `if` statements, that first look at the matching rule, and then look at which shape corresponds to the response shape (for the shape-matching rule) or which color corresponds to the response color (for the color-matching rule) etc.
@@ -300,15 +290,15 @@ Now add another INLINE_SCRIPT item to the start of the *trial_sequence*. In the 
 To get started, here's part of the solution (but it needs to be completed!):
 
 ```python
-if var.matching_rule == 'shape':
-    if var.shape1 == var.response_shape:
-        var.correct_response = 'a'
+if matching_rule == 'shape':
+    if shape1 == response_shape:
+        correct_response = 'a'
     # Not done yet
 # Not done yet
 
 # Let's print some info to the debug window
-print('matching_rule = {}'.format(var.matching_rule))
-print('correct_response = {}'.format(var.correct_response))
+print('matching_rule = {}'.format(matching_rule))
+print('correct_response = {}'.format(correct_response))
 ```
 
 
