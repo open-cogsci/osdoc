@@ -1,5 +1,4 @@
 title: Wisconsin Card Sorting Test
-uptodate: false
 
 
 [TOC]
