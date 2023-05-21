@@ -35,6 +35,10 @@ https://osdoc.cogsci.nl/4.0/fr/manual/osweb/sonasystems
 https://osdoc.cogsci.nl/4.0/fr/manual/javascript/about
 https://osdoc.cogsci.nl/4.0/fr/manual/javascript/common
 https://osdoc.cogsci.nl/4.0/fr/manual/javascript/canvas
+https://osdoc.cogsci.nl/4.0/fr/manual/javascript/csv
+https://osdoc.cogsci.nl/4.0/fr/manual/javascript/color-convert
+https://osdoc.cogsci.nl/4.0/fr/manual/javascript/pythonic
+https://osdoc.cogsci.nl/4.0/fr/manual/javascript/random
 https://osdoc.cogsci.nl/4.0/fr/manual/forms/about
 https://osdoc.cogsci.nl/4.0/fr/manual/forms/readymade
 https://osdoc.cogsci.nl/4.0/fr/manual/forms/variables

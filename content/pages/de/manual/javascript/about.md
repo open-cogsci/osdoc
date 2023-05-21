@@ -1,5 +1,5 @@
 title: Über JavaScript
-hash: b35489df1d7af79c088585c5b57e0661050203bbe5a62da2cd5449da48a08da6
+hash: 073e796248136726c6b04b838715a867d5ef1958a34beae0785870553faa2e4c
 locale: de
 language: German
 
@@ -109,9 +109,9 @@ console.log('meine_variable ist: ' + vars.my_variable)
 vars.my_variable = 'mein_wert'
 ```
 
-### Das `pool`-Objekt: Zugriff auf den Datei-Pool
+### Das `pool` Objekt: Zugriff auf den Datei-Pool
 
-Du greifst auf 'Dateien' im Datei-Pool über das `pool`-Objekt zu. Am offensichtlichsten ist die Verwendung, um CSV-Dateien, zum Beispiel mit experimentellen Bedingungen, aus dem Datei-Pool mithilfe der `csv-parse`-Bibliothek (weiter unten ausführlicher beschrieben) zu parsen.
+Über das `pool` Objekt erhalten Sie Zugriff auf die 'Dateien' aus dem Datei-Pool. Der offensichtlichste Einsatz dafür ist das Auslesen von CSV-Dateien, zum Beispiel mit experimentellen Bedingungen, aus dem Datei-Pool mit Hilfe der `csv-parse` Bibliothek (weiter unten im Detail beschrieben).
 
 ```js
 const conditions = csvParse(
@@ -123,16 +123,16 @@ for (const trial of conditions) {
 }
 ```
 
-Du kannst auch Tondateien direkt aus dem Datei-Pool abspielen. Angenommen, es gibt eine Datei namens `bark.ogg` im Datei-Pool, kannst du sie wie folgt abspielen:
+Sie können auch Tondateien direkt aus dem Datei-Pool abspielen. Angenommen, es gibt eine Datei namens `bark.ogg` im Datei-Pool, dann können Sie sie so abspielen:
 
 ```js
 pool['bark.ogg'].data.play()
 ```
 
 
-### Die `Canvas`-Klasse: Visuelle Reize präsentieren
+### Die `Canvas` Klasse: Präsentation von visuellen Reizen
 
-Die `Canvas`-Klasse wird verwendet, um visuelle Reize zu präsentieren. Du kannst zum Beispiel einen Fixationspunkt wie folgt anzeigen:
+Die `Canvas` Klasse wird verwendet, um visuelle Reize darzustellen. So können Sie zum Beispiel einen Fixationspunkt auf folgende Weise anzeigen:
 
 ```js
 let myCanvas = Canvas()
@@ -140,119 +140,43 @@ myCanvas.fixdot()
 myCanvas.show()
 ```
 
-Eine vollständige Übersicht über die `Canvas`-Klasse findest du hier:
+Eine vollständige Übersicht über die `Canvas` Klasse finden Sie hier:
 
 - %link:manual/javascript/canvas%
 
+## Verfügbarer JavaScript-Bibliotheken
 
-## Verfügbare JavaScript-Bibliotheken
+Die folgenden JavaScript-Bibliotheken sind standardmäßig enthalten:
 
-Mehrere praktische JavaScript-Bibliotheken sind mit OSWeb gebündelt.
+- [Zufallsfunktionen (`random-ext`)](%url:manual/javascript/random%)
+- [Farbkonvertierungsfunktionen (`color-convert`)](%url:manual/javascript/color-convert%)
+- [CSV-Funktionen (`csv-parse`)](%url:manual/javascript/csv%)
+- [Python-ähnliche Iteratoren (`pythonic`)](%url:manual/javascript/pythonic%)
 
-
-### random-ext: erweiterte Zufallsgenerierung
-
-Die `random-ext`-Bibliothek ist als `random` verfügbar. Diese Bibliothek bietet viele praktische, höherwertige Funktionen für die Zufallsgenerierung.
-
-__Beispiel:__
-
-Zeichne acht Kreise mit einer zufälligen Farbe und einer Position, die zufällig aus einem 5x5-Raster ausgewählt wird:
-
-```js
-let positions = xy_grid(5, 50)
-positions = random.subArray(positions, 8)
-const cnv = Canvas()
-cnv.fixdot()
-for (const [x, y] of positions) {
-    cnv.circle({x: x, y: y, r: 20, fill: true, color: random.color()})
-}
-cnv.show()
-```
-
-Für eine Übersicht, siehe:
-
-- <https://www.npmjs.com/package/random-ext>
-
-
-### pythonic: Python-ähnliche Funktionen zum Durchlaufen von Arrays
-
-Die `pythonic`-Bibliothek bietet Python-ähnliche Funktionen zum Durchlaufen von Arrays. Verfügbare Funktionen sind: `range()`, `enumerate()`, `items()`, `zip()` und `zipLongest()`.
-
-__Beispiel:__
-
-Zeichne ein 5x5-Raster mit ansteigenden Zahlen:
-
-```js
-let positions = xy_grid(5, 50)
-const cnv = Canvas()
-for (const [i, [x, y]] of enumerate(positions)) {
-    cnv.text({text: i, x: x, y: y})
-}
-cnv.show()
-```
-
-Für eine Übersicht, siehe:
-
-- <https://www.npmjs.com/package/pythonic>
-
-
-### color-convert: Farbumwandlungs-Utility
-
-Die `color-convert`-Bibliothek ist als `convert` verfügbar. Sie bietet praktische High-Level-Funktionen für die Umwandlung von einer Farbspezifikation in eine andere.
-
-__Beispiel:__
-
-```js
-console.log('Die RGB-Werte für Blau sind ' + convert.keyword.rgb('blue'))
-```
-
-Für eine Übersicht, siehe:
-
-- <https://www.npmjs.com/package/color-convert>
-
-
-### csv-parse: CSV-formatierten Text in ein Objekt umwandeln
-
-Die synchronen `parse()`-Funktion aus der `csv-parse`-Bibliothek ist verfügbar. Damit kannst du CSV-formatierten Text, zum Beispiel aus einer CSV-Datei im Datei-Pool, in ein Objekt umwandeln.
-
-__Beispiel:__
-
-```js
-const conditions = csvParse(
-    pool['attentional-capture-jobs.csv'].data,
-    {columns: true}
-)
-for (const trial of conditions) {
-    console.log(trial.distractor)
-}
-```
-
-Für eine Übersicht, siehe:
-
-- <https://csv.js.org/parse/api/sync/#sync-api>
+Sie können zusätzliche JavaScript-Bibliotheken hinzufügen, indem Sie URLs zu den Bibliotheken im Feld 'Externe JavaScript-Bibliotheken' des OSWeb-Kontrollpanels eingeben.
 
 
 ## Debugging
 
-Die meisten modernen Browser, insbesondere Chrome und Firefox, verfügen über einen leistungsstarken integrierten Debugger. Du kannst den Debugger aktivieren, indem du eine Zeile hinzufügst, die einfach `debugger` in dein Skript aussagt (%FigDebuggerInlineJavaScript).
+Die meisten modernen Browser, insbesondere Chrome und Firefox, verfügen über einen leistungsstarken integrierten Debugger. Sie können den Debugger aktivieren, indem Sie eine Zeile, die einfach `debugger` in Ihrem Skript enthält, hinzufügen (%FigDebuggerInlineJavaScript).
 
 %--
-abbildung:
+figure:
  id: FigDebuggerInlineJavaScript
  source: debugger-inline-javascript.png
- caption: Aktivierung des Debuggers aus einem INLINE_JAVASCRIPT-Element.
+ caption: Aktivierung des Debuggers aus einem INLINE_JAVASCRIPT Element.
 --%
 
 
-Starte dann das Experiment und zeige den Debugger (oder: Entwicklertools in Chrome, oder: Web-Entwickler-Tools in Firefox) an, sobald der OSWeb-Startbildschirm erscheint. Der Debugger hält dann das Experiment an, wenn er auf die `debugger`-Anweisung trifft. An diesem Punkt kannst du die Konsole verwenden, um mit dem JavaScript-Arbeitsbereich zu interagieren, oder du kannst Variablen mit dem Scope-Tool untersuchen (%FigDebuggerChrome).
+Starten Sie dann das Experiment und zeigen Sie den Debugger (oder: Dev tools in Chrome oder: Web Developer Tools in Firefox) sobald der OSWeb-Begrüßungsbildschirm erscheint. Der Debugger wird das Experiment anhalten, wenn er auf die Anweisung `debugger` stößt. An diesem Punkt können Sie die Konsole verwenden, um mit dem JavaScript-Arbeitsbereich zu interagieren, oder Sie können Variablen mit dem Scope-Tool untersuchen (%FigDebuggerChrome).
 
 %--
-Abbildung:
- ID: FigDebuggerChrome
- Quelle: debugger-chrome.png
-Beschriftung: Inspektion des Variablenbereichs in Chrome.
+figure:
+ id: FigDebuggerChrome
+ source: debugger-chrome.png
+ caption: Überprüfen des Variablenbereichs in Chrome.
 --%
 
-Siehe auch:
+Weitere Informationen finden Sie unter:
 
 - %link:manual/osweb/osweb%

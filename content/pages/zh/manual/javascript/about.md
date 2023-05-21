@@ -1,5 +1,5 @@
 title: 关于JavaScript
-hash: b35489df1d7af79c088585c5b57e0661050203bbe5a62da2cd5449da48a08da6
+hash: 073e796248136726c6b04b838715a867d5ef1958a34beae0785870553faa2e4c
 locale: zh
 language: Chinese
 
@@ -105,9 +105,9 @@ console.log('my_variable 是: ' + vars.my_variable)
 vars.my_variable = 'my_value'
 ```
 
-### `pool` 对象：访问文件池
+### `pool`对象：访问文件池
 
-您可以通过 `pool` 对象访问文件池中的'文件'。最明显的用途是使用 `csv-parse` 库（下面详细介绍）从文件池中解析 CSV 文件，例如实验条件。
+通过`pool`对象访问文件池中的'文件'。最明显的用途是使用`csv-parse`库（下面将详细描述）从文件池中解析CSV文件，例如实验条件。
 
 ```js
 const conditions = csvParse(
@@ -119,16 +119,16 @@ for (const trial of conditions) {
 }
 ```
 
-您还可以直接从文件池播放音频文件。假如文件池中有一个名为 `bark.ogg` 的文件，你可以这样播放它：
+您还可以直接从文件池播放声音文件。假设文件池中有一个名为`bark.ogg`的文件，您可以这样播放它：
 
 ```js
 pool['bark.ogg'].data.play()
 ```
 
 
-### `Canvas` 类：呈现视觉刺激
+### `Canvas`类：呈现视觉刺激
 
-`Canvas` 类用于呈现视觉刺激。例如，您可以像这样显示一个注视点：
+`Canvas`类用于呈现视觉刺激。例如，您可以显示一个固定点，如下所示：
 
 ```js
 let myCanvas = Canvas()
@@ -136,118 +136,42 @@ myCanvas.fixdot()
 myCanvas.show()
 ```
 
-关于 `Canvas` 类的完整概述可以在这里找到：
+`Canvas`类的完整概述可以在这里找到：
 
 - %link:manual/javascript/canvas%
 
+## 可用的JavaScript库
 
-## 可用的 JavaScript 库
+以下JavaScript库默认包含在内：
 
-OSWeb 随附了几个方便的 JavaScript 库。
+- [随机函数（`random-ext`）](%url:manual/javascript/random%)
+- [颜色转换函数（`color-convert`）](%url:manual/javascript/color-convert%)
+- [CSV函数（`csv-parse`）](%url:manual/javascript/csv%)
+- [类Python迭代器（`pythonic`）](%url:manual/javascript/pythonic%)
 
-
-### random-ext：高级随机化
-
-`random-ext` 类库以 `random` 的形式提供。此库为随机化提供了许多便捷的高级功能。
-
-__示例：__
-
-在五行五列的网格中，绘制八个随机颜色的圆，位置从五行五列的网格中随机采样：
-
-```js
-let positions = xy_grid(5, 50)
-positions = random.subArray(positions, 8)
-const cnv = Canvas()
-cnv.fixdot()
-for (const [x, y] of positions) {
-    cnv.circle({x: x, y: y, r: 20, fill: true, color: random.color()})
-}
-cnv.show()
-```
-
-概述如下：
-
-- <https://www.npmjs.com/package/random-ext>
-
-
-### pythonic：用于遍历数组的 Python 类似函数
-
-`pythonic` 库提供了类似 Python 的遍历数组的函数。提供的功能有：`range()`, `enumerate()`, `items()`, `zip()`, 和 `zipLongest()`。
-
-__示例：__
-
-绘制一个五行五列的递增数字网格：
-
-```js
-let positions = xy_grid(5, 50)
-const cnv = Canvas()
-for (const [i, [x, y]] of enumerate(positions)) {
-    cnv.text({text: i, x: x, y: y})
-}
-cnv.show()
-```
-
-概述如下：
-
-- <https://www.npmjs.com/package/pythonic>
-
-
-### color-convert：颜色转换工具
-
-`color-convert` 类库以 `convert` 的形式提供。它提供了方便的高级功能，将一种颜色规范转换为另一种颜色规范。
-
-__示例：__
-
-```js
-console.log('The RGB values for blue are ' + convert.keyword.rgb('blue'))
-```
-
-概述如下：
-
-- <https://www.npmjs.com/package/color-convert>
-
-
-###csv-parse: 将 CSV 格式的文本解析为对象
-
-`csv-parse` 库提供了同步的 `parse()` 函数。这使您可以将 CSV 格式的文本解析为对象，例如从文件池中的 CSV 文件。
-
-__示例：__
-
-```js
-const conditions = csvParse(
-    pool['attentional-capture-jobs.csv'].data,
-    {columns: true}
-)
-for (const trial of conditions) {
-    console.log(trial.distractor)
-}
-```
-
-概述如下：
-
-- <https://csv.js.org/parse/api/sync/#sync-api>
+您可以通过在OSWeb控制面板的“外部JavaScript”库字段中输入库的URL来包含其他JavaScript库。
 
 
 ## 调试
 
-现代浏览器大多数，尤其是 Chrome 和 Firefox, 都内置了强大的调试器。您可以通过在脚本中添加一个简单的 `debugger` 行来激活调试器（%FigDebuggerInlineJavaScript）。
+大多数现代浏览器，尤其是Chrome和Firefox，都内置了强大的调试器。您可以通过在脚本中添加一个简单的`debugger`行来激活调试器（%FigDebuggerInlineJavaScript）。
 
 %--
 figure:
  id: FigDebuggerInlineJavaScript
  source: debugger-inline-javascript.png
- caption: 从 INLINE_JAVASCRIPT 项目中激活调试器。
+ caption: 从INLINE_JAVASCRIPT项目激活调试器。
 --%
 
-然后启动实验并在 OSWeb 欢迎屏幕出现后显示调试器（或者：在 Chrome 中打开开发者工具，或者：在 Firefox 中打开 Web 开发者工具）。当调试器遇到 `debugger` 语句时，将暂停实验。在这一点上，您可以使用控制台与 JavaScript 工作区进行交互，或者使用 Scope 工具检查变量 (%FigDebuggerChrome)。
+然后启动实验，并在OSWeb欢迎屏幕出现后立即显示调试器（或：Chrome中的Dev tools，或：Firefox中的Web开发者工具）。当调试器遇到`debugger`语句时，它将暂停实验。此时，您可以使用控制台与JavaScript工作区进行交互，或者使用Scope工具检查变量（%FigDebuggerChrome）。
 
 %--
 figure:
  id: FigDebuggerChrome
  source: debugger-chrome.png
- caption: Inspecting the variable scope in Chrome.
+ caption: 在Chrome中检查变量范围。
 --%
 
 另请参阅：
 
-- %link:manual/osweb/osweb%
+- %link:manual/osweb/osweb%@

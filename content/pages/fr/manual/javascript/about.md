@@ -1,5 +1,5 @@
 title: À propos de JavaScript
-hash: b35489df1d7af79c088585c5b57e0661050203bbe5a62da2cd5449da48a08da6
+hash: 073e796248136726c6b04b838715a867d5ef1958a34beae0785870553faa2e4c
 locale: fr
 language: French
 
@@ -109,9 +109,9 @@ console.log('my_variable est : ' + vars.my_variable)
 vars.my_variable = 'my_value'
 ```
 
-### L'objet `pool` : Accès au pool de fichiers
+### L'objet `pool` : Accès à la réserve de fichiers
 
-Vous accédez aux 'fichiers' du pool de fichiers via l'objet `pool`. L'utilisation la plus évidente de cela est de parser les fichiers CSV, par exemple avec les conditions expérimentales, à partir du pool de fichiers en utilisant la bibliothèque `csv-parse` (décrite plus en détail ci-dessous).
+Vous accédez aux 'fichiers' de la réserve de fichiers via l'objet `pool`. L'utilisation la plus évidente de cela est de lire les fichiers CSV, par exemple avec les conditions expérimentales, à partir de la réserve de fichiers en utilisant la bibliothèque `csv-parse` (décrite plus en détail ci-dessous).
 
 ```js
 const conditions = csvParse(
@@ -123,7 +123,7 @@ for (const trial of conditions) {
 }
 ```
 
-Vous pouvez également jouer des fichiers sonores directement à partir du pool de fichiers. En supposant qu'il y ait un fichier appelé `bark.ogg` dans le pool de fichiers, vous pouvez le jouer comme suit :
+Vous pouvez également jouer des fichiers sonores directement à partir de la réserve de fichiers. En supposant qu'il y ait un fichier appelé `bark.ogg` dans la réserve de fichiers, vous pouvez le jouer comme ceci :
 
 ```js
 pool['bark.ogg'].data.play()
@@ -132,7 +132,7 @@ pool['bark.ogg'].data.play()
 
 ### La classe `Canvas` : Présentation de stimuli visuels
 
-La classe `Canvas` est utilisée pour présenter des stimuli visuels. Par exemple, vous pouvez montrer un point de fixation comme suit:
+La classe `Canvas` est utilisée pour présenter des stimuli visuels. Par exemple, vous pouvez montrer un point de fixation comme suit :
 
 ```js
 let myCanvas = Canvas()
@@ -140,101 +140,25 @@ myCanvas.fixdot()
 myCanvas.show()
 ```
 
-Un aperçu complet de la classe `Canvas` peut être trouvé ici:
+Un aperçu complet de la classe `Canvas` se trouve ici :
 
-- %link:manuel/javascript/canvas%
-
+- %link:manual/javascript/canvas%
 
 ## Bibliothèques JavaScript disponibles
 
-Plusieurs bibliothèques JavaScript pratiques sont intégrées dans OSWeb.
+Les bibliothèques JavaScript suivantes sont incluses par défaut :
 
+- [Fonctions aléatoires (`random-ext`)](%url:manual/javascript/random%)
+- [Fonctions de conversion de couleurs (`color-convert`)](%url:manual/javascript/color-convert%)
+- [Fonctions CSV (`csv-parse`)](%url:manual/javascript/csv%)
+- [Itérateurs de type Python (`pythonic`)](%url:manual/javascript/pythonic%)
 
-### random-ext: randomisation avancée
-
-La bibliothèque `random-ext` est disponible sous le nom de `random`. Cette bibliothèque fournit de nombreuses fonctions pratiques et de haut niveau pour la randomisation.
-
-__Exemple :__
-
-Dessinez huit cercles avec une couleur aléatoire et une position qui est échantillonnée aléatoirement dans une grille de cinq sur cinq :
-
-```js
-let positions = xy_grid(5, 50)
-positions = random.subArray(positions, 8)
-const cnv = Canvas()
-cnv.fixdot()
-for (const [x, y] of positions) {
-    cnv.circle({x: x, y: y, r: 20, fill: true, color: random.color()})
-}
-cnv.show()
-```
-
-Pour un aperçu, voir :
-
-- <https://www.npmjs.com/package/random-ext>
-
-
-### pythonic: Fonctions similaires à Python pour itérer sur des tableaux
-
-La bibliothèque `pythonic` fournit des fonctions similaires à Python pour itérer sur des tableaux. Les fonctions disponibles sont : `range()`, `enumerate()`, `items()`, `zip()`, et `zipLongest()`.
-
-__Exemple :__
-
-Dessinez une grille de cinq sur cinq de chiffres croissants :
-
-```js
-let positions = xy_grid(5, 50)
-const cnv = Canvas()
-for (const [i, [x, y]] of enumerate(positions)) {
-    cnv.text({text: i, x: x, y: y})
-}
-cnv.show()
-```
-
-Pour un aperçu, voir :
-
-- <https://www.npmjs.com/package/pythonic>
-
-
-### color-convert: utilitaires de conversion de couleurs
-
-La bibliothèque `color-convert` est disponible sous le nom de `convert`. Elle fournit des fonctions de haut niveau pratiques pour convertir une spécification de couleur en une autre.
-
-__Exemple :__
-
-```js
-console.log('Les valeurs RGB pour le bleu sont ' + convert.keyword.rgb('blue'))
-```
-
-Pour un aperçu, voir :
-
-- <https://www.npmjs.com/package/color-convert>
-
-
-### csv-parse: conversion de texte au format CSV en un objet
-
-La fonction synchronisée `parse()` de la bibliothèque `csv-parse` est disponible. Cela vous permet de parser un texte au format CSV, par exemple à partir d'un fichier CSV dans le pool de fichiers, en un objet.
-
-__Exemple :__
-
-```js
-const conditions = csvParse(
-    pool['attentional-capture-jobs.csv'].data,
-    {columns: true}
-)
-for (const trial of conditions) {
-    console.log(trial.distractor)
-}
-```
-
-Pour un aperçu, voir :
-
-- <https://csv.js.org/parse/api/sync/#sync-api>
+Vous pouvez inclure des bibliothèques JavaScript supplémentaires en ajoutant les URL des bibliothèques dans le champ 'Bibliothèques JavaScript externes' du panneau de configuration d'OSWeb.
 
 
 ## Débogage
 
-La plupart des navigateurs modernes, en particulier Chrome et Firefox, disposent d'un débogueur intégré puissant. Vous pouvez activer le débogueur en ajoutant une ligne qui indique simplement `debugger` à votre script (%FigDebuggerInlineJavaScript).
+La plupart des navigateurs modernes, notamment Chrome et Firefox, disposent d'un débogueur intégré puissant. Vous pouvez activer le débogueur en ajoutant une ligne qui indique simplement `debugger` à votre script (%FigDebuggerInlineJavaScript).
 
 %--
 figure:
@@ -244,7 +168,7 @@ figure:
 --%
 
 
-Ensuite, démarrez l'expérience et affichez le débogueur (ou : Outils de développement dans Chrome, ou : Outils de développement Web dans Firefox) dès que l'écran d'accueil OSWeb apparaît. Le débogueur mettra alors l'expérience en pause lorsqu'il rencontrera l'instruction `debugger`. À ce stade, vous pouvez utiliser la console pour interagir avec l'espace de travail JavaScript, ou vous pouvez inspecter les variables à l'aide de l'outil Scope (%FigDebuggerChrome).
+Ensuite, démarrez l'expérience et affichez le débogueur (ou : Dev tools dans Chrome, ou : Outils web de développement dans Firefox) dès que l'écran d'accueil d'OSWeb apparaît. Le débogueur mettra alors en pause l'expérience lorsqu'il rencontrera l'instruction `debugger`. À ce stade, vous pouvez utiliser la Console pour interagir avec l'espace de travail JavaScript, ou vous pouvez inspecter les variables en utilisant l'outil Scope (%FigDebuggerChrome).
 
 %--
 figure:
@@ -255,4 +179,4 @@ figure:
 
 Voir aussi :
 
-- %link:manuel/osweb/osweb%
+- %link:manual/osweb/osweb%

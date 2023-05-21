@@ -36,55 +36,59 @@ Manual:
         Video: es/manual/stimuli/video
     _:
     Experimentos en línea:
-    Flujo de trabajo: manual/osweb/workflow
+    Flujo de trabajo: es/manual/osweb/workflow
     Desarrollo:
-        OSWeb: manual/osweb/osweb
-        JATOS: manual/osweb/jatos
-        Datos: manual/osweb/data
-        Cuestionarios: manual/osweb/questionnaires
+        OSWeb: es/manual/osweb/osweb
+        JATOS: es/manual/osweb/jatos
+        Datos: es/manual/osweb/data
+        Cuestionarios: es/manual/osweb/questionnaires
     Reclutamiento de participantes:
-        Prolific: manual/osweb/prolific
-        Mechanical Turk: manual/osweb/mturk
-        Sona Systems: manual/osweb/sonasystems
+        Prolific: es/manual/osweb/prolific
+        Mechanical Turk: es/manual/osweb/mturk
+        Sona Systems: es/manual/osweb/sonasystems
     JavaScript:
-    JavaScript en OpenSesame: manual/javascript/about
+    JavaScript en OpenSesame: es/manual/javascript/about
     Funciones de JavaScript:
-        Funciones comunes: manual/javascript/common
-        Lienzo: manual/javascript/canvas
+        Funciones comunes: es/manual/javascript/common
+        Lienzo (Canvas): es/manual/javascript/canvas
+        csv: es/manual/javascript/csv
+        convertidor-de-color (color-convert): es/manual/javascript/color-convert
+        pythonic: es/manual/javascript/pythonic
+        Aleatorio (random): es/manual/javascript/random
     Formularios:
-    Formularios en OpenSesame: manual/forms/about
-    Formularios predefinidos: manual/forms/readymade
-    Variables de formulario: manual/forms/variables
-    Formularios personalizados: manual/forms/custom
-    Widgets y palabras clave: manual/forms/widgets
-    Validación de entrada de formulario: manual/forms/validation
-    Formularios HTML personalizados: manual/forms/html
+    Formularios en OpenSesame: es/manual/forms/about
+    Formularios predefinidos: es/manual/forms/readymade
+    Variables de formulario: es/manual/forms/variables
+    Formularios personalizados: es/manual/forms/custom
+    Widgets y palabras clave: es/manual/forms/widgets
+    Validación de entrada de formulario: es/manual/forms/validation
+    Formularios HTML personalizados: es/manual/forms/html
     ___:
     Python:
-    Python en la GUI de OpenSesame: manual/python/about
-    Módulo Python de OpenSesame (sin GUI): manual/python/nogui
+    Python en la GUI de OpenSesame: es/manual/python/about
+    Módulo Python de OpenSesame (sin GUI): es/manual/python/nogui
     Funciones de Python:
-        Funciones comunes: manual/python/common
-        Variables: manual/python/var
-        Grupo de archivos (pool): manual/python/pool
-        Elementos (items): manual/python/items
-        Historial de respuestas: manual/python/responses
-        Reloj (clock): manual/python/clock
-        Lienzo (Canvas): manual/python/canvas
-        Teclado (Keyboard): manual/python/keyboard
-        Registro (log): manual/python/log
-        Ratón (Mouse): manual/python/mouse
-        Muestreador (Sampler): manual/python/sampler
+        Funciones comunes: es/manual/python/common
+        Variables: es/manual/python/var
+        Grupo de archivos (pool): es/manual/python/pool
+        Elementos (items): es/manual/python/items
+        Historial de respuestas: es/manual/python/responses
+        Reloj (clock): es/manual/python/clock
+        Lienzo (Canvas): es/manual/python/canvas
+        Teclado (Keyboard): es/manual/python/keyboard
+        Registro (log): es/manual/python/log
+        Ratón (Mouse): es/manual/python/mouse
+        Muestreador (Sampler): es/manual/python/sampler
     Seguimiento ocular:
-    PyGaze: manual/eyetracking/pygaze
+    PyGaze: es/manual/eyetracking/pygaze
     Modelos:
-        EyeLink: manual/eyetracking/eyelink
-        EyeLogic: manual/eyetracking/eyelogic
-        EyeTribe: manual/eyetracking/eyetribe
-        GazePoint / OpenGaze: manual/eyetracking/gazepoint
-        SMI: manual/eyetracking/smi
-        Tobii: manual/eyetracking/tobii
-        WebGazer.js (en línea): manual/eyetracking/webgazer
+        EyeLink: es/manual/eyetracking/eyelink
+        EyeLogic: es/manual/eyetracking/eyelogic
+        EyeTribe: es/manual/eyetracking/eyetribe
+        GazePoint / OpenGaze: es/manual/eyetracking/gazepoint
+        SMI: es/manual/eyetracking/smi
+        Tobii: es/manual/eyetracking/tobii
+        WebGazer.js (en línea): es/manual/eyetracking/webgazer
     ____:
     Avanzado:
     La estrategia de preparar-ejecutar: es/manual/prepare-run

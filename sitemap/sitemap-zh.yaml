@@ -55,7 +55,11 @@
     OpenSesame中的JavaScript: zh/manual/javascript/about
     JavaScript函数:
         通用函数: zh/manual/javascript/common
-        画布: zh/manual/javascript/canvas
+        画布 (Canvas): zh/manual/javascript/canvas
+        csv: zh/manual/javascript/csv
+        color-convert: zh/manual/javascript/color-convert
+        pythonic: zh/manual/javascript/pythonic
+        random: zh/manual/javascript/random
     
     表单:
     OpenSesame中的表单: zh/manual/forms/about

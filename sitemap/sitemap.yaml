@@ -51,6 +51,10 @@ Manual:
     JavaScript functions:
         Common functions: manual/javascript/common
         Canvas: manual/javascript/canvas
+        csv: manual/javascript/csv
+        color-convert: manual/javascript/color-convert
+        pythonic: manual/javascript/pythonic
+        random: manual/javascript/random
     Forms:
     Forms in OpenSesame: manual/forms/about
     Ready-made forms: manual/forms/readymade

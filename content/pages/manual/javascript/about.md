@@ -142,93 +142,16 @@ A full overview of the `Canvas` class can be found here:
 
 - %link:manual/javascript/canvas%
 
-
 ## Available JavaScript libraries
 
-Several convenient JavaScript libraries are bundled with OSWeb.
+The following JavaScript libraries are included by default:
 
+- [random functions (`random-ext`)](%url:manual/javascript/random%)
+- [Color-conversion functions (`color-convert`)](%url:manual/javascript/color-convert%)
+- [CSV functions (`csv-parse`)](%url:manual/javascript/csv%)
+- [Python-like iterators (`pythonic`)](%url:manual/javascript/pythonic%)
 
-### random-ext: advanced randomization
-
-
-The `random-ext` library is available as `random`. This library provides many convenient, higher-level functions for randomization.
-
-__Example:__
-
-Draw eight circle with a random color and a location that is randomly sampled from a five by five grid:
-
-```js
-let positions = xy_grid(5, 50)
-positions = random.subArray(positions, 8)
-const cnv = Canvas()
-cnv.fixdot()
-for (const [x, y] of positions) {
-    cnv.circle({x: x, y: y, r: 20, fill: true, color: random.color()})
-}
-cnv.show()
-```
-
-For an overview, see:
-
-- <https://www.npmjs.com/package/random-ext>
-
-
-### pythonic: Python-like functions for iterating over arrays
-
-The `pythonic` library provides Python-like functions for iterating over arrays. Available functions are: `range()`, `enumerate()`, `items()`, `zip()`, and `zipLongest()`.
-
-__Example:__
-
-Draw a five by five grid of incrementing numbers:
-
-```js
-let positions = xy_grid(5, 50)
-const cnv = Canvas()
-for (const [i, [x, y]] of enumerate(positions)) {
-    cnv.text({text: i, x: x, y: y})
-}
-cnv.show()
-```
-
-For an overview, see:
-
-- <https://www.npmjs.com/package/pythonic>
-
-
-### color-convert: color conversion utilities
-
-The `color-convert` library is available as `convert`. It provides convenient high level functions for converting from one color specification to another.
-
-__Example:__
-
-```js
-console.log('The RGB values for blue are ' + convert.keyword.rgb('blue'))
-```
-
-For an overview, see:
-
-- <https://www.npmjs.com/package/color-convert>
-
-
-### csv-parse: parse CSV-formatted text into an Object
-
-The synchronous `parse()` function from the `csv-parse` library is available. This allows you to parse CSV-formatted text, for example from a CSV file in the file pool, into an Object.
-
-__Example:__
-
-```js
-const conditions = csvParse(
-    pool['attentional-capture-jobs.csv'].data,
-    {columns: true}
-)
-for (const trial of conditions) {
-    console.log(trial.distractor)
-}
-```
-
-For an overview, see:
-
-- <https://csv.js.org/parse/api/sync/#sync-api>
+You can include additional JavaScript libraries by URLs to the libraries in the 'External JavaScript' libraries field of the OSWeb control panel.
 
 
 ## Debugging

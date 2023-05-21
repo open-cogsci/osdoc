@@ -56,6 +56,10 @@ Manuel:
     Fonctions JavaScript:
         Fonctions courantes: fr/manual/javascript/common
         Toile (Canvas): fr/manual/javascript/canvas
+        csv: fr/manual/javascript/csv
+        convertir-couleur (color-convert): fr/manual/javascript/color-convert
+        pythonic: fr/manual/javascript/pythonic
+        aléatoire (random): fr/manual/javascript/random
     
     Formulaires:
     Formulaires dans OpenSesame: fr/manual/forms/about

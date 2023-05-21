@@ -50,6 +50,10 @@ Handbuch:
     JavaScript-Funktionen:
         Allgemeine Funktionen: de/manual/javascript/common
         Canvas: de/manual/javascript/canvas
+        csv: de/manual/javascript/csv
+        farbe-konvertieren (color-convert): de/manual/javascript/color-convert
+        pythonic: de/manual/javascript/pythonic
+        random: de/manual/javascript/random
     Formulare:
     Formulare in OpenSesame: de/manual/forms/about
     Vorgefertigte Formulare: de/manual/forms/readymade

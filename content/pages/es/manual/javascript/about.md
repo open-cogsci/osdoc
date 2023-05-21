@@ -1,5 +1,5 @@
 title: Acerca de JavaScript
-hash: b35489df1d7af79c088585c5b57e0661050203bbe5a62da2cd5449da48a08da6
+hash: 073e796248136726c6b04b838715a867d5ef1958a34beae0785870553faa2e4c
 locale: es
 language: Spanish
 
@@ -109,9 +109,9 @@ console.log('mi_variable es: ' + vars.my_variable)
 vars.my_variable = 'mi_valor'
 ```
 
-### El objeto `pool`: Acceso al archivo pool
+### El objeto `pool`: acceso al grupo de archivos
 
-Se accede a los 'archivos' del archivo pool a través del objeto `pool`. El uso más evidente de esto es analizar los archivos CSV, por ejemplo, con condiciones experimentales, desde el archivo pool utilizando la biblioteca `csv-parse` (descrita con más detalle a continuación).
+Puedes acceder a los 'archivos' del grupo de archivos a través del objeto `pool`. El uso más obvio de esto es analizar archivos CSV, por ejemplo con condiciones experimentales, desde el grupo de archivos utilizando la biblioteca `csv-parse` (descrita con más detalle a continuación).
 
 ```js
 const conditions = csvParse(
@@ -123,16 +123,16 @@ for (const trial of conditions) {
 }
 ```
 
-También puede reproducir archivos de sonido directamente desde el archivo pool. Suponiendo que haya un archivo llamado `bark.ogg` en el archivo pool, puedes reproducirlo de la siguiente manera:
+También puedes reproducir archivos de sonido directamente desde el grupo de archivos. Suponiendo que haya un archivo llamado `bark.ogg` en el grupo de archivos, puedes reproducirlo de la siguiente manera:
 
 ```js
 pool['bark.ogg'].data.play()
 ```
 
 
-### La clase `Canvas`: Presentación de estímulos visuales
+### La clase `Canvas`: presentando estímulos visuales
 
-La clase `Canvas` se utiliza para presentar estímulos visuales. Por ejemplo, puede mostrar un punto de fijación de la siguiente manera:
+La clase `Canvas` se utiliza para presentar estímulos visuales. Por ejemplo, puedes mostrar un punto de fijación de la siguiente manera:
 
 ```js
 let myCanvas = Canvas()
@@ -140,111 +140,33 @@ myCanvas.fixdot()
 myCanvas.show()
 ```
 
-Puede encontrar una descripción completa de la clase `Canvas` aquí:
+Se puede encontrar una descripción completa de la clase `Canvas` aquí:
 
 - %link:manual/javascript/canvas%
 
-
 ## Bibliotecas de JavaScript disponibles
 
-OSWeb incluye varias bibliotecas de JavaScript prácticas.
+Las siguientes bibliotecas de JavaScript están incluidas de forma predeterminada:
 
+- [Funciones aleatorias (`random-ext`)](%url:manual/javascript/random%)
+- [Funciones de conversión de colores (`color-convert`)](%url:manual/javascript/color-convert%)
+- [Funciones CSV (`csv-parse`)](%url:manual/javascript/csv%)
+- [Iteradores estilo Python (`pythonic`)](%url:manual/javascript/pythonic%)
 
-### random-ext: randomización avanzada
-
-La biblioteca `random-ext` está disponible como `random`. Esta biblioteca proporciona muchas funciones de nivel superior convenientes para la randomización.
-
-__Ejemplo:__
-
-Dibuje ocho círculos con un color aleatorio y una ubicación que se muestre al azar en una cuadrícula de cinco por cinco:
-
-```js
-let positions = xy_grid(5, 50)
-positions = random.subArray(positions, 8)
-const cnv = Canvas()
-cnv.fixdot()
-for (const [x, y] of positions) {
-    cnv.circle({x: x, y: y, r: 20, fill: true, color: random.color()})
-}
-cnv.show()
-```
-
-Para obtener una descripción general, consulte:
-
-- <https://www.npmjs.com/package/random-ext>
-
-
-### pythonic: funciones similares a Python para iterar sobre matrices
-
-La biblioteca `pythonic` proporciona funciones similares a Python para iterar sobre matrices. Las funciones disponibles son: `range()`, `enumerate()`, `items()`, `zip()` y `zipLongest()`.
-
-__Ejemplo:__
-
-Dibuje una cuadrícula de cinco por cinco de números incrementales:
-
-```js
-let positions = xy_grid(5, 50)
-const cnv = Canvas()
-for (const [i, [x, y]] of enumerate(positions)) {
-    cnv.text({text: i, x: x, y: y})
-}
-cnv.show()
-```
-
-Para obtener una descripción general, consulte:
-
-- <https://www.npmjs.com/package/pythonic>
-
-
-### color-convert: utilidades de conversión de color
-
-La biblioteca `color-convert` está disponible como `convert`. Proporciona funciones de alto nivel convenientes para convertir de una especificación de color a otra.
-
-__Ejemplo:__
-
-```js
-console.log('Los valores RGB para azul son ' + convert.keyword.rgb('blue'))
-```
-
-Para obtener una descripción general, consulte:
-
-- <https://www.npmjs.com/package/color-convert>
-
-
-### csv-parse: convertir texto formateado en CSV en un objeto
-
-La función `parse()` síncrona de la biblioteca `csv-parse` está disponible. Esto le permite analizar texto en formato CSV, por ejemplo, a partir de un archivo CSV en el archivo pool, en un objeto.
-
-__Ejemplo:__
-
-```js
-const conditions = csvParse(
-    pool['attentional-capture-jobs.csv'].data,
-    {columns: true}
-)
-for (const trial of conditions) {
-    console.log(trial.distractor)
-}
-```
-
-Para obtener una descripción general, consulte:
-
-- <https://csv.js.org/parse/api/sync/#sync-api>
-
+Puedes incluir bibliotecas adicionales de JavaScript agregando las URLs a las bibliotecas en el campo 'Bibliotecas de JavaScript externas' del panel de control de OSWeb.
 
 ## Depuración
 
-La mayoría de los navegadores modernos, especialmente Chrome y Firefox, tienen un depurador integrado potente. Puede activar el depurador agregando una línea que simplemente indica `debugger` en su script (%FigDebuggerInlineJavaScript).
+La mayoría de los navegadores modernos, especialmente Chrome y Firefox, cuentan con un depurador integrado potente. Puedes activar el depurador agregando una línea que simplemente indique `debugger` a tu script (%FigDebuggerInlineJavaScript).
 
 %--
 figure:
  id: FigDebuggerInlineJavaScript
  source: debugger-inline-javascript.png
- caption: Activación del depurador desde un elemento INLINE_JAVASCRIPT.
+ caption: Activando el depurador desde un elemento INLINE_JAVASCRIPT.
 --%
 
-
-Luego, inicie el experimento y muestre el depurador (o: Dev tools en Chrome, o: Web Developer Tools en Firefox) tan pronto como aparezca la pantalla de bienvenida de OSWeb. El depurador pausará el experimento cuando encuentre la declaración `debugger`. En este punto, puede utilizar la consola para interactuar con el espacio de trabajo de JavaScript o puede inspeccionar variables utilizando la herramienta Scope (%FigDebuggerChrome).
+Luego, inicia el experimento y muestra el depurador (o: Dev tools en Chrome, o: Web Developer Tools en Firefox) tan pronto como aparezca la pantalla de bienvenida de OSWeb. El depurador pausará el experimento cuando encuentre la declaración `debugger`. En este punto, puede usar la Consola para interactuar con el espacio de trabajo de JavaScript, o puede inspeccionar variables usando la herramienta Scope (%FigDebuggerChrome).
 
 %--
 figure:

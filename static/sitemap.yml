@@ -89,6 +89,14 @@
                 - /4.0/manual/javascript/common
               - - Canvas
                 - /4.0/manual/javascript/canvas
+              - - csv
+                - /4.0/manual/javascript/csv
+              - - color-convert
+                - /4.0/manual/javascript/color-convert
+              - - pythonic
+                - /4.0/manual/javascript/pythonic
+              - - random
+                - /4.0/manual/javascript/random
         - - Forms in OpenSesame
           - /4.0/manual/forms/about
         - - Ready-made forms
