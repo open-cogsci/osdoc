@@ -156,25 +156,6 @@ You can include additional JavaScript libraries by URLs to the libraries in the 
 
 ## Debugging
 
-Most modern browsers, especially Chrome and Firefox, have a powerful built-in debugger. You can activate the debugger by adding a line that simply states `debugger` to your script (%FigDebuggerInlineJavaScript).
+See:
 
-%--
-figure:
- id: FigDebuggerInlineJavaScript
- source: debugger-inline-javascript.png
- caption: Activating the debugger from an INLINE_JAVASCRIPT item.
---%
-
-
-Then start the experiment and show the debugger (or: Dev tools in Chrome, or: Web Developer Tools in Firefox) as soon as the OSWeb welcome screen appears. The debugger will then pause the experiment when it encounters the `debugger` statement. At this point, you can use the Console to interact with the JavaScript workspace, or you can inspect variables using the Scope tool (%FigDebuggerChrome).
-
-%--
-figure:
- id: FigDebuggerChrome
- source: debugger-chrome.png
- caption: Inspecting the variable scope in Chrome.
---%
-
-See also:
-
-- %link:manual/osweb/osweb%
+- %link:debugging%
