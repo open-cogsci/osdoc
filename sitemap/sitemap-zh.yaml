@@ -16,6 +16,7 @@
     使用界面: zh/manual/interface
     变量和if语句: zh/manual/variables
     数据记录: zh/manual/logging
+    调试: zh/manual/debugging
     示例: zh/manual/examples
 
     流程和结构:
@@ -45,7 +46,7 @@
         OSWeb: zh/manual/osweb/osweb
         JATOS: zh/manual/osweb/jatos
         数据: zh/manual/osweb/data
-        问卷: zh/manual/osweb/questionnaires
+        <nodoc> 问卷: zh/manual/osweb/questionnaires
     招募参与者:
         Prolific: zh/manual/osweb/prolific
         机械土耳其: zh/manual/osweb/mturk

@@ -27,6 +27,8 @@
           - /4.0/manual/variables
         - - Data logging
           - /4.0/manual/logging
+        - - Debugging
+          - /4.0/manual/debugging
         - - Examples
           - /4.0/manual/examples
         - - Flow and structure

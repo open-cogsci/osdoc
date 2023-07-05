@@ -16,6 +16,7 @@ Handbuch:
     Verwendung der Benutzeroberfläche: de/manual/interface
     Variablen und If-Anweisungen: de/manual/variables
     Datenprotokollierung: de/manual/logging
+    Debuggem: de/manual/debugging
     Beispiele: de/manual/examples
     Ablauf und Struktur:
         Schleifen und Definition unabhängiger Variablen: de/manual/structure/loop
@@ -40,7 +41,7 @@ Handbuch:
         OSWeb: de/manual/osweb/osweb
         JATOS: de/manual/osweb/jatos
         Daten: de/manual/osweb/data
-        Fragebögen: de/manual/osweb/questionnaires
+        <nodoc> Fragebögen: de/manual/osweb/questionnaires
     Teilnehmer rekrutieren:
         Prolific: de/manual/osweb/prolific
         Mechanical Turk: de/manual/osweb/mturk

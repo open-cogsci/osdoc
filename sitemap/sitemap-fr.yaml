@@ -16,6 +16,7 @@ Manuel:
     Utilisation de l'interface: fr/manual/interface
     Variables et instructions conditionnelles: fr/manual/variables
     Enregistrement des données: fr/manual/logging
+    Débogage: fr/manual/debugging
     Exemples: fr/manual/examples
 
     Flux et structure:
@@ -45,7 +46,7 @@ Manuel:
         OSWeb: fr/manual/osweb/osweb
         JATOS: fr/manual/osweb/jatos
         Données: fr/manual/osweb/data
-        Questionnaires: fr/manual/osweb/questionnaires
+        <nodoc> Questionnaires: fr/manual/osweb/questionnaires
     Recrutement de participants:
         Prolific: fr/manual/osweb/prolific
         Mechanical Turk: fr/manual/osweb/mturk

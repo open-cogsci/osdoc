@@ -17,6 +17,7 @@ Manual:
     Uso de la interfaz: es/manual/interface
     Variables y declaraciones if: es/manual/variables
     Registro de datos: es/manual/logging
+    Depuración: es/manual/debugging
     Ejemplos: es/manual/examples
     Flujo y estructura:
         Bucles y definición de variables independientes: es/manual/structure/loop
@@ -41,7 +42,7 @@ Manual:
         OSWeb: es/manual/osweb/osweb
         JATOS: es/manual/osweb/jatos
         Datos: es/manual/osweb/data
-        Cuestionarios: es/manual/osweb/questionnaires
+        <nodoc> Cuestionarios: es/manual/osweb/questionnaires
     Reclutamiento de participantes:
         Prolific: es/manual/osweb/prolific
         Mechanical Turk: es/manual/osweb/mturk
