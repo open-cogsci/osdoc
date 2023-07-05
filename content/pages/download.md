@@ -147,10 +147,11 @@ conda config --add channels conda-forge --add channels cogsci
 conda install opensesame opensesame-extension-osweb opensesame-extension-updater opensesame-plugin-psychopy rapunzel pygaze qtconsole pyqtwebengine wxpython
 ```
 
-Some packages are not available through conda. You can use `pip install` for these.
+Some packages are not available through conda. You can use `pip install` for these. (PsychoPy is known to fail to install on some systems, which is why it is installed separately below.)
 
 ```bash
-pip install soundfile pygame psychopy psychopy-sounddevice http://files.cogsci.nl/expyriment-0.10.0+opensesame2-py3-none-any.whl
+pip install soundfile pygame http://files.cogsci.nl/expyriment-0.10.0+opensesame2-py3-none-any.whl
+pip install psychopy psychopy-sounddevice
 ```
 
 Once you have installed all packages, you can simply run OpenSesame by (after having activated the correct environment) running:
