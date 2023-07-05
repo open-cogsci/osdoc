@@ -17,6 +17,7 @@ Manual:
     Using the interface: manual/interface
     Variables and if statements: manual/variables
     Data logging: manual/logging
+    Debugging: manual/debugging
     Examples: manual/examples
     Flow and structure:
         Looping and defining indepedent variables: manual/structure/loop
