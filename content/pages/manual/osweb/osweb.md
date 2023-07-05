@@ -6,64 +6,52 @@ title: OSWeb
 
 ## About OSWeb
 
-OSWeb is an online runtime for OpenSesame experiments. That is, it is a JavaScript library that interprets and executes OpenSesame experiments.
+OSWeb is an online runtime for OpenSesame experiments. It is a JavaScript library that executes OpenSesame experiments in a browser. To use OSWeb, you need the `opensesame-extension-osweb` package, which comes pre-installed with the Windows and macOS distributions of OpenSesame.
 
 
-## The OSWeb extension
+## Executing an Experiment in a Web Browser
 
-The OSWeb extension for OpenSesame (%FigOSWebExtension) allows you to test experiments in a browser, and to export experiments in a format that you can import into [JATOS](%url:jatos%).
+To run an experiment in a web browser using OSWeb, follow these steps:
 
-
-%--
-figure:
- id: FigOSWebExtension
- source: osweb-extension.png
- caption: The OSWeb extension for OpenSesame.
---%
-
-
-## Testing in a browser
-
-- In OpenSesame, open the OSWeb extension (Menu → Tools → OSWeb).
-- The extension will perform a simple (and incomplete) check to see if your experiment appears to be compatible with OSWeb.
-- If no problems are detected, click 'Test experiment in external browser', or click on the corresponding button in the main toolbar.
-- This will open the experiment in your default browser so that you can check if the experiment runs as expected (%FigTestRun).
-- You can also click the 'Run in browser' button in the main toolbar (Alt+Ctrl+W)
+1. Open the Experiment Properties and select 'In a browser with OSWeb (osweb)' in the 'Run experiment' section.
+2. Click any of the 'Run' buttons to start the experiment.
+3. If the experiment is not compatible with OSWeb, an error message will appear that details the compatibility issues. (Refer to the 'supported functionality' section for more details.)
+4. If there are no compatibility issues, the experiment will open in a new browser window. Note that even though the experiment is running in a web browser, it is still executing locally on your own computer. To host the experiment online, you need to publish it to [JATOS](%url:jatos%).
+5. When the experiment is finished, the data will be downloaded in `.json` format. This data file can then be [converted to `.xlsx` or `.csv` format](%url:manual/osweb/data%) for further analysis.
 
 
 %--
 figure:
  id: FigTestRun
  source: testrun.png
- caption: The welcome screen of OSWeb when testing the experiment in a browser.
+ caption: Open the Experiment Properties and select 'In a browser with OSWeb (osweb)' under 'Run experiment'.
 --%
 
 
-## Debugging
+## OSWeb control panel
 
-First, make sure that your experiment only uses supported functionality, as described below. Next, run the experiment in the traditional (non-browser) way in OpenSesame. This will give you the most informative error messages that you can use for debugging.
+For more control over OSWeb experiments, you can access the OSWeb and JATOS control panel from the Tools menu. This panel offers a range of configuration options:
 
-If your experiment uses only supported functionality and runs normally in OpenSesame, then you can use the browser console to see JavaScript error messages. These are much less informative than OpenSesame's error messages, but they can still be helpful. Each browser has a different way to access the console. In Chrome, you can access the console by right-clicking somewhere, selecting Inspect (`Ctrl+Shift+I`), and then switching to the Console tab (see %FigChromeConsole). In Firefox, you can access the console by clicking on the Menu icon in the top right and then selecting Web Developer → Web Console (`Ctrl+Shift+I`).
-
-If you're using INLINE_JAVASCRIPT items in your experiment, the browser console is also a powerful way to debug your scripts, as described here:
-
-- %link:manual/javascript/about%
+- **Possible subject numbers:** When running an experiment from within JATOS, a subject number is randomly selected from this list. You can specify individual numbers using commas (e.g., '1,2,3') or number ranges (e.g., '1-10'). When running an experiment from within OpenSesame, this option does not apply, as the subject number is specified when the experiment starts.
+- **Make browser fullscreen:** This option determines whether the browser should switch to fullscreen mode when an experiment starts within JATOS. If you're running an experiment directly from OpenSesame, this option is ignored; instead, you can run the experiment fullscreen by using the regular Run button, while the Quick Run button does not enable fullscreen.
+- **Show OSWeb Welcome Screen:** This toggle controls whether participants will see a welcome screen before the experiment starts. The welcome screen can convey crucial information to participants. Additionally, it serves a technical purpose—due to browser-security policies, media playback and certain functionality is only available if the experiment is initiated by a user action. Therefore, it is generally recommended to leave this option enabled.
+- **Bypass Compatibility Check:** Enabling this option allows you to run the experiment even when the OSWeb compatibility check fails. Note that doing so will not automagically resolve compatibility issues!
+- **Welcome Text:** This field allows you to customize the welcome message displayed to participants on the welcome screen.
+- **External Libraries:** This field lets you specify any external libraries that should be loaded with your experiment. The use of external libraries is explained in more detail in the section below.
 
 
 %--
 figure:
- id: FigChromeConsole
- source: chrome-console.png
- caption: Chrome's browser console.
+ id: FigOSWebControlPanel
+ source: osweb-control-panel.png
+ caption: The OSWeb and JATOS control panel offers a range of configuration options for your OSWeb experiments.
 --%
-
 
 
 ## Supported functionality
 
-You can check whether your experiment is compatible with OSWeb using the Compatibility Check (%FigOSWebExtension). This compatibility check is fairly superficial. A more complete overview of supported functionality can be found below.
+When you run the experiment from within OpenSesame, a compatibility check is automatically performed. However, this check is fairly superficial. A more complete overview of supported functionality can be found below.
 
-__Important__: A lot of supported functionality was added in OSWeb 1.4. Therefore, check your version of OSWeb against the version notes in the list below.
 
 - `advanced_delay`
 - `feedback`
@@ -104,58 +92,12 @@ __Important__: A lot of supported functionality was added in OSWeb 1.4. Therefor
 
 The compatibility check may also indicate errors of the following type:
 
-```bash
-The prepare phase for item new_logger is called multiple times in a row
-The run phase for item new_logger is called multiple times in a row
-```
+> The prepare phase for item new_logger is called multiple times in a row
 
 This error results from how the experiment is structured, and specifically the use of linked copies. It's not always easy to understand where this error comes from, but you can read more about the prepare-run strategy in [this article](%url:prepare-run%). As a workaround, you can put the problematic items in a dummy LOOP, that is, a LOOP that simply calls the item once.
 
 
-## Supported browsers
-
-The following combinations of browser and operating systems have been tested with the latest version of OSWeb. Older browser versions, operating systems, and versions of OSWeb may work, but have not undergone recent testing. Certain extensions, such as Ad blockers or Script blockers, may prevent OSWeb from running.
-
-### Fully supported
-
-- Chrome >= 101 (Windows 11, Mac OS Monterey, Ubuntu 22.04, Android 12.0)
-- Edge >= 101 (Windows 11, Mac OS Monterey)
-- Firefox >= 99 (Windows 11, Mac OS Monterey, Ubuntu 22.04, Android 12.0)
-- Opera >= 86 (Windows 11) 
-- Chromium >= 101 (iOS 15.2)
-- Firefox >= 99 (iOS 15.2)
-- Opera >= 86 (Mac OS Monterey) 
-- Safari >= 15 (iOS 15.2, Mac OS Monterey)
-
-### Unsupported
-
-- Internet Explorer >= 11 (Windows 10) 
-
-
-
-## Upgrading OSWeb
-
-OSWeb is under active development. If you want to make sure that you're running the latest version, you can upgrade the OSWeb extension, which is called `opensesame-extension-osweb`. As of OpenSesame 3.3, you can do this by running the following command in the console:
-
-```bash
-conda update opensesame-extension-osweb -c cogsci -c conda-forge -y
-```
-
-Or:
-
-```bash
-pip install --pre opensesame-extension-osweb --upgrade
-```
-
-See also:
-
-- <https://rapunzel.cogsci.nl/manual/environment/>
-
-
 ## Including external JavaScript packages
-
-New in OSWeb v1.4.6.1
-{:.page-notification}
 
 You can include external JavaScript packages by entering URLs to these packages (one URL per line) in the input field labeled 'External JavaScript libraries'. These packages are then included with `<script>` tags in the head of the HTML.
 
@@ -164,3 +106,10 @@ For example, you can include [WebGazer](%url:webgazer%) for in-browser by enteri
 ```
 https://webgazer.cs.brown.edu/webgazer.js
 ```
+
+
+## Debugging
+
+See:
+
+- %link:debugging%

@@ -1,14 +1,14 @@
 title: Downloading and converting data
 
-Once you have collected data with OSWeb through JATOS, you can download this data in JATOS by navigating to your experiment, clicking on Results, and then selecting Export Results → All (see %FigJatosExportResults).
-
+After collecting data with OSWeb through JATOS, you can download and process this data for analysis. To download, navigate to your study within JATOS, click on 'Results', select all Result entries, and then choose 'Export Results → JATOS Results Archive' (see %FigJatosExportResults).
 
 %--
 figure:
  id: FigJatosExportResults
  source: jatos-export-results.png
- caption: Exporting results collecting with OSWeb through JATOS.
+ caption: Procedure for exporting results collected with OSWeb through JATOS.
 --%
 
+The downloaded file, typically named in the format `jatos_results_<timestamp>.jzip`, contains various folders and files corresponding to metadata and participant data. This format can be difficult to work with directly for data analysis.
 
-You will then download a file that has a name similar to `jatos_results_20190429113807.txt`. This file contains mostly JSON data, but may also contain fragments of data that render the file invalid as a regular JSON string. However, you can easily convert the data to a `.csv` or `.xlsx` file with 'Convert JATOS results to csv/ xlsx' option in the OSWeb extension.
+To simplify data analysis, you can convert this file to a more accessible format like `.csv` or `.xlsx`. This conversion can be easily achieved by using the 'Convert OSWeb results to csv/xlsx' option found in the OSWeb extension.

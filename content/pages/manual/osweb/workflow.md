@@ -18,12 +18,11 @@ First, you develop your experiment as you ordinarily would, using the OpenSesame
 
 - %link:manual/osweb/osweb%
 - %link:manual/javascript/about%
-- %link:manual/osweb/questionnaires%
 
 
 ### Uploading your experiment to JATOS
 
-Once you have developed your experiment, you export it from OpenSesame and upload it to JATOS. JATOS is a web server that manages experiments: it allows you to generate links that you can distribute participants, and it stores data that has been collected.
+Once you have developed your experiment, you publish it to JATOS. JATOS is a web server that manages experiments: it allows you to generate links that you can distribute participants, and it stores data that has been collected.
 
 There is not a single JATOS server. Rather, many institutions maintain their own JATOS server. In addition, <https://mindprobe.eu> is a free JATOS server, sponsored by ESCoP and OpenSesame.
 
@@ -32,11 +31,18 @@ There is not a single JATOS server. Rather, many institutions maintain their own
 
 ### Collecting data
 
-One you have uploaded your experiment to JATOS, you can start collecting data. You can do this by manually sending links to participants, for example through email. Or you can use a platform for participant recruitment, such as Prolific, Mechanical Turk, or Sona Systems.
+One you have published your experiment to JATOS, you can start collecting data. You can do this by manually sending links to participants, for example through email. Or you can use a platform for participant recruitment, such as Prolific, Mechanical Turk, or Sona Systems.
 
 - %link:prolific%
 - %link:mturk%
 - %link:sonasystems%
+
+
+### Analyzing data
+
+Once data collection is finished, you can download the data from JATOS and convert it to `.xlsx` or `.csv` format for further analysis:
+
+- %link:manual/osweb/data%
 
 
 ## Tutorials

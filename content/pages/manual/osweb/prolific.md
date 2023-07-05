@@ -71,18 +71,18 @@ When running the experiment through Prolific, this will make the Prolific ID ava
 ```javascript
 if (window.jatos && jatos.urlQueryParameters.PROLIFIC_PID) {
     console.log('Prolific information is available')
-    vars.prolific_participant_id = jatos.urlQueryParameters.PROLIFIC_PID
-    vars.prolific_study_id = jatos.urlQueryParameters.STUDY_ID
-    vars.prolific_session_id = jatos.urlQueryParameters.SESSION_ID
+    var prolific_participant_id = jatos.urlQueryParameters.PROLIFIC_PID
+    var prolific_study_id = jatos.urlQueryParameters.STUDY_ID
+    var prolific_session_id = jatos.urlQueryParameters.SESSION_ID
 } else {
     console.log('Prolific information is not available (setting values to -1)')
-    vars.prolific_participant_id = -1
-    vars.prolific_study_id = -1
-    vars.prolific_session_id = -1
+    var prolific_participant_id = -1
+    var prolific_study_id = -1
+    var prolific_session_id = -1
 }
-console.log('prolific_participant_id = ' + vars.prolific_participant_id)
-console.log('prolific_study_id = ' + vars.prolific_study_id)
-console.log('prolific_session_id = ' + vars.prolific_session_id)
+console.log('prolific_participant_id = ' + prolific_participant_id)
+console.log('prolific_study_id = ' + prolific_study_id)
+console.log('prolific_session_id = ' + prolific_session_id)
 ```
 
 

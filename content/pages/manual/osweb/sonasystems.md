@@ -39,12 +39,12 @@ When running the experiment through Sona, this will make the Sona ID available a
 ```javascript
 if (window.jatos && jatos.urlQueryParameters.SONA_ID) {
     console.log('Sona information is available')
-    vars.sona_participant_id = jatos.urlQueryParameters.SONA_ID
+    var sona_participant_id = jatos.urlQueryParameters.SONA_ID
 } else {
     console.log('Sona information is not available (setting value to -1)')
-    vars.sona_participant_id = -1
+    var sona_participant_id = -1
 }
-console.log('sona_participant_id = ' + vars.sona_participant_id)
+console.log('sona_participant_id = ' + sona_participant_id)
 ```
 
 
