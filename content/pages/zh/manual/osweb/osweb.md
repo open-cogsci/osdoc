@@ -1,161 +1,108 @@
 title: OSWeb
-hash: 9fc0b6a63aa91000243df7d41fe843fc7eb52f30b3e6ac866728b5e0e8ebde0a
+hash: d0eed8ce85e569f15d774ecf9cc4dff90b02dffd12470987bae00484d0c05865
 locale: zh
 language: Chinese
 
 [TOC]
 
-## 关于 OSWeb
+## 关于OSWeb
 
-OSWeb 是用于在线运行 OpenSesame 实验的运行时库。也就是说，它是一个用于解释和执行 OpenSesame 实验的 JavaScript 库。
+OSWeb是用于OpenSesame实验的在线运行环境。它是一个JavaScript库，可以在浏览器中执行OpenSesame实验。要使用OSWeb，您需要`opensesame-extension-osweb`包，该包预装在OpenSesame的Windows和macOS发行版中。
 
+## 在网络浏览器中执行实验
 
-## OSWeb 扩展
+要使用OSWeb在网络浏览器中运行实验，请按照以下步骤操作：
 
-OpenSesame 的 OSWeb 扩展（%FigOSWebExtension）允许您在浏览器中测试实验，并将实验导出为可以导入 [JATOS](%url:jatos%) 的格式。
-
-%--
-figure:
- id: FigOSWebExtension
- source: osweb-extension.png
- caption: OpenSesame中的OSWeb扩展
---%
-
-
-## 在浏览器中测试
-
-- 在 OpenSesame 中打开 OSWeb 扩展（菜单 → 工具 → OSWeb）。
-- 扩展将执行一个简单（且不完整）的检查，以查看您的实验是否与 OSWeb 兼容。
-- 如果没有检测到问题，点击“在外部浏览器中测试实验”，或者点击主工具栏中的相应按钮。
-- 这将在您的默认浏览器中打开实验，以便您检查实验是否按预期运行（%FigTestRun）。
-- 您还可以点击主工具栏中的“在浏览器中运行”按钮（Alt+Ctrl+W）。
+1. 打开实验属性，并在“运行实验”部分选择“在浏览器中使用OSWeb（osweb）”。
+2. 点击任何“运行”按钮开始实验。
+3. 如果实验与OSWeb不兼容，将出现详细说明兼容性问题的错误消息。（参见下面“支持的功能”部分以获取更多详细信息。）
+4. 如果没有兼容性问题，实验将在新的浏览器窗口中打开。请注意，即使实验在网络浏览器中运行，它仍在您自己的计算机上本地执行。 要在网上托管实验，您需要将它发布到[JATOS](％url：jatos％)。
+5. 实验结束后，数据将以`.json`格式下载。然后可以将此数据文件[转换为`.xlsx`或`.csv`格式](％url：manual/osweb/data％)，以进行进一步分析。
 
 %--
 figure:
  id: FigTestRun
  source: testrun.png
- caption: 在浏览器中测试实验时的OSWeb欢迎屏幕
+ caption: Open the Experiment Properties and select 'In a browser with OSWeb (osweb)' under 'Run experiment'.
 --%
 
+## OSWeb 控制面板
 
-## 调试
+为更好地控制OSWeb实验，您可以从工具菜单访问OSWeb和JATOS控制面板。此面板提供了一系列配置选项：
 
-首先，请确保您的实验仅使用受支持的功能，如下所示。接下来，在 OpenSesame 中以传统的（非浏览器）方式运行实验。这将为您提供可用于调试的最有用的错误消息。
-
-如您的实验仅使用受支持的功能并在 OpenSesame 正常运行，则您可以使用浏览器控制台查看 JavaScript 错误消息。这些消息的信息量远不及 OpenSesame 的错误消息，但它们仍然可能有帮助。每个浏览器访问控制台的方式都不同。在 Chrome 中，您可以通过右键单击某个位置，选择 Inspect（`Ctrl+Shift+I`），然后切换到 Console 标签（见 %FigChromeConsole）。在 Firefox 中，您可以通过点击右上角的菜单图标，然后选择 Web Developer → Web Console（`Ctrl+Shift+I`）访问控制台。
-
-如果您的实验使用了 INLINE_JAVASCRIPT 项目，浏览器控制台也是调试脚本的强大工具，如下所述：
-
-- %link:manual/javascript/about%
+- **可能的主题数字：** 在从JATOS中运行实验时，会从此列表中随机选择一个主题编号。您可以使用逗号（例如，“1,2,3”）或数字范围（例如，“1-10”）指定单个数字。 在从OpenSesame中运行实验时，此选项不适用，因为在实验开始时指定了主题编号。
+- **使浏览器全屏：**此选项决定当实验在JATOS中开始时，是否应切换到全屏模式。 如果你直接从OpenSesame运行一个实验，这个选项将被忽视；相反，你可以通过使用常规的运行按钮来全屏运行实验，而快速运行按钮则不启用全屏。
+- **显示OSWeb欢迎屏幕：** 这个切换控制参与者在实验开始之前是否会看到欢迎屏幕。 欢迎屏幕可以向参与者传达重要信息。 此外，它还具有技术目的-由于浏览器安全策略，媒体播放和某些功能只有在实验由用户操作启动时才可用。 因此，建议通常启用此选项。
+- **跳过兼容性检查：** 启用此选项可允许您在OSWeb兼容性检查失败时运行实验。 请注意，这样做不会自动解决兼容性问题！
+- **欢迎文字：**此字段允许你自定义显示给参与者的欢迎屏幕上的欢迎消息。
+- **外部库：**此字段允许您指定应与实验一起加载的任何外部库。 下面的章节将更详细地解释外部库的使用。
 
 %--
 figure:
- id: FigChromeConsole
- source: chrome-console.png
- caption: Chrome的浏览器控制台
+ id: FigOSWebControlPanel
+ source: osweb-control-panel.png
+ caption: The OSWeb and JATOS control panel offers a range of configuration options for your OSWeb experiments.
 --%
 
+## 支持的功能
 
-
-## 受支持的功能
-
-您可以使用兼容性检查（%FigOSWebExtension）检查您的实验是否与 OSWeb 兼容。这个兼容性检查相当肤浅。下面提供了受支持功能的更完整概述。
-
-__注意__：许多受支持的功能在 OSWeb 1.4 中已添加。因此，请检查您的 OSWeb 版本与以下概述的版本。
+当你从OpenSesame中运行实验时，会自动执行一个兼容性检查。 然而，这个检查相当肤浅。 支持的功能的更完整概述如下。
 
 - `advanced_delay`
 - `feedback`
     - 参见 `sketchpad`
-- `form_consent`（支持 >= v1.4）
-- `form_text_display`（支持 >= 1.4）
-- `form_text_input`（支持 >= 1.4）
+- `form_consent` (支持版本 >= v1.4)
+- `form_text_display` (支持版本 >= 1.4)
+- `form_text_input` (支持版本 >= 1.4)
     - 不支持：全屏模式
-- `form_multiple_choice`（支持 >= 1.4）
-- `inline_html`（支持 >= 1.4）
+- `form_multiple_choice` (支持版本 >= 1.4)
+- `inline_html` (支持版本 >= 1.4)
 - `inline_javascript`
 - `keyboard`
-    - 不支持：按键释放
-    - 不支持：HSV、HSL 和 CIELab 色彩空间
+    - 不支持：键释放
+    - 不支持：HSV，HSL，以及 CIELab 色彩空间
 - `logger`
 - `loop`
-    - 不支持：在中断后恢复
-    - 不支持：禁用第一次循环的评估
-    - 不支持：约束条件（伪随机化）
-    - 支持 >= 1.4：文件来源
+    - 不支持：休息后恢复
+    - 不支持：禁用第一周期评估
+    - 不支持：约束（伪随机化）
+    - 支持版本 >= 1.4：文件源
 - `mouse`
     - 不支持：鼠标释放
-    - 不支持：关联的 sketchpad
+    - 不支持：关联 sketchpad
 - `notepad`
 - `repeat_cycle`
 - `reset_feedback`
 - `sampler`
-    - 支持 >= 1.4.12: 合成声音、音调和淡入
-    - 支持 >= 1.4.12：在 Safari for Mac OS 或任何 iOS 浏览器上的声音回放
+    - 支持版本 >= 1.4.12：声音平移，音调和淡入效果
+    - 支持版本 >= 1.4.12：在 Safari 上的 Mac OS 或任何 iOS 浏览器上的声音播放
     - 不支持：停止后
 - `sequence`
 - `sketchpad`
     - 不支持：命名元素
-    - 支持 >= 1.4：图像旋转
-    - 不支持：HSV、HSL 和 CIELab 色彩空间
+    - 支持版本 >= 1.4：图像旋转
+    - 不支持：HSV，HSL，以及 CIELab 色彩空间 
 - `touch_response`
 
-兼容性检查可能还会显示以下类型的错误：
+兼容性检查也可能指示以下类型的错误：
 
-```bash
-项目new_logger的准备阶段被连续调用多次
-项目new_logger的运行阶段被连续调用多次
-```
+> 项目 new_logger 的准备阶段被连续多次调用
 
-此错误是由实验的结构以及特别是链接副本的使用所导致的。这个错误的来源并不总是容易理解，但您可以在[这篇文章](%url:prepare-run%)中了解更多关于准备-运行策略的信息。作为一种解决方法，您可以将有问题的项目放在一个虚拟的循环中，也就是说，一个只调用项目一次的循环。
-
-## 支持的浏览器
-
-以下浏览器和操作系统组合已经过与最新版本的OSWeb的兼容性测试。较旧的浏览器版本、操作系统和OSWeb版本可能可以使用，但近期未经过充分测试。某些扩展，如广告拦截器或脚本拦截器，可能会阻止OSWeb运行。
-
-### 完全支持
-
-- Chrome >= 101 (Windows 11, Mac OS Monterey, Ubuntu 22.04, Android 12.0)
-- Edge >= 101 (Windows 11, Mac OS Monterey)
-- Firefox >= 99 (Windows 11, Mac OS Monterey, Ubuntu 22.04, Android 12.0)
-- Opera >= 86 (Windows 11) 
-- Chromium >= 101 (iOS 15.2)
-- Firefox >= 99 (iOS 15.2)
-- Opera >= 86 (Mac OS Monterey) 
-- Safari >= 15 (iOS 15.2, Mac OS Monterey)
-
-### 不支持
-
-- Internet Explorer >= 11 (Windows 10) 
-
-
-## 升级OSWeb
-
-OSWeb正在积极开发中。如果您想确保您正在运行的是最新版本，可以升级名为`opensesame-extension-osweb`的OSWeb扩展。从OpenSesame 3.3开始，您可以在控制台中运行以下命令来实现：
-
-```bash
-conda update opensesame-extension-osweb -c cogsci -c conda-forge -y
-```
-
-或：
-
-```bash
-pip install --pre opensesame-extension-osweb --upgrade
-```
-
-另请参阅：
-
-- <https://rapunzel.cogsci.nl/manual/environment/>
-
+这个错误是由于实验的结构导致的，特别是链接复制的使用。这个错误的来源并不总是容易理解，但是您可以在[这篇文章](%url:prepare-run%)中了解更多关于准备-运行策略。作为一种解决方案，你可以将有问题的项目放到一个虚拟的 LOOP 中，也就是一个仅仅调用一次该项目的 LOOP 。
 
 ## 包含外部JavaScript包
 
-新增于OSWeb v1.4.6.1
-{:.page-notification}
+您可以通过在标有 'External JavaScript libraries' 的输入字段中输入这些包的 URL （每行一个 URL ）来包含外部 JavaScript 包。然后，这些包将通过在 HTML 头部的 `<script>` 标签进行包含。
 
-您可以通过在标签为“外部JavaScript库”的输入字段中输入这些包的网址（每行一个网址）来包含外部JavaScript包。然后，这些包将通过HTML头部的`<script>`标签包含。
-
-例如，您可以通过输入以下链接将[WebGazer](%url:webgazer%)包含到浏览器中:
+比如，您可以通过输入以下链接来包含矛盾：
 
 ```
 https://webgazer.cs.brown.edu/webgazer.js
 ```
+
+
+## 调试
+
+见：
+
+- %link:debugging%

@@ -1,5 +1,5 @@
 title: Über JavaScript
-hash: 073e796248136726c6b04b838715a867d5ef1958a34beae0785870553faa2e4c
+hash: c3cfb549c6deb5d2a4f14b8681cb80f556bc41109c145df9574880d7eaa2399b
 locale: de
 language: German
 
@@ -111,7 +111,7 @@ vars.my_variable = 'mein_wert'
 
 ### Das `pool` Objekt: Zugriff auf den Datei-Pool
 
-Über das `pool` Objekt erhalten Sie Zugriff auf die 'Dateien' aus dem Datei-Pool. Der offensichtlichste Einsatz dafür ist das Auslesen von CSV-Dateien, zum Beispiel mit experimentellen Bedingungen, aus dem Datei-Pool mit Hilfe der `csv-parse` Bibliothek (weiter unten im Detail beschrieben).
+Sie greifen auf 'Dateien' aus dem Datei-Pool über das `pool` Objekt zu. Der offensichtlichste Gebrauch dafür ist das Parsen von CSV-Dateien, zum Beispiel mit experimentellen Bedingungen, aus dem Datei-Pool mit der `csv-parse` Bibliothek (weiter unten genauer beschrieben).
 
 ```js
 const conditions = csvParse(
@@ -123,7 +123,7 @@ for (const trial of conditions) {
 }
 ```
 
-Sie können auch Tondateien direkt aus dem Datei-Pool abspielen. Angenommen, es gibt eine Datei namens `bark.ogg` im Datei-Pool, dann können Sie sie so abspielen:
+Sie können auch direkt Sounddateien aus dem Datei-Pool abspielen. Angenommen, es gibt eine Datei namens `bark.ogg` im Datei-Pool, können Sie sie folgendermaßen abspielen:
 
 ```js
 pool['bark.ogg'].data.play()
@@ -132,7 +132,7 @@ pool['bark.ogg'].data.play()
 
 ### Die `Canvas` Klasse: Präsentation von visuellen Reizen
 
-Die `Canvas` Klasse wird verwendet, um visuelle Reize darzustellen. So können Sie zum Beispiel einen Fixationspunkt auf folgende Weise anzeigen:
+Die `Canvas` Klasse wird verwendet, um visuelle Reize zu präsentieren. Zum Beispiel können Sie einen Fixierungspunkt wie folgt anzeigen:
 
 ```js
 let myCanvas = Canvas()
@@ -144,7 +144,7 @@ Eine vollständige Übersicht über die `Canvas` Klasse finden Sie hier:
 
 - %link:manual/javascript/canvas%
 
-## Verfügbarer JavaScript-Bibliotheken
+## Verfügbar JavaScript-Bibliotheken
 
 Die folgenden JavaScript-Bibliotheken sind standardmäßig enthalten:
 
@@ -153,30 +153,11 @@ Die folgenden JavaScript-Bibliotheken sind standardmäßig enthalten:
 - [CSV-Funktionen (`csv-parse`)](%url:manual/javascript/csv%)
 - [Python-ähnliche Iteratoren (`pythonic`)](%url:manual/javascript/pythonic%)
 
-Sie können zusätzliche JavaScript-Bibliotheken hinzufügen, indem Sie URLs zu den Bibliotheken im Feld 'Externe JavaScript-Bibliotheken' des OSWeb-Kontrollpanels eingeben.
+Sie können zusätzliche JavaScript-Bibliotheken durch URLs zu den Bibliotheken im Feld 'Externe JavaScript-Bibliotheken' im OSWeb-Kontrollfeld einbinden.
 
 
-## Debugging
+## Debuggen
 
-Die meisten modernen Browser, insbesondere Chrome und Firefox, verfügen über einen leistungsstarken integrierten Debugger. Sie können den Debugger aktivieren, indem Sie eine Zeile, die einfach `debugger` in Ihrem Skript enthält, hinzufügen (%FigDebuggerInlineJavaScript).
+Siehe:
 
-%--
-figure:
- id: FigDebuggerInlineJavaScript
- source: debugger-inline-javascript.png
- caption: Aktivierung des Debuggers aus einem INLINE_JAVASCRIPT Element.
---%
-
-
-Starten Sie dann das Experiment und zeigen Sie den Debugger (oder: Dev tools in Chrome oder: Web Developer Tools in Firefox) sobald der OSWeb-Begrüßungsbildschirm erscheint. Der Debugger wird das Experiment anhalten, wenn er auf die Anweisung `debugger` stößt. An diesem Punkt können Sie die Konsole verwenden, um mit dem JavaScript-Arbeitsbereich zu interagieren, oder Sie können Variablen mit dem Scope-Tool untersuchen (%FigDebuggerChrome).
-
-%--
-figure:
- id: FigDebuggerChrome
- source: debugger-chrome.png
- caption: Überprüfen des Variablenbereichs in Chrome.
---%
-
-Weitere Informationen finden Sie unter:
-
-- %link:manual/osweb/osweb%
+- %link:debugging%

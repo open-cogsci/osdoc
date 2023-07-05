@@ -1,5 +1,5 @@
 title: OSWeb
-hash: 9fc0b6a63aa91000243df7d41fe843fc7eb52f30b3e6ac866728b5e0e8ebde0a
+hash: d0eed8ce85e569f15d774ecf9cc4dff90b02dffd12470987bae00484d0c05865
 locale: fr
 language: French
 
@@ -8,82 +8,68 @@ language: French
 
 ## À propos d'OSWeb
 
-OSWeb est un environnement d'exécution en ligne pour les expériences OpenSesame. C'est-à-dire, une bibliothèque JavaScript qui interprète et exécute les expériences OpenSesame.
+OSWeb est un environnement d'exécution en ligne pour les expériences OpenSesame. C'est une bibliothèque JavaScript qui exécute les expériences OpenSesame dans un navigateur. Pour utiliser OSWeb, vous avez besoin du package `opensesame-extension-osweb`, qui est préinstallé avec les distributions Windows et macOS d'OpenSesame.
 
 
-## L'extension OSWeb
+## Exécuter une expérience dans un navigateur Web
 
-L'extension OSWeb pour OpenSesame (%FigOSWebExtension) vous permet de tester les expériences dans un navigateur et d'exporter les expériences dans un format que vous pouvez importer dans [JATOS](%url:jatos%).
+Pour exécuter une expérience dans un navigateur web à l'aide d'OSWeb, suivez ces étapes :
 
+1. Ouvrez les propriétés de l'expérience et sélectionnez 'Dans un navigateur avec OSWeb (osweb)' dans la section 'Exécuter l'expérience'.
+2. Cliquez sur n'importe quel bouton 'Exécuter' pour démarrer l'expérience.
+3. Si l'expérience n'est pas compatible avec OSWeb, un message d'erreur apparaîtra détaillant les problèmes de compatibilité. (Consultez la section 'fonctionnalités prises en charge' pour plus de détails.)
+4. S'il n'y a pas de problèmes de compatibilité, l'expérience s'ouvrira dans une nouvelle fenêtre de navigateur. Notez que même si l'expérience se déroule dans un navigateur web, elle est toujours exécutée localement sur votre propre ordinateur. Pour héberger l'expérience en ligne, vous devez la publier sur [JATOS](%url:jatos%). 
+5. Lorsque l'expérience est terminée, les données sont téléchargées au format `.json`. Ce fichier de données peut ensuite être [converti au format `.xlsx` ou `.csv`](%url:manual/osweb/data%) pour une analyse ultérieure.
 
-%--
-figure:
- id: FigOSWebExtension
- source: osweb-extension.png
- caption: L'extension OSWeb pour OpenSesame.
---%
-
-
-## Tests dans un navigateur
-
-- Dans OpenSesame, ouvrez l'extension OSWeb (Menu → Outils → OSWeb).
-- L'extension effectuera une vérification simple (et incomplète) pour voir si votre expérience semble être compatible avec OSWeb.
-- Si aucun problème n'est détecté, cliquez sur 'Tester l'expérience dans un navigateur externe' ou cliquez sur le bouton correspondant dans la barre d'outils principale.
-- Cela ouvrira l'expérience dans votre navigateur par défaut afin que vous puissiez vérifier si l'expérience fonctionne comme prévu (%FigTestRun).
-- Vous pouvez également cliquer sur le bouton 'Exécuter dans un navigateur' dans la barre d'outils principale (Alt+Ctrl+W)
 
 %--
 figure:
  id: FigTestRun
  source: testrun.png
- caption: L'écran de bienvenue d'OSWeb lors du test de l'expérience dans un navigateur.
+ caption: Ouvrir les propriétés de l'expérience et sélectionner 'Dans un navigateur avec OSWeb (osweb)' sous 'Exécuter l'expérience'.
 --%
 
+## Panneau de contrôle d'OSWeb
 
-## Débogage
+Pour avoir plus de contrôle sur les expériences OSWeb, vous pouvez accéder au panneau de contrôle d'OSWeb et de JATOS depuis le menu Outils. Ce panneau propose une série d'options de configuration :
 
-Tout d'abord, assurez-vous que votre expérience n'utilise que les fonctionnalités prises en charge, comme décrit ci-dessous. Ensuite, exécutez l'expérience de manière traditionnelle (hors navigateur) dans OpenSesame. Cela vous donnera les messages d'erreur les plus informatifs que vous pouvez utiliser pour le débogage.
-
-Si votre expérience n'utilise que des fonctionnalités prises en charge et fonctionne normalement dans OpenSesame, vous pouvez utiliser la console du navigateur pour voir les messages d'erreur JavaScript. Ces messages sont beaucoup moins informatifs que les messages d'erreur d'OpenSesame, mais ils peuvent toujours être utiles. Chaque navigateur a une manière différente d'accéder à la console. Dans Chrome, vous pouvez accéder à la console en faisant un clic droit quelque part, en sélectionnant Inspecter (`Ctrl+Shift+I`) puis en passant à l'onglet Console (voir % FigChromeConsole). Dans Firefox, vous pouvez accéder à la console en cliquant sur l'icône du menu en haut à droite, puis en sélectionnant Développeur Web → Console Web (`Ctrl+Shift+I`).
-
-Si vous utilisez des éléments INLINE_JAVASCRIPT dans votre expérience, la console du navigateur est également un moyen puissant de déboguer vos scripts, comme décrit ici :
-
-- %link:manual/javascript/about%
+- **Numéros de sujet possibles :** Lors de l'exécution d'une expérience depuis JATOS, un numéro de sujet est aléatoirement sélectionné dans cette liste. Vous pouvez spécifier des numéros individuels à l'aide de virgules (par exemple, '1,2,3') ou des plages de numéros (par exemple, '1-10'). Lors de l'exécution d'une expérience depuis OpenSesame, cette option ne s'applique pas, car le numéro de sujet est spécifié lorsque l'expérience commence.
+- **Passer le navigateur en plein écran :** Cette option détermine si le navigateur doit passer en mode plein écran lorsqu'une expérience commence dans JATOS. Si vous exécutez une expérience directement depuis OpenSesame, cette option est ignorée ; à la place, vous pouvez exécuter l'expérience en plein écran en utilisant le bouton Exécuter normal, tandis que le bouton Exécution rapide n'active pas le plein écran.
+- **Afficher l'écran d'accueil d'OSWeb :** Ce bascule contrôle si les participants verront un écran d'accueil avant que l'expérience commence. L'écran d'accueil peut transmettre des informations cruciales aux participants. De plus, il a une fonction technique – en raison des politiques de sécurité des navigateurs, la lecture des médias et certaines fonctionnalités ne sont disponibles que si l'expérience est initiée par une action de l'utilisateur. Par conséquent, il est généralement recommandé de laisser cette option activée.
+- **Contourner le contrôle de compatibilité :** Activer cette option vous permet d'exécuter l'expérience même lorsque le contrôle de compatibilité d'OSWeb échoue. Notez que ceci ne résoudra pas automatiquement les problèmes de compatibilité !
+- **Texte de bienvenue :** Ce champ vous permet de personnaliser le message de bienvenue affiché aux participants sur l'écran d'accueil.
+- **Bibliothèques externes :** Ce champ vous permet de spécifier toute bibliothèque externe qui devrait être chargée avec votre expérience. L'utilisation de bibliothèques externes est expliquée plus en détail dans la section ci-dessous.
 
 %--
 figure:
- id: FigChromeConsole
- source: chrome-console.png
- caption: La console du navigateur Chrome.
+ id: FigOSWebControlPanel
+ source: osweb-control-panel.png
+ caption: Le panneau de contrôle OSWeb et JATOS propose une série d'options de configuration pour vos expériences OSWeb.
 --%
-
-
 
 ## Fonctionnalités prises en charge
 
-Vous pouvez vérifier si votre expérience est compatible avec OSWeb en utilisant la vérification de compatibilité (%FigOSWebExtension). Cette vérification de compatibilité est assez superficielle. Un aperçu plus complet des fonctionnalités prises en charge se trouve ci-dessous.
-
-__Important__: Beaucoup de fonctionnalités prises en charge ont été ajoutées dans OSWeb 1.4. Par conséquent, vérifiez votre version d'OSWeb par rapport aux notes de version dans la liste ci-dessous.
+Lorsque vous exécutez l'expérience depuis OpenSesame, une vérification de compatibilité est automatiquement effectuée. Cependant, cette vérification est assez superficielle. Un aperçu plus complet des fonctionnalités prises en charge peut être trouvé ci-dessous.
 
 - `advanced_delay`
 - `feedback`
     - Voir `sketchpad`
-- `form_consent` (supported >= v1.4)
-- `form_text_display` (supported >= 1.4)
-- `form_text_input` (supported >= 1.4)
+- `form_consent` (supporté >= v1.4)
+- `form_text_display` (supporté >= 1.4)
+- `form_text_input` (supporté >= 1.4)
     - Non pris en charge : mode plein écran
-- `form_multiple_choice` (supported >= 1.4)
-- `inline_html` (supported >= 1.4)
+- `form_multiple_choice` (supporté >= 1.4)
+- `inline_html` (supporté >= 1.4)
 - `inline_javascript`
 - `keyboard`
-    - Non pris en charge : relâchement des touches
-    - Non pris en charge : espaces colorimétriques HSV, HSL et CIELab
+    - Non pris en charge : relâchement de la touche
+    - Non pris en charge : espaces de couleurs HSV, HSL et CIELab
 - `logger`
 - `loop`
-    - Non pris en charge : reprise après une pause
-    - Non pris en charge : désactivation de l'évaluation lors du premier cycle
-    - Non pris en charge : contraintes (pseudo-randomisation)
-    - Pris en charge >= 1.4 : source de fichier
+    - Non pris en charge : reprise après pause
+    - Non pris en charge : Désactivation de l'évaluation lors du premier cycle
+    - Non pris en charge : contraintes (pseudorandomisation)
+    - Supporté >= 1.4: source de fichier
 - `mouse`
     - Non pris en charge : relâchement de la souris
     - Non pris en charge : sketchpad lié
@@ -91,71 +77,37 @@ __Important__: Beaucoup de fonctionnalités prises en charge ont été ajoutées
 - `repeat_cycle`
 - `reset_feedback`
 - `sampler`
-    - Pris en charge >= 1.4.12 : panoramique, hauteur et fondu
-    - Pris en charge >= 1.4.12 : lecture du son sur Safari sur Mac OS ou sur n'importe quel navigateur sur iOS
-    - Non pris en charge : arrêter après
+    - Supporté >= 1.4.12 : balayage, hauteur et estompage
+    - Supporté >= 1.4.12 : Lecture de son sur Safari sur Mac OS ou n'importe quel navigateur sur iOS
+    - Non pris en charge : stop après
 - `sequence`
 - `sketchpad`
     - Non pris en charge : éléments nommés
-    - Pris en charge >= 1.4 : rotation de l'image
-    - Non pris en charge : espaces colorimétriques HSV, HSL et CIELab
+    - Supporté >= 1.4 : rotation de l'image
+    - Non pris en charge : espaces de couleurs HSV, HSL et CIELab
 - `touch_response`
+
 
 La vérification de compatibilité peut également indiquer des erreurs du type suivant :
 
-```bash
-La phase de préparation pour l'élément new_logger est appelée plusieurs fois de suite
-La phase d'exécution pour l'élément new_logger est appelée plusieurs fois de suite
-```
+> La phase de préparation pour l'élément new_logger est appelée plusieurs fois de suite
 
-Cette erreur provient de la structure de l'expérience, et plus précisément de l'utilisation de copies liées. Il n'est pas toujours facile de comprendre d'où vient cette erreur, mais vous pouvez en savoir plus sur la stratégie de préparation-exécution dans [cet article](%url:prepare-run%). En guise de solution temporaire, vous pouvez mettre les éléments problématiques dans une boucle factice, c'est-à-dire une boucle qui appelle simplement l'élément une fois.
+Cette erreur résulte de la façon dont l'expérience est structurée, et en particulier de l'utilisation de copies liées. Il n'est pas toujours facile de comprendre d'où vient cette erreur, mais vous pouvez en savoir plus sur la stratégie de préparation-exécution dans [cet article](%url:prepare-run%). Comme solution de contournement, vous pouvez placer les éléments problématiques dans une boucle factice, c'est-à-dire, une boucle qui appelle simplement l'élément une fois.
 
-## Navigateurs pris en charge
 
-Les combinaisons de navigateurs et de systèmes d'exploitation suivantes ont été testées avec la dernière version d'OSWeb. Les versions antérieures des navigateurs, des systèmes d'exploitation et des versions d'OSWeb peuvent fonctionner, mais n'ont pas été testées récemment. Certaines extensions, telles que les bloqueurs de publicités ou les bloqueurs de scripts, peuvent empêcher OSWeb de fonctionner.
+## Inclusion de packages JavaScript externes
 
-### Complètement pris en charge
+Vous pouvez inclure des packages JavaScript externes en entrant les URL de ces packages (une URL par ligne) dans le champ d'entrée intitulé 'Bibliothèques JavaScript externes'. Ces packages sont ensuite inclus avec des balises `<script>` dans l'en-tête du HTML.
 
-- Chrome >= 101 (Windows 11, Mac OS Monterey, Ubuntu 22.04, Android 12.0)
-- Edge >= 101 (Windows 11, Mac OS Monterey)
-- Firefox >= 99 (Windows 11, Mac OS Monterey, Ubuntu 22.04, Android 12.0)
-- Opera >= 86 (Windows 11)
-- Chromium >= 101 (iOS 15.2)
-- Firefox >= 99 (iOS 15.2)
-- Opera >= 86 (Mac OS Monterey)
-- Safari >= 15 (iOS 15.2, Mac OS Monterey)
-
-### Non pris en charge
-
-- Internet Explorer >= 11 (Windows 10)
-
-## Mise à jour d'OSWeb
-
-OSWeb est en développement actif. Si vous souhaitez vous assurer que vous utilisez la dernière version, vous pouvez mettre à jour l'extension OSWeb, appelée `opensesame-extension-osweb`. À partir d'OpenSesame 3.3, vous pouvez le faire en exécutant la commande suivante dans la console :
-
-```bash
-conda update opensesame-extension-osweb -c cogsci -c conda-forge -y
-```
-
-Ou :
-
-```bash
-pip install --pre opensesame-extension-osweb --upgrade
-```
-
-Voir aussi :
-
-- <https://rapunzel.cogsci.nl/manual/environment/>
-
-## Inclure des bibliothèques JavaScript externes
-
-Nouveau dans OSWeb v1.4.6.1
-{:.page-notification}
-
-Vous pouvez inclure des bibliothèques JavaScript externes en saisissant les URL de ces bibliothèques (une URL par ligne) dans le champ de saisie intitulé 'Bibliothèques JavaScript externes'. Ces bibliothèques sont ensuite incluses avec des balises `<script>` dans l'en-tête du HTML.
-
-Par exemple, vous pouvez inclure [WebGazer](%url:webgazer%) pour un navigateur en entrant le lien suivant :
+Par exemple, vous pouvez inclure [WebGazer](%url:webgazer%) pour le navigateur en entrant le lien suivant :
 
 ```
 https://webgazer.cs.brown.edu/webgazer.js
 ```
+
+
+## Débogage
+
+Voir :
+
+- %link:debugging%

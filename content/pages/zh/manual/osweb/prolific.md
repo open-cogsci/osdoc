@@ -1,32 +1,35 @@
 title: Prolific
-hash: ae0240db997107f3570b2cbf0d4576f801d25a57fbdd0a043e7f8be1bb82d715
+hash: fd3ba787ea541676148e558d0e902641c2b9f9eb848745aff73e95c443e9fc56
 locale: zh
 language: Chinese
 
 [TOC]
 
+
 ## 关于Prolific
 
-[Prolific](https://prolific.co/)是一种用于招募研究参与者的商业工具。要在Prolific上运行OSWeb实验，您需要按照以下步骤操作。
+[Prolific](https://prolific.co/) 是一个用于招募研究参与者的商业工具。要在Prolific 上运行 OSWeb 实验，需要按照下面的步骤进行。
 
-另请参阅：
+请参考：
 
 - <http://www.jatos.org/Use-Prolific.html>
 
-## 在JATOS上创建研究
 
-首先，将您的实验导入到JATOS中，如上所述。接下来，进入Worker & Batch Manager，激活General Multiple Worker，点击Get Link获取URL，并将其复制（%FigJatosURL）。
+## 在 JATOS 上创建研究
+
+首先，将实验导入到 JATOS 中，如上所述。接下来，进入 Worker & Batch Manager，激活 General Multiple Worker，点击 Get Link 获取一个 URL 并复制它（%FigJatosURL）。
 
 %--
-图：
+figure:
  id: FigJatosURL
  source: jatos-url.png
- caption: 从JATOS获取研究URL。
+ caption: 从 JATOS 获取研究的URL。
 --%
 
-## 在Prolific上创建研究
 
-接下来，在Prolific上创建一个研究。在Study Details（%FigProlific）下，将JATOS研究URL插入到标有“What is the URL of your study?”的字段中。这将告诉Prolific如何启动实验。重要的是，在URL末尾添加以下内容（这将从Prolific传递重要信息到您的实验中）：
+## 在 Prolific 创建研究
+
+接下来，在 Prolific 上创建研究。在“研究详情”（%FigProlific）下，将 JATOS 的研究 URL 插入标有 "What is the URL of your study?" 的字段中。这将告诉 Prolific 如何启动实验。重要的是，将下面的内容添加到 URL 的末尾（这将把 Prolific 的重要信息传递给您的实验）：
 
 {% raw %}
 ```bash
@@ -34,48 +37,50 @@ language: Chinese
 ```
 {% endraw %}
 
-当实验完成时，Prolific需要知道这一点。为此，Prolific使用一个End Redirect URL，在标有"To prove that participants have completed your study …"的字段中列出。复制此End Redirect URL。还要勾选上标有"I've set up my study to redirect to this url at the end"的框。
+实验完成后，Prolific 需要了解此情况。为此，Prolific 使用了一个 End Redirect URL，该 URL 列在标有 "To prove that participants have completed your study …" 的字段中。复制这个 End Redirect URL。另外，勾选标有 "I've set up my study to redirect to this url at the end" 的方框。
 
 %--
-图：
+figure:
  id: FigProlific
  source: prolific.png
- caption: Prolific上的研究详细信息。
+ caption: Prolific 中的研究详情。
 --%
 
-## 在JATOS中设置End Redirect URL
 
-现在回到JATOS，打开您的研究的属性（%FigJatosProperties）。在那里，将您从Prolific复制的End Redirect URL粘贴到标有"End Redirect URL"的字段中。这将告诉JATOS在实验完成时，参与者应该被重定向回Prolific，以便Prolific知道参与者完成了实验。
+
+## 在 JATOS 中设置 End Redirect URL
+
+现在返回到 JATOS，并打开您的研究的属性（%FigJatosProperties）。在这里，将您从 Prolific 复制的 End Redirect URL 粘贴到标有 "End Redirect URL" 的字段中。这将告诉 JATOS，实验结束时，参与者应该被重定向回 Prolific，以便 Prolific 知道参与者已经完成了实验。
 
 %--
-图：
+figure:
  id: FigJatosProperties
  source: jatos-properties.png
- caption: 在JATOS中设置End Redirect URL。
+ caption: 在 JATOS 设置 End Redirect URL。
 --%
 
-## 在您的实验中注册Prolific信息
 
-每个来自Prolific的参与者都有一个唯一的ID。记录这个ID很重要，因为这可以让您知道哪个Prolific参与者对应JATOS结果中的哪个条目。您可以通过将以下脚本添加到您实验开始时的`inline_javascript`项的Prepare阶段来实现这一点。
+## 在您的实验中注册 Prolific 信息
 
-当通过Prolific运行实验时，这将使Prolific ID作为实验变量`prolific_participant_id`可用。当以其他方式运行实验（例如在测试过程中），变量`prolific_participant_id`将设置为-1。这个逻辑同样适用于Prolific Study ID（`prolific_study_id`）和Prolific Session ID（`prolific_session_id`）。
+Prolific 的每个参与者都由一个唯一的 ID 标识。在您的实验中记录此 ID 很重要，因为这可以让您知道哪个来自 Prolific 的参与者对应 JATOS 结果中的哪一项。您可以通过在实验开始时的 `inline_javascript` 项目的准备阶段添加下面的脚本来实现这一点。
 
+当通过 Prolific 运行实验时，将使 Prolific ID 作为试验变量 `prolific_participant_id` 可用。当以任何其他方式运行实验时（例如在测试中），变量 `prolific_participant_id` 将被设置为 -1。同样的逻辑适用于 Prolific 研究 ID（`prolific_study_id`）和 Prolific 会话 ID （`prolific_session_id`）。
 
 ```javascript
 if (window.jatos && jatos.urlQueryParameters.PROLIFIC_PID) {
-    console.log('Prolific information is available')
-    vars.prolific_participant_id = jatos.urlQueryParameters.PROLIFIC_PID
-    vars.prolific_study_id = jatos.urlQueryParameters.STUDY_ID
-    vars.prolific_session_id = jatos.urlQueryParameters.SESSION_ID
+    console.log('Prolific 信息可用')
+    var prolific_participant_id = jatos.urlQueryParameters.PROLIFIC_PID
+    var prolific_study_id = jatos.urlQueryParameters.STUDY_ID
+    var prolific_session_id = jatos.urlQueryParameters.SESSION_ID
 } else {
-    console.log('Prolific information is not available (setting values to -1)')
-    vars.prolific_participant_id = -1
-    vars.prolific_study_id = -1
-    vars.prolific_session_id = -1
+    console.log('Prolific 信息不可用（设置值为 -1）')
+    var prolific_participant_id = -1
+    var prolific_study_id = -1
+    var prolific_session_id = -1
 }
-console.log('prolific_participant_id = ' + vars.prolific_participant_id)
-console.log('prolific_study_id = ' + vars.prolific_study_id)
-console.log('prolific_session_id = ' + vars.prolific_session_id)
+console.log('prolific_participant_id = ' + prolific_participant_id)
+console.log('prolific_study_id = ' + prolific_study_id)
+console.log('prolific_session_id = ' + prolific_session_id)
 ```
 
 ## 测试研究

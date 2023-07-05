@@ -1,5 +1,5 @@
 title: À propos de JavaScript
-hash: 073e796248136726c6b04b838715a867d5ef1958a34beae0785870553faa2e4c
+hash: c3cfb549c6deb5d2a4f14b8681cb80f556bc41109c145df9574880d7eaa2399b
 locale: fr
 language: French
 
@@ -111,7 +111,7 @@ vars.my_variable = 'my_value'
 
 ### L'objet `pool` : Accès à la réserve de fichiers
 
-Vous accédez aux 'fichiers' de la réserve de fichiers via l'objet `pool`. L'utilisation la plus évidente de cela est de lire les fichiers CSV, par exemple avec les conditions expérimentales, à partir de la réserve de fichiers en utilisant la bibliothèque `csv-parse` (décrite plus en détail ci-dessous).
+Vous accédez aux 'fichiers' de la réserve de fichiers via l'objet `pool`. L'utilisation la plus évidente de ceci est de parser les fichiers CSV, par exemple avec des conditions expérimentales, à partir de la réserve de fichiers en utilisant la bibliothèque `csv-parse` (décrite plus en détail ci-dessous).
 
 ```js
 const conditions = csvParse(
@@ -123,14 +123,14 @@ for (const trial of conditions) {
 }
 ```
 
-Vous pouvez également jouer des fichiers sonores directement à partir de la réserve de fichiers. En supposant qu'il y ait un fichier appelé `bark.ogg` dans la réserve de fichiers, vous pouvez le jouer comme ceci :
+Vous pouvez aussi lire des fichiers sonores directement à partir de la réserve de fichiers. En supposant qu'il y a un fichier appelé `bark.ogg` dans la réserve de fichiers, vous pouvez le jouer comme ceci :
 
 ```js
 pool['bark.ogg'].data.play()
 ```
 
 
-### La classe `Canvas` : Présentation de stimuli visuels
+### La classe `Canvas` : Présentation des stimuli visuels
 
 La classe `Canvas` est utilisée pour présenter des stimuli visuels. Par exemple, vous pouvez montrer un point de fixation comme suit :
 
@@ -140,43 +140,24 @@ myCanvas.fixdot()
 myCanvas.show()
 ```
 
-Un aperçu complet de la classe `Canvas` se trouve ici :
+Un aperçu complet de la classe `Canvas` peut être trouvé ici :
 
 - %link:manual/javascript/canvas%
 
-## Bibliothèques JavaScript disponibles
+## Les bibliothèques JavaScript disponibles
 
 Les bibliothèques JavaScript suivantes sont incluses par défaut :
 
 - [Fonctions aléatoires (`random-ext`)](%url:manual/javascript/random%)
 - [Fonctions de conversion de couleurs (`color-convert`)](%url:manual/javascript/color-convert%)
 - [Fonctions CSV (`csv-parse`)](%url:manual/javascript/csv%)
-- [Itérateurs de type Python (`pythonic`)](%url:manual/javascript/pythonic%)
+- [Itérateurs à la Python (`pythonic`)](%url:manual/javascript/pythonic%)
 
-Vous pouvez inclure des bibliothèques JavaScript supplémentaires en ajoutant les URL des bibliothèques dans le champ 'Bibliothèques JavaScript externes' du panneau de configuration d'OSWeb.
+Vous pouvez inclure d'autres bibliothèques JavaScript en ajoutant des URL vers les bibliothèques dans le champ 'Bibliothèques JavaScript externes' du panneau de contrôle OSWeb.
 
 
 ## Débogage
 
-La plupart des navigateurs modernes, notamment Chrome et Firefox, disposent d'un débogueur intégré puissant. Vous pouvez activer le débogueur en ajoutant une ligne qui indique simplement `debugger` à votre script (%FigDebuggerInlineJavaScript).
+Voir :
 
-%--
-figure:
- id: FigDebuggerInlineJavaScript
- source: debugger-inline-javascript.png
- caption: Activation du débogueur à partir d'un élément INLINE_JAVASCRIPT.
---%
-
-
-Ensuite, démarrez l'expérience et affichez le débogueur (ou : Dev tools dans Chrome, ou : Outils web de développement dans Firefox) dès que l'écran d'accueil d'OSWeb apparaît. Le débogueur mettra alors en pause l'expérience lorsqu'il rencontrera l'instruction `debugger`. À ce stade, vous pouvez utiliser la Console pour interagir avec l'espace de travail JavaScript, ou vous pouvez inspecter les variables en utilisant l'outil Scope (%FigDebuggerChrome).
-
-%--
-figure:
- id: FigDebuggerChrome
- source: debugger-chrome.png
- caption: Inspecter la portée des variables dans Chrome.
---%
-
-Voir aussi :
-
-- %link:manual/osweb/osweb%
+- %link:debugging%

@@ -1,15 +1,17 @@
 title: 下载并转换数据
-hash: 107ebe6aa385be243fb6fa5d9117a4cbe10925553e29d4cbf251a8ba7a3b0ef9
+hash: 3ab535f2cc44ff0565b2183aa31768623aacd998a849e1cf6667e3b4ec5425da
 locale: zh
 language: Chinese
 
-当你通过JATOS使用OSWeb收集到数据后，你可以在JATOS中下载这些数据。方法是导航到你的实验，点击结果，然后选择导出结果→全部（参见％FigJatosExportResults）。
+使用OSWeb通过JATOS收集数据后，您可以下载并处理这些数据进行分析。要下载，请导航到JATOS中的您的研究，点击“结果”，选择所有的结果条目，然后选择“导出结果 → JATOS结果存档”（见％FigJatosExportResults）。
 
 %--
 figure:
  id: FigJatosExportResults
  source: jatos-export-results.png
- caption: 通过 JATOS 导出使用 OSWeb 收集的结果。
+ caption: Procedure for exporting results collected with OSWeb through JATOS.
 --%
 
-然后，您将下载一个名为`jatos_results_20190429113807.txt`的文件。这个文件主要包含 JSON 数据，但也可能包含使文件作为常规 JSON 字符串无效的数据片段。然而，您可以轻松地使用 OSWeb 扩展中的'将 JATOS 结果转换为 csv/ xlsx'选项将数据转换为`.csv`或`.xlsx`文件。
+下载的文件，通常以`jatos_results_<timestamp>.jzip`的格式命名，包含着对应于元数据和参与者数据的各种文件夹和文件。这种格式直接用于数据分析可能会比较困难。
+
+为了简化数据分析，您可以将此文件转换为更易访问的格式，如`.csv`或`.xlsx`。通过使用OSWeb扩展中的'转换OSWeb结果为csv/xlsx'选项，可以轻松实现这种转换。

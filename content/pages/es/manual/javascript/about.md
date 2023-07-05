@@ -1,5 +1,5 @@
 title: Acerca de JavaScript
-hash: 073e796248136726c6b04b838715a867d5ef1958a34beae0785870553faa2e4c
+hash: c3cfb549c6deb5d2a4f14b8681cb80f556bc41109c145df9574880d7eaa2399b
 locale: es
 language: Spanish
 
@@ -109,9 +109,9 @@ console.log('mi_variable es: ' + vars.my_variable)
 vars.my_variable = 'mi_valor'
 ```
 
-### El objeto `pool`: acceso al grupo de archivos
+### El objeto `pool`: Acceso al conjunto de archivos
 
-Puedes acceder a los 'archivos' del grupo de archivos a través del objeto `pool`. El uso más obvio de esto es analizar archivos CSV, por ejemplo con condiciones experimentales, desde el grupo de archivos utilizando la biblioteca `csv-parse` (descrita con más detalle a continuación).
+Accedes a los 'archivos' del conjunto de archivos a través del objeto `pool`. El uso más obvio de esto es para analizar archivos CSV, por ejemplo con condiciones experimentales, del conjunto de archivos utilizando la biblioteca `csv-parse` (descrita con más detalle a continuación).
 
 ```js
 const conditions = csvParse(
@@ -123,14 +123,14 @@ for (const trial of conditions) {
 }
 ```
 
-También puedes reproducir archivos de sonido directamente desde el grupo de archivos. Suponiendo que haya un archivo llamado `bark.ogg` en el grupo de archivos, puedes reproducirlo de la siguiente manera:
+También puedes reproducir archivos de sonido directamente del conjunto de archivos. Suponiendo que hay un archivo llamado `bark.ogg` en el conjunto de archivos, puedes reproducirlo de esta manera:
 
 ```js
 pool['bark.ogg'].data.play()
 ```
 
 
-### La clase `Canvas`: presentando estímulos visuales
+### La clase `Canvas`: Presentación de estímulos visuales
 
 La clase `Canvas` se utiliza para presentar estímulos visuales. Por ejemplo, puedes mostrar un punto de fijación de la siguiente manera:
 
@@ -140,41 +140,24 @@ myCanvas.fixdot()
 myCanvas.show()
 ```
 
-Se puede encontrar una descripción completa de la clase `Canvas` aquí:
+Se puede encontrar una visión general completa de la clase `Canvas` aquí:
 
 - %link:manual/javascript/canvas%
 
-## Bibliotecas de JavaScript disponibles
+## Bibliotecas JavaScript disponibles
 
-Las siguientes bibliotecas de JavaScript están incluidas de forma predeterminada:
+Las siguientes bibliotecas JavaScript están incluidas por defecto:
 
 - [Funciones aleatorias (`random-ext`)](%url:manual/javascript/random%)
-- [Funciones de conversión de colores (`color-convert`)](%url:manual/javascript/color-convert%)
+- [Funciones de conversión de color (`color-convert`)](%url:manual/javascript/color-convert%)
 - [Funciones CSV (`csv-parse`)](%url:manual/javascript/csv%)
-- [Iteradores estilo Python (`pythonic`)](%url:manual/javascript/pythonic%)
+- [Iteradores tipo Python (`pythonic`)](%url:manual/javascript/pythonic%)
 
-Puedes incluir bibliotecas adicionales de JavaScript agregando las URLs a las bibliotecas en el campo 'Bibliotecas de JavaScript externas' del panel de control de OSWeb.
+Puedes incluir bibliotecas JavaScript adicionales por URLs a las bibliotecas en el campo 'Bibliotecas JavaScript externas' del panel de control de OSWeb.
+
 
 ## Depuración
 
-La mayoría de los navegadores modernos, especialmente Chrome y Firefox, cuentan con un depurador integrado potente. Puedes activar el depurador agregando una línea que simplemente indique `debugger` a tu script (%FigDebuggerInlineJavaScript).
+Ver:
 
-%--
-figure:
- id: FigDebuggerInlineJavaScript
- source: debugger-inline-javascript.png
- caption: Activando el depurador desde un elemento INLINE_JAVASCRIPT.
---%
-
-Luego, inicia el experimento y muestra el depurador (o: Dev tools en Chrome, o: Web Developer Tools en Firefox) tan pronto como aparezca la pantalla de bienvenida de OSWeb. El depurador pausará el experimento cuando encuentre la declaración `debugger`. En este punto, puede usar la Consola para interactuar con el espacio de trabajo de JavaScript, o puede inspeccionar variables usando la herramienta Scope (%FigDebuggerChrome).
-
-%--
-figure:
- id: FigDebuggerChrome
- source: debugger-chrome.png
- caption: Inspeccionando el ámbito de las variables en Chrome.
---%
-
-Ver también:
-
-- %link:manual/osweb/osweb%
+- %link:debugging%

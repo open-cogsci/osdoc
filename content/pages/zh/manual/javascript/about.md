@@ -1,5 +1,5 @@
 title: 关于JavaScript
-hash: 073e796248136726c6b04b838715a867d5ef1958a34beae0785870553faa2e4c
+hash: c3cfb549c6deb5d2a4f14b8681cb80f556bc41109c145df9574880d7eaa2399b
 locale: zh
 language: Chinese
 
@@ -105,9 +105,9 @@ console.log('my_variable 是: ' + vars.my_variable)
 vars.my_variable = 'my_value'
 ```
 
-### `pool`对象：访问文件池
+### `pool` 对象：访问文件池
 
-通过`pool`对象访问文件池中的'文件'。最明显的用途是使用`csv-parse`库（下面将详细描述）从文件池中解析CSV文件，例如实验条件。
+您可以通过 `pool` 对象从文件池中访问'文件'。最明显的用法是使用 `csv-parse` 库（下面将详细描述）从文件池解析 CSV 文件，例如带有实验条件的文件。
 
 ```js
 const conditions = csvParse(
@@ -119,16 +119,16 @@ for (const trial of conditions) {
 }
 ```
 
-您还可以直接从文件池播放声音文件。假设文件池中有一个名为`bark.ogg`的文件，您可以这样播放它：
+您还可以直接从文件池播放声音文件。假设文件池中有一个名为 `bark.ogg` 的文件，您可以像这样播放它：
 
 ```js
 pool['bark.ogg'].data.play()
 ```
 
 
-### `Canvas`类：呈现视觉刺激
+### `Canvas` 类：展示视觉刺激
 
-`Canvas`类用于呈现视觉刺激。例如，您可以显示一个固定点，如下所示：
+`Canvas` 类用于展示视觉刺激。例如，您可以按照以下方式显示一个固定的点：
 
 ```js
 let myCanvas = Canvas()
@@ -136,42 +136,23 @@ myCanvas.fixdot()
 myCanvas.show()
 ```
 
-`Canvas`类的完整概述可以在这里找到：
+`Canvas` 类的完整概述可以在这里找到：
 
 - %link:manual/javascript/canvas%
 
-## 可用的JavaScript库
+## 可用的 JavaScript 库
 
-以下JavaScript库默认包含在内：
+以下 JavaScript 库默认包含在内：
 
 - [随机函数（`random-ext`）](%url:manual/javascript/random%)
 - [颜色转换函数（`color-convert`）](%url:manual/javascript/color-convert%)
-- [CSV函数（`csv-parse`）](%url:manual/javascript/csv%)
-- [类Python迭代器（`pythonic`）](%url:manual/javascript/pythonic%)
+- [CSV 函数（`csv-parse`）](%url:manual/javascript/csv%)
+- [Python式迭代器（`pythonic`）](%url:manual/javascript/pythonic%)
 
-您可以通过在OSWeb控制面板的“外部JavaScript”库字段中输入库的URL来包含其他JavaScript库。
-
+您可以通过将库的 URL 添加到 OSWeb 控制面板的 '外部 JavaScript' 库字段中，来包含额外的 JavaScript 库。
 
 ## 调试
 
-大多数现代浏览器，尤其是Chrome和Firefox，都内置了强大的调试器。您可以通过在脚本中添加一个简单的`debugger`行来激活调试器（%FigDebuggerInlineJavaScript）。
+参见：
 
-%--
-figure:
- id: FigDebuggerInlineJavaScript
- source: debugger-inline-javascript.png
- caption: 从INLINE_JAVASCRIPT项目激活调试器。
---%
-
-然后启动实验，并在OSWeb欢迎屏幕出现后立即显示调试器（或：Chrome中的Dev tools，或：Firefox中的Web开发者工具）。当调试器遇到`debugger`语句时，它将暂停实验。此时，您可以使用控制台与JavaScript工作区进行交互，或者使用Scope工具检查变量（%FigDebuggerChrome）。
-
-%--
-figure:
- id: FigDebuggerChrome
- source: debugger-chrome.png
- caption: 在Chrome中检查变量范围。
---%
-
-另请参阅：
-
-- %link:manual/osweb/osweb%@
+- %link:debugging%

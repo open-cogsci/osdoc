@@ -1,15 +1,17 @@
 title: Descargando y convirtiendo datos
-hash: 107ebe6aa385be243fb6fa5d9117a4cbe10925553e29d4cbf251a8ba7a3b0ef9
+hash: 3ab535f2cc44ff0565b2183aa31768623aacd998a849e1cf6667e3b4ec5425da
 locale: es
 language: Spanish
 
-Una vez que haya recolectado datos con OSWeb a través de JATOS, puede descargar estos datos en JATOS navegando a su experimento, haciendo clic en Resultados y luego seleccionando Exportar resultados → Todos (ver %FigJatosExportResults).
+Después de recopilar datos con OSWeb a través de JATOS, puedes descargar y procesar estos datos para su análisis. Para descargarlos, navega a tu estudio dentro de JATOS, haz clic en 'Resultados', selecciona todas las entradas de Resultados y luego elige 'Exportar Resultados → Archivo de Resultados de JATOS' (ver %FigJatosExportResults).
 
 %--
 figure:
  id: FigJatosExportResults
  source: jatos-export-results.png
- caption: Exportando resultados recolectados con OSWeb a través de JATOS.
+ caption: Procedure for exporting results collected with OSWeb through JATOS.
 --%
 
-Luego, descargará un archivo que tiene un nombre similar a `jatos_results_20190429113807.txt`. Este archivo contiene principalmente datos JSON, pero también puede contener fragmentos de datos que hacen que el archivo no sea válido como una cadena JSON regular. Sin embargo, puede convertir fácilmente los datos a un archivo `.csv` o `.xlsx` con la opción 'Convertir resultados de JATOS a csv / xlsx' en la extensión OSWeb.
+El archivo descargado, normalmente nombrado en el formato `jatos_results_<timestamp>.jzip`, contiene varias carpetas y archivos correspondientes a metadatos y datos de los participantes. Este formato puede ser difícil de manejar directamente para el análisis de datos.
+
+Para simplificar el análisis de datos, puedes convertir este archivo a un formato más accesible como `.csv` o `.xlsx`. Esta conversión se puede lograr fácilmente utilizando la opción 'Convertir resultados de OSWeb a csv/xlsx' que se encuentra en la extensión de OSWeb.

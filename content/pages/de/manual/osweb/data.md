@@ -1,15 +1,17 @@
 title: Herunterladen und Konvertieren von Daten
-hash: 107ebe6aa385be243fb6fa5d9117a4cbe10925553e29d4cbf251a8ba7a3b0ef9
+hash: 3ab535f2cc44ff0565b2183aa31768623aacd998a849e1cf6667e3b4ec5425da
 locale: de
 language: German
 
-Sobald Sie Daten mit OSWeb über JATOS gesammelt haben, können Sie diese Daten in JATOS herunterladen, indem Sie zu Ihrem Experiment navigieren, auf Ergebnisse klicken und dann Export Ergebnisse → Alle auswählen (siehe % FigJatosExportResults).
+Nachdem Sie Daten mit OSWeb über JATOS gesammelt haben, können Sie diese Daten herunterladen und für die Analyse verarbeiten. Um herunterzuladen, navigieren Sie zu Ihrer Studie innerhalb von JATOS, klicken Sie auf 'Ergebnisse', wählen Sie alle Ergebniseinträge aus und wählen Sie dann 'Ergebnisse exportieren → JATOS Ergebnisarchiv' aus (siehe %FigJatosExportResults).
 
 %--
 figure:
  id: FigJatosExportResults
  source: jatos-export-results.png
- caption: Exportieren von Ergebnissen, die mit OSWeb über JATOS gesammelt wurden.
+ caption: Verfahren zur Exportierung von mit OSWeb über JATOS gesammelten Ergebnissen.
 --%
 
-Sie laden dann eine Datei herunter, die einen ähnlichen Namen hat wie `jatos_results_20190429113807.txt`. Diese Datei enthält hauptsächlich JSON-Daten, kann aber auch Fragmente von Daten enthalten, die die Datei als regulären JSON-String ungültig machen. Sie können die Daten jedoch mit der Option "JATOS-Ergebnisse in csv / xlsx konvertieren" in der OSWeb-Erweiterung problemlos in eine `.csv`- oder `.xlsx`-Datei konvertieren.
+Die heruntergeladene Datei, normalerweise im Format `jatos_results_<timestamp>.jzip` benannt, enthält verschiedene Ordner und Dateien, die Metadaten und Teilnehmerdaten entsprechen. Dieses Format kann direkt für die Datenanalyse schwer zu handhaben sein.
+
+Um die Datenanalyse zu vereinfachen, können Sie diese Datei in ein zugänglicheres Format wie `.csv` oder `.xlsx` konvertieren. Diese Konvertierung kann einfach mit der Option 'OSWeb-Ergebnisse in csv/xlsx konvertieren' erreicht werden, die in der OSWeb-Erweiterung gefunden wird.
