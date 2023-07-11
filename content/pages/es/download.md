@@ -153,7 +153,8 @@ conda install opensesame opensesame-extension-osweb opensesame-extension-updater
 Algunos paquetes no están disponibles a través de conda. Puedes usar `pip install` para estos.
 
 ```bash
-pip install soundfile pygame psychopy psychopy-sounddevice http://files.cogsci.nl/expyriment-0.10.0+opensesame2-py3-none-any.whl
+pip install soundfile pygame http://files.cogsci.nl/expyriment-0.10.0+opensesame2-py3-none-any.whl
+pip install psychopy psychopy-sounddevice
 ```
 
 Una vez que hayas instalado todos los paquetes, simplemente puedes ejecutar OpenSesame (después de haber activado el entorno correcto) ejecutando:

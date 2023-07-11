@@ -129,7 +129,7 @@ clock.sleep(495)
 ## Debugging in a web browser (OSWeb)
 
 
-### Printing Output to the Browser Console
+### Printing output to the browser console
 
 The JavaScript `console.log()` function is a simple-yet-powerful debugging tool when used inside INLINE_JAVASCRIPT items. It serves a similar purpose to the Python `print()` function and the Variable Inspector, neither of which are available in OSWeb. For instance, you can print the values of the variables `left_letter` and `right_letter` during the Prepare phase of an INLINE_SCRIPT at the beginning of each trial.
 

@@ -152,7 +152,8 @@ conda install opensesame opensesame-extension-osweb opensesame-extension-updater
 有些软件包无法通过conda安装。您可以使用`pip install`安装这些软件包。
 
 ```bash
-pip install soundfile pygame psychopy psychopy-sounddevice http://files.cogsci.nl/expyriment-0.10.0+opensesame2-py3-none-any.whl
+pip install soundfile pygame http://files.cogsci.nl/expyriment-0.10.0+opensesame2-py3-none-any.whl
+pip install psychopy psychopy-sounddevice
 ```
 
 安装了所有软件包后，只需运行一下命令（激活正确的环境后）来启动OpenSesame：

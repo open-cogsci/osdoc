@@ -184,7 +184,7 @@ The source code of OpenSesame is available on [GitHub](https://github.com/open-c
 
 ### Which version of Python to use?
 
-OpenSesame is currently built and tested with Python 3.11.0. Others versions of Python >=3.7 work but are not extensively tested. Python 2 is no longer supported. The last release that included a Python 2 package was 3.3.12, which can still be downloaded from the [release archive](https://github.com/open-cogsci/OpenSesame/releases/tag/release%2F3.3.12).
+OpenSesame is currently built and tested with Python 3.11 Others versions of Python >=3.7 work but are not extensively tested. Python 2 is no longer supported. The last release that included a Python 2 package was 3.3.12, which can still be downloaded from the [release archive](https://github.com/open-cogsci/OpenSesame/releases/tag/release%2F3.3.12).
 
 
 ### When (not) to update?

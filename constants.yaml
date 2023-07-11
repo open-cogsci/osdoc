@@ -3,7 +3,7 @@ branch: 4.0
 notes: 400
 status: development
 codename: Melodramatic Milgram
-release-date: unreleased
+release-date: July 11, 2023
 url-windows-exe-py3: https://github.com/open-cogsci/OpenSesame/releases/
 url-windows-zip-py3: https://github.com/open-cogsci/OpenSesame/releases/
 url-windows-exe-py3-megapack: https://github.com/open-cogsci/OpenSesame/releases/

@@ -9,7 +9,7 @@ title: OSWeb
 OSWeb is an online runtime for OpenSesame experiments. It is a JavaScript library that executes OpenSesame experiments in a browser. To use OSWeb, you need the `opensesame-extension-osweb` package, which comes pre-installed with the Windows and macOS distributions of OpenSesame.
 
 
-## Executing an Experiment in a Web Browser
+## Executing an experiment in a web browser
 
 To run an experiment in a web browser using OSWeb, follow these steps:
 
