@@ -4,10 +4,8 @@ notes: 400
 status: development
 codename: Melodramatic Milgram
 release-date: July 11, 2023
-url-windows-exe-py3: https://github.com/open-cogsci/OpenSesame/releases/
-url-windows-zip-py3: https://github.com/open-cogsci/OpenSesame/releases/
-url-windows-exe-py3-megapack: https://github.com/open-cogsci/OpenSesame/releases/
-url-windows-zip-py3-megapack: https://github.com/open-cogsci/OpenSesame/releases/
-url-osx-dmg-x64-py3: https://github.com/open-cogsci/OpenSesame/releases/download/
+url-windows-exe-py3: https://github.com/open-cogsci/OpenSesame/releases/download/release%2F4.0.0/opensesame_4.0.0-py311-win64-1.exe
+url-windows-zip-py3: https://github.com/open-cogsci/OpenSesame/releases/download/release%2F4.0.0/opensesame_4.0.0-py311-win64-1.zip
+url-osx-dmg-x64-py3: https://github.com/open-cogsci/OpenSesame/releases/download/release%2F4.0.0/opensesame_4.0.0-py311-macos-x64-1.dmg
 url-source: https://github.com/open-cogsci/OpenSesame
 url-old: https://github.com/open-cogsci/OpenSesame/releases

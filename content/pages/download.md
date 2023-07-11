@@ -54,10 +54,7 @@ The Windows package is based on Python 3.11 for 64 bit systems. The installer an
 
 ### Mac OS
 
-There are currently no prerelease packages of OpenSesame 4.0 for Mac OS. Please use conda or pip.
-{: .page-notification}
-
-[This article](https://support.apple.com/en-in/guide/mac-help/mh40616/mac) on the Mac OS support site explains how to override the security settings of Mac OS that will by default prevent OpenSesame from launching.
+[This article](https://support.apple.com/en-in/guide/mac-help/mh40616/mac) on the Mac OS support site explains how to override the security settings of Mac OS that will by default prevent OpenSesame from launching. The first time that you start OpenSesame it will take a very long time before the application starts; subsequent launches go much faster.
 
 The package below is built for Intel processors but also runs on ARM (M1) processors.
 

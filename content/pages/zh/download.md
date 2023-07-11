@@ -56,9 +56,6 @@ Windows 软件包基于 Python 3.11，面向 64 位系统。安装程序和 `.zi
 
 ### Mac OS
 
-目前还没有 OpenSesame 4.0 的 Mac OS 预发布软件包。请使用 conda 或 pip。
-{: .page-notification}
-
 [Mac OS 支持网站上的这篇文章](https://support.apple.com/en-in/guide/mac-help/mh40616/mac) 解释了如何覆盖 Mac OS 的安全设置，以防止 OpenSesame 默认启动。
 
 下面的软件包是为 Intel 处理器构建的，但也可以在 ARM (M1) 处理器上运行。
