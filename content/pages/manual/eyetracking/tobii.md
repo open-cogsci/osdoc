@@ -1,18 +1,26 @@
 title: Tobii
 
-PyGaze offers *experimental* support for Tobii eye trackers. The `tobii-research` package can be installed through `pip`, but at the time of writing it requires a specific version of Python—and *which* version of Python it requires varies from release to release. Therefore, the first step is to find out which version of Python you need. You can do that by visiting the `tobii-research` on PyPi and clicking on 'Download files':
+PyGaze offers *experimental* support for Tobii eye trackers.
 
-- <https://pypi.org/project/tobii-research/#files>
+`tobii-research` is the Python library for Tobii support. As of July 2023, `tobii-research` requires Python 3.10, whereas OpenSesame by default uses Python 3.11. Therefore, until `tobii-research` is updated for Python 3.11, the easiest way to install OpenSesame with Tobii support is by building a Python 3.10 environment through Anaconda.
 
-From the file names, you can tell which version of Python you need; for example, the `cp310` in the name 
-`tobii_research-1.10.2-cp310-cp310-win_amd64.whl` means that you need Python 3.10 (`cp` stands for C-Python).
+This sounds complicated, but it is really not. To do so, first read the general procedure for installing OpenSesame through Anaconda as described on the Downloads page:
 
-Next, install OpenSesame in a Python environment of the correct version (so Python 3.10 for version 1.10.2 of `tobii-research` as shown above). This most easily done using Anaconda, as described [here](%url:download%). Finally, install the `tobii-research` package into this Python environment.
+- %link:download%
+
+Next, once you understand the general procedure, start by creating a Python 3.10 environment, continue with the instructions from the Downloads page, and then install `tobii-research`:
 
 ```
-!pip install tobii-research
+# Start by creating a Python 3.10 environment
+conda create -n opensesame-py3 python=3.10
+conda activate opensesame-py3
+# Now follow the instructions from the downloads page
+# ...
+# Then install Tobii support
+pip install tobii-research
+# And now launch OpenSesame!
+opensesame
 ```
-
 
 For more information, see:
 

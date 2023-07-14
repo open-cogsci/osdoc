@@ -1,22 +1,31 @@
 title: Tobii
-hash: 91075c11d390d9162057a382ddc27a006029b42c7c7c79882ad81ff5e90f4430
+hash: a383da57d44200882bf0aa52f84f681e06fecc7982e5a785150b5372d2d75259
 locale: zh
 language: Chinese
 
-PyGaze 为 Tobii 眼动跟踪器提供*实验性*支持。可以通过`pip`安装`tobii-research`包，但在撰写本文时，它需要特定版本的Python——需要*哪个*版本的Python因发布版本而异。因此，第一步是找出你需要哪个版本的Python。你可以通过访问PyPi上的`tobii-research`并点击“下载文件”来实现这一点：
+PyGaze为Tobii眼球追踪器提供*试验性*支持。
 
-- <https://pypi.org/project/tobii-research/#files>
+`tobii-research`是支持Tobii的Python库。截至2023年7月，`tobii-research`需要Python 3.10，而OpenSesame默认使用Python 3.11。因此，在`tobii-research`升级至Python 3.11之前，通过Anaconda构建Python 3.10环境来安装含有Tobii支持的OpenSesame是最简单的方法。
 
-从文件名中，你可以知道需要哪个版本的Python；例如，在名称中的`cp310`代表你需要Python 3.10（`cp`代表C-Python）。
+这听起来很复杂，但实际上并不难。首先，阅读在下载页面上描述的通过Anaconda安装OpenSesame的一般步骤：
 
-接下来，在正确版本的Python环境中安装OpenSesame（如上所示，对于`tobii-research`的1.10.2版本，需要Python 3.10）。这可以使用Anaconda轻松完成，如[此处](%url:download%)所述。最后，将`tobii-research`包安装到这个Python环境中。
+- %link:download%
+
+接下来，理解了一般步骤后，开始创建一个Python 3.10环境，继续按照下载页面的说明进行，然后安装`tobii-research`：
 
 ```
-!pip install tobii-research
+# 首先，创建一个Python 3.10环境
+conda create -n opensesame-py3 python=3.10
+conda activate opensesame-py3
+# 现在按照下载页面的说明进行
+# ...
+# 然后安装Tobii支持
+pip install tobii-research
+# 现在启动OpenSesame！
+opensesame
 ```
 
-
-更多信息请查看：
+若想获得更多信息，请参见：
 
 - %link:pygaze%
 - <https://rapunzel.cogsci.nl/manual/environment/>

@@ -1,21 +1,29 @@
 title: Tobii
-hash: 91075c11d390d9162057a382ddc27a006029b42c7c7c79882ad81ff5e90f4430
+hash: a383da57d44200882bf0aa52f84f681e06fecc7982e5a785150b5372d2d75259
 locale: fr
 language: French
 
-PyGaze offre un support *expérimental* pour les eye-trackers Tobii. Le paquet `tobii-research` peut être installé via `pip`, mais au moment de l'écriture, il nécessite une version spécifique de Python—et *quelle* version de Python il requiert varie d'une version à l'autre. Par conséquent, la première étape consiste à déterminer quelle version de Python vous avez besoin. Vous pouvez le faire en visitant `tobii-research` sur PyPi et en cliquant sur "Download files":
+PyGaze offre un support *expérimental* pour les eye-trackers Tobii.
 
-- <https://pypi.org/project/tobii-research/#files>
+`tobii-research` est la bibliothèque Python pour le support Tobii. En juillet 2023, `tobii-research` nécessite Python 3.10, alors qu'OpenSesame utilise par défaut Python 3.11. Par conséquent, jusqu'à ce que `tobii-research` soit mis à jour pour Python 3.11, la façon la plus simple d'installer OpenSesame avec le support Tobii est de construire un environnement Python 3.10 via Anaconda.
 
-À partir des noms de fichiers, vous pouvez déterminer quelle version de Python vous avez besoin; par exemple, le `cp310` dans le nom
-`tobii_research-1.10.2-cp310-cp310-win_amd64.whl` signifie que vous avez besoin de Python 3.10 (`cp` signifie C-Python).
+Cela semble compliqué, mais ce ne l'est pas vraiment. Pour ce faire, commencez par lire la procédure générale pour installer OpenSesame via Anaconda, comme décrit sur la page Téléchargements :
 
-Ensuite, installez OpenSesame dans un environnement Python de la version correcte (donc Python 3.10 pour la version 1.10.2 de `tobii-research` comme indiqué ci-dessus). Ceci est plus facilement réalisé en utilisant Anaconda, comme décrit [ici](%url:download%). Enfin, installez le paquet `tobii-research` dans cet environnement Python.
+- %link:download%
+
+Ensuite, une fois que vous avez compris la procédure générale, commencez par créer un environnement Python 3.10, continuez avec les instructions de la page Téléchargements, puis installez `tobii-research` :
 
 ```
-!pip install tobii-research
+# Commencez par créer un environnement Python 3.10
+conda create -n opensesame-py3 python=3.10
+conda activate opensesame-py3
+# Suivez maintenant les instructions de la page de téléchargements
+# ...
+# Ensuite installez le support Tobii
+pip install tobii-research
+# Et maintenant lancez OpenSesame !
+opensesame
 ```
-
 
 Pour plus d'informations, voir :
 
