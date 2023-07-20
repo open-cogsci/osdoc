@@ -100,10 +100,17 @@ __Version note__ As of OSWeb 2.0, all experimental variables are available as gl
 You can access experimental variables through the `vars` object:
 
 ```js
+// OSWeb <= 1.4 (with vars object)
 // Get an experimental variable
 console.log('my_variable is: ' + vars.my_variable)
 // Set an experimental variable
 vars.my_variable = 'my_value'
+
+// OSWeb >= 2.0 (without vars object)
+// Get an experimental variable
+console.log('my_variable is: ' + my_variable)
+// Set an experimental variable
+var my_variable = 'my_value'
 ```
 
 

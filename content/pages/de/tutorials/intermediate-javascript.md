@@ -622,21 +622,6 @@ figure:
   Die *trial_sequence* am Ende von Schritt 8.
 --%
 
-## Schritt 9: Kompatibilität prüfen
-
-Wenn Sie ein Experiment in einem Browser ausführen möchten, können Sie nicht alle Funktionen von OpenSesame nutzen. Um zu überprüfen, ob Ihr Experiment in einem Browser ausgeführt werden kann, können Sie die OSWeb-Kompatibilitätsprüfung verwenden, indem Sie zu Menü → Tools → OSweb gehen. Wenn Sie alle Schritte dieses Tutorials befolgt haben, wird die Kompatibilitätsprüfung erfolgreich sein:
-
-%--
-figure:
- id: FigCompatibilityCheck
- source: compatibility-check.png
- caption: |
-  Die Kompatibilitätsprüfung zeigt an, ob das Experiment mit OSWeb kompatibel ist.
---%
-
-Für eine Liste der von OSWeb unterstützten Funktionen siehe:
-
-- %link:manual/osweb/osweb%
 
 ## Fertig!
 

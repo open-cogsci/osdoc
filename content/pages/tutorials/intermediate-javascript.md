@@ -625,23 +625,6 @@ figure:
 --%
 
 
-## Step 9: Checking compatibility
-
-When you want to run an experiment in a browser, you cannot use all of OpenSesame's functionality. To check whether your experiment is able to run in a browser, you can use the OSWeb compatibility check by going to Menu → Tools → OSweb. If you've followed all the steps of this tutorial, the compatibility check will succeeed:
-
-%--
-figure:
- id: FigCompatibilityCheck
- source: compatibility-check.png
- caption: |
-  The compatibility check indicates whether the experiment is compatible with OSWeb.
---%
-
-For a list of functionality that is supported by OSWeb, see:
-
-- %link:manual/osweb/osweb%
-
-
 ## Finished!
 
 Congratulations, the experiment is complete! You can give it a test run by pressing on the toolbar button that shows a green circle with a gray play button inside (shortcut: `Alt+Ctrl+W`).

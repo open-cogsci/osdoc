@@ -619,21 +619,6 @@ figure:
   第8步结束时的*trial_sequence*。
 --%
 
-## 步骤9：检查兼容性
-
-当您想在浏览器中运行实验时，您不能使用所有的OpenSesame功能。您可以通过菜单 → 工具 → OSweb使用OSWeb兼容性检查来检查您的实验是否能在浏览器中运行。如果您按照本教程的所有步骤操作，兼容性检查将成功：
-
-%--
-figure:
- id: FigCompatibilityCheck
- source: compatibility-check.png
- caption: |
-  兼容性检查指示实验是否与OSWeb兼容。
---%
-
-有关OSWeb支持的功能列表，请参阅：
-
-- %link:manual/osweb/osweb%
 
 ## 完成！
 

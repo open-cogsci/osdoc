@@ -623,23 +623,6 @@ figure:
 --%
 
 
-## Étape 9 : Vérification de la compatibilité
-
-Lorsque vous souhaitez exécuter une expérience dans un navigateur, vous ne pouvez pas utiliser toutes les fonctionnalités d'OpenSesame. Pour vérifier si votre expérience peut être exécutée dans un navigateur, vous pouvez utiliser le test de compatibilité OSWeb en allant dans Menu → Outils → OSweb. Si vous avez suivi toutes les étapes de ce tutoriel, le test de compatibilité réussira :
-
-%--
-figure:
- id: FigCompatibilityCheck
- source: compatibility-check.png
- caption: |
-  Le test de compatibilité indique si l'expérience est compatible avec OSWeb.
---%
-
-Pour une liste des fonctionnalités prises en charge par OSWeb, voir :
-
-- %link:manuel/osweb/osweb%
-
-
 ## Terminé !
 
 Félicitations, l'expérience est terminée ! Vous pouvez faire un essai en appuyant sur le bouton de la barre d'outils qui montre un cercle vert avec un bouton de lecture gris à l'intérieur (raccourci : `Alt+Ctrl+W`).

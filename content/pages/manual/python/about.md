@@ -128,10 +128,17 @@ __Version note__ As of OpenSesame 4.0, all experimental variables are available 
 You can access experimental variables through the `var` object:
 
 ~~~ .python
+# OpenSesame <= 3.3 (with var object)
 # Get an experimental variable
 print('my_variable is: %s' % var.my_variable)
 # Set an experimental variable
 var.my_variable = 'my_value'
+
+# OpenSesame >= 4.0 (without var object)
+# Get an experimental variable
+print('my_variable is: %s' % my_variable)
+# Set an experimental variable
+my_variable = 'my_value'
 ~~~
 
 A full overview of the `var` object can be found here:

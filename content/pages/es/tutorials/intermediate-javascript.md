@@ -621,23 +621,6 @@ figure:
 --%
 
 
-## Paso 9: Comprobando la compatibilidad
-
-Cuando desees ejecutar un experimento en un navegador, no podrás utilizar toda la funcionalidad de OpenSesame. Para verificar si tu experimento puede ejecutarse en un navegador, puedes usar la compatibilidad de OSWeb yendo al menú → Herramientas → OSweb. Si has seguido todos los pasos de este tutorial, la verificación de compatibilidad será exitosa:
-
-%--
-figure:
- id: FigCompatibilityCheck
- source: compatibility-check.png
- caption: |
-  La verificación de compatibilidad indica si el experimento es compatible con OSWeb.
---%
-
-Para obtener una lista de las funciones compatibles con OSWeb, consulta:
-
-- %enlace:manual/osweb/osweb%
-
-
 ## ¡Terminado!
 
 ¡Felicidades, el experimento está completo! Puedes probarlo presionando el botón de la barra de herramientas que muestra un círculo verde con un botón gris de reproducción en el interior (atajo: `Alt+Ctrl+W`).

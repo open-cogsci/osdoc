@@ -1,5 +1,5 @@
 title: 关于Python
-hash: 99b67bfe88b7ad764c9bc1c2a5da5b4114e573e6c0e442ff7f88dc080051e6b2
+hash: f909cf66bfb509985a9c3a131043cd177b0810ba2e22a2faacbe879979114123
 locale: zh
 language: Chinese
 
@@ -104,58 +104,65 @@ print('这将显示在调试窗口中！')
 许多常用函数可以直接在INLINE_SCRIPT项目中使用，无需导入任何内容。例如：
 
 ~~~ .python
-# `Canvas()`是一个工厂函数，它返回一个`Canvas`对象
+# `Canvas()`是一个工厂函数，返回一个`Canvas`对象
 fixdot_canvas = Canvas()
-if sometimes(): # 有时候fixdot是绿色的
+if sometimes(): # 有时修正点是绿色的
     fixdot_canvas.fixdot(color='green')
-else: # 有时候它是红色的
+else: # 有时它是红色的
     fixdot_canvas.fixdot(color='red')
 fixdot_canvas.show()
 ~~~
 
-要查看常用函数列表，请参阅：
+如需常用函数的列表，参见：
 
-- %link:manual/python/common%
+-%link:manual/python/common%
 
 
 ### `var`对象：访问实验变量
 
-__版本说明__自OpenSesame 4.0起，所有实验变量都作为全局变量提供。这意味着您无需使用`var`对象。
+__版本说明__从OpenSesame 4.0版本开始，所有实验变量都作为全局变量可用。这意味着你不再需要`var`对象。
 {:.page-notification}
 
-您可以通过`var`对象访问实验变量：
+你可以通过`var`对象来访问实验变量：
 
 ~~~ .python
+# OpenSesame <= 3.3（带var对象）
 # 获取实验变量
 print('my_variable is: %s' % var.my_variable)
 # 设置实验变量
 var.my_variable = 'my_value'
+
+# OpenSesame >= 4.0（不带var对象）
+# 获取实验变量
+print('my_variable is: %s' % my_variable)
+# 设置实验变量
+my_variable = 'my_value'
 ~~~
 
-关于`var`对象的完整概述可以在此找到：
+`var`对象的完整概览可以在此处找到：
 
-- %link:manual/python/var%
+-%link:manual/python/var%
 
 
 ### `clock`对象：时间函数
 
-`clock`对象可提供基本的时间函数：
+基本的时间函数通过`clock`对象可以利用：
 
 ~~~ .python
-# 获取当前时间戳
+# 获取当前的时间戳
 t = clock.time()
-# 等待1秒钟
+# 等待1秒
 clock.sleep(1000)
 ~~~
 
-关于`clock`对象的完整概述可以在此找到：
+`clock`对象的完整概览可以在此处找到：
 
-- %link:manual/python/clock%
+-%link:manual/python/clock%
 
 
 ### `log`对象：数据记录
 
-`log`对象提供数据记录功能：
+数据记录通过`log`对象可以利用：
 
 ~~~ .python
 # 写一行文本
@@ -164,45 +171,45 @@ log.write('My custom log message')
 log.write_vars()
 ~~~
 
-关于`log`对象的完整概述可以在此找到：
+`log`对象的完整概览可以在此处找到：
 
-- %link:manual/python/log%
+-%link:manual/python/log%
 
 
 ### `pool`对象：访问文件池
 
-通过`pool`对象，您可以获得文件池中文件的完整路径：
+你可以通过`pool`对象获取文件池中文件的完整路径：
 
 ~~~ .python
-# 显示文件池中的图片
+# 显示文件池中的一个图片
 path = pool['img.png']
 my_canvas = Canvas()
 my_canvas.image(path)
 my_canvas.show()
 ~~~
 
-关于`pool`对象的完整概述可以在此找到：
+`pool`对象的完整概览可以在此处找到：
 
-- %link:manual/python/pool%
+-%link:manual/python/pool%
 
 
-### `responses`对象：访问参与者的回应
+### `responses`对象：访问参与者响应
 
-`responses`对象记录了实验过程中收集到的所有参与者回应。例如，列出到目前为止所有回应的正确性：
+`responses`对象记录了实验过程中收集的所有参与者响应。例如，列出迄今为止所有响应的正确性：
 
 ~~~ .python
 for response in responses:
 	print(response.correct)
 ~~~
 
-关于`responses`对象的完整概述可以在此找到：
+`responses`对象的完整概览可以在此处找到：
 
-- %link:manual/python/responses%
+-%link:manual/python/responses%
 
 
 ### `Canvas`类：呈现视觉刺激
 
-`Canvas`类用于呈现视觉刺激。例如，您可以按如下方式显示一个凝视点：
+`Canvas`类用于呈现视觉刺激。例如，你可以按以下方式显示一个固定点：
 
 ~~~ .python
 my_canvas = Canvas()
@@ -210,74 +217,74 @@ my_canvas.fixdot()
 my_canvas.show()
 ~~~
 
-关于`Canvas`类的完整概述可以在此找到：
+`Canvas`类的完整概览可以在此处找到：
 
-- %link:manual/python/canvas%
+-%link:manual/python/canvas%
 
 
-### `Keyboard`类：收集按键
+### `Keyboard`类：收集按键操作
 
-`Keyboard`类用于收集按键。例如，收集一个具有1000毫秒超时的按键：
+`Keyboard`类用于收集按键操作。例如，收集一个具有1000毫秒超时的按键操作：
 
 ~~~ .python
 my_keyboard = Keyboard(timeout=1000)
 key, time = my_keyboard.get_key()
 ~~~
 
-关于`Keyboard`类的完整概述可以在此找到：
+`Keyboard`类的完整概览可以在此处找到：
 
-- %link:manual/python/keyboard%
+-%link:manual/python/keyboard%
 
 
 ### `Mouse`类：收集鼠标点击和屏幕触摸
 
-`Mouse`类用于收集鼠标点击和屏幕触摸。(OpenSesame不区分二者。)例如，收集一个具有1000毫秒超时的鼠标点击：
+`Mouse`类用于收集鼠标点击和屏幕触摸。(OpenSesame在两者之间不做区分。)例如，收集一个具有1000毫秒超时的鼠标点击：
 
 ~~~ .python
 my_mouse = Mouse(timeout=1000)
 button, position, time = my_mouse.get_click()
 ~~~
 
-关于`Mouse`类的完整概述可以在此找到：
+`Mouse`类的完整概览可以在此处找到：
 
-- %link:manual/python/mouse%
+-%link:manual/python/mouse%
 
 
 ### `Sampler`类：声音播放
 
-`Sampler`类用于播放声音样本。例如，播放一个简单的哔声：
+`Sampler`类用于播放声音样本。例如，播放一个简单的蜂鸣声：
 
 ~~~ .python
 my_sampler = Sampler()
 my_sampler.play()
 ~~~
 
-关于`Sampler`类的完整概述可以在此找到：
+`Sampler`类的完整概览可以在此处找到：
 
-- %link:manual/python/sampler%
+-%link:manual/python/sampler%
 
 
-## 用于显示呈现、回应收集等的替代模块
+## 显示表现、响应收集等的替代模块
 
 
 ### `psychopy`
 
-如果您使用*psycho*后端，您可以直接使用各种[PsychoPy]模块。有关更多信息，请参阅：
+如果您正在使用*psycho* 后端，您可以直接使用各种 [PsychoPy] 模块。更多信息请查阅：
 
-- %link:backends%
+- ％link:backends％
 
 
 ### `expyriment`
 
-如果使用*xpyriment*后端，您可以直接使用各种[Expyriment]模块。有关更多信息，请参阅：
+如果您正在使用 *xpyriment* 后端，您可以直接使用各种 [Expyriment] 模块。更多信息请查阅：
 
-- %link:backends%
+- ％link:backends％
 
 ### `pygame`
 
-如果您使用*legacy *，* droid *或*xpyriment*（仅当"Use OpenGL"设置为"no"时）后端，您可以直接使用各种[PyGame]模块。有关更多信息，请参阅：
+如果您正在使用 *legacy*，*droid*，或 *xpyriment* (仅在 "Use OpenGL" 设置为 "no" 时)后端，您可以直接使用各种 [PyGame] 模块。更多信息请查阅：
 
--％link:backends％
+- ％link:backends％
 
 
 [python]: http://www.python.org/

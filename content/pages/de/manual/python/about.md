@@ -1,5 +1,5 @@
 title: Über Python
-hash: 99b67bfe88b7ad764c9bc1c2a5da5b4114e573e6c0e442ff7f88dc080051e6b2
+hash: f909cf66bfb509985a9c3a131043cd177b0810ba2e22a2faacbe879979114123
 locale: de
 language: German
 
@@ -104,32 +104,39 @@ Die Konsole ist außerdem ein interaktiver Python-Interpreter, der von [Jupyter 
 Viele gängige Funktionen sind direkt in einem INLINE_SCRIPT-Element verfügbar, ohne dass etwas importiert werden muss. Zum Beispiel:
 
 ~~~ .python
-# `Canvas()` ist eine Fabrikfunktion, die ein `Canvas`-Objekt zurückgibt
+# `Canvas()` ist eine Factory-Funktion, die ein `Canvas`-Objekt zurückgibt
 fixdot_canvas = Canvas()
-if sometimes(): # Manchmal ist der Fixpunkt grün
+if sometimes(): # Manchmal ist der Fixdot grün
     fixdot_canvas.fixdot(color='green')
 else: # Manchmal ist er rot
     fixdot_canvas.fixdot(color='red')
 fixdot_canvas.show()
 ~~~
 
-Eine Liste der häufig verwendeten Funktionen finden Sie unter:
+Für eine Liste der gängigen Funktionen, siehe:
 
 - %link:manual/python/common%
 
 
-### Das `var`-Objekt: Zugang zu experimentellen Variablen
+### Das `var`-Objekt: Zugriff auf experimentelle Variablen
 
-__Hinweis zur Version__ Ab OpenSesame 4.0 sind alle experimentellen Variablen als globale Variablen verfügbar. Das bedeutet, dass Sie das `var`-Objekt nicht mehr benötigen.
+__Hinweis zur Version__ Ab OpenSesame 4.0 sind alle experimentellen Variablen als Globale verfügbar. Das bedeutet, dass Sie das `var`-Objekt nicht mehr benötigen.
 {:.page-notification}
 
 Sie können auf experimentelle Variablen über das `var`-Objekt zugreifen:
 
 ~~~ .python
-# Eine experimentelle Variable abrufen
+# OpenSesame <= 3.3 (mit var-Objekt)
+# Abrufen einer experimentellen Variable
 print('my_variable ist: %s' % var.my_variable)
-# Eine experimentelle Variable setzen
+# Einstellen einer experimentellen Variable
 var.my_variable = 'my_value'
+
+# OpenSesame >= 4.0 (ohne var-Objekt)
+# Abrufen einer experimentellen Variable
+print('my_variable ist: %s' % my_variable)
+# Einstellen einer experimentellen Variable
+my_variable = 'my_value'
 ~~~
 
 Eine vollständige Übersicht über das `var`-Objekt finden Sie hier:
@@ -142,9 +149,9 @@ Eine vollständige Übersicht über das `var`-Objekt finden Sie hier:
 Grundlegende Zeitfunktionen sind über das `clock`-Objekt verfügbar:
 
 ~~~ .python
-# Den aktuellen Zeitstempel abrufen
+# Abrufen des aktuellen Zeitstempels
 t = clock.time()
-# 1 s warten
+# Warten Sie 1 s
 clock.sleep(1000)
 ~~~
 
@@ -153,14 +160,14 @@ Eine vollständige Übersicht über das `clock`-Objekt finden Sie hier:
 - %link:manual/python/clock%
 
 
-### Das `log`-Objekt: Datenaufzeichnung
+### Das `log`-Objekt: Datenprotokollierung
 
-Die Datenaufzeichnung ist über das `log`-Objekt verfügbar:
+Datenprotokollierung ist über das `log`-Objekt verfügbar:
 
 ~~~ .python
-# Eine Zeile Text schreiben
-log.write('Meine benutzerdefinierte Log-Nachricht')
-# Alle Variablen schreiben
+# Schreiben Sie eine Zeile Text
+log.write('Meine benutzerdefinierte Protokollnachricht')
+# Schreiben Sie alle Variablen
 log.write_vars()
 ~~~
 
@@ -169,12 +176,12 @@ Eine vollständige Übersicht über das `log`-Objekt finden Sie hier:
 - %link:manual/python/log%
 
 
-### Das `pool`-Objekt: Zugang zum Datei-Pool
+### Das `pool`-Objekt: Zugriff auf den Dateipool
 
-Den vollständigen Pfad zu einer Datei im Datei-Pool erhalten Sie über das `pool`-Objekt:
+Sie erhalten den vollständigen Pfad zu einer Datei im Dateipool über das `pool`-Objekt:
 
 ~~~ .python
-# Ein Bild aus dem Datei-Pool anzeigen
+# Zeigen Sie ein Bild aus dem Dateipool an
 path = pool['img.png']
 my_canvas = Canvas()
 my_canvas.image(path)
@@ -186,13 +193,13 @@ Eine vollständige Übersicht über das `pool`-Objekt finden Sie hier:
 - %link:manual/python/pool%
 
 
-### Das `responses`-Objekt: Zugang zu Teilnehmerantworten
+### Das `responses`-Objekt: Zugriff auf Teilnehmerantworten
 
-Das `responses`-Objekt speichert alle Teilnehmerantworten, die während des Experiments erfasst wurden. Um beispielsweise die Korrektheit aller bisher erfassten Antworten aufzulisten:
+Das `responses`-Objekt protokolliert alle Teilnehmerantworten, die im Laufe des Experiments gesammelt wurden. Zum Beispiel, um die Korrektheit aller bisherigen Antworten aufzulisten:
 
 ~~~ .python
 for response in responses:
-    print(response.correct)
+	print(response.correct)
 ~~~
 
 Eine vollständige Übersicht über das `responses`-Objekt finden Sie hier:
@@ -200,9 +207,9 @@ Eine vollständige Übersicht über das `responses`-Objekt finden Sie hier:
 - %link:manual/python/responses%
 
 
-### Die `Canvas`-Klasse: Präsentation visueller Reize
+### Die `Canvas`-Klasse: Präsentation von visuellen Reizen
 
-Die `Canvas`-Klasse wird verwendet, um visuelle Reize darzustellen. Um beispielsweise einen Fixationspunkt anzuzeigen:
+Die `Canvas`-Klasse wird verwendet, um visuelle Reize zu präsentieren. Zum Beispiel können Sie einen Fixpunkt wie folgt anzeigen:
 
 ~~~ .python
 my_canvas = Canvas()
@@ -210,14 +217,14 @@ my_canvas.fixdot()
 my_canvas.show()
 ~~~
 
-Eine vollständige Übersicht über die "Canvas"-Klasse finden Sie hier:
+Eine vollständige Übersicht über die `Canvas`-Klasse finden Sie hier:
 
 - %link:manual/python/canvas%
 
 
-### Die `Keyboard`-Klasse: Tastendrucke sammeln
+### Die `Keyboard`-Klasse: Sammlung von Tastendrücken
 
-Die `Keyboard`-Klasse wird verwendet, um Tastendrucke zu erfassen. Um beispielsweise einen Tastendruck mit einer Timeout von 1000 ms zu erfassen:
+Die `Keyboard`-Klasse wird verwendet, um Tastendrücke zu erfassen. Zum Beispiel, um ein Tastendruck mit einem Timeout von 1000 ms zu erfassen:
 
 ~~~ .python
 my_keyboard = Keyboard(timeout=1000)
@@ -229,9 +236,9 @@ Eine vollständige Übersicht über die `Keyboard`-Klasse finden Sie hier:
 - %link:manual/python/keyboard%
 
 
-### Die `Mouse`-Klasse: Mausklicks und Bildschirmberührungen sammeln
+### Die `Mouse`-Klasse: Erfassung von Mausklicks und Bildschirmberührungen
 
-Die `Mouse`-Klasse wird verwendet, um Mausklicks und Bildschirmberührungen zu erfassen. (OpenSesame macht keinen Unterschied zwischen den beiden.) Um beispielsweise einen Mausklick mit einer Timeout von 1000 ms zu erfassen:
+Die `Mouse`-Klasse wird verwendet, um Mausklicks und Bildschirmberührungen zu erfassen. (OpenSesame macht keinen Unterschied zwischen den beiden.) Zum Beispiel, um einen Mausklick mit einem Timeout von 1000 ms zu erfassen:
 
 ~~~ .python
 my_mouse = Mouse(timeout=1000)
@@ -243,9 +250,9 @@ Eine vollständige Übersicht über die `Mouse`-Klasse finden Sie hier:
 - %link:manual/python/mouse%
 
 
-### Die `Sampler`-Klasse: Soundwiedergabe
+### Die `Sampler`-Klasse: Tonwiedergabe
 
-Die `Sampler`-Klasse wird verwendet, um Tonbeispiele abzuspielen. Um beispielsweise einen einfachen Piepton wiederzugeben:
+Die `Sampler`-Klasse wird verwendet, um Tonsamples abzuspielen. Zum Beispiel, um einen einfachen Beep abzuspielen:
 
 ~~~ .python
 my_sampler = Sampler()
@@ -257,25 +264,25 @@ Eine vollständige Übersicht über die `Sampler`-Klasse finden Sie hier:
 - %link:manual/python/sampler%
 
 
-## Alternative Module für die Darstellung von Anzeigen, Sammeln von Antworten usw.
+## Alternative Module für Präsentation von Darstellungen, Erfassung von Antworten usw.
 
 
 ### `psychopy`
 
-Wenn Sie das *psycho*-Backend verwenden, können Sie die verschiedenen [PsychoPy]-Module direkt verwenden. Weitere Informationen finden Sie unter:
+Wenn Sie das *psycho* Backend verwenden, können Sie die verschiedenen [PsychoPy] Module direkt verwenden. Weitere Informationen finden Sie unter:
 
 - %link:backends%
 
 
 ### `expyriment`
 
-Wenn Sie das *xpyriment*-Backend verwenden, können Sie die verschiedenen [Expyriment]-Module direkt verwenden. Weitere Informationen finden Sie unter:
+Wenn Sie das *xpyriment* Backend verwenden, können Sie die verschiedenen [Expyriment] Module direkt verwenden. Weitere Informationen finden Sie unter:
 
 - %link:backends%
 
 ### `pygame`
 
-Wenn Sie das *legacy*, *droid* oder *xpyriment* Backend verwenden (nur mit "Use OpenGL" auf "no" eingestellt), können Sie die verschiedenen [PyGame] Module direkt verwenden. Weitere Informationen finden Sie unter:
+Wenn Sie das *legacy*, *droid* oder *xpyriment* Backend (nur wenn "Use OpenGL" auf "no" gesetzt ist) verwenden, können Sie die verschiedenen [PyGame] Module direkt verwenden. Weitere Informationen finden Sie unter:
 
 - %link:backends%
 

@@ -1,5 +1,5 @@
 title: À propos de Python
-hash: 99b67bfe88b7ad764c9bc1c2a5da5b4114e573e6c0e442ff7f88dc080051e6b2
+hash: f909cf66bfb509985a9c3a131043cd177b0810ba2e22a2faacbe879979114123
 locale: fr
 language: French
 
@@ -104,35 +104,42 @@ La console est également un interpréteur Python interactif alimenté par [proj
 De nombreuses fonctions courantes sont directement disponibles dans un élément INLINE_SCRIPT, sans avoir besoin d'importer quoi que ce soit. Par exemple :
 
 ~~~ .python
-# `Canvas()` est une fonction usine qui renvoie un objet `Canvas`
+# `Canvas()` est une fonction d'usine qui renvoie un objet `Canvas`
 fixdot_canvas = Canvas()
-if sometimes(): # Parfois, le fixdot est vert
+if sometimes(): # Parfois le fixdot est vert
     fixdot_canvas.fixdot(color='green')
-else: # Parfois, il est rouge
+else: # Parfois c'est rouge
     fixdot_canvas.fixdot(color='red')
 fixdot_canvas.show()
 ~~~
 
-Pour une liste des fonctions courantes, consultez :
+Pour une liste de fonctions communes, voir :
 
 - %link:manual/python/common%
 
 
 ### L'objet `var` : Accès aux variables expérimentales
 
-__Note de version__ Depuis OpenSesame 4.0, toutes les variables expérimentales sont disponibles en tant que variables globales. Cela signifie que vous n'avez plus besoin de l'objet `var`.
+__Note de version__ À partir d'OpenSesame 4.0, toutes les variables expérimentales sont disponibles comme globales. Cela signifie que vous n'avez plus besoin de l'objet `var`.
 {:.page-notification}
 
 Vous pouvez accéder aux variables expérimentales via l'objet `var` :
 
 ~~~ .python
+# OpenSesame <= 3.3 (avec l'objet var)
 # Obtenir une variable expérimentale
 print('my_variable est : %s' % var.my_variable)
 # Définir une variable expérimentale
 var.my_variable = 'my_value'
+
+# OpenSesame >= 4.0 (sans l'objet var)
+# Obtenir une variable expérimentale
+print('my_variable est : %s' % my_variable)
+# Définir une variable expérimentale
+my_variable = 'my_value'
 ~~~
 
-Un aperçu complet de l'objet `var` se trouve ici :
+Une vue d'ensemble complète de l'objet `var` se trouve ici :
 
 - %link:manual/python/var%
 
@@ -144,18 +151,18 @@ Les fonctions de temps de base sont disponibles via l'objet `clock` :
 ~~~ .python
 # Obtenir l'horodatage actuel
 t = clock.time()
-# Attendre pendant 1 s
+# Attendre 1 s
 clock.sleep(1000)
 ~~~
 
-Un aperçu complet de l'objet `clock` se trouve ici :
+Une vue d'ensemble complète de l'objet `clock` se trouve ici :
 
 - %link:manual/python/clock%
 
 
-### L'objet `log` : Enregistrement des données
+### L'objet `log` : Journalisation des données
 
-L'enregistrement des données est disponible via l'objet `log` :
+La journalisation des données est disponible via l'objet `log` :
 
 ~~~ .python
 # Écrire une ligne de texte
@@ -164,45 +171,45 @@ log.write('Mon message de journal personnalisé')
 log.write_vars()
 ~~~
 
-Un aperçu complet de l'objet `log` se trouve ici :
+Une vue d'ensemble complète de l'objet `log` se trouve ici :
 
 - %link:manual/python/log%
 
 
-### L'objet `pool` : Accès au pool de fichiers
+### L'objet `pool` : Accès à la réserve de fichiers
 
-Vous obtenez le chemin complet d'un fichier dans le pool de fichiers via l'objet `pool` :
+Vous obtenez le chemin complet vers un fichier dans la file pool via l'objet `pool` :
 
 ~~~ .python
-# Afficher une image du pool de fichiers
+# Afficher une image de la file pool
 path = pool['img.png']
 my_canvas = Canvas()
 my_canvas.image(path)
 my_canvas.show()
 ~~~
 
-Un aperçu complet de l'objet `pool` se trouve ici :
+Une vue d'ensemble complète de l'objet `pool` se trouve ici :
 
 - %link:manual/python/pool%
 
 
 ### L'objet `responses` : Accès aux réponses des participants
 
-L'objet `responses` suit toutes les réponses des participants qui ont été collectées pendant l'expérience. Par exemple, pour lister la justesse de toutes les réponses jusqu'à présent :
+L'objet `responses` garde une trace de toutes les réponses des participants qui ont été recueillies pendant l'expérience. Par exemple, pour énumérer la précision de toutes les réponses jusqu'à présent :
 
 ~~~ .python
 for response in responses:
 	print(response.correct)
 ~~~
 
-Un aperçu complet de l'objet `responses` se trouve ici :
+Une vue d'ensemble complète de l'objet `responses` se trouve ici :
 
 - %link:manual/python/responses%
 
 
 ### La classe `Canvas` : Présentation de stimuli visuels
 
-La classe `Canvas` est utilisée pour présenter des stimuli visuels. Par exemple, vous pouvez afficher un point de fixation comme suit :
+La classe `Canvas` est utilisée pour présenter des stimuli visuels. Par exemple, vous pouvez montrer un point de fixation comme suit :
 
 ~~~ .python
 my_canvas = Canvas()
@@ -210,72 +217,72 @@ my_canvas.fixdot()
 my_canvas.show()
 ~~~
 
-Un aperçu complet de la classe `Canvas` se trouve ici :
+Une vue d'ensemble complète de la classe `Canvas` se trouve ici :
 
 - %link:manual/python/canvas%
 
 
-### La classe `Keyboard` : Collecte des touches du clavier
+### La classe `Keyboard` : Collecte des touches pressées
 
-La classe `Keyboard` est utilisée pour collecter les pressions sur les touches. Par exemple, pour collecter une pression de touche avec un délai d'expiration de 1000 ms :
+La classe `Keyboard` est utilisée pour recueillir les touches pressées. Par exemple, pour collecter une touche pressée avec un délai de 1000 ms :
 
 ~~~ .python
 my_keyboard = Keyboard(timeout=1000)
 key, time = my_keyboard.get_key()
 ~~~
 
-Un aperçu complet de la classe `Keyboard` se trouve ici :
+Une vue d'ensemble complète de la classe `Keyboard` se trouve ici :
 
 - %link:manual/python/keyboard%
 
 
-### La classe `Mouse` : Collecte des clics de souris et des écrans tactiles
+### La classe `Mouse` : Collecte des clics de souris et des touches d'écran
 
-La classe `Mouse` est utilisée pour collecter les clics de souris et les écrans tactiles. (OpenSesame ne fait pas de distinction entre les deux.) Par exemple, pour collecter un clic de souris avec un délai d'expiration de 1000 ms :
+La classe `Mouse` est utilisée pour collecter les clics de souris et les touches d'écran. (OpenSesame ne fait pas de distinction entre les deux.) Par exemple, pour collecter un clic de souris avec un délai de 1000 ms:
 
 ~~~ .python
 my_mouse = Mouse(timeout=1000)
 button, position, time = my_mouse.get_click()
 ~~~
 
-Un aperçu complet de la classe `Mouse` se trouve ici :
+Une vue d'ensemble complète de la classe `Mouse` se trouve ici:
 
 - %link:manual/python/mouse%
 
 
-### La classe `Sampler` : Lecture de sons
+### La classe `Sampler` : Lecture du son
 
-La classe `Sampler` est utilisée pour lire des échantillons sonores. Par exemple, pour lire un simple bip :
+La classe `Sampler` est utilisée pour lire des échantillons sonores. Par exemple, pour lire un bip simple :
 
 ~~~ .python
 my_sampler = Sampler()
 my_sampler.play()
 ~~~
 
-Un aperçu complet de la classe `Sampler` se trouve ici :
+Une vue d'ensemble complète de la classe `Sampler` se trouve ici :
 
 - %link:manual/python/sampler%
 
 
-## Modules alternatifs pour la présentation d'affichages, la collecte de réponses, etc.
+## Modules alternatifs pour la présentation d'affichage, la collecte de réponses, etc.
 
 
 ### `psychopy`
 
-Si vous utilisez le backend *psycho*, vous pouvez utiliser directement les différents modules [PsychoPy]. Pour plus d'informations, consultez :
+Si vous utilisez le backend *psycho*, vous pouvez directement utiliser les différents modules [PsychoPy]. Pour plus d'informations, consultez :
 
 - %link:backends%
 
 
 ### `expyriment`
 
-Si vous utilisez le backend *xpyriment*, vous pouvez utiliser directement les différents modules [Expyriment]. Pour plus d'informations, consultez :
+Si vous utilisez le backend *xpyriment*, vous pouvez directement utiliser les différents modules [Expyriment]. Pour plus d'informations, consultez :
 
 - %link:backends%
 
 ### `pygame`
 
-Si vous utilisez le backend *legacy*, *droid*, ou *xpyriment* (uniquement avec "Use OpenGL" réglé sur "non"), vous pouvez utiliser directement les différents modules [PyGame]. Pour plus d'informations, consultez :
+Si vous utilisez le backend *legacy*, *droid* ou *xpyriment* (seulement avec "Use OpenGL" défini sur "non"), vous pouvez directement utiliser les différents modules [PyGame]. Pour plus d'informations, consultez :
 
 - %link:backends%
 

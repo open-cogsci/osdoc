@@ -1,5 +1,5 @@
 title: Acerca de Python
-hash: 99b67bfe88b7ad764c9bc1c2a5da5b4114e573e6c0e442ff7f88dc080051e6b2
+hash: f909cf66bfb509985a9c3a131043cd177b0810ba2e22a2faacbe879979114123
 locale: es
 language: Spanish
 
@@ -113,33 +113,40 @@ else: # A veces es rojo
 fixdot_canvas.show()
 ~~~
 
-Para obtener una lista de funciones comunes, consulte:
+Para ver una lista de funciones comunes, consulte:
 
 - %link:manual/python/common%
 
 
-### El objeto `var`: acceso a las variables experimentales
+### El objeto `var`: Acceso a las variables experimentales
 
-__Nota de versión__ A partir de OpenSesame 4.0, todas las variables experimentales están disponibles como globales. Esto significa que ya no necesita el objeto `var`.
+__Nota de la versión__ A partir de OpenSesame 4.0, todas las variables experimentales están disponibles como globales. Esto significa que ya no necesita el objeto `var`.
 {:.page-notification}
 
 Puede acceder a las variables experimentales a través del objeto `var`:
 
 ~~~ .python
+# OpenSesame <= 3.3 (con objeto var)
 # Obtener una variable experimental
 print('my_variable es: %s' % var.my_variable)
-# Establecer una variable experimental
+# Configurar una variable experimental
 var.my_variable = 'my_value'
+
+# OpenSesame >= 4.0 (sin objeto var)
+# Obtener una variable experimental
+print('my_variable es: %s' % my_variable)
+# Configurar una variable experimental
+my_variable = 'my_value'
 ~~~
 
-Una descripción completa del objeto `var` se puede encontrar aquí:
+Se puede encontrar una descripción general completa del objeto `var` aquí:
 
 - %link:manual/python/var%
 
 
-### El objeto `clock`: funciones de tiempo
+### El objeto `clock`: Funciones de tiempo
 
-Las funciones básicas de tiempo están disponibles a través del objeto `clock`:
+Las funciones de tiempo básicas están disponibles a través del objeto `clock`:
 
 ~~~ .python
 # Obtener la marca de tiempo actual
@@ -148,12 +155,12 @@ t = clock.time()
 clock.sleep(1000)
 ~~~
 
-Una descripción completa del objeto `clock` se puede encontrar aquí:
+Se puede encontrar una descripción general completa del objeto `clock` aquí:
 
 - %link:manual/python/clock%
 
 
-### El objeto `log`: registro de datos
+### El objeto `log`: Registro de datos
 
 El registro de datos está disponible a través del objeto `log`:
 
@@ -164,43 +171,43 @@ log.write('Mi mensaje de registro personalizado')
 log.write_vars()
 ~~~
 
-Una descripción completa del objeto `log` se puede encontrar aquí:
+Se puede encontrar una descripción general completa del objeto `log` aquí:
 
 - %link:manual/python/log%
 
 
-### El objeto `pool`: acceso al grupo de archivos
+### El objeto `pool`: Acceso al depósito de archivos
 
-Puede obtener la ruta completa a un archivo en el grupo de archivos a través del objeto `pool`:
+Obtiene la ruta completa a un archivo en el depósito de archivos a través del objeto `pool`:
 
 ~~~ .python
-# Mostrar una imagen del grupo de archivos
+# Mostrar una imagen del depósito de archivos
 path = pool['img.png']
 my_canvas = Canvas()
 my_canvas.image(path)
 my_canvas.show()
 ~~~
 
-Una descripción completa del objeto `pool` se puede encontrar aquí:
+Se puede encontrar una descripción general completa del objeto `pool` aquí:
 
 - %link:manual/python/pool%
 
 
-### El objeto `responses`: acceso a las respuestas de los participantes
+### El objeto `responses`: Acceso a las respuestas de los participantes
 
-El objeto `responses` realiza un seguimiento de todas las respuestas de los participantes que se han recopilado durante el experimento. Por ejemplo, para enumerar la corrección de todas las respuestas hasta ahora:
+El objeto `responses` lleva un registro de todas las respuestas de los participantes que se han recogido durante el experimento. Por ejemplo, para listar la corrección de todas las respuestas hasta ahora:
 
 ~~~ .python
 for response in responses:
-	print(response.correct)
+    print(response.correct)
 ~~~
 
-Una descripción completa del objeto `responses` se puede encontrar aquí:
+Se puede encontrar una descripción general completa del objeto `responses` aquí:
 
 - %link:manual/python/responses%
 
 
-### La clase `Canvas`: presentación de estímulos visuales
+### La clase `Canvas`: Presentación de estímulos visuales
 
 La clase `Canvas` se utiliza para presentar estímulos visuales. Por ejemplo, puede mostrar un punto de fijación de la siguiente manera:
 
@@ -210,72 +217,72 @@ my_canvas.fixdot()
 my_canvas.show()
 ~~~
 
-Una descripción completa de la clase `Canvas` se puede encontrar aquí:
+Se puede encontrar una descripción general completa de la clase `Canvas` aquí:
 
 - %link:manual/python/canvas%
 
 
-### La clase `Keyboard`: recopilación de pulsaciones de teclas
+### La clase `Keyboard`: Recolección de teclas presionadas
 
-La clase `Keyboard` se utiliza para recopilar pulsaciones de teclas. Por ejemplo, para recopilar una pulsación de tecla con un tiempo de espera de 1000 ms:
+La clase `Keyboard` se utiliza para recoger presiones de teclas. Por ejemplo, para recoger una presión de tecla con un tiempo de espera de 1000 ms:
 
 ~~~ .python
 my_keyboard = Keyboard(timeout=1000)
 key, time = my_keyboard.get_key()
 ~~~
 
-Una descripción completa de la clase `Keyboard` se puede encontrar aquí:
+Se puede encontrar una descripción general completa de la clase `Keyboard` aquí:
 
 - %link:manual/python/keyboard%
 
 
-### La clase `Mouse`: recopilación de clics del mouse y toques en la pantalla
+### La clase `Mouse`: Recolección de clics de ratón y toques en pantalla
 
-La clase `Mouse` se utiliza para recopilar clics del mouse y toques en la pantalla. (OpenSesame no hace distinción entre los dos.) Por ejemplo, para recopilar un clic del mouse con un tiempo de espera de 1000 ms:
+La clase `Mouse` se utiliza para recoger clics de ratón y toques en pantalla. (OpenSesame no hace distinción entre los dos.) Por ejemplo, para recoger un clic de ratón con un tiempo de espera de 1000 ms:
 
 ~~~ .python
 my_mouse = Mouse(timeout=1000)
 button, position, time = my_mouse.get_click()
 ~~~
 
-Una descripción completa de la clase `Mouse` se puede encontrar aquí:
+Se puede encontrar una descripción general completa de la clase `Mouse` aquí:
 
 - %link:manual/python/mouse%
 
 
-### La clase `Sampler`: reproducción de sonido
+### La clase `Sampler`: Reproducción de sonido
 
-La clase `Sampler` se utiliza para reproducir muestras de sonido. Por ejemplo, para reproducir un simple pitido:
+La clase `Sampler` se utiliza para reproducir muestras de sonido. Por ejemplo, para reproducir un simple beep:
 
 ~~~ .python
 my_sampler = Sampler()
 my_sampler.play()
 ~~~
 
-Una descripción completa de la clase `Sampler` se puede encontrar aquí:
+Se puede encontrar una descripción general completa de la clase `Sampler` aquí:
 
 - %link:manual/python/sampler%
 
 
-## Módulos alternativos para la presentación de pantalla, recopilación de respuestas, etc.
+## Módulos alternativos para la presentación de visualización, recolección de respuesta, etc.
 
 
 ### `psychopy`
 
-Si está utilizando el backend *psycho*, puede utilizar directamente los diversos módulos de [PsychoPy]. Para obtener más información, consulte:
+Si estás utilizando el backend *psycho*, puedes usar directamente los varios módulos [PsychoPy]. Para más información, consulta:
 
 - %link:backends%
 
 
 ### `expyriment`
 
-Si está utilizando el backend *xpyriment*, puede utilizar directamente los diversos módulos de [Expyriment]. Para obtener más información, consulte:
+Si estás utilizando el backend *xpyriment*, puedes usar directamente los varios módulos [Expyriment]. Para más información, consulta:
 
 - %link:backends%
 
 ### `pygame`
 
-Si está utilizando el backend *legacy*, *droid* o *xpyriment* (solo con "Usar OpenGL" establecido en "no"), puede usar directamente los diversos módulos de [PyGame]. Para obtener más información, consulte:
+Si estás utilizando el backend *legacy*, *droid*, o *xpyriment* (solo con "Use OpenGL" configurado en "no"), puedes usar directamente varios módulos [PyGame]. Para más información, consulta:
 
 - %link:backends%
 
