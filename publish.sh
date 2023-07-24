@@ -11,4 +11,4 @@ cp output/$BRANCH/fr/index/index.html output/$BRANCH/fr/index.html
 cp output/$BRANCH/zh/index/index.html output/$BRANCH/zh/index.html
 cp output/$BRANCH/de/index/index.html output/$BRANCH/de/index.html
 cp output/$BRANCH/es/index/index.html output/$BRANCH/es/index.html
-python parse-theme.py
+# python parse-theme.py
