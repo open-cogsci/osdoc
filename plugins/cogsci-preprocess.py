@@ -248,7 +248,7 @@ class AcademicMarkdownReader(MarkdownReader):
                 summary_prompt = match.group(1).strip()
                 text = re.sub(SUMMARY_PROMPT_PATTERN, '', text,
                               flags=re.DOTALL).strip()
-            elif len(text.split()) > 800:
+            elif len(text.split()) > 800 and len(text.split()) < 5000:
                 print("No summary prompt is defined")
                 summary_prompt = DEFAULT_SUMMARY_PROMPT
             else:
