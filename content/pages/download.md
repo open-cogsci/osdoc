@@ -36,7 +36,7 @@ toc:
 
 ## All download options
 
-The latest $status$ version is $version$ *$codename$*, released on $release-date$ ([release notes](http://osdoc.cogsci.nl/$branch$/notes/$notes$)).
+The latest $status$ version is $version$ *$codename$* ([release notes](http://osdoc.cogsci.nl/$branch$/notes/$notes$)).
 
 
 ### Windows

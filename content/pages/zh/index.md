@@ -3,7 +3,7 @@ hash: 52e63365d804b437f91c29ab7c39cf7625d7475f3955e3c98c58be1d5dab0d64
 locale: zh
 language: Chinese
 
-OpenSesame是一个用于创建心理学、神经科学和实验经济学实验的程序。最新的$status$版本是$version$ *$codename$*，于$release-date$发布（[发布说明](http://osdoc.cogsci.nl/$branch$/zh/notes/$notes$)）。
+OpenSesame是一个用于创建心理学、神经科学和实验经济学实验的程序。最新的$status$版本是$version$ *$codename$*（[发布说明](http://osdoc.cogsci.nl/$branch$/zh/notes/$notes$)）。
 
 <div class="btn-group" role="group" aria-label="...">
   <a role="button" class="btn btn-success" href="%url:download%">

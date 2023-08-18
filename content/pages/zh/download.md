@@ -39,7 +39,7 @@ toc:
 
 ## 所有下载选项
 
-最新的 $status$ 版本是 $version$ *$codename$*, 发布于 $release-date$（[发行说明](http://osdoc.cogsci.nl/$branch$/zh/notes/$notes$)）。
+最新的 $status$ 版本是 $version$ *$codename$*（[发行说明](http://osdoc.cogsci.nl/$branch$/zh/notes/$notes$)）。
 
 ### Windows
 

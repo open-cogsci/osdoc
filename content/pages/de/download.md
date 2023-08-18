@@ -39,7 +39,7 @@ toc:
 
 ## Alle Downloadoptionen
 
-Die aktuelle $status$ Version ist $version$ *$codename$*, veröffentlicht am $release-date$ ([Versionshinweise](http://osdoc.cogsci.nl/$branch$/notes/$notes$)).
+Die aktuelle $status$ Version ist $version$ *$codename$* ([Versionshinweise](http://osdoc.cogsci.nl/$branch$/notes/$notes$)).
 
 
 ### Windows

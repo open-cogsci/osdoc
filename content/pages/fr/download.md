@@ -39,7 +39,7 @@ toc:
 
 ## Toutes les options de téléchargement
 
-La dernière version $status$ est $version$ *$codename$*, sortie le $release-date$ ([notes de version](http://osdoc.cogsci.nl/$branch$/fr/notes/$notes$)).
+La dernière version $status$ est $version$ *$codename$* ([notes de version](http://osdoc.cogsci.nl/$branch$/fr/notes/$notes$)).
 
 
 ### Windows
