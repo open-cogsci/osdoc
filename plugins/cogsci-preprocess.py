@@ -7,6 +7,7 @@ import sys
 import jinja2
 sys.path.insert(0, '/home/sebastiaan/git/academicmarkdown')
 import yaml
+import json
 from pathlib import Path
 from collections import OrderedDict
 from pelican import signals
@@ -17,6 +18,10 @@ from markdown.extensions.toc import TocExtension
 from markdown.extensions.tables import TableExtension
 from academicmarkdown import build, HTMLFilter, _FigureParser
 from translation_tools.translation_utils import LOCALES, parse_metadata
+from langchain.text_splitter import MarkdownHeaderTextSplitter
+from datamatrix import functional as fnc
+from langchain.chat_models import ChatOpenAI
+from translation_tools import translation_utils
 if 'publishconf.py' in sys.argv:
     from publishconf import *
 else:
@@ -40,6 +45,13 @@ ITEM_TYPES = [
     'PYGAZE_START_RECORDING', 'THIS_STYLE', 'NOTEPAD', 'INLINE_JAVASCRIPT',
     'INLINE_HTML'
 ]
+DEFAULT_SUMMARY_PROMPT = '''Write a comprehensive summary for the documentation below.
+
+```markdown
+{content}
+```
+'''
+SUMMARY_PROMPT_PATTERN = r"<summary_prompt>(.*?)</summary_prompt>"
 
 root = os.path.dirname(os.path.dirname(__file__)) + '/content'
 
@@ -207,7 +219,8 @@ class AcademicMarkdownReader(MarkdownReader):
             text = text.replace(full, '<%s/%s>' % (SITEURL, link))
         text = text.replace(root, u'')
         text = HTMLFilter.DOI(text)
-        content = self._md.convert(text)
+        content = self._md.convert(re.sub(SUMMARY_PROMPT_PATTERN, '', text,
+                                   flags=re.DOTALL))
         for var, val in const.items():
             content = content.replace(u'$%s$' % var, str(val))
         for item_type in ITEM_TYPES:
@@ -216,11 +229,67 @@ class AcademicMarkdownReader(MarkdownReader):
         build.path = build.path[3:]
         metadata = self._parse_metadata(self._md.Meta)
         build.path = build_path
+        # Write content to a JSON file that is ready for indexing by
+        # sigmund. We do this only for english, which is the only language
+        # with out a locale in the metadata. We also don't include pages aren't
+        # translated, because those tend to be workshop pages etc.
+        includes = ['manual/', 'items/', 'beginner.md', 'intermediate.md',
+                    'intermediate-javascript.md']
+        if 'locale:' not in text and 'translate: false' not in text and \
+                any(include in source_path for include in includes):
+            url = SITEURL + source_path[len(build_path[0]) + 14:]
+            # A summary prompt can be embedded in the text in pseudo tags. If
+            # so, then we use that to summarize the page, otherwise we use a
+            # default summary tool. For chunks of text that are relatively
+            # short, we don't summarize at all.
+            match = re.search(SUMMARY_PROMPT_PATTERN, text, re.DOTALL)
+            if match:
+                print("Summary prompt is defined")
+                summary_prompt = match.group(1).strip()
+                text = re.sub(SUMMARY_PROMPT_PATTERN, '', text,
+                              flags=re.DOTALL).strip()
+            elif len(text.split()) > 800:
+                print("No summary prompt is defined")
+                summary_prompt = DEFAULT_SUMMARY_PROMPT
+            else:
+                summary_prompt = None
+            with open('sigmund-sources.jsonl', 'a') as fd:
+                if summary_prompt is not None:
+                    query = summary_prompt.format(content=text)
+                    summary = predict(query)
+                    fd.write(json.dumps(
+                        {'content': summary,
+                         'url': url,
+                         'title': metadata['title']}) + '\n')
+                splitter = MarkdownHeaderTextSplitter(
+                    headers_to_split_on=[('#', 'Header 1'),
+                                         ('##', 'Header 2')])
+                for doc in splitter.split_text(text):
+                    lines = doc.page_content.splitlines()
+                    while lines:
+                        chunk = ''
+                        while lines and len(chunk.split()) < 800:
+                            chunk += lines.pop(0)
+                        print(f'{url} {len(chunk.split())}')
+                        fd.write(json.dumps(
+                            {'content': chunk,
+                             'url': url,
+                             'title': metadata['title']}) + '\n')
         return content, metadata
+
+
+@fnc.memoize(persistent=True)
+def predict(query):
+    llm = ChatOpenAI(model='gpt-4')
+    answer = llm.predict(query)
+    print(answer)
+    return answer
 
 
 def init_academicmarkdown(sender):
 
+    with open('sigmund-sources.jsonl', 'w') as fd:
+        pass
     build.postMarkdownFilters = []
     build.figureTemplate = 'jekyll'
     build.tableTemplate = 'kramdown'
