@@ -18,6 +18,21 @@ figure:
 --%
 
 
+## Using show-if expressions
+
+You can use show-if expressions to determine whether or not a particular element should be shown. For example, if you have an image of a happy face that should be shown only when the variable `valence` has the value 'positive', then you can set the show-if expression for the corresponding image element to:
+
+```python
+valence == 'positive'
+```
+
+If you leave a show-if expression empty or enter `True`, element will always be shown. Show-if expressions use the same syntax as other conditional expressions. For more information, see:
+
+- %link:manual/variables%
+
+Show-if expressions are evaluated at the moment that the display is prepared. This means that for SKETCHPAD items, they are evaluated during the prepare phase, whereas for FEEDBACK items, they are evaluated during the run phase (see also the section below).
+
+
 ## The difference between sketchpad and feedback items
 
 The SKETCHPAD and FEEDBACK items are identical in most ways, except for two important differences.
