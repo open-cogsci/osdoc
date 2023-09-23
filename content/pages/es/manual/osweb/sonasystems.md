@@ -25,7 +25,7 @@ Primero, importa tu experimento a JATOS, tal como se describió anteriormente. A
 Luego, crea un estudio en Sona Systems. Inserta la URL del estudio JATOS en el campo etiquetado como "URL del estudio". Esto le dirá a Sona Systems cómo iniciar el experimento. Importante, agrega lo siguiente al final de la URL (esto pasará la ID del participante de Sona a tu experimento):
 
 ```bash
-&SONA_ID=%SURVEY_CODE% 
+?SONA_ID=%SURVEY_CODE%  
 ```
 
 Sona Systems no utiliza una URL de redireccionamiento. Esto significa que Sona Systems no sabrá automáticamente si el participante terminó o no el estudio.

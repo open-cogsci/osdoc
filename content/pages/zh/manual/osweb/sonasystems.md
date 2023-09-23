@@ -25,7 +25,7 @@ Sona Systems 是许多大学用于招募参与者、给学生参与者授予课�
 接下来，在 Sona Systems 上创建研究。将 JATOS 研究 URL 插入到标记为 “Study URL” 的字段中。这将告诉 Sona Systems 如何启动实验。重要的是，要将以下内容添加到URL的末尾（这将会将参与者的 Sona ID 传递给你的实验）:
 
 ```bash
-&SONA_ID=%SURVEY_CODE% 
+?SONA_ID=%SURVEY_CODE%  
 ```
 
 Sona Systems 不使用重定向 URL。这意味着 Sona Systems 不会自动知道参与者是否完成了研究。
