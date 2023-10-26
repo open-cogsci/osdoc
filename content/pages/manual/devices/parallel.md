@@ -5,30 +5,22 @@ In EEG/ ERP studies it is common to send triggers to mark the timestamp for sign
 
 [TOC]
 
+
 ## Using the `parallel_port_trigger` plugin
 
-Parallel_port_trigger is a third-party plugin, but has been reviewed by the OpenSesame team.
+Parallel_port_trigger is a third-party plugin and not maintained by the OpenSesame team.
 {: .page-notification}
 
-Triggers can be sent with the `parallel_port_trigger` plugin which works under Linux and Windows.
+An OpenSesame plug-in for sending stimulus synchronization triggers through the parallel port to data acquisition systems.
 
-The plugin has three input boxes:
+- <https://github.com/dev-jam/opensesame-plugin-parallel_port_trigger/>
 
-- The value ranges between 0-255 and specifies the trigger byte.
-- The duration (in ms) is the time that the trigger is on. Unless a 0 ms duration was specified, the trigger will be reset to 0 after this interval.
-- The port address has to be specified manually. This setting applies only to Windows and is ignored under Linux.
+You can install the `parallel_port_trigger` plugin from PyPi:
 
-You can download the plugin from here:
+```
+pip install pip install opensesame-plugin-parallel-port-trigger
+```
 
-- <https://github.com/dev-jam/opensesame_plugin_parallel-port-trigger>
-
-%--
-figure:
- id: FigScreenshot
- source: plugin-screenshot.png
- caption: |
-  A screenshot of the `parallel_port_trigger` plugin.
---%
 
 ## Using `dportio.dll` in a Python inline Script (Windows only)
 

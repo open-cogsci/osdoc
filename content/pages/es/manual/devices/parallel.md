@@ -1,41 +1,33 @@
 title: Puerto paralelo (disparadores EEG)
 reviewed: false
-hash: 587cf8f063e30d745e5bef81527ea94d14a49a67069a670b5d61e369af1c09ff
+hash: 173d67c1a3fbe4fb17b8a936fe30584d71443f518bf86bd65c9ad6da21c4e229
 locale: es
 language: Spanish
 
-En los estudios de EEG/ERP es común enviar disparadores para marcar la marca de tiempo de eventos significativos (por ejemplo, el inicio de un ensayo, la presentación de un estímulo particular, etc.). Los disparadores son típicamente bytes que se envían a través del puerto paralelo al aparato de EEG.
+En los estudios EEG/ERP es común enviar disparadores para marcar el intervalo de tiempo para eventos significativos (por ejemplo, el inicio de un ensayo, la presentación de un estímulo particular, etc.). Los disparadores suelen ser bytes que se envían a través del puerto paralelo al aparato EEG.
 
 [TOC]
 
-## Usando el complemento `parallel_port_trigger`
 
-Parallel_port_trigger es un complemento de terceros, pero ha sido revisado por el equipo de OpenSesame.
+## Usando el plugin `parallel_port_trigger`
+
+Parallel_port_trigger es un plugin de terceros y no está mantenido por el equipo de OpenSesame.
 {: .page-notification}
 
-Los disparadores se pueden enviar con el complemento `parallel_port_trigger` que funciona bajo Linux y Windows.
+Un plugin de OpenSesame para enviar disparadores de sincronización de estímulos a través del puerto paralelo a sistemas de adquisición de datos.
 
-El complemento tiene tres cuadros de entrada:
+- <https://github.com/dev-jam/opensesame-plugin-parallel_port_trigger/>
 
-- El valor oscila entre 0-255 y especifica el byte del disparador.
-- La duración (en ms) es el tiempo que el disparador está activo. A menos que se haya especificado una duración de 0 ms, el disparador se restablecerá a 0 después de este intervalo.
-- La dirección del puerto debe especificarse manualmente. Esta configuración solo se aplica a Windows y se ignora en Linux.
+Puede instalar el plugin `parallel_port_trigger` desde PyPi:
 
-Puedes descargar el complemento desde aquí:
+```
+pip install pip install opensesame-plugin-parallel-port-trigger
+```
 
-- <https://github.com/dev-jam/opensesame_plugin_parallel-port-trigger>
 
-%--
-figure:
- id: FigScreenshot
- source: plugin-screenshot.png
- caption: |
-  Una captura de pantalla del complemento `parallel_port_trigger`.
---%
+## Usando `dportio.dll` en un Script Python inline (solo para Windows)
 
-## Usando `dportio.dll` en un script Python INLINE (solo para Windows)
-
-En lugar de usar el complemento `parallel_port_trigger`, también es posible enviar disparadores con `dlportio.dll` a través de un script Python INLINE. Este enfoque es solo para Windows. Para hacerlo, primero agregue un INLINE_SCRIPT al inicio del experimento con el siguiente código en la fase de preparación:
+En lugar de usar el plugin `parallel_port_trigger`, también es posible enviar disparadores con `dlportio.dll` a través de un script Python inline. Este método solo sirve para Windows. Para hacerlo, primero agregue un INLINE_SCRIPT al inicio del experimento con el siguiente código en la fase de preparación:
 
 ~~~ .python
 try:
@@ -43,45 +35,45 @@ try:
 	global io
 	io = windll.dlportio # requires dlportio.dll !!!
 except:
-	print('The parallel port couldn\'t be opened')
+	print('El puerto paralelo no pudo ser abierto')
 ~~~
 
-Esto cargará `dlportio.dll` como un objeto global llamado `io`. ¡Tenga en cuenta que el fallo no bloqueará el experimento, así que asegúrese de revisar la ventana de depuración para ver mensajes de error!
+Esto cargará `dlportio.dll` como un objeto global llamado `io`. Nota que un fallo no colapsará el experimento, así que asegúrate de verificar la ventana de depuración para los mensajes de error!
 
-Ahora use el siguiente código en un INLINE_SCRIPT en cualquier lugar del experimento para enviar un disparador:
+Ahora utilice el siguiente código en un INLINE_SCRIPT en cualquier parte del experimento para enviar un disparador:
 
 ~~~ .python
 global io
-trigger = 1
-port = 0x378
+disparador = 1
+puerto = 0x378
 try:
-	io.DlPortWritePortUchar(port, trigger)
+	io.DlPortWritePortUchar(puerto, disparador)
 except:
-	print('Failed to send trigger!')
+	print('¡Falló el envío del disparador!')
 ~~~
 
-Tenga en cuenta que esto envía el disparador 1 al puerto 0x378 (= 888). Cambie estos valores de acuerdo a su configuración.
+Nota que este envía el disparador 1 al puerto 0x378 (=888). Cambie estos valores de acuerdo a su configuración.
 
 ## Obteniendo acceso al puerto paralelo
 
 ### Linux
 
-En Linux, utilizamos el módulo `parport_pc` (probado en Debian Wheezy) y necesitamos proporcionarnos nosotros mismos con permisos para hacerlo. Podemos lograr esto ejecutando los siguientes comandos:
+En Linux usamos el módulo `parport_pc` (probado en Debian Wheezy) y necesitamos proporcionarnos permisos para hacerlo. Podemos lograr esto ejecutando los siguientes comandos:
 
 	sudo rmmod lp
 	sudo rmmod parport_pc
 	sudo modprobe parport_pc
-	sudo adduser [user] lp
+	sudo adduser [usuario] lp
 
-Aquí, `[user]` debe ser reemplazado por su nombre de usuario. Luego, cierre sesión e inicie sesión, ¡y está listo para comenzar!
+Aquí, `[usuario]` debe ser reemplazado por su nombre de usuario. Después, cierre sesión e ingrese de nuevo, ¡y estará listo para empezar!
 
-### Windows XP y Windows Vista (32 bits)
+### Windows XP y Windows Vista (32 bit)
 
 1. Descargue el controlador DLPortIO de 32 bits desde [aquí][win32-dll] y descomprima el archivo zip.
-2. Vaya a la carpeta `DriverLINX/drivers` y copie `dlportio.dll` y `dlportio.sys` en la carpeta `install`. Esta es la carpeta donde se encuentra `install.exe`. Luego, ejecute `install.exe`
-3. Debe copiar `dlportio.dll` en la carpeta de OpenSesame (es decir, la misma carpeta que contiene `opensesame.exe`).
+2. Vaya a la carpeta `DriverLINX/drivers` y copie `dlportio.dll` y `dlportio.sys` a la carpeta `install`. Esta es la carpeta donde se encuentra `install.exe`. Luego ejecute `install.exe`
+3. Necesita copiar `dlportio.dll` en la carpeta de OpenSesame (es decir, la misma carpeta que contiene `opensesame.exe`).
 
-### Windows 7 (32 y 64 bits)
+### Windows 7 (32 y 64 bit)
 
 1. Descarga el controlador DLPortIO de 32 bits o 64 bits [aquí][win7-dll] y descomprime el archivo zip.
 2. Como Windows 7 tiene un sistema de seguridad reforzado (al menos en comparación con XP), no se puede instalar simplemente el controlador DLPortIO. Esto no funcionará, ya que Windows 7 bloqueará todos los intentos de instalar un controlador no oficialmente firmado (por Microsoft). Bueno para la seguridad de un usuario promedio, pero malo para nosotros. Para eludir esta restricción, se debe utilizar un pequeño programa llamado "Digital Signature Enforcement Overrider" (DSEO), que se puede descargar [aquí][dseo] (por supuesto, hay otras formas posibles de hacer esto, pero este programa se menciona en el archivo `readme.txt` de DLPortIO y no es necesario profundizar en las especialidades de la arquitectura de MS Windows 7).

@@ -1,41 +1,31 @@
 title: Port parallèle (déclencheurs EEG)
 reviewed: false
-hash: 587cf8f063e30d745e5bef81527ea94d14a49a67069a670b5d61e369af1c09ff
+hash: 173d67c1a3fbe4fb17b8a936fe30584d71443f518bf86bd65c9ad6da21c4e229
 locale: fr
 language: French
 
-Dans les études EEG/ERP, il est courant d'envoyer des déclencheurs pour marquer l'instant de certains événements significatifs (par exemple, le début d'un essai, la présentation d'un stimulus particulier, etc.). Les déclencheurs sont généralement des octets envoyés via le port parallèle vers l'appareil EEG.
+Dans les études EEG / ERP, il est courant d'envoyer des déclencheurs pour marquer le timestamp des événements importants (par exemple, le début d'un essai, la présentation d'un stimulus particulier, etc.). Les déclencheurs sont généralement des octets qui sont envoyés via le port parallèle à l'appareil EEG.
 
 [TOC]
 
 ## Utilisation du plugin `parallel_port_trigger`
 
-Parallel_port_trigger est un plugin tiers, mais a été examiné par l'équipe OpenSesame.
+Parallel_port_trigger est un plugin tiers et n'est pas maintenu par l'équipe d'OpenSesame.
 {: .page-notification}
 
-Les déclencheurs peuvent être envoyés avec le plugin `parallel_port_trigger` qui fonctionne sous Linux et Windows.
+Un plug-in OpenSesame pour envoyer des déclencheurs de synchronisation de stimulus via le port parallèle aux systèmes d'acquisition de données.
 
-Le plugin a trois zones de saisie :
+- <https://github.com/dev-jam/opensesame-plugin-parallel_port_trigger/>
 
-- La valeur varie entre 0 et 255 et spécifie l'octet du déclencheur.
-- La durée (en ms) est le temps pendant lequel le déclencheur est activé. À moins qu'une durée de 0 ms ne soit spécifiée, le déclencheur sera réinitialisé à 0 après cet intervalle.
-- L'adresse du port doit être spécifiée manuellement. Ce réglage s'applique uniquement à Windows et est ignoré sous Linux.
+Vous pouvez installer le plugin `parallel_port_trigger` depuis PyPi :
 
-Vous pouvez télécharger le plugin depuis ici :
-
-- <https://github.com/dev-jam/opensesame_plugin_parallel-port-trigger>
-
-%--
-figure:
- id: FigScreenshot
- source: plugin-screenshot.png
- caption: |
-  Une capture d'écran du plugin `parallel_port_trigger`.
---%
+```
+pip install opensesame-plugin-parallel-port-trigger
+```
 
 ## Utilisation de `dportio.dll` dans un script Python inline (uniquement pour Windows)
 
-Au lieu d'utiliser le plugin `parallel_port_trigger`, il est également possible d'envoyer des déclencheurs avec `dlportio.dll` via un script Python inline. Cette approche est réservée à Windows. Pour ce faire, ajoutez d'abord un INLINE_SCRIPT au début de l'expérience avec le code suivant dans la phase de préparation :
+Au lieu d'utiliser le plugin `parallel_port_trigger`, il est également possible d'envoyer des déclencheurs avec `dlportio.dll` via un script Python inline. Cette approche fonctionne uniquement sur Windows. Pour ce faire, ajoutez d'abord un INLINE_SCRIPT au début de l'expérience avec le code suivant dans la phase de préparation :
 
 ~~~ .python
 try:
@@ -46,9 +36,9 @@ except:
 	print('Le port parallèle n\'a pas pu être ouvert')
 ~~~
 
-Cela chargera `dlportio.dll` en tant qu'objet global appelé `io`. Veuillez noter que l'échec ne provoquera pas de plantage de l'expérience, alors assurez-vous de vérifier la fenêtre de débogage pour les messages d'erreur !
+Ceci chargera `dlportio.dll` comme un objet global appelé `io`. Veuillez noter qu'une défaillance ne fera pas échouer l'expérience, alors assurez-vous de vérifier la fenêtre de débogage pour les messages d'erreur !
 
-Utilisez maintenant le code suivant dans un INLINE_SCRIPT n'importe où dans l'expérience pour envoyer un déclencheur :
+Maintenant, utilisez le code suivant dans un INLINE_SCRIPT n'importe où dans l'expérience pour envoyer un déclencheur :
 
 ~~~ .python
 global io
@@ -57,29 +47,29 @@ port = 0x378
 try:
 	io.DlPortWritePortUchar(port, trigger)
 except:
-	print('Échec de l\'envoi du déclencheur!')
+	print('Échec de l'envoi du déclencheur !')
 ~~~
 
-Notez que cela envoie le déclencheur 1 au port 0x378 (=888). Modifiez ces valeurs en fonction de votre configuration.
+Notez que cela envoie le déclencheur 1 au port 0x378 (=888). Changez ces valeurs en fonction de votre configuration.
 
-## Obtenir l'accès au port parallèle
+## Obtention de l'accès au port parallèle
 
 ### Linux
 
-Dans Linux, nous utilisons le module `parport_pc` (testé sur Debian Wheezy) et nous devons nous donner les autorisations pour le faire. Nous pouvons y parvenir en exécutant les commandes suivantes :
+Sur Linux, nous utilisons le module `parport_pc` (testé sur Debian Wheezy) et nous devons nous donner les permissions pour ce faire. Nous pouvons accomplir cela en exécutant les commandes suivantes :
 
 	sudo rmmod lp
 	sudo rmmod parport_pc
 	sudo modprobe parport_pc
 	sudo adduser [user] lp
 
-Ici, `[user]` doit être remplacé par votre nom d'utilisateur. Ensuite, déconnectez-vous et reconnectez-vous, et vous êtes prêt à partir !
+Ici, `[user]` doit être remplacé par votre nom d'utilisateur. Ensuite, déconnectez-vous et reconnectez-vous, et vous êtes prêt à y aller !
 
 ### Windows XP et Windows Vista (32 bits)
 
-1. Téléchargez le pilote DLPortIO 32 bits [ici][win32-dll] et décompressez l'archive zip.
-2. Allez dans le dossier `DriverLINX/drivers` et copiez `dlportio.dll` et `dlportio.sys` dans le dossier `install`. C'est le dossier où se trouve `install.exe`. Ensuite, exécutez `install.exe`.
-3. Vous devez copier `dlportio.dll` dans le dossier OpenSesame (c'est-à-dire le même dossier qui contient `opensesame.exe`).
+1. Téléchargez le pilote DLPortIO 32 bits à partir de [ici][win32-dll] et décompressez l'archive zip.
+2. Allez dans le dossier `DriverLINX/drivers` et copiez `dlportio.dll` et `dlportio.sys` dans le dossier `install`. C'est le dossier où se trouve `install.exe`. Ensuite, exécutez `install.exe`
+3. Vous devez copier `dlportio.dll` dans le dossier OpenSesame (c'est-à-dire le dossier qui contient `opensesame.exe`).
 
 ### Windows 7 (32 et 64 bits)
 

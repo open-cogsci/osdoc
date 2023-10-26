@@ -1,54 +1,46 @@
 title: Parallelport (EEG-Trigger)
 reviewed: false
-hash: 587cf8f063e30d745e5bef81527ea94d14a49a67069a670b5d61e369af1c09ff
+hash: 173d67c1a3fbe4fb17b8a936fe30584d71443f518bf86bd65c9ad6da21c4e229
 locale: de
 language: German
 
-In EEG/ ERP-Studien ist es üblich, Trigger zu senden, um den Zeitstempel für bedeutende Ereignisse zu markieren (z.B. Beginn eines Versuchs, Präsentation eines bestimmten Reizes usw.). Trigger sind typischerweise Bytes, die über den Parallelport an das EEG-Gerät gesendet werden.
+In EEG/ ERP-Studien ist es üblich, Trigger zu senden, um den Zeitstempel für bedeutende Ereignisse zu markieren (z. B. den Beginn eines Versuchs, die Darstellung eines bestimmten Stimulus usw.). Trigger sind in der Regel Bytes, die über den Parallelport an das EEG-Gerät gesendet werden.
 
 [TOC]
 
+
 ## Verwendung des `parallel_port_trigger` Plugins
 
-Parallel_port_trigger ist ein Plugin eines Drittanbieters, wurde jedoch vom OpenSesame-Team überprüft.
+Parallel_port_trigger ist ein Plugin von Drittanbietern und wird nicht vom OpenSesame-Team gepflegt.
 {: .page-notification}
 
-Trigger können mit dem `parallel_port_trigger` Plugin gesendet werden, das unter Linux und Windows funktioniert.
+Ein OpenSesame-Plugin zum Senden von Stimulussynchronisationstriggern über den Parallelport an Datenerfassungssysteme.
 
-Das Plugin hat drei Eingabefelder:
+- <https://github.com/dev-jam/opensesame-plugin-parallel_port_trigger/>
 
-- Der Wert liegt zwischen 0-255 und gibt das Trigger-Byte an.
-- Die Dauer (in ms) ist die Zeit, in der der Trigger aktiv ist. Falls keine 0 ms Dauer angegeben wurde, wird der Trigger nach diesem Intervall auf 0 zurückgesetzt.
-- Die Port-Adresse muss manuell angegeben werden. Diese Einstellung gilt nur für Windows und wird unter Linux ignoriert.
+Sie können das `parallel_port_trigger` Plugin von PyPi installieren:
 
-Das Plugin kann hier heruntergeladen werden:
+```
+pip install pip install opensesame-plugin-parallel-port-trigger
+```
 
-- <https://github.com/dev-jam/opensesame_plugin_parallel-port-trigger>
-
-%--
-figure:
- id: FigScreenshot
- source: plugin-screenshot.png
- caption: |
-  Ein Screenshot des `parallel_port_trigger` Plugins.
---%
 
 ## Verwendung von `dportio.dll` in einem Python Inline-Skript (nur Windows)
 
-Anstelle des `parallel_port_trigger` Plugins können Trigger auch mit `dlportio.dll` über ein Python Inline-Skript gesendet werden. Dieser Ansatz funktioniert nur unter Windows. Fügen Sie dazu zuerst einen INLINE_SCRIPT zu Beginn des Experiments mit folgendem Code in der Vorbereitungsphase hinzu:
+Anstelle des `parallel_port_trigger` Plugins ist es auch möglich, Trigger mit `dlportio.dll` über ein Python Inline-Skript zu senden. Dieser Ansatz ist auf Windows beschränkt. Fügen Sie dazu zunächst ein INLINE_SCRIPT am Anfang des Experiments mit dem folgenden Code in der Vorbereitungsphase hinzu:
 
 ~~~ .python
 try:
 	from ctypes import windll
 	global io
-	io = windll.dlportio # requires dlportio.dll !!!
+	io = windll.dlportio # erfordert dlportio.dll !!!
 except:
-	print('The parallel port couldn\'t be opened')
+	print('Der Parallelport konnte nicht geöffnet werden')
 ~~~
 
-Dies wird `dlportio.dll` als globales Objekt namens `io` laden. Beachten Sie, dass Fehler das Experiment nicht zum Absturz bringen, also überprüfen Sie das Debug-Fenster für Fehlermeldungen!
+Dies lädt `dlportio.dll` als globales Objekt namens `io`. Bitte beachten Sie, dass ein Fehler das Experiment nicht zum Absturz bringt, überprüfen Sie also das Debug-Fenster auf Fehlermeldungen!
 
-Verwenden Sie dann den folgenden Code in einem INLINE_SCRIPT irgendwo im Experiment, um einen Trigger zu senden:
+Verwenden Sie jetzt den folgenden Code in einem INLINE_SCRIPT irgendwo im Experiment, um einen Trigger zu senden:
 
 ~~~ .python
 global io
@@ -57,29 +49,29 @@ port = 0x378
 try:
 	io.DlPortWritePortUchar(port, trigger)
 except:
-	print('Failed to send trigger!')
+	print('Es wurde versucht, einen Trigger zu senden!')
 ~~~
 
-Beachten Sie, dass dies Trigger 1 an Port 0x378 (=888) sendet. Ändern Sie diese Werte entsprechend Ihrer Konfiguration.
+Beachten Sie, dass dies den Trigger 1 an Port 0x378 (=888) sendet. Ändern Sie diese Werte je nach Ihrer Einrichtung.
 
-## Zugang zum Parallelport erhalten
+## Zugriff auf den Parallelport erhalten
 
 ### Linux
 
-Unter Linux verwenden wir das `parport_pc`-Modul (getestet in Debian Wheezy) und müssen uns selbst die Berechtigung dazu geben. Dies kann erreicht werden, indem die folgenden Befehle ausgeführt werden:
+Unter Linux verwenden wir das `parport_pc` Modul (getestet in Debian Wheezy) und müssen uns Berechtigungen dafür geben. Dies kann durch Ausführen der folgenden Befehle erreicht werden:
 
 	sudo rmmod lp
 	sudo rmmod parport_pc
 	sudo modprobe parport_pc
 	sudo adduser [user] lp
 
-Hier sollte `[user]` durch Ihren Benutzernamen ersetzt werden. Anschließend melden Sie sich ab und wieder an, und Sie sind einsatzbereit!
+Hier sollte `[user]` durch Ihren Benutzernamen ersetzt werden. Danach loggen Sie sich aus und wieder ein, und Sie können loslegen!
 
 ### Windows XP und Windows Vista (32 Bit)
 
-1. Laden Sie den 32-Bit DLPortIO-Treiber von [hier][win32-dll] herunter und entpacken Sie das ZIP-Archiv.
-2. Gehen Sie zum `DriverLINX/drivers` Ordner und kopieren Sie `dlportio.dll` und `dlportio.sys` in den `install` Ordner. Dies ist der Ordner, in dem sich `install.exe` befindet. Führen Sie anschließend `install.exe` aus.
-3. Sie müssen `dlportio.dll` in den OpenSesame-Ordner kopieren (also in denselben Ordner, der `opensesame.exe` enthält).
+1. Laden Sie den 32-Bit DLPortIO Treiber von [hier][win32-dll] herunter und entpacken Sie das Zip-Archiv.
+2. Gehen Sie zum `DriverLINX/drivers` Ordner und kopieren Sie `dlportio.dll` und `dlportio.sys` in den `install` Ordner. Dies ist der Ordner, in dem `install.exe` liegt. Führen Sie dann `install.exe` aus.
+3. Sie müssen `dlportio.dll` in den OpenSesame Ordner kopieren (d.h., den gleichen Ordner, der `opensesame.exe` enthält).
 
 ### Windows 7 (32 und 64 Bit)
 

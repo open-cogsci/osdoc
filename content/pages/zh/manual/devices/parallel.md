@@ -1,54 +1,45 @@
 title: 并口 (EEG 触发器)
 reviewed: false
-hash: 587cf8f063e30d745e5bef81527ea94d14a49a67069a670b5d61e369af1c09ff
+hash: 173d67c1a3fbe4fb17b8a936fe30584d71443f518bf86bd65c9ad6da21c4e229
 locale: zh
 language: Chinese
 
-在EEG/ERP研究中，通常通过发送触发器来标记显著事件（如试验开始、特定刺激呈现等）的时间戳。触发器通常是通过并口发送到EEG设备的字节。
+在EEG / ERP研究中，通常会发送触发信号来标记重要事件（例如，试验的开始，特定刺激的呈现等）的时间戳。触发器通常是通过并行端口发送到EEG设备的字节。
 
 [TOC]
 
-## 使用`parallel_port_trigger`插件
+## 使用 `parallel_port_trigger` 插件
 
-Parallel_port_trigger是一个第三方插件，已通过OpenSesame团队的审核。
+Parallel_port_trigger 是一个第三方插件，不由 OpenSesame 团队维护。
 {: .page-notification}
 
-在Linux和Windows 下，可以使用`parallel_port_trigger`插件来发送触发器。
+这是一个 OpenSesame 插件，用于通过并行端口向数据采集系统发送刺激同步触发信号。
 
-该插件有三个输入框：
+- <https://github.com/dev-jam/opensesame-plugin-parallel_port_trigger/>
 
-- 值的范围在0-255之间，表示触发器字节。
-- 持续时间（以毫秒为单位）表示触发器开启的时间。除非指定了0毫秒的持续时间，否则，该时间间隔过后，触发器将被重置为0。
-- 端口地址需要手动指定。此设置仅适用于Windows操作系统，在Linux下将被忽略。
+您可以从 PyPi 安装 `parallel_port_trigger` 插件：
 
-您可以从以下链接下载插件：
+```
+pip install pip install opensesame-plugin-parallel-port-trigger
+```
 
-- <https://github.com/dev-jam/opensesame_plugin_parallel-port-trigger>
 
-%--
-figure:
- id: FigScreenshot
- source: plugin-screenshot.png
- caption: |
-  `parallel_port_trigger`插件的截图。
---%
+## 在Python 内联脚本中使用 `dportio.dll`（仅限Windows）
 
-## 使用Python内联脚本中的`dportio.dll`（仅限Windows）
-
-除了使用`parallel_port_trigger`插件外，还可以通过Python内联脚本发送`dlportio.dll`触发器。此方法仅适用于Windows系统。首先，在实验开始处添加一个内联脚本(INLINE_SCRIPT)，在准备阶段插入以下代码：
+除了使用 `parallel_port_trigger` 插件，还可以通过在Python内联脚本中使用 `dlportio.dll` 来发送触发器。这种方法仅适用于Windows。为此，首先在实验的开始处添加一个INLINE_SCRIPT，并在准备阶段运行以下代码：
 
 ~~~ .python
 try:
 	from ctypes import windll
 	global io
-	io = windll.dlportio # 需要dlportio.dll !!!
+	io = windll.dlportio # 需要 dlportio.dll ！！！
 except:
-	print('The parallel port couldn\'t be opened')
+	print('并行端口无法打开')
 ~~~
 
-这将`dlportio.dll`变成一个名为`io`的全局对象。请注意，失败不会导致实验崩溃，因此请务必检查调试窗口中的错误消息！
+这将加载 `dlportio.dll` 为一种名为 `io` 的全局对象。请注意，失败并不会导致实验崩溃，因此确保检查调试窗口以查看错误消息！
 
-接下来在实验的任何地方，使用以下代码在INLINE_SCRIPT中发送触发器：
+现在，在实验的任何地方使用以下代码在 INLINE_SCRIPT 中发送一个触发信号：
 
 ~~~ .python
 global io
@@ -57,31 +48,31 @@ port = 0x378
 try:
 	io.DlPortWritePortUchar(port, trigger)
 except:
-	print('Failed to send trigger!')
+	print('发送触发信号失败！')
 ~~~
 
-请注意，这将向端口0x378(=888)发送触发器1。根据您的设置更改这些值。
+请注意，这将触发器1发送到端口0x378（=888）。根据您的设置更改这些值。
 
 ## 获取并行端口的访问权限
 
 ### Linux
 
-在Linux中，我们使用`parport_pc`模块（在Debian Wheezy中进行了测试），我们需要为自己提供许可。我们可以通过执行以下命令来实现：   
+在 Linux 中，我们使用 `parport_pc` 模块（在 Debian Wheezy 中测试过），我们需要提供相应的权限。我们可以通过执行以下命令来实现：
 
-    sudo rmmod lp
-    sudo rmmod parport_pc
-    sudo modprobe parport_pc
-    sudo adduser [user] lp
+	sudo rmmod lp
+	sudo rmmod parport_pc
+	sudo modprobe parport_pc
+	sudo adduser [user] lp
 
-这里的`[user]`应该是你的用户名。接下来，登出并重新登录，你就可以开始使用了！
+这里的 `[user]` 应替换为您的用户名。然后，注销并重新登录，您就可以开始了！
 
-### Windows XP和Windows Vista（32位）
+### Windows XP 和 Windows Vista（32 位）
 
-1. 从[这里][win32-dll]下载32位DLPortIO驱动程序，然后解压缩zip文件。
-2. 转到`DriverLINX/drivers`文件夹，将`dlportio.dll`和`dlportio.sys`复制到`install`文件夹。`install.exe`位于此文件夹。然后运行`install.exe`。
-3. 你需要将`dlportio.dll`复制到OpenSesame文件夹（也就是包含`opensesame.exe`的文件夹）。
+1. 从[此处][win32-dll]下载32位的 DLPortIO 驱动程序，并解压缩zip存档。
+2. 转到 `DriverLINX/drivers` 文件夹，并复制 `dlportio.dll` 和 `dlportio.sys` 到 `install` 文件夹。这是包含 `install.exe` 的文件夹。然后运行 `install.exe`
+3. 您需要将 `dlportio.dll` 复制到 OpenSesame 文件夹（也就是包含 `opensesame.exe` 的文件夹）。
 
-### Windows 7（32和64位）
+### Windows 7（32位和64位）
 
 1. 下载32位或64位的DLPortIO驱动程序[这里][win7-dll]，并解压缩zip存档。
 2. 由于Windows 7具有加强的安全系统（至少与XP相比），因此无法简单地安装DLPortIO驱动程序。这不起作用，因为Windows 7将阻止安装未经正式签名（由Microsoft签名）的驱动程序的所有尝试。对于普通用户的安全性很好，但对我们来说不好。要绕过此限制，必须使用一个名为“数字签名强制执行覆盖器”（DSEO）的小助手程序，可以在[这里][dseo]下载（当然还有其他可能的方法可以执行此操作， 但是这个程序在DLPortIO的`readme.txt`中被提及，不需要深入了解MS Windows 7体系结构专用功能）。
