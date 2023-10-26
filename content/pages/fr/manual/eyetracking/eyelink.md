@@ -37,15 +37,7 @@ Cela peut sembler compliqué, mais ça ne l'est vraiment pas. Pour ce faire, com
 Ensuite, une fois que vous comprenez la procédure générale, commencez par créer un environnement Python 3.10, continuez avec les instructions de la page Téléchargements, puis installez PyLink :
 
 ```
-# Commencez par créer un environnement Python 3.10
-conda create -n opensesame-py3 python=3.10
-conda activate opensesame-py3
-# Suivez maintenant les instructions de la page de téléchargement
-# ...
-# Puis installez PyLink depuis l'entrepôt PyPi de SR Research
 pip install --index-url=https://pypi.sr-research.com sr-research-pylink
-# Et maintenant lancez OpenSesame !
-opensesame
 ```
 
 Vous pouvez trouver plus d'informations sur PyLink sur le forum de SR Research (inscription gratuite requise) :

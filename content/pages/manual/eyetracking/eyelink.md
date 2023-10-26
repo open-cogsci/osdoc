@@ -27,24 +27,10 @@ In this folder, there is a `libs` subfolder, which you need to add to the system
 
 ### Installing OpenSesame with PyLink
 
-PyLink is the Python library for EyeLink support. As of July 2023, PyLink supports Python versions up to 3.10, whereas OpenSesame by default uses Python 3.11. Therefore, until Pylink is updated for Python 3.11, the easiest way to install OpenSesame with Pylink is by building a Python 3.10 environment through Anaconda.
-
-This sounds complicated, but it is really not. To do so, first read the general procedure for installing OpenSesame through Anaconda as described on the Downloads page:
-
-- %link:download%
-
-Next, once you understand the general procedure, start by creating a Python 3.10 environment, continue with the instructions from the Downloads page, and then install PyLink:
+PyLink is the Python library for EyeLink support. PyLink can be installed from the SR Research PyPi repository through `pip install`:
 
 ```
-# Start by creating a Python 3.10 environment
-conda create -n opensesame-py3 python=3.10
-conda activate opensesame-py3
-# Now follow the instructions from the downloads page
-# ...
-# Then install PyLink from the SR Research PyPi repository
 pip install --index-url=https://pypi.sr-research.com sr-research-pylink
-# And now launch OpenSesame!
-opensesame
 ```
 
 You can find more information about PyLink on the SR Research forum (free registration required):
@@ -57,7 +43,8 @@ You can find more information about PyLink on the SR Research forum (free regist
 The EyeLink display software can be installed directly from a repository. This also installs PyLink and various convenient tools, such ast the `edf2asc` converter.
 
 ```bash
-sudo add-apt-repository "deb http://download.sr-support.com/software SRResearch main"
+sudo add-apt-repository 'deb [arch=amd64] https://apt.sr-research.com SRResearch main'
+sudo apt-key adv --fetch-keys https://apt.sr-research.com/SRResearch_key
 sudo apt-get update
 sudo apt-get install eyelink-display-software
 ```

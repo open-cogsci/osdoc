@@ -38,15 +38,7 @@ PyLink是支持EyeLink的Python库。截至2023年7月，PyLink支持最高到Py
 接下来，一旦你理解了通用步骤，首先创建一个Python 3.10环境，继续按照下载页面的指示操作，然后安装PyLink：
 
 ```
-# 首先创建一个Python 3.10环境
-conda create -n opensesame-py3 python=3.10
-conda activate opensesame-py3
-# 现在按照下载页面的指示操作
-# ...
-# 然后从SR Research PyPi仓库安装PyLink
 pip install --index-url=https://pypi.sr-research.com sr-research-pylink
-# 现在启动OpenSesame！
-opensesame
 ```
 
 你可以在SR Research的论坛上找到更多关于PyLink的信息（需要免费注册）：
