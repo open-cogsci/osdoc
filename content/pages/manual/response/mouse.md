@@ -35,10 +35,13 @@ You can indicate the correct response in three main ways:
 - *Enter a literal value.* You can explicitly enter a response, such as 1. This is only useful if the correct response is fixed.
 - *Enter a variable name.* You can enter a variable, such as '{cr}'. In this case, this variable will be used for the correct response.
 
+Note that the correct response refers to which mouse button was clicked, not to which region of interest was clicked (ROI); see the section below for more information about ROIs.
 
 ## Allowed responses
 
 The *Allowed responses* field indicates a list of allowed responses. All other responses will be ignored, except for 'Escape', which will pause the experiment. The allowed responses should be a semicolon-separated list of responses, such as '1;3' to allow the left and right mouse buttons. To accept all responses, leave the *Allowed responses* field empty.
+
+Note that the allowed responses refer to which mouse button can be clicked, not to which region of interest can be clicked (ROI); see the section below for more information about ROIs.
 
 
 %--include: include/timeout.md--%
@@ -48,6 +51,36 @@ The *Allowed responses* field indicates a list of allowed responses. All other r
 The `cursor_x` and `cursor_y` variables hold the location of the mouse click.
 
 If you indicate a linked SKETCHPAD, the variable `cursor_roi` will hold a comma-separated list of names of elements that contain the clicked coordinate. In other words, elements on the SKETCHPAD automatically serve as regions of interest for the mouse click.
+
+If the correctness of a response depends on which ROI was clicked, you cannot use the `correct_response` variable for this, because this currently refers only to which mouse button was clicked. Instead you need to use a simple script.
+
+In a Python INLINE_SCRIPT you can do this as follows:
+
+```python
+clicked_rois = cursor_roi.split(';')
+correct_roi = 'my_roi'
+if correct_roi in clicked_rois:
+    print('correct!')
+    correct = 1
+else:
+    print('incorrect!')
+    correct = 0
+```
+
+With OSWeb using a INLINE_JAVASCRIPT you can do this as follows:
+
+```js
+clicked_rois = cursor_roi.split(';')
+correct_roi = 'my_roi'
+if (clicked_rois.includes(correct_roi)) {
+    console.log('correct!')
+    correct = 1
+} else {
+    console.log('incorrect!')
+    correct = 0
+}
+```
+
 
 %--
 video:

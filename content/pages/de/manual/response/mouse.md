@@ -1,9 +1,9 @@
 title: Mausreaktionen
-hash: 9e348c65c44cf1d0e1e152976c013b0a235f432d16ceeb3fff09001f8c9d0e7b
+hash: 047288a3fddc3e00aa932fe2d7d9f62628bd9d8e5e6d54ceac2b7b5a836e6f0f
 locale: de
 language: German
 
-Mausantworten werden mit dem MOUSE_RESPONSE-Element erfasst. Das MOUSE_RESPONSE dient hauptsächlich zur Erfassung einzelner Mausklicks. Wenn Sie die Bewegung des Mauszeigers erfassen möchten, sehen Sie sich die MOUSETRAP-Plugins an:
+Mausklicks werden mit dem MOUSE_RESPONSE-Element aufgenommen. MOUSE_RESPONSE ist in erster Linie dafür vorgesehen, einzelne Mausklicks zu sammeln. Wenn Sie die Trajektorien des Mauszeigers erfassen möchten, schauen Sie sich die MOUSETRAP-Plugins an:
 
 - %link:mousetracking%
 
@@ -11,13 +11,13 @@ Mausantworten werden mit dem MOUSE_RESPONSE-Element erfasst. Das MOUSE_RESPONSE 
 
 ## Antwortvariablen
 
-Die MOUSE_RESPONSE setzt die Standard-Antwortvariablen, wie hier beschrieben:
+Das MOUSE_RESPONSE-Element definiert die Standardantwortvariablen, wie hier beschrieben:
 
 - %link:manual/variables%
 
-## Namen der Maustasten
+## Maustastennamen
 
-Mausknöpfe haben sowohl eine Nummer (z.B. `1`) als auch einen Namen (z.B. `left_button`). Beides kann verwendet werden, um korrekte und erlaubte Antworten anzugeben, aber die `response`-Variable wird auf eine Nummer eingestellt:
+Maustasten haben eine Nummer (`1`, usw.) sowie einen Namen (`left_button`, usw.). Beide können verwendet werden, um korrekte und erlaubte Antworten anzugeben, aber die Variable `response` wird auf eine Nummer gesetzt.
 
 - `left_button` entspricht `1`
 - `middle_button` entspricht `2`
@@ -27,25 +27,58 @@ Mausknöpfe haben sowohl eine Nummer (z.B. `1`) als auch einen Namen (z.B. `left
 
 ## Korrekte Antwort
 
-Das Feld *Korrekte Antwort* gibt an, welche Antwort als korrekt angesehen wird. Nach einer korrekten Antwort wird die Variable `correct` automatisch auf 1 gesetzt; nach einer falschen Antwort oder einem Timeout (also allem anderen) wird `correct` auf 0 gesetzt; wenn keine korrekte Antwort angegeben ist, wird `correct` auf "undefined" gesetzt.
+Das Feld *Korrekte Antwort* gibt an, welche Antwort als korrekt betrachtet wird. Nach einer korrekten Antwort wird die Variable `correct` automatisch auf 1 gesetzt; nach einer falschen Antwort oder einem Timeout (d.h. alles andere) wird `correct` auf 0 gesetzt; wenn keine korrekte Antwort angegeben ist, wird `correct` auf 'undefined' gesetzt.
 
-Sie können die korrekte Antwort auf drei Hauptweisen angeben:
+Sie können die korrekte Antwort auf drei Hauptwegen angeben:
 
-- *Lassen Sie das Feld leer.* Wenn Sie das Feld "Korrekte Antwort" leer lassen, überprüft OpenSesame automatisch, ob eine Variable mit dem Namen `correct_response` definiert wurde, und verwendet diese Variable, wenn ja, für die korrekte Antwort.
-- *Geben Sie einen Literalwert ein.* Sie können eine Antwort explizit eingeben, wie z.B. 1. Dies ist nur sinnvoll, wenn die korrekte Antwort festgelegt ist.
-- *Geben Sie einen Variablennamen ein.* Sie können eine Variable eingeben, wie z.B. '{cr}'. In diesem Fall wird diese Variable für die korrekte Antwort verwendet.
+- *Das Feld leer lassen.* Wenn Sie das Feld *Korrekte Antwort* leer lassen, überprüft OpenSesame automatisch, ob eine Variable namens `correct_response` definiert wurde und wenn ja, verwendet diese Variable für die korrekte Antwort.
+- *Einen Literalwert eingeben.* Sie können eine Antwort explizit eingeben, wie zum Beispiel 1. Dies ist nur nützlich, wenn die korrekte Antwort festgelegt ist.
+- *Einen Variablennamen eingeben.* Sie können eine Variable eingeben, wie `{cr}`. In diesem Fall wird diese Variable für die korrekte Antwort verwendet.
+
+Beachten Sie, dass die korrekte Antwort sich darauf bezieht, welche Maustaste geklickt wurde, und nicht darauf, welche Region von Interesse (ROI) geklickt wurde; siehe untenstehender Abschnitt für weitere Informationen über ROIs.
 
 ## Erlaubte Antworten
 
-Das Feld *Erlaubte Antworten* gibt eine Liste der erlaubten Antworten an. Alle anderen Antworten werden ignoriert, außer "Escape", das das Experiment unterbricht. Die erlaubten Antworten sollten eine semikolongetrennte Liste von Antworten sein, wie z.B. "1;3", um die linke und rechte Maustaste zuzulassen. Um alle Antworten zu akzeptieren, lassen Sie das Feld *Erlaubte Antworten* leer.
+Das Feld *Erlaubte Antworten* gibt eine Liste von erlaubten Antworten an. Alle anderen Antworten werden ignoriert, außer 'Escape', was das Experiment pausiert. Die erlaubten Antworten sollten eine Semikolon-getrennte Liste von Antworten sein, wie '1;3', um die linke und rechte Maustaste zu erlauben. Um alle Antworten zu akzeptieren, lassen Sie das Feld *Erlaubte Antworten* leer.
 
-%--include: include/timeout.md--%
+Beachten Sie, dass die erlaubten Antworten sich darauf beziehen, welche Maustaste geklickt werden kann, und nicht darauf, welche Region von Interesse (ROI) geklickt werden kann; siehe untenstehender Abschnitt für weitere Informationen über ROIs.
 
-## Koordinaten und Interessensbereiche (ROIs)
+%--include: include/timeout.md--%</notranslate>
 
-Die Variablen `cursor_x` und `cursor_y` enthalten die Position des Mausklicks.
+## Koordinaten und Regionen von Interesse (ROIs)
 
-Wenn Sie einen verknüpften SKETCHPAD angeben, enthält die Variable `cursor_roi` eine kommaseparierte Liste von Namen der Elemente, die die angeklickte Koordinate enthalten. Mit anderen Worten: Elemente auf dem SKETCHPAD dienen automatisch als Interessensbereiche für den Mausklick.
+Die Variablen `cursor_x` und `cursor_y` halten die Position des Mausklicks.
+
+Wenn Sie ein verlinktes SKETCHPAD angeben, wird die Variable `cursor_roi` eine durch Kommas getrennte Liste von Namen von Elementen enthalten, die die geklickten Koordinaten enthalten. Mit anderen Worten, Elemente auf dem SKETCHPAD dienen automatisch als Regionen von Interesse für den Mausklick.
+
+Wenn die Korrektheit einer Antwort davon abhängt, welche ROI geklickt wurde, können Sie dafür nicht die Variable `correct_response` verwenden, da diese derzeit nur darauf verweist, welche Maustaste geklickt wurde. Stattdessen müssen Sie ein einfaches Skript verwenden.
+
+In einem Python INLINE_SCRIPT können Sie dies folgendermaßen tun:
+
+```python
+clicked_rois = cursor_roi.split(';')
+correct_roi = 'my_roi'
+if correct_roi in clicked_rois:
+    print('korrekt!')
+    correct = 1
+else:
+    print('falsch!')
+    correct = 0
+```
+
+Mit OSWeb unter Verwendung eines INLINE_JAVASCRIPT können Sie dies folgendermaßen tun:
+
+```js
+clicked_rois = cursor_roi.split(';')
+correct_roi = 'my_roi'
+if (clicked_rois.includes(correct_roi)) {
+    console.log('korrekt!')
+    correct = 1
+} else {
+    console.log('falsch!')
+    correct = 0
+}
+```
 
 %--
 video:
@@ -55,11 +88,11 @@ video:
  width: 640
  height: 360
  caption: |
-  Mausklicks sammeln und Interessensbereiche verwenden.
+  Sammeln von Mausklicks und verwenden von Regionen von Interesse.
 --%
 
 ## Mausantworten in Python sammeln
 
-Sie können das `mouse`-Objekt verwenden, um Mausantworten in Python zu erfassen:
+Sie können das `mouse`-Objekt verwenden, um Mausantworten in Python zu sammeln:
 
 - %link:manual/python/mouse%
