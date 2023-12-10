@@ -237,7 +237,7 @@ class AcademicMarkdownReader(MarkdownReader):
                     'intermediate-javascript.md']
         if 'locale:' not in text and 'translate: false' not in text and \
                 any(include in source_path for include in includes):
-            url = SITEURL + source_path[len(build_path[0]) + 14:]
+            url = SITEURL + source_path[len(build_path[0]) + 14:-3]
             # A summary prompt can be embedded in the text in pseudo tags. If
             # so, then we use that to summarize the page, otherwise we use a
             # default summary tool. For chunks of text that are relatively
@@ -261,21 +261,22 @@ class AcademicMarkdownReader(MarkdownReader):
                         {'content': summary,
                          'url': url,
                          'title': metadata['title']}) + '\n')
-                splitter = MarkdownHeaderTextSplitter(
-                    headers_to_split_on=[('#', 'Header 1'),
-                                         ('##', 'Header 2')])
-                for doc in splitter.split_text(text):
-                    lines = doc.page_content.splitlines()
-                    while lines:
-                        chunk = ''
-                        while lines and len(chunk.split()) < 800:
-                            chunk += lines.pop(0)
+                else:
+                    for chunk in markdown_split(text):
                         print(f'{url} {len(chunk.split())}')
                         fd.write(json.dumps(
                             {'content': chunk,
                              'url': url,
                              'title': metadata['title']}) + '\n')
         return content, metadata
+
+
+def markdown_split(md, maxlen=5000):
+    while len(md) > maxlen:
+        split_point = md[:len(md) // 2].rfind('\n#')
+        yield md[:split_point + 1]
+        md = md[split_point + 1:]
+    yield md
 
 
 @fnc.memoize(persistent=True)
