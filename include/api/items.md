@@ -3,7 +3,7 @@
 # instance __items__
 
 The `items` object provides dict-like access to the items. It's mainly
-useful for programatically executing items.
+useful for programmatically executing items.
 
 An `items` object is created automatically when the experiment starts.
 

@@ -13,7 +13,7 @@ and can be used within an INLINE_SCRIPT item as `joystick`.
 
 [TOC]
 
-## flush(self)
+## flush()
 
 Clears all pending input, not limited to the joystick.
 
@@ -105,7 +105,7 @@ occurs. `event` is one of `None`, 'joybuttonpress',
 'joyballmotion', 'joyaxismotion', or 'joyhatmotion'
 
 
-## input_options(self)
+## input_options()
 
 Generates a list with the number of available buttons, axes, balls
 and hats.

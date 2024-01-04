@@ -18,7 +18,7 @@ __Example__
 # attributes.
 for response in responses:
     print(response.correct)
-# Print the two last-given respones
+# Print the two last-given responses
 print('last_two responses:')
 print(responses[:2])
 ~~~
@@ -47,7 +47,7 @@ responses.add(response_time=500, correct=1, response='left')
 
 
 
-## clear(self)
+## clear()
 
 Clears all responses.
 
@@ -61,7 +61,7 @@ responses.clear()
 
 
 
-## reset_feedback(self)
+## reset_feedback()
 
 Sets the feedback status of all responses to False, so that only
 new responses will be included in feedback.

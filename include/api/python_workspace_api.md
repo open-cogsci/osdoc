@@ -49,7 +49,7 @@ window handle (backend-specific), Clock, and Log objects.
 
 __Example__
 
-To implement an experiment fully programatically:
+To implement an experiment fully programmatically:
 
 ~~~ .python
 from libopensesame.python_workspace_api import (
@@ -165,7 +165,7 @@ my_sampler.play()
 
 
 
-## Synth(osc='sine', freq=440, length=100, attack=0, decay=5)
+## Synth(osc='sine', freq=440, length=100, attack=0, decay=5, \*\*playback_args)
 
 A factory function that synthesizes a sound and returns it as a
 `Sampler` object.
@@ -179,6 +179,8 @@ __Parameters__
 - **length**: The length of the sound in milliseconds.
 - **attack**: The attack (fade-in) time in milliseconds.
 - **decay**: The decay (fade-out) time in milliseconds.
+- **\*\*playback_args**: Optional playback keywords, such as volume and pan, as described under
+[/python/sampler/]().
 
 __Returns__
 
@@ -187,7 +189,7 @@ __Returns__
 __Example__
 
 ~~~ .python
-my_sampler = Synth(freq=u'b2', length=500)
+my_sampler = Synth(freq='b2', length=500)
 ~~~
 
 
@@ -315,7 +317,7 @@ point.
 - **phi0**: The angular coordinate for the first coordinate. This is a
 counterclockwise rotation in degrees (i.e. not radians), where 0 is
 straight right.
-- **pole**: The refence point.
+- **pole**: The reference point.
 
 __Returns__
 
@@ -362,7 +364,7 @@ __Parameters__
 - **rho**: The radial coordinate, also distance or eccentricity.
 - **phi**: The angular coordinate. This reflects a clockwise rotation in degrees
 (i.e. not radians), where 0 is straight right.
-- **pole**: The refence point.
+- **pole**: The reference point.
 
 __Returns__
 
@@ -395,7 +397,7 @@ indicates a 2x2 grid, or a (n_col, n_row) `tuple`, so that `n=(2,3)`
 indicates a 2x3 grid.
 - **spacing**: A numeric value that indicates the spacing between cells, or a
 (col_spacing, row_spacing) tuple.
-- **pole**: The refence point.
+- **pole**: The reference point.
 
 __Returns__
 
@@ -429,7 +431,7 @@ __Parameters__
 - **width**: The width of the field with random points.
 - **height**: The height of the field with random points.
 - **min_dist**: The minimum distance between each point.
-- **pole**: The refence point.
+- **pole**: The reference point.
 
 __Returns__
 
@@ -458,7 +460,7 @@ __Parameters__
 
 - **x**: The X coordinate.
 - **y**: The Y coordinate.
-- **pole**: The refence point.
+- **pole**: The reference point.
 
 __Returns__
 

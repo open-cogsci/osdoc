@@ -105,7 +105,7 @@ button1, time1 = my_mouse.get_click()
 button2, time2 = my_mouse.get_click()
 ~~~
 
-## flush(self)
+## flush()
 
 Clears all pending input, not limited to the mouse.
 
@@ -187,7 +187,7 @@ if button is None:
 
 
 
-## get_pos(self)
+## get_pos()
 
 Returns the current position of the cursor.
 
@@ -207,7 +207,7 @@ print('The cursor was at (%d, %d)' % (x, y))
 
 
 
-## get_pressed(self)
+## get_pressed()
 
 Returns the current state of the mouse buttons. A True value means
 the button is currently being pressed.

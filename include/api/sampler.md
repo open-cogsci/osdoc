@@ -111,7 +111,7 @@ __Parameters__
 - **experiment**: The experiment object.
 
 
-## is_playing(self)
+## is_playing()
 
 Checks if a sound is currently playing.
 
@@ -134,7 +134,7 @@ if my_sampler.is_playing():
 
 
 
-## pause(self)
+## pause()
 
 Pauses playback (if any).
 
@@ -175,7 +175,7 @@ my_sampler.play(pitch=.5, block=True)
 
 
 
-## resume(self)
+## resume()
 
 Resumes playback (if any).
 
@@ -205,7 +205,7 @@ __Parameters__
 - **\*\*cfg**: The to-be-updated configurables.
 
 
-## stop(self)
+## stop()
 
 Stops the currently playing sound (if any).
 
@@ -223,7 +223,7 @@ my_sampler.stop()
 
 
 
-## wait(self)
+## wait()
 
 Blocks until the sound has finished playing or returns right away
 if no sound is playing.

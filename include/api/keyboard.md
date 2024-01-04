@@ -39,7 +39,7 @@ my_keyboard = Keyboard(timeout=2000)
 ### Key names
 
 - Key names may differ between backends.
-- Keys can be identified either by character or name, and are case-insentive.
+- Keys can be identified either by character or name, and are case-insensitive.
   For example:
   - The key 'a' is represented by 'a' and 'A'
   - The up arrow is represented by 'up' and 'UP'
@@ -87,7 +87,7 @@ key1, time1 = my_keyboard.get_key()
 key2, time2 = my_keyboard.get_key()
 ~~~
 
-## flush(self)
+## flush()
 
 Clears all pending keyboard input, not limited to the keyboard.
 
@@ -162,7 +162,7 @@ if response is None:
 
 
 
-## get_mods(self)
+## get_mods()
 
 Returns a list of keyboard moderators (e.g., shift, alt, etc.) that
 are currently pressed.
@@ -224,7 +224,7 @@ __Returns__
 - A list of synonyms
 
 
-## valid_keys(self)
+## valid_keys()
 
 Tries to guess which key names are accepted by the back-end. For
 internal use.

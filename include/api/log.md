@@ -16,7 +16,7 @@ log.write_vars()
 
 [TOC]
 
-## close(self)
+## close()
 
 Closes the current log.
 

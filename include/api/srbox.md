@@ -66,7 +66,7 @@ __Parameters__
 `bytes` using utf-8 encoding.
 
 
-## start(self)
+## start()
 
 Turns on sending mode, so that the SR Box starts to send output.
 The SR Box must be in sending mode when you call
@@ -75,7 +75,7 @@ The SR Box must be in sending mode when you call
 
 
 
-## stop(self)
+## stop()
 
 Turns off sending mode, so that the SR Box stops giving output.
 

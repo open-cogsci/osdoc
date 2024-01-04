@@ -63,14 +63,14 @@ pool.add('/home/username/Pictures/my_ing.png')
 
 
 
-## clean_up(self)
+## clean_up()
 
 Removes the pool folder.
 
 
 
 
-## fallback_folder(self)
+## fallback_folder()
 
 The full path to the fallback pool folder, which is the
 `__pool__` subfolder of the current experiment folder, or
@@ -95,7 +95,7 @@ if pool.fallback_folder() is not None:
 
 
 
-## files(self)
+## files()
 
 Returns all files in the file pool.
 
@@ -117,7 +117,7 @@ for path in pool:
 
 
 
-## folder(self)
+## folder()
 
 Gives the full path to the (main) pool folder. This is typically a
 temporary folder that is deleted when the experiment is finished.
@@ -210,7 +210,7 @@ pool.rename('my_old_img.png', 'my_new_img.png')
 
 
 
-## size(self)
+## size()
 
 Gets the combined size in bytes of all files in the file pool.
 

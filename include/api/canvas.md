@@ -585,7 +585,7 @@ my_canvas['my_polygon'] = Polygon([n1, n2, n3])
 
 
 
-## prepare(self)
+## prepare()
 
 Finishes pending canvas operations (if any), so that a subsequent
 call to [canvas.show] is extra fast. It's only necessary to call this
@@ -638,7 +638,7 @@ Renames an element.
 
 
 
-## show(self)
+## show()
 
 Shows, or 'flips', the canvas on the screen.
 
