@@ -71,6 +71,23 @@ For a list of common functions, see:
 - %link:manual/javascript/common%
 
 
+### Declaring variables (let and var)
+
+INLINE_JAVASCRIPT items are executed in non-strict (or: sloppy) mode. This means that you can assign a value to a variable that was not explicitly declared. When you do this, the variable is implicitly declared using `var` if it wasn't already declared.
+
+```js
+my_variable = 'my value'  // implicitly declared using var
+```
+
+Variables that are declared implicitly or explicitly using `var` are global, which primarily means that they may be logged by a LOGGER. Variables that are declared using `let` are not global, which primarily means that they are not logged by a LOGGER.
+
+```js
+this_is_a_global_variable = 'my value'
+var this_is_also_a_global_variable = 'my value'
+let this_is_not_a_global_variable = 'my value'
+```
+
+
 ### The `persistent` object: preserving objects across scripts
 
 __Version note__ As of OSWeb 2.0, all JavaScript code is executed in the same workspace and objects are therefore preserved across scripts. This means that you no longer need the `persistent` object.
@@ -110,7 +127,7 @@ vars.my_variable = 'my_value'
 // Get an experimental variable
 console.log('my_variable is: ' + my_variable)
 // Set an experimental variable
-var my_variable = 'my_value'
+my_variable = 'my_value'
 ```
 
 
