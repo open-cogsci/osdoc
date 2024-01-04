@@ -263,7 +263,7 @@ class AcademicMarkdownReader(MarkdownReader):
                          'title': metadata['title']}) + '\n')
                 else:
                     for chunk in markdown_split(text):
-                        print(f'{url} {len(chunk.split())}')
+                        print(f'{url} {len(chunk)}')
                         fd.write(json.dumps(
                             {'content': chunk,
                              'url': url,
@@ -281,7 +281,7 @@ def markdown_split(md, maxlen=5000):
 
 @fnc.memoize(persistent=True)
 def predict(query):
-    llm = ChatOpenAI(model='gpt-4')
+    llm = ChatOpenAI(model='gpt-4-1106-preview')
     answer = llm.predict(query)
     print(answer)
     return answer
