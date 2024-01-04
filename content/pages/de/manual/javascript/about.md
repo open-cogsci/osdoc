@@ -1,17 +1,16 @@
 title: Über JavaScript
-hash: a7f9ce07f8ba8ef35658430e6e490db256a6c6c1681e7b791f85a4d8f288ae44
+hash: 1a7fe7974b0f26b2ee7c29211c43267ef47dff0d720592d5fd82996550c56b07
 locale: de
 language: German
 
-In OpenSesame können Sie komplexe Experimente ausschließlich mit der grafischen Benutzeroberfläche (GUI) erstellen. Manchmal stoßen Sie jedoch auf Situationen, in denen die von der GUI bereitgestellte Funktionalität unzureichend ist. In diesen Fällen können Sie Ihrem Experiment JavaScript-Code hinzufügen.
+In OpenSesame können Sie komplexe Experimente allein über die grafische Benutzeroberfläche (GUI) erstellen. Aber manchmal stoßen Sie auf Situationen, in denen die Funktionalität der GUI nicht ausreicht. In diesen Fällen können Sie JavaScript-Code zu Ihrem Experiment hinzufügen.
 
-JavaScript dient für Experimente, die in einem Browser mit OSWeb laufen. Wenn Sie Ihr Experiment auf dem Desktop ausführen müssen, müssen Sie anstelle von JavaScript [Python](%url:manual/python/about%) verwenden.
+JavaScript ist für Experimente gedacht, die in einem Browser mit OSWeb laufen. Wenn Sie Ihr Experiment auf dem Desktop ausführen müssen, sollten Sie [Python](%url:manual/python/about%) anstatt JavaScript verwenden.
 
-__Versionshinweis:__ Die Unterstützung für JavaScript auf dem Desktop wurde in OpenSesame 4.0 entfernt. Der Grund dafür ist, dass die JavaScript-Unterstützung auf dem Desktop unvollständig war und von den Benutzern als verwirrend empfunden wurde, ohne viel Nutzen zu bringen.
+__Versionshinweis:__ Die Desktopunterstützung für JavaScript wurde in OpenSesame 4.0 entfernt. Dies liegt daran, dass die JavaScript-Unterstützung auf dem Desktop unvollständig war und von den Benutzern als verwirrend empfunden wurde, ohne einen großen Mehrwert zu bieten.
 {: .page-notification}
 
 [TOC]
-
 
 ## JavaScript lernen
 
@@ -23,43 +22,43 @@ Es gibt viele JavaScript-Tutorials online. Eine gute Ressource ist Code Academy:
 ## JavaScript in der OpenSesame GUI
 
 
-### Inline_javascript Elemente
+### Inline_javascript-Elemente
 
-Um JavaScript-Code zu verwenden, müssen Sie ein INLINE_JAVASCRIPT-Element zu Ihrem Experiment hinzufügen. Nachdem Sie dies getan haben, wird Ihnen etwas wie %FigInlineJavaScript angezeigt.
+Um JavaScript-Code zu verwenden, müssen Sie ein Inline_javascript-Element zu Ihrem Experiment hinzufügen. Nachdem Sie dies getan haben, werden Sie etwas Ähnliches wie %FigInlineJavaScript sehen.
 
 %--
 figure:
  id: FigInlineJavaScript
  source: inline-javascript.png
- caption: Das INLINE_JAVASCRIPT-Element.
+ caption: Das Inline_javascript-Element.
 --%
 
-Wie Sie sehen können, besteht das INLINE_JAVASCRIPT-Element aus zwei Tabs: einem für die Vorbereitungsphase und einem für die Ausführungsphase. Die Vorbereitungsphase wird zuerst ausgeführt, um die Elemente auf die zeitkritische Ausführungsphase vorzubereiten. Es ist gute Praxis, `Canvas`-Objekte während der Vorbereitungsphase zu konstruieren, damit sie während der Ausführungsphase ohne Verzögerung präsentiert werden können. Dies ist jedoch nur eine Konvention; Sie können während beider Phasen beliebigen JavaScript-Code ausführen.
+Wie Sie sehen können, besteht das Inline_javascript-Element aus zwei Tabs: einem für die Prepare-Phase und einem für die Run-Phase. Die Prepare-Phase wird zuerst ausgeführt, sodass die Elemente sich auf die zeitkritische Run-Phase vorbereiten können. Es ist eine gute Praxis, `Canvas`-Objekte während der Prepare-Phase zu erstellen, sodass sie ohne Verzögerung während der Run-Phase präsentiert werden können. Aber das ist nur eine Konvention; Sie können beliebigen JavaScript-Code während beider Phasen ausführen.
 
-Für weitere Informationen zur Vorbereitungs-Ausführungs-Strategie, siehe:
+Für mehr Informationen über die Prepare-Run-Strategie, siehe:
 
 - %link:prepare-run%
 
 
-### Ausgabe auf die Konsole drucken
+### Ausgabe in die Konsole drucken
 
-Sie können mit dem Befehl `console.log()` auf die Konsole drucken:
+Sie können mit dem Befehl `console.log()` in die Konsole drucken:
 
 ```js
-console.log('Das wird in der Konsole angezeigt!')
+console.log('Dies wird in der Konsole erscheinen!')
 ```
 
-Wenn Sie auf dem Desktop ausführen, erscheint die Ausgabe in der OpenSesame-Konsole (oder: Debug-Fenster). Bei der Ausführung in einem Browser erscheint die Ausgabe in der Konsolenausgabe des Browsers.
+Wenn das Experiment auf dem Desktop läuft, erscheint die Ausgabe in der OpenSesame-Konsole (oder: Debug-Fenster). Wenn es in einem Browser läuft, erscheint die Ausgabe in der Browser-Konsole.
 
 
-## Dinge, die Sie wissen sollten
+## Wissenswertes
 
-### Typische Funktionen
+### Häufige Funktionen
 
-Viele gängige Funktionen sind direkt in einem INLINE_JAVASCRIPT-Element verfügbar. Zum Beispiel:
+Viele häufig verwendete Funktionen stehen direkt in einem Inline_javascript-Element zur Verfügung. Zum Beispiel:
 
 ```js
-// `Canvas()` ist eine Fabrikfunktion, die ein `Canvas`-Objekt zurückgibt
+// `Canvas()` ist eine Factory-Funktion, die ein `Canvas`-Objekt zurückgibt
 let fixdotCanvas = Canvas()
 if (sometimes()) {  // Manchmal ist der Fixpunkt grün
     fixdotCanvas.fixdot({color: 'green'})
@@ -69,26 +68,43 @@ if (sometimes()) {  // Manchmal ist der Fixpunkt grün
 fixdotCanvas.show()
 ```
 
-Für eine Liste der gängigen Funktionen, siehe:
+Für eine Liste häufig verwendeter Funktionen, siehe:
 
 - %link:manual/javascript/common%
 
 
-### Das `persistent`-Objekt: Objekte über Skripte hinweg bewahren
+### Variablen deklarieren (let und var)
 
-__Versionshinweis__ Ab OSWeb 2.0 wird der gesamte JavaScript-Code im selben Arbeitsbereich ausgeführt und Objekte werden daher über Skripte hinweg bewahrt. Dies bedeutet, dass Sie das `persistent`-Objekt nicht mehr benötigen.
+Inline_javascript-Elemente werden im Non-Strict-Modus (oder: Sloppy-Modus) ausgeführt. Das bedeutet, dass Sie einer Variablen, die nicht explizit deklariert wurde, einen Wert zuweisen können. Wenn Sie das tun, wird die Variable implizit mit `var` deklariert, falls sie nicht bereits deklariert wurde.
+
+```js
+my_variable = 'mein Wert'  // implizit deklariert mit var
+```
+
+Variablen, die implizit oder explizit mit `var` deklariert werden, sind global, was hauptsächlich bedeutet, dass sie von einem Logger protokolliert werden können. Variablen, die mit `let` deklariert werden, sind nicht global, was hauptsächlich bedeutet, dass sie nicht von einem Logger protokolliert werden.
+
+```js
+this_is_a_global_variable = 'mein Wert'
+var this_is_also_a_global_variable = 'mein Wert'
+let this_is_not_a_global_variable = 'mein Wert'
+```
+
+
+### Das `persistent`-Objekt: Objekte über Skripte hinweg erhalten
+
+__Versionshinweis__ Ab OSWeb 2.0 wird aller JavaScript-Code im selben Arbeitsbereich ausgeführt und Objekte werden daher über Skripte hinweg erhalten. Das bedeutet, dass Sie das `persistent`-Objekt nicht mehr benötigen.
 {:.page-notification}
 
-Jedes INLINE_JAVASCRIPT-Element wird in seinem eigenen Arbeitsbereich ausgeführt. Dies bedeutet - und das ist anders als bei Python INLINE_SCRIPT-Elementen! - dass Sie Variablen oder Funktionen, die Sie in einem Skript deklariert haben, nicht in einem anderen Skript verwenden können. Als Workaround können Sie Variablen oder Funktionen als Eigenschaften zum `persistent`-Objekt hinzufügen, das als Behälter für Dinge dient, die Sie über Skripte hinweg bewahren möchten.
+Jedes INLINE_JAVASCRIPT-Element wird in seinem eigenen Arbeitsbereich ausgeführt. Das bedeutet – und das ist anders als bei Python INLINE_SCRIPT-Elementen! –, dass Sie keine Variablen oder Funktionen verwenden können, die Sie in einem Skript deklariert haben, in einem anderen Skript. Um das Problem zu umgehen, können Sie Variablen oder Funktionen als Eigenschaften an das `persistent`-Objekt anhängen, das als Behälter für Dinge dient, die Sie zwischen Skripten erhalten möchten.
 
-Auf diese Weise können Sie ein `Canvas` in einem INLINE_JAVASCRIPT konstruieren...
+So können Sie ein `Canvas` in einem INLINE_JAVASCRIPT konstruieren ...
 
 ```js
 persistent.myCanvas = Canvas()
 persistent.myCanvas.fixdot()
 ```
 
-.. und es in einem anderen INLINE_JAVASCRIPT anzeigen:
+... und es in einem anderen INLINE_JAVASCRIPT anzeigen:
 
 ```js
 persistent.myCanvas.show()
@@ -104,22 +120,22 @@ Sie können auf experimentelle Variablen über das `vars`-Objekt zugreifen:
 
 ```js
 // OSWeb <= 1.4 (mit vars-Objekt)
-// Abrufen einer experimentellen Variable
+// Eine experimentelle Variable erhalten
 console.log('my_variable ist: ' + vars.my_variable)
-// Setzen einer experimentellen Variable
+// Eine experimentelle Variable setzen
 vars.my_variable = 'my_value'
 
 // OSWeb >= 2.0 (ohne vars-Objekt)
-// Abrufen einer experimentellen Variable
+// Eine experimentelle Variable erhalten
 console.log('my_variable ist: ' + my_variable)
-// Setzen einer experimentellen Variable
-var my_variable = 'my_value'
+// Eine experimentelle Variable setzen
+my_variable = 'my_value'
 ```
 
 
 ### Das `pool`-Objekt: Zugriff auf den Dateipool
 
-Sie greifen auf 'Dateien' aus dem Dateipool über das `pool`-Objekt zu. Am offensichtlichsten ist die Verwendung davon, um CSV-Dateien, z. B. mit experimentellen Bedingungen, mit der `csv-parse`-Bibliothek (unten näher beschrieben) aus dem Dateipool zu parsen.
+Sie greifen über das `pool`-Objekt auf 'Dateien' aus dem Dateipool zu. Die offensichtlichste Verwendung dafür ist das Parsen von CSV-Dateien, zum Beispiel mit experimentellen Bedingungen, aus dem Dateipool mit Hilfe der `csv-parse`-Bibliothek (weiter unten detaillierter beschrieben).
 
 ```js
 const conditions = csvParse(
@@ -131,16 +147,16 @@ for (const trial of conditions) {
 }
 ```
 
-Sie können auch Tondateien direkt aus dem Dateipool abspielen. Angenommen, es gibt eine Datei namens `bark.ogg` im Dateipool, können Sie sie wie folgt abspielen:
+Sie können auch direkt Sounddateien aus dem Dateipool abspielen. Angenommen, im Dateipool befindet sich eine Datei namens `bark.ogg`, können Sie sie folgendermaßen abspielen:
 
 ```js
 pool['bark.ogg'].data.play()
 ```
 
 
-### Die `Canvas`-Klasse: Präsentation von visuellen Reizen
+### Die `Canvas`-Klasse: Präsentation visueller Stimuli
 
-Die `Canvas`-Klasse wird zur Präsentation von visuellen Reizen verwendet. Zum Beispiel können Sie einen Fixationspunkt wie folgt anzeigen:
+Die `Canvas`-Klasse wird verwendet, um visuelle Stimuli zu präsentieren. Zum Beispiel können Sie so einen Fixationspunkt zeigen:
 
 ```js
 let myCanvas = Canvas()
@@ -148,20 +164,20 @@ myCanvas.fixdot()
 myCanvas.show()
 ```
 
-Eine vollständige Übersicht über die `Canvas`-Klasse finden Sie hier:
+Einen vollständigen Überblick über die `Canvas`-Klasse finden Sie hier:
 
 - %link:manual/javascript/canvas%
 
-## Verfügbare JavaScript-Bibliotheken
+## Verfügbar JavaScript-Bibliotheken
 
 Die folgenden JavaScript-Bibliotheken sind standardmäßig enthalten:
 
-- [Random-Funktionen (`random-ext`)](%url:manual/javascript/random%)
-- [Farbumwandlungsfunktionen (`color-convert`)](%url:manual/javascript/color-convert%)
+- [Zufallsfunktionen (`random-ext`)](%url:manual/javascript/random%)
+- [Farbkonvertierungsfunktionen (`color-convert`)](%url:manual/javascript/color-convert%)
 - [CSV-Funktionen (`csv-parse`)](%url:manual/javascript/csv%)
-- [Python-ähnliche Iteratoren (`pythonic`)](%url:manual/javascript/pythonic%)
+- [Python-artige Iteratoren (`pythonic`)](%url:manual/javascript/pythonic%)
 
-Zusätzliche JavaScript-Bibliotheken können Sie durch Hinzufügen von URLs zu den Bibliotheken im Feld 'Externe JavaScript-Bibliotheken' des OSWeb-Kontrollfelds einfügen.
+Sie können zusätzliche JavaScript-Bibliotheken einbinden, indem Sie URLs zu den Bibliotheken im Feld 'Externe JavaScript-Bibliotheken' des OSWeb-Kontrollfelds eingeben.
 
 
 ## Debugging
