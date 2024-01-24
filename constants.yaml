@@ -6,6 +6,6 @@ codename: Melodramatic Milgram
 release-date: July 12, 2023
 url-windows-exe-py3: https://github.com/open-cogsci/OpenSesame/releases/download/release%2F4.0.13/opensesame_4.0.13-py311-win64-1.exe
 url-windows-zip-py3: https://github.com/open-cogsci/OpenSesame/releases/download/release%2F4.0.13/opensesame_4.0.13-py311-win64-1.zip
-url-osx-dmg-x64-py3: https://github.com/open-cogsci/OpenSesame/releases/download/release%2F4.0.1/opensesame_4.0.1-py311-macos-x64-1.dmg
+url-osx-dmg-x64-py3: https://github.com/open-cogsci/OpenSesame/releases/download/release%2F4.0.13/opensesame_4.0.13-py311-macos-x64-1.dmg
 url-source: https://github.com/open-cogsci/OpenSesame
 url-old: https://github.com/open-cogsci/OpenSesame/releases
