@@ -1,6 +1,6 @@
 # OpenSesame documentation area
 
-Copyright 2010-2023
+Copyright 2010-2024
 
 Sebastiaan Mathôt <s.mathot@cogsci.nl>
 
