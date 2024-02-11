@@ -51,6 +51,15 @@ If you have used the standard LOGGER item, data files are in the following forma
 - UTF-8 encoded
 - column names on the first row
 
+## Which variables are logged?
+
+By default, variables that are defined in the user interface, such as columns in a `loop` table or response variables are always logged.
+
+By default, variables that are defined in an `inline_script` or `inline_javascript` are logged if they are numbers (`int` and `float`), strings (`str` and `bytes`), and `None` values. This is to avoid log files from becoming unreasonably large due to logging of long lists and other large values. (As of OpenSesame 4.0, there is no longer a need to use the `var` (Python) or `vars` (JavaScript) object.)
+
+If you want to explicitly log a variable that is not logged by default, you can use the 'Include' field in the LOGGER item.
+
+
 ## Reading and processing data files
 
 ### In Python with pandas or DataMatrix

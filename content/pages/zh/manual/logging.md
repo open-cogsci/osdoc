@@ -1,17 +1,17 @@
 title: 记录和读取数据文件
-hash: 6c081bb9571ecf270fcbd02104d88319bf6044245745b621d549cbc38c34e370
+hash: 404c31c1711c098c3d658e7de50a871eaeae4a66cfa946a5405071f57239ea81
 locale: zh
 language: Chinese
 
-始终三次检查您的数据在运行实验之前是否正确记录！
-{：.page-notification}
+在进行实验之前，始终要三重检查数据是否已正确记录！
+{: .page-notification}
 
 [TOC]
 
 
-## 使用 logger item
+## 使用日志记录器（LOGGER）项目
 
-OpenSesame 不会自动记录您的数据。相反，您需要插入一个 LOGGER 项目，通常位于试验序列的末尾。
+OpenSesame 不会自动记录你的数据。相反，你需要在试验序列的末尾插入一个 LOGGER 项目。
 
 %--
 figure:
@@ -21,44 +21,52 @@ figure:
   LOGGER 项目。
 --%
 
-使用 LOGGER 的最简单方法是启用 “自动记录所有变量” 选项。这样，除了下面明确排除的变量之外，OpenSesame已知的所有变量都会写入日志文件。
+使用 LOGGER 的最简单方式是启用“自动记录所有变量”选项。这样，OpenSesame 所知道的所有变量都会被写入日志文件，除了那些明确排除的变量（见下文）。
 
-您可以明确地*包含*要记录的变量。这样做的主要原因是当您发现某些变量丢失(因为OpenSesame没有自动检测到它们)或者当您禁用了“自动记录所有变量”选项，
+你可以明确*包括*你想记录的变量。这样做的主要原因是，因为 OpenSesame 没有自动检测到某些变量，导致这些变量丢失，或者你已经禁用了“自动记录所有变量”的选项。
 
-您还可以明确地从日志文件中排除某些变量。这样做的主要原因是通过排除通常没有用处的变量来保持日志文件的整洁。
+你也可以明确排除某些变量，不在日志文件中记录。这样做的主要原因是通过排除通常无用的变量，保持日志文件的清洁。
 
-一般来说，您应该只创建一个 logger 项目，并在需要的时候在实验中的不同位置重复使用该 LOGGER（即使用相同 LOGGER 项目的链接副本）。如果您创建多个 LOGGER（而不是多次使用单个 LOGGER），它们都将写入相同的日志文件，结果将是混乱的！
+通常情况下，你应该只创建一个 LOGGER 项目，并在实验的不同位置根据需要重复使用该 LOGGER（即使用同一个 LOGGER 项目的链接副本）。如果你创建了多个 LOGGER（而不是多次使用单一的 LOGGER），它们都将写入同一个日志文件，结果会是一团糟！
 
 ## 使用 Python 内联脚本
 
-您可以使用 `log` 对象将数据写入日志文件：
+你可以使用 `log` 对象来写入日志：
 
 ~~~ .python
-log.write('这将写入日志文件！')
+log.write('这将被写到日志文件中！')
 ~~~
 
-有关详细信息，请参阅：
+更多信息，请参见：
 
 - %link:log%
 
-通常情况下，您不应直接将数据写入日志文件，同时使用 LOGGER 项目。这样做会导致混乱的日志文件。
+你通常不应该直接写入日志文件，并同时使用 LOGGER 项目；这样会导致日志文件混乱。
 
-## 数据文件格式
+## 数据文件的格式
 
-如果您使用了标准的 LOGGER 项，数据文件采用以下格式（简单的标准 csv）：
+如果你使用了标准的 LOGGER 项目，则数据文件的格式如下（只是标准的 csv 格式）：
 
 - 纯文本
 - 逗号分隔
-- 双引号（文字双引号带反斜杠转义）
-- 类 Unix 行结束符
+- 双引号包围（字面上的双引号用反斜杠转义）
+- Unix 风格的行尾
 - UTF-8 编码
-- 第一行上的列名
+- 第一行为列名
+
+## 记录哪些变量？
+
+默认情况下，用户界面中定义的变量，如 `loop` 表中的列或响应变量总是会被记录。
+
+默认情况下，`inline_script` 或 `inline_javascript` 中定义的变量如果是数字（`int` 和 `float`）、字符串（`str` 和 `bytes`）或 `None` 值时，会被记录。这是为了避免因记录长列表和其他大值而导致日志文件过于庞大。 （截至 OpenSesame 4.0 版本，不再需要使用 `var`（Python）或 `vars`（JavaScript）对象。）
+
+如果你想明确记录某个默认不会被记录的变量，可以在 LOGGER 项目中使用“包括”字段。
 
 ## 读取和处理数据文件
 
-### 用 Python pandas 或 DataMatrix
+### 在 Python 中使用 pandas 或 DataMatrix
 
-在 Python 中，您可以使用 [pandas](http://pandas.pydata.org/) 读取 csv 文件。
+在 Python 中，你可以使用 [pandas](http://pandas.pydata.org/) 来读取 csv 文件。
 
 ```python
 import pandas
@@ -66,7 +74,7 @@ df = pandas.read_csv('subject-1.csv')
 print(df)
 ```
 
-或 [DataMatrix](https://datamatrix.cogsci.nl/):
+或者使用 [DataMatrix](https://datamatrix.cogsci.nl/)：
 
 ```python
 from datamatrix import io
@@ -76,28 +84,28 @@ print(dm)
 
 ### 在 R 中
 
-在 R 中，您可以简单地使用 `read.csv()` 函数读取单个数据文件。
+在 R 中，你可以简单地使用 `read.csv()` 函数来读取单个数据文件。
 
 ~~~ .R
 df = read.csv('subject-1.csv', encoding = 'UTF-8')
 head(df)
 ~~~
 
-此外，您可以使用 [readbulk](https://github.com/pascalkieslich/readbulk) 包中的 `read_opensesame()` 函数轻松读取和合并多个数据文件到一个大的数据框架中。该包可在 CRAN 上获得，可以通过 `install.packages('readbulk')` 来安装。
+此外，你可以使用来自 [readbulk](https://github.com/pascalkieslich/readbulk) 包的 `read_opensesame()` 函数，以方便地读取多个数据文件，并将它们合并成一个大的数据框。该包可在 CRAN 上安装，通过 `install.packages('readbulk')` 进行安装。
 
 ~~~ .R
-# 读取并合并存储在'raw_data'文件夹中的所有数据文件
+# 读取并合并存储在文件夹 'raw_data' 中的所有数据文件
 library(readbulk)
 df = read_opensesame('raw_data')
 ~~~
 
 ### 在 JASP 中
 
-[JASP](http://jasp-stats.org/)，一个开源统计软件包，可以直接打开 csv 文件。
+[JASP](http://jasp-stats.org/)，一款开源统计软件包，可以直接打开 csv 文件。
 
 ### 在 LibreOffice Calc 中
 
-如果在 LibreOffice Calc 中打开 csv 文件，您需要指定准确的数据格式，如 %FigLibreOffice 所示。（默认设置通常是正确的。）
+如果您在LibreOffice Calc中打开一个csv文件，您需要指明确切的数据格式，如%FigLibreOffice所示。（默认设置通常是正确的。）
 
 %--
 figure:
@@ -105,48 +113,44 @@ figure:
  id: FigLibreOffice
 --%
 
-### 在 Microsoft Excel 中
+### 在Microsoft Excel中
 
-在 Microsoft Excel 中，您需要使用“文本导入向导”。
+在Microsoft Excel中，您需要使用文本导入向导。
 
-### 将多个数据文件合并到一个大文件中
+### 将多个数据文件合并成一个大文件
 
-对于某些用途，例如使用数据透视表，将所有数据文件合并到一个大文件中可能会很方便。使用 Python DataMatrix，您可以使用以下脚本执行此操作：
+出于某些目的，例如使用数据透视表，将所有数据文件合并成一个大文件可能会比较方便。使用Python DataMatrix，您可以使用以下脚本来实现：
 
 ```python
 import os
 from datamatrix import DataMatrix, io, operations as ops
 
-# 将此更改为包含.csv文件的文件夹
+# 将此处更改为包含.csv文件的文件夹
 SRC_FOLDER = 'student_data'
-# 将此更改为您要保留的列名列表
+# 更改为您想要保留的列名列表
 COLUMNS_TO_KEEP = [
     'RT_search',
     'load',
     'memory_resp'
 ]
 
-
 dm = DataMatrix()
 for basename in os.listdir(SRC_FOLDER):
     path = os.path.join(SRC_FOLDER, basename)
-    print('正在读取{}'.format(path))
+    print('读取 {}'.format(path))
     dm <<= ops.keep_only(io.readtxt(path), *COLUMNS_TO_KEEP)
 io.writetxt(dm, 'merged-data.csv')
 ```
 
+## 在OSWeb中记录
 
-## 在OSWeb中记录日志
+当您在浏览器中用OSWeb运行实验时，记录的方式与在桌面上运行实验时不同。
 
-当您使用OSWeb在浏览器中运行实验时，日志记录方式与在桌面上运行实验时不同。
+具体来说，当您直接从OpenSesame中启动OSWeb实验时，日志文件会在实验结束时下载。这个日志文件是`.json`格式的。当您通过JATOS启动OSWeb实验时，没有实际的日志文件，而是所有数据都发送到JATOS，从那里可以下载。
 
-具体来说，当您直接从 OpenSesame 启动 OSWeb 实验时，实验结束时会下载日志文件。这个日志文件是`.json`格式。当您从 JATOS 启动 OSWeb 实验时，没有日志文件，而是将所有数据发送到 JATOS，然后从那里下载。
-
-参考：
+另见：
 
 - %link:manual/osweb/workflow%
-
-
 
 [libreoffice]: http://www.libreoffice.org/
 [openoffice]: http://www.openoffice.org/
