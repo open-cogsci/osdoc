@@ -79,6 +79,13 @@ widget 0 2 1 1 button text="$0.10"
 widget 1 2 1 1 button text="$0.05"
 ~~~
 
+If you want a specific widget to receive the focus when the form is executed, you can apply the `focus=yes` keyword to one of the widgets:
+
+```
+widget 0 0 1 1 text_input text="Initial text" frame=yes center=no stub="Type here …" return_accepts=yes var=response focus=yes
+```
+
+
 ### Creating forms using Python inline script
 
 The exact same form can be created using an INLINE_SCRIPT and a bit of Python code. You will notice that the Python code somewhat resembles the OpenSesame script shown above. This is no wonder: The FORM_BASE plugin essentially translates the OpenSesame script into Python code.
