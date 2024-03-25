@@ -1,60 +1,60 @@
 title: Tutoriel intermédiaire (JavaScript) : recherche visuelle
-hash: 388eaf09923982d0aa520902c34577097ba883be1bae01e48c53293d53efad53
+hash: 8a884ef49e4ac79ec8dd0e01bf078980622b9f0365927917c21e42253e76321c
 locale: fr
 language: French
 
-[TOC]
-
 ## À propos d'OpenSesame
 
-OpenSesame est un programme convivial pour le développement d'expériences comportementales en psychologie, neurosciences et économie expérimentale. Pour les débutants, OpenSesame dispose d'une interface graphique complète et facile à utiliser. Pour les utilisateurs avancés, OpenSesame prend en charge Python (bureau uniquement) et JavaScript (bureau et navigateur).
+OpenSesame est un programme convivial pour le développement d'expériences comportementales en psychologie, neurosciences et économie expérimentale. Pour les débutants, OpenSesame propose une interface graphique complète et intuitive. Pour les utilisateurs avancés, OpenSesame prend en charge Python (uniquement sur ordinateur de bureau) et JavaScript (sur ordinateur de bureau et dans le navigateur).
 
-OpenSesame est disponible gratuitement sous la [Licence Publique Générale v3][gpl].
+OpenSesame est librement disponible sous la [General Public License v3][gpl].
 
 ## À propos de ce tutoriel
 
-Ce tutoriel montre comment créer une expérience de recherche visuelle de base à l'aide d'OpenSesame [(Mathôt, Schreij, & Theeuwes, 2012)][references]. Nous utiliserons à la fois l'interface graphique et JavaScript pour développer une expérience que vous pouvez exécuter en ligne dans un navigateur. Une certaine expérience avec OpenSesame et JavaScript est recommandée. Ce tutoriel prend environ une heure.
+Ce tutoriel montre comment créer une expérience de recherche visuelle de base en utilisant OpenSesame [(Mathôt, Schreij, & Theeuwes, 2012)][references]. Nous utiliserons à la fois l'interface graphique et JavaScript pour développer une expérience que vous pouvez exécuter en ligne dans un navigateur. Une certaine expérience avec OpenSesame et JavaScript est recommandée. Ce tutoriel prend environ une heure.
 
-Une version Python de ce tutoriel est également disponible. Si vous n'avez pas besoin d'exécuter vos expériences en ligne, le tutoriel Python est probablement ce dont vous avez besoin :
+Une version de ce tutoriel basée sur Python est également disponible. Si vous n'avez pas besoin d'exécuter vos expériences en ligne, alors le tutoriel Python est probablement ce dont vous avez besoin :
 
 - %link:tutorials/intermediate%
 
+
 ## Ressources
 
-- __Télécharger__ — Ce tutoriel suppose que vous utilisez la version 4.0.0 d'OpenSesame ou ultérieure et OSWeb 2.0 ou ultérieure. Vous pouvez télécharger la version la plus récente d'OpenSesame à partir de :
+- __Téléchargement__ — Ce tutoriel suppose que vous utilisez la version 4.0.0 d'OpenSesame ou ultérieure et OSWeb 2.0 ou ultérieure. Vous pouvez télécharger la version la plus récente d'OpenSesame depuis :
 	- %link:download%
-- __Documentation__ — Un site de documentation dédié se trouve à l'adresse suivante :
+- __Documentation__ — Un site web dédié à la documentation peut être trouvé à :
 	- <http://osdoc.cogsci.nl/>
-- __Forum__ — Un forum d'assistance se trouve à l'adresse suivante :
+- __Forum__ — Un forum de support peut être trouvé à :
 	- <http://forum.cogsci.nl/>
+- __Sigmund__ -- SigmundAI est un assistant IA avec une connaissance experte d'OpenSesame et peut être trouvé à :
+	- <https://sigmundai.eu/>
+
 
 ## L'expérience
 
-Dans ce tutoriel, vous créerez une expérience de recherche visuelle de base. L'expérience ressemble aux études classiques de recherche visuelle de [Treisman and Gelade (1980)][references], mais elle n'est pas identique.
+Dans ce tutoriel, vous allez créer une expérience de recherche visuelle de base. L'expérience ressemble aux études classiques de recherche visuelle de [Treisman et Gelade (1980)][references], mais elle n'est pas identique.
 
-Avant de commencer à *construire* l'expérience par vous-même, vous pouvez déjà *participer* à celle-ci. Cela vous donnera une bonne idée de ce à quoi vous travaillez dans ce tutoriel.
+Avant de commencer à *construire* l'expérience par vous-même, vous pouvez déjà *y participer*. Cela vous donnera une bonne idée de ce vers quoi vous travaillez dans ce tutoriel.
 
-<a role="button" class="btn btn-success btn-align-left" href="https://jatos.mindprobe.eu/publix/1938/start?batchId=2191&generalMultiple">Participez à l'expérience !</a>
+<a role="button" class="btn btn-success btn-align-left" href="https://jatos.mindprobe.eu/publix/1938/start?batchId=2191&generalMultiple">Participez à l'expérience!</a>
 
-Dans cette expérience, les participants cherchent un objet cible, qui peut être un carré jaune, un cercle jaune, un carré bleu ou un cercle bleu ; l'identité de la cible varie entre les blocs d'essais. Les participants indiquent si la cible est présente ou non en appuyant sur la flèche droite (présente) ou gauche (absente).
+Dans cette expérience, les participants recherchent un objet cible, qui peut être un carré jaune, un cercle jaune, un carré bleu ou un cercle bleu; l'identité de la cible varie entre les blocs d'essais. Les participants indiquent si la cible est présente ou non en appuyant sur la flèche droite (présente) ou gauche (absente).
 
-En plus de la cible, zéro ou plusieurs objets distracteurs sont affichés. Il y a trois conditions, et la condition détermine le type de distracteurs :
+En plus de la cible, zéro ou plusieurs objets distracteurs sont montrés. Il y a trois conditions, et la condition détermine quel type de distracteurs il y a :
 
-- Dans la condition *Conjonction*, les distracteurs peuvent avoir n'importe quelle forme et couleur, avec la seule restriction que les distracteurs ne peuvent pas être identiques à la cible. Ainsi, par exemple, si la cible est un carré jaune, les distracteurs sont des cercles jaunes, des cercles bleus et des carrés bleus.
-- Dans la condition *Caractéristique de forme*, les distracteurs ont une forme différente de la cible, mais peuvent avoir n'importe quelle couleur. Ainsi, par exemple, si la cible est un carré jaune, les distracteurs sont des cercles jaunes et des cercles bleus.
-- Dans la condition *Caractéristique de couleur*, les distracteurs peuvent avoir n'importe quelle forme, mais ont une couleur différente de la cible. Ainsi, par exemple, si la cible est un carré jaune, les distracteurs sont des carrés bleus et des cercles bleus.
+- Dans la condition *Conjonction*, les distracteurs peuvent avoir n'importe quelle forme et couleur, avec la seule restriction qu'ils ne peuvent pas être identiques à la cible. Donc, par exemple, si la cible est un carré jaune, alors les distracteurs sont des cercles jaunes, des cercles bleus et des carrés bleus.
+- Dans la condition *Caractéristique Forme*, les distracteurs ont une forme différente de la cible, mais peuvent avoir n'importe quelle couleur. Donc, par exemple, si la cible est un carré jaune, alors les distracteurs sont des cercles jaunes et des cercles bleus.
+- Dans la condition *Caractéristique Couleur*, les distracteurs peuvent avoir n'importe quelle forme, mais ont une couleur différente de la cible. Donc, par exemple, si la cible est un carré jaune, alors les distracteurs sont des carrés bleus et des cercles bleus.
 
-Un retour d'information immédiat est affiché après chaque essai: un point vert après une réponse correcte, et un point rouge après une réponse incorrecte. Un retour d'information détaillé sur les temps de réponse moyens et la précision est affiché après chaque bloc d'essais.
+Un retour immédiat est donné après chaque essai : un point vert après une réponse correcte, et un point rouge après une réponse incorrecte. Un retour détaillé sur les temps de réponse moyens et la précision est montré après chaque bloc d'essais.
 
-%--
 figure:
  id: FigVisualSearch
  source: visual-search.svg
  caption: |
-  L'expérience de recherche visuelle que vous allez mettre en œuvre dans ce tutoriel.
---%
+  L'expérience de recherche visuelle que vous mettrez en œuvre dans ce tutoriel.
 
-Les expériences comme celle-ci montrent deux résultats typiques :
+Des expériences comme celle-ci montrent deux résultats typiques :
 
 - Il faut plus de temps pour trouver la cible dans la condition Conjonction que dans les deux conditions Caractéristiques.
 - Dans la condition Conjonction, les temps de réponse augmentent à mesure que le nombre de distracteurs augmente. Cela suggère que les personnes recherchent la cible un élément à la fois ; on appelle cela la *recherche sérielle*.
@@ -599,43 +599,41 @@ Des commentaires après chaque essai peuvent motiver les participants ; cependan
 
 Pour faire cela:
 
-- Insérez deux nouveaux SKETCHPADs dans *trial_sequence*, juste après *keyboard_response*.
+- Insérez deux nouveaux SKETCHPAD dans *trial_sequence*, juste après *keyboard_response*.
 - Renommez un SKETCHPAD en *green_dot*, dessinez un point de fixation vert central dessus et changez sa durée à 500.
-- Renommez l'autre SKETCHPAD en *red_dot*, dessinez un point de fixation rouge central dessus, et changez sa durée à 500.
+- Renommez l'autre SKETCHPAD en *red_dot*, dessinez un point de fixation rouge central dessus et changez sa durée à 500.
 
-Bien sûr, un seul des deux points doit être affiché à chaque essai. Pour ce faire, nous allons spécifier des instructions run-if dans *trial_sequence* :
+Naturellement, un seul des deux points devrait être montré à chaque essai. Pour y parvenir, nous allons spécifier des instructions run-if dans *trial_sequence* :
 
-- Changez l'instruction run-if pour *green_dot* en 'correct == 1', indiquant qu'il ne doit être affiché qu'après une réponse correcte.
-- Changez l'instruction run-if pour *red_dot* en 'correct == 0', indiquant qu'il ne doit être affiché qu'après une réponse incorrecte.
+- Changez l'instruction run-if pour *green_dot* en 'correct == 1', indiquant qu'il devrait seulement être montré après une réponse correcte.
+- Changez l'instruction run-if pour *red_dot* en 'correct == 0', indiquant qu'il devrait seulement être montré après une réponse incorrecte.
 
-La variable `correct` est automatiquement créée si la variable `correct_response` est disponible; c'est pourquoi nous avons défini `correct_response` à l'étape 7. Pour plus d'informations sur les variables et les instructions run-if, voir :
+La variable `correct` est automatiquement créée si la variable `correct_response` est disponible ; c'est pourquoi nous avons défini `correct_response` à l'étape 7. Pour plus d'informations sur les variables et les instructions run-if, voir :
 
-- %link:manuel/variables%
+- %link:manual/variables%
 
-Le *trial_sequence* devrait maintenant ressembler à %FigStep8.
+La *trial_sequence* devrait maintenant ressembler à %FigStep8.
 
-%--
 figure:
  id: FigStep8
  source: step8.png
  caption: |
-  Le *trial_sequence* à la fin de l'étape 8.
---%
+  La *trial_sequence* à la fin de l'étape 8.
 
 
 ## Terminé !
 
-Félicitations, l'expérience est terminée ! Vous pouvez faire un essai en appuyant sur le bouton de la barre d'outils qui montre un cercle vert avec un bouton de lecture gris à l'intérieur (raccourci : `Alt+Ctrl+W`).
+Félicitations, l'expérience est terminée ! Vous pouvez la tester en cliquant sur le bouton de la barre d'outils qui montre un cercle vert avec un bouton de lecture gris à l'intérieur (raccourci : `Alt+Ctrl+W`).
 
-Si l'expérience ne fonctionne pas au premier essai : Ne vous inquiétez pas et déterminez calmement d'où vient l'erreur. Les crashs font partie du processus normal de développement. Mais vous pouvez vous éviter beaucoup de temps et de maux de tête en travaillant de manière structurée, comme nous l'avons fait dans ce tutoriel.
+Si l'expérience ne fonctionne pas du premier coup : Ne vous inquiétez pas et déterminez calmement d'où vient l'erreur. Les plantages font partie du processus de développement normal. Mais vous pouvez vous épargner beaucoup de temps et de maux de tête en travaillant de manière structurée, comme nous l'avons fait dans ce tutoriel.
 
 ## Références
 
 <div class='reference' markdown='1'>
 
-Mathôt, S., Schreij, D., & Theeuwes, J. (2012). OpenSesame: An open-source, graphical experiment builder for the social sciences. *Behavior Research Methods*, *44*(2), 314-324. doi:10.3758/s13428-011-0168-7
+Mathôt, S., Schreij, D., & Theeuwes, J. (2012). OpenSesame : Un constructeur d'expériences graphique open-source pour les sciences sociales. *Behavior Research Methods*, *44*(2), 314-324. doi:10.3758/s13428-011-0168-7
 
-Treisman, A. M., & Gelade, G. (1980). A feature-integration theory of attention. *Cognitive Psychology*, 12(1), 97–136. doi:10.1016/0010-0285(80)90005-5
+Treisman, A. M., & Gelade, G. (1980). Une théorie de l'intégration des caractéristiques de l'attention. *Cognitive Psychology*, 12(1), 97-136. doi:10.1016/0010-0285(80)90005-5
 
 </div>
 

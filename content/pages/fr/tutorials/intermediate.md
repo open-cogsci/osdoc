@@ -1,5 +1,5 @@
 title: Tutoriel intermédiaire (Python) recherche visuelle
-hash: 0cf121366f237514374da30901d4babf9b196c43186f6fbbc12f2c7fa7e43edd
+hash: 2db5f6aa8a0276e362c99516e42c8d94a078dd3c52b5eacb7f4686da10b768df
 locale: fr
 language: French
 
@@ -7,15 +7,15 @@ language: French
 
 ## À propos d'OpenSesame
 
-OpenSesame est un programme convivial pour le développement d'expériences comportementales en psychologie, neurosciences et économie expérimentale. Pour les débutants, OpenSesame propose une interface graphique complète, accessible par point-and-click. Pour les utilisateurs avancés, OpenSesame prend en charge Python (bureau uniquement) et JavaScript (bureau et navigateur).
+OpenSesame est un programme convivial pour le développement d'expériences comportementales en psychologie, neurosciences, et économie expérimentale. Pour les débutants, OpenSesame dispose d'une interface graphique complète et intuitive de pointage et de clic. Pour les utilisateurs avancés, OpenSesame prend en charge Python (uniquement sur le bureau) et JavaScript (sur le bureau et le navigateur).
 
-OpenSesame est disponible gratuitement sous la [licence publique générale v3][gpl].
+OpenSesame est librement disponible sous la [General Public License v3][gpl].
 
 ## À propos de ce tutoriel
 
-Ce tutoriel montre comment créer une expérience de recherche visuelle de base en utilisant OpenSesame [(Mathôt, Schreij, & Theeuwes, 2012)][references]. Nous utiliserons à la fois l'interface graphique et la programmation Python pour développer une expérience que vous pourrez exécuter sur le bureau dans un environnement de laboratoire traditionnel. Une certaine expérience d'OpenSesame et Python est recommandée. Ce tutoriel prend environ une heure.
+Ce tutoriel montre comment créer une expérience de recherche visuelle simple en utilisant OpenSesame [(Mathôt, Schreij, & Theeuwes, 2012)][references]. Nous utiliserons à la fois l'interface graphique et la programmation Python pour développer une expérience que vous pouvez exécuter sur le bureau dans un environnement de laboratoire traditionnel. Une certaine expérience avec OpenSesame et Python est recommandée. Ce tutoriel prend environ une heure.
 
-Une version JavaScript de ce tutoriel est également disponible. Si vous souhaitez exécuter vos expériences en ligne dans un navigateur (avec OSWeb), le tutoriel JavaScript est ce dont vous avez besoin :
+Une version JavaScript de ce tutoriel est également disponible. Si vous souhaitez exécuter vos expériences en ligne dans un navigateur (avec OSWeb), alors le tutoriel JavaScript est ce dont vous avez besoin :
 
 - %link:tutorials/intermediate-javascript%
 
@@ -23,38 +23,40 @@ Une version JavaScript de ce tutoriel est également disponible. Si vous souhait
 
 - __Téléchargement__ — Ce tutoriel suppose que vous utilisez la version 4.0.0 ou ultérieure d'OpenSesame. Vous pouvez télécharger la version la plus récente d'OpenSesame à partir de :
 	- %link:download%
-- __Documentation__ — Un site de documentation dédié est disponible à l'adresse suivante :
+- __Documentation__ — Un site web dédié à la documentation se trouve à :
 	- <http://osdoc.cogsci.nl/>
-- __Forum__ — Un forum d'assistance est disponible à l'adresse suivante :
+- __Forum__ — Un forum de support est disponible à l'adresse :
 	- <http://forum.cogsci.nl/>
+- __Sigmund__ -- SigmundAI est un assistant IA doté d'une connaissance experte d'OpenSesame et est disponible à l'adresse :
+	- <https://sigmundai.eu/>
 
 ## L'expérience
 
-Dans ce tutoriel, vous allez créer une expérience de recherche visuelle de base. L'expérience ressemble aux études classiques de recherche visuelle de [Treisman et Gelade (1980)][references], mais elle n'est pas identique.
+Dans ce tutoriel, vous allez créer une expérience de recherche visuelle de base. L'expérience ressemble aux études classiques de recherche visuelle de [Treisman et Gelade (1980)][references], mais n'est pas identique.
 
-Dans cette expérience, les participants recherchent un objet cible, qui peut être un carré jaune, un cercle jaune, un carré bleu ou un cercle bleu ; l'identité de la cible varie entre les blocs d'essais. Les participants indiquent si la cible est présente ou non en appuyant sur la flèche droite (présent) ou gauche (absent) du clavier.
+Dans cette expérience, les participants recherchent un objet cible, qui peut être un carré jaune, un cercle jaune, un carré bleu ou un cercle bleu ; l'identité de la cible varie entre les blocs d'essais. Les participants indiquent si la cible est présente ou non en appuyant sur la flèche de droite (présent) ou de gauche (absent).
 
-En plus de la cible, zéro ou plusieurs objets distracteurs sont présentés. Il y a trois conditions, et la condition détermine quel type de distracteurs sont présents :
+En plus de la cible, zéro ou plusieurs objets distracteurs sont montrés. Il y a trois conditions, et la condition détermine quel type de distracteurs il y a :
 
-- Dans la condition *Conjonction*, les distracteurs peuvent être de n'importe quelle forme et couleur, la seule restriction étant qu'ils ne peuvent pas être identiques à la cible. Ainsi, par exemple, si la cible est un carré jaune, les distracteurs sont des cercles jaunes, des cercles bleus et des carrés bleus.
-- Dans la condition *Attribut de forme*, les distracteurs ont une forme différente de la cible, mais peuvent être de n'importe quelle couleur. Ainsi, par exemple, si la cible est un carré jaune, les distracteurs sont des cercles jaunes et des cercles bleus.
-- Dans la condition *Attribut de couleur*, les distracteurs peuvent être de n'importe quelle forme, mais doivent avoir une couleur différente de la cible. Ainsi, par exemple, si la cible est un carré jaune, les distracteurs sont des carrés bleus et des cercles bleus.
+- Dans la condition *Conjonction*, les distracteurs peuvent avoir n'importe quelle forme et couleur, avec la seule restriction que les distracteurs ne peuvent pas être identiques à la cible. Donc, par exemple, si la cible est un carré jaune, alors les distracteurs sont des cercles jaunes, des cercles bleus et des carrés bleus.
+- Dans la condition *Caractéristique de Forme*, les distracteurs ont une forme différente de celle de la cible, mais peuvent avoir n'importe quelle couleur. Donc, par exemple, si la cible est un carré jaune, alors les distracteurs sont des cercles jaunes et des cercles bleus.
+- Dans la condition *Caractéristique de Couleur*, les distracteurs peuvent avoir n'importe quelle forme, mais ont une couleur différente de celle de la cible. Donc, par exemple, si la cible est un carré jaune, alors les distracteurs sont des carrés bleus et des cercles bleus.
 
-Un retour d'information immédiat est montré après chaque essai: un point vert après une réponse correcte, et un point rouge après une réponse incorrecte. Un retour d'information détaillé sur les temps de réponse moyens et la précision est présenté après chaque bloc d'essais.
+Un feedback immédiat est présenté après chaque essai : un point vert après une réponse correcte et un point rouge après une réponse incorrecte. Un feedback détaillé sur les temps de réponse moyens et la précision est montré après chaque bloc d'essais.
 
 %--
-figure :
+figure:
  id: FigVisualSearch
  source: visual-search.svg
  caption: |
-  L'expérience de recherche visuelle que vous allez mettre en œuvre dans ce tutoriel.
+  L'expérience de recherche visuelle que vous allez implémenter dans ce tutoriel.
 --%
 
-Les expériences de ce type donnent deux résultats typiques :
+Les expériences comme celle-ci montrent deux résultats typiques :
 
-- Il faut plus de temps pour trouver la cible dans la condition Conjonction que dans les deux conditions d'Attribut.
-- Dans la condition Conjonction, les temps de réponse augmentent à mesure que le nombre de distracteurs augmente. Cela suggère que les gens cherchent la cible un élément à la fois ; c'est ce qu'on appelle la *recherche série*.
-- Dans les conditions d'Attribut (forme et couleur), les temps de réponse ne sont pas, ou peu, influencés par l'augmentation du nombre de distracteurs. Cela suggère que les gens traitent l'ensemble de l'affichage en une seule fois ; c'est ce qu'on appelle la *recherche parallèle*.
+- Il faut plus de temps pour trouver la cible dans la condition Conjonction que dans les deux conditions Caractéristique.
+- Dans la condition Conjonction, les temps de réponse augmentent à mesure que le nombre de distracteurs augmente. Cela suggère que les gens cherchent la cible un élément à la fois ; ceci est appelé *recherche sérielle*.
+- Dans les conditions Caractéristique (forme et couleur), les temps de réponse n'augmentent pas, ou augmentent à peine, à mesure que le nombre de distracteurs augmente. Cela suggère que les gens traitent toute la scène en une seule fois ; ceci est appelé *recherche parallèle*.
 
 Selon la théorie de l'intégration des caractéristiques de Treisman et Gelade, ces résultats montrent que la condition de Conjonction nécessite de combiner, ou *lier*, la couleur et la forme de chaque objet. Ce processus requiert de l'attention, et vous devez donc déplacer votre attention d'un objet à l'autre; ceci est lent, et explique pourquoi les temps de réaction dépendent du nombre d'objets. En revanche, dans les conditions de Caractéristique, la couleur et la forme n'ont pas besoin d'être liées, et donc l'ensemble du tableau peut être traité en un seul balayage sans que l'attention ne soit dirigée sur chaque objet.
 
@@ -567,22 +569,22 @@ figure:
  id: FigStep8
  source: step8.png
  caption: |
-  La séquence *trial_sequence* à la fin de l'étape 8.
+  Le *trial_sequence* à la fin de l'étape 8.
 --%
 
-## Terminé!
+## Fini !
 
-Félicitations, l'expérience est complète! Vous pouvez la tester en appuyant sur le bouton à double flèche bleue (raccourci: `Ctrl+W`).
+Félicitations, l'expérience est terminée ! Vous pouvez la tester en appuyant sur le bouton des doubles flèches bleues (raccourci : `Ctrl+W`).
 
-Si l'expérience ne fonctionne pas du premier coup : ne vous inquiétez pas et cherchez calmement d'où vient l'erreur. Les plantages font partie du processus normal de développement. Mais vous pouvez gagner beaucoup de temps et éviter des maux de tête en travaillant de manière structurée, comme nous l'avons fait dans ce tutoriel.
+Si l'expérience ne fonctionne pas du premier coup : Ne vous inquiétez pas et calmement cherchez d'où l'erreur provient. Les plantages sont une partie normale du processus de développement. Mais vous pouvez vous épargner beaucoup de temps et de maux de tête en travaillant de manière structurée, comme nous l'avons fait dans ce tutoriel.
 
 ## Références
 
 <div class='reference' markdown='1'>
 
-Mathôt, S., Schreij, D., & Theeuwes, J. (2012). OpenSesame: An open-source, graphical experiment builder for the social sciences. *Behavior Research Methods*, *44*(2), 314-324. doi:10.3758/s13428-011-0168-7
+Mathôt, S., Schreij, D., & Theeuwes, J. (2012). OpenSesame : Un créateur d'expériences graphique open-source pour les sciences sociales. *Behavior Research Methods*, *44*(2), 314-324. doi:10.3758/s13428-011-0168-7
 
-Treisman, A. M., & Gelade, G. (1980). A feature-integration theory of attention. *Cognitive Psychology*, 12(1), 97–136. doi:10.1016/0010-0285(80)90005-5
+Treisman, A. M., & Gelade, G. (1980). Une théorie de l'intégration des caractéristiques de l'attention. *Cognitive Psychology*, 12(1), 97–136. doi:10.1016/0010-0285(80)90005-5
 
 </div>
 

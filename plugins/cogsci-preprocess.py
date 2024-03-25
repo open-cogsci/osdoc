@@ -229,45 +229,6 @@ class AcademicMarkdownReader(MarkdownReader):
         build.path = build.path[3:]
         metadata = self._parse_metadata(self._md.Meta)
         build.path = build_path
-        # Write content to a JSON file that is ready for indexing by
-        # sigmund. We do this only for english, which is the only language
-        # with out a locale in the metadata. We also don't include pages aren't
-        # translated, because those tend to be workshop pages etc.
-        includes = ['manual/', 'items/', 'beginner.md', 'intermediate.md',
-                    'intermediate-javascript.md']
-        if 'locale:' not in text and 'translate: false' not in text and \
-                any(include in source_path for include in includes):
-            url = SITEURL + source_path[len(build_path[0]) + 14:-3]
-            # A summary prompt can be embedded in the text in pseudo tags. If
-            # so, then we use that to summarize the page, otherwise we use a
-            # default summary tool. For chunks of text that are relatively
-            # short, we don't summarize at all.
-            match = re.search(SUMMARY_PROMPT_PATTERN, text, re.DOTALL)
-            if match:
-                print("Summary prompt is defined")
-                summary_prompt = match.group(1).strip()
-                text = re.sub(SUMMARY_PROMPT_PATTERN, '', text,
-                              flags=re.DOTALL).strip()
-            elif len(text.split()) > 800 and len(text.split()) < 5000:
-                print("No summary prompt is defined")
-                summary_prompt = DEFAULT_SUMMARY_PROMPT
-            else:
-                summary_prompt = None
-            with open('sigmund-sources.jsonl', 'a') as fd:
-                if summary_prompt is not None:
-                    query = summary_prompt.format(content=text)
-                    summary = predict(query)
-                    fd.write(json.dumps(
-                        {'content': summary,
-                         'url': url,
-                         'title': metadata['title']}) + '\n')
-                else:
-                    for chunk in markdown_split(text):
-                        print(f'{url} {len(chunk)}')
-                        fd.write(json.dumps(
-                            {'content': chunk,
-                             'url': url,
-                             'title': metadata['title']}) + '\n')
         return content, metadata
 
 

@@ -1,5 +1,5 @@
 title: Fortgeschrittenes Tutorial (JavaScript): Visuelle Suche
-hash: be4398c1389153b66026511513743b6e43fb856b7f7a0dac63fc2069a8be95bb
+hash: 8a884ef49e4ac79ec8dd0e01bf078980622b9f0365927917c21e42253e76321c
 locale: de
 language: German
 
@@ -7,13 +7,13 @@ language: German
 
 ## Über OpenSesame
 
-OpenSesame ist ein benutzerfreundliches Programm zur Entwicklung von Verhaltensexperimenten für Psychologie, Neurowissenschaften und experimentelle Wirtschaft. Für Anfänger bietet OpenSesame eine umfassende grafische Point-and-Click-Oberfläche. Für fortgeschrittene Benutzer unterstützt OpenSesame Python (nur Desktop) und JavaScript (Desktop und Browser).
+OpenSesame ist ein benutzerfreundliches Programm für die Entwicklung von Verhaltensexperimenten in den Bereichen Psychologie, Neurowissenschaften und experimentelle Ökonomie. Für Anfänger bietet OpenSesame eine umfassende grafische, Point-and-Click-Oberfläche. Für fortgeschrittene Nutzer:innen unterstützt OpenSesame Python (nur Desktop) und JavaScript (Desktop und Browser).
 
-OpenSesame ist kostenlos verfügbar unter der [General Public License v3][gpl].
+OpenSesame ist frei verfügbar unter der [General Public License v3][gpl].
 
 ## Über dieses Tutorial
 
-In diesem Tutorial wird gezeigt, wie man mit OpenSesame [(Mathôt, Schreij & Theeuwes, 2012)][references] ein grundlegendes visuelles Suchexperiment erstellt. Wir werden sowohl die grafische Oberfläche als auch JavaScript verwenden, um ein Experiment zu entwickeln, das Sie online in einem Browser ausführen können. Erfahrungen mit OpenSesame und JavaScript sind empfehlenswert. Dieses Tutorial dauert ungefähr eine Stunde.
+Dieses Tutorial zeigt, wie Sie ein einfaches visuelles Suchexperiment mit OpenSesame [(Mathôt, Schreij, & Theeuwes, 2012)][references] erstellen. Wir werden sowohl die grafische Oberfläche als auch JavaScript verwenden, um ein Experiment zu entwickeln, das Sie online in einem Browser ausführen können. Einige Erfahrungen mit OpenSesame und JavaScript werden empfohlen. Dieses Tutorial dauert etwa eine Stunde.
 
 Eine auf Python basierende Version dieses Tutorials ist ebenfalls verfügbar. Wenn Sie Ihre Experimente nicht online durchführen müssen, ist das Python-Tutorial wahrscheinlich das, was Sie benötigen:
 
@@ -21,40 +21,42 @@ Eine auf Python basierende Version dieses Tutorials ist ebenfalls verfügbar. We
 
 ## Ressourcen
 
-- __Download__ — In diesem Tutorial wird davon ausgegangen, dass Sie OpenSesame-Version 4.0.0 oder höher und OSWeb 2.0 oder höher verwenden. Sie können die neueste Version von OpenSesame herunterladen von:
+- __Herunterladen__ — Dieses Tutorial setzt voraus, dass Sie OpenSesame Version 4.0.0 oder neuer und OSWeb 2.0 oder neuer verwenden. Sie können die neueste Version von OpenSesame hier herunterladen:
 	- %link:download%
-- __Dokumentation__ — Eine spezielle Dokumentationsseite finden Sie unter:
+- __Dokumentation__ — Eine dedizierte Dokumentationswebsite finden Sie unter:
 	- <http://osdoc.cogsci.nl/>
 - __Forum__ — Ein Supportforum finden Sie unter:
 	- <http://forum.cogsci.nl/>
+- __Sigmund__ -- SigmundAI ist ein KI-Assistent mit Expertenwissen über OpenSesame und ist unter folgender Adresse erreichbar:
+	- <https://sigmundai.eu/>
 
 ## Das Experiment
 
-In diesem Tutorial erstellen Sie ein einfaches visuelles Suchexperiment. Das Experiment ähnelt den klassischen visuellen Suchstudien von [Treisman und Gelade (1980)][references], ist aber nicht identisch.
+In diesem Tutorial erstellen Sie ein einfaches visuelles Suchexperiment. Das Experiment ähnelt den klassischen Studien zur visuellen Suche von [Treisman und Gelade (1980)][references], ist jedoch nicht identisch.
 
-Bevor Sie damit beginnen, das Experiment selbst zu *erstellen*, können Sie bereits daran *teilnehmen*. Das gibt Ihnen eine gute Vorstellung davon, worauf Sie in diesem Tutorial hinarbeiten.
+Bevor Sie beginnen, das Experiment selbst zu *erstellen*, können Sie bereits *teilnehmen*. Dies gibt Ihnen eine gute Vorstellung davon, worauf Sie in diesem Tutorial hinarbeiten.
 
 <a role="button" class="btn btn-success btn-align-left" href="https://jatos.mindprobe.eu/publix/1938/start?batchId=2191&generalMultiple">Am Experiment teilnehmen!</a>
 
-In diesem Experiment suchen die Teilnehmer nach einem Zielobjekt, das ein gelbes Viereck, ein gelber Kreis, ein blaues Viereck oder ein blauer Kreis sein kann; die Identität des Ziels variiert zwischen den Versuchsblöcken. Die Teilnehmer geben an, ob das Ziel vorhanden ist oder nicht, indem sie die rechte (vorhanden) oder linke (nicht vorhanden) Pfeiltaste drücken.
+In diesem Experiment suchen die Teilnehmenden nach einem Zielobjekt, das ein gelbes Quadrat, ein gelber Kreis, ein blaues Quadrat oder ein blauer Kreis sein kann; die Identität des Ziels variiert zwischen den Blöcken. Die Teilnehmenden geben an, ob das Ziel vorhanden ist oder nicht, indem sie die rechte (vorhanden) oder linke (nicht vorhanden) Pfeiltaste drücken.
 
-Zusätzlich zum Ziel werden null oder mehr Ablenkerobjekte angezeigt. Es gibt drei Bedingungen, und die Bedingung bestimmt, welche Art von Ablenkern es gibt:
+Zusätzlich zum Zielobjekt werden null oder mehr Ablenkungsobjekte gezeigt. Es gibt drei Bedingungen, und die Bedingung bestimmt, welche Art von Ablenkern vorhanden sind:
 
-- In der *Conjunction*-Bedingung können Ablenker jede Form und Farbe haben, mit der einzigen Einschränkung, dass Ablenker nicht identisch mit dem Ziel sein dürfen. Wenn das Ziel also zum Beispiel ein gelbes Viereck ist, dann sind die Ablenker gelbe Kreise, blaue Kreise und blaue Vierecke.
-- In der *Shape Feature*-Bedingung haben Ablenker eine andere Form als das Ziel, können aber jede Farbe haben. Wenn das Ziel also zum Beispiel ein gelbes Viereck ist, dann sind die Ablenker gelbe Kreise und blaue Kreise.
-- In der *Color Feature*-Bedingung können Ablenker jede Form haben, haben aber eine andere Farbe als das Ziel. Wenn das Ziel also zum Beispiel ein gelbes Viereck ist, dann sind die Ablenker blaue Vierecke und blaue Kreise.
+- In der *Conjunction*-Bedingung können Ablenker jede Form und Farbe haben, jedoch mit der Einschränkung, dass Ablenker nicht identisch mit dem Ziel sein dürfen. Wenn das Ziel also ein gelbes Quadrat ist, dann sind die Ablenker gelbe Kreise, blaue Kreise und blaue Quadrate.
+- In der *Shape Feature*-Bedingung haben Ablenker eine andere Form als das Ziel, können aber jede Farbe haben. Wenn das Ziel also ein gelbes Quadrat ist, dann sind die Ablenker gelbe und blaue Kreise.
+- In der *Color Feature*-Bedingung können Ablenker jede Form haben, aber eine andere Farbe als das Ziel. Wenn das Ziel also ein gelbes Quadrat ist, dann sind die Ablenker blaue Quadrate und blaue Kreise.
 
-Nach jedem Versuch wird sofortiges Feedback angezeigt: ein grüner Punkt nach einer korrekten Antwort und ein roter Punkt nach einer falschen Antwort. Detailliertes Feedback zur durchschnittlichen Reaktionszeit und Genauigkeit wird nach jedem Versuchsblock angezeigt.
+Nach jedem Versuch wird sofortiges Feedback gegeben: ein grüner Punkt bei einer richtigen Antwort und ein roter Punkt bei einer falschen Antwort. Detailliertes Feedback zu durchschnittlichen Reaktionszeiten und Genauigkeit wird nach jedem Block angezeigt.
 
 %--
-figure:
+Abbildung:
  id: FigVisualSearch
- source: visual-search.svg
- caption: |
-  Das visuelle Suchexperiment, das Sie in diesem Tutorial implementieren.
+ Quelle: visual-search.svg
+ Bildunterschrift: |
+  Das visuelle Suchexperiment, das Sie in diesem Tutorial umsetzen werden.
 --%
 
-Experimente wie dieses zeigen zwei typische Befunde:
+Experimente wie dieses zeigen zwei typische Ergebnisse:
 
 - Es dauert länger, das Ziel in der Verbindungskondition zu finden als in den beiden Merkmalsbedingungen.
 - In der Verbindungskondition steigen die Reaktionszeiten, wenn die Anzahl der Störreize zunimmt. Dies legt nahe, dass die Menschen das Ziel nacheinander suchen; dies wird als *serielle Suche* bezeichnet.
@@ -599,43 +601,43 @@ Feedback nach jedem Versuch kann die Teilnehmer motivieren. Allerdings sollte da
 
 So geht's:
 
-- Fügen Sie zwei neue SKETCHPADs in *trial_sequence* ein, direkt nach *keyboard_response*.
-- Benennen Sie einen SKETCHPAD in *green_dot* um, zeichnen Sie darauf einen zentralen grünen Fixierungspunkt und ändern Sie die Dauer auf 500.
-- Benennen Sie das andere SKETCHPAD in *red_dot* um, zeichnen Sie darauf einen zentralen roten Fixierungspunkt und ändern Sie die Dauer auf 500.
+- Fügen Sie zwei neue SKETCHPADs in die *trial_sequence* ein, gleich nach *keyboard_response*.
+- Benennen Sie ein SKETCHPAD in *green_dot* um, zeichnen Sie darauf einen grünen Fixierungspunkt in der Mitte und ändern Sie seine Dauer auf 500.
+- Benennen Sie das andere SKETCHPAD in *red_dot* um, zeichnen Sie darauf einen roten Fixierungspunkt in der Mitte und ändern Sie seine Dauer auf 500.
 
-Natürlich sollte auf jedem Versuch nur einer der beiden Punkte gezeigt werden. Um dies zu erreichen, werden wir in *trial_sequence* Run-if-Anweisungen angeben:
+Natürlich sollte in jedem Durchgang nur einer der beiden Punkte angezeigt werden. Um dies zu erreichen, werden wir run-if-Bedingungen in der *trial_sequence* festlegen:
 
-- Ändern Sie die Run-if-Anweisung für *green_dot* zu 'correct == 1', was bedeutet, dass es nur nach einer korrekten Antwort angezeigt werden sollte.
-- Ändern Sie die Run-if-Anweisung für *red_dot* zu 'correct == 0', was bedeutet, dass es nur nach einer nicht korrekten Antwort gezeigt werden sollte.
+- Ändern Sie die run-if-Bedingung für *green_dot* in 'correct == 1', was anzeigt, dass es nur nach einer korrekten Antwort gezeigt werden soll.
+- Ändern Sie die run-if-Bedingung für *red_dot* in 'correct == 0', was anzeigt, dass es nur nach einer falschen Antwort gezeigt werden soll.
 
-Die Variable `correct` wird automatisch erstellt, wenn die Variable `correct_response` verfügbar ist; deshalb haben wir `correct_response` in Schritt 7 definiert. Weitere Informationen zu Variablen und Run-if-Anweisungen finden Sie unter:
+Die Variable `correct` wird automatisch erstellt, wenn die Variable `correct_response` verfügbar ist; deshalb haben wir `correct_response` in Schritt 7 definiert. Für weitere Informationen über Variablen und run-if-Bedingungen, siehe:
 
 - %link:manual/variables%
 
-Die *trial_sequence* sollte nun wie %FigStep8 aussehen.
+Die *trial_sequence* sollte nun so aussehen wie in %FigStep8.
 
 %--
-figure:
+Abbildung:
  id: FigStep8
- source: step8.png
- caption: |
+ Quelle: step8.png
+ Bildunterschrift: |
   Die *trial_sequence* am Ende von Schritt 8.
 --%
 
 
 ## Fertig!
 
-Herzlichen Glückwunsch, das Experiment ist abgeschlossen! Sie können es testen, indem Sie auf die Symbolleiste-Schaltfläche drücken, die einen grünen Kreis mit einem grauen Wiedergabeknopf darin zeigt (Verknüpfung: `Alt+Ctrl+W`).
+Herzlichen Glückwunsch, das Experiment ist vollständig! Sie können es testen, indem Sie auf die Schaltfläche in der Symbolleiste klicken, die einen grünen Kreis mit einem grauen Play-Button darin zeigt (Tastenkombination: `Alt+Ctrl+W`).
 
-Wenn das Experiment beim ersten Versuch nicht funktioniert: Keine Sorge, finden Sie ruhig heraus, woher der Fehler kommt. Abstürze gehören zum normalen Entwicklungsprozess. Aber Sie können sich viel Zeit und Kopfschmerzen ersparen, indem Sie auf strukturierte Weise arbeiten, wie wir es in diesem Tutorial getan haben.
+Wenn das Experiment beim ersten Versuch nicht funktioniert: Keine Sorge, und finden Sie ruhig heraus, wo der Fehler liegt. Abstürze gehören zum normalen Entwicklungsprozess. Aber Sie können sich viel Zeit und Ärger ersparen, indem Sie strukturiert arbeiten, wie wir es in diesem Tutorial getan haben.
 
-## Literaturhinweise
+## Referenzen
 
 <div class='reference' markdown='1'>
 
-Mathôt, S., Schreij, D., & Theeuwes, J. (2012). OpenSesame: An open-source, graphical experiment builder for the social sciences. *Behavior Research Methods*, *44*(2), 314-324. doi:10.3758/s13428-011-0168-7
+Mathôt, S., Schreij, D., & Theeuwes, J. (2012). OpenSesame: Ein Open-Source, grafischer Experiment-Builder für die Sozialwissenschaften. *Behavior Research Methods*, *44*(2), 314-324. doi:10.3758/s13428-011-0168-7
 
-Treisman, A. M., & Gelade, G. (1980). A feature-integration theory of attention. *Cognitive Psychology*, 12(1), 97–136. doi:10.1016/0010-0285(80)90005-5
+Treisman, A. M., & Gelade, G. (1980). Eine Integrations-Theorie der Aufmerksamkeit. *Cognitive Psychology*, 12(1), 97–136. doi:10.1016/0010-0285(80)90005-5
 
 </div>
 

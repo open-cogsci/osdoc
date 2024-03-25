@@ -1,50 +1,52 @@
 title: Tutorial intermedio (JavaScript): búsqueda visual
-hash: be4398c1389153b66026511513743b6e43fb856b7f7a0dac63fc2069a8be95bb
+hash: 8a884ef49e4ac79ec8dd0e01bf078980622b9f0365927917c21e42253e76321c
 locale: es
 language: Spanish
 
-[TOC]
-
 ## Acerca de OpenSesame
 
-OpenSesame es un programa fácil de usar para el desarrollo de experimentos de comportamiento en psicología, neurociencia y economía experimental. Para principiantes, OpenSesame tiene una interfaz gráfica completa, de apuntar y hacer clic. Para usuarios avanzados, OpenSesame admite Python (solo escritorio) y JavaScript (escritorio y navegador).
+OpenSesame es un programa de fácil uso para el desarrollo de experimentos de comportamiento en psicología, neurociencia y economía experimental. Para principiantes, OpenSesame tiene una interfaz gráfica integral de punto y clic. Para usuarios avanzados, OpenSesame admite Python (solo escritorio) y JavaScript (escritorio y navegador).
 
 OpenSesame está disponible gratuitamente bajo la [Licencia Pública General v3][gpl].
 
 ## Acerca de este tutorial
 
-Este tutorial muestra cómo crear un experimento básico de búsqueda visual utilizando OpenSesame [(Mathôt, Schreij y Theeuwes, 2012)][references]. Utilizaremos tanto la interfaz gráfica como JavaScript para desarrollar un experimento que puedas ejecutar en línea en un navegador. Se recomienda tener experiencia con OpenSesame y JavaScript. Este tutorial dura aproximadamente una hora.
+Este tutorial muestra cómo crear un experimento básico de búsqueda visual utilizando OpenSesame [(Mathôt, Schreij, & Theeuwes, 2012)][referencias]. Utilizaremos tanto la interfaz gráfica como JavaScript para desarrollar un experimento que puedas ejecutar en línea en un navegador. Se recomienda tener alguna experiencia con OpenSesame y JavaScript. Este tutorial tiene una duración aproximada de una hora.
 
 También está disponible una versión de este tutorial basada en Python. Si no necesitas ejecutar tus experimentos en línea, entonces el tutorial de Python es probablemente lo que necesitas:
 
 - %link:tutorials/intermediate%
 
+
 ## Recursos
 
-- __Descargar__ — Este tutorial supone que estás ejecutando OpenSesame versión 4.0.0 o posterior y OSWeb 2.0 o posterior. Puedes descargar la versión más reciente de OpenSesame desde:
+- __Descargar__ — Este tutorial supone que estás ejecutando la versión 4.0.0 o posterior de OpenSesame y OSWeb 2.0 o posterior. Puedes descargar la versión más reciente de OpenSesame desde:
 	- %link:download%
-- __Documentación__ — Un sitio web dedicado a la documentación se encuentra en:
+- __Documentación__ — Puedes encontrar un sitio web dedicado a la documentación en:
 	- <http://osdoc.cogsci.nl/>
 - __Foro__ — Un foro de soporte se encuentra en:
 	- <http://forum.cogsci.nl/>
+- __Sigmund__ — SigmundAI es un asistente de IA con conocimiento experto en OpenSesame y se encuentra en:
+	- <https://sigmundai.eu/>
+
 
 ## El experimento
 
-En este tutorial, crearás un experimento básico de búsqueda visual. El experimento se asemeja a los estudios clásicos de búsqueda visual de [Treisman y Gelade (1980)][references], pero no es idéntico.
+En este tutorial, crearás un experimento básico de búsqueda visual. El experimento se asemeja a los estudios clásicos de búsqueda visual de [Treisman y Gelade (1980)][referencias], pero no es idéntico.
 
-Antes de comenzar a *construir* el experimento por ti mismo, ya puedes *participar* en él. Esto te dará una buena idea de lo que estás trabajando en este tutorial.
+Antes de comenzar a *construir* el experimento por ti mismo, ya puedes *participar* en él. Esto te dará una buena idea de a qué te diriges en este tutorial.
 
 <a role="button" class="btn btn-success btn-align-left" href="https://jatos.mindprobe.eu/publix/1938/start?batchId=2191&generalMultiple">¡Participa en el experimento!</a>
 
 En este experimento, los participantes buscan un objeto objetivo, que puede ser un cuadrado amarillo, un círculo amarillo, un cuadrado azul o un círculo azul; la identidad del objetivo varía entre bloques de ensayos. Los participantes indican si el objetivo está presente o no presionando la flecha derecha (presente) o izquierda (ausente).
 
-Además del objetivo, se muestran cero o más objetos distractores. Hay tres condiciones, y la condición determina qué tipo de distractores hay:
+Además del objetivo, se muestran cero o más objetos distractores. Hay tres condiciones y la condición determina qué tipo de distractores hay:
 
-- En la condición *Conjunción*, los distractores pueden tener cualquier forma y color, con la única restricción de que los distractores no pueden ser idénticos al objetivo. Entonces, por ejemplo, si el objetivo es un cuadrado amarillo, los distractores serán círculos amarillos, círculos azules y cuadrados azules.
-- En la condición *Característica de forma*, los distractores tienen una forma diferente que el objetivo, pero pueden tener cualquier color. Entonces, por ejemplo, si el objetivo es un cuadrado amarillo, los distractores serán círculos amarillos y círculos azules.
-- En la condición *Característica de color*, los distractores pueden tener cualquier forma, pero tienen un color diferente al objetivo. Entonces, por ejemplo, si el objetivo es un cuadrado amarillo, los distractores serán cuadrados azules y círculos azules.
+- En la condición de *Conjunción*, los distractores pueden tener cualquier forma y color, con la única restricción de que los distractores no pueden ser idénticos al objetivo. Entonces, por ejemplo, si el objetivo es un cuadrado amarillo, entonces los distractores son círculos amarillos, círculos azules y cuadrados azules.
+- En la condición de *Característica de Forma*, los distractores tienen una forma diferente al objetivo, pero pueden tener cualquier color. Entonces, por ejemplo, si el objetivo es un cuadrado amarillo, entonces los distractores son círculos amarillos y círculos azules.
+- En la condición de *Característica de Color*, los distractores pueden tener cualquier forma, pero tienen un color diferente al del objetivo. Entonces, por ejemplo, si el objetivo es un cuadrado amarillo, entonces los distractores son cuadrados azules y círculos azules.
 
-Se muestra comentarios inmediatos después de cada ensayo: un punto verde después de una respuesta correcta y un punto rojo después de una respuesta incorrecta. Se muestra información detallada sobre los tiempos de respuesta promedio y la precisión después de cada bloque de ensayos.
+Se muestra una retroalimentación inmediata después de cada ensayo: un punto verde después de una respuesta correcta y un punto rojo después de una respuesta incorrecta. Se muestra una retroalimentación detallada sobre los tiempos de respuesta promedio y la precisión después de cada bloque de ensayos.
 
 %--
 figure:
@@ -54,7 +56,7 @@ figure:
   El experimento de búsqueda visual que implementarás en este tutorial.
 --%
 
-Los experimentos como este muestran dos hallazgos típicos:
+Experimentos como este muestran dos hallazgos típicos:
 
 - Se tarda más tiempo en encontrar el objetivo en la condición de Conjunción que en las dos condiciones de Característica.
 - En la condición de Conjunción, los tiempos de respuesta aumentan a medida que aumenta el número de distractores. Esto sugiere que las personas buscan el objetivo un elemento a la vez; esto se llama *búsqueda en serie*.
@@ -597,45 +599,44 @@ La retroalimentación después de cada ensayo puede motivar a los participantes;
 
 Para hacer esto:
 
-- Inserta dos nuevos SKETCHPADs en *trial_sequence*, justo después de *keyboard_response*.
-- Renombra un SKETCHPAD a *green_dot*, dibuja un punto de fijación verde central en él y cambia su duración a 500.
-- Renombra el otro SKETCHPAD a *red_dot*, dibuja un punto de fijación rojo central en él y cambia su duración a 500.
+- Inserte dos nuevos SKETCHPAD en *trial_sequence*, justo después de *keyboard_response*.
+- Renombre un SKETCHPAD como *green_dot*, dibuje un punto de fijación verde central en él y cambie su duración a 500.
+- Renombre el otro SKETCHPAD como *red_dot*, dibuje un punto de fijación rojo central en él y cambie su duración a 500.
 
 Por supuesto, solo uno de los dos puntos debe mostrarse en cada ensayo. Para lograr esto, especificaremos declaraciones run-if en *trial_sequence*:
 
-- Cambia la declaración run-if para *green_dot* a 'correct == 1', indicando que solo debe mostrarse después de una respuesta correcta.
-- Cambia la declaración run-if para *red_dot* a 'correct == 0', indicando que solo debe mostrarse después de una respuesta incorrecta.
+- Cambie la declaración run-if para *green_dot* a 'correct == 1', indicando que solo debe mostrarse después de una respuesta correcta.
+- Cambie la declaración run-if para *red_dot* a 'correct == 0', indicando que solo debe mostrarse después de una respuesta incorrecta.
 
-La variable `correct` se crea automáticamente si la variable `correct_response` está disponible; por eso definimos `correct_response` en el paso 7. Para obtener más información sobre las variables y las declaraciones run-if, consulta:
+La variable `correct` se crea automáticamente si la variable `correct_response` está disponible; es por eso que definimos `correct_response` en el paso 7. Para más información sobre variables y declaraciones run-if, vea:
 
-- %enlace:manual/variables%
+- %link:manual/variables%
 
-El *trial_sequence* ahora debería verse como %FigStep8.
+La *trial_sequence* ahora debería verse como en %FigStep8.
 
 %--
-figure:
+figura:
  id: FigStep8
- source: step8.png
- caption: |
-  El *trial_sequence* al final del paso 8.
+ fuente: step8.png
+ leyenda: |
+  La *trial_sequence* al final del paso 8.
 --%
-
 
 ## ¡Terminado!
 
-¡Felicidades, el experimento está completo! Puedes probarlo presionando el botón de la barra de herramientas que muestra un círculo verde con un botón gris de reproducción en el interior (atajo: `Alt+Ctrl+W`).
+¡Felicidades, el experimento está completo! Puedes realizar una prueba presionando el botón de la barra de herramientas que muestra un círculo verde con un botón de reproducción gris en el interior (atajo: `Alt+Ctrl+W`).
 
-Si el experimento no funciona a la primera: no te preocupes y calmadamente averigua de dónde proviene el error. Los bloqueos son parte del proceso normal de desarrollo. Pero puedes ahorrarte mucho tiempo y dolores de cabeza trabajando de manera estructurada, como lo hemos hecho en este tutorial.
+Si el experimento no funciona en el primer intento: No te preocupes, y descubre con calma de dónde viene el error. Los fallos son parte del proceso de desarrollo normal. Pero puedes ahorrarte mucho tiempo y dolores de cabeza trabajando de manera estructurada, como hemos hecho en este tutorial.
 
 ## Referencias
 
 <div class='reference' markdown='1'>
 
-Mathôt, S., Schreij, D., & Theeuwes, J. (2012). OpenSesame: An open-source, graphical experiment builder for the social sciences. *Behavior Research Methods*, *44*(2), 314-324. doi:10.3758/s13428-011-0168-7
+Mathôt, S., Schreij, D., & Theeuwes, J. (2012). OpenSesame: Una herramienta de construcción de experimentos gráficos de código abierto para las ciencias sociales. *Behavior Research Methods*, *44*(2), 314-324. doi:10.3758/s13428-011-0168-7
 
-Treisman, A. M., & Gelade, G. (1980). A feature-integration theory of attention. *Cognitive Psychology*, 12(1), 97–136. doi:10.1016/0010-0285(80)90005-5
+Treisman, A. M., & Gelade, G. (1980). Una teoría de la integración de características de la atención. *Psicología Cognitiva*, 12(1), 97–136. doi:10.1016/0010-0285(80)90005-5
 
 </div>
 
-[referencias]: #referencias
+[references]: #references
 [gpl]: http://www.gnu.org/licenses/gpl-3.0.en.html

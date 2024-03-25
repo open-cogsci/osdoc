@@ -1,5 +1,5 @@
 title: Intermediäres Tutorial (Python) visuelle Suche
-hash: bc6a941f73aa734c08871ddf1fd8ffcd188aed4dde8ec8200b599a033ffa1de4
+hash: 2db5f6aa8a0276e362c99516e42c8d94a078dd3c52b5eacb7f4686da10b768df
 locale: de
 language: German
 
@@ -7,54 +7,56 @@ language: German
 
 ## Über OpenSesame
 
-OpenSesame ist ein benutzerfreundliches Programm für die Entwicklung von Verhaltensexperimenten für Psychologie, Neurowissenschaften und experimentelle Wirtschaft. Für Anfänger bietet OpenSesame eine umfassende grafische, Point-and-Click-Schnittstelle. Für fortgeschrittene Benutzer unterstützt OpenSesame Python (nur Desktop) und JavaScript (Desktop und Browser).
+OpenSesame ist ein benutzerfreundliches Programm für die Entwicklung von Verhaltensexperimenten in der Psychologie, den Neurowissenschaften und der experimentellen Ökonomie. Für Anfänger bietet OpenSesame eine umfassende grafische Bedienoberfläche zum Klicken. Für fortgeschrittene Nutzer unterstützt OpenSesame Python-Skripting (nur Desktop) und JavaScript (Desktop und Browser).
 
-OpenSesame ist unter der [General Public License v3][gpl] frei verfügbar.
+OpenSesame ist frei verfügbar unter der [General Public License v3][gpl].
 
 ## Über dieses Tutorial
 
-In diesem Tutorial wird gezeigt, wie man mit OpenSesame ein grundlegendes visuelles Suchexperiment erstellt [(Mathôt, Schreij, & Theeuwes, 2012)][references]. Wir werden sowohl die grafische Schnittstelle als auch Python-Skripting verwenden, um ein Experiment zu entwickeln, das auf dem Desktop in einem traditionellen Laborsetting durchgeführt werden kann. Erfahrungen mit OpenSesame und Python sind empfehlenswert. Dieses Tutorial dauert etwa eine Stunde.
+Dieses Tutorial zeigt, wie man ein grundlegendes visuelles Suchexperiment mit OpenSesame [(Mathôt, Schreij, & Theeuwes, 2012)][references] erstellt. Wir werden sowohl die grafische Oberfläche als auch Python-Skripting verwenden, um ein Experiment zu entwickeln, das Sie auf dem Desktop in einem traditionellen Laborumfeld durchführen können. Einige Erfahrungen mit OpenSesame und Python werden empfohlen. Dieses Tutorial dauert etwa eine Stunde.
 
-Eine JavaScript-basierte Version dieses Tutorials ist ebenfalls verfügbar. Wenn Sie Ihre Experimente online in einem Browser (mit OSWeb) durchführen möchten, ist das JavaScript-Tutorial das Richtige für Sie:
+Eine JavaScript-basierte Version dieses Tutorials ist ebenfalls verfügbar. Wenn Sie Ihre Experimente online in einem Browser durchführen möchten (mit OSWeb), dann ist das JavaScript-Tutorial das Richtige für Sie:
 
 - %link:tutorials/intermediate-javascript%
 
 ## Ressourcen
 
-- __Download__ — Dieses Tutorial setzt voraus, dass Sie mindestens Version 4.0.0 von OpenSesame verwenden. Sie können die neueste Version von OpenSesame herunterladen unter:
+- __Herunterladen__ — Dieses Tutorial setzt voraus, dass Sie OpenSesame Version 4.0.0 oder neuer verwenden. Sie können die neueste Version von OpenSesame hier herunterladen:
 	- %link:download%
-- __Dokumentation__ — Eine spezielle Dokumentationswebsite finden Sie unter:
+- __Dokumentation__ — Eine spezielle Dokumentationswebseite finden Sie unter:
 	- <http://osdoc.cogsci.nl/>
 - __Forum__ — Ein Supportforum finden Sie unter:
 	- <http://forum.cogsci.nl/>
+- __Sigmund__ -- SigmundAI ist ein KI-Assistent mit Expertenwissen über OpenSesame und ist hier verfügbar:
+	- <https://sigmundai.eu/>
 
 ## Das Experiment
 
-In diesem Tutorial erstellen Sie ein grundlegendes visuelles Suchexperiment. Das Experiment ähnelt den klassischen visuellen Suchstudien von [Treisman und Gelade (1980)][references], ist aber nicht identisch.
+In diesem Tutorial erstellen Sie ein grundlegendes Experiment zur visuellen Suche. Das Experiment ähnelt den klassischen Studien zur visuellen Suche von [Treisman und Gelade (1980)][references], ist aber nicht identisch.
 
-In diesem Experiment suchen die Teilnehmer nach einem Zielobjekt, das ein gelbes Quadrat, ein gelber Kreis, ein blaues Quadrat oder ein blauer Kreis sein kann; die Identität des Ziels variiert zwischen den Blöcken von Versuchen. Die Teilnehmer geben an, ob das Ziel vorhanden ist oder nicht, indem sie die rechte (vorhanden) oder linke (nicht vorhanden) Pfeiltaste drücken.
+In diesem Experiment suchen die Teilnehmer nach einem Zielobjekt, das ein gelbes Quadrat, ein gelber Kreis, ein blaues Quadrat oder ein blauer Kreis sein kann; die Identität des Ziels variiert zwischen den Blöcken von Versuchen. Die Teilnehmer geben an, ob das Ziel vorhanden ist oder nicht, indem sie die rechte (vorhanden) oder linke (abwesend) Pfeiltaste drücken.
 
-Zusätzlich zum Ziel werden null oder mehr Ablenkungsobjekte angezeigt. Es gibt drei Bedingungen, und die Bedingung bestimmt, welche Art von Ablenkern es gibt:
+Neben dem Ziel werden null oder mehr Ablenkungsobjekte angezeigt. Es gibt drei Bedingungen, und die Bedingung bestimmt, welche Art von Ablenkungsobjekten es gibt:
 
-- In der *Konjunktions*-Bedingung können Ablenker jede Form und Farbe haben, mit der einzigen Einschränkung, dass Ablenker nicht identisch mit dem Ziel sein dürfen. Wenn das Ziel also beispielsweise ein gelbes Quadrat ist, dann sind die Ablenker gelbe Kreise, blaue Kreise und blaue Quadrate.
-- In der *Shape-Feature*-Bedingung haben Ablenker eine andere Form als das Ziel, können aber jede Farbe haben. Wenn das Ziel also beispielsweise ein gelbes Quadrat ist, dann sind die Ablenker gelbe Kreise und blaue Kreise.
-- In der *Color-Feature*-Bedingung können Ablenker jede Form haben, haben aber eine andere Farbe als das Ziel. Wenn das Ziel also beispielsweise ein gelbes Quadrat ist, dann sind die Ablenker blaue Quadrate und blaue Kreise.
+- In der *Konjunktions*bedingung können Ablenkungsobjekte jede Form und Farbe haben, mit der einzigen Einschränkung, dass Ablenkungsobjekte nicht identisch mit dem Ziel sein dürfen. Also, wenn zum Beispiel das Ziel ein gelbes Quadrat ist, dann sind Ablenkungsobjekte gelbe Kreise, blaue Kreise und blaue Quadrate.
+- In der Bedingung *Shape Feature* haben Ablenkungsobjekte eine andere Form als das Ziel, können aber jede Farbe haben. Also, wenn zum Beispiel das Ziel ein gelbes Quadrat ist, dann sind Ablenkungsobjekte gelbe Kreise und blaue Kreise.
+- In der Bedingung *Color Feature* können Ablenkungsobjekte jede Form haben, haben aber eine andere Farbe als das Ziel. Also, wenn zum Beispiel das Ziel ein gelbes Quadrat ist, dann sind Ablenkungsobjekte blaue Quadrate und blaue Kreise.
 
-Unmittelbares Feedback wird nach jedem Versuch angezeigt: ein grüner Punkt nach einer korrekten Antwort und ein roter Punkt nach einer falschen Antwort. Detailliertes Feedback über durchschnittliche Reaktionszeiten und Genauigkeit wird nach jedem Block von Versuchen angezeigt.
+Unmittelbares Feedback wird nach jedem Versuch angezeigt: ein grüner Punkt nach einer korrekten Antwort und ein roter Punkt nach einer inkorrekten Antwort. Detailliertes Feedback zu durchschnittlichen Reaktionszeiten und Genauigkeit wird nach jedem Block von Versuchen gezeigt.
 
 %--
-Abbildung:
+figure:
  id: FigVisualSearch
- Quelle: visual-search.svg
- Bildunterschrift: |
-  Das visuelle Suchexperiment, das Sie in diesem Tutorial implementieren werden.
+ source: visual-search.svg
+ caption: |
+  Das Experiment zur visuellen Suche, das Sie in diesem Tutorial umsetzen werden.
 --%
 
-Experimente wie dieses zeigen zwei typische Ergebnisse:
+Experimente wie dieses zeigen zwei typische Befunde:
 
-- Es dauert länger, das Ziel in der Konjunktionsbedingung zu finden als in den zwei Feature-Bedingungen.
-- In der Konjunktionsbedingung nehmen die Reaktionszeiten zu, je mehr Ablenker es gibt. Das deutet darauf hin, dass Menschen das Ziel objektweise suchen; dies wird als *serielle Suche* bezeichnet.
-- In den Feature-Bedingungen (sowohl Form als auch Farbe) nehmen die Reaktionszeiten nicht oder kaum zu, je mehr Ablenker es gibt. Das deutet darauf hin, dass die Menschen das gesamte Display auf einmal verarbeiten; dies wird als *parallele Suche* bezeichnet.
+- Es dauert länger, das Ziel in der Konjunktionsbedingung zu finden als in den beiden Feature-Bedingungen.
+- In der Konjunktionsbedingung nehmen die Reaktionszeiten zu, wenn die Anzahl der Ablenkungsobjekte steigt. Dies deutet darauf hin, dass die Menschen nach dem Zielobjekt eines nach dem anderen suchen; dies wird als *serielle Suche* bezeichnet.
+- In den Feature-Bedingungen (sowohl Form als auch Farbe) nehmen die Reaktionszeiten nicht oder nur kaum zu, wenn die Anzahl der Ablenkungsobjekte steigt. Dies legt nahe, dass die Menschen das gesamte Display auf einmal verarbeiten; dies wird als *parallele Suche* bezeichnet.
 
 Laut Treismans und Gelades Merkmalsintegrations-Theorie spiegeln diese Ergebnisse wider, dass die Bedingung "Verbindung" erfordert, dass Sie Farbe und Form jedes Objekts kombinieren oder *binden*. Diese Bindung erfordert Aufmerksamkeit, und Sie müssen daher Ihre Aufmerksamkeit von einem Objekt zum nächsten verschieben; das ist langsam und erklärt, warum die Reaktionszeiten von der Anzahl der Objekte abhängen. Im Gegensatz dazu müssen in den Merkmalsbedingungen Farbe und Form nicht gebunden werden, und daher kann das gesamte Display in einem einzigen Durchgang verarbeitet werden, ohne dass die Aufmerksamkeit auf jedes einzelne Objekt gerichtet wird.
 

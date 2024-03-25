@@ -25,6 +25,8 @@ A Python-based version of this tutorial is also available. If you don't need to 
 	- <http://osdoc.cogsci.nl/>
 - __Forum__ — A support forum can be found at:
 	- <http://forum.cogsci.nl/>
+- __Sigmund__ -- SigmundAI is an AI assistant with expert knowledge of OpenSesame and can be found at:
+	- <https://sigmundai.eu/>
 
 
 ## The experiment

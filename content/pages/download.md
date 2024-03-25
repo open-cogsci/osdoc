@@ -13,12 +13,11 @@ function startDownload(url) {
 
 <h3>Your download should start shortly!</h3>
 
-<a role="button" class="btn btn-success btn-align-left" href="https://www.buymeacoffee.com/cogsci">
-<span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-Help us stay focused and buy us a coffee!
+<a role="button" class="btn btn-success btn-align-left" href="https://sigmundai.eu">
+ &#128150; Subscribe to SigmundAI.eu
 </a>
 
-Coffee keeps us awake so that we can develop free software and answer your questions on the support forum!
+Better than ChatGPT for OpenSesame questions. Your €9/month subscription supports OpenSesame.
 
 Click <a id="click-here">here</a> if your download doesn't start.
 </div>

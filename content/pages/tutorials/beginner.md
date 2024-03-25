@@ -17,9 +17,11 @@ This tutorial shows how to create a simple but complete psychological experiment
 - __Download__ -- This tutorial assumes that you are running OpenSesame version 4.0.0 or later. To check which version you are running, see the bottom right of the 'Get started' tab (see %FigGetStarted). You can download the most recent version of OpenSesame from:
 	- %link:download%
 - __Documentation__ -- A dedicated documentation website can be found at:
-	- <http://osdoc.cogsci.nl/>
+	- <https://osdoc.cogsci.nl/>
 - __Forum__ -- A support forum can be found at:
-	- <http://forum.cogsci.nl/>
+	- <https://forum.cogsci.nl/>
+- __Sigmund__ -- SigmundAI is an AI assistant with expert knowledge of OpenSesame and can be found at:
+	- <https://sigmundai.eu/>
 
 ## The experiment
 

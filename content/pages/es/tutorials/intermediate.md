@@ -1,46 +1,46 @@
 title: Tutorial intermedio (Python) búsqueda visual
-hash: bc6a941f73aa734c08871ddf1fd8ffcd188aed4dde8ec8200b599a033ffa1de4
+hash: 2db5f6aa8a0276e362c99516e42c8d94a078dd3c52b5eacb7f4686da10b768df
 locale: es
 language: Spanish
 
-[TOC]
-
 ## Acerca de OpenSesame
 
-OpenSesame es un programa fácil de usar para el desarrollo de experimentos conductuales en psicología, neurociencia y economía experimental. Para principiantes, OpenSesame cuenta con una interfaz gráfica completa, de apuntar y hacer clic. Para usuarios avanzados, OpenSesame admite Python (solo escritorio) y JavaScript (escritorio y navegador).
+OpenSesame es un programa amigable para el desarrollo de experimentos de comportamiento en psicología, neurociencia y economía experimental. Para principiantes, OpenSesame tiene una interfaz gráfica completa de apuntar y clic. Para usuarios avanzados, OpenSesame soporta Python (solo escritorio) y JavaScript (escritorio y navegador).
 
 OpenSesame está disponible gratuitamente bajo la [Licencia Pública General v3][gpl].
 
 ## Acerca de este tutorial
 
-Este tutorial muestra cómo crear un experimento básico de búsqueda visual usando OpenSesame [(Mathôt, Schreij y Theeuwes, 2012)][references]. Usaremos tanto la interfaz gráfica como la secuencia de comandos en Python para desarrollar un experimento que puede ejecutar en el escritorio en un entorno de laboratorio tradicional. Se recomienda algo de experiencia con OpenSesame y Python. Este tutorial dura aproximadamente una hora.
+Este tutorial muestra cómo crear un experimento básico de búsqueda visual usando OpenSesame [(Mathôt, Schreij, & Theeuwes, 2012)][references]. Utilizaremos tanto la interfaz gráfica como la programación en Python para desarrollar un experimento que puedes ejecutar en el escritorio en un entorno de laboratorio tradicional. Se recomienda cierta experiencia con OpenSesame y Python. Este tutorial toma aproximadamente una hora.
 
-También hay disponible una versión basada en JavaScript de este tutorial. Si desea ejecutar sus experimentos en línea en un navegador (con OSWeb), entonces el tutorial de JavaScript es lo que necesita:
+También está disponible una versión basada en JavaScript de este tutorial. Si quieres ejecutar tus experimentos en línea en un navegador (con OSWeb), entonces el tutorial de JavaScript es lo que necesitas:
 
 - %link:tutorials/intermediate-javascript%
 
 ## Recursos
 
-- __Descargar__ — Este tutorial supone que está ejecutando la versión 4.0.0 de OpenSesame o posterior. Puede descargar la versión más reciente de OpenSesame desde:
+- __Descarga__ — Este tutorial asume que estás ejecutando la versión 4.0.0 o posterior de OpenSesame. Puedes descargar la versión más reciente de OpenSesame desde:
 	- %link:download%
-- __Documentación__ — Se puede encontrar un sitio web de documentación dedicado en:
+- __Documentación__ — Puedes encontrar un sitio web dedicado a la documentación en:
 	- <http://osdoc.cogsci.nl/>
-- __Foro__ — Se puede encontrar un foro de soporte en:
+- __Foro__ — Puedes encontrar un foro de soporte en:
 	- <http://forum.cogsci.nl/>
+- __Sigmund__ -- SigmundAI es un asistente de inteligencia artificial con conocimiento experto sobre OpenSesame y se puede encontrar en:
+	- <https://sigmundai.eu/>
 
 ## El experimento
 
-En este tutorial, creará un experimento básico de búsqueda visual. El experimento se asemeja a los estudios clásicos de búsqueda visual de [Treisman y Gelade (1980)][references], pero no es idéntico.
+En este tutorial, crearás un experimento básico de búsqueda visual. El experimento se asemeja a los estudios clásicos de búsqueda visual de [Treisman y Gelade (1980)][references], pero no es idéntico.
 
-En este experimento, los participantes buscan un objeto objetivo, que puede ser un cuadrado amarillo, un círculo amarillo, un cuadrado azul o un círculo azul; la identidad del objetivo varía entre bloques de ensayos. Los participantes indican si el objetivo está presente o no presionando la flecha derecha (presente) o izquierda (ausente).
+En este experimento, los participantes buscan un objeto objetivo, que puede ser un cuadrado amarillo, un círculo amarillo, un cuadrado azul o un círculo azul; la identidad del objetivo varía entre bloques de ensayos. Los participantes indican si el objetivo está presente o no presionando la tecla de flecha derecha (presente) o izquierda (ausente).
 
 Además del objetivo, se muestran cero o más objetos distractores. Hay tres condiciones y la condición determina qué tipo de distractores hay:
 
-- En la condición de *Conjunción*, los distractores pueden tener cualquier forma y color, con la única restricción de que los distractores no pueden ser idénticos al objetivo. Entonces, por ejemplo, si el objetivo es un cuadrado amarillo, entonces los distractores son círculos amarillos, círculos azules y cuadrados azules.
-- En la condición de *Característica de forma*, los distractores tienen una forma diferente del objetivo, pero pueden tener cualquier color. Entonces, por ejemplo, si el objetivo es un cuadrado amarillo, entonces los distractores son círculos amarillos y círculos azules.
-- En la condición de *Característica de color*, los distractores pueden tener cualquier forma, pero tienen un color diferente al objetivo. Entonces, por ejemplo, si el objetivo es un cuadrado amarillo, entonces los distractores son cuadrados azules y círculos azules.
+- En la condición de *Conjunción*, los distractores pueden tener cualquier forma y color, con la única restricción de que los distractores no pueden ser idénticos al objetivo. Por lo tanto, por ejemplo, si el objetivo es un cuadrado amarillo, entonces los distractores son círculos amarillos, círculos azules y cuadrados azules.
+- En la condición de *Característica de Forma*, los distractores tienen una forma diferente del objetivo, pero pueden tener cualquier color. Entonces, por ejemplo, si el objetivo es un cuadrado amarillo, entonces los distractores son círculos amarillos y círculos azules.
+- En la condición de *Característica de Color*, los distractores pueden tener cualquier forma, pero tienen un color diferente del objetivo. Por lo tanto, por ejemplo, si el objetivo es un cuadrado amarillo, entonces los distractores son cuadrados azules y círculos azules.
 
-Se muestra una retroalimentación inmediata después de cada ensayo: un punto verde después de una respuesta correcta y un punto rojo después de una respuesta incorrecta. Se muestra una retroalimentación detallada sobre los tiempos de respuesta promedio y la precisión después de cada bloque de ensayos.
+Se muestra retroalimentación inmediata después de cada ensayo: un punto verde después de una respuesta correcta y un punto rojo después de una respuesta incorrecta. Se muestra retroalimentación detallada sobre los tiempos de respuesta promedio y la precisión después de cada bloque de ensayos.
 
 %--
 figure:
@@ -52,9 +52,9 @@ figure:
 
 Experimentos como este muestran dos hallazgos típicos:
 
-- Lleva más tiempo encontrar el objetivo en la condición de Conjunción que en las dos condiciones de Característica.
-- En la condición de Conjunción, los tiempos de respuesta aumentan a medida que aumenta el número de distractores. Esto sugiere que las personas buscan el objetivo un elemento a la vez; esto se llama *búsqueda en serie*.
-- En las condiciones de Característica (tanto de forma como de color), los tiempos de respuesta no aumentan, o apenas aumentan, a medida que aumenta el número de distractores. Esto sugiere que las personas procesan toda la pantalla a la vez; esto se llama *búsqueda en paralelo*.
+- Se tarda más tiempo en encontrar el objetivo en la condición de Conjunción que en las dos condiciones de Características.
+- En la condición de Conjunción, los tiempos de respuesta aumentan a medida que aumenta el número de distractores. Esto sugiere que la gente busca el objetivo uno por uno; esto se llama *búsqueda serial*.
+- En las condiciones de Características (tanto de forma como de color), los tiempos de respuesta no aumentan, o apenas aumentan, a medida que aumenta el número de distractores. Esto sugiere que la gente procesa toda la pantalla a la vez; esto se llama *búsqueda paralela*.
 
 Según la teoría de integración de características de Treisman y Gelade, estos resultados reflejan que la condición de Conjunción requiere que combines, o *vincules*, el color y la forma de cada objeto. Este enlace requiere atención, y por lo tanto necesitas desplazar tu atención de un objeto a otro; esto es lento y explica por qué los tiempos de respuesta dependen de cuántos objetos hay. En contraste, en las condiciones de Característica, el color y la forma no necesitan ser vinculados, y por lo tanto, toda la pantalla se puede procesar en un solo barrido sin que la atención se dirija a cada objeto en particular.
 
@@ -581,9 +581,9 @@ Si el experimento no funciona en el primer intento: No te preocupes y averigua c
 
 <div class='reference' markdown='1'>
 
-Mathôt, S., Schreij, D., & Theeuwes, J. (2012). OpenSesame: An open-source, graphical experiment builder for the social sciences. *Behavior Research Methods*, *44*(2), 314-324. doi:10.3758/s13428-011-0168-7
+Mathôt, S., Schreij, D., & Theeuwes, J. (2012). OpenSesame: Un creador de experimentos abierto y gráfico para las ciencias sociales. *Métodos de investigación en comportamiento*, *44*(2), 314-324. doi:10.3758/s13428-011-0168-7
 
-Treisman, A. M., & Gelade, G. (1980). A feature-integration theory of attention. *Cognitive Psychology*, 12(1), 97–136. doi:10.1016/0010-0285(80)90005-5
+Treisman, A. M., & Gelade, G. (1980). Una teoría de integración de características de atención. *Psicología cognitiva*, 12(1), 97–136. doi:10.1016/0010-0285(80)90005-5
 
 </div>
 

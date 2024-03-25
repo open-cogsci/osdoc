@@ -1,60 +1,64 @@
 title: 中级教程（JavaScript）：视觉搜索
-hash: 388eaf09923982d0aa520902c34577097ba883be1bae01e48c53293d53efad53
+hash: 8a884ef49e4ac79ec8dd0e01bf078980622b9f0365927917c21e42253e76321c
 locale: zh
 language: Chinese
 
 [TOC]
 
-## 关于OpenSesame
+## 关于 OpenSesame
 
-OpenSesame是一个用户友好的程序，用于开发心理学、神经科学和实验经济学方面的行为实验。对于初学者，OpenSesame具有全面的图形化、点击式界面。对于高级用户，OpenSesame支持Python（仅桌面端）和JavaScript（桌面和浏览器）。
+OpenSesame 是一个用户友好型的程序，用于开发心理学、神经科学和实验经济学的行为实验。对于初学者来说，OpenSesame 有一个全面的图形化点选界面。对于高级用户，OpenSesame 支持 Python（仅限桌面）和 JavaScript（桌面和浏览器）。
 
-OpenSesame在 [通用公共许可证v3][gpl] 下免费提供。
+OpenSesame 可根据 [通用公共许可证 v3][gpl] 免费获取。
 
 ## 关于本教程
 
-本教程介绍如何使用OpenSesame [(Mathôt, Schreij, & Theeuwes, 2012)][references] 创建一个基本的视觉搜索实验。我们将使用图形界面和JavaScript来开发一个可以在浏览器中在线运行的实验。推荐具备一定的OpenSesame和JavaScript经验。本教程大约需要一个小时。
+本教程展示了如何使用 OpenSesame 创建一个基本的视觉搜索实验 [(Mathôt, Schreij, & Theeuwes, 2012)][references]。我们将使用图形界面和 JavaScript 来开发一个可以在浏览器中在线运行的实验。建议您已经有一些 OpenSesame 和 JavaScript 的使用经验。本教程大约需要一个小时。
 
-本教程还提供基于Python的版本。如果您不需要在线运行实验，那么Python教程可能是您需要的：
+本教程的基于 Python 的版本也可以使用。如果您不需要在线运行您的实验，那么 Python 教程可能是您需要的：
 
 - %link:tutorials/intermediate%
 
+
 ## 资源
 
-- __下载__ —— 本教程假设您运行的是OpenSesame 4.0.0或更高版本，以及OSWeb 2.0或更高版本。您可以从以下地址下载OpenSesame的最新版本：
+- __下载__ — 本教程假设您运行的是 OpenSesame 4.0.0 或更新版本以及 OSWeb 2.0 或更新版本。您可以从以下链接下载最新版本的 OpenSesame：
 	- %link:download%
-- __文档__ — 独立的文档网站可以在：
+- __文档__ — 专门的文档网站可以在以下链接找到：
 	- <http://osdoc.cogsci.nl/>
-- __论坛__ — 支持论坛可以在：
+- __论坛__ — 支持论坛可以在以下链接找到：
 	- <http://forum.cogsci.nl/>
+- __Sigmund__ -- SigmundAI 是一个具有 OpenSesame 专家知识的人工智能助手，可以在以下链接找到：
+	- <https://sigmundai.eu/>
+
 
 ## 实验
 
-在本教程中，你将创建一个基本的视觉搜索实验。实验类似于 [Treisman and Gelade (1980)][references] 的经典视觉搜索研究，但并非完全相同。
+在本教程中，您将创建一个基本的视觉搜索实验。该实验类似于 [Treisman and Gelade (1980)][references] 的经典视觉搜索研究，但并非完全相同。
 
-在开始*构建*实验之前，你已经可以*参加*实验。这将让你对本教程的目标有一个很好的了解。
+在开始*构建*您自己的实验之前，您已经可以*参与*这个实验。这将让您对在本教程中所进行的工作有一个很好的了解。
 
-<a role="button" class="btn btn-success btn-align-left" href="https://jatos.mindprobe.eu/publix/1938/start?batchId=2191&generalMultiple">参加实验！</a>
+<a role="button" class="btn btn-success btn-align-left" href="https://jatos.mindprobe.eu/publix/1938/start?batchId=2191&generalMultiple">参与实验!</a>
 
-在这个实验中，参与者寻找一个目标物体，可以是黄色的正方形、黄色的圆形、蓝色的正方形或蓝色的圆形；目标物的身份在试验块之间变化。参与者通过按右（出现）或左（消失）箭头键来表示目标是否存在。
+在这个实验中，参与者需要搜索一个目标物体，它可以是黄色方块、黄色圆圈、蓝色方块或蓝色圆圈；目标的身份会在实验的不同阶段中变化。参与者通过按右箭头键（存在）或左箭头键（不存在）来指示目标是否存在。
 
-除了目标之外，还会显示零个或多个干扰物。共有三种条件，条件决定了有哪些干扰物：
+除了目标以外，还会展示零个或多个干扰物。有三种条件，条件决定了有哪些干扰物：
 
-- 在*结构*条件下，干扰物可以是任何形状和颜色，唯一的限制是干扰物不能与目标相同。例如，如果目标是黄色正方形，那么干扰物就是黄色圆形、蓝色圆形和蓝色正方形。
-- 在*形状特征*条件下，干扰物与目标的形状不同，但可以是任何颜色。例如，如果目标是黄色正方形，那么干扰物就是黄色圆形和蓝色圆形。
-- 在*颜色特征*条件下，干扰物可以是任何形状，但颜色与目标不同。例如，如果目标是黄色正方形，那么干扰物就是蓝色正方形和蓝色圆形。
+- 在*联结*条件下，干扰物可以具有任何形状和颜色，唯一的限制是干扰物不能与目标完全相同。因此，例如，如果目标是一个黄色方块，那么干扰物就是黄色圆圈、蓝色圆圈和蓝色方块。
+- 在*形状特征*条件下，干扰物的形状与目标不同，但可以是任何颜色。所以，例如，如果目标是一个黄色方块，那么干扰物就是黄色圆圈和蓝色圆圈。
+- 在*颜色特征*条件下，干扰物可以是任何形状，但颜色与目标不同。所以，例如，如果目标是一个黄色方块，那么干扰物就是蓝色方块和蓝色圆圈。
 
-在每个实验后都会显示即时反馈：正确回答后显示绿点，错误回答后显示红点。在每个试验块结束后，将显示关于平均反应时间和准确性的详细反馈。
+每次试验后都会立即显示反馈：正确响应后显示绿点，错误响应后显示红点。在每个实验阶段之后，会显示关于平均响应时间和准确度的详细反馈。
 
 %--
-图：
+figure:
  id: FigVisualSearch
  source: visual-search.svg
  caption: |
-  在本教程中，你将要实现的视觉搜索实验。
+  您将在本教程中实现的视觉搜索实验。
 --%
 
-这类实验通常有两个典型的发现：
+像这样的实验显示了两个典型的发现：
 
 - 在连接条件中找到目标所需的时间比在两个特征条件中要多。
 - 在连接条件中，随着干扰物数量的增加，反应时间也会增加。这表明人们逐项搜索目标；这被称为*串行搜索*。
@@ -103,7 +107,7 @@ OpenSesame在 [通用公共许可证v3][gpl] 下免费提供。
 概览区域现在应该看起来像%FigStep1:
 
 %--
-图：
+ 图：
  id：FigStep1
  source：step1.png
  caption：|
@@ -596,45 +600,45 @@ if (target_present === 'present') {
 
 要实现这一点：
 
-- 将两个新的SKETCHPAD插入*trial_sequence*，紧接在*keyboard_response*之后。
-- 将其中一个SKETCHPAD重命名为*green_dot*，在上面画一个中央绿色固定点，并将其持续时间更改为500。
-- 将另一个SKETCHPAD重命名为*red_dot*，在上面画一个中央红色固定点，并将其持续时间更改为500。
+- 在 *trial_sequence* 中插入两个新的 SKETCHPAD，放在 *keyboard_response* 之后。
+- 将一个 SKETCHPAD 重命名为 *green_dot*，在其上绘制一个绿色的中心固定点，并将其持续时间更改为 500。
+- 将另一个 SKETCHPAD 重命名为 *red_dot*，在其上绘制一个红色的中心固定点，并将其持续时间更改为 500。
 
-当然，在每次试验中只应显示其中一个点。为此，我们将在*trial_sequence*中指定run-if语句：
+当然，在每次试验中只应显示两个点之一。为了实现这一点，我们将在 *trial_sequence* 中指定运行条件语句：
 
-- 将*green_dot*的run-if语句更改为'correct == 1'，表示只在正确响应后显示。
-- 将*red_dot*的run-if语句更改为'correct == 0'，表示只在错误响应后显示。
+- 将 *green_dot* 的运行条件语句更改为 'correct == 1'，表示它只应在正确响应后显示。
+- 将 *red_dot* 的运行条件语句更改为 'correct == 0'，表示它只应在不正确响应后显示。
 
-如果变量`correct_response`可用，变量`correct`会自动创建；这就是为什么我们在第7步中定义了`correct_response`。有关变量和run-if语句的更多信息，请参阅：
+如果变量 `correct_response` 可用，则会自动创建变量 `correct`；这就是为什么我们在第七步定义了 `correct_response`。有关变量和运行条件语句的更多信息，请参见：
 
 - %link:manual/variables%
 
-*trial_sequence* 现在应该如%FigStep8所示。
+*trial_sequence* 现在应该看起来像 %FigStep8。
 
 %--
 figure:
  id: FigStep8
  source: step8.png
  caption: |
-  第8步结束时的*trial_sequence*。
+  第八步结束时的 *trial_sequence*。
 --%
 
 
 ## 完成！
 
-恭喜，实验完成了！您可以通过单击工具栏上显示绿色圆圈内的灰色播放按钮（快捷键：`Alt+Ctrl+W`）来进行测试运行。
+恭喜，实验完成了！您可以通过点击工具栏上显示有灰色播放按钮的绿色圆圈按钮进行测试运行（快捷键：`Alt+Ctrl+W`）。
 
-如果实验第一次尝试没有成功：不要担心，并冷静地找出错误的来源。崩溃是正常开发过程的一部分。但是，通过有序的工作方式，您可以节省大量时间和麻烦，就像我们在本教程中所做的那样。
+如果实验第一次尝试时不工作：不要担心，冷静地找出错误来源。崩溃是正常开发过程的一部分。但是，如果像我们在本教程中所做的那样有条理地工作，您可以节省大量的时间和头疼事。
 
 ## 参考文献
 
 <div class='reference' markdown='1'>
 
-Mathôt, S., Schreij, D., & Theeuwes, J. (2012). OpenSesame: An open-source, graphical experiment builder for the social sciences. *Behavior Research Methods*, *44*(2), 314-324. doi:10.3758/s13428-011-0168-7
+Mathôt, S., Schreij, D., & Theeuwes, J. (2012). OpenSesame: 一个为社会科学设计的开源图形实验构建器。*行为研究方法*，*44*(2), 314-324. doi:10.3758/s13428-011-0168-7
 
-Treisman, A. M., & Gelade, G. (1980). A feature-integration theory of attention. *Cognitive Psychology*, 12(1), 97–136. doi:10.1016/0010-0285(80)90005-5
+Treisman, A. M., & Gelade, G. (1980). 注意的特征整合理论。*认知心理学*，12(1), 97–136. doi:10.1016/0010-0285(80)90005-5
 
 </div>
 
-[参考文献]: #参考文献
+[references]: #references
 [gpl]: http://www.gnu.org/licenses/gpl-3.0.en.html
