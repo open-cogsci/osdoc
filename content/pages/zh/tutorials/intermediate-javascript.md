@@ -107,10 +107,10 @@ figure:
 概览区域现在应该看起来像%FigStep1:
 
 %--
- 图：
- id：FigStep1
- source：step1.png
- caption：|
+figure:
+ id: FigStep1
+ source: step1.png
+ caption: |
    第1步结束时的概览区域。
 --%
 

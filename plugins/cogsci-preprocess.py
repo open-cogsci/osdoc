@@ -137,6 +137,7 @@ class AcademicMarkdownReader(MarkdownReader):
         text = text.replace('图示：', 'figure:')
         text = text.replace('图:', 'figure:')
         text = text.replace('图：', 'figure:')
+        text = text.replace(' 图：', 'figure:')
         # German
         text = text.replace('Abbildung:', 'figure:')
         text = text.replace('Bedienungsanleitung/', 'manual/')
