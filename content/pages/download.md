@@ -19,6 +19,8 @@ function startDownload(url) {
 
 Better than ChatGPT for OpenSesame questions. Your €9/month subscription supports OpenSesame.
 
+Try 1 month for free with coupon code NHVB3IXD. &#128293;
+
 Click <a id="click-here">here</a> if your download doesn't start.
 </div>
 
