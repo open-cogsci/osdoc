@@ -22,8 +22,6 @@ function startDownload(url) {
 
 Mejor que ChatGPT para preguntas sobre OpenSesame. Tu suscripción de €9/mes apoya a OpenSesame.
 
-Prueba 1 mes gratis con el código de cupón NHVB3IXD. &#128293;
-
 Haz clic <a id="click-here">aquí</a> si tu descarga no comienza.
 </div>
 

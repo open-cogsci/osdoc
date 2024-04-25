@@ -23,8 +23,6 @@ function startDownload(url) {
 
 Besser als ChatGPT für OpenSesame-Fragen. Ihr Abonnement für 9 €/Monat unterstützt OpenSesame.
 
-Probieren Sie 1 Monat kostenlos mit dem Gutscheincode NHVB3IXD. &#128293;
-
 Klicken Sie <a id="click-here">hier</a>, wenn Ihr Download nicht startet.
 </div>
 

@@ -22,8 +22,6 @@ function startDownload(url) {
 
 针对 OpenSesame 问题比 ChatGPT 更好。您每月9欧元的订阅支持 OpenSesame。
 
-使用优惠码 NHVB3IXD 免费试用1个月。&#128293;
-
 如果您的下载没有开始，请点击 <a id="click-here">这里</a>。
 </div>
 
