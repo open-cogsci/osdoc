@@ -85,10 +85,24 @@ The fonts have been renamed for clarity, but correspond to the following open-so
 
 If you select 'other ...' in the font selection dialog, you can select any font that is available on your operating system. If you do this, your experiment is no longer fully portable, and will require that the selected font is installed on the system that you run your experiment on.
 
-### Placing a custom font in the file pool
+This is only works for OpenSesame on the desktop, not for online OSWeb experiments.
 
-Another way to use a custom font is to put a font file in the file pool. For example, if you place the font file `inconsolata.ttf` in the file pool, you can use this font in a SKETCHPAD item, like so:
+
+### Placing a custom font in the file pool (OpenSesame desktop)
+
+When running your experiment on the desktop, another way to use a custom font is to put a font file in the file pool. For example, if you place the font file `inconsolata.ttf` in the file pool, you can use this font in a SKETCHPAD item, like so:
 
 	draw textline 0.0 0.0 "This will be inconsolata" font_family="inconsolata"
 
-Note that the font file must be a truetype `.ttf` file.
+The font file must be a truetype `.ttf` file. This is only works for OpenSesame on the desktop, not for online OSWeb experiments.
+
+
+### Using a custom font from Google Fonts (OSWeb)
+
+When running your experiment in a browser with OSWeb, you can use fonts from Google Fonts. To do so, simply edit the script of a text element and specify the name of the font under `font_family`:
+
+```
+draw textline x=0 y=0 font_family="Jacquard 12 Charted" text="This is shown in a funny font"
+```
+
+This is only works for online OSWeb experiments, not for OpenSesame on the desktop.

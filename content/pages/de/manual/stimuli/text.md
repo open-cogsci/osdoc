@@ -1,14 +1,11 @@
 title: Text
-hash: 1958b3f404645f67ec8c328c22b9b876e1507c616fa82878164f23ac0d364e92
+hash: 2c5f78c24fe19088d9f96d120232def3d4ca9bb4bc48409ae868d353c7ebc4ed
 locale: de
 language: German
 
-[TOC]
+## Wie kann ich Text präsentieren?
 
-## Wie kann ich Text anzeigen?
-
-Die gebräuchlichste Methode, um Text darzustellen, besteht darin, ein SKETCHPAD- oder FEEDBACK-Element zu verwenden. Diese ermöglichen es Ihnen, Text und andere visuelle Reize einzugeben. Um Text in einer fragebogenähnlichen Weise anzuzeigen, können Sie [Forms](%link:manual/forms/about%) verwenden.
-
+Die gebräuchlichste Methode, Text anzuzeigen, ist die Verwendung eines SKETCHPAD oder eines FEEDBACK-Elements. Diese ermöglichen es Ihnen, Text und andere visuelle Reize einzugeben. Für eine fragebogenähnliche Darstellung von Text können Sie [Formulare](%link:manual/forms/about%) verwenden.
 
 ## HTML-Formatierung
 
@@ -17,81 +14,91 @@ Sie können HTML-Tags verwenden, die Sie einfach in Ihren Text einfügen können
 Beispiel:
 
 ~~~ .html
-OpenSesame unterstützt eine Teilmenge von HTML-Tags:
-- <b>Fett</b>
+OpenSesame unterstützt eine Untergruppe von HTML-Tags:
+- <b>Fettgedruckt</b>
 - <i>Kursiv</i>
 - <u>Unterstrichen</u>
 
-Außerdem können Sie 'color', 'size' und 'style' als Schlüsselwörter an ein 'span'-Tag übergeben:
+Zusätzlich können Sie 'color', 'size' und 'style' als Schlüsselwörter zu einem 'span'-Tag hinzufügen:
 - <span style='color:red;'>Farbe</span>
 - <span style='font-size:32px;'>Schriftgröße</span>
-- <span style='font-family:serif;'>Schriftstil</span>
+- <span style='font-family:serif;'>Schriftart</span>
 
-Schließlich können Sie mit dem 'br'-Tag Zeilenumbrüche erzwingen:
+Schließlich können Sie Zeilenumbrüche mit dem 'br'-Tag erzwingen:
 Zeile 1<br>Zeile 2
 ~~~
 
-
 ## Variablen und inline Python
 
-Sie können Variablen in Text einbetten, indem Sie die `{...}` Syntax verwenden. Zum Beispiel ergibt Folgendes:
+Sie können Variablen im Text einbetten, indem Sie die `{...}`-Syntax verwenden. Zum Beispiel könnte folgendes:
 
 ~~~ .python
-Die Versuchspersonennummer ist {subject_nr}
+Die Probandennummer ist {subject_nr}
 ~~~
 
-.. könnte auswerten zu (für Versuchsperson 1):
+... ausgewertet werden als (für Probanden 1):
 
 ~~~ .python
-Die Versuchspersonennummer ist 1
+Die Probandennummer ist 1
 ~~~
 
-Sie können auch Python-Ausdrücke einbetten. Zum Beispiel ergibt Folgendes:
+Sie können auch Python-Ausdrücke einbetten. Zum Beispiel könnte folgendes:
 
 ~~~ .python
-Der Versuchspersonennummer modulo fünf ist {subject_nr % 5}
+Die Probandennummer modulo fünf ist {subject_nr % 5}
 ~~~
 
-.. könnte auswerten zu (für Versuchsperson 7):
+... ausgewertet werden als (für Proband 7):
 
 ~~~ .python
-Der Versuchspersonennummer modulo fünf ist 2
+Die Probandennummer modulo fünf ist 2
 ~~~
-
 
 ## Schriftarten
 
 ### Standard-Schriftarten
 
-Sie können eine der Standardschriftarten aus den Schriftartenauswahldialogen (%FigFontSelect) auswählen. Diese Schriftarten sind in OpenSesame enthalten und daher ist Ihr Experiment vollständig portabel, wenn Sie diese Schriftarten verwenden.
+Sie können eine der Standard-Schriftarten aus den Schriftart-Auswahldialogen (%FigFontSelect) wählen. Diese Schriftarten sind in OpenSesame enthalten, und Ihr Experiment ist daher vollständig portabel, wenn Sie sie verwenden.
 
 %--
 Abbildung:
- ID: FigFontSelect
+ id: FigFontSelect
  Quelle: font-selection-dialog.png
- Beschriftung: "Eine Reihe von Standardschriftarten, die mit OpenSesame gebündelt sind, können über die Schriftartenauswahldialoge ausgewählt werden."
+ Beschriftung: "Eine Auswahl von Standard-Schriftarten, die mit OpenSesame gebündelt sind, kann über die Schriftart-Auswahldialoge ausgewählt werden."
 --%
 
-Die Schriftarten wurden zur Klarstellung umbenannt, entsprechen aber den folgenden Open-Source-Schriftarten:
+Die Schriftarten wurden zur besseren Verständlichkeit umbenannt, entsprechen aber den folgenden Open-Source-Schriftarten:
 
-|__Name in OpenSesame__		|__Tatsächliche Schriftart__|
-|---------------------------|---------------------------|
-|`sans`					    |Droid Sans				    |
-|`serif`				    |Droid Serif			    |
-|`mono`					    |Droid Sans Mono		    |
-|`chinese-japanese-korean`	|WenQuanYi Micro Hei	    |
-|`arabic`				    |Droid Arabic Naskh		    |
-|`hebrew`				    |Droid Sans Hebrew		    |
-|`hindi`				    |Lohit Hindi			    |
+|__Name in OpenSesame__		|__Tatsächliche Schriftart__	|
+|---------------------------|-------------------------------|
+|`sans`						|Droid Sans					|
+|`serif`					|Droid Serif					|
+|`mono`						|Droid Sans Mono			|
+|`chinesisch-japanisch-koreanisch`	|WenQuanYi Micro Hei	|
+|`arabisch`					|Droid Arabic Naskh			|
+|`hebräisch`				|Droid Sans Hebrew			|
+|`hindi`					|Lohit Hindi				|
 
-### Auswahl einer benutzerdefinierten Schriftart über den Schriftartenauswahldialog
+### Auswahl einer benutzerdefinierten Schriftart über den Schriftart-Auswahldialog
 
-Wenn Sie in der Schriftartenauswahl "andere ..." auswählen, können Sie jede Schriftart auswählen, die auf Ihrem Betriebssystem verfügbar ist. Wenn Sie dies tun, ist Ihr Experiment nicht mehr vollständig portabel und erfordert, dass die ausgewählte Schriftart auf dem System installiert ist, auf dem Sie Ihr Experiment ausführen.
+Wenn Sie 'andere ...' im Schriftart-Auswahldialog wählen, können Sie jede Schriftart auswählen, die auf Ihrem Betriebssystem verfügbar ist. Wenn Sie dies tun, ist Ihr Experiment nicht länger voll portabel und erfordert, dass die ausgewählte Schriftart auf dem System installiert ist, auf dem Ihr Experiment ausgeführt wird.
 
-### Platzieren einer benutzerdefinierten Schriftart im Datei-Pool
+Dies funktioniert nur für OpenSesame auf dem Desktop, nicht für Online-OSWeb-Experimente.
 
-Eine andere Möglichkeit, eine benutzerdefinierte Schriftart zu verwenden, besteht darin, eine Schriftartendatei in den Datei-Pool zu legen. Wenn Sie beispielsweise die Schriftartendatei `inconsolata.ttf` in den Datei-Pool stellen, können Sie diese Schriftart in einem SKETCHPAD-Element verwenden, wie folgt:
+### Platzieren einer benutzerdefinierten Schriftart im Dateipool (OpenSesame Desktop)
 
-	draw textline 0.0 0.0 "Das wird inconsolata sein" font_family="inconsolata"
+Wenn Sie Ihr Experiment auf dem Desktop ausführen, ist eine weitere Möglichkeit, eine benutzerdefinierte Schriftart zu verwenden, eine Schriftartdatei im Dateipool abzulegen. Wenn Sie zum Beispiel die Schriftartdatei `inconsolata.ttf` im Dateipool platzieren, können Sie diese Schriftart in einem SKETCHPAD-Element verwenden, wie folgt:
 
-Beachten Sie, dass die Schriftartendatei eine Truetype-`.ttf`-Datei sein muss.
+	draw textline 0.0 0.0 "This will be inconsolata" font_family="inconsolata"
+
+Die Schriftartdatei muss eine Truetype-`.ttf`-Datei sein. Dies funktioniert nur für OpenSesame auf dem Desktop, nicht für Online-OSWeb-Experimente.
+
+### Verwendung einer benutzerdefinierten Schriftart von Google Fonts (OSWeb)
+
+Wenn Sie Ihr Experiment in einem Browser mit OSWeb ausführen, können Sie Schriftarten von Google Fonts verwenden. Dazu bearbeiten Sie einfach das Skript eines Textelements und geben den Namen der Schriftart unter `font_family` an:
+
+```
+draw textline x=0 y=0 font_family="Jacquard 12 Charted" text="This is shown in a funny font"
+```
+
+Dies funktioniert nur für Online-OSWeb-Experimente, nicht für OpenSesame auf dem Desktop.
