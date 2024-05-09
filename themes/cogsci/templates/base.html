@@ -18,6 +18,8 @@
 		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
+		<script type="module" src="https://sigmundai.eu/public/search-widget.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw==" crossorigin="anonymous" referrerpolicy="no-referrer" />		
 		<link href='https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Ubuntu+Mono|Roboto+Slab' rel='stylesheet' type='text/css'>
 		{% include "google-analytics.html" %}
 		{% include "cookie-consent.html" %}
@@ -68,14 +70,11 @@
 				</div>
 				<!-- Content -->
 				<div class="col-md-6 cogsci-content">
-					<div class='visible-md visible-sm visible-xs'>
-						{% include 'search.html' %}
-					</div>
+					<search-widget endpoint="https://sigmundai.eu/public/search"></search-widget>
 					{% block content %}
 					{% endblock %}
 				</div>
 				<div class="col-md-3 cogsci-sidebar visible-lg">
-					{% include 'search.html' %}
 					{% include 'supported-by.html' %}
 				</div>
 			</div>
