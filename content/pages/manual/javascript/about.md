@@ -148,8 +148,14 @@ for (const trial of conditions) {
 You can also play sound files from the file pool directly. Assuming that there is a file called `bark.ogg` in the file pool, you can play it like so:
 
 ```js
-pool['bark.ogg'].data.play()
+audioContext = new (window.AudioContext || window.webkitAudioContext)()
+source = audioContext.createBufferSource()
+source.buffer = pool['bark.ogg'].data
+source.connect(audioContext.destination)
+source.start(0)
 ```
+
+Note that in older versions of OSWeb you could simply use `pool['bark.ogg'].data.play()`. However, this doesn't work anymore since OSWeb has migrated to Web Audio API, which is a more modern and widely supported way to play audio.
 
 
 ### The `Canvas` class: Presenting visual stimuli
