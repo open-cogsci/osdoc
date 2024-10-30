@@ -1,5 +1,5 @@
 title: Acerca de JavaScript
-hash: 1a7fe7974b0f26b2ee7c29211c43267ef47dff0d720592d5fd82996550c56b07
+hash: 89b8cd7f6f738823b8fc04558cb7b3e118768d97f5e91a82f90905cbf9bdbe6e
 locale: es
 language: Spanish
 
@@ -93,7 +93,7 @@ let this_is_not_a_global_variable = 'mi valor'
 __Nota sobre la versión__ A partir de OSWeb 2.0, todo el código JavaScript se ejecuta en el mismo espacio de trabajo y por lo tanto los objetos se conservan a través de los scripts. Esto significa que ya no necesitas el objeto `persistent`.
 {:.page-notification}
 
-Cada elemento INLINE_JAVASCRIPT se ejecuta en su propio espacio de trabajo. Esto significa, ¡y esto es diferente a los elementos INLINE_SCRIPT de Python!—que no se pueden utilizar variables o funciones que hayas declarado en un guion en otro guion. Como solución alternativa, puedes adjuntar variables o funciones como propiedades al objeto `persistent`, que sirve como un contenedor de cosas que quieres preservar a través de los guiones.
+Cada elemento INLINE_JAVASCRIPT se ejecuta en su propio espacio de trabajo. Esto significa—¡y esto es diferente de los elementos INLINE_SCRIPT de Python!—que no puedes usar variables o funciones que hayas declarado en un script en otro. Como solución alternativa, puedes adjuntar variables o funciones como propiedades al objeto `persistent`, que sirve como contenedor de cosas que quieres conservar a través de los scripts.
 
 De esta manera, puedes construir un `Canvas` en un INLINE_JAVASCRIPT ...
 
@@ -102,7 +102,7 @@ persistent.myCanvas = Canvas()
 persistent.myCanvas.fixdot()
 ```
 
-.. y mostrarlo en otro INLINE_JAVASCRIPT:
+... y mostrarlo en otro INLINE_JAVASCRIPT:
 
 ```js
 persistent.myCanvas.show()
@@ -111,7 +111,7 @@ persistent.myCanvas.show()
 
 ### El objeto `vars`: Acceso a las variables experimentales
 
-__Nota de la versión__ A partir de OSWeb 2.0, todas las variables experimentales están disponibles como globales. Esto significa que ya no necesitas el objeto `vars`.
+__Nota de versión__ A partir de OSWeb 2.0, todas las variables experimentales están disponibles como globales. Esto significa que ya no necesitas el objeto `vars`.
 {:.page-notification}
 
 Puedes acceder a las variables experimentales a través del objeto `vars`:
@@ -119,37 +119,43 @@ Puedes acceder a las variables experimentales a través del objeto `vars`:
 ```js
 // OSWeb <= 1.4 (con objeto vars)
 // Obtener una variable experimental
-console.log('mi_variable es: ' + vars.mi_variable)
+console.log('my_variable es: ' + vars.my_variable)
 // Establecer una variable experimental
-vars.mi_variable = 'mi_valor'
+vars.my_variable = 'my_value'
 
 // OSWeb >= 2.0 (sin objeto vars)
 // Obtener una variable experimental
-console.log('mi_variable es: ' + my_variable)
+console.log('my_variable es: ' + my_variable)
 // Establecer una variable experimental
-my_variable = 'mi_valor'
+my_variable = 'my_value'
 ```
 
 
-### El objeto `pool`: Acceso al archivo del conjunto de archivos
+### El objeto `pool`: Acceso al banco de archivos
 
-Accedes a los 'archivos' del conjunto de archivos a través del objeto `pool`. El uso más evidente de esto es analizar archivos CSV, por ejemplo con condiciones experimentales, del conjunto de archivos usando la biblioteca `csv-parse` (descrita con más detalle a continuación).
+Accedes a los 'archivos' del banco de archivos a través del objeto `pool`. El uso más obvio de esto es analizar archivos CSV, por ejemplo con condiciones experimentales, del banco de archivos utilizando la biblioteca `csv-parse` (descrita con más detalle a continuación).
 
 ```js
-const condiciones = csvParse(
+const conditions = csvParse(
     pool['attentional-capture-jobs.csv'].data,
     {columns: true}
 )
-for (const prueba of condiciones) {
-    console.log(prueba.distractor)
+for (const trial of conditions) {
+    console.log(trial.distractor)
 }
 ```
 
-También puedes reproducir archivos de sonido directamente del conjunto de archivos. Suponiendo que hay un archivo llamado `bark.ogg` en el conjunto de archivos, puedes reproducirlo así:
+También puedes reproducir archivos de sonido directamente desde el banco de archivos. Suponiendo que hay un archivo llamado `bark.ogg` en el banco de archivos, puedes reproducirlo así:
 
 ```js
-pool['bark.ogg'].data.play()
+audioContext = new (window.AudioContext || window.webkitAudioContext)()
+source = audioContext.createBufferSource()
+source.buffer = pool['bark.ogg'].data
+source.connect(audioContext.destination)
+source.start(0)
 ```
+
+Ten en cuenta que en versiones anteriores de OSWeb simplemente podrías usar `pool['bark.ogg'].data.play()`. Sin embargo, esto ya no funciona desde que OSWeb migró a Web Audio API, que es una forma más moderna y ampliamente soportada de reproducir audio.
 
 
 ### La clase `Canvas`: Presentación de estímulos visuales
@@ -162,7 +168,7 @@ myCanvas.fixdot()
 myCanvas.show()
 ```
 
-Una descripción completa de la clase `Canvas` se puede encontrar aquí:
+Una visión completa de la clase `Canvas` se puede encontrar aquí:
 
 - %link:manual/javascript/canvas%
 
@@ -171,11 +177,11 @@ Una descripción completa de la clase `Canvas` se puede encontrar aquí:
 Las siguientes bibliotecas de JavaScript están incluidas por defecto:
 
 - [Funciones aleatorias (`random-ext`)](%url:manual/javascript/random%)
-- [Funciones de conversión de color (`color-convert`)](%url:manual/javascript/color-convert%)
+- [Funciones de conversión de colores (`color-convert`)](%url:manual/javascript/color-convert%)
 - [Funciones CSV (`csv-parse`)](%url:manual/javascript/csv%)
-- [Iteradores al estilo Python (`pythonic`)](%url:manual/javascript/pythonic%)
+- [Iteradores estilo Python (`pythonic`)](%url:manual/javascript/pythonic%)
 
-Puedes incluir bibliotecas adicionales de JavaScript añadiendo URLs de las bibliotecas en el campo 'Bibliotecas externas de JavaScript' del panel de control de OSWeb.
+Puedes incluir bibliotecas adicionales de JavaScript añadiendo URLs de las bibliotecas en el campo 'Bibliotecas de JavaScript externas' del panel de control de OSWeb.
 
 
 ## Depuración

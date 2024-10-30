@@ -1,5 +1,5 @@
 title: 关于JavaScript
-hash: 1a7fe7974b0f26b2ee7c29211c43267ef47dff0d720592d5fd82996550c56b07
+hash: 89b8cd7f6f738823b8fc04558cb7b3e118768d97f5e91a82f90905cbf9bdbe6e
 locale: zh
 language: Chinese
 
@@ -89,16 +89,16 @@ let this_is_not_a_global_variable = '我的值'
 __版本说明__ 从 OSWeb 2.0 开始，所有 JavaScript 代码都在同一个工作空间中执行，因此对象在脚本之间得以保持。这意味着您不再需要 `persistent` 对象。
 {:.page-notification}
 
-每个 `INLINE_JAVASCRIPT` 项都在其自己的工作区中执行。这意味着——同 `Python INLINE_SCRIPT` 项不同！——您不能在一个脚本中声明的变量或函数在另一个脚本中使用。作为解决办法，您可以将变量或函数作为属性附加到 `persistent` 对象上，`persistent` 对象用作跨脚本保留事物的容器。
+每个 INLINE_JAVASCRIPT 项目在其自身的工作区中执行。这意味着——这与 Python INLINE_SCRIPT 项目不同！——您不能在一个脚本中使用在另一个脚本中声明的变量或函数。作为解决方法，您可以将变量或函数作为属性附加到 `persistent` 对象，该对象用作您希望在多个脚本中保持一致的内容的容器。
 
-这样您就可以在一个 `INLINE_JAVASCRIPT` 中构造一个 `Canvas` ...
+这样，您可以在一个 INLINE_JAVASCRIPT 中构建一个 `Canvas`...
 
 ```js
 persistent.myCanvas = Canvas()
 persistent.myCanvas.fixdot()
 ```
 
-.. 并在另一个 `INLINE_JAVASCRIPT` 中显示它:
+...并在另一个 INLINE_JAVASCRIPT 中显示它：
 
 ```js
 persistent.myCanvas.show()
@@ -107,29 +107,29 @@ persistent.myCanvas.show()
 
 ### `vars` 对象：访问实验变量
 
-__版本说明__ 从 OSWeb 2.0 开始，所有实验变量都可作为全局变量使用。这意味着您不再需要 `vars` 对象。
+__版本说明__ 从 OSWeb 2.0 开始，所有实验变量都可以作为全局变量使用。这意味着您不再需要 `vars` 对象。
 {:.page-notification}
 
 您可以通过 `vars` 对象访问实验变量：
 
 ```js
 // OSWeb <= 1.4（使用 vars 对象）
-// 获取一个实验变量
+// 获取实验变量
 console.log('my_variable is: ' + vars.my_variable)
-// 设置一个实验变量
+// 设置实验变量
 vars.my_variable = 'my_value'
 
-// OSWeb >= 2.0（不使用 vars 对象）
-// 获取一个实验变量
+// OSWeb >= 2.0 (无 vars 对象)
+// 获取实验变量
 console.log('my_variable is: ' + my_variable)
-// 设置一个实验变量
+// 设置实验变量
 my_variable = 'my_value'
 ```
 
 
 ### `pool` 对象：访问文件池
 
-您可以通过 `pool` 对象从文件池中访问“文件”。最明显的用法是使用 `csv-parse` 库（下面将更详细地描述）解析文件池中的 CSV 文件，例如包含实验条件的文件。
+您通过 `pool` 对象访问文件池中的“文件”。最明显的用途是使用 `csv-parse` 库（下文将更详细介绍）从文件池中解析 CSV 文件，例如实验条件。
 
 ```js
 const conditions = csvParse(
@@ -141,16 +141,22 @@ for (const trial of conditions) {
 }
 ```
 
-您也可以直接从文件池播放声音文件。假设文件池中有一个叫做 `bark.ogg` 的文件，您可以这样播放它：
+您还可以直接播放来自文件池的声音文件。假设文件池中有一个名为 `bark.ogg` 的文件，您可以像这样播放它：
 
 ```js
-pool['bark.ogg'].data.play()
+audioContext = new (window.AudioContext || window.webkitAudioContext)()
+source = audioContext.createBufferSource()
+source.buffer = pool['bark.ogg'].data
+source.connect(audioContext.destination)
+source.start(0)
 ```
+
+请注意，在旧版本的 OSWeb 中，您可以简单地使用 `pool['bark.ogg'].data.play()`。然而，随着OSWeb迁移到 Web Audio API，这种方法不再有效，这是播放音频的更现代和更广泛支持的方法。
 
 
 ### `Canvas` 类：呈现视觉刺激
 
-`Canvas` 类用于呈现视觉刺激。例如，您可以以下述方式显示一个注视点：
+`Canvas` 类用于呈现视觉刺激。例如，您可以如下显示一个固定点：
 
 ```js
 let myCanvas = Canvas()
@@ -158,24 +164,23 @@ myCanvas.fixdot()
 myCanvas.show()
 ```
 
-`Canvas` 类的完整概述可以在这里找到：
+有关 `Canvas` 类的完整概述可以在这里找到：
 
 - %link:manual/javascript/canvas%
 
 ## 可用的 JavaScript 库
 
-以下 JavaScript 库默认包含在内：
+以下 JavaScript 库默认包含：
 
 - [随机函数 (`random-ext`)](%url:manual/javascript/random%)
 - [颜色转换函数 (`color-convert`)](%url:manual/javascript/color-convert%)
 - [CSV 函数 (`csv-parse`)](%url:manual/javascript/csv%)
 - [类 Python 迭代器 (`pythonic`)](%url:manual/javascript/pythonic%)
 
-您可以通过在 OSWeb 控制面板的“外部 JavaScript 库”字段中添加库的 URL 来包含其他 JavaScript 库。
-
+您可以通过在 OSWeb 控制面板的 'External JavaScript' 库字段中添加库的 URL 来包含其他 JavaScript 库。
 
 ## 调试
 
-见：
+参见：
 
 - %link:debugging%

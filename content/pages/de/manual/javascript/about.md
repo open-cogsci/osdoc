@@ -1,5 +1,5 @@
 title: Über JavaScript
-hash: 1a7fe7974b0f26b2ee7c29211c43267ef47dff0d720592d5fd82996550c56b07
+hash: 89b8cd7f6f738823b8fc04558cb7b3e118768d97f5e91a82f90905cbf9bdbe6e
 locale: de
 language: German
 
@@ -95,47 +95,47 @@ let this_is_not_a_global_variable = 'mein Wert'
 __Versionshinweis__ Ab OSWeb 2.0 wird aller JavaScript-Code im selben Arbeitsbereich ausgeführt und Objekte werden daher über Skripte hinweg erhalten. Das bedeutet, dass Sie das `persistent`-Objekt nicht mehr benötigen.
 {:.page-notification}
 
-Jedes INLINE_JAVASCRIPT-Element wird in seinem eigenen Arbeitsbereich ausgeführt. Das bedeutet – und das ist anders als bei Python INLINE_SCRIPT-Elementen! –, dass Sie keine Variablen oder Funktionen verwenden können, die Sie in einem Skript deklariert haben, in einem anderen Skript. Um das Problem zu umgehen, können Sie Variablen oder Funktionen als Eigenschaften an das `persistent`-Objekt anhängen, das als Behälter für Dinge dient, die Sie zwischen Skripten erhalten möchten.
+Jedes INLINE_JAVASCRIPT Element wird in seinem eigenen Arbeitsbereich ausgeführt. Dies bedeutet — und das ist anders als bei Python INLINE_SCRIPT Elementen! —, dass Sie keine Variablen oder Funktionen nutzen können, die Sie in einem Skript deklariert haben, in einem anderen Skript. Als Workaround können Sie Variablen oder Funktionen als Eigenschaften an das `persistent` Objekt anhängen, welches als Behälter für Elemente dient, die Sie zwischen den Skripten erhalten möchten.
 
-So können Sie ein `Canvas` in einem INLINE_JAVASCRIPT konstruieren ...
+So können Sie eine `Canvas` in einem INLINE_JAVASCRIPT konstruieren ...
 
 ```js
 persistent.myCanvas = Canvas()
 persistent.myCanvas.fixdot()
 ```
 
-... und es in einem anderen INLINE_JAVASCRIPT anzeigen:
+.. und es in einem anderen INLINE_JAVASCRIPT anzeigen:
 
 ```js
 persistent.myCanvas.show()
 ```
 
 
-### Das `vars`-Objekt: Zugriff auf experimentelle Variablen
+### Das `vars` Objekt: Zugriff auf experimentelle Variablen
 
-__Versionshinweis__ Ab OSWeb 2.0 sind alle experimentellen Variablen als Globale verfügbar. Das bedeutet, dass Sie das `vars`-Objekt nicht mehr benötigen.
+__Versionshinweis__ Ab OSWeb 2.0 sind alle experimentellen Variablen als globale verfügbar. Das bedeutet, dass Sie das `vars` Objekt nicht mehr benötigen.
 {:.page-notification}
 
-Sie können auf experimentelle Variablen über das `vars`-Objekt zugreifen:
+Sie können auf experimentelle Variablen über das `vars` Objekt zugreifen:
 
 ```js
-// OSWeb <= 1.4 (mit vars-Objekt)
-// Eine experimentelle Variable erhalten
+// OSWeb <= 1.4 (mit vars Objekt)
+// Eine experimentelle Variable abrufen
 console.log('my_variable ist: ' + vars.my_variable)
 // Eine experimentelle Variable setzen
 vars.my_variable = 'my_value'
 
-// OSWeb >= 2.0 (ohne vars-Objekt)
-// Eine experimentelle Variable erhalten
+// OSWeb >= 2.0 (ohne vars Objekt)
+// Eine experimentelle Variable abrufen
 console.log('my_variable ist: ' + my_variable)
 // Eine experimentelle Variable setzen
 my_variable = 'my_value'
 ```
 
 
-### Das `pool`-Objekt: Zugriff auf den Dateipool
+### Das `pool` Objekt: Zugriff auf den Dateienpool
 
-Sie greifen über das `pool`-Objekt auf 'Dateien' aus dem Dateipool zu. Die offensichtlichste Verwendung dafür ist das Parsen von CSV-Dateien, zum Beispiel mit experimentellen Bedingungen, aus dem Dateipool mit Hilfe der `csv-parse`-Bibliothek (weiter unten detaillierter beschrieben).
+Sie greifen über das `pool` Objekt auf 'Dateien' aus dem Dateienpool zu. Der offensichtlichste Gebrauch dafür ist, CSV-Dateien, zum Beispiel mit experimentellen Bedingungen, aus dem Dateienpool mit Hilfe der `csv-parse` Bibliothek zu parsen (detaillierter unten beschrieben).
 
 ```js
 const conditions = csvParse(
@@ -147,16 +147,22 @@ for (const trial of conditions) {
 }
 ```
 
-Sie können auch direkt Sounddateien aus dem Dateipool abspielen. Angenommen, im Dateipool befindet sich eine Datei namens `bark.ogg`, können Sie sie folgendermaßen abspielen:
+Sie können auch direkt Sounddateien aus dem Dateienpool abspielen. Angenommen, es gibt eine Datei namens `bark.ogg` im Dateienpool, können Sie sie so abspielen:
 
 ```js
-pool['bark.ogg'].data.play()
+audioContext = new (window.AudioContext || window.webkitAudioContext)()
+source = audioContext.createBufferSource()
+source.buffer = pool['bark.ogg'].data
+source.connect(audioContext.destination)
+source.start(0)
 ```
 
+Beachten Sie, dass in älteren Versionen von OSWeb Sie einfach `pool['bark.ogg'].data.play()` verwenden konnten. Dies funktioniert jedoch nicht mehr, da OSWeb zur Web Audio API gewechselt hat, die eine modernere und weit verbreitete Methode zur Audiowiedergabe darstellt.
 
-### Die `Canvas`-Klasse: Präsentation visueller Stimuli
 
-Die `Canvas`-Klasse wird verwendet, um visuelle Stimuli zu präsentieren. Zum Beispiel können Sie so einen Fixationspunkt zeigen:
+### Die `Canvas` Klasse: Darstellen von visuellen Stimuli
+
+Die `Canvas` Klasse wird verwendet, um visuelle Stimuli darzustellen. Zum Beispiel können Sie einen Fixationspunkt wie folgt anzeigen:
 
 ```js
 let myCanvas = Canvas()
@@ -164,20 +170,20 @@ myCanvas.fixdot()
 myCanvas.show()
 ```
 
-Einen vollständigen Überblick über die `Canvas`-Klasse finden Sie hier:
+Eine vollständige Übersicht der `Canvas` Klasse finden Sie hier:
 
 - %link:manual/javascript/canvas%
 
-## Verfügbar JavaScript-Bibliotheken
+## Verfügbare JavaScript-Bibliotheken
 
 Die folgenden JavaScript-Bibliotheken sind standardmäßig enthalten:
 
 - [Zufallsfunktionen (`random-ext`)](%url:manual/javascript/random%)
 - [Farbkonvertierungsfunktionen (`color-convert`)](%url:manual/javascript/color-convert%)
 - [CSV-Funktionen (`csv-parse`)](%url:manual/javascript/csv%)
-- [Python-artige Iteratoren (`pythonic`)](%url:manual/javascript/pythonic%)
+- [Python-ähnliche Iteratoren (`pythonic`)](%url:manual/javascript/pythonic%)
 
-Sie können zusätzliche JavaScript-Bibliotheken einbinden, indem Sie URLs zu den Bibliotheken im Feld 'Externe JavaScript-Bibliotheken' des OSWeb-Kontrollfelds eingeben.
+Sie können zusätzliche JavaScript-Bibliotheken hinzufügen, indem Sie URLs zu den Bibliotheken im Feld 'Externe JavaScript-Bibliotheken' des OSWeb-Steuerfelds hinzufügen.
 
 
 ## Debugging
