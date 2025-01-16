@@ -59,23 +59,14 @@
 			<!-- Main row containing both the sidebar and the content-->
 			<div class="row">
 				<!-- Sidebar, only visible on large screens -->
-				<div class="col-md-3 cogsci-sidebar visible-lg">
-					{% include 'social.html' %}
-					{% include 'sigmund.html' %}
-				</div>
-				<div class="col-md-3 cogsci-sidebar visible-md">
-					{% include 'social.html' %}
+				<div class="col-md-4 cogsci-sidebar visible-lg visible-md">
 					{% include 'supported-by.html' %}
-					{% include 'sigmund.html' %}
 				</div>
 				<!-- Content -->
-				<div class="col-md-6 cogsci-content">
+				<div class="col-md-8 cogsci-content">
 					<search-widget endpoint="https://sigmundai.eu/public/search"></search-widget>
 					{% block content %}
 					{% endblock %}
-				</div>
-				<div class="col-md-3 cogsci-sidebar visible-lg">
-					{% include 'supported-by.html' %}
 				</div>
 			</div>
 			<!-- Footer -->

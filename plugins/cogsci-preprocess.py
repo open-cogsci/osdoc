@@ -251,8 +251,6 @@ def predict(query):
 
 def init_academicmarkdown(sender):
 
-    with open('sigmund-sources.jsonl', 'w') as fd:
-        pass
     build.postMarkdownFilters = []
     build.figureTemplate = 'jekyll'
     build.tableTemplate = 'kramdown'
