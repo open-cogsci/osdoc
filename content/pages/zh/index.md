@@ -17,6 +17,9 @@ OpenSesame是一个用于创建心理学、神经科学和实验经济学实验�
   <a role="button" class="btn btn-success" href="https://professional.cogsci.nl/">
   <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
   获取支持</a>
+  <a role="button" class="btn btn-success" href="https://sigmundai.eu/">
+  <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+  问问Sigmund</a>  
 </div>
 
 ## 特点

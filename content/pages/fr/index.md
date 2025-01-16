@@ -17,6 +17,9 @@ OpenSesame est un programme pour créer des expériences en psychologie, neurosc
   <a role="button" class="btn btn-success" href="https://professional.cogsci.nl/">
   <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
   Obtenir de l'aide</a>
+  <a role="button" class="btn btn-success" href="https://sigmundai.eu/">
+  <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+  Demandez á Sigmund</a>
 </div>
 
 ## Fonctionnalités

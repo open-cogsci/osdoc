@@ -17,6 +17,9 @@ OpenSesame ist ein Programm zur Erstellung von Experimenten für Psychologie, Ne
   <a role="button" class="btn btn-success" href="https://professional.cogsci.nl/">
   <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
   Unterstützung erhalten</a>
+  <a role="button" class="btn btn-success" href="https://sigmundai.eu/">
+  <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+  Frag Sigmund</a>
 </div>
 
 ## Funktionen
