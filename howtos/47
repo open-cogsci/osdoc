@@ -1,0 +1,12 @@
+# How to fix psychopy.exceptions.SoundFormatError
+
+This error is ocurring because PsychoPy does not support playing audio files with different sample rates in the same experiment. 
+To avoid the psychopy.exceptions.SoundFormatError in OpenSesame when using multiple audio files:
+
+1. Ensure all audio files have the same sample rate
+  - Use audio editing software (e.g., Audacity) to check and convert all audio files to the same sample rate (e.g., 44100 Hz).
+  - In Audacity: Open the file, then set project rate to 44100 Hz, then export the file (File > Export > WAV).
+2. Replace the old audio files by the newly converted ones in your OpenSesame experiment (pool)
+3. Check for other interfering sounds
+  - Ensure that all system-generated sounds in the experiment use the same sample rate.
+  - Synthetic beeps (e.g., from eye-tracking calibration) also count as different audio streams.
