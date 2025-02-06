@@ -63,6 +63,8 @@
                 - /4.0/manual/stimuli/sound
               - - Video
                 - /4.0/manual/stimuli/video
+        - - SigmundAI Copilot
+          - /4.0/manual/sigmund
         - - Workflow
           - /4.0/manual/osweb/workflow
         - - Development

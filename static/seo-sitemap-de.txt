@@ -25,6 +25,7 @@ https://osdoc.cogsci.nl/4.0/de/manual/stimuli/text
 https://osdoc.cogsci.nl/4.0/de/manual/stimuli/visual
 https://osdoc.cogsci.nl/4.0/de/manual/stimuli/sound
 https://osdoc.cogsci.nl/4.0/de/manual/stimuli/video
+https://osdoc.cogsci.nl/4.0/de/manual/sigmund
 https://osdoc.cogsci.nl/4.0/de/manual/osweb/workflow
 https://osdoc.cogsci.nl/4.0/de/manual/osweb/osweb
 https://osdoc.cogsci.nl/4.0/de/manual/osweb/jatos

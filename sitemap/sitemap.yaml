@@ -36,6 +36,8 @@ Manual:
         Sound: manual/stimuli/sound
         Video: manual/stimuli/video
     _:
+    AI assistance:
+    SigmundAI Copilot: manual/sigmund
     Online experiments:
     Workflow: manual/osweb/workflow
     Development:
