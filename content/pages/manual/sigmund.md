@@ -12,15 +12,33 @@ figure:
 --%
 
 
-[SigmundAI.eu](https://sigmundai.eu) is an AI research assistant that has been designed to help you with OpenSesame. You can use Sigmund directly from within OpenSesame by installing an extension. Sigmund requires a subscription.
+[SigmundAI.eu](https://sigmundai.eu) is an AI research assistant that has been designed to help you with OpenSesame. You can use Sigmund directly from within OpenSesame by installing an extension.
 
 
 [TOC]
 
 
-## Installing the Sigmund extension
+## Getting started
 
-First, install the `opensesame-extension-sigmund` package:
+### Logging into Sigmund
+
+Sigmund requires a monthly subscription, which can be cancelled at any time. Go to <https://sigmundai.eu> to subscribe.
+
+&#128150; Your subscription supports the development of open-source software! 
+
+Once you are logged in to Sigmund, the chat interface becomes visible. The chat interface automatically listens to incoming connections from OpenSesame.
+
+%--
+figure:
+ id: FigChatWindow
+ source: chat-window.png
+ caption: The chat interface of SigmundAI.eu.
+--%
+
+
+### Installing the Sigmund extension in OpenSesame
+
+To connect to Sigmund from within OpenSesame, you need to install the `opensesame-extension-sigmund` package. You can do this by entering the following command in the OpenSesame console:
 
 ```
 pip install opensesame-extension-sigmund
@@ -32,23 +50,7 @@ On Windows, you need to run the above command as Administrator, or pass the `--u
 pip install opensesame-extension-sigmund --user
 ```
 
-For more information about installing packages, see:
-
-- <https://rapunzel.cogsci.nl/manual/environment/>
-
-
-## Connecting to Sigmund
-
-Log into <https://sigmundai.eu/>. The chat interface should now be visible. The chat interface automatically listens to incoming connections from OpenSesame.
-
-%--
-figure:
- id: FigChatWindow
- source: chat-window.png
- caption: The chat interface of SigmundAI.eu.
---%
-
-Within OpenSesame, activate the SigmundAI Copilot by clicking on the Robot icon in the main toolbar. OpenSesame now tries to connect to the Sigmund chat interface.
+After installing the extension, restart OpenSesame. The Sigmund icon should now appear in the main toolbar. Activate the SigmundAI Copilot by clicking on the Sigmund icon.
 
 
 %--
@@ -67,10 +69,20 @@ figure:
  caption: OpenSesame is connected to Sigmund.
 --%
 
+### Fixing common issues
+
+Sigmund is under active development. If you encounter issues, first make sure that you have applied all updates, which appear through the automatic updater in OpenSesame.
+
+If the Sigmund icon (a yellow robot face) does not appear in the main toolbar, this likely means that the Sigmund extension is not installed. See [this page](https://rapunzel.cogsci.nl/manual/environment/) to learn more about how to manage packages in OpenSesame.
+
+If you continuously see the message, "Open https://sigmundai.eu in a browser and log in. OpenSesame will automatically connect", this likely means that <https://sigmundai.eu> is not open or not active in a web browser. Many browsers automatically deactivate pages that are not being used. Opening (or reloading) the Sigmund AI tab should re-activate the page.
+
+If you see the message "Failed to listen to Sigmund. Maybe another application is already listening?", this likely means that you started OpenSesame twice. Only one instance of OpenSesame can connect to Sigmund at a time. A less likely reason for this message is that another (unrelated) process is using port 8080 on your system. To debug this, simply ask Sigmund: "I'm using [your operating system here]. I think that some process is using port 8080. How can I find out whether this is the case, and if so, which process is using port 8080?"
+
 
 ## Functionality
 
-### Editing items and scripts
+### Sigmund can edit items and scripts
 
 First, select an item in OpenSesame by clicking on it in the overview area. Next, you can questions about it, and even ask Sigmund to modify the item directly. 
 
@@ -84,7 +96,7 @@ figure:
 --%
 
 
-### Fixing errors
+### Sigmund can fix errors in your experiment
 
 If an error occurs while running your experiment, you can ask Sigmund to fix the error. Sigmund will then analyze the error, and may suggest changes to fix it.
 
