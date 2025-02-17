@@ -122,6 +122,7 @@ Oder für den Rapunzel-Code-Editor:
 rapunzel
 ```
 
+#### Qt Probleme?
 Es gab [Berichte](https://github.com/open-cogsci/OpenSesame/issues/819#issuecomment-2630370898) über `QT` Fehler, zum Beispiel `Unrecognized OpenGL version` oder `QtWebWidget not found`. In diesen Fällen könnten Sie versuchen die folgenden Pakete zusätzlich zu installieren:
 ```bash
 pip install pyqt5-tools pyqtwebengine
