@@ -114,6 +114,13 @@ pip install --pre opensesame-core rapunzel opensesame-extension-osweb opensesame
 pip install psychopy psychopy_sounddevice pygame http://files.cogsci.nl/expyriment-0.10.0+opensesame2-py3-none-any.whl https://github.com/smathot/PyGaze/releases/download/prerelease%2F0.8.0a3/python_pygaze-0.8.0a3-py3-none-any.whl
 ```
 
+You may also need to install PyQt5 and QtWebEngine, which provide the GUI toolkit:
+
+```bash
+pip install pyqt5 pyqtwebengine
+```
+
+
 Once you have installed all packages, you can simply run OpenSesame by (after having activated the correct environment) running:
 
 ```bash
@@ -126,11 +133,6 @@ Or for the Rapunzel code editor:
 rapunzel
 ```
 
-#### Qt problems?
-There were [reports](https://github.com/open-cogsci/OpenSesame/issues/819#issuecomment-2630370898) in the past of `QT` errors along the lines of `Unrecognized OpenGL version` or `QtWebWidget not found`. In this case you can try to install the following additional packages:
-```bash
-pip install pyqt5-tools pyqtwebengine
-```
 
 ### Anaconda (cross-platform)
 
