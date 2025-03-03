@@ -3,7 +3,6 @@ hash: 38128d277ebe6e5684caf8cc54f9d14c8497654ad399028843668298333d7df4
 locale: zh
 language: Chinese
 
-```javascript
 <script>
 function startDownload(url) {
 	document.getElementById('click-here').href = url
@@ -181,7 +180,7 @@ OpenSesame 的源代码可以在 [GitHub](https://github.com/open-cogsci/OpenSes
 OpenSesame 目前使用 Python 3.11 构建和测试。其他版本的 Python >=3.7 也可以使用，但未经过广泛测试。Python 2 不再支持。最后一个包含 Python 2 包的版本是 3.3.12，仍可以从[发布存档](https://github.com/open-cogsci/OpenSesame/releases/tag/release%2F3.3.12)下载。
 
 
-### 什么时候（不）更新？
+### 什么时候（不）更新？`
 
 - 在开发和测试实验时更新；始终最好使用 OpenSesame 的最新版本。
 - 在进行实验时不要更新；也就是说，在收集数据时不要更新。

@@ -3,7 +3,6 @@ hash: 38128d277ebe6e5684caf8cc54f9d14c8497654ad399028843668298333d7df4
 locale: fr
 language: French
 
-```html
 <script>
 function startDownload(url) {
 	document.getElementById('click-here').href = url
@@ -101,17 +100,33 @@ pip install psychopy psychopy_sounddevice python-bidi arabic_reshaper
 ### PyPi (multiplateforme)
 
 Tous les paquets peuvent être installés avec pip. Notez que OpenSesame est appelé `opensesame-core` sur PyPi.
+
+```bash
+pip install --pre opensesame-core rapunzel opensesame-extension-osweb opensesame-extension-updater opensesame-plugin-psychopy opensesame-plugin-media_player_mpy
+pip install psychopy psychopy_sounddevice pygame http://files.cogsci.nl/expyriment-0.10.0+opensesame2-py3-none-any.whl https://github.com/smathot/PyGaze/releases/download/prerelease%2F0.8.0a3/python_pygaze-0.8.0a3-py3-none-any.whl
 ```
 
-Vous pourriez également avoir besoin d'installer PyQt5 et QtWebEngine, qui fournissent le kit d'outils pour l'interface graphique :
+Vous pourriez également avoir besoin d'installer PyQt5 et QtWebEngine, qui fournissent le kit d'outils pour l'interface graphique :
+
+```bash
+pip install pyqt5 pyqtwebengine
+```
 
 Une fois que vous avez installé tous les paquets, vous pouvez simplement exécuter OpenSesame en (après avoir activé l'environnement correct) exécutant :
 
+```bash
+opensesame
+```
+
 Ou pour l'éditeur de code Rapunzel :
+
+```bash
+rapunzel
+```
 
 ### Anaconda (multi-plateforme)
 
-Tout d'abord, créez un nouvel environnement Python pour OpenSesame (optionnel) :
+Tout d'abord, créez un nouvel environnement Python pour OpenSesame (optionnel) :
 
 Ensuite, ajoutez les canaux pertinents (`cogsci`) et (`conda-forge`) et installez tous les paquets pertinents. Assurez-vous que `pyqode.core` et `pyqode.python` sont >= 3.2 à partir du canal `cogsci`, et non pas les anciennes versions du canal `conda-forge`.
 
@@ -145,7 +160,7 @@ OpenSesame est actuellement construit et testé avec Python 3.11. D'autres versi
 
 ### Mise à jour manuelle des paquets
 
-OpenSesame est un environnement Python régulier, et vous pouvez mettre à jour les paquets avec `pip` ou `conda` comme décrit ici :
+OpenSesame est un environnement Python régulier, et vous pouvez mettre à jour les paquets avec `pip` ou `conda` comme décrit ici :
 
 - <https://rapunzel.cogsci.nl/manual/environment/>
 

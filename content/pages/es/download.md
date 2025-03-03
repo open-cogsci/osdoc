@@ -3,7 +3,6 @@ hash: 38128d277ebe6e5684caf8cc54f9d14c8497654ad399028843668298333d7df4
 locale: es
 language: Spanish
 
-```html
 <script>
 function startDownload(url) {
 	document.getElementById('click-here').href = url
@@ -105,7 +104,6 @@ pip install psychopy psychopy_sounddevice python-bidi arabic_reshaper
 ### PyPi (multiplataforma)
 
 Todos los paquetes se pueden instalar con pip. Ten en cuenta que OpenSesame se llama `opensesame-core` en PyPi.
-```
 
 ```bash
 pip install --pre opensesame-core rapunzel opensesame-extension-osweb opensesame-extension-updater opensesame-plugin-psychopy opensesame-plugin-media_player_mpy
