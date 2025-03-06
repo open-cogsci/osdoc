@@ -1,12 +1,12 @@
 title: advanced_delay
-hash: 05d5215072bc5c76e2fd177cc099d6281a44d87cde42c43e79a945b2ac83b98f
+hash: 54879490fe7472c89ac95be6dc21911ffcdddabbe58ec3de0baf4b660ad5dc89
 locale: es
 language: Spanish
 
-El complemento `advanced_delay` retrasa el experimento durante una duración promedio preespecificada más un margen aleatorio.
+El complemento `advanced_delay` retrasa el experimento por una duración promedio preespecificada más un margen aleatorio.
 
-- *Duración* es la duración promedio del retraso en milisegundos.
-- *Variación* es el tamaño de la variación en el retraso en milisegundos.
-- *Modo de variación* es cómo se calcula la variación:
-	- *Desviación estándar* tomará la variación de una distribución gaussiana con la variación como desviación estándar.
-	- *Uniforme* tomará la variación en duración de una distribución uniforme.
+- *Duration* es la duración promedio del retraso en milisegundos.
+- *Jitter* es el tamaño de la variación en el retraso en milisegundos.
+- *Jitter mode* es cómo se define el jitter:
+  - *Standard deviation* tomará valores de una distribución Gaussiana con Jitter como la desviación estándar.
+  - *Uniform* tomará valores de una distribución Uniforme centrada en Duration, con Jitter como el ancho.

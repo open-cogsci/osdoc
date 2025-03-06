@@ -1,12 +1,12 @@
 title: Advanced_delay
-hash: 05d5215072bc5c76e2fd177cc099d6281a44d87cde42c43e79a945b2ac83b98f
+hash: 54879490fe7472c89ac95be6dc21911ffcdddabbe58ec3de0baf4b660ad5dc89
 locale: zh
 language: Chinese
 
-`advanced_delay`插件会使实验延迟一个预先指定的平均持续时间加上一个随机范围。
+`advanced_delay` 插件将实验延迟一个预先指定的平均持续时间加上一个随机的浮动。
 
 - *Duration* 是延迟的平均持续时间，以毫秒为单位。
-- *Jitter* 是延迟变化的大小，以毫秒为单位。
-- *Jitter mode* 是计算抖动的方式：
-	- *Standard deviation* 会从具有Jitter作为标准差的高斯分布中抽取变化。
-	- *Uniform* 将从均匀分布中抽取持续时间的变化。
+- *Jitter* 是延迟变化的幅度，以毫秒为单位。
+- *Jitter mode* 是定义浮动的方式：
+  - *Standard deviation*将从一个以Jitter为标准差的高斯分布中提取值。
+  - *Uniform* 将从一个以Duration为中心的均匀分布中提取值，Jitter为宽度。
