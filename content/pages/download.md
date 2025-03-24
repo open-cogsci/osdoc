@@ -70,9 +70,9 @@ brew install --cask opensesame
 
 ### Ubuntu
 
-Packages are developed and tested on Ubuntu 22.04 Jammy Jellyfish. Packages are only available for 22.04 and 22.10.
+Packages are developed and tested on Ubuntu 24.04 Jammy Jellyfish. Your mileage may vary on other versions of Ubuntu.
 
-If you have OpenSesame 3.X installed, first deinstall all packages . This is required to avoid package conflicts due to slight renaming of some packages in OpenSesame 4.0.
+If you have OpenSesame 3.X installed, first deinstall all packages. This is required to avoid package conflicts due to slight renaming of some packages in OpenSesame 4.0.
 
 ```bash
 # If necessary: uninstall OpenSesame 3.X
@@ -94,14 +94,16 @@ Some commonly used packages are not available through the PPA. You can install t
 
 ```bash
 # Install optional packages that are only available through pip
-pip install --pre opensesame-extension-osweb opensesame-plugin-psychopy opensesame-plugin-media_player_mpy http://files.cogsci.nl/expyriment-0.10.0+opensesame2-py3-none-any.whl
+pip install --break-system-packages --pre opensesame-extension-osweb opensesame-plugin-psychopy opensesame-plugin-media_player_mpy http://files.cogsci.nl/expyriment-0.10.0+opensesame2-py3-none-any.whl
 ```
 
-PsychoPy is best installed through pip, because the Ubuntu package is currently broken. 
+PsychoPy is best installed through pip, because the Ubuntu package is currently broken.
 
 ```bash
-# Install psychopy
-pip install psychopy psychopy_sounddevice python-bidi arabic_reshaper
+# First install a custom version of wxPython, which is required for PsychoPy
+pip install --break-system-packages https://extras.wxpython.org/wxPython4/extras/linux/gtk3/ubuntu-24.04/wxPython-4.2.2-cp312-cp312-linux_x86_64.whl
+# Next install psychopy and ignore the requirement for Python <=3.11, because Ubuntu 24.04 uses Python 3.12
+pip install --break-system-packages --ignore-requires-python psychopy psychopy_sounddevice python-bidi arabic_reshaper
 ```
 
 
