@@ -1,9 +1,6 @@
 title: SigmundAI Copilot
 
 
-SigmundAI Copilot is currently in public beta
-{:.page-notification}
-
 %--
 figure:
  id: FigExample
@@ -18,11 +15,9 @@ figure:
 [TOC]
 
 
-## Getting started
+## Connecting to SigmundAI
 
-### Logging into Sigmund
-
-Sigmund requires a monthly subscription, which can be cancelled at any time. Go to <https://sigmundai.eu> to subscribe.
+Sigmund requires a monthly subscription, which can be cancelled at any time. Visit <https://sigmundai.eu> to subscribe.
 
 &#128150; Your subscription supports the development of open-source software! 
 
@@ -35,23 +30,7 @@ figure:
  caption: The chat interface of SigmundAI.eu.
 --%
 
-
-### Installing the Sigmund extension in OpenSesame
-
-To connect to Sigmund from within OpenSesame, you need to install the `opensesame-extension-sigmund` package. You can do this by entering the following command in the OpenSesame console:
-
-```
-pip install opensesame-extension-sigmund
-```
-
-On Windows, you need to run the above command as Administrator, or pass the `--user` flag:
-
-```
-pip install opensesame-extension-sigmund --user
-```
-
-After installing the extension, restart OpenSesame. The Sigmund icon should now appear in the main toolbar. Activate the SigmundAI Copilot by clicking on the Sigmund icon.
-
+Next, activate the SigmundAI Copilot by clicking on the Sigmund icon.
 
 %--
 figure:
@@ -68,16 +47,6 @@ figure:
  source: connected.png
  caption: OpenSesame is connected to Sigmund.
 --%
-
-### Fixing common issues
-
-Sigmund is under active development. If you encounter issues, first make sure that you have applied all updates, which appear through the automatic updater in OpenSesame.
-
-If the Sigmund icon (a yellow robot face) does not appear in the main toolbar, this likely means that the Sigmund extension is not installed. See [this page](https://rapunzel.cogsci.nl/manual/environment/) to learn more about how to manage packages in OpenSesame.
-
-If you continuously see the message, "Open https://sigmundai.eu in a browser and log in. OpenSesame will automatically connect", this likely means that <https://sigmundai.eu> is not open or not active in a web browser. Many browsers automatically deactivate pages that are not being used. Opening (or reloading) the Sigmund AI tab should re-activate the page.
-
-If you see the message "Failed to listen to Sigmund. Maybe another application is already listening?", this likely means that you started OpenSesame twice. Only one instance of OpenSesame can connect to Sigmund at a time. A less likely reason for this message is that another (unrelated) process is using port 8080 on your system. To debug this, simply ask Sigmund: "I'm using [your operating system here]. I think that some process is using port 8080. How can I find out whether this is the case, and if so, which process is using port 8080?"
 
 
 ## Functionality
@@ -107,3 +76,10 @@ figure:
  source: error.png
  caption: Sigmund can diagnose and fix errors in your experiment.
 --%
+
+
+### Fixing common issues
+
+If you continuously see the message, "Open https://sigmundai.eu in a browser and log in. OpenSesame will automatically connect", this likely means that <https://sigmundai.eu> is not open or not active in a web browser. Many browsers automatically deactivate pages that are not being used. Opening (or reloading) the Sigmund AI tab should re-activate the page.
+
+If you see the message "Failed to listen to Sigmund. Maybe another application is already listening?", this likely means that you already started OpenSesame (or another application that has connected to Sigmund). Only one application can connect to Sigmund at a time.

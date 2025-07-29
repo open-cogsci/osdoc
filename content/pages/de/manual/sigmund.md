@@ -1,105 +1,36 @@
 title: SigmundAI Copilot
-hash: 068066429b87ece4165a56d9298972b751462edb129261bcda7b23fb49f2dcf5
+hash: 72727f42fda075f92ed04c3fec80945ccbc7a18696b66aa3ddc6cb97f87a997c
 locale: de
 language: German
 
-SigmundAI Copilot befindet sich derzeit in der öffentlichen Beta
-{:.page-notification}
+[SigmundAI.eu](https://sigmundai.eu) ist ein KI-Forschungsassistent, der speziell dafür entwickelt wurde, Ihnen mit OpenSesame zu helfen. Sie können Sigmund direkt aus OpenSesame heraus nutzen, indem Sie eine Erweiterung installieren.
 
-%--
-figure:
- id: FigExample
- source: example.png
- caption: Debugging an issue with Sigmund.
---%
+## Verbindung zu SigmundAI herstellen
 
-[SigmundAI.eu](https://sigmundai.eu) ist ein KI-Forschungsassistent, der entwickelt wurde, um Ihnen mit OpenSesame zu helfen. Sie können Sigmund direkt aus OpenSesame heraus nutzen, indem Sie eine Erweiterung installieren.
-
-[TOC]
-
-## Erste Schritte
-
-### Anmeldung bei Sigmund
-
-Sigmund erfordert ein monatliches Abonnement, das jederzeit gekündigt werden kann. Gehen Sie zu <https://sigmundai.eu>, um sich anzumelden.
+Sigmund erfordert ein monatliches Abonnement, das jederzeit gekündigt werden kann. Besuchen Sie <https://sigmundai.eu>, um ein Abonnement abzuschließen.
 
 &#128150; Ihr Abonnement unterstützt die Entwicklung von Open-Source-Software!
 
-Sobald Sie bei Sigmund eingeloggt sind, wird die Chat-Oberfläche sichtbar. Die Chat-Oberfläche hört automatisch auf eingehende Verbindungen von OpenSesame.
+Sobald Sie bei Sigmund angemeldet sind, wird die Chat-Oberfläche sichtbar. Die Chat-Oberfläche hört automatisch auf eingehende Verbindungen von OpenSesame.
 
-%--
-figure:
- id: FigChatWindow
- source: chat-window.png
- caption: The chat interface of SigmundAI.eu.
---%
+Als Nächstes aktivieren Sie den SigmundAI Copilot, indem Sie auf das Sigmund-Symbol klicken.
 
-### Installation der Sigmund-Erweiterung in OpenSesame
-
-Um sich mit Sigmund aus OpenSesame heraus zu verbinden, müssen Sie das Paket `opensesame-extension-sigmund` installieren. Sie können dies tun, indem Sie den folgenden Befehl in der OpenSesame-Konsole eingeben:
-
-```
-pip install opensesame-extension-sigmund
-```
-
-Unter Windows müssen Sie den obigen Befehl als Administrator ausführen oder das `--user`-Flag verwenden:
-
-```
-pip install opensesame-extension-sigmund --user
-```
-
-Nach der Installation der Erweiterung starten Sie OpenSesame neu. Das Sigmund-Icon sollte jetzt in der Hauptsymbolleiste erscheinen. Aktivieren Sie den SigmundAI Copilot, indem Sie auf das Sigmund-Icon klicken.
-
-%--
-figure:
- id: FigListening
- source: listening.png
- caption: OpenSesame is connecting to Sigmund.
---%
-
-Nach einigen Sekunden sollte eine Verbindung hergestellt werden. Die Sigmund-Chat-Oberfläche im Browser zeigt an, dass sie mit OpenSesame verbunden ist. Innerhalb von OpenSesame erscheint eine integrierte Chat-Oberfläche.
-
-%--
-figure:
- id: FigConnected
- source: connected.png
- caption: OpenSesame is connected to Sigmund.
---%
-
-### Beheben von häufigen Problemen
-
-Sigmund befindet sich in aktiver Entwicklung. Wenn Sie auf Probleme stoßen, stellen Sie zunächst sicher, dass Sie alle Updates angewendet haben, die über den automatischen Updater in OpenSesame erscheinen.
-
-Wenn das Sigmund-Icon (ein gelbes Roboter-Gesicht) nicht in der Hauptsymbolleiste erscheint, bedeutet dies wahrscheinlich, dass die Sigmund-Erweiterung nicht installiert ist. Siehe [diese Seite](https://rapunzel.cogsci.nl/manual/environment/), um mehr darüber zu erfahren, wie man Pakete in OpenSesame verwaltet.
-
-Wenn Sie ständig die Nachricht sehen: "Open https://sigmundai.eu in a browser and log in. OpenSesame will automatically connect", bedeutet dies wahrscheinlich, dass <https://sigmundai.eu> nicht geöffnet oder nicht aktiv in einem Webbrowser ist. Viele Browser deaktivieren automatisch Seiten, die nicht genutzt werden. Das Öffnen (oder Neuladen) des Sigmund AI-Tabs sollte die Seite reaktivieren.
-
-Wenn Sie die Nachricht "Failed to listen to Sigmund. Maybe another application is already listening?" sehen, bedeutet dies wahrscheinlich, dass Sie OpenSesame zweimal gestartet haben. Nur eine Instanz von OpenSesame kann gleichzeitig zu Sigmund verbinden. Ein weniger wahrscheinlicher Grund für diese Nachricht ist, dass ein anderer (unabhängiger) Prozess Port 8080 auf Ihrem System verwendet. Um dies zu debuggen, fragen Sie einfach Sigmund: "Ich benutze [Ihr Betriebssystem hier]. Ich denke, dass ein Prozess Port 8080 benutzt. Wie kann ich herausfinden, ob dies der Fall ist und wenn ja, welcher Prozess Port 8080 benutzt?"
+Nach einigen Sekunden sollte eine Verbindung hergestellt sein. Die Sigmund-Chat-Oberfläche im Browser zeigt an, dass sie mit OpenSesame verbunden ist. Innerhalb von OpenSesame erscheint eine integrierte Chat-Oberfläche.
 
 ## Funktionalität
 
-### Sigmund kann Items und Skripte bearbeiten
+### Sigmund kann Elemente und Skripte bearbeiten
 
-Zuerst wählen Sie ein Item in OpenSesame aus, indem Sie darauf im Übersichtsbereich klicken. Anschließend können Sie Fragen dazu stellen und Sigmund sogar bitten, das Item direkt zu ändern.
+Wählen Sie zunächst ein Element in OpenSesame aus, indem Sie darauf im Übersichtsbereich klicken. Anschließend können Sie dazu Fragen stellen und Sigmund sogar bitten, das Element direkt zu ändern.
 
-Zum Beispiel, wenn Sie Sigmund bitten, die Farbe des Textes auf einer SKETCHPAD in rot zu ändern, wird Sigmund eine einfache Änderung des SKETCHPAD-Skripts vorschlagen. Diese Änderung wird in einem sogenannten Diff-Viewer angezeigt, wo Sie sie überprüfen und entscheiden können, ob Sie die Änderung übernehmen wollen oder nicht. Wenn Sie auf Ok klicken, wird die Änderung angewendet und der Text ist nun rot.
+Wenn Sie Sigmund zum Beispiel bitten, die Farbe des Texts auf einer SKETCHPAD auf Rot zu ändern, schlägt Sigmund eine einfache Änderung am SKETCHPAD-Skript vor. Diese Änderung wird in einem sogenannten Diff-Viewer angezeigt, in dem Sie die Änderung überprüfen und entscheiden können, ob Sie sie übernehmen möchten. Wenn Sie auf Ok klicken, wird die Änderung übernommen und der Text erscheint nun in Rot.
 
-%--
-figure:
- id: FigDiffViewer
- source: diff-viewer.png
- caption: When Sigmund suggests changes, you can first review the changes before deciding whether or not to accept them.
---%
+### Sigmund kann Fehler in Ihrem Experiment beheben
 
+Wenn bei der Ausführung Ihres Experiments ein Fehler auftritt, können Sie Sigmund bitten, den Fehler zu beheben. Sigmund analysiert dann den Fehler und könnte Änderungsvorschläge zur Behebung des Fehlers machen.
 
-### Sigmund kann Fehler in deinem Experiment beheben
+### Häufige Probleme beheben
 
-Wenn während der Durchführung deines Experiments ein Fehler auftritt, kannst du Sigmund bitten, den Fehler zu beheben. Sigmund wird dann den Fehler analysieren und möglicherweise Änderungen vorschlagen, um ihn zu beheben.
+Wenn Sie ständig die Meldung sehen: „Öffnen Sie https://sigmundai.eu in einem Browser und melden Sie sich an. OpenSesame wird automatisch verbunden“, bedeutet das wahrscheinlich, dass <https://sigmundai.eu> nicht geöffnet oder im Webbrowser nicht aktiv ist. Viele Browser deaktivieren automatisch Seiten, die nicht genutzt werden. Das Öffnen (oder Neuladen) des Sigmund AI-Tabs sollte die Seite wieder aktivieren.
 
-
-%--
-figure:
- id: FigError
- source: error.png
- caption: Sigmund can diagnose and fix errors in your experiment.
---%
+Wenn Sie die Meldung „Fehler beim Lauschen auf Sigmund. Vielleicht lauscht bereits eine andere Anwendung?“ sehen, bedeutet das wahrscheinlich, dass Sie OpenSesame (oder eine andere Anwendung, die mit Sigmund verbunden ist) schon gestartet haben. Es kann jeweils immer nur eine Anwendung eine Verbindung zu Sigmund herstellen.

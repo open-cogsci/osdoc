@@ -1,9 +1,9 @@
 title: OpenSesame
-hash: a39c261b0a0aff058455782ca677d0f92d3ef7e0a24d1fa6dc94af5e2ebc50b9
+hash: 6d849c097dae99593910535916f19b8e81ff850881ac1b70d906e4c658d28a81
 locale: fr
 language: French
 
-OpenSesame est un programme pour créer des expériences en psychologie, neurosciences et économie expérimentale. La dernière version $status$ est la $version$ *$codename$* ([notes de version](http://osdoc.cogsci.nl/$branch$/fr/notes/$notes$)).
+OpenSesame est un programme permettant de créer des expériences pour la psychologie, les neurosciences et l'économie expérimentale. La dernière version $status$ est $version$ *$codename$* ([notes de version](http://osdoc.cogsci.nl/$branch$/notes/$notes$)).
 
 <div class="btn-group" role="group" aria-label="...">
   <a role="button" class="btn btn-success" href="%url:download%">
@@ -19,7 +19,7 @@ OpenSesame est un programme pour créer des expériences en psychologie, neurosc
   Obtenir de l'aide</a>
   <a role="button" class="btn btn-success" href="https://sigmundai.eu/">
   <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-  Demandez á Sigmund</a>
+  Demander à Sigmund</a>
 </div>
 
 ## Fonctionnalités
@@ -28,13 +28,14 @@ OpenSesame est un programme pour créer des expériences en psychologie, neurosc
 - __Expériences en ligne__ — exécutez votre expérience dans un navigateur avec [OSWeb](%link:manual/osweb/workflow%)
 - __Python__ — ajoutez la puissance de [Python](%link:manual/python/about%) à votre expérience
 - __JavaScript__ — ajoutez la puissance de [JavaScript](%link:manual/python/about%) à votre expérience
-- __Utilisez vos appareils__ — utilisez votre [eye tracker](%link:pygaze%), [boîtier de boutons](%link:buttonbox%), [équipement EEG](%link:parallel%), et plus encore.
-- __Gratuit__ — publié sous licence GPL3
+- __Utilisez vos appareils__ — utilisez votre [eye tracker](%link:pygaze%), [boîtier de réponse](%link:buttonbox%), [équipement EEG](%link:parallel%) et plus encore.
+- __Copilote SigmundAI__ — créez et corrigez les expériences avec [l'aide de l'intelligence artificielle](%link:sigmund%)
+- __Gratuit__ — distribué sous licence GPL3
 - __Multiplateforme__ — Windows, Mac OS et Linux
 
 ## Citations
 
-Mathôt, S., Schreij, D., & Theeuwes, J. (2012). OpenSesame: An open-source, graphical experiment builder for the social sciences. *Behavior Research Methods*, *44*(2), 314-324. doi:10.3758/s13428-011-0168-7
+Mathôt, S., Schreij, D., & Theeuwes, J. (2012). OpenSesame : Un logiciel libre et graphique de création d’expériences pour les sciences sociales. *Behavior Research Methods*, *44*(2), 314-324. doi:10.3758/s13428-011-0168-7
 
-Mathôt, S., & March, J. (2022). Conducting linguistic experiments online with OpenSesame and OSWeb. *Language Learning*. doi:10.1111/lang.12509
-<br /><small>[Related preprint (not identical to published manuscript)](https://doi.org/10.31234/osf.io/wnryc)</small>
+Mathôt, S., & March, J. (2022). Réaliser des expériences linguistiques en ligne avec OpenSesame et OSWeb. *Language Learning*. doi:10.1111/lang.12509
+<br /><small>[Prépublication associée (différente du manuscrit publié)](https://doi.org/10.31234/osf.io/wnryc)</small>

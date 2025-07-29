@@ -55,8 +55,8 @@ SYSTEM_API = f'''You're a translator for OpenSesame, a program for developing ps
 Important: This text is an API documentation. Therefore, do not translate class names, function names, and parameter names.
 
 Reply with a %s translation. Only provide the translated text without adding any additional text. This concludes the instruction. The to be translated text will be provided next.'''
-MODEL = 'gpt-4o'
-openai.api_key = (Path.home() / '.openai-api-key').read_text().strip()
+MODEL = 'gpt-4.1'
+API_KEY = (Path.home() / '.openai-api-key').read_text().strip()
 ROOT = Path('../content/pages')
 INCLUDE = Path('../include')
 MAX_SECTION_LENGTH = 4000
@@ -105,12 +105,12 @@ def translate_text(text, language, code, system=SYSTEM, lock=None,
     if code in translations[text] and not force_retranslate:
         print('Retrieving translation from cache')
         return translations[text][code]
-    response = openai.ChatCompletion.create(
+    client = openai.Client(api_key=API_KEY)
+    response = client.chat.completions.create(
         model=MODEL,
         messages=[{"role": "system", "content": SYSTEM % language},
-                  {"role": "user", "content": text}],
-        request_timeout=600)
-    reply = response['choices'][0]['message']['content']
+                  {"role": "user", "content": text}])
+    reply = response.choices[0].message.content
     if lock is not None:
         lock.acquire()
     translations = translation_cache()
