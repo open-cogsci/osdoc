@@ -175,8 +175,6 @@
           - /4.1/manual/opensesame-script
         - - <nodoc> OpenSesameRun (no GUI)
           - /4.1/manual/opensesamerun
-        - - Installing packages, plugins, and extensions
-          - https://rapunzel.cogsci.nl/manual/environment/
         - - Runners
           - /4.1/manual/runners
         - - Mouse tracking
