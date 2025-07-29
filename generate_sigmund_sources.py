@@ -9,7 +9,7 @@ import os
 import json
 import tiktoken
 from typing import List, Dict
-from langchain.chat_models import ChatOpenAI
+from langchain_community.chat_models import ChatOpenAI
 from datamatrix import functional as fnc
 from publishconf import SITEURL
 
@@ -34,6 +34,7 @@ FOUNDATION_DOCUMENTS = {
     'inline_script': 'sigmund/inline_script.py',
     'inline_javascript': 'sigmund/inline_javascript.js',
 }
+EXTRA_DOCUMENTS = []
 
 # Initialize tokenizer for GPT models
 tokenizer = tiktoken.encoding_for_model("gpt-3.5-turbo")
@@ -241,6 +242,8 @@ def main():
             
             metadata['topics'] = topics
             metadata['collection'] = COLLECTION
+            metadata['foundation'] = False
+            metadata['howto'] = False
             
             # Chunk the content
             chunks = chunk_markdown_by_tokens(content)
@@ -267,9 +270,21 @@ def main():
         metadata = {
             'title': f'Foundation document for {topic}',
             'collection': COLLECTION,
-            'topic': topic
+            'topic': topic,
+            'howto': False,
+            'foundation': True
         }
         documents.append(create_document(Path(path).read_text(), metadata))
+        
+    # Process extra documents:
+    for metadata in EXTRA_DOCUMENTS:
+        path = metadata.pop('path')
+        metadata['collection'] = COLLECTION
+        metadata['howto'] = False
+        metadata['foundation'] = False
+        metadata['topics'] = [DEFAULT_TOPIC]
+        documents.append(create_document(Path(path).read_text(), metadata))    
+    print(f"\nTotal extra documents: {len(documents)}")
     
     # Process how-to documents
     print("\n--- Processing how-to documents ---")
@@ -292,9 +307,11 @@ def main():
             # Create metadata for how-to
             metadata = {
                 'title': title,
-                'topics': [DEFAULT_TOPIC, 'howto'],
+                'topics': [DEFAULT_TOPIC],
                 'collection': COLLECTION,
-                'source': 'howtos'
+                'howto': True,
+                'source': 'howtos',
+                'foundation': False
             }
             
             # Chunk if necessary
