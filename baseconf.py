@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 import os
 
-BRANCH = '4.0'
+BRANCH = '4.1'
 PLUGIN_PATHS = ["plugins"]
 PLUGINS = ["cogsci-preprocess", "page_hierarchy"]
 LOCALE = 'en_US'
