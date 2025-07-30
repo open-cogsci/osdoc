@@ -71,7 +71,7 @@ Copy-paste the line below into a terminal. This will download and run an install
 bash <(curl -L https://github.com/open-cogsci/OpenSesame/raw/refs/heads/4.1/linux-installer.sh) --install
 ```
 
-OpenSesame is developed and tested on Ubuntu 24.04. Your mileage may vary on other Linux distrubtions and other versions of Ubuntu.
+OpenSesame is developed and tested on Ubuntu 24.04. Your mileage may vary on other Linux distributions and other versions of Ubuntu.
 
 
 ## Advanced installation options
@@ -84,7 +84,6 @@ All packages can be pip-installed. Note that OpenSesame is called `opensesame-co
 OpenSesame core dependencies:
 
 ```bash
-# OpenSesame core dependencies
 pip install --pre opensesame-core opensesame-extension-sigmund opensesame-extension-osweb opensesame-extension-updater opensesame-plugin-psychopy opensesame-plugin-media_player_mpy pygame
 ```
 

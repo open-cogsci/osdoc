@@ -1,5 +1,5 @@
 title: Télécharger
-hash: b38f65619e4c2d6695dd956ab06de9e176c145e37d2819dbaac4a0bc70eb23a5
+hash: acf8377b52efc30d1c3f5f4f459cb00a79f09028ca118806c6cf122c7a3e9925
 locale: fr
 language: French
 
@@ -43,38 +43,38 @@ La dernière version $status$ est $version$ *$codename$* ([notes de version](htt
 
 ### Windows
 
-Le package Windows est basé sur Python 3.13 pour les systèmes 64 bits. Les packages installateur et `.zip` sont identiques, sauf pour l'installation. La plupart des utilisateurs téléchargent le package installateur (bouton vert).
+Le paquet Windows est basé sur Python 3.13 pour les systèmes 64 bits. Les paquets installeur et `.zip` sont identiques, sauf pour l'installation. La plupart des utilisateurs téléchargent le paquet installeur (bouton vert).
 
 <a role="button" class="btn btn-success btn-align-left" onclick="startDownload('$url-windows-exe-py3$')">
-	<b>Installateur</b> standard Windows (.exe)
+	<b>Installateur standard</b> Windows (.exe)
 </a>
 
 <a role="button" class="btn btn-default btn-align-left" onclick="startDownload('$url-windows-zip-py3$')">
-	<b>Standard</b> Windows sans installation requise (.zip)
+	<b>Version standard</b> Windows sans installation requise (.zip)
 </a>
 
-OpenSesame est développé et testé sous Windows 11. Votre expérience peut varier sur d'autres versions de Windows.
+OpenSesame est développé et testé sur Windows 11. Les résultats peuvent varier sur d’autres versions de Windows.
 
 
 ### Mac OS
 
-Les packages Mac OS ne sont pas encore disponibles pour OpenSesame 4.1. Le lien de téléchargement ci-dessous pointe toujours vers la version 4.0.
+Les paquets Mac OS ne sont pas encore disponibles pour OpenSesame 4.1. Le lien de téléchargement ci-dessous pointe encore vers la version 4.0.
 {.page-notification}
 
 <a role="button" class="btn btn-default btn-align-left" onclick="startDownload('$url-osx-dmg-x64-py3$')">
-	Package Mac OS (.dmg)
+	Paquet Mac OS (.dmg)
 </a>
 
 
 ### Linux / Ubuntu
 
-Copiez-collez la ligne ci-dessous dans un terminal. Ceci téléchargera et exécutera un script d'installation. Le script d'installation nécessite curl et virtualenv. Sous Ubuntu, ceux-ci peuvent être installés avec `sudo apt install curl python3-venv`.
+Copiez-collez la ligne ci-dessous dans un terminal. Ceci téléchargera et exécutera un script d'installation. Le script d'installation nécessite curl et virtualenv. Sur Ubuntu, ceux-ci peuvent être installés avec `sudo apt install curl python3-venv`.
 
 ```bash
 bash <(curl -L https://github.com/open-cogsci/OpenSesame/raw/refs/heads/4.1/linux-installer.sh) --install
 ```
 
-OpenSesame est développé et testé sur Ubuntu 24.04. Votre expérience peut varier sur d'autres distributions Linux et d'autres versions d'Ubuntu.
+OpenSesame est développé et testé sur Ubuntu 24.04. Les résultats peuvent varier sur d’autres distributions Linux et versions d’Ubuntu.
 
 
 ## Options d'installation avancées
@@ -82,22 +82,21 @@ OpenSesame est développé et testé sur Ubuntu 24.04. Votre expérience peut va
 
 ### PyPi (multiplateforme)
 
-Tous les packages peuvent être installés via pip. Notez qu'OpenSesame s'appelle `opensesame-core` sur PyPi.
+Tous les paquets peuvent être installés avec pip. Notez que OpenSesame s'appelle `opensesame-core` sur PyPi.
 
-Dépendances principales d'OpenSesame&nbsp;:
+Dépendances principales d’OpenSesame :
 
 ```bash
-# Dépendances principales d'OpenSesame
 pip install --pre opensesame-core opensesame-extension-sigmund opensesame-extension-osweb opensesame-extension-updater opensesame-plugin-psychopy opensesame-plugin-media_player_mpy pygame
 ```
 
-PsychoPy pour le backend psycho (par défaut). Selon votre système d'exploitation et version de Python, PsychoPy peut ne pas s'installer correctement. Si cela se produit, demandez de l'aide sur le forum de support ou utilisez l'un des packages/installateurs préfabriqués.
+PsychoPy pour le backend (par défaut) psycho. Selon votre système d'exploitation et la version de Python, PsychoPy peut ne pas s'installer correctement. Si cela se produit, demandez de l’aide sur le forum de support ou utilisez l’un des paquets/installateurs préfabriqués.
 
 ```bash
 pip install psychopy psychopy_sounddevice psychopy_visionscience 
 ```
 
-PyGaze pour l'oculométrie&nbsp;:
+PyGaze pour le suivi oculaire :
 
 ```bash
 pip install https://github.com/smathot/PyGaze/releases/download/prerelease%2F0.8.0a3/python_pygaze-0.8.0a3-py3-none-any.whl
@@ -109,7 +108,7 @@ Expyriment pour le backend xpyriment
 pip install http://files.cogsci.nl/expyriment-0.10.0+opensesame2-py3-none-any.whl 
 ```
 
-Une fois tous les packages installés, vous pouvez simplement lancer OpenSesame en exécutant&nbsp;:
+Une fois que tous les paquets sont installés, vous pouvez simplement lancer OpenSesame en exécutant&nbsp;:
 
 ```bash
 opensesame
@@ -124,19 +123,19 @@ sigmund-analyst
 
 ### Anaconda (multiplateforme)
 
-Créez d'abord un nouvel environnement Python pour OpenSesame (optionnel)
+D'abord, créez un nouvel environnement Python pour OpenSesame (optionnel) :
 
 ```bash
 conda create -n opensesame-41 python=3.13
 conda activate opensesame-41
 ```
 
-Ensuite, suivez les instructions d'installation PyPi ci-dessus. Des packages Anaconda dédiés ne sont plus fournis.
+Ensuite, suivez les instructions d'installation PyPi ci-dessus. Des paquets Anaconda dédiés ne sont plus proposés.
 
 
-### Versions antérieures
+### Versions précédentes
 
-Les anciennes versions peuvent être téléchargées depuis les releases GitHub&nbsp;:
+Les versions précédentes peuvent être téléchargées depuis les releases GitHub :
 
 - <https://github.com/open-cogsci/OpenSesame/releases>
 

@@ -1,5 +1,5 @@
 title: 下载
-hash: b38f65619e4c2d6695dd956ab06de9e176c145e37d2819dbaac4a0bc70eb23a5
+hash: acf8377b52efc30d1c3f5f4f459cb00a79f09028ca118806c6cf122c7a3e9925
 locale: zh
 language: Chinese
 
@@ -14,19 +14,18 @@ function startDownload(url) {
 
 <div class="info-box" id="download-started" markdown="1" style="display:none;">
 
-<h3>您的下载应该很快就会开始！</h3>
+<h3>您的下载即将开始！</h3>
 
 <a role="button" class="btn btn-success btn-align-left" href="https://sigmundai.eu">
  &#128150; 订阅 SigmundAI.eu
 </a>
 
-对于 OpenSesame 问题，比 ChatGPT 更好。您每月 €9 的订阅支持 OpenSesame。
+比 ChatGPT 更适合 OpenSesame 问题。您的每月 9 欧元订阅将支持 OpenSesame。
 
-如果您的下载没有自动开始，请点击<a id="click-here">这里</a>。
+如果您的下载没有开始，请点击<a id="click-here">这里</a>。
 </div>
 
-
-## 概览
+## 概述
 
 %--
 toc:
@@ -35,63 +34,60 @@ toc:
  maxdepth: 3
 --%
 
-
 ## 标准安装选项
 
-最新的 $status$ 版本为 $version$ *$codename$* ([发行说明](http://osdoc.cogsci.nl/$branch$/notes/$notes$))。
+最新的 $status$ 版本是 $version$ *$codename$* ([发行说明](http://osdoc.cogsci.nl/$branch$/notes/$notes$))。
 
 
 ### Windows
 
-Windows 包基于 Python 3.13，适用于 64 位系统。安装程序和 `.zip` 包功能相同，仅安装方式不同。大多数用户会下载安装程序包（绿色按钮）。
+Windows 安装包基于 Python 3.13，仅适用于 64 位系统。安装程序包和 `.zip` 包功能相同，只是安装方式不同。大多数用户下载安装程序包（绿色按钮）。
 
 <a role="button" class="btn btn-success btn-align-left" onclick="startDownload('$url-windows-exe-py3$')">
 	<b>标准</b> Windows 安装程序 (.exe)
 </a>
 
 <a role="button" class="btn btn-default btn-align-left" onclick="startDownload('$url-windows-zip-py3$')">
-	<b>标准</b> Windows 免安装版 (.zip)
+	<b>标准</b> Windows 免安装版本 (.zip)
 </a>
 
-OpenSesame 在 Windows 11 上开发和测试。在其他版本的 Windows 上效果可能有所不同。
+OpenSesame 在 Windows 11 上开发和测试。在其他版本的 Windows 上体验可能会有所不同。
 
 
 ### Mac OS
 
-Mac OS 包尚未适配 OpenSesame 4.1。下面的下载链接仍指向 4.0。
+OpenSesame 4.1 的 Mac OS 安装包尚未发布。下面的下载链接指向 4.0 版本。
 {.page-notification}
 
 <a role="button" class="btn btn-default btn-align-left" onclick="startDownload('$url-osx-dmg-x64-py3$')">
-	Mac OS 软件包 (.dmg)
+	Mac OS 安装包 (.dmg)
 </a>
 
 
 ### Linux / Ubuntu
 
-将下方命令复制粘贴到终端。这将下载并运行安装脚本。安装脚本需要 curl 和 virtualenv。在 Ubuntu 上可以通过 `sudo apt install curl python3-venv` 安装它们。
+将下面的命令复制粘贴到终端。这将下载并运行一个安装脚本。该安装脚本需要 curl 和 virtualenv。在 Ubuntu 上，可以使用 `sudo apt install curl python3-venv` 进行安装。
 
 ```bash
 bash <(curl -L https://github.com/open-cogsci/OpenSesame/raw/refs/heads/4.1/linux-installer.sh) --install
 ```
 
-OpenSesame 在 Ubuntu 24.04 上开发和测试。在其他 Linux 发行版及其他版本的 Ubuntu 上效果可能有所不同。
+OpenSesame 在 Ubuntu 24.04 上开发和测试。在其他 Linux 发行版或其他 Ubuntu 版本上的使用体验可能会不同。
 
 
 ## 高级安装选项
 
-
 ### PyPi（跨平台）
 
-所有软件包均可通过 pip 安装。注意 OpenSesame 在 PyPi 上名为 `opensesame-core`。
+所有安装包都可用 pip 安装。请注意，在 PyPi 上 OpenSesame 的名称为 `opensesame-core`。
 
 OpenSesame 核心依赖：
 
 ```bash
-# OpenSesame 核心依赖
 pip install --pre opensesame-core opensesame-extension-sigmund opensesame-extension-osweb opensesame-extension-updater opensesame-plugin-psychopy opensesame-plugin-media_player_mpy pygame
 ```
 
-PsychoPy 用于（默认的）psycho 后端。根据您的操作系统和 Python 版本，PsychoPy 可能无法正确安装。若有问题，可以到支持论坛寻求帮助，或使用现成的安装包。
+PsychoPy 用于（默认）psycho 后端。根据您的操作系统和 Python 版本，PsychoPy 可能无法正确安装。如果出现这种情况，请在支持论坛寻求帮助，或使用预制的安装包/安装程序。
 
 ```bash
 pip install psychopy psychopy_sounddevice psychopy_visionscience 
@@ -109,34 +105,32 @@ Expyriment 用于 xpyriment 后端
 pip install http://files.cogsci.nl/expyriment-0.10.0+opensesame2-py3-none-any.whl 
 ```
 
-安装所有软件包后，您可以通过以下命令直接运行 OpenSesame：
+安装所有包后，只需运行以下命令即可启动 OpenSesame：
 
 ```bash
 opensesame
 ```
 
-或运行 Sigmund Analyst（代码编辑器）：
+对于 Sigmund Analyst（代码编辑器）：
 
 ```bash
 sigmund-analyst
 ```
 
-
 ### Anaconda（跨平台）
 
-首先，为 OpenSesame 创建一个新的 Python 环境（可选）
+首先，为 OpenSesame 创建一个新的 Python 环境（可选）：
 
 ```bash
 conda create -n opensesame-41 python=3.13
 conda activate opensesame-41
 ```
 
-接下来，按照上述 PyPi 安装说明操作。不再单独提供 Anaconda 包。
-
+然后，按照上方 PyPi 安装说明操作。不再单独提供 Anaconda 安装包。
 
 ### 旧版本
 
-旧版本可从 GitHub releases 下载：
+旧版本可从 GitHub 发布页面下载：
 
 - <https://github.com/open-cogsci/OpenSesame/releases>
 

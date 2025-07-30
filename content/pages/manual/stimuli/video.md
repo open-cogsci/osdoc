@@ -5,13 +5,7 @@ title: Video playback
 
 ## media_player_mpy plugin
 
-The MEDIA_PLAYER_MPY plugin is based on MoviePy. It is included by default with the Windows and Mac OS packages of OpenSesame. If it is not installed, you can get it by installing the `opensesame-plugin-media-player-mpy` package, as described here:
-
-- <https://rapunzel.cogsci.nl/manual/environment/>
-
-The source code is hosted at:
-
-- <https://github.com/dschreij/opensesame-plugin-mediaplayer>
+The [MEDIA_PLAYER_MPY](https://github.com/open-cogsci/opensesame-plugin-mediaplayer) plugin is based on MoviePy. It is included by default with OpenSesame. (If you have a custom environment, you can get it by installing the `opensesame-plugin-media_player_mpy` package.)
 
 
 ## OpenCV
@@ -22,7 +16,7 @@ OpenCV is a powerful computer vision library, which contains (among many other t
 
 The following example shows how to play back a video file, while drawing a red square on top of the video. This example assumes that you're using the legacy backend.
 
-~~~ .python
+```python
 import cv2
 import numpy
 import pygame
@@ -46,4 +40,4 @@ for i in range(100):
     # Show the PyGame surface!
     exp.surface.blit(surf, (0, 0))
     pygame.display.flip()
-~~~
+```
