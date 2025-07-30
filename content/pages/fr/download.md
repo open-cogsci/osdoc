@@ -1,5 +1,5 @@
 title: Télécharger
-hash: 70d7d3aa0db9c3d49b6e9a94cd6d92a1dd50ec0dc94bc9bfc9e076703ab3dd3a
+hash: b38f65619e4c2d6695dd956ab06de9e176c145e37d2819dbaac4a0bc70eb23a5
 locale: fr
 language: French
 
@@ -14,13 +14,13 @@ function startDownload(url) {
 
 <div class="info-box" id="download-started" markdown="1" style="display:none;">
 
-<h3>Votre téléchargement devrait commencer sous peu !</h3>
+<h3>Votre téléchargement devrait commencer sous peu&nbsp;!</h3>
 
 <a role="button" class="btn btn-success btn-align-left" href="https://sigmundai.eu">
  &#128150; Abonnez-vous à SigmundAI.eu
 </a>
 
-Mieux que ChatGPT pour les questions OpenSesame. Votre abonnement de 9 €/mois soutient OpenSesame.
+Mieux que ChatGPT pour les questions sur OpenSesame. Votre abonnement à 9&nbsp;€/mois soutient OpenSesame.
 
 Cliquez <a id="click-here">ici</a> si votre téléchargement ne démarre pas.
 </div>
@@ -36,27 +36,29 @@ toc:
 --%
 
 
-## Toutes les options de téléchargement
+## Options d'installation standard
 
 La dernière version $status$ est $version$ *$codename$* ([notes de version](http://osdoc.cogsci.nl/$branch$/notes/$notes$)).
 
 
 ### Windows
 
-Le package Windows est basé sur Python 3.13 pour les systèmes 64 bits. Les installateurs et les packages `.zip` sont identiques à l’exception de la procédure d’installation. La plupart des utilisateurs téléchargent le package installateur (bouton vert).
+Le package Windows est basé sur Python 3.13 pour les systèmes 64 bits. Les packages installateur et `.zip` sont identiques, sauf pour l'installation. La plupart des utilisateurs téléchargent le package installateur (bouton vert).
 
 <a role="button" class="btn btn-success btn-align-left" onclick="startDownload('$url-windows-exe-py3$')">
-	<b>Installateur</b> Windows standard (.exe)
+	<b>Installateur</b> standard Windows (.exe)
 </a>
 
 <a role="button" class="btn btn-default btn-align-left" onclick="startDownload('$url-windows-zip-py3$')">
-	<b>Windows standard</b> sans installation requise (.zip)
+	<b>Standard</b> Windows sans installation requise (.zip)
 </a>
+
+OpenSesame est développé et testé sous Windows 11. Votre expérience peut varier sur d'autres versions de Windows.
 
 
 ### Mac OS
 
-Les packages Mac OS ne sont pas encore disponibles pour OpenSesame 4.1. Le lien ci-dessous pointe encore vers la version 4.0.
+Les packages Mac OS ne sont pas encore disponibles pour OpenSesame 4.1. Le lien de téléchargement ci-dessous pointe toujours vers la version 4.0.
 {.page-notification}
 
 <a role="button" class="btn btn-default btn-align-left" onclick="startDownload('$url-osx-dmg-x64-py3$')">
@@ -66,33 +68,36 @@ Les packages Mac OS ne sont pas encore disponibles pour OpenSesame 4.1. Le lien 
 
 ### Linux / Ubuntu
 
-Copiez-collez la ligne ci-dessous dans un terminal. Cela téléchargera et exécutera un script d’installation. Le script nécessite virtualenv, qui peut être installé sous Ubuntu avec `sudo apt install python3-venv`.
+Copiez-collez la ligne ci-dessous dans un terminal. Ceci téléchargera et exécutera un script d'installation. Le script d'installation nécessite curl et virtualenv. Sous Ubuntu, ceux-ci peuvent être installés avec `sudo apt install curl python3-venv`.
 
 ```bash
 bash <(curl -L https://github.com/open-cogsci/OpenSesame/raw/refs/heads/4.1/linux-installer.sh) --install
 ```
 
-OpenSesame est développé et testé sous Ubuntu 24.04. Le fonctionnement peut varier avec d’autres distributions Linux et versions d’Ubuntu.
+OpenSesame est développé et testé sur Ubuntu 24.04. Votre expérience peut varier sur d'autres distributions Linux et d'autres versions d'Ubuntu.
 
 
-### PyPi (multi-plateforme)
+## Options d'installation avancées
 
-Tous les paquets peuvent être installés via pip. Notez que OpenSesame s’appelle `opensesame-core` sur PyPi.
 
-Dépendances principales de OpenSesame :
+### PyPi (multiplateforme)
+
+Tous les packages peuvent être installés via pip. Notez qu'OpenSesame s'appelle `opensesame-core` sur PyPi.
+
+Dépendances principales d'OpenSesame&nbsp;:
 
 ```bash
 # Dépendances principales d'OpenSesame
 pip install --pre opensesame-core opensesame-extension-sigmund opensesame-extension-osweb opensesame-extension-updater opensesame-plugin-psychopy opensesame-plugin-media_player_mpy pygame
 ```
 
-PsychoPy pour le backend psycho (par défaut). Selon votre système d’exploitation et la version de Python, installation de PsychoPy peut échouer. Dans ce cas, demandez de l’aide sur le forum de support ou utilisez un package/installeur préparé.
+PsychoPy pour le backend psycho (par défaut). Selon votre système d'exploitation et version de Python, PsychoPy peut ne pas s'installer correctement. Si cela se produit, demandez de l'aide sur le forum de support ou utilisez l'un des packages/installateurs préfabriqués.
 
 ```bash
 pip install psychopy psychopy_sounddevice psychopy_visionscience 
 ```
 
-PyGaze pour l’oculométrie :
+PyGaze pour l'oculométrie&nbsp;:
 
 ```bash
 pip install https://github.com/smathot/PyGaze/releases/download/prerelease%2F0.8.0a3/python_pygaze-0.8.0a3-py3-none-any.whl
@@ -104,64 +109,64 @@ Expyriment pour le backend xpyriment
 pip install http://files.cogsci.nl/expyriment-0.10.0+opensesame2-py3-none-any.whl 
 ```
 
-Une fois tous les paquets installés, vous pouvez lancer OpenSesame en tapant :
+Une fois tous les packages installés, vous pouvez simplement lancer OpenSesame en exécutant&nbsp;:
 
 ```bash
 opensesame
 ```
 
-Ou pour Sigmund Analyst (éditeur de code) :
+Ou pour Sigmund Analyst (éditeur de code)&nbsp;:
 
 ```bash
 sigmund-analyst
 ```
 
 
-### Anaconda (multi-plateforme)
+### Anaconda (multiplateforme)
 
-D’abord, créez un nouvel environnement Python pour OpenSesame (optionnel) :
+Créez d'abord un nouvel environnement Python pour OpenSesame (optionnel)
 
 ```bash
 conda create -n opensesame-41 python=3.13
 conda activate opensesame-41
 ```
 
-Ensuite, suivez les instructions d’installation PyPi ci-dessus. Des paquets Anaconda spécifiques ne sont plus proposés.
+Ensuite, suivez les instructions d'installation PyPi ci-dessus. Des packages Anaconda dédiés ne sont plus fournis.
 
 
-### Versions précédentes
+### Versions antérieures
 
-Les versions précédentes peuvent être téléchargées depuis les publications GitHub :
+Les anciennes versions peuvent être téléchargées depuis les releases GitHub&nbsp;:
 
 - <https://github.com/open-cogsci/OpenSesame/releases>
 
 
 ### Code source
 
-Le code source d’OpenSesame est disponible sur [GitHub](https://github.com/open-cogsci/OpenSesame).
+Le code source d'OpenSesame est disponible sur [GitHub](https://github.com/open-cogsci/OpenSesame).
 
 
 ## Conseils
 
 
-### Quelle version de Python utiliser ?
+### Quelle version de Python utiliser ?
 
-OpenSesame est actuellement développé et testé avec Python 3.13. D'autres versions de Python >=3.10 fonctionnent mais ne sont pas testées de manière approfondie. Python 2 n'est plus pris en charge. La dernière version qui incluait un paquet Python 2 était la 3.3.12, qui peut encore être téléchargée depuis l'[archive des versions](https://github.com/open-cogsci/OpenSesame/releases/tag/release%2F3.3.12).
+OpenSesame est actuellement développé et testé avec Python 3.13. D’autres versions de Python >=3.10 fonctionnent mais ne sont pas testées de manière approfondie. Python 2 n’est plus pris en charge. La dernière version incluant un package Python 2 était la 3.3.12, toujours disponible dans l’[archive des versions](https://github.com/open-cogsci/OpenSesame/releases/tag/release%2F3.3.12).
 
 
 ### Quand (ne pas) mettre à jour ?
 
-- Mettez à jour pendant le développement et les tests de votre expérience ; il est toujours préférable d'utiliser la dernière version d'OpenSesame.
-- Ne mettez pas à jour pendant que vous exécutez une expérience ; c'est-à-dire ne mettez pas à jour pendant la collecte des données.
-- Exécutez une expérience avec la même version d'OpenSesame que celle utilisée pour le développement et les tests.
+- Mettez à jour pendant le développement et les tests de votre expérience ; il est toujours préférable d’utiliser la dernière version d’OpenSesame.
+- Ne mettez pas à jour pendant que vous exécutez une expérience ; c’est-à-dire, ne mettez pas à jour pendant la collecte de données.
+- Exécutez une expérience avec la même version d’OpenSesame que celle utilisée pour le développement et les tests.
 
 
-### Mise à jour manuelle des paquets
+### Mise à niveau manuelle des packages
 
 OpenSesame est un environnement Python classique, et vous pouvez exécuter des commandes `pip install` dans la console Jupyter.
 
 
-### Conseils pour les administrateurs systèmes
+### Conseils pour les administrateurs système
 
-- Lorsqu'une nouvelle version majeure d'OpenSesame est publiée (avec un numéro se terminant par 0, par exemple 3.1.0), elle est généralement suivie rapidement d'une ou deux versions de maintenance (par exemple 3.1.1 et 3.1.2) qui corrigent des bugs importants. Par conséquent, si vous installez OpenSesame sur des systèmes que vous ne mettez pas à jour fréquemment, il est recommandé d'attendre la deuxième ou la troisième version de maintenance (par exemple 3.0.2, 3.1.3, etc.). De cette façon, vous minimisez le risque de déployer une version d'OpenSesame contenant des bugs majeurs.
-- L'installeur Windows vous permet d'installer OpenSesame silencieusement grâce à l'option `/S`.
+- Lorsqu’une nouvelle version majeure d’OpenSesame est publiée (avec un numéro de version se terminant par 0, par exemple 3.1.0), elle est généralement suivie rapidement d’une ou deux versions de maintenance (par exemple 3.1.1 et 3.1.2) qui corrigent des bugs majeurs. Par conséquent, si vous installez OpenSesame sur des systèmes que vous ne mettez pas à jour fréquemment, il est préférable d’attendre la deuxième ou troisième version de maintenance (par exemple 3.0.2, 3.1.3, etc.). Ainsi, vous minimisez le risque de déployer une version d’OpenSesame contenant des bugs majeurs.
+- L’installateur Windows permet d’installer OpenSesame silencieusement à l’aide du paramètre `/S`.

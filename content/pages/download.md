@@ -33,7 +33,7 @@ toc:
 --%
 
 
-## All download options
+## Standard installation options
 
 The latest $status$ version is $version$ *$codename$* ([release notes](http://osdoc.cogsci.nl/$branch$/notes/$notes$)).
 
@@ -50,6 +50,8 @@ The Windows package is based on Python 3.13 for 64 bit systems. The installer an
 	<b>Standard</b> Windows no installation required (.zip)
 </a>
 
+OpenSesame is developed and tested on Windows 11. Your mileage may vary on other versions of Windows.
+
 
 ### Mac OS
 
@@ -63,13 +65,16 @@ Mac OS packages are not yet available for OpenSesame 4.1. The download link belo
 
 ### Linux / Ubuntu
 
-Copy-paste the line below into a terminal. This will download and run an installation script. The installation script requires virtualenv, which on Ubuntu can be installed this with `sudo apt install python3-venv`.
+Copy-paste the line below into a terminal. This will download and run an installation script. The installation script requires curl and virtualenv. On Ubuntu these can be installed with `sudo apt install curl python3-venv`.
 
 ```bash
 bash <(curl -L https://github.com/open-cogsci/OpenSesame/raw/refs/heads/4.1/linux-installer.sh) --install
 ```
 
-OpenSesame is developed and tested on Ubuntu 24.04. Your mileage may vary on other Linux distrubtions and other versions Ubuntu.
+OpenSesame is developed and tested on Ubuntu 24.04. Your mileage may vary on other Linux distrubtions and other versions of Ubuntu.
+
+
+## Advanced installation options
 
 
 ### PyPi (crossplatform)
