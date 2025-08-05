@@ -55,12 +55,15 @@ OpenSesame is developed and tested on Windows 11. Your mileage may vary on other
 
 ### Mac OS
 
-Mac OS packages are not yet available for OpenSesame 4.1. The download link below still points towards 4.0.
-{.page-notification}
+When you start OpenSesame for the first time, it is blocked by the operating system because the app is not from a trusted developer. You will find an 'Open anyway' option under Settings > Privacy & Security. This option appears after the app is blocked.
+
 
 <a role="button" class="btn btn-default btn-align-left" onclick="startDownload('$url-osx-dmg-x64-py3$')">
 	Mac OS package (.dmg)
 </a>
+
+OpenSesame is developed and tested on Mac OS X Sequoia. Your mileage may vary on other versions of Mac OS X.
+
 
 
 ### Linux / Ubuntu
