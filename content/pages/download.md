@@ -40,8 +40,6 @@ The latest $status$ version is $version$ *$codename$* ([release notes](http://os
 
 ### Windows
 
-The Windows package is based on Python 3.13 for 64 bit systems. The installer and `.zip` packages are identical, except for the installation. Most people download the installer package (green button).
-
 <a role="button" class="btn btn-success btn-align-left" onclick="startDownload('$url-windows-exe-py3$')">
 	<b>Standard</b> Windows installer (.exe)
 </a>
@@ -50,20 +48,20 @@ The Windows package is based on Python 3.13 for 64 bit systems. The installer an
 	<b>Standard</b> Windows no installation required (.zip)
 </a>
 
-OpenSesame is developed and tested on Windows 11. Your mileage may vary on other versions of Windows.
+Most people download the `.exe` installer package. If you do not have admin privileges, or if you need to run multiple versions of OpenSesame side by side, download the `.zip` package instead.
+
+Based on Python 3.13 for 64 bit systems. Tested on Windows 11.
 
 
 ### Mac OS
 
-When you start OpenSesame for the first time, it is blocked by the operating system because the app is not from a trusted developer. You will find an 'Open anyway' option under Settings > Privacy & Security. This option appears after the app is blocked.
-
-
-<a role="button" class="btn btn-default btn-align-left" onclick="startDownload('$url-osx-dmg-x64-py3$')">
+<a role="button" class="btn btn-success btn-align-left" onclick="startDownload('$url-osx-dmg-x64-py3$')">
 	Mac OS package (.dmg)
 </a>
 
-OpenSesame is developed and tested on Mac OS X Sequoia. Your mileage may vary on other versions of Mac OS X.
+When you start OpenSesame for the first time, it is blocked by the operating system because the app is not from a trusted developer. You will find an 'Open anyway' option under Settings > Privacy & Security. This option appears after the app is blocked.
 
+Based on Python 3.13 for 64 bit intel systems. Tested on Mac OS X Sequoia.
 
 
 ### Linux / Ubuntu
@@ -74,7 +72,7 @@ Copy-paste the line below into a terminal. This will download and run an install
 bash <(curl -L https://github.com/open-cogsci/OpenSesame/raw/refs/heads/4.1/linux-installer.sh) --install
 ```
 
-OpenSesame is developed and tested on Ubuntu 24.04. Your mileage may vary on other Linux distributions and other versions of Ubuntu.
+Tested on Ubuntu 24.04 (Python 3.12).
 
 
 ## Advanced installation options
