@@ -17,7 +17,7 @@ function startDownload(url) {
  &#128150; Subscribe to SigmundAI.eu
 </a>
 
-Better than ChatGPT for OpenSesame questions. Your €9/month subscription supports OpenSesame.
+Your AI-copilot for OpenSesame. Your €9/month subscription supports OpenSesame.
 
 Click <a id="click-here">here</a> if your download doesn't start.
 </div>
@@ -66,9 +66,14 @@ Based on Python 3.13 for 64 bit intel systems. Tested on Mac OS X Sequoia.
 
 ### Linux / Ubuntu
 
-Copy-paste the line below into a terminal. This will download and run an installation script. The installation script requires curl and virtualenv. On Ubuntu these can be installed with `sudo apt install curl python3-venv`.
+Copy-paste the lines below into a terminal. This will download and run an installation script.
 
 ```bash
+# These packages need to be installed on Ubuntu 24.04.
+# Equivalent packages need to be installed on other
+# Linux distributions.
+sudo apt install curl python3-venv libxcb-cursor0
+# Download and run the OpenSesame installation script.
 bash <(curl -L https://github.com/open-cogsci/OpenSesame/raw/refs/heads/4.1/linux-installer.sh) --install
 ```
 
