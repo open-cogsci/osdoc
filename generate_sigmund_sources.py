@@ -5,11 +5,10 @@ Processes markdown files, extracts metadata, determines topics, and chunks conte
 
 from pathlib import Path
 import re
-import os
 import json
 import tiktoken
 from typing import List, Dict
-from langchain_community.chat_models import ChatOpenAI
+from sigmund import static
 from datamatrix import functional as fnc
 from publishconf import SITEURL
 
@@ -35,13 +34,10 @@ FOUNDATION_DOCUMENTS = {
     'inline_javascript': 'sigmund/inline_javascript.js',
 }
 EXTRA_DOCUMENTS = []
+MODEL = 'gpt-5'
 
 # Initialize tokenizer for GPT models
 tokenizer = tiktoken.encoding_for_model("gpt-3.5-turbo")
-
-# LLM setup
-openai_api_key = os.environ['OPENAI_API_KEY']
-llm = ChatOpenAI(model='gpt-4.1', openai_api_key=openai_api_key)
 
 
 def process_includes(content: str, base_path: Path) -> str:
@@ -87,8 +83,7 @@ def detect_secondary_topic(content: str, title: str) -> List[str]:
     topic_descriptions = '\n'.join([
         f"- {topic}: {description}"
         for topic, description in SECONDARY_TOPICS.items()
-    ])
-    
+    ])    
     prompt = f"""Given the following documentation page title and content, determine which secondary topic(if any) is most appropriate.
 
 Title: {title}
@@ -101,7 +96,7 @@ Available secondary topics:
 
 Reply with ONLY a comma-separated list of all topic names that clearly apply, or 'none' if no secondary topic is appropriate."""
     
-    response = llm.predict(prompt).strip().lower()
+    response = static.predict(prompt, model=MODEL).strip().lower()
     
     # Parse the response and filter valid topics
     topics = []
@@ -221,49 +216,45 @@ def main():
         
         print(f'\n--- Processing: {path} ---')
         
-        try:
-            # Process include directives
-            content = process_includes(content, Path('.'))
+        # Process include directives
+        content = process_includes(content, Path('.'))
+        
+        # Extract basic metadata
+        metadata = extract_metadata(path, content)
+        print(f"Title: {metadata['title']}")
+        print(f"URL: {metadata['url']}")
+        
+        # Determine topics
+        topics = [DEFAULT_TOPIC]
+        
+        # Detect secondary topics if any are defined
+        if SECONDARY_TOPICS:
+            secondary_topics = detect_secondary_topic(content, metadata['title'])
+            if secondary_topics:
+                topics += secondary_topics
+                print(f"Secondary topics detected: {secondary_topics}")
+        
+        metadata['topics'] = topics
+        metadata['collection'] = COLLECTION
+        metadata['foundation'] = False
+        metadata['howto'] = False
+        
+        # Chunk the content
+        chunks = chunk_markdown_by_tokens(content)
+        print(f"Split into {len(chunks)} chunks")
+        
+        # Create document for each chunk
+        for i, chunk in enumerate(chunks):
+            chunk_metadata = metadata.copy()
+            chunk_metadata['chunk'] = i + 1
+            chunk_metadata['total_chunks'] = len(chunks)
             
-            # Extract basic metadata
-            metadata = extract_metadata(path, content)
-            print(f"Title: {metadata['title']}")
-            print(f"URL: {metadata['url']}")
+            # Add title to chunk content
+            chunk_content = f"# {metadata['title']}\n\n{chunk}"
             
-            # Determine topics
-            topics = [DEFAULT_TOPIC]
+            documents.append(create_document(chunk_content, chunk_metadata))
+            print(f"  Chunk {i+1}: {count_tokens(chunk_content)} tokens")
             
-            # Detect secondary topics if any are defined
-            if SECONDARY_TOPICS:
-                secondary_topics = detect_secondary_topic(content, metadata['title'])
-                if secondary_topics:
-                    topics += secondary_topics
-                    print(f"Secondary topics detected: {secondary_topics}")
-            
-            metadata['topics'] = topics
-            metadata['collection'] = COLLECTION
-            metadata['foundation'] = False
-            metadata['howto'] = False
-            
-            # Chunk the content
-            chunks = chunk_markdown_by_tokens(content)
-            print(f"Split into {len(chunks)} chunks")
-            
-            # Create document for each chunk
-            for i, chunk in enumerate(chunks):
-                chunk_metadata = metadata.copy()
-                chunk_metadata['chunk'] = i + 1
-                chunk_metadata['total_chunks'] = len(chunks)
-                
-                # Add title to chunk content
-                chunk_content = f"# {metadata['title']}\n\n{chunk}"
-                
-                documents.append(create_document(chunk_content, chunk_metadata))
-                print(f"  Chunk {i+1}: {count_tokens(chunk_content)} tokens")
-                
-        except Exception as e:
-            print(f"Error processing {path}: {e}")
-            continue
         
     # Process foundation documents
     for topic, path in FOUNDATION_DOCUMENTS.items():
