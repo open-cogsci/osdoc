@@ -1,32 +1,38 @@
 title: Tobii
-hash: a383da57d44200882bf0aa52f84f681e06fecc7982e5a785150b5372d2d75259
+hash: b29e3b34f4a2f2600b95bc2d17497c21e352fb3a5834b0f4061bd6cd27e4e3dd
 locale: zh
 language: Chinese
 
-PyGaze为Tobii眼球追踪器提供*试验性*支持。
+## 安装 Tobii research
 
-`tobii-research`是支持Tobii的Python库。截至2023年7月，`tobii-research`需要Python 3.10，而OpenSesame默认使用Python 3.11。因此，在`tobii-research`升级至Python 3.11之前，通过Anaconda构建Python 3.10环境来安装含有Tobii支持的OpenSesame是最简单的方法。
+`tobii-research` 是用于 Tobii 支持的 Python 库。目前，`tobii-research` 仅支持 Python 3.10 及更早版本，而 OpenSesame 的标准软件包是基于 Python 3.13 构建的。因此，你必须使用来自 [GitHub releases](https://github.com/open-cogsci/OpenSesame/releases) 的 OpenSesame Python 3.10（或更早版本）软件包。
 
-这听起来很复杂，但实际上并不难。首先，阅读在下载页面上描述的通过Anaconda安装OpenSesame的一般步骤：
-
-- %link:download%
-
-接下来，理解了一般步骤后，开始创建一个Python 3.10环境，继续按照下载页面的说明进行，然后安装`tobii-research`：
+接下来，可以安装 `tobii-research`：
 
 ```
-# 首先，创建一个Python 3.10环境
-conda create -n opensesame-py3 python=3.10
-conda activate opensesame-py3
-# 现在按照下载页面的说明进行
-# ...
-# 然后安装Tobii支持
 pip install tobii-research
-# 现在启动OpenSesame！
-opensesame
 ```
 
-若想获得更多信息，请参见：
+更多信息，请参见：
+
+- <http://www.tobii.com/en/eye-tracking-research/global/>
+
+
+## PyGaze
+
+安装完 `tobii-research` 后，你就可以在 PyGaze 中使用 Tobii 了！参见：
 
 - %link:pygaze%
-- <https://rapunzel.cogsci.nl/manual/environment/>
-- <http://www.tobii.com/en/eye-tracking-research/global/>
+
+
+## Titta 眼动追踪插件
+
+Bob Rosbag、Diederick C. Niehorster 和 Marcus Nyström 为 OpenSesame 开发了他们自己的 Tobii 插件。这些插件在某种程度上与 PyGaze 插件类似，但提供了 PyGaze 中不具备的一些功能，并且可能更为稳定。要安装这些插件，请运行：
+
+```
+pip install opensesame-plugin-titta-eyetracking
+```
+
+更多信息，请访问：
+
+- <https://github.com/dev-jam/opensesame-plugin-titta_eyetracking>

@@ -1,67 +1,81 @@
 title: Eyelink
-hash: 795cf5b31d90084e4fe773cb7002ad511f76aa023cfef172927e5544fd44ed44
+hash: 446281a464dd40eabe3f55f650572a8894359598a77c99f0c8eb20fe31cad1fc
 locale: fr
 language: French
 
 [TOC]
 
-## A propos d'EyeLink
+## À propos de EyeLink
 
-La série des eye-trackers EyeLink, produite par SR Research, est l'une des plus couramment utilisées dans la recherche en psychologie. SR Research fournit des liaisons Python pour l'EyeLink (appelé PyLink), qui sont utilisées par PyGaze. La licence de PyLink est incompatible avec la licence utilisée par OpenSesame. Pour cette raison, PyLink n'est pas inclus dans la distribution par défaut d'OpenSesame et doit être installé séparément.
+La série de trackers oculaires EyeLink, produite par SR Research, sont parmi les trackers oculaires les plus couramment utilisés en recherche psychologique. SR Research fournit des liaisons Python pour EyeLink (appelées PyLink), qui sont utilisées par PyGaze. La licence de PyLink est incompatible avec la licence utilisée par OpenSesame. Pour cette raison, PyLink n’est pas inclus dans la distribution par défaut d’OpenSesame et doit être installé séparément.
+
 
 ## Windows
 
-### Installation du kit de développement EyeLink
+### Installer le EyeLink Developers Kit
 
-Le kit de développement EyeLink (parfois appelé logiciel d'affichage) fournit les bibliothèques nécessaires pour communiquer avec le PC EyeLink. Vous pouvez le trouver ici (inscription gratuite requise) :
+Le EyeLink Developers Kit (parfois appelé Display Software) fournit les bibliothèques nécessaires pour communiquer avec le PC EyeLink. Vous pouvez le trouver ici (inscription gratuite requise) :
 
 - <https://www.sr-research.com/support/thread-13.html>
 
-Si vous extrayez le fichier `.zip`, puis exécutez l'installateur `.exe`, l'affichage EyeLink sera installé dans l'un des dossiers suivants (selon votre version de Windows) :
+Si vous extrayez le fichier `.zip`, puis exécutez le programme d’installation `.exe`, l’affichage EyeLink sera installé dans l’un des dossiers suivants (selon votre version de Windows) :
 
 ```
 C:\Program Files\SR Research\EyeLink\
 C:\Program Files (x86)\SR Research\EyeLink
 ```
 
-Dans ce dossier, il y a un sous-dossier `libs`, que vous devez ajouter au chemin d'accès système (cela a peut-être été ajouté au chemin d'accès automatiquement, mais vérifiez pour vous en assurer). Vous pouvez le faire en ouvrant "Mon Ordinateur", en cliquant sur "Voir les informations système", en ouvrant l'onglet "Avancé", en cliquant sur "Variables d'environnement" et en ajoutant `;C:\Program Files\SR Research\EyeLink\libs` ou (selon votre système) `;C:\Program Files (x86)\SR Research\EyeLink\libs` à la variable Path (sous Variables système).
+Dans ce dossier, il y a un sous-dossier `libs`, que vous devez ajouter au Path du système (cela a peut-être déjà été ajouté automatiquement, mais vérifiez pour être sûr). Pour cela, ouvrez "Poste de travail", cliquez sur "Afficher les informations système", ouvrez l’onglet "Avancé", cliquez sur "Variables d’environnement" et ajoutez `;C:\Program Files\SR Research\EyeLink\libs` ou (selon votre système) `;C:\Program Files (x86)\SR Research\EyeLink\libs` à la variable Path (sous Variables système).
 
-### Installation d'OpenSesame avec PyLink
 
-PyLink est la bibliothèque Python pour le support EyeLink. En juillet 2023, PyLink prend en charge les versions Python jusqu'à 3.10, tandis qu'OpenSesame utilise par défaut Python 3.11. Par conséquent, jusqu'à ce que Pylink soit mis à jour pour Python 3.11, le moyen le plus simple d'installer OpenSesame avec Pylink est de créer un environnement Python 3.10 via Anaconda.
+### Installer OpenSesame avec PyLink
 
-Cela peut sembler compliqué, mais ça ne l'est vraiment pas. Pour ce faire, commencez par lire la procédure générale pour installer OpenSesame via Anaconda comme décrit sur la page Téléchargements :
+`pylink` est la bibliothèque Python pour la compatibilité EyeLink. Actuellement, `pylink` ne prend en charge que Python 3.12 et les versions antérieures, tandis que les packages standards d’OpenSesame sont construits avec Python 3.13. Par conséquent, vous devez utiliser le package OpenSesame avec Python 3.12 (ou antérieur) disponible sur [GitHub releases](https://github.com/open-cogsci/OpenSesame/releases).
 
-- %link:download%
-
-Ensuite, une fois que vous comprenez la procédure générale, commencez par créer un environnement Python 3.10, continuez avec les instructions de la page Téléchargements, puis installez PyLink :
+Ensuite, `pylink` peut être installé à partir du dépôt PyPi de SR Research via `pip install` :
 
 ```
 pip install --index-url=https://pypi.sr-research.com sr-research-pylink
 ```
 
-Vous pouvez trouver plus d'informations sur PyLink sur le forum de SR Research (inscription gratuite requise) :
+Important : ne tentez *pas* d’installer `pylink` en exécutant `pip install pylink`. Cela installerait un tout autre package !
+
+Vous pouvez trouver plus d’informations sur `pylink` sur le forum SR Research (inscription gratuite requise) :
 
 - <https://www.sr-research.com/support/thread-8291.html>
 
 
 ## Ubuntu
 
-Le logiciel d'affichage EyeLink peut être installé directement à partir d'un dépôt. Ceci installe également PyLink et divers outils pratiques comme le convertisseur `edf2asc`.
+Le logiciel d’affichage EyeLink peut être installé directement depuis un dépôt. Cela installe également PyLink et divers outils utiles, tels que le convertisseur `edf2asc`.
 
 ```bash
-sudo add-apt-repository "deb http://download.sr-support.com/software SRResearch main"
+sudo add-apt-repository 'deb [arch=amd64] https://apt.sr-research.com SRResearch main'
+sudo apt-key adv --fetch-keys https://apt.sr-research.com/SRResearch_key
 sudo apt-get update
 sudo apt-get install eyelink-display-software
 ```
 
-Pour plus d'informations, veuillez visiter :
+Pour plus d’informations, veuillez consulter :
 
 - <https://www.sr-support.com/thread-13.html>
 
 
 ## PyGaze
 
-Une fois que vous avez installé le logiciel d'affichage EyeLink et PyLink selon les instructions ci-dessus, vous pouvez utiliser l'EyeLink avec PyGaze ! Voir :
+Après avoir installé le logiciel d’affichage EyeLink et PyLink selon les instructions ci-dessus, vous pouvez utiliser EyeLink avec PyGaze ! Voir :
 
 - %link:pygaze%
+
+
+## Plugin eyelink SR Research
+
+SR Research propose également leurs propres plug-ins EyeLink pour OpenSesame. Ceux-ci sont assez similaires (et à l’origine basés sur) les plugins PyGaze, mais offrent quelques fonctionnalités qui ne sont pas disponibles via PyGaze. Pour installer ces plug-ins, exécutez :
+
+```
+pip install opensesame-plugin-eyelink
+```
+
+Pour plus d’informations, veuillez consulter :
+
+- <https://www.sr-research.com/support/thread-52.html>
