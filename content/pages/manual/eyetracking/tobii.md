@@ -1,29 +1,35 @@
 title: Tobii
 
-PyGaze offers *experimental* support for Tobii eye trackers.
+## Installing Tobii research
 
-`tobii-research` is the Python library for Tobii support. As of July 2023, `tobii-research` requires Python 3.10, whereas OpenSesame by default uses Python 3.11. Therefore, until `tobii-research` is updated for Python 3.11, the easiest way to install OpenSesame with Tobii support is by building a Python 3.10 environment through Anaconda.
+`tobii-research` is the Python library for Tobii support. Currently, `tobii-research` only supports Python 3.10 and earlier, whereas the standard packages of OpenSesame are built with Python 3.13. Therefore, you must use the Python 3.10 (or earlier) package of OpenSesame from [GitHub releases](https://github.com/open-cogsci/OpenSesame/releases).
 
-This sounds complicated, but it is really not. To do so, first read the general procedure for installing OpenSesame through Anaconda as described on the Downloads page:
-
-- %link:download%
-
-Next, once you understand the general procedure, start by creating a Python 3.10 environment, continue with the instructions from the Downloads page, and then install `tobii-research`:
+Next, `tobii-research` can be installed:
 
 ```
-# Start by creating a Python 3.10 environment
-conda create -n opensesame-py3 python=3.10
-conda activate opensesame-py3
-# Now follow the instructions from the downloads page
-# ...
-# Then install Tobii support
 pip install tobii-research
-# And now launch OpenSesame!
-opensesame
 ```
 
 For more information, see:
 
-- %link:pygaze%
-- <https://rapunzel.cogsci.nl/manual/environment/>
 - <http://www.tobii.com/en/eye-tracking-research/global/>
+
+
+## PyGaze
+
+After you have install `tobii-research`, you can use Tobii with PyGaze! See:
+
+- %link:pygaze%
+
+
+## Titta eye-tracking plugin
+
+Bob Rosbag, Diederick C. Niehorster & Marcus Nyström have developed their own Tobii plug-ins for OpenSesame. These are somewhat similar to the PyGaze plugins, but offer some functionality that is not available through PyGaze, and may also be more stable. To install these plugins, run:
+
+```
+pip install opensesame-plugin-titta-eyetracking
+```
+
+For more information, please visit:
+
+- <https://github.com/dev-jam/opensesame-plugin-titta_eyetracking>

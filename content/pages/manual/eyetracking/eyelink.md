@@ -27,13 +27,17 @@ In this folder, there is a `libs` subfolder, which you need to add to the system
 
 ### Installing OpenSesame with PyLink
 
-PyLink is the Python library for EyeLink support. PyLink can be installed from the SR Research PyPi repository through `pip install`:
+`pylink` is the Python library for EyeLink support. Currently, `pylink` only supports Python 3.12 and earlier, whereas the standard packages of OpenSesame are built with Python 3.13. Therefore, you must use the Python 3.12 (or earlier) package of OpenSesame from [GitHub releases](https://github.com/open-cogsci/OpenSesame/releases).
+
+Next, `pylink` can be installed from the SR Research PyPi repository through `pip install`:
 
 ```
 pip install --index-url=https://pypi.sr-research.com sr-research-pylink
 ```
 
-You can find more information about PyLink on the SR Research forum (free registration required):
+Important: do *not* try to install `pylink` by running `pip install pylink`. Doing so will install a completely different package!
+
+You can find more information about `pylink` on the SR Research forum (free registration required):
 
 - <https://www.sr-research.com/support/thread-8291.html>
 
@@ -59,3 +63,16 @@ For more information, please visit:
 After you have install the EyeLink display software and PyLink per the instructions above, you can use the EyeLink with PyGaze! See:
 
 - %link:pygaze%
+
+
+## SR Research eyelink plugin
+
+SR Research also provides their own EyeLink plug-ins for OpenSesame. These are somewhat similar to (and originally based on) the PyGaze plugins, but offer some functionality that is not available through PyGaze. To install these plugins, run:
+
+```
+pip install opensesame-plugin-eyelink
+```
+
+For more information, please visit:
+
+- <https://www.sr-research.com/support/thread-52.html>

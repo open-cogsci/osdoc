@@ -52,6 +52,8 @@ Most people download the `.exe` installer package. If you do not have admin priv
 
 Based on Python 3.13 for 64 bit systems. Tested on Windows 11.
 
+Some external devices, such as [EyeLink](%url:eyelink%) and [Tobii](%url:tobii%) eye trackers, require a different version of Python. Visit the respective documentation pages for more information.
+
 
 ### Mac OS
 
@@ -62,6 +64,8 @@ Based on Python 3.13 for 64 bit systems. Tested on Windows 11.
 When you start OpenSesame for the first time, it is blocked by the operating system because the app is not from a trusted developer. You will find an 'Open anyway' option under Settings > Privacy & Security. This option appears after the app is blocked.
 
 Based on Python 3.13 for 64 bit intel systems. Tested on Mac OS X Sequoia.
+
+Some external devices, such as [EyeLink](%url:eyelink%) and [Tobii](%url:tobii%) eye trackers, require a different version of Python. Visit the respective documentation pages for more information.
 
 
 ### Linux / Ubuntu
@@ -133,14 +137,15 @@ conda create -n opensesame-41 python=3.13
 conda activate opensesame-41
 ```
 
-Next, follow the PyPi installation instructtions above. Dedicated Anaconda packages are no longer provided.
+Next, follow the PyPi installation instructions above. Dedicated Anaconda packages are no longer provided.
 
 
-### Older versions
+### Older versions of OpenSesame and other Python versions
 
-Older versions can be downloaded from GitHub releases:
+Older versions of OpenSesame as well as packages built with different versions of Python (3.10, 3.11, and 3.12) are available on GitHub releases:
 
 - <https://github.com/open-cogsci/OpenSesame/releases>
+
 
 
 ### Source code
