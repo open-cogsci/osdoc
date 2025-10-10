@@ -1,5 +1,5 @@
 title: Télécharger
-hash: e832cf1e1be9442432bd3d542053f2fe1b63fb4c9693f37b64cda1907e87dba6
+hash: 0057d1f73dae2a2590e1f0e03dfe7d984bdf6d67622188a9eb35e2cb08646b28
 locale: fr
 language: French
 
@@ -14,13 +14,13 @@ function startDownload(url) {
 
 <div class="info-box" id="download-started" markdown="1" style="display:none;">
 
-<h3>Votre téléchargement devrait commencer sous peu&nbsp;!</h3>
+<h3>Votre téléchargement devrait commencer sous peu !</h3>
 
 <a role="button" class="btn btn-success btn-align-left" href="https://sigmundai.eu">
- &#128150; Abonnez-vous à SigmundAI.eu
+ &#128150; S’abonner à SigmundAI.eu
 </a>
 
-Votre copilote IA pour OpenSesame. Votre abonnement à 9&nbsp;€/mois soutient OpenSesame.
+Votre copilote IA pour OpenSesame. Votre abonnement à 9 €/mois soutient OpenSesame.
 
 Cliquez <a id="click-here">ici</a> si votre téléchargement ne démarre pas.
 </div>
@@ -44,18 +44,18 @@ La dernière version $status$ est $version$ *$codename$* ([notes de version](htt
 ### Windows
 
 <a role="button" class="btn btn-success btn-align-left" onclick="startDownload('$url-windows-exe-py3$')">
-	<b>Installateur standard</b> Windows (.exe)
+	<b>Installateur</b> Windows standard (.exe)
 </a>
 
 <a role="button" class="btn btn-default btn-align-left" onclick="startDownload('$url-windows-zip-py3$')">
-	<b>Standard</b> Windows sans installation requise (.zip)
+	<b>Windows standard</b> sans installation requise (.zip)
 </a>
 
-La plupart des utilisateurs téléchargent le paquet d'installation `.exe`. Si vous n'avez pas de droits administrateur, ou si vous devez exécuter plusieurs versions d'OpenSesame en parallèle, téléchargez plutôt le paquet `.zip`.
+La plupart des utilisateurs téléchargent le package d'installation `.exe`. Si vous n'avez pas de droits administrateur, ou si vous souhaitez exécuter plusieurs versions de OpenSesame côte à côte, téléchargez plutôt le package `.zip`.
 
-Basé sur Python 3.13 pour les systèmes 64 bits. Testé sous Windows 11.
+Basé sur Python 3.13 pour systèmes 64 bits. Testé sur Windows 11.
 
-Certains périphériques externes, tels que les oculomètres [EyeLink](%url:eyelink%) et [Tobii](%url:tobii%), nécessitent une version différente de Python. Consultez les pages de documentation respectives pour plus d'informations.
+Certains appareils externes, tels que les eye trackers [EyeLink](%url:eyelink%) et [Tobii](%url:tobii%), nécessitent une autre version de Python. Consultez les pages de documentation respectives pour plus d'informations.
 
 
 ### Mac OS
@@ -64,11 +64,11 @@ Certains périphériques externes, tels que les oculomètres [EyeLink](%url:eyel
 	Paquet Mac OS (.dmg)
 </a>
 
-Lorsque vous lancez OpenSesame pour la première fois, il est bloqué par le système d'exploitation car l'application ne provient pas d'un développeur de confiance. Vous trouverez une option «&nbsp;Ouvrir quand même&nbsp;» dans Réglages&nbsp;> Confidentialité et sécurité. Cette option apparaît après que l'application ait été bloquée.
+Lorsque vous lancez OpenSesame pour la première fois, il est bloqué par le système d’exploitation car l’application ne provient pas d’un développeur identifié. Vous trouverez une option « Ouvrir quand même » dans Réglages > Confidentialité et sécurité. Cette option apparaît après le blocage de l’application.
 
-Basé sur Python 3.13 pour les systèmes Intel 64 bits. Testé sur Mac OS X Sequoia.
+Basé sur Python 3.13 pour systèmes intel 64 bits. Testé sur Mac OS X Sequoia.
 
-Certains périphériques externes, tels que les oculomètres [EyeLink](%url:eyelink%) et [Tobii](%url:tobii%), nécessitent une version différente de Python. Consultez les pages de documentation respectives pour plus d'informations.
+Certains appareils externes, tels que les eye trackers [EyeLink](%url:eyelink%) et [Tobii](%url:tobii%), nécessitent une autre version de Python. Consultez les pages de documentation respectives pour plus d'informations.
 
 
 ### Linux / Ubuntu
@@ -77,10 +77,10 @@ Copiez-collez les lignes ci-dessous dans un terminal. Cela téléchargera et ex�
 
 ```bash
 # Ces paquets doivent être installés sur Ubuntu 24.04.
-# Des paquets équivalents doivent être installés sur
-# d'autres distributions Linux.
-sudo apt install curl python3-venv libxcb-cursor0
-# Téléchargez et exécutez le script d'installation d'OpenSesame.
+# Des paquets équivalents doivent être installés sur les autres
+# distributions Linux.
+sudo apt install curl python3-dev python3-venv libxcb-cursor0
+# Téléchargez et lancez le script d'installation d'OpenSesame.
 bash <(curl -L https://github.com/open-cogsci/OpenSesame/raw/refs/heads/4.1/linux-installer.sh) --install
 ```
 
@@ -92,33 +92,33 @@ Testé sur Ubuntu 24.04 (Python 3.12).
 
 ### PyPi (multiplateforme)
 
-Tous les paquets peuvent être installés via pip. Notez qu'OpenSesame se nomme `opensesame-core` sur PyPi.
+Tous les paquets peuvent être installés avec pip. À noter que OpenSesame s'appelle `opensesame-core` sur PyPi.
 
-Dépendances principales d'OpenSesame&nbsp;:
+Dépendances principales d’OpenSesame :
 
 ```bash
 pip install --pre opensesame-core opensesame-extension-sigmund opensesame-extension-osweb opensesame-extension-updater opensesame-plugin-psychopy opensesame-plugin-media_player_mpy pygame
 ```
 
-PsychoPy pour le backend (par défaut) psycho. Selon votre système d’exploitation et la version de Python, PsychoPy peut ne pas s’installer correctement. Si c’est le cas, sollicitez de l’aide sur le forum d’assistance ou utilisez l’un des paquets/installeurs précompilés.
+PsychoPy pour l’arrière-plan (backend) psycho (par défaut). Selon votre système d’exploitation et la version de Python, PsychoPy peut ne pas s’installer correctement. En cas de problème, demandez de l’aide sur le forum de support ou utilisez un des installateurs ou paquets préfabriqués.
 
 ```bash
 pip install psychopy psychopy_sounddevice psychopy_visionscience 
 ```
 
-PyGaze pour l'oculométrie&nbsp;:
+PyGaze pour le suivi oculaire :
 
 ```bash
 pip install https://github.com/smathot/PyGaze/releases/download/prerelease%2F0.8.0a3/python_pygaze-0.8.0a3-py3-none-any.whl
 ```
 
-Expyriment pour le backend xpyriment
+Expyriment pour l’arrière-plan xpyriment
 
 ```bash
 pip install http://files.cogsci.nl/expyriment-0.10.0+opensesame2-py3-none-any.whl 
 ```
 
-Une fois tous les paquets installés, vous pouvez simplement lancer OpenSesame avec&nbsp;:
+Une fois tous les paquets installés, vous pouvez simplement lancer OpenSesame en exécutant :
 
 ```bash
 opensesame

@@ -76,7 +76,7 @@ Copy-paste the lines below into a terminal. This will download and run an instal
 # These packages need to be installed on Ubuntu 24.04.
 # Equivalent packages need to be installed on other
 # Linux distributions.
-sudo apt install curl python3-venv libxcb-cursor0
+sudo apt install curl python3-dev python3-venv libxcb-cursor0
 # Download and run the OpenSesame installation script.
 bash <(curl -L https://github.com/open-cogsci/OpenSesame/raw/refs/heads/4.1/linux-installer.sh) --install
 ```

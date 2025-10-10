@@ -1,5 +1,5 @@
 title: Herunterladen
-hash: e832cf1e1be9442432bd3d542053f2fe1b63fb4c9693f37b64cda1907e87dba6
+hash: 0057d1f73dae2a2590e1f0e03dfe7d984bdf6d67622188a9eb35e2cb08646b28
 locale: de
 language: German
 
@@ -20,13 +20,13 @@ function startDownload(url) {
  &#128150; Abonnieren Sie SigmundAI.eu
 </a>
 
-Ihr KI-Copilot für OpenSesame. Ihr 9 €/Monat-Abonnement unterstützt OpenSesame.
+Ihr KI-Copilot für OpenSesame. Ihr Abonnement für 9 €/Monat unterstützt OpenSesame.
 
-Klicken Sie <a id="click-here">hier</a>, falls der Download nicht automatisch startet.
+Klicken Sie <a id="click-here">hier</a>, falls Ihr Download nicht automatisch startet.
 </div>
 
 
-## Übersicht
+## Überblick
 
 %--
 toc:
@@ -38,7 +38,7 @@ toc:
 
 ## Standard-Installationsoptionen
 
-Die aktuelle $status$-Version ist $version$ *$codename$* ([Versionshinweise](http://osdoc.cogsci.nl/$branch$/notes/$notes$)).
+Die aktuellste $status$ Version ist $version$ *$codename$* ([Versionshinweise](http://osdoc.cogsci.nl/$branch$/notes/$notes$)).
 
 
 ### Windows
@@ -51,11 +51,11 @@ Die aktuelle $status$-Version ist $version$ *$codename$* ([Versionshinweise](htt
 	<b>Standard</b> Windows, keine Installation erforderlich (.zip)
 </a>
 
-Die meisten laden das `.exe`-Installationspaket herunter. Falls Sie keine Administratorrechte haben oder mehrere Versionen von OpenSesame parallel betreiben möchten, laden Sie stattdessen das `.zip`-Paket herunter.
+Die meisten Nutzer laden das `.exe`-Installationspaket herunter. Wenn Sie keine Administratorrechte haben oder mehrere Versionen von OpenSesame nebeneinander ausführen müssen, laden Sie stattdessen das `.zip`-Paket herunter.
 
-Basiert auf Python 3.13 für 64-Bit-Systeme. Getestet unter Windows 11.
+Basierend auf Python 3.13 für 64-Bit-Systeme. Getestet unter Windows 11.
 
-Manche externe Geräte wie [EyeLink](%url:eyelink%) und [Tobii](%url:tobii%) Eye-Tracker benötigen eine andere Python-Version. Weitere Informationen finden Sie auf den jeweiligen Dokumentationsseiten.
+Einige externe Geräte, wie [EyeLink](%url:eyelink%) und [Tobii](%url:tobii%) Eye-Tracker, erfordern eine andere Python-Version. Weitere Informationen finden Sie auf den jeweiligen Dokumentationsseiten.
 
 
 ### Mac OS
@@ -64,27 +64,27 @@ Manche externe Geräte wie [EyeLink](%url:eyelink%) und [Tobii](%url:tobii%) Eye
 	Mac OS-Paket (.dmg)
 </a>
 
-Bei der ersten Ausführung von OpenSesame wird die App vom Betriebssystem blockiert, da sie nicht von einem vertrauenswürdigen Entwickler stammt. Unter Einstellungen > Datenschutz & Sicherheit finden Sie danach die Option „Dennoch öffnen“. Diese erscheint, nachdem die App blockiert wurde.
+Wenn Sie OpenSesame zum ersten Mal starten, wird es vom Betriebssystem blockiert, da die App nicht von einem vertrauenswürdigen Entwickler stammt. Unter Einstellungen > Datenschutz & Sicherheit finden Sie die Option "Dennoch öffnen". Diese Option erscheint, nachdem die App blockiert wurde.
 
-Basiert auf Python 3.13 für 64-Bit-Intel-Systeme. Getestet auf Mac OS X Sequoia.
+Basierend auf Python 3.13 für 64-Bit-Intel-Systeme. Getestet unter Mac OS X Sequoia.
 
-Manche externe Geräte wie [EyeLink](%url:eyelink%) und [Tobii](%url:tobii%) Eye-Tracker benötigen eine andere Python-Version. Weitere Informationen finden Sie auf den jeweiligen Dokumentationsseiten.
+Einige externe Geräte, wie [EyeLink](%url:eyelink%) und [Tobii](%url:tobii%) Eye-Tracker, erfordern eine andere Python-Version. Weitere Informationen finden Sie auf den jeweiligen Dokumentationsseiten.
 
 
 ### Linux / Ubuntu
 
-Kopieren Sie die folgenden Zeilen und fügen Sie sie in ein Terminal ein. Damit werden das Installationsskript heruntergeladen und ausgeführt.
+Kopieren Sie die folgenden Zeilen in ein Terminal. Dadurch wird ein Installationsskript heruntergeladen und ausgeführt.
 
 ```bash
-# Diese Pakete müssen unter Ubuntu 24.04 installiert werden.
-# Entsprechende Pakete müssen auf anderen
+# Diese Pakete müssen unter Ubuntu 24.04 installiert sein.
+# Entsprechende Pakete müssen unter anderen
 # Linux-Distributionen installiert werden.
-sudo apt install curl python3-venv libxcb-cursor0
-# Installationsskript für OpenSesame herunterladen und ausführen.
+sudo apt install curl python3-dev python3-venv libxcb-cursor0
+# Installationsskript für OpenSesame herunterladen und ausführen
 bash <(curl -L https://github.com/open-cogsci/OpenSesame/raw/refs/heads/4.1/linux-installer.sh) --install
 ```
 
-Getestet auf Ubuntu 24.04 (Python 3.12).
+Getestet unter Ubuntu 24.04 (Python 3.12).
 
 
 ## Erweiterte Installationsoptionen
@@ -92,15 +92,15 @@ Getestet auf Ubuntu 24.04 (Python 3.12).
 
 ### PyPi (plattformübergreifend)
 
-Alle Pakete können mit pip installiert werden. Beachten Sie, dass OpenSesame auf PyPi `opensesame-core` heißt.
+Alle Pakete können mit pip installiert werden. Beachten Sie, dass OpenSesame bei PyPi `opensesame-core` genannt wird.
 
-OpenSesame-Core-Abhängigkeiten:
+OpenSesame Kerndependencies:
 
 ```bash
 pip install --pre opensesame-core opensesame-extension-sigmund opensesame-extension-osweb opensesame-extension-updater opensesame-plugin-psychopy opensesame-plugin-media_player_mpy pygame
 ```
 
-PsychoPy für das (Standard-)psycho-Backend. Abhängig vom Betriebssystem und der Python-Version kann es vorkommen, dass PsychoPy nicht korrekt installiert wird. In diesem Fall holen Sie sich Hilfe im Support-Forum oder nutzen Sie eines der vorgefertigten Pakete/Installationsprogramme.
+PsychoPy für das (Standard-)Psycho-Backend. Je nach Betriebssystem und Python-Version kann es passieren, dass PsychoPy nicht korrekt installiert wird. In diesem Fall suchen Sie Hilfe im Support-Forum oder verwenden Sie eine der vorgefertigten Paketdateien bzw. Installer.
 
 ```bash
 pip install psychopy psychopy_sounddevice psychopy_visionscience 
@@ -118,7 +118,7 @@ Expyriment für das xpyriment-Backend
 pip install http://files.cogsci.nl/expyriment-0.10.0+opensesame2-py3-none-any.whl 
 ```
 
-Sobald Sie alle Pakete installiert haben, können Sie OpenSesame einfach durch Ausführen starten:
+Nachdem Sie alle Pakete installiert haben, können Sie OpenSesame einfach starten, indem Sie:
 
 ```bash
 opensesame

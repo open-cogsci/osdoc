@@ -1,5 +1,5 @@
 title: 下载
-hash: e832cf1e1be9442432bd3d542053f2fe1b63fb4c9693f37b64cda1907e87dba6
+hash: 0057d1f73dae2a2590e1f0e03dfe7d984bdf6d67622188a9eb35e2cb08646b28
 locale: zh
 language: Chinese
 
@@ -14,15 +14,15 @@ function startDownload(url) {
 
 <div class="info-box" id="download-started" markdown="1" style="display:none;">
 
-<h3>您的下载即将开始！</h3>
+<h3>您的下载应该很快就会开始！</h3>
 
 <a role="button" class="btn btn-success btn-align-left" href="https://sigmundai.eu">
  &#128150; 订阅 SigmundAI.eu
 </a>
 
-您的 OpenSesame AI 协同助手。每月 €9 的订阅将支持 OpenSesame 项目。
+您的 OpenSesame AI 协作助手。每月 9 欧元的订阅支持 OpenSesame 项目。
 
-如果下载没有开始，请点击<a id="click-here">这里</a>。
+如果下载没有开始，请点击 <a id="click-here">此处</a>。
 </div>
 
 
@@ -38,81 +38,86 @@ toc:
 
 ## 标准安装选项
 
-最新的 $status$ 版本为 $version$ *$codename$*（[发行说明](http://osdoc.cogsci.nl/$branch$/notes/$notes$)）。
+最新的 $status$ 版本是 $version$ *$codename$* ([发布说明](http://osdoc.cogsci.nl/$branch$/notes/$notes$))。
+
 
 ### Windows
 
 <a role="button" class="btn btn-success btn-align-left" onclick="startDownload('$url-windows-exe-py3$')">
-	<b>标准</b> Windows 安装程序（.exe）
+	<b>标准</b> Windows 安装包 (.exe)
 </a>
 
 <a role="button" class="btn btn-default btn-align-left" onclick="startDownload('$url-windows-zip-py3$')">
-	<b>标准</b> Windows 无需安装版（.zip）
+	<b>标准</b> Windows 免安装包 (.zip)
 </a>
 
-大多数用户会下载 `.exe` 安装包。如果您没有管理员权限，或者需要同时运行多个 OpenSesame 版本，请下载 `.zip` 包。
+大多数用户下载 `.exe` 安装包。如果您没有管理员权限，或者需要同时运行多个版本的 OpenSesame，请下载 `.zip` 包。
 
-基于 Python 3.13，适用于 64 位系统。在 Windows 11 上测试通过。
+基于适用于 64 位系统的 Python 3.13。在 Windows 11 上进行过测试。
 
-部分外部设备，如 [EyeLink](%url:eyelink%) 和 [Tobii](%url:tobii%) 眼动仪，需要不同版本的 Python。更多信息请参阅相关文档页面。
+某些外部设备，如 [EyeLink](%url:eyelink%) 和 [Tobii](%url:tobii%) 眼动仪，需要不同版本的 Python。请访问相关设备的文档页面获取更多信息。
+
 
 ### Mac OS
 
 <a role="button" class="btn btn-success btn-align-left" onclick="startDownload('$url-osx-dmg-x64-py3$')">
-	Mac OS 安装包（.dmg）
+	Mac OS 安装包 (.dmg)
 </a>
 
-首次启动 OpenSesame 时，系统会因为应用不来自受信任的开发者而阻止其运行。您可以在“设置 > 隐私与安全”下找到“仍要打开”选项。当应用被阻止后，此选项才会出现。
+首次启动 OpenSesame 时，操作系统会因应用非受信开发者而阻止运行。您将在“设置 > 隐私与安全性”下找到“仍要打开”选项。该选项会在应用被阻止后出现。
 
-基于 Python 3.13，适用于 64 位 Intel 系统。在 Mac OS X Sequoia 上测试通过。
+基于适用于 64 位 Intel 系统的 Python 3.13。在 Mac OS X Sequoia 上经过测试。
 
-部分外部设备，如 [EyeLink](%url:eyelink%) 和 [Tobii](%url:tobii%) 眼动仪，需要不同版本的 Python。更多信息请参阅相关文档页面。
+某些外部设备，如 [EyeLink](%url:eyelink%) 和 [Tobii](%url:tobii%) 眼动仪，需要不同版本的 Python。请访问相关设备的文档页面获取更多信息。
+
 
 ### Linux / Ubuntu
 
-将以下命令复制粘贴到终端中。这将下载并运行安装脚本。
+将以下命令复制粘贴到终端。这将下载并运行安装脚本。
 
 ```bash
-# 以下软件包需要在 Ubuntu 24.04 上安装。
-# 其他 Linux 发行版需安装等效软件包。
-sudo apt install curl python3-venv libxcb-cursor0
+# 下面这些软件包需要在 Ubuntu 24.04 上安装。
+# 其他 Linux 发行版需要安装对应的软件包。
+sudo apt install curl python3-dev python3-venv libxcb-cursor0
 # 下载并运行 OpenSesame 安装脚本。
 bash <(curl -L https://github.com/open-cogsci/OpenSesame/raw/refs/heads/4.1/linux-installer.sh) --install
 ```
 
-已在 Ubuntu 24.04（Python 3.12）测试。
+在 Ubuntu 24.04（Python 3.12）上测试通过。
+
 
 ## 高级安装选项
 
+
 ### PyPi（跨平台）
 
-所有包均可通过 pip 安装。请注意，OpenSesame 在 PyPi 上名为 `opensesame-core`。
+所有软件包都支持 pip 安装。请注意，OpenSesame 在 PyPi 上叫做 `opensesame-core`。
 
-OpenSesame 核心依赖：
+OpenSesame 核心依赖项：
 
 ```bash
 pip install --pre opensesame-core opensesame-extension-sigmund opensesame-extension-osweb opensesame-extension-updater opensesame-plugin-psychopy opensesame-plugin-media_player_mpy pygame
 ```
 
-PsychoPy 为（默认）psycho 后端。根据您的操作系统和 Python 版本，PsychoPy 可能不会正确安装。如果出现此问题，请在支持论坛寻求帮助或使用预制包/安装程序。
+用于（默认）psycho 后端的 PsychoPy。根据您的操作系统和 Python 版本，PsychoPy 可能无法正确安装。如遇此问题，请在支持论坛寻求帮助，或使用官方预制安装包。
 
 ```bash
 pip install psychopy psychopy_sounddevice psychopy_visionscience 
 ```
 
-用于眼动追踪的 PyGaze：
+用于眼动仪的 PyGaze：
 
 ```bash
 pip install https://github.com/smathot/PyGaze/releases/download/prerelease%2F0.8.0a3/python_pygaze-0.8.0a3-py3-none-any.whl
 ```
 
-xpyriment 后端的 Expyriment
+用于 xpyriment 后端的 Expyriment
 
 ```bash
 pip install http://files.cogsci.nl/expyriment-0.10.0+opensesame2-py3-none-any.whl 
 ```
 
-安装好全部包后，您只需要运行：
+安装所有软件包后，您只需运行以下命令即可启动 OpenSesame：
 
 ```bash
 opensesame
