@@ -1,0 +1,16 @@
+# This is a generic example script for a sampler item in OpenSesame
+set description "Plays a sound file in .wav or .ogg format"
+# Stop playback after [stop_after] ms, or 0 to play entire sample
+set stop_after 0
+# Sound file should exist in file pool
+set sample "my_sound.ogg"
+# 1.0 = original pitch
+set pitch 1
+# Fade-in time in ms, or 0 for no fade-in
+set fade_in 0
+# 0.0 = silent, 1.0 = maximum volume
+set volume 1.0
+# 0 = center, positive values toward the right, "left" or "right" for full panning
+set pan 0
+# Important: the duration does not relate to the duration of the sound. Instead, it indicates when the experiment should advance to the next item. A value of 0 indicates that the experiment advances immediately to the next item while the sample keeps playing in the background. A value of "sound" indicates that the experiment only advances to the next item when the sample is finished playing.
+set duration 0

@@ -1,0 +1,5 @@
+# This is a generic example script for a notepad item in OpenSesame
+set description "A simple notepad to document your experiment"
+__note__
+The note text goes here
+__end__

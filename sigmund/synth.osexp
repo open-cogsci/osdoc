@@ -1,0 +1,18 @@
+# This is a generic example script for a synth item in OpenSesame
+set description "A basic sound synthesizer"
+# sine, square, saw, white_noise
+set osc sine
+# Length of the sound in ms
+set length 100
+# Sound frequency in Hertz
+set freq 440
+# Sound decay in milliseconds
+set decay 5
+# Sound attack in milliseconds
+set attack 0
+# 0.0 = silent, 1.0 = maximum volume
+set volume 1.0
+# 0 = center, positive values toward the right, "left" or "right" for full panning
+set pan 0
+# Important: the duration does not relate to the duration of the sound. Instead, it indicates when the experiment should advance to the next item. A value of 0 indicates that the experiment advances immediately to the next item while the sample keeps playing in the background. A value of "sound" indicates that the experiment only advances to the next item when the sample is finished playing.
+set duration 0

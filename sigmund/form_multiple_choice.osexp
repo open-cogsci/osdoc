@@ -1,0 +1,23 @@
+# This is a generic example script for a form_multiple_choice item in OpenSesame
+set description "A simple multiple choice item"
+# Response time out in milliseconds, or "infinite" for no timeout
+set timeout infinite
+set spacing 10
+# The question can be a literal or defined in a {variable}
+__question__
+{question_text}
+__end__
+# The options can be literal or defined in {variables}
+__options__
+{question_option1}
+{question_option2}
+{question_option3}
+__end__
+# Indicates whether multiple options can be selected. If not, the participant has to select exactly one option. [yes, no]
+set allow_multiple no
+# Indicates whether the experiment should advance immediately when participant selects an option. If not, the participant needs to press Ok first. Only applicable when allow_multiple is no. [yes, no]
+set advance_immediately yes
+# The name of the response variable, which will contain a semicolon-separated list of all selected options 'no' if no option has been selected
+set form_var response
+set form_title "Multiple-choice question"
+set button_text Ok

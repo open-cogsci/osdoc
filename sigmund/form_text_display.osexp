@@ -1,0 +1,12 @@
+# This is a generic example script for a form_text_display item in OpenSesame
+set description "A simple text display form"
+# Response time out in milliseconds, or "infinite" for no timeout
+set timeout infinite
+set ok_text Start
+set form_title "<b>Instructions</b>"
+__form_text__
+Some text, possibly including {variables}.
+__end__
+widget 0 0 3 1 label text="{form_title}"
+widget 0 1 3 1 label center=no text="{form_text}"
+widget 1 2 1 1 button text="{ok_text}"

@@ -1,0 +1,53 @@
+# This is a generic example script for a sketchpad or a feedback item in OpenSesame
+# The main difference between a sketchpad and a feedback item is that a sketchpad is prepared in advanced, during the prepare phase of the sequence that contains it. For this reason, a sketchpad has better temporal precision, but a feedback item can show information that was created during the run phase of the containing sequence, such as response variables.
+set description "Displays visual stimuli"
+# Duration in milliseconds, "keypress", or "mouseclick"
+# Important: when a sketchpad or feedback item is followed by a response item, such as a keyboard response, the duration is usually set to 0, so that response collection starts immediately.
+set duration 0
+
+# Common style keywords applicable to most drawing commands:
+# - color: Color name (e.g., 'red', 'blue') or hex value (e.g., '#FF0000')
+# - penwidth: Line thickness in pixels (default: 1)
+# - fill: 0 for outline only, 1 for filled shape (applies to shapes)
+# - font_size: Text size in pixels (applies to text elements)
+# - font_bold: yes/no for bold text (applies to text elements)
+# - font_italic: yes/no for italic text (applies to text elements)
+# - font_family: Font name (e.g., 'arial', 'mono') (applies to text elements)
+
+# Syntax: draw line [sx] [sy] [ex] [ey] [**style_keywords]
+draw line -200 200 0 0 color=red penwidth=3
+draw line 0 0 -200 200 color=blue penwidth=3
+
+# Syntax: draw ellipse [x] [y] [w] [h] [**style_keywords]
+draw ellipse -150 -150 80 60 fill=1 color=purple
+
+# Syntax: draw rect [x] [y] [w] [h] [**style_keywords]
+draw rect 160 50 40 30 fill=0 color=darkred penwidth=3
+
+# Syntax: draw image [x] [y] [filename] [center=yes] [scale=1] [rotation=0]
+# Image file should exist in file pool
+draw image 0 0 "image.png" scale=1.0 rotation=0
+
+# Syntax: draw circle [x] [y] [r] [**style_keywords]
+draw circle 100 -100 30 fill=1 color=orange
+
+# Syntax: draw line [sx] [sy] [ex] [ey] [**style_keywords]
+draw line -100 50 100 50 color=green penwidth=4
+
+# Syntax: draw arrow [sx] [sy] [ex] [ey] [arrow_body_length=0.8] [arrow_body_width=0.5] [arrow_head_width=30] [**style_keywords]
+draw arrow -150 150 -50 100 color=red penwidth=2 arrow_head_width=25
+
+# Syntax: draw textline [x] [y] [text] [center=yes] [**style_keywords]
+# Note: Use 'textline' instead of 'text'
+draw textline -100 200 "All Visual Elements" color=darkblue font_size=18
+
+# Syntax: draw fixdot [x] [y] [style=default] [**style_keywords]
+# Styles: default, large-filled, medium-filled, small-filled, large-open, medium-open, small-open, large-cross, medium-cross, small-cross
+draw fixdot 0 0 style=default color=black
+
+# Syntax: draw gabor [x] [y] [orient] [freq] [env=gaussian] [size=96] [stdev=12] [phase=0] [color1=white] [color2=black] [bgmode=avg] [**style_keywords]
+# env options: gaussian, linear, circular, rectangular
+draw gabor 150 -50 orient=45 freq=0.1 size=60 env=gaussian color1=green color2=black
+
+# Syntax: draw noise [x] [y] [env=gaussian] [size=96] [stdev=12] [color1=white] [color2='black'] [bgmode=avg] [**style_keywords]
+draw noise -50 100 env=gaussian size=40 color1=white color2=black

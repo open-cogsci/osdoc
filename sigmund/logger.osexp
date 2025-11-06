@@ -1,0 +1,55 @@
+# This is a generic example script for a logger item in OpenSesame
+set description "Logs experimental data"
+# Indicates whether all detected variables should be automatically logged [yes, no]
+set auto_log yes
+# Variables that should be explicitly included. This is mainly useful when auto-logging is disabled.
+log condition
+log response_time
+log response
+log correct
+# Variables that should be excluded when auto-logging is enabled. This keeps the logfile clean.
+exclude "*_backend"
+exclude PERSISTENT
+exclude TEMPORARY
+exclude acc
+exclude accuracy
+exclude average_response_time
+exclude avg_rt
+exclude background
+exclude closed
+exclude "count_*"
+exclude credentialless
+exclude crossOriginIsolated
+exclude datetime
+exclude description
+exclude devicePixelRatio
+exclude disable_garbage_collection
+exclude experiment_file
+exclude experiment_path
+exclude "font_*"
+exclude foreground
+exclude form_clicks
+exclude fullscreen
+exclude height
+exclude innerHeight
+exclude innerWidth
+exclude isSecureContext
+exclude length
+exclude logfile
+exclude opensesame_codename
+exclude origin
+exclude originAgentCluster
+exclude outerHeight
+exclude outerWidth
+exclude "page?Offset"
+exclude round_decimals
+exclude "screen*"
+exclude "scroll?"
+exclude "sound_*"
+exclude start
+exclude status
+exclude "time_*"
+exclude total_correct
+exclude total_response_time
+exclude total_responses
+exclude width

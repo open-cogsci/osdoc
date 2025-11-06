@@ -1,5 +1,5 @@
 /**
-# Instuctions for JavaScript in inline_javascript
+# Instuctions for JavaScript in inline_javascript items in OpenSesame
 
 - Stimulus preparation should be done in Prepare phase. Stimulus presentation, response collection, etc. should be done in Run phase. The Prepare and Run phase are tabs in the `inline_javascript` GUI item.
 JavaScript in the GUI:

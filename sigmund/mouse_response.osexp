@@ -1,0 +1,14 @@
+# This is a generic example script for a mouse_response item in OpenSesame
+set description "Collects mouse responses"
+# Response time out in milliseconds, or "infinite" for no timeout
+set timeout infinite
+# Indicates whether the mouse cursor should become visible during responding [yes, no]
+set show_cursor yes
+# Optional: a linked sketchpad can be provided to do an automatic region-of-interest analysis. The names of all elements under the clicked position are then logged as the `cursor_roi` variable.
+set linked_sketchpad sketchpad_with_named_elements
+# [mouseclick, mouserelease]
+set event_type mouseclick
+# Optional: a Python expression indicating which mouse button will be considered correct. If no correct_response is defined here, the global variable correct_response, typically defined in a loop table, is used. This does not relate to the linked sketchpad.
+set correct_response "{my_correct_response}"
+# A semi-colon separated list of allowed mouse buttons. All other mouse buttons are ignored.
+set allowed_responses "left_button;right_button"

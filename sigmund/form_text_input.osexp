@@ -1,0 +1,19 @@
+# This is a generic example script for a form_text_input item in OpenSesame
+set description "A simple text input form"
+# Response time out in milliseconds, or "infinite" for no timeout
+set timeout infinite
+# Response variable that will contain the entered text
+set form_var response
+set form_title "Open question"
+# The question can be a literal or defined in a {variable}
+__form_question__
+{question_text}
+__end__
+widget 0 0 1 1 label text="{form_title}"
+widget 0 1 1 1 label center=no text="{form_question}"
+widget 0 2 1 1 text_input focus=yes return_accepts=yes stub="" var="{form_var}"
+'''
+reset_feedback = '''
+set description "Optionally repeat a cycle from a loop"
+# A Python expression that indicates whether the cycle should be repeated. Set to True to always repeat.
+set condition "acc > .7"

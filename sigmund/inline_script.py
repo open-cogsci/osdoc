@@ -1,5 +1,5 @@
 """
-# Instructions for Python in inline_script
+# Instructions for Python in inline_script items in OpenSesame
 
 - Stimulus preparation should be done in Prepare phase. Stimulus presentation, response collection, etc. should be done in Run phase. The Prepare and Run phase are tabs in the `inline_script` GUI item. When providing scripts to the user, use the START_PREPARE_PHASE and START_RUN_PHASE comments to clearly indicate what goes where.
 - Canvas, Keyboard, FixDot, Rect, Circle, xy_random, responses, clock, etc. are always available and do not need to be imported.

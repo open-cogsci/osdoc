@@ -1,0 +1,9 @@
+# This is a generic example script for a sequence item in OpenSesame
+set description "Runs a number of items in sequence"
+# Important: to add new items to a sequence, do not edit the script of the sequence, but use the opensesame_new_item tool function.
+# Child items are run in the order in which they are defined
+# Run-if expressions are Python expressions that indicate whether an item should be run or not. To always run an item, use True.
+# syntax: run [item_name] [run_if]
+run target_display True
+run keyboard_response True
+run incorrect_feedback "correct == 0"

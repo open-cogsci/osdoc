@@ -32,6 +32,19 @@ FOUNDATION_DOCUMENTS = {
     'opensesame' : 'sigmund/opensesame.md',
     'inline_script': 'sigmund/inline_script.py',
     'inline_javascript': 'sigmund/inline_javascript.js',
+    'loop': 'sigmund/loop.osexp',
+    'logger': 'sigmund/logger.osexp',
+    'sketchpad': 'sigmund/sketchpad.osexp',
+    'feedback': 'sigmund/sketchpad.osexp',
+    'notepad': 'sigmund/notepad.osexp',
+    'sequence': 'sigmund/sequence.osexp',
+    'mouse_response': 'sigmund/mouse_response.osexp',
+    'keyboard_response': 'sigmund/keyboard_response.osexp',
+    'sampler': 'sigmund/sampler.osexp',
+    'synth': 'sigmund/synth.osexp',
+    'form_text_input': 'sigmund/form_text_input.osexp',
+    'form_text_display': 'sigmund/form_text_display.osexp',
+    'form_multiple_choice': 'sigmund/form_multiple_choice.osexp'
 }
 EXTRA_DOCUMENTS = []
 MODEL = 'gpt-5'
@@ -266,6 +279,7 @@ def main():
             'foundation': True
         }
         documents.append(create_document(Path(path).read_text(), metadata))
+        print(f"Added foundation document for {topic}")
         
     # Process extra documents:
     for metadata in EXTRA_DOCUMENTS:

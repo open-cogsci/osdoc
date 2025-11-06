@@ -1,0 +1,26 @@
+# This is a generic example script for a loop item in OpenSesame
+set description "Repeatedly runs another item"
+# The name of the child item, which is typically a sequence
+run child_sequence
+# The number of times that each cycle should be repeated. This can be a float.
+set repeat 1
+# Indicates whether or not the loop should be randomized [random, sequential]
+set order random
+# Optional: a Python expression to indicate a stop criterion for the loop. 
+set break_if "acc > .75"
+# Optional: if yes, then the break-if expression is evaluated also before the first cycle. [yes, no]
+set break_if_on_first yes
+# The loop table is defined through setcycle commands
+# syntax: setcycle [cycle_nr] [column_name] [value]
+setcycle 0 cue_direction left
+setcycle 0 cue_validity valid
+setcycle 1 cue_direction right
+setcycle 1 cue_validity valid
+setcycle 2 cue_direction left
+setcycle 2 cue_validity valid
+setcycle 3 cue_direction right
+setcycle 3 cue_validity valid
+setcycle 4 cue_direction left
+setcycle 4 cue_validity invalid
+setcycle 5 cue_direction right
+setcycle 5 cue_validity invalid

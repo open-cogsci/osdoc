@@ -1,0 +1,10 @@
+# This is a generic example script for a keyboard_response item in OpenSesame
+set description "Collects keyboard responses"
+# Optional: a Python expression indicating which key will be considered correct. If no correct_response is defined here, the global variable correct_response, typically defined in a loop table, is used.
+set correct_response "{my_correct_response}"
+# A semi-colon separated list of allowed keys. All other keys are ignored.
+set allowed_responses "z;/"
+# Response time out in milliseconds, or "infinite" for no timeout
+set timeout infinite
+# [keypress, keyrelease]
+set event_type keypress
