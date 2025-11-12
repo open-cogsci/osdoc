@@ -2,6 +2,10 @@
 set description "A simple text input form"
 # Response time out in milliseconds, or "infinite" for no timeout
 set timeout infinite
+# A single column
+set cols "1"
+# Three equally sized rows (sizes are relative)
+set rows "1;1;1"
 # Response variable that will contain the entered text
 set form_var response
 set form_title "Open question"
@@ -9,6 +13,8 @@ set form_title "Open question"
 __form_question__
 {question_text}
 __end__
+# Syntax: widget [column] [row] [colspan] [rowspan] [widget type] [**options]
+# Important: the position and span of the widgets need to fit the cols and rows as specified above
 widget 0 0 1 1 label text="{form_title}"
 widget 0 1 1 1 label center=no text="{form_question}"
 widget 0 2 1 1 text_input focus=yes return_accepts=yes stub="" var="{form_var}"

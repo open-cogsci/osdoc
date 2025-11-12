@@ -14,40 +14,44 @@ set duration 0
 # - font_italic: yes/no for italic text (applies to text elements)
 # - font_family: Font name (e.g., 'arial', 'mono') (applies to text elements)
 
-# Syntax: draw line [sx] [sy] [ex] [ey] [**style_keywords]
-draw line -200 200 0 0 color=red penwidth=3
-draw line 0 0 -200 200 color=blue penwidth=3
+# Syntax: draw line [x1] [y2] [x2] [y2] [**style_keywords]
+draw line x1=-200 y1=200 x2=0 y2=0 color=red penwidth=3
 
 # Syntax: draw ellipse [x] [y] [w] [h] [**style_keywords]
-draw ellipse -150 -150 80 60 fill=1 color=purple
+draw ellipse x=-150 y=-150 w=80 h=60 fill=1 color=purple
 
 # Syntax: draw rect [x] [y] [w] [h] [**style_keywords]
-draw rect 160 50 40 30 fill=0 color=darkred penwidth=3
+draw rect x=160 y=50 w=40 h=30 fill=0 color=darkred penwidth=3
 
-# Syntax: draw image [x] [y] [filename] [center=yes] [scale=1] [rotation=0]
+# Syntax: draw image [x] [y] [file] [center=1] [scale=1] [rotation=0]
 # Image file should exist in file pool
-draw image 0 0 "image.png" scale=1.0 rotation=0
+draw image x=0 y=0 file="image.png" center=1 scale=1.0 rotation=0
 
 # Syntax: draw circle [x] [y] [r] [**style_keywords]
-draw circle 100 -100 30 fill=1 color=orange
+draw circle x=100 y=-100 r=30 fill=1 color=orange
 
-# Syntax: draw line [sx] [sy] [ex] [ey] [**style_keywords]
-draw line -100 50 100 50 color=green penwidth=4
+# Syntax: draw arrow [x1] [y2] [x2] [y2] [arrow_body_length=0.8] [arrow_body_width=0.5] [arrow_head_width=30] [**style_keywords]
+draw arrow x1=-150 y1=150 x2=-50 y2=100 color=red penwidth=2 arrow_head_width=25
 
-# Syntax: draw arrow [sx] [sy] [ex] [ey] [arrow_body_length=0.8] [arrow_body_width=0.5] [arrow_head_width=30] [**style_keywords]
-draw arrow -150 150 -50 100 color=red penwidth=2 arrow_head_width=25
-
-# Syntax: draw textline [x] [y] [text] [center=yes] [**style_keywords]
+# Syntax: draw textline [x] [y] [text] [center=1] [**style_keywords]
 # Note: Use 'textline' instead of 'text'
-draw textline -100 200 "All Visual Elements" color=darkblue font_size=18
+draw textline x=-100 y=200 text="All Visual Elements" color=darkblue font_size=18
 
 # Syntax: draw fixdot [x] [y] [style=default] [**style_keywords]
 # Styles: default, large-filled, medium-filled, small-filled, large-open, medium-open, small-open, large-cross, medium-cross, small-cross
-draw fixdot 0 0 style=default color=black
+draw fixdot x=0 y=0 style=default
 
 # Syntax: draw gabor [x] [y] [orient] [freq] [env=gaussian] [size=96] [stdev=12] [phase=0] [color1=white] [color2=black] [bgmode=avg] [**style_keywords]
 # env options: gaussian, linear, circular, rectangular
-draw gabor 150 -50 orient=45 freq=0.1 size=60 env=gaussian color1=green color2=black
+draw gabor x=150 y=-50 orient=45 freq=0.1 size=60 env=gaussian color1=green color2=black
 
 # Syntax: draw noise [x] [y] [env=gaussian] [size=96] [stdev=12] [color1=white] [color2='black'] [bgmode=avg] [**style_keywords]
-draw noise -50 100 env=gaussian size=40 color1=white color2=black
+draw noise x=-50 y=100 env=gaussian size=40 color1=white color2=black
+
+# Example: use Python expression for x-coordinate
+# Important: there should be double quotes around the Python expression
+draw textlibsne x="{-1.5 * target_pos}" y=200 text="x" color=darkblue font_size=18
+
+# Example: use Python expression for image file
+# Important: there should be double quotes around the Python expression
+draw image x=0 y=0 file="stimulus-{stim_nr}.png" center=1 scale=1.0 rotation=0

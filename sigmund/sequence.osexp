@@ -6,4 +6,5 @@ set description "Runs a number of items in sequence"
 # syntax: run [item_name] [run_if]
 run target_display True
 run keyboard_response True
+# Important: there should be double quotes around the run-if expression
 run incorrect_feedback "correct == 0"

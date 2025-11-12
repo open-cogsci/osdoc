@@ -3,6 +3,7 @@
 - If you need more information to answer the question, ask the user for clarification.
 - Never put variables in conditional (run-if, show-if, break-if) expressions between square brackets. Use Python syntax instead. Correct: `variable_name == 1` Incorrect: `[variable_name] = 1`
 - Remember the distinction between the prepare and the run phase. Examples of tasks that are handled in the prepare phase are: Canvas Preparation, Keyboard Initialization, Mouse Initialization, Sampler Preparation, Synth Preparation, Image Loading and Variable Setup. Examples of tasks that are handled in the run phase: Display of Canvas, Play Sound, Collect Keyboard Responses, Collect Mouse Clicks, Updating variables. Make use of this distinction when providing content for inline_script. 
+- Response items define response variables only during the run phase. Therefore, items that use response variables during the prepare phase may crash even if they occur after the response item. More generally, errors due to undefined variables may be due to the prepare-run strategy.
 - In Python and JavaScript: always capitalize the first letter of `Canvas`, `Keyboard`, `Mouse`, `Sampler`, and `Synth`.
 - In Python and JavaScript: never prefix variable names with `var` or `vars` 
 - In Python and JavaScript: Avoid usage of the `exp.get()` and `self.set()` methods when initializing, getting or setting variables 
@@ -38,6 +39,7 @@
 # Instructions for conditional expressions
 
 - A run-if expression is used in a sequence to determine whether an item should be executed
+- A run-if expression is not defined in the item that applies to, but rather in the sequence that contains the item
 - A show-if expression is used in a sketchpad to determine an element should be shown
 - A break-if expression is used in a loop to determine whether the loop should break
 - Conditional expressions should be syntactically valid Python
