@@ -2,6 +2,7 @@ Descargar: es/download
 Tutoriales:
     Principal:
     Principiante: es/tutorials/beginner
+    SigmundAI: es/tutorials/beginner-sigmund
     Intermedio (Python): es/tutorials/intermediate
     Intermedio (JavaScript): es/tutorials/intermediate-javascript
     _:
@@ -37,7 +38,7 @@ Manual:
         Video: es/manual/stimuli/video
     _:
     Asistencia de IA:
-    SigmundAI copiloto: es/manual/sigmund
+    <nodoc> SigmundAI copiloto: es/manual/sigmund
     Experimentos en línea:
     Flujo de trabajo: es/manual/osweb/workflow
     Desarrollo:

@@ -2,6 +2,7 @@ Herunterladen: de/download
 Anleitungen:
     Haupt:
     Anfänger: de/tutorials/beginner
+    SigmundAI: de/tutorials/beginner-sigmund
     Fortgeschrittene (Python): de/tutorials/intermediate
     Fortgeschrittene (JavaScript): de/tutorials/intermediate-javascript
     _:
@@ -36,7 +37,7 @@ Handbuch:
         Video: de/manual/stimuli/video
     _:
     KI-Unterstützung:
-    SigmundAI Co-Pilot: de/manual/sigmund
+    <nodoc> SigmundAI Co-Pilot: de/manual/sigmund
     Online-Experimente:
     Arbeitsablauf: de/manual/osweb/workflow
     Entwicklung:

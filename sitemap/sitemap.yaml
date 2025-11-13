@@ -2,6 +2,7 @@ Download: download
 Tutorials:
     Main:
     Beginner: tutorials/beginner
+    SigmundAI: tutorials/beginner-sigmund
     Intermediate (Python): tutorials/intermediate
     Intermediate (JavaScript): tutorials/intermediate-javascript
     _:
@@ -37,7 +38,7 @@ Manual:
         Video: manual/stimuli/video
     _:
     AI assistance:
-    SigmundAI Copilot: manual/sigmund
+    <nodoc> SigmundAI Copilot: manual/sigmund
     Online experiments:
     Workflow: manual/osweb/workflow
     Development:

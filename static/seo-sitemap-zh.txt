@@ -1,5 +1,6 @@
 https://osdoc.cogsci.nl/4.1/zh/download
 https://osdoc.cogsci.nl/4.1/zh/tutorials/beginner
+https://osdoc.cogsci.nl/4.1/zh/tutorials/beginner-sigmund
 https://osdoc.cogsci.nl/4.1/zh/tutorials/intermediate
 https://osdoc.cogsci.nl/4.1/zh/tutorials/intermediate-javascript
 https://osdoc.cogsci.nl/4.1/zh/tutorials/iat

@@ -2,6 +2,7 @@
 教程:
     主要:
     初学者: zh/tutorials/beginner
+    SigmundAI: zh/tutorials/beginner-sigmund
     中级 (Python): zh/tutorials/intermediate
     中级 (JavaScript): zh/tutorials/intermediate-javascript
     _:
@@ -40,7 +41,7 @@
 
     _:
     AI助理:
-    SigmundAI 副驾驶: zh/manual/sigmund
+    <nodoc> SigmundAI 副驾驶: zh/manual/sigmund
     在线实验:
     工作流程: zh/manual/osweb/workflow
     开发:

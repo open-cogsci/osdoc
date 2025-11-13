@@ -4,28 +4,19 @@ title: Beginner tutorial: gaze cuing
 
 ## About OpenSesame
 
-OpenSesame is a program for easy of development of behavioral experiments for psychology, neuroscience, and experimental economy. For beginners, OpenSesame has a comprehensive graphical, point-and-click interface. For advanced users, OpenSesame supports Python scripting (not covered in this tutorial).
+OpenSesame is a free program for easy of development of behavioral experiments for psychology, neuroscience, and experimental economy. For beginners, OpenSesame has a comprehensive graphical, point-and-click interface. For advanced users, OpenSesame supports Python scripting (not covered in this tutorial).
 
-OpenSesame is freely available under the [General Public License v3][gpl].
 
 ## About this tutorial
 
 This tutorial shows how to create a simple but complete psychological experiment using OpenSesame [(Mathôt, Schreij, & Theeuwes, 2012; Mathôt & March, 2022)][references]. You will use mainly the graphical user interface of OpenSesame (i.e., no Python inline coding), although you will make small modifications to the OpenSesame script. This tutorial takes approximately one hour.
 
-## Resources
+This tutorial assumes that you are running OpenSesame 4.1 with all the latest updates applied. If you see a notification that "Some packages can be updated (…)", click on the "Install updates …" button to open the update panel, and then on "Run update script" to perform the actual updates. After updating, restart OpenSesame.
 
-- __Download__ -- This tutorial assumes that you are running OpenSesame version 4.0.0 or later. To check which version you are running, see the bottom right of the 'Get started' tab (see %FigGetStarted). You can download the most recent version of OpenSesame from:
-	- %link:download%
-- __Documentation__ -- A dedicated documentation website can be found at:
-	- <https://osdoc.cogsci.nl/>
-- __Forum__ -- A support forum can be found at:
-	- <https://forum.cogsci.nl/>
-- __Sigmund__ -- SigmundAI is an AI assistant with expert knowledge of OpenSesame and can be found at:
-	- <https://sigmundai.eu/>
 
 ## The experiment
 
-In this tutorial, you will create a gaze-cuing experiment as introduced by [Friesen and Kingstone (1998)][references]. In this experiment, a face is presented in the center of the screen (%FigGazeCuing). This face looks either to the right or to the left. A target letter (an 'F' or an 'H') is presented to the left or right of the face. A distractor stimulus (the letter 'X') is presented on the other side of the face. The task is to indicate as quickly as possible whether the target letter is an 'F' or an 'H'. In the congruent condition, the face looks at the target. In the incongruent condition, the face looks at the distractor. As you may have guessed, the typical finding is that participant respond faster in the congruent condition than in the incongruent condition, even though the direction of gaze is not predictive of the target location. This shows that our attention is automatically guided by other people's gaze, even in situations where this doesn't serve any purpose. (And even when the face is just a smiley!)
+In this tutorial, you will create a gaze-cuing experiment as introduced by [Friesen and Kingstone (1998)][references]. In this experiment, a face is presented in the center of the screen (%FigGazeCuing). This face looks either to the right or to the left. A target letter (an 'F' or an 'H') is presented to the left or right of the face. A distractor stimulus (the letter 'X') is presented on the other side of the face. The task is to indicate as quickly as possible whether the target letter is an 'F' or an 'H'. In the congruent condition, the face looks at the target. In the incongruent condition, the face looks at the distractor. As you may have guessed, the typical finding is that participants respond faster in the congruent condition than in the incongruent condition, even though the direction of gaze is not predictive of the target location. This shows that our attention is automatically guided by other people's gaze, even in situations where this doesn't serve any purpose. (And even when the face is just a smiley!)
 
 %--
 figure:
@@ -37,9 +28,7 @@ figure:
 
 The experiment consists of a practice and an experimental phase. Visual feedback will be presented after every block of trials. A sound will be played after every incorrect response.
 
-## Experimental design
-
-This design:
+The experimental design:
 
 - is *within-subject*, because all participants do all conditions
 - is *fully crossed* (or full-factorial), because all combinations of conditions occur
@@ -47,10 +36,8 @@ This design:
     - *gaze side* with two levels (left, right)
     - *target side* with two levels (left, right)
     - *target letter* with two levels (F, H)
-- has N subjects
 
-
-See also %DesignScreencast for an explanation of the logic and design of the experiment:
+See %DesignScreencast for an explanation of the logic and design of the experiment:
 
 
 %--
@@ -67,28 +54,19 @@ video:
 
 ## Step 1: Create the main sequence
 
-When you start OpenSesame, you see the 'Get started!' tab (%FigGetStarted). A list of templates is shown below 'Start a new experiment'. These templates provide convenient starting points for new experiments. After you saved an experiment the first time, recently opened experiments are shown under 'Continue with a recent experiment'. At the bottom of the page there are links to the documentation (which includes this tutorial), the community forum, and a page with professional (paid) support options. And of course a link where you can buy us a cup of coffee to help us stay awake while we are working on providing the best free software!
+When you start OpenSesame, you see the 'Get started!' tab (%FigGetStarted). A list of templates is shown below 'Start a new experiment'. These templates provide convenient starting points for new experiments. After you saved an experiment the first time, recently opened experiments are shown under 'Continue with a recent experiment'.
 
 %--
 figure:
  id: FigGetStarted
  source: get-started.png
  caption: |
-  The 'Get started' dialog on OpenSesame start-up.
+  The 'Get started' panel on OpenSesame start-up.
 --%
 
 Click on 'Default template' to start with a minimal experimental template.
 
-By default there is a main SEQUENCE, which is simply called *experiment*. Click on *experiment* in the overview area (by default on the left side, see %FigInterface) to open its controls in the tab area. The *experiment* SEQUENCE consists of two items: a `notepad` called *getting started* and a SKETCHPAD called *welcome*.
-
-We don't need these two items. Remove *getting_started* by right-clicking on it in the overview area and selecting 'Delete' (shortcut: `Del`). Remove *welcome* in the same way. The *experiment* SEQUENCE is now empty.
-
-%--
-figure:
- id: FigInterface
- source: interface.png
- caption: "The default layout of the OpenSesame interface."
---%
+By default there is a main SEQUENCE, which is simply called *experiment*. Click on *experiment* in the overview area (by default on the left side, see %FigGetStarted) to open its controls in the tab area. The *experiment* SEQUENCE consists of two items: a `notepad` called *getting started* and a SKETCHPAD called *welcome*.
 
 <div class='info-box' markdown='1'>
 
@@ -116,11 +94,16 @@ figure:
 
 </div>
 
+
+__Remove unnecessary items__
+
+We don't need the two items that are part of the default template. Remove *getting_started* by right-clicking on it in the overview area and selecting 'Delete' (shortcut: `Del`). Remove *welcome* in the same way. The *experiment* SEQUENCE is now empty.
+
 __Append a form_text_display item for the instruction display__
 
 As the name suggests, a `form_text_display` is a form that displays text. We are going to use a `form_text_display` to give instructions to the participant at the beginning of the experiment.
 
-Click on *experiment* in the overview area to open its controls in the tab area. You will see an empty SEQUENCE. Drag a `form_text_display` from the item toolbar (under 'Form', see %FigInterface) onto the *experiment* SEQUENCE in the tab area. When you let go, a new `form_text_display` item will be inserted into the SEQUENCE. (We will get back to this in Step 12.)
+Click on *experiment* in the overview area to open its controls in the tab area. You will see an empty SEQUENCE. Drag a `form_text_display` from the item toolbar (under 'Form', see %FigGetStarted) onto the *experiment* SEQUENCE in the tab area. When you let go, a new `form_text_display` item will be inserted into the SEQUENCE. (We will get back to this in Step 12.)
 
 <div class='info-box' markdown='1'>
 

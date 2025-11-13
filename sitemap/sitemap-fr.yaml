@@ -2,6 +2,7 @@ Téléchargement: fr/download
 Tutoriels:
     Principal:
     Débutant: fr/tutorials/beginner
+    SigmundAI: fr/tutorials/beginner-sigmund
     Intermédiaire (Python): fr/tutorials/intermediate
     Intermédiaire (JavaScript): fr/tutorials/intermediate-javascript
     _:
@@ -40,7 +41,7 @@ Manuel:
 
     _:
     Assistance IA:
-    SigmundAI copilote: fr/manual/sigmund
+    <nodoc> SigmundAI copilote: fr/manual/sigmund
     Expériences en ligne:
     Flux de travail: fr/manual/osweb/workflow
     Développement:

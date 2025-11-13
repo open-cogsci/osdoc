@@ -5,6 +5,8 @@
     - !!python/object/apply:collections.OrderedDict
       - - - Beginner
           - /4.1/tutorials/beginner
+        - - SigmundAI
+          - /4.1/tutorials/beginner-sigmund
         - - Intermediate (Python)
           - /4.1/tutorials/intermediate
         - - Intermediate (JavaScript)
@@ -63,7 +65,7 @@
                 - /4.1/manual/stimuli/sound
               - - Video
                 - /4.1/manual/stimuli/video
-        - - SigmundAI Copilot
+        - - <nodoc> SigmundAI Copilot
           - /4.1/manual/sigmund
         - - Workflow
           - /4.1/manual/osweb/workflow

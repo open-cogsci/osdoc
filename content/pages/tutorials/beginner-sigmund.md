@@ -5,23 +5,46 @@ title: SigmundAI tutorial: gaze cuing
 
 ## About this tutorial
 
-In this tutorial, you will learn how to use SigmundAI effectively as an OpenSesame copilot. This tutorial is based on the [the beginner tutorial](%url:beginner%).
+In this tutorial, you'll build a psychology experiment by working together with SigmundAI, your AI copilot for OpenSesame. You'll learn how to give clear instructions to Sigmund, catch and fix mistakes, and build experiments faster than ever before.
+
+We'll create a classic gaze-cuing experiment. This is a fun and interesting paradigm, where people can't help but follow where a face is looking.
+
+This tutorial builds on [the beginner tutorial](%url:beginner%), using the same experiment but showing you how to create it with AI assistance.
+
+
+## What you'll learn
+
+By the end of this tutorial, you'll know how to:
+
+- ✅ Give Sigmund clear, effective instructions
+- ✅ Break complex tasks into simple steps
+- ✅ Catch and correct Sigmund's mistakes (yes, AI makes mistakes!)
+- ✅ Build experiment structures quickly
+- ✅ Work efficiently with an AI copilot
 
 
 ## What you'll need
 
-This tutorial assumes that you are running OpenSesame 4.1 with all the latest updates applied. If you see a notification that "Some packages can be updated (…)", click on the "Install updates …" button to open the update panel, and then on "Run update script" to perform the actual updates. After updating, restart OpenSesame.
+**OpenSesame 4.1 or later** with all updates installed. If you see a notification about available updates, click "Install updates..." and then "Run update script." Restart OpenSesame after updating. You can also manually update by running the following command in the OpenSesame console.
 
-AI does not replace human understanding! If you are new to OpenSesame, I recommend to start with the [beginner tutorial](%url:beginner%) before proceeding with this tutorial. The beginner tutorial provides you with the basic understanding of OpenSesame that is necessary to collaborate effectively with Sigmund.
+```bash
+pip install opensesame-core opensesame-extension-sigmund --upgrade
+```
 
-This tutorial assumes that you have a subscription to [SigmundAI](https://sigmundai.eu/).
+**Basic OpenSesame knowledge.** New to OpenSesame? Start with the [beginner tutorial](%url:beginner%) first. Understanding the basics will help you collaborate effectively with Sigmund. AI is powerful, but it doesn't replace understanding how things work.
+
+**A SigmundAI subscription.** You'll need an active subscription at [sigmundai.eu](https://sigmundai.eu/).
 
 
 ## Connecting OpenSesame to Sigmund
 
-Sigmund is an AI research assistant, powered by the same state-of-the-art AI technology that is used by ChatGPT+, Anthropic Claude, and Mistral LeChat. Sigmund has expert knowledge of OpenSesame, and integrates with the OpenSesame user interface. Because of these features, it is a much more effective copilot for OpenSesame than other chatbots are.
+Sigmund is an AI assistant specifically designed for OpenSesame. Unlike general chatbots like ChatGPT, Sigmund:
 
-To connect OpenSesame to Sigmund, simply log into [sigmundai.eu](https://sigmundai.eu). The Sigmund panel in OpenSesame will automatically connect:
+- Knows OpenSesame inside and out
+- Works directly inside the OpenSesame interface
+- Can make changes to your experiment automatically
+
+To connect, simply log into [sigmundai.eu](https://sigmundai.eu). The Sigmund panel in OpenSesame will automatically connect:
 
 <video controls width="100%">
   <source src="/video/sigmund-connect.mp4" type="video/mp4">
@@ -30,25 +53,35 @@ To connect OpenSesame to Sigmund, simply log into [sigmundai.eu](https://sigmund
 
 ## The experiment
 
-In this tutorial, you will create a gaze-cuing experiment as introduced by [Friesen and Kingstone (1998)][references]. In this experiment, a face is presented in the center of the screen (%FigGazeCuing). This face looks either to the right or to the left. A target letter (an 'F' or an 'H') is presented to the left or right of the face. A distractor stimulus (the letter 'X') is presented on the other side of the face. The task is to indicate as quickly as possible whether the target letter is an 'F' or an 'H'.
+As mentioned, we'll create a gaze-cuing experiment, originally developed by [Friesen and Kingstone (1998)][references]. Here's how it works:
+
+1. A face appears in the center of the screen
+2. The face looks left or right
+3. A target letter ('F' or 'H') appears on one side
+4. A distractor letter ('X') appears on the other side
+5. Participants identify the target letter as quickly as possible
+
+The interesting finding? People are faster when the face looks toward the target, even though the gaze direction doesn't predict where the target will appear. This shows that humans automatically follow where others are looking.
 
 %--
 figure:
  id: FigGazeCuing
  source: gaze-cuing.png
  caption: |
-  The gaze-cuing paradigm [(Friesen and Kingstone, 1998)][references] that you will implement in this tutorial. This example depicts a trial in the incongruent condition, because the smiley looks at the distractor ('X') and not at the target ('F').
+  The gaze-cuing paradigm [(Friesen and Kingstone, 1998)][references]. This example shows an **incongruent** trial, because the face looks at the distractor ('X') instead of the target ('F').
 --%
 
 
 ## Step 1: Create the main sequence
 
-The experiment consists of a practice and an experimental phase. Instruction screens are shown before and after each phase. Let's ask Sigmund to implement the basic structure of the experiment for us. Use a clear and concrete prompt that tells Sigmund exactly what you need! It is also important to tell Sigmund what you do *not* need; otherwise Sigmund may do more than you asked for, for example by adding content to an item when you only asked Sigmund to create the item.
+Let's start by building the basic structure. The experiment has two phases: practice and experimental. Each phase needs instructions before and a message after. Starting with a clear structure helps both you and Sigmund stay organized.
 
-💬 Prompt:
+When talking to Sigmund, be specific! Tell Sigmund exactly what you want, and also what you *don't* want yet. This prevents Sigmund from doing too much at once.
+
+💬 **Prompt:**
 
 ```text
-Hi Sigmund! I would like to implement a gaze-cuing experiment together in OpenSesame. To get started, can you help me implement the basic structure of the experiment? It should look like this:
+Hi Sigmund! I'd like to build a gaze-cuing experiment together. Let's start with the basic structure:
 
 - experiment (sequence)
   - instructions (form_text_display)
@@ -58,57 +91,68 @@ Hi Sigmund! I would like to implement a gaze-cuing experiment together in OpenSe
   - experimental_loop (loop)
     - block_sequence (sequence)
   - end_of_experiment (form_text_display)
-  
-Please don't add any content to the items yet. We'll get to that later!
+
+Please create this structure but don't add any content to the items yet. We'll do that step by step!
 ```
 
-When Sigmund has built the structure, we can ask him to make sure that there are no redundant items left. (Sigmund may already have removed the unnecessary items, in which case of course you don't need to ask it again!) And to give the experiment a useful name. It's best to ask this in a separate prompt, so that we don't overwhelm Sigmund with many separate instructions in a single prompt! Sigmund easily gets confused if you ask it to do too many things at once.
+After Sigmund creates this structure, let's clean things up. Ask in a separate prompt to avoid overwhelming Sigmund with too many tasks at once.
 
-💬 Prompt:
+💬 **Prompt:**
 
 ```text
-Great! Now please also remove any unnecessary items. And give the experiment a sensible title.
+Great! Now please remove any items we don't need, and give the experiment a clear title.
 ```
 
-The overview area of your experiment now looks like %FigStep1. (The experiment title may be different).
+Your overview area should look like %FigStep1. (Your experiment title might be slightly different. That's fine!)
 
 %--
 figure:
  id: FigStep1
  source: step1.png
  caption: |
-  The overview area at the end of the step 1.
+  The overview area at the end of Step 1.
 --%
 
 
 <div class='info-box' markdown='1'>
 
-__Keep Sigmund in check!__
+**💡 Keep Sigmund in check!**
 
-At the bottom of the Sigmund panel, you can choose whether or not you want to explicitly review Sigmund's actions. When this option is enabled, you need to approve every action that Sigmund wants to take, such as selecting an item or changing an item's script. You can disable this for a smoother workflow. But remember that Sigmund makes mistakes, so it's important to double-check the results!
+At the bottom of the Sigmund panel, you can choose whether to review Sigmund's actions before they happen. When enabled, you'll approve each change Sigmund makes.
+
+- **For learning:** Keep this ON. You'll understand what Sigmund is doing.
+- **For speed:** Turn this OFF once you're comfortable.
+
+Remember that Sigmund makes mistakes! Always double-check the results, especially at first.
 
 </div>
 
 
 ## Step 2: Create the block sequence
 
-The *block_sequence* corresponds to a single block of trials. Each block of trials starts by resetting all feedback variables to avoid performance from previous blocks carrying over, followed by a loop with a trial sequence inside it, and ends with a feedback display. We can ask Sigmund to build this structure for us.
+Now let's build what happens in each block of trials. Each block follows this pattern:
 
-💬 Prompt:
+1. Reset feedback (so performance on previous blocks doesn't affect feedback on the current one)
+2. Run a loop of trials
+3. Show performance feedback
+
+The practice and experimental phases use the same *block_sequence* item. This is called a linked copy. When you change one, the other changes too. Using linked copies is convenient when the same functionality (such as a block of trials) occurs at multiple places in your experiment.
+
+💬 **Prompt:**
 
 ```text
-Awesome! Now I'd like to add content to the block_sequence. The block_sequence should be shared (i.e. a linked copy) between the practice and the experimental phase. I would like it to be structured as follows:
+Perfect! Now let's add content to the block_sequence. This should be shared between practice and experimental phases (a linked copy). Structure it like this:
 
 - block_sequence (sequence)
   - reset_feedback (reset_feedback)
   - block_loop (loop)
     - trial_sequence (sequence)
   - feedback (feedback)
-  
-Again, please don't add content to the items. We'll flesh those out later. Is that clear? If so, let's go!
+
+Again, just create the structure. We'll add content later. Ready? Let's go!
 ```
 
-The overview of your experiment now looks like %FigStep2.
+Your overview should now look like %FigStep2.
 
 %--
 figure:
@@ -119,33 +163,38 @@ figure:
 --%
 
 
-## Step 3: Fill the block loop with independent variables
+## Step 3: Define the trial conditions
 
-Independent variables, such as experimental conditions, are typically defined in the block loop (at least when they are varied from trial to trial). In our case, we have three independent variables:
+Every experiment has independent variables. Those are the things you're manipulating. In our experiment, we're varying:
 
-- `gaze_cue`: left or right.
-- `target_pos`: -300 or 300 (x-coordinate where 0 is the center and negative is left)
-- `target_letter`: F or H
-- `dist_pos`: opposite from `target_pos`
-- `correct_response`: z when `target_letter` is F and m otherwise
+- Which way the face looks (left or right)
+- Where the target appears (left at -300, or right at 300)
+- Which letter is the target (F or H)
 
-To make sure that Sigmund understands what kind of experimental design we have in mind for the block loop, provide clear instructions.
+We also need to calculate:
 
-💬 Prompt:
+- Where the distractor goes (opposite side from target)
+- What the correct response key is (z for F, m for H)
+
+This creates a 2 × 2 × 2 design = 8 different trial types.
+
+By explaining the design to Sigmund, we help Sigmund understand the logic and create all the correct combinations.
+
+💬 **Prompt:**
 
 ```text
-Can you define the following variables in the block loop? Please consider that this is a 2 (left or right) by 2 (-300 or 300) by 2 (F or H) design, so that the loop should have 8 rows in total.
+Now let's define the variables in the block_loop. This is a 2 × 2 × 2 design (8 rows total):
 
-- `gaze_cue`: left or right.
-- `target_pos`: -300 or 300 (x-coordinate where 0 is the center and negative is left)
-- `target_letter`: F or H
-- `dist_pos`: opposite from `target_pos`
-- `correct_response`: z when `target_letter` is F and m otherwise
+- gaze_cue: left or right
+- target_pos: -300 or 300 (x-coordinate, negative = left, 0 = center)
+- target_letter: F or H
+- dist_pos: opposite from target_pos
+- correct_response: z when target_letter is F, m when target_letter is H
 
-Clear? Go!
+Can you create this? Thanks!
 ```
 
-The *block_loop* now looks like %FigStep3.
+Your *block_loop* should now look like %FigStep3, with 8 rows showing all possible combinations.
 
 %--
 figure:
@@ -157,28 +206,35 @@ figure:
 
 <div class='info-box' markdown='1'>
 
-__Choose an AI model that works for you!__
+**🤖 Choose an AI model that works for you!**
 
-Sigmund is not itself an AI model. Rather, it is an chatbot that is built on top of an AI model. And you can choose which AI model should be used. In the browser interface of Sigmund, you can select a range of AI models. This tutorial was tested with Claude 4.5 Sonnet and GPT-5 for conversations.
+Sigmund isn't a single AI. It's a chatbot that can use different AI models. On [sigmundai.eu](https://sigmundai.eu), you can select from various models.
 
-You can experiment with different models to see which works best for you. Consider that problem-solving models are slow, environmentally unfriendly, and provide only neglibable improvements on most tasks.
+This tutorial was tested with **Claude Sonnet 4.5** and **GPT-5**, both in conversation mode.
+
+Tips:
+
+- Different models have different strengths. Experiment to find your favorite.
+- Problem-solving models are slower and not always better for simple tasks.
 
 </div>
 
 
-## Step 4: Add images and sound files to the file pool
+## Step 4: Add images and sounds to the file pool
 
-For our stimuli, we will use images from file. In addition, we will play a sound if the participant makes an error. For this we need a sound file.
+We need some files for our stimuli:
 
-Download the required files and add them to the file pool (Sigmund cannot do this):
+- Images of a face looking neutral, left, and right
+- A sound to play when participants make an error
+
+Sigmund can't download files for you, so you'll have to do this part manually. Download the files below and drag them into your file pool:
 
 - [gaze_neutral.png](/img/beginner-tutorial/gaze_neutral.png)
 - [gaze_left.png](/img/beginner-tutorial/gaze_left.png)
 - [gaze_right.png](/img/beginner-tutorial/gaze_right.png)
 - [incorrect.ogg](/img/beginner-tutorial/incorrect.ogg)
 
-
-Your file pool now looks like %FigStep4. Remember to save your experiment regularly.
+file pool should look like %FigStep4.
 
 %--
 figure:
@@ -188,29 +244,42 @@ figure:
 --%
 
 
-## Step 5: Fill the trial sequence with items
+## Step 5: Build the trial sequence
 
-Now let's ask Sigmund to implement the trial sequence. We'll focus only on the general structure for now, and get back to the items later.
+Time to create the structure of a single trial. Here's what happens on each trial:
 
-💬 Prompt:
+1. Show a fixation dot (get ready!)
+2. Show the neutral face (here comes the face)
+3. Show the gaze cue (face looks left or right)
+4. Show the target and distractor (time to respond!)
+5. Collect the keyboard response
+6. Play error sound (only if the response was wrong)
+7. Log the data
+
+The error sound should only play on incorrect trials. This uses a run-if expression: a condition that determines when an item runs.
+
+💬 **Prompt:**
 
 ```text
-Now let's add items to the trial sequence.
+Let's add items to the trial_sequence:
 
 - fixation_dot (sketchpad)
 - neutral_gaze (sketchpad)
 - gaze_cue (sketchpad)
 - target (sketchpad)
 - keyboard_response (keyboard_response)
-- incorrect_sound (sampler) Only after an icorrect response.
+- incorrect_sound (sampler) — only play after an incorrect response
 - logger (logger)
 
-As before, don't add any content to the items. We'll do that later. Is that clear? Go!
+Just create the items for now, don't add content yet. Can you do that?
 ```
 
-I already mentioned that Sigmund sometimes makes mistakes. This would be a good moment to check whether Sigmund implemented the structure correctly!
+This task requires many actions, and Sigmund sometimes gets confused. Make sure to check his work carefully.
 
-For me, while writing this tutorial, Sigmund indeed made two mistakes while performing the task above. First, even though it confidently asserted that the *incorrect_sound* item was configured to play only after an incorrect response, he did not actually add the corresponding run-if expression to the trial sequence. Second, the logger wasn't added.
+Common mistakes Sigmund makes here:
+
+- Forgetting to create some of the items
+- Forgetting to add the run-if expression for *incorrect_sound*
 
 %--
 figure:
@@ -219,18 +288,19 @@ figure:
  caption: "Oops! Sigmund forgot to add a logger and to define a run-if expression for incorrect_sound."
 --%
 
+If Sigmund made a mistake (like forgetting the logger or the run-if expression), give it a gentle reminder with specific instructions:
 
-Why did this happen? Mistakes are unpredictable, so in part this was simply bad luck. But Sigmund struggles with tasks that require a large number of actions. The task above, even though conceptually simple, required no fewer than nine consecutive actions: one for each of the seven newly created items, one to select the trial sequence, and one to add the run-if expression to the trial sequence. When asking Sigmund to perform multi-action tasks, be especially on guard for mistakes!
-
-Now let's kindly remind Sigmund to finish the job. By providing very concrete instructions, we prevent more mistakes.
-
-💬 Prompt (your prompt will be different, depending on whether and what kind of mistake Sigmund made):
+💬 **Prompt** (adjust based on what's missing):
 
 ```text
-It seems that the logger is still missing. Coul you add it please? And once you're done with that, please select the trial sequence and add the run-if expression for the sampler. (Remember that a run-if expression for an item is not defined in the item itself, but rather in the sequence that contains the item.)
+I notice the logger is missing. Could you add it please? 
+
+And then, could you select the trial_sequence and add a run-if expression for the incorrect_sound sampler? Remember, run-if expressions are set in the sequence that contains the item, not in the item itself.
 ```
 
-The *trial_sequence* now looks like %FigStep5.
+Why does Sigmund make mistakes? AI is unpredictable, which means that mistakes can happen for any task. However, Sigmund struggles especially with multi-step tasks. The task above required 9 separate actions! When asking for complex tasks, always double-check the results.
+
+Your *trial_sequence* should look like %FigStep5.
 
 %--
 figure:
@@ -240,112 +310,145 @@ figure:
 --%
 
 
-## Step 6: Draw the sketchpad items
+## Step 6: Draw the display items
 
-We're now going to draw the SKETCHPAD items, starting with the fixation dot. Our stimuli are white, which means that we need to specify that the experiment uses a white background and a black foreground color.
+Now for the fun part: creating what participants will see! We'll work through each display one by one.
 
-💬 Prompt:
+First, let's set up the colors and draw the initial fixation dot. Our gaze stimuli use a white background, so we need a white background with black elements.
+
+💬 **Prompt:**
 
 ```text
-Could you please change the experiment settings so that we use black stimuli on a white background? And then add a fixation dot to the fixation-dot item. And change the duration of the fixation dot to 745 ms.
+Could you change the experiment settings to use black stimuli on a white background? Then add a fixation dot to the fixation_dot item and set its duration to 745 ms.
 ```
 
-Next, the display containing the neutral gaze. Sigmund is usually smart enough to infer that the neutral gaze is an image from the file pool (but check!).
+Next, the neutral face display:
 
-💬 Prompt:
+💬 **Prompt:**
 
 ```text
-Awesome! Now the neutral gaze please! The duration should again be 745 ms.
+Great! Now add the neutral gaze image. Duration should be 745 ms.
 ```
 
-Next, the gaze cue. Again, Sigmund is usually smart enough to infer that the gaze cue is an image from the file pool, and that the `gaze_cue` variable (defined in the block loop) indicates which image should be shown (but check!).
+Sigmund should have figured out to use the *gaze_neutral.png* file from the file pool. Look at the sketchpad to verify!
 
-💬 Prompt:
+Now the gaze cue (where the face looks):
+
+💬 **Prompt:**
 
 ```text
-Perfect! And now implement the actual gaze cue. It should be shown for 495 ms.
+Perfect! Now add the gaze cue display. It should show for 495 ms.
 ```
 
-And finally the target.
+Sigmund should use the `gaze_cue` variable to show either *gaze_left.png* or *gaze_right.png*.
 
-💬 Prompt:
+Finally, the target display (the most complex one):
+
+💬 **Prompt:**
 
 ```text
-Spot on! And now the target. The target display should also contain the gaze cue. In addition, the target letter should be shown either on the left or the right, depending on its defined position. On the other side, there should always be an 'X'.
+Excellent! Now create the target display. It should show:
+
+- The gaze cue (face still looking)
+- The target letter on the left or right (based on target_pos)
+- An 'X' on the opposite side
 ```
 
-Sigmund should have understood that the duration of the target should be 0, because the next item is a keyboard response. But mistakes happen easily, so double-check!
+The duration should be 0 because the *keyboard_response* item comes next and will wait for input. Verify that Sigmund did this correctly!
 
 
-## Step 7: Configure the keyboard response item
+## Step 7: Configure the keyboard response
 
-Steps 7 through 12 are self-explanatory!
+Now we need to collect participants' responses.
 
-💬 Prompt:
-
-```text
-As for the resonse: I would like to have a response timeout of 2000 ms, and only valid keys should be accepted.
-```
-
-
-## Step 8: Configure the incorrect (sampler) item
-
-💬 Prompt:
+💬 **Prompt:**
 
 ```text
-Awesome. Can you now define the incorrect sound?
-```
-
-
-## Step 9: Draw the feedback item
- 
-💬 Prompt:
-
-```text
-Can you add participant feedback about the accuracy and average response time after each block of trials?
+Please configure the keyboard response with a 2000 ms timeout. Only accept the correct response keys (z and m).
 ```
 
 
-## Step 11: Set the length of the practice phase and experimental phase
+## Step 8: Set up the error sound
 
-💬 Prompt:
+When participants make mistakes, they should hear feedback.
+
+💬 **Prompt:**
 
 ```text
-I would like to have 2 practice blocks followed by 8 experimental blocks. Please define a `practice` variable (yes or no) so that later I can tell apart practice and experimental blocks later.
+Now configure the incorrect_sound sampler to play the error sound file.
 ```
 
 
-## Step 12: Write the instruction, end_of_practice and end_of_experiment forms
+## Step 9: Create the feedback display
 
-💬 Prompt:
+After each block, participants should see how they're doing.
+
+💬 **Prompt:**
 
 ```text
-Awesome! Could you now add some clear and concise instructions as well as informative messages at the end of the practice phase and the end of the experiment? Use your good judgment as to the content of these messages!
+Add feedback to the feedback item showing the average accuracy and response time for the block.
 ```
 
 
-## Step 13: Test and debug the experiment!
+## Step 10: Set block repetitions
 
-You're now ready to give the experiment a test run! For me, while writing this tutorial, I immediately got an error:
+Now we need to specify how many times to repeat each block.
 
+💬 **Prompt:**
+
+```text
+Set the practice phase to 2 blocks and the experimental phase to 8 blocks. Also create a 'practice' variable (yes or no) so we can distinguish practice from experimental trials in our data.
+```
+
+
+## Step 11: Write the instruction screens
+
+Participants need to know what to do! Let's have Sigmund write clear instructions.
+
+💬 **Prompt:**
+
+```text
+Please write clear, concise instructions for the experiment, plus helpful messages at the end of practice and at the end of the experiment. Use your judgment for the content!
+```
+
+Read through the instructions. Do they make sense? Are they clear? Feel free to ask Sigmund to revise them if needed!
+
+
+## Step 12: Test and debug!
+
+Time for the moment of truth. Let's run the experiment! Press the blue quick-run button and see what happens. You might get an error! This is completely normal. Here's a possible error:
 
 %--
 figure:
  id: FigFStringError
  source: fstringerror.png
- caption: "Computer says no."
+ caption: "An error appears. Don't panic!"
 --%
 
+What's going wrong? The end-of-practice item tries to show the `acc` variable before it exists. This happens because of OpenSesame's prepare-run phases: items are prepared in advance, and sometimes variables haven't been defined yet at this point.
 
-This error results from the fact that end-of-practice item refers to the variable `acc`, which is not yet defined at the moment that this item is prepared. Sigmund is easily confused by the [distinction between the prepare phase and the run phase](%url:prepare-run%), but was able to correct the issue when I clicked 'Ask Sigmund to fix this error'. (In fact I had to ask twice: once for the end-of-practice item and once for the end-of-experiment item.)
+Sigmund can usually fix such issues. Simply click "Ask Sigmund to fix this" when the error appears. Once the error is fixed, try run the experiment again. Rinse and repeat if necessary.
 
-✅ Done!
+Done! Congratulations. You've built a complete experiment with Sigmund!
 
-💬 Prompt:
+💬 **Final prompt:**
 
 ```text
-Thank you Sigmund!
+Thank you Sigmund! Great work!
 ```
+
+
+## Key takeaways
+
+You've learned how to work effectively with an AI copilot! Here are the main lessons:
+
+1. **Be specific and clear** in your prompts.
+2. **Break complex tasks into simple steps**. Don't ask too much at once.
+3. **Always check Sigmund's work**. AI makes mistakes!
+4. **Ask follow-up questions** when something's not right.
+5. **Be patient**. Debugging is part of the process.
+
+With practice, you and Sigmund will become a great team! 🤝
 
 
 ## References
