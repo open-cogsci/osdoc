@@ -1,41 +1,173 @@
 title: OpenSesame
-hash: 6d849c097dae99593910535916f19b8e81ff850881ac1b70d906e4c658d28a81
+hash: c1aa13ed52abdabe508b561e062e8092d5335f7f46f7867e757c20994d706313
 locale: de
 language: German
 
-OpenSesame ist ein Programm zur Erstellung von Experimenten für Psychologie, Neurowissenschaften und experimentelle Wirtschaftswissenschaften. Die aktuellste $status$-Version ist $version$ *$codename$* ([Versionshinweise](http://osdoc.cogsci.nl/$branch$/notes/$notes$)).
+OpenSesame ist ein Programm zur Erstellung von Experimenten für Psychologie, Neurowissenschaften und experimentelle Wirtschaftswissenschaften. Die aktuellste $status$-Version ist $version$ *$codename* ([Versionshinweise](http://osdoc.cogsci.nl/$branch$/notes/$notes$)).
+
 
 <div class="btn-group" role="group" aria-label="...">
-  <a role="button" class="btn btn-success" href="%url:download%">
-		<span class="glyphicon glyphicon-download" aria-hidden="true"></span>
-		Download
-	 </a>
-  <a role="button" class="btn btn-success" href="%url:beginner%">
+  <a role="button" class="btn btn-success" id="btn-download" onclick="showQuickOptions('download')">
+    <span class="glyphicon glyphicon-download" aria-hidden="true"></span>
+    Herunterladen
+    </a>
+  <a role="button" class="btn btn-success" id="btn-tutorial" onclick="showQuickOptions('tutorial')">
   <span class="glyphicon glyphicon-education" aria-hidden="true"></span>
-  	Tutorial
+    Anleitung
   </a>
-  <a role="button" class="btn btn-success" href="https://professional.cogsci.nl/">
+  <a role="button" class="btn btn-success" id="btn-support" onclick="showQuickOptions('support')">
   <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
-  Support erhalten</a>
-  <a role="button" class="btn btn-success" href="https://sigmundai.eu/">
-  <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-  Frage Sigmund</a>
+    Support erhalten
+  </a>
 </div>
+
+
+<div class="quick-options" id="quick-options-download" style="display: none;">
+  <p>
+  Los geht's!
+  </p>  
+  <p class="quick-options-download-windows" style="display: none;">
+    <a role="button" class="btn btn-primary" href="$url-windows-exe-py3$">
+    Standard-Windows-Installer (.exe)
+    </a>
+  </p>  
+  <p class="quick-options-download-macos" style="display: none;">
+    <a role="button" class="btn btn-primary" href="$url-osx-dmg-x64-py3$">
+    Mac OS-Paket (.dmg)
+    </a>
+  </p>
+  <p class="quick-options-download-linux" style="display: none;">
+  Es gibt verschiedene Möglichkeiten, OpenSesame unter Linux/ Ubuntu zu installieren. Bitte siehe die untenstehenden Download- und Installationsmöglichkeiten.
+  </p>
+  <p>
+    <a role="button" class="btn btn-primary" href="%url:download%">
+    Weitere Download- und Installationsoptionen
+    </a>
+  </p>
+</div>
+
+<div class="quick-options" id="quick-options-tutorial" style="display: none;">
+  <p>
+  Super! Was möchtest du lernen?
+  </p>
+  <p>
+    <a role="button" class="btn btn-primary" href="%url:tutorials/beginner%">
+    Wie man ein einfaches Experiment erstellt (Anfänger)
+    </a>
+  </p>
+  <p>
+    <a role="button" class="btn btn-primary" href="%url:tutorials/beginner-sigmund%">
+    <b>Neu!</b> 🌟 Wie man effektiv mit SigmundAI arbeitet (Anfänger)
+    </a>
+  </p>
+  <p>
+    <a role="button" class="btn btn-primary" href="%url:tutorials/intermediate%">
+    Wie man Python-Skripte im eigenen Experiment verwendet (Fortgeschrittene)
+    </a>
+  </p>
+  <p>
+    <a role="button" class="btn btn-primary" href="%url:tutorials/intermediate-javascript%">
+    Wie man JavaScript im eigenen Online-Experiment verwendet (Fortgeschrittene)
+    </a>
+  </p>
+</div>
+
+<div class="quick-options" id="quick-options-support" style="display: none;">
+  <p>
+    Wir helfen gerne! Welche Art von Unterstützung suchst du?
+  </p>
+  <p>
+    <a role="button" class="btn btn-primary" href="https://forum.cogsci.nl">
+    Community-Support-Forum (kostenlos)
+    </a>
+  </p>
+  <p>
+    <a role="button" class="btn btn-primary" href="https://sigmundai.eu">
+    SigmundAI (monatliches Abonnement)
+    </a>
+  </p>
+  <p>
+    <a role="button" class="btn btn-primary" href="https://professional.cogsci.nl">
+    Professioneller Support (kostenpflichtig)
+    </a>
+  </p>
+</div>
+
+<script>
+function detectOS() {
+  const userAgent = navigator.userAgent.toLowerCase();
+  const platform = navigator.platform.toLowerCase();
+  
+  if (platform.indexOf('win') !== -1 || userAgent.indexOf('windows') !== -1) {
+    return 'windows';
+  } else if (platform.indexOf('mac') !== -1 || userAgent.indexOf('mac') !== -1) {
+    return 'macos';
+  } else if (platform.indexOf('linux') !== -1 || userAgent.indexOf('linux') !== -1 || userAgent.indexOf('x11') !== -1) {
+    return 'linux';
+  }
+  return 'linux'; // default to linux if unknown
+}
+
+function showQuickOptions(option) {
+  // Alle Schnelloptionen ausblenden
+  const allOptions = document.querySelectorAll('.quick-options');
+  allOptions.forEach(opt => opt.style.display = 'none');
+  
+  // Alle Buttons auf btn-success zurücksetzen
+  const allButtons = document.querySelectorAll('.btn-group .btn');
+  allButtons.forEach(btn => {
+    btn.classList.remove('btn-primary');
+    btn.classList.add('btn-success');
+  });
+  
+  // Ausgewählte Option anzeigen
+  const selectedOption = document.getElementById('quick-options-' + option);
+  if (selectedOption.style.display === 'none') {
+    selectedOption.style.display = 'block';
+    
+    // Button-Stil aktualisieren
+    const selectedButton = document.getElementById('btn-' + option);
+    selectedButton.classList.remove('btn-success');
+    selectedButton.classList.add('btn-primary');
+    
+    // Wenn Download-Option, dann betriebssystemspezifischen Inhalt anzeigen
+    if (option === 'download') {
+      const os = detectOS();
+      const windowsOption = document.querySelector('.quick-options-download-windows');
+      const macosOption = document.querySelector('.quick-options-download-macos');
+      const linuxOption = document.querySelector('.quick-options-download-linux');
+      
+      windowsOption.style.display = 'none';
+      macosOption.style.display = 'none';
+      linuxOption.style.display = 'none';
+      
+      if (os === 'windows') {
+        windowsOption.style.display = 'block';
+      } else if (os === 'macos') {
+        macosOption.style.display = 'block';
+      } else {
+        linuxOption.style.display = 'block';
+      }
+    }
+  }
+}
+</script>
+
 
 ## Funktionen
 
 - __Eine benutzerfreundliche Oberfläche__ — eine moderne, professionelle und einfach zu bedienende grafische [Oberfläche](%link:manual/interface%)
 - __Online-Experimente__ — führe dein Experiment im Browser mit [OSWeb](%link:manual/osweb/workflow%) aus
-- __Python__ — erweitere dein Experiment durch die Möglichkeiten von [Python](%link:manual/python/about%)
-- __JavaScript__ — erweitere dein Experiment durch die Möglichkeiten von [JavaScript](%link:manual/python/about%)
-- __Eigene Geräte nutzen__ — verwende deinen [Eye Tracker](%link:pygaze%), [Buttonbox](%link:buttonbox%), [EEG-Ausrüstung](%link:parallel%) und mehr.
-- __SigmundAI Copilot__ — baue und debugge Experimente mit [Hilfe von künstlicher Intelligenz](%link:sigmund%)
+- __Python__ — bringe die Leistung von [Python](%link:manual/python/about%) in dein Experiment ein
+- __JavaScript__ — bringe die Leistung von [JavaScript](%link:manual/python/about%) in dein Experiment ein
+- __Nutze deine Geräte__ — verwenden Sie Ihren [Eyetracker](%link:pygaze%), [Buttonbox](%link:buttonbox%), [EEG-Ausrüstung](%link:parallel%) und mehr.
+- __SigmundAI__ — entwickle und debugge Experimente zusammen mit [einem KI-Experten](%link:beginner-sigmund%)
 - __Kostenlos__ — veröffentlicht unter der GPL3
 - __Plattformübergreifend__ — Windows, Mac OS und Linux
 
 ## Zitationen
 
-Mathôt, S., Schreij, D., & Theeuwes, J. (2012). OpenSesame: An open-source, graphical experiment builder for the social sciences. *Behavior Research Methods*, *44*(2), 314-324. doi:10.3758/s13428-011-0168-7
+Mathôt, S., Schreij, D., & Theeuwes, J. (2012). OpenSesame: Ein quelloffener, grafischer Experiment-Builder für die Sozialwissenschaften. *Behavior Research Methods*, *44*(2), 314-324. doi:10.3758/s13428-011-0168-7
 
-Mathôt, S., & March, J. (2022). Conducting linguistic experiments online with OpenSesame and OSWeb. *Language Learning*. doi:10.1111/lang.12509
-<br /><small>[Verwandtes Preprint (nicht identisch mit dem veröffentlichten Manuskript)](https://doi.org/10.31234/osf.io/wnryc)</small>
+Mathôt, S., & March, J. (2022). Sprachwissenschaftliche Experimente online durchführen mit OpenSesame und OSWeb. *Language Learning*. doi:10.1111/lang.12509
+<br /><small>[Verwandter Preprint (nicht identisch mit dem veröffentlichten Manuskript)](https://doi.org/10.31234/osf.io/wnryc)</small>

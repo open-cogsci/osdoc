@@ -1,50 +1,53 @@
 title: SigmundAI Anleitung: Blickhinweis
-hash: d5304ea6608e83e51e1a0e01bbc9e8efc6602bc92944fcf1444d2848f9e097fe
+hash: 80f0a9ae4381f62b46aa6b1cca4b807990e8235070ac5187f47bc98a6f028d00
 locale: de
 language: German
 
+[TOC]
+
+
 ## Über dieses Tutorial
 
-In diesem Tutorial baust du ein Psychologie-Experiment, indem du gemeinsam mit SigmundAI, deinem KI-Copiloten für OpenSesame, arbeitest. Du lernst, wie du Sigmund klare Anweisungen gibst, Fehler findest und behebst und Experimente schneller als je zuvor erstellst.
+In diesem Tutorial erstellst du ein psychologisches Experiment in Zusammenarbeit mit SigmundAI, deinem AI-Copiloten für OpenSesame. Du lernst, wie du Sigmund klare Anweisungen gibst, Fehler erkennst und behebst und Experimente schneller als je zuvor erstellst.
 
-Wir erstellen ein klassisches Gaze-Cuing-Experiment. Dies ist ein unterhaltsames und interessantes Paradigma, bei dem Menschen unwillkürlich der Blickrichtung eines Gesichts folgen.
+Wir erstellen ein klassisches Gaze-Cuing-Experiment. Dies ist ein unterhaltsames und interessantes Paradigma, bei dem Menschen unwillkürlich dem Blick einer abgebildeten Person folgen.
 
-Dieses Tutorial baut auf dem [Einsteiger-Tutorial](%url:beginner%) auf. Wir verwenden dasselbe Experiment, zeigen dir aber, wie du es mit KI-Unterstützung erstellst.
+Dieses Tutorial baut auf [dem Einsteiger-Tutorial](%url:beginner%) auf und verwendet dasselbe Experiment, zeigt dir jedoch, wie du es mit AI-Unterstützung erstellst.
 
 
 ## Was du lernen wirst
 
-Am Ende dieses Tutorials weißt du, wie man:
+Nach Abschluss dieses Tutorials wirst du wissen, wie man:
 
-- ✅ Sigmund klare, effektive Anweisungen gibt
-- ✅ Komplexe Aufgaben in einfache Schritte zerlegt
-- ✅ Sigmunds Fehler erkennt und korrigiert (ja, auch KI macht Fehler!)
-- ✅ Experimentalstrukturen schnell erstellt
-- ✅ Effizient mit einem KI-Copiloten arbeitet
+- 💡 Sigmund klar und effektiv Anweisungen gibt
+- 💡 Komplexe Aufgaben in einfache Schritte unterteilt
+- 💡 Sigmunds Fehler erkennt und korrigiert (ja, AI macht Fehler!)
+- 💡 Experimente schnell strukturiert
+- 💡 Effizient mit einem AI-Copiloten zusammenarbeitet
 
 
 ## Was du benötigst
 
-**OpenSesame 4.1 oder neuer** mit allen installierten Updates. Wenn eine Benachrichtigung über verfügbare Updates erscheint, klicke auf "Updates installieren ..." und dann auf "Update-Skript ausführen". Starte OpenSesame nach dem Update neu. Du kannst auch manuell über die folgende Eingabe in der OpenSesame-Konsole aktualisieren:
+**OpenSesame 4.1 oder neuer** mit allen installierten Updates. Falls du eine Benachrichtigung über verfügbare Updates siehst, klicke auf „Updates installieren...“ und dann auf „Update-Skript ausführen“. Starte OpenSesame nach dem Update neu. Du kannst auch manuell aktualisieren, indem du folgenden Befehl in der OpenSesame-Konsole ausführst.
 
 ```bash
 pip install opensesame-core opensesame-extension-sigmund --upgrade
 ```
 
-**Grundkenntnisse in OpenSesame.** Neu in OpenSesame? Starte zuerst mit dem [Einsteiger-Tutorial](%url:beginner%). Wenn du die Grundlagen verstehst, kannst du besser mit Sigmund zusammenarbeiten. KI ist mächtig – aber sie ersetzt nicht das Verständnis, wie Dinge funktionieren.
+**Grundkenntnisse in OpenSesame.** Noch neu bei OpenSesame? Starte zuerst mit dem [Einsteiger-Tutorial](%url:beginner%). Das Verständnis der Grundlagen hilft dir, effektiv mit Sigmund zusammenzuarbeiten. AI ist mächtig, ersetzt aber nicht das Verständnis der Funktionsweise.
 
-**Ein SigmundAI-Abonnement.** Du benötigst ein aktives Abonnement auf [sigmundai.eu](https://sigmundai.eu/).
+**Ein SigmundAI-Abo.** Du benötigst ein aktives Abo auf [sigmundai.eu](https://sigmundai.eu/).
 
 
 ## OpenSesame mit Sigmund verbinden
 
-Sigmund ist ein KI-Assistent, der speziell für OpenSesame entwickelt wurde. Anders als allgemeine Chatbots wie ChatGPT:
+Sigmund ist ein speziell für OpenSesame entwickelter AI-Assistent. Im Gegensatz zu allgemeinen Chatbots wie ChatGPT:
 
 - kennt Sigmund OpenSesame in- und auswendig,
 - arbeitet direkt in der OpenSesame-Oberfläche,
-- kann automatisch Änderungen an deinem Experiment vornehmen.
+- kann Änderungen an deinem Experiment automatisch vornehmen.
 
-Um dich zu verbinden, melde dich einfach bei [sigmundai.eu](https://sigmundai.eu) an. Das Sigmund-Panel in OpenSesame stellt automatisch eine Verbindung her:
+Um die Verbindung herzustellen, einfach bei [sigmundai.eu](https://sigmundai.eu/) anmelden. Das Sigmund-Panel in OpenSesame stellt dann automatisch die Verbindung her:
 
 <video controls width="100%">
   <source src="/video/sigmund-connect.mp4" type="video/mp4">
@@ -55,33 +58,33 @@ Um dich zu verbinden, melde dich einfach bei [sigmundai.eu](https://sigmundai.eu
 
 Wie bereits erwähnt, erstellen wir ein Gaze-Cuing-Experiment, das ursprünglich von [Friesen und Kingstone (1998)][references] entwickelt wurde. So funktioniert es:
 
-1. Ein Gesicht erscheint in der Mitte des Bildschirms.
+1. Ein Gesicht erscheint in der Bildschirmmitte.
 2. Das Gesicht blickt nach links oder rechts.
-3. Ein Zielbuchstabe ('F' oder 'H') erscheint auf einer Seite.
-4. Ein Ablenkungsbuchstabe ('X') erscheint auf der anderen Seite.
+3. Ein Ziellbuchstabe („F“ oder „H“) erscheint auf einer Seite.
+4. Ein Ablenkungsbuchstabe („X“) erscheint auf der anderen Seite.
 5. Die Teilnehmenden identifizieren den Zielbuchstaben so schnell wie möglich.
 
-Das Interessante: Menschen sind schneller, wenn das Gesicht zum Ziel blickt – obwohl die Blickrichtung nicht vorhersagt, wo das Ziel erscheinen wird. Das zeigt, dass Menschen automatisch der Blickrichtung anderer folgen.
+Die interessante Erkenntnis? Menschen sind schneller, wenn das Gesicht zum Ziel blickt, obwohl die Blickrichtung nicht vorhersagt, wo das Ziel erscheint. Das zeigt, dass Menschen automatisch dem Blick anderer folgen.
 
 %--
 figure:
  id: FigGazeCuing
  source: gaze-cuing.png
  caption: |
-  Das Gaze-Cuing-Paradigma [(Friesen und Kingstone, 1998)][references]. Das Beispiel zeigt einen **inkongruenten** Durchgang, weil das Gesicht auf den Ablenker ('X') statt auf das Ziel ('F') blickt.
+  Das Gaze-Cuing-Paradigma [(Friesen und Kingstone, 1998)][references]. Dieses Beispiel zeigt einen **inkongruenten** Durchgang, da das Gesicht auf den Ablenker („X“) statt auf das Ziel („F“) blickt.
 --%
 
 
-## Schritt 1: Erstelle die Hauptsequenz
+## Schritt 1: Die Hauptsequenz erstellen
 
-Beginnen wir mit dem grundlegenden Aufbau. Das Experiment besteht aus zwei Phasen: Übung und Experimentalphase. Jede Phase braucht eine Instruktion davor und eine Nachricht danach. Ein klarer Aufbau hilft sowohl dir als auch Sigmund, den Überblick zu behalten.
+Beginnen wir mit dem Grundaufbau. Das Experiment hat zwei Phasen: Übungsphase und Experimentalphase. Jede Phase benötigt eine Instruktion davor und eine Nachricht danach. Ein klarer Aufbau hilft dir und Sigmund, organisiert zu bleiben.
 
-Wenn du mit Sigmund sprichst, sei spezifisch! Sag Sigmund genau, was du möchtest, und auch, was du *noch nicht* möchtest. Das verhindert, dass Sigmund zu viel auf einmal macht.
+Sei bei deinen Anweisungen an Sigmund präzise! Sage Sigmund genau, was du möchtest – und auch, was du *noch nicht* möchtest. Das verhindert, dass Sigmund zu viel auf einmal machen will.
 
-💬 **Prompt:**
+💬 **Eingabeaufforderung:**
 
 ```text
-Hi Sigmund! Ich möchte gemeinsam ein Gaze-Cuing-Experiment bauen. Lass uns mit der Basisstruktur starten:
+Hi Sigmund! Ich möchte zusammen ein Gaze-Cuing-Experiment erstellen. Lass uns mit dem Grundaufbau beginnen:
 
 - experiment (sequence)
   - instructions (form_text_display)
@@ -225,17 +228,17 @@ Tipps:
 
 Wir benötigen einige Dateien für unsere Stimuli:
 
-- Bilder eines Gesichts mit neutralem Blick, nach links und nach rechts schauend
+- Bilder eines Gesichts, das neutral, nach links und nach rechts blickt
 - Einen Ton, der abgespielt wird, wenn Teilnehmende einen Fehler machen
 
-Sigmund kann keine Dateien für dich herunterladen, daher musst du diesen Teil manuell erledigen. Lade die folgenden Dateien herunter und ziehe sie in deinen file pool:
+Sigmund kann keine Dateien für dich herunterladen, deshalb musst du diesen Teil manuell machen. Lade die folgenden Dateien herunter und ziehe sie in deinen Dateipool:
 
 - [gaze_neutral.png](/img/beginner-tutorial/gaze_neutral.png)
 - [gaze_left.png](/img/beginner-tutorial/gaze_left.png)
 - [gaze_right.png](/img/beginner-tutorial/gaze_right.png)
 - [incorrect.ogg](/img/beginner-tutorial/incorrect.ogg)
 
-Der file pool sollte wie %FigStep4 aussehen.
+Der Dateipool sollte wie %FigStep4 aussehen.
 
 %--
 figure:
@@ -245,42 +248,42 @@ figure:
 --%
 
 
-## Schritt 5: Baue die Versuch-Sequenz
+## Schritt 5: Die Trial-Sequenz erstellen
 
-Jetzt ist es Zeit, die Struktur eines einzelnen Versuchs zu erstellen. Folgendes passiert bei jedem Durchgang:
+Nun ist es an der Zeit, die Struktur eines einzelnen Trials zu erstellen. Folgendes passiert in jedem Trial:
 
-1. Zeige einen Fixationspunkt (Bereit machen!)
-2. Zeige das neutrale Gesicht (hier kommt das Gesicht)
-3. Zeige den Blick-Hinweis (Gesicht schaut nach links oder rechts)
-4. Zeige Zielreiz und Distraktor (Zeit zu reagieren!)
-5. Erhebe die Tastaturreaktion
+1. Zeige einen Fixationspunkt (bereit machen!)
+2. Zeige das neutrale Gesicht (jetzt kommt das Gesicht)
+3. Zeige die Blickrichtung (Gesicht blickt nach links oder rechts)
+4. Zeige Zielreiz und Distraktor (jetzt antworten!)
+5. Erfasse die Tastatureingabe
 6. Spiele Fehlerton ab (nur bei falscher Antwort)
 7. Protokolliere die Daten
 
-Der Fehlerton soll nur bei falschen Durchgängen abgespielt werden. Dafür wird ein run-if-Ausdruck verwendet: eine Bedingung, die bestimmt, wann ein Element ausgeführt wird.
+Der Fehlerton sollte nur bei falschen Durchgängen abgespielt werden. Dafür wird ein Run-if-Ausdruck verwendet: eine Bedingung, die bestimmt, wann ein Element ausgeführt wird.
 
 💬 **Prompt:**
 
 ```text
-Fügen wir Items zur trial_sequence hinzu:
+Fügen wir die folgenden Elemente zur trial_sequence hinzu:
 
 - fixation_dot (sketchpad)
 - neutral_gaze (sketchpad)
 - gaze_cue (sketchpad)
 - target (sketchpad)
 - keyboard_response (keyboard_response)
-- incorrect_sound (sampler) — nur abspielen nach einer falschen Antwort
+- incorrect_sound (sampler) — soll nur nach einer falschen Antwort abgespielt werden
 - logger (logger)
 
-Erstelle zunächst nur die Items, füge noch keinen Inhalt hinzu. Geht das?
+Erstelle die Elemente zunächst nur, füge aber noch keinen Inhalt hinzu. Schaffst du das?
 ```
 
-Diese Aufgabe erfordert viele Schritte und Sigmund vertut sich manchmal dabei. Überprüfe seine Arbeit daher sorgfältig.
+Diese Aufgabe erfordert viele Schritte, und Sigmund macht hier manchmal Fehler. Überprüfe deshalb seine Arbeit sorgfältig.
 
-**Häufige Fehler, die Sigmund hier macht:**
+Häufige Fehler von Sigmund an dieser Stelle:
 
-- Vergisst, einige der Items zu erstellen
-- Vergisst, für *incorrect_sound* den run-if-Ausdruck hinzuzufügen
+- Vergisst, einige der Elemente zu erstellen
+- Vergisst, den Run-if-Ausdruck für *incorrect_sound* hinzuzufügen
 
 %--
 figure:
@@ -289,17 +292,17 @@ figure:
  caption: "Oops! Sigmund forgot to add a logger and to define a run-if expression for incorrect_sound."
 --%
 
-Falls Sigmund einen Fehler gemacht hat (z.B. logger oder run-if-Ausdruck für incorrect_sound vergessen), gib ihm eine freundliche Erinnerung mit konkreten Anweisungen:
+Falls Sigmund einen Fehler gemacht hat (z. B. logger oder Run-if-Ausdruck vergessen), gib ihm eine freundliche, aber gezielte Erinnerung mit spezifischen Anweisungen:
 
-💬 **Prompt** (je nach fehlendem Teil anpassen):
+💬 **Prompt** (anpassen je nachdem, was fehlt):
 
 ```text
-Mir ist aufgefallen, dass der logger fehlt. Könntest du ihn bitte noch hinzufügen? 
+Mir ist aufgefallen, dass der logger fehlt. Könntest du ihn bitte noch hinzufügen?
 
-Und könntest du dann die trial_sequence auswählen und einen run-if-Ausdruck für den incorrect_sound sampler ergänzen? Denk daran: run-if-Ausdrücke werden in der Sequenz gesetzt, die das Item enthält, nicht im Item selbst.
+Und dann könntest du bitte die trial_sequence auswählen und einen Run-if-Ausdruck für den incorrect_sound sampler hinzufügen? Denk daran: Run-if-Ausdrücke werden in der Sequenz gesetzt, die das Element enthält, nicht im Element selbst.
 ```
 
-Warum macht Sigmund Fehler? Künstliche Intelligenz ist unvorhersehbar, weshalb Fehler bei jeder Aufgabe passieren können. Besonders schwer tun sich AIs aber mit Aufgaben, die viele einzelne Schritte beinhalten. Die Aufgabe oben forderte 9 separate Aktionen! Kontrolliere bei komplexen Aufgaben deshalb immer die Ergebnisse noch einmal genau.
+Warum macht Sigmund Fehler? KI ist unvorhersehbar, daher können bei jeder Aufgabe Fehler passieren. Besonders schwierig sind für Sigmund Aufgaben mit vielen Einzelschritten. Die Aufgabe oben erforderte ganze 9 Einzelschritte! Überprüfe bei komplexen Aufgaben immer sorgfältig das Ergebnis.
 
 Deine *trial_sequence* sollte wie %FigStep5 aussehen.
 
@@ -311,72 +314,72 @@ figure:
 --%
 
 
-## Schritt 6: Zeichne die Anzeige-Elemente
+## Schritt 6: Die Anzeige-Elemente gestalten
 
-Jetzt kommt der spaßige Teil: Wir gestalten die Anzeigen für die Teilnehmenden! Wir gehen jede Anzeige Schritt für Schritt durch.
+Nun zum spannenden Teil: Gestalte, was die Teilnehmenden sehen! Wir arbeiten jede Anzeige einzeln ab.
 
-Zuerst stellen wir die Farben ein und zeichnen den Fixationspunkt. Unsere Blickstimuli haben einen weißen Hintergrund, daher brauchen wir einen weißen Hintergrund mit schwarzen Elementen.
+Zuerst richten wir die Farben ein und zeichnen den Fixationspunkt. Unsere Blickstimuli verwenden einen weißen Hintergrund, also benötigen wir ebenfalls einen weißen Hintergrund mit schwarzen Elementen.
 
 💬 **Prompt:**
 
 ```text
-Könntest du die Experiment-Einstellungen ändern, sodass schwarze Stimuli auf weißem Hintergrund verwendet werden? Füge dann einen Fixationspunkt zum fixation_dot-Item hinzu und setze die Dauer auf 745 ms.
+Könntest du die Einstellungen des Experiments so ändern, dass schwarze Stimuli auf weißem Hintergrund verwendet werden? Dann füge im fixation_dot-Element einen Fixationspunkt hinzu und setze die Dauer auf 745 ms.
 ```
 
-Jetzt das neutrale Gesichtsbild:
+Als Nächstes die Anzeige für das neutrale Gesicht:
 
 💬 **Prompt:**
 
 ```text
-Super! Füge nun das neutrale Blickbild hinzu. Die Dauer beträgt 745 ms.
+Super! Jetzt füge das Bild mit neutralem Blick ein. Die Dauer sollte 745 ms betragen.
 ```
 
-Sigmund sollte erkannt haben, dass er die Datei *gaze_neutral.png* aus dem file pool nutzen soll. Überprüfe das sketchpad daraufhin!
+Sigmund sollte das *gaze_neutral.png*-Bild aus dem Dateipool nutzen. Schau auf das sketchpad, um das zu prüfen!
 
-Jetzt der Blick-Hinweis (wohin das Gesicht schaut):
+Jetzt die Anzeige für den Blickhinweis (wohin das Gesicht schaut):
 
 💬 **Prompt:**
 
 ```text
-Perfekt! Jetzt füge die gaze cue-Anzeige hinzu. Sie sollte für 495 ms gezeigt werden.
+Perfekt! Füge jetzt die Anzeige für den Blickhinweis hinzu. Sie soll für 495 ms angezeigt werden.
 ```
 
-Sigmund sollte die Variable `gaze_cue` verwenden, um entweder *gaze_left.png* oder *gaze_right.png* anzuzeigen.
+Sigmund soll die Variable `gaze_cue` nutzen, um entweder *gaze_left.png* oder *gaze_right.png* anzuzeigen.
 
-Zum Schluss die Zielanzeige (das komplexeste Element):
+Zum Schluss das Target-Display (das komplexeste):
 
 💬 **Prompt:**
 
 ```text
-Ausgezeichnet! Jetzt erstelle die Zielanzeige. Sie sollte Folgendes zeigen:
+Ausgezeichnet! Erstelle nun die Zielanzeige. Sie sollte Folgendes zeigen:
 
-- Den Blickhinweis (Gesicht schaut weiterhin)
+- Den Blickhinweis (Gesicht schaut immer noch)
 - Den Zielbuchstaben links oder rechts (je nach target_pos)
 - Ein 'X' auf der gegenüberliegenden Seite
 ```
 
-Die Dauer sollte 0 sein, da das *keyboard_response*-Element als nächstes kommt und auf die Eingabe wartet. Überprüfe, ob Sigmund dies richtig gemacht hat!
+Die Dauer sollte 0 betragen, da als Nächstes das *keyboard_response*-Element kommt und auf eine Eingabe wartet. Überprüfe, ob Sigmund dies korrekt gemacht hat!
 
 
-## Schritt 7: Konfiguriere die Tastaturantwort
+## Schritt 7: Konfiguriere die Tastatureingabe
 
-Nun müssen wir die Antworten der Teilnehmer erfassen.
+Jetzt müssen wir die Antworten der Teilnehmer erfassen.
 
-💬 **Anweisung:**
+💬 **Aufforderung:**
 
 ```text
-Bitte konfiguriere das keyboard_response mit einem Timeout von 2000 ms. Akzeptiere nur die korrekten Antworttasten (z und m).
+Bitte konfiguriere die keyboard_response mit einem Timeout von 2000 ms. Akzeptiere nur die korrekten Antworttasten (z und m).
 ```
 
 
 ## Schritt 8: Richte das Fehlersignal ein
 
-Wenn Teilnehmer Fehler machen, sollen sie Rückmeldung erhalten.
+Wenn Teilnehmer Fehler machen, sollen sie eine Rückmeldung hören.
 
-💬 **Anweisung:**
+💬 **Aufforderung:**
 
 ```text
-Konfiguriere jetzt den incorrect_sound sampler so, dass die Fehlersound-Datei abgespielt wird.
+Konfiguriere jetzt den incorrect_sound sampler so, dass die Fehlermeldung abgespielt wird.
 ```
 
 
@@ -384,21 +387,21 @@ Konfiguriere jetzt den incorrect_sound sampler so, dass die Fehlersound-Datei ab
 
 Nach jedem Block sollen die Teilnehmer sehen, wie sie abschneiden.
 
-💬 **Anweisung:**
+💬 **Aufforderung:**
 
 ```text
 Füge dem feedback-Element Rückmeldung hinzu, die die durchschnittliche Genauigkeit und Reaktionszeit für den Block anzeigt.
 ```
 
 
-## Schritt 10: Blockwiederholungen einstellen
+## Schritt 10: Blockwiederholungen festlegen
 
 Jetzt müssen wir festlegen, wie oft jeder Block wiederholt werden soll.
 
-💬 **Anweisung:**
+💬 **Aufforderung:**
 
 ```text
-Setze die Übungsphase auf 2 Blöcke und die Experimentalphase auf 8 Blöcke. Erstelle außerdem eine 'practice'-Variable (ja oder nein), damit wir Übungsdurchgänge von Experimental-Durchgängen in unseren Daten unterscheiden können.
+Setze die Übungsphase auf 2 Blöcke und die experimentelle Phase auf 8 Blöcke. Erstelle außerdem eine 'practice'-Variable (yes oder no), damit wir Übung und experimentelle Durchgänge in unseren Daten unterscheiden können.
 ```
 
 
@@ -406,53 +409,53 @@ Setze die Übungsphase auf 2 Blöcke und die Experimentalphase auf 8 Blöcke. Er
 
 Die Teilnehmer müssen wissen, was zu tun ist! Lass Sigmund klare Anweisungen schreiben.
 
-💬 **Anweisung:**
+💬 **Aufforderung:**
 
 ```text
-Bitte schreibe klare, prägnante Anweisungen für das Experiment sowie hilfreiche Nachrichten am Ende der Übung und am Ende des Experiments. Überlege dir den Inhalt selbst!
+Bitte schreibe klare, prägnante Anweisungen für das Experiment sowie hilfreiche Nachrichten am Ende der Übungsphase und am Ende des Experiments. Entscheide dich selbst für den Inhalt!
 ```
 
-Lies die Anweisungen durch. Ergibt alles Sinn? Sind sie verständlich? Bitte Sigmund ggf. um Überarbeitung!
+Lies die Anweisungen sorgfältig durch. Ergibt alles Sinn? Sind sie verständlich? Bitte Sigmund ggf. um Überarbeitung!
 
 
-## Schritt 12: Testen und Debuggen!
+## Schritt 12: Teste und debugge!
 
-Der Moment der Wahrheit ist gekommen. Lass das Experiment laufen! Drücke auf den blauen Quick-Run-Button und beobachte, was passiert. Es kann sein, dass ein Fehler auftritt! Das ist völlig normal. Hier ein möglicher Fehler:
+Jetzt kommt der Moment der Wahrheit. Starte das Experiment mit dem blauen Schnellstart-Button und beobachte, was passiert. Ein Fehler kann auftreten – das ist völlig normal. Hier ist ein möglicher Fehler:
 
 %--
 figure:
  id: FigFStringError
  source: fstringerror.png
- caption: "Ein Fehler erscheint. Keine Panik!"
+ caption: "Ein Fehler wird angezeigt. Keine Panik!"
 --%
 
-Was läuft schief? Das End-of-practice-Element versucht, die Variable `acc` anzuzeigen, bevor sie existiert. Dies passiert aufgrund der Prepare-Run-Phasen in OpenSesame: Elemente werden im Voraus vorbereitet, und manchmal sind Variablen zu diesem Zeitpunkt noch nicht definiert.
+Was läuft schief? Das End-of-Practice-Element versucht, die Variable `acc` anzuzeigen, bevor sie existiert. Das passiert wegen der Prepare-Run-Phasen von OpenSesame: Items werden im Voraus vorbereitet, und manchmal sind Variablen zu diesem Zeitpunkt noch nicht definiert.
 
-Sigmund kann solche Probleme meist beheben. Klicke einfach auf „Ask Sigmund to fix this“, wenn der Fehler erscheint. Sobald der Fehler behoben ist, führe das Experiment erneut aus. Wiederhole den Vorgang falls nötig.
+Sigmund kann solche Probleme normalerweise beheben. Klicke einfach auf „Ask Sigmund to fix this“, wenn der Fehler auftritt. Sobald der Fehler behoben ist, probiere das Experiment erneut aus. Wiederhole den Vorgang bei Bedarf.
 
-Geschafft! Herzlichen Glückwunsch. Du hast mit Sigmund ein komplettes Experiment gebaut!
+Fertig! Glückwunsch. Du hast mit Sigmund ein vollständiges Experiment gebaut!
 
-💬 **Finale Anweisung:**
+💬 **Letzter Schritt:**
 
 ```text
-Danke Sigmund! Gute Arbeit!
+Danke, Sigmund! Großartige Arbeit!
 ```
 
 
-## Wichtige Erkenntnisse
+## Wichtigste Erkenntnisse
 
-Du hast gelernt, wie man effektiv mit einem KI-Copiloten arbeitet! Hier die wichtigsten Lektionen:
+Du hast gelernt, wie man effektiv mit einem KI-Copiloten zusammenarbeitet! Hier die wichtigsten Lektionen:
 
-1. **Sei spezifisch und klar** in deinen Anweisungen.
-2. **Teile komplexe Aufgaben in einfache Schritte auf**. Bitte nicht zu viel auf einmal.
-3. **Überprüfe immer Sigmunds Arbeit**. Auch KI macht Fehler!
-4. **Stelle Rückfragen**, wenn etwas nicht passt.
-5. **Hab Geduld**. Debugging gehört dazu.
+- ✅ **Sei spezifisch und klar** in deinen Aufforderungen.
+- ✅ **Teile komplexe Aufgaben in einfache Schritte auf**. Frage nicht zu viel auf einmal.
+- ✅ **Überprüfe immer Sigmunds Arbeit**. KI macht Fehler!
+- ✅ **Stelle Rückfragen**, wenn etwas nicht stimmt.
+- ✅ **Sei geduldig**. Debugging gehört dazu.
 
-Mit ein wenig Übung werdet ihr ein tolles Team! 🤝
+Mit etwas Übung werdet ihr und Sigmund ein tolles Team! 🤝
 
 
-## Literaturverzeichnis
+## Literatur
 
 <div class='reference' markdown='1'>
 

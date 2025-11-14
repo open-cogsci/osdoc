@@ -16,11 +16,11 @@ This tutorial builds on [the beginner tutorial](%url:beginner%), using the same 
 
 By the end of this tutorial, you'll know how to:
 
-- ✅ Give Sigmund clear, effective instructions
-- ✅ Break complex tasks into simple steps
-- ✅ Catch and correct Sigmund's mistakes (yes, AI makes mistakes!)
-- ✅ Build experiment structures quickly
-- ✅ Work efficiently with an AI copilot
+- 💡 Give Sigmund clear, effective instructions
+- 💡 Break complex tasks into simple steps
+- 💡 Catch and correct Sigmund's mistakes (yes, AI makes mistakes!)
+- 💡 Build experiment structures quickly
+- 💡 Work efficiently with an AI copilot
 
 
 ## What you'll need
@@ -442,11 +442,11 @@ Thank you Sigmund! Great work!
 
 You've learned how to work effectively with an AI copilot! Here are the main lessons:
 
-1. **Be specific and clear** in your prompts.
-2. **Break complex tasks into simple steps**. Don't ask too much at once.
-3. **Always check Sigmund's work**. AI makes mistakes!
-4. **Ask follow-up questions** when something's not right.
-5. **Be patient**. Debugging is part of the process.
+- ✅ **Be specific and clear** in your prompts.
+- ✅ **Break complex tasks into simple steps**. Don't ask too much at once.
+- ✅ **Always check Sigmund's work**. AI makes mistakes!
+- ✅ **Ask follow-up questions** when something's not right.
+- ✅ **Be patient**. Debugging is part of the process.
 
 With practice, you and Sigmund will become a great team! 🤝
 

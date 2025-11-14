@@ -1,0 +1,31 @@
+/* Plus/minus summary indicator for details info boxes */
+details.info-box > summary {
+  font-weight: 700;
+  margin-bottom: 8px;
+  list-style: none;           /* Hide default marker in some browsers */
+  cursor: pointer;
+}
+
+/* Remove default marker in WebKit */
+details.info-box > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Closed state: show plus */
+details.info-box > summary::before {
+  content: "+";
+  display: inline-block;
+  width: 1em;
+  margin-right: 0.25em;
+  transform: translateY(-1px);
+}
+
+/* Open state: show minus */
+details.info-box[open] > summary::before {
+  content: "−"; /* Unicode minus */
+}
+
+.quick-options {
+  display: none;
+  margin-top: 8px;
+}

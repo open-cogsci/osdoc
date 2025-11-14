@@ -1,26 +1,154 @@
 title: OpenSesame
-hash: 6d849c097dae99593910535916f19b8e81ff850881ac1b70d906e4c658d28a81
+hash: c1aa13ed52abdabe508b561e062e8092d5335f7f46f7867e757c20994d706313
 locale: fr
 language: French
 
-OpenSesame est un programme permettant de créer des expériences pour la psychologie, les neurosciences et l'économie expérimentale. La dernière version $status$ est $version$ *$codename$* ([notes de version](http://osdoc.cogsci.nl/$branch$/notes/$notes$)).
+OpenSesame est un programme permettant de créer des expériences en psychologie, neurosciences et économie expérimentale. La dernière version $status$ est $version$ *$codename$* ([notes de version](http://osdoc.cogsci.nl/$branch$/notes/$notes$)).
 
 <div class="btn-group" role="group" aria-label="...">
-  <a role="button" class="btn btn-success" href="%url:download%">
-		<span class="glyphicon glyphicon-download" aria-hidden="true"></span>
-		Télécharger
-	 </a>
-  <a role="button" class="btn btn-success" href="%url:beginner%">
+  <a role="button" class="btn btn-success" id="btn-download" onclick="showQuickOptions('download')">
+    <span class="glyphicon glyphicon-download" aria-hidden="true"></span>
+    Télécharger
+    </a>
+  <a role="button" class="btn btn-success" id="btn-tutorial" onclick="showQuickOptions('tutorial')">
   <span class="glyphicon glyphicon-education" aria-hidden="true"></span>
-  	Tutoriel
+    Tutoriel
   </a>
-  <a role="button" class="btn btn-success" href="https://professional.cogsci.nl/">
+  <a role="button" class="btn btn-success" id="btn-support" onclick="showQuickOptions('support')">
   <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
-  Obtenir de l'aide</a>
-  <a role="button" class="btn btn-success" href="https://sigmundai.eu/">
-  <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-  Demander à Sigmund</a>
+    Obtenir de l'aide
+  </a>
 </div>
+
+<div class="quick-options" id="quick-options-download" style="display: none;">
+  <p>
+  Commençons !
+  </p>  
+  <p class="quick-options-download-windows" style="display: none;">
+    <a role="button" class="btn btn-primary" href="$url-windows-exe-py3$">
+    Installateur standard Windows (.exe)
+    </a>
+  </p>  
+  <p class="quick-options-download-macos" style="display: none;">
+    <a role="button" class="btn btn-primary" href="$url-osx-dmg-x64-py3$">
+    Paquet Mac OS (.dmg)
+    </a>
+  </p>
+  <p class="quick-options-download-linux" style="display: none;">
+  Il existe plusieurs façons d'installer OpenSesame sur Linux/ Ubuntu. Veuillez consulter les options de téléchargement et d'installation ci-dessous.
+  </p>
+  <p>
+    <a role="button" class="btn btn-primary" href="%url:download%">
+    Plus d'options de téléchargement et d'installation
+    </a>
+  </p>
+</div>
+
+<div class="quick-options" id="quick-options-tutorial" style="display: none;">
+  <p>
+  Parfait ! Qu'aimeriez-vous apprendre ?
+  </p>
+  <p>
+    <a role="button" class="btn btn-primary" href="%url:tutorials/beginner%">
+    Comment créer une expérience de base (débutant)
+    </a>
+  </p>
+  <p>
+    <a role="button" class="btn btn-primary" href="%url:tutorials/beginner-sigmund%">
+    <b>Nouveau !</b> 🌟 Comment travailler efficacement avec SigmundAI (débutant)
+    </a>
+  </p>
+  <p>
+    <a role="button" class="btn btn-primary" href="%url:tutorials/intermediate%">
+    Comment utiliser un script Python dans mon expérience (intermédiaire)</a>
+  </p>
+  <p>
+    <a role="button" class="btn btn-primary" href="%url:tutorials/intermediate-javascript%">
+    Comment utiliser JavaScript dans mon expérience en ligne (intermédiaire)</a>
+  </p>
+</div>
+
+<div class="quick-options" id="quick-options-support" style="display: none;">
+  <p>
+    Nous sommes là pour vous aider ! Quel type de support recherchez-vous ?
+  </p>
+  <p>
+    <a role="button" class="btn btn-primary" href="https://forum.cogsci.nl">
+    Forum de la communauté (gratuit)
+    </a>
+  </p>
+  <p>
+    <a role="button" class="btn btn-primary" href="https://sigmundai.eu">
+    SigmundAI (abonnement mensuel)
+    </a>
+  </p>
+  <p>
+    <a role="button" class="btn btn-primary" href="https://professional.cogsci.nl">
+    Support professionnel (payant)
+    </a>
+  </p>
+</div>
+
+<script>
+function detectOS() {
+  const userAgent = navigator.userAgent.toLowerCase();
+  const platform = navigator.platform.toLowerCase();
+  
+  if (platform.indexOf('win') !== -1 || userAgent.indexOf('windows') !== -1) {
+    return 'windows';
+  } else if (platform.indexOf('mac') !== -1 || userAgent.indexOf('mac') !== -1) {
+    return 'macos';
+  } else if (platform.indexOf('linux') !== -1 || userAgent.indexOf('linux') !== -1 || userAgent.indexOf('x11') !== -1) {
+    return 'linux';
+  }
+  return 'linux'; // default to linux if unknown
+}
+
+function showQuickOptions(option) {
+  // Masquer toutes les options rapides
+  const allOptions = document.querySelectorAll('.quick-options');
+  allOptions.forEach(opt => opt.style.display = 'none');
+  
+  // Réinitialiser tous les boutons à btn-success
+  const allButtons = document.querySelectorAll('.btn-group .btn');
+  allButtons.forEach(btn => {
+    btn.classList.remove('btn-primary');
+    btn.classList.add('btn-success');
+  });
+  
+  // Afficher l'option sélectionnée
+  const selectedOption = document.getElementById('quick-options-' + option);
+  if (selectedOption.style.display === 'none') {
+    selectedOption.style.display = 'block';
+    
+    // Mettre à jour le style du bouton
+    const selectedButton = document.getElementById('btn-' + option);
+    selectedButton.classList.remove('btn-success');
+    selectedButton.classList.add('btn-primary');
+    
+    // Si option de téléchargement, afficher le contenu spécifique à l'OS
+    if (option === 'download') {
+      const os = detectOS();
+      const windowsOption = document.querySelector('.quick-options-download-windows');
+      const macosOption = document.querySelector('.quick-options-download-macos');
+      const linuxOption = document.querySelector('.quick-options-download-linux');
+      
+      windowsOption.style.display = 'none';
+      macosOption.style.display = 'none';
+      linuxOption.style.display = 'none';
+      
+      if (os === 'windows') {
+        windowsOption.style.display = 'block';
+      } else if (os === 'macos') {
+        macosOption.style.display = 'block';
+      } else {
+        linuxOption.style.display = 'block';
+      }
+    }
+  }
+}
+</script>
+
 
 ## Fonctionnalités
 
@@ -28,14 +156,14 @@ OpenSesame est un programme permettant de créer des expériences pour la psycho
 - __Expériences en ligne__ — exécutez votre expérience dans un navigateur avec [OSWeb](%link:manual/osweb/workflow%)
 - __Python__ — ajoutez la puissance de [Python](%link:manual/python/about%) à votre expérience
 - __JavaScript__ — ajoutez la puissance de [JavaScript](%link:manual/python/about%) à votre expérience
-- __Utilisez vos appareils__ — utilisez votre [eye tracker](%link:pygaze%), [boîtier de réponse](%link:buttonbox%), [équipement EEG](%link:parallel%) et plus encore.
-- __Copilote SigmundAI__ — créez et corrigez les expériences avec [l'aide de l'intelligence artificielle](%link:sigmund%)
+- __Utilisez vos appareils__ — utilisez votre [eye tracker](%link:pygaze%), [boîte de boutons](%link:buttonbox%), [équipement EEG](%link:parallel%), et plus encore.
+- __SigmundAI__ — créez et déboguez des expériences avec [un expert IA](%link:beginner-sigmund%)
 - __Gratuit__ — distribué sous licence GPL3
 - __Multiplateforme__ — Windows, Mac OS et Linux
 
 ## Citations
 
-Mathôt, S., Schreij, D., & Theeuwes, J. (2012). OpenSesame : Un logiciel libre et graphique de création d’expériences pour les sciences sociales. *Behavior Research Methods*, *44*(2), 314-324. doi:10.3758/s13428-011-0168-7
+Mathôt, S., Schreij, D., & Theeuwes, J. (2012). OpenSesame : un créateur d’expériences graphique open source pour les sciences sociales. *Behavior Research Methods*, *44*(2), 314-324. doi:10.3758/s13428-011-0168-7
 
 Mathôt, S., & March, J. (2022). Réaliser des expériences linguistiques en ligne avec OpenSesame et OSWeb. *Language Learning*. doi:10.1111/lang.12509
-<br /><small>[Prépublication associée (différente du manuscrit publié)](https://doi.org/10.31234/osf.io/wnryc)</small>
+<br /><small>[Préimpression associée (différente du manuscrit publié)](https://doi.org/10.31234/osf.io/wnryc)</small>

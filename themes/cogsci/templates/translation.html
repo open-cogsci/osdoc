@@ -25,7 +25,7 @@ function stripLanguageCode(url) {
 
 function suggestTranslation() {
   const browserLanguage = getBrowserLanguage().substring(0, 2);
-  const baseUrl = '/4.0/';
+  const baseUrl = '/4.1/';
   const [ currentPage, languageCode ] = stripLanguageCode(getCurrentPage());
   if (languageCode === browserLanguage) {
     return

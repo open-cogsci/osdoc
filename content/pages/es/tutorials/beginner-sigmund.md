@@ -1,29 +1,32 @@
 title: Tutorial de SigmundAI: señalización de la mirada
-hash: d5304ea6608e83e51e1a0e01bbc9e8efc6602bc92944fcf1444d2848f9e097fe
+hash: 80f0a9ae4381f62b46aa6b1cca4b807990e8235070ac5187f47bc98a6f028d00
 locale: es
 language: Spanish
 
+[TOC]
+
+
 ## Sobre este tutorial
 
-En este tutorial, construirás un experimento de psicología trabajando junto con SigmundAI, tu copiloto de IA para OpenSesame. Aprenderás a dar instrucciones claras a Sigmund, detectar y corregir errores, y a construir experimentos más rápido que nunca.
+En este tutorial, construirás un experimento de psicología colaborando con SigmundAI, tu copiloto de IA para OpenSesame. Aprenderás a dar instrucciones claras a Sigmund, detectar y corregir errores, y crear experimentos más rápido que nunca.
 
-Crearemos un experimento clásico de señalización con la mirada (gaze-cuing). Este es un paradigma divertido e interesante, en el que las personas no pueden evitar seguir hacia donde mira una cara.
+Crearemos un experimento clásico de orientación de la mirada. Es un paradigma divertido e interesante, donde las personas no pueden evitar seguir hacia donde mira una cara.
 
-Este tutorial se basa en [el tutorial para principiantes](%url:beginner%), usando el mismo experimento pero mostrándote cómo crearlo con ayuda de la IA.
+Este tutorial se basa en [el tutorial para principiantes](%url:beginner%), usando el mismo experimento, pero mostrándote cómo crearlo con asistencia de IA.
 
 
 ## Qué aprenderás
 
 Al finalizar este tutorial, sabrás cómo:
 
-- ✅ Dar instrucciones claras y efectivas a Sigmund
-- ✅ Dividir tareas complejas en pasos simples
-- ✅ Detectar y corregir errores de Sigmund (¡sí, la IA comete errores!)
-- ✅ Construir rápidamente la estructura de un experimento
-- ✅ Trabajar eficientemente con un copiloto de IA
+- 💡 Darle a Sigmund instrucciones claras y efectivas
+- 💡 Dividir tareas complejas en pasos sencillos
+- 💡 Detectar y corregir los errores de Sigmund (sí, ¡la IA se equivoca!)
+- 💡 Crear la estructura de experimentos rápidamente
+- 💡 Trabajar eficientemente con un copiloto de IA
 
 
-## Qué necesitas
+## Lo que necesitarás
 
 **OpenSesame 4.1 o posterior** con todas las actualizaciones instaladas. Si ves una notificación sobre actualizaciones disponibles, haz clic en "Instalar actualizaciones..." y luego en "Ejecutar script de actualización." Reinicia OpenSesame después de actualizar. También puedes actualizar manualmente ejecutando el siguiente comando en la consola de OpenSesame.
 
@@ -31,7 +34,7 @@ Al finalizar este tutorial, sabrás cómo:
 pip install opensesame-core opensesame-extension-sigmund --upgrade
 ```
 
-**Conocimientos básicos de OpenSesame.** ¿Nuevo/a en OpenSesame? Comienza primero con el [tutorial para principiantes](%url:beginner%). Entender lo básico te ayudará a colaborar efectivamente con Sigmund. La IA es poderosa, pero no reemplaza el conocimiento de cómo funcionan las cosas.
+**Conocimientos básicos de OpenSesame.** ¿Nuevo en OpenSesame? Comienza primero con el [tutorial para principiantes](%url:beginner%). Comprender lo básico te ayudará a colaborar efectivamente con Sigmund. La IA es poderosa, pero no reemplaza entender cómo funcionan las cosas.
 
 **Una suscripción a SigmundAI.** Necesitarás una suscripción activa en [sigmundai.eu](https://sigmundai.eu/).
 
@@ -40,11 +43,11 @@ pip install opensesame-core opensesame-extension-sigmund --upgrade
 
 Sigmund es un asistente de IA diseñado específicamente para OpenSesame. A diferencia de chatbots generales como ChatGPT, Sigmund:
 
-- Conoce OpenSesame a fondo
+- Conoce OpenSesame a la perfección
 - Funciona directamente dentro de la interfaz de OpenSesame
 - Puede hacer cambios en tu experimento automáticamente
 
-Para conectarte, simplemente inicia sesión en [sigmundai.eu](https://sigmundai.eu). El panel de Sigmund en OpenSesame se conectará automáticamente:
+Para conectar, simplemente inicia sesión en [sigmundai.eu](https://sigmundai.eu). El panel de Sigmund en OpenSesame se conectará automáticamente:
 
 <video controls width="100%">
   <source src="/video/sigmund-connect.mp4" type="video/mp4">
@@ -53,35 +56,35 @@ Para conectarte, simplemente inicia sesión en [sigmundai.eu](https://sigmundai.
 
 ## El experimento
 
-Como mencionamos, crearemos un experimento de señalización con la mirada, desarrollado originalmente por [Friesen y Kingstone (1998)][references]. Así funciona:
+Como se mencionó, crearemos un experimento de orientación de la mirada, desarrollado originalmente por [Friesen y Kingstone (1998)][references]. Así es como funciona:
 
-1. Una cara aparece en el centro de la pantalla
-2. La cara mira hacia la izquierda o la derecha
+1. Aparece una cara en el centro de la pantalla
+2. La cara mira hacia la izquierda o derecha
 3. Una letra objetivo ('F' o 'H') aparece en un lado
 4. Una letra distractora ('X') aparece en el otro lado
 5. Los participantes identifican la letra objetivo lo más rápido posible
 
-¿El hallazgo interesante? Las personas son más rápidas cuando la cara mira hacia el objetivo, aunque la dirección de la mirada no predice dónde aparecerá el objetivo. Esto demuestra que los humanos siguen automáticamente la mirada de otros.
+¿El hallazgo interesante? Las personas son más rápidas cuando la cara mira hacia el objetivo, ¡aunque la dirección de la mirada no predice dónde aparecerá el objetivo! Esto demuestra que los humanos siguen automáticamente la mirada de otros.
 
 %--
 figure:
  id: FigGazeCuing
  source: gaze-cuing.png
  caption: |
-  El paradigma de señalización con la mirada [(Friesen y Kingstone, 1998)][references]. Este ejemplo muestra un ensayo **incongruente**, porque la cara mira al distractor ('X') en lugar del objetivo ('F').
+  El paradigma de orientación de la mirada [(Friesen y Kingstone, 1998)][references]. Este ejemplo muestra un ensayo **incongruente**, porque la cara mira al distractor ('X') en lugar del objetivo ('F').
 --%
 
 
-## Paso 1: Crea la secuencia principal
+## Paso 1: Crear la secuencia principal
 
-Comencemos construyendo la estructura básica. El experimento tiene dos fases: práctica y experimental. Cada fase necesita instrucciones antes y un mensaje después. Empezar con una estructura clara ayuda tanto a ti como a Sigmund a mantenerse organizados.
+Comencemos construyendo la estructura básica. El experimento tiene dos fases: práctica y experimental. Cada fase necesita instrucciones antes y un mensaje después. Comenzar con una estructura clara ayuda tanto a ti como a Sigmund a mantener el orden.
 
-¡Sé específico al hablar con Sigmund! Dile exactamente lo que quieres, y también lo que *no* quieres aún. Esto evita que Sigmund haga demasiado de una sola vez.
+¡Al hablar con Sigmund, sé específico! Indícale exactamente lo que deseas, y también lo que *no* deseas aún. Esto previene que Sigmund haga demasiado de una sola vez.
 
-💬 **Indicador:**
+💬 **Pregunta:**
 
 ```text
-¡Hola Sigmund! Me gustaría construir juntos un experimento de señalización con la mirada. Empecemos con la estructura básica:
+¡Hola Sigmund! Me gustaría construir juntos un experimento de orientación de la mirada. Comencemos con la estructura básica:
 
 - experiment (sequence)
   - instructions (form_text_display)
@@ -225,7 +228,7 @@ Consejos:
 
 Necesitamos algunos archivos para nuestros estímulos:
 
-- Imágenes de una cara mirando neutral, a la izquierda y a la derecha
+- Imágenes de una cara mirando de forma neutral, hacia la izquierda y hacia la derecha
 - Un sonido para reproducir cuando los participantes cometen un error
 
 Sigmund no puede descargar archivos por ti, así que tendrás que hacer esta parte manualmente. Descarga los archivos a continuación y arrástralos a tu grupo de archivos:
@@ -235,7 +238,7 @@ Sigmund no puede descargar archivos por ti, así que tendrás que hacer esta par
 - [gaze_right.png](/img/beginner-tutorial/gaze_right.png)
 - [incorrect.ogg](/img/beginner-tutorial/incorrect.ogg)
 
-file pool debe verse como %FigStep4.
+el grupo de archivos debe verse como %FigStep4.
 
 %--
 figure:
@@ -247,39 +250,39 @@ figure:
 
 ## Paso 5: Construir la secuencia de ensayo
 
-Es hora de crear la estructura de un ensayo individual. Esto es lo que sucede en cada ensayo:
+Es hora de crear la estructura de un solo ensayo. Esto es lo que sucede en cada ensayo:
 
 1. Mostrar un punto de fijación (¡prepárate!)
 2. Mostrar la cara neutral (aquí viene la cara)
-3. Mostrar la señal de la mirada (la cara mira hacia la izquierda o la derecha)
+3. Mostrar la indicación de la mirada (la cara mira a la izquierda o a la derecha)
 4. Mostrar el objetivo y el distractor (¡hora de responder!)
-5. Recoger la respuesta del teclado
+5. Registrar la respuesta del teclado
 6. Reproducir el sonido de error (solo si la respuesta fue incorrecta)
 7. Registrar los datos
 
-El sonido de error solo debe reproducirse en los ensayos incorrectos. Esto usa una expresión run-if: una condición que determina cuándo se ejecuta un elemento.
+El sonido de error solo debe reproducirse en los ensayos incorrectos. Esto utiliza una expresión "run-if": una condición que determina cuándo se ejecuta un ítem.
 
-💬 **Indicador:**
+💬 **Sugerencia:**
 
 ```text
-Vamos a añadir elementos al trial_sequence:
+Agreguemos ítems a la trial_sequence:
 
 - fixation_dot (sketchpad)
 - neutral_gaze (sketchpad)
 - gaze_cue (sketchpad)
 - target (sketchpad)
 - keyboard_response (keyboard_response)
-- incorrect_sound (sampler) — solo reproducir después de una respuesta incorrecta
+- incorrect_sound (sampler) — solo se reproduce tras una respuesta incorrecta
 - logger (logger)
 
-Por ahora solo crea los elementos, aún no añadas contenido. ¿Puedes hacerlo?
+Solo crea los ítems por ahora, aún no agregues contenido. ¿Puedes hacerlo?
 ```
 
-Esta tarea requiere muchas acciones y Sigmund a veces se confunde. Asegúrate de revisar cuidadosamente su trabajo.
+Esta tarea requiere muchas acciones y Sigmund a veces se confunde. Asegúrate de revisar su trabajo cuidadosamente.
 
-**Errores comunes que Sigmund comete aquí:**
+Errores comunes que comete Sigmund aquí:
 
-- Olvidar crear algunos de los elementos
+- Olvidar crear algunos de los ítems
 - Olvidar agregar la expresión run-if para *incorrect_sound*
 
 %--
@@ -291,15 +294,15 @@ figure:
 
 Si Sigmund cometió un error (como olvidar el logger o la expresión run-if), dale un recordatorio amable con instrucciones específicas:
 
-💬 **Indicador** (ajusta según lo que falte):
+💬 **Sugerencia** (ajusta según lo que falte):
 
 ```text
-Noto que falta el logger. ¿Podrías añadirlo por favor?
+Noto que falta el logger. ¿Podrías agregarlo por favor?
 
-Y luego, ¿podrías seleccionar el trial_sequence y añadir una expresión run-if para el sampler incorrect_sound? Recuerda, las expresiones run-if se definen en la secuencia que contiene el elemento, no en el propio elemento.
+Y después, ¿podrías seleccionar la trial_sequence y agregar una expresión run-if para el incorrect_sound sampler? Recuerda, las expresiones run-if se configuran en la secuencia que contiene el ítem, no en el ítem en sí.
 ```
 
-¿Por qué Sigmund comete errores? La IA es impredecible, lo que significa que pueden suceder errores en cualquier tarea. Sin embargo, a Sigmund le cuesta especialmente con las tareas de varios pasos. ¡La tarea anterior requería 9 acciones separadas! Cuando solicites tareas complejas, revisa siempre los resultados.
+¿Por qué Sigmund comete errores? La IA es impredecible, lo que significa que los errores pueden ocurrir en cualquier tarea. Sin embargo, a Sigmund le cuesta especialmente en tareas de varios pasos. ¡La tarea anterior requería 9 acciones separadas! Cuando pidas tareas complejas, revisa siempre los resultados.
 
 Tu *trial_sequence* debe verse como %FigStep5.
 
@@ -311,61 +314,61 @@ figure:
 --%
 
 
-## Paso 6: Dibuja los elementos de la pantalla
+## Paso 6: Dibuja los ítems de visualización
 
-¡Ahora viene la parte divertida: crear lo que los participantes verán! Trabajaremos cada pantalla una por una.
+¡Ahora viene la parte divertida: crear lo que verán los participantes! Revisaremos cada visualización una por una.
 
-Primero, configuremos los colores y dibujemos el punto de fijación inicial. Nuestros estímulos de mirada usan un fondo blanco, así que necesitamos un fondo blanco con elementos negros.
+Primero, configuremos los colores y dibujemos el punto de fijación inicial. Nuestros estímulos de mirada usan un fondo blanco, así que necesitamos un fondo blanco con elementos en negro.
 
-💬 **Indicador:**
+💬 **Sugerencia:**
 
 ```text
-¿Podrías cambiar la configuración del experimento para usar estímulos negros sobre fondo blanco? Luego añade un punto de fijación al elemento fixation_dot y establece su duración en 745 ms.
+¿Podrías cambiar los ajustes del experimento para usar estímulos negros sobre fondo blanco? Luego, agrega un punto de fijación al ítem fixation_dot y ajusta su duración a 745 ms.
 ```
 
-A continuación, la pantalla de cara neutral:
+Ahora, la visualización de la cara neutral:
 
-💬 **Indicador:**
+💬 **Sugerencia:**
 
 ```text
-¡Genial! Ahora añade la imagen de la mirada neutral. La duración debe ser de 745 ms.
+¡Genial! Ahora agrega la imagen de la mirada neutral. La duración debe ser de 745 ms.
 ```
 
-Sigmund debería haber deducido que debe usar el archivo *gaze_neutral.png* del grupo de archivos. ¡Verifica el sketchpad para asegurarte!
+Sigmund debería haberse dado cuenta de usar el archivo *gaze_neutral.png* del grupo de archivos. ¡Revisa el sketchpad para verificar!
 
-Ahora la señal de la mirada (hacia donde mira la cara):
+Ahora la indicación de la mirada (hacia dónde mira la cara):
 
-💬 **Indicador:**
+💬 **Sugerencia:**
 
 ```text
-¡Perfecto! Ahora añade la pantalla de la señal de la mirada. Debería mostrarse por 495 ms.
+¡Perfecto! Ahora agrega la visualización de la indicación de la mirada. Debe mostrarse durante 495 ms.
 ```
 
-Sigmund debe usar la variable `gaze_cue` para mostrar *gaze_left.png* o *gaze_right.png*.
+Sigmund debería usar la variable `gaze_cue` para mostrar *gaze_left.png* o *gaze_right.png*.
 
-Finalmente, la pantalla de objetivo (la más compleja):
+Finalmente, la visualización del objetivo (la más compleja):
 
-💬 **Indicador:**
+💬 **Sugerencia:**
 
 ```text
-¡Excelente! Ahora crea la pantalla de destino. Debe mostrar:
+¡Excelente! Ahora crea la pantalla del objetivo. Debe mostrar:
 
-- La señal de mirada (la cara sigue mirando)
+- La pista de mirada (rostro sigue mirando)
 - La letra objetivo a la izquierda o derecha (según target_pos)
 - Una 'X' en el lado opuesto
 ```
 
-La duración debe ser 0 porque el siguiente elemento es *keyboard_response* y esperará la respuesta. ¡Verifica que Sigmund haya hecho esto correctamente!
+La duración debe ser 0 porque el elemento *keyboard_response* viene a continuación y esperará una respuesta. ¡Verifica que Sigmund haya hecho esto correctamente!
 
 
-## Paso 7: Configurar la respuesta de teclado
+## Paso 7: Configura la respuesta del teclado
 
-Ahora necesitamos recoger las respuestas de los participantes.
+Ahora necesitamos recopilar las respuestas de los participantes.
 
-💬 **Indicador:**
+💬 **Indicación:**
 
 ```text
-Por favor configura el keyboard_response con un límite de tiempo de 2000 ms. Solo acepta las teclas de respuesta correctas (z y m).
+Por favor, configura el keyboard_response con un tiempo límite de 2000 ms. Solo acepta las teclas de respuesta correctas (z y m).
 ```
 
 
@@ -373,81 +376,81 @@ Por favor configura el keyboard_response con un límite de tiempo de 2000 ms. So
 
 Cuando los participantes cometan errores, deben escuchar una retroalimentación.
 
-💬 **Indicador:**
+💬 **Indicación:**
 
 ```text
 Ahora configura el incorrect_sound sampler para reproducir el archivo de sonido de error.
 ```
 
 
-## Paso 9: Crear la pantalla de retroalimentación
+## Paso 9: Crea la pantalla de retroalimentación
 
-Después de cada bloque, los participantes deben ver cómo les va.
+Después de cada bloque, los participantes deben ver cómo les está yendo.
 
-💬 **Indicador:**
+💬 **Indicación:**
 
 ```text
-Agrega retroalimentación al elemento feedback mostrando la precisión promedio y el tiempo de respuesta para el bloque.
+Agrega retroalimentación al elemento feedback mostrando la precisión promedio y el tiempo de respuesta del bloque.
 ```
 
 
-## Paso 10: Establecer repeticiones del bloque
+## Paso 10: Establece las repeticiones de los bloques
 
-Ahora debemos especificar cuántas veces repetir cada bloque.
+Ahora necesitamos especificar cuántas veces repetir cada bloque.
 
-💬 **Indicador:**
+💬 **Indicación:**
 
 ```text
-Configura la fase de práctica en 2 bloques y la fase experimental en 8 bloques. También crea una variable 'practice' (sí o no) para poder distinguir ensayos de práctica y experimentales en nuestros datos.
+Establece la fase de práctica en 2 bloques y la fase experimental en 8 bloques. También crea una variable 'practice' (sí o no) para distinguir las pruebas de práctica de las experimentales en nuestros datos.
 ```
 
 
-## Paso 11: Escribir las pantallas de instrucciones
+## Paso 11: Escribe las pantallas de instrucciones
 
-¡Los participantes necesitan saber qué hacer! Vamos a pedirle a Sigmund que escriba instrucciones claras.
+¡Los participantes deben saber qué hacer! Pidamos a Sigmund que escriba instrucciones claras.
 
-💬 **Indicador:**
+💬 **Indicación:**
 
 ```text
-Por favor redacta instrucciones claras y concisas para el experimento, además de mensajes útiles al final de la práctica y al finalizar el experimento. ¡Usa tu criterio para el contenido!
+Por favor, redacta instrucciones claras y concisas para el experimento, además de mensajes útiles al final de la práctica y al final del experimento. ¡Usa tu criterio para el contenido!
 ```
 
 Lee las instrucciones. ¿Tienen sentido? ¿Son claras? ¡No dudes en pedirle a Sigmund que las revise si es necesario!
 
 
-## Paso 12: ¡Probar y depurar!
+## Paso 12: ¡Prueba y depura!
 
-Es el momento de la verdad. Ejecuta el experimento presionando el botón azul de ejecución rápida y observa qué sucede. ¡Puede que aparezca un error! Esto es completamente normal. Aquí tienes un posible error:
+Ha llegado el momento de la verdad. ¡Ejecuta el experimento! Presiona el botón azul de ejecución rápida y observa qué sucede. ¡Puede que aparezca un error! Esto es completamente normal. Puede aparecer el siguiente error:
 
 %--
 figure:
  id: FigFStringError
  source: fstringerror.png
- caption: "Aparece un error. ¡No te asustes!"
+ caption: "An error appears. Don't panic!"
 --%
 
-¿Qué está yendo mal? El elemento de final de práctica intenta mostrar la variable `acc` antes de que esta exista. Esto ocurre debido a las fases prepare-run de OpenSesame: los elementos se preparan por adelantado, y a veces las variables aún no se han definido en ese momento.
+¿Qué está pasando? El elemento end-of-practice intenta mostrar la variable `acc` antes de que exista. Esto ocurre debido a las fases de preparación-ejecución de OpenSesame: los elementos se preparan por adelantado y, a veces, las variables aún no se han definido en ese momento.
 
-Sigmund usualmente puede arreglar estos problemas. Simplemente haz clic en "Ask Sigmund to fix this" cuando aparezca el error. Una vez corregido, intenta ejecutar el experimento de nuevo. Repite cuantas veces sea necesario.
+Sigmund normalmente puede solucionar estos problemas. Simplemente haz clic en "Ask Sigmund to fix this" cuando aparezca el error. Una vez solucionado, intenta ejecutar el experimento de nuevo. Repite el proceso si es necesario.
 
-¡Listo! Felicidades. ¡Has construido un experimento completo con Sigmund!
+¡Listo! Felicidades. ¡Has creado un experimento completo con Sigmund!
 
-💬 **Indicador final:**
+💬 **Indicación final:**
 
 ```text
-¡Gracias Sigmund! ¡Gran trabajo!
+¡Gracias Sigmund! ¡Excelente trabajo!
 ```
 
 
 ## Puntos clave
 
-¡Has aprendido a trabajar eficazmente con un copiloto de IA! Estos son los principales aprendizajes:
+¡Aprendiste a trabajar eficazmente con un copiloto de IA! Aquí tienes las lecciones principales:
 
-1. **Sé específico y claro** en tus indicaciones.
-2. **Divide tareas complejas en pasos simples**. No pidas demasiado a la vez.
-3. **Revisa siempre el trabajo de Sigmund**. ¡La IA puede cometer errores!
-4. **Haz preguntas de seguimiento** si algo no está bien.
-5. **Sé paciente**. La depuración es parte del proceso.
+- ✅ **Sé específico y claro** en tus indicaciones.
+- ✅ **Divide tareas complejas en pasos simples**. No pidas demasiado de una sola vez.
+- ✅ **Siempre revisa el trabajo de Sigmund**. ¡La IA comete errores!
+- ✅ **Haz preguntas de seguimiento** cuando algo no esté bien.
+- ✅ **Sé paciente**. La depuración es parte del proceso.
 
 ¡Con práctica, tú y Sigmund serán un gran equipo! 🤝
 

@@ -1,82 +1,82 @@
 title: SigmundAI 教程：注视线索
-hash: d5304ea6608e83e51e1a0e01bbc9e8efc6602bc92944fcf1444d2848f9e097fe
+hash: 80f0a9ae4381f62b46aa6b1cca4b807990e8235070ac5187f47bc98a6f028d00
 locale: zh
 language: Chinese
 
 ## 关于本教程
 
-在本教程中，你将与 SigmundAI（你在 OpenSesame 上的 AI 副驾驶）一起协作，构建一个心理学实验。你将学会如何向 Sigmund 提出清晰的指令，发现并修正错误，并比以往更高效地搭建实验。
+在本教程中，你将通过与 SigmundAI（你的 OpenSesame AI 助手）合作，构建一个心理学实验。你将学会如何向 Sigmund 提供清晰的指令、发现并修正错误，以及以前所未有的速度构建实验。
 
-我们要制作一个经典的凝视线索（gaze-cuing）实验。这是一个有趣且引人入胜的实验范式，在这种实验中，人们会不由自主地跟随面孔注视的方向。
+我们将创建一个经典的凝视提示（gaze-cuing）实验。这是一个有趣的实验范式，人们会不由自主地跟随一张脸的视线方向。
 
-本教程是在[初学者教程](%url:beginner%)基础上升级的，使用相同的实验，但教你如何借助 AI 助手来完成。
+本教程是在[初学者教程](%url:beginner%)基础上进行的，实验内容相同，但会演示如何借助 AI 共同完成。
 
 ## 你将学到什么
 
-完成本教程后，你将能够：
+完成本教程后，你将掌握以下技能：
 
-- ✅ 向 Sigmund 提供清晰、有效的指令
-- ✅ 将复杂任务拆分为简单步骤
-- ✅ 发现并纠正 Sigmund 的错误（没错，AI 也会出错！）
-- ✅ 快速搭建实验结构
-- ✅ 高效地与 AI 副驾驶协同工作
+- 💡 向 Sigmund 提供清晰、有效的指令
+- 💡 将复杂任务拆解为简单步骤
+- 💡 发现和纠正 Sigmund 的错误（没错，AI 也会犯错！）
+- 💡 快速搭建实验结构
+- 💡 高效地与 AI 协作
 
-## 你需要什么
+## 你需要的准备
 
-**OpenSesame 4.1 或更高版本**，并安装了所有更新。如果你看到有可用更新的通知，请点击“安装更新…”然后点击“运行更新脚本”。更新后请重启 OpenSesame。你也可以手动在 OpenSesame 控制台运行以下命令进行更新。
+**OpenSesame 4.1 或更高版本**，并已安装所有更新。如果你看到有可用更新的通知，请点击“安装更新...”然后点击“运行更新脚本”。更新后重启 OpenSesame。你也可以在 OpenSesame 控制台手动执行以下命令来更新。
 
 ```bash
 pip install opensesame-core opensesame-extension-sigmund --upgrade
 ```
 
-**OpenSesame 基础知识。** 第一次接触 OpenSesame？请先阅读[初学者教程](%url:beginner%)。理解基础知识会帮助你更好地与 Sigmund 协作。AI 很强大，但无法替代你对原理的理解。
+**OpenSesame 基础知识。** 如果你是新手，请首先学习[初学者教程](%url:beginner%)。理解基础知识将帮助你更有效地与 Sigmund 协作。AI 很强大，但无法替代对原理的理解。
 
-**SigmundAI 订阅。** 你需要一个有效的订阅，可在 [sigmundai.eu](https://sigmundai.eu/) 获取。
+**SigmundAI 订阅。** 你需要一个在 [sigmundai.eu](https://sigmundai.eu/) 的有效订阅。
 
-## 连接 OpenSesame 与 Sigmund
+## 将 OpenSesame 连接到 Sigmund
 
-Sigmund 是专为 OpenSesame 设计的 AI 助手。与 ChatGPT 等通用聊天机器人不同，Sigmund：
+Sigmund 是专为 OpenSesame 设计的 AI 助手。与 ChatGPT 这类通用聊天机器人不同，Sigmund：
 
-- 熟悉 OpenSesame
-- 直接在 OpenSesame 界面工作
-- 可以自动修改你的实验
+- 充分了解 OpenSesame 的细节
+- 直接在 OpenSesame 界面内工作
+- 能自动对你的实验做出更改
 
-只需登录 [sigmundai.eu](https://sigmundai.eu/)，OpenSesame 中的 Sigmund 面板会自动连接：
+只需登录 [sigmundai.eu](https://sigmundai.eu/)，OpenSesame 内的 Sigmund 面板会自动连接：
 
 <video controls width="100%">
   <source src="/video/sigmund-connect.mp4" type="video/mp4">
 </video>
 
-## 实验介绍
+## 实验简介
 
-如前所述，我们将制作凝视线索实验，该实验最初由 [Friesen 和 Kingstone (1998)][references] 开发。流程如下：
+如前所述，我们将创建一个最初由 [Friesen 和 Kingstone (1998)][references] 开发的凝视提示实验。具体流程如下：
 
-1. 一张面孔出现在屏幕中央
-2. 面孔向左或向右看
-3. 一个目标字母（'F' 或 'H'）出现在一侧
-4. 一个干扰字母（'X'）出现在另一侧
+1. 屏幕中央出现一张人脸
+2. 人脸的视线向左或向右
+3. 目标字母（‘F’或‘H’）在一侧出现
+4. 干扰字母（‘X’）在另一侧出现
 5. 参与者尽快识别目标字母
 
-有趣的发现是什么？当面孔看向目标时，人们的反应速度更快，即使面孔的注视方向并不能预测目标出现在哪里。这说明人类会自动地跟随他人的目光。
+有趣的发现是：当脸的视线朝向目标时，人们反应更快，尽管视线方向无法预测目标出现的位置。这表明人类会自动关注他人的视线方向。
 
 %--
 figure:
  id: FigGazeCuing
  source: gaze-cuing.png
  caption: |
-  凝视线索实验范式 [(Friesen and Kingstone, 1998)][references]。该例为**不一致**试次，因为面孔看向了干扰项（'X'）而不是目标（'F'）。
+  凝视提示实验范式 [(Friesen and Kingstone, 1998)][references]。此示例展示了一个**不一致**试次，因为人脸的视线看向干扰项（‘X’），而不是目标（‘F’）。
 --%
 
 ## 步骤 1：创建主序列
 
-我们先搭建基本结构。实验分为两个阶段：练习和正式实验。每个阶段在开始前需要有说明，在结束后需要有提示信息。从清晰的结构开始，有助于你和 Sigmund 都保持条理。
+让我们从搭建基本结构开始。实验包含两个阶段：练习阶段和实验阶段。每个阶段都需要在开始前显示说明，在结束后显示提示信息。明确的结构有助于你和 Sigmund 保持条理。
 
-与 Sigmund 沟通时要具体！准确告诉他你的需求，也说明*暂时不需要*哪些内容。这样可以避免 Sigmund 一次性做得太多。
+与 Sigmund 沟通时，要具体说明！明确告诉 Sigmund 你想要什么，也要说明你*暂时不需要*什么，这样可以防止 Sigmund 一次性做太多操作。
 
-💬 **提示语：**
+💬 **对话示例：**
 
 ```text
-Hi Sigmund! 我想一起搭建一个凝视线索实验。让我们从基础结构开始：
+Hi Sigmund! I'd like to build a gaze-cuing experiment together. Let's start with the basic structure:
 
 - experiment (sequence)
   - instructions (form_text_display)
@@ -214,17 +214,17 @@ Sigmund 不是单一 AI，而是一个可调用多种模型的聊天机器人。
 
 我们需要一些用于刺激的文件：
 
-- 一张面部表情为中性、向左看、向右看的图片
-- 当被试做出错误反应时播放的声音
+- 一张面部图像，表现为中性、左看和右看
+- 参与者出错时播放的声音
 
-Sigmund 无法为你下载文件，所以你需要手动完成这一步。请下载下列文件并拖入文件池：
+Sigmund 无法为你下载文件，因此你需要手动完成这一步。请下载以下文件并将它们拖入你的 file pool：
 
 - [gaze_neutral.png](/img/beginner-tutorial/gaze_neutral.png)
 - [gaze_left.png](/img/beginner-tutorial/gaze_left.png)
 - [gaze_right.png](/img/beginner-tutorial/gaze_right.png)
 - [incorrect.ogg](/img/beginner-tutorial/incorrect.ogg)
 
-file pool 应该看起来像 %FigStep4。
+file pool 应该如 %FigStep4 所示。
 
 %--
 figure:
@@ -234,42 +234,42 @@ figure:
 --%
 
 
-## 第5步：构建trial序列
+## 第5步：构建 trial_sequence
 
-现在开始创建单个trial的结构。每个trial会发生以下事件：
+现在是时候创建单个试次的结构了。每个试次会发生以下流程：
 
 1. 显示注视点（准备好！）
-2. 显示中性面孔（面孔出现咯）
-3. 显示凝视线索（面孔朝左或朝右看）
-4. 显示目标和干扰项（需要做出反应了！）
+2. 显示中性面部（即将出现面孔）
+3. 显示凝视线索（面部向左或向右看）
+4. 显示目标和干扰项（该作答啦！）
 5. 收集键盘反应
-6. 播放错误音效（仅在错误反应时播放）
+6. 播放错误提示音（只在作答错误时）
 7. 记录数据
 
-错误音效应该只在错误trial上播放。这需要用到run-if表达式：条件表达式决定某个项目是否执行。
+错误提示音只应在错误试次播放。这需要用到 run-if 表达式：一条决定某项何时运行的条件语句。
 
 💬 **提示：**
 
 ```text
-Let's add items to the trial_sequence:
+让我们把如下项目加入 trial_sequence：
 
 - fixation_dot (sketchpad)
 - neutral_gaze (sketchpad)
 - gaze_cue (sketchpad)
 - target (sketchpad)
 - keyboard_response (keyboard_response)
-- incorrect_sound (sampler) — only play after an incorrect response
+- incorrect_sound (sampler) — 只在作答错误后播放
 - logger (logger)
 
-Just create the items for now, don't add content yet. Can you do that?
+现在只需新建这些项目，无需填写内容。可以做到吗？
 ```
 
-这个任务需要执行很多步骤，Sigmund 有时会弄错。一定要仔细检查他的工作。
+此任务需要多个操作，Sigmund 有时会出错。一定要仔细检查他的工作。
 
-**Sigmund在这里常见的错误：**
+Sigmund 在此阶段常见的错误：
 
 - 忘记创建某些项目
-- 忘记为*incorrect_sound*添加run-if表达式
+- 忘记为 *incorrect_sound* 添加 run-if 表达式
 
 %--
 figure:
@@ -278,19 +278,19 @@ figure:
  caption: "Oops! Sigmund forgot to add a logger and to define a run-if expression for incorrect_sound."
 --%
 
-如果Sigmund出现了失误（比如遗漏了logger或者run-if表达式），给他一个温和、具体的提醒：
+如果 Sigmund 出错（例如遗漏了 logger 或 run-if 表达式），请温和地用具体的指令提醒他：
 
-💬 **提示**（根据缺失项调整）：
+💬 **提示**（根据缺失内容调整）：
 
 ```text
-I notice the logger is missing. Could you add it please? 
+我注意到 logger 缺失了，可以补上吗？
 
-And then, could you select the trial_sequence and add a run-if expression for the incorrect_sound sampler? Remember, run-if expressions are set in the sequence that contains the item, not in the item itself.
+随后，请选择 trial_sequence，并为 incorrect_sound sampler 添加 run-if 表达式。记得，run-if 表达式需要在包含此项目的 sequence 里设置，而不是项目本身。
 ```
 
-为什么Sigmund会出错？AI不可预测，任何任务都可能出现错误。然而，Sigmund在处理多步任务时尤其容易出错。上面的任务就需要9个独立的操作！当你要求执行复杂任务时，一定要仔细检查结果。
+为什么 Sigmund 会出错？AI 难以预测，任何任务都可能出错。但 Sigmund 在多步骤任务上尤其容易犯错。上面的任务一共需要9项独立操作！当你布置复杂任务时，一定要仔细检查结果。
 
-你的*trial_sequence*应该看起来像%FigStep5。
+你的 *trial_sequence* 应如 %FigStep5 所示。
 
 %--
 figure:
@@ -302,111 +302,112 @@ figure:
 
 ## 第6步：绘制显示项目
 
-现在进入有趣的部分：创建被试将会看到的显示内容！我们将逐个完成每个显示项目。
+现在开始有趣的部分：创建参与者将看到的内容！我们会逐一制作每个显示界面。
 
-首先，设置颜色并绘制初始注视点。我们的凝视刺激使用白色背景，所以需要白底黑字元素。
-
-💬 **提示：**
-
-```text
-Could you change the experiment settings to use black stimuli on a white background? Then add a fixation dot to the fixation_dot item and set its duration to 745 ms.
-```
-
-接下来是中性面孔的显示：
+首先，设置颜色并绘制初始注视点。凝视刺激使用白色背景，因此我们需要白底配黑色元素。
 
 💬 **提示：**
 
 ```text
-Great! Now add the neutral gaze image. Duration should be 745 ms.
+请将实验设置修改为黑色刺激配白色背景。然后在 fixation_dot 项中添加注视点，并将其显示时长设为 745 毫秒。
 ```
 
-Sigmund 应该能想到使用文件池中的*gaze_neutral.png*。请查看sketchpad以确认！
-
-然后是凝视线索（面部注视方向）：
+接着是中性面孔显示：
 
 💬 **提示：**
 
 ```text
-Perfect! Now add the gaze cue display. It should show for 495 ms.
+很好！现在加入中性凝视图片，显示时长设为 745 毫秒。
 ```
 
-Sigmund 应该用`gaze_cue`变量来显示*gaze_left.png*或者*gaze_right.png*。
+Sigmund 应该能想到使用 file pool 中的 *gaze_neutral.png* 文件。记得查看 sketchpad 确认！
 
-最后是目标显示（最复杂的一个）：
+接下来是凝视线索显示（面部方向）：
 
 💬 **提示：**
 
 ```text
-太棒了！现在创建目标显示界面。它应显示：
-
-- 注视线索（面孔仍在注视）
-- 左侧或右侧的目标字母（根据 target_pos 决定）
-- 对侧显示一个“X”
+完美！现在添加凝视线索界面，显示时长为 495 毫秒。
 ```
 
-时长应设置为0，因为接下来的 *keyboard_response* 项会等待输入。请核实 Sigmund 是否正确完成此项！
+Sigmund 应该用 `gaze_cue` 变量，显示 *gaze_left.png* 或 *gaze_right.png*。
+
+最后，是目标显示（最复杂的一项）：
+
+💬 **提示：**
 
 
-## 步骤7：配置键盘响应
+```text
+非常好！现在创建目标显示界面。它应显示：
 
-现在我们需要收集参与者的反应。
+- 注视线索（面部仍注视）
+- 左侧或右侧的目标字母（取决于 target_pos）
+- 另一侧显示一个‘X’
+```
+
+时长应设为 0，因为接下来要用 *keyboard_response* 项等待输入。请确认 Sigmund 是否已正确完成！
+
+
+## 步骤 7：配置键盘响应
+
+现在我们需要收集被试的答案。
 
 💬 **提示：**
 
 ```text
-请将键盘响应项设置为2000毫秒超时。只接受正确的响应按键（z 和 m）。
+请将 keyboard_response 配置为 2000 毫秒超时。只接受正确的响应按键（z 和 m）。
 ```
 
 
-## 步骤8：设置错误提示音
+## 步骤 8：设置错误声音
 
-当参与者出错时，应听到反馈声音。
+当被试犯错时，应听到反馈声音。
 
 💬 **提示：**
 
 ```text
-现在将 incorrect_sound sampler 配置为播放错误音频文件。
+现在配置 incorrect_sound sampler 播放错误提示音文件。
 ```
 
 
-## 步骤9：创建反馈显示界面
+## 步骤 9：创建反馈界面
 
-每个区块后，参与者应看到他们的表现。
+每个区块后，被试应能看到自己的表现如何。
 
 💬 **提示：**
 
 ```text
-在 feedback 项中添加反馈，显示本区块的平均正确率和反应时。
+在 feedback 项中添加反馈，显示该区块的平均准确率和反应时。
 ```
 
 
-## 步骤10：设置区块重复次数
+## 步骤 10：设置区块重复次数
 
-现在需要指定每个区块的重复次数。
+现在我们需要指定每个区块重复的次数。
 
 💬 **提示：**
 
 ```text
-将练习阶段设为2个区块，正式实验阶段设为8个区块。同时创建一个 'practice' 变量（yes 或 no），以便在数据中区分练习和正式实验试次。
+将练习阶段设置为 2 个区块，正式实验阶段设置为 8 个区块。并创建一个 'practice' 变量（是或否），以便我们能在数据中区分练习和正式实验试次。
 ```
 
 
-## 步骤11：编写操作说明界面
+## 步骤 11：编写说明页面
 
-参与者需要知道实验流程！让 Sigmund 写下清晰的操作说明。
+被试需要知道实验流程！让 Sigmund 编写简明清晰的实验说明。
 
 💬 **提示：**
 
 ```text
-请为本实验撰写清晰简明的说明，并在练习结束与实验结束时显示提示信息。内容请自行判断！
+请为实验编写清晰简洁的说明，并编写练习结束和实验结束时的友好提示。内容可自行斟酌！
 ```
 
-仔细阅读这些说明。它们是否有道理？是否清晰？如有需要，可要求 Sigmund 进行修改！
+仔细阅读说明。它们是否通顺、清晰？如有需要，可让 Sigmund 进行修改！
 
 
-## 步骤12：测试与调试！
+## 步骤 12：测试和调试！
 
-终于到了关键时刻。运行实验吧！点击蓝色的快速运行按钮，看看会发生什么。你可能会遇到一个错误！这很正常。比如可能出现以下错误：
+重要时刻到了。让我们运行实验！点击蓝色快速运行按钮，看看会发生什么。你可能会遇到错误！这很正常。比如可能出现如下错误：
 
 %--
 figure:
@@ -415,30 +416,30 @@ figure:
  caption: "An error appears. Don't panic!"
 --%
 
-出什么问题了？练习结束项尝试显示 `acc` 变量，而该变量此时还没有定义。这是因为 OpenSesame 的准备-运行阶段机制：项目会预先准备，但有时此时变量还未被定义。
+发生了什么？练习结束那个项在 acc 变量尚未生成时就尝试显示它。这是因为 OpenSesame 的 prepare-run 阶段机制：项会提前准备，有时此时变量还没被定义。
 
-Sigmund 通常可以解决此类问题。在出现错误时，点击 “让 Sigmund 修复此项” 按钮。错误修复后，再次运行实验。如有必要，反复进行。
+Sigmund 通常能修复此类问题。错误弹出时只需点击 “Ask Sigmund to fix this”。修复后再次尝试运行实验。如有必要，重复此过程。
 
-完成！恭喜你。你和 Sigmund 一起构建了一个完整的实验！
+完成！恭喜你，与 Sigmund 一起完成了整个实验的构建！
 
 💬 **最终提示：**
 
 ```text
-谢谢你，Sigmund！干得漂亮！
+谢谢你，Sigmund！做得很棒！
 ```
 
 
-## 关键要点总结
+## 关键要点
 
-你已经学会了如何高效地与AI协作者合作！主要经验如下：
+你已经学会如何高效与 AI 副驾驶协作啦！主要经验包括：
 
-1. **在提示中要具体且清晰。**
-2. **将复杂任务拆分为简单步骤。** 不要一次要求太多。
-3. **始终检查 Sigmund 的工作。** AI 也会出错！
-4. **当发现问题时，提出后续问题。**
-5. **保持耐心。** 调试是流程的一部分。
+- ✅ **提示要具体、清楚**。
+- ✅ **将复杂任务拆解为简单步骤**，不要一次要求太多。
+- ✅ **始终检查 Sigmund 的成果**，AI 也会犯错！
+- ✅ **出现问题要积极追问**。
+- ✅ **要有耐心**，调试是实验流程的一部分。
 
-多加练习，你和 Sigmund 会成为优秀的团队！🤝
+多练习后，你和 Sigmund 将成为黄金搭档！🤝
 
 
 ## 参考文献

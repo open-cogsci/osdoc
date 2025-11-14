@@ -1,399 +1,340 @@
 title: Tutoriel débutant : orientation du regard
-hash: 8b68f010d5f28f2e59818b6c6aac4308f317f2ced632ba0c36993b1e159c8432
+hash: 1bc0db6f02f63201f3d90855479f82e8a246736a8141fb744439c06fe8783002
 locale: fr
 language: French
 
 ## À propos d'OpenSesame
 
-OpenSesame est un programme gratuit permettant de développer facilement des expériences comportementales en psychologie, en neurosciences, et en économie expérimentale. Pour les débutants, OpenSesame propose une interface graphique complète, basée sur le point-and-click. Pour les utilisateurs avancés, OpenSesame prend en charge le script Python (non abordé dans ce tutoriel).
+OpenSesame est un programme gratuit pour le développement rapide d’expériences comportementales en psychologie, neurosciences cognitives et économie expérimentale. Pour les débutants, OpenSesame propose une interface graphique complète basée sur le « pointer-cliquer ». Pour les utilisateurs avancés, OpenSesame prend en charge le script Python et JavaScript (non abordé dans ce tutoriel).
 
 ## À propos de ce tutoriel
 
-Ce tutoriel montre comment créer une expérience psychologique simple mais complète à l’aide d’OpenSesame [(Mathôt, Schreij, & Theeuwes, 2012; Mathôt & March, 2022)][references]. Vous utiliserez principalement l’interface graphique d’OpenSesame (c’est-à-dire, pas de codage inline en Python), bien que vous effectuerez quelques modifications mineures sur le script OpenSesame. Ce tutoriel prend environ une heure.
+Nous allons créer une expérience classique d'orientation du regard (« gaze-cuing »). Il s'agit d'un paradigme amusant et intéressant, où il est difficile de ne pas regarder là où fixe un visage.
 
-Ce tutoriel suppose que vous utilisez OpenSesame 4.1 avec toutes les dernières mises à jour appliquées. Si vous voyez une notification indiquant "Certains paquets peuvent être mis à jour (...)", cliquez sur le bouton "Installer les mises à jour ..." pour ouvrir le panneau de mise à jour, puis sur "Exécuter le script de mise à jour" pour effectuer les mises à jour. Après la mise à jour, redémarrez OpenSesame.
+Nous utiliserons uniquement l’interface graphique. Nous *n’utiliserons pas* de code Python ou JavaScript (ce contenu est traité dans les tutoriels intermédiaires). Ce tutoriel dure environ une heure.
+
+## Ce que vous allez apprendre
+
+À la fin de ce tutoriel, vous saurez :
+
+- 💡 Construire la structure d’une expérience avec des items SEQUENCE et LOOP
+- 💡 Définir un plan factoriel complet avec des variables indépendantes dans une table LOOP
+- 💡 Créer des stimuli visuels avec des items SKETCHPAD
+- 💡 Recueillir des réponses avec des items KEYBOARD_RESPONSE
+- 💡 Fournir un feedback aux participants avec des items FEEDBACK
+- 💡 Afficher du texte à l'aide des items FORM_TEXT_DISPLAY
+- 💡 Utiliser des variables pour définir vos stimuli
+- 💡 Utiliser des expressions conditionnelles (run-if) pour contrôler le déroulement de l’expérience
+- 💡 Organiser les fichiers de stimuli dans le file pool
+- 💡 Enregistrer des données (log)
+
+## Ce dont vous aurez besoin
+
+**OpenSesame 4.1 ou version ultérieure** avec toutes les mises à jour installées. Si une notification de mises à jour disponibles apparaît, cliquez sur « Installer les mises à jour... » puis sur « Exécuter le script de mise à jour ». Redémarrez OpenSesame après la mise à jour. Vous pouvez également mettre à jour manuellement en exécutant la commande suivante dans la console OpenSesame.
+
+```bash
+pip install opensesame-core opensesame-extension-sigmund --upgrade
+```
 
 ## L'expérience
 
-Dans ce tutoriel, vous allez créer une expérience de guidance du regard telle qu’introduite par [Friesen et Kingstone (1998)][references]. Dans cette expérience, un visage est présenté au centre de l’écran (%FigGazeCuing). Ce visage regarde soit vers la droite soit vers la gauche. Une lettre cible (un 'F' ou un 'H') est présentée à gauche ou à droite du visage. Un stimulus distracteur (la lettre 'X') est présenté de l’autre côté du visage. La tâche consiste à indiquer le plus rapidement possible si la lettre cible est un 'F' ou un 'H'. Dans la condition congruente, le visage regarde la cible. Dans la condition incongruente, le visage regarde le distracteur. Comme vous pouvez vous y attendre, le résultat typique est que les participants répondent plus rapidement dans la condition congruente que dans la condition incongruente, même si la direction du regard ne prédit pas l’emplacement de la cible. Cela démontre que notre attention est automatiquement guidée par le regard d’autrui, même dans des situations où cela n’a pas d’utilité. (Et même lorsque le visage est un simple smiley !)
+Comme mentionné précédemment, nous allons créer une expérience d’orientation du regard, initialement développée par [Friesen et Kingstone (1998)][references]. Voici le déroulement :
 
-L’expérience se compose d’une phase de pratique et d’une phase expérimentale. Un feedback visuel sera présenté après chaque bloc d’essais. Un son sera joué après chaque réponse incorrecte.
+1. Un visage apparaît au centre de l'écran
+2. Le visage regarde à gauche ou à droite
+3. Une lettre cible ('F' ou 'H') apparaît d’un côté
+4. Une lettre distractrice ('X') apparaît de l’autre côté
+5. Les participants identifient la lettre cible aussi vite que possible
 
-La conception expérimentale :
+L'expérience comprend une phase d’entraînement et une phase expérimentale. Vous montrerez un feedback après chaque bloc. Un son sera joué après une réponse incorrecte.
 
-- est *intra-sujets*, car tous les participants font toutes les conditions
-- est *complètement croisée* (ou factorielle complète), car toutes les combinaisons de conditions apparaissent
-- comporte trois facteurs :
-    - *côté du regard* avec deux niveaux (gauche, droite)
-    - *côté de la cible* avec deux niveaux (gauche, droite)
-    - *lettre cible* avec deux niveaux (F, H)
+Le résultat intéressant ? Les gens sont plus rapides lorsque le visage regarde vers la cible, même si la direction du regard ne prédit pas l'emplacement de la cible. Cela montre que les humains suivent automatiquement le regard des autres.
 
-Voir %DesignScreencast pour une explication de la logique et de la conception de l’expérience :
+## Étape 1 : Créer la séquence principale
 
-## Étape 1 : Créer la séquence principale
+🎯 __But :__ Dans cette étape, nous allons créer la structure de base de notre expérience : une phase d’entraînement, durant laquelle les participants s’exercent à la tâche ; une phase expérimentale, durant laquelle nous collecterons les données pour l’analyse ; et des écrans d’information avant et après ces phases. Nous allons uniquement mettre en place la structure. Les détails seront implémentés plus tard.
 
-Lorsque vous démarrez OpenSesame, vous voyez l’onglet 'Bien démarrer !' (%FigGetStarted). Une liste de modèles s’affiche sous 'Commencer une nouvelle expérience'. Ces modèles fournissent des points de départ pratiques pour de nouvelles expériences. Après avoir enregistré une expérience pour la première fois, les expériences récemment ouvertes apparaissent sous 'Continuer avec une expérience récente'.
+Lorsque vous lancez OpenSesame, l’onglet « Bien démarrer ! » apparaît (%FigGetStarted). Choisissez « Modèle par défaut ».
 
-Cliquez sur 'Modèle par défaut' pour commencer avec un modèle expérimental minimal.
+Open the main SEQUENCE named *experiment*. Il contient deux items par défaut : un notepad (*getting_started*) et un SKETCHPAD (*welcome*).
 
-Par défaut, il existe une SEQUENCE principale, simplement appelée *experiment*. Cliquez sur *experiment* dans la zone de présentation (par défaut à gauche, voir %FigInterface) pour ouvrir ses contrôles dans la zone d’onglets. La SEQUENCE *experiment* se compose de deux items : un `notepad` appelé *getting started* et un SKETCHPAD appelé *welcome*.
+<details class='info-box' markdown='1'>
 
-<div class='info-box' markdown='1'>
+<summary markdown='1'>Astuces utiles pour ce tutoriel</summary>
 
-__Encadré d'information__
-
-__Noms vs types__ -- Les items dans OpenSesame ont un nom et un type. Le nom et le type peuvent être identiques, mais ce n’est généralement pas le cas. Par exemple, un item SKETCHPAD peut avoir comme nom *my_target_sketchpad*. Pour clarifier cette distinction, nous utiliserons la `monospace` pour indiquer les types d’items, et les *italiques* pour les noms.
-
-__Astuce__ -- Le modèle 'Extended template' est un bon point de départ pour de nombreuses expériences. Il contient déjà la structure de base d'une expérience basée sur des essais.
-
-__Astuce__ -- Vous pouvez cliquer sur les icônes d’aide en haut à droite de l’onglet d’un item pour obtenir une aide contextuelle.
-
-__Astuce__ -- Sauvegardez (raccourci : `Ctrl+S`) fréquemment votre expérience ! En cas de perte de données (peu probable, mais possible), vous pourrez souvent récupérer votre travail à partir des sauvegardes automatiques créées toutes les 10 minutes par défaut (Menu → Outils → Ouvrir le dossier de sauvegarde).
-
-__Astuce__ -- Sauf si vous avez utilisé 'Supprimer définitivement' (raccourci : `Shift+Del`), les items supprimés restent disponibles dans la corbeille 'Unused items', jusqu’à ce que vous choisissiez 'Permanently delete unused items' dans l’onglet 'Unused items'. Vous pouvez réintégrer un item supprimé à une SEQUENCE en le faisant glisser hors de la corbeille 'Unused items' vers l’emplacement de votre choix dans votre expérience.
-
-__Astuce__ -- %FigExperimentStructure montre de façon schématique la structure de l’expérience que vous allez créer. Si vous êtes perdu pendant le tutoriel, vous pouvez vous référer à %FigExperimentStructure pour voir où vous en êtes.
+- Cliquez sur l’icône Aide dans l’onglet de n’importe quel item pour afficher l’aide contextuelle.
+- Sauvegardez fréquemment (Ctrl+S). Des sauvegardes sont créées automatiquement (Outils → Ouvrir le dossier de sauvegarde).
+- Les items supprimés peuvent être récupérés depuis “Éléments inutilisés” sauf s’ils ont été définitivement supprimés (Shift+Del).
+- Consultez la figure ci-dessous pour la structure que nous allons construire.
 
 %--
 figure:
  id: FigExperimentStructure
  source: experiment-structure.png
  caption: |
-  A schematic representation of the structure of the 'Gaze cuing' experiment. The item types are in bold face, item names in regular face.
+  Structure of the gaze-cuing experiment. Item types in bold, item names regular.
 --%
 
-</div>
+</details>
 
+Supprimez les items par défaut :
 
-__Supprimez les items inutiles__
+- Clic droit sur *getting_started* → Supprimer
+- Clic droit sur *welcome* → Supprimer
 
-Nous n’avons pas besoin des deux items du modèle par défaut. Supprimez *getting_started* en faisant un clic droit dessus dans la zone de présentation et en sélectionnant « Supprimer » (raccourci : `Del`). Supprimez *welcome* de la même façon. La SEQUENCE *experiment* est maintenant vide.
+La SEQUENCE *experiment* est maintenant vide. Ajoutez un formulaire pour les instructions :
 
-__Ajoutez un item form_text_display pour afficher les instructions__
+- Faites glisser un FORM_TEXT_DISPLAY depuis la barre d’outils (Form) dans *experiment*. Celui-ci affichera les instructions au début (nous définirons le texte des instructions à l’étape 12).
 
-Comme son nom l’indique, un `form_text_display` est un formulaire qui affiche du texte. Nous allons utiliser un `form_text_display` pour donner des instructions au participant au début de l'expérience.
+Ajoutez une LOOP avec une SEQUENCE pour la phase d’entraînement :
 
-Cliquez sur *experiment* dans la zone de présentation pour ouvrir ses contrôles dans la zone d’onglets. Vous verrez une SEQUENCE vide. Faites glisser un `form_text_display` depuis la barre d’outils des items (sous « Form », voir %FigInterface) vers la SEQUENCE *experiment* dans la zone d’onglets. Lorsque vous relâchez, un nouvel item `form_text_display` sera inséré dans la SEQUENCE. (Nous y reviendrons à l’étape 12.)
+- Faites glisser une LOOP dans *experiment* (placez-la après le formulaire d’instructions).
+- Faites glisser une SEQUENCE dans la LOOP et choisissez “Insérer dans [nom de la loop]”.
 
-<div class='info-box' markdown='1'>
+<details class='info-box' markdown='1'>
 
-__Encadré d'information__
+<summary markdown='1'>En savoir plus sur la structure LOOP/ SEQUENCE</summary>
 
-__Astuce__ -- Vous pouvez faire glisser des items dans la zone de présentation et dans les onglets de SEQUENCE.
+Vous répétez souvent une séquence d’événements, comme un essai. Cela se fait généralement en combinant une LOOP, qui répète un seul item, et une SEQUENCE, qui exécute plusieurs items dans l’ordre.
 
-__Astuce__ -- Si une action de dépôt est ambiguë, un menu contextuel apparaîtra pour vous demander ce que vous souhaitez faire.
+Exemple : Un *block_loop* contient une *trial_sequence*, qui elle-même contient plusieurs items correspondant à un essai. Ensemble, cette structure LOOP/ SEQUENCE correspond à un bloc unique comprenant plusieurs essais.
 
-__Astuce__ -- Un `form_text_display` affiche uniquement du texte. Si vous avez besoin d’images, etc., vous pouvez utiliser un item SKETCHPAD. Nous présenterons le SKETCHPAD à l’étape 5.
+</details>
 
-</div>
+Ajoutez un formulaire à la fin de l’entraînement
 
-__Ajoutez un item loop, contenant un item sequence, pour la phase d’entraînement__
+- Dans *experiment*, faites glisser un autre FORM_TEXT_DISPLAY et choisissez “Insérer après [nom de la loop d’entraînement]”. Ceci affichera un message de “fin d'entraînement” (Étape 12).
 
-Nous devons ajouter un item LOOP à la SEQUENCE *experiment*. Nous utiliserons ce LOOP pour la phase d’entraînement de l’expérience. Cliquez sur la SEQUENCE *experiment* pour ouvrir ses contrôles dans la zone d’onglets.
+Ajoutez une LOOP pour la phase expérimentale, en réutilisant une copie liée de la même SEQUENCE que vous avez utilisée pour la LOOP d’entraînement :
 
-Faites glisser l’élément LOOP depuis la barre d’outils des éléments dans la SEQUENCE, de la même manière que vous avez ajouté le `form_text_display`. Les nouveaux éléments sont insérés sous l’élément sur lequel ils sont déposés, donc si vous déposez le nouveau LOOP sur le `form_text_display` précédemment créé, il apparaîtra à l’endroit souhaité : après le `form_text_display`. Mais ne vous inquiétez pas si vous déposez un nouvel élément au mauvais endroit, car vous pourrez toujours réorganiser les éléments plus tard.
+- Faites glisser une LOOP et insérez-la après le formulaire de fin d’entraînement.
+- Réutilisez la SEQUENCE que vous avez créée pour la LOOP d’entraînement :
+  - Clic droit sur la SEQUENCE existante > Copier (lié).
+  - Clic droit sur la nouvelle LOOP expérimentale > Coller > “Insérer dans [loop expérimentale]”.
 
-Un LOOP, à lui seul, ne fait rien. Un LOOP a toujours besoin d’un autre élément à exécuter. Par conséquent, vous devez remplir le nouvel élément LOOP avec un autre élément. (Si vous affichez l’élément loop, vous verrez également une alerte : « Aucun élément sélectionné ».) Faites glisser un élément SEQUENCE depuis la barre d’outils des éléments sur l’élément LOOP. Un menu contextuel apparaît, vous demandant si vous souhaitez insérer la SEQUENCE après ou dans l’élément LOOP. Sélectionnez « Insérer dans new_loop ». (Nous y reviendrons à l’étape 2.)
+<details class='info-box' markdown='1'>
 
-<div class='info-box' markdown='1'>
+<summary markdown='1'>En savoir plus sur les copies liées et non liées</summary>
 
-__Boîte d’information__
+Lorsque exactement le même item apparaît à plusieurs endroits, ce sont des copies liées. Les copies liées sont pratiques, car ainsi toute modification de l’item n’a à être effectuée qu’une seule fois.
 
-__Qu’est-ce qu’un élément LOOP ?__ – Un LOOP est un élément qui structure votre expérience. Il exécute de façon répétée un autre élément, généralement une SEQUENCE. C’est aussi l’endroit où vous définissez habituellement vos variables indépendantes, c’est-à-dire celles que vous manipulez dans votre expérience.
+Les copies non liées sont indépendantes les unes des autres, vous pouvez donc en modifier une sans affecter les autres.
 
-__Qu’est-ce qu’un élément SEQUENCE ?__ – Un élément SEQUENCE structure aussi votre expérience. Comme son nom l’indique, une SEQUENCE exécute plusieurs autres éléments les uns après les autres.
+Il est recommandé d’utiliser des copies liées autant que possible !
 
-__La structure LOOP-SEQUENCE__ – Vous souhaitez souvent répéter une séquence d’événements. Pour cela, vous aurez besoin d’un élément LOOP contenant un élément SEQUENCE. Une SEQUENCE seule ne se répète pas : elle commence simplement par le premier élément et se termine par le dernier. En « entourant » une SEQUENCE avec un LOOP, vous pouvez répéter la SEQUENCE plusieurs fois. Par exemple, un essai unique correspond généralement à une SEQUENCE unique appelée *trial_sequence*. Un LOOP (souvent nommé *block_loop*) autour de cette *trial_sequence* constituerait alors un bloc d’essais. De même, mais à un autre niveau de l’expérience, une SEQUENCE (souvent appelée *block_sequence*) peut contenir un seul bloc d’essais, suivi d’un affichage FEEDBACK. Un LOOP *practice_phase* autour de cette SEQUENCE « bloc » constituerait alors la phase d’entraînement de l’expérience. Cela peut sembler un peu abstrait pour l’instant, mais au fur et à mesure de ce tutoriel, vous vous familiariserez avec l’utilisation des LOOP et des SEQUENCE.
+</details>
 
-__Astuce__ – Pour plus d’informations sur les SEQUENCEs et les LOOPs, voir :
+Ajoutez un formulaire d’au revoir :
 
-- %link:loop%
-- %link:sequence%
+- Faites glisser un FORM_TEXT_DISPLAY et insérez-le après la loop expérimentale.
 
-</div>
+Renommez les items pour plus de clarté :
 
-__Ajoutez un nouvel élément form_text_display pour le message de fin de phase d’entraînement__
+- new_form_text_display → *instructions*
+- new_loop → *practice_loop*
+- new_sequence → *block_sequence* (les copies liées sont mises à jour automatiquement)
+- new_form_text_display_1 → *end_of_practice*
+- new_loop_1 → *experimental_loop*
+- new_form_text_display_2 → *end_of_experiment*
 
-Après la phase de pratique, nous voulons informer le participant que la vraie expérience va commencer. Pour cela, nous avons besoin d’un autre `form_text_display`. Retournez dans la SEQUENCE *experiment*, et faites glisser un `form_text_display` depuis la barre d’outils des éléments sur l’élément LOOP. Le même menu contextuel apparaîtra que précédemment. Cette fois, sélectionnez « Insérer après new_loop ». (Nous y reviendrons à l’étape 12.)
+Renommez l’expérience :
 
-<div class='info-box' markdown='1'>
-
-__Astuce__ – Ne vous inquiétez pas si vous avez accidentellement changé l’élément à exécuter d’un LOOP. Vous pouvez facilement annuler cela en cliquant sur le bouton « Annuler » dans la barre d’outils (`Ctrl+Maj+Z`).
-
-</div>
-
-__Ajoutez un nouvel élément loop, contenant la séquence précédemment créée, pour la phase expérimentale__
-
-Nous avons besoin d’un élément LOOP pour la phase expérimentale, comme pour la phase de pratique. Faites donc glisser un LOOP depuis le menu de la barre d’outils des éléments sur *_form_text_display*.
-
-Le LOOP nouvellement créé (appelé *new_loop_1*) est vide, et doit être rempli avec une SEQUENCE, exactement comme le LOOP que nous avons créé auparavant. Cependant, puisque les essais des phases de pratique et expérimentale sont identiques, ils peuvent utiliser la même SEQUENCE. Donc, au lieu de faire glisser une nouvelle SEQUENCE depuis la barre d’outils, vous pouvez réutiliser l’existante (c’est-à-dire créer une copie liée).
-
-Pour ce faire, faites un clic droit sur la *new_sequence* précédemment créée et sélectionnez « Copier (lié) ». Maintenant, faites un clic droit sur *new_loop_1* et sélectionnez « Coller ». Dans le menu contextuel qui apparaît, sélectionnez « Insérer dans new_loop 1 ».
-
-<div class='info-box' markdown='1'>
-
-__Boîte de contexte__
-
-__Astuce__ — Il y a une distinction importante entre les copies *liées* et *non liées*. Si vous créez une copie liée d’un item, vous créez une autre occurrence du même item. Ainsi, si vous modifiez l’item d’origine, la copie liée sera également modifiée. En revanche, si vous créez une copie non liée d’un item, cette copie sera initialement identique (sauf pour le nom), mais vous pourrez modifier l’original sans affecter la copie non liée, et inversement.
-
-</div>
-
-__Ajoutez un nouvel item form_text_display, pour le message d’au revoir__
-
-Lorsque l’expérience est terminée, nous devons dire au revoir au participant. Pour cela, nous avons besoin d’un autre item `form_text_display`. Retournez dans la SÉQUENCE *experiment*, et faites glisser un `form_text_display` depuis la barre d’outils des items sur *new_loop_1*. Dans le menu contextuel qui apparaît, sélectionnez « Insérer après new_loop_1 ». (Nous y reviendrons à l’étape 12.)
-
-__Donnez des noms explicites aux nouveaux items__
-
-Par défaut, les nouveaux items portent des noms comme *new_sequence* et *new_form_text_display_2*. Il est conseillé de nommer les items avec des noms explicites. Cela facilite grandement la compréhension de la structure de l’expérience. Si vous le souhaitez, vous pouvez également ajouter une description à chaque item. Les noms des items doivent contenir uniquement des caractères alphanumériques et/ou des tirets bas (_).
-
-- Sélectionnez *new_form_text_display* dans la zone d’aperçu, double-cliquez sur son libellé en haut de la zone d’onglet et renommez l’item en *instructions*. (Raccourci pour la zone d’aperçu : `F2`)
-- Renommez *new_loop* en *practice_loop*.
-- Renommez *new_sequence* en *block_sequence*. Comme vous avez réutilisé cet item dans *new_loop_1*, le nom changera automatiquement à cet endroit aussi. (Cela illustre pourquoi il est efficace de créer des copies liées dès que possible.)
-- Renommez *new_form_text_display_1* en *end_of_practice*.
-- Renommez *new_loop_1* en *experimental_loop*.
-- Renommez *new_form_text_display_2* en *end_of_experiment*.
-
-__Donnez un nom explicite à toute l’expérience__
-
-L’expérience complète possède également un titre et une description. Cliquez sur « New experiment » dans la zone d’aperçu. Vous pouvez renommer l’expérience de la même façon que vous avez renommé ses items. Le titre est actuellement « New experiment ». Renommez l’expérience en « Tutoriel : Gaze cuing ». Contrairement aux noms des items, le titre de l’expérience peut contenir des espaces, etc.
-
-La zone d’aperçu de votre expérience ressemble désormais à %FigStep1. C’est le bon moment pour sauvegarder votre expérience (raccourci : `Ctrl+S`).
+- Cliquez sur New experiment dans l’aperçu. Renommez en “Tutoriel : Gaze cuing”. Puis sauvegardez (Ctrl+S).
 
 %--
 figure:
- id: FigStep1
+ id: FigStep_1
  source: step1.png
  caption: |
-  The overview area at the end of the step 1.
+  Overview at the end of Step 1.
 --%
 
+<details class='info-box' markdown='1'>
 
-## Étape 2 : Créer la séquence de bloc
+<summary markdown='1'>En savoir plus sur les différents types d’items</summary>
 
-Cliquez sur *block_sequence* dans l’aperçu. Pour l’instant, cette SÉQUENCE est vide. Nous voulons que *block_sequence* contienne un bloc d’essais, suivi d’un affichage de FEEDBACK. Pour cela, nous devons faire ce qui suit :
+- SEQUENCE : Exécute les items dans l’ordre.
+- LOOP : Répète un autre item, souvent une SEQUENCE, et définit les variables indépendantes.
+- SKETCHPAD : Présente des stimuli visuels. Est préparé à l’avance, et convient donc aux stimuli nécessitant une synchronisation précise.
+- FEEDBACK : Présente des stimuli visuels. N’est pas préparé à l’avance, et convient donc à la présentation de contenus actualisés, comme le retour sur les réponses d’un participant.
+- KEYBOARD_RESPONSE : Récupère une réponse par pression d’une touche.
+- SAMPLER : Joue un son à partir d’un fichier.
+- LOGGER : Écrit des données dans un fichier.
+- RESET_FEEDBACK : Réinitialise les variables de feedback au début d’un bloc.
+- FORM_TEXT_DISPLAY : Affiche du texte en utilisant une disposition de formulaire.
 
-__Ajoutez un item reset_feedback pour réinitialiser les variables de feedback__
+</details>
 
-Nous ne voulons pas que notre feedback soit affecté par des pressions de touches faites par les participants pendant la phase d’instructions ou lors des blocs d’essais précédents. C’est pourquoi nous commençons chaque bloc d’essais en réinitialisant les variables de feedback. Pour cela, il nous faut un item `reset_feedback`. Prenez `reset_feedback` depuis la barre d’outils des items (sous « Collecte de réponses ») et faites-le glisser sur *block_sequence*.
+## Étape 2 : Créer la séquence de blocs
 
-__Ajoutez une nouvelle boucle, contenant une nouvelle séquence, pour un bloc d’essais__
+🎯 __Objectif :__ Dans cette étape, nous allons à nouveau structurer notre expérience. Cette fois, nous allons implémenter la structure pour un seul bloc d’essais, qui correspond à *block_sequence*. Nous mettrons seulement en place la structure. Les détails seront implémentés ultérieurement.
 
-Pour un essai unique, nous avons besoin d’une SÉQUENCE. Pour un bloc d’essais, il faut répéter cette SÉQUENCE plusieurs fois. Ainsi, pour un bloc d’essais, il faut placer une BOUCLE autour d’une SÉQUENCE. Faites glisser un LOOP depuis la barre d’outils des items sur *new_reset_feedback*. Ensuite, faites glisser une SÉQUENCE depuis la barre d’outils des items sur le LOOP nouvellement créé, puis sélectionnez « Insérer dans new_loop » dans le menu contextuel qui apparaît. (Nous y reviendrons à l’étape 3.)
+Ouvrez *block_sequence* et ajoutez les items suivants dans l’ordre :
 
-__Ajoutez un item feedback__
+- RESET_FEEDBACK (pour réinitialiser les variables de feedback au début du bloc)
+- LOOP avec une nouvelle SEQUENCE insérée (pour gérer la boucle effective et la logique des essais)
+- FEEDBACK (pour fournir un feedback au participant à la fin du bloc)
 
-Après chaque bloc d’essais, nous voulons donner un retour au participant, afin qu’il/elle sache comment il/elle s’en sort. Pour cela, nous avons besoin d’un item FEEDBACK. Faites glisser un FEEDBACK depuis la barre d’outils des items vers *new_loop*, puis sélectionnez « Insérer après le loop » dans le menu contextuel qui apparaît. (Nous y reviendrons à l’Étape 10.)
+Renommez
 
-__Donnez des noms pertinents aux nouveaux items__
-
-Renommez : (Consultez l’Étape 1 si vous ne vous souvenez plus de la procédure.)
-
-- *new_loop* en *block_loop*
-- *new_sequence* en *trial_sequence*
-- *new_reset_feedback* en *reset_feedback*
-- *new_feedback* en *feedback*
-
-L’aperçu de votre expérience ressemble maintenant à %FigStep2. N’oubliez pas d’enregistrer régulièrement votre expérience.
+- new_reset_feedback → *reset_feedback*
+- new_loop → *block_loop*
+- new_sequence → *trial_sequence*
+- new_feedback → *feedback*
 
 %--
 figure:
- id: FigStep2
+ id: FigStep_2
  source: step2.png
  caption: |
-  The overview area at the end of Step 2.
+  Vue d’ensemble à la fin de l’étape 2.
 --%
 
-## Étape 3 : Remplissez le block_loop avec les variables indépendantes
 
-Comme son nom l’indique, *block_loop* correspond à un seul bloc d’essais. À l’étape précédente, nous avons créé le *block_loop*, mais nous devons encore définir les variables indépendantes qui varieront à l’intérieur du bloc. Notre expérience comporte trois variables indépendantes :
+## Étape 3 : Remplir la boucle de bloc avec les variables indépendantes
+ 
+🎯 __Objectif :__ Dans cette étape, nous allons définir les variables indépendantes (conditions) de notre expérience. Notre expérience est un exemple de plan complètement randomisé, ce qui signifie que les variables indépendantes varient d’un essai à l’autre.
 
-- __gaze_cue__ peut être « left » ou « right ».
-- __target_pos__ (la position de la cible) peut être « -300 » ou « 300 ». Ces valeurs correspondent à la coordonnée X de la cible en pixels (0 = centre). Utiliser directement les coordonnées, plutôt que « left » et « right », sera plus pratique lorsque nous créerons les écrans de présentation de la cible (voir Étape 5).
-- __target_letter__ (la lettre cible) peut être « F » ou « H ».
+Ouvrez *block_loop*. Cliquez sur Full-factorial design. Définissez :
 
-Par conséquent, notre expérience comporte 2 x 2 x 2 = 8 conditions. Bien que 8 conditions ne soient pas beaucoup (la plupart des expériences en auront plus), nous n’avons pas besoin de saisir toutes les combinaisons possibles à la main. Cliquez sur *block_loop* dans l’aperçu pour ouvrir son onglet. Cliquez ensuite sur le bouton « Plan factoriel complet ». Dans l’assistant de variables, il vous suffit de définir toutes les variables en tapant le nom dans la première ligne et les niveaux dans les lignes en dessous du nom (voir %FigVariableWizard). Si vous sélectionnez « Ok », vous verrez que *block_loop* a été rempli avec toutes les 8 combinaisons possibles.
+- `gaze_cue` : left, right
+- `target_pos` : -300, 300 (coordonnée x en pixels ; 0 = centre ; négatif = gauche)
+- `target_letter` : F, H
+
+Cela crée 2×2×2 = 8 combinaisons. Nous devons aussi définir plusieurs variables qui sont dérivées des variables ci-dessus. Pour cela, ajoutez manuellement une colonne pour chaque variable et saisissez les valeurs correctes dans chaque cellule.
+
+- `dist_pos` : Pour chaque ligne, mettez 300 si `target_pos` vaut -300, et -300 si `target_pos` vaut 300
+- `correct_response` : z pour F, m pour H
+- `congruency` : congruent si le regard indique la direction de la cible, et incongruent sinon
+
+Vérifiez que la table de la boucle comporte 8 lignes. Réglez ensuite Repeat sur 3 afin d’obtenir 3 × 8 = 24 essais par bloc.
 
 %--
 figure:
- id: FigVariableWizard
- source: variable-wizard.png
- caption: |
-  The loop variable wizard in Step 3.
---%
-
-Dans le tableau du loop obtenu, chaque ligne correspond à une exécution de *trial_sequence*. Dans notre cas, une exécution de *trial_sequence* correspond à un essai, chaque ligne du tableau de loop représente donc un essai. Chaque colonne correspond à une variable, qui peut prendre une valeur différente à chaque essai.
-
-Mais ce n’est pas tout. Nous devons ajouter trois variables supplémentaires : la position du distracteur, la réponse correcte et la congruence.
-
-- __dist_pos__ -- Sur la première ligne de la première colonne vide, entrez « dist_pos ». Cela ajoute automatiquement une nouvelle variable expérimentale nommée « dist_pos ». Dans les lignes en dessous, saisissez « 300 » partout où « target_pos » vaut -300, et « -300 » partout où « target_pos » vaut 300. En d’autres termes, la cible et le distracteur doivent être placés de manière opposée.
-- __correct_response__ -- Créez une autre variable, dans une nouvelle colonne vide, avec le nom « correct_response ». Attribuez « z » à « correct_response » là où « target_letter » est « F », et « m » là où « target_letter » est « H ». Cela signifie que le participant doit appuyer sur la touche « z » s’il voit un « F » et sur la touche « m » s’il voit un « H ». (N’hésitez pas à choisir d’autres touches si « z » et « m » ne sont pas pratiques sur votre clavier ; par exemple, « w » et « n » sont de meilleures options sur un clavier AZERTY.)
-- __congruency__ -- Créez une autre variable appelée « congruency ». Attribuez « congruent » à « congruency » lorsque « target_pos » vaut « -300 » et « gaze_cue » vaut « left », et lorsque « target_pos » vaut « 300 » et « gaze_cue » vaut « right ». En d’autres termes, un essai est congruent si le visage regarde la cible. Attribuez « incongruent » pour les essais où le visage regarde le distracteur. La variable « congruency » n’est pas nécessaire pour faire fonctionner l’expérience ; cependant, elle sera utile lors de l’analyse ultérieure des données.
-
-Nous devons faire une dernière chose. ‘Repeat’ est actuellement réglé sur ‘1.00’. Cela signifie que chaque cycle sera exécuté une fois. Donc, le bloc consiste maintenant en 8 essais, ce qui est un peu court. Une longueur raisonnable pour un bloc d'essais est de 24, donc réglez ‘Repeat’ sur 3.00 (3 répétitions x 8 cycles = 24 essais). Il n’est pas nécessaire de modifier ‘Order’, car ‘random’ est exactement ce que nous souhaitons.
-
-Le *block_loop* ressemble maintenant à %FigStep3. Pensez à enregistrer régulièrement votre expérience.
-
-%--
-figure:
- id: FigStep3
+ id: FigStep_3
  source: step3.png
- caption: "The *block_loop* at the end of Step 3."
+ caption: |
+  La *block_loop* à la fin de l’étape 3.
 --%
 
-<div class='info-box' markdown='1'>
+<details class='info-box' markdown='1'>
 
-__Boîte de contexte__
+<summary markdown='1'>En savoir plus sur la table LOOP</summary>
 
-__Astuce__ -- Vous pouvez préparer votre table de boucle dans votre programme de tableur préféré et la copier-coller dans la table des variables de LOOP.
+- Vous pouvez copier-coller une table à partir d’un tableur, ou charger un fichier .csv/.xlsx en réglant Source sur file.
+- Repeat peut être fractionnaire. Par exemple, en réglant repeat à 0.5, seule la moitié des lignes seront exécutées, sélectionnées de façon aléatoire.
 
-__Astuce__ -- Vous pouvez spécifier votre table de boucle dans un fichier séparé (au format `.xlsx` ou `.csv`), et utiliser ce fichier directement. Pour cela, sélectionnez ‘file’ dans ‘Source’.
+</details>
 
-__Astuce__ -- Vous pouvez définir ‘Repeat’ sur une valeur non entière. Par exemple, en réglant ‘Repeat’ sur ‘0.5’, seule la moitié des essais (sélectionnés aléatoirement) seront exécutés.
 
-</div>
+## Étape 4 : Ajouter des images et fichiers audio à la banque de fichiers
 
-## Étape 4 : Ajouter des images et des fichiers sonores à la réserve de fichiers
+🎯 __Objectif :__ Dans cette étape, nous allons utiliser la banque de fichiers pour intégrer les fichiers de stimuli (images et un son) à l’expérience.
 
-Pour nos stimuli, nous utiliserons des images depuis un fichier. De plus, nous diffuserons un son si le participant fait une erreur. Pour cela, nous avons besoin d’un fichier son.
-
-Vous pouvez télécharger les fichiers nécessaires ici (dans la plupart des navigateurs, vous pouvez faire un clic droit sur les liens et choisir « Enregistrer le lien sous » ou une option similaire) :
+Téléchargez les fichiers ci-dessous :
 
 - [gaze_neutral.png](/img/beginner-tutorial/gaze_neutral.png)
 - [gaze_left.png](/img/beginner-tutorial/gaze_left.png)
 - [gaze_right.png](/img/beginner-tutorial/gaze_right.png)
 - [incorrect.ogg](/img/beginner-tutorial/incorrect.ogg)
 
-Après avoir téléchargé ces fichiers (par exemple sur votre bureau), vous pouvez les ajouter à la réserve de fichiers. Si la réserve de fichiers n’est pas déjà visible (par défaut, sur le côté droit de la fenêtre), cliquez sur le bouton « Afficher la réserve de fichiers » dans la barre d’outils principale (raccourci : `Ctrl+P`). Le moyen le plus simple d’ajouter les quatre fichiers à la réserve de fichiers est de les glisser-déposer depuis le bureau (ou l’endroit où vous les avez téléchargés) dans la réserve de fichiers. Vous pouvez également cliquer sur le bouton ‘+’ dans la réserve de fichiers pour ajouter des fichiers à l’aide de la boîte de dialogue qui s’ouvre. La réserve de fichiers sera automatiquement enregistrée avec votre expérience.
-
-Votre réserve de fichiers ressemble maintenant à %FigStep4. Pensez à enregistrer régulièrement votre expérience.
+Ouvrez la banque de fichiers (Ctrl+P) et glissez-y les fichiers. Ou bien utilisez le bouton + pour les ajouter. La banque de fichiers est automatiquement intégrée à votre expérience.
 
 %--
 figure:
- id: FigStep4
+ id: FigStep_4
  source: step4.png
- caption: "The file pool at the end of Step 4."
+ caption: |
+  Banque de fichiers à la fin de l’étape 4.
 --%
 
 ## Étape 5 : Remplir la séquence d’essai avec des items
 
-Un essai dans notre expérience se présente comme suit :
+🎯 __Objectif :__ Dans cette étape, nous allons définir la séquence d’un essai. Pour l’instant, nous allons seulement ajouter les items nécessaires sans les définir en détail. Nous ferons cela plus tard.
 
-1. __Point de fixation__ — 750 ms, SKETCHPAD item
-2. __Regard neutre__ — 750 ms, SKETCHPAD item
-3. __Indice de regard__ — 500 ms, SKETCHPAD item
-4. __Cible__  — 0 ms, SKETCHPAD item
-5. __Collecte de la réponse__ — KEYBOARD_RESPONSE item
-6. __Jouer un son si la réponse est incorrecte__ —  SAMPLER item
-7. __Enregistrer la réponse dans un fichier__ — LOGGER item
+Un essai consiste en :
 
-Cliquez sur *trial_sequence* dans l’aperçu pour ouvrir l’onglet *trial_sequence*. Prenez un SKETCHPAD depuis la barre d’outils des items et faites-le glisser dans le *trial_sequence*. Répétez cela trois fois encore, pour que *trial_sequence* contienne quatre SKETCHPADs. Ensuite, sélectionnez et ajoutez un item KEYBOARD_RESPONSE, un item SAMPLER, et un item LOGGER.
+1. Point de fixation — 750 ms — SKETCHPAD  
+2. Regard neutre — 750 ms — SKETCHPAD  
+3. Indice de regard — 500 ms — SKETCHPAD  
+4. Cible — 0 ms — SKETCHPAD (la durée de 0 ms permet à l'expérience de passer immédiatement à la collecte de la réponse)  
+5. Collecte de la réponse — KEYBOARD_RESPONSE  
+6. Son incorrect — SAMPLER (exécuté uniquement si la réponse est incorrecte)  
+7. Log — LOGGER  
 
-Encore une fois, nous allons renommer les nouveaux items pour que le *trial_sequence* soit facile à comprendre. Renommez :
+Ouvrez *trial_sequence*, ainsi que les items dans l'ordre indiqué ci-dessus. Une fois terminé, renommez-les :
 
-- *new_sketchpad* en *fixation_dot*
-- *new_sketchpad_1* en *neutral_gaze*
-- *new_sketchpad_2* en *gaze_cue*
-- *new_sketchpad_3* en *target*
-- *new_keyboard_response* en *keyboard_response*
-- *new_sampler* en *incorrect_sound*
-- *new_logger* en *logger*
+- *new_sketchpad* → *fixation_dot*
+- *new_sketchpad_1* → *neutral_gaze*
+- *new_sketchpad_2* → *gaze_cue*
+- *new_sketchpad_3* → *target*
+- *new_keyboard_response* → *keyboard_response*
+- *new_sampler* → *incorrect_sound*
+- *new_logger* → *logger*
 
-Par défaut, les items sont toujours exécutés, ce qui est indiqué par l'expression run-if `True`. Cependant, nous souhaitons changer cela pour l’item *incorrect_sound*, qui ne doit être exécuté que si une erreur a été commise. Pour ce faire, nous devons modifier l’expression « Run if » en `correct == 0` dans l’onglet *trial_sequence*. Cela fonctionne car l’item *keyboard_response* crée automatiquement une variable `correct`, qui prend la valeur `1` (correct), `0` (incorrect) ou `undefined` (cela dépend de la variable `correct_response` définie à l’étape 3). Le signe égal double correspond à la syntaxe Python et indique que l’on veut vérifier si les deux éléments sont égaux, en l’occurrence si la variable `correct` est égale à 0. Pour modifier une expression run-if, double-cliquez dessus (raccourci : `F3`).
-
-La *trial_sequence* ressemble maintenant à %FigStep5.
+Dans *trial_sequence*, réglez "run-if" pour *incorrect_sound* sur : `correct == 0`. Il est important d'utiliser un double signe égal (`==`), qui vérifie si deux valeurs sont identiques, dans ce cas si `correct` est égal à 0. (Si vous utilisez accidentellement un seul signe égal, `correct = 1`, vous obtiendrez une `SyntaxError` lors de l'exécution de l'expérience.)
 
 %--
 figure:
- id: FigStep5
+ id: FigStep_5
  source: step5.png
- caption: "The *trial_sequence* at the end of Step 5."
+ caption: |
+  *trial_sequence* à la fin de l'étape 5.
 --%
 
-<div class='info-box' markdown='1'>
+<details class='info-box' markdown='1'>
 
-__Boîte d'arrière-plan__
+<summary markdown='1'>En savoir plus sur les variables et les expressions run-if</summary>
 
-__Qu’est-ce qu’un item SKETCHPAD ?__ -- Un SKETCHPAD est utilisé pour présenter des stimuli visuels : texte, formes géométriques, points de fixation, patchs de Gabor, etc. Vous pouvez dessiner sur le SKETCHPAD à l’aide des outils de dessin intégrés.
+Les variables et les expressions conditionnelles (run-if) sont puissantes ! Voir %link:manual/variables%
 
-__Qu’est-ce qu’un item KEYBOARD_RESPONSE ?__ -- Un item KEYBOARD_RESPONSE collecte la réponse d’un participant au clavier.
+</details>
 
-__Qu’est-ce qu’un item SAMPLER ?__ -- Un item SAMPLER joue un son à partir d’un fichier sonore.
+## Étape 6 : Dessiner les items SKETCHPAD
 
-__Qu’est-ce qu’un item LOGGER ?__ -- Un item LOGGER enregistre les données dans le fichier log. C’est très important : si vous oubliez d’inclure un item LOGGER, aucune donnée ne sera enregistrée pendant l’expérience !
+🎯 __Objectif :__ Dans cette étape, nous allons définir les quatre items SKETCHPAD de la séquence d'essai : le point de fixation, le regard neutre (regarde droit devant), l'indice de regard (regarde à gauche ou à droite), et l'affichage de la cible (deux lettres de chaque côté de l'indice de regard, qui regarde encore à gauche ou à droite).
 
-__Astuce__ -- Les variables et les expressions conditionnelles « if » sont très puissantes ! Pour en savoir plus à leur sujet, consultez :
+Définissez la couleur de fond de l'expérience sur blanc et la couleur de premier plan sur noir :
 
-- %link:manual/variables%
+- Cliquez sur le titre de l'expérience pour ouvrir les propriétés générales
+- Modifiez Background en 'white' et Foreground en 'black'
 
-</div>
+Définir le point de fixation :
 
-## Étape 6 : Dessiner les items sketchpad
+- Ouvrez *fixation_dot*
+- Sélectionnez l'élément fixdot. Il s'agit de l'icône du point de fixation dans la barre d'outils verticale à gauche du canevas.
+- Tracez un point de fixation au centre de l'écran (0, 0)
+- Définissez la durée à 745 ms. Celle-ci sera arrondie à la durée souhaitée de 750 ms.
 
-Les items SKETCHPAD que nous avons créés à l’étape 5 sont encore vides. Il est temps de dessiner !
+<details class='info-box' markdown='1'>
 
-__Définir la couleur de fond sur blanc__
+<summary markdown='1'>Pourquoi spécifier une durée de 745 ms alors que vous souhaitez afficher un écran pendant 750 ms&nbsp;?</summary>
 
-Cliquez sur *fixation_dot* dans la zone d’aperçu pour ouvrir son onglet. Le SKETCHPAD est encore gris foncé, alors que les images que nous avons téléchargées ont un fond blanc. Oups, nous avons oublié de définir la couleur de fond de l’expérience sur blanc (elle est grise foncée par défaut) ! Cliquez sur « Tutorial: Gaze cuing » dans la zone d’aperçu pour ouvrir l’onglet « General properties ». Changez « Foreground » en « black » et « Background » en « white ».
+Les écrans se rafraîchissent périodiquement. Sur un moniteur 60 Hz, un cycle de rafraîchissement dure 1000 / 60 = 16,67 ms. Cela signifie que, sur un moniteur 60 Hz, la durée d'un affichage sera nécessairement un multiple de 16,67.
 
-<div class='info-box' markdown='1'>
+745 n'est *pas* un multiple de 16,67. Par conséquent, la durée sera arrondie au multiple supérieur le plus proche, c'est-à-dire 750.
 
-__Boîte d'arrière-plan__
-
-__Astuce__ -- Pour un contrôle plus précis des couleurs, vous pouvez aussi utiliser l’écriture RGB hexadécimale (par exemple, `#FF000` pour le rouge), utiliser différents espaces couleur, ou l’outil sélecteur de couleurs. Voir aussi :
-
-- %link:manual/python/canvas%
-
-</div>
-
-__Dessiner le point de fixation__
-
-Revenez à *fixation_dot* en cliquant sur *fixation_dot* dans l’aperçu. Sélectionnez maintenant l’outil point de fixation en cliquant sur le bouton en forme de mire. Si vous déplacez votre curseur sur le sketchpad, vous pouvez voir les coordonnées de l’écran en haut à droite. Définissez la couleur (avant-plan) sur « black ». Cliquez au centre de l’écran (0, 0) pour dessiner un point de fixation central.
-
-Enfin, changez le champ ‘Duration’ de ‘keypress’ à ‘745’, car nous voulons que le point de fixation soit présenté pendant 750 ms. Attendez… *pourquoi n’avons-nous pas simplement indiqué 750 ms ?* La raison est que la durée réelle d’affichage est toujours arrondie vers la valeur compatible avec la fréquence de rafraîchissement de votre moniteur. Cela peut sembler compliqué, mais pour la plupart des cas, les règles suivantes suffisent :
-
-1. Choisissez une durée compatible avec le taux de rafraîchissement de votre écran. Par exemple, si le taux de rafraîchissement de votre écran est de 60 Hz, cela signifie que chaque image dure 16,7 ms (= 1000 ms/60 Hz). Par conséquent, sur un écran à 60 Hz, vous devriez toujours sélectionner une durée qui est un multiple de 16,7 ms, comme 16,7, 33,3, 50, 100, etc.
-2. Dans le champ de durée du SKETCHPAD, spécifiez une durée qui est inférieure de quelques millisecondes à celle que vous visez. Donc, si vous souhaitez présenter un SKETCHPAD pendant 50 ms, choisissez une durée de 45. Si vous souhaitez présenter un SKETCHPAD pendant 1000 ms, choisissez une durée de 995. Etc.
-
-<div class='info-box' markdown='1'>
-
-__Boîte d'information__
-
-__Astuce__ -- Pour une discussion détaillée sur la synchronisation expérimentale, consultez :
+Pour plus d'informations, voir :
 
 - %link:timing%
 
-__Astuce__ -- La durée d'un SKETCHPAD peut être une valeur en millisecondes, mais vous pouvez également entrer 'keypress' ou 'mouseclick' pour enregistrer respectivement une pression de touche ou un clic de souris. Dans ce cas, un SKETCHPAD fonctionnera presque de la même manière qu'un item KEYBOARD_RESPONSE (mais avec moins d’options).
+</details>
 
-__Astuce__ -- Assurez-vous que la couleur (avant-plan) est définie sur noir. Sinon, vous dessinerez en blanc sur fond blanc et vous ne verrez rien !
+Définir l'affichage du regard neutre :
 
-</div>
+- Ouvrez *neutral_gaze*
+- Sélectionnez l'élément image
+- Placez une image au centre de l'écran, et choisissez `gaze_neutral.png` dans la boîte de dialogue de la bibliothèque de fichiers qui s'affiche
+- Définissez la durée à 745 ms
 
-__Dessiner le regard neutre__
+Définir l'affichage de l'indice de regard :
 
-Ouvrez le SKETCHPAD *neutral_gaze*. Sélectionnez maintenant l’outil image en cliquant sur le bouton avec l’icône représentant un paysage de montagne. Cliquez au centre de l’écran (0, 0). La boîte de dialogue 'Sélectionner un fichier du pool' apparaîtra. Sélectionnez le fichier `gaze_neutral.png` et cliquez sur le bouton 'Sélectionner'. L’image de regard neutre apparaîtra alors au centre de l’écran ! Enfin, comme précédemment, changez le champ 'Duration' de 'keypress' à '745'. (Et notez encore une fois que cela correspond à une durée de 750 ms sur la plupart des écrans !)
+- Ouvrez *gaze_cue*
+- Placez `gaze_left.png` au centre de l'écran
 
-<div class='info-box' markdown='1'>
+Bien entendu, nous ne souhaitons pas toujours afficher `gaze_left.png`. Nous voulons afficher `gaze_left.png` lorsque la variable `gaze_cue` vaut "left", et `gaze_right.png` lorsque la variable `gaze_cue` vaut "right". Autrement dit, nous voulons afficher `gaze_{gaze_cue}.png`, où les accolades indiquent qu'une variable doit être insérée.
 
-__Boîte d'information__
-
-__Astuce__ -- OpenSesame peut gérer une grande variété de formats d’image. Toutefois, certains formats `.bmp` (non standards) sont connus pour poser problème. Si vous constatez qu’une image `.bmp` n'est pas affichée, vous pouvez la convertir dans un autre format, comme `.png`. Vous pouvez facilement convertir des images avec des outils gratuits tels que [GIMP].
-</div>
-
-__Dessiner l’indice directionnel du regard__
-
-Ouvrez le SKETCHPAD *gaze_cue*, et sélectionnez à nouveau l’outil image. Cliquez au centre de l’écran (0, 0) et sélectionnez le fichier `gaze_left.png`.
-
-Mais nous n’avons pas encore terminé ! Car l’indice directionnel du regard ne devrait pas toujours être 'left', mais dépendre de la variable `gaze_cue`, que nous avons définie à l’étape 3. Cependant, en dessinant l’image `gaze_left.png` sur le SKETCHPAD, nous avons généré un script qui ne nécessite qu’une très petite modification pour s’assurer que la bonne image sera affichée. Cliquez sur le bouton 'Select view' en haut à droite de l’onglet *gaze_cue* et sélectionnez 'View script'. Vous verrez maintenant le script correspondant au sketchpad que nous venons de créer :
-
-~~~ .python
-set duration keypress
-set description "Displays stimuli"
-draw image center=1 file="gaze_left.png" scale=1 show_if=True x=0 y=0 z_index=0
-~~~
-
-La seule chose à faire est de remplacer `gaze_left.png` par `gaze_{gaze_cue}.png`. Cela signifie qu’OpenSesame utilise la variable `gaze_cue` (qui prend les valeurs `left` et `right`) pour déterminer quelle image doit être affichée.
-
-Pendant que nous y sommes, changeons aussi la durée à '495' (arrondi à 500 !). Le script ressemble maintenant à ceci :
+Nous pouvons spécifier cela dans le script de l'item. Cliquez sur Select view (l'icône du milieu en haut à droite) → View script. Cela affiche le script OpenSesame qui définit l'item (ce n'est pas du Python ni du JavaScript !). Modifiez la commande `draw image` comme indiqué ci-dessous. Profitez-en également pour spécifier la durée (rappelez-vous que 495 ms sera arrondi à 500 ms, comme expliqué ci-dessus).
 
 ~~~ .python
 set duration 495
@@ -401,141 +342,107 @@ set description "Displays stimuli"
 draw image center=1 file="gaze_{gaze_cue}.png" scale=1 show_if=True x=0 y=0 z_index=0
 ~~~
 
-Cliquez sur le bouton 'Apply' en haut à droite pour appliquer vos modifications au script et revenir aux commandes classiques de l’item. OpenSesame vous avertira que l’image ne peut pas être affichée car elle est définie à l’aide de variables, et une image de remplacement sera affichée à la place. Ne vous inquiétez pas, l’image correcte sera affichée pendant l’expérience !
+Cliquez sur Appliquer. L’affichage revient maintenant à la vue des contrôles graphiques. L’image apparaît maintenant sous forme de point d’interrogation. Pas d’inquiétude ! L’image correcte sera affichée pendant l’expérience.
 
-<div class='info-box' markdown='1'>
+<details class='info-box' markdown='1'>
 
-__Boîte d'information__
+<summary markdown='1'>En savoir plus sur les variables existantes dans votre expérience</summary>
 
-__Astuces__ -- L’inspecteur de variables (raccourci : `Ctrl+I`) est un moyen puissant de découvrir quelles variables ont été définies dans votre expérience, et quelles valeurs elles possèdent (voir %FigVariableInspector). Lorsque votre expérience n’est pas en cours d’exécution, la plupart des variables n’ont pas encore de valeur. Mais lorsque vous exécutez votre expérience dans une fenêtre, tout en gardant l’inspecteur de variables visible, vous pouvez voir les variables changer en temps réel. Cela est très utile pour déboguer votre expérience.
+Ouvrez l’inspecteur de variables (Ctrl+I) pour voir quelles variables existent dans votre expérience. Lorsque l’expérience tourne, vous verrez même leurs valeurs changer en temps réel !
 
 %--
 figure:
  id: FigVariableInspector
  source: variable-inspector.png
- caption: "L’inspecteur de variables est un moyen pratique d’obtenir un aperçu des variables présentes dans votre expérience."
+ caption: |
+  L’inspecteur de variables.
 --%
 
-</div>
+</details>
 
-__Dessiner la cible__
+Définir l’affichage cible :
 
-Nous voulons que trois objets fassent partie de l’affichage de la cible : la lettre cible, la lettre distractrice et l’indice de regard (voir %FigGazeCuing). Comme précédemment, nous allons commencer par créer un affichage statique en utilisant l’éditeur SKETCHPAD. Ensuite, il ne sera nécessaire de faire que des modifications mineures du script pour que l’affichage exact dépende des variables.
+- Ouvrez *target*
+- Dessinez `gaze_left.png` au centre de l’écran.
+- Sélectionnez l’élément textline.
+- Placez "{target_letter}" quelque part sur le côté gauche de l’écran. Les coordonnées exactes importent peu, car nous utiliserons ensuite une variable à cet emplacement. Comme précédemment, les accolades indiquent que la variable `target_letter` doit être insérée.
+- Placez "X" quelque part sur le côté droit de l’écran.
 
-Cliquez sur *target* dans la vue d’ensemble pour ouvrir l’onglet de la cible et, comme précédemment, dessinez l’image `gaze_left.png` au centre de l’écran. Sélectionnez ensuite l’outil Texte en cliquant sur le bouton avec l’icône ‘A’. Changez la couleur du texte en ‘noir’ (si ce n’est pas déjà le cas). La taille de police par défaut est de 18 px, ce qui est un peu petit pour notre objectif, donc changez la taille de la police à 32 px. Cliquez ensuite sur (-320, 0) dans le SKETCHPAD (la coordonnée X n’a pas besoin d’être exactement 320, car nous la changerons de toute façon par une variable). Entrez "{target_letter}" dans la boite de dialogue qui apparaît, pour dessiner la lettre cible (lors du dessin de texte, vous pouvez utiliser directement des variables). De la même manière, cliquez sur (320, 0) et dessinez un ‘X’ (le distracteur est toujours un ‘X’).
+Éditez le script de l’item (Sélectionnez Affichage → Afficher le script). Comme précédemment, l’indice de regard ("gaze cue") doit dépendre de la variable `gaze_cue`. De plus, la coordonnée X de la lettre cible doit dépendre de la variable `target_pos`, et la coordonnée X du "X" doit dépendre de la variable `dist_pos`.
 
-Ouvrez maintenant l’éditeur de script en cliquant sur le bouton ‘Select view’ en haut à droite de l’onglet, puis en sélectionnant ‘View script’. Le script ressemble à ceci :
-
-~~~ .python
-set duration keypress
-set duration keypress
-set description "Displays stimuli"
-draw image center=1 file="gaze_left.png" scale=1 show_if=True x=0 y=0 z_index=0
-draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=32 html=yes show_if=True text="{target_letter}" x=-320 y=0 z_index=0
-draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=32 html=yes show_if=True text=X x=320 y=0 z_index=0
-~~~
-
-Comme précédemment, changez `gaze_left.png` par `gaze_{gaze_cue}.png`. Nous devons aussi faire en sorte que la position de la cible et du distracteur dépende respectivement des variables `target_pos` et `dist_pos`. Pour cela, changez simplement `-320` en `{target_pos}` et `320` en `{dist_pos}`. Assurez-vous de laisser le `0`, qui correspond à la coordonnée Y. Le script ressemble maintenant à ceci :
+Il est important de définir la durée à 0. Cela ne signifie pas que la cible est affichée pendant 0 ms. Cela signifie plutôt que l’expérience passe immédiatement à l’item suivant, qui est un KEYBOARD_RESPONSE. Autrement dit, la collecte de réponse commence dès que la cible est affichée !
 
 ~~~ .python
 set duration keypress
 set description "Displays stimuli"
 draw image center=1 file="gaze_{gaze_cue}.png" scale=1 show_if=True x=0 y=0 z_index=0
-draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=32 html=yes show_if=True text="{target_letter}" x={target_pos} y=0 z_index=0
-draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=32 html=yes show_if=True text=X x={dist_pos} y=0 z_index=0
+draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=32 html=yes show_if=True text="{target_letter}" x="{target_pos}" y=0 z_index=0
+draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=32 html=yes show_if=True text="X" x="{dist_pos}" y=0 z_index=0
 ~~~
 
-Cliquez sur le bouton 'Apply' pour appliquer le script et revenir aux contrôles réguliers de l’item.
+<details class='info-box' markdown='1'>
 
-Enfin, définissez le champ ‘Duration’ sur ‘0’. Cela ne veut pas dire que la cible est présentée pendant seulement 0 ms, mais que l’expérience va passer à l’item suivant (*keyboard_response*) immédiatement. Puisque *keyboard_response* attend une réponse sans changer ce qui est affiché à l’écran, la cible restera visible jusqu’à ce qu’une réponse soit donnée.
+<summary markdown='1'>En savoir plus sur l’utilisation d’expressions de variables complexes dans le script OpenSesame</summary>
 
-N’oubliez pas d’enregistrer régulièrement votre expérience.
+Dans le script OpenSesame, vous pouvez inclure des expressions complexes à l’aide des accolades. Par exemple, au lieu de spécifier `x="{dist_pos}"` pour le "X", nous aurions pu écrire `x="{-1 * target_pos}"`. Cela utilise les [littéraux de chaînes formatées en Python](https://docs.python.org/3/tutorial/inputoutput.html#tut-f-strings).
 
-<div class='info-box' markdown='1'>
+</details>
 
-__Boîte de fond__
 
-__Astuce__ -- Chaque élément d'un SKETCHPAD possède une option 'Afficher si', qui spécifie à quel moment l'élément doit être affiché. Vous pouvez utiliser cela pour masquer/afficher des éléments d'un SKETCHPAD en fonction de certaines variables, de la même manière que les instructions run-if dans une SEQUENCE.
+## Étape 7 : Configurer l’item keyboard_response
 
-__Astuce__ -- Assurez-vous que la couleur (avant-plan) est définie sur noir. Sinon, vous dessinerez en blanc sur blanc et vous ne verrez rien !
+🎯 __Objectif :__ Dans cette étape, nous allons configurer les touches que les participants peuvent utiliser pour répondre, ainsi que la durée dont disposent les participants pour répondre.
 
-</div>
+Ouvrez *keyboard_response* :
 
-## Étape 7 : Configurer l'élément keyboard_response
-
-Cliquez sur *keyboard_response* dans l'aperçu pour ouvrir son onglet. Vous voyez trois options : Réponse correcte, Réponses autorisées, Temps d'attente (Timeout), et Type d'événement.
-
-Nous avons déjà défini la variable `correct_response` à l'étape 3. À moins de spécifier explicitement une réponse correcte, OpenSesame utilise automatiquement la variable `correct_response` si elle est disponible. Par conséquent, nous n'avons pas besoin de modifier le champ 'Réponse correcte' ici.
-
-Nous devons en revanche spécifier les réponses autorisées. Entrez 'z;m' dans le champ des réponses autorisées (ou d'autres touches si vous avez choisi des touches différentes). Le point-virgule sépare les réponses. Le KEYBOARD_RESPONSE n'accepte maintenant que les touches 'z' et 'm'. Toutes les autres frappes sont ignorées, à l'exception de 'escape', qui met l'expérience en pause.
-
-Nous voulons également définir un temps d'attente, c'est-à-dire l'intervalle maximal pendant lequel le KEYBOARD_RESPONSE attend avant de décider que la réponse est incorrecte et de définir la variable 'response' sur 'None'. '2000' (ms) est une bonne valeur.
-
-Nous ne devons pas changer le type d'événement, car nous voulons que le participant réponde en appuyant sur une touche (keypress, valeur par défaut) et non en relâchant une touche (keyrelease).
-
-Le KEYBOARD_RESPONSE ressemble maintenant à %FigStep7.
+- Laissez Réponse correcte vide. La variable `correct_response` (de l’étape 3) sera utilisée par défaut.
+- Définissez Réponses autorisées sur `z;m`
+- Définissez le Timeout à `2000` ms
+- Laissez Type d’événement sur keypress
 
 %--
 figure:
- id: FigStep7
+ id: FigStep_7
  source: step7.png
- caption: "Le KEYBOARD_RESPONSE à la fin de l'étape 7."
+ caption: |
+  KEYBOARD_RESPONSE à la fin de l’étape 7.
 --%
 
-<div class='info-box' markdown='1'>
 
-__Boîte d'information__
+## Étape 8 : Configurer l’item sampler
 
-__Astuce__ -- Par défaut, le KEYBOARD_RESPONSE utilisera la variable `correct_response` pour déterminer si une réponse est correcte. Mais vous pouvez aussi utiliser une autre variable. Pour cela, saisissez un nom de variable entre accolades (`{my_variable}`) dans le champ réponse correcte.
+🎯 __Objectif :__ Dans cette étape, nous allons spécifier quel son doit être joué après une mauvaise réponse.
 
-__Astuce__ -- Si 'vider les frappes en attente' est activé (c'est le cas par défaut), toutes les frappes de touche en attente sont ignorées lorsque l'élément KEYBOARD_RESPONSE est appelé. Cela évite les effets de report, qui pourraient sinon survenir si le participant appuie accidentellement sur une touche lors d'une phase sans réponse de l'essai.
-
-__Astuce__ -- Pour utiliser des touches spéciales, telles que '/' ou la flèche vers le haut, vous pouvez utiliser le nom des touches (ex : 'up' et 'space') ou les caractères correspondants (ex : '/' et ']'). Le bouton 'Lister les touches disponibles' fournit un aperçu de tous les noms de touches valides.
-
-</div>
-
-## Étape 8 : Configurer l'élément incorrect (sampler)
-
-L'élément *incorrect_sound* ne nécessite pas beaucoup de configuration : il suffit de sélectionner le son à jouer. Cliquez sur *incorrect_sound* dans l'aperçu pour ouvrir son onglet. Cliquez sur le bouton 'Parcourir' et sélectionnez `incorrect.ogg` depuis la bibliothèque de fichiers.
-
-Le sampler ressemble maintenant à %FigStep8.
+Ouvrez *incorrect_sound*. Cliquez sur Parcourir et sélectionnez `incorrect.ogg` depuis la banque de fichiers.
 
 %--
 figure:
- id: FigStep8
+ id: FigStep_8
  source: step8.png
- caption: "L'élément *incorrect_sound* à la fin de l'étape 8."
+ caption: |
+  *incorrect_sound* à la fin de l’étape 8.
 --%
 
-<div class='info-box' markdown='1'>
 
-__Boîte d'information__
+## Étape 9 : Configurer le logger
 
-__Astuce__ -- Vous pouvez utiliser des variables pour spécifier quel son doit être joué en utilisant un nom de variable entre accolades comme (partie du) nom de fichier. Par exemple : `{a_word}.ogg`
+🎯 __Objectif :__ Dans cette étape, nous allons revoir la méthodologie de l’enregistrement des données.
 
-__Astuce__ -- Le SAMPLER gère les fichiers aux formats `.ogg`, `.mp3`, et `.wav`. Si vous avez des fichiers audio dans un autre format, [Audacity] est un excellent outil gratuit pour convertir des fichiers audio (et bien plus).
+Ouvrez *logger*. Par défaut, « Enregistrer automatiquement toutes les variables » est activé. C’est une bonne pratique, il n’est donc pas nécessaire de changer quoi que ce soit ici !
 
-</div>
+<details class='info-box' markdown='1'>
 
-## Étape 9 : Configurer le variable logger
+<summary markdown='1'>En savoir plus sur l’enregistrement de données personnalisé</summary>
 
-En réalité, nous n'avons pas besoin de configurer le LOGGER de variables, mais regardons-le tout de même. Cliquez sur *logger* dans l'aperçu pour ouvrir son onglet. Vous verrez que l'option 'Consigner automatiquement toutes les variables' est sélectionnée. Cela signifie qu'OpenSesame enregistre tout, ce qui est très bien.
+Vous pouvez également exclure des variables spécifiques que vous ne souhaitez pas enregistrer. Vous pouvez aussi désactiver complètement l’enregistrement automatique et sélectionner manuellement les variables à enregistrer. Cela peut aider à garder les fichiers journaux clairs. Cependant, vérifiez toujours attentivement que toutes les variables requises sont enregistrées !
 
-<div class='info-box' markdown='1'>
+</details>
 
-__Boîte d'information__
+## Étape 10 : Dessiner l’item de feedback
 
-__Astuce__ -- Si vous souhaitez garder vos fichiers de log propres, vous pouvez désactiver l’option « Enregistrer automatiquement toutes les variables » et sélectionner manuellement les variables, soit en saisissant leurs noms (« Ajouter une variable personnalisée »), soit en faisant glisser les variables depuis l’inspecteur de variables vers le tableau LOGGER. Vous pouvez également laisser l’option « Enregistrer automatiquement toutes les variables » activée et exclure les variables qui ne vous intéressent pas.
+🎯 __Objectif :__ Dans cette étape, nous allons définir le feedback que les participants recevront sur leurs performances à la fin de chaque bloc.
 
-__L’astuce ultime__ -- Vérifiez toujours trois fois si toutes les variables nécessaires sont bien enregistrées dans votre expérience ! La meilleure façon de vérifier est d’exécuter l’expérience et d’inspecter les fichiers de log générés.
-
-</div>
-
-## Étape 10 : Dessiner l’élément feedback
-
-Après chaque bloc d’essais, nous souhaitons présenter un retour au participant afin de lui indiquer ses performances. Pour cette raison, à l’étape 2, nous avons ajouté un élément FEEDBACK, simplement nommé *feedback*, à la fin de *block_sequence*.
-
-Cliquez sur *feedback* dans l’aperçu pour ouvrir son onglet, sélectionnez l’outil texte, changez la couleur du premier plan en « noir » (si ce n’est pas déjà le cas), et cliquez à (0, 0). Saisissez alors le texte suivant :
+Ouvrez *feedback*. Laissez la durée sur 'keypress'. Ajoutez le texte suivant pour le feedback :
 
 ```text
 Fin du bloc
@@ -546,132 +453,146 @@ Votre précision était de {acc} %
 Appuyez sur une touche pour continuer
 ```
 
-Comme nous voulons que l’élément feedback reste affiché aussi longtemps que le participant le souhaite (jusqu’à ce qu’il appuie sur une touche), nous laissons le champ « Durée » à « keypress ».
-
-L’élément feedback ressemble maintenant à %FigStep_10.
-
 %--
 figure:
  id: FigStep_10
  source: step10.png
- caption: "The feedback item at the end of Step 10."
+ caption: |
+  *feedback* à la fin de l’étape 10.
 --%
 
-<div class='info-box' markdown='1'>
+<details class='info-box' markdown='1'>
 
-__Boîte de contexte__
+<summary markdown='1'>En savoir plus sur les variables de feedback</summary>
 
-__Qu’est-ce qu’un élément feedback ?__ -- Un élément FEEDBACK est presque identique à un élément SKETCHPAD. La seule différence est qu’un élément FEEDBACK n’est pas préparé à l’avance. Cela signifie que vous pouvez l’utiliser pour présenter des retours, qui nécessitent des informations à jour sur la réponse du participant. Vous ne devez pas utiliser les éléments FEEDBACK pour présenter des affichages critiques en termes de temps, car le fait qu’ils ne soient pas préparés à l’avance signifie que leurs propriétés temporelles ne sont pas aussi bonnes que celles de l’élément SKETCHPAD. Voir aussi :
+OpenSesame suit automatiquement les variables de feedback :
 
-- %link:visual%
+- `response` est la valeur de la dernière réponse. Exemples : "z", "left", etc.
+- `correct` vaut 1 après une réponse correcte, et 0 après une réponse incorrecte
+- `response_time` est le temps de réponse (en millisecondes) de la dernière réponse
+- `acc` est le pourcentage de réponses correctes depuis la dernière réinitialisation des variables de feedback, ici par l’item RESET_FEEDBACK au début du bloc
+- `avg_rt` est le temps de réponse moyen depuis la dernière réinitialisation des variables de feedback
 
-__Feedback et variables__ -- Les éléments de réponse suivent automatiquement la précision et le temps de réponse moyen du participant dans les variables 'acc' (synonyme : 'accuracy') et 'avg_rt' (synonyme : 'average_response_time'). Voir aussi :
+Voir aussi :
 
 - %link:manual/variables%
 
-__Astuce__ -- Vérifiez que la couleur (de premier plan) est bien réglée sur noir. Sinon, vous écrirez en blanc sur blanc et ne verrez rien !
+</details>
 
-</div>
+## Étape 11 : Régler le nombre de blocs pour la phase d’entraînement et la phase expérimentale
 
-## Étape 11 : Définir la longueur des phases d’entraînement et expérimentale
+🎯 __Objectif :__ Dans cette étape, nous allons spécifier le nombre de blocs d’essais dans les phases d’entraînement et expérimentale.
 
-Nous avons déjà créé les éléments *practice_loop* et *experiment_loop*, qui appellent tous les deux *block_sequence* (c’est-à-dire un bloc d’essais). Cependant, actuellement, ils appellent *block_sequence* une seule fois, ce qui signifie que la phase d’entraînement et la phase expérimentale ne comprennent qu’un seul bloc d’essais.
+Ouvrez *practice_loop* et réglez Répéter sur 2, afin d’avoir deux blocs d’entraînement. Ajoutez également une variable practice à la table de boucle, et mettez-la à 'yes'. Cela est pratique, car cela nous permettra d’identifier facilement les essais qui faisaient partie de la phase d’entraînement lors de l’analyse des données.
 
-Cliquez sur *practice_loop* pour ouvrir son onglet et réglez « Répéter » sur « 2,00 ». Cela signifie que la phase d’entraînement comprend deux blocs.
+Ouvrez *experimental_loop* et réglez Répéter sur 8. Ajoutez à nouveau une variable practice mais cette fois, réglez-la sur 'no'.
 
-Cliquez sur *experimental_loop* pour ouvrir son onglet et réglez « Répéter » sur « 8,00 ». Cela signifie que la phase expérimentale comprend huit blocs.
+## Étape 12 : Écrire les formulaires d’instructions, *end_of_practice* et *end_of_experiment*
 
-<div class='info-box' markdown='1'>
+🎯 __Objectif :__ Dans cette étape, nous allons ajouter des messages d’instructions informatifs tout au long de l’expérience.
 
-__Boîte de contexte__
+Ouvrez les trois items FORM_TEXT_DISPLAY et saisissez des instructions brèves et claires. De bonnes instructions sont simples, complètes et spécifiques !
 
-__Astuce__ -- Vous pouvez créer une variable `practice` dans *practice_loop* et *experimental_loop* et la définir respectivement sur « yes » et « no ». C’est un moyen simple de garder une trace des essais faisant partie de la phase d’entraînement.
+## Étape 13 : Lancer l’expérience !
 
-</div>
+🎯 __Objectif :__ Dans cette étape, nous allons effectuer un premier test de l’expérience !
 
-## Étape 12 : Rédiger les formulaires instruction, end_of_practice et end_of_experiment
+La double flèche bleue dans la barre d’outils est le bouton Exécution rapide (Ctrl+Shift+W). Cela lance l’expérience dans une fenêtre en utilisant un numéro de sujet fictif et un emplacement de fichier journal temporaire. Ceci est principalement utile pendant le développement.
 
-Je pense que vous pouvez gérer cette étape tout seul ! Ouvrez simplement les éléments appropriés et ajoutez du texte pour présenter les instructions, un message de fin de phase d’entraînement, et un message de fin d’expérience.
+La simple flèche verte est le bouton Lancer en plein écran (Ctrl+R). Il demande d’abord un numéro de sujet et un fichier journal, et vous demande si vous voulez exécuter l’expérience en plein écran ou dans une fenêtre. Ceci est principalement utile lors de la collecte de données.
 
-<div class='info-box' markdown='1'>
+Appuyez sur un des deux boutons pour effectuer un test de l’expérience !
 
-__Boîte de contexte__
+🏁 Si l’expérience fonctionne, vous avez terminé ! Mais avant de partir, examinons deux derniers points importants, liés au débogage et au choix du backend :
 
-__Astuce__ -- Vous pouvez utiliser un sous-ensemble de balises HTML pour formater votre texte. Par exemple, *&lt;b&gt;ceci sera en gras&lt;b&gt;* et *&lt;span color='red'&gt;ceci sera en rouge&lt;span&gt;*. Pour plus d’informations, voir :
+## Un débogage efficace et la compréhension des erreurs
 
-- %link:text%
+Les erreurs sont normales lors de la construction d’expériences. Lisez les messages d’erreur attentivement, et essayez de comprendre ce qu’ils signifient. C’est la seule véritable voie vers un débogage efficace !
 
-</div>
+%FigErrorMessage montre un exemple de message d’erreur :
 
-## Étape 13 : Exécutez l'expérience !
-
-C'est terminé ! Cliquez sur les boutons 'Exécuter dans une fenêtre' (raccourci : `Ctrl+W`) ou 'Exécuter en plein écran' (raccourci : `Ctrl+R`) dans la barre d'outils pour lancer votre expérience.
-
-<div class='info-box' markdown='1'>
-
-__Boîte d'information__
-
-__Astuce__ -- Un essai rapide est encore plus rapide en cliquant sur le bouton orange 'Exécuter dans une fenêtre' (raccourci : `Ctrl+Shift+W`), qui ne vous demande pas comment sauvegarder le fichier journal (et ne doit donc être utilisé qu'à des fins de test).
-
-</div>
-
-
-## Comprendre les erreurs
-
-Savoir comprendre les messages d'erreur est une compétence cruciale lorsqu'on travaille avec OpenSesame. Après tout, une expérience nouvellement créée démarre rarement sans aucune erreur !
-
-Supposons que nous ayons commis une erreur lors d'une des étapes ci-dessus. En essayant d'exécuter l'expérience, nous obtenons le message d'erreur suivant (%FigErrorMessage) :
+- Le type d’erreur est `FStringError`
+- La description indique : « Échec lors de l’évaluation de l’expression f-string dans le texte suivant : `gaze_{gaze_ceu}.png` »
+- L’erreur s’est produite dans la phase de préparation des items *gaze_cue*
+- Le traceback est un message d’erreur Python. C’est une version plus technique de la description ci-dessus.
 
 %--
 figure:
  id: FigErrorMessage
  source: error-message.png
- caption: "Un message d'erreur dans OpenSesame."
+ caption: |
+  Un message d’erreur dans OpenSesame.
 --%
 
-Le message d’erreur commence par un nom, dans ce cas `FStringError`, qui indique le type général d’erreur. Ceci est suivi d’un court texte explicatif, ici 'Failed to evaluate f-string expression in the following text: gaze_{gaze_ceu}.png`. Même sans comprendre ce qu'est une f-string (c'est une chaîne qui contient du code Python entre des accolades), il est clair qu'il y a quelque chose qui cloche avec le texte '{gaze_ceu}.png'.
-
-Le message d’erreur indique aussi que l’erreur provient de la phase de préparation de l’item *gaze_cue*.
-
-Enfin, le message d’erreur précise ce qui, précisément, a échoué lors de l’évaluation du texte 'gaze_{gaze_ceu}.png' : le nom 'gaze_ceu' n’est pas défini.
-
-En lisant attentivement le message d’erreur, la cause et la solution vous viennent probablement déjà à l’esprit : nous avons fait une simple faute de frappe dans l’item *gaze_cue*, en écrivant '{gaze_ceu}' au lieu de '{gaze_cue}' ! Cela a donc généré une erreur car il n’existe pas de variable nommée `gaze_ceu`. Ceci peut être facilement corrigé en ouvrant le script de l’item *gaze_cue* et en corrigeant la faute de frappe.
+Une fois que vous avez compris d’où vient l’erreur, vous pouvez essayer de la corriger. Dans cet exemple, l’erreur provient d'une faute de frappe lors de la définition de l'item *gaze_cue* à l’étape 6. `gaze_{gaze_ceu}.png` devrait être `gaze_{gaze_cue}.png`. Facile à corriger !
 
 
-## Enfin : Quelques considérations générales concernant le timing et la sélection du backend
+<details class='info-box' markdown='1'>
 
-Dans l’onglet 'Propriétés générales' de l’expérience (l’onglet que vous ouvrez en cliquant sur le nom de l’expérience), vous pouvez sélectionner un backend. Le backend est la couche logicielle qui contrôle l’affichage, les dispositifs d’entrée, le son, etc. La plupart des expériences fonctionnent avec tous les backends, mais il y a des raisons de préférer un backend à un autre, principalement liées au timing. Il existe actuellement quatre backends (selon votre système, tous ne seront peut-être pas disponibles) :
+<summary markdown='1'>En savoir plus sur le débogage efficace</summary>
 
-- __psycho__ -- un backend accéléré matériellement basé sur PsychoPy [(Peirce, 2007)][references]. C’est celui par défaut.
-- __xpyriment__ -- un backend accéléré matériellement basé sur Expyriment [(Krause & Lindeman, 2013)][references]
-- __legacy__ -- un backend "sûr" basé sur PyGame. Il offre des performances fiables sur la plupart des plateformes, mais, faute d’accélération matérielle, ses propriétés temporelles ne sont pas aussi bonnes que celles des autres backends.
-- __osweb__ -- exécute les expériences dans un navigateur [(Mathôt & March, 2022)][references].
+Un débogage efficace est une compétence importante. L’apprendre vous fera gagner beaucoup de temps et vous évitera bien des frustrations ! Consultez le lien ci-dessous pour des conseils :
 
-Voir aussi :
+- %link:manual/debugging%
+
+</details>
+
+
+## Chronométrage et sélection du backend
+
+Dans l’onglet ‘Propriétés générales’ de l’expérience (l’onglet que vous ouvrez en cliquant sur le nom de l’expérience), vous pouvez sélectionner un backend. Le backend est la couche logicielle qui contrôle l’affichage, les périphériques d’entrée, le son, etc. La plupart des expériences fonctionnent avec tous les backends, mais il existe des raisons de préférer l’un à l’autre, principalement liées au chronométrage. Il existe actuellement quatre backends :
+
+- __psycho__ est le choix par défaut. Il est basé sur PsychoPy et fournit un excellent chronométrage [(Peirce, 2007)][references].
+- xpyriment — est basé sur Expyriment et offre également un excellent chronométrage [(Krause & Lindemann, 2013)][references]
+- legacy — est une option de secours qui fonctionne sur plus de systèmes mais offre un chronométrage moins précis
+- osweb — exécute les expériences dans un navigateur [(Mathôt & March, 2022)][references]
+
+Voir aussi :
 
 - %link:backends%
 - %link:timing%
 
+## Points clés à retenir
+
+Vous avez appris à construire une expérience simple mais complète !
+
+- ✅ La structure d’une expérience est généralement construite en combinant des items SEQUENCE et LOOP
+- ✅ Les variables sont généralement définies dans le tableau LOOP
+- ✅ Les stimuli visuels sensibles au temps sont généralement présentés avec un SKETCHPAD
+- ✅ Les retours aux participants sont généralement présentés avec des items FEEDBACK
+- ✅ Le FORM_TEXT_DISPLAY est pratique pour la présentation de texte
+- ✅ Les variables et expressions peuvent être insérées avec des accolades. Exemple : `{gaze_cue}`
+- ✅ Les expressions Run-if sont définies dans une SEQUENCE et déterminent quels items sont effectivement exécutés : Exemple : `correct == 0`
+- ✅ Vérifiez toujours le chronométrage et les fichiers journaux avec un test complet avant la collecte de données
+
+
+## Prochaines étapes
+
+Vous avez maintenant une compréhension de base d’OpenSesame. Cela suffit pour créer de nombreuses expériences simples. Cependant, vous pourriez avoir besoin ou envie d’en savoir encore plus ! Voici quelques prochaines étapes judicieuses :
+
+- [Apprenez à construire des expériences avec SigmundAI](%url:beginner-sigmund%)
+- [Apprenez à utiliser du code Python dans vos expériences](%url:intermediate%)
+- [Apprenez à utiliser du code JavaScript dans vos expériences en ligne](%url:intermediate-javascript%)
 
 ## Références
 
 <div class='reference' markdown='1'>
 
-Brand, A., & Bradley, M. T. (2011). Assessing the effects of technical variance on the statistical outcomes of web experiments measuring response times. *Social Science Computer Review*. doi:10.1177/0894439311415604
+Brand, A., & Bradley, M. T. (2011). Assessing the effects of technical variance on the statistical outcomes of web experiments measuring response times. Social Science Computer Review. doi:10.1177/0894439311415604
 
-Damian, M. F. (2010). Does variability in human performance outweigh imprecision in response devices such as computer keyboards? *Behavior Research Methods*, *42*, 205-211. doi:10.3758/BRM.42.1.205
+Damian, M. F. (2010). Does variability in human performance outweigh imprecision in response devices such as computer keyboards? Behavior Research Methods, 42, 205-211. doi:10.3758/BRM.42.1.205
 
-Friesen, C. K., & Kingstone, A. (1998). The eyes have it! Reflexive orienting is triggered by nonpredictive gaze. *Psychonomic Bulletin & Review*, *5*, 490–495. doi:10.3758/BF03208827
+Friesen, C. K., & Kingstone, A. (1998). The eyes have it! Reflexive orienting is triggered by nonpredictive gaze. Psychonomic Bulletin & Review, 5, 490–495. doi:10.3758/BF03208827
 
-Krause, F., & Lindemann, O. (2013). Expyriment: A Python library for cognitive and neuroscientific experiments. *Behavior Research Methods*. doi:10.3758/s13428-013-0390-6
+Krause, F., & Lindemann, O. (2013). Expyriment: A Python library for cognitive and neuroscientific experiments. Behavior Research Methods. doi:10.3758/s13428-013-0390-6
 
-Mathôt, S., Schreij, D., & Theeuwes, J. (2012). OpenSesame : Un outil open-source et graphique pour créer des expériences en sciences sociales. *Behavior Research Methods*, *44*(2), 314-324. doi:10.3758/s13428-011-0168-7
+Mathôt, S., Schreij, D., & Theeuwes, J. (2012). OpenSesame: An open-source, graphical experiment builder for the social sciences. Behavior Research Methods, 44(2), 314-324. doi:10.3758/s13428-011-0168-7
 
-Mathôt, S., & March, J. (2022). Réaliser des expériences linguistiques en ligne avec OpenSesame et OSWeb. *Language Learning*. doi:10.1111/lang.12509
+Mathôt, S., & March, J. (2022). Conducting linguistic experiments online with OpenSesame and OSWeb. Language Learning. doi:10.1111/lang.12509
 
-Peirce, J. W. (2007). PsychoPy : Un logiciel de psychophysique en Python. *Journal of Neuroscience Methods*, *162*(1-2), 8-13. doi:10.1016/j.jneumeth.2006.11.017
+Peirce, J. W. (2007). PsychoPy: Psychophysics software in Python. Journal of Neuroscience Methods, 162(1-2), 8-13. doi:10.1016/j.jneumeth.2006.11.017
 
-Ulrich, R., & Giray, M. (1989). Résolution temporelle des horloges : Effets sur la mesure du temps de réaction—De bonnes nouvelles pour les mauvaises horloges. *British Journal of Mathematical and Statistical Psychology*, *42*(1), 1-12. doi:10.1111/j.2044-8317.1989.tb01111.x
+Ulrich, R., & Giray, M. (1989). Résolution temporelle des horloges : Effets sur la mesure du temps de réaction—De bonnes nouvelles pour les mauvaises horloges. British Journal of Mathematical and Statistical Psychology, 42(1), 1-12. doi:10.1111/j.2044-8317.1989.tb01111.x
 
 </div>
 
