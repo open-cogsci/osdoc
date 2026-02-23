@@ -5,6 +5,133 @@
 </a>
 
 
-<a href='https://suchwasnot.com'>
-	<img src='{{ SITEURL }}/theme/img/een-wereld-vol-denkers.png' alt='Bestel Een wereld vol denkers door Sebastiaan Mathôt via suchwasnot.com' style="width:192px;margin-top:20px;">
-</a>
+<style>
+.book-buy-widget {
+    display: inline-block;
+    position: relative;
+    margin-top: 20px;
+    font-family: sans-serif;
+}
+
+/* Book image */
+.book-buy-widget img {
+    width: 192px;
+    display: block;
+    border-radius: 4px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Slight zoom / shadow on hover */
+.book-buy-widget:hover img {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+/* Panel with options */
+.book-buy-options {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    margin-top: 0px;
+    background: white;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    transform: translateY(-4px);
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 10;
+}
+
+/* Show the panel on hover */
+.book-buy-widget:hover .book-buy-options {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* List styling */
+.book-buy-options ul {
+    list-style: none;
+    margin: 0;
+    padding: 6px 0;
+}
+
+.book-buy-options li {
+    margin: 0;
+    padding: 6px 10px;
+    font-size: 14px;
+}
+
+.book-buy-options li + li {
+    border-top: 1px solid #eee;
+}
+
+.book-buy-options a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+}
+
+.book-buy-options a:hover {
+    background: #f5f5f5;
+}
+</style>
+
+<div class="book-buy-widget">
+    <a href="https://www.bol.com/nl/nl/p/een-wereld-vol-denkers/9300000227991962/">
+        <img id="book-image" src="" alt="Bestel Een wereld vol denkers door Sebastiaan Mathôt via bol.com">
+    </a>
+
+    <div class="book-buy-options">
+        <ul>
+            <li><a href="https://www.bol.com/nl/nl/p/een-wereld-vol-denkers/9300000227991962/">Bestel via bol.com</a></li>
+            <li><a href="https://suchwasnot.com">Bestel bij de auteur (gesigneerd)</a></li>
+            <li><a href="https://www.libris.nl" target="_blank">Koop bij je lokale boekhandel</a></li>
+        </ul>
+    </div>
+</div>
+
+<script>
+(function() {
+    const siteUrl = '{{ SITEURL }}';
+    const totalImages = 15;
+    const bookImage = document.getElementById('book-image');
+    let usedImages = [];
+    
+    function getRandomImage() {
+        // If all images have been used, reset the list
+        if (usedImages.length === totalImages) {
+            usedImages = [];
+        }
+        
+        // Get available images (not yet used)
+        const availableImages = [];
+        for (let i = 1; i <= totalImages; i++) {
+            if (!usedImages.includes(i)) {
+                availableImages.push(i);
+            }
+        }
+        
+        // Pick a random available image
+        const randomIndex = Math.floor(Math.random() * availableImages.length);
+        const imageNumber = availableImages[randomIndex];
+        
+        // Mark as used
+        usedImages.push(imageNumber);
+        
+        return `${siteUrl}/theme/img/een-wereld-vol-denkers/${imageNumber}.png`;
+    }
+    
+    function updateImage() {
+        bookImage.src = getRandomImage();
+    }
+    
+    // Set initial random image
+    updateImage();
+    
+    setInterval(updateImage, 30000);
+})();
+</script>

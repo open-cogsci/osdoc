@@ -106,6 +106,51 @@ function detectOS() {
   return 'linux'; // default to linux if unknown
 }
 
+function showQuickOptions(option) {
+  // Hide all quick options
+  const allOptions = document.querySelectorAll('.quick-options');
+  allOptions.forEach(opt => opt.style.display = 'none');
+  
+  // Reset all buttons to btn-success
+  const allButtons = document.querySelectorAll('.btn-group .btn');
+  allButtons.forEach(btn => {
+    btn.classList.remove('btn-primary');
+    btn.classList.add('btn-success');
+  });
+  
+  // Show selected option
+  const selectedOption = document.getElementById('quick-options-' + option);
+  if (selectedOption.style.display === 'none') {
+    selectedOption.style.display = 'block';
+    
+    // Update button style
+    const selectedButton = document.getElementById('btn-' + option);
+    selectedButton.classList.remove('btn-success');
+    selectedButton.classList.add('btn-primary');
+    
+    // If download option, show OS-specific content
+    if (option === 'download') {
+      const os = detectOS();
+      const windowsOption = document.querySelector('.quick-options-download-windows');
+      const macosOption = document.querySelector('.quick-options-download-macos');
+      const linuxOption = document.querySelector('.quick-options-download-linux');
+      
+      windowsOption.style.display = 'none';
+      macosOption.style.display = 'none';
+      linuxOption.style.display = 'none';
+      
+      if (os === 'windows') {
+        windowsOption.style.display = 'block';
+      } else if (os === 'macos') {
+        macosOption.style.display = 'block';
+      } else {
+        linuxOption.style.display = 'block';
+      }
+    }
+  }
+}
+</script>
+
 ## 功能特点
 
 - __用户友好的界面__ — 现代、专业且易于使用的图形[界面](%link:manual/interface%)
