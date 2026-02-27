@@ -46,7 +46,7 @@ Immediate feedback is shown after each trial: a green dot after a correct respon
 %--
 figure:
  id: FigVisualSearch
- source: visual-search.png
+ source: visual-search.svg.png
  caption: The visual-search experiment that you will implement in this tutorial.
 --%
 
