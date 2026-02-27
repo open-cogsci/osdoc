@@ -50,10 +50,6 @@ figure:
  caption: The visual-search experiment that you will implement in this tutorial.
 --%
 
-<p align="center">
-  <img src="visual-search.png" width="100%">
-</p>
-<p align="center"><em>Figure 1. The visual-search experiment that you will implement in this tutorial.</em></p>
 
 Experiments like this show two typical findings:
 
@@ -104,10 +100,6 @@ figure:
   Figure 2. The overview area after creating the main structure.
 --%
 
-<p align="center">
-  <img src="step1.png" width=40%">
-</p>
-<p align="center"><em>Figure 2. The overview area after creating the main structure</em></p>
 
 Before continuing we should ask Sigmund to give our experiment a fitting name and remove any unnecessary items: 
 
@@ -119,8 +111,8 @@ Please remove unnecessary default items and give the experiment a clear title.
 
 %--
 figure:
- id: FigStep1
- source: step1.png
+ id: FigStep1b
+ source: step1b.png
  caption: |
   The overview area at the end of Step 1.
 --%
