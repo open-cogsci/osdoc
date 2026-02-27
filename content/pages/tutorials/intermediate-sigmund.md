@@ -26,7 +26,7 @@ Sigmund is an AI assistant specifically designed for OpenSesame. Unlike general 
 To connect, simply log into [sigmundai.eu](https://sigmundai.eu). The Sigmund panel in OpenSesame will automatically connect:
 
 <video controls width ="100%"> 
-    <source src="video/Sigmund-connect.mp4" type="video/mp4">
+    <source src="/video/sigmund-connect.mp4" type="video/mp4">
 </video>
 <p align="center"><em>Video 1. Connecting OpenSesame to Sigmund.</em></p>
 
@@ -373,7 +373,7 @@ Congratulations, the experiment is complete! You can give it a test run by press
 Here is what a completed visual-search block looks like:
 
 <video controls width="100%">
-  <source src="video/visual-search-demo.mp4" type="video/mp4">
+  <source src="/video/visual-search-demo.mp4" type="video/mp4">
 </video>
 
 <p align="center"><em>Video 2. Demonstration of a completed visual-search block.</em></p>
