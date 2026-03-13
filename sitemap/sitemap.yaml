@@ -5,6 +5,7 @@ Tutorials:
     SigmundAI: tutorials/beginner-sigmund
     Intermediate (Python): tutorials/intermediate
     Intermediate (JavaScript): tutorials/intermediate-javascript
+    Intermediate (SigmundAI): tutorials/intermediate-sigmund
     _:
     Other:
     Implicit association task (IAT): /tutorials/iat

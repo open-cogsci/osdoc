@@ -63,6 +63,11 @@ OpenSesame is a program to create experiments for psychology, neuroscience, and 
     How to use Python script in my experiment (intermediate)</a>
   </p>
   <p>
+    <a role="button" class="btn btn-primary" href="%url:tutorials/intermediate-sigmund%">
+    <b>New!</b> 🌟 How to use SigmundAI to write Python script (intermediate)
+    </a>
+  </p>  
+  <p>
     <a role="button" class="btn btn-primary" href="%url:tutorials/intermediate-javascript%">
     How to use JavaScript in my online experiment (intermediate)</a>
   </p>

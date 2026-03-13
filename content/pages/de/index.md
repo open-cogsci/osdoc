@@ -1,9 +1,9 @@
 title: OpenSesame
-hash: c1aa13ed52abdabe508b561e062e8092d5335f7f46f7867e757c20994d706313
+hash: 0da5cd23c8c071ca84bb0818de0aafb330af2b50da3d8c681bde73bb60136602
 locale: de
 language: German
 
-OpenSesame ist ein Programm zur Erstellung von Experimenten für Psychologie, Neurowissenschaften und experimentelle Wirtschaftswissenschaften. Die aktuellste $status$-Version ist $version$ *$codename* ([Versionshinweise](http://osdoc.cogsci.nl/$branch$/notes/$notes$)).
+OpenSesame ist ein Programm zur Erstellung von Experimenten für Psychologie, Neurowissenschaften und experimentelle Ökonomie. Die neueste $status$ Version ist $version$ *$codename$* ([Versionshinweise](http://osdoc.cogsci.nl/$branch$/notes/$notes$)).
 
 
 <div class="btn-group" role="group" aria-label="...">
@@ -13,7 +13,7 @@ OpenSesame ist ein Programm zur Erstellung von Experimenten für Psychologie, Ne
     </a>
   <a role="button" class="btn btn-success" id="btn-tutorial" onclick="showQuickOptions('tutorial')">
   <span class="glyphicon glyphicon-education" aria-hidden="true"></span>
-    Anleitung
+    Tutorial
   </a>
   <a role="button" class="btn btn-success" id="btn-support" onclick="showQuickOptions('support')">
   <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
@@ -37,7 +37,7 @@ OpenSesame ist ein Programm zur Erstellung von Experimenten für Psychologie, Ne
     </a>
   </p>
   <p class="quick-options-download-linux" style="display: none;">
-  Es gibt verschiedene Möglichkeiten, OpenSesame unter Linux/ Ubuntu zu installieren. Bitte siehe die untenstehenden Download- und Installationsmöglichkeiten.
+  Es gibt verschiedene Möglichkeiten, OpenSesame unter Linux/ Ubuntu zu installieren. Bitte sehen Sie sich unten die Download- und Installationsoptionen an.
   </p>
   <p>
     <a role="button" class="btn btn-primary" href="%url:download%">
@@ -48,7 +48,7 @@ OpenSesame ist ein Programm zur Erstellung von Experimenten für Psychologie, Ne
 
 <div class="quick-options" id="quick-options-tutorial" style="display: none;">
   <p>
-  Super! Was möchtest du lernen?
+  Großartig! Was möchten Sie lernen?
   </p>
   <p>
     <a role="button" class="btn btn-primary" href="%url:tutorials/beginner%">
@@ -62,19 +62,22 @@ OpenSesame ist ein Programm zur Erstellung von Experimenten für Psychologie, Ne
   </p>
   <p>
     <a role="button" class="btn btn-primary" href="%url:tutorials/intermediate%">
-    Wie man Python-Skripte im eigenen Experiment verwendet (Fortgeschrittene)
-    </a>
+    Wie man Python-Skript in meinem Experiment verwendet (Fortgeschrittene)</a>
   </p>
   <p>
-    <a role="button" class="btn btn-primary" href="%url:tutorials/intermediate-javascript%">
-    Wie man JavaScript im eigenen Online-Experiment verwendet (Fortgeschrittene)
+    <a role="button" class="btn btn-primary" href="%url:tutorials/intermediate-sigmund%">
+    <b>Neu!</b> 🌟 Wie man SigmundAI zum Schreiben von Python-Skript verwendet (Fortgeschrittene)
     </a>
+  </p>  
+  <p>
+    <a role="button" class="btn btn-primary" href="%url:tutorials/intermediate-javascript%">
+    Wie man JavaScript in meinem Online-Experiment verwendet (Fortgeschrittene)</a>
   </p>
 </div>
 
 <div class="quick-options" id="quick-options-support" style="display: none;">
   <p>
-    Wir helfen gerne! Welche Art von Unterstützung suchst du?
+    Wir sind hier, um zu helfen! Welche Art von Unterstützung suchen Sie?
   </p>
   <p>
     <a role="button" class="btn btn-primary" href="https://forum.cogsci.nl">
@@ -105,7 +108,7 @@ function detectOS() {
   } else if (platform.indexOf('linux') !== -1 || userAgent.indexOf('linux') !== -1 || userAgent.indexOf('x11') !== -1) {
     return 'linux';
   }
-  return 'linux'; // default to linux if unknown
+  return 'linux'; // standardmäßig linux, falls unbekannt
 }
 
 function showQuickOptions(option) {
