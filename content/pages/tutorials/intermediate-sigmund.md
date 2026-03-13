@@ -38,9 +38,12 @@ In this experiment, participants search for a target object, which can be a yell
 
 In addition to the target, zero or more distractor objects are shown. There are three conditions, and the condition determines what kind of distractors there are:
 
-In the Conjunction condition, distractors can have any shape and color, with the only restriction that distractors cannot be identical to the target. So, for example, if the target is a yellow square, then distractors are yellow circles, blue circles, and blue squares.
-In the Shape Feature condition, distractors have a different shape from the target, but can have any color. So, for example, if the target is a yellow square, then distractors are yellow circles and blue circles.
-In the Color Feature condition, distractors can have any shape, but have a different color from the target. So, for example, if the target is a yellow square, then distractors are blue squares and blue circles.
+- In the *Conjunction* condition, distractors can have any shape and color, with the only restriction that distractors cannot be identical to the target. So, for example, if the target is a yellow square, then distractors are yellow circles, blue circles, and blue squares.
+
+- In the *Shape Feature* condition, distractors have a different shape from the target, but can have any color. So, for example, if the target is a yellow square, then distractors are yellow circles and blue circles.
+
+- In the *Color Feature* condition, distractors can have any shape, but have a different color from the target. So, for example, if the target is a yellow square, then distractors are blue squares and blue circles.
+
 Immediate feedback is shown after each trial: a green dot after a correct response, and a red dot after an incorrect response. Detailed feedback on average response times and accuracy is shown after each block of trials.
 
 %--
@@ -53,12 +56,11 @@ figure:
 
 Experiments like this show two typical findings:
 
-It takes more time to find the target in the Conjunction condition than in the two Feature conditions.
-In the Conjunction condition, response times increase as the number of distractors increases. This suggests that people search for the target one item at a time; this is called serial search.
+- It takes more time to find the target in the Conjunction condition than in the two Feature conditions.
+- In the Conjunction condition, response times increase as the number of distractors increases. This suggests that people search for the target one item at a time; this is called *serial search*.
+- In the Feature conditions (both shape and color), response times do not, or hardly, increase as the number of distractors increases. This suggests that people process the entire display at once; this is called *parallel search*.
 
-In the Feature conditions (both shape and color), response times do not, or hardly, increase as the the number of distractors increases. This suggests that people process the entire display at once; this is called parallel search.
-
-According to Treisman and Gelade's feature-integration theory, these results reflect that the Conjunction condition requires that you combine, or bind, the color and shape of each object. This binding requires attention, and you therefore need to shift your attention from one object to the next; this is slow, and explains why response times depend on how many objects there are. In contrast, in the Feature conditions, color and shape do not need to be bound, and therefore the whole display can be processed in a single sweep without attention being directed at each and every object.
+According to Treisman and Gelade's feature-integration theory, these results reflect that the Conjunction condition requires that you combine, or *bind*, the color and shape of each object. This binding requires attention, and you therefore need to shift your attention from one object to the next; this is slow, and explains why response times depend on how many objects there are. In contrast, in the Feature conditions, color and shape do not need to be bound, and therefore the whole display can be processed in a single sweep without attention being directed at each and every object.
 
 ## Step 1: Build the main structure  
 
@@ -79,9 +81,8 @@ Using a clear structure like this keeps both us and Sigmund organized. If we try
 So let’s make the framework first, and fill in the details later!
 
 
-
 💬 **Prompt:**
-```
+```text
 Hi Sigmund! I’d like to build a visual search experiment.
 Please create this structure without adding content yet:
 - experiment (sequence)
@@ -90,6 +91,7 @@ Please create this structure without adding content yet:
     - block_sequence (sequence)
   - end_message (sketchpad)
 ```
+
 The overview should now look like %FigStep1: 
 
 %--
@@ -97,7 +99,7 @@ figure:
  id: FigStep1
  source: step1.png
  caption: |
-  Figure 2. The overview area after creating the main structure.
+  The overview area after creating the main structure.
 --%
 
 
@@ -105,7 +107,7 @@ Before continuing we should ask Sigmund to give our experiment a fitting name an
 
 
 💬 **Prompt:**
-```
+```text
 Please remove unnecessary default items and give the experiment a clear title.
 ```
 
@@ -129,7 +131,7 @@ The next step is to build the structure for a single block. Each block should ha
 
 
 💬 **Prompt:**
-```
+```text
 Now create the block_sequence contents. It should look like this:
 - block_sequence (sequence)
   - block_instructions (sketchpad)
@@ -157,7 +159,7 @@ We now tell Sigmund to define variables in experimental_loop to create all combi
 
 
 💬 **Prompt:**
-```
+```text
 Please define the variables in experimental_loop so that all combinations of:
   1. target_shape (circle/square)
   2. target_color (blue/yellow)
@@ -174,7 +176,8 @@ figure:
 
 
 ## Step 4: Define trial conditions 
-Within each block, from trial to trial, we vary:
+Within each block, three factors vary from trial to trial:
+
 1. The condition (conjunction / shape / color)
 2. The number of stimuli (1 / 5 / 15)
 3. Whether the target is present or not.
@@ -183,7 +186,7 @@ We want Sigmund to make trial conditions for all combinations, a full factorial 
 3 conditions x 3 set sizes x 2 presence levels = 18 trial types
 
 💬 **Prompt:**
-```
+```text
 Now define the block_loop variables.
 This should be a full factorial design with:
   1. condition: conjunction, feature_shape, feature_color
@@ -204,6 +207,7 @@ figure:
 ## Step 5: Build trial sequence 
 Now we need to define what happens in a single trial. Let’s first create the items, we’ll add content in the next steps.
 During a single trial we:
+
 1. Show a fixation dot 
 2. Show the main search display
 3. Get the response from the participant 
@@ -212,7 +216,7 @@ During a single trial we:
 
 
 💬 **Prompt:**
-```
+```text
 Please add items to trial_sequence in this order:
   - fixation (sketchpad)
   - search_display_script (inline_script)
@@ -237,7 +241,7 @@ Let’s start adding content!
 Get Sigmund to draw a fixation dot on the sketchpad: 
 
 💬 **Prompt:**
-```
+```text
 Please draw a central fixation dot in the fixation item and set its duration to 500 ms.
 ```
 
@@ -255,7 +259,7 @@ Generating the visual search display the way we want goes beyond what the OpenSe
 Tell Sigmund to write us the script we need: 
 
 💬 **Prompt:**
-```
+```text
 Now implement the search display using the inline script.
 
 It should:
@@ -271,13 +275,14 @@ It should:
 
 The script should output the canvas for display.
 ```
+
 Because this task is a bit more complex, Sigmund sometimes makes errors. However, Sigmund may be able to fix them himself! 
 Try to run the experiment and if it returns an error, ask Sigmund to fix it.
 
 An example of a common mistake is that Sigmund sometimes forgets to import a python library, such as “random”. If you notice this, you may ask him to import it and he should fix it!
 
 💬 **Prompt:**
-```
+```text
 It looks like you forgot to import random. If you did, import it and rewrite the script.
 ```
 
@@ -292,21 +297,22 @@ figure:
 ## Step 8: Define the correct response 
 The keyboard_response item Sigmund put in earlier checks answers against a variable called correct_response. So we must define what the correct answer is before the response is collected.
 We can ask Sigmund to do so with an inline script: 
+
 💬 **Prompt:**
-```
+```text
 Add logic so the experiment knows the correct response.
 
 If target_present is present → correct response is right arrow.
 If target_present is absent → correct response is left arrow.
 
-```
 Please implement this using a new inline script placed before the keyboard response item.
+```
 
 ## Step 9: Configure the keyboard response 
 Only the left and right arrow keys are valid responses, so we restrict the participants to using those. We can also ask Sigmund to automatically skip to the next display after a fixed amount of time if the participant does not respond within a reasonable time.
 
 💬 **Prompt:**
-```
+```text
 Please configure the keyboard response so that:
   1. timeout is 3000 ms
   2. only left and right arrow keys are allowed
@@ -317,7 +323,7 @@ Next we want to give the participants feedback on whether they correctly identif
 Tell Sigmund to dynamically set the feedback display:
 
 💬 **Prompt:**
-```
+```text
 Now configure the feedback sketchpads:
   1. green_feedback should show a green fixation dot for 500 ms
   2. red_feedback should show a red fixation dot for 500 ms
@@ -347,7 +353,7 @@ After each block we give the participants feedback on how well they performed ba
 Let Sigmund make the screen for us:
 
 💬 **Prompt:**
-```
+```text
 Configure the feedback item so it shows average accuracy and response time for the block. Use “draw textline”.
 ```
 
@@ -363,7 +369,7 @@ figure:
 Finally, we add a closing message.
 
 💬 **Prompt:**
-```
+```text
 set an end of experiment message in end_message.
 ```
 
@@ -379,18 +385,18 @@ Here is what a completed visual-search block looks like:
 <p align="center"><em>Video 2. Demonstration of a completed visual-search block.</em></p>
 
 To make sure the experiment works well, check if you recognize the following elements:
+
 1. Each block begins with instructions showing the current target shape and color
 2. Each trial has a fixation dot and the correct feedback is shown immediately after each trial 
 3. Across trials set sizes and target presence varies 
 4. After each block there is a performance summary
 
-If you notice small bugs or mistakes, don’t worry because Sigmund can often fix these on its own. Try running the experiment and, if an error appears, simply describe the problem to Sigmund and ask it to correct it. For example, Sigmund can usually fix missing imports, incorrect variable names, or small logic errors when you point them out. Learning to test your experiment and iteratively ask Sigmund for targeted fixes is an important part of working efficiently with an AI copilot.
+If you notice small bugs or mistakes, don’t worry because Sigmund can often fix these on his own. Try running the experiment and, if an error appears, simply describe the problem to Sigmund and ask it to correct it. For example, Sigmund can usually fix missing imports, incorrect variable names, or small logic errors when you point them out. Learning to test your experiment and iteratively ask Sigmund for targeted fixes is an important part of working efficiently with an AI copilot.
 
 ## References
 <div class='reference' markdown='1'>
   Treisman, A. M., & Gelade, G. (1980). A feature-integration theory of attention. *Cognitive Psychology*, *12*(1), 97–136. doi:10.1016/0010-0285(80)90005-5
 
-</div>
 </div>
 
 [references]: #references
