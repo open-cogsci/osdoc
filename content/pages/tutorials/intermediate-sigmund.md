@@ -1,4 +1,4 @@
-Title: SigmundAI tutorial: Visual Search Task
+title: SigmundAI tutorial: Visual Search Task
 
 [TOC]
 
