@@ -36,7 +36,57 @@ number of options:
 - *Volume* between 0 and 100%
 - *Pan* turns the right (negative values) or left (positive values) channel down. Setting pan to -20 or 20 completely mutes the right or left channel, respectively.
 - *Length* indicates the length of the sound (in milliseconds).
-- *Duration* indicates the duration of the SYNTH item, before the next item is presented. This doesn't need to match the length of the sound. For example, the duration of the SYNTH may be set to 0ms, in order to advance directly to the next item (e.g., a SKETCHPAD), while the sound continues playing in the background. In addition to a numeric value, you can set the duration to 'keypress', to wait for a keyboard press, 'mouseclick', to wait for a mouse click, or 'sound', to wait until the SYNTH has finished playing.
+- *Duration* indicates the duration of the SYNTH item, before the next item is presented. This doesn't need to match the length of the sound. For example, the duration of the SYNTH may be set to 0 ms, in order to advance directly to the next item (e.g., a SKETCHPAD), while the sound continues playing in the background. In addition to a numeric value, you can set the duration to 'keypress', to wait for a keyboard press, 'mouseclick', to wait for a mouse click, or 'sound', to wait until the SYNTH has finished playing.
+
+## Sound timing in sampler and synth
+
+Playing a sound in OpenSesame involves two independent controls: one that determines how long the sound itself plays, and one that determines how long the experiment waits at the current item before moving on. Understanding the difference between these two controls is essential for precise stimulus timing.
+
+### Two independent controls
+
+#### Sound length
+
+| Item | Parameter | Description |
+|---|---|---|
+| **Sampler** | **Stop after** | Cuts the audio file short after the given number of ms. Set to `0` to play the file to its natural end. |
+| **Synth** | **Length** | Directly sets how long the generated tone lasts (in ms). There is no natural end beyond the specified value. |
+
+#### Item timing
+
+Both SAMPLER and SYNTH share the *Duration* parameter, which controls how long the experiment stays on the item before moving to the next one. It does not directly affect the sound itself.
+
+| Duration value | Behaviour |
+|---|---|
+| `0` | Move on immediately |
+| *number* (ms) | Wait for the given number of ms, then move on |
+| `sound` | Wait until the sound has finished playing |
+
+> [!NOTE]
+> *Duration* and sound length are independent. Setting *Duration* does not stop the sound, and setting *Stop after* or *Length* does not by itself determine when the experiment moves on.
+
+### General rule
+
+Let *sound length* refer to:
+- *Stop after* for SAMPLER, or the file's natural length if *Stop after* is `0`
+- *Length* for SYNTH
+
+Then the following applies:
+
+| Condition | Result |
+|---|---|
+| *Duration* **<** sound length | The item ends before the sound, so the sound continues into the next item |
+| *Duration* = `sound` | The experiment waits until the sound finishes |
+| *Duration* **≥** sound length | The item outlasts the sound, so playback has finished before the next item starts |
+
+### Notes
+
+- For SAMPLER, the actual playback time is the natural file length, unless *Stop after* is greater than `0`, in which case playback stops after the specified duration.
+- For SYNTH, the actual playback time is always equal to *Length*.
+- When *Duration* = `sound`, the experiment waits for the actual playback time, taking *Stop after* into account for SAMPLER.
+
+### Sound continuing into the next item
+
+A sound can continue playing after the current item has finished if *Duration* is shorter than the actual playback time. This can be intentional, for example when you want a sound to run in the background while the next item is shown. But it can also happen unintentionally if *Duration* is shorter than expected, in which case the sound may spill over into the next trial element.
 
 ## Sound playback in Python
 
