@@ -221,7 +221,7 @@ log(msg: str) -> None
 
 # responses Object API Reference
 
-The `responses` singleton stores response history and calculates accuracy/RT feedback. Responses are stored in reverse chronological order (newest first). Adding responses automatically updates variables like `var.response`, `var.correct`, `var.acc`, and `var.avg_rt`.
+The `responses` singleton stores response history and calculates accuracy/RT feedback. Responses are stored in reverse chronological order (newest first). Adding responses automatically updates variables like `response`, `correct`, `acc`, and `avg_rt`.
 
 ## Examples
 ```python
@@ -229,11 +229,11 @@ The `responses` singleton stores response history and calculates accuracy/RT fee
 kb = Keyboard()
 start = clock.time()
 key, end = kb.get_key()
-correct = 1 if key == var.correct_response else 0
+correct = 1 if key == correct_response else 0
 responses.add(response=key, correct=correct, response_time=end-start)
 
 # Check performance
-print(f"Accuracy: {var.acc}%")
+print(f"Accuracy: {acc}%")
 
 # Analyze recent responses
 for r in responses[:10]:
