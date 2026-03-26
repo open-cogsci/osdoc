@@ -3,6 +3,7 @@ https://osdoc.cogsci.nl/4.1/tutorials/beginner
 https://osdoc.cogsci.nl/4.1/tutorials/beginner-sigmund
 https://osdoc.cogsci.nl/4.1/tutorials/intermediate
 https://osdoc.cogsci.nl/4.1/tutorials/intermediate-javascript
+https://osdoc.cogsci.nl/4.1/tutorials/intermediate-sigmund
 https://osdoc.cogsci.nl/4.1//tutorials/iat
 https://osdoc.cogsci.nl/4.1//tutorials/capybara
 https://osdoc.cogsci.nl/4.1/tutorials/visual-world
