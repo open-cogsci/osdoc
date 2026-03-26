@@ -61,8 +61,6 @@ Both SAMPLER and SYNTH share the *Duration* parameter, which controls how long t
 | *number* (ms) | Wait for the given number of ms, then move on |
 | `sound` | Wait until the sound has finished playing |
 
-> [!NOTE]
-> *Duration* and sound length are independent. Setting *Duration* does not stop the sound, and setting *Stop after* or *Length* does not by itself determine when the experiment moves on.
 
 ### General rule
 
