@@ -1,9 +1,9 @@
 title: 开放芝麻
-hash: c1aa13ed52abdabe508b561e062e8092d5335f7f46f7867e757c20994d706313
+hash: 0da5cd23c8c071ca84bb0818de0aafb330af2b50da3d8c681bde73bb60136602
 locale: zh
 language: Chinese
 
-OpenSesame 是一个用于心理学、神经科学和实验经济学实验设计的程序。最新 $status$ 版本为 $version$ *$codename$* ([发行说明](http://osdoc.cogsci.nl/$branch$/notes/$notes$))。
+OpenSesame 是一个用于创建心理学、神经科学和实验经济学实验的程序。最新的 $status$ 版本是 $version$ *$codename$*（[发行说明](http://osdoc.cogsci.nl/$branch$/notes/$notes$)）。
 
 
 <div class="btn-group" role="group" aria-label="...">
@@ -28,16 +28,16 @@ OpenSesame 是一个用于心理学、神经科学和实验经济学实验设计
   </p>  
   <p class="quick-options-download-windows" style="display: none;">
     <a role="button" class="btn btn-primary" href="$url-windows-exe-py3$">
-    标准 Windows 安装程序 (.exe)
+    标准 Windows 安装程序（.exe）
     </a>
   </p>  
   <p class="quick-options-download-macos" style="display: none;">
     <a role="button" class="btn btn-primary" href="$url-osx-dmg-x64-py3$">
-    Mac OS 安装包 (.dmg)
+    Mac OS 安装包（.dmg）
     </a>
   </p>
   <p class="quick-options-download-linux" style="display: none;">
-  在 Linux/ Ubuntu 上安装 OpenSesame 有多种方式。请参阅下方的下载和安装选项。
+  在 Linux/ Ubuntu 上安装 OpenSesame 有多种方式。请参阅下面的下载和安装选项。
   </p>
   <p>
     <a role="button" class="btn btn-primary" href="%url:download%">
@@ -52,27 +52,32 @@ OpenSesame 是一个用于心理学、神经科学和实验经济学实验设计
   </p>
   <p>
     <a role="button" class="btn btn-primary" href="%url:tutorials/beginner%">
-    如何建立基础实验（初学者）
+    如何构建一个基础实验（初学者）
     </a>
   </p>
   <p>
     <a role="button" class="btn btn-primary" href="%url:tutorials/beginner-sigmund%">
-    <b>新！</b> 🌟 如何高效使用 SigmundAI（初学者）
+    <b>New!</b> 🌟 如何高效地使用 SigmundAI（初学者）
     </a>
   </p>
   <p>
     <a role="button" class="btn btn-primary" href="%url:tutorials/intermediate%">
-    如何在实验中使用 Python 脚本（中级）</a>
+    如何在我的实验中使用 Python script（中级）</a>
   </p>
   <p>
+    <a role="button" class="btn btn-primary" href="%url:tutorials/intermediate-sigmund%">
+    <b>New!</b> 🌟 如何使用 SigmundAI 编写 Python script（中级）
+    </a>
+  </p>  
+  <p>
     <a role="button" class="btn btn-primary" href="%url:tutorials/intermediate-javascript%">
-    如何在在线实验中使用 JavaScript（中级）</a>
+    如何在我的在线实验中使用 JavaScript（中级）</a>
   </p>
 </div>
 
 <div class="quick-options" id="quick-options-support" style="display: none;">
   <p>
-    我们随时为您提供帮助！您需要哪种支持？
+    我们随时为您提供帮助！您在寻找哪种支持？
   </p>
   <p>
     <a role="button" class="btn btn-primary" href="https://forum.cogsci.nl">
@@ -81,7 +86,7 @@ OpenSesame 是一个用于心理学、神经科学和实验经济学实验设计
   </p>
   <p>
     <a role="button" class="btn btn-primary" href="https://sigmundai.eu">
-    SigmundAI（月度订阅）
+    SigmundAI（按月订阅）
     </a>
   </p>
   <p>
@@ -103,53 +108,8 @@ function detectOS() {
   } else if (platform.indexOf('linux') !== -1 || userAgent.indexOf('linux') !== -1 || userAgent.indexOf('x11') !== -1) {
     return 'linux';
   }
-  return 'linux'; // default to linux if unknown
+  return 'linux'; // 如果未知，则默认使用 linux
 }
-
-function showQuickOptions(option) {
-  // Hide all quick options
-  const allOptions = document.querySelectorAll('.quick-options');
-  allOptions.forEach(opt => opt.style.display = 'none');
-  
-  // Reset all buttons to btn-success
-  const allButtons = document.querySelectorAll('.btn-group .btn');
-  allButtons.forEach(btn => {
-    btn.classList.remove('btn-primary');
-    btn.classList.add('btn-success');
-  });
-  
-  // Show selected option
-  const selectedOption = document.getElementById('quick-options-' + option);
-  if (selectedOption.style.display === 'none') {
-    selectedOption.style.display = 'block';
-    
-    // Update button style
-    const selectedButton = document.getElementById('btn-' + option);
-    selectedButton.classList.remove('btn-success');
-    selectedButton.classList.add('btn-primary');
-    
-    // If download option, show OS-specific content
-    if (option === 'download') {
-      const os = detectOS();
-      const windowsOption = document.querySelector('.quick-options-download-windows');
-      const macosOption = document.querySelector('.quick-options-download-macos');
-      const linuxOption = document.querySelector('.quick-options-download-linux');
-      
-      windowsOption.style.display = 'none';
-      macosOption.style.display = 'none';
-      linuxOption.style.display = 'none';
-      
-      if (os === 'windows') {
-        windowsOption.style.display = 'block';
-      } else if (os === 'macos') {
-        macosOption.style.display = 'block';
-      } else {
-        linuxOption.style.display = 'block';
-      }
-    }
-  }
-}
-</script>
 
 ## 功能特点
 

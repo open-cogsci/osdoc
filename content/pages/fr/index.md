@@ -1,9 +1,10 @@
 title: OpenSesame
-hash: c1aa13ed52abdabe508b561e062e8092d5335f7f46f7867e757c20994d706313
+hash: 0da5cd23c8c071ca84bb0818de0aafb330af2b50da3d8c681bde73bb60136602
 locale: fr
 language: French
 
-OpenSesame est un programme permettant de créer des expériences en psychologie, neurosciences et économie expérimentale. La dernière version $status$ est $version$ *$codename$* ([notes de version](http://osdoc.cogsci.nl/$branch$/notes/$notes$)).
+OpenSesame est un programme permettant de créer des expériences pour la psychologie, les neurosciences et l’économie expérimentale. La dernière version $status$ est $version$ *$codename$* ([notes de version](http://osdoc.cogsci.nl/$branch$/notes/$notes$)).
+
 
 <div class="btn-group" role="group" aria-label="...">
   <a role="button" class="btn btn-success" id="btn-download" onclick="showQuickOptions('download')">
@@ -16,9 +17,10 @@ OpenSesame est un programme permettant de créer des expériences en psychologie
   </a>
   <a role="button" class="btn btn-success" id="btn-support" onclick="showQuickOptions('support')">
   <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
-    Obtenir de l'aide
+    Obtenir de l’aide
   </a>
 </div>
+
 
 <div class="quick-options" id="quick-options-download" style="display: none;">
   <p>
@@ -26,31 +28,31 @@ OpenSesame est un programme permettant de créer des expériences en psychologie
   </p>  
   <p class="quick-options-download-windows" style="display: none;">
     <a role="button" class="btn btn-primary" href="$url-windows-exe-py3$">
-    Installateur standard Windows (.exe)
+    Installateur Windows standard (.exe)
     </a>
   </p>  
   <p class="quick-options-download-macos" style="display: none;">
     <a role="button" class="btn btn-primary" href="$url-osx-dmg-x64-py3$">
-    Paquet Mac OS (.dmg)
+    Package Mac OS (.dmg)
     </a>
   </p>
   <p class="quick-options-download-linux" style="display: none;">
-  Il existe plusieurs façons d'installer OpenSesame sur Linux/ Ubuntu. Veuillez consulter les options de téléchargement et d'installation ci-dessous.
+  Il existe plusieurs façons d’installer OpenSesame sur Linux/ Ubuntu. Veuillez consulter les options de téléchargement et d’installation ci-dessous.
   </p>
   <p>
     <a role="button" class="btn btn-primary" href="%url:download%">
-    Plus d'options de téléchargement et d'installation
+    Plus d’options de téléchargement et d’installation
     </a>
   </p>
 </div>
 
 <div class="quick-options" id="quick-options-tutorial" style="display: none;">
   <p>
-  Parfait ! Qu'aimeriez-vous apprendre ?
+  Super ! Que voulez-vous apprendre ?
   </p>
   <p>
     <a role="button" class="btn btn-primary" href="%url:tutorials/beginner%">
-    Comment créer une expérience de base (débutant)
+    Comment créer une expérience simple (débutant)
     </a>
   </p>
   <p>
@@ -63,6 +65,11 @@ OpenSesame est un programme permettant de créer des expériences en psychologie
     Comment utiliser un script Python dans mon expérience (intermédiaire)</a>
   </p>
   <p>
+    <a role="button" class="btn btn-primary" href="%url:tutorials/intermediate-sigmund%">
+    <b>Nouveau !</b> 🌟 Comment utiliser SigmundAI pour écrire un script Python (intermédiaire)
+    </a>
+  </p>  
+  <p>
     <a role="button" class="btn btn-primary" href="%url:tutorials/intermediate-javascript%">
     Comment utiliser JavaScript dans mon expérience en ligne (intermédiaire)</a>
   </p>
@@ -70,11 +77,11 @@ OpenSesame est un programme permettant de créer des expériences en psychologie
 
 <div class="quick-options" id="quick-options-support" style="display: none;">
   <p>
-    Nous sommes là pour vous aider ! Quel type de support recherchez-vous ?
+    Nous sommes là pour vous aider ! Quel type d’assistance recherchez-vous ?
   </p>
   <p>
     <a role="button" class="btn btn-primary" href="https://forum.cogsci.nl">
-    Forum de la communauté (gratuit)
+    Forum d’assistance communautaire (gratuit)
     </a>
   </p>
   <p>
@@ -84,7 +91,7 @@ OpenSesame est un programme permettant de créer des expériences en psychologie
   </p>
   <p>
     <a role="button" class="btn btn-primary" href="https://professional.cogsci.nl">
-    Support professionnel (payant)
+    Assistance professionnelle (payante)
     </a>
   </p>
 </div>
@@ -101,7 +108,7 @@ function detectOS() {
   } else if (platform.indexOf('linux') !== -1 || userAgent.indexOf('linux') !== -1 || userAgent.indexOf('x11') !== -1) {
     return 'linux';
   }
-  return 'linux'; // default to linux if unknown
+  return 'linux'; // par défaut, linux si inconnu
 }
 
 function showQuickOptions(option) {
