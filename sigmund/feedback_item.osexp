@@ -1,8 +1,8 @@
-# This is a generic example script for a sketchpad in OpenSesame
+# This is a generic example script for a feedback item in OpenSesame
 # The main difference between a sketchpad and a feedback item is that a sketchpad is prepared in advanced, during the prepare phase of the sequence that contains it. For this reason, a sketchpad has better temporal precision, but a feedback item can show information that was created during the run phase of the containing sequence, such as response variables.
 set description "Displays visual stimuli"
 # Duration in milliseconds, "keypress", or "mouseclick"
-# Important: when a sketchpad is followed by a response item, such as a keyboard response, the duration is usually set to 0, so that response collection starts immediately.
+# Important: when a feedback item is followed by a response item, such as a keyboard response, the duration is usually set to 0, so that response collection starts immediately.
 set duration 0
 
 # Common style keywords applicable to most drawing commands:
@@ -55,3 +55,7 @@ draw textlibsne x="{-1.5 * target_pos}" y=200 text="x" color=darkblue font_size=
 # Example: use Python expression for image file
 # Important: there should be double quotes around the Python expression
 draw image x=0 y=0 file="stimulus-{stim_nr}.png" center=1 scale=1.0 rotation=0
+
+draw textline x=0 y=0 text="TEST_SKETCHPAD_WORKS" color=red font_size=32 center=1
+
+
