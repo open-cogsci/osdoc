@@ -1,8 +1,8 @@
-# This is a generic example script for a sketchpad or a feedback item in OpenSesame
+# This is a generic example script for a sketchpad in OpenSesame
 # The main difference between a sketchpad and a feedback item is that a sketchpad is prepared in advanced, during the prepare phase of the sequence that contains it. For this reason, a sketchpad has better temporal precision, but a feedback item can show information that was created during the run phase of the containing sequence, such as response variables.
 set description "Displays visual stimuli"
 # Duration in milliseconds, "keypress", or "mouseclick"
-# Important: when a sketchpad or feedback item is followed by a response item, such as a keyboard response, the duration is usually set to 0, so that response collection starts immediately.
+# Important: when a sketchpad is followed by a response item, such as a keyboard response, the duration is usually set to 0, so that response collection starts immediately.
 set duration 0
 
 # Common style keywords applicable to most drawing commands:
