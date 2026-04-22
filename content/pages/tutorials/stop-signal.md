@@ -1,4 +1,4 @@
-# Stop signal task with coroutines
+title: Stop signal task with coroutines
 
 [TOC]
 
@@ -12,11 +12,9 @@ OpenSesame is freely available under the [General Public License v3][gpl].
 
 This tutorial shows how to create a stop-signal task in OpenSesame using the `coroutines` plugin. The experiment is based on the simple reaction-time version of [Logan, Cowan and Davis (1984)][references]. The main goal of this tutorial is not only to build the task, but also to understand how coroutines allow several events to be placed on a single trial timeline.
 
-This tutorial assumes that you are working with OpenSesame 4.1 or later and that you are running the experiment on the desktop.
-
 ## Resources
 
-- __Download__ — This tutorial assumes that you are running OpenSesame version 4.0.0 or later. You can download the most recent version of OpenSesame from:
+- __Download__ — This tutorial assumes that you are running OpenSesame version 4.1 or later, and that you are running the experiment on the desktop. You can download the most recent version of OpenSesame from:
   - <https://osdoc.cogsci.nl/4.1/download/>
 - __Documentation__ — A dedicated documentation website can be found at:
   - <http://osdoc.cogsci.nl/>
@@ -342,12 +340,10 @@ Congratulations, the experiment is complete. You can now give it a test run by p
 
 Below is a demonstration of a shortened version of the experiment created for tutorial purposes.
 
-%--
-video:
- id: Vid_demo
- source: stop_demo.mp4
- caption: Demonstration of the completed stop-signal task.
---%
+<video controls width ="100%"> 
+    <source src="/video/stop_demo.mp4" type="video/mp4">
+</video>
+<p align="center"><em>Video 1. Demonstration of the completed stop-signal task.</em></p>
 
 ## References
 
