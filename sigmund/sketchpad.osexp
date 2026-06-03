@@ -50,7 +50,7 @@ draw noise x=-50 y=100 env=gaussian size=40 color1=white color2=black
 
 # Example: use Python expression for x-coordinate
 # Important: there should be double quotes around the Python expression
-draw textlibsne x="{-1.5 * target_pos}" y=200 text="x" color=darkblue font_size=18
+draw textline x="{-1.5 * target_pos}" y=200 text="x" color=darkblue font_size=18
 
 # Example: use Python expression for image file
 # Important: there should be double quotes around the Python expression
