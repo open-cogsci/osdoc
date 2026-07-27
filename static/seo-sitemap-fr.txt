@@ -4,6 +4,7 @@ https://osdoc.cogsci.nl/4.1/fr/tutorials/beginner-sigmund
 https://osdoc.cogsci.nl/4.1/fr/tutorials/intermediate
 https://osdoc.cogsci.nl/4.1/fr/tutorials/intermediate-javascript
 https://osdoc.cogsci.nl/4.1/fr/tutorials/intermediate-sigmund
+https://osdoc.cogsci.nl/4.1/fr/tutorials/sigmund-guided-generation
 https://osdoc.cogsci.nl/4.1/fr/tutorials/iat
 https://osdoc.cogsci.nl/4.1/fr/tutorials/capybara
 https://osdoc.cogsci.nl/4.1/fr/tutorials/visual-world

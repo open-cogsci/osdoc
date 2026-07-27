@@ -13,6 +13,10 @@
           - /4.1/tutorials/intermediate-javascript
         - - Intermediate (SigmundAI)
           - /4.1/tutorials/intermediate-sigmund
+        - - Guided generation (SigmundAI)
+          - /4.1/tutorials/sigmund-guided-generation
+        - - Stop-signal task (working with coroutines)
+          - /4.1//tutorials/stop-signal
         - - Implicit association task (IAT)
           - /4.1//tutorials/iat
         - - Cats, dogs, and capybaras

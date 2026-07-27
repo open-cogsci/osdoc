@@ -78,7 +78,7 @@ Copy-paste the lines below into a terminal. This will download and run an instal
 # Linux distributions.
 sudo apt install curl python3-dev python3-venv libxcb-cursor0
 # Download and run the OpenSesame installation script.
-bash <(curl -L https://github.com/open-cogsci/OpenSesame/raw/refs/heads/4.1/linux-installer.sh) --install
+bash <(curl -L https://github.com/open-cogsci/OpenSesame/raw/refs/heads/nightingale/linux-installer.sh) --install
 ```
 
 Tested on Ubuntu 24.04 (Python 3.12).

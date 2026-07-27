@@ -35,7 +35,7 @@ FOUNDATION_DOCUMENTS = {
     'loop': 'sigmund/loop.osexp',
     'logger': 'sigmund/logger.osexp',
     'sketchpad': 'sigmund/sketchpad.osexp',
-    'feedback': 'sigmund/sketchpad.osexp',
+    'feedback': 'sigmund/feedback.osexp',
     'notepad': 'sigmund/notepad.osexp',
     'sequence': 'sigmund/sequence.osexp',
     'mouse_response': 'sigmund/mouse_response.osexp',
@@ -44,10 +44,20 @@ FOUNDATION_DOCUMENTS = {
     'synth': 'sigmund/synth.osexp',
     'form_text_input': 'sigmund/form_text_input.osexp',
     'form_text_display': 'sigmund/form_text_display.osexp',
-    'form_multiple_choice': 'sigmund/form_multiple_choice.osexp'
+    'form_multiple_choice': 'sigmund/form_multiple_choice.osexp',
+    'osexp_syntax': 'sigmund/osexp_syntax.osexp'
+}
+# These are marked for inclusion in the system prompt, as opposed to contex that
+# is provided along with the last user message. The main reason to do this, is to
+# improve caching.
+FOUNDATION_DOCUMENTS_IN_SYSTEM_PROMPT = {
+    'opensesame',
+    'inline_script',
+    'inline_javascript',
+    'datamatrix' 
 }
 EXTRA_DOCUMENTS = []
-MODEL = 'gpt-5'
+MODEL = 'gpt-5.4'
 
 # Initialize tokenizer for GPT models
 tokenizer = tiktoken.encoding_for_model("gpt-3.5-turbo")
@@ -251,6 +261,7 @@ def main():
         metadata['collection'] = COLLECTION
         metadata['foundation'] = False
         metadata['howto'] = False
+        metadata['system_prompt'] = False
         
         # Chunk the content
         chunks = chunk_markdown_by_tokens(content)
@@ -276,7 +287,8 @@ def main():
             'collection': COLLECTION,
             'topic': topic,
             'howto': False,
-            'foundation': True
+            'foundation': True,
+            'system_prompt': topic in FOUNDATION_DOCUMENTS_IN_SYSTEM_PROMPT
         }
         documents.append(create_document(Path(path).read_text(), metadata))
         print(f"Added foundation document for {topic}")
@@ -287,6 +299,7 @@ def main():
         metadata['collection'] = COLLECTION
         metadata['howto'] = False
         metadata['foundation'] = False
+        metadata['system_prompt'] = False
         metadata['topics'] = [DEFAULT_TOPIC]
         documents.append(create_document(Path(path).read_text(), metadata))    
     print(f"\nTotal extra documents: {len(documents)}")
@@ -316,7 +329,8 @@ def main():
                 'collection': COLLECTION,
                 'howto': True,
                 'source': 'howtos',
-                'foundation': False
+                'foundation': False,
+                'system_prompt': False
             }
             
             # Chunk if necessary

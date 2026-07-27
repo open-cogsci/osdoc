@@ -1,0 +1,42 @@
+# This is a general reference to the OpenSesame script syntax. Item-type-specific commands are explained in the item-type example scripts, provided separately.
+
+# Variables
+# Syntax: set [varname] [value]
+set number_var 1
+set text_var "some text"
+# IMPORTANT: variables consisting of multiple lines (e.g. `form_text`) are embedded between `__[varname]__` and `__end__` markers.
+__instructions__
+Respond as fast and accurately as possible.
+Press any key to begin.
+__end__
+
+## Item definitions
+# Syntax: define [item_type] [item_name]
+# The item body is indented by a single tab
+define keyboard_response my_kb_resp 
+	set allowed_responses "a;x"
+	set description "Collects keyboard responses"
+	set timeout "infinite"
+	set flush "yes"
+# Python code in inline_script are multiline variables
+define inline_script my_python_script
+	set description "Executes Python code"
+	___run__
+	t = c.show()
+	print(f'timestamp: {t}')
+	__end__
+	___prepare__
+	c = Canvas()
+	c.fixdot()
+	__end__
+# JavaScript in inline_javascript are multiline variables
+define inline_javascript my_javascript
+	set description "Executes JavaScript"
+	___run__
+	t = c.show()
+	console.log('timestamp: ' + t)
+	__end__
+	___prepare__
+	c = Canvas()
+	c.fixdot()
+	__end__

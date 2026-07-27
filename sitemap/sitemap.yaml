@@ -6,8 +6,10 @@ Tutorials:
     Intermediate (Python): tutorials/intermediate
     Intermediate (JavaScript): tutorials/intermediate-javascript
     Intermediate (SigmundAI): tutorials/intermediate-sigmund
+    Guided generation (SigmundAI): tutorials/sigmund-guided-generation
     _:
     Other:
+    Stop-signal task (working with coroutines): /tutorials/stop-signal
     Implicit association task (IAT): /tutorials/iat
     Cats, dogs, and capybaras: /tutorials/capybara
     Visual-world paradigm: tutorials/visual-world

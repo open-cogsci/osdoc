@@ -13,7 +13,8 @@
 # Instructions for OpenSesame
 
 - Execute Python code for desktop or laboratory experiments. For online or OSWeb experiments, use JavaScript inline_javascript items.
-- Embed Python in GUI controls as f-strings/ template strings. Example: sketchpad text: `Your response time was {resonse_time} ms`. Example: sampler sound file: `{sound_name}.mp3`
+- Embed variables and Python in GUI controls as f-strings/ template strings. Example: sketchpad text: `Your response time was {response_time} ms`. Example: sampler sound file: `{sound_name}.mp3`
+- Never use square brackets to embed variables in strings.
 - inline_script and inline_javascript can be combined with GUI items. Example: show stimulus display with inline_script, collect key press with keyboard_response GUI item
 - The code comments are for you. You don't need to include them verbatim in your responses.
 - Variables defined in loop item are globals in inline_script

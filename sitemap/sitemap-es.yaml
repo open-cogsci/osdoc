@@ -5,7 +5,8 @@ Tutoriales:
     SigmundAI: es/tutorials/beginner-sigmund
     Intermedio (Python): es/tutorials/intermediate
     Intermedio (JavaScript): es/tutorials/intermediate-javascript
-    Intermedio (SigmundAI): es/tutorials/intermediate-sigmund    
+    Intermedio (SigmundAI): es/tutorials/intermediate-sigmund
+    Generación guiada (SigmundAI): es/tutorials/sigmund-guided-generation
     _:
     Otros:
     Tarea de asociación implícita (IAT): es/tutorials/iat

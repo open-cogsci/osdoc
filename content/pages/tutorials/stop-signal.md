@@ -1,4 +1,4 @@
-title: Stop signal task with coroutines
+title: Stop-signal task (working with coroutines)
 
 [TOC]
 
@@ -15,13 +15,13 @@ This tutorial shows how to create a stop-signal task in OpenSesame using the `co
 ## Resources
 
 - __Download__ — This tutorial assumes that you are running OpenSesame version 4.1 or later, and that you are running the experiment on the desktop. You can download the most recent version of OpenSesame from:
-  - <https://osdoc.cogsci.nl/4.1/download/>
+	- <https://osdoc.cogsci.nl/4.1/download/>
 - __Documentation__ — A dedicated documentation website can be found at:
-  - <http://osdoc.cogsci.nl/>
+	- <http://osdoc.cogsci.nl/>
 - __Forum__ — A support forum can be found at:
-  - <http://forum.cogsci.nl/>
+	- <http://forum.cogsci.nl/>
 - __Sigmund__ — SigmundAI is an AI assistant with expert knowledge of OpenSesame and can be found at:
-  - <https://sigmundai.eu/>
+	- <https://sigmundai.eu/>
 
 ## The experiment
 
@@ -54,15 +54,15 @@ This design:
 - is within-subject, because all participants complete all trial types
 - includes go trials and stop trials
 - includes four stop-signal delays on stop trials:
-  - `50`
-  - `100`
-  - `150`
-  - `200`
+	- `50`
+	- `100`
+	- `150`
+	- `200`
 - includes four letters:
-  - `E`
-  - `F`
-  - `H`
-  - `L`
+	- `E`
+	- `F`
+	- `H`
+	- `L`
 
 The loop table contains 80 rows and is repeated four times, resulting in four blocks of 80 trials.
 
