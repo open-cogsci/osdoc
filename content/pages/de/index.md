@@ -1,15 +1,15 @@
 title: OpenSesame
-hash: 0da5cd23c8c071ca84bb0818de0aafb330af2b50da3d8c681bde73bb60136602
+hash: 9ab882d14433c23e7f81044baa2279aa743cdd9b414f30c82091495ab6226904
 locale: de
 language: German
 
-OpenSesame ist ein Programm zur Erstellung von Experimenten für Psychologie, Neurowissenschaften und experimentelle Ökonomie. Die neueste $status$ Version ist $version$ *$codename$* ([Versionshinweise](http://osdoc.cogsci.nl/$branch$/notes/$notes$)).
+OpenSesame ist ein Programm zur Erstellung von Experimenten für Psychologie, Neurowissenschaften und experimentelle Ökonomie. Die neueste $status$-Version ist $version$ *$codename$* ([Versionshinweise](http://osdoc.cogsci.nl/$branch$/notes/$notes$)).
 
 
 <div class="btn-group" role="group" aria-label="...">
   <a role="button" class="btn btn-success" id="btn-download" onclick="showQuickOptions('download')">
     <span class="glyphicon glyphicon-download" aria-hidden="true"></span>
-    Herunterladen
+    Download
     </a>
   <a role="button" class="btn btn-success" id="btn-tutorial" onclick="showQuickOptions('tutorial')">
   <span class="glyphicon glyphicon-education" aria-hidden="true"></span>
@@ -33,11 +33,11 @@ OpenSesame ist ein Programm zur Erstellung von Experimenten für Psychologie, Ne
   </p>  
   <p class="quick-options-download-macos" style="display: none;">
     <a role="button" class="btn btn-primary" href="$url-osx-dmg-x64-py3$">
-    Mac OS-Paket (.dmg)
+    Mac-OS-Paket (.dmg)
     </a>
   </p>
   <p class="quick-options-download-linux" style="display: none;">
-  Es gibt verschiedene Möglichkeiten, OpenSesame unter Linux/ Ubuntu zu installieren. Bitte sehen Sie sich unten die Download- und Installationsoptionen an.
+  Es gibt verschiedene Möglichkeiten, OpenSesame unter Linux/ Ubuntu zu installieren. Bitte siehe unten die Download- und Installationsoptionen.
   </p>
   <p>
     <a role="button" class="btn btn-primary" href="%url:download%">
@@ -48,7 +48,7 @@ OpenSesame ist ein Programm zur Erstellung von Experimenten für Psychologie, Ne
 
 <div class="quick-options" id="quick-options-tutorial" style="display: none;">
   <p>
-  Großartig! Was möchten Sie lernen?
+  Großartig! Was möchtest du lernen?
   </p>
   <p>
     <a role="button" class="btn btn-primary" href="%url:tutorials/beginner%">
@@ -57,31 +57,36 @@ OpenSesame ist ein Programm zur Erstellung von Experimenten für Psychologie, Ne
   </p>
   <p>
     <a role="button" class="btn btn-primary" href="%url:tutorials/beginner-sigmund%">
-    <b>Neu!</b> 🌟 Wie man effektiv mit SigmundAI arbeitet (Anfänger)
+    Wie man effektiv mit SigmundAI arbeitet (Anfänger)
     </a>
   </p>
   <p>
     <a role="button" class="btn btn-primary" href="%url:tutorials/intermediate%">
-    Wie man Python-Skript in meinem Experiment verwendet (Fortgeschrittene)</a>
+    Wie man Python script in meinem Experiment verwendet (Fortgeschrittene)</a>
   </p>
   <p>
     <a role="button" class="btn btn-primary" href="%url:tutorials/intermediate-sigmund%">
-    <b>Neu!</b> 🌟 Wie man SigmundAI zum Schreiben von Python-Skript verwendet (Fortgeschrittene)
+    Wie man SigmundAI zum Schreiben von Python script verwendet (Fortgeschrittene)
     </a>
-  </p>  
   <p>
     <a role="button" class="btn btn-primary" href="%url:tutorials/intermediate-javascript%">
     Wie man JavaScript in meinem Online-Experiment verwendet (Fortgeschrittene)</a>
   </p>
+  </p> 
+  <p>
+    <a role="button" class="btn btn-primary" href="%url:tutorials/sigmund-guided-generation%">
+    <b>Neu!</b> 🌟 Lerne, wie du mit angeleiteter Generierung mit SigmundAI jedes beliebige Experiment erstellen kannst!
+    </a>
+  </p> 
 </div>
 
 <div class="quick-options" id="quick-options-support" style="display: none;">
   <p>
-    Wir sind hier, um zu helfen! Welche Art von Unterstützung suchen Sie?
+    Wir sind hier, um zu helfen! Welche Art von Unterstützung suchst du?
   </p>
   <p>
     <a role="button" class="btn btn-primary" href="https://forum.cogsci.nl">
-    Community-Support-Forum (kostenlos)
+    Community-Supportforum (kostenlos)
     </a>
   </p>
   <p>

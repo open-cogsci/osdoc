@@ -1,5 +1,5 @@
 title: OpenSesame
-hash: 0da5cd23c8c071ca84bb0818de0aafb330af2b50da3d8c681bde73bb60136602
+hash: 9ab882d14433c23e7f81044baa2279aa743cdd9b414f30c82091495ab6226904
 locale: es
 language: Spanish
 
@@ -24,11 +24,11 @@ OpenSesame es un programa para crear experimentos de psicología, neurociencia y
 
 <div class="quick-options" id="quick-options-download" style="display: none;">
   <p>
-  ¡Comencemos!
+  ¡Empecemos!
   </p>  
   <p class="quick-options-download-windows" style="display: none;">
     <a role="button" class="btn btn-primary" href="$url-windows-exe-py3$">
-    Instalador estándar para Windows (.exe)
+    Instalador estándar de Windows (.exe)
     </a>
   </p>  
   <p class="quick-options-download-macos" style="display: none;">
@@ -57,22 +57,27 @@ OpenSesame es un programa para crear experimentos de psicología, neurociencia y
   </p>
   <p>
     <a role="button" class="btn btn-primary" href="%url:tutorials/beginner-sigmund%">
-    <b>¡Nuevo!</b> 🌟 Cómo trabajar eficazmente con SigmundAI (principiante)
+    Cómo trabajar eficazmente con SigmundAI (principiante)
     </a>
   </p>
   <p>
     <a role="button" class="btn btn-primary" href="%url:tutorials/intermediate%">
-    Cómo usar script de Python en mi experimento (intermedio)</a>
+    Cómo usar un script de Python en mi experimento (intermedio)</a>
   </p>
   <p>
     <a role="button" class="btn btn-primary" href="%url:tutorials/intermediate-sigmund%">
-    <b>¡Nuevo!</b> 🌟 Cómo usar SigmundAI para escribir script de Python (intermedio)
+    Cómo usar SigmundAI para escribir un script de Python (intermedio)
     </a>
-  </p>  
   <p>
     <a role="button" class="btn btn-primary" href="%url:tutorials/intermediate-javascript%">
     Cómo usar JavaScript en mi experimento en línea (intermedio)</a>
   </p>
+  </p> 
+  <p>
+    <a role="button" class="btn btn-primary" href="%url:tutorials/sigmund-guided-generation%">
+    <b>¡Nuevo!</b> 🌟 ¡Aprende a crear cualquier experimento usando generación guiada con SigmundAI!
+    </a>
+  </p> 
 </div>
 
 <div class="quick-options" id="quick-options-support" style="display: none;">

@@ -1,5 +1,5 @@
 title: 开放芝麻
-hash: 0da5cd23c8c071ca84bb0818de0aafb330af2b50da3d8c681bde73bb60136602
+hash: 9ab882d14433c23e7f81044baa2279aa743cdd9b414f30c82091495ab6226904
 locale: zh
 language: Chinese
 
@@ -28,12 +28,12 @@ OpenSesame 是一个用于创建心理学、神经科学和实验经济学实验
   </p>  
   <p class="quick-options-download-windows" style="display: none;">
     <a role="button" class="btn btn-primary" href="$url-windows-exe-py3$">
-    标准 Windows 安装程序（.exe）
+    标准 Windows 安装程序 (.exe)
     </a>
   </p>  
   <p class="quick-options-download-macos" style="display: none;">
     <a role="button" class="btn btn-primary" href="$url-osx-dmg-x64-py3$">
-    Mac OS 安装包（.dmg）
+    Mac OS 安装包 (.dmg)
     </a>
   </p>
   <p class="quick-options-download-linux" style="display: none;">
@@ -57,7 +57,7 @@ OpenSesame 是一个用于创建心理学、神经科学和实验经济学实验
   </p>
   <p>
     <a role="button" class="btn btn-primary" href="%url:tutorials/beginner-sigmund%">
-    <b>New!</b> 🌟 如何高效地使用 SigmundAI（初学者）
+    如何高效地使用 SigmundAI（初学者）
     </a>
   </p>
   <p>
@@ -66,18 +66,23 @@ OpenSesame 是一个用于创建心理学、神经科学和实验经济学实验
   </p>
   <p>
     <a role="button" class="btn btn-primary" href="%url:tutorials/intermediate-sigmund%">
-    <b>New!</b> 🌟 如何使用 SigmundAI 编写 Python script（中级）
+    如何使用 SigmundAI 编写 Python script（中级）
     </a>
-  </p>  
   <p>
     <a role="button" class="btn btn-primary" href="%url:tutorials/intermediate-javascript%">
     如何在我的在线实验中使用 JavaScript（中级）</a>
   </p>
+  </p> 
+  <p>
+    <a role="button" class="btn btn-primary" href="%url:tutorials/sigmund-guided-generation%">
+    <b>全新！</b> 🌟 学习如何使用 SigmundAI 的引导式生成功能来构建任何实验！
+    </a>
+  </p> 
 </div>
 
 <div class="quick-options" id="quick-options-support" style="display: none;">
   <p>
-    我们随时为您提供帮助！您在寻找哪种支持？
+    我们随时为你提供帮助！你在寻找哪种支持？
   </p>
   <p>
     <a role="button" class="btn btn-primary" href="https://forum.cogsci.nl">
@@ -108,7 +113,7 @@ function detectOS() {
   } else if (platform.indexOf('linux') !== -1 || userAgent.indexOf('linux') !== -1 || userAgent.indexOf('x11') !== -1) {
     return 'linux';
   }
-  return 'linux'; // 如果未知，则默认使用 linux
+  return 'linux'; // 如果未知，默认使用 linux
 }
 
 ## 功能特点

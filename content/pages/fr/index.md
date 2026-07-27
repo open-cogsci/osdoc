@@ -1,5 +1,5 @@
 title: OpenSesame
-hash: 0da5cd23c8c071ca84bb0818de0aafb330af2b50da3d8c681bde73bb60136602
+hash: 9ab882d14433c23e7f81044baa2279aa743cdd9b414f30c82091495ab6226904
 locale: fr
 language: French
 
@@ -28,7 +28,7 @@ OpenSesame est un programme permettant de créer des expériences pour la psycho
   </p>  
   <p class="quick-options-download-windows" style="display: none;">
     <a role="button" class="btn btn-primary" href="$url-windows-exe-py3$">
-    Installateur Windows standard (.exe)
+    Programme d’installation Windows standard (.exe)
     </a>
   </p>  
   <p class="quick-options-download-macos" style="display: none;">
@@ -52,12 +52,12 @@ OpenSesame est un programme permettant de créer des expériences pour la psycho
   </p>
   <p>
     <a role="button" class="btn btn-primary" href="%url:tutorials/beginner%">
-    Comment créer une expérience simple (débutant)
+    Comment créer une expérience de base (débutant)
     </a>
   </p>
   <p>
     <a role="button" class="btn btn-primary" href="%url:tutorials/beginner-sigmund%">
-    <b>Nouveau !</b> 🌟 Comment travailler efficacement avec SigmundAI (débutant)
+    Comment travailler efficacement avec SigmundAI (débutant)
     </a>
   </p>
   <p>
@@ -66,13 +66,18 @@ OpenSesame est un programme permettant de créer des expériences pour la psycho
   </p>
   <p>
     <a role="button" class="btn btn-primary" href="%url:tutorials/intermediate-sigmund%">
-    <b>Nouveau !</b> 🌟 Comment utiliser SigmundAI pour écrire un script Python (intermédiaire)
+    Comment utiliser SigmundAI pour écrire un script Python (intermédiaire)
     </a>
-  </p>  
   <p>
     <a role="button" class="btn btn-primary" href="%url:tutorials/intermediate-javascript%">
     Comment utiliser JavaScript dans mon expérience en ligne (intermédiaire)</a>
   </p>
+  </p> 
+  <p>
+    <a role="button" class="btn btn-primary" href="%url:tutorials/sigmund-guided-generation%">
+    <b>Nouveau !</b> 🌟 Découvrez comment créer n’importe quelle expérience en utilisant la génération guidée avec SigmundAI !
+    </a>
+  </p> 
 </div>
 
 <div class="quick-options" id="quick-options-support" style="display: none;">
@@ -108,7 +113,7 @@ function detectOS() {
   } else if (platform.indexOf('linux') !== -1 || userAgent.indexOf('linux') !== -1 || userAgent.indexOf('x11') !== -1) {
     return 'linux';
   }
-  return 'linux'; // par défaut, linux si inconnu
+  return 'linux'; // par défaut sur linux si inconnu
 }
 
 function showQuickOptions(option) {

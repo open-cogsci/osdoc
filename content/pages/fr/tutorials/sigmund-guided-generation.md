@@ -1,5 +1,5 @@
 title: Utilisez la génération guidée pour créer n’importe quelle expérience avec SigmundAI
-hash: 3cca055564d833b594ffb053c8d6d796732c86b27c92b7bbcf8a874169c96a50
+hash: 9fd2992708f865ec29c9a7080a645de89d5d0a9619c8e543101fe468cd89d355
 locale: fr
 language: French
 
@@ -207,7 +207,7 @@ Beautiful, well done Sigmund! Please save this as another persistent note so you
 
 ## Implémentation de l’expérience
 
-Maintenant, tout est prêt ! Cette étape finale repousse les limites de ce que la plupart des modèles d’IA peuvent faire. Si vous constatez que Sigmund échoue de façon systématique, essayez de passer à un modèle plus puissant. J’ai obtenu de bons résultats avec Claude Sonnet 5.
+Nous sommes maintenant prêts à commencer ! Cette dernière étape repousse les limites de ce que la plupart des modèles d’IA peuvent faire. Si vous constatez que Sigmund échoue systématiquement, essayez de passer à un modèle plus puissant. J’ai obtenu de bons résultats avec Claude Sonnet 5.
 
 💬 **Prompt :**
 
@@ -223,16 +223,16 @@ We're now ready to implement the experiment. A few pointers:
 This is a challenging task, but I know you can do it. Let's go!
 ```
 
-Sigmund parvient à implémenter avec succès l’expérience de mémoire de travail visuelle utilisée comme exemple. Cependant, toutes les expériences ne se dérouleront pas aussi bien.
+Sigmund parvient à implémenter avec succès l’expérience de mémoire de travail visuelle utilisée comme exemple. Cependant, toutes les expériences ne se dérouleront pas forcément aussi bien.
 
 Si Sigmund remarque qu’il a fait une erreur de syntaxe en générant l’expérience, il essaiera de la corriger. Sigmund peut se retrouver bloqué dans une boucle infinie en essayant de faire fonctionner les choses. Lorsque cela se produit, interrompez la conversation.
 
-Si l’expérience est générée avec succès, elle peut tout de même contenir des erreurs ou des imperfections. Testez-la soigneusement et peaufinez-la !
+Si l’expérience est générée avec succès, elle peut malgré tout contenir des erreurs ou des imperfections. Testez-la soigneusement et peaufinez-la !
 
 
-## Exemples d’expériences créées avec une génération guidée
+## Exemples d’expériences créées avec génération guidée
 
-Pour tous les exemples ci-dessous, les étapes initiales ont été réalisées avec Z.ai GLM 5.2, et l’étape finale d’implémentation a été effectuée avec Claude Sonnet 5. Je n’ai fourni aucun retour sur la description complète ni sur la spécification JSON. Cependant, j’ai peaufiné l’expérience finale comme décrit dans les notes ci-dessous.
+Pour tous les exemples ci-dessous, les étapes initiales ont été effectuées avec Z.ai GLM 5.2, et l’étape finale d’implémentation a été réalisée avec Claude Sonnet 5. Je n’ai fourni aucun retour sur la description complète ni sur la spécification JSON. Cependant, j’ai peaufiné l’expérience finale comme décrit dans les notes ci-dessous.
 
 
 ### Mémoire de travail visuelle
@@ -245,8 +245,8 @@ A typical visual-working-memory task where circles of different colors need to b
 
 Notes :
 
-- Sigmund a utilisé la syntaxe obsolète `[square_brackets_syntax]` pour faire référence aux variables dans les items SKETCHPAD. Cela fonctionne, mais je l’ai remplacée par la syntaxe préférée `{curly_brackets_syntax}`.
-- Sigmund a utilisé Python INLINE_SCRIPT pour cette expérience. Elle ne peut donc pas être exécutée dans un navigateur.
+- Sigmund a utilisé la syntaxe obsolète `[square_brackets_syntax]` pour faire référence aux variables dans les éléments SKETCHPAD. Cela fonctionne, mais je l’ai remplacée par la syntaxe préférée `{curly_brackets_syntax}`.
+- Sigmund a utilisé Python INLINE_SCRIPT pour cette expérience. Par conséquent, elle ne peut pas être exécutée dans un navigateur.
 
 Essayez l’expérience :
 
@@ -263,8 +263,8 @@ A Posner cuing paradigm with a central cue and a letter-discrimination task.
 
 Notes :
 
-- Sigmund a utilisé des marqueurs unicode (par ex. `\u2190`) pour les indices en forme de flèche. Ceux-ci ne sont pas rendus par OpenSesame, et ont dû être remplacés par les caractères réels (par ex. '←').
-- Sigmund a utilisé la syntaxe obsolète `[square_brackets_syntax]` pour faire référence aux variables dans les items SKETCHPAD. Cela fonctionne, mais je l’ai remplacée par la syntaxe préférée `{curly_brackets_syntax}`.
+- Sigmund a utilisé des marqueurs unicode (par ex. `\u2190`) pour les indices fléchés. Ils ne sont pas affichés par OpenSesame et ont dû être remplacés par les caractères réels (par ex. '←').
+- Sigmund a utilisé la syntaxe obsolète `[square_brackets_syntax]` pour faire référence aux variables dans les éléments SKETCHPAD. Cela fonctionne, mais je l’ai remplacée par la syntaxe préférée `{curly_brackets_syntax}`.
 
 Essayez l’expérience :
 
@@ -282,7 +282,7 @@ An AX continuous performance task.
 
 Notes :
 
-- Sigmund a oublié de définir quels items exécuter dans les différents items `sequence`. Cela a dû être corrigé manuellement.
+- Sigmund a oublié de définir quels éléments exécuter dans les différents éléments `sequence`. Cela a dû être corrigé manuellement.
 
 Essayez l’expérience :
 

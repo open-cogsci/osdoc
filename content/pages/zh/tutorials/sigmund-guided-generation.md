@@ -1,5 +1,5 @@
 title: 使用 guided generation 用 SigmundAI 创建任意实验
-hash: 3cca055564d833b594ffb053c8d6d796732c86b27c92b7bbcf8a874169c96a50
+hash: 9fd2992708f865ec29c9a7080a645de89d5d0a9619c8e543101fe468cd89d355
 locale: zh
 language: Chinese
 
@@ -195,57 +195,57 @@ Sigmund 将回复一份详细的实验描述。请审核它，并在必要时提
 请针对实验叙述描述回复 JSON 规范。暂时不要将 JSON 规范保存为注释，因为我们首先要审查它。
 ```
 
-Sigmund 现在将提供一份详细的 JSON 规范，这本质上是 OpenSesame 中概览区域的技术视图。如有必要，请审查该规范并提供反馈。如果你满意，请要求 Sigmund 记下来。
+Sigmund 现在将提供一份详细的 JSON 规范，这本质上是 OpenSesame 中概览区域的技术视图。请审查该规范，并在必要时提供反馈。如果你满意，请要求 Sigmund 记下来。
 
-💬 **提示：**
+💬 **Prompt:**
 
 ```text
-太棒了，做得很好 Sigmund！请把这保存为另一条持久笔记，以免你忘记。不要总结，而是完整保存。
+太棒了，做得很好 Sigmund！请把这个保存为另一条持久笔记，以免你忘记。不要总结它，而是完整保存。
 ```
 
 
 ## 实现实验
 
-现在我们准备就绪了！这最后一步正在挑战大多数 AI 模型能力的极限。如果你发现 Sigmund 总是失败，试着切换到一个更强大的模型。我用 Claude Sonnet 5 取得过成功。
+现在我们准备就绪了！这最后一步正在逼近大多数 AI 模型能力的极限。如果你发现 Sigmund 持续失败，尝试切换到一个更强大的模型。我曾用 Claude Sonnet 5 成功过。
 
-💬 **提示：**
+💬 **Prompt:**
 
 ```text
-我们现在准备好实现实验了。有几点提示：
+我们现在已经准备好实现实验了。有几点提示：
 
-- 将这些说明保存为一条持久笔记，以免你忘记。
-- *不要*检查当前实验的 items。它们无关紧要，因为我们将彻底覆盖当前实验。
-- 出于同样的原因，*不要*检查当前实验的 general script。
+- 将这些说明保存为持久笔记，以免你忘记。
+- *不要* 检查当前实验的项目。它们不相关，因为我们将彻底覆盖当前实验。
+- 出于同样的原因，*不要* 检查当前实验的 general script。
 - 在编写实验脚本之前，调用 `opensesame_get_syntax_documentation` 并设置 `save_as="note"`，以获取所有相关文档。
-- 最后，将新实验编写为一个完整的 general script，并将其传递给 `opensesame_update_general_script`。
+- 最后，将新实验写成一个单一的完整 general script，并将其传递给 `opensesame_update_general_script`。
 
 这是一项具有挑战性的任务，但我知道你能做到。开始吧！
 ```
 
-Sigmund 成功实现了作为示例使用的 visual-working-memory 实验。不过，并非所有实验都会顺利进行。
+Sigmund 成功实现了作为示例使用的视觉工作记忆实验。不过，并非所有实验都会顺利进行。
 
-如果 Sigmund 注意到它在生成实验时犯了语法错误，它会尝试修复它。Sigmund 可能会在试图让程序正常工作时陷入无限循环。发生这种情况时，请中止对话。
+如果 Sigmund 注意到它在生成实验时犯了语法错误，它会尝试修复它。Sigmund 可能会在试图让程序运行时陷入无限循环。发生这种情况时，中止对话。
 
-如果实验已成功生成，它仍然可能包含错误或不完善之处。请仔细测试并打磨它！
+如果实验成功生成，它仍然可能包含错误或不完善之处。请仔细测试并打磨它！
 
 
 ## 通过引导式生成创建的实验示例
 
-对于下面所有示例，初始步骤均使用 Z.ai GLM 5.2 完成，最后的实现步骤使用 Claude Sonnet 5 完成。我没有对全面描述或 JSON 规范提供任何反馈。不过，我确实按照下面注释中的说明对最终实验进行了打磨。
+对于下面所有示例，初始步骤都是使用 Z.ai GLM 5.2 完成的，而最终实现步骤使用的是 Claude Sonnet 5。我没有对全面描述或 JSON 规范提供任何反馈。不过，我确实按照下面的说明对最终实验进行了打磨。
 
 
-### Visual Working Memory
+### Visual working memory
 
-💬 **描述：**
+💬 **Description:**
 
 ```text
-一个典型的 visual-working-memory 任务，需要记住不同颜色的圆圈。通过在原始圆圈位置呈现一个颜色相同或不同的圆圈来探测其中一个圆圈。参与者作出相同/不同判断。集合大小会变化。
+一个典型的视觉工作记忆任务，需要记住不同颜色的圆。通过在原始圆的位置呈现一个颜色相同或不同的圆来探测其中一个圆。参与者做出相同/不同判断。集合大小会变化。
 ```
 
-注释：
+说明：
 
-- Sigmund 使用了已弃用的 `[square_brackets_syntax]` 来在 SKETCHPAD items 中引用变量。这虽然可用，但我将其改成了首选的 `{curly_brackets_syntax}`。
-- Sigmund 在这个实验中使用了 Python INLINE_SCRIPT。因此，它不能在浏览器中运行。
+- Sigmund 在这个实验中使用了已弃用的 `[square_brackets_syntax]` 来在 sketchpad 项目中引用变量。这虽然可用，但我把它改成了推荐的 `{curly_brackets_syntax}`。
+- Sigmund 为这个实验使用了 Python INLINE_SCRIPT。因此，它不能在浏览器中运行。
 
 试用该实验：
 
@@ -254,16 +254,16 @@ Sigmund 成功实现了作为示例使用的 visual-working-memory 实验。不�
 
 ### Posner cuing
 
-💬 **描述：**
+💬 **Description:**
 
 ```text
-一个带有中央线索和字母辨别任务的 Posner cuing 范式。
+一个带有中央线索和字母辨别任务的 Posner 线索提示范式。
 ```
 
-注释：
+说明：
 
-- Sigmund 使用了 unicode 标记（例如 `\u2190`）作为箭头线索。OpenSesame 不会渲染这些标记，因此需要将其替换为实际字符（例如“←”）。
-- Sigmund 使用了已弃用的 `[square_brackets_syntax]` 来在 SKETCHPAD items 中引用变量。这虽然可用，但我将其改成了首选的 `{curly_brackets_syntax}`。
+- Sigmund 使用了 unicode 标记（例如 `\u2190`）作为箭头线索。OpenSesame 不会渲染这些标记，因此需要将其替换为实际字符（例如 “←”）。
+- Sigmund 使用了已弃用的 `[square_brackets_syntax]` 来在 sketchpad 项目中引用变量。这虽然可用，但我把它改成了推荐的 `{curly_brackets_syntax}`。
 
 试用该实验：
 
@@ -273,15 +273,15 @@ Sigmund 成功实现了作为示例使用的 visual-working-memory 实验。不�
 
 ### AX continuous performance
 
-💬 **描述：**
+💬 **Description:**
 
 ```text
 一个 AX continuous performance task。
 ```
 
-注释：
+说明：
 
-- Sigmund 忘记在各个 `sequence` items 中设置要运行哪些 items。这需要手动修复。
+- Sigmund 忘记设置各个 `sequence` 项目中要运行哪些项目。这需要手动修复。
 
 试用该实验：
 

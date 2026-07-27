@@ -1,5 +1,5 @@
 title: Usa guided generation para crear cualquier experimento con SigmundAI
-hash: 3cca055564d833b594ffb053c8d6d796732c86b27c92b7bbcf8a874169c96a50
+hash: 9fd2992708f865ec29c9a7080a645de89d5d0a9619c8e543101fe468cd89d355
 locale: es
 language: Spanish
 
@@ -195,7 +195,7 @@ El segundo punto del prompt menciona qué tipos de ítems se pueden usar. Para a
 Por favor, responde con la especificación JSON para la descripción narrativa del experimento. No guardes todavía la especificación JSON como una nota, porque primero vamos a revisarla.
 ```
 
-Sigmund ahora proporcionará una especificación JSON detallada, que es esencialmente una vista técnica del área de overview en OpenSesame. Revisa la especificación y proporciona comentarios si es necesario. Si estás conforme, pídele a Sigmund que tome nota de ello.
+Sigmund proporcionará ahora una especificación JSON detallada, que es esencialmente una vista técnica del área de resumen en OpenSesame. Revisa la especificación y proporciona comentarios si es necesario. Si estás conforme, pídele a Sigmund que tome nota.
 
 💬 **Prompt:**
 
@@ -206,7 +206,7 @@ Beautiful, well done Sigmund! Please save this as another persistent note so you
 
 ## Implementar el experimento
 
-¡Ahora ya está todo listo! Este paso final lleva al límite lo que la mayoría de los modelos de IA pueden hacer. Si ves que Sigmund falla de forma consistente, intenta cambiar a un modelo más potente. Yo he tenido éxito con Claude Sonnet 5.
+¡Ahora sí, ya estamos listos! Este paso final lleva al límite lo que la mayoría de los modelos de IA pueden hacer. Si ves que Sigmund falla de forma consistente, prueba a cambiar a un modelo más potente. He tenido éxito con Claude Sonnet 5.
 
 💬 **Prompt:**
 
@@ -224,14 +224,14 @@ This is a challenging task, but I know you can do it. Let's go!
 
 Sigmund logra implementar correctamente el experimento de memoria de trabajo visual usado como ejemplo. Sin embargo, no todos los experimentos saldrán bien.
 
-Si Sigmund nota que cometió un error de sintaxis al generar el experimento, intentará corregirlo. Sigmund puede quedarse atascado en un bucle infinito mientras intenta hacer que funcione. Cuando esto ocurra, aborta la conversación.
+Si Sigmund nota que cometió un error de sintaxis al generar el experimento, intentará corregirlo. Sigmund puede quedarse atrapado en un bucle infinito mientras intenta hacer que funcione. Cuando esto ocurra, aborta la conversación.
 
-Si el experimento se genera correctamente, aún puede contener errores o imperfecciones. ¡Pruébalo cuidadosamente y púlelo!
+Si el experimento se genera correctamente, aun así puede contener errores o imperfecciones. ¡Pruébalo cuidadosamente y púlelo!
 
 
 ## Ejemplos de experimentos creados con generación guiada
 
-En todos los ejemplos de abajo, los pasos iniciales se hicieron con Z.ai GLM 5.2, y el paso final de implementación se hizo con Claude Sonnet 5. No proporcioné ningún comentario sobre la descripción exhaustiva ni sobre la especificación JSON. Sin embargo, sí pulí el experimento final como se describe en las notas de abajo.
+En todos los ejemplos siguientes, los pasos iniciales se realizaron con Z.ai GLM 5.2, y el paso final de implementación se hizo con Claude Sonnet 5. No proporcioné comentarios sobre la descripción exhaustiva ni sobre la especificación JSON. Sin embargo, sí pulí el experimento final como se describe en las notas a continuación.
 
 
 ### Memoria de trabajo visual
@@ -244,7 +244,7 @@ A typical visual-working-memory task where circles of different colors need to b
 
 Notas:
 
-- Sigmund usó la sintaxis obsoleta `[square_brackets_syntax]` para referirse a variables en los ítems de sketchpad. Esto funciona, pero yo lo cambié a la sintaxis preferida `{curly_brackets_syntax}`.
+- Sigmund usó la sintaxis obsoleta `[square_brackets_syntax]` para referirse a variables en los items de sketchpad. Esto funciona, pero la cambié por la sintaxis preferida `{curly_brackets_syntax}`.
 - Sigmund usó Python INLINE_SCRIPT para este experimento. Por lo tanto, no puede ejecutarse en un navegador.
 
 Prueba el experimento:
@@ -262,8 +262,8 @@ A Posner cuing paradigm with a central cue and a letter-discrimination task.
 
 Notas:
 
-- Sigmund usó marcadores unicode (p. ej. `\u2190`) para las señales con flechas. OpenSesame no los renderiza, y hubo que reemplazarlos por los caracteres reales (p. ej. '←').
-- Sigmund usó la sintaxis obsoleta `[square_brackets_syntax]` para referirse a variables en los ítems de sketchpad. Esto funciona, pero yo lo cambié a la sintaxis preferida `{curly_brackets_syntax}`.
+- Sigmund usó marcadores unicode (p. ej. `\u2190`) para las flechas de señalización. OpenSesame no los representa, y fue necesario reemplazarlos por los caracteres reales (p. ej. '←').
+- Sigmund usó la sintaxis obsoleta `[square_brackets_syntax]` para referirse a variables en los items de sketchpad. Esto funciona, pero la cambié por la sintaxis preferida `{curly_brackets_syntax}`.
 
 Prueba el experimento:
 
@@ -281,7 +281,7 @@ An AX continuous performance task.
 
 Notas:
 
-- Sigmund olvidó configurar qué ítems ejecutar en los distintos ítems `sequence`. Esto tuvo que corregirse manualmente.
+- Sigmund olvidó configurar qué items ejecutar en los distintos items de `sequence`. Esto tuvo que corregirse manualmente.
 
 Prueba el experimento:
 

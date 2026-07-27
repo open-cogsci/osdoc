@@ -1,5 +1,5 @@
 title: Verwenden Sie guided generation, um ein beliebiges Experiment mit SigmundAI zu erstellen
-hash: 3cca055564d833b594ffb053c8d6d796732c86b27c92b7bbcf8a874169c96a50
+hash: 9fd2992708f865ec29c9a7080a645de89d5d0a9619c8e543101fe468cd89d355
 locale: de
 language: German
 
@@ -196,7 +196,7 @@ Weiter geht's! Hier ist deine nächste Aufgabe:
 Bitte antworte mit der JSON-Spezifikation für die narrative Beschreibung des Experiments. Speichere die JSON-Spezifikation noch nicht als Notiz, da wir sie zuerst überprüfen werden.
 ```
 
-Sigmund wird nun eine detaillierte JSON-Spezifikation bereitstellen, die im Wesentlichen eine technische Ansicht des Übersichtsbereichs in OpenSesame ist. Prüfe die Spezifikation und gib bei Bedarf Feedback. Wenn du zufrieden bist, bitte Sigmund, sich dies zu notieren.
+Sigmund wird nun eine detaillierte JSON-Spezifikation bereitstellen, die im Wesentlichen eine technische Ansicht des Übersichtsbereichs in OpenSesame ist. Prüfe die Spezifikation und gib bei Bedarf Feedback. Wenn du zufrieden bist, bitte Sigmund, sich eine Notiz dazu zu machen.
 
 💬 **Prompt:**
 
@@ -205,9 +205,9 @@ Beautiful, well done Sigmund! Please save this as another persistent note so you
 ```
 
 
-## Das Experiment implementieren
+## Implementierung des Experiments
 
-Jetzt können wir loslegen! Dieser letzte Schritt stößt an die Grenzen dessen, was die meisten KI-Modelle leisten können. Wenn du feststellst, dass Sigmund konsistent scheitert, versuche, zu einem leistungsfähigeren Modell zu wechseln. Ich hatte Erfolg mit Claude Sonnet 5.
+Jetzt kann es losgehen! Dieser letzte Schritt geht an die Grenzen dessen, was die meisten AI-Modelle leisten können. Wenn du feststellst, dass Sigmund wiederholt scheitert, versuche, zu einem leistungsfähigeren Modell zu wechseln. Ich habe mit Claude Sonnet 5 gute Erfahrungen gemacht.
 
 💬 **Prompt:**
 
@@ -223,16 +223,16 @@ We're now ready to implement the experiment. A few pointers:
 This is a challenging task, but I know you can do it. Let's go!
 ```
 
-Sigmund schafft es, das als Beispiel verwendete visuelle Arbeitsgedächtnis-Experiment erfolgreich zu implementieren. Allerdings verlaufen nicht alle Experimente reibungslos.
+Sigmund schafft es, das als Beispiel verwendete Visual-Working-Memory-Experiment erfolgreich zu implementieren. Allerdings werden nicht alle Experimente reibungslos verlaufen.
 
-Wenn Sigmund bemerkt, dass es beim Erstellen des Experiments einen Syntaxfehler gemacht hat, wird es versuchen, ihn zu beheben. Sigmund kann in einer Endlosschleife hängen bleiben, während es versucht, die Dinge zum Laufen zu bringen. Wenn das passiert, brich die Konversation ab.
+Wenn Sigmund bemerkt, dass es beim Generieren des Experiments einen Syntaxfehler gemacht hat, wird es versuchen, diesen zu beheben. Dabei kann Sigmund in einer Endlosschleife stecken bleiben, während es versucht, alles zum Laufen zu bringen. Wenn das passiert, brich die Konversation ab.
 
-Wenn das Experiment erfolgreich generiert wurde, kann es dennoch Fehler oder Unvollkommenheiten enthalten. Teste es sorgfältig und optimiere es!
+Wenn das Experiment erfolgreich generiert wurde, kann es dennoch Fehler oder Unvollkommenheiten enthalten. Teste und optimiere es sorgfältig!
 
 
 ## Beispiele für Experimente, die mit geführter Generierung erstellt wurden
 
-Bei allen folgenden Beispielen wurden die ersten Schritte mit Z.ai GLM 5.2 durchgeführt, und der letzte Implementierungsschritt wurde mit Claude Sonnet 5 erledigt. Ich habe kein Feedback zur umfassenden Beschreibung oder JSON-Spezifikation gegeben. Allerdings habe ich das endgültige Experiment wie in den folgenden Hinweisen beschrieben nachbearbeitet.
+Bei allen folgenden Beispielen wurden die ersten Schritte mit Z.ai GLM 5.2 durchgeführt, und der letzte Implementierungsschritt wurde mit Claude Sonnet 5 ausgeführt. Ich habe kein Feedback zur umfassenden Beschreibung oder zur JSON-Spezifikation gegeben. Das endgültige Experiment habe ich jedoch, wie in den folgenden Notizen beschrieben, nachbearbeitet.
 
 
 ### Visuelles Arbeitsgedächtnis
@@ -243,10 +243,10 @@ Bei allen folgenden Beispielen wurden die ersten Schritte mit Z.ai GLM 5.2 durch
 A typical visual-working-memory task where circles of different colors need to be remembered. One circle is probed by presenting a circle of either the same or a different color at the original circle's location. The participant responds with a same/different judgment. Set size is varied.
 ```
 
-Hinweise:
+Notizen:
 
-- Sigmund verwendete die veraltete `[square_brackets_syntax]`, um in SKETCHPAD-Items auf Variablen zu verweisen. Das funktioniert, aber ich habe es in die bevorzugte `{curly_brackets_syntax}` geändert.
-- Sigmund verwendete für dieses Experiment Python INLINE_SCRIPT. Daher kann es nicht im Browser ausgeführt werden.
+- Sigmund verwendete die veraltete `[square_brackets_syntax]`, um in sketchpad-Items auf Variablen zu verweisen. Das funktioniert, aber ich habe es auf die bevorzugte `{curly_brackets_syntax}` geändert.
+- Sigmund verwendete für dieses Experiment Python INLINE_SCRIPT. Daher kann es nicht in einem Browser ausgeführt werden.
 
 Probiere das Experiment aus:
 
@@ -261,10 +261,10 @@ Probiere das Experiment aus:
 A Posner cuing paradigm with a central cue and a letter-discrimination task.
 ```
 
-Hinweise:
+Notizen:
 
-- Sigmund verwendete Unicode-Marker (z. B. `\u2190`) für Pfeil-Cues. Diese werden von OpenSesame nicht gerendert und mussten durch die tatsächlichen Zeichen ersetzt werden (z. B. '←').
-- Sigmund verwendete die veraltete `[square_brackets_syntax]`, um in SKETCHPAD-Items auf Variablen zu verweisen. Das funktioniert, aber ich habe es in die bevorzugte `{curly_brackets_syntax}` geändert.
+- Sigmund verwendete Unicode-Marker (z. B. `\u2190`) für Pfeil-Cues. Diese werden von OpenSesame nicht gerendert und mussten durch die tatsächlichen Zeichen ersetzt werden (z. B. „←“).
+- Sigmund verwendete die veraltete `[square_brackets_syntax]`, um in sketchpad-Items auf Variablen zu verweisen. Das funktioniert, aber ich habe es auf die bevorzugte `{curly_brackets_syntax}` geändert.
 
 Probiere das Experiment aus:
 
@@ -280,7 +280,7 @@ Probiere das Experiment aus:
 An AX continuous performance task.
 ```
 
-Hinweise:
+Notizen:
 
 - Sigmund vergaß festzulegen, welche Items in den verschiedenen `sequence`-Items ausgeführt werden sollen. Dies musste manuell korrigiert werden.
 

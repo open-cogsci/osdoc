@@ -55,7 +55,7 @@ OpenSesame is a program to create experiments for psychology, neuroscience, and 
   </p>
   <p>
     <a role="button" class="btn btn-primary" href="%url:tutorials/beginner-sigmund%">
-    <b>New!</b> 🌟 How to work effectively with SigmundAI (beginner)
+    How to work effectively with SigmundAI (beginner)
     </a>
   </p>
   <p>
@@ -64,13 +64,18 @@ OpenSesame is a program to create experiments for psychology, neuroscience, and 
   </p>
   <p>
     <a role="button" class="btn btn-primary" href="%url:tutorials/intermediate-sigmund%">
-    <b>New!</b> 🌟 How to use SigmundAI to write Python script (intermediate)
+    How to use SigmundAI to write Python script (intermediate)
     </a>
-  </p>  
   <p>
     <a role="button" class="btn btn-primary" href="%url:tutorials/intermediate-javascript%">
     How to use JavaScript in my online experiment (intermediate)</a>
   </p>
+  </p> 
+  <p>
+    <a role="button" class="btn btn-primary" href="%url:tutorials/sigmund-guided-generation%">
+    <b>New!</b> 🌟 Learn how to build any experiment using guided generation with SigmundAI!
+    </a>
+  </p> 
 </div>
 
 <div class="quick-options" id="quick-options-support" style="display: none;">

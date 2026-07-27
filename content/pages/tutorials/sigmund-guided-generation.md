@@ -231,7 +231,7 @@ If the experiment is succesfully generated, it may still contain mistakes or imp
 For all of the examples below, the initial steps were done using Z.ai GLM 5.2, and the final implementation step was done using Claude Sonnet 5. I didn't provide any feedback on the comprehensive description or JSON specification. However, I did polish the final experiment as described in the notes below.
 
 
-### Visual Working Memory
+### Visual working memory
 
 💬 **Description:**
 
