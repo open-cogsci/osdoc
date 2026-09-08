@@ -52,7 +52,7 @@ Most people download the `.exe` installer package. If you do not have admin priv
 
 Based on Python 3.13 for 64 bit systems. Tested on Windows 11.
 
-Some external devices, such as [EyeLink](%url:eyelink%) and [Tobii](%url:tobii%) eye trackers, require a different version of Python. Visit the respective documentation pages for more information.
+Some external devices, such as [Tobii](%url:tobii%) eye trackers, require a different version of Python. Visit the respective documentation pages for more information.
 
 
 ### Mac OS
@@ -65,7 +65,7 @@ When you start OpenSesame for the first time, it is blocked by the operating sys
 
 Based on Python 3.13 for 64 bit intel systems. Tested on Mac OS X Sequoia.
 
-Some external devices, such as [EyeLink](%url:eyelink%) and [Tobii](%url:tobii%) eye trackers, require a different version of Python. Visit the respective documentation pages for more information.
+Some external devices, such as [Tobii](%url:tobii%) eye trackers, require a different version of Python. Visit the respective documentation pages for more information.
 
 
 ### Linux / Ubuntu

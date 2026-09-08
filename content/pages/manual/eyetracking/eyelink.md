@@ -6,7 +6,6 @@ title: EyeLink
 
 The EyeLink eye trackers, produced by SR Research, are one of the most commonly used eye trackers in psychological research. SR Research provides Python bindings for communicating with the EyeLink (called PyLink), which are used by PyGaze and their own EyeLink Plugin. 
 
-Historically, PyLink was not included in the default distribution of OpenSesame because it depended on the EyeLink Developers Kit. This dependency has since been removed, but the package still needs to be installed separately via PyPI.
 
 ## Installing PyLink
 
